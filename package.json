@@ -1,34 +1,22 @@
 {
   "name": "@tum-far/ubii-msg-formats",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "license": "",
-  "repository": "https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-topic-data",
+  "main": "src/index.js",
+  "repository": "https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-formats",
   "author": {
     "name": "Daniel Dyrda",
     "email": "dyrda@in.tum.de",
     "url": ""
   },
-  "engines": {
-    "node": ">=4"
-  },
   "scripts": {
-    "test": "webpack && ava"
+    "test": "ava -v -s"
   },
-  "files": [
-    "dist/bundle.js"
-  ],
   "keywords": [
     ""
   ],
   "devDependencies": {
-    "ava": "^1.0.0-beta.3",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.14",
-    "xo": "^0.18.2",
-    "@ava/babel-preset-stage-4": "^1.1.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1"
+    "ava": "^1.0.0-beta.3"
   },
   "dependencies": {}
 }

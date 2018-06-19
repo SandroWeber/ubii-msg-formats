@@ -1,4 +1,4 @@
-const {topicSeparator, deviceIdPrefix} = require('./constants.js');
+const {topicSeparator, deviceIdPrefix, msgTypeSeparator, valueTypeSeparator} = require('./constants.js');
 
 let getDeviceIdentifier = function(msg){
     if(!msg.includes(deviceIdPrefix)){
@@ -9,7 +9,9 @@ let getDeviceIdentifier = function(msg){
 }
 
 module.exports = {
+    'msgTypeSeparator': msgTypeSeparator,
     'topicSeparator': topicSeparator,
+    'valueTypeSeparator': valueTypeSeparator,
     'deviceIdPrefix': deviceIdPrefix,
     'getDeviceIdentifier': getDeviceIdentifier,
 }
