@@ -1,5 +1,5 @@
 {
-  "name": "ubii-msg-formats",
+  "name": "@tum-far/ubii-msg-formats",
   "version": "0.0.1",
   "description": "",
   "license": "",
@@ -30,6 +30,5 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

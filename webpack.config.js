@@ -29,7 +29,7 @@ const index = {
     output: {
         path: path.resolve(__dirname, 'dist/js'),
         filename: 'bundle.js',
-        library: "CommonForest",
+        library: "ubiiMsgFormats",
         libraryTarget: "commonjs2"
     }
 };

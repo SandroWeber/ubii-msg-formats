@@ -1,7 +1,7 @@
 const {topicSeparator, deviceIdPrefix} = require('./constants.js');
 
 let getDeviceIdentifier = function(msg){
-    if(msg.includes(deviceIdPrefix)){
+    if(!msg.includes(deviceIdPrefix)){
         return '';
     }
     let fields = msg.split(deviceIdPrefix);
