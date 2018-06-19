@@ -1,6 +1,6 @@
 const {topicSeparator, deviceIdPrefix, msgTypeSeparator, valueTypeSeparator} = require('./constants.js');
 
-let getDeviceIdentifier = function(msg){
+let extractDeviceIdentifier = function(msg){
     if(!msg.includes(deviceIdPrefix)){
         return '';
     }
@@ -8,7 +8,7 @@ let getDeviceIdentifier = function(msg){
     return fields[fields.length - 1 ];
 }
 
-let getMessageType = function(msg){
+let extractMessageType = function(msg){
     if(!msg.includes(msgTypeSeparator)){
         return '';
     }
@@ -29,7 +29,7 @@ module.exports = {
     'topicSeparator': topicSeparator,
     'valueTypeSeparator': valueTypeSeparator,
     'deviceIdPrefix': deviceIdPrefix,
-    'getDeviceIdentifier': getDeviceIdentifier,
-    'getMessageType': getMessageType,
+    'extractDeviceIdentifier': extractDeviceIdentifier,
+    'extractMessageType': extractMessageType,
     'removeMessageType': removeMessageType,
 }
