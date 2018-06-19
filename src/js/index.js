@@ -10,4 +10,6 @@ let getDeviceIdentifier = function(msg){
 
 module.exports = {
     'topicSeparator': topicSeparator,
+    'deviceIdPrefix': deviceIdPrefix,
+    'getDeviceIdentifier': getDeviceIdentifier,
 }
