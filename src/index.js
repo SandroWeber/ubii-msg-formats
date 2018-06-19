@@ -4,7 +4,7 @@ let getDeviceIdentifier = function(msg){
     if(!msg.includes(deviceIdPrefix)){
         return '';
     }
-    let fields = msg.split(deviceIdPrefix);
+    let fields = msg.toString().split(deviceIdPrefix);
     return fields[fields.length - 1 ];
 }
 
@@ -12,7 +12,7 @@ let getMessageType = function(msg){
     if(!msg.includes(msgTypeSeparator)){
         return '';
     }
-    let fields = msg.split(msgTypeSeparator);
+    let fields = msg.toString().split(msgTypeSeparator);
     return fields[0];
 }
 
@@ -21,7 +21,7 @@ let removeMessageType = function(msg){
         return '';
     }
    
-    return msg.split(msgTypeSeparator).pop();
+    return msg.toString().split(msgTypeSeparator).pop();
 }
 
 module.exports = {
