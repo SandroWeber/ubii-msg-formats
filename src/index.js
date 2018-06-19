@@ -1,6 +1,8 @@
-const {topicSeparator, deviceIdPrefix, msgTypeSeparator, valueTypeSeparator} = require('./constants.js');
+const {topicSeparator, deviceIdPrefix, msgTypeSeparator, valueSeparator} = require('./constants.js');
 
 let extractDeviceIdentifier = function(msg){
+    //ToDo: validate msg
+    
     if(!msg.includes(deviceIdPrefix)){
         return '';
     }
@@ -9,6 +11,8 @@ let extractDeviceIdentifier = function(msg){
 }
 
 let extractMessageType = function(msg){
+    //ToDo: validate msg
+
     if(!msg.includes(msgTypeSeparator)){
         return '';
     }
@@ -17,22 +21,31 @@ let extractMessageType = function(msg){
 }
 
 let extractTopic = function(msg){
-    if(!msg.includes(msgTypeSeparator)){
-        return '';
-    }
-    let fields = msg.toString().split(msgTypeSeparator);
+    //ToDo: validate msg
 
-    if(!fields[1].includes(valueTypeSeparator)){
+    let tempMsg;
+    let fields;
+    if(msg.includes(msgTypeSeparator)){
+        fields = msg.toString().split(msgTypeSeparator);
+        tempMsg = fields[1];
+    }else{
+        tempMsg = msg;
+    }
+
+    if(!tempMsg.includes(valueSeparator)){
         return '';
     }
-    fields = fields[1].toString().split(valueTypeSeparator);
+    fields = tempMsg.toString().split(valueSeparator);
     return fields[0];
 }
 let extractValue = function(msg){
-    if(!msg.includes(valueTypeSeparator)){
+    //ToDo: validate msg
+
+    if(!msg.includes(valueSeparator)){
         return '';
     }
-    let fields = msg.toString().split(valueTypeSeparator);
+    let fields = msg.toString().split(valueSeparator);
+    
 
     if(!fields[1].includes(deviceIdPrefix)){
         return '';
@@ -42,6 +55,8 @@ let extractValue = function(msg){
 }
 
 let removeMessageType = function(msg){
+    //ToDo: validate msg
+
     if(!msg.includes(msgTypeSeparator)){
         return '';
     }
@@ -52,7 +67,7 @@ let removeMessageType = function(msg){
 module.exports = {
     'msgTypeSeparator': msgTypeSeparator,
     'topicSeparator': topicSeparator,
-    'valueTypeSeparator': valueTypeSeparator,
+    'valueSeparator': valueSeparator,
     'deviceIdPrefix': deviceIdPrefix,
     'extractDeviceIdentifier': extractDeviceIdentifier,
     'extractTopic': extractTopic,
