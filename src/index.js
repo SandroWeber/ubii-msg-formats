@@ -1,3 +1,5 @@
+var protobuf = require("protobufjs");
+
 const {topicSeparator, deviceIdPrefix, msgTypeSeparator, valueSeparator} = require('./constants.js');
 
 let extractDeviceIdentifier = function(msg){
@@ -75,3 +77,11 @@ module.exports = {
     'extractValue': extractValue,
     'removeMessageType': removeMessageType,
 }
+
+// validation
+
+// Validate complete structure parts
+
+// Validate complete structure 
+
+// Validate each property
