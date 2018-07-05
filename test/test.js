@@ -1,9 +1,34 @@
 import test from 'ava';
 import {extractDeviceIdentifier, extractTopic, extractValue, topicSeparator, valueSeparator, deviceIdPrefix} from '../src/index';
+import {TopicDataBlockMessage} from '../src/index';
 
 (function(){
 
-	test('extractDeviceIdentifier', t => {
+    test('extractDeviceIdentifier', t => {
+        let protoMessage = new TopicDataBlockMessage();
+        let result;
+        
+        protoMessage.setMessageFromPayload(protoMessage.createPayload({
+            topic: 'awesomeTopic',
+            value: '30',
+            deviceIdentifier: 'superDevice',
+        }));
+
+        console.log('current message: '+protoMessage.message);
+
+        result = protoMessage.createBufferFromMessage(protoMessage.message);
+        console.log('buffer: '+result.toString());
+        result = protoMessage.createMessageFromBuffer(result);
+        console.log('after buffer message: '+result);
+        result = protoMessage.createPayloadFromMessage(result);
+        console.log('after toObject: '+result.topic);
+        t.is('hello', 'hello');
+        
+        
+    });
+
+    // Legacy implementation tests
+	/*test('extractDeviceIdentifier', t => {
         let testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}kinect1`;
         t.is(extractDeviceIdentifier(testString), 'kinect1');
     
@@ -49,6 +74,6 @@ import {extractDeviceIdentifier, extractTopic, extractValue, topicSeparator, val
 
         testString = `player1${topicSeparator}left${topicSeparator}arm${deviceIdPrefix}56463653_kinect1`;
         t.is(extractTopic(testString), '');
-    });
+    });*/
     
 })();
