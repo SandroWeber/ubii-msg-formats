@@ -1,4 +1,4 @@
-const TopicDataBlockMessage = require('./topicDataBlockMessage.js');
+const TopicDataBlockMessage = require('./topicDataBlockMessage/topicDataBlockMessage');
 
 module.exports =  {
     TopicDataBlockMessage: TopicDataBlockMessage,
