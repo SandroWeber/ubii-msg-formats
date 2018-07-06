@@ -25,7 +25,7 @@ class TopicDataBlockMessage extends UbiiMessage {
             console.log('loaded');
         });*/
     }
-/*
+
     createPayload(data){
         // todo: check for string
 
@@ -38,7 +38,7 @@ class TopicDataBlockMessage extends UbiiMessage {
 
         return payload;
     }
-  */
+  
 }
 
 module.exports = TopicDataBlockMessage;
