@@ -6,9 +6,9 @@ Ubii message formats module.
 
 ## Table of Contents
 
-- [Loading Proto Files](Loading Proto Files)
-- [Command Line Interfaces (CLIs)](CLIs)
-- [Testing](Testing)
+- [Loading Proto Files](#Loading Proto Files)
+- [Command Line Interfaces (CLIs)](#CLIs)
+- [Testing](#Testing)
 
 ### Loading Proto Files
 
