@@ -1,9 +1,0 @@
-package topicDataBlockPackage;
-syntax = "proto3";
-
-message topicDataBlockMessage {
-    required string messageType = 1;
-    required string topic = 2;
-    required string value = 3;
-    required string deviceIdentifier = 4;
-}
