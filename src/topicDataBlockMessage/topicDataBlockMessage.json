@@ -1,28 +1,28 @@
 {
-    "nested": {
-      "topicDataBlockMessage": {
-        "fields": {
-          "messageType": {
-            "type": "string",
-            "id": 1,
-            "rule": "required"
-          },
-          "topic": {
-            "type": "string",
-            "id": 2,
-            "rule": "required"
-          },
-          "value": {
-            "type": "string",
-            "id": 3,
-            "rule": "required"
-          },
-          "deviceIdentifier": {
-            "type": "string",
-            "id": 4,
-            "rule": "required"
-          }
+  "nested": {
+    "topicDataBlockMessage": {
+      "fields": {
+        "messageType": {
+          "type": "string",
+          "id": 1,
+          "rule": "required"
+        },
+        "topic": {
+          "type": "string",
+          "id": 2,
+          "rule": "required"
+        },
+        "value": {
+          "type": "string",
+          "id": 3,
+          "rule": "required"
+        },
+        "deviceIdentifier": {
+          "type": "string",
+          "id": 4,
+          "rule": "required"
         }
       }
     }
+  }
 }

@@ -1,12 +1,11 @@
-var protobuf = require("protobufjs");
+const protobuf = require("protobufjs");
 var jsonDescriptor = require("./topicDataBlockMessage.json");
+const UbiiMessage = require('../ubiiMessage/ubiiMessage');
 
-class TopicDataBlockMessage {
+class TopicDataBlockMessage extends UbiiMessage {
 
     constructor(){
-        this.message = {};
-        this.Proto = undefined;
-        this.loadProtoFile();
+       super();
     }
 
     loadProtoFile(){
@@ -16,6 +15,7 @@ class TopicDataBlockMessage {
         var root = protobuf.Root.fromJSON(jsonDescriptor);
 
         this.Proto = root.lookupType(lookupType);
+        
 
         // Legacy async laoding:
         /* protobuf.load(protoFilename)
@@ -25,15 +25,7 @@ class TopicDataBlockMessage {
             console.log('loaded');
         });*/
     }
-
-    verify(object){
-        let errMsg = this.Proto.verify(object);
-        if (errMsg){
-            throw Error(errMsg);
-        }
-        return true;
-    }
-
+/*
     createPayload(data){
         // todo: check for string
 
@@ -46,55 +38,7 @@ class TopicDataBlockMessage {
 
         return payload;
     }
-
-    createMessageFromPayload(payload){
-        // Verify the payload
-        this.verify(payload);
-
-        // Create a new message
-        return this.Proto.create(payload);
-    }
-
-    createPayloadFromMessage(message){
-        // Maybe convert the message back to a plain object
-        let payload = this.Proto.toObject(message, {
-            longs: String,
-            enums: String,
-            bytes: String,
-            // see ConversionOptions
-        });
-
-        // Verify the object
-        this.verify(payload);
-
-        return payload;
-    }
-
-    createBufferFromMessage(message){
-        // Encode a message to an Uint8Array (browser) or Buffer (node)
-        return this.Proto.encode(message).finish();
-    }
-
-    createMessageFromBuffer(buffer){
-        // Decode an Uint8Array (browser) or Buffer (node) to a message
-        let message =  this.Proto.decode(buffer);
-        
-        // Verify
-        this.verify(message);
-
-        return message;
-    }
-
-    // Set
-
-    setMessageFromPayload(payload){
-        this.message = this.createMessageFromPayload(payload);
-    }
-
-    setMesageFromBuffer(buffer){
-        this.message = this.createMessageFromBuffer(buffer);
-    }
-    
+  */
 }
 
 module.exports = TopicDataBlockMessage;
