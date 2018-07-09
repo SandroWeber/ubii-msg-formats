@@ -1,5 +1,5 @@
-const TopicDataBlockMessage = require('./topicDataBlockMessage/topicDataBlockMessage');
+const IoMessage = require('./ioMessage/ioMessage');
 
 module.exports =  {
-    TopicDataBlockMessage: TopicDataBlockMessage,
+    IoMessage: IoMessage,
 };

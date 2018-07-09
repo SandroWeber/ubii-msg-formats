@@ -1,6 +1,6 @@
 {
   "nested": {
-    "topicDataBlockMessage": {
+    "ioMessage": {
       "fields": {
         "messageType": {
           "type": "string",

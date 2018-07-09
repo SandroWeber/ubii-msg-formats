@@ -1,8 +1,8 @@
 const protobuf = require("protobufjs");
-var jsonDescriptor = require("./topicDataBlockMessage.json");
-const UbiiMessage = require('../ubiiMessage/ubiiMessage');
+var jsonDescriptor = require("./ioMessage.json");
+const Message = require('../message/message');
 
-class TopicDataBlockMessage extends UbiiMessage {
+class IoMessage extends Message {
 
     constructor(){
        super();
@@ -10,7 +10,7 @@ class TopicDataBlockMessage extends UbiiMessage {
 
     loadProtoFile(){
         //const protoFilename = './topicDataBlockMessage.proto';
-        const lookupType = 'topicDataBlockMessage';
+        const lookupType = 'ioMessage';
 
         var root = protobuf.Root.fromJSON(jsonDescriptor);
 
@@ -30,7 +30,7 @@ class TopicDataBlockMessage extends UbiiMessage {
         // todo: check for string
 
         let payload = {
-            messageType: 'topicDataBlock',
+            messageType: 'io',
             topic: data.topic,
             value: data.value,
             deviceIdentifier: data.deviceIdentifier,
@@ -41,4 +41,4 @@ class TopicDataBlockMessage extends UbiiMessage {
   
 }
 
-module.exports = TopicDataBlockMessage;
+module.exports = IoMessage;

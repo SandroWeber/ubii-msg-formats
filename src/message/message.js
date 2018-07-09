@@ -1,9 +1,9 @@
 const protobuf = require("protobufjs");
 
-class UbiiMessage {
+class Message {
 
     constructor() {
-        if (new.target === UbiiMessage) {
+        if (new.target === Message) {
             throw new TypeError("Cannot construct UbiiMessage instances directly");
         }
 
@@ -78,5 +78,5 @@ class UbiiMessage {
     }
   }
   
-  module.exports = UbiiMessage;
+  module.exports = Message;
   
