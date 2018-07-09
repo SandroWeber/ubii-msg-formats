@@ -73,7 +73,7 @@ class Message {
         this.message = this.createMessageFromPayload(payload);
     }
 
-    setMesageFromBuffer(buffer){
+    setMessageFromBuffer(buffer){
         this.message = this.createMessageFromBuffer(buffer);
     }
   }
