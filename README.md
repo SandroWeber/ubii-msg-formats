@@ -10,17 +10,17 @@ Ubii message formats module.
 - [Command Line Interfaces (CLIs)](#CLIs)
 - [Testing](#Testing)
 
-### Loading Proto Files
+## Loading Proto Files
 
 - In order to support synchronous loading of the Proto files, the Proto files must be written in JSON format (JSON descriptors). JSON files can then be imported by a require statement. More details about Proto files in JSON format can be found in the [protobufjs repository](https://github.com/dcodeIO/ProtoBuf.js/#using-json-descriptors).
 
-### CLIs
+## CLIs
 
 #### Tests
 
 - Run ``npm test`` to process all standard tests. See the [Testing section](Testing) for more details on tests.
 
-### Testing
+## Testing
 
 - This module uses the [AVA](https://github.com/avajs/ava) test runner.
 - You can add new tests to the test folder. Entry point for the test runner is test.js within the test folder. See the [AVA Documentation](https://github.com/avajs/ava#contents) for more details on how to create new test cases for AVA.
