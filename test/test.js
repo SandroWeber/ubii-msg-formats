@@ -1,21 +1,23 @@
 import test from 'ava';
-import {IoMessage} from '../src/index';
+import {
+    TopicDataMessageTranslator
+} from '../src/index';
 
 (function () {
 
-    test('extractDeviceIdentifier', t => {
-        let protoMessage = new IoMessage();
+    test('basicProtobufTest', t => {
+        let protoMessage = new TopicDataMessageTranslator();
         let result;
 
-        protoMessage.setMessageFromPayload(protoMessage.createPayload({
+        let message = protoMessage.createMessageFromPayload(protoMessage.createPayload({
             topic: 'awesomeTopic',
             value: '30',
             deviceIdentifier: 'superDevice',
         }));
 
-        console.log('current message: ' + protoMessage.message);
+        console.log('current message: ' + message);
 
-        result = protoMessage.createBufferFromMessage(protoMessage.message);
+        result = protoMessage.createBufferFromMessage(message);
         console.log('buffer: ' + result.toString());
         result = protoMessage.createMessageFromBuffer(result);
         console.log('after buffer message: ' + result);
