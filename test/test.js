@@ -1,12 +1,10 @@
 import test from 'ava';
-import {
-    TopicDataBlockMessage
-} from '../src/index';
+import {IoMessage} from '../src/index';
 
 (function () {
 
-    test('basicProtobufTest', t => {
-        let protoMessage = new TopicDataBlockMessage();
+    test('extractDeviceIdentifier', t => {
+        let protoMessage = new IoMessage();
         let result;
 
         protoMessage.setMessageFromPayload(protoMessage.createPayload({

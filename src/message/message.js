@@ -1,29 +1,24 @@
-var protobuf = require("protobufjs");
-var jsonDescriptor = require("./topicDataBlockMessage.json");
+const protobuf = require("protobufjs");
 
-class TopicDataBlockMessage {
+class Message {
 
-    constructor(){
+    constructor() {
+        if (new.target === Message) {
+            throw new TypeError("Cannot construct UbiiMessage instances directly");
+        }
+
+        if (this.createPayload === undefined) {
+            throw new TypeError("Must override createPayload method.");
+        }
+        if (this.loadProtoFile === undefined) {
+            // or maybe test typeof this.method === "function"
+            throw new TypeError("Must override loadProtoFile method.");
+        }
+
         this.message = {};
         this.Proto = undefined;
         this.loadProtoFile();
-    }
-
-    loadProtoFile(){
-        //const protoFilename = './topicDataBlockMessage.proto';
-        const lookupType = 'topicDataBlockMessage';
-
-        var root = protobuf.Root.fromJSON(jsonDescriptor);
-
-        this.Proto = root.lookupType(lookupType);
-
-        // Legacy async laoding:
-        /* protobuf.load(protoFilename)
-        .then( (root) => {
-            // Obtain a message type
-            this.Proto = root.lookupType(lookupType);
-            console.log('loaded');
-        });*/
+  
     }
 
     verify(object){
@@ -32,19 +27,6 @@ class TopicDataBlockMessage {
             throw Error(errMsg);
         }
         return true;
-    }
-
-    createPayload(data){
-        // todo: check for string
-
-        let payload = {
-            messageType: 'topicDataBlock',
-            topic: data.topic,
-            value: data.value,
-            deviceIdentifier: data.deviceIdentifier,
-        };
-
-        return payload;
     }
 
     createMessageFromPayload(payload){
@@ -91,10 +73,10 @@ class TopicDataBlockMessage {
         this.message = this.createMessageFromPayload(payload);
     }
 
-    setMesageFromBuffer(buffer){
+    setMessageFromBuffer(buffer){
         this.message = this.createMessageFromBuffer(buffer);
     }
-    
-}
-
-module.exports = TopicDataBlockMessage;
+  }
+  
+  module.exports = Message;
+  
