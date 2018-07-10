@@ -1,14 +1,21 @@
 import test from 'ava';
-import {extractDeviceIdentifier, extractTopic, extractValue, topicSeparator, valueSeparator, deviceIdPrefix} from '../src/legacy/extraction.js';
+import {
+    extractDeviceIdentifier,
+    extractTopic,
+    extractValue,
+    topicSeparator,
+    valueSeparator,
+    deviceIdPrefix
+} from '../src/legacy/extraction.js';
 
-(function(){
+(function () {
 
 
     // Legacy implementation tests
-	test('extractDeviceIdentifier', t => {
+    test('extractDeviceIdentifier', t => {
         let testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}kinect1`;
         t.is(extractDeviceIdentifier(testString), 'kinect1');
-    
+
         testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}56463653:kinect1`;
         t.is(extractDeviceIdentifier(testString), '56463653:kinect1');
 
@@ -22,7 +29,7 @@ import {extractDeviceIdentifier, extractTopic, extractValue, topicSeparator, val
     test('extractValue', t => {
         let testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}kinect1`;
         t.is(extractValue(testString), '0');
-    
+
         testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}1${deviceIdPrefix}56463653:kinect1`;
         t.is(extractValue(testString), '1');
 
@@ -39,7 +46,7 @@ import {extractDeviceIdentifier, extractTopic, extractValue, topicSeparator, val
     test('extractTopic', t => {
         let testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}kinect1`;
         t.is(extractTopic(testString), `player1${topicSeparator}left${topicSeparator}arm`);
-    
+
         testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}1${deviceIdPrefix}56463653_kinect1`;
         t.is(extractTopic(testString), `player1${topicSeparator}left${topicSeparator}arm`);
 
@@ -52,5 +59,5 @@ import {extractDeviceIdentifier, extractTopic, extractValue, topicSeparator, val
         testString = `player1${topicSeparator}left${topicSeparator}arm${deviceIdPrefix}56463653_kinect1`;
         t.is(extractTopic(testString), '');
     });
-    
+
 })();
