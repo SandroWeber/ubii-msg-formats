@@ -1,35 +1,40 @@
-const protobuf = require("protobufjs");
-
-class Message {
+/**
+ * Message Translator base class.
+ * Message translators provide basic functionalities to translate variables between the three js protobuf formats: 
+ * payload (plain js objects) <--> protobuf message <--> buffer
+ */
+class MessageTranslator {
 
     constructor() {
-        if (new.target === Message) {
-            throw new TypeError("Cannot construct UbiiMessage instances directly");
+        if (new.target === MessageTranslator) {
+            throw new TypeError("Cannot construct MessageTranslator instances directly");
         }
 
         if (this.createPayload === undefined) {
             throw new TypeError("Must override createPayload method.");
         }
         if (this.loadProtoFile === undefined) {
-            // or maybe test typeof this.method === "function"
             throw new TypeError("Must override loadProtoFile method.");
         }
 
-        this.message = {};
         this.Proto = undefined;
         this.loadProtoFile();
-  
+
     }
 
-    verify(object){
+    /**
+     * Verifies any payload, mesage or buffer object.
+     * @param {*} object Object to be verified. Can be a payload, message or buffer.
+     */
+    verify(object) {
         let errMsg = this.Proto.verify(object);
-        if (errMsg){
+        if (errMsg) {
             throw Error(errMsg);
         }
         return true;
     }
 
-    createMessageFromPayload(payload){
+    createMessageFromPayload(payload) {
         // Verify the payload
         this.verify(payload);
 
@@ -37,8 +42,7 @@ class Message {
         return this.Proto.create(payload);
     }
 
-    createPayloadFromMessage(message){
-        // Maybe convert the message back to a plain object
+    createPayloadFromMessage(message) {
         let payload = this.Proto.toObject(message, {
             longs: String,
             enums: String,
@@ -52,31 +56,20 @@ class Message {
         return payload;
     }
 
-    createBufferFromMessage(message){
+    createBufferFromMessage(message) {
         // Encode a message to an Uint8Array (browser) or Buffer (node)
         return this.Proto.encode(message).finish();
     }
 
-    createMessageFromBuffer(buffer){
+    createMessageFromBuffer(buffer) {
         // Decode an Uint8Array (browser) or Buffer (node) to a message
-        let message =  this.Proto.decode(buffer);
-        
+        let message = this.Proto.decode(buffer);
+
         // Verify
         this.verify(message);
 
         return message;
     }
+}
 
-    // Set
-
-    setMessageFromPayload(payload){
-        this.message = this.createMessageFromPayload(payload);
-    }
-
-    setMessageFromBuffer(buffer){
-        this.message = this.createMessageFromBuffer(buffer);
-    }
-  }
-  
-  module.exports = Message;
-  
+module.exports = MessageTranslator;

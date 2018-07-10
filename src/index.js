@@ -1,10 +1,5 @@
-const IoMessage = require('./ioMessage/ioMessage');
+const TopicDataMessageTranslator = require('./topicDataMessage/topicDataMessageTranslator.js');
 
-<<<<<<< HEAD
-module.exports = {
-    TopicDataBlockMessage: TopicDataBlockMessage,
-=======
 module.exports =  {
-    IoMessage: IoMessage,
->>>>>>> e98d71f8b10f7969557cb1d1bdddb2e670236f2c
+    TopicDataMessageTranslator: TopicDataMessageTranslator,
 };
