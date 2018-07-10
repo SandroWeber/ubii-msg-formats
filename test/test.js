@@ -1,54 +1,31 @@
 import test from 'ava';
-import {extractDeviceIdentifier, extractTopic, extractValue, topicSeparator, valueSeparator, deviceIdPrefix} from '../src/index';
+import {
+    TopicDataMessageTranslator
+} from '../src/index';
 
-(function(){
+(function () {
 
-	test('extractDeviceIdentifier', t => {
-        let testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}kinect1`;
-        t.is(extractDeviceIdentifier(testString), 'kinect1');
-    
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}56463653:kinect1`;
-        t.is(extractDeviceIdentifier(testString), '56463653:kinect1');
+    test('basicProtobufTest', t => {
+        let protoMessage = new TopicDataMessageTranslator();
+        let result;
 
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}whitespace${deviceIdPrefix}56463653:kinect1`;
-        t.is(extractDeviceIdentifier(testString), '56463653:kinect1');
+        let message = protoMessage.createMessageFromPayload(protoMessage.createPayload({
+            topic: 'awesomeTopic',
+            value: '30',
+            deviceIdentifier: 'superDevice',
+        }));
 
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0`;
-        t.is(extractDeviceIdentifier(testString), '');
+        console.log('current message: ' + message);
+
+        result = protoMessage.createBufferFromMessage(message);
+        console.log('buffer: ' + result.toString());
+        result = protoMessage.createMessageFromBuffer(result);
+        console.log('after buffer message: ' + result);
+        result = protoMessage.createPayloadFromMessage(result);
+        console.log('after toObject: ' + result.topic);
+        t.is('hello', 'hello');
+
+
     });
 
-    test('extractValue', t => {
-        let testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}kinect1`;
-        t.is(extractValue(testString), '0');
-    
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}1${deviceIdPrefix}56463653:kinect1`;
-        t.is(extractValue(testString), '1');
-
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}2${deviceIdPrefix}whitespace${deviceIdPrefix}56463653:kinect1`;
-        t.is(extractValue(testString), '2');
-
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0`;
-        t.is(extractValue(testString), '');
-
-        testString = `player1${topicSeparator}left${topicSeparator}arm${deviceIdPrefix}56463653:kinect1`;
-        t.is(extractValue(testString), '');
-    });
-
-    test('extractTopic', t => {
-        let testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0${deviceIdPrefix}kinect1`;
-        t.is(extractTopic(testString), `player1${topicSeparator}left${topicSeparator}arm`);
-    
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}1${deviceIdPrefix}56463653_kinect1`;
-        t.is(extractTopic(testString), `player1${topicSeparator}left${topicSeparator}arm`);
-
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}2${deviceIdPrefix}whitespace${deviceIdPrefix}56463653_kinect1`;
-        t.is(extractTopic(testString), `player1${topicSeparator}left${topicSeparator}arm`);
-
-        testString = `player1${topicSeparator}left${topicSeparator}arm${valueSeparator}0`;
-        t.is(extractTopic(testString), `player1${topicSeparator}left${topicSeparator}arm`);
-
-        testString = `player1${topicSeparator}left${topicSeparator}arm${deviceIdPrefix}56463653_kinect1`;
-        t.is(extractTopic(testString), '');
-    });
-    
 })();
