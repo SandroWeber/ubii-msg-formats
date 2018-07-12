@@ -1,22 +1,19 @@
-const protobuf = require("protobufjs");
-var jsonDescriptor = require("./topicDataMessage.json");
-const Message = require('../messageTranslator/messageTranslator');
+const MessageTranslator = require('../messageTranslator/messageTranslator');
 
 /**
  * Message translator for topic data input and output messages.
  */
-class topicDataMessageTranslator extends Message {
+class TopicDataMessageTranslator extends MessageTranslator {
 
-    constructor() {
-        super();
+    constructor(proto) {
+        super(proto);
     }
-
-    loadProtoFile() {
-        const lookupType = 'topicDataMessage';
-
-        var root = protobuf.Root.fromJSON(jsonDescriptor);
-
-        this.Proto = root.lookupType(lookupType);
+    
+    static async createMessageTranslator(){
+        console.log('1');
+        let proto = await TopicDataMessageTranslator.loadProtoFile('src/topicDataMessage/topicDataMessage.proto', 'topicDataMessage');
+        console.log('11');
+        return new TopicDataMessageTranslator(proto);
     }
 
     createPayload(data) {
@@ -34,4 +31,4 @@ class topicDataMessageTranslator extends Message {
 
 }
 
-module.exports = topicDataMessageTranslator;
+module.exports = TopicDataMessageTranslator;
