@@ -1,15 +1,16 @@
 import test from 'ava';
 import {
-    TopicDataMessageTranslator
+    TopicDataMessageTranslator,
+    CarrierMessageTranslator,
 } from '../src/index';
 
 (function () {
 
-    test('basicProtobufTest', t => {
-        let protoMessage = new TopicDataMessageTranslator();
+    test('basicTopicDataMessage', async t => {
+        let translator = await TopicDataMessageTranslator.createMessageTranslator();
         let result;
 
-        let message = protoMessage.createMessageFromPayload(protoMessage.createPayload({
+        let message = translator.createMessageFromPayload(translator.createPayload({
             topic: 'awesomeTopic',
             value: '30',
             deviceIdentifier: 'superDevice',
@@ -17,15 +18,33 @@ import {
 
         console.log('current message: ' + message);
 
-        result = protoMessage.createBufferFromMessage(message);
+        result = translator.createBufferFromMessage(message);
         console.log('buffer: ' + result.toString());
-        result = protoMessage.createMessageFromBuffer(result);
+        result = translator.createMessageFromBuffer(result);
         console.log('after buffer message: ' + result);
-        result = protoMessage.createPayloadFromMessage(result);
+        result = translator.createPayloadFromMessage(result);
         console.log('after toObject: ' + result.topic);
-        t.is('hello', 'hello');
+        t.is('true', 'true');
+    });
 
+    test('basicCarrierMessage', async t => {
+        let translator = await CarrierMessageTranslator.createMessageTranslator();
+        let result;
 
+        let message = translator.createMessageFromPayload(translator.createPayload({
+            topic: 'awesomeTopic',
+            content: 'awesome content',
+        }));
+
+        console.log('current message: ' + message);
+
+        result = translator.createBufferFromMessage(message);
+        console.log('buffer: ' + result.toString());
+        result = translator.createMessageFromBuffer(result);
+        console.log('after buffer message: ' + result);
+        result = translator.createPayloadFromMessage(result);
+        console.log('after toObject: ' + result.topic);
+        t.is('true', 'true');
     });
 
 })();
