@@ -1,0 +1,7 @@
+package carrierMessagePackage;
+syntax = "proto3";
+
+message carrierMessage {
+    required string message_type = 1; 
+    required string content = 2; 
+}

@@ -1,22 +1,18 @@
-const protobuf = require("protobufjs");
-var jsonDescriptor = require("./carrierMessage.json");
-const Message = require('../messageTranslator/messageTranslator');
+const MessageTranslator = require('../messageTranslator/messageTranslator');
 
 /**
  * Message translator for topic data input and output messages.
  */
-class carrierMessageTranslator extends Message {
+class CarrierMessageTranslator extends MessageTranslator {
 
-    constructor() {
-        super();
+    constructor(proto) {
+        super(proto);
     }
+    
+    static async createMessageTranslator(){
+        let proto = await CarrierMessageTranslator.loadProtoFile('src/carrierMessage/carrierMessage.proto', 'carrierMessage');
 
-    loadProtoFile() {
-        const lookupType = 'carrierMessage';
-
-        var root = protobuf.Root.fromJSON(jsonDescriptor);
-
-        this.Proto = root.lookupType(lookupType);
+        return new CarrierMessageTranslator(proto);
     }
 
     createPayload(data) {
@@ -33,4 +29,4 @@ class carrierMessageTranslator extends Message {
 
 }
 
-module.exports = carrierMessageTranslator;
+module.exports = CarrierMessageTranslator;
