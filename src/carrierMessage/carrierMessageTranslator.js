@@ -10,7 +10,7 @@ class CarrierMessageTranslator extends MessageTranslator {
     }
     
     static async createMessageTranslator(){
-        let proto = await CarrierMessageTranslator.loadProtoFile('src/carrierMessage/carrierMessage.proto', 'carrierMessage');
+        let proto = await CarrierMessageTranslator.loadProtoFile(__dirname+'/carrierMessage.proto', 'carrierMessage');
 
         return new CarrierMessageTranslator(proto);
     }
@@ -19,9 +19,9 @@ class CarrierMessageTranslator extends MessageTranslator {
         // todo: check for string
 
         let payload = {
-            messageType: 'topicData',
-            contentType: data.contentType,
+            messageType: 'carrier',
             content: data.content,
+            contentType: data.contentType,
         };
 
         return payload;

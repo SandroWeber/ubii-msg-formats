@@ -1,4 +1,6 @@
+const protobuf = require("protobufjs");
 const MessageTranslator = require('../messageTranslator/messageTranslator');
+
 
 /**
  * Message translator for topic data input and output messages.
@@ -11,10 +13,14 @@ class TopicDataMessageTranslator extends MessageTranslator {
     
     static async createMessageTranslator(){
         console.log('1');
-        let proto = await TopicDataMessageTranslator.loadProtoFile('src/topicDataMessage/topicDataMessage.proto', 'topicDataMessage');
+        
+        let proto = await TopicDataMessageTranslator.loadProtoFile(__dirname+'/topicDataMessage.proto', 'topicDataMessage');
+        
         console.log('11');
         return new TopicDataMessageTranslator(proto);
     }
+
+    
 
     createPayload(data) {
         // todo: check for string

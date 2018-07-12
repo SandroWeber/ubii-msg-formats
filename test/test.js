@@ -32,7 +32,7 @@ import {
         let result;
 
         let message = translator.createMessageFromPayload(translator.createPayload({
-            topic: 'awesomeTopic',
+            contentType: 'awesomeTopic',
             content: 'awesome content',
         }));
 
