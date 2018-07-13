@@ -5,16 +5,10 @@ const MessageTranslator = require('../messageTranslator/messageTranslator');
  */
 class CarrierMessageTranslator extends MessageTranslator {
 
-    constructor(proto) {
-        super(proto);
+    constructor(loadProtoFileSynchronously = true) {
+        super(__dirname+'/carrierMessage.proto', 'carrierMessage', loadProtoFileSynchronously);
     }
     
-    static async createMessageTranslator(){
-        let proto = await CarrierMessageTranslator.loadProtoFile(__dirname+'/carrierMessage.proto', 'carrierMessage');
-
-        return new CarrierMessageTranslator(proto);
-    }
-
     createPayload(data) {
         // todo: check for string
 
@@ -26,7 +20,6 @@ class CarrierMessageTranslator extends MessageTranslator {
 
         return payload;
     }
-
 }
 
 module.exports = CarrierMessageTranslator;
