@@ -35,8 +35,8 @@ import {
         let result;
 
         let message = translator.createMessageFromPayload(translator.createPayload({
-            contentType: 'awesomeTopic',
-            content: 'awesome content',
+            cargoType: 'awesomeTopic',
+            cargo: 'awesome cargo content',
         }));
 
         console.log('basicCarrierMessage: current message: ' + message);
