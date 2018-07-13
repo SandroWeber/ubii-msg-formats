@@ -1,26 +1,13 @@
-const protobuf = require("protobufjs");
 const MessageTranslator = require('../messageTranslator/messageTranslator');
-
 
 /**
  * Message translator for topic data input and output messages.
  */
 class TopicDataMessageTranslator extends MessageTranslator {
 
-    constructor(proto) {
-        super(proto);
+    constructor(loadProtoFileSynchronously = true) {
+        super(__dirname+'/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
     }
-    
-    static async createMessageTranslator(){
-        console.log('1');
-        
-        let proto = await TopicDataMessageTranslator.loadProtoFile(__dirname+'/topicDataMessage.proto', 'topicDataMessage');
-        
-        console.log('11');
-        return new TopicDataMessageTranslator(proto);
-    }
-
-    
 
     createPayload(data) {
         // todo: check for string
@@ -34,7 +21,6 @@ class TopicDataMessageTranslator extends MessageTranslator {
 
         return payload;
     }
-
 }
 
 module.exports = TopicDataMessageTranslator;
