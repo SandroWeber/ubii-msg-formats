@@ -10,13 +10,10 @@ class CarrierMessageTranslator extends MessageTranslator {
     }
     
     createPayload(data) {
-        // todo: check for string
-
         let payload = {
+            ...data, 
             messageType: 'carrier',
-            content: data.content,
-            contentType: data.contentType,
-        };
+        }
 
         return payload;
     }

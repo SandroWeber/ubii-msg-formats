@@ -10,14 +10,10 @@ class TopicDataMessageTranslator extends MessageTranslator {
     }
 
     createPayload(data) {
-        // todo: check for string
-
         let payload = {
+            ...data, 
             messageType: 'topicData',
-            topic: data.topic,
-            value: data.value,
-            deviceIdentifier: data.deviceIdentifier,
-        };
+        }
 
         return payload;
     }
