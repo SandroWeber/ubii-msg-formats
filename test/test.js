@@ -7,7 +7,7 @@ import {
 (function () {
 
     test('basicTopicDataMessage', async t => {
-        let translator = await TopicDataMessageTranslator.createMessageTranslator();
+        let translator = new TopicDataMessageTranslator();
         let result;
 
         let message = translator.createMessageFromPayload(translator.createPayload({
@@ -27,7 +27,7 @@ import {
         t.is('true', 'true');
     });
 
-    test('basicCarrierMessage', async t => {
+  /*  test('basicCarrierMessage', async t => {
         let translator = await CarrierMessageTranslator.createMessageTranslator();
         let result;
 
@@ -45,6 +45,6 @@ import {
         result = translator.createPayloadFromMessage(result);
         console.log('after toObject: ' + result.topic);
         t.is('true', 'true');
-    });
+    });*/
 
 })();
