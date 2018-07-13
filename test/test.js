@@ -6,7 +6,7 @@ import {
 
 (function () {
 
-    test('basicTopicDataMessage', async t => {
+    test('basicTopicDataMessage', t => {
         let translator = new TopicDataMessageTranslator();
         let result;
 
@@ -16,19 +16,22 @@ import {
             deviceIdentifier: 'superDevice',
         }));
 
-        console.log('current message: ' + message);
+        console.log('basicTopicDataMessage: current message: ' + message);
 
         result = translator.createBufferFromMessage(message);
-        console.log('buffer: ' + result.toString());
+        console.log('basicTopicDataMessage: buffer: ' + result.toString());
+
         result = translator.createMessageFromBuffer(result);
-        console.log('after buffer message: ' + result);
+        console.log('basicTopicDataMessage: after buffer message: ' + result);
+
         result = translator.createPayloadFromMessage(result);
-        console.log('after toObject: ' + result.topic);
+        console.log('basicTopicDataMessage: after toObject: ' + result.topic);
+
         t.is('true', 'true');
     });
 
-  /*  test('basicCarrierMessage', async t => {
-        let translator = await CarrierMessageTranslator.createMessageTranslator();
+    test('basicCarrierMessage', t => {
+        let translator = new CarrierMessageTranslator();
         let result;
 
         let message = translator.createMessageFromPayload(translator.createPayload({
@@ -36,15 +39,19 @@ import {
             content: 'awesome content',
         }));
 
-        console.log('current message: ' + message);
+        console.log('basicCarrierMessage: current message: ' + message);
 
         result = translator.createBufferFromMessage(message);
-        console.log('buffer: ' + result.toString());
+        console.log('basicCarrierMessage: buffer: ' + result.toString());
+
         result = translator.createMessageFromBuffer(result);
-        console.log('after buffer message: ' + result);
+        console.log('basicCarrierMessage: after buffer message: ' + result);
+
         result = translator.createPayloadFromMessage(result);
-        console.log('after toObject: ' + result.topic);
+
+        console.log('basicCarrierMessage: after toObject: ' + result.content);
+
         t.is('true', 'true');
-    });*/
+    });
 
 })();
