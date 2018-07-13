@@ -3,6 +3,6 @@ syntax = "proto3";
 
 message carrierMessage {
     required string message_type = 1; 
-    required string content = 2; 
-    required string content_type = 3; 
+    required string cargo = 2; 
+    required string cargo_type = 3; 
 }
