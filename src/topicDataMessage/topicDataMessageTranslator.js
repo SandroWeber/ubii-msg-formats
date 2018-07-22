@@ -9,44 +9,55 @@ class TopicDataMessageTranslator extends MessageTranslator {
         super(__dirname+'/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
     }
 
-    /**
-     * 
-     * @param {String} deviceIdentifier 
-     * @param {Object} action 
-     */
-    createPayload(deviceIdentifier, action) {
+    createPayload(data) {
         let payload = {
+            ...data, 
             messageType: 'topicData',
-            deviceIdentifier: ''+deviceIdentifier,
-            action: action,
         }
 
         return payload;
     }
 
-    createPublishTopicDataAction(topic, data){
-        let action = {
-            topic: topic,
-            data: data,
+    /**
+     * 
+     * @param {String} deviceIdentifier 
+     * @param {Object} action 
+     */
+    createPublishTopicDataPayload(deviceIdentifier, topic, data) {
+        let payload = {
+            messageType: 'topicData',
+            deviceIdentifier: ''+deviceIdentifier,
+            publishTopicData: {
+                topic: topic,
+                data: data,
+            }
         }
 
-        return action;
+        return payload;
     }
 
-    createSubscribeTopicDataAction(topic){
-        let action = {
-            topic: topic,
+    createSubscribeTopicDataPayload(deviceIdentifier, topic) {
+        let payload = {
+            messageType: 'topicData',
+            deviceIdentifier: ''+deviceIdentifier,
+            subscribeTopicData: {
+                topic: topic
+            }
         }
 
-        return action;
+        return payload;
     }
 
-    createUnsubscribeTopicDataAction(topic){
-        let action = {
-            topic: topic,
+    createUnsubscribeTopicDataPayload(deviceIdentifier, topic) {
+        let payload = {
+            messageType: 'topicData',
+            deviceIdentifier: ''+deviceIdentifier,
+            unsubscribeTopicData: {
+                topic: topic
+            }
         }
 
-        return action;
+        return payload;
     }
 }
 
