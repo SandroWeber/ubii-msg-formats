@@ -2,8 +2,8 @@ package topicData;
 syntax = "proto3";
 
 message topicDataMessage {
-    required string message_type = 1; 
-    required string topic = 2; 
-    required string value = 3; 
-    required string device_identifier = 4; 
+    string message_type = 1; 
+    string topic = 2; 
+    string value = 3; 
+    string device_identifier = 4; 
 }
