@@ -1,8 +1,13 @@
-package carrierMessagePackage;
+package carrier;
 syntax = "proto3";
+
+import "./../topicDataMessage/topicDataMessage.proto";
+import "./../registrationMessage/registrationMessage.proto";
 
 message carrierMessage {
     required string message_type = 1; 
-    required string cargo = 2; 
-    required string cargo_type = 3; 
+    oneof cargo{
+        topicDataMessage topic_data_message = 2;
+        registrationMessage registration_message = 3;
+    }
 }
