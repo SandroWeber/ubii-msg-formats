@@ -11,9 +11,10 @@ import {
             let translator = new TopicDataMessageTranslator();
             let result;
 
-            let message = translator.createMessageFromPayload(translator.createPayload(
+            let message = translator.createMessageFromPayload(translator.createPublishTopicDataPayload(
                 'superDevice',
-                translator.createPublishTopicDataAction( 'awesomeTopic','30'),
+                'awesomeTopic',
+                '30'
             ));
 
             //console.log('basicTopicDataMessage: current message: ' + message);
@@ -49,9 +50,10 @@ import {
             let result;
 
             let message = translator.createMessageFromPayload(translator.createPayload({
-                topicDataMessage: topicDataMessageTranslator.createPayload(
+                topicDataMessage: topicDataMessageTranslator.createPublishTopicDataPayload(
                     'UniqueDevice',
-                    topicDataMessageTranslator.createPublishTopicDataAction( 'awesomeTopic','30'),
+                    'awesomeTopic',
+                    '30'
                 )
             }));
 
