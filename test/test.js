@@ -39,6 +39,8 @@ import {
                 rawBuffer: 'awesome cargo content',
                 why: 'why?'
             }));
+
+            t.is('true', 'true');
     });
 
     test('carrierMessageOneOfOtherMessageType', t => {
