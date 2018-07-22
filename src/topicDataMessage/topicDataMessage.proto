@@ -12,14 +12,14 @@ message topicDataMessage {
 }
 
 message publishTopicData {
-    repeated string topic = 1; 
+    string topic = 1; 
     string data = 2; 
 }
 
 message subscribeTopicData {
-    repeated string topic = 1; 
+    string topic = 1; 
 }
 
 message unsubscribeTopicData {
-    repeated string topic = 1; 
+    string topic = 1; 
 }
