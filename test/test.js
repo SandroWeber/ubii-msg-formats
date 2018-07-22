@@ -7,27 +7,26 @@ import {
 (function () {
 
     test('basicTopicDataMessage', t => {
-        let translator = new TopicDataMessageTranslator();
-        let result;
+        t.notThrows( () => {
+            let translator = new TopicDataMessageTranslator();
+            let result;
 
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            topic: 'awesomeTopic',
-            value: '30',
-            deviceIdentifier: 'superDevice',
-        }));
+            let message = translator.createMessageFromPayload(translator.createPayload(
+                'superDevice',
+                translator.createPublishTopicDataAction( 'awesomeTopic','30'),
+            ));
 
-        console.log('basicTopicDataMessage: current message: ' + message);
+            //console.log('basicTopicDataMessage: current message: ' + message);
 
-        result = translator.createBufferFromMessage(message);
-        console.log('basicTopicDataMessage: buffer: ' + result.toString());
+            result = translator.createBufferFromMessage(message);
+            //console.log('basicTopicDataMessage: buffer: ' + result.toString());
 
-        result = translator.createMessageFromBuffer(result);
-        console.log('basicTopicDataMessage: after buffer message: ' + result);
+            result = translator.createMessageFromBuffer(result);
+            //console.log('basicTopicDataMessage: after buffer message: ' + result);
 
-        result = translator.createPayloadFromMessage(result);
-        console.log('basicTopicDataMessage: after toObject: ' + result.topic);
-
-        t.is('true', 'true');
+            result = translator.createPayloadFromMessage(result);
+            //console.log('basicTopicDataMessage: after toObject: ' + result.topic);
+        });
     });
 
     test('basicCarrierMessage', t => {
@@ -44,25 +43,25 @@ import {
     });
 
     test('carrierMessageOneOfOtherMessageType', t => {
-        let translator = new CarrierMessageTranslator();
-        let topicDataMessageTranslator = new TopicDataMessageTranslator();
-        let result;
+        t.notThrows( () => {
+            let translator = new CarrierMessageTranslator();
+            let topicDataMessageTranslator = new TopicDataMessageTranslator();
+            let result;
 
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            topicDataMessage: topicDataMessageTranslator.createPayload({
-                value: 'five',
-                topic: 'awesomeTopic',
-                deviceIdentifier: 'UniqueDevice',
-            })
-        }));
+            let message = translator.createMessageFromPayload(translator.createPayload({
+                topicDataMessage: topicDataMessageTranslator.createPayload(
+                    'UniqueDevice',
+                    topicDataMessageTranslator.createPublishTopicDataAction( 'awesomeTopic','30'),
+                )
+            }));
 
-        result = translator.createBufferFromMessage(message);
-        result = translator.createMessageFromBuffer(result);
+            result = translator.createBufferFromMessage(message);
+            result = translator.createMessageFromBuffer(result);
 
-        console.log('basicCarrierMessage: after buffer message: ' + result);
-        console.log('basicCarrierMessage: cargo: ' + result.cargo);
-        console.log('basicCarrierMessage: cargoContent: ' + result[result.cargo]);
+            //console.log('basicCarrierMessage: after buffer message: ' + result);
+            //console.log('basicCarrierMessage: cargo: ' + result.cargo);
+            //console.log('basicCarrierMessage: cargoContent: ' + result[result.cargo]);
 
-        t.is('true', 'true');
+        });
     });
 })();
