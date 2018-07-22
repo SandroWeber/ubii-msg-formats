@@ -13,7 +13,7 @@ import {
 
             let message = translator.createMessageFromPayload(translator.createPublishTopicDataPayload(
                 'superDevice',
-                'awesomeTopic',
+                ['awesomeTopic'],
                 '30'
             ));
 
@@ -52,7 +52,7 @@ import {
             let message = translator.createMessageFromPayload(translator.createPayload({
                 topicDataMessage: topicDataMessageTranslator.createPublishTopicDataPayload(
                     'UniqueDevice',
-                    'awesomeTopic',
+                    ['awesomeTopic'],
                     '30'
                 )
             }));
