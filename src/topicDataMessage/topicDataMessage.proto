@@ -3,7 +3,23 @@ syntax = "proto3";
 
 message topicDataMessage {
     string message_type = 1; 
-    string topic = 2; 
-    string value = 3; 
-    string device_identifier = 4; 
+    string device_identifier = 2;
+    oneof action{
+        publishTopicData publish_topic_data = 3;
+        subscribeTopicData subscribe_topic_data = 4;
+        unsubscribeTopicData unsubscribe_topic_data = 5;
+    }
+}
+
+message publishTopicData {
+    string topic = 1; 
+    string data = 2; 
+}
+
+message subscribeTopicData {
+    string topic = 1; 
+}
+
+message unsubscribeTopicData {
+    string topic = 1; 
 }
