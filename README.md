@@ -20,7 +20,11 @@ See the [Protobuf Documentation](https://developers.google.com/protocol-buffers/
 
 #### Required and Validation
 
+According to Protocol Buffers documentation, the required field rule is not recommended:
+
 >Required Is Forever You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field – old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead. Some engineers at Google have come to the conclusion that using required does more harm than good; they prefer to use only optional and repeated. However, this view is not universal. --[Protobuf Documentation](https://developers.google.com/protocol-buffers/docs/proto)
+
+Therefore, we switch to our own validation methods, which are automatically applied when creating the payloads and should be applied before working with the messages.
 
 #### OneOf
 
