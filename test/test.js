@@ -34,24 +34,33 @@ import {
         let translator = new CarrierMessageTranslator();
         let result;
 
+       // t.throws(() =>{
+            let message = translator.createMessageFromPayload(translator.createPayload({
+                rawBuffer: 'awesome cargo content',
+                why: 'why?'
+            }));
+    });
+
+    test('carrierMessageOneOfOtherMessageType', t => {
+        let translator = new CarrierMessageTranslator();
+        let topicDataMessageTranslator = new TopicDataMessageTranslator();
+        let result;
+
         let message = translator.createMessageFromPayload(translator.createPayload({
-            cargoType: 'awesomeTopic',
-            cargo: 'awesome cargo content',
+            topicDataMessage: topicDataMessageTranslator.createPayload({
+                value: 'five',
+                topic: 'awesomeTopic',
+                deviceIdentifier: 'UniqueDevice',
+            })
         }));
 
-        console.log('basicCarrierMessage: current message: ' + message);
-
         result = translator.createBufferFromMessage(message);
-        console.log('basicCarrierMessage: buffer: ' + result.toString());
-
         result = translator.createMessageFromBuffer(result);
+
         console.log('basicCarrierMessage: after buffer message: ' + result);
-
-        result = translator.createPayloadFromMessage(result);
-
-        console.log('basicCarrierMessage: after toObject: ' + result.content);
+        console.log('basicCarrierMessage: cargo: ' + result.cargo);
+        console.log('basicCarrierMessage: cargoContent: ' + result[result.cargo]);
 
         t.is('true', 'true');
     });
-
 })();
