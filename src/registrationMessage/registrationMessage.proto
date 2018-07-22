@@ -2,6 +2,6 @@ package registration;
 syntax = "proto3";
 
 message registrationMessage {
-    required string message_type = 1;
-    required string device_identifier = 2; 
+    string message_type = 1;
+    string device_identifier = 2; 
 }
