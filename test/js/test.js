@@ -1,7 +1,7 @@
 import test from 'ava';
 import {
     TopicDataMessageTranslator,
-    CarrierMessageTranslator,
+    UbiiMessageTranslator,
 } from '../../src/js/index';
 
 (function () {
@@ -55,8 +55,8 @@ import {
     
     });
 
-    test('basicCarrierMessage', t => {
-        let translator = new CarrierMessageTranslator();
+    test('basicUbiiMessage', t => {
+        let translator = new UbiiMessageTranslator();
 
         // t.throws(() =>{
         let message = translator.createMessageFromPayload(translator.createPayload({
@@ -67,8 +67,8 @@ import {
         t.is('true', 'true');
     });
 
-    test('carrierMessageOneOfOtherMessageType', t => {
-        let translator = new CarrierMessageTranslator();
+    test('ubiiMessageOneOfOtherMessageType', t => {
+        let translator = new UbiiMessageTranslator();
 
         let message = translator.createMessageFromPayload(translator.createPayload({
             topicDataMessage: createTopicDatMessageSnapshotOne()

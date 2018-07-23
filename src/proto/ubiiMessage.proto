@@ -1,12 +1,12 @@
-package carrier;
+package ubii;
 syntax = "proto3";
 
 import "./topicDataMessage.proto";
 import "./registrationMessage.proto";
 
-message carrierMessage {
+message ubiiMessage {
     string message_type = 1; 
-    oneof cargo{
+    oneof submessage{
         topicDataMessage topic_data_message = 2;
         registrationMessage registration_message = 3;
     }

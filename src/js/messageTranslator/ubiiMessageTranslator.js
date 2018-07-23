@@ -3,20 +3,20 @@ const MessageTranslator = require('./messageTranslator');
 /**
  * Message translator for topic data input and output messages.
  */
-class CarrierMessageTranslator extends MessageTranslator {
+class UbiiMessageTranslator extends MessageTranslator {
 
     constructor(loadProtoFileSynchronously = true) {
-        super(__dirname+'/../../proto/carrierMessage.proto', 'carrierMessage', loadProtoFileSynchronously);
+        super(__dirname+'/../../proto/ubiiMessage.proto', 'ubiiMessage', loadProtoFileSynchronously);
     }
     
     createPayload(data) {
         let payload = {
             ...data, 
-            messageType: 'carrier',
+            messageType: 'ubii',
         }
 
         return payload;
     }
 }
 
-module.exports = CarrierMessageTranslator;
+module.exports = UbiiMessageTranslator;
