@@ -1,0 +1,25 @@
+package topicData;
+syntax = "proto3";
+
+message topicDataMessage {
+    string message_type = 1; 
+    string device_identifier = 2;
+
+    repeated publishTopicData publish_topic_data = 3;
+    repeated subscribeTopicData subscribe_topic_data = 4;
+    repeated unsubscribeTopicData unsubscribe_topic_data = 5;
+    
+}
+
+message publishTopicData {
+    string topic = 1; 
+    string data = 2; 
+}
+
+message subscribeTopicData {
+    string topic = 1; 
+}
+
+message unsubscribeTopicData {
+    string topic = 1; 
+}

@@ -1,0 +1,13 @@
+package carrier;
+syntax = "proto3";
+
+import "./topicDataMessage.proto";
+import "./registrationMessage.proto";
+
+message carrierMessage {
+    string message_type = 1; 
+    oneof cargo{
+        topicDataMessage topic_data_message = 2;
+        registrationMessage registration_message = 3;
+    }
+}
