@@ -1,7 +1,0 @@
-package registration;
-syntax = "proto3";
-
-message registrationMessage {
-    string message_type = 1;
-    string device_identifier = 2; 
-}
