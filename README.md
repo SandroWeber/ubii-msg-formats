@@ -10,11 +10,21 @@ Ubii message formats module.
 - [Command Line Interfaces (CLIs)](#CLIs)
 - [Testing](#Testing)
 
+## Ubii Messages
+
+- The `ubiiMessage` is the carrier message for all submessages. All messages sent over the network must be wrapped in an ubii message.
+- The `ubiiMessage` has knowledge of all proper message types.
+- All valid submessages can be content of the `oneof submessage` block of `ubiiMessage`.
+
 ## Protobuf
 
 The messages are based on google's Protobuf.
 
 See the [Protobuf Documentation](https://developers.google.com/protocol-buffers/) and the used [protobuf.js Github repository of a JS implementaion](https://github.com/dcodeIO/ProtoBuf.js/) for more details.
+
+### Loading Proto Files
+
+- In order to support synchronous loading of the Proto files, the Proto files must be written in JSON format (JSON descriptors). JSON files can then be imported by a require statement. More details about Proto files in JSON format can be found in the [protobufjs repository](https://github.com/dcodeIO/ProtoBuf.js/#using-json-descriptors).
 
 ### Protobuf Usage
 
@@ -51,10 +61,6 @@ let currentOneofType = message.avatar;
 ```js
 let currentOneofValue = message[message.avatar];
 ```
-
-### Loading Proto Files
-
-- In order to support synchronous loading of the Proto files, the Proto files must be written in JSON format (JSON descriptors). JSON files can then be imported by a require statement. More details about Proto files in JSON format can be found in the [protobufjs repository](https://github.com/dcodeIO/ProtoBuf.js/#using-json-descriptors).
 
 ## CLIs
 
