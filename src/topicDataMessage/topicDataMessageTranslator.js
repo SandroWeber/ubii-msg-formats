@@ -1,37 +1,64 @@
-const protobuf = require("protobufjs");
-var jsonDescriptor = require("./topicDataMessage.json");
-const Message = require('../messageTranslator/messageTranslator');
+const MessageTranslator = require('../messageTranslator/messageTranslator');
 
 /**
  * Message translator for topic data input and output messages.
  */
-class topicDataMessageTranslator extends Message {
+class TopicDataMessageTranslator extends MessageTranslator {
 
-    constructor() {
-        super();
-    }
-
-    loadProtoFile() {
-        const lookupType = 'topicDataMessage';
-
-        var root = protobuf.Root.fromJSON(jsonDescriptor);
-
-        this.Proto = root.lookupType(lookupType);
+    constructor(loadProtoFileSynchronously = true) {
+        super(__dirname+'/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
     }
 
     createPayload(data) {
-        // todo: check for string
-
         let payload = {
+            ...data, 
             messageType: 'topicData',
-            topic: data.topic,
-            value: data.value,
-            deviceIdentifier: data.deviceIdentifier,
-        };
+        }
 
         return payload;
     }
 
+    /**
+     * 
+     * @param {String} deviceIdentifier 
+     * @param {Object} action 
+     */
+    createPublishTopicDataPayload(deviceIdentifier, topic, data) {
+        let payload = {
+            messageType: 'topicData',
+            deviceIdentifier: ''+deviceIdentifier,
+            publishTopicData: {
+                topic: topic,
+                data: data,
+            }
+        }
+
+        return payload;
+    }
+
+    createSubscribeTopicDataPayload(deviceIdentifier, topic) {
+        let payload = {
+            messageType: 'topicData',
+            deviceIdentifier: ''+deviceIdentifier,
+            subscribeTopicData: {
+                topic: topic
+            }
+        }
+
+        return payload;
+    }
+
+    createUnsubscribeTopicDataPayload(deviceIdentifier, topic) {
+        let payload = {
+            messageType: 'topicData',
+            deviceIdentifier: ''+deviceIdentifier,
+            unsubscribeTopicData: {
+                topic: topic
+            }
+        }
+
+        return payload;
+    }
 }
 
-module.exports = topicDataMessageTranslator;
+module.exports = TopicDataMessageTranslator;
