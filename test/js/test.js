@@ -30,7 +30,33 @@ import {
         );
     }
 
-    test('basicTopicDataMessage', t => {
+    test('ubiiMessage - Basics', t => {
+        let translator = new UbiiMessageTranslator();
+
+        // t.throws(() =>{
+        let message = translator.createMessageFromPayload(translator.createPayload({
+            rawBuffer: 'awesome cargo content',
+            why: 'why?'
+        }));
+
+        t.is('true', 'true');
+    });
+
+    test('ubiiMessage - OneOfOtherMessageType', t => {
+        let translator = new UbiiMessageTranslator();
+
+        let message = translator.createMessageFromPayload(translator.createPayload({
+            topicDataMessage: createTopicDatMessageSnapshotOne()
+        }));
+
+        let result = translator.createBufferFromMessage(message);
+        result = translator.createMessageFromBuffer(result);
+
+        t.not(result.topicDataMessage, null);
+        t.is(result.registrationMessage, null);
+    });
+
+    test('topicDataMessage - Basics', t => {
         let translator = new TopicDataMessageTranslator();
         let message = createTopicDatMessageSnapshotOne();
         let repeatedPublishTopicData = createRepeatedPublishTopicDataSnapshotOne();
@@ -55,29 +81,5 @@ import {
     
     });
 
-    test('basicUbiiMessage', t => {
-        let translator = new UbiiMessageTranslator();
-
-        // t.throws(() =>{
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            rawBuffer: 'awesome cargo content',
-            why: 'why?'
-        }));
-
-        t.is('true', 'true');
-    });
-
-    test('ubiiMessageOneOfOtherMessageType', t => {
-        let translator = new UbiiMessageTranslator();
-
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            topicDataMessage: createTopicDatMessageSnapshotOne()
-        }));
-
-        let result = translator.createBufferFromMessage(message);
-        result = translator.createMessageFromBuffer(result);
-
-        t.not(result.topicDataMessage, null);
-        t.is(result.registrationMessage, null);
-    });
+   
 })();
