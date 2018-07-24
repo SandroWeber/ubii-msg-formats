@@ -6,15 +6,39 @@ Ubii message formats module.
 
 ## Table of Contents
 
+- [Message Types](#Message Types)
 - [Protobuf](#Protobuf)
 - [Command Line Interfaces (CLIs)](#CLIs)
 - [Testing](#Testing)
+
+## Message Types
+
+### Ubii Message
+
+- The `ubiiMessage` is the carrier message for all submessages. All messages sent over the network must be wrapped in an ubii message.
+- All valid submessages can be content of the `oneof submessage` block of `ubiiMessage`.
+
+### Registration Message
+
+- Register a device at the Master Node by sending a `registerMessage`.
+
+### Topic Data Message
+
+- Messages related to the topic data
+- The `topicDataMessage` can have repeated entries of the following types:
+  - publishTopicData: topic value pair for transporting values of the specified topic
+  - subscribeTopicData: topic a device wants to subscribe to.
+  - unsubscribeTopicData: topic a device wants to unsubscribe.
 
 ## Protobuf
 
 The messages are based on google's Protobuf.
 
 See the [Protobuf Documentation](https://developers.google.com/protocol-buffers/) and the used [protobuf.js Github repository of a JS implementaion](https://github.com/dcodeIO/ProtoBuf.js/) for more details.
+
+### Loading Proto Files
+
+- In order to support synchronous loading of the Proto files, the Proto files must be written in JSON format (JSON descriptors). JSON files can then be imported by a require statement. More details about Proto files in JSON format can be found in the [protobufjs repository](https://github.com/dcodeIO/ProtoBuf.js/#using-json-descriptors).
 
 ### Protobuf Usage
 
@@ -51,10 +75,6 @@ let currentOneofType = message.avatar;
 ```js
 let currentOneofValue = message[message.avatar];
 ```
-
-### Loading Proto Files
-
-- In order to support synchronous loading of the Proto files, the Proto files must be written in JSON format (JSON descriptors). JSON files can then be imported by a require statement. More details about Proto files in JSON format can be found in the [protobufjs repository](https://github.com/dcodeIO/ProtoBuf.js/#using-json-descriptors).
 
 ## CLIs
 

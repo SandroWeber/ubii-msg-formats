@@ -1,4 +1,4 @@
-const MessageTranslator = require('../messageTranslator/messageTranslator');
+const MessageTranslator = require('./messageTranslator');
 
 /**
  * Message translator for topic data input and output messages.
@@ -6,7 +6,7 @@ const MessageTranslator = require('../messageTranslator/messageTranslator');
 class TopicDataMessageTranslator extends MessageTranslator {
 
     constructor(loadProtoFileSynchronously = true) {
-        super(__dirname+'/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
+        super(__dirname+'/../../proto/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
     }
 
     createPayload(data) {
