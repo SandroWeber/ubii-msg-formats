@@ -26,9 +26,9 @@ Ubii message formats module.
 
 - Messages related to the topic data
 - The `topicDataMessage` can have repeated entries of the following types:
-  - publishTopicData: topic value pair for transporting values of the specified topic
-  - subscribeTopicData: topic a device wants to subscribe to.
-  - unsubscribeTopicData: topic a device wants to unsubscribe.
+  - `publishTopicData`: topic value pair for transporting values of the specified topic
+  - `subscribeTopicData`: topic a device wants to subscribe to.
+  - `unsubscribeTopicData`: topic a device wants to unsubscribe.
 
 ## Protobuf
 
