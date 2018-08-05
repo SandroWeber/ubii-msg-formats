@@ -28,7 +28,7 @@ class TopicDataMessageTranslator extends MessageTranslator {
      */
     createPublishTopicDataPayload(topic, data) {
         let payload = {
-            topic: topic,
+            topic: JSON.stringify(topic),
             data: data,
         }
 
@@ -37,7 +37,7 @@ class TopicDataMessageTranslator extends MessageTranslator {
 
     createSubscribeTopicDataPayload(topic) {
         let payload = {          
-            topic: topic
+            topic: JSON.stringify(topic)
         }
 
         return payload;
@@ -45,7 +45,7 @@ class TopicDataMessageTranslator extends MessageTranslator {
 
     createUnsubscribeTopicDataPayload(topic) {
         let payload = {          
-            topic: topic
+            topic: JSON.stringify(topic)
         }
 
         return payload;
