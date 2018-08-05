@@ -6,10 +6,10 @@ Ubii message formats module.
 
 ## Table of Contents
 
-- [Message Types](#Message Types)
-- [Protobuf](#Protobuf)
-- [Command Line Interfaces (CLIs)](#CLIs)
-- [Testing](#Testing)
+- [Message Types](#message-types)
+- [Protobuf](#protobuf)
+- [Command Line Interfaces (CLIs)](#clis)
+- [Testing](#testing)
 
 ## Message Types
 
@@ -20,7 +20,7 @@ Ubii message formats module.
 
 ### Registration Message
 
-- Register a device at the Master Node by sending a `registerMessage`.
+- Register a device at the Master Node by sending a `registrationMessage`.
 
 ### Topic Data Message
 
@@ -55,7 +55,7 @@ Therefore, we switch to our own validation methods, which are automatically appl
 The use of oneofs in JS is very poorly documented. Therefore we have collected some snippets how you can use them in JS (and how they are used in this project).
 If you have some improvements, please update the appropriate code snippets and update this section.
 
-- Specify Oneofs as documented in the protobuf documentation. Example:
+- Specify `oneof` as documented in the protobuf documentation. Example:
 
 ```js
 oneof avatar {
