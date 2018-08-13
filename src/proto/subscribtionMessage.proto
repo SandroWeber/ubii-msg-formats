@@ -1,7 +1,7 @@
-package topicData;
+package subscribtion;
 syntax = "proto3";
 
-message topicDataMessage {
+message subscribtionMessage {
     string message_type = 1; 
     string device_identifier = 2;
     repeated subscribeTopicData subscribe_topic_data = 3;
