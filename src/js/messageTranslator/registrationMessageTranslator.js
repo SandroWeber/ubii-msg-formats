@@ -3,10 +3,10 @@ const MessageTranslator = require('./messageTranslator');
 /**
  * Message translator for topic data input and output messages.
  */
-class TopicDataMessageTranslator extends MessageTranslator {
+class RegistrationMessageTranslator extends MessageTranslator {
 
     constructor(loadProtoFileSynchronously = true) {
-        super(__dirname+'/../../proto/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
+        super(__dirname+'/../../proto/registrationMessage.proto', 'registrationMessage', loadProtoFileSynchronously);
     }
 
     createPayload(data) {
@@ -19,4 +19,4 @@ class TopicDataMessageTranslator extends MessageTranslator {
     }
 }
 
-module.exports = TopicDataMessageTranslator;
+module.exports = RegistrationMessageTranslator;
