@@ -26,35 +26,9 @@ import {
         let translator = new TopicDataMessageTranslator();
 
         return translator.createMessageFromPayload(
-            translator.createPayload('superDevice', createRepeatedPublishTopicDataSnapshotOne(), undefined, undefined)
+            translator.createPayload('superDevice', createRepeatedPublishTopicDataSnapshotOne())
         );
     }
-
-    test('ubiiMessage - Basics', t => {
-        let translator = new UbiiMessageTranslator();
-
-        // t.throws(() =>{
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            rawBuffer: 'awesome cargo content',
-            why: 'why?'
-        }));
-
-        t.is('true', 'true');
-    });
-
-    test('ubiiMessage - OneOfOtherMessageType', t => {
-        let translator = new UbiiMessageTranslator();
-
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            topicDataMessage: createTopicDatMessageSnapshotOne()
-        }));
-
-        let result = translator.createBufferFromMessage(message);
-        result = translator.createMessageFromBuffer(result);
-
-        t.not(result.topicDataMessage, null);
-        t.is(result.registrationMessage, null);
-    });
 
     test('topicDataMessage - Basics', t => {
         let translator = new TopicDataMessageTranslator();
@@ -67,8 +41,6 @@ import {
         result = translator.createMessageFromBuffer(result);
         //console.log('basicTopicDataMessage: after buffer message: ' + result.publishTopicData);
 
-        t.deepEqual(result.subscribeTopicData, []);
-        t.deepEqual(result.unsubscribeTopicData, []);
         t.is(result.publishTopicData.length, repeatedPublishTopicData.length);
 
         t.deepEqual(result.publishTopicData[0].topic, repeatedPublishTopicData[0].topic);
