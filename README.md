@@ -27,8 +27,18 @@ Ubii message formats module.
 - Messages related to the topic data
 - The `topicDataMessage` can have repeated entries of the following types:
   - `publishTopicData`: topic value pair for transporting values of the specified topic
+
+### Subscribtion Message
+
+- Messages related to subscribing to the topic data and unsubscribing from the topic data
+- The `subscribtionMessage` can have repeated entries of the following types:
   - `subscribeTopicData`: topic a device wants to subscribe to.
   - `unsubscribeTopicData`: topic a device wants to unsubscribe.
+
+## Topics
+
+Topics are transported as strings.
+Topics are stringified on payload creation. You can parse them after you have received the buffer and created the corresponding message with `JSON.parse()`.
 
 ## Protobuf
 
