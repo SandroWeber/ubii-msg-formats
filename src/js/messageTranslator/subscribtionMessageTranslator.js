@@ -22,7 +22,7 @@ class SubscribtionMessageTranslator extends MessageTranslator {
 
     createSubscribeTopicDataPayload(topic) {
         let payload = {          
-            topic: JSON.stringify(topic)
+            topic: topic
         }
 
         return payload;
@@ -30,7 +30,7 @@ class SubscribtionMessageTranslator extends MessageTranslator {
 
     createUnsubscribeTopicDataPayload(topic) {
         let payload = {          
-            topic: JSON.stringify(topic)
+            topic: topic
         }
 
         return payload;
