@@ -21,7 +21,7 @@ class TopicDataMessageTranslator extends MessageTranslator {
 
     createPublishTopicDataPayload(topic, data) {
         let payload = {
-            topic: JSON.stringify(topic),
+            topic: topic,
             data: data,
         }
 
