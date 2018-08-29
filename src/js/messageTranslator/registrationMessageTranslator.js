@@ -9,9 +9,10 @@ class RegistrationMessageTranslator extends MessageTranslator {
         super(__dirname+'/../../proto/registrationMessage.proto', 'registrationMessage', loadProtoFileSynchronously);
     }
 
-    createPayload(data) {
+    createPayload(deviceIdentifier, deviceType) {
         let payload = {
-            ...data, 
+            deviceIdentifier: deviceIdentifier,
+            deviceType: deviceType,
             messageType: 'registration',
         }
 
