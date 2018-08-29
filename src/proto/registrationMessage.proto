@@ -3,5 +3,10 @@ syntax = "proto3";
 
 message registrationMessage {
     string message_type = 1;
-    string device_identifier = 2; 
+    string device_identifier = 2;
+    enum DeviceType {
+        PARTICIPANT = 0;
+        WATCHER = 1;
+    }
+    optional DeviceType device_type = 3 [default = PARTICIPANT];
 }
