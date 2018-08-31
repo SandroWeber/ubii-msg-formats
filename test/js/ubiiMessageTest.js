@@ -33,13 +33,13 @@ import {
     test('ubiiMessage - Basics', t => {
         let translator = new UbiiMessageTranslator();
 
-        // t.throws(() =>{
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            rawBuffer: 'awesome cargo content',
-            why: 'why?'
-        }));
+        t.notThrows(() =>{
+            let message = translator.createMessageFromPayload(translator.createPayload({
+                rawBuffer: 'awesome cargo content',
+                why: 'why?'
+            }));
+        });
 
-        t.is('true', 'true');
     });
 
     test('ubiiMessage - OneOfOtherMessageType', t => {
