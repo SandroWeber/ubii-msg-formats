@@ -8,5 +8,5 @@ message registrationMessage {
         PARTICIPANT = 0;
         WATCHER = 1;
     }
-    optional DeviceType device_type = 3 [default = PARTICIPANT];
+    DeviceType device_type = 3 [default = PARTICIPANT];
 }
