@@ -9,14 +9,11 @@ class SubscribtionMessageTranslator extends MessageTranslator {
         super(__dirname+'/../../proto/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
     }
 
-    createPayload(deviceIdentifier, repeatedSubscribeTopicData = [], repeatedUnsubscribeTopicData = []) {
+    createPayload(data) {
         let payload = {
+            ...data,
             messageType: 'subscribtion',
-            deviceIdentifier: ''+deviceIdentifier,
-            subscribeTopicData: repeatedSubscribeTopicData,
-            unsubscribeTopicData: repeatedUnsubscribeTopicData,
         }
-
         return payload;
     }
 
@@ -24,7 +21,6 @@ class SubscribtionMessageTranslator extends MessageTranslator {
         let payload = {          
             topic: topic
         }
-
         return payload;
     }
 
@@ -32,7 +28,6 @@ class SubscribtionMessageTranslator extends MessageTranslator {
         let payload = {          
             topic: topic
         }
-
         return payload;
     }
 }
