@@ -14,7 +14,6 @@ class UbiiMessageTranslator extends MessageTranslator {
             ...data, 
             messageType: 'ubii',
         }
-
         return payload;
     }
 }
