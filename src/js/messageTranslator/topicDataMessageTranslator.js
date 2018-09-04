@@ -9,13 +9,11 @@ class TopicDataMessageTranslator extends MessageTranslator {
         super(__dirname+'/../../proto/topicDataMessage.proto', 'topicDataMessage', loadProtoFileSynchronously);
     }
 
-    createPayload(deviceIdentifier, repeatedPublishTopicData = []) {
+    createPayload(data) {
         let payload = {
+            ...data,
             messageType: 'topicData',
-            deviceIdentifier: ''+deviceIdentifier,
-            publishTopicData: repeatedPublishTopicData,
         }
-
         return payload;
     }
 
@@ -24,7 +22,6 @@ class TopicDataMessageTranslator extends MessageTranslator {
             topic: topic,
             data: data,
         }
-
         return payload;
     }
 }
