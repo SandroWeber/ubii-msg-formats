@@ -6,7 +6,7 @@ const protobuf = require("protobufjs");
  * plain JavaScript payload object <-> protobuf message object <-> buffer
  * 
  * The class can load proto files automatically using a synchronous method (only in node environments) or manually using 
- * a asynchronous method by calling the initializeAsync() memebr method after object initialization.
+ * a asynchronous method by calling the initializeAsync() member method after object initialization.
  * You can specify which method you want to use by passing a value for the constructor parameter loadProtoFileSynchronously.
  * The automatic, synchronous method is used by default.
  */
@@ -35,7 +35,7 @@ class MessageTranslator {
 
     /**
      * Asynchronously initialization method.
-     * Can be used in non-node environments such as the browser where the synchronously loading method does not work.
+     * Can be used in non-node environments such as the browser where the synchronously loading of proto files does not work.
      */
     async initializeAsync() {
         await protobuf.load(this.fileName)
