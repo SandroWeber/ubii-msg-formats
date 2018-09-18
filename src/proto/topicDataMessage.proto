@@ -1,6 +1,13 @@
 package ubii.topicData;
 syntax = "proto3";
 
+import "./dataStructure/vector2.proto";
+import "./dataStructure/vector3.proto";
+import "./dataStructure/vector4.proto";
+import "./dataStructure/quaternion.proto";
+import "./dataStructure/matrix3x2.proto";
+import "./dataStructure/matrix4x4.proto";
+
 message topicDataMessage {
     string message_type = 1; 
     string device_identifier = 2;
@@ -9,5 +16,15 @@ message topicDataMessage {
 
 message publishTopicData {
     string topic = 1; 
-    string data = 2; 
+    oneof data{
+        double number = 2;
+        bool boolean = 3;
+        string string = 4;
+        vector2 vector2 = 5;
+        vector3 vector3 = 6;
+        vector4 vector4 = 7;
+        quaternion quaternion = 8;
+        matrix3x2 matrix3x2 = 9;
+        matrix4x4 matrix4x4 = 10;
+    }
 }
