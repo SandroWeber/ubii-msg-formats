@@ -1,9 +1,13 @@
 # ubii-msg-formats
 
-- Ubii message formats module.
-- This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
+Hi. This is the repository for Ubii message formats. This repository contains everything about *what* ubii nodes and devices say to each other. If you are interested in how they speak to each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
+
+This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
 
 ## Table of Contents
+
+- TOC
+{:toc}
 
 - [Command Line Interfaces (CLIs)](#clis)
 - [Message Types](#message-types)
@@ -15,16 +19,17 @@
 
 ### Tests
 
-- Run ``npm test`` to process all standard tests. See the [Testing section](#testing) for more details on tests.
+Run ``npm test`` to process all standard tests. See the [Testing section](#testing) for more details on tests.
 
 
 ## Ubii Message
 
 - The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages. You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
-- The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped in an ubii message.
-- A `ubiiMessage` has a submessage that contains further data that should be processed.
-- The proto file of the `ubiiMessage` imports all submessages. Thus the proto or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
-- Check out the [oneof section below](#oneof) for how you can get the specified submessage by accessing the `oneof` properties.
+
+The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped in an ubii message. A `ubiiMessage` has a submessage that contains further data that should be processed.
+
+The proto file of the `ubiiMessage` imports all submessages. Thus the proto or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
+Check out the [oneof section](#oneof) below for how you can get the specified submessage by accessing the `oneof` properties.
 
 ### Submessages
 
