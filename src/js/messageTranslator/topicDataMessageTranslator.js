@@ -16,14 +16,6 @@ class TopicDataMessageTranslator extends MessageTranslator {
         }
         return payload;
     }
-
-    createPublishTopicDataPayload(topic, data) {
-        let payload = {
-            topic: topic,
-            data: data,
-        }
-        return payload;
-    }
 }
 
 module.exports = TopicDataMessageTranslator;
