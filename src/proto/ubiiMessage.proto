@@ -4,6 +4,7 @@ syntax = "proto3";
 import "./topicDataMessage.proto";
 import "./subscribtionMessage.proto";
 import "./registrationMessage.proto";
+import "./errorMessage.proto";
 
 message ubiiMessage {
     string message_type = 1; 
@@ -11,5 +12,6 @@ message ubiiMessage {
         topicDataMessage topic_data_message = 2;
         subscribtionMessage subscribtion_message = 3;
         registrationMessage registration_message = 4;
+        errorMessage error_message = 5;
     }
 }
