@@ -6,7 +6,7 @@ const MessageTranslator = require('./messageTranslator');
 class UbiiMessageTranslator extends MessageTranslator {
 
     constructor(loadProtoFileSynchronously = true) {
-        super(__dirname+'/../../proto/ubiiMessage.proto', 'ubiiMessage', loadProtoFileSynchronously);
+        super(__dirname+'/../../proto/ubiiMessage.proto', 'UbiiMessage', loadProtoFileSynchronously);
     }
     
     createPayload(data) {

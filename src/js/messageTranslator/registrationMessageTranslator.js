@@ -6,7 +6,7 @@ const MessageTranslator = require('./messageTranslator');
 class RegistrationMessageTranslator extends MessageTranslator {
 
     constructor(loadProtoFileSynchronously = true) {
-        super(__dirname+'/../../proto/registrationMessage.proto', 'registrationMessage', loadProtoFileSynchronously);
+        super(__dirname+'/../../proto/registrationMessage.proto', 'RegistrationMessage', loadProtoFileSynchronously);
     }
 
     createPayload(data) {
