@@ -26,7 +26,10 @@ import {
         let translator = new TopicDataMessageTranslator();
 
         return translator.createMessageFromPayload(
-            translator.createPayload('superDevice', createRepeatedPublishTopicDataSnapshotOne())
+            translator.createPayload({
+                deviceIdentifier: 'superDevice', 
+                publishTopicData: createRepeatedPublishTopicDataSnapshotOne()
+            })
         );
     }
 
