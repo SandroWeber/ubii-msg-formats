@@ -6,39 +6,63 @@ Ubii message formats module.
 
 ## Table of Contents
 
+- [Command Line Interfaces (CLIs)](#clis)
 - [Message Types](#message-types)
 - [Protobuf](#protobuf)
-- [Command Line Interfaces (CLIs)](#clis)
+- [Topics](#topics)
 - [Testing](#testing)
 
-## Message Types
+## CLIs
 
-### Ubii Message
+### Tests
 
-- The `ubiiMessage` is the carrier message for all submessages. All messages sent over the network must be wrapped in an ubii message.
-- All valid submessages can be content of the `oneof submessage` block of `ubiiMessage`.
+- Run ``npm test`` to process all standard tests. See the [Testing section](Testing) for more details on tests.
 
-### Registration Message
 
-- Register a device at the Master Node by sending a `registrationMessage`.
+## Ubii Message
 
-### Topic Data Message
+- The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information.
+- The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped in an ubii message.
+- A `ubiiMessage` has a submessage that contains further data that should be processed.
+- The proto file of the `ubiiMessage` imports all submessages. Thus the proto or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
+- You can check for the specified submessage by accessing the `oneof` specifier property of the message object and compare it with the specifiers of the possible `oneof` values: 
+```js
+switch(message.submessage)
+    {
+      case 'topicDataMessage':  // this is a specifier of the possible values of the oneof
+        this.publish(
+          message.submessage,   // Access the oneof specifier to get the specifier of the actual value
+          message[message.submessage]   // Access the actual data of the oneof
+          );
+      break;
 
-- Messages related to the topic data
-- The `topicDataMessage` can have repeated entries of the following types:
-  - `publishTopicData`: topic value pair for transporting values of the specified topic
+      //...
+```
 
-### Subscribtion Message
+### Submessages
 
-- Messages related to subscribing to the topic data and unsubscribing from the topic data
-- The `subscribtionMessage` can have repeated entries of the following types:
-  - `subscribeTopicData`: topic a device wants to subscribe to.
-  - `unsubscribeTopicData`: topic a device wants to unsubscribe.
+- All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance.
+- The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` have one submessage.
+
+#### Registration Message
+
+- You can attach a `registrationMessage` as submessage to register a device at a ubii node.
+
+#### Topic Data Message
+
+- `topicDataMessage` instances are submessages related to the topic data.
+- The `topicDataMessage` can have repeated entries of the `publishTopicData` proto structure. The structure contains a topic-data-pair.
+- You can attach a `topicDataMessage` as submessage and sen dit to a master node in order to publish repeated topic-data-pairs in form of a `publishTopicData` structure to a master node.
+- In return, master nodes will send `ubiiMessages` with `topicDataMessage` as submessage to devices in order to inform them about changes of their subscribed topics.
+
+#### Subscribtion Message
+
+- `subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data.
+- The `subscribtionMessage` can have repeated `subscribeTopicData` and `unsubscribeTopicData` entries. The `subscribeTopicData` proto structure describes a topic a device wants to subscribe to. The `unsubscribeTopicData` proto structure describes a topic a device wants to unsubscribe.
 
 ## Topics
 
-Topics are transported as strings.
-Topics are stringified on payload creation. You can parse them after you have received the buffer and created the corresponding message with `JSON.parse()`.
+Topics are strings. The actual format is specified in the topicData project.
 
 ## Protobuf
 
@@ -85,12 +109,6 @@ let currentOneofType = message.avatar;
 ```js
 let currentOneofValue = message[message.avatar];
 ```
-
-## CLIs
-
-### Tests
-
-- Run ``npm test`` to process all standard tests. See the [Testing section](Testing) for more details on tests.
 
 ## Testing
 
