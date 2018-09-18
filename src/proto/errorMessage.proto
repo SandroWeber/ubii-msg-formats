@@ -1,0 +1,7 @@
+package registration;
+syntax = "proto3";
+
+message errorMessage {
+    string message_type = 1;
+    string error_message = 2;
+}
