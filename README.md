@@ -15,7 +15,7 @@
 
 ### Tests
 
-- Run ``npm test`` to process all standard tests. See the [Testing section](Testing) for more details on tests.
+- Run ``npm test`` to process all standard tests. See the [Testing section](#testing) for more details on tests.
 
 
 ## Ubii Message
