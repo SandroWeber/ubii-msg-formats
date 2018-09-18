@@ -21,8 +21,7 @@ Run ``npm test`` to process all standard tests. See the [Testing section](#testi
 
 ## Ubii Message
 
-**Note:** The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages. You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
-{: .note}
+> **Note:** The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages. You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
 
 The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped in an ubii message. A `ubiiMessage` has a submessage that contains further data that should be processed.
 
