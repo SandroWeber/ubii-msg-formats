@@ -1,4 +1,4 @@
-package topicData;
+package ubii.topicData;
 syntax = "proto3";
 
 message topicDataMessage {

@@ -1,4 +1,4 @@
-package subscribtion;
+package ubii.subscribtion;
 syntax = "proto3";
 
 message subscribtionMessage {

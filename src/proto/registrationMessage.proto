@@ -1,4 +1,4 @@
-package registration;
+package ubii.registration;
 syntax = "proto3";
 
 message registrationMessage {
