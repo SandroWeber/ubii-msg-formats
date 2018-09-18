@@ -10,14 +10,18 @@ import {
         let translator = new TopicDataMessageTranslator();
 
         let repeatedPublishTopicData = [];
-        repeatedPublishTopicData.push(translator.createPublishTopicDataPayload(
-            'awesomeTopic',
-            '30'
-        ));
-        repeatedPublishTopicData.push(translator.createPublishTopicDataPayload(
-            'awesomeTopic2',
-            '302'
-        ));
+        repeatedPublishTopicData.push({
+            topic: 'awesomeTopic',
+            number: 30
+        });
+        repeatedPublishTopicData.push({
+            topic: 'awesomeTopic2',
+            vector3: {
+                x: 2,
+                y: 2,
+                z: 2
+            }
+        });
 
         return repeatedPublishTopicData;
     }
@@ -26,7 +30,25 @@ import {
         let translator = new TopicDataMessageTranslator();
 
         return translator.createMessageFromPayload(
-            translator.createPayload('superDevice', createRepeatedPublishTopicDataSnapshotOne())
+            translator.createPayload({
+                deviceIdentifier: 'superDevice', 
+                publishTopicData: [
+                    {
+                        topic: 'awesomeTopic',
+                        data: 'number',
+                        number: 30
+                    },
+                    {
+                        topic: 'awesomeTopic2',
+                        data: 'vector3',
+                        vector3: {
+                            x: 2,
+                            y: 2,
+                            z: 2
+                        }
+                    }
+                ]
+            })
         );
     }
 
