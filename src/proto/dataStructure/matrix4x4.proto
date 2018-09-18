@@ -1,12 +1,12 @@
 package ubii.dataStructure;
 syntax = "proto3";
 
-message matrix4x4 {
+message Matrix4x4 {
     double m11 = 1;
     double m12 = 2;
     double m13 = 3;
     double m14 = 4;
-    
+
     double m21 = 5;
     double m22 = 6;
     double m23 = 7;

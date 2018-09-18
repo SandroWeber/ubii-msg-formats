@@ -1,7 +1,7 @@
 package ubii.dataStructure;
 syntax = "proto3";
 
-message vector4 {
+message Vector4 {
     double x = 1;
     double y = 2;
     double z = 3;
