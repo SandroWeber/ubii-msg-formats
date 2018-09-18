@@ -6,11 +6,11 @@ This project is managed as [Jira instance of the FAR group at the Technical Unit
 
 ## Table of Contents
 
-- [Command Line Interfaces (CLIs)](#clis)
-- [Message Types](#message-types)
-- [Protobuf](#protobuf)
-- [Topics](#topics)
-- [Testing](#testing)
+1. [Command Line Interfaces (CLIs)](#clis)
+1. [Message Types](#message-types)
+1. [Protobuf](#protobuf)
+1. [Topics](#topics)
+1. [Testing](#testing)
 
 ## CLIs
 
@@ -30,24 +30,21 @@ Check out the [oneof section](#oneof) below for how you can get the specified su
 
 ### Submessages
 
-- All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance.
-- The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has one submessage.
+All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance. The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has one submessage.
 
 #### Registration Message
 
-- You can attach a `registrationMessage` as submessage to register a device at a ubii node.
+`registrationMessage` instances are submessages related to the registration of devices and their corresponding clients. You can attach a `registrationMessage` as submessage to register a device at a ubii node.
 
 #### Topic Data Message
 
-- `topicDataMessage` instances are submessages related to the topic data.
-- The `topicDataMessage` can have repeated entries of the `publishTopicData` proto structure. The structure contains a topic-data-pair.
-- You can attach a `topicDataMessage` as submessage and sen dit to a master node in order to publish repeated topic-data-pairs in form of a `publishTopicData` structure to a master node.
-- In return, master nodes will send `ubiiMessages` with `topicDataMessage` as submessage to devices in order to inform them about changes of their subscribed topics.
+`topicDataMessage` instances are submessages related to the topic data. The `topicDataMessage` can have repeated entries of the `publishTopicData` proto structure. The structure contains a topic-data-pair.
+
+You can attach a `topicDataMessage` as submessage and send it to a master node in order to publish repeated topic-data-pairs in form of a `publishTopicData` structure to a master node. In return, master nodes will send `ubiiMessages` with `topicDataMessage` as submessage to devices in order to inform them about changes of their subscribed topics.
 
 #### Subscribtion Message
 
-- `subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data.
-- The `subscribtionMessage` can have repeated `subscribeTopicData` and `unsubscribeTopicData` entries. The `subscribeTopicData` proto structure describes a topic a device wants to subscribe to. The `unsubscribeTopicData` proto structure describes a topic a device wants to unsubscribe.
+`subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data. The `subscribtionMessage` can have repeated `subscribeTopicData` and `unsubscribeTopicData` entries. The `subscribeTopicData` proto structure describes a topic a device wants to subscribe to. The `unsubscribeTopicData` proto structure describes a topic a device wants to unsubscribe.
 
 ## Topics
 
@@ -55,13 +52,13 @@ Topics are strings. The actual format is specified in the topicData project.
 
 ## Protobuf
 
-- The messages are based on google's Protobuf.
-- The following section contains some topics that are super relevant for this project.
-- See the [Protobuf Documentation](https://developers.google.com/protocol-buffers/) and the used [protobuf.js Github repository of a JS implementaion](https://github.com/dcodeIO/ProtoBuf.js/) for more details.
+The messages are based on google's Protobuf. The following section contains some topics that are super relevant for this project.
+
+See the [Protobuf Documentation](https://developers.google.com/protocol-buffers/) and the used [protobuf.js Github repository of a JS implementaion](https://github.com/dcodeIO/ProtoBuf.js/) for more details.
 
 ### Loading Proto Files
 
-- The proto files can be loaded synchronously or asynchronously. The asynchronous method should be prefered. However it is only available in a nodeJS environment.
+The proto files can be loaded synchronously or asynchronously. The asynchronous method should be prefered. However it is only available in a nodeJS environment.
 
 ### Proto Files
 
@@ -101,12 +98,13 @@ let currentOneofValue = message[message.avatar];
 
 ### Usage of Proto Files in JS
 
-- This repository provides `messageTranslator` classes.
-- These classes provide all relevant functionalities to work with the proto messages.
-- The main aspect is on a validated translatingg between the three proto message states: buffer <-> message <-> payload
+This repository provides `messageTranslator` classes. These classes provide all relevant functionalities to work with the proto messages.
+
+- The main aspect is on a validated translating between the three proto message states: buffer <-> message <-> payload
 - Payloads can be created with specific `createPayload` methods provided by the translator classes or directly by plain JS objects.
 
 ## Testing
 
-- This module uses the [AVA](https://github.com/avajs/ava) test runner.
-- You can add new tests to the test folder. Entry point for the test runner is test.js within the test folder. See the [AVA Documentation](https://github.com/avajs/ava#contents) for more details on how to create new test cases for AVA.
+This module uses the [AVA](https://github.com/avajs/ava) test runner.
+
+You can add new tests to the test folder. Entry point for the test runner is test.js within the test folder. See the [AVA Documentation](https://github.com/avajs/ava#contents) for more details on how to create new test cases for AVA.
