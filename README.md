@@ -1,6 +1,6 @@
 # ubii-msg-formats
 
-Hi. This is the repository for Ubii message formats. This repository contains everything about *what* ubii nodes and devices say to each other. If you are interested in how they speak to each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
+Hi. This is the repository for Ubii message formats. This repository contains everything about **what** ubii nodes and devices say to each other. If you are interested in how they speak to each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
 
 This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
 
