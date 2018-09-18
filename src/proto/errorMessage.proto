@@ -1,4 +1,4 @@
-package registration;
+package ubii.error;
 syntax = "proto3";
 
 message errorMessage {
