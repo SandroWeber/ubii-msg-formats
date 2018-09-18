@@ -1,7 +1,6 @@
 # ubii-msg-formats
 
-Ubii message formats module.
-
+- Ubii message formats module.
 - This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
 
 ## Table of Contents
@@ -21,28 +20,16 @@ Ubii message formats module.
 
 ## Ubii Message
 
-- The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information.
+- The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages. You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
 - The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped in an ubii message.
 - A `ubiiMessage` has a submessage that contains further data that should be processed.
 - The proto file of the `ubiiMessage` imports all submessages. Thus the proto or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
-- You can check for the specified submessage by accessing the `oneof` specifier property of the message object and compare it with the specifiers of the possible `oneof` values: 
-```js
-switch(message.submessage)
-    {
-      case 'topicDataMessage':  // this is a specifier of the possible values of the oneof
-        this.publish(
-          message.submessage,   // Access the oneof specifier to get the specifier of the actual value
-          message[message.submessage]   // Access the actual data of the oneof
-          );
-      break;
-
-      //...
-```
+- Check out the [oneof section below](#oneof) for how you can get the specified submessage by accessing the `oneof` properties.
 
 ### Submessages
 
 - All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance.
-- The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` have one submessage.
+- The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has one submessage.
 
 #### Registration Message
 
@@ -66,15 +53,15 @@ Topics are strings. The actual format is specified in the topicData project.
 
 ## Protobuf
 
-The messages are based on google's Protobuf.
-
-See the [Protobuf Documentation](https://developers.google.com/protocol-buffers/) and the used [protobuf.js Github repository of a JS implementaion](https://github.com/dcodeIO/ProtoBuf.js/) for more details.
+- The messages are based on google's Protobuf.
+- The following section contains some topics that are super relevant for this project.
+- See the [Protobuf Documentation](https://developers.google.com/protocol-buffers/) and the used [protobuf.js Github repository of a JS implementaion](https://github.com/dcodeIO/ProtoBuf.js/) for more details.
 
 ### Loading Proto Files
 
-- In order to support synchronous loading of the Proto files, the Proto files must be written in JSON format (JSON descriptors). JSON files can then be imported by a require statement. More details about Proto files in JSON format can be found in the [protobufjs repository](https://github.com/dcodeIO/ProtoBuf.js/#using-json-descriptors).
+- The proto files can be loaded synchronously or asynchronously. The asynchronous method should be prefered. However it is only available in a nodeJS environment.
 
-### Protobuf Usage
+### Proto Files
 
 #### Required and Validation
 
@@ -109,6 +96,13 @@ let currentOneofType = message.avatar;
 ```js
 let currentOneofValue = message[message.avatar];
 ```
+
+### Usage of Proto Files in JS
+
+- This repository provides `messageTranslator` classes.
+- These classes provide all relevant functionalities to work with the proto messages.
+- The main aspect is on a validated translatingg between the three proto message states: buffer <-> message <-> payload
+- Payloads can be created with specific `createPayload` methods provided by the translator classes or directly by plain JS objects.
 
 ## Testing
 
