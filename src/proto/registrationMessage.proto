@@ -1,7 +1,7 @@
 package ubii.registration;
 syntax = "proto3";
 
-message registrationMessage {
+message RegistrationMessage {
     string message_type = 1;
     string device_identifier = 2;
     enum DeviceType {

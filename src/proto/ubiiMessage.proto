@@ -6,12 +6,12 @@ import "./subscribtionMessage.proto";
 import "./registrationMessage.proto";
 import "./errorMessage.proto";
 
-message ubiiMessage {
+message UbiiMessage {
     string message_type = 1; 
     oneof submessage{
-        topicDataMessage topic_data_message = 2;
-        subscribtionMessage subscribtion_message = 3;
-        registrationMessage registration_message = 4;
-        errorMessage error_message = 5;
+        TopicDataMessage topic_data_message = 2;
+        SubscribtionMessage subscribtion_message = 3;
+        RegistrationMessage registration_message = 4;
+        ErrorMessage error_message = 5;
     }
 }
