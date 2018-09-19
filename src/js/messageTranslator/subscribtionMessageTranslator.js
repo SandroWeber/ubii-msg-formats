@@ -12,7 +12,6 @@ class SubscribtionMessageTranslator extends MessageTranslator {
     createPayload(data) {
         let payload = {
             ...data,
-            messageType: 'subscribtion',
         }
         return payload;
     }

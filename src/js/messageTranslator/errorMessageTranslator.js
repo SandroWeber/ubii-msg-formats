@@ -12,7 +12,6 @@ class ErrorMessageTranslator extends MessageTranslator {
     createPayload(data) {
         let payload = {
             ...data,
-            messageType: 'error',
         }
         return payload;
     }

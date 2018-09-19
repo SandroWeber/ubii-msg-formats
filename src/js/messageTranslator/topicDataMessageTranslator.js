@@ -12,7 +12,6 @@ class TopicDataMessageTranslator extends MessageTranslator {
     createPayload(data) {
         let payload = {
             ...data,
-            messageType: 'topicData',
         }
         return payload;
     }

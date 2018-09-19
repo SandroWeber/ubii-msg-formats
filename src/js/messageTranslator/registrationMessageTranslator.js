@@ -12,7 +12,6 @@ class RegistrationMessageTranslator extends MessageTranslator {
     createPayload(data) {
         let payload = {
             ...data,
-            messageType: 'registration',
         }
         return payload;
     }
