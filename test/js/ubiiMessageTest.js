@@ -6,41 +6,20 @@ import {
 
 (function () {
 
-    let createRepeatedPublishTopicDataSnapshotOne = () => {
-        let translator = new TopicDataMessageTranslator();
-
-        let repeatedPublishTopicData = [];
-        repeatedPublishTopicData.push({
-            topic: 'awesomeTopic',
-            number: 30
-        });
-        repeatedPublishTopicData.push({
-            topic: 'awesomeTopic2',
-            vector3: {
-                x: 2,
-                y: 2,
-                z: 2
-            }
-        });
-
-        return repeatedPublishTopicData;
-    }
-
-    let createTopicDatMessageSnapshotOne = () => {
-        let translator = new TopicDataMessageTranslator();
+    let createTopicDataUbiiMessageOne = () => {
+        let translator = new UbiiMessageTranslator();
 
         return translator.createMessageFromPayload(
             translator.createPayload({
+            topicDataMessage: {
                 deviceIdentifier: 'superDevice', 
                 publishTopicData: [
                     {
                         topic: 'awesomeTopic',
-                        //data: 'number',
                         number: 30
                     },
                     {
                         topic: 'awesomeTopic2',
-                        //data: 'vector3',
                         vector3: {
                             x: 2,
                             y: 2,
@@ -48,8 +27,8 @@ import {
                         }
                     }
                 ]
-            })
-        );
+            }
+        }));
     }
 
     test('ubiiMessage - Basics', t => {
@@ -61,15 +40,12 @@ import {
                 why: 'why?'
             }));
         });
-
     });
 
     test('ubiiMessage - OneOfOtherMessageType', t => {
         let translator = new UbiiMessageTranslator();
 
-        let message = translator.createMessageFromPayload(translator.createPayload({
-            topicDataMessage: createTopicDatMessageSnapshotOne()
-        }));
+        let message = createTopicDataUbiiMessageOne();
 
         let result = translator.createBufferFromMessage(message);
         result = translator.createMessageFromBuffer(result);
