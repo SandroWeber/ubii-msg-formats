@@ -35,12 +35,12 @@ import {
                 publishTopicData: [
                     {
                         topic: 'awesomeTopic',
-                        data: 'number',
+                        //data: 'number',
                         number: 30
                     },
                     {
                         topic: 'awesomeTopic2',
-                        data: 'vector3',
+                        //data: 'vector3',
                         vector3: {
                             x: 2,
                             y: 2,
