@@ -9,7 +9,6 @@ import {
 
         let message = translator.createMessageFromPayload(translator.createPayload({
             registrationMessage: {
-                messageType: 'registration',
                 deviceIdentifier: 'uniqueId',
                 deviceType: 0
             }
