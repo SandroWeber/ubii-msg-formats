@@ -1,6 +1,5 @@
 import test from 'ava';
 import {
-    TopicDataMessageTranslator,
     UbiiMessageTranslator,
 } from '../../src/js/index';
 
