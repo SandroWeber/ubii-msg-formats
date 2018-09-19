@@ -2,10 +2,10 @@ package ubii.registration;
 syntax = "proto3";
 
 message RegistrationMessage {
-    string device_identifier = 2;
+    string device_identifier = 1;
     enum DeviceType {
         PARTICIPANT = 0;
         WATCHER = 1;
     }
-    DeviceType device_type = 3 [default = PARTICIPANT];
+    DeviceType device_type = 2 [default = PARTICIPANT];
 }

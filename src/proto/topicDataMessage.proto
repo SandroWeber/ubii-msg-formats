@@ -9,8 +9,8 @@ import "./dataStructure/matrix3x2.proto";
 import "./dataStructure/matrix4x4.proto";
 
 message TopicDataMessage {
-    string device_identifier = 2;
-    repeated PublishTopicData publish_topic_data = 3;
+    string device_identifier = 1;
+    repeated PublishTopicData publish_topic_data = 2;
 }
 
 message PublishTopicData {

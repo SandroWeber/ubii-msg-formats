@@ -2,9 +2,9 @@ package ubii.subscribtion;
 syntax = "proto3";
 
 message SubscribtionMessage {
-    string device_identifier = 2;
-    repeated SubscribeTopicData subscribe_topic_data = 3;
-    repeated UnsubscribeTopicData unsubscribe_topic_data = 4;
+    string device_identifier = 1;
+    repeated SubscribeTopicData subscribe_topic_data = 2;
+    repeated UnsubscribeTopicData unsubscribe_topic_data = 3;
 }
 
 message SubscribeTopicData {
