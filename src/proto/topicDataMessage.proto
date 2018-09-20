@@ -1,0 +1,29 @@
+package ubii.topicData;
+syntax = "proto3";
+
+import "./dataStructure/vector2.proto";
+import "./dataStructure/vector3.proto";
+import "./dataStructure/vector4.proto";
+import "./dataStructure/quaternion.proto";
+import "./dataStructure/matrix3x2.proto";
+import "./dataStructure/matrix4x4.proto";
+
+message TopicDataMessage {
+    string device_identifier = 1;
+    repeated PublishTopicData publish_topic_data = 2;
+}
+
+message PublishTopicData {
+    string topic = 1; 
+    oneof data{
+        double number = 2;
+        bool boolean = 3;
+        string string = 4;
+        Vector2 vector2 = 5;
+        Vector3 vector3 = 6;
+        Vector4 vector4 = 7;
+        Quaternion quaternion = 8;
+        Matrix3x2 matrix3x2 = 9;
+        Matrix4x4 matrix4x4 = 10;
+    }
+}
