@@ -55,13 +55,13 @@ import {
         }));
     }
 
-    test('topicDataMessage - Basics', t => {
+    test('topicDataMessage - creation', t => {
         t.notThrows(() =>{
             createMessageOne();
         });
     });
 
-    test('topicDataMessage - PublishTopicData', t => {
+    test('topicDataMessage - publishTopicData', t => {
         let translator = new UbiiMessageTranslator();
         let message = createMessageOne();
         let snapshot = createMessageSnapshotOne();
