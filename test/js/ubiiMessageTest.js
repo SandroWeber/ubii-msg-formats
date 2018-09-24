@@ -49,6 +49,7 @@ import {
         let result = translator.createBufferFromMessage(message);
         result = translator.createMessageFromBuffer(result);
 
+        t.is(result.submessage, 'topicDataMessage');
         t.not(result.topicDataMessage, null);
         t.is(result.registrationMessage, null);
     }); 
