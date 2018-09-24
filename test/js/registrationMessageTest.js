@@ -4,7 +4,7 @@ import {
 } from '../../src/js/index';
 
 (function () {
-    test('registrationmessage - Basics', t => {
+    test('basics', t => {
         let translator = new UbiiMessageTranslator();
 
         let message = translator.createMessageFromPayload(translator.createPayload({
