@@ -1,11 +1,11 @@
 import test from 'ava';
 import {
     UbiiMessageTranslator,
-} from '../../src/js/index';
+} from '../../src/js';
 
 (function () {
 
-    let createTopicDataUbiiMessageSnapshotOne = () => {
+    let createMessageSnapshotOne = () => {
         return  {
             messageType: 'ubii',
             topicDataMessage: {
@@ -30,7 +30,7 @@ import {
         };
     };
 
-    let createTopicDataUbiiMessageOne = () => {
+    let createMessageOne = () => {
         let translator = new UbiiMessageTranslator();
 
         return translator.createMessageFromPayload(
@@ -57,14 +57,14 @@ import {
 
     test('topicDataMessage - Basics', t => {
         t.notThrows(() =>{
-            createTopicDataUbiiMessageOne();
+            createMessageOne();
         });
     });
 
     test('topicDataMessage - PublishTopicData', t => {
         let translator = new UbiiMessageTranslator();
-        let message = createTopicDataUbiiMessageOne();
-        let snapshot = createTopicDataUbiiMessageSnapshotOne();
+        let message = createMessageOne();
+        let snapshot = createMessageSnapshotOne();
 
         let result = translator.createBufferFromMessage(message);
         //console.log('basicTopicDataMessage: buffer: ' + result.toString());
