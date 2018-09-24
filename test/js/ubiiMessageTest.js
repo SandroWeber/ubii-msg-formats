@@ -30,7 +30,7 @@ import {
         }));
     }
 
-    test('ubiiMessage - Basics', t => {
+    test('basics', t => {
         let translator = new UbiiMessageTranslator();
 
         t.notThrows(() =>{
@@ -41,7 +41,7 @@ import {
         });
     });
 
-    test('ubiiMessage - OneOfOtherMessageType', t => {
+    test('oneOf submessage', t => {
         let translator = new UbiiMessageTranslator();
 
         let message = createTopicDataUbiiMessageOne();
