@@ -30,7 +30,7 @@ import {
         }));
     }
 
-    test('basics', t => {
+    test('create basic', t => {
         let translator = new UbiiMessageTranslator();
 
         t.notThrows(() =>{
