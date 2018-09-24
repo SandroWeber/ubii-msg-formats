@@ -5,25 +5,22 @@ import {
 
 (function () {
 
-    let createMessageSnapshotOne = () => {
+    let createMessageSnapshotSubscribeUnsubscribe = () => {
         return  {
             messageType: 'ubii',
-            topicDataMessage: {
+            subscribtionMessage: {
                 deviceIdentifier: 'superDevice', 
-                publishTopicData: [
+                subscribeTopicData: [
                     {
-                        topic: 'awesomeTopic',
-                        data: 'number',
-                        number: 30
+                        topic: 'topic->subtopic',
                     },
                     {
-                        topic: 'awesomeTopic2',
-                        data: 'vector3',
-                        vector3: {
-                            x: 2,
-                            y: 2,
-                            z: 2
-                        }
+                        topic: 'topic2->subtopic2',
+                    }
+                ],
+                unsubscribeTopicData: [
+                    {
+                        topic: 'topic3->subtopic3',
                     }
                 ]
             }
@@ -82,12 +79,15 @@ import {
                     deviceIdentifier: 'superDevice',
                     subscribeTopicData: [
                         {
-                            topic: 'topic->subtopic'
+                            topic: 'topic->subtopic',
+                        },
+                        {
+                            topic: 'topic2->subtopic2',
                         }
                     ],
                     unsubscribeTopicData: [
                         {
-                            topic: 'topic2->subtopic2'
+                            topic: 'topic3->subtopic3'
                         }
                     ]
                 }
@@ -116,5 +116,19 @@ import {
         t.notThrows(() =>{
             createMessageSubscribeUnsubscribe();
         });
+    });
+
+    test('structure', t => {
+      /*  let translator = new UbiiMessageTranslator();
+        let message = createMessageSubscribeUnsubscribe();
+        let snapshot = createMessageSnapshotSubscribeUnsubscribe();
+
+        let result = translator.createBufferFromMessage(message);
+        //console.log('basicTopicDataMessage: buffer: ' + result.toString());
+
+        result = translator.createMessageFromBuffer(result);
+        //console.log('basicTopicDataMessage: after buffer message: ' + result.publishTopicData);
+
+       t.is(result.messageType, snapshot.messageType);*/
     });
 })();
