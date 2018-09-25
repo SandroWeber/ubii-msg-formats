@@ -86,9 +86,9 @@ class MessageTranslator {
      */
     createPayloadFromMessage(message) {
         let payload = this.proto.toObject(message, {
-            longs: String,
-            enums: String,
-            bytes: String,
+            //longs: String,
+            //enums: String,
+            //bytes: String,
             // see ConversionOptions
         });
 
