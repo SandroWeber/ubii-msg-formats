@@ -118,7 +118,7 @@ import {
         });
     });
 
-    test('structure', t => {
+   // test('structure', t => {
       /*  let translator = new UbiiMessageTranslator();
         let message = createMessageSubscribeUnsubscribe();
         let snapshot = createMessageSnapshotSubscribeUnsubscribe();
@@ -130,5 +130,5 @@ import {
         //console.log('basicTopicDataMessage: after buffer message: ' + result.publishTopicData);
 
        t.is(result.messageType, snapshot.messageType);*/
-    });
+    //});
 })();
