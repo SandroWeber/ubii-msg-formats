@@ -20,9 +20,9 @@ import {
                         topic: 'awesomeTopic2',
                         data: 'vector3',
                         vector3: {
-                            x: 2,
-                            y: 2,
-                            z: 2
+                            x: 2000.1,
+                            y: 100.0,
+                            z: 567.000678
                         }
                     }
                 ]
@@ -45,9 +45,9 @@ import {
                     {
                         topic: 'awesomeTopic2',
                         vector3: {
-                            x: 2,
-                            y: 2,
-                            z: 2
+                            x: 2000.1,
+                            y: 100.0,
+                            z: 567.000678
                         }
                     }
                 ]
@@ -66,6 +66,7 @@ import {
         let message = createMessageOne();
         let snapshot = createMessageSnapshotOne();
 
+        
         let result = translator.createBufferFromMessage(message);
         //console.log('basicTopicDataMessage: buffer: ' + result.toString());
 
