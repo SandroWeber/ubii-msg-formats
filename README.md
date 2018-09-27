@@ -13,7 +13,7 @@ This project is managed as [Jira instance of the FAR group at the Technical Unit
 1. [Testing](#testing)
 1. [Tips](#tips)
 
-## CLIs
+## CLIs 
 
 ### Tests
 
