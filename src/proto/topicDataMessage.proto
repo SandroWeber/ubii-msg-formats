@@ -14,7 +14,7 @@ message TopicDataMessage {
 }
 
 message PublishTopicData {
-    string topic = 1; 
+    string topic = 1;
     oneof data{
         double number = 2;
         bool boolean = 3;
