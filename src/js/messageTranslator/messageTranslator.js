@@ -47,7 +47,7 @@ class MessageTranslator {
     /**
      * (NODE ONLY)
      * Synchronously loading of the proto file. 
-     * Only available in node environments.
+     * This is only available in node environments.
      */
     loadProtoFileSync() {
         this.proto = protobuf.loadSync(this.fileName).lookupType(this.typePath);
@@ -67,7 +67,7 @@ class MessageTranslator {
     }
 
     /**
-     * Creates and returns a verified protobuf message object from a given plain JavaScript payload object.
+     * Creates and returns a verified protobuf message object from a specified plain JavaScript payload object.
      * @param {Object} payload Valid plain JavaScript payload object.
      * @return Returns a protobuf message object.
      */
@@ -80,7 +80,7 @@ class MessageTranslator {
     }
 
     /**
-     * Creates and returns a verified plain JavaScript payload object from a given protobuf message object.
+     * Creates and returns a verified plain JavaScript payload object from a specified protobuf message object.
      * @param {Object} message Valid protobuf message object.
      * @return Returns a plain JavaScript payload object.
      */
@@ -99,7 +99,7 @@ class MessageTranslator {
     }
 
     /**
-     * Creates and returns an encoded buffer from a given protobuf message object.
+     * Creates and returns an encoded buffer from a specified protobuf message object.
      * @param {Object} message Valid protobuf message object.
      * @return Returns a Uint8Array (browser) or Buffer (node).
      */
@@ -108,7 +108,7 @@ class MessageTranslator {
     }
 
     /**
-     * Creates and returns a valid protobuf message object from a given buffer.
+     * Creates and returns a valid protobuf message object from a specified buffer.
      * @param buffer Uint8Array (browser) or Buffer (node).
      * @return Returns a valid protobuf message object.
      */
