@@ -5,7 +5,9 @@ import {
 
 (function () {
 
-    let createMessageSnapshotSubscribeUnsubscribe = () => {
+    // helepers:
+
+    let getComparisonObjectOne = () => {
         return  {
             messageType: 'ubii',
             errorMessage: {
@@ -15,36 +17,38 @@ import {
         };
     };
 
-    let createMessageBasic = () => {
+    let getMessageOne = () => {
         let translator = new UbiiMessageTranslator();
 
         return translator.createMessageFromPayload(
             translator.createPayload({
-            registrationMessage: {
+            errorMessage: {
                 name: 'error',
                 message: 'An error has occured.'
             }
         }));
     }
 
+    // tests:
+
+    test.beforeEach(t => {
+        t.context.translator = new UbiiMessageTranslator();
+    });
+
     test('create basic', t => {
         t.notThrows(() =>{
-            createMessageBasic();
+            getMessageOne(t.context);
         });
     });
 
+    test('structure', t => {
+        let messageOne = getMessageOne(t.context);
+        let comparisonObject = getComparisonObjectOne();
+        let buffer = t.context.translator.createBufferFromMessage(messageOne);
+        let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
 
-    //test('structure', t => {
-      /*  let translator = new UbiiMessageTranslator();
-        let message = createMessageSubscribeUnsubscribe();
-        let snapshot = createMessageSnapshotSubscribeUnsubscribe();
+        t.snapshot(messageTwo);
 
-        let result = translator.createBufferFromMessage(message);
-        //console.log('basicTopicDataMessage: buffer: ' + result.toString());
-
-        result = translator.createMessageFromBuffer(result);
-        //console.log('basicTopicDataMessage: after buffer message: ' + result.publishTopicData);
-
-       t.is(result.messageType, snapshot.messageType);*/
-    //});
+        t.true(JSON.stringify(messageTwo) === JSON.stringify(comparisonObject));
+    });
 })();
