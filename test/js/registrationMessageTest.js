@@ -6,10 +6,10 @@ import {
 (function () {
 
     let getComparisonObject = () => {
-        return  {
+        return {
             messageType: 'ubii',
             registrationMessage: {
-                deviceIdentifier: 'superDevice', 
+                deviceIdentifier: 'superDevice',
                 deviceType: 'PARTICIPANT'
             }
         };
@@ -20,11 +20,11 @@ import {
 
         return translator.createMessageFromPayload(
             translator.createPayload({
-            registrationMessage: {
-                deviceIdentifier: 'superDevice',
-                deviceType: 0
-            }
-        }));
+                registrationMessage: {
+                    deviceIdentifier: 'superDevice',
+                    deviceType: 0
+                }
+            }));
     }
 
     // test cases:
@@ -34,7 +34,7 @@ import {
     });
 
     test('create basic', t => {
-        t.notThrows(() =>{
+        t.notThrows(() => {
             getMessageBasic(t.context);
         });
     });
@@ -46,7 +46,7 @@ import {
         let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
         let object = t.context.translator.createPayloadFromMessage(buffer);
 
-        t.snapshot(messageTwo); 
+        t.snapshot(messageTwo);
 
         t.true(JSON.stringify(messageTwo) === JSON.stringify(comparisonObject));
     });

@@ -8,10 +8,10 @@ import {
     // helepers:
 
     let getComparisonObjectOne = () => {
-        return  {
+        return {
             messageType: 'ubii',
             errorMessage: {
-                name: 'error', 
+                name: 'error',
                 message: 'An error has occured.'
             }
         };
@@ -22,11 +22,11 @@ import {
 
         return translator.createMessageFromPayload(
             translator.createPayload({
-            errorMessage: {
-                name: 'error',
-                message: 'An error has occured.'
-            }
-        }));
+                errorMessage: {
+                    name: 'error',
+                    message: 'An error has occured.'
+                }
+            }));
     }
 
     // test cases:
@@ -36,7 +36,7 @@ import {
     });
 
     test('create basic', t => {
-        t.notThrows(() =>{
+        t.notThrows(() => {
             getMessageOne(t.context);
         });
     });

@@ -10,24 +10,23 @@ import {
     let getTopicDataUbiiMessage = (context) => {
         return context.translator.createMessageFromPayload(
             context.translator.createPayload({
-            topicDataMessage: {
-                deviceIdentifier: 'superDevice', 
-                publishTopicData: [
-                    {
-                        topic: 'awesomeTopic',
-                        number: 30
-                    },
-                    {
-                        topic: 'awesomeTopic2',
-                        vector3: {
-                            x: 2,
-                            y: 2,
-                            z: 2
+                topicDataMessage: {
+                    deviceIdentifier: 'superDevice',
+                    publishTopicData: [{
+                            topic: 'awesomeTopic',
+                            number: 30
+                        },
+                        {
+                            topic: 'awesomeTopic2',
+                            vector3: {
+                                x: 2,
+                                y: 2,
+                                z: 2
+                            }
                         }
-                    }
-                ]
-            }
-        }));
+                    ]
+                }
+            }));
     }
 
     // test cases:
@@ -38,19 +37,19 @@ import {
 
     test('create basic message', t => {
 
-        t.notThrows(() =>{
+        t.notThrows(() => {
             let message = t.context.translator.createMessageFromPayload(
                 t.context.translator.createPayload({
                     rawBuffer: 'awesome cargo content',
                     why: 'why?'
-            }));
+                }));
         });
     });
 
     test('create buffer from message', t => {
         let message = getTopicDataUbiiMessage(t.context);
 
-        t.notThrows(() =>{
+        t.notThrows(() => {
             t.context.translator.createBufferFromMessage(message);
         });
     });
@@ -58,7 +57,7 @@ import {
     test('create message from buffer', t => {
         let message = getTopicDataUbiiMessage(t.context);
 
-        t.notThrows(() =>{
+        t.notThrows(() => {
             let buffer = t.context.translator.createBufferFromMessage(message);
 
             message = t.context.translator.createMessageFromBuffer(buffer);
@@ -76,6 +75,6 @@ import {
 
         // data field
         t.not(messageTwo.topicDataMessage, null);
-        
-    }); 
+
+    });
 })();

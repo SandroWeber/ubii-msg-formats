@@ -1,5 +1,5 @@
 const UbiiMessageTranslator = require('./messageTranslator/ubiiMessageTranslator');
 
-module.exports =  {
+module.exports = {
     UbiiMessageTranslator: UbiiMessageTranslator
 };
