@@ -5,11 +5,11 @@ import {
 
 (function () {
 
-    let createTopicDataUbiiMessageOne = () => {
-        let translator = new UbiiMessageTranslator();
+    // helper:
 
-        return translator.createMessageFromPayload(
-            translator.createPayload({
+    let getTopicDataUbiiMessage = (context) => {
+        return context.translator.createMessageFromPayload(
+            context.translator.createPayload({
             topicDataMessage: {
                 deviceIdentifier: 'superDevice', 
                 publishTopicData: [
@@ -30,27 +30,52 @@ import {
         }));
     }
 
-    test('create basic', t => {
-        let translator = new UbiiMessageTranslator();
+    // tests:
+
+    test.beforeEach(t => {
+        t.context.translator = new UbiiMessageTranslator();
+    });
+
+    test('create basic message', t => {
 
         t.notThrows(() =>{
-            let message = translator.createMessageFromPayload(translator.createPayload({
-                rawBuffer: 'awesome cargo content',
-                why: 'why?'
+            let message = t.context.translator.createMessageFromPayload(
+                t.context.translator.createPayload({
+                    rawBuffer: 'awesome cargo content',
+                    why: 'why?'
             }));
         });
     });
 
-    test('oneOf submessage', t => {
-        let translator = new UbiiMessageTranslator();
+    test('create buffer from message', t => {
+        let message = getTopicDataUbiiMessage(t.context);
 
-        let message = createTopicDataUbiiMessageOne();
+        t.notThrows(() =>{
+            t.context.translator.createBufferFromMessage(message);
+        });
+    });
 
-        let result = translator.createBufferFromMessage(message);
-        result = translator.createMessageFromBuffer(result);
+    test('create message from buffer', t => {
+        let message = getTopicDataUbiiMessage(t.context);
 
-        t.is(result.submessage, 'topicDataMessage');
-        t.not(result.topicDataMessage, null);
-        t.is(result.registrationMessage, null);
+        t.notThrows(() =>{
+            let buffer = t.context.translator.createBufferFromMessage(message);
+
+            message = t.context.translator.createMessageFromBuffer(buffer);
+        });
+    });
+
+    test('oneof submessage field', t => {
+        let messageOne = getTopicDataUbiiMessage(t.context);
+        let buffer = t.context.translator.createBufferFromMessage(messageOne);
+        let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
+
+        // oneof specifier field
+        t.is(messageTwo.submessage, 'topicDataMessage');
+        t.is(messageTwo.registrationMessage, null);
+
+        // data field
+        t.not(messageTwo.topicDataMessage, null);
+        
     }); 
 })();
