@@ -37,18 +37,18 @@ import {
         let buffer = test.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = test.context.translator.createMessageFromBuffer(buffer);
 
-        // snapshot test
+        // test snapshot
         test.snapshot(messageTwo);
         // test message fields
         test.true(checkTemplateKeys(rawComparisonObject, messageTwo));
-        // message stringified
+        // test stringified message
         test.true(JSON.stringify(messageTwo) === JSON.stringify(comparisonObject));
-        // object stringified
+        // test stringified object
         let payload = test.context.translator.createPayloadFromMessage(messageTwo);
         test.true(JSON.stringify(payload) === JSON.stringify(comparisonObject));
-        // topic
+        // test topicData topic
         test.is(messageTwo.topicDataMessage.publishTopicData[0].topic, comparisonObject.topicDataMessage.publishTopicData[0].topic);
-        // oneof specifier
+        // test oneof specifier
         test.is(messageTwo.topicDataMessage.publishTopicData[0].data, dataType);
         // compare specific tempalte keys
         let keys = Object.keys(messageTwo.topicDataMessage.publishTopicData[0][dataType]);
@@ -65,9 +65,9 @@ import {
             return true;
         }
 
-        // if they are not strictly equal, they both need to be Objects
-        if (!(template instanceof Object || template instanceof Array) || !(item instanceof Object || item instanceof Array)) {
-            console.log('b'+template+item);
+        // if they are not strictly equal, they both need to be Objects or Arrays containining Objects
+        if (!(template instanceof Object || template instanceof Array) || 
+            !(item instanceof Object || item instanceof Array)) {
             return false;
         }
 
@@ -77,7 +77,6 @@ import {
             }
 
             if (item[key] === undefined) {
-                console.log('1');
                 return false;
             }
 
@@ -88,13 +87,11 @@ import {
 
             // Numbers, Strings, Functions, Booleans must be strictly equal
             if (typeof (template[key]) !== "object") {
-                console.log('2');
                 return false;
             }
 
             // Objects and Arrays must be tested recursively
             if (!checkTemplateKeys(template[key], item[key])) {
-                console.log('3');
                 return false;
             }
         }
