@@ -30,7 +30,7 @@ import {
         }));
     }
 
-    // tests:
+    // test cases:
 
     test.beforeEach(t => {
         t.context.translator = new UbiiMessageTranslator();
