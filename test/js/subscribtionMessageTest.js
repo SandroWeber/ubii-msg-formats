@@ -5,17 +5,19 @@ import {
 
 (function () {
 
-    let createMessageSnapshotSubscribeUnsubscribe = () => {
-        return  {
+    // helper:
+
+    let getComparisonObjectSubscribeUnsubscribe = () => {
+        return {
             messageType: 'ubii',
             subscribtionMessage: {
                 deviceIdentifier: 'superDevice', 
                 subscribeTopicData: [
                     {
-                        topic: 'topic->subtopic',
+                        topic: 'topic->subtopic'
                     },
                     {
-                        topic: 'topic2->subtopic2',
+                        topic: 'topic2->subtopic2'
                     }
                 ],
                 unsubscribeTopicData: [
@@ -27,108 +29,119 @@ import {
         };
     };
 
-    let createMessageBasic = () => {
-        let translator = new UbiiMessageTranslator();
-
-        return translator.createMessageFromPayload(
-            translator.createPayload({
+    let getMessageBasic = (context) => {
+        return context.translator.createMessageFromPayload(
+            context.translator.createPayload({
             subscribtionMessage: {
                 deviceIdentifier: 'superDevice'
             }
         }));
     }
 
-    let createMessageSubscribeOnly = () => {
-        let translator = new UbiiMessageTranslator();
-
-        return translator.createMessageFromPayload(
-            translator.createPayload({
-                subscribtionMessage: {
-                    deviceIdentifier: 'superDevice',
-                    subscribeTopicData: [
-                        {
-                            topic: 'topic->subtopic'
-                        }
-                    ]
-                }
+    let getMessageSubscribeOnly = (context) => {
+        return context.translator.createMessageFromPayload(
+            context.translator.createPayload({
+            subscribtionMessage: {
+                deviceIdentifier: 'superDevice',
+                subscribeTopicData: [
+                    {
+                        topic: 'topic->subtopic'
+                    }
+                ]
+            }
         }));
     }
 
-    let createMessageUnsubscribeOnly = () => {
-        let translator = new UbiiMessageTranslator();
-
-        return translator.createMessageFromPayload(
-            translator.createPayload({
-                subscribtionMessage: {
-                    deviceIdentifier: 'superDevice',
-                    unsubscribeTopicData: [
-                        {
-                            topic: 'topic->subtopic'
-                        }
-                    ]
-                }
+    let getMessageUnsubscribeOnly = (context) => {
+        return context.translator.createMessageFromPayload(
+            context.translator.createPayload({
+            subscribtionMessage: {
+                deviceIdentifier: 'superDevice',
+                unsubscribeTopicData: [
+                    {
+                        topic: 'topic->subtopic'
+                    }
+                ]
+            }
         }));
     }
 
-    let createMessageSubscribeUnsubscribe = () => {
-        let translator = new UbiiMessageTranslator();
-
-        return translator.createMessageFromPayload(
-            translator.createPayload({
-                subscribtionMessage: {
-                    deviceIdentifier: 'superDevice',
-                    subscribeTopicData: [
-                        {
-                            topic: 'topic->subtopic',
-                        },
-                        {
-                            topic: 'topic2->subtopic2',
-                        }
-                    ],
-                    unsubscribeTopicData: [
-                        {
-                            topic: 'topic3->subtopic3'
-                        }
-                    ]
-                }
+    let getMessageSubscribeUnsubscribe = (context) => {
+        return context.translator.createMessageFromPayload(
+            context.translator.createPayload({
+            subscribtionMessage: {
+                deviceIdentifier: 'superDevice',
+                subscribeTopicData: [
+                    {
+                        topic: 'topic->subtopic',
+                    },
+                    {
+                        topic: 'topic2->subtopic2',
+                    }
+                ],
+                unsubscribeTopicData: [
+                    {
+                        topic: 'topic3->subtopic3'
+                    }
+                ]
+            }
         }));
     }
 
-    test('create basic', t => {
-        t.notThrows(() =>{
-            createMessageBasic();
-        });
+    // tests:
+
+    test.beforeEach(t => {
+        t.context.translator = new UbiiMessageTranslator();
     });
 
-    test('create subscribe only', t => {
+    test('create basic message', t => {
+        let message;
+
         t.notThrows(() =>{
-            createMessageSubscribeOnly();
+            message = getMessageBasic(t.context);
         });
+
+        t.snapshot(message);
     });
 
-    test('create unsubscribe only', t => {
+    test('create message with subscribe only', t => {
+        let message;
+
         t.notThrows(() =>{
-            createMessageUnsubscribeOnly();
+            message = getMessageSubscribeOnly(t.context);
         });
+
+        t.snapshot(message);
     });
 
-    test('create subscribe and unsubscribe', t => {
+    test('create message with unsubscribe only', t => {
+        let message;
+
         t.notThrows(() =>{
-            createMessageSubscribeUnsubscribe();
+            message =getMessageUnsubscribeOnly(t.context);
         });
+
+        t.snapshot(message);
     });
 
-   // test('structure', t => {
-      /*  let translator = new UbiiMessageTranslator();
-        let message = createMessageSubscribeUnsubscribe();
-        let snapshot = createMessageSnapshotSubscribeUnsubscribe();
+    test('create message with subscribe and unsubscribe', t => {
+        let message;
 
-        let result = translator.createBufferFromMessage(message);
-        //console.log('basicTopicDataMessage: buffer: ' + result.toString());
+        t.notThrows(() =>{
+            message = getMessageSubscribeUnsubscribe(t.context);
+        });
 
-        result = translator.createMessageFromBuffer(result);
-        //console.log('basicTopicDataMessage: after buffer message: ' + result.publishTopicData);
+        t.snapshot(message);
+    });
 
-       t.is(result.messageType, snapshot.messageType);*/
-    //});
+    test('structure', t => {
+        let messageOne = getMessageSubscribeUnsubscribe(t.context);
+        let comparisonObject = getComparisonObjectSubscribeUnsubscribe();
+        let buffer = t.context.translator.createBufferFromMessage(messageOne);
+        let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
+
+        t.snapshot(messageTwo);
+
+        t.true(JSON.stringify(messageTwo) === JSON.stringify(comparisonObject));
+    });
 })();
