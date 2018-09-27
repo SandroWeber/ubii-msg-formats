@@ -6,8 +6,7 @@
   "repository": "https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-formats",
   "author": {
     "name": "Daniel Dyrda",
-    "email": "dyrda@in.tum.de",
-    "url": ""
+    "email": "dyrda@in.tum.de"
   },
   "scripts": {
     "test": "ava -v -s"
