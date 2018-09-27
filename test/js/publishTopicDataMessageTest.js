@@ -5,7 +5,9 @@ import {
 
 (function () {
 
-    let createMessageSnapshotOne = () => {
+    // helper:
+
+    let getComparisonObjectOne = () => {
         return  {
             messageType: 'ubii',
             topicDataMessage: {
@@ -30,11 +32,32 @@ import {
         };
     };
 
-    let createMessageOne = () => {
-        let translator = new UbiiMessageTranslator();
+    let getStringifiedComparisonObjectOne = () => {
+        return  {
+            messageType: 'ubii',
+            topicDataMessage: {
+                deviceIdentifier: 'superDevice', 
+                publishTopicData: [
+                    {
+                        topic: 'awesomeTopic',
+                        number: 30
+                    },
+                    {
+                        topic: 'awesomeTopic2',
+                        vector3: {
+                            x: 2000.1,
+                            y: 100.0,
+                            z: 567.000678
+                        }
+                    }
+                ]
+            }
+        };
+    };
 
-        return translator.createMessageFromPayload(
-            translator.createPayload({
+    let getMessageOne = (context) => {
+        return context.translator.createMessageFromPayload(
+            context.translator.createPayload({
             topicDataMessage: {
                 deviceIdentifier: 'superDevice', 
                 publishTopicData: [
@@ -55,74 +78,46 @@ import {
         }));
     }
 
+    // tests:
+
+    test.beforeEach(t => {
+        t.context.translator = new UbiiMessageTranslator();
+    });
+
     test('create basic', t => {
         t.notThrows(() =>{
-            createMessageOne();
+            getMessageOne(t.context);
         });
     });
 
     test('structure', t => {
-        let translator = new UbiiMessageTranslator();
-        let message = createMessageOne();
-        let snapshot = createMessageSnapshotOne();
+        let messageOne = getMessageOne(t.context);
+        let comparisonObject = getComparisonObjectOne();
+        let stringifiedComparisonObject = getStringifiedComparisonObjectOne();
+        let buffer = t.context.translator.createBufferFromMessage(messageOne);
+        let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
 
-        
-        let buffer = translator.createBufferFromMessage(message);
+        t.snapshot(messageTwo);
 
-        let result = translator.createMessageFromBuffer(buffer);
-        //console.log('basicTopicDataMessage: after buffer message: ' + result.publishTopicData);
+        // stringified
+        t.true(JSON.stringify(messageTwo) === JSON.stringify(stringifiedComparisonObject));
 
-        t.is(result.topicDataMessage.publishTopicData.length, snapshot.topicDataMessage.publishTopicData.length);
-        t.is(result.messageType, snapshot.messageType);
-        t.is(result.topicDataMessage.publishTopicData[0].topic, snapshot.topicDataMessage.publishTopicData[0].topic);
-        t.is(result.topicDataMessage.publishTopicData[0].data, 'number');
-        t.is(result.topicDataMessage.publishTopicData[0].number, snapshot.topicDataMessage.publishTopicData[0].number);
-        t.is(result.topicDataMessage.publishTopicData[1].topic, snapshot.topicDataMessage.publishTopicData[1].topic);
-        t.is(result.topicDataMessage.publishTopicData[1].data, 'vector3');
-        t.is(result.topicDataMessage.publishTopicData[1].vector3.x, snapshot.topicDataMessage.publishTopicData[1].vector3.x);
-        t.is(result.topicDataMessage.publishTopicData[1].vector3.y, snapshot.topicDataMessage.publishTopicData[1].vector3.y);
-        t.is(result.topicDataMessage.publishTopicData[1].vector3.z, snapshot.topicDataMessage.publishTopicData[1].vector3.z);
+        // oneofs
+        t.is(messageTwo.topicDataMessage.publishTopicData.length, comparisonObject.topicDataMessage.publishTopicData.length);
 
-        result = translator.createPayloadFromMessage(result);
-        t.is(result.topicDataMessage.publishTopicData.length, snapshot.topicDataMessage.publishTopicData.length);
-        t.is(result.messageType, snapshot.messageType);
-        t.is(result.topicDataMessage.publishTopicData[0].topic, snapshot.topicDataMessage.publishTopicData[0].topic);
-        t.is(result.topicDataMessage.publishTopicData[0].number, snapshot.topicDataMessage.publishTopicData[0].number);
-        t.is(result.topicDataMessage.publishTopicData[1].topic, snapshot.topicDataMessage.publishTopicData[1].topic);
-        t.is(result.topicDataMessage.publishTopicData[1].vector3.x, snapshot.topicDataMessage.publishTopicData[1].vector3.x);
-        t.is(result.topicDataMessage.publishTopicData[1].vector3.y, snapshot.topicDataMessage.publishTopicData[1].vector3.y);
-        t.is(result.topicDataMessage.publishTopicData[1].vector3.z, snapshot.topicDataMessage.publishTopicData[1].vector3.z);
+        t.is(messageTwo.topicDataMessage.publishTopicData[0].topic, comparisonObject.topicDataMessage.publishTopicData[0].topic);
+        t.is(messageTwo.topicDataMessage.publishTopicData[0].data, 'number');
+        t.is(messageTwo.topicDataMessage.publishTopicData[0].number, comparisonObject.topicDataMessage.publishTopicData[0].number);
 
-    
+        t.is(messageTwo.topicDataMessage.publishTopicData[1].topic, comparisonObject.topicDataMessage.publishTopicData[1].topic);
+        t.is(messageTwo.topicDataMessage.publishTopicData[1].data, 'vector3');
+        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.x, comparisonObject.topicDataMessage.publishTopicData[1].vector3.x);
+        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.y, comparisonObject.topicDataMessage.publishTopicData[1].vector3.y);
+        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.z, comparisonObject.topicDataMessage.publishTopicData[1].vector3.z);
+
+        // as object
+        let payload = t.context.translator.createPayloadFromMessage(messageTwo);
+        t.true(JSON.stringify(payload) === JSON.stringify(stringifiedComparisonObject));
     });
 
-    test('valid buffer and JSON', t => {
-        let translator = new UbiiMessageTranslator();
-        let message = createMessageOne();
-        let snapshot = createMessageSnapshotOne();
-
-        
-        let buffer = translator.createBufferFromMessage(message);
-        //console.log('basicTopicDataMessage: buffer: ' + result.toString());
-        buffer = JSON.stringify(buffer, null, 4);
-        buffer = JSON.parse(buffer, (k, v) => {
-            if (
-              v !== null            &&
-              typeof v === 'object' && 
-              'type' in v           &&
-              v.type === 'Buffer'   &&
-              'data' in v           &&
-              Array.isArray(v.data)) {
-              return new Buffer(v.data);
-            }
-            return v;
-          });
-
-        let result = translator.createMessageFromBuffer(buffer);
-        //console.log('basicTopicDataMessage: after buffer message: ' + result.publishTopicData);
-
-    
-    });
-
-   
 })();
