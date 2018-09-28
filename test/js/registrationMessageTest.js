@@ -15,11 +15,9 @@ import {
         };
     };
 
-    let getMessageOne = () => {
-        let translator = new UbiiMessageTranslator();
-
-        return translator.createMessageFromPayload(
-            translator.createPayload({
+    let getMessageOne = (context) => {
+        return context.translator.createMessageFromPayload(
+            context.translator.createPayload({
                 registrationMessage: {
                     deviceIdentifier: 'superDevice',
                     deviceType: 0
