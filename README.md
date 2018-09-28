@@ -18,7 +18,9 @@ This project is managed as [Jira instance of the FAR group at the Technical Unit
 
 ### Tests
 
-Run ``npm test`` to process all standard tests. See the [Testing section](#testing) for more details on tests.
+- Run `npm test` to process all standard tests.
+- If snapshot assertions fail you can run `npm run-script update-snapshots` to process all standard tests and update all snapshots if the changes are intentional.
+- See the [Testing section](#testing) for more details on tests.
 
 ## Ubii Message
 
