@@ -1,6 +1,7 @@
 # ubii-msg-formats
 
-Hi. This is the repository for Ubii message formats. This repository contains everything about **what** ubii nodes and devices say to each other. If you are interested in how they speak to each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
+Hi. This is the repository for Ubii message formats. It contains everything about **what** ubii nodes and devices say to each other.
+If you are interested in how they speak to each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
 
 This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
 
@@ -19,19 +20,18 @@ This project is managed as [Jira instance of the FAR group at the Technical Unit
 
 Run ``npm test`` to process all standard tests. See the [Testing section](#testing) for more details on tests.
 
-
 ## Ubii Message
 
 > **Note:** The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages. You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
 
-The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped in an ubii message. A `ubiiMessage` has a submessage that contains further data that should be processed.
+The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped up in an ubii message. A `ubiiMessage` has a submessage that contains further data that should be processed.
 
-The proto file of the `ubiiMessage` imports all submessages. Thus the proto or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
+The proto file of the `ubiiMessage` imports all submessages. Thus the proto instance or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
 Check out the [oneof section](#oneof) below for how you can get the specified submessage by accessing the `oneof` properties.
 
 ### Submessages
 
-All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance. The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has one submessage.
+All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance. The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has exactly one submessage.
 
 #### Registration Message
 
@@ -69,8 +69,6 @@ According to Protocol Buffers documentation, the required field rule is not reco
 
 >Required Is Forever You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field – old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead. Some engineers at Google have come to the conclusion that using required does more harm than good; they prefer to use only optional and repeated. However, this view is not universal. --[Protobuf Documentation](https://developers.google.com/protocol-buffers/docs/proto)
 
-Therefore, we switch to our own validation methods, which are automatically applied when creating the payloads and should be applied before working with the messages.
-
 #### OneOf
 
 The use of oneofs in JS is very poorly documented. Therefore we have collected some snippets how you can use them in JS (and how they are used in this project).
@@ -85,13 +83,15 @@ oneof avatar {
 }
 ```
 
-- You can then acces the currently set oneof type at runtime via `message['oneof name']`. Example:
+- You can then acces the currently set oneof type at runtime via `message['oneof specifier']`. Example:
 
 ```js
 let currentOneofType = message.avatar;
 ```
 
-- You can then access the explicit value via `message[message['oneof name']]`. Example:
+> The `message['oneof specifier']` is a property of the proto `Message` prototype. It is not visible if the message is converted to a plain js object or `toString()` is used to convert it to a string.
+
+- You can then access the explicit value via `message[message['oneof specifier']]`. Example:
 
 ```js
 let currentOneofValue = message[message.avatar];
