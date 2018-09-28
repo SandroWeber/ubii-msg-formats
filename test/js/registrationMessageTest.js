@@ -5,7 +5,7 @@ import {
 
 (function () {
 
-    let getComparisonObject = () => {
+    let getComparisonObjectOne = () => {
         return {
             messageType: 'ubii',
             registrationMessage: {
@@ -15,7 +15,7 @@ import {
         };
     };
 
-    let getMessageBasic = () => {
+    let getMessageOne = () => {
         let translator = new UbiiMessageTranslator();
 
         return translator.createMessageFromPayload(
@@ -35,13 +35,13 @@ import {
 
     test('create basic', t => {
         t.notThrows(() => {
-            getMessageBasic(t.context);
+            getMessageOne(t.context);
         });
     });
 
     test('structure', t => {
-        let messageOne = getMessageBasic(t.context);
-        let comparisonObject = getComparisonObject();
+        let messageOne = getMessageOne(t.context);
+        let comparisonObject = getComparisonObjectOne();
         let buffer = t.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
         let object = t.context.translator.createPayloadFromMessage(buffer);
