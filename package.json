@@ -9,7 +9,8 @@
     "email": "dyrda@in.tum.de"
   },
   "scripts": {
-    "test": "ava -v -s"
+    "test": "ava -v -s",
+    "update-snapshots": "ava --update-snapshots"
   },
   "keywords": [
     ""
