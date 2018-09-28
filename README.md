@@ -24,30 +24,36 @@ This project is managed as [Jira instance of the FAR group at the Technical Unit
 
 ## Ubii Message
 
-> **Note:** The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages. You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
+> **Note:** The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages.
+> You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
 
-The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped up in an ubii message. A `ubiiMessage` has a submessage that contains further data that should be processed.
+The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped up in an ubii message.A `ubiiMessage` has a submessage that contains further data that should be processed.
 
 The proto file of the `ubiiMessage` imports all submessages. Thus the proto instance or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
 Check out the [oneof section](#oneof) below for how you can get the specified submessage by accessing the `oneof` properties.
 
 ### Submessages
 
-All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance. The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has exactly one submessage.
+All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance.
+The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has exactly one submessage.
 
 #### Registration Message
 
-`registrationMessage` instances are submessages related to the registration of devices and their corresponding clients. You can attach a `registrationMessage` as submessage to register a device at a ubii node.
+`registrationMessage` instances are submessages related to the registration of devices and their corresponding clients.
+You can attach a `registrationMessage` as submessage to register a device at a ubii node.
 
 #### Topic Data Message
 
 `topicDataMessage` instances are submessages related to the topic data. The `topicDataMessage` can have repeated entries of the `publishTopicData` proto structure. The structure contains a topic-data-pair.
 
-You can attach a `topicDataMessage` as submessage and send it to a master node in order to publish repeated topic-data-pairs in form of a `publishTopicData` structure to a master node. In return, master nodes will send `ubiiMessages` with `topicDataMessage` as submessage to devices in order to inform them about changes of their subscribed topics.
+You can attach a `topicDataMessage` as submessage and send it to a master node in order to publish repeated topic-data-pairs in form of a `publishTopicData` structure to a master node.
+In return, master nodes will send `ubiiMessages` with `topicDataMessage` as submessage to devices in order to inform them about changes of their subscribed topics.
 
 #### Subscribtion Message
 
-`subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data. The `subscribtionMessage` can have repeated `subscribeTopicData` and `unsubscribeTopicData` entries. The `subscribeTopicData` proto structure describes a topic a device wants to subscribe to. The `unsubscribeTopicData` proto structure describes a topic a device wants to unsubscribe.
+`subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data. The `subscribtionMessage` can have repeated `subscribeTopicData` and `unsubscribeTopicData` entries.
+The `subscribeTopicData` proto structure describes a topic a device wants to subscribe to.
+The `unsubscribeTopicData` proto structure describes a topic a device wants to unsubscribe.
 
 ## Topics
 
