@@ -29,7 +29,9 @@ class MessageTranslator {
                 this.loadProtoFileSync();
             }
         } catch (e) {
-            console.log('Unable to laod proto file synchronously. Use the async initializeAsync() method after object initialization. Orginal error message: ' + e);
+            console.log(`Unable to laod proto file synchronously. 
+            Use the async initializeAsync() method after object initialization. 
+            Orginal error message: ${e}`);
         }
     }
 
