@@ -52,7 +52,7 @@ import {
         // test oneof specifier
         test.is(messageTwo.topicDataMessage.publishTopicData[0].data,
             dataType);
-        // compare specific tempalte keys
+        // compare specific data type keys
         let keys = Object.keys(messageTwo.topicDataMessage.publishTopicData[0][dataType]);
         for (let i = 0; i < keys.length; i++) {
             test.is(messageTwo.topicDataMessage.publishTopicData[0][dataType][keys[i]],
@@ -98,7 +98,7 @@ import {
                 return false;
             }
         }
-        // only test one direction
+        // only test keys of the template entitiy
 
         return true;
     }
