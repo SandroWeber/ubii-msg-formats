@@ -1,16 +1,9 @@
 package ubii.dataStructure;
 syntax = "proto3";
 
-message Color
-{
-  oneof type{
-    Rgba rgba = 1;
-  }
-}
-
-message Rgba{
-  float r = 1;
-  float g = 2;
-  float b = 3;
-  optional float a = 4 [default = 1.0];
+message Color {
+    double r = 1;
+    double g = 2;
+    double b = 3;
+    double a = 4;
 }

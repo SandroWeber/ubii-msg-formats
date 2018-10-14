@@ -5,12 +5,14 @@ import {
 
 (function () {
 
+    // helepers:
+
     let getComparisonObjectOne = () => {
         return {
             messageType: 'ubii',
-            registrationMessage: {
-                deviceIdentifier: 'superDevice',
-                deviceType: 'PARTICIPANT'
+            errorMessage: {
+                name: 'error',
+                message: 'An error has occured.'
             }
         };
     };
@@ -18,9 +20,9 @@ import {
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload(
             context.translator.createPayload({
-                registrationMessage: {
-                    deviceIdentifier: 'superDevice',
-                    deviceType: 0
+                errorMessage: {
+                    name: 'error',
+                    message: 'An error has occured.'
                 }
             }));
     }
@@ -42,7 +44,6 @@ import {
         let comparisonObject = getComparisonObjectOne();
         let buffer = t.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
-        let object = t.context.translator.createPayloadFromMessage(buffer);
 
         t.snapshot(messageTwo);
 

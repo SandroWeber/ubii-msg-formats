@@ -2,5 +2,6 @@ package ubii.error;
 syntax = "proto3";
 
 message ErrorMessage {
-    string error_message = 1;
+    string name = 1;
+    string message = 2;
 }
