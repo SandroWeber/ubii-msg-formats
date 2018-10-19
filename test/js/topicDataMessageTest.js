@@ -7,33 +7,33 @@ import {
 
     // helper:
 
-    let getMessageWithTopicDataEntries = (context, topicDataEntries) => {
+    let getMessageWithTopicDataRecords = (context, topicDataRecords) => {
         return context.translator.createMessageFromPayload(
             context.translator.createPayload({
                 topicDataMessage: {
                     deviceIdentifier: 'superDevice',
-                    topicDataEntries: topicDataEntries
+                    topicDataRecords: topicDataRecords
                 }
             }));
     }
 
-    let getComparisonObjectWithTopicDataEntries = (topicDataEntries) => {
+    let getComparisonObjectWithTopicDataRecords = (topicDataRecords) => {
         return {
             messageType: 'ubii',
             topicDataMessage: {
                 deviceIdentifier: 'superDevice',
-                topicDataEntries: topicDataEntries
+                topicDataRecords: topicDataRecords
             }
         };
     };
 
-    let generalDataStructureTestProcess = (test, rawTopicDataEntries) => {
-        let topicDataEntries = JSON.parse(JSON.stringify(rawTopicDataEntries));
-        delete topicDataEntries[0].type;
-        let dataType = rawTopicDataEntries[0].type;
-        let comparisonObject = getComparisonObjectWithTopicDataEntries(topicDataEntries);
-        let rawComparisonObject = getComparisonObjectWithTopicDataEntries(rawTopicDataEntries);
-        let messageOne = getMessageWithTopicDataEntries(test.context, topicDataEntries);
+    let generalDataStructureTestProcess = (test, rawTopicDataRecords) => {
+        let topicDataRecords = JSON.parse(JSON.stringify(rawTopicDataRecords));
+        delete topicDataRecords[0].type;
+        let dataType = rawTopicDataRecords[0].type;
+        let comparisonObject = getComparisonObjectWithTopicDataRecords(topicDataRecords);
+        let rawComparisonObject = getComparisonObjectWithTopicDataRecords(rawTopicDataRecords);
+        let messageOne = getMessageWithTopicDataRecords(test.context, topicDataRecords);
         let buffer = test.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = test.context.translator.createMessageFromBuffer(buffer);
 
@@ -46,17 +46,17 @@ import {
         // test stringified object
         let payload = test.context.translator.createPayloadFromMessage(messageTwo);
         test.true(JSON.stringify(payload) === JSON.stringify(comparisonObject));
-        // test topicDataEntries topic
-        test.is(messageTwo.topicDataMessage.topicDataEntries[0].topic,
-            comparisonObject.topicDataMessage.topicDataEntries[0].topic);
+        // test topicDataRecords topic
+        test.is(messageTwo.topicDataMessage.topicDataRecords[0].topic,
+            comparisonObject.topicDataMessage.topicDataRecords[0].topic);
         // test oneof specifier
-        test.is(messageTwo.topicDataMessage.topicDataEntries[0].type,
+        test.is(messageTwo.topicDataMessage.topicDataRecords[0].type,
             dataType);
         // compare specific data type keys
-        let keys = Object.keys(messageTwo.topicDataMessage.topicDataEntries[0][dataType]);
+        let keys = Object.keys(messageTwo.topicDataMessage.topicDataRecords[0][dataType]);
         for (let i = 0; i < keys.length; i++) {
-            test.is(messageTwo.topicDataMessage.topicDataEntries[0][dataType][keys[i]],
-                comparisonObject.topicDataMessage.topicDataEntries[0][dataType][keys[i]]);
+            test.is(messageTwo.topicDataMessage.topicDataRecords[0][dataType][keys[i]],
+                comparisonObject.topicDataMessage.topicDataRecords[0][dataType][keys[i]]);
         }
 
         return messageTwo;
@@ -111,7 +111,7 @@ import {
 
     test('create basic', t => {
         t.notThrows(() => {
-            getMessageWithTopicDataEntries(t.context,
+            getMessageWithTopicDataRecords(t.context,
                 [{
                         topic: 'awesomeTopic',
                         number: 30
@@ -129,7 +129,7 @@ import {
     });
 
     test('basic structure', t => {
-        let messageOne = getMessageWithTopicDataEntries(t.context,
+        let messageOne = getMessageWithTopicDataRecords(t.context,
             [{
                     topic: 'awesomeTopic',
                     number: 30
@@ -143,7 +143,7 @@ import {
                     }
                 }
             ]);
-        let comparisonObject = getComparisonObjectWithTopicDataEntries(
+        let comparisonObject = getComparisonObjectWithTopicDataRecords(
             [{
                     topic: 'awesomeTopic',
                     type: 'number',
@@ -159,7 +159,7 @@ import {
                     }
                 }
             ]);
-        let rawComparisonObject = getComparisonObjectWithTopicDataEntries(
+        let rawComparisonObject = getComparisonObjectWithTopicDataRecords(
             [{
                     topic: 'awesomeTopic',
                     number: 30
@@ -182,24 +182,24 @@ import {
         t.true(JSON.stringify(messageTwo) === JSON.stringify(rawComparisonObject));
 
         // oneofs
-        t.is(messageTwo.topicDataMessage.topicDataEntries.length,
-            comparisonObject.topicDataMessage.topicDataEntries.length);
+        t.is(messageTwo.topicDataMessage.topicDataRecords.length,
+            comparisonObject.topicDataMessage.topicDataRecords.length);
 
-        t.is(messageTwo.topicDataMessage.topicDataEntries[0].topic,
-            comparisonObject.topicDataMessage.topicDataEntries[0].topic);
-        t.is(messageTwo.topicDataMessage.topicDataEntries[0].type, 'number');
-        t.is(messageTwo.topicDataMessage.topicDataEntries[0].number,
-            comparisonObject.topicDataMessage.topicDataEntries[0].number);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[0].topic,
+            comparisonObject.topicDataMessage.topicDataRecords[0].topic);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[0].type, 'number');
+        t.is(messageTwo.topicDataMessage.topicDataRecords[0].number,
+            comparisonObject.topicDataMessage.topicDataRecords[0].number);
 
-        t.is(messageTwo.topicDataMessage.topicDataEntries[1].topic,
-            comparisonObject.topicDataMessage.topicDataEntries[1].topic);
-        t.is(messageTwo.topicDataMessage.topicDataEntries[1].type, 'vector3');
-        t.is(messageTwo.topicDataMessage.topicDataEntries[1].vector3.x,
-            comparisonObject.topicDataMessage.topicDataEntries[1].vector3.x);
-        t.is(messageTwo.topicDataMessage.topicDataEntries[1].vector3.y,
-            comparisonObject.topicDataMessage.topicDataEntries[1].vector3.y);
-        t.is(messageTwo.topicDataMessage.topicDataEntries[1].vector3.z,
-            comparisonObject.topicDataMessage.topicDataEntries[1].vector3.z);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].topic,
+            comparisonObject.topicDataMessage.topicDataRecords[1].topic);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].type, 'vector3');
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].vector3.x,
+            comparisonObject.topicDataMessage.topicDataRecords[1].vector3.x);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].vector3.y,
+            comparisonObject.topicDataMessage.topicDataRecords[1].vector3.y);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].vector3.z,
+            comparisonObject.topicDataMessage.topicDataRecords[1].vector3.z);
 
         // as object
         let payload = t.context.translator.createPayloadFromMessage(messageTwo);
@@ -207,37 +207,37 @@ import {
     });
 
     test('number', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'number',
             number: 8098
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('boolean', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'boolean',
             boolean: false
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('string', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'string',
             string: 'I am a string.'
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('vector2', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'vector2',
             vector2: {
@@ -246,11 +246,11 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('vector3', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'vector3',
             vector3: {
@@ -260,11 +260,11 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('vector4', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'vector4',
             vector4: {
@@ -275,11 +275,11 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('quaternion', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeColorTopic',
             type: 'quaternion',
             quaternion: {
@@ -290,11 +290,11 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('matrix3x2', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'matrix3x2',
             matrix3x2: {
@@ -309,11 +309,11 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('matrix4x4', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
             type: 'matrix4x4',
             matrix4x4: {
@@ -339,11 +339,11 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('color', t => {
-        let rawTopicDataEntries = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeColorTopic',
             type: 'color',
             color: {
@@ -354,7 +354,7 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawTopicDataEntries);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
 })();
