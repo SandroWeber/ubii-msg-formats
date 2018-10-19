@@ -7,33 +7,33 @@ import {
 
     // helper:
 
-    let getMessageWithPublishTopicData = (context, publishTopicData) => {
+    let getMessageWithPublishTopicData = (context, topicData) => {
         return context.translator.createMessageFromPayload(
             context.translator.createPayload({
                 topicDataMessage: {
                     deviceIdentifier: 'superDevice',
-                    publishTopicData: publishTopicData
+                    topicData: topicData
                 }
             }));
     }
 
-    let getComparisonObjectWithPublishTopicData = (publishTopicData) => {
+    let getComparisonObjectWithPublishTopicData = (topicData) => {
         return {
             messageType: 'ubii',
             topicDataMessage: {
                 deviceIdentifier: 'superDevice',
-                publishTopicData: publishTopicData
+                topicData: topicData
             }
         };
     };
 
     let generalDataStructureTestProcess = (test, rawPublishTopicData) => {
-        let publishTopicData = JSON.parse(JSON.stringify(rawPublishTopicData));
-        delete publishTopicData[0].data;
+        let topicData = JSON.parse(JSON.stringify(rawPublishTopicData));
+        delete topicData[0].data;
         let dataType = rawPublishTopicData[0].data;
-        let comparisonObject = getComparisonObjectWithPublishTopicData(publishTopicData);
+        let comparisonObject = getComparisonObjectWithPublishTopicData(topicData);
         let rawComparisonObject = getComparisonObjectWithPublishTopicData(rawPublishTopicData);
-        let messageOne = getMessageWithPublishTopicData(test.context, publishTopicData);
+        let messageOne = getMessageWithPublishTopicData(test.context, topicData);
         let buffer = test.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = test.context.translator.createMessageFromBuffer(buffer);
 
@@ -47,16 +47,16 @@ import {
         let payload = test.context.translator.createPayloadFromMessage(messageTwo);
         test.true(JSON.stringify(payload) === JSON.stringify(comparisonObject));
         // test topicData topic
-        test.is(messageTwo.topicDataMessage.publishTopicData[0].topic,
-            comparisonObject.topicDataMessage.publishTopicData[0].topic);
+        test.is(messageTwo.topicDataMessage.topicData[0].topic,
+            comparisonObject.topicDataMessage.topicData[0].topic);
         // test oneof specifier
-        test.is(messageTwo.topicDataMessage.publishTopicData[0].data,
+        test.is(messageTwo.topicDataMessage.topicData[0].data,
             dataType);
         // compare specific data type keys
-        let keys = Object.keys(messageTwo.topicDataMessage.publishTopicData[0][dataType]);
+        let keys = Object.keys(messageTwo.topicDataMessage.topicData[0][dataType]);
         for (let i = 0; i < keys.length; i++) {
-            test.is(messageTwo.topicDataMessage.publishTopicData[0][dataType][keys[i]],
-                comparisonObject.topicDataMessage.publishTopicData[0][dataType][keys[i]]);
+            test.is(messageTwo.topicDataMessage.topicData[0][dataType][keys[i]],
+                comparisonObject.topicDataMessage.topicData[0][dataType][keys[i]]);
         }
 
         return messageTwo;
@@ -182,24 +182,24 @@ import {
         t.true(JSON.stringify(messageTwo) === JSON.stringify(rawComparisonObject));
 
         // oneofs
-        t.is(messageTwo.topicDataMessage.publishTopicData.length,
-            comparisonObject.topicDataMessage.publishTopicData.length);
+        t.is(messageTwo.topicDataMessage.topicData.length,
+            comparisonObject.topicDataMessage.topicData.length);
 
-        t.is(messageTwo.topicDataMessage.publishTopicData[0].topic,
-            comparisonObject.topicDataMessage.publishTopicData[0].topic);
-        t.is(messageTwo.topicDataMessage.publishTopicData[0].data, 'number');
-        t.is(messageTwo.topicDataMessage.publishTopicData[0].number,
-            comparisonObject.topicDataMessage.publishTopicData[0].number);
+        t.is(messageTwo.topicDataMessage.topicData[0].topic,
+            comparisonObject.topicDataMessage.topicData[0].topic);
+        t.is(messageTwo.topicDataMessage.topicData[0].data, 'number');
+        t.is(messageTwo.topicDataMessage.topicData[0].number,
+            comparisonObject.topicDataMessage.topicData[0].number);
 
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].topic,
-            comparisonObject.topicDataMessage.publishTopicData[1].topic);
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].data, 'vector3');
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.x,
-            comparisonObject.topicDataMessage.publishTopicData[1].vector3.x);
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.y,
-            comparisonObject.topicDataMessage.publishTopicData[1].vector3.y);
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.z,
-            comparisonObject.topicDataMessage.publishTopicData[1].vector3.z);
+        t.is(messageTwo.topicDataMessage.topicData[1].topic,
+            comparisonObject.topicDataMessage.topicData[1].topic);
+        t.is(messageTwo.topicDataMessage.topicData[1].data, 'vector3');
+        t.is(messageTwo.topicDataMessage.topicData[1].vector3.x,
+            comparisonObject.topicDataMessage.topicData[1].vector3.x);
+        t.is(messageTwo.topicDataMessage.topicData[1].vector3.y,
+            comparisonObject.topicDataMessage.topicData[1].vector3.y);
+        t.is(messageTwo.topicDataMessage.topicData[1].vector3.z,
+            comparisonObject.topicDataMessage.topicData[1].vector3.z);
 
         // as object
         let payload = t.context.translator.createPayloadFromMessage(messageTwo);
