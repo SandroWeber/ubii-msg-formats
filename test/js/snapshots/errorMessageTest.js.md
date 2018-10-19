@@ -1,4 +1,4 @@
-# Snapshot report for `test\js\errorMessageTest.js`
+# Snapshot report for `test/js/errorMessageTest.js`
 
 The actual snapshot is saved in `errorMessageTest.js.snap`.
 
