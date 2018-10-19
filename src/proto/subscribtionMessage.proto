@@ -3,14 +3,14 @@ syntax = "proto3";
 
 message SubscribtionMessage {
     string device_identifier = 1;
-    repeated SubscribeEntry subscribe_entries = 2;
-    repeated UnsubscribeEntry unsubscribe_entries = 3;
+    repeated SubscribtionEntry subscribtion_entries = 2;
+    repeated UnsubscribtionEntry unsubscribtion_entries = 3;
 }
 
-message SubscribeEntry {
+message SubscribtionEntry {
     string topic = 1; 
 }
 
-message UnsubscribeEntry {
+message UnsubscribtionEntry {
     string topic = 1; 
 }
