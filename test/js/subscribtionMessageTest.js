@@ -12,14 +12,14 @@ import {
             messageType: 'ubii',
             subscribtionMessage: {
                 deviceIdentifier: 'superDevice',
-                subscribeTopic: [{
+                subscribeEntries: [{
                         topic: 'topic->subtopic'
                     },
                     {
                         topic: 'topic2->subtopic2'
                     }
                 ],
-                unsubscribeTopic: [{
+                unsubscribeEntries: [{
                     topic: 'topic3->subtopic3',
                 }]
             }
@@ -40,7 +40,7 @@ import {
             context.translator.createPayload({
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
-                    subscribeTopic: [{
+                    subscribeEntries: [{
                         topic: 'topic->subtopic'
                     }]
                 }
@@ -52,7 +52,7 @@ import {
             context.translator.createPayload({
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
-                    unsubscribeTopic: [{
+                    unsubscribeEntries: [{
                         topic: 'topic->subtopic'
                     }]
                 }
@@ -64,14 +64,14 @@ import {
             context.translator.createPayload({
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
-                    subscribeTopic: [{
+                    subscribeEntries: [{
                             topic: 'topic->subtopic',
                         },
                         {
                             topic: 'topic2->subtopic2',
                         }
                     ],
-                    unsubscribeTopic: [{
+                    unsubscribeEntries: [{
                         topic: 'topic3->subtopic3'
                     }]
                 }
