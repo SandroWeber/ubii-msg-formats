@@ -44,16 +44,16 @@ You can attach a `registrationMessage` as submessage to register a device at a u
 
 #### Topic Data Message
 
-`topicDataMessage` instances are submessages related to the topic data. The `topicDataMessage` can have repeated entries of the `publishTopicData` proto structure. The structure contains a topic-data-pair.
+`topicDataMessage` instances are submessages related to the topic data. The `topicDataMessage` can have repeated entries of the `topicDataRecords` proto structure. The structure contains a topic-data-pair.
 
-You can attach a `topicDataMessage` as submessage and send it to a master node in order to publish repeated topic-data-pairs in form of a `publishTopicData` structure to a master node.
+You can attach a `topicDataMessage` as submessage and send it to a master node in order to publish repeated topic-data-pairs in form of a `topicDataRecord` structure to a master node.
 In return, master nodes will send `ubiiMessages` with `topicDataMessage` as submessage to devices in order to inform them about changes of their subscribed topics.
 
 #### Subscribtion Message
 
-`subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data. The `subscribtionMessage` can have repeated `subscribeTopicData` and `unsubscribeTopicData` entries.
-The `subscribeTopicData` proto structure describes a topic a device wants to subscribe to.
-The `unsubscribeTopicData` proto structure describes a topic a device wants to unsubscribe.
+`subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data. The `subscribtionMessage` can have repeated `subscribtionRecord` and `unsubscribtionRecord` entries.
+The `subscribtionRecord` proto structure describes a topic a device wants to subscribe to.
+The `unsubscribtionRecord` proto structure describes a topic a device wants to unsubscribe.
 
 ## Topics
 
