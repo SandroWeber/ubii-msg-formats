@@ -11,12 +11,12 @@ import "./dataStructure/color.proto";
 
 message TopicDataMessage {
     string device_identifier = 1;
-    repeated TopicData topic_data = 2;
+    repeated TopicDataEntry topic_data_entries = 2;
 }
 
-message TopicData {
+message TopicDataEntry {
     string topic = 1;
-    oneof data{
+    oneof type{
         double number = 2;
         bool boolean = 3;
         string string = 4;
