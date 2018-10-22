@@ -121,6 +121,17 @@ class MessageTranslator {
 
         return message;
     }
+
+    /**
+     * Creates and returns an encoded buffer from a specified payload object.
+     * @param {Object} payload Valid plain JavaScript payload object.
+     * @return Returns a Uint8Array (browser) or Buffer (node).
+     */
+    createBufferFromPayload(payload){
+        this.verify(payload);
+
+        return this.proto.encode( this.proto.create(payload) ).finish();
+    }
 }
 
 module.exports = MessageTranslator;
