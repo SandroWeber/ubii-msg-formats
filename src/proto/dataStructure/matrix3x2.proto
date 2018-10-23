@@ -2,10 +2,10 @@ package ubii.dataStructure;
 syntax = "proto3";
 
 message Matrix3x2 {
-    double m11 = 1;
-    double m12 = 2;
-    double m21 = 3;
-    double m22 = 4;
-    double m31 = 5;
-    double m32 = 6;
+    double m00 = 1;
+    double m01 = 2;
+    double m10 = 3;
+    double m11 = 4;
+    double m20 = 5;
+    double m21 = 6;
 }

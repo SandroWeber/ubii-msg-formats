@@ -2,24 +2,24 @@ package ubii.dataStructure;
 syntax = "proto3";
 
 message Matrix4x4 {
-    double m11 = 1;
-    double m12 = 2;
-    double m13 = 3;
-    double m14 = 4;
+    double m00 = 1;
+    double m01 = 2;
+    double m02 = 3;
+    double m03 = 4;
 
-    double m21 = 5;
-    double m22 = 6;
-    double m23 = 7;
-    double m24 = 8;
+    double m10 = 5;
+    double m11 = 6;
+    double m12 = 7;
+    double m13 = 8;
 
-    double m31 = 9;
-    double m32 = 10;
-    double m33 = 11;
-    double m34 = 12;
+    double m20 = 9;
+    double m21 = 10;
+    double m22 = 11;
+    double m23 = 12;
 
-    double m41 = 13;
-    double m42 = 14;
-    double m43 = 15;
-    double m44 = 16;
+    double m30 = 13;
+    double m31 = 14;
+    double m32 = 15;
+    double m33 = 16;
     
 }
