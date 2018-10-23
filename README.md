@@ -110,7 +110,6 @@ let currentOneofValue = message[message.avatar];
 This repository provides `messageTranslator` classes. These classes provide all relevant functionalities to work with the proto messages.
 
 - The main aspect is on a validated translating between the three proto message states: buffer <-> message <-> payload
-- Payloads can be created with specific `createPayload` methods provided by the translator classes or directly by plain JS objects reflecting the structure of the proto classes.
 
 ## Testing
 
