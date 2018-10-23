@@ -116,7 +116,7 @@ This repository provides `messageTranslator` classes. These classes provide all 
 This module uses the [AVA](https://github.com/avajs/ava) test runner.
 
 You can add new tests to the test folder. Entry point for the test runner is test.js within the test folder. See the [AVA Documentation](https://github.com/avajs/ava#contents) for more details on how to create new test cases for AVA.
-g
+
 ## Tips
 
 There are extensions availabe for Visual Studio Code that support Proto3 files (Sytntax highlighting, syntax validation, ...). Just search for *ext:proto* in the marketplace.
