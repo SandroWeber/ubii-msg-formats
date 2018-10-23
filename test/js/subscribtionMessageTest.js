@@ -9,7 +9,6 @@ import {
 
     let getComparisonObjectSubscribeUnsubscribe = () => {
         return {
-            messageType: 'ubii',
             subscribtionMessage: {
                 deviceIdentifier: 'superDevice',
                 subscribeTopicData: [{
@@ -28,40 +27,40 @@ import {
 
     let getMessageBasic = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice'
                 }
-            }));
+            });
     }
 
     let getMessageSubscribeOnly = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
                     subscribeTopicData: [{
                         topic: 'topic->subtopic'
                     }]
                 }
-            }));
+            });
     }
 
     let getMessageUnsubscribeOnly = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
                     unsubscribeTopicData: [{
                         topic: 'topic->subtopic'
                     }]
                 }
-            }));
+            });
     }
 
     let getMessageSubscribeUnsubscribe = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
                     subscribeTopicData: [{
@@ -75,7 +74,7 @@ import {
                         topic: 'topic3->subtopic3'
                     }]
                 }
-            }));
+            });
     }
 
     // test cases:

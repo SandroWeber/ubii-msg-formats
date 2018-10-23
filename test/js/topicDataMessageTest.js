@@ -9,17 +9,16 @@ import {
 
     let getMessageWithPublishTopicData = (context, publishTopicData) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 topicDataMessage: {
                     deviceIdentifier: 'superDevice',
                     publishTopicData: publishTopicData
                 }
-            }));
+            });
     }
 
     let getComparisonObjectWithPublishTopicData = (publishTopicData) => {
         return {
-            messageType: 'ubii',
             topicDataMessage: {
                 deviceIdentifier: 'superDevice',
                 publishTopicData: publishTopicData
@@ -298,14 +297,14 @@ import {
             topic: 'awesomeTopic',
             data: 'matrix3x2',
             matrix3x2: {
-                m11: 723974298.890,
-                m12: 8275786.809088,
+                m00: 723974298.890,
+                m01: 8275786.809088,
 
-                m21: 1324.890,
-                m22: 5473.809088,
+                m10: 1324.890,
+                m11: 5473.809088,
 
-                m31: 36735.890,
-                m32: 3736753.36573,
+                m20: 36735.890,
+                m21: 3736753.36573,
             }
         }];
 
@@ -317,25 +316,25 @@ import {
             topic: 'awesomeTopic',
             data: 'matrix4x4',
             matrix4x4: {
-                m11: 723974298.890,
-                m12: 8275786.809088,
-                m13: 723974298.890,
-                m14: 8275786.809088,
+                m00: 723974298.890,
+                m01: 8275786.809088,
+                m02: 723974298.890,
+                m03: 8275786.809088,
 
-                m21: 56765.5673,
-                m22: 98679.689689,
-                m23: 689667.890,
-                m24: 46746.809047588,
+                m10: 56765.5673,
+                m11: 98679.689689,
+                m12: 689667.890,
+                m13: 46746.809047588,
 
-                m31: 4675.890,
-                m32: 82755674786.8096088,
-                m33: 7235467974298.845690,
-                m34: 82754567786.8094567088,
+                m20: 4675.890,
+                m21: 82755674786.8096088,
+                m22: 7235467974298.845690,
+                m23: 82754567786.8094567088,
 
-                m41: 46746577645.890,
-                m42: 82754657786.809476088,
-                m43: 4567.890,
-                m44: 47467.809047688,
+                m30: 46746577645.890,
+                m31: 82754657786.809476088,
+                m32: 4567.890,
+                m33: 47467.809047688,
             }
         }];
 

@@ -9,7 +9,7 @@ import {
 
     let getTopicDataUbiiMessage = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 topicDataMessage: {
                     deviceIdentifier: 'superDevice',
                     publishTopicData: [{
@@ -26,7 +26,7 @@ import {
                         }
                     ]
                 }
-            }));
+            });
     }
 
     // test cases:
@@ -39,10 +39,10 @@ import {
 
         t.notThrows(() => {
             let message = t.context.translator.createMessageFromPayload(
-                t.context.translator.createPayload({
+                {
                     rawBuffer: 'awesome cargo content',
                     why: 'why?'
-                }));
+                });
         });
     });
 

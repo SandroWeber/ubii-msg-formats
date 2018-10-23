@@ -7,7 +7,6 @@ import {
 
     let getComparisonObjectOne = () => {
         return {
-            messageType: 'ubii',
             registrationMessage: {
                 deviceIdentifier: 'superDevice',
                 deviceType: 'PARTICIPANT'
@@ -17,12 +16,12 @@ import {
 
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 registrationMessage: {
                     deviceIdentifier: 'superDevice',
                     deviceType: 0
                 }
-            }));
+            });
     }
 
     // test cases:
