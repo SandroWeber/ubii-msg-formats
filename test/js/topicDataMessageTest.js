@@ -7,32 +7,32 @@ import {
 
     // helper:
 
-    let getMessageWithPublishTopicData = (context, publishTopicData) => {
+    let getMessageWithTopicDataRecords = (context, topicDataRecords) => {
         return context.translator.createMessageFromPayload(
             {
                 topicDataMessage: {
                     deviceIdentifier: 'superDevice',
-                    publishTopicData: publishTopicData
+                    topicDataRecords: topicDataRecords
                 }
             });
     }
 
-    let getComparisonObjectWithPublishTopicData = (publishTopicData) => {
+    let getComparisonObjectWithTopicDataRecords = (topicDataRecords) => {
         return {
             topicDataMessage: {
                 deviceIdentifier: 'superDevice',
-                publishTopicData: publishTopicData
+                topicDataRecords: topicDataRecords
             }
         };
     };
 
-    let generalDataStructureTestProcess = (test, rawPublishTopicData) => {
-        let publishTopicData = JSON.parse(JSON.stringify(rawPublishTopicData));
-        delete publishTopicData[0].data;
-        let dataType = rawPublishTopicData[0].data;
-        let comparisonObject = getComparisonObjectWithPublishTopicData(publishTopicData);
-        let rawComparisonObject = getComparisonObjectWithPublishTopicData(rawPublishTopicData);
-        let messageOne = getMessageWithPublishTopicData(test.context, publishTopicData);
+    let generalDataStructureTestProcess = (test, rawTopicDataRecords) => {
+        let topicDataRecords = JSON.parse(JSON.stringify(rawTopicDataRecords));
+        delete topicDataRecords[0].type;
+        let dataType = rawTopicDataRecords[0].type;
+        let comparisonObject = getComparisonObjectWithTopicDataRecords(topicDataRecords);
+        let rawComparisonObject = getComparisonObjectWithTopicDataRecords(rawTopicDataRecords);
+        let messageOne = getMessageWithTopicDataRecords(test.context, topicDataRecords);
         let buffer = test.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = test.context.translator.createMessageFromBuffer(buffer);
 
@@ -45,17 +45,17 @@ import {
         // test stringified object
         let payload = test.context.translator.createPayloadFromMessage(messageTwo);
         test.true(JSON.stringify(payload) === JSON.stringify(comparisonObject));
-        // test topicData topic
-        test.is(messageTwo.topicDataMessage.publishTopicData[0].topic,
-            comparisonObject.topicDataMessage.publishTopicData[0].topic);
+        // test topicDataRecords topic
+        test.is(messageTwo.topicDataMessage.topicDataRecords[0].topic,
+            comparisonObject.topicDataMessage.topicDataRecords[0].topic);
         // test oneof specifier
-        test.is(messageTwo.topicDataMessage.publishTopicData[0].data,
+        test.is(messageTwo.topicDataMessage.topicDataRecords[0].type,
             dataType);
         // compare specific data type keys
-        let keys = Object.keys(messageTwo.topicDataMessage.publishTopicData[0][dataType]);
+        let keys = Object.keys(messageTwo.topicDataMessage.topicDataRecords[0][dataType]);
         for (let i = 0; i < keys.length; i++) {
-            test.is(messageTwo.topicDataMessage.publishTopicData[0][dataType][keys[i]],
-                comparisonObject.topicDataMessage.publishTopicData[0][dataType][keys[i]]);
+            test.is(messageTwo.topicDataMessage.topicDataRecords[0][dataType][keys[i]],
+                comparisonObject.topicDataMessage.topicDataRecords[0][dataType][keys[i]]);
         }
 
         return messageTwo;
@@ -110,7 +110,7 @@ import {
 
     test('create basic', t => {
         t.notThrows(() => {
-            getMessageWithPublishTopicData(t.context,
+            getMessageWithTopicDataRecords(t.context,
                 [{
                         topic: 'awesomeTopic',
                         number: 30
@@ -128,7 +128,7 @@ import {
     });
 
     test('basic structure', t => {
-        let messageOne = getMessageWithPublishTopicData(t.context,
+        let messageOne = getMessageWithTopicDataRecords(t.context,
             [{
                     topic: 'awesomeTopic',
                     number: 30
@@ -142,15 +142,15 @@ import {
                     }
                 }
             ]);
-        let comparisonObject = getComparisonObjectWithPublishTopicData(
+        let comparisonObject = getComparisonObjectWithTopicDataRecords(
             [{
                     topic: 'awesomeTopic',
-                    data: 'number',
+                    type: 'number',
                     number: 30
                 },
                 {
                     topic: 'awesomeTopic2',
-                    data: 'vector3',
+                    type: 'vector3',
                     vector3: {
                         x: 2000.1,
                         y: 100.0,
@@ -158,7 +158,7 @@ import {
                     }
                 }
             ]);
-        let rawComparisonObject = getComparisonObjectWithPublishTopicData(
+        let rawComparisonObject = getComparisonObjectWithTopicDataRecords(
             [{
                     topic: 'awesomeTopic',
                     number: 30
@@ -181,24 +181,24 @@ import {
         t.true(JSON.stringify(messageTwo) === JSON.stringify(rawComparisonObject));
 
         // oneofs
-        t.is(messageTwo.topicDataMessage.publishTopicData.length,
-            comparisonObject.topicDataMessage.publishTopicData.length);
+        t.is(messageTwo.topicDataMessage.topicDataRecords.length,
+            comparisonObject.topicDataMessage.topicDataRecords.length);
 
-        t.is(messageTwo.topicDataMessage.publishTopicData[0].topic,
-            comparisonObject.topicDataMessage.publishTopicData[0].topic);
-        t.is(messageTwo.topicDataMessage.publishTopicData[0].data, 'number');
-        t.is(messageTwo.topicDataMessage.publishTopicData[0].number,
-            comparisonObject.topicDataMessage.publishTopicData[0].number);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[0].topic,
+            comparisonObject.topicDataMessage.topicDataRecords[0].topic);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[0].type, 'number');
+        t.is(messageTwo.topicDataMessage.topicDataRecords[0].number,
+            comparisonObject.topicDataMessage.topicDataRecords[0].number);
 
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].topic,
-            comparisonObject.topicDataMessage.publishTopicData[1].topic);
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].data, 'vector3');
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.x,
-            comparisonObject.topicDataMessage.publishTopicData[1].vector3.x);
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.y,
-            comparisonObject.topicDataMessage.publishTopicData[1].vector3.y);
-        t.is(messageTwo.topicDataMessage.publishTopicData[1].vector3.z,
-            comparisonObject.topicDataMessage.publishTopicData[1].vector3.z);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].topic,
+            comparisonObject.topicDataMessage.topicDataRecords[1].topic);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].type, 'vector3');
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].vector3.x,
+            comparisonObject.topicDataMessage.topicDataRecords[1].vector3.x);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].vector3.y,
+            comparisonObject.topicDataMessage.topicDataRecords[1].vector3.y);
+        t.is(messageTwo.topicDataMessage.topicDataRecords[1].vector3.z,
+            comparisonObject.topicDataMessage.topicDataRecords[1].vector3.z);
 
         // as object
         let payload = t.context.translator.createPayloadFromMessage(messageTwo);
@@ -206,52 +206,52 @@ import {
     });
 
     test('number', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'number',
+            type: 'number',
             number: 8098
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('boolean', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'boolean',
+            type: 'boolean',
             boolean: false
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('string', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'string',
+            type: 'string',
             string: 'I am a string.'
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('vector2', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'vector2',
+            type: 'vector2',
             vector2: {
                 x: 723974298.890,
                 y: 8275786.809088
             }
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('vector3', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'vector3',
+            type: 'vector3',
             vector3: {
                 x: 723974298.890,
                 y: 8275786.809088,
@@ -259,13 +259,13 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('vector4', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'vector4',
+            type: 'vector4',
             vector4: {
                 x: 723974298.890,
                 y: 8275786.809088,
@@ -274,13 +274,13 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('quaternion', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeColorTopic',
-            data: 'quaternion',
+            type: 'quaternion',
             quaternion: {
                 x: 723974298.890,
                 y: 8275786.809088,
@@ -289,13 +289,13 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('matrix3x2', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'matrix3x2',
+            type: 'matrix3x2',
             matrix3x2: {
                 m00: 723974298.890,
                 m01: 8275786.809088,
@@ -308,13 +308,13 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('matrix4x4', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeTopic',
-            data: 'matrix4x4',
+            type: 'matrix4x4',
             matrix4x4: {
                 m00: 723974298.890,
                 m01: 8275786.809088,
@@ -338,13 +338,13 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
     test('color', t => {
-        let rawPublishTopicData = [{
+        let rawTopicDataRecords = [{
             topic: 'awesomeColorTopic',
-            data: 'color',
+            type: 'color',
             color: {
                 r: 1.0,
                 g: 0.5,
@@ -353,7 +353,7 @@ import {
             }
         }];
 
-        generalDataStructureTestProcess(t, rawPublishTopicData);
+        generalDataStructureTestProcess(t, rawTopicDataRecords);
     });
 
 })();
