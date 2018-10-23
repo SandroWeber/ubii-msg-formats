@@ -31,7 +31,7 @@ import {
 
     let getTopicDataUbiiMessage = (context) => {
         return context.translator.createMessageFromPayload(
-            etExamplePayload()
+            getExamplePayload()
             );
     }
 
