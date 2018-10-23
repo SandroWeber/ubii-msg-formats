@@ -16,9 +16,6 @@ class MessageTranslator {
         if (new.target === MessageTranslator) {
             throw new TypeError("Cannot construct MessageTranslator instances directly");
         }
-        if (this.createPayload === undefined) {
-            throw new TypeError("Must override createPayload method.");
-        }
 
         this.fileName = fileName;
         this.typePath = typePath;
