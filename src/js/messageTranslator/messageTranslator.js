@@ -16,9 +16,6 @@ class MessageTranslator {
         if (new.target === MessageTranslator) {
             throw new TypeError("Cannot construct MessageTranslator instances directly");
         }
-        if (this.createPayload === undefined) {
-            throw new TypeError("Must override createPayload method.");
-        }
 
         this.fileName = fileName;
         this.typePath = typePath;
@@ -120,6 +117,17 @@ class MessageTranslator {
         this.verify(message);
 
         return message;
+    }
+
+    /**
+     * Creates and returns an encoded buffer from a specified payload object.
+     * @param {Object} payload Valid plain JavaScript payload object.
+     * @return Returns a Uint8Array (browser) or Buffer (node).
+     */
+    createBufferFromPayload(payload){
+        this.verify(payload);
+
+        return this.proto.encode( this.proto.create(payload) ).finish();
     }
 }
 

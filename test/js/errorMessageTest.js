@@ -9,7 +9,6 @@ import {
 
     let getComparisonObjectOne = () => {
         return {
-            messageType: 'ubii',
             errorMessage: {
                 name: 'error',
                 message: 'An error has occured.'
@@ -19,12 +18,12 @@ import {
 
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 errorMessage: {
                     name: 'error',
                     message: 'An error has occured.'
                 }
-            }));
+            });
     }
 
     // test cases:

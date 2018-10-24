@@ -7,12 +7,12 @@ import {
 
     // helper:
 
-    let getTopicDataUbiiMessage = (context) => {
-        return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+    let getExamplePayload = (context) => {
+        return {
                 topicDataMessage: {
+                    messageType: 'ubii',
                     deviceIdentifier: 'superDevice',
-                    publishTopicData: [{
+                    topicDataRecord: [{
                             topic: 'awesomeTopic',
                             number: 30
                         },
@@ -26,7 +26,13 @@ import {
                         }
                     ]
                 }
-            }));
+            };
+    }
+
+    let getTopicDataUbiiMessage = (context) => {
+        return context.translator.createMessageFromPayload(
+            getExamplePayload()
+            );
     }
 
     // test cases:
@@ -39,10 +45,10 @@ import {
 
         t.notThrows(() => {
             let message = t.context.translator.createMessageFromPayload(
-                t.context.translator.createPayload({
+                {
                     rawBuffer: 'awesome cargo content',
                     why: 'why?'
-                }));
+                });
         });
     });
 
@@ -53,6 +59,15 @@ import {
             t.context.translator.createBufferFromMessage(message);
         });
     });
+
+
+    test('create buffer from payload', t => {
+        t.notThrows(() => {
+            t.context.translator.createBufferFromPayload(getExamplePayload());
+            }
+        );
+    });
+
 
     test('create message from buffer', t => {
         let message = getTopicDataUbiiMessage(t.context);

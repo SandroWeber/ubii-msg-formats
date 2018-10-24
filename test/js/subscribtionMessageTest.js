@@ -7,19 +7,18 @@ import {
 
     // helper:
 
-    let getComparisonObjectSubscribeUnsubscribe = () => {
+    let getComparisonObjectSubscribtionUnsubscribtion = () => {
         return {
-            messageType: 'ubii',
             subscribtionMessage: {
                 deviceIdentifier: 'superDevice',
-                subscribeTopicData: [{
+                subscribtionRecords: [{
                         topic: 'topic->subtopic'
                     },
                     {
                         topic: 'topic2->subtopic2'
                     }
                 ],
-                unsubscribeTopicData: [{
+                unsubscribtionRecords: [{
                     topic: 'topic3->subtopic3',
                 }]
             }
@@ -28,54 +27,54 @@ import {
 
     let getMessageBasic = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice'
                 }
-            }));
+            });
     }
 
-    let getMessageSubscribeOnly = (context) => {
+    let getMessageSubscribtionOnly = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
-                    subscribeTopicData: [{
+                    subscribtionRecords: [{
                         topic: 'topic->subtopic'
                     }]
                 }
-            }));
+            });
     }
 
-    let getMessageUnsubscribeOnly = (context) => {
+    let getMessageUnsubscribtionOnly = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
-                    unsubscribeTopicData: [{
+                    unsubscribtionRecords: [{
                         topic: 'topic->subtopic'
                     }]
                 }
-            }));
+            });
     }
 
-    let getMessageSubscribeUnsubscribe = (context) => {
+    let getMessageSubscribtionUnsubscribtion = (context) => {
         return context.translator.createMessageFromPayload(
-            context.translator.createPayload({
+            {
                 subscribtionMessage: {
                     deviceIdentifier: 'superDevice',
-                    subscribeTopicData: [{
+                    subscribtionRecords: [{
                             topic: 'topic->subtopic',
                         },
                         {
                             topic: 'topic2->subtopic2',
                         }
                     ],
-                    unsubscribeTopicData: [{
+                    unsubscribtionRecords: [{
                         topic: 'topic3->subtopic3'
                     }]
                 }
-            }));
+            });
     }
 
     // test cases:
@@ -94,39 +93,39 @@ import {
         t.snapshot(message);
     });
 
-    test('create message with subscribe only', t => {
+    test('create message with subscribtion only', t => {
         let message;
 
         t.notThrows(() => {
-            message = getMessageSubscribeOnly(t.context);
+            message = getMessageSubscribtionOnly(t.context);
         });
 
         t.snapshot(message);
     });
 
-    test('create message with unsubscribe only', t => {
+    test('create message with unsubscribtion only', t => {
         let message;
 
         t.notThrows(() => {
-            message = getMessageUnsubscribeOnly(t.context);
+            message = getMessageUnsubscribtionOnly(t.context);
         });
 
         t.snapshot(message);
     });
 
-    test('create message with subscribe and unsubscribe', t => {
+    test('create message with subscribtion and unsubscribtion', t => {
         let message;
 
         t.notThrows(() => {
-            message = getMessageSubscribeUnsubscribe(t.context);
+            message = getMessageSubscribtionUnsubscribtion(t.context);
         });
 
         t.snapshot(message);
     });
 
     test('structure', t => {
-        let messageOne = getMessageSubscribeUnsubscribe(t.context);
-        let comparisonObject = getComparisonObjectSubscribeUnsubscribe();
+        let messageOne = getMessageSubscribtionUnsubscribtion(t.context);
+        let comparisonObject = getComparisonObjectSubscribtionUnsubscribtion();
         let buffer = t.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
 
