@@ -55,6 +55,14 @@ In return, master nodes will send `ubiiMessages` with `topicDataMessage` as subm
 The `subscribtionRecord` proto structure describes a topic a device wants to subscribe to.
 The `unsubscribtionRecord` proto structure describes a topic a device wants to unsubscribe.
 
+#### Service Message
+
+`serviceMessage` instances are submessages for service requests.
+
+#### Error Message
+
+`errorMessage` instances are submessages contaitning error messages.
+
 ## Topics
 
 Topics are strings. The actual format is specified in the topicData project.
