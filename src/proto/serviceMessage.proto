@@ -1,0 +1,8 @@
+package ubii.service;
+syntax = "proto3";
+
+message ServiceMessage {
+    oneof service{
+        bool uuid_request = 1;
+    }
+}
