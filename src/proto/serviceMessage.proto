@@ -3,6 +3,9 @@ syntax = "proto3";
 
 message ServiceMessage {
     oneof service{
-        bool uuid_request = 1;
+        ClientUuidRequest client_uuid_request = 1;
     }
+}
+
+message ClientUuidRequest {
 }
