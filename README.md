@@ -8,7 +8,7 @@ This project is managed as [Jira instance of the FAR group at the Technical Unit
 ## Table of Contents
 
 1. [Command Line Interfaces (CLIs)](#clis)
-1. [Message Types](#message-types)
+1. [Ubii Message](#ubii-message)
 1. [Protobuf](#protobuf)
 1. [Topics](#topics)
 1. [Testing](#testing)
