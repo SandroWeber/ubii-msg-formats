@@ -107,7 +107,7 @@ import {
         t.snapshot(message);
     });
 
-    test('create message with subscribe and unsubscribe', t => {
+    test('create message', t => {
         let message;
 
         t.notThrows(() => {

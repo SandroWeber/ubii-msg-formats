@@ -25,7 +25,7 @@ import {
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new ServiceRequestTranslator();
+        t.context.translator = new ServiceReplyTranslator();
     });
 
     test('create basic message', t => {

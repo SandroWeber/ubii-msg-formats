@@ -1,6 +1,6 @@
 import test from 'ava';
 import {
-    ServiceRequestTranslator,
+    ServiceReplyTranslator,
 } from '../../src/js';
 
 (function () {
@@ -21,13 +21,14 @@ import {
             success: {
                 title: 'success title',
                 message: 'success message'
-            });
+            }
+        });
     }
 
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new ServiceRequestTranslator();
+        t.context.translator = new ServiceReplyTranslator();
     });
 
     test('create basic', t => {
