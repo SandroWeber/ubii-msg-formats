@@ -8,7 +8,7 @@ import "./request/subscribtion.proto";
 message ServiceRequest {
     oneof type{
         ClientRegistration client_registration = 1;
-        repeated DeviceRegistration device_registrations = 2;
+        DeviceRegistration device_registration = 2;
         Subscribtion subscribtion = 3;
     }
 }
