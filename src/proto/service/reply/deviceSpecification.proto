@@ -2,7 +2,8 @@ package ubii.service.reply;
 syntax = "proto3";
 
 message DeviceSpecification {
-    string display_name = 1;
-    string namespace = 2;
-    string id = 3;
+    string corresponding_client_id = 1;
+    string display_name = 2;
+    string namespace = 3;
+    string id = 4;
 }
