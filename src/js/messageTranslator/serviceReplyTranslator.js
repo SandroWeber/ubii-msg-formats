@@ -6,7 +6,7 @@ const MessageTranslator = require('./messageTranslator');
 class ServiceReplyTranslator extends MessageTranslator {
 
     constructor(loadProtoFileSynchronously = true) {
-        super(__dirname + '/../../proto/topicData/topicData.proto', 'ServiceRequest', loadProtoFileSynchronously);
+        super(__dirname + '/../../proto/service/serviceReply.proto', 'ServiceReply', loadProtoFileSynchronously);
     }
 }
 
