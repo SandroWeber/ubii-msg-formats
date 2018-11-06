@@ -1,7 +1,10 @@
 package ubii;
 syntax = "proto3";
 
+import "./error.proto";
+
 message ServiceReply {
-    oneof service{
+    oneof type{
+        Error error = 0;
     }
 }
