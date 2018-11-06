@@ -1,0 +1,10 @@
+package ubii.subscribtion;
+syntax = "proto3";
+
+import "./topicRecord.proto";
+
+message Subscribtion {
+    string device_id = 1;
+    repeated TopicRecord subscribtion_topics = 2;
+    repeated TopicRecord unsubscribtion_topics = 3;
+}
