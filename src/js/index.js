@@ -1,5 +1,9 @@
-const UbiiMessageTranslator = require('./messageTranslator/ubiiMessageTranslator');
+const TopicDataTranslator = require('./messageTranslator/topicDataTranslator');
+const ServiceRequestTranslator = require('./messageTranslator/serviceRequestTranslator');
+const ServiceReplyTranslator = require('./messageTranslator/serviceReplyTranslator');
 
 module.exports = {
-    UbiiMessageTranslator: UbiiMessageTranslator
+    TopicDataTranslator: TopicDataTranslator,
+    ServiceRequestTranslator: ServiceRequestTranslator,
+    ServiceReplyTranslator: ServiceReplyTranslator,
 };
