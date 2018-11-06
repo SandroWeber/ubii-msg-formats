@@ -1,9 +1,0 @@
-package ubii.topicData;
-syntax = "proto3";
-
-import "./topicDataRecord.proto";
-
-message TopicDataMessage {
-    string device_identifier = 1;
-    repeated TopicDataRecord topic_data_records = 2;
-}

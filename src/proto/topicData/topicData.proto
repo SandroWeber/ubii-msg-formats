@@ -9,7 +9,8 @@ import "./dataStructure/matrix3x2.proto";
 import "./dataStructure/matrix4x4.proto";
 import "./dataStructure/color.proto";
 
-message TopicDataRecord {
+message TopicData {
+    string device_identifier = 0;
     string topic = 1;
     oneof type{
         double number = 2;
