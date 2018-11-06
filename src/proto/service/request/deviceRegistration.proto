@@ -1,12 +1,12 @@
-package ubii.registration;
+package ubii.service.request;
 syntax = "proto3";
 
 message DeviceRegistration {
-    string corresponding_client_id = 0;
-    string display_name = 1;
+    string corresponding_client_id = 1;
+    string display_name = 2;
     enum DeviceType {
-        PARTICIPANT = 0;
-        WATCHER = 1;
+        PARTICIPANT = 1;
+        WATCHER = 2;
     }
-    DeviceType device_type = 2 [default = PARTICIPANT];
+    DeviceType device_type = 3 [default = PARTICIPANT];
 }

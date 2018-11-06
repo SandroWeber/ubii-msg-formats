@@ -10,18 +10,18 @@ import "./dataStructure/matrix4x4.proto";
 import "./dataStructure/color.proto";
 
 message TopicData {
-    string device_identifier = 0;
-    string topic = 1;
+    string device_identifier = 1;
+    string topic = 2;
     oneof type{
-        double number = 2;
-        bool boolean = 3;
-        string string = 4;
-        Vector2 vector2 = 5;
-        Vector3 vector3 = 6;
-        Vector4 vector4 = 7;
-        Quaternion quaternion = 8;
-        Matrix3x2 matrix3x2 = 9;
-        Matrix4x4 matrix4x4 = 10;
-        Color color = 11;
+        double number = 3;
+        bool boolean = 4;
+        string string = 5;
+        Vector2 vector2 = 6;
+        Vector3 vector3 = 7;
+        Vector4 vector4 = 8;
+        Quaternion quaternion = 9;
+        Matrix3x2 matrix3x2 = 10;
+        Matrix4x4 matrix4x4 = 11;
+        Color color = 12;
     }
 }

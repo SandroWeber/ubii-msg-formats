@@ -1,10 +1,8 @@
-package ubii.subscribtion;
+package ubii.service.request;
 syntax = "proto3";
 
-import "./topicRecord.proto";
-
 message Subscribtion {
-    string device_id = 0;
-    repeated string subscribe_topics = 1;
-    repeated string unsubscribe_topics = 2;
+    string device_id = 1;
+    repeated string subscribe_topics = 2;
+    repeated string unsubscribe_topics = 3;
 }

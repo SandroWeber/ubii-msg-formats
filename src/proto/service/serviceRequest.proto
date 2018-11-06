@@ -1,4 +1,4 @@
-package ubii;
+package ubii.service;
 syntax = "proto3";
 
 import "./request/clientRegistration.proto";
@@ -7,8 +7,8 @@ import "./request/subscribtion.proto";
 
 message ServiceRequest {
     oneof type{
-        ClientRegistration client_registration = 0;
-        repeated DeviceRegistration device_registrations = 1;
-        Subscribtion subscribtion = 2;
+        ClientRegistration client_registration = 1;
+        repeated DeviceRegistration device_registrations = 2;
+        Subscribtion subscribtion = 3;
     }
 }

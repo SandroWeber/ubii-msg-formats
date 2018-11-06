@@ -1,4 +1,4 @@
-package ubii.error;
+package ubii.service.reply;
 syntax = "proto3";
 
 message ClientSpecification {
