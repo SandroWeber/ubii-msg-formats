@@ -1,9 +1,0 @@
-package ubii.dataStructure;
-syntax = "proto3";
-
-message Vector4 {
-    double x = 1;
-    double y = 2;
-    double z = 3;
-    double w = 4;
-}

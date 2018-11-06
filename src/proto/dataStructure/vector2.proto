@@ -1,7 +1,0 @@
-package ubii.dataStructure;
-syntax = "proto3";
-
-message Vector2 {
-    double x = 1;
-    double y = 2;
-}

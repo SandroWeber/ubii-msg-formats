@@ -1,7 +1,0 @@
-package ubii;
-syntax = "proto3";
-
-message ServiceReply {
-    oneof service{
-    }
-}
