@@ -1,0 +1,16 @@
+package ubii.subscribtion;
+syntax = "proto3";
+
+message SubscribtionMessage {
+    string device_identifier = 1;
+    repeated SubscribtionRecord subscribtion_records = 2;
+    repeated UnsubscribtionRecord unsubscribtion_records = 3;
+}
+
+message SubscribtionRecord {
+    string topic = 1; 
+}
+
+message UnsubscribtionRecord {
+    string topic = 1; 
+}
