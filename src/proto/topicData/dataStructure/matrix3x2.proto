@@ -1,0 +1,11 @@
+package ubii.dataStructure;
+syntax = "proto3";
+
+message Matrix3x2 {
+    double m00 = 1;
+    double m01 = 2;
+    double m10 = 3;
+    double m11 = 4;
+    double m20 = 5;
+    double m21 = 6;
+}
