@@ -5,6 +5,6 @@ import "./topicRecord.proto";
 
 message Subscribtion {
     string device_id = 1;
-    repeated string subscribtion_topics = 2;
-    repeated string unsubscribtion_topics = 3;
+    repeated string subscribe_topics = 2;
+    repeated string unsubscribe_topics = 3;
 }
