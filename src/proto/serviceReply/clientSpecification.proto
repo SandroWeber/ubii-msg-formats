@@ -1,0 +1,10 @@
+package ubii.error;
+syntax = "proto3";
+
+message ClientSpecification {
+    string display_name = 1;
+    string namespace = 2;
+    string id = 3;
+    string target_host = 4;
+    string target_port = 5;
+}
