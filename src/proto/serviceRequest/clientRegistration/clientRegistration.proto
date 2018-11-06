@@ -1,0 +1,7 @@
+package ubii.registration;
+syntax = "proto3";
+
+message ClientRegistration {
+    string display_name = 0;
+    string namespace = 1;
+}

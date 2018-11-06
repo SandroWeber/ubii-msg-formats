@@ -1,0 +1,6 @@
+package ubii.subscribtion;
+syntax = "proto3";
+
+message SubscribtionRecord {
+    string topic = 1; 
+}

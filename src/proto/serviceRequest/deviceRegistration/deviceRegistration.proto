@@ -1,0 +1,9 @@
+package ubii.registration;
+syntax = "proto3";
+
+import "./deviceRecord.proto";
+
+message DeviceRegistration {
+    string corresponding_client_id = 0;
+    repeated DeviceRecord devices = 1;
+}
