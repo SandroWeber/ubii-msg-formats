@@ -1,0 +1,7 @@
+package ubii.error;
+syntax = "proto3";
+
+message Success {
+    string title = 1;
+    string message = 2;
+}

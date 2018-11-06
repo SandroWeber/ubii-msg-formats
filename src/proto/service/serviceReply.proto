@@ -1,14 +1,16 @@
 package ubii;
 syntax = "proto3";
 
+import "./reply/success.proto";
 import "./reply/error.proto";
 import "./reply/clientSpecification.proto";
 import "./reply/deviceSpecification.proto";
 
 message ServiceReply {
     oneof type{
-        Error error = 0;
-        ClientSpecification client_specification = 1;
-        DeviceSpecification device_specification = 2;
+        Success success = 0;
+        Error error = 1;
+        ClientSpecification client_specification = 2;
+        DeviceSpecification device_specification = 3;
     }
 }
