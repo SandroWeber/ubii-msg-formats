@@ -1,9 +1,9 @@
 package ubii;
 syntax = "proto3";
 
-import "./clientRegistration/clientRegistration.proto";
-import "./deviceRegistration/deviceRegistration.proto";
-import "./subscribtion/subscribtion.proto";
+import "./request/clientRegistration.proto";
+import "./request/deviceRegistration.proto";
+import "./request/subscribtion.proto";
 
 message ServiceRequest {
     oneof type{
