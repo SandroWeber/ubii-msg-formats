@@ -1,7 +1,7 @@
 package ubii.session;
 syntax = "proto3";
 
-message TopicMapping {
+message InteractionTopicMapping {
     enum IOType {
         INPUT = 0;
         OUTPUT = 1;
