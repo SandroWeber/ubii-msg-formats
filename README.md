@@ -1,28 +1,28 @@
-# ubii-msg-formats  <!-- omit in toc -->
-
-[//]: # hei
+# ubii-msg-formats
 
 Hi. This is the repository for Ubii message formats. It contains everything about **what** ubii nodes and devices say to each other.
 If you are interested in how they communicate with each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
 
 This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
 
-## Table of Contents  <!-- omit in toc -->
+## Table of Contents
 
-- [CLIs](#clis)
-    - [Tests](#tests)
-- [Ubii Messages](#ubii-messages)
-    - [TopicData](#topicdata)
-    - [ServiceRequest](#servicerequest)
-    - [ServiceReply](#servicereply)
-- [Protobuf](#protobuf)
-    - [Loading Proto Files](#loading-proto-files)
-    - [Proto Files](#proto-files)
-        - [Required and Validation](#required-and-validation)
-        - [OneOf](#oneof)
-    - [Usage of Proto Files in JS](#usage-of-proto-files-in-js)
-- [Testing](#testing)
-- [Tips](#tips)
+- [ubii-msg-formats](#ubii-msg-formats)
+    - [Table of Contents](#table-of-contents)
+    - [CLIs](#clis)
+        - [Tests](#tests)
+    - [Ubii Messages](#ubii-messages)
+        - [TopicData](#topicdata)
+        - [ServiceRequest](#servicerequest)
+        - [ServiceReply](#servicereply)
+    - [Protobuf](#protobuf)
+        - [Loading Proto Files](#loading-proto-files)
+        - [Proto Files](#proto-files)
+            - [Required and Validation](#required-and-validation)
+            - [OneOf](#oneof)
+        - [Usage of Proto Files in JS](#usage-of-proto-files-in-js)
+    - [Testing](#testing)
+    - [Tips](#tips)
 
 ## CLIs
 
