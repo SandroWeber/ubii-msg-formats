@@ -1,0 +1,13 @@
+package ubii.session;
+syntax = "proto3";
+
+message TopicMapping {
+    enum IOType {
+        INPUT = 0;
+        OUTPUT = 1;
+    }
+
+    string interaction_identifier = 1;
+    string topic = 2;
+    IOType io_type = 3;
+}

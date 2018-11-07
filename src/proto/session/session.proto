@@ -1,0 +1,11 @@
+package ubii.session;
+syntax = "proto3";
+
+import "../interaction/interaction.proto";
+import "./topicMapping.proto";
+
+message Session {
+    string name = 1;
+    repeated Interaction interactions = 2;
+    repeated TopicMapping topic_mappings = 3;
+}

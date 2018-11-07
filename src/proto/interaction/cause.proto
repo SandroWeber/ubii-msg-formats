@@ -1,0 +1,7 @@
+package ubii.interaction;
+syntax = "proto3";
+
+message Cause {
+    string name = 1;
+    string callback = 2;
+}
