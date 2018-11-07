@@ -1,7 +1,7 @@
 const MessageTranslator = require('./messageTranslator');
 
 /**
- * Message translator for topic data input and output messages.
+ * Message translator for topic data messages.
  */
 class TopicDataTranslator extends MessageTranslator {
 
