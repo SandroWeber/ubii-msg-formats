@@ -3,14 +3,11 @@
 Hi. This is the repository for Ubii message formats. It contains everything about **what** ubii nodes and devices say to each other.
 If you are interested in how they communicate with each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
 
-This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
-
 ## Table of Contents
 
 - [ubii-msg-formats](#ubii-msg-formats)
     - [Table of Contents](#table-of-contents)
     - [CLIs](#clis)
-        - [Tests](#tests)
     - [Ubii Messages](#ubii-messages)
         - [TopicData](#topicdata)
         - [ServiceRequest](#servicerequest)
@@ -26,11 +23,8 @@ This project is managed as [Jira instance of the FAR group at the Technical Unit
 
 ## CLIs
 
-### Tests
-
 - Run `npm test` to process all standard tests.
 - If snapshot assertions fail you can run `npm run-script update-snapshots` to process all standard tests and update all snapshots if the changes are intentional.
-- See the [Testing section](#testing) for more details on tests.
 
 ## Ubii Messages
 
@@ -51,7 +45,7 @@ The proto file of the first order messages imports all submessages. Thus the pro
 
 ### TopicData
 
-This message is used to communicate topic data from the client to the server and from the server to the client. The message is used in a dealer router communication pattern context.
+This message is used to communicate topic data from the client to the server and from the server to the client. It is used in a dealer router communication pattern context.
 
 Beside general information this message contains a topic data pair. The `TopicData` can contain the following data structures:
 
@@ -66,12 +60,12 @@ Beside general information this message contains a topic data pair. The `TopicDa
 - `Matrix4x4`
 - `Color`
 
-You can send a `topicData` message to a master node in order to publish topic data pairs to a master node.
-In return, master nodes will send `topicData` messages to registered devices in order to inform them about changes of their subscribed topics.
+You can send a `TopicData` message to a master node in order to publish topic data pairs to a master node.
+In return, master nodes will send `TopicData` messages to registered devices to inform them about changes of their subscribed topics.
 
 ### ServiceRequest
 
-This message is used to formulate service request from the client to the server. The message is used in a request reply communication pattern context.
+This message is used to formulate service request. It is sent from the client to the server. The message is used in a request reply communication pattern context.
 
 The `ServiceRequest` can have the following submessages specifing the type of the reply:
 
@@ -85,8 +79,8 @@ This message is used by the server to formulate service replies to previous serv
 
 The `ServiceReply` can have the following submessages specifing the type of the reply:
 
-- `Success`: This message is sent, if a service request was processed successfully and has no special reply message.
-- `Error`: This message is sent, if a service request was not processed successfully and caused an error.
+- `Success`: This message is sent if a service request was processed successfully and has no special reply message.
+- `Error`: This message is sent if a service request was not processed successfully and caused an error.
 - `ClientSpecification`: This message is sent as reply to a client registration request. It contains all relevant information about the client such as its new unique uuid and the host adress and port number of the dealer router interface.
 - `DeviceSpecification`: This message is sent as reply to a device registration request.
 
