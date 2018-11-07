@@ -1,6 +1,7 @@
+# ubii-msg-formats  <!-- omit in toc -->
+
 {::options parse_block_html="true" /}
 
-# ubii-msg-formats  <!-- omit in toc -->
 
 Hi. This is the repository for Ubii message formats. It contains everything about **what** ubii nodes and devices say to each other.
 If you are interested in how they communicate with each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
@@ -151,3 +152,5 @@ You can add new tests to the test folder. Entry point for the test runner is tes
 ## Tips
 
 There are extensions availabe for Visual Studio Code that support Proto3 files (Sytntax highlighting, syntax validation, ...). Just search for *ext:proto* in the marketplace.
+
+{::options parse_block_html="false" /}
