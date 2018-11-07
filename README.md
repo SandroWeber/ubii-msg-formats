@@ -55,16 +55,16 @@ This message is used to communicate topic data from the client to the server and
 
 Beside general information this message contains a topic data pair. The `TopicData` can contain the following data structures:
 
-- Number
-- Boolean
-- String
-- Vector2
-- Vector3
-- Vector4
-- Quaternion
-- Matrix3x2
-- Matrix4x4
-- Color
+- `Number`
+- `Boolean`
+- `String`
+- `Vector2`
+- `Vector3`
+- `Vector4`
+- `Quaternion`
+- `Matrix3x2`
+- `Matrix4x4`
+- `Color`
 
 You can send a `topicData` message to a master node in order to publish topic data pairs to a master node.
 In return, master nodes will send `topicData` messages to registered devices in order to inform them about changes of their subscribed topics.
@@ -73,22 +73,22 @@ In return, master nodes will send `topicData` messages to registered devices in 
 
 This message is used to formulate service request from the client to the server. The message is used in a request reply communication pattern context.
 
-The ServiceRequest can have the following submessages specifing the type of the reply:
+The `ServiceRequest` can have the following submessages specifing the type of the reply:
 
-- ClientRegistration: This message specifies a client that should be registered at a ubii node.
-- DeviceRegistration: This message specifies a device that should be registered at a ubii node.
-- Subscribtion: This message specifies a device and topics that should be subscribed and topics that should be unsubscribed.
+- `ClientRegistration`: This message specifies a client that should be registered at a ubii node.
+- `DeviceRegistration`: This message specifies a device that should be registered at a ubii node.
+- `Subscribtion`: This message specifies a device and topics that should be subscribed and topics that should be unsubscribed.
 
 ### ServiceReply
 
 This message is used by the server to formulate service replies to previous service requests from clients. The message is used in a request reply communication pattern context.
 
-The ServiceReply can have the following submessages specifing the type of the reply:
+The `ServiceReply` can have the following submessages specifing the type of the reply:
 
-- Success: This message is sent, if a service request was processed successfully and has no special reply message.
-- Error: This message is sent, if a service request was not processed successfully and caused an error.
-- ClientSpecification: This message is sent as reply to a client registration request. It contains all relevant information about the client such as its new unique uuid and the host adress and port number of the dealer router interface.
-- DeviceSpecification: This message is sent as reply to a device registration request.
+- `Success`: This message is sent, if a service request was processed successfully and has no special reply message.
+- `Error`: This message is sent, if a service request was not processed successfully and caused an error.
+- `ClientSpecification`: This message is sent as reply to a client registration request. It contains all relevant information about the client such as its new unique uuid and the host adress and port number of the dealer router interface.
+- `DeviceSpecification`: This message is sent as reply to a device registration request.
 
 ## Protobuf
 
