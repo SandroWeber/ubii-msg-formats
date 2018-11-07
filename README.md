@@ -1,3 +1,5 @@
+{::options parse_block_html="true" /}
+
 # ubii-msg-formats  <!-- omit in toc -->
 
 Hi. This is the repository for Ubii message formats. It contains everything about **what** ubii nodes and devices say to each other.
