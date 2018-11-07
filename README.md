@@ -3,69 +3,86 @@
 Hi. This is the repository for Ubii message formats. It contains everything about **what** ubii nodes and devices say to each other.
 If you are interested in how they communicate with each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
 
-This project is managed as [Jira instance of the FAR group at the Technical Unitversity of Munich (TUM)](https://jira.far.in.tum.de/).
-
 ## Table of Contents
 
-1. [Command Line Interfaces (CLIs)](#clis)
-1. [Ubii Message](#ubii-message)
-1. [Protobuf](#protobuf)
-1. [Topics](#topics)
-1. [Testing](#testing)
-1. [Tips](#tips)
+- [ubii-msg-formats](#ubii-msg-formats)
+    - [Table of Contents](#table-of-contents)
+    - [CLIs](#clis)
+    - [Ubii Messages](#ubii-messages)
+        - [TopicData](#topicdata)
+        - [ServiceRequest](#servicerequest)
+        - [ServiceReply](#servicereply)
+    - [Protobuf](#protobuf)
+        - [Loading Proto Files](#loading-proto-files)
+        - [Proto Files](#proto-files)
+            - [Required and Validation](#required-and-validation)
+            - [OneOf](#oneof)
+        - [Usage of Proto Files in JS](#usage-of-proto-files-in-js)
+    - [Testing](#testing)
+    - [Tips](#tips)
 
 ## CLIs
 
-### Tests
-
 - Run `npm test` to process all standard tests.
 - If snapshot assertions fail you can run `npm run-script update-snapshots` to process all standard tests and update all snapshots if the changes are intentional.
-- See the [Testing section](#testing) for more details on tests.
 
-## Ubii Message
+## Ubii Messages
 
 > **Note:** The messages are based on google's Protobuf. Check out the [Protobuf](#protobuf) section below for more information on how to handle these types of messages.
 > You can find some more information on the proto files itself describing the structure of the messages as well as sections on how to work with proto messages in relevant envrionments such as nodeJS.
 
-The `ubiiMessage` is the first order message of the ubii system. All ubii related messages sent over the network must be wrapped up in an ubii message.A `ubiiMessage` has a submessage that contains further data that should be processed.
+There are three first order messages:
 
-The proto file of the `ubiiMessage` imports all submessages. Thus the proto instance or a translator instance of the `ubiiMessage` can encode and decode all `ubiiMessages`.
-Check out the [oneof section](#oneof) below for how you can get the specified submessage by accessing the `oneof` properties.
+- `topicData`
+- `serviceRequest`
+- `serviceReply`
 
-### Submessages
+All ubii related sub messages sent over the network are wrapped up in one of the first order messages. A first order message has submessages that contains further data that should be processed. Typically this is sepcified by a `type` oneof field.
 
-All valid submessages can be content of the `oneof submessage` block of a `ubiiMessage` instance.
-The present submessage inherently defines the purpose of the `ubiiMessage`, since every `ubiiMessage` has exactly one submessage.
+> Check out the [oneof section](#oneof) below for how you can get the specified submessage by accessing the `oneof` properties.
 
-#### Registration Message
+The proto file of the first order messages imports all submessages. Thus the proto instance or a translator instance of a first order message can encode and decode all related message buffers.
 
-`registrationMessage` instances are submessages related to the registration of devices and their corresponding clients.
-You can attach a `registrationMessage` as submessage to register a device at a ubii node.
+### TopicData
 
-#### Topic Data Message
+This message is used to communicate topic data from the client to the server and from the server to the client. It is used in a dealer router communication pattern context.
 
-`topicDataMessage` instances are submessages related to the topic data. The `topicDataMessage` can have repeated entries of the `topicDataRecords` proto structure. The structure contains a topic-data-pair.
+Beside general information this message contains a topic data pair. The `TopicData` can contain the following data structures:
 
-You can attach a `topicDataMessage` as submessage and send it to a master node in order to publish repeated topic-data-pairs in form of a `topicDataRecord` structure to a master node.
-In return, master nodes will send `ubiiMessages` with `topicDataMessage` as submessage to devices in order to inform them about changes of their subscribed topics.
+- `Number`
+- `Boolean`
+- `String`
+- `Vector2`
+- `Vector3`
+- `Vector4`
+- `Quaternion`
+- `Matrix3x2`
+- `Matrix4x4`
+- `Color`
 
-#### Subscribtion Message
+You can send a `TopicData` message to a master node in order to publish topic data pairs to a master node.
+In return, master nodes will send `TopicData` messages to registered devices to inform them about changes of their subscribed topics.
 
-`subscribtionMessage` instances are related to subscribing to a topic from the topic data and unsubscribing a topic from the topic data. The `subscribtionMessage` can have repeated `subscribtionRecord` and `unsubscribtionRecord` entries.
-The `subscribtionRecord` proto structure describes a topic a device wants to subscribe to.
-The `unsubscribtionRecord` proto structure describes a topic a device wants to unsubscribe.
+### ServiceRequest
 
-#### Service Message
+This message is used to formulate service request. It is sent from the client to the server. The message is used in a request reply communication pattern context.
 
-`serviceMessage` instances are submessages for service requests.
+The `ServiceRequest` can have the following submessages specifing the type of the reply:
 
-#### Error Message
+- `ClientRegistration`: This message specifies a client that should be registered at a ubii node.
+- `DeviceRegistration`: This message specifies a device that should be registered at a ubii node.
+- `Subscribtion`: This message specifies a device and topics that should be subscribed and topics that should be unsubscribed.
 
-`errorMessage` instances are submessages contaitning error messages.
+### ServiceReply
 
-## Topics
+This message is used by the server to formulate service replies to previous service requests from clients. The message is used in a request reply communication pattern context.
 
-Topics are strings. The actual format is specified in the topicData project.
+The `ServiceReply` can have the following submessages specifing the type of the reply:
+
+- `Success`: This message is sent if a service request was processed successfully and has no special reply message.
+- `Error`: This message is sent if a service request was not processed successfully and caused an error.
+- `ClientSpecification`: This message is sent as reply to a client registration request. It contains all relevant information about the client such as its new unique uuid and the host adress and port number of the dealer router interface.
+- `DeviceSpecification`: This message is sent as reply to a device registration request.
 
 ## Protobuf
 

@@ -1,7 +1,0 @@
-package ubii.error;
-syntax = "proto3";
-
-message ErrorMessage {
-    string name = 1;
-    string message = 2;
-}
