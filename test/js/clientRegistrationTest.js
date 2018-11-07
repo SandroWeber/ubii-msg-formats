@@ -1,25 +1,26 @@
 import test from 'ava';
 import {
-    UbiiMessageTranslator,
+    ServiceRequestTranslator,
 } from '../../src/js';
 
 (function () {
 
+    // helepers:
+
     let getComparisonObjectOne = () => {
         return {
-            registrationMessage: {
-                deviceIdentifier: 'superDevice',
-                deviceType: 'PARTICIPANT'
+            clientRegistration: {
+                displayName: 'clientName',
+                namespace: 'app'
             }
         };
     };
 
     let getMessageOne = (context) => {
-        return context.translator.createMessageFromPayload(
-            {
-                registrationMessage: {
-                    deviceIdentifier: 'superDevice',
-                    deviceType: 0
+        return context.translator.createMessageFromPayload({
+            clientRegistration: {
+                displayName: 'clientName',
+                namespace: 'app'
                 }
             });
     }
@@ -27,7 +28,7 @@ import {
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new UbiiMessageTranslator();
+        t.context.translator = new ServiceRequestTranslator();
     });
 
     test('create basic', t => {
@@ -41,10 +42,9 @@ import {
         let comparisonObject = getComparisonObjectOne();
         let buffer = t.context.translator.createBufferFromMessage(messageOne);
         let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
-        let object = t.context.translator.createPayloadFromMessage(buffer);
 
         t.snapshot(messageTwo);
 
-        t.true(JSON.stringify(messageTwo) === JSON.stringify(comparisonObject));
+        t.deepEqual(JSON.stringify(messageTwo) , JSON.stringify(comparisonObject));
     });
 })();

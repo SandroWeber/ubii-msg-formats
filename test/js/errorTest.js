@@ -1,6 +1,6 @@
 import test from 'ava';
 import {
-    UbiiMessageTranslator,
+    ServiceReplyTranslator,
 } from '../../src/js';
 
 (function () {
@@ -9,19 +9,18 @@ import {
 
     let getComparisonObjectOne = () => {
         return {
-            errorMessage: {
-                name: 'error',
-                message: 'An error has occured.'
+            error: {
+                title: 'error title',
+                message: 'error message'
             }
         };
     };
 
     let getMessageOne = (context) => {
-        return context.translator.createMessageFromPayload(
-            {
-                errorMessage: {
-                    name: 'error',
-                    message: 'An error has occured.'
+        return context.translator.createMessageFromPayload({
+            error: {
+                title: 'error title',
+                message: 'error message'
                 }
             });
     }
@@ -29,7 +28,7 @@ import {
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new UbiiMessageTranslator();
+        t.context.translator = new ServiceReplyTranslator();
     });
 
     test('create basic', t => {
@@ -46,6 +45,6 @@ import {
 
         t.snapshot(messageTwo);
 
-        t.true(JSON.stringify(messageTwo) === JSON.stringify(comparisonObject));
+        t.deepEqual(JSON.stringify(messageTwo) , JSON.stringify(comparisonObject));
     });
 })();

@@ -1,0 +1,8 @@
+package ubii.service.request;
+syntax = "proto3";
+
+message Subscribtion {
+    string device_id = 1;
+    repeated string subscribe_topics = 2;
+    repeated string unsubscribe_topics = 3;
+}

@@ -1,6 +1,6 @@
 import test from 'ava';
 import {
-    UbiiMessageTranslator,
+    ServiceRequestTranslator,
 } from '../../src/js';
 
 (function () {
@@ -9,25 +9,28 @@ import {
 
     let getComparisonObjectOne = () => {
         return {
-            serviceMessage: {
-                clientUuidRequest: {}
+            deviceRegistration: {
+                correspondingClientId: 'someClientId',
+                displayName: 'clientName',
+                deviceType: 'PARTICIPANT'
             }
         };
     };
 
     let getMessageOne = (context) => {
-        return context.translator.createMessageFromPayload(
-            {
-                serviceMessage: {
-                    clientUuidRequest: {}
-                }
-            });
+        return context.translator.createMessageFromPayload({
+            deviceRegistration: {
+                correspondingClientId: 'someClientId',
+                displayName: 'clientName',
+                deviceType: 1
+            }
+        });
     }
 
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new UbiiMessageTranslator();
+        t.context.translator = new ServiceRequestTranslator();
     });
 
     test('create basic', t => {
@@ -44,7 +47,6 @@ import {
 
         t.snapshot(messageTwo);
 
-        t.true(messageTwo.serviceMessage !== undefined);
-        t.true(messageTwo.serviceMessage.clientUuidRequest !== undefined);
+        t.deepEqual(JSON.stringify(messageTwo) , JSON.stringify(comparisonObject));
     });
 })();
