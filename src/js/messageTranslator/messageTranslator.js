@@ -125,9 +125,7 @@ class MessageTranslator {
      * @return Returns a Uint8Array (browser) or Buffer (node).
      */
     createBufferFromPayload(payload){
-        this.verify(payload);
-
-        return this.proto.encode( this.proto.create(payload) ).finish();
+        return this.createBufferFromMessage(this.createMessageFromPayload(payload));
     }
 }
 
