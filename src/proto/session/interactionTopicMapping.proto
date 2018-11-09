@@ -10,4 +10,5 @@ message InteractionTopicMapping {
     string interaction_identifier = 1;
     string topic = 2;
     IOType io_type = 3;
+    string internal_name = 4;
 }
