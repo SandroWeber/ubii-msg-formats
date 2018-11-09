@@ -1,51 +1,29 @@
 import test from 'ava';
 import {
     SessionTranslator,
-} from '../../src/js';
+} from '../../../src/js';
 
-(function () {
 
-    // helepers:
+/* run tests */
 
-    let getComparisonObjectOne = () => {
-        return {
-            session: {
-                name: 'session',
-                interactions: [],
-                interaction_topic_mappings: []
-            }
-        };
+test.beforeEach(t => {
+    t.context.translator = new SessionTranslator();
+});
+
+test('create message', t => {
+    let sessionMsg = {
+        Session: {
+            name: 'session',
+            interactions: [],
+            interaction_topic_mappings: []
+        }
     };
+    /*let sessionMsg = {
+     name: 'session',
+     interactions: [],
+     interaction_topic_mappings: []
+     };*/
 
-    let getMessageOne = (context) => {
-        return context.translator.createMessageFromPayload({
-            clientRegistration: {
-                displayName: 'clientName',
-                namespace: 'app'
-            }
-        });
-    }
-
-    // test cases:
-
-    test.beforeEach(t => {
-        t.context.translator = new SessionTranslator();
+    let protoMsg = t.context.translator.createMessageFromPayload(sessionMsg);
+    console.info(protoMsg);
 });
-
-    test('create basic', t => {
-        t.notThrows(() => {
-        getMessageOne(t.context);
-});
-});
-
-    test('structure', t => {
-        let messageOne = getMessageOne(t.context);
-    let comparisonObject = getComparisonObjectOne();
-    let buffer = t.context.translator.createBufferFromMessage(messageOne);
-    let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
-
-    t.snapshot(messageTwo);
-
-    t.deepEqual(JSON.stringify(messageTwo) , JSON.stringify(comparisonObject));
-});
-})();
