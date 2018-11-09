@@ -4,4 +4,5 @@ syntax = "proto3";
 message Error {
     string title = 1;
     string message = 2;
+    string stack = 3;
 }
