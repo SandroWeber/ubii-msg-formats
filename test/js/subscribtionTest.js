@@ -10,8 +10,7 @@ import {
     let getComparisonObjectSubscribtionUnsubscribtion = () => {
         return {
             subscribtion: {
-                clientId: '0000-0000-0000-0000',
-                    deviceId: '1111-1111-1111-1111',
+                deviceId: '1111-1111-1111-1111',
                 subscribeTopics: [
                     'topic->subtopic',
                     'topic2->subtopic2'
@@ -27,7 +26,6 @@ import {
         return context.translator.createMessageFromPayload(
             {
                 subscribtion: {
-                    clientId: '0000-0000-0000-0000',
                     deviceId: '1111-1111-1111-1111',
                 }
             });
@@ -37,7 +35,6 @@ import {
         return context.translator.createMessageFromPayload(
             {
                 subscribtion: {
-                    clientId: '0000-0000-0000-0000',
                     deviceId: '1111-1111-1111-1111',
                     subscribeTopics: [
                         'topic->subtopic',
@@ -51,7 +48,6 @@ import {
         return context.translator.createMessageFromPayload(
             {
                 subscribtion: {
-                    clientId: '0000-0000-0000-0000',
                     deviceId: '1111-1111-1111-1111',
                     unsubscribeTopics: [
                         'topic3->subtopic3'
@@ -64,7 +60,6 @@ import {
         return context.translator.createMessageFromPayload(
             {
             subscribtion: {
-                clientId: '0000-0000-0000-0000',
                 deviceId: '1111-1111-1111-1111',
                 subscribeTopics: [
                     'topic->subtopic',
