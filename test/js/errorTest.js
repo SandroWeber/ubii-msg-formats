@@ -11,7 +11,8 @@ import {
         return {
             error: {
                 title: 'error title',
-                message: 'error message'
+                message: 'error message',
+                stack: 'error stack'
             }
         };
     };
@@ -20,7 +21,8 @@ import {
         return context.translator.createMessageFromPayload({
             error: {
                 title: 'error title',
-                message: 'error message'
+                message: 'error message',
+                stack: 'error stack'
                 }
             });
     }
