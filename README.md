@@ -21,7 +21,7 @@ If you are interested in how they communicate with each other, visit the [ubii-m
     - [Testing](#testing)
     - [Tips](#tips)
 
-## CLIs
+## CLIs 
 
 - Run `npm test` to process all standard tests.
 - If snapshot assertions fail you can run `npm run-script update-snapshots` to process all standard tests and update all snapshots if the changes are intentional.
