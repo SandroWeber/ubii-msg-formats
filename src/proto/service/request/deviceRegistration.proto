@@ -3,7 +3,7 @@ syntax = "proto3";
 
 message DeviceRegistration {
     string corresponding_client_id = 1;
-    string display_name = 2;
+    string name = 2;
     enum DeviceType {
         PARTICIPANT = 1;
         WATCHER = 2;
