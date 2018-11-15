@@ -6,4 +6,5 @@ message DeviceSpecification {
     string name = 2;
     string namespace = 3;
     string id = 4;
+    string deviceType = 5;
 }
