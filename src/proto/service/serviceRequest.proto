@@ -6,9 +6,10 @@ import "./request/deviceRegistration.proto";
 import "./request/subscribtion.proto";
 
 message ServiceRequest {
-    oneof type{
-        ClientRegistration client_registration = 1;
-        DeviceRegistration device_registration = 2;
-        Subscribtion subscribtion = 3;
+    string topic = 1;
+    oneof type {
+        ClientRegistration client_registration = 2;
+        DeviceRegistration device_registration = 3;
+        Subscribtion subscribtion = 4;
     }
 }
