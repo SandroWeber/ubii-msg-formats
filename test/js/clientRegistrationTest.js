@@ -10,7 +10,7 @@ import {
     let getComparisonObjectOne = () => {
         return {
             clientRegistration: {
-                displayName: 'clientName',
+                name: 'clientName',
                 namespace: 'app'
             }
         };
@@ -19,7 +19,7 @@ import {
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload({
             clientRegistration: {
-                displayName: 'clientName',
+                name: 'clientName',
                 namespace: 'app'
                 }
             });

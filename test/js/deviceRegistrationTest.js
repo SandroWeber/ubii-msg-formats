@@ -11,7 +11,7 @@ import {
         return {
             deviceRegistration: {
                 correspondingClientId: 'someClientId',
-                displayName: 'clientName',
+                name: 'clientName',
                 deviceType: 'PARTICIPANT'
             }
         };
@@ -21,7 +21,7 @@ import {
         return context.translator.createMessageFromPayload({
             deviceRegistration: {
                 correspondingClientId: 'someClientId',
-                displayName: 'clientName',
+                name: 'clientName',
                 deviceType: 1
             }
         });

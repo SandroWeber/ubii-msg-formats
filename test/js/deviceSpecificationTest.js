@@ -11,7 +11,7 @@ import {
         return {
             deviceSpecification: {
                 correspondingClientId: 'clientUuid',
-                displayName: 'awesomeDeviceName',
+                name: 'awesomeDeviceName',
                 namespace: 'app',
                 id: 'uuid'
             }
@@ -22,7 +22,7 @@ import {
         return context.translator.createMessageFromPayload({
             deviceSpecification: {
                 correspondingClientId: 'clientUuid',
-                displayName: 'awesomeDeviceName',
+                name: 'awesomeDeviceName',
                 namespace: 'app',
                 id: 'uuid'
             }
