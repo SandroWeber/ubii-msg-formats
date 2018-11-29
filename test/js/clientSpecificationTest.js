@@ -12,7 +12,7 @@ import {
             clientSpecification: {
                 name: 'awesomeDeviceName',
                 namespace: 'app',
-                id: 'uuid',
+                identifier: 'uuid',
                 targetHost: 'localhost',
                 targetPort: '8667',
             }
@@ -24,7 +24,7 @@ import {
             clientSpecification: {
                 name: 'awesomeDeviceName',
                 namespace: 'app',
-                id: 'uuid',
+                identifier: 'uuid',
                 targetHost: 'localhost',
                 targetPort: '8667',
             }

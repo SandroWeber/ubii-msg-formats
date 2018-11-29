@@ -10,9 +10,9 @@ import {
     let getComparisonObjectOne = () => {
         return {
             deviceRegistration: {
-                correspondingClientId: 'someClientId',
                 name: 'clientName',
-                deviceType: 'PARTICIPANT'
+                deviceType: 'PARTICIPANT',
+                correspondingClientIdentifier: 'someClientId',
             }
         };
     };
@@ -20,9 +20,9 @@ import {
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload({
             deviceRegistration: {
-                correspondingClientId: 'someClientId',
                 name: 'clientName',
-                deviceType: 1
+                deviceType: 1,
+                correspondingClientIdentifier: 'someClientId',
             }
         });
     }
