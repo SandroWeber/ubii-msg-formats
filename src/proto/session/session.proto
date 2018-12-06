@@ -2,10 +2,8 @@ package ubii.session;
 syntax = "proto3";
 
 import "../interaction/interaction.proto";
-import "./interactionTopicMapping.proto";
 
 message Session {
     string name = 1;
     repeated Interaction interactions = 2;
-    repeated InteractionTopicMapping interaction_topic_mappings = 3;
 }

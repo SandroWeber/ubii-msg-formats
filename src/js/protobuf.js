@@ -2942,6 +2942,7 @@ $root.ubii = (function() {
              * Properties of a CauseEffectRelation.
              * @memberof ubii.interaction
              * @interface ICauseEffectRelation
+             * @property {string|null} [id] CauseEffectRelation id
              * @property {string|null} [name] CauseEffectRelation name
              * @property {Array.<ubii.interaction.ICause>|null} [causes] CauseEffectRelation causes
              * @property {Array.<ubii.interaction.IEffect>|null} [effects] CauseEffectRelation effects
@@ -2963,6 +2964,14 @@ $root.ubii = (function() {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * CauseEffectRelation id.
+             * @member {string} id
+             * @memberof ubii.interaction.CauseEffectRelation
+             * @instance
+             */
+            CauseEffectRelation.prototype.id = "";
 
             /**
              * CauseEffectRelation name.
@@ -3012,14 +3021,16 @@ $root.ubii = (function() {
             CauseEffectRelation.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
                 if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.causes != null && message.causes.length)
                     for (var i = 0; i < message.causes.length; ++i)
-                        $root.ubii.interaction.Cause.encode(message.causes[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.ubii.interaction.Cause.encode(message.causes[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.effects != null && message.effects.length)
                     for (var i = 0; i < message.effects.length; ++i)
-                        $root.ubii.interaction.Effect.encode(message.effects[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.ubii.interaction.Effect.encode(message.effects[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -3055,14 +3066,17 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.name = reader.string();
+                        message.id = reader.string();
                         break;
                     case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
                         if (!(message.causes && message.causes.length))
                             message.causes = [];
                         message.causes.push($root.ubii.interaction.Cause.decode(reader, reader.uint32()));
                         break;
-                    case 3:
+                    case 4:
                         if (!(message.effects && message.effects.length))
                             message.effects = [];
                         message.effects.push($root.ubii.interaction.Effect.decode(reader, reader.uint32()));
@@ -3102,6 +3116,9 @@ $root.ubii = (function() {
             CauseEffectRelation.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
@@ -3138,6 +3155,8 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.interaction.CauseEffectRelation)
                     return object;
                 var message = new $root.ubii.interaction.CauseEffectRelation();
+                if (object.id != null)
+                    message.id = String(object.id);
                 if (object.name != null)
                     message.name = String(object.name);
                 if (object.causes) {
@@ -3180,8 +3199,12 @@ $root.ubii = (function() {
                     object.causes = [];
                     object.effects = [];
                 }
-                if (options.defaults)
+                if (options.defaults) {
+                    object.id = "";
                     object.name = "";
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
                 if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
                 if (message.causes && message.causes.length) {
@@ -3819,287 +3842,6 @@ $root.ubii = (function() {
          */
         var session = {};
 
-        session.InteractionTopicMapping = (function() {
-
-            /**
-             * Properties of an InteractionTopicMapping.
-             * @memberof ubii.session
-             * @interface IInteractionTopicMapping
-             * @property {string|null} [interactionIdentifier] InteractionTopicMapping interactionIdentifier
-             * @property {string|null} [topic] InteractionTopicMapping topic
-             * @property {ubii.session.InteractionTopicMapping.IOType|null} [ioType] InteractionTopicMapping ioType
-             * @property {string|null} [internalName] InteractionTopicMapping internalName
-             */
-
-            /**
-             * Constructs a new InteractionTopicMapping.
-             * @memberof ubii.session
-             * @classdesc Represents an InteractionTopicMapping.
-             * @implements IInteractionTopicMapping
-             * @constructor
-             * @param {ubii.session.IInteractionTopicMapping=} [properties] Properties to set
-             */
-            function InteractionTopicMapping(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * InteractionTopicMapping interactionIdentifier.
-             * @member {string} interactionIdentifier
-             * @memberof ubii.session.InteractionTopicMapping
-             * @instance
-             */
-            InteractionTopicMapping.prototype.interactionIdentifier = "";
-
-            /**
-             * InteractionTopicMapping topic.
-             * @member {string} topic
-             * @memberof ubii.session.InteractionTopicMapping
-             * @instance
-             */
-            InteractionTopicMapping.prototype.topic = "";
-
-            /**
-             * InteractionTopicMapping ioType.
-             * @member {ubii.session.InteractionTopicMapping.IOType} ioType
-             * @memberof ubii.session.InteractionTopicMapping
-             * @instance
-             */
-            InteractionTopicMapping.prototype.ioType = 0;
-
-            /**
-             * InteractionTopicMapping internalName.
-             * @member {string} internalName
-             * @memberof ubii.session.InteractionTopicMapping
-             * @instance
-             */
-            InteractionTopicMapping.prototype.internalName = "";
-
-            /**
-             * Creates a new InteractionTopicMapping instance using the specified properties.
-             * @function create
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {ubii.session.IInteractionTopicMapping=} [properties] Properties to set
-             * @returns {ubii.session.InteractionTopicMapping} InteractionTopicMapping instance
-             */
-            InteractionTopicMapping.create = function create(properties) {
-                return new InteractionTopicMapping(properties);
-            };
-
-            /**
-             * Encodes the specified InteractionTopicMapping message. Does not implicitly {@link ubii.session.InteractionTopicMapping.verify|verify} messages.
-             * @function encode
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {ubii.session.IInteractionTopicMapping} message InteractionTopicMapping message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            InteractionTopicMapping.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.interactionIdentifier != null && message.hasOwnProperty("interactionIdentifier"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.interactionIdentifier);
-                if (message.topic != null && message.hasOwnProperty("topic"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.topic);
-                if (message.ioType != null && message.hasOwnProperty("ioType"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.ioType);
-                if (message.internalName != null && message.hasOwnProperty("internalName"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.internalName);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified InteractionTopicMapping message, length delimited. Does not implicitly {@link ubii.session.InteractionTopicMapping.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {ubii.session.IInteractionTopicMapping} message InteractionTopicMapping message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            InteractionTopicMapping.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes an InteractionTopicMapping message from the specified reader or buffer.
-             * @function decode
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.session.InteractionTopicMapping} InteractionTopicMapping
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            InteractionTopicMapping.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.session.InteractionTopicMapping();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.interactionIdentifier = reader.string();
-                        break;
-                    case 2:
-                        message.topic = reader.string();
-                        break;
-                    case 3:
-                        message.ioType = reader.int32();
-                        break;
-                    case 4:
-                        message.internalName = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes an InteractionTopicMapping message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.session.InteractionTopicMapping} InteractionTopicMapping
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            InteractionTopicMapping.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies an InteractionTopicMapping message.
-             * @function verify
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            InteractionTopicMapping.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.interactionIdentifier != null && message.hasOwnProperty("interactionIdentifier"))
-                    if (!$util.isString(message.interactionIdentifier))
-                        return "interactionIdentifier: string expected";
-                if (message.topic != null && message.hasOwnProperty("topic"))
-                    if (!$util.isString(message.topic))
-                        return "topic: string expected";
-                if (message.ioType != null && message.hasOwnProperty("ioType"))
-                    switch (message.ioType) {
-                    default:
-                        return "ioType: enum value expected";
-                    case 0:
-                    case 1:
-                        break;
-                    }
-                if (message.internalName != null && message.hasOwnProperty("internalName"))
-                    if (!$util.isString(message.internalName))
-                        return "internalName: string expected";
-                return null;
-            };
-
-            /**
-             * Creates an InteractionTopicMapping message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.session.InteractionTopicMapping} InteractionTopicMapping
-             */
-            InteractionTopicMapping.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.session.InteractionTopicMapping)
-                    return object;
-                var message = new $root.ubii.session.InteractionTopicMapping();
-                if (object.interactionIdentifier != null)
-                    message.interactionIdentifier = String(object.interactionIdentifier);
-                if (object.topic != null)
-                    message.topic = String(object.topic);
-                switch (object.ioType) {
-                case "INPUT":
-                case 0:
-                    message.ioType = 0;
-                    break;
-                case "OUTPUT":
-                case 1:
-                    message.ioType = 1;
-                    break;
-                }
-                if (object.internalName != null)
-                    message.internalName = String(object.internalName);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from an InteractionTopicMapping message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof ubii.session.InteractionTopicMapping
-             * @static
-             * @param {ubii.session.InteractionTopicMapping} message InteractionTopicMapping
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            InteractionTopicMapping.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.defaults) {
-                    object.interactionIdentifier = "";
-                    object.topic = "";
-                    object.ioType = options.enums === String ? "INPUT" : 0;
-                    object.internalName = "";
-                }
-                if (message.interactionIdentifier != null && message.hasOwnProperty("interactionIdentifier"))
-                    object.interactionIdentifier = message.interactionIdentifier;
-                if (message.topic != null && message.hasOwnProperty("topic"))
-                    object.topic = message.topic;
-                if (message.ioType != null && message.hasOwnProperty("ioType"))
-                    object.ioType = options.enums === String ? $root.ubii.session.InteractionTopicMapping.IOType[message.ioType] : message.ioType;
-                if (message.internalName != null && message.hasOwnProperty("internalName"))
-                    object.internalName = message.internalName;
-                return object;
-            };
-
-            /**
-             * Converts this InteractionTopicMapping to JSON.
-             * @function toJSON
-             * @memberof ubii.session.InteractionTopicMapping
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            InteractionTopicMapping.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * IOType enum.
-             * @name ubii.session.InteractionTopicMapping.IOType
-             * @enum {string}
-             * @property {number} INPUT=0 INPUT value
-             * @property {number} OUTPUT=1 OUTPUT value
-             */
-            InteractionTopicMapping.IOType = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "INPUT"] = 0;
-                values[valuesById[1] = "OUTPUT"] = 1;
-                return values;
-            })();
-
-            return InteractionTopicMapping;
-        })();
-
         session.Session = (function() {
 
             /**
@@ -4108,7 +3850,6 @@ $root.ubii = (function() {
              * @interface ISession
              * @property {string|null} [name] Session name
              * @property {Array.<ubii.interaction.IInteraction>|null} [interactions] Session interactions
-             * @property {Array.<ubii.session.IInteractionTopicMapping>|null} [interactionTopicMappings] Session interactionTopicMappings
              */
 
             /**
@@ -4121,7 +3862,6 @@ $root.ubii = (function() {
              */
             function Session(properties) {
                 this.interactions = [];
-                this.interactionTopicMappings = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4143,14 +3883,6 @@ $root.ubii = (function() {
              * @instance
              */
             Session.prototype.interactions = $util.emptyArray;
-
-            /**
-             * Session interactionTopicMappings.
-             * @member {Array.<ubii.session.IInteractionTopicMapping>} interactionTopicMappings
-             * @memberof ubii.session.Session
-             * @instance
-             */
-            Session.prototype.interactionTopicMappings = $util.emptyArray;
 
             /**
              * Creates a new Session instance using the specified properties.
@@ -4181,9 +3913,6 @@ $root.ubii = (function() {
                 if (message.interactions != null && message.interactions.length)
                     for (var i = 0; i < message.interactions.length; ++i)
                         $root.ubii.interaction.Interaction.encode(message.interactions[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.interactionTopicMappings != null && message.interactionTopicMappings.length)
-                    for (var i = 0; i < message.interactionTopicMappings.length; ++i)
-                        $root.ubii.session.InteractionTopicMapping.encode(message.interactionTopicMappings[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -4225,11 +3954,6 @@ $root.ubii = (function() {
                         if (!(message.interactions && message.interactions.length))
                             message.interactions = [];
                         message.interactions.push($root.ubii.interaction.Interaction.decode(reader, reader.uint32()));
-                        break;
-                    case 3:
-                        if (!(message.interactionTopicMappings && message.interactionTopicMappings.length))
-                            message.interactionTopicMappings = [];
-                        message.interactionTopicMappings.push($root.ubii.session.InteractionTopicMapping.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4278,15 +4002,6 @@ $root.ubii = (function() {
                             return "interactions." + error;
                     }
                 }
-                if (message.interactionTopicMappings != null && message.hasOwnProperty("interactionTopicMappings")) {
-                    if (!Array.isArray(message.interactionTopicMappings))
-                        return "interactionTopicMappings: array expected";
-                    for (var i = 0; i < message.interactionTopicMappings.length; ++i) {
-                        var error = $root.ubii.session.InteractionTopicMapping.verify(message.interactionTopicMappings[i]);
-                        if (error)
-                            return "interactionTopicMappings." + error;
-                    }
-                }
                 return null;
             };
 
@@ -4314,16 +4029,6 @@ $root.ubii = (function() {
                         message.interactions[i] = $root.ubii.interaction.Interaction.fromObject(object.interactions[i]);
                     }
                 }
-                if (object.interactionTopicMappings) {
-                    if (!Array.isArray(object.interactionTopicMappings))
-                        throw TypeError(".ubii.session.Session.interactionTopicMappings: array expected");
-                    message.interactionTopicMappings = [];
-                    for (var i = 0; i < object.interactionTopicMappings.length; ++i) {
-                        if (typeof object.interactionTopicMappings[i] !== "object")
-                            throw TypeError(".ubii.session.Session.interactionTopicMappings: object expected");
-                        message.interactionTopicMappings[i] = $root.ubii.session.InteractionTopicMapping.fromObject(object.interactionTopicMappings[i]);
-                    }
-                }
                 return message;
             };
 
@@ -4340,10 +4045,8 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults) {
+                if (options.arrays || options.defaults)
                     object.interactions = [];
-                    object.interactionTopicMappings = [];
-                }
                 if (options.defaults)
                     object.name = "";
                 if (message.name != null && message.hasOwnProperty("name"))
@@ -4352,11 +4055,6 @@ $root.ubii = (function() {
                     object.interactions = [];
                     for (var j = 0; j < message.interactions.length; ++j)
                         object.interactions[j] = $root.ubii.interaction.Interaction.toObject(message.interactions[j], options);
-                }
-                if (message.interactionTopicMappings && message.interactionTopicMappings.length) {
-                    object.interactionTopicMappings = [];
-                    for (var j = 0; j < message.interactionTopicMappings.length; ++j)
-                        object.interactionTopicMappings[j] = $root.ubii.session.InteractionTopicMapping.toObject(message.interactionTopicMappings[j], options);
                 }
                 return object;
             };

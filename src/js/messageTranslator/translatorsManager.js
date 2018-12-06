@@ -22,7 +22,14 @@ class TranslatorsManager {
             }
             typePath += nestedType.name;
 
-            this.translators.set(typePath, new MessageTranslator(filePath, typePath));
+            try {
+                if (protoRoot.lookupType(typePath)) {
+                    this.translators.set(typePath, new MessageTranslator(filePath, typePath));
+                }
+            }
+            catch (error) {
+                //console.warn(error);
+            }
         });
     }
 
@@ -49,6 +56,10 @@ class TranslatorsManager {
 
         return files;
     };
+
+    getTranslator(messageType) {
+        return this.translators.get(messageType);
+    }
 }
 
 module.exports.default = new TranslatorsManager();
