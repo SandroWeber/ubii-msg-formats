@@ -1,10 +1,11 @@
 package ubii.interaction;
 syntax = "proto3";
 
-import "./ioFormat.proto";
+import "./ioMapping.proto";
 
 message Cause {
-    string name = 1;
-    string callback = 2;
-    repeated IOFormat inputs = 3;
+    string id = 1;
+    string name = 2;
+    string callback = 3;
+    repeated IOMapping inputs = 4;
 }

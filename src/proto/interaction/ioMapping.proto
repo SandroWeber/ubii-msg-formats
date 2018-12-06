@@ -1,0 +1,9 @@
+package ubii.interaction;
+syntax = "proto3";
+
+message IOMapping {
+    string internal_name = 1;
+    string topic = 2;
+    string protobuf_type = 3;
+    string protobuf_file = 4;
+}
