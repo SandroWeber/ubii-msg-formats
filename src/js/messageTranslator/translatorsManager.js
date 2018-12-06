@@ -62,4 +62,4 @@ class TranslatorsManager {
     }
 }
 
-module.exports.default = new TranslatorsManager();
+module.exports = new TranslatorsManager();
