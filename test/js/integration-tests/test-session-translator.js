@@ -1,6 +1,6 @@
 import test from 'ava';
 import {
-    SessionTranslator,
+    SessionTranslator
 } from '../../../src/js';
 
 

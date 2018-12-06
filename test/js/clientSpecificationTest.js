@@ -10,9 +10,9 @@ import {
     let getComparisonObjectOne = () => {
         return {
             clientSpecification: {
-                displayName: 'awesomeDeviceName',
+                name: 'awesomeDeviceName',
                 namespace: 'app',
-                id: 'uuid',
+                identifier: 'uuid',
                 targetHost: 'localhost',
                 targetPort: '8667',
             }
@@ -22,9 +22,9 @@ import {
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload({
             clientSpecification: {
-                displayName: 'awesomeDeviceName',
+                name: 'awesomeDeviceName',
                 namespace: 'app',
-                id: 'uuid',
+                identifier: 'uuid',
                 targetHost: 'localhost',
                 targetPort: '8667',
             }

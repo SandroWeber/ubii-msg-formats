@@ -1,0 +1,10 @@
+package ubii.service.reply;
+syntax = "proto3";
+
+message DeviceSpecification {
+    string name = 1;
+    string namespace = 2;
+    string identifier = 3;
+    string deviceType = 4;
+    string corresponding_client_identifier = 5;
+}

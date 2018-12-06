@@ -2,11 +2,11 @@ package ubii.service.request;
 syntax = "proto3";
 
 message DeviceRegistration {
-    string corresponding_client_id = 1;
-    string display_name = 2;
+    string name = 1;
     enum DeviceType {
         PARTICIPANT = 1;
         WATCHER = 2;
     }
-    DeviceType device_type = 3 [default = PARTICIPANT];
+    DeviceType device_type = 2 [default = PARTICIPANT];
+    string corresponding_client_identifier = 3;
 }

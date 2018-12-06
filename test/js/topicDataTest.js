@@ -10,9 +10,11 @@ import {
     let getSimpleMessage = (context, topic, type, value) => {
         let payload = {
             deviceIdentifier: 'superDevice',
-            topic: topic,
+            topicDataRecord:{
+                topic: topic,
+            }
         };
-        payload[type] = value;
+        payload.topicDataRecord[type] = value;
 
         return context.translator.createMessageFromPayload(payload);
     }
@@ -20,9 +22,11 @@ import {
     let getComparisonObject = (topic, type, value) => {
         let object = {
             deviceIdentifier: 'superDevice',
-            topic: topic,
+            topicDataRecord:{
+                topic: topic,
+            }
         };
-        object[type] = value;
+        object.topicDataRecord[type] = value;
 
         return object;
     };
@@ -30,10 +34,12 @@ import {
     let getRawComparisonObject = (topic, type, value) => {
         let object = {
             deviceIdentifier: 'superDevice',
-            topic: topic,
-            type: type
+            topicDataRecord:{
+                topic: topic,
+                type: type
+            }
         };
-        object[type] = value;
+        object.topicDataRecord[type] = value;
 
         return object;
     };
@@ -55,16 +61,16 @@ import {
         let payload = test.context.translator.createPayloadFromMessage(messageTwo);
         test.true(JSON.stringify(payload) === JSON.stringify(comparisonObject));
         // test topic
-        test.is(messageTwo.topic,
-            comparisonObject.topic);
+        test.is(messageTwo.topicDataRecord.topic,
+            comparisonObject.topicDataRecord.topic);
         // test oneof specifier
-        test.is(messageTwo.type,
+        test.is(messageTwo.topicDataRecord.type,
             type);
         // compare specific data type keys
-        let keys = Object.keys(messageTwo[type]);
+        let keys = Object.keys(messageTwo.topicDataRecord[type]);
         for (let i = 0; i < keys.length; i++) {
-            test.is(messageTwo[type][keys[i]],
-                comparisonObject[type][keys[i]]);
+            test.is(messageTwo.topicDataRecord[type][keys[i]],
+                comparisonObject.topicDataRecord[type][keys[i]]);
         }
 
         return messageTwo;
@@ -157,18 +163,18 @@ import {
         t.true(JSON.stringify(messageTwo) === JSON.stringify(rawComparisonObject));
 
         // oneofs
-        t.is(messageTwo.length,
-            comparisonObject.length);
+        t.is(messageTwo.topicDataRecord.length,
+            comparisonObject.topicDataRecord.length);
 
-        t.is(messageTwo.topic,
-            comparisonObject.topic);
-        t.is(messageTwo.type, 'vector3');
-        t.is(messageTwo.vector3.x,
-            comparisonObject.vector3.x);
-        t.is(messageTwo.vector3.y,
-            comparisonObject.vector3.y);
-        t.is(messageTwo.vector3.z,
-            comparisonObject.vector3.z);
+        t.is(messageTwo.topicDataRecord.topic,
+            comparisonObject.topicDataRecord.topic);
+        t.is(messageTwo.topicDataRecord.type, 'vector3');
+        t.is(messageTwo.topicDataRecord.vector3.x,
+            comparisonObject.topicDataRecord.vector3.x);
+        t.is(messageTwo.topicDataRecord.vector3.y,
+            comparisonObject.topicDataRecord.vector3.y);
+        t.is(messageTwo.topicDataRecord.vector3.z,
+            comparisonObject.topicDataRecord.vector3.z);
 
         // as object
         let payload = t.context.translator.createPayloadFromMessage(messageTwo);

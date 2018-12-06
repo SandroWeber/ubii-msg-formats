@@ -1,8 +1,0 @@
-package ubii.interaction;
-syntax = "proto3";
-
-message IOFormat {
-    string name = 1;
-    string proto_type = 2;
-    string proto_file = 3;
-}

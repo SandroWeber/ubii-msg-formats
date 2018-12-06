@@ -10,10 +10,11 @@ import {
     let getComparisonObjectOne = () => {
         return {
             deviceSpecification: {
-                correspondingClientId: 'clientUuid',
-                displayName: 'awesomeDeviceName',
+                name: 'awesomeDeviceName',
                 namespace: 'app',
-                id: 'uuid'
+                identifier: 'uuid',
+                deviceType: '1',
+                correspondingClientIdentifier: 'clientUuid',
             }
         };
     };
@@ -21,10 +22,11 @@ import {
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload({
             deviceSpecification: {
-                correspondingClientId: 'clientUuid',
-                displayName: 'awesomeDeviceName',
+                name: 'awesomeDeviceName',
                 namespace: 'app',
-                id: 'uuid'
+                identifier: 'uuid',
+                deviceType: '1',
+                correspondingClientIdentifier: 'clientUuid',
             }
         });
     }

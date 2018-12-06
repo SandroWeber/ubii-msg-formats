@@ -2,7 +2,7 @@ package ubii.service;
 syntax = "proto3";
 
 import "./reply/success.proto";
-import "./reply/error.proto";
+import "./../general/error.proto";
 import "./reply/clientSpecification.proto";
 import "./reply/deviceSpecification.proto";
 
