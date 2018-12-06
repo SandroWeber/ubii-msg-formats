@@ -13,9 +13,9 @@ const protobuf = require("protobufjs");
 class MessageTranslator {
 
     constructor(fileName, typePath, loadProtoFileSynchronously = true) {
-        if (new.target === MessageTranslator) {
+        /*if (new.target === MessageTranslator) {
             throw new TypeError("Cannot construct MessageTranslator instances directly");
-        }
+        }*/
 
         this.fileName = fileName;
         this.typePath = typePath;

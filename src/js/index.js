@@ -5,6 +5,7 @@ const SessionTranslator = require('./messageTranslator/sessionTranslator');
 const InteractionTranslator = require('./messageTranslator/interactionTranslator');
 const CauseTranslator = require('./messageTranslator/causeTranslator');
 const EffectTranslator = require('./messageTranslator/effectTranslator');
+const TranslatorsManager = require('./messageTranslator/translatorsManager');
 
 module.exports = {
     TopicDataTranslator: TopicDataTranslator,
@@ -13,5 +14,6 @@ module.exports = {
     SessionTranslator: SessionTranslator,
     CauseTranslator: CauseTranslator,
     EffectTranslator: EffectTranslator,
-    InteractionTranslator: InteractionTranslator
+    InteractionTranslator: InteractionTranslator,
+    TranslatorsManager: TranslatorsManager
 };

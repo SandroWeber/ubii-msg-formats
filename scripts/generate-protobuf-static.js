@@ -22,7 +22,6 @@ const pbjs = require("protobufjs/cli/pbjs");
                 });
             }
             else if (newPath.indexOf(filter) >= 0) {
-                //console.log('-- found: ',newPath);
                 files.push(newPath);
             }
         }
