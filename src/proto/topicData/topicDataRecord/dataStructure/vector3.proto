@@ -1,5 +1,5 @@
-package ubii.dataStructure;
 syntax = "proto3";
+package ubii.dataStructure;
 
 message Vector3 {
     double x = 1;

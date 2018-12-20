@@ -1,5 +1,5 @@
-package ubii.service.request;
 syntax = "proto3";
+package ubii.service.request;
 
 message DeviceRegistration {
     string name = 1;
