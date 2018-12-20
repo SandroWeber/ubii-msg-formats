@@ -1,5 +1,5 @@
-package ubii.service;
 syntax = "proto3";
+package ubii.service;
 
 import "./request/clientRegistration.proto";
 import "./request/deviceRegistration.proto";

@@ -1,5 +1,5 @@
-package ubii.session;
 syntax = "proto3";
+package ubii.session;
 
 import "../interaction/interaction.proto";
 

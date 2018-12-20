@@ -1,5 +1,5 @@
-package ubii.service.reply;
 syntax = "proto3";
+package ubii.service.reply;
 
 message ClientSpecification {
     string name = 1;
