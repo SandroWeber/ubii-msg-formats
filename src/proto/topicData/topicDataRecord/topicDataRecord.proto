@@ -1,5 +1,5 @@
-package ubii.topicData;
 syntax = "proto3";
+package ubii.topicData;
 
 import "./dataStructure/vector2.proto";
 import "./dataStructure/vector3.proto";

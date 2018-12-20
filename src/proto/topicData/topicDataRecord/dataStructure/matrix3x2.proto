@@ -1,5 +1,5 @@
-package ubii.dataStructure;
 syntax = "proto3";
+package ubii.dataStructure;
 
 message Matrix3x2 {
     double m00 = 1;

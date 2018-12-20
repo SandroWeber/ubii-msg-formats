@@ -1,5 +1,5 @@
-package ubii.interaction;
 syntax = "proto3";
+package ubii.interaction;
 
 import "./ioMapping.proto";
 

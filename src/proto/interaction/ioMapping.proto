@@ -1,5 +1,5 @@
-package ubii.interaction;
 syntax = "proto3";
+package ubii.interaction;
 
 message IOMapping {
     string internal_name = 1;
