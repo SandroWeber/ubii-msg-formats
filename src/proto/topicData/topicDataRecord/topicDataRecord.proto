@@ -1,13 +1,13 @@
 syntax = "proto3";
 package ubii.topicData;
 
-import "./dataStructure/vector2.proto";
-import "./dataStructure/vector3.proto";
-import "./dataStructure/vector4.proto";
-import "./dataStructure/quaternion.proto";
-import "./dataStructure/matrix3x2.proto";
-import "./dataStructure/matrix4x4.proto";
-import "./dataStructure/color.proto";
+import "topicData/topicDataRecord/dataStructure/vector2.proto";
+import "topicData/topicDataRecord/dataStructure/vector3.proto";
+import "topicData/topicDataRecord/dataStructure/vector4.proto";
+import "topicData/topicDataRecord/dataStructure/quaternion.proto";
+import "topicData/topicDataRecord/dataStructure/matrix3x2.proto";
+import "topicData/topicDataRecord/dataStructure/matrix4x4.proto";
+import "topicData/topicDataRecord/dataStructure/color.proto";
 
 message TopicDataRecord {
     string topic = 1;
@@ -15,12 +15,12 @@ message TopicDataRecord {
         double number = 2;
         bool boolean = 3;
         string string = 4;
-        Vector2 vector2 = 5;
-        Vector3 vector3 = 6;
-        Vector4 vector4 = 7;
-        Quaternion quaternion = 8;
-        Matrix3x2 matrix3x2 = 9;
-        Matrix4x4 matrix4x4 = 10;
-        Color color = 11;
+        ubii.dataStructure.Vector2 vector2 = 5;
+        ubii.dataStructure.Vector3 vector3 = 6;
+        ubii.dataStructure.Vector4 vector4 = 7;
+        ubii.dataStructure.Quaternion quaternion = 8;
+        ubii.dataStructure.Matrix3x2 matrix3x2 = 9;
+        ubii.dataStructure.Matrix4x4 matrix4x4 = 10;
+        ubii.dataStructure.Color color = 11;
     }
 }

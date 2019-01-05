@@ -1,12 +1,12 @@
 syntax = "proto3";
 package ubii.interaction;
 
-import "./cause.proto";
-import "./effect.proto";
+import "interaction/cause.proto";
+import "interaction/effect.proto";
 
 message CauseEffectRelation {
     string id = 1;
     string name = 2;
-    repeated Cause causes = 3;
-    repeated Effect effects = 4;
+    repeated ubii.interaction.Cause causes = 3;
+    repeated ubii.interaction.Effect effects = 4;
 }

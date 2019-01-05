@@ -1,15 +1,15 @@
 syntax = "proto3";
 package ubii.service;
 
-import "./request/clientRegistration.proto";
-import "./request/deviceRegistration.proto";
-import "./request/subscribtion.proto";
+import "serviceRequest/request/clientRegistration.proto";
+import "serviceRequest/request/deviceRegistration.proto";
+import "serviceRequest/request/subscribtion.proto";
 
 message ServiceRequest {
     string topic = 1;
     oneof type {
-        ClientRegistration client_registration = 2;
-        DeviceRegistration device_registration = 3;
-        Subscribtion subscribtion = 4;
+        ubii.service.request.ClientRegistration client_registration = 2;
+        ubii.service.request.DeviceRegistration device_registration = 3;
+        ubii.service.request.Subscribtion subscribtion = 4;
     }
 }
