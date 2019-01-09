@@ -33,7 +33,7 @@ else:
   protoc = find_executable("protoc")
 
 pathToProtos = './src/proto'
-pathToOutput = './build/lib'
+pathToOutput = './ubii_msg_formats'
 
 def getAllProtos():
 
