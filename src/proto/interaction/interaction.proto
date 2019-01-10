@@ -1,7 +1,7 @@
 syntax = "proto3";
 package ubii.interaction;
 
-import "interaction/ioMapping.proto";
+import "proto/interaction/ioMapping.proto";
 
 message Interaction {
     string id = 1;

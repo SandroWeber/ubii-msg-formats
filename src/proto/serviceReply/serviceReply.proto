@@ -1,10 +1,10 @@
 syntax = "proto3";
 package ubii.service;
 
-import "serviceReply/reply/success.proto";
-import "general/error.proto";
-import "serviceReply/reply/clientSpecification.proto";
-import "serviceReply/reply/deviceSpecification.proto";
+import "proto/serviceReply/reply/success.proto";
+import "proto/general/error.proto";
+import "proto/serviceReply/reply/clientSpecification.proto";
+import "proto/serviceReply/reply/deviceSpecification.proto";
 
 message ServiceReply {
     oneof type{

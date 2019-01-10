@@ -1,8 +1,8 @@
 syntax = "proto3";
 package ubii.interaction;
 
-import "interaction/cause.proto";
-import "interaction/effect.proto";
+import "proto/interaction/cause.proto";
+import "proto/interaction/effect.proto";
 
 message CauseEffectRelation {
     string id = 1;

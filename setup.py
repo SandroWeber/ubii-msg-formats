@@ -32,8 +32,8 @@ elif os.path.exists("../vsprojects/Release/protoc.exe"):
 else:
   protoc = find_executable("protoc")
 
-pathToProtos = './src/proto'
-pathToOutput = './ubii_msg_formats'
+pathToProtos = './src'
+pathToOutput = './'
 
 def getAllProtos():
 

@@ -1,9 +1,9 @@
 syntax = "proto3";
 package ubii.service;
 
-import "serviceRequest/request/clientRegistration.proto";
-import "serviceRequest/request/deviceRegistration.proto";
-import "serviceRequest/request/subscribtion.proto";
+import "proto/serviceRequest/request/clientRegistration.proto";
+import "proto/serviceRequest/request/deviceRegistration.proto";
+import "proto/serviceRequest/request/subscribtion.proto";
 
 message ServiceRequest {
     string topic = 1;

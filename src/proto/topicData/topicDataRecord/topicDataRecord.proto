@@ -1,13 +1,13 @@
 syntax = "proto3";
 package ubii.topicData;
 
-import "topicData/topicDataRecord/dataStructure/vector2.proto";
-import "topicData/topicDataRecord/dataStructure/vector3.proto";
-import "topicData/topicDataRecord/dataStructure/vector4.proto";
-import "topicData/topicDataRecord/dataStructure/quaternion.proto";
-import "topicData/topicDataRecord/dataStructure/matrix3x2.proto";
-import "topicData/topicDataRecord/dataStructure/matrix4x4.proto";
-import "topicData/topicDataRecord/dataStructure/color.proto";
+import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
+import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
+import "proto/topicData/topicDataRecord/dataStructure/vector4.proto";
+import "proto/topicData/topicDataRecord/dataStructure/quaternion.proto";
+import "proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto";
+import "proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto";
+import "proto/topicData/topicDataRecord/dataStructure/color.proto";
 
 message TopicDataRecord {
     string topic = 1;
