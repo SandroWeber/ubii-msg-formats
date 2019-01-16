@@ -1,4 +1,4 @@
-# Snapshot report for `test\js\subscribtionTest.js`
+# Snapshot report for `test/js/subscribtionTest.js`
 
 The actual snapshot is saved in `subscribtionTest.js.snap`.
 

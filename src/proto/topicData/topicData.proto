@@ -1,8 +1,8 @@
 syntax = "proto3";
 package ubii.topicData;
 
-import "./topicDataRecord/topicDataRecord.proto";
-import "./../general/error.proto";
+import "topicDataRecord/topicDataRecord.proto";
+import "../general/error.proto";
 
 message TopicData {
     string device_identifier = 1;

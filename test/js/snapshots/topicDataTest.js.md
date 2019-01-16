@@ -1,4 +1,4 @@
-# Snapshot report for `test\js\topicDataTest.js`
+# Snapshot report for `test/js/topicDataTest.js`
 
 The actual snapshot is saved in `topicDataTest.js.snap`.
 
