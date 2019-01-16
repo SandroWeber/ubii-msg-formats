@@ -5,6 +5,7 @@ message ClientSpecification {
     string name = 1;
     string namespace = 2;
     string identifier = 3;
-    string target_host = 4;
-    string target_port = 5;
+    string topic_data_host = 4;
+    string topic_data_port_zmq = 5;
+    string topic_data_port_ws = 6;
 }
