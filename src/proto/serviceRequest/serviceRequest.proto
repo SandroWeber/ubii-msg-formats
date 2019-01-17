@@ -10,6 +10,6 @@ message ServiceRequest {
     oneof type {
         ClientRegistration client_registration = 2;
         DeviceRegistration device_registration = 3;
-        Subscribtion subscribtion = 4;
+        Subscription subscription = 4;
     }
 }
