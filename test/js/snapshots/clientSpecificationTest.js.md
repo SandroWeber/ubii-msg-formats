@@ -1,4 +1,4 @@
-# Snapshot report for `test\js\clientSpecificationTest.js`
+# Snapshot report for `test/js/clientSpecificationTest.js`
 
 The actual snapshot is saved in `clientSpecificationTest.js.snap`.
 

@@ -21,7 +21,7 @@ import {
         return context.translator.createMessageFromPayload({
             deviceRegistration: {
                 name: 'clientName',
-                deviceType: 1,
+                deviceType: 0,
                 correspondingClientIdentifier: 'someClientId',
             }
         });
