@@ -32,8 +32,8 @@ elif os.path.exists("../vsprojects/Release/protoc.exe"):
 else:
   protoc = find_executable("protoc")
 
-pathToProtos = './src'
-pathToOutput = './'
+pathToProtos = './..'
+pathToOutput = './../..'
 
 def getAllProtos():
 
@@ -149,7 +149,6 @@ if __name__ == '__main__':
       #        'import_test_package',
       #    ],
       ),
-      #test_suite='google.protobuf.internal',
       cmdclass={
           'clean': clean,
           'build_py': build_py,
