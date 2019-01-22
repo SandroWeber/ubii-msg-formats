@@ -11,8 +11,8 @@ import platform
 # We must use setuptools, not distutils, because we need to use the
 # namespace_packages.
 from setuptools import setup, find_packages
+from setuptools.command.install import install as install
 
-from distutils.command.install import install as install
 from distutils.command.build_py import build_py as _build_py
 from distutils.command.clean import clean as _clean
 from distutils.spawn import find_executable
