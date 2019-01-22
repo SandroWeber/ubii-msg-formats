@@ -9,7 +9,7 @@ import sysconfig
 import platform
 
 # We must use setuptools, not distutils, because we need to use the
-# namespace_packages option for the "google" package.
+# namespace_packages.
 from setuptools import setup, find_packages
 
 from distutils.command.build_py import build_py as _build_py
@@ -20,20 +20,12 @@ from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
 if 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
-  protoc = os.environ['PROTOC']
-elif os.path.exists("../src/protoc"):
-  protoc = "../src/protoc"
-elif os.path.exists("../src/protoc.exe"):
-  protoc = "../src/protoc.exe"
-elif os.path.exists("../vsprojects/Debug/protoc.exe"):
-  protoc = "../vsprojects/Debug/protoc.exe"
-elif os.path.exists("../vsprojects/Release/protoc.exe"):
-  protoc = "../vsprojects/Release/protoc.exe"
+    protoc = os.environ['PROTOC']
 else:
-  protoc = find_executable("protoc")
+    protoc = find_executable("protoc")
 
 pathToProtos = './..'
-pathToOutput = './../..'
+
 
 def getAllProtos():
 
@@ -55,7 +47,7 @@ def getAllProtos():
         
     return files
 
-def generate_proto(source, require = True):
+def generate_proto(source, pathToOutput, fileEnding, protocArg,require = True):
     """Invokes the Protocol Compiler to generate a _pb2.py from the given
     .proto file.  Does nothing if the output already exists and is newer than
     the input."""
@@ -63,7 +55,7 @@ def generate_proto(source, require = True):
     if not require and not os.path.exists(source):
         return
 
-    output = source.replace(".proto", "_pb2.py")
+    output = source.replace(".proto", fileEnding)
     #.replace("../src/", "")
 
     if (not os.path.exists(output) or
@@ -81,17 +73,17 @@ def generate_proto(source, require = True):
                 "or install the binary package.\n")
             sys.exit(-1)
 
-        protoc_command = [ protoc, "-I"+pathToProtos, "-I.", "--python_out="+pathToOutput, source ]
+        protoc_command = [ protoc, "-I"+pathToProtos, "-I.", "--"+protocArg+"_out="+pathToOutput, source ]
         if subprocess.call(protoc_command) != 0:
             sys.exit(-1)
 
-def generateProtos():
+def generateProtos(pathToOutput = './../../dist/py',fileEnding = '_pb3.py', protoc_arg='python'):
     re = getAllProtos()
     
     os.makedirs(pathToOutput, exist_ok=True)
 
     for i in re:
-        generate_proto(i,False)
+        generate_proto(i,pathToOutput,fileEnding,protoc_arg,False)
 
 class clean(_clean):
     def run(self):
@@ -107,15 +99,19 @@ class clean(_clean):
 
 class build_py(_build_py):
     def run(self):
-    # Generate necessary .proto file if it doesn't exist.
+        # Generate necessary .proto file if it doesn't exist.
         generateProtos()
 
         # _build_py is an old-style class, so super() doesn't work.
         _build_py.run(self)
 
+class build_java(_build_py):
+    def run(self):
+        generateProtos('./../../dist/java','_pb3.java','java')
+
 if __name__ == '__main__':
 
-    generateProtos()
+    #generateProtos('./../../dist/java','_pb3.py','python')
     # Keep this list of dependencies in sync with tox.ini.
     install_requires = ['six>=1.9', 'setuptools']
     if sys.version_info <= (2,7):
@@ -152,6 +148,7 @@ if __name__ == '__main__':
       cmdclass={
           'clean': clean,
           'build_py': build_py,
+          'build_java': build_java,
       },
       install_requires=install_requires,
   )
