@@ -10,7 +10,7 @@ import platform
 
 # We must use setuptools, not distutils, because we need to use the
 # namespace_packages.
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, find_namespace_packages
 from setuptools.command.install import install as install
 from setuptools.command.develop import develop as develop
 
@@ -26,14 +26,34 @@ if 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
 else:
     protoc = find_executable("protoc")
 
-pathToProtos = './..'
+def generateInits(pathToOutput):
+   
+    dirn = []
+    files = []
+    destdir = []
+    start = True
 
+    while len(dirn) != 0 or start:
+        if start: p = pathToOutput 
+        else: p = dirn.pop(0)
+        
+        start = False
+        for (dirpath, dirnames, filenames) in os.walk(p):
+            dirn.extend([p+"/"+x for x in dirnames])
+            filename = dirpath+'/__init__.py'
+            print(filename)
+            os.makedirs(os.path.dirname(filename), exist_ok=True)
+            with open(filename, "w") as f:
+                pass
+            break
+    
+    
 
-def getAllProtos():
+def getAllProtos(pathToProtos = '../proto'):
 
     dirn = []
     files = []
-    #destdir = []
+    destdir = []
     start = True
 
     while len(dirn) != 0 or start:
@@ -54,34 +74,35 @@ def generate_proto(source, pathToOutput, fileEnding, protocArg,require = True):
     .proto file.  Does nothing if the output already exists and is newer than
     the input."""
 
+    pathToProtos = './../'
+
     if not require and not os.path.exists(source):
         return
+
+    #print('path to protos: '+pathToProtos)
+    #print('path to output: '+pathToOutput)
 
     output = source.replace(".proto", fileEnding)
     #.replace("../src/", "")
 
-    if (not os.path.exists(output) or
-        (os.path.exists(source) and
-        os.path.getmtime(source) > os.path.getmtime(output))):
-        print("Generating %s..." % output)
+    if not os.path.exists(source):
+        sys.stderr.write("Can't find required file: %s\n" % source)
+        sys.exit(-1)
 
-        if not os.path.exists(source):
-            sys.stderr.write("Can't find required file: %s\n" % source)
-            sys.exit(-1)
+    if protoc is None:
+        sys.stderr.write(
+            "protoc is not installed nor found in ../src.  Please compile it "
+            "or install the binary package.\n")
+        sys.exit(-1)
 
-        if protoc is None:
-            sys.stderr.write(
-                "protoc is not installed nor found in ../src.  Please compile it "
-                "or install the binary package.\n")
-            sys.exit(-1)
-
-        protoc_command = [ protoc, "-I"+pathToProtos, "-I.", "--"+protocArg+"_out="+pathToOutput, source ]
-        if subprocess.call(protoc_command) != 0:
-            sys.exit(-1)
+    protoc_command = [ protoc, "-I"+pathToProtos, "-I.", "--"+protocArg+"_out="+pathToOutput, source ]
+    print(protoc_command)
+    if subprocess.call(protoc_command) != 0:
+        sys.exit(-1)
 
 def generateProtos(pathToOutput = './../../dist/py',fileEnding = '_pb2.py', protoc_arg='python'):
     re = getAllProtos()
-    
+    #print(re)
     os.makedirs(pathToOutput, exist_ok=True)
 
     for i in re:
@@ -96,21 +117,24 @@ class clean(_clean):
 class build_py(_build_py):
     def run(self):
         # Generate necessary .proto file if it doesn't exist.
-        generateProtos()
-
+        generateProtos('./build/','_pb2.py','python')
+        generateInits('./build/proto')
         # _build_py is an old-style class, so super() doesn't work.
         _build_py.run(self)
 
 class build_java(_build_py):
     def run(self):
         generateProtos('./../../dist/java','.java','java')
+        
+        # _build_py is an old-style class, so super() doesn't work.
         _build_py.run(self)
 
-#pip install not supported!
+#pip install
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
     def run(self):
-        generateProtos()
+        generateProtos('./','_pb2.py','python')
+        generateInits('./proto')
         install.run(self)
 
 # pip install -e
@@ -151,12 +175,9 @@ if __name__ == '__main__':
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         ],
-      #namespace_packages=['ubiinteract'],
-      packages=find_packages(
-      #    exclude=[
-      #        'import_test_package',
-      #    ],
-      ),
+      #namespace_packages=['./dist/py/proto'],
+      #packages = ['dist/py/proto/',],
+      packages=find_packages(),
       cmdclass={
           'clean': clean,
           'build_py': build_py,
