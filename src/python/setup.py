@@ -50,7 +50,7 @@ def getAllProtos():
     return files
 
 def generate_proto(source, pathToOutput, fileEnding, protocArg,require = True):
-    """Invokes the Protocol Compiler to generate a _pb3.py from the given
+    """Invokes the Protocol Compiler to generate a _pb2.py from the given
     .proto file.  Does nothing if the output already exists and is newer than
     the input."""
 
@@ -79,7 +79,7 @@ def generate_proto(source, pathToOutput, fileEnding, protocArg,require = True):
         if subprocess.call(protoc_command) != 0:
             sys.exit(-1)
 
-def generateProtos(pathToOutput = './../../dist/py',fileEnding = '_pb3.py', protoc_arg='python'):
+def generateProtos(pathToOutput = './../../dist/py',fileEnding = '_pb2.py', protoc_arg='python'):
     re = getAllProtos()
     
     os.makedirs(pathToOutput, exist_ok=True)
@@ -103,7 +103,8 @@ class build_py(_build_py):
 
 class build_java(_build_py):
     def run(self):
-        generateProtos('./../../dist/java','_pb3.java','java')
+        generateProtos('./../../dist/java','.java','java')
+        _build_py.run(self)
 
 #pip install not supported!
 class PostInstallCommand(install):
@@ -116,7 +117,7 @@ class PostInstallCommand(install):
 class PostDevelopCommand(develop):
     """Post-installation for installation mode."""
     def run(self):
-        generateProtos('./','_pb3.py','python')
+        generateProtos('./','_pb2.py','python')
         develop.run(self)
 
 
