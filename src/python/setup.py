@@ -156,7 +156,7 @@ if __name__ == '__main__':
           'clean': clean,
           'build_py': build_py,
           'build_java': build_java,
-          'PostInstallCommand': install
+          'install': PostInstallCommand
       },
       install_requires=install_requires,
   )
