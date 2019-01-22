@@ -12,6 +12,7 @@ import platform
 # namespace_packages.
 from setuptools import setup, find_packages
 
+from distutils.command.install import install as install
 from distutils.command.build_py import build_py as _build_py
 from distutils.command.clean import clean as _clean
 from distutils.spawn import find_executable
@@ -108,6 +109,12 @@ class build_py(_build_py):
 class build_java(_build_py):
     def run(self):
         generateProtos('./../../dist/java','_pb3.java','java')
+
+class PostInstallCommand(install):
+    """Post-installation for installation mode."""
+    def run(self):
+        generateProtos()
+        install.run(self)
 
 if __name__ == '__main__':
 
