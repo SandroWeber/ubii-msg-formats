@@ -12,6 +12,7 @@ import platform
 # namespace_packages.
 from setuptools import setup, find_packages
 from setuptools.command.install import install as install
+from setuptools.command.develop import develop as develop
 
 from distutils.command.build_py import build_py as _build_py
 from distutils.command.clean import clean as _clean
@@ -116,6 +117,13 @@ class PostInstallCommand(install):
         generateProtos()
         install.run(self)
 
+class PostDevelopCommand(develop):
+    """Post-installation for installation mode."""
+    def run(self):
+        generateProtos()
+        develop.run(self)
+
+
 if __name__ == '__main__':
 
     #generateProtos('./../../dist/java','_pb3.py','python')
@@ -147,7 +155,7 @@ if __name__ == '__main__':
         "Programming Language :: Python :: 3.7",
         ],
       #namespace_packages=['ubiinteract'],
-      packages=find_packages(
+      packages=find_packages(['./../../dist/py']
       #    exclude=[
       #        'import_test_package',
       #    ],
@@ -156,9 +164,8 @@ if __name__ == '__main__':
           'clean': clean,
           'build_py': build_py,
           'build_java': build_java,
-          'install': PostInstallCommand
+          'install': PostInstallCommand,
+          'develop': PostDevelopeCommand,
       },
       install_requires=install_requires,
   )
-    
-
