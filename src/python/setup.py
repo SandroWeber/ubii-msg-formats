@@ -165,7 +165,7 @@ if __name__ == '__main__':
           'build_py': build_py,
           'build_java': build_java,
           'install': PostInstallCommand,
-          'develop': PostDevelopeCommand,
+          'develop': PostDevelopCommand,
       },
       install_requires=install_requires,
   )
