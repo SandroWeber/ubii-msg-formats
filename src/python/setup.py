@@ -50,7 +50,7 @@ def getAllProtos():
     return files
 
 def generate_proto(source, pathToOutput, fileEnding, protocArg,require = True):
-    """Invokes the Protocol Compiler to generate a _pb2.py from the given
+    """Invokes the Protocol Compiler to generate a _pb3.py from the given
     .proto file.  Does nothing if the output already exists and is newer than
     the input."""
 
@@ -90,12 +90,6 @@ def generateProtos(pathToOutput = './../../dist/py',fileEnding = '_pb3.py', prot
 class clean(_clean):
     def run(self):
         # Delete generated files in the code tree.
-        for (dirpath, dirnames, filenames) in os.walk("."):
-            for filename in filenames:
-                filepath = os.path.join(dirpath, filename)
-                if filepath.endswith("_pb2.py") or filepath.endswith(".pyc") or \
-                filepath.endswith(".so") or filepath.endswith(".o"):
-                    os.remove(filepath)
         # _clean is an old-style class, so super() doesn't work.
         _clean.run(self)
 
@@ -122,7 +116,7 @@ class PostInstallCommand(install):
 class PostDevelopCommand(develop):
     """Post-installation for installation mode."""
     def run(self):
-        generateProtos(pathToOutput = './../../')
+        generateProtos('./','_pb3.py','python')
         develop.run(self)
 
 
@@ -157,7 +151,7 @@ if __name__ == '__main__':
         "Programming Language :: Python :: 3.7",
         ],
       #namespace_packages=['ubiinteract'],
-      packages=find_packages('./../../dist/py'
+      packages=find_packages(
       #    exclude=[
       #        'import_test_package',
       #    ],
