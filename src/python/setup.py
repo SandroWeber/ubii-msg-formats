@@ -111,16 +111,18 @@ class build_java(_build_py):
     def run(self):
         generateProtos('./../../dist/java','_pb3.java','java')
 
+#pip install not supported!
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
     def run(self):
         generateProtos()
         install.run(self)
 
+# pip install -e
 class PostDevelopCommand(develop):
     """Post-installation for installation mode."""
     def run(self):
-        generateProtos()
+        generateProtos(pathToOutput = './../../')
         develop.run(self)
 
 
