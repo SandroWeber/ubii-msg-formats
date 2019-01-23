@@ -11,6 +11,10 @@ if __name__ == '__main__':
         install_requires.append('ordereddict')
         install_requires.append('unittest2')
 
+    pkg = find_packages(where='./dist/py')
+    pkg = ['dist.py.'+s for s in pkg]
+    #print(pkg)
+
     setup(
       name='ubii_msg_formats',
       version=1.0,
@@ -33,7 +37,7 @@ if __name__ == '__main__':
         "Programming Language :: Python :: 3.7",
         ],
       #packages = ['dist/py/',],
-      packages=find_packages(),
+      packages=pkg,
       #package_dir={'proto' : './dist/py/proto'},
       install_requires=install_requires,
       include_package_data=True,
