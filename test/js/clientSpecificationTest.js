@@ -5,7 +5,7 @@ import {
 
 (function () {
 
-    // helepers:
+    // helpers:
 
     let getComparisonObjectOne = () => {
         return {
@@ -13,8 +13,9 @@ import {
                 name: 'awesomeDeviceName',
                 namespace: 'app',
                 identifier: 'uuid',
-                targetHost: 'localhost',
-                targetPort: '8667',
+                topicDataHost: 'localhost',
+                topicDataPortZmq: '8667',
+                topicDataPortWs: '8668',
             }
         };
     };
@@ -25,11 +26,12 @@ import {
                 name: 'awesomeDeviceName',
                 namespace: 'app',
                 identifier: 'uuid',
-                targetHost: 'localhost',
-                targetPort: '8667',
+                topicDataHost: 'localhost',
+                topicDataPortZmq: '8667',
+                topicDataPortWs: '8668',
             }
         });
-    }
+    };
 
     // test cases:
 
@@ -51,6 +53,7 @@ import {
 
         t.snapshot(messageTwo);
 
+        console.info(comparisonObject);
         t.deepEqual(JSON.stringify(messageTwo) , JSON.stringify(comparisonObject));
     });
 })();
