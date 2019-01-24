@@ -85,6 +85,9 @@ def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto',
     #print(re)
     os.makedirs(pathToOutput, exist_ok=True)
 
+    if protoc_arg == 'js':
+        pathToOutput = 'import_style=commonjs,binary:' + pathToOutput
+
     for i in re:
         generate_proto(i,pathToOutput,pathToProtos,includePath,protoc_arg,False)
 
@@ -92,20 +95,22 @@ def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto',
 
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv,"hpj",["help","python","java"])
+        opts, args = getopt.getopt(argv,"hpj",["help","python","java","javascript"])
     except getopt.GetoptError:
         print('compile.py -p')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt in ("-h", "--help"):
-            print('compile.py --help --python --java')
+            print('compile.py --help --python --java --javascript')
             sys.exit()
         elif opt in ("-p", "--python"): 
             p = generateProtos()
             generateInits(p)
         elif opt in ("-j", "--java"):
             generateProtos('./../dist/java','./../src/proto','./../src','java')
+        elif opt in ("-js", "--javascript"):
+            generateProtos('./../dist/js','./../src/proto','./../src','js')
     
 
 if __name__ == "__main__":
