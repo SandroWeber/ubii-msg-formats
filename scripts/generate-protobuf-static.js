@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const pbjs = require("protobufjs/cli/pbjs");
+const pbjs = require('protobufjs/cli/pbjs');
 
 
 (function () {
     let getFilesSync = (dir, filter) => {
         if (!fs.existsSync(dir)) {
-            console.log("no directory ", dir);
+            console.log('no directory ', dir);
             return;
         }
 
@@ -30,10 +30,11 @@ const pbjs = require("protobufjs/cli/pbjs");
     };
 
     let generateCode = (protobufDirectory) => {
+        let outputFile = path.resolve(__dirname + '/../dist/js/protobuf.js');
         let params = [
             '--target', 'static-module',
             '--wrap', 'commonjs',
-            '--out', './src/js/protobuf.js'
+            '--out', outputFile
         ];
         let files = getFilesSync(protobufDirectory, '.proto');
         params.push(...files);
