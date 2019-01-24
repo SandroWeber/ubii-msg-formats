@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.service.reply',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n2proto/serviceReply/reply/clientSpecification.proto\x12\x12ubii.service.reply\"t\n\x13\x43lientSpecification\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x12\n\nidentifier\x18\x03 \x01(\t\x12\x13\n\x0btarget_host\x18\x04 \x01(\t\x12\x13\n\x0btarget_port\x18\x05 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n2proto/serviceReply/reply/clientSpecification.proto\x12\x12ubii.service.reply\"\x9c\x01\n\x13\x43lientSpecification\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x12\n\nidentifier\x18\x03 \x01(\t\x12\x17\n\x0ftopic_data_host\x18\x04 \x01(\t\x12\x1b\n\x13topic_data_port_zmq\x18\x05 \x01(\t\x12\x1a\n\x12topic_data_port_ws\x18\x06 \x01(\tb\x06proto3')
 )
 
 
@@ -54,15 +54,22 @@ _CLIENTSPECIFICATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='target_host', full_name='ubii.service.reply.ClientSpecification.target_host', index=3,
+      name='topic_data_host', full_name='ubii.service.reply.ClientSpecification.topic_data_host', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='target_port', full_name='ubii.service.reply.ClientSpecification.target_port', index=4,
+      name='topic_data_port_zmq', full_name='ubii.service.reply.ClientSpecification.topic_data_port_zmq', index=4,
       number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='topic_data_port_ws', full_name='ubii.service.reply.ClientSpecification.topic_data_port_ws', index=5,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -79,8 +86,8 @@ _CLIENTSPECIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=74,
-  serialized_end=190,
+  serialized_start=75,
+  serialized_end=231,
 )
 
 DESCRIPTOR.message_types_by_name['ClientSpecification'] = _CLIENTSPECIFICATION

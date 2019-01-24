@@ -3,13 +3,13 @@ package ubii.service;
 
 import "proto/serviceRequest/request/clientRegistration.proto";
 import "proto/serviceRequest/request/deviceRegistration.proto";
-import "proto/serviceRequest/request/subscribtion.proto";
+import "proto/serviceRequest/request/subscription.proto";
 
 message ServiceRequest {
     string topic = 1;
     oneof type {
         ubii.service.request.ClientRegistration client_registration = 2;
         ubii.service.request.DeviceRegistration device_registration = 3;
-        ubii.service.request.Subscribtion subscribtion = 4;
+        ubii.service.request.Subscription subscription = 4;
     }
 }

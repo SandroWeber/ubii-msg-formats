@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys, getopt
+import sys, argparse
 import os
 import platform
 import subprocess
@@ -93,25 +93,26 @@ def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto',
 
     return pathToOutput
 
-def main(argv):
-    try:
-        opts, args = getopt.getopt(argv,"hpj",["help","python","java","javascript"])
-    except getopt.GetoptError:
-        print('compile.py -p')
-        sys.exit(2)
 
-    for opt, arg in opts:
-        if opt in ("-h", "--help"):
-            print('compile.py --help --python --java --javascript')
-            sys.exit()
-        elif opt in ("-p", "--python"): 
-            p = generateProtos()
-            generateInits(p)
-        elif opt in ("-j", "--java"):
-            generateProtos('./../dist/java','./../src/proto','./../src','java')
-        elif opt in ("-js", "--javascript"):
-            generateProtos('./../dist/js','./../src/proto','./../src','js')
-    
+def choosed_option(args):
+
+    if args.opt == 'py' or args.opt == 'python':
+        p = generateProtos()
+        generateInits(p)
+    elif args.opt == 'j' or args.opt == 'java':
+        generateProtos('./../dist/java','./../src/proto','./../src','java')
+    elif args.opt == 'js' or args.opt == 'javascript':
+        generateProtos('./../dist/js','./../src/proto','./../src','js')
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--opt', type=str, default='python',
+                        help='Supported options: [py] python, [j] java, [js] javascript')
+
+    args = parser.parse_args()
+    sys.stdout.write(str(choosed_option(args)))
+
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
