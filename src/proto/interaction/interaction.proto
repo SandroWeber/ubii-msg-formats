@@ -1,12 +1,12 @@
 syntax = "proto3";
 package ubii.interaction;
 
-import "ioMapping.proto";
+import "proto/interaction/ioMapping.proto";
 
 message Interaction {
     string id = 1;
     string name = 2;
     string callback = 3;
-    repeated IOMapping inputs = 4;
-    repeated IOMapping outputs = 5;
+    repeated ubii.interaction.IOMapping inputs = 4;
+    repeated ubii.interaction.IOMapping outputs = 5;
 }

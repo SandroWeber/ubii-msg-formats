@@ -1,9 +1,9 @@
 syntax = "proto3";
 package ubii.session;
 
-import "../interaction/interaction.proto";
+import "proto/interaction/interaction.proto";
 
 message Session {
     string name = 1;
-    repeated Interaction interactions = 2;
+    repeated ubii.interaction.Interaction interactions = 2;
 }
