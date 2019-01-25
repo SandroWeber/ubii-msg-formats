@@ -27,6 +27,7 @@
     "ava": "^1.0.0-beta.3"
   },
   "dependencies": {
-    "protobufjs": "^6.8.6"
+    "protobufjs": "^6.8.6",
+    "google-protobuf": "3.6.1"
   }
 }

@@ -1,6 +1,6 @@
 export default {
 	"files": [
-		"test/**/*.js"
+		"test/js/translatorsProvider.js"
 	],
 	"sources": [
 		"**/*.{js,jsx}",
