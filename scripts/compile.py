@@ -86,6 +86,15 @@ def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto',
     os.makedirs(pathToOutput, exist_ok=True)
 
     if protoc_arg == 'js':
+        ### build js library
+        pathToOutputLibrary = 'library=protobuf_library,binary:' + pathToOutput
+        protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protoc_arg+"_out="+pathToOutputLibrary ]
+        for i in re:
+            protoc_command.append(i)
+        print(protoc_command)
+        if subprocess.call(protoc_command) != 0:
+            sys.exit(-1)
+
         pathToOutput = 'import_style=commonjs,binary:' + pathToOutput
 
     for i in re:

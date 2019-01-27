@@ -12,11 +12,8 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_serviceRequest_request_clientRegistration_pb = require('../../proto/serviceRequest/request/clientRegistration_pb.js');
-goog.object.extend(proto, proto_serviceRequest_request_clientRegistration_pb);
 var proto_serviceRequest_request_deviceRegistration_pb = require('../../proto/serviceRequest/request/deviceRegistration_pb.js');
-goog.object.extend(proto, proto_serviceRequest_request_deviceRegistration_pb);
 var proto_serviceRequest_request_subscription_pb = require('../../proto/serviceRequest/request/subscription_pb.js');
-goog.object.extend(proto, proto_serviceRequest_request_subscription_pb);
 goog.exportSymbol('proto.ubii.service.ServiceRequest', null, global);
 
 /**
@@ -252,7 +249,7 @@ proto.ubii.service.ServiceRequest.prototype.clearClientRegistration = function()
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.service.ServiceRequest.prototype.hasClientRegistration = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -282,7 +279,7 @@ proto.ubii.service.ServiceRequest.prototype.clearDeviceRegistration = function()
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.service.ServiceRequest.prototype.hasDeviceRegistration = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -312,7 +309,7 @@ proto.ubii.service.ServiceRequest.prototype.clearSubscription = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.service.ServiceRequest.prototype.hasSubscription = function() {
   return jspb.Message.getField(this, 4) != null;

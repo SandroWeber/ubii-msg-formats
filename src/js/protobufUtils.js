@@ -1,4 +1,3 @@
-require('../../dist/js/proto/general/error_pb');
 
 
 class ProtobufUtils {

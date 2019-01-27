@@ -201,7 +201,7 @@ proto.ubii.service.request.Subscription.prototype.setSubscribeTopicsList = funct
 
 
 /**
- * @param {string} value
+ * @param {!string} value
  * @param {number=} opt_index
  */
 proto.ubii.service.request.Subscription.prototype.addSubscribeTopics = function(value, opt_index) {
@@ -230,7 +230,7 @@ proto.ubii.service.request.Subscription.prototype.setUnsubscribeTopicsList = fun
 
 
 /**
- * @param {string} value
+ * @param {!string} value
  * @param {number=} opt_index
  */
 proto.ubii.service.request.Subscription.prototype.addUnsubscribeTopics = function(value, opt_index) {
