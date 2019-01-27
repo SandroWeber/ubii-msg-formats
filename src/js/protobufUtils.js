@@ -1,11 +1,11 @@
-
+goog.require('../../dist/js/protobuf_library')
 
 class ProtobufUtils {
     static getMessage(typeString) {
         let packageArray = typeString.split('.');
         let message = proto;
         packageArray.forEach((subpackage) => {
-            message = protobuf[subpackage];
+            message = message[subpackage];
         });
 
         return message;

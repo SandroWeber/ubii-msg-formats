@@ -1,12 +1,15 @@
 import test from 'ava';
-import TranslatorsProvider from '../../src/js/protobufUtils';
+import ProtobufUtils from '../../src/js/protobufUtils';
 
 /* run tests */
 
 test.beforeEach(t => {
-    t.context.provider = TranslatorsProvider;
+    t.context.utils = ProtobufUtils;
 });
 
-test('create buffer from valid payload', t => {
-    t.is(t.context.provider !== undefined);
-};
+test('getMessage()', t => {
+    let utils = t.context.utils;
+
+    let messageType = 'ubii.service.reply.Error';
+    t.is(utils.getMessage(messageType) !== undefined);
+});
