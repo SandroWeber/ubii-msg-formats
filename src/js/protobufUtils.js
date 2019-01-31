@@ -1,23 +1,47 @@
+// TODO: (Sandro Weber)
+// find a way to properly use google closure library and require protobuf_library.js as a single file
+// without manually requiring each single protobuf.js file here
 
-require('google-protobuf');
-require('google-closure-library');
+require('../../dist/js/proto/general/error_pb');
 
-require('../../dist/js/protobuf_library');
-//goog.require('../../dist/js/protobuf_library');
+require('../../dist/js/proto/serviceRequest/serviceRequest_pb');
+require('../../dist/js/proto/serviceRequest/request/clientRegistration_pb');
+require('../../dist/js/proto/serviceRequest/request/deviceRegistration_pb');
+require('../../dist/js/proto/serviceRequest/request/subscription_pb');
+
+require('../../dist/js/proto/serviceReply/serviceReply_pb');
+require('../../dist/js/proto/serviceReply/reply/clientSpecification_pb');
+require('../../dist/js/proto/serviceReply/reply/deviceSpecification_pb');
+require('../../dist/js/proto/serviceReply/reply/success_pb');
+
+require('../../dist/js/proto/topicData/topicData_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/topicDataRecord_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/color_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/matrix3x2_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/matrix4x4_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/quaternion_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/vector2_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/vector3_pb');
+require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/vector4_pb');
 
 class ProtobufUtils {
-    static getMessage(typeString) {
+    static getProtobuf(typeString) {
         let packageArray = typeString.split('.');
-        let message = proto;
+        let protobuf = proto;
         packageArray.forEach((subpackage) => {
-            message = message[subpackage];
+            protobuf = protobuf[subpackage] || undefined;
         });
 
-        return message;
+        return protobuf;
     }
 
-    static createMessage(typeString) {
-        return new ProtobufUtils.getMessage(typeString);
+    static getMessage(typeString) {
+        let protobuf = this.getProtobuf(typeString);
+        if (typeof protobuf === 'undefined') {
+            return undefined;
+        } else {
+            return new protobuf();
+        }
     }
 
     static serialize(msg) {
@@ -25,7 +49,7 @@ class ProtobufUtils {
     }
 
     static deserialize(buffer, typeString) {
-        return ProtobufUtils.getMessage(typeString).deserializeBinary(buffer);
+        return ProtobufUtils.getProtobuf(typeString).deserializeBinary(buffer);
     }
 }
 
