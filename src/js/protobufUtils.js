@@ -1,4 +1,9 @@
-goog.require('../../dist/js/protobuf_library')
+
+require('google-protobuf');
+require('google-closure-library');
+
+require('../../dist/js/protobuf_library');
+//goog.require('../../dist/js/protobuf_library');
 
 class ProtobufUtils {
     static getMessage(typeString) {
