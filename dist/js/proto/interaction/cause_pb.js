@@ -12,7 +12,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_interaction_ioMapping_pb = require('../../proto/interaction/ioMapping_pb.js');
-goog.object.extend(proto, proto_interaction_ioMapping_pb);
 goog.exportSymbol('proto.ubii.interaction.Cause', null, global);
 
 /**

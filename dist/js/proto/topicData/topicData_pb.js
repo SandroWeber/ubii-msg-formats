@@ -12,9 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_topicData_topicDataRecord_topicDataRecord_pb = require('../../proto/topicData/topicDataRecord/topicDataRecord_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_topicDataRecord_pb);
 var proto_general_error_pb = require('../../proto/general/error_pb.js');
-goog.object.extend(proto, proto_general_error_pb);
 goog.exportSymbol('proto.ubii.topicData.TopicData', null, global);
 
 /**
@@ -235,7 +233,7 @@ proto.ubii.topicData.TopicData.prototype.clearTopicDataRecord = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicData.prototype.hasTopicDataRecord = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -265,7 +263,7 @@ proto.ubii.topicData.TopicData.prototype.clearError = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicData.prototype.hasError = function() {
   return jspb.Message.getField(this, 3) != null;

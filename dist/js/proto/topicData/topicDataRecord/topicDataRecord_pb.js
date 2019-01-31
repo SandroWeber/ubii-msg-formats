@@ -12,19 +12,12 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_topicData_topicDataRecord_dataStructure_vector2_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector2_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_vector2_pb);
 var proto_topicData_topicDataRecord_dataStructure_vector3_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector3_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_vector3_pb);
 var proto_topicData_topicDataRecord_dataStructure_vector4_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector4_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_vector4_pb);
 var proto_topicData_topicDataRecord_dataStructure_quaternion_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/quaternion_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_quaternion_pb);
 var proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/matrix3x2_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb);
 var proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/matrix4x4_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb);
 var proto_topicData_topicDataRecord_dataStructure_color_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/color_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_color_pb);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
 
 /**
@@ -358,7 +351,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearNumber = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasNumber = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -389,7 +382,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearBoolean = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasBoolean = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -418,7 +411,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearString = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasString = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -448,7 +441,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearVector2 = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasVector2 = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -478,7 +471,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearVector3 = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasVector3 = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -508,7 +501,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearVector4 = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasVector4 = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -538,7 +531,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearQuaternion = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasQuaternion = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -568,7 +561,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix3x2 = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix3x2 = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -598,7 +591,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix4x4 = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix4x4 = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -628,7 +621,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearColor = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasColor = function() {
   return jspb.Message.getField(this, 11) != null;

@@ -12,13 +12,9 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_serviceReply_reply_success_pb = require('../../proto/serviceReply/reply/success_pb.js');
-goog.object.extend(proto, proto_serviceReply_reply_success_pb);
 var proto_general_error_pb = require('../../proto/general/error_pb.js');
-goog.object.extend(proto, proto_general_error_pb);
 var proto_serviceReply_reply_clientSpecification_pb = require('../../proto/serviceReply/reply/clientSpecification_pb.js');
-goog.object.extend(proto, proto_serviceReply_reply_clientSpecification_pb);
 var proto_serviceReply_reply_deviceSpecification_pb = require('../../proto/serviceReply/reply/deviceSpecification_pb.js');
-goog.object.extend(proto, proto_serviceReply_reply_deviceSpecification_pb);
 goog.exportSymbol('proto.ubii.service.ServiceReply', null, global);
 
 /**
@@ -242,7 +238,7 @@ proto.ubii.service.ServiceReply.prototype.clearSuccess = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.service.ServiceReply.prototype.hasSuccess = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -272,7 +268,7 @@ proto.ubii.service.ServiceReply.prototype.clearError = function() {
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.service.ServiceReply.prototype.hasError = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -302,7 +298,7 @@ proto.ubii.service.ServiceReply.prototype.clearClientSpecification = function() 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.service.ServiceReply.prototype.hasClientSpecification = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -332,7 +328,7 @@ proto.ubii.service.ServiceReply.prototype.clearDeviceSpecification = function() 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return {!boolean}
  */
 proto.ubii.service.ServiceReply.prototype.hasDeviceSpecification = function() {
   return jspb.Message.getField(this, 4) != null;

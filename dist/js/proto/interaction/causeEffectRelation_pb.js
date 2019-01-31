@@ -12,9 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_interaction_cause_pb = require('../../proto/interaction/cause_pb.js');
-goog.object.extend(proto, proto_interaction_cause_pb);
 var proto_interaction_effect_pb = require('../../proto/interaction/effect_pb.js');
-goog.object.extend(proto, proto_interaction_effect_pb);
 goog.exportSymbol('proto.ubii.interaction.CauseEffectRelation', null, global);
 
 /**

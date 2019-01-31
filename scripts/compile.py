@@ -86,23 +86,38 @@ def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto',
     os.makedirs(pathToOutput, exist_ok=True)
 
     if protoc_arg == 'js':
+        ### build js library
+        pathToOutputLibrary = 'library=protobuf_library,binary:' + pathToOutput
+        protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protoc_arg+"_out="+pathToOutputLibrary ]
+        for i in re:
+            protoc_command.append(i)
+        print(protoc_command)
+        if subprocess.call(protoc_command) != 0:
+            sys.exit(-1)
+
+        # prepare output path for individual file compilation
         pathToOutput = 'import_style=commonjs,binary:' + pathToOutput
 
     for i in re:
-        generate_proto(i,pathToOutput,pathToProtos,includePath,protoc_arg,False)
+        generate_proto(i, pathToOutput, pathToProtos, includePath, protoc_arg, False)
 
     return pathToOutput
 
 
-def choosed_option(args):
+def chosen_option(args):
+    file_directory = os.path.dirname(__file__)
+    proto_src_directory = os.path.join(file_directory, '../src/proto')
+    src_directory = os.path.join(file_directory, '../src')
 
     if args.opt == 'py' or args.opt == 'python':
         p = generateProtos()
         generateInits(p)
     elif args.opt == 'j' or args.opt == 'java':
-        generateProtos('./../dist/java','./../src/proto','./../src','java')
+        destination_directory = os.path.join(file_directory, '../dist/java')
+        generateProtos(destination_directory, proto_src_directory, src_directory, 'java')
     elif args.opt == 'js' or args.opt == 'javascript':
-        generateProtos('./../dist/js','./../src/proto','./../src','js')
+        destination_directory = os.path.join(file_directory, '../dist/js')
+        generateProtos(destination_directory, proto_src_directory, src_directory, 'js')
 
 
 def main():
@@ -111,7 +126,7 @@ def main():
                         help='Supported options: [py] python, [j] java, [js] javascript')
 
     args = parser.parse_args()
-    sys.stdout.write(str(choosed_option(args)))
+    sys.stdout.write(str(chosen_option(args)))
 
 
 if __name__ == "__main__":
