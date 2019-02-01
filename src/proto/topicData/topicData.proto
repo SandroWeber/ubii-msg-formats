@@ -1,13 +1,13 @@
 syntax = "proto3";
 package ubii.topicData;
 
-import "topicDataRecord/topicDataRecord.proto";
-import "../general/error.proto";
+import "proto/topicData/topicDataRecord/topicDataRecord.proto";
+import "proto/general/error.proto";
 
 message TopicData {
     string device_identifier = 1;
     oneof type{
-        TopicDataRecord topic_data_record = 2;
-        Error error = 3;
+        ubii.topicData.TopicDataRecord topic_data_record = 2;
+        ubii.service.reply.Error error = 3;
     }
 }
