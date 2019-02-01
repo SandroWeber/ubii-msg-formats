@@ -1,7 +1,7 @@
 import test from 'ava';
 import {
     ServiceReplyTranslator,
-} from '../../src/js';
+} from '../../../src/js/index';
 
 (function () {
 

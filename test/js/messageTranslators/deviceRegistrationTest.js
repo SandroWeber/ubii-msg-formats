@@ -1,7 +1,7 @@
 import test from 'ava';
 import {
-    ServiceReplyTranslator,
-} from '../../src/js';
+    ServiceRequestTranslator,
+} from '../../../src/js/index';
 
 (function () {
 
@@ -9,28 +9,28 @@ import {
 
     let getComparisonObjectOne = () => {
         return {
-            error: {
-                title: 'error title',
-                message: 'error message',
-                stack: 'error stack'
+            deviceRegistration: {
+                name: 'clientName',
+                deviceType: 'PARTICIPANT',
+                correspondingClientIdentifier: 'someClientId',
             }
         };
     };
 
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload({
-            error: {
-                title: 'error title',
-                message: 'error message',
-                stack: 'error stack'
-                }
-            });
+            deviceRegistration: {
+                name: 'clientName',
+                deviceType: 0,
+                correspondingClientIdentifier: 'someClientId',
+            }
+        });
     }
 
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new ServiceReplyTranslator();
+        t.context.translator = new ServiceRequestTranslator();
     });
 
     test('create basic', t => {

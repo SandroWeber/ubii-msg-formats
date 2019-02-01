@@ -1,7 +1,7 @@
 import test from 'ava';
 import {
-    ServiceRequestTranslator,
-} from '../../src/js';
+    ServiceReplyTranslator,
+} from '../../../src/js/index';
 
 (function () {
 
@@ -9,26 +9,32 @@ import {
 
     let getComparisonObjectOne = () => {
         return {
-            clientRegistration: {
-                name: 'clientName',
-                namespace: 'app'
+            deviceSpecification: {
+                name: 'awesomeDeviceName',
+                namespace: 'app',
+                identifier: 'uuid',
+                deviceType: '1',
+                correspondingClientIdentifier: 'clientUuid',
             }
         };
     };
 
     let getMessageOne = (context) => {
         return context.translator.createMessageFromPayload({
-            clientRegistration: {
-                name: 'clientName',
-                namespace: 'app'
-                }
-            });
+            deviceSpecification: {
+                name: 'awesomeDeviceName',
+                namespace: 'app',
+                identifier: 'uuid',
+                deviceType: '1',
+                correspondingClientIdentifier: 'clientUuid',
+            }
+        });
     }
 
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new ServiceRequestTranslator();
+        t.context.translator = new ServiceReplyTranslator();
     });
 
     test('create basic', t => {

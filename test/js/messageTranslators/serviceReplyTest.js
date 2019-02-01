@@ -1,7 +1,7 @@
 import test from 'ava';
 import {
-    ServiceRequestTranslator,
-} from '../../src/js/index';
+    ServiceReplyTranslator,
+} from '../../../src/js/index';
 
 (function () {
 
@@ -9,9 +9,9 @@ import {
 
     let getExamplePayload = (context) => {
         return {
-            clientRegistration: {
-                displayName: 'awesomeClient',
-                namespace: 'homeOfficeApp'
+            error: {
+                title: 'error title',
+                message: 'error message'
                 }
             };
     }
@@ -25,7 +25,7 @@ import {
     // test cases:
 
     test.beforeEach(t => {
-        t.context.translator = new ServiceRequestTranslator();
+        t.context.translator = new ServiceReplyTranslator();
     });
 
     test('create basic message', t => {
@@ -66,11 +66,8 @@ import {
         let messageTwo = t.context.translator.createMessageFromBuffer(buffer);
 
         // oneof specifier field
-        t.is(messageTwo.type, 'clientRegistration');
-        t.is(messageTwo.deviceRegistration, null);
-
-        // oneof field
-        t.not(messageTwo.clientRegistration, null);
-
+        t.is(messageTwo.type, 'error');
+        t.is(messageTwo.success, null);
+        t.not(messageTwo.error, null);
     });
 })();
