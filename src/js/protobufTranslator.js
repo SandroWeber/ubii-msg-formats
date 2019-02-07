@@ -3,6 +3,10 @@ const ProtobufUtils = require('./protobufUtils');
 class ProtobufTranslator {
     constructor(type) {
         this.proto = ProtobufUtils.getMessageOfType(type);
+
+        if (!this.proto) {
+            throw TypeError('Protobuf message type "' + type + '" is not defined!');
+        }
     }
 
     /**
@@ -79,6 +83,15 @@ class ProtobufTranslator {
      */
     createBufferFromPayload(payload){
         return this.createBufferFromMessage(this.createMessageFromPayload(payload));
+    }
+
+    /**
+     * Creates and returns an encoded buffer from a specified payload object.
+     * @param {Object} payload Valid plain JavaScript payload object.
+     * @return Returns a Uint8Array (browser) or Buffer (node).
+     */
+    createPayloadFromBuffer(buffer){
+        return this.createPayloadFromMessage(this.createMessageFromBuffer(buffer));
     }
 }
 
