@@ -1,6 +1,7 @@
 export default {
 	"files": [
-		"test/js/protobufUtils.js"
+		"test/js/protobufUtils.js",
+        "test/js/protobufTranslator.js"
 	],
 	"sources": [
 		"**/*.{js,jsx}",
