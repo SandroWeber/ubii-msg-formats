@@ -25,7 +25,7 @@ require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/vector3_pb'
 require('../../dist/js/proto/topicData/topicDataRecord/dataStructure/vector4_pb');
 
 class ProtobufUtils {
-    static getProtobuf(typeString) {
+    static getMessageOfType(typeString) {
         let packageArray = typeString.split('.');
         let protobuf = proto;
         packageArray.forEach((subpackage) => {
@@ -35,12 +35,12 @@ class ProtobufUtils {
         return protobuf;
     }
 
-    static getMessage(typeString) {
-        let protobuf = this.getProtobuf(typeString);
+    static newMessage(typeString, data) {
+        let protobuf = this.getMessageOfType(typeString);
         if (typeof protobuf === 'undefined') {
             return undefined;
         } else {
-            return new protobuf();
+            return new protobuf(data);
         }
     }
 
@@ -49,7 +49,7 @@ class ProtobufUtils {
     }
 
     static deserialize(buffer, typeString) {
-        return ProtobufUtils.getProtobuf(typeString).deserializeBinary(buffer);
+        return ProtobufUtils.getMessageOfType(typeString).deserializeBinary(buffer);
     }
 }
 
