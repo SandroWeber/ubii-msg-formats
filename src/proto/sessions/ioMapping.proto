@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ubii.sessions;
+
+import "proto/interactions/ioFormat.proto";
+
+message IOMapping {
+    string interaction_id = 1;
+    oneof type {
+        ubii.interactions.IOFormat interaction_input = 2;
+        ubii.interactions.IOFormat interaction_output = 3;
+    }
+    string topic = 4;
+}
