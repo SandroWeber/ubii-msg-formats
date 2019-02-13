@@ -8,10 +8,16 @@ import subprocess
 from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
-if 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
+protoc_local = os.path.join(os.path.dirname(__file__), '../external/bin/protoc')
+if os.path.isfile(protoc_local):
+    protoc = protoc_local
+elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
     protoc = os.environ['PROTOC']
 else:
     protoc = find_executable("protoc")
+
+print(protoc)
+
 
 def generateInits(pathToOutput):
    
@@ -34,7 +40,8 @@ def generateInits(pathToOutput):
             break
 
         start = False
-    
+
+
 def getAllProtos(pathToProtos):
 
     dirn = []
@@ -118,12 +125,15 @@ def chosen_option(args):
     elif args.opt == 'js' or args.opt == 'javascript':
         destination_directory = os.path.join(file_directory, '../dist/js')
         generateProtos(destination_directory, proto_src_directory, src_directory, 'js')
+    elif args.opt == 'cs' or args.opt == 'csharp':
+        destination_directory = os.path.join(file_directory, '../dist/cs')
+        generateProtos(destination_directory, proto_src_directory, src_directory, 'csharp')
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--opt', type=str, default='python',
-                        help='Supported options: [py] python, [j] java, [js] javascript')
+                        help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp')
 
     args = parser.parse_args()
     sys.stdout.write(str(chosen_option(args)))
