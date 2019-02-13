@@ -7,6 +7,7 @@ If you are interested in how they communicate with each other, visit the [ubii-m
 
 - [ubii-msg-formats](#ubii-msg-formats)
     - [Table of Contents](#table-of-contents)
+    - [Compilation](#compilation)
     - [CLIs](#clis)
     - [Ubii Messages](#ubii-messages)
         - [TopicData](#topicdata)
@@ -20,6 +21,12 @@ If you are interested in how they communicate with each other, visit the [ubii-m
         - [Usage of Proto Files in JS](#usage-of-proto-files-in-js)
     - [Testing](#testing)
     - [Tips](#tips)
+
+## Compilation
+
+- required: python >=3.5
+- required: if 'protoc' compiler >=3.6.1 not available in system path, copy 'protoc' to /external/bin from distribution matching OS provided in /external. You can also get it from https://github.com/protocolbuffers/protobuf/releases.
+- run 'python scripts/compile.py --opt [language]' where [language] is one of py/python, j/java, js/javascript, cs/csharp
 
 ## CLIs 
 

@@ -7,7 +7,7 @@ import "proto/serviceReply/reply/clientSpecification.proto";
 import "proto/serviceReply/reply/deviceSpecification.proto";
 
 message ServiceReply {
-    oneof type{
+    oneof type {
         ubii.service.reply.Success success = 1;
         ubii.service.reply.Error error = 2;
         ubii.service.reply.ClientSpecification client_specification = 3;

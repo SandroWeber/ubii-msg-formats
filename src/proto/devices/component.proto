@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ubii.devices;
+
+message Component {
+    string topic = 1;
+    string data_format = 2;
+
+    enum IOType {
+        INPUT = 0;
+        OUTPUT = 1;
+    }
+    IOType io_type = 3;
+}

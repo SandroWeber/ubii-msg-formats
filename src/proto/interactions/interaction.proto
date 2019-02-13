@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ubii.interactions;
+
+import "proto/interactions/ioFormat.proto";
+
+message Interaction {
+    string id = 1;
+    string name = 2;
+    string callback = 3;
+    repeated ubii.interactions.IOFormat inputs = 4;
+    repeated ubii.interactions.IOFormat outputs = 5;
+}
