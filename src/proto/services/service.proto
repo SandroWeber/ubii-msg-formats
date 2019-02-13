@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ubii.services;
+
+
+message Service {
+    string topic = 1;
+    string request_message_format = 2;
+    string response_message_format = 3;
+}
