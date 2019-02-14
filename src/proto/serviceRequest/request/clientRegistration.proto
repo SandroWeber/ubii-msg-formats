@@ -1,7 +1,0 @@
-syntax = "proto3";
-package ubii.service.request;
-
-message ClientRegistration {
-    string name = 1;
-    string namespace = 2;
-}

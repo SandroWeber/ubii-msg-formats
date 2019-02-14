@@ -26,15 +26,15 @@ namespace Ubii.TopicData {
           string.Concat(
             "Ch9wcm90by90b3BpY0RhdGEvdG9waWNEYXRhLnByb3RvEg51YmlpLnRvcGlj",
             "RGF0YRo1cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC90b3BpY0Rh",
-            "dGFSZWNvcmQucHJvdG8aGXByb3RvL2dlbmVyYWwvZXJyb3IucHJvdG8imAEK",
-            "CVRvcGljRGF0YRIZChFkZXZpY2VfaWRlbnRpZmllchgBIAEoCRI8ChF0b3Bp",
-            "Y19kYXRhX3JlY29yZBgCIAEoCzIfLnViaWkudG9waWNEYXRhLlRvcGljRGF0",
-            "YVJlY29yZEgAEioKBWVycm9yGAMgASgLMhkudWJpaS5zZXJ2aWNlLnJlcGx5",
-            "LkVycm9ySABCBgoEdHlwZWIGcHJvdG8z"));
+            "dGFSZWNvcmQucHJvdG8aGXByb3RvL2dlbmVyYWwvZXJyb3IucHJvdG8iigEK",
+            "CVRvcGljRGF0YRIRCglkZXZpY2VfaWQYASABKAkSPAoRdG9waWNfZGF0YV9y",
+            "ZWNvcmQYAiABKAsyHy51YmlpLnRvcGljRGF0YS5Ub3BpY0RhdGFSZWNvcmRI",
+            "ABIkCgVlcnJvchgDIAEoCzITLnViaWkuZ2VuZXJhbC5FcnJvckgAQgYKBHR5",
+            "cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.TopicData.TopicDataRecordReflection.Descriptor, global::Ubii.Service.Reply.ErrorReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.TopicData.TopicDataRecordReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicData), global::Ubii.TopicData.TopicData.Parser, new[]{ "DeviceIdentifier", "TopicDataRecord", "Error" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicData), global::Ubii.TopicData.TopicData.Parser, new[]{ "DeviceId", "TopicDataRecord", "Error" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -66,7 +66,7 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TopicData(TopicData other) : this() {
-      deviceIdentifier_ = other.deviceIdentifier_;
+      deviceId_ = other.deviceId_;
       switch (other.TypeCase) {
         case TypeOneofCase.TopicDataRecord:
           TopicDataRecord = other.TopicDataRecord.Clone();
@@ -84,14 +84,14 @@ namespace Ubii.TopicData {
       return new TopicData(this);
     }
 
-    /// <summary>Field number for the "device_identifier" field.</summary>
-    public const int DeviceIdentifierFieldNumber = 1;
-    private string deviceIdentifier_ = "";
+    /// <summary>Field number for the "device_id" field.</summary>
+    public const int DeviceIdFieldNumber = 1;
+    private string deviceId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DeviceIdentifier {
-      get { return deviceIdentifier_; }
+    public string DeviceId {
+      get { return deviceId_; }
       set {
-        deviceIdentifier_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -109,8 +109,8 @@ namespace Ubii.TopicData {
     /// <summary>Field number for the "error" field.</summary>
     public const int ErrorFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Service.Reply.Error Error {
-      get { return typeCase_ == TypeOneofCase.Error ? (global::Ubii.Service.Reply.Error) type_ : null; }
+    public global::Ubii.General.Error Error {
+      get { return typeCase_ == TypeOneofCase.Error ? (global::Ubii.General.Error) type_ : null; }
       set {
         type_ = value;
         typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Error;
@@ -149,7 +149,7 @@ namespace Ubii.TopicData {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DeviceIdentifier != other.DeviceIdentifier) return false;
+      if (DeviceId != other.DeviceId) return false;
       if (!object.Equals(TopicDataRecord, other.TopicDataRecord)) return false;
       if (!object.Equals(Error, other.Error)) return false;
       if (TypeCase != other.TypeCase) return false;
@@ -159,7 +159,7 @@ namespace Ubii.TopicData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (DeviceIdentifier.Length != 0) hash ^= DeviceIdentifier.GetHashCode();
+      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicDataRecord) hash ^= TopicDataRecord.GetHashCode();
       if (typeCase_ == TypeOneofCase.Error) hash ^= Error.GetHashCode();
       hash ^= (int) typeCase_;
@@ -176,9 +176,9 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (DeviceIdentifier.Length != 0) {
+      if (DeviceId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(DeviceIdentifier);
+        output.WriteString(DeviceId);
       }
       if (typeCase_ == TypeOneofCase.TopicDataRecord) {
         output.WriteRawTag(18);
@@ -196,8 +196,8 @@ namespace Ubii.TopicData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (DeviceIdentifier.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceIdentifier);
+      if (DeviceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
       }
       if (typeCase_ == TypeOneofCase.TopicDataRecord) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicDataRecord);
@@ -216,8 +216,8 @@ namespace Ubii.TopicData {
       if (other == null) {
         return;
       }
-      if (other.DeviceIdentifier.Length != 0) {
-        DeviceIdentifier = other.DeviceIdentifier;
+      if (other.DeviceId.Length != 0) {
+        DeviceId = other.DeviceId;
       }
       switch (other.TypeCase) {
         case TypeOneofCase.TopicDataRecord:
@@ -228,7 +228,7 @@ namespace Ubii.TopicData {
           break;
         case TypeOneofCase.Error:
           if (Error == null) {
-            Error = new global::Ubii.Service.Reply.Error();
+            Error = new global::Ubii.General.Error();
           }
           Error.MergeFrom(other.Error);
           break;
@@ -246,7 +246,7 @@ namespace Ubii.TopicData {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            DeviceIdentifier = input.ReadString();
+            DeviceId = input.ReadString();
             break;
           }
           case 18: {
@@ -259,7 +259,7 @@ namespace Ubii.TopicData {
             break;
           }
           case 26: {
-            global::Ubii.Service.Reply.Error subBuilder = new global::Ubii.Service.Reply.Error();
+            global::Ubii.General.Error subBuilder = new global::Ubii.General.Error();
             if (typeCase_ == TypeOneofCase.Error) {
               subBuilder.MergeFrom(Error);
             }

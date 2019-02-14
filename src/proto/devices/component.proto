@@ -3,7 +3,7 @@ package ubii.devices;
 
 message Component {
     string topic = 1;
-    string data_format = 2;
+    string message_format = 2;
 
     enum IOType {
         INPUT = 0;

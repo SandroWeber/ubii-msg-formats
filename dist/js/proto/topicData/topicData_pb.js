@@ -87,7 +87,7 @@ proto.ubii.topicData.TopicData.prototype.toObject = function(opt_includeInstance
  */
 proto.ubii.topicData.TopicData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceIdentifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    deviceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     topicDataRecord: (f = msg.getTopicDataRecord()) && proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.toObject(includeInstance, f),
     error: (f = msg.getError()) && proto_general_error_pb.Error.toObject(includeInstance, f)
   };
@@ -128,7 +128,7 @@ proto.ubii.topicData.TopicData.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDeviceIdentifier(value);
+      msg.setDeviceId(value);
       break;
     case 2:
       var value = new proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord;
@@ -169,7 +169,7 @@ proto.ubii.topicData.TopicData.prototype.serializeBinary = function() {
  */
 proto.ubii.topicData.TopicData.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDeviceIdentifier();
+  f = message.getDeviceId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -196,16 +196,16 @@ proto.ubii.topicData.TopicData.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional string device_identifier = 1;
+ * optional string device_id = 1;
  * @return {string}
  */
-proto.ubii.topicData.TopicData.prototype.getDeviceIdentifier = function() {
+proto.ubii.topicData.TopicData.prototype.getDeviceId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.topicData.TopicData.prototype.setDeviceIdentifier = function(value) {
+proto.ubii.topicData.TopicData.prototype.setDeviceId = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -241,16 +241,16 @@ proto.ubii.topicData.TopicData.prototype.hasTopicDataRecord = function() {
 
 
 /**
- * optional ubii.service.reply.Error error = 3;
- * @return {?proto.ubii.service.reply.Error}
+ * optional ubii.general.Error error = 3;
+ * @return {?proto.ubii.general.Error}
  */
 proto.ubii.topicData.TopicData.prototype.getError = function() {
-  return /** @type{?proto.ubii.service.reply.Error} */ (
+  return /** @type{?proto.ubii.general.Error} */ (
     jspb.Message.getWrapperField(this, proto_general_error_pb.Error, 3));
 };
 
 
-/** @param {?proto.ubii.service.reply.Error|undefined} value */
+/** @param {?proto.ubii.general.Error|undefined} value */
 proto.ubii.topicData.TopicData.prototype.setError = function(value) {
   jspb.Message.setOneofWrapperField(this, 3, proto.ubii.topicData.TopicData.oneofGroups_[0], value);
 };

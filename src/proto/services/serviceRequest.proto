@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ubii.services;
+
+import "proto/clients/client.proto";
+import "proto/devices/device.proto";
+import "proto/services/request/topicSubscription.proto";
+
+message ServiceRequest {
+    string topic = 1;
+    oneof type {
+        ubii.clients.Client client_registration = 2;
+        ubii.devices.Device device_registration = 3;
+        ubii.services.request.TopicSubscription topic_subscription = 4;
+    }
+}

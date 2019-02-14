@@ -1,5 +1,5 @@
 syntax = "proto3";
-package ubii.service.reply;
+package ubii.general;
 
 message Error {
     string title = 1;

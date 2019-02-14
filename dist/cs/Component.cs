@@ -25,14 +25,14 @@ namespace Ubii.Devices {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1wcm90by9kZXZpY2VzL2NvbXBvbmVudC5wcm90bxIMdWJpaS5kZXZpY2Vz",
-            "IoEBCglDb21wb25lbnQSDQoFdG9waWMYASABKAkSEwoLZGF0YV9mb3JtYXQY",
-            "AiABKAkSLwoHaW9fdHlwZRgDIAEoDjIeLnViaWkuZGV2aWNlcy5Db21wb25l",
-            "bnQuSU9UeXBlIh8KBklPVHlwZRIJCgVJTlBVVBAAEgoKBk9VVFBVVBABYgZw",
-            "cm90bzM="));
+            "IoQBCglDb21wb25lbnQSDQoFdG9waWMYASABKAkSFgoObWVzc2FnZV9mb3Jt",
+            "YXQYAiABKAkSLwoHaW9fdHlwZRgDIAEoDjIeLnViaWkuZGV2aWNlcy5Db21w",
+            "b25lbnQuSU9UeXBlIh8KBklPVHlwZRIJCgVJTlBVVBAAEgoKBk9VVFBVVBAB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Devices.Component), global::Ubii.Devices.Component.Parser, new[]{ "Topic", "DataFormat", "IoType" }, null, new[]{ typeof(global::Ubii.Devices.Component.Types.IOType) }, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Devices.Component), global::Ubii.Devices.Component.Parser, new[]{ "Topic", "MessageFormat", "IoType" }, null, new[]{ typeof(global::Ubii.Devices.Component.Types.IOType) }, null)
           }));
     }
     #endregion
@@ -65,7 +65,7 @@ namespace Ubii.Devices {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Component(Component other) : this() {
       topic_ = other.topic_;
-      dataFormat_ = other.dataFormat_;
+      messageFormat_ = other.messageFormat_;
       ioType_ = other.ioType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,14 +86,14 @@ namespace Ubii.Devices {
       }
     }
 
-    /// <summary>Field number for the "data_format" field.</summary>
-    public const int DataFormatFieldNumber = 2;
-    private string dataFormat_ = "";
+    /// <summary>Field number for the "message_format" field.</summary>
+    public const int MessageFormatFieldNumber = 2;
+    private string messageFormat_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DataFormat {
-      get { return dataFormat_; }
+    public string MessageFormat {
+      get { return messageFormat_; }
       set {
-        dataFormat_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        messageFormat_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -122,7 +122,7 @@ namespace Ubii.Devices {
         return true;
       }
       if (Topic != other.Topic) return false;
-      if (DataFormat != other.DataFormat) return false;
+      if (MessageFormat != other.MessageFormat) return false;
       if (IoType != other.IoType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -131,7 +131,7 @@ namespace Ubii.Devices {
     public override int GetHashCode() {
       int hash = 1;
       if (Topic.Length != 0) hash ^= Topic.GetHashCode();
-      if (DataFormat.Length != 0) hash ^= DataFormat.GetHashCode();
+      if (MessageFormat.Length != 0) hash ^= MessageFormat.GetHashCode();
       if (IoType != 0) hash ^= IoType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -150,9 +150,9 @@ namespace Ubii.Devices {
         output.WriteRawTag(10);
         output.WriteString(Topic);
       }
-      if (DataFormat.Length != 0) {
+      if (MessageFormat.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(DataFormat);
+        output.WriteString(MessageFormat);
       }
       if (IoType != 0) {
         output.WriteRawTag(24);
@@ -169,8 +169,8 @@ namespace Ubii.Devices {
       if (Topic.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Topic);
       }
-      if (DataFormat.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DataFormat);
+      if (MessageFormat.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MessageFormat);
       }
       if (IoType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) IoType);
@@ -189,8 +189,8 @@ namespace Ubii.Devices {
       if (other.Topic.Length != 0) {
         Topic = other.Topic;
       }
-      if (other.DataFormat.Length != 0) {
-        DataFormat = other.DataFormat;
+      if (other.MessageFormat.Length != 0) {
+        MessageFormat = other.MessageFormat;
       }
       if (other.IoType != 0) {
         IoType = other.IoType;
@@ -211,7 +211,7 @@ namespace Ubii.Devices {
             break;
           }
           case 18: {
-            DataFormat = input.ReadString();
+            MessageFormat = input.ReadString();
             break;
           }
           case 24: {
