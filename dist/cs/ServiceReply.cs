@@ -27,16 +27,18 @@ namespace Ubii.Services {
             "CiFwcm90by9zZXJ2aWNlcy9zZXJ2aWNlUmVwbHkucHJvdG8SDXViaWkuc2Vy",
             "dmljZXMaG3Byb3RvL2dlbmVyYWwvc3VjY2Vzcy5wcm90bxoZcHJvdG8vZ2Vu",
             "ZXJhbC9lcnJvci5wcm90bxoacHJvdG8vY2xpZW50cy9jbGllbnQucHJvdG8a",
-            "GnByb3RvL2RldmljZXMvZGV2aWNlLnByb3RvItIBCgxTZXJ2aWNlUmVwbHkS",
-            "KAoHc3VjY2VzcxgBIAEoCzIVLnViaWkuZ2VuZXJhbC5TdWNjZXNzSAASJAoF",
-            "ZXJyb3IYAiABKAsyEy51YmlpLmdlbmVyYWwuRXJyb3JIABI0ChRjbGllbnRf",
-            "c3BlY2lmaWNhdGlvbhgDIAEoCzIULnViaWkuY2xpZW50cy5DbGllbnRIABI0",
-            "ChRkZXZpY2Vfc3BlY2lmaWNhdGlvbhgEIAEoCzIULnViaWkuZGV2aWNlcy5E",
-            "ZXZpY2VIAEIGCgR0eXBlYgZwcm90bzM="));
+            "GnByb3RvL2RldmljZXMvZGV2aWNlLnByb3RvGhpwcm90by9zZXJ2ZXJzL3Nl",
+            "cnZlci5wcm90byKIAgoMU2VydmljZVJlcGx5EigKB3N1Y2Nlc3MYASABKAsy",
+            "FS51YmlpLmdlbmVyYWwuU3VjY2Vzc0gAEiQKBWVycm9yGAIgASgLMhMudWJp",
+            "aS5nZW5lcmFsLkVycm9ySAASNAoUY2xpZW50X3NwZWNpZmljYXRpb24YAyAB",
+            "KAsyFC51YmlpLmNsaWVudHMuQ2xpZW50SAASNAoUZGV2aWNlX3NwZWNpZmlj",
+            "YXRpb24YBCABKAsyFC51YmlpLmRldmljZXMuRGV2aWNlSAASNAoUc2VydmVy",
+            "X3NwZWNpZmljYXRpb24YBSABKAsyFC51YmlpLnNlcnZlcnMuU2VydmVySABC",
+            "BgoEdHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "ClientSpecification", "DeviceSpecification" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "ClientSpecification", "DeviceSpecification", "ServerSpecification" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -80,6 +82,9 @@ namespace Ubii.Services {
           break;
         case TypeOneofCase.DeviceSpecification:
           DeviceSpecification = other.DeviceSpecification.Clone();
+          break;
+        case TypeOneofCase.ServerSpecification:
+          ServerSpecification = other.ServerSpecification.Clone();
           break;
       }
 
@@ -135,6 +140,17 @@ namespace Ubii.Services {
       }
     }
 
+    /// <summary>Field number for the "server_specification" field.</summary>
+    public const int ServerSpecificationFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Servers.Server ServerSpecification {
+      get { return typeCase_ == TypeOneofCase.ServerSpecification ? (global::Ubii.Servers.Server) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.ServerSpecification;
+      }
+    }
+
     private object type_;
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
@@ -143,6 +159,7 @@ namespace Ubii.Services {
       Error = 2,
       ClientSpecification = 3,
       DeviceSpecification = 4,
+      ServerSpecification = 5,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -173,6 +190,7 @@ namespace Ubii.Services {
       if (!object.Equals(Error, other.Error)) return false;
       if (!object.Equals(ClientSpecification, other.ClientSpecification)) return false;
       if (!object.Equals(DeviceSpecification, other.DeviceSpecification)) return false;
+      if (!object.Equals(ServerSpecification, other.ServerSpecification)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -184,6 +202,7 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.Error) hash ^= Error.GetHashCode();
       if (typeCase_ == TypeOneofCase.ClientSpecification) hash ^= ClientSpecification.GetHashCode();
       if (typeCase_ == TypeOneofCase.DeviceSpecification) hash ^= DeviceSpecification.GetHashCode();
+      if (typeCase_ == TypeOneofCase.ServerSpecification) hash ^= ServerSpecification.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -214,6 +233,10 @@ namespace Ubii.Services {
         output.WriteRawTag(34);
         output.WriteMessage(DeviceSpecification);
       }
+      if (typeCase_ == TypeOneofCase.ServerSpecification) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ServerSpecification);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -233,6 +256,9 @@ namespace Ubii.Services {
       }
       if (typeCase_ == TypeOneofCase.DeviceSpecification) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceSpecification);
+      }
+      if (typeCase_ == TypeOneofCase.ServerSpecification) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerSpecification);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -269,6 +295,12 @@ namespace Ubii.Services {
             DeviceSpecification = new global::Ubii.Devices.Device();
           }
           DeviceSpecification.MergeFrom(other.DeviceSpecification);
+          break;
+        case TypeOneofCase.ServerSpecification:
+          if (ServerSpecification == null) {
+            ServerSpecification = new global::Ubii.Servers.Server();
+          }
+          ServerSpecification.MergeFrom(other.ServerSpecification);
           break;
       }
 
@@ -317,6 +349,15 @@ namespace Ubii.Services {
             }
             input.ReadMessage(subBuilder);
             DeviceSpecification = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Ubii.Servers.Server subBuilder = new global::Ubii.Servers.Server();
+            if (typeCase_ == TypeOneofCase.ServerSpecification) {
+              subBuilder.MergeFrom(ServerSpecification);
+            }
+            input.ReadMessage(subBuilder);
+            ServerSpecification = subBuilder;
             break;
           }
         }

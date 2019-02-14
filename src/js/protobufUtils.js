@@ -5,7 +5,9 @@ class ProtobufUtils {
         let packageArray = typeString.split('.');
         let protobuf = proto;
         packageArray.forEach((subpackage) => {
-            protobuf = protobuf[subpackage] || undefined;
+            if (typeof protobuf !== 'undefined') {
+              protobuf = protobuf[subpackage] || undefined;
+            }
         });
 
         return protobuf;
