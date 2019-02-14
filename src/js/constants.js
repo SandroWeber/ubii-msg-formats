@@ -1,6 +1,6 @@
 const MSG_TYPES = {
-  SERVICE_REQUEST: 'ubii.service.ServiceRequest',
-  SERVICE_REPLY: 'ubii.service.ServiceReply',
+  SERVICE_REQUEST: 'ubii.services.ServiceRequest',
+  SERVICE_REPLY: 'ubii.services.ServiceReply',
   TOPIC_DATA: 'ubii.topicData.TopicData'
 };
 
