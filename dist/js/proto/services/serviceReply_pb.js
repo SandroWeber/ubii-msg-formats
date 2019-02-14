@@ -15,6 +15,7 @@ var proto_general_success_pb = require('../../proto/general/success_pb.js');
 var proto_general_error_pb = require('../../proto/general/error_pb.js');
 var proto_clients_client_pb = require('../../proto/clients/client_pb.js');
 var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
+var proto_servers_server_pb = require('../../proto/servers/server_pb.js');
 goog.exportSymbol('proto.ubii.services.ServiceReply', null, global);
 
 /**
@@ -42,7 +43,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5]];
 
 /**
  * @enum {number}
@@ -52,7 +53,8 @@ proto.ubii.services.ServiceReply.TypeCase = {
   SUCCESS: 1,
   ERROR: 2,
   CLIENT_SPECIFICATION: 3,
-  DEVICE_SPECIFICATION: 4
+  DEVICE_SPECIFICATION: 4,
+  SERVER_SPECIFICATION: 5
 };
 
 /**
@@ -94,7 +96,8 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     success: (f = msg.getSuccess()) && proto_general_success_pb.Success.toObject(includeInstance, f),
     error: (f = msg.getError()) && proto_general_error_pb.Error.toObject(includeInstance, f),
     clientSpecification: (f = msg.getClientSpecification()) && proto_clients_client_pb.Client.toObject(includeInstance, f),
-    deviceSpecification: (f = msg.getDeviceSpecification()) && proto_devices_device_pb.Device.toObject(includeInstance, f)
+    deviceSpecification: (f = msg.getDeviceSpecification()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
+    serverSpecification: (f = msg.getServerSpecification()) && proto_servers_server_pb.Server.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -150,6 +153,11 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto_devices_device_pb.Device;
       reader.readMessage(value,proto_devices_device_pb.Device.deserializeBinaryFromReader);
       msg.setDeviceSpecification(value);
+      break;
+    case 5:
+      var value = new proto_servers_server_pb.Server;
+      reader.readMessage(value,proto_servers_server_pb.Server.deserializeBinaryFromReader);
+      msg.setServerSpecification(value);
       break;
     default:
       reader.skipField();
@@ -210,6 +218,14 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       4,
       f,
       proto_devices_device_pb.Device.serializeBinaryToWriter
+    );
+  }
+  f = message.getServerSpecification();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto_servers_server_pb.Server.serializeBinaryToWriter
     );
   }
 };
@@ -332,6 +348,36 @@ proto.ubii.services.ServiceReply.prototype.clearDeviceSpecification = function()
  */
 proto.ubii.services.ServiceReply.prototype.hasDeviceSpecification = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional ubii.servers.Server server_specification = 5;
+ * @return {?proto.ubii.servers.Server}
+ */
+proto.ubii.services.ServiceReply.prototype.getServerSpecification = function() {
+  return /** @type{?proto.ubii.servers.Server} */ (
+    jspb.Message.getWrapperField(this, proto_servers_server_pb.Server, 5));
+};
+
+
+/** @param {?proto.ubii.servers.Server|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setServerSpecification = function(value) {
+  jspb.Message.setOneofWrapperField(this, 5, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearServerSpecification = function() {
+  this.setServerSpecification(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasServerSpecification = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
