@@ -560,6 +560,7 @@ $root.ubii = (function() {
              * @interface IDevice
              * @property {string|null} [id] Device id
              * @property {string|null} [name] Device name
+             * @property {ubii.devices.Device.DeviceType|null} [deviceType] Device deviceType
              * @property {Array.<ubii.devices.IComponent>|null} [components] Device components
              * @property {string|null} [clientId] Device clientId
              */
@@ -595,6 +596,14 @@ $root.ubii = (function() {
              * @instance
              */
             Device.prototype.name = "";
+
+            /**
+             * Device deviceType.
+             * @member {ubii.devices.Device.DeviceType} deviceType
+             * @memberof ubii.devices.Device
+             * @instance
+             */
+            Device.prototype.deviceType = 0;
 
             /**
              * Device components.
@@ -640,11 +649,13 @@ $root.ubii = (function() {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
                 if (message.name != null && message.hasOwnProperty("name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.deviceType != null && message.hasOwnProperty("deviceType"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.deviceType);
                 if (message.components != null && message.components.length)
                     for (var i = 0; i < message.components.length; ++i)
-                        $root.ubii.devices.Component.encode(message.components[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.ubii.devices.Component.encode(message.components[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.clientId != null && message.hasOwnProperty("clientId"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.clientId);
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.clientId);
                 return writer;
             };
 
@@ -686,11 +697,14 @@ $root.ubii = (function() {
                         message.name = reader.string();
                         break;
                     case 3:
+                        message.deviceType = reader.int32();
+                        break;
+                    case 4:
                         if (!(message.components && message.components.length))
                             message.components = [];
                         message.components.push($root.ubii.devices.Component.decode(reader, reader.uint32()));
                         break;
-                    case 4:
+                    case 5:
                         message.clientId = reader.string();
                         break;
                     default:
@@ -734,6 +748,14 @@ $root.ubii = (function() {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
+                if (message.deviceType != null && message.hasOwnProperty("deviceType"))
+                    switch (message.deviceType) {
+                    default:
+                        return "deviceType: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 if (message.components != null && message.hasOwnProperty("components")) {
                     if (!Array.isArray(message.components))
                         return "components: array expected";
@@ -765,6 +787,16 @@ $root.ubii = (function() {
                     message.id = String(object.id);
                 if (object.name != null)
                     message.name = String(object.name);
+                switch (object.deviceType) {
+                case "PARTICIPANT":
+                case 0:
+                    message.deviceType = 0;
+                    break;
+                case "WATCHER":
+                case 1:
+                    message.deviceType = 1;
+                    break;
+                }
                 if (object.components) {
                     if (!Array.isArray(object.components))
                         throw TypeError(".ubii.devices.Device.components: array expected");
@@ -798,12 +830,15 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
+                    object.deviceType = options.enums === String ? "PARTICIPANT" : 0;
                     object.clientId = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
+                if (message.deviceType != null && message.hasOwnProperty("deviceType"))
+                    object.deviceType = options.enums === String ? $root.ubii.devices.Device.DeviceType[message.deviceType] : message.deviceType;
                 if (message.components && message.components.length) {
                     object.components = [];
                     for (var j = 0; j < message.components.length; ++j)
@@ -824,6 +859,20 @@ $root.ubii = (function() {
             Device.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
+
+            /**
+             * DeviceType enum.
+             * @name ubii.devices.Device.DeviceType
+             * @enum {string}
+             * @property {number} PARTICIPANT=0 PARTICIPANT value
+             * @property {number} WATCHER=1 WATCHER value
+             */
+            Device.DeviceType = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "PARTICIPANT"] = 0;
+                values[valuesById[1] = "WATCHER"] = 1;
+                return values;
+            })();
 
             return Device;
         })();

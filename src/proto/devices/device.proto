@@ -10,7 +10,7 @@ message Device {
         PARTICIPANT = 0;
         WATCHER = 1;
     }
-    DeviceType device_type = 3;
+    ubii.devices.Device.DeviceType device_type = 3;
     repeated ubii.devices.Component components = 4;
     string client_id = 5;
 }
