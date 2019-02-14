@@ -25,12 +25,12 @@ namespace Ubii.Interactions {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFwcm90by9pbnRlcmFjdGlvbnMvaW9Gb3JtYXQucHJvdG8SEXViaWkuaW50",
-            "ZXJhY3Rpb25zIi0KCElPRm9ybWF0EgwKBG5hbWUYASABKAkSEwoLZGF0YV9m",
-            "b3JtYXQYAiABKAliBnByb3RvMw=="));
+            "ZXJhY3Rpb25zIjkKCElPRm9ybWF0EhUKDWludGVybmFsX25hbWUYASABKAkS",
+            "FgoObWVzc2FnZV9mb3JtYXQYAiABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.IOFormat), global::Ubii.Interactions.IOFormat.Parser, new[]{ "Name", "DataFormat" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.IOFormat), global::Ubii.Interactions.IOFormat.Parser, new[]{ "InternalName", "MessageFormat" }, null, null, null)
           }));
     }
     #endregion
@@ -62,8 +62,8 @@ namespace Ubii.Interactions {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public IOFormat(IOFormat other) : this() {
-      name_ = other.name_;
-      dataFormat_ = other.dataFormat_;
+      internalName_ = other.internalName_;
+      messageFormat_ = other.messageFormat_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -72,25 +72,25 @@ namespace Ubii.Interactions {
       return new IOFormat(this);
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
+    /// <summary>Field number for the "internal_name" field.</summary>
+    public const int InternalNameFieldNumber = 1;
+    private string internalName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
+    public string InternalName {
+      get { return internalName_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        internalName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "data_format" field.</summary>
-    public const int DataFormatFieldNumber = 2;
-    private string dataFormat_ = "";
+    /// <summary>Field number for the "message_format" field.</summary>
+    public const int MessageFormatFieldNumber = 2;
+    private string messageFormat_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DataFormat {
-      get { return dataFormat_; }
+    public string MessageFormat {
+      get { return messageFormat_; }
       set {
-        dataFormat_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        messageFormat_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -107,16 +107,16 @@ namespace Ubii.Interactions {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Name != other.Name) return false;
-      if (DataFormat != other.DataFormat) return false;
+      if (InternalName != other.InternalName) return false;
+      if (MessageFormat != other.MessageFormat) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (DataFormat.Length != 0) hash ^= DataFormat.GetHashCode();
+      if (InternalName.Length != 0) hash ^= InternalName.GetHashCode();
+      if (MessageFormat.Length != 0) hash ^= MessageFormat.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -130,13 +130,13 @@ namespace Ubii.Interactions {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
+      if (InternalName.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteString(InternalName);
       }
-      if (DataFormat.Length != 0) {
+      if (MessageFormat.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(DataFormat);
+        output.WriteString(MessageFormat);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -146,11 +146,11 @@ namespace Ubii.Interactions {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (InternalName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InternalName);
       }
-      if (DataFormat.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DataFormat);
+      if (MessageFormat.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MessageFormat);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -163,11 +163,11 @@ namespace Ubii.Interactions {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.InternalName.Length != 0) {
+        InternalName = other.InternalName;
       }
-      if (other.DataFormat.Length != 0) {
-        DataFormat = other.DataFormat;
+      if (other.MessageFormat.Length != 0) {
+        MessageFormat = other.MessageFormat;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -181,11 +181,11 @@ namespace Ubii.Interactions {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Name = input.ReadString();
+            InternalName = input.ReadString();
             break;
           }
           case 18: {
-            DataFormat = input.ReadString();
+            MessageFormat = input.ReadString();
             break;
           }
         }

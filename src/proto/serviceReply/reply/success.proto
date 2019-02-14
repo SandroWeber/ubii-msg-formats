@@ -1,7 +1,0 @@
-syntax = "proto3";
-package ubii.service.reply;
-
-message Success {
-    string title = 1;
-    string message = 2;
-}

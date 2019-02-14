@@ -26,14 +26,14 @@ namespace Ubii.Interactions {
           string.Concat(
             "CiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8SEXViaWku",
             "aW50ZXJhY3Rpb25zGiFwcm90by9pbnRlcmFjdGlvbnMvaW9Gb3JtYXQucHJv",
-            "dG8ilAEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
-            "EAoIY2FsbGJhY2sYAyABKAkSKwoGaW5wdXRzGAQgAygLMhsudWJpaS5pbnRl",
-            "cmFjdGlvbnMuSU9Gb3JtYXQSLAoHb3V0cHV0cxgFIAMoCzIbLnViaWkuaW50",
-            "ZXJhY3Rpb25zLklPRm9ybWF0YgZwcm90bzM="));
+            "dG8inwEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
+            "GwoTcHJvY2Vzc2luZ19jYWxsYmFjaxgDIAEoCRIrCgZpbnB1dHMYBCADKAsy",
+            "Gy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1hdBIsCgdvdXRwdXRzGAUgAygL",
+            "MhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.IoFormatReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "Callback", "Inputs", "Outputs" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "Inputs", "Outputs" }, null, null, null)
           }));
     }
     #endregion
@@ -67,7 +67,7 @@ namespace Ubii.Interactions {
     public Interaction(Interaction other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      callback_ = other.callback_;
+      processingCallback_ = other.processingCallback_;
       inputs_ = other.inputs_.Clone();
       outputs_ = other.outputs_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -100,14 +100,14 @@ namespace Ubii.Interactions {
       }
     }
 
-    /// <summary>Field number for the "callback" field.</summary>
-    public const int CallbackFieldNumber = 3;
-    private string callback_ = "";
+    /// <summary>Field number for the "processing_callback" field.</summary>
+    public const int ProcessingCallbackFieldNumber = 3;
+    private string processingCallback_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Callback {
-      get { return callback_; }
+    public string ProcessingCallback {
+      get { return processingCallback_; }
       set {
-        callback_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        processingCallback_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -146,7 +146,7 @@ namespace Ubii.Interactions {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Callback != other.Callback) return false;
+      if (ProcessingCallback != other.ProcessingCallback) return false;
       if(!inputs_.Equals(other.inputs_)) return false;
       if(!outputs_.Equals(other.outputs_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -157,7 +157,7 @@ namespace Ubii.Interactions {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Callback.Length != 0) hash ^= Callback.GetHashCode();
+      if (ProcessingCallback.Length != 0) hash ^= ProcessingCallback.GetHashCode();
       hash ^= inputs_.GetHashCode();
       hash ^= outputs_.GetHashCode();
       if (_unknownFields != null) {
@@ -181,9 +181,9 @@ namespace Ubii.Interactions {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Callback.Length != 0) {
+      if (ProcessingCallback.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Callback);
+        output.WriteString(ProcessingCallback);
       }
       inputs_.WriteTo(output, _repeated_inputs_codec);
       outputs_.WriteTo(output, _repeated_outputs_codec);
@@ -201,8 +201,8 @@ namespace Ubii.Interactions {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Callback.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Callback);
+      if (ProcessingCallback.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProcessingCallback);
       }
       size += inputs_.CalculateSize(_repeated_inputs_codec);
       size += outputs_.CalculateSize(_repeated_outputs_codec);
@@ -223,8 +223,8 @@ namespace Ubii.Interactions {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Callback.Length != 0) {
-        Callback = other.Callback;
+      if (other.ProcessingCallback.Length != 0) {
+        ProcessingCallback = other.ProcessingCallback;
       }
       inputs_.Add(other.inputs_);
       outputs_.Add(other.outputs_);
@@ -248,7 +248,7 @@ namespace Ubii.Interactions {
             break;
           }
           case 26: {
-            Callback = input.ReadString();
+            ProcessingCallback = input.ReadString();
             break;
           }
           case 34: {

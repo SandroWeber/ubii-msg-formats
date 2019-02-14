@@ -16,8 +16,6 @@ elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
 else:
     protoc = find_executable("protoc")
 
-print(protoc)
-
 
 def generateInits(pathToOutput):
    
@@ -89,7 +87,7 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
 
 def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto', includePath='./../src' , protoc_arg='python'):
     re = getAllProtos(pathToProtos)
-    #print(re)
+    print(re)
     os.makedirs(pathToOutput, exist_ok=True)
 
     if protoc_arg == 'js':
@@ -117,7 +115,8 @@ def chosen_option(args):
     src_directory = os.path.join(file_directory, '../src')
 
     if args.opt == 'py' or args.opt == 'python':
-        p = generateProtos()
+        destination_directory = os.path.join(file_directory, '../dist/py')
+        p = generateProtos(destination_directory, proto_src_directory, src_directory, 'python')
         generateInits(p)
     elif args.opt == 'j' or args.opt == 'java':
         destination_directory = os.path.join(file_directory, '../dist/java')

@@ -25,15 +25,16 @@ namespace Ubii.Sessions {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5wcm90by9zZXNzaW9ucy9pb01hcHBpbmcucHJvdG8SDXViaWkuc2Vzc2lv",
-            "bnMaIXByb3RvL2ludGVyYWN0aW9ucy9pb0Zvcm1hdC5wcm90byKvAQoJSU9N",
+            "bnMaIXByb3RvL2ludGVyYWN0aW9ucy9pb0Zvcm1hdC5wcm90byKyAQoJSU9N",
             "YXBwaW5nEhYKDmludGVyYWN0aW9uX2lkGAEgASgJEjgKEWludGVyYWN0aW9u",
             "X2lucHV0GAIgASgLMhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXRIABI5",
             "ChJpbnRlcmFjdGlvbl9vdXRwdXQYAyABKAsyGy51YmlpLmludGVyYWN0aW9u",
-            "cy5JT0Zvcm1hdEgAEg0KBXRvcGljGAQgASgJQgYKBHR5cGViBnByb3RvMw=="));
+            "cy5JT0Zvcm1hdEgAEg0KBXRvcGljGAQgASgJQgkKB2lvX3R5cGViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.IoFormatReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.IOMapping), global::Ubii.Sessions.IOMapping.Parser, new[]{ "InteractionId", "InteractionInput", "InteractionOutput", "Topic" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.IOMapping), global::Ubii.Sessions.IOMapping.Parser, new[]{ "InteractionId", "InteractionInput", "InteractionOutput", "Topic" }, new[]{ "IoType" }, null, null)
           }));
     }
     #endregion
@@ -67,11 +68,11 @@ namespace Ubii.Sessions {
     public IOMapping(IOMapping other) : this() {
       interactionId_ = other.interactionId_;
       topic_ = other.topic_;
-      switch (other.TypeCase) {
-        case TypeOneofCase.InteractionInput:
+      switch (other.IoTypeCase) {
+        case IoTypeOneofCase.InteractionInput:
           InteractionInput = other.InteractionInput.Clone();
           break;
-        case TypeOneofCase.InteractionOutput:
+        case IoTypeOneofCase.InteractionOutput:
           InteractionOutput = other.InteractionOutput.Clone();
           break;
       }
@@ -99,10 +100,10 @@ namespace Ubii.Sessions {
     public const int InteractionInputFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.Interactions.IOFormat InteractionInput {
-      get { return typeCase_ == TypeOneofCase.InteractionInput ? (global::Ubii.Interactions.IOFormat) type_ : null; }
+      get { return ioTypeCase_ == IoTypeOneofCase.InteractionInput ? (global::Ubii.Interactions.IOFormat) ioType_ : null; }
       set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.InteractionInput;
+        ioType_ = value;
+        ioTypeCase_ = value == null ? IoTypeOneofCase.None : IoTypeOneofCase.InteractionInput;
       }
     }
 
@@ -110,10 +111,10 @@ namespace Ubii.Sessions {
     public const int InteractionOutputFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.Interactions.IOFormat InteractionOutput {
-      get { return typeCase_ == TypeOneofCase.InteractionOutput ? (global::Ubii.Interactions.IOFormat) type_ : null; }
+      get { return ioTypeCase_ == IoTypeOneofCase.InteractionOutput ? (global::Ubii.Interactions.IOFormat) ioType_ : null; }
       set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.InteractionOutput;
+        ioType_ = value;
+        ioTypeCase_ = value == null ? IoTypeOneofCase.None : IoTypeOneofCase.InteractionOutput;
       }
     }
 
@@ -128,23 +129,23 @@ namespace Ubii.Sessions {
       }
     }
 
-    private object type_;
-    /// <summary>Enum of possible cases for the "type" oneof.</summary>
-    public enum TypeOneofCase {
+    private object ioType_;
+    /// <summary>Enum of possible cases for the "io_type" oneof.</summary>
+    public enum IoTypeOneofCase {
       None = 0,
       InteractionInput = 2,
       InteractionOutput = 3,
     }
-    private TypeOneofCase typeCase_ = TypeOneofCase.None;
+    private IoTypeOneofCase ioTypeCase_ = IoTypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TypeOneofCase TypeCase {
-      get { return typeCase_; }
+    public IoTypeOneofCase IoTypeCase {
+      get { return ioTypeCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearType() {
-      typeCase_ = TypeOneofCase.None;
-      type_ = null;
+    public void ClearIoType() {
+      ioTypeCase_ = IoTypeOneofCase.None;
+      ioType_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,7 +165,7 @@ namespace Ubii.Sessions {
       if (!object.Equals(InteractionInput, other.InteractionInput)) return false;
       if (!object.Equals(InteractionOutput, other.InteractionOutput)) return false;
       if (Topic != other.Topic) return false;
-      if (TypeCase != other.TypeCase) return false;
+      if (IoTypeCase != other.IoTypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -172,10 +173,10 @@ namespace Ubii.Sessions {
     public override int GetHashCode() {
       int hash = 1;
       if (InteractionId.Length != 0) hash ^= InteractionId.GetHashCode();
-      if (typeCase_ == TypeOneofCase.InteractionInput) hash ^= InteractionInput.GetHashCode();
-      if (typeCase_ == TypeOneofCase.InteractionOutput) hash ^= InteractionOutput.GetHashCode();
+      if (ioTypeCase_ == IoTypeOneofCase.InteractionInput) hash ^= InteractionInput.GetHashCode();
+      if (ioTypeCase_ == IoTypeOneofCase.InteractionOutput) hash ^= InteractionOutput.GetHashCode();
       if (Topic.Length != 0) hash ^= Topic.GetHashCode();
-      hash ^= (int) typeCase_;
+      hash ^= (int) ioTypeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -193,11 +194,11 @@ namespace Ubii.Sessions {
         output.WriteRawTag(10);
         output.WriteString(InteractionId);
       }
-      if (typeCase_ == TypeOneofCase.InteractionInput) {
+      if (ioTypeCase_ == IoTypeOneofCase.InteractionInput) {
         output.WriteRawTag(18);
         output.WriteMessage(InteractionInput);
       }
-      if (typeCase_ == TypeOneofCase.InteractionOutput) {
+      if (ioTypeCase_ == IoTypeOneofCase.InteractionOutput) {
         output.WriteRawTag(26);
         output.WriteMessage(InteractionOutput);
       }
@@ -216,10 +217,10 @@ namespace Ubii.Sessions {
       if (InteractionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InteractionId);
       }
-      if (typeCase_ == TypeOneofCase.InteractionInput) {
+      if (ioTypeCase_ == IoTypeOneofCase.InteractionInput) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(InteractionInput);
       }
-      if (typeCase_ == TypeOneofCase.InteractionOutput) {
+      if (ioTypeCase_ == IoTypeOneofCase.InteractionOutput) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(InteractionOutput);
       }
       if (Topic.Length != 0) {
@@ -242,14 +243,14 @@ namespace Ubii.Sessions {
       if (other.Topic.Length != 0) {
         Topic = other.Topic;
       }
-      switch (other.TypeCase) {
-        case TypeOneofCase.InteractionInput:
+      switch (other.IoTypeCase) {
+        case IoTypeOneofCase.InteractionInput:
           if (InteractionInput == null) {
             InteractionInput = new global::Ubii.Interactions.IOFormat();
           }
           InteractionInput.MergeFrom(other.InteractionInput);
           break;
-        case TypeOneofCase.InteractionOutput:
+        case IoTypeOneofCase.InteractionOutput:
           if (InteractionOutput == null) {
             InteractionOutput = new global::Ubii.Interactions.IOFormat();
           }
@@ -274,7 +275,7 @@ namespace Ubii.Sessions {
           }
           case 18: {
             global::Ubii.Interactions.IOFormat subBuilder = new global::Ubii.Interactions.IOFormat();
-            if (typeCase_ == TypeOneofCase.InteractionInput) {
+            if (ioTypeCase_ == IoTypeOneofCase.InteractionInput) {
               subBuilder.MergeFrom(InteractionInput);
             }
             input.ReadMessage(subBuilder);
@@ -283,7 +284,7 @@ namespace Ubii.Sessions {
           }
           case 26: {
             global::Ubii.Interactions.IOFormat subBuilder = new global::Ubii.Interactions.IOFormat();
-            if (typeCase_ == TypeOneofCase.InteractionOutput) {
+            if (ioTypeCase_ == IoTypeOneofCase.InteractionOutput) {
               subBuilder.MergeFrom(InteractionOutput);
             }
             input.ReadMessage(subBuilder);

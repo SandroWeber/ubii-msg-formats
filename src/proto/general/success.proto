@@ -1,8 +1,7 @@
 syntax = "proto3";
 package ubii.general;
 
-message Error {
+message Success {
     string title = 1;
     string message = 2;
-    string stack = 3;
 }
