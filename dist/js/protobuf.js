@@ -2589,6 +2589,338 @@ $root.ubii = (function() {
         return interactions;
     })();
 
+    ubii.servers = (function() {
+
+        /**
+         * Namespace servers.
+         * @memberof ubii
+         * @namespace
+         */
+        var servers = {};
+
+        servers.Server = (function() {
+
+            /**
+             * Properties of a Server.
+             * @memberof ubii.servers
+             * @interface IServer
+             * @property {string|null} [id] Server id
+             * @property {string|null} [name] Server name
+             * @property {string|null} [ip] Server ip
+             * @property {string|null} [portServiceZmq] Server portServiceZmq
+             * @property {string|null} [portServiceRest] Server portServiceRest
+             * @property {string|null} [portTopicDataZmq] Server portTopicDataZmq
+             * @property {string|null} [portTopicDataWs] Server portTopicDataWs
+             */
+
+            /**
+             * Constructs a new Server.
+             * @memberof ubii.servers
+             * @classdesc Represents a Server.
+             * @implements IServer
+             * @constructor
+             * @param {ubii.servers.IServer=} [properties] Properties to set
+             */
+            function Server(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Server id.
+             * @member {string} id
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.id = "";
+
+            /**
+             * Server name.
+             * @member {string} name
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.name = "";
+
+            /**
+             * Server ip.
+             * @member {string} ip
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.ip = "";
+
+            /**
+             * Server portServiceZmq.
+             * @member {string} portServiceZmq
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.portServiceZmq = "";
+
+            /**
+             * Server portServiceRest.
+             * @member {string} portServiceRest
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.portServiceRest = "";
+
+            /**
+             * Server portTopicDataZmq.
+             * @member {string} portTopicDataZmq
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.portTopicDataZmq = "";
+
+            /**
+             * Server portTopicDataWs.
+             * @member {string} portTopicDataWs
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.portTopicDataWs = "";
+
+            /**
+             * Creates a new Server instance using the specified properties.
+             * @function create
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {ubii.servers.IServer=} [properties] Properties to set
+             * @returns {ubii.servers.Server} Server instance
+             */
+            Server.create = function create(properties) {
+                return new Server(properties);
+            };
+
+            /**
+             * Encodes the specified Server message. Does not implicitly {@link ubii.servers.Server.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {ubii.servers.IServer} message Server message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Server.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.ip != null && message.hasOwnProperty("ip"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.ip);
+                if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.portServiceZmq);
+                if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.portServiceRest);
+                if (message.portTopicDataZmq != null && message.hasOwnProperty("portTopicDataZmq"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.portTopicDataZmq);
+                if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.portTopicDataWs);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Server message, length delimited. Does not implicitly {@link ubii.servers.Server.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {ubii.servers.IServer} message Server message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Server.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Server message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.servers.Server} Server
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Server.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.servers.Server();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.ip = reader.string();
+                        break;
+                    case 4:
+                        message.portServiceZmq = reader.string();
+                        break;
+                    case 5:
+                        message.portServiceRest = reader.string();
+                        break;
+                    case 6:
+                        message.portTopicDataZmq = reader.string();
+                        break;
+                    case 7:
+                        message.portTopicDataWs = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Server message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.servers.Server} Server
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Server.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Server message.
+             * @function verify
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Server.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.ip != null && message.hasOwnProperty("ip"))
+                    if (!$util.isString(message.ip))
+                        return "ip: string expected";
+                if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
+                    if (!$util.isString(message.portServiceZmq))
+                        return "portServiceZmq: string expected";
+                if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
+                    if (!$util.isString(message.portServiceRest))
+                        return "portServiceRest: string expected";
+                if (message.portTopicDataZmq != null && message.hasOwnProperty("portTopicDataZmq"))
+                    if (!$util.isString(message.portTopicDataZmq))
+                        return "portTopicDataZmq: string expected";
+                if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
+                    if (!$util.isString(message.portTopicDataWs))
+                        return "portTopicDataWs: string expected";
+                return null;
+            };
+
+            /**
+             * Creates a Server message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.servers.Server} Server
+             */
+            Server.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.servers.Server)
+                    return object;
+                var message = new $root.ubii.servers.Server();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.ip != null)
+                    message.ip = String(object.ip);
+                if (object.portServiceZmq != null)
+                    message.portServiceZmq = String(object.portServiceZmq);
+                if (object.portServiceRest != null)
+                    message.portServiceRest = String(object.portServiceRest);
+                if (object.portTopicDataZmq != null)
+                    message.portTopicDataZmq = String(object.portTopicDataZmq);
+                if (object.portTopicDataWs != null)
+                    message.portTopicDataWs = String(object.portTopicDataWs);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Server message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.servers.Server
+             * @static
+             * @param {ubii.servers.Server} message Server
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Server.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.name = "";
+                    object.ip = "";
+                    object.portServiceZmq = "";
+                    object.portServiceRest = "";
+                    object.portTopicDataZmq = "";
+                    object.portTopicDataWs = "";
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                if (message.ip != null && message.hasOwnProperty("ip"))
+                    object.ip = message.ip;
+                if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
+                    object.portServiceZmq = message.portServiceZmq;
+                if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
+                    object.portServiceRest = message.portServiceRest;
+                if (message.portTopicDataZmq != null && message.hasOwnProperty("portTopicDataZmq"))
+                    object.portTopicDataZmq = message.portTopicDataZmq;
+                if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
+                    object.portTopicDataWs = message.portTopicDataWs;
+                return object;
+            };
+
+            /**
+             * Converts this Server to JSON.
+             * @function toJSON
+             * @memberof ubii.servers.Server
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Server.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Server;
+        })();
+
+        return servers;
+    })();
+
     ubii.services = (function() {
 
         /**
@@ -3062,6 +3394,7 @@ $root.ubii = (function() {
              * @property {ubii.general.IError|null} [error] ServiceReply error
              * @property {ubii.clients.IClient|null} [clientSpecification] ServiceReply clientSpecification
              * @property {ubii.devices.IDevice|null} [deviceSpecification] ServiceReply deviceSpecification
+             * @property {ubii.servers.IServer|null} [serverSpecification] ServiceReply serverSpecification
              */
 
             /**
@@ -3111,17 +3444,25 @@ $root.ubii = (function() {
              */
             ServiceReply.prototype.deviceSpecification = null;
 
+            /**
+             * ServiceReply serverSpecification.
+             * @member {ubii.servers.IServer|null|undefined} serverSpecification
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.serverSpecification = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"clientSpecification"|"deviceSpecification"|undefined} type
+             * @member {"success"|"error"|"clientSpecification"|"deviceSpecification"|"serverSpecification"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "clientSpecification", "deviceSpecification"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "clientSpecification", "deviceSpecification", "serverSpecification"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -3157,6 +3498,8 @@ $root.ubii = (function() {
                     $root.ubii.clients.Client.encode(message.clientSpecification, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.deviceSpecification != null && message.hasOwnProperty("deviceSpecification"))
                     $root.ubii.devices.Device.encode(message.deviceSpecification, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.serverSpecification != null && message.hasOwnProperty("serverSpecification"))
+                    $root.ubii.servers.Server.encode(message.serverSpecification, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -3202,6 +3545,9 @@ $root.ubii = (function() {
                         break;
                     case 4:
                         message.deviceSpecification = $root.ubii.devices.Device.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.serverSpecification = $root.ubii.servers.Server.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3277,6 +3623,16 @@ $root.ubii = (function() {
                             return "deviceSpecification." + error;
                     }
                 }
+                if (message.serverSpecification != null && message.hasOwnProperty("serverSpecification")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.servers.Server.verify(message.serverSpecification);
+                        if (error)
+                            return "serverSpecification." + error;
+                    }
+                }
                 return null;
             };
 
@@ -3311,6 +3667,11 @@ $root.ubii = (function() {
                     if (typeof object.deviceSpecification !== "object")
                         throw TypeError(".ubii.services.ServiceReply.deviceSpecification: object expected");
                     message.deviceSpecification = $root.ubii.devices.Device.fromObject(object.deviceSpecification);
+                }
+                if (object.serverSpecification != null) {
+                    if (typeof object.serverSpecification !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.serverSpecification: object expected");
+                    message.serverSpecification = $root.ubii.servers.Server.fromObject(object.serverSpecification);
                 }
                 return message;
             };
@@ -3347,6 +3708,11 @@ $root.ubii = (function() {
                     object.deviceSpecification = $root.ubii.devices.Device.toObject(message.deviceSpecification, options);
                     if (options.oneofs)
                         object.type = "deviceSpecification";
+                }
+                if (message.serverSpecification != null && message.hasOwnProperty("serverSpecification")) {
+                    object.serverSpecification = $root.ubii.servers.Server.toObject(message.serverSpecification, options);
+                    if (options.oneofs)
+                        object.type = "serverSpecification";
                 }
                 return object;
             };

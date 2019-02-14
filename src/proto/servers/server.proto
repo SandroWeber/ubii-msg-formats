@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ubii.servers;
+
+message Server {
+    string id = 1;
+    string name = 2;
+    string ip = 3;
+    string port_service_zmq = 4;
+    string port_service_rest = 5;
+    string port_topic_data_zmq = 6;
+    string port_topic_data_ws = 7;
+}
