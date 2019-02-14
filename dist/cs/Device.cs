@@ -25,14 +25,16 @@ namespace Ubii.Devices {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chpwcm90by9kZXZpY2VzL2RldmljZS5wcm90bxIMdWJpaS5kZXZpY2VzGh1w",
-            "cm90by9kZXZpY2VzL2NvbXBvbmVudC5wcm90byJiCgZEZXZpY2USCgoCaWQY",
-            "ASABKAkSDAoEbmFtZRgCIAEoCRIrCgpjb21wb25lbnRzGAMgAygLMhcudWJp",
-            "aS5kZXZpY2VzLkNvbXBvbmVudBIRCgljbGllbnRfaWQYBCABKAliBnByb3Rv",
-            "Mw=="));
+            "cm90by9kZXZpY2VzL2NvbXBvbmVudC5wcm90byLEAQoGRGV2aWNlEgoKAmlk",
+            "GAEgASgJEgwKBG5hbWUYAiABKAkSNAoLZGV2aWNlX3R5cGUYAyABKA4yHy51",
+            "YmlpLmRldmljZXMuRGV2aWNlLkRldmljZVR5cGUSKwoKY29tcG9uZW50cxgE",
+            "IAMoCzIXLnViaWkuZGV2aWNlcy5Db21wb25lbnQSEQoJY2xpZW50X2lkGAUg",
+            "ASgJIioKCkRldmljZVR5cGUSDwoLUEFSVElDSVBBTlQQABILCgdXQVRDSEVS",
+            "EAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Devices.ComponentReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Devices.Device), global::Ubii.Devices.Device.Parser, new[]{ "Id", "Name", "Components", "ClientId" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Devices.Device), global::Ubii.Devices.Device.Parser, new[]{ "Id", "Name", "DeviceType", "Components", "ClientId" }, null, new[]{ typeof(global::Ubii.Devices.Device.Types.DeviceType) }, null)
           }));
     }
     #endregion
@@ -66,6 +68,7 @@ namespace Ubii.Devices {
     public Device(Device other) : this() {
       id_ = other.id_;
       name_ = other.name_;
+      deviceType_ = other.deviceType_;
       components_ = other.components_.Clone();
       clientId_ = other.clientId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -98,10 +101,21 @@ namespace Ubii.Devices {
       }
     }
 
+    /// <summary>Field number for the "device_type" field.</summary>
+    public const int DeviceTypeFieldNumber = 3;
+    private global::Ubii.Devices.Device.Types.DeviceType deviceType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Devices.Device.Types.DeviceType DeviceType {
+      get { return deviceType_; }
+      set {
+        deviceType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "components" field.</summary>
-    public const int ComponentsFieldNumber = 3;
+    public const int ComponentsFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Ubii.Devices.Component> _repeated_components_codec
-        = pb::FieldCodec.ForMessage(26, global::Ubii.Devices.Component.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Ubii.Devices.Component.Parser);
     private readonly pbc::RepeatedField<global::Ubii.Devices.Component> components_ = new pbc::RepeatedField<global::Ubii.Devices.Component>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Ubii.Devices.Component> Components {
@@ -109,7 +123,7 @@ namespace Ubii.Devices {
     }
 
     /// <summary>Field number for the "client_id" field.</summary>
-    public const int ClientIdFieldNumber = 4;
+    public const int ClientIdFieldNumber = 5;
     private string clientId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ClientId {
@@ -134,6 +148,7 @@ namespace Ubii.Devices {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
+      if (DeviceType != other.DeviceType) return false;
       if(!components_.Equals(other.components_)) return false;
       if (ClientId != other.ClientId) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -144,6 +159,7 @@ namespace Ubii.Devices {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (DeviceType != 0) hash ^= DeviceType.GetHashCode();
       hash ^= components_.GetHashCode();
       if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
       if (_unknownFields != null) {
@@ -167,9 +183,13 @@ namespace Ubii.Devices {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
+      if (DeviceType != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) DeviceType);
+      }
       components_.WriteTo(output, _repeated_components_codec);
       if (ClientId.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(ClientId);
       }
       if (_unknownFields != null) {
@@ -185,6 +205,9 @@ namespace Ubii.Devices {
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (DeviceType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DeviceType);
       }
       size += components_.CalculateSize(_repeated_components_codec);
       if (ClientId.Length != 0) {
@@ -206,6 +229,9 @@ namespace Ubii.Devices {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.DeviceType != 0) {
+        DeviceType = other.DeviceType;
       }
       components_.Add(other.components_);
       if (other.ClientId.Length != 0) {
@@ -230,17 +256,33 @@ namespace Ubii.Devices {
             Name = input.ReadString();
             break;
           }
-          case 26: {
-            components_.AddEntriesFrom(input, _repeated_components_codec);
+          case 24: {
+            deviceType_ = (global::Ubii.Devices.Device.Types.DeviceType) input.ReadEnum();
             break;
           }
           case 34: {
+            components_.AddEntriesFrom(input, _repeated_components_codec);
+            break;
+          }
+          case 42: {
             ClientId = input.ReadString();
             break;
           }
         }
       }
     }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the Device message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum DeviceType {
+        [pbr::OriginalName("PARTICIPANT")] Participant = 0,
+        [pbr::OriginalName("WATCHER")] Watcher = 1,
+      }
+
+    }
+    #endregion
 
   }
 
