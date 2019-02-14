@@ -19,6 +19,7 @@ goog.provide('proto.ubii.dataStructure.Vector4');
 goog.provide('proto.ubii.devices.Component');
 goog.provide('proto.ubii.devices.Component.IOType');
 goog.provide('proto.ubii.devices.Device');
+goog.provide('proto.ubii.devices.Device.DeviceType');
 goog.provide('proto.ubii.general.Error');
 goog.provide('proto.ubii.general.Success');
 goog.provide('proto.ubii.interactions.Cause');
@@ -3659,7 +3660,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.devices.Device.repeatedFields_ = [3];
+proto.ubii.devices.Device.repeatedFields_ = [4];
 
 
 
@@ -3692,9 +3693,10 @@ proto.ubii.devices.Device.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    deviceType: jspb.Message.getFieldWithDefault(msg, 3, 0),
     componentsList: jspb.Message.toObjectList(msg.getComponentsList(),
     proto.ubii.devices.Component.toObject, includeInstance),
-    clientId: jspb.Message.getFieldWithDefault(msg, 4, "")
+    clientId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -3740,11 +3742,15 @@ proto.ubii.devices.Device.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 3:
+      var value = /** @type {!proto.ubii.devices.Device.DeviceType} */ (reader.readEnum());
+      msg.setDeviceType(value);
+      break;
+    case 4:
       var value = new proto.ubii.devices.Component;
       reader.readMessage(value,proto.ubii.devices.Component.deserializeBinaryFromReader);
       msg.addComponents(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setClientId(value);
       break;
@@ -3791,10 +3797,17 @@ proto.ubii.devices.Device.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getDeviceType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
   f = message.getComponentsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.ubii.devices.Component.serializeBinaryToWriter
     );
@@ -3802,12 +3815,20 @@ proto.ubii.devices.Device.serializeBinaryToWriter = function(message, writer) {
   f = message.getClientId();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.ubii.devices.Device.DeviceType = {
+  PARTICIPANT: 0,
+  WATCHER: 1
+};
 
 /**
  * optional string id = 1;
@@ -3840,18 +3861,33 @@ proto.ubii.devices.Device.prototype.setName = function(value) {
 
 
 /**
- * repeated Component components = 3;
+ * optional DeviceType device_type = 3;
+ * @return {!proto.ubii.devices.Device.DeviceType}
+ */
+proto.ubii.devices.Device.prototype.getDeviceType = function() {
+  return /** @type {!proto.ubii.devices.Device.DeviceType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {!proto.ubii.devices.Device.DeviceType} value */
+proto.ubii.devices.Device.prototype.setDeviceType = function(value) {
+  jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * repeated Component components = 4;
  * @return {!Array<!proto.ubii.devices.Component>}
  */
 proto.ubii.devices.Device.prototype.getComponentsList = function() {
   return /** @type{!Array<!proto.ubii.devices.Component>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.devices.Component, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.devices.Component, 4));
 };
 
 
 /** @param {!Array<!proto.ubii.devices.Component>} value */
 proto.ubii.devices.Device.prototype.setComponentsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -3861,7 +3897,7 @@ proto.ubii.devices.Device.prototype.setComponentsList = function(value) {
  * @return {!proto.ubii.devices.Component}
  */
 proto.ubii.devices.Device.prototype.addComponents = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.devices.Component, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ubii.devices.Component, opt_index);
 };
 
 
@@ -3871,17 +3907,17 @@ proto.ubii.devices.Device.prototype.clearComponentsList = function() {
 
 
 /**
- * optional string client_id = 4;
+ * optional string client_id = 5;
  * @return {string}
  */
 proto.ubii.devices.Device.prototype.getClientId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
 proto.ubii.devices.Device.prototype.setClientId = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

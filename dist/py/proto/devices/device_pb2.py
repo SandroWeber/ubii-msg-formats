@@ -20,11 +20,33 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.devices',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1aproto/devices/device.proto\x12\x0cubii.devices\x1a\x1dproto/devices/component.proto\"b\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12+\n\ncomponents\x18\x03 \x03(\x0b\x32\x17.ubii.devices.Component\x12\x11\n\tclient_id\x18\x04 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/devices/device.proto\x12\x0cubii.devices\x1a\x1dproto/devices/component.proto\"\xc4\x01\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0b\x64\x65vice_type\x18\x03 \x01(\x0e\x32\x1f.ubii.devices.Device.DeviceType\x12+\n\ncomponents\x18\x04 \x03(\x0b\x32\x17.ubii.devices.Component\x12\x11\n\tclient_id\x18\x05 \x01(\t\"*\n\nDeviceType\x12\x0f\n\x0bPARTICIPANT\x10\x00\x12\x0b\n\x07WATCHER\x10\x01\x62\x06proto3')
   ,
   dependencies=[proto_dot_devices_dot_component__pb2.DESCRIPTOR,])
 
 
+
+_DEVICE_DEVICETYPE = _descriptor.EnumDescriptor(
+  name='DeviceType',
+  full_name='ubii.devices.Device.DeviceType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='PARTICIPANT', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='WATCHER', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=230,
+  serialized_end=272,
+)
+_sym_db.RegisterEnumDescriptor(_DEVICE_DEVICETYPE)
 
 
 _DEVICE = _descriptor.Descriptor(
@@ -49,15 +71,22 @@ _DEVICE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='components', full_name='ubii.devices.Device.components', index=2,
-      number=3, type=11, cpp_type=10, label=3,
+      name='device_type', full_name='ubii.devices.Device.device_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='components', full_name='ubii.devices.Device.components', index=3,
+      number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='client_id', full_name='ubii.devices.Device.client_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='client_id', full_name='ubii.devices.Device.client_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -67,6 +96,7 @@ _DEVICE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _DEVICE_DEVICETYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -74,11 +104,13 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=75,
-  serialized_end=173,
+  serialized_start=76,
+  serialized_end=272,
 )
 
+_DEVICE.fields_by_name['device_type'].enum_type = _DEVICE_DEVICETYPE
 _DEVICE.fields_by_name['components'].message_type = proto_dot_devices_dot_component__pb2._COMPONENT
+_DEVICE_DEVICETYPE.containing_type = _DEVICE
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
