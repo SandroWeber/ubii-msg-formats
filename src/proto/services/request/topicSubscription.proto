@@ -2,6 +2,6 @@ syntax = "proto3";
 package ubii.services.request;
 
 message TopicSubscription {
-    string topic = 1;
-    string client_id = 2;
+    repeated string subscribe_topics = 1;
+    repeated string unsubscribe_topics = 2;
 }

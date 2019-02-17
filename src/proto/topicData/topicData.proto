@@ -5,8 +5,7 @@ import "proto/topicData/topicDataRecord/topicDataRecord.proto";
 import "proto/general/error.proto";
 
 message TopicData {
-    string device_id = 1;
-    oneof type{
+    oneof type {
         ubii.topicData.TopicDataRecord topic_data_record = 2;
         ubii.general.Error error = 3;
     }
