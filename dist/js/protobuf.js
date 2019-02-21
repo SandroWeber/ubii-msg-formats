@@ -2994,8 +2994,9 @@ $root.ubii = (function() {
                  * Properties of a TopicSubscription.
                  * @memberof ubii.services.request
                  * @interface ITopicSubscription
-                 * @property {string|null} [topic] TopicSubscription topic
                  * @property {string|null} [clientId] TopicSubscription clientId
+                 * @property {Array.<string>|null} [subscribeTopics] TopicSubscription subscribeTopics
+                 * @property {Array.<string>|null} [unsubscribeTopics] TopicSubscription unsubscribeTopics
                  */
 
                 /**
@@ -3007,19 +3008,13 @@ $root.ubii = (function() {
                  * @param {ubii.services.request.ITopicSubscription=} [properties] Properties to set
                  */
                 function TopicSubscription(properties) {
+                    this.subscribeTopics = [];
+                    this.unsubscribeTopics = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
                                 this[keys[i]] = properties[keys[i]];
                 }
-
-                /**
-                 * TopicSubscription topic.
-                 * @member {string} topic
-                 * @memberof ubii.services.request.TopicSubscription
-                 * @instance
-                 */
-                TopicSubscription.prototype.topic = "";
 
                 /**
                  * TopicSubscription clientId.
@@ -3028,6 +3023,22 @@ $root.ubii = (function() {
                  * @instance
                  */
                 TopicSubscription.prototype.clientId = "";
+
+                /**
+                 * TopicSubscription subscribeTopics.
+                 * @member {Array.<string>} subscribeTopics
+                 * @memberof ubii.services.request.TopicSubscription
+                 * @instance
+                 */
+                TopicSubscription.prototype.subscribeTopics = $util.emptyArray;
+
+                /**
+                 * TopicSubscription unsubscribeTopics.
+                 * @member {Array.<string>} unsubscribeTopics
+                 * @memberof ubii.services.request.TopicSubscription
+                 * @instance
+                 */
+                TopicSubscription.prototype.unsubscribeTopics = $util.emptyArray;
 
                 /**
                  * Creates a new TopicSubscription instance using the specified properties.
@@ -3053,10 +3064,14 @@ $root.ubii = (function() {
                 TopicSubscription.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.topic != null && message.hasOwnProperty("topic"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
                     if (message.clientId != null && message.hasOwnProperty("clientId"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.clientId);
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.clientId);
+                    if (message.subscribeTopics != null && message.subscribeTopics.length)
+                        for (var i = 0; i < message.subscribeTopics.length; ++i)
+                            writer.uint32(/* id 2, wireType 2 =*/18).string(message.subscribeTopics[i]);
+                    if (message.unsubscribeTopics != null && message.unsubscribeTopics.length)
+                        for (var i = 0; i < message.unsubscribeTopics.length; ++i)
+                            writer.uint32(/* id 3, wireType 2 =*/26).string(message.unsubscribeTopics[i]);
                     return writer;
                 };
 
@@ -3092,10 +3107,17 @@ $root.ubii = (function() {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.topic = reader.string();
+                            message.clientId = reader.string();
                             break;
                         case 2:
-                            message.clientId = reader.string();
+                            if (!(message.subscribeTopics && message.subscribeTopics.length))
+                                message.subscribeTopics = [];
+                            message.subscribeTopics.push(reader.string());
+                            break;
+                        case 3:
+                            if (!(message.unsubscribeTopics && message.unsubscribeTopics.length))
+                                message.unsubscribeTopics = [];
+                            message.unsubscribeTopics.push(reader.string());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -3132,12 +3154,23 @@ $root.ubii = (function() {
                 TopicSubscription.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.topic != null && message.hasOwnProperty("topic"))
-                        if (!$util.isString(message.topic))
-                            return "topic: string expected";
                     if (message.clientId != null && message.hasOwnProperty("clientId"))
                         if (!$util.isString(message.clientId))
                             return "clientId: string expected";
+                    if (message.subscribeTopics != null && message.hasOwnProperty("subscribeTopics")) {
+                        if (!Array.isArray(message.subscribeTopics))
+                            return "subscribeTopics: array expected";
+                        for (var i = 0; i < message.subscribeTopics.length; ++i)
+                            if (!$util.isString(message.subscribeTopics[i]))
+                                return "subscribeTopics: string[] expected";
+                    }
+                    if (message.unsubscribeTopics != null && message.hasOwnProperty("unsubscribeTopics")) {
+                        if (!Array.isArray(message.unsubscribeTopics))
+                            return "unsubscribeTopics: array expected";
+                        for (var i = 0; i < message.unsubscribeTopics.length; ++i)
+                            if (!$util.isString(message.unsubscribeTopics[i]))
+                                return "unsubscribeTopics: string[] expected";
+                    }
                     return null;
                 };
 
@@ -3153,10 +3186,22 @@ $root.ubii = (function() {
                     if (object instanceof $root.ubii.services.request.TopicSubscription)
                         return object;
                     var message = new $root.ubii.services.request.TopicSubscription();
-                    if (object.topic != null)
-                        message.topic = String(object.topic);
                     if (object.clientId != null)
                         message.clientId = String(object.clientId);
+                    if (object.subscribeTopics) {
+                        if (!Array.isArray(object.subscribeTopics))
+                            throw TypeError(".ubii.services.request.TopicSubscription.subscribeTopics: array expected");
+                        message.subscribeTopics = [];
+                        for (var i = 0; i < object.subscribeTopics.length; ++i)
+                            message.subscribeTopics[i] = String(object.subscribeTopics[i]);
+                    }
+                    if (object.unsubscribeTopics) {
+                        if (!Array.isArray(object.unsubscribeTopics))
+                            throw TypeError(".ubii.services.request.TopicSubscription.unsubscribeTopics: array expected");
+                        message.unsubscribeTopics = [];
+                        for (var i = 0; i < object.unsubscribeTopics.length; ++i)
+                            message.unsubscribeTopics[i] = String(object.unsubscribeTopics[i]);
+                    }
                     return message;
                 };
 
@@ -3173,14 +3218,24 @@ $root.ubii = (function() {
                     if (!options)
                         options = {};
                     var object = {};
-                    if (options.defaults) {
-                        object.topic = "";
-                        object.clientId = "";
+                    if (options.arrays || options.defaults) {
+                        object.subscribeTopics = [];
+                        object.unsubscribeTopics = [];
                     }
-                    if (message.topic != null && message.hasOwnProperty("topic"))
-                        object.topic = message.topic;
+                    if (options.defaults)
+                        object.clientId = "";
                     if (message.clientId != null && message.hasOwnProperty("clientId"))
                         object.clientId = message.clientId;
+                    if (message.subscribeTopics && message.subscribeTopics.length) {
+                        object.subscribeTopics = [];
+                        for (var j = 0; j < message.subscribeTopics.length; ++j)
+                            object.subscribeTopics[j] = message.subscribeTopics[j];
+                    }
+                    if (message.unsubscribeTopics && message.unsubscribeTopics.length) {
+                        object.unsubscribeTopics = [];
+                        for (var j = 0; j < message.unsubscribeTopics.length; ++j)
+                            object.unsubscribeTopics[j] = message.unsubscribeTopics[j];
+                    }
                     return object;
                 };
 
@@ -4701,7 +4756,6 @@ $root.ubii = (function() {
              * Properties of a TopicData.
              * @memberof ubii.topicData
              * @interface ITopicData
-             * @property {string|null} [deviceId] TopicData deviceId
              * @property {ubii.topicData.ITopicDataRecord|null} [topicDataRecord] TopicData topicDataRecord
              * @property {ubii.general.IError|null} [error] TopicData error
              */
@@ -4720,14 +4774,6 @@ $root.ubii = (function() {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * TopicData deviceId.
-             * @member {string} deviceId
-             * @memberof ubii.topicData.TopicData
-             * @instance
-             */
-            TopicData.prototype.deviceId = "";
 
             /**
              * TopicData topicDataRecord.
@@ -4783,8 +4829,6 @@ $root.ubii = (function() {
             TopicData.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.deviceId != null && message.hasOwnProperty("deviceId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.deviceId);
                 if (message.topicDataRecord != null && message.hasOwnProperty("topicDataRecord"))
                     $root.ubii.topicData.TopicDataRecord.encode(message.topicDataRecord, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.error != null && message.hasOwnProperty("error"))
@@ -4823,9 +4867,6 @@ $root.ubii = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
-                        message.deviceId = reader.string();
-                        break;
                     case 2:
                         message.topicDataRecord = $root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32());
                         break;
@@ -4868,9 +4909,6 @@ $root.ubii = (function() {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 var properties = {};
-                if (message.deviceId != null && message.hasOwnProperty("deviceId"))
-                    if (!$util.isString(message.deviceId))
-                        return "deviceId: string expected";
                 if (message.topicDataRecord != null && message.hasOwnProperty("topicDataRecord")) {
                     properties.type = 1;
                     {
@@ -4904,8 +4942,6 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.topicData.TopicData)
                     return object;
                 var message = new $root.ubii.topicData.TopicData();
-                if (object.deviceId != null)
-                    message.deviceId = String(object.deviceId);
                 if (object.topicDataRecord != null) {
                     if (typeof object.topicDataRecord !== "object")
                         throw TypeError(".ubii.topicData.TopicData.topicDataRecord: object expected");
@@ -4932,10 +4968,6 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults)
-                    object.deviceId = "";
-                if (message.deviceId != null && message.hasOwnProperty("deviceId"))
-                    object.deviceId = message.deviceId;
                 if (message.topicDataRecord != null && message.hasOwnProperty("topicDataRecord")) {
                     object.topicDataRecord = $root.ubii.topicData.TopicDataRecord.toObject(message.topicDataRecord, options);
                     if (options.oneofs)
