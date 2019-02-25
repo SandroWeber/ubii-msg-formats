@@ -6,6 +6,8 @@ import "proto/general/error.proto";
 import "proto/clients/client.proto";
 import "proto/devices/device.proto";
 import "proto/servers/server.proto";
+import "proto/sessions/session.proto";
+import "proto/general/stringList.proto";
 
 message ServiceReply {
     oneof type {
@@ -14,5 +16,7 @@ message ServiceReply {
         ubii.clients.Client client_specification = 3;
         ubii.devices.Device device_specification = 4;
         ubii.servers.Server server_specification = 5;
+        ubii.sessions.Session session_specification = 6;
+        ubii.general.StringList topic_list = 7;
     }
 }
