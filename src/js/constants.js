@@ -1,6 +1,7 @@
 const MSG_TYPES = {
   ERROR: 'ubii.general.Error',
   SUCCESS: 'ubii.general.Success',
+  INTERACTION: 'ubii.interactions.Interaction',
   SERVICE_REQUEST: 'ubii.services.ServiceRequest',
   SERVICE_REPLY: 'ubii.services.ServiceReply',
   SESSION: 'ubii.sessions.Session',

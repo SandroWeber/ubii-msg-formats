@@ -3,6 +3,7 @@ package ubii.services;
 
 import "proto/clients/client.proto";
 import "proto/devices/device.proto";
+import "proto/sessions/session.proto";
 import "proto/services/request/topicSubscription.proto";
 
 message ServiceRequest {
@@ -11,5 +12,6 @@ message ServiceRequest {
         ubii.clients.Client client_registration = 2;
         ubii.devices.Device device_registration = 3;
         ubii.services.request.TopicSubscription topic_subscription = 4;
+        ubii.sessions.Session session_registration = 5;
     }
 }
