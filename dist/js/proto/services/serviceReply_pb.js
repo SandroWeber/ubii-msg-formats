@@ -54,11 +54,11 @@ proto.ubii.services.ServiceReply.TypeCase = {
   TYPE_NOT_SET: 0,
   SUCCESS: 1,
   ERROR: 2,
-  CLIENT_SPECIFICATION: 3,
-  DEVICE_SPECIFICATION: 4,
-  SERVER_SPECIFICATION: 5,
-  SESSION_SPECIFICATION: 6,
-  TOPIC_LIST: 7
+  CLIENT: 3,
+  DEVICE: 4,
+  SERVER: 5,
+  SESSION: 6,
+  STRING_LIST: 7
 };
 
 /**
@@ -99,11 +99,11 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
   var f, obj = {
     success: (f = msg.getSuccess()) && proto_general_success_pb.Success.toObject(includeInstance, f),
     error: (f = msg.getError()) && proto_general_error_pb.Error.toObject(includeInstance, f),
-    clientSpecification: (f = msg.getClientSpecification()) && proto_clients_client_pb.Client.toObject(includeInstance, f),
-    deviceSpecification: (f = msg.getDeviceSpecification()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
-    serverSpecification: (f = msg.getServerSpecification()) && proto_servers_server_pb.Server.toObject(includeInstance, f),
-    sessionSpecification: (f = msg.getSessionSpecification()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
-    topicList: (f = msg.getTopicList()) && proto_general_stringList_pb.StringList.toObject(includeInstance, f)
+    client: (f = msg.getClient()) && proto_clients_client_pb.Client.toObject(includeInstance, f),
+    device: (f = msg.getDevice()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
+    server: (f = msg.getServer()) && proto_servers_server_pb.Server.toObject(includeInstance, f),
+    session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
+    stringList: (f = msg.getStringList()) && proto_general_stringList_pb.StringList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -153,27 +153,27 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
     case 3:
       var value = new proto_clients_client_pb.Client;
       reader.readMessage(value,proto_clients_client_pb.Client.deserializeBinaryFromReader);
-      msg.setClientSpecification(value);
+      msg.setClient(value);
       break;
     case 4:
       var value = new proto_devices_device_pb.Device;
       reader.readMessage(value,proto_devices_device_pb.Device.deserializeBinaryFromReader);
-      msg.setDeviceSpecification(value);
+      msg.setDevice(value);
       break;
     case 5:
       var value = new proto_servers_server_pb.Server;
       reader.readMessage(value,proto_servers_server_pb.Server.deserializeBinaryFromReader);
-      msg.setServerSpecification(value);
+      msg.setServer(value);
       break;
     case 6:
       var value = new proto_sessions_session_pb.Session;
       reader.readMessage(value,proto_sessions_session_pb.Session.deserializeBinaryFromReader);
-      msg.setSessionSpecification(value);
+      msg.setSession(value);
       break;
     case 7:
       var value = new proto_general_stringList_pb.StringList;
       reader.readMessage(value,proto_general_stringList_pb.StringList.deserializeBinaryFromReader);
-      msg.setTopicList(value);
+      msg.setStringList(value);
       break;
     default:
       reader.skipField();
@@ -220,7 +220,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto_general_error_pb.Error.serializeBinaryToWriter
     );
   }
-  f = message.getClientSpecification();
+  f = message.getClient();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -228,7 +228,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto_clients_client_pb.Client.serializeBinaryToWriter
     );
   }
-  f = message.getDeviceSpecification();
+  f = message.getDevice();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -236,7 +236,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto_devices_device_pb.Device.serializeBinaryToWriter
     );
   }
-  f = message.getServerSpecification();
+  f = message.getServer();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -244,7 +244,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto_servers_server_pb.Server.serializeBinaryToWriter
     );
   }
-  f = message.getSessionSpecification();
+  f = message.getSession();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -252,7 +252,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto_sessions_session_pb.Session.serializeBinaryToWriter
     );
   }
-  f = message.getTopicList();
+  f = message.getStringList();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -324,23 +324,23 @@ proto.ubii.services.ServiceReply.prototype.hasError = function() {
 
 
 /**
- * optional ubii.clients.Client client_specification = 3;
+ * optional ubii.clients.Client client = 3;
  * @return {?proto.ubii.clients.Client}
  */
-proto.ubii.services.ServiceReply.prototype.getClientSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.getClient = function() {
   return /** @type{?proto.ubii.clients.Client} */ (
     jspb.Message.getWrapperField(this, proto_clients_client_pb.Client, 3));
 };
 
 
 /** @param {?proto.ubii.clients.Client|undefined} value */
-proto.ubii.services.ServiceReply.prototype.setClientSpecification = function(value) {
+proto.ubii.services.ServiceReply.prototype.setClient = function(value) {
   jspb.Message.setOneofWrapperField(this, 3, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
-proto.ubii.services.ServiceReply.prototype.clearClientSpecification = function() {
-  this.setClientSpecification(undefined);
+proto.ubii.services.ServiceReply.prototype.clearClient = function() {
+  this.setClient(undefined);
 };
 
 
@@ -348,29 +348,29 @@ proto.ubii.services.ServiceReply.prototype.clearClientSpecification = function()
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.services.ServiceReply.prototype.hasClientSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.hasClient = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional ubii.devices.Device device_specification = 4;
+ * optional ubii.devices.Device device = 4;
  * @return {?proto.ubii.devices.Device}
  */
-proto.ubii.services.ServiceReply.prototype.getDeviceSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.getDevice = function() {
   return /** @type{?proto.ubii.devices.Device} */ (
     jspb.Message.getWrapperField(this, proto_devices_device_pb.Device, 4));
 };
 
 
 /** @param {?proto.ubii.devices.Device|undefined} value */
-proto.ubii.services.ServiceReply.prototype.setDeviceSpecification = function(value) {
+proto.ubii.services.ServiceReply.prototype.setDevice = function(value) {
   jspb.Message.setOneofWrapperField(this, 4, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
-proto.ubii.services.ServiceReply.prototype.clearDeviceSpecification = function() {
-  this.setDeviceSpecification(undefined);
+proto.ubii.services.ServiceReply.prototype.clearDevice = function() {
+  this.setDevice(undefined);
 };
 
 
@@ -378,29 +378,29 @@ proto.ubii.services.ServiceReply.prototype.clearDeviceSpecification = function()
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.services.ServiceReply.prototype.hasDeviceSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.hasDevice = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional ubii.servers.Server server_specification = 5;
+ * optional ubii.servers.Server server = 5;
  * @return {?proto.ubii.servers.Server}
  */
-proto.ubii.services.ServiceReply.prototype.getServerSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.getServer = function() {
   return /** @type{?proto.ubii.servers.Server} */ (
     jspb.Message.getWrapperField(this, proto_servers_server_pb.Server, 5));
 };
 
 
 /** @param {?proto.ubii.servers.Server|undefined} value */
-proto.ubii.services.ServiceReply.prototype.setServerSpecification = function(value) {
+proto.ubii.services.ServiceReply.prototype.setServer = function(value) {
   jspb.Message.setOneofWrapperField(this, 5, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
-proto.ubii.services.ServiceReply.prototype.clearServerSpecification = function() {
-  this.setServerSpecification(undefined);
+proto.ubii.services.ServiceReply.prototype.clearServer = function() {
+  this.setServer(undefined);
 };
 
 
@@ -408,29 +408,29 @@ proto.ubii.services.ServiceReply.prototype.clearServerSpecification = function()
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.services.ServiceReply.prototype.hasServerSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.hasServer = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional ubii.sessions.Session session_specification = 6;
+ * optional ubii.sessions.Session session = 6;
  * @return {?proto.ubii.sessions.Session}
  */
-proto.ubii.services.ServiceReply.prototype.getSessionSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.getSession = function() {
   return /** @type{?proto.ubii.sessions.Session} */ (
     jspb.Message.getWrapperField(this, proto_sessions_session_pb.Session, 6));
 };
 
 
 /** @param {?proto.ubii.sessions.Session|undefined} value */
-proto.ubii.services.ServiceReply.prototype.setSessionSpecification = function(value) {
+proto.ubii.services.ServiceReply.prototype.setSession = function(value) {
   jspb.Message.setOneofWrapperField(this, 6, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
-proto.ubii.services.ServiceReply.prototype.clearSessionSpecification = function() {
-  this.setSessionSpecification(undefined);
+proto.ubii.services.ServiceReply.prototype.clearSession = function() {
+  this.setSession(undefined);
 };
 
 
@@ -438,29 +438,29 @@ proto.ubii.services.ServiceReply.prototype.clearSessionSpecification = function(
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.services.ServiceReply.prototype.hasSessionSpecification = function() {
+proto.ubii.services.ServiceReply.prototype.hasSession = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional ubii.general.StringList topic_list = 7;
+ * optional ubii.general.StringList string_list = 7;
  * @return {?proto.ubii.general.StringList}
  */
-proto.ubii.services.ServiceReply.prototype.getTopicList = function() {
+proto.ubii.services.ServiceReply.prototype.getStringList = function() {
   return /** @type{?proto.ubii.general.StringList} */ (
     jspb.Message.getWrapperField(this, proto_general_stringList_pb.StringList, 7));
 };
 
 
 /** @param {?proto.ubii.general.StringList|undefined} value */
-proto.ubii.services.ServiceReply.prototype.setTopicList = function(value) {
+proto.ubii.services.ServiceReply.prototype.setStringList = function(value) {
   jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
-proto.ubii.services.ServiceReply.prototype.clearTopicList = function() {
-  this.setTopicList(undefined);
+proto.ubii.services.ServiceReply.prototype.clearStringList = function() {
+  this.setStringList(undefined);
 };
 
 
@@ -468,7 +468,7 @@ proto.ubii.services.ServiceReply.prototype.clearTopicList = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.services.ServiceReply.prototype.hasTopicList = function() {
+proto.ubii.services.ServiceReply.prototype.hasStringList = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 

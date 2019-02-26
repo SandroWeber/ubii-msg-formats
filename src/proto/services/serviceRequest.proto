@@ -9,9 +9,9 @@ import "proto/services/request/topicSubscription.proto";
 message ServiceRequest {
     string topic = 1;
     oneof type {
-        ubii.clients.Client client_registration = 2;
-        ubii.devices.Device device_registration = 3;
+        ubii.clients.Client client = 2;
+        ubii.devices.Device device = 3;
         ubii.services.request.TopicSubscription topic_subscription = 4;
-        ubii.sessions.Session session_registration = 5;
+        ubii.sessions.Session session = 5;
     }
 }

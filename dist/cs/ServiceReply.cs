@@ -29,20 +29,18 @@ namespace Ubii.Services {
             "ZXJhbC9lcnJvci5wcm90bxoacHJvdG8vY2xpZW50cy9jbGllbnQucHJvdG8a",
             "GnByb3RvL2RldmljZXMvZGV2aWNlLnByb3RvGhpwcm90by9zZXJ2ZXJzL3Nl",
             "cnZlci5wcm90bxoccHJvdG8vc2Vzc2lvbnMvc2Vzc2lvbi5wcm90bxoecHJv",
-            "dG8vZ2VuZXJhbC9zdHJpbmdMaXN0LnByb3RvIvECCgxTZXJ2aWNlUmVwbHkS",
+            "dG8vZ2VuZXJhbC9zdHJpbmdMaXN0LnByb3RvIroCCgxTZXJ2aWNlUmVwbHkS",
             "KAoHc3VjY2VzcxgBIAEoCzIVLnViaWkuZ2VuZXJhbC5TdWNjZXNzSAASJAoF",
-            "ZXJyb3IYAiABKAsyEy51YmlpLmdlbmVyYWwuRXJyb3JIABI0ChRjbGllbnRf",
-            "c3BlY2lmaWNhdGlvbhgDIAEoCzIULnViaWkuY2xpZW50cy5DbGllbnRIABI0",
-            "ChRkZXZpY2Vfc3BlY2lmaWNhdGlvbhgEIAEoCzIULnViaWkuZGV2aWNlcy5E",
-            "ZXZpY2VIABI0ChRzZXJ2ZXJfc3BlY2lmaWNhdGlvbhgFIAEoCzIULnViaWku",
-            "c2VydmVycy5TZXJ2ZXJIABI3ChVzZXNzaW9uX3NwZWNpZmljYXRpb24YBiAB",
-            "KAsyFi51YmlpLnNlc3Npb25zLlNlc3Npb25IABIuCgp0b3BpY19saXN0GAcg",
-            "ASgLMhgudWJpaS5nZW5lcmFsLlN0cmluZ0xpc3RIAEIGCgR0eXBlYgZwcm90",
-            "bzM="));
+            "ZXJyb3IYAiABKAsyEy51YmlpLmdlbmVyYWwuRXJyb3JIABImCgZjbGllbnQY",
+            "AyABKAsyFC51YmlpLmNsaWVudHMuQ2xpZW50SAASJgoGZGV2aWNlGAQgASgL",
+            "MhQudWJpaS5kZXZpY2VzLkRldmljZUgAEiYKBnNlcnZlchgFIAEoCzIULnVi",
+            "aWkuc2VydmVycy5TZXJ2ZXJIABIpCgdzZXNzaW9uGAYgASgLMhYudWJpaS5z",
+            "ZXNzaW9ucy5TZXNzaW9uSAASLwoLc3RyaW5nX2xpc3QYByABKAsyGC51Ymlp",
+            "LmdlbmVyYWwuU3RyaW5nTGlzdEgAQgYKBHR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.General.StringListReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "ClientSpecification", "DeviceSpecification", "ServerSpecification", "SessionSpecification", "TopicList" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "Client", "Device", "Server", "Session", "StringList" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -81,20 +79,20 @@ namespace Ubii.Services {
         case TypeOneofCase.Error:
           Error = other.Error.Clone();
           break;
-        case TypeOneofCase.ClientSpecification:
-          ClientSpecification = other.ClientSpecification.Clone();
+        case TypeOneofCase.Client:
+          Client = other.Client.Clone();
           break;
-        case TypeOneofCase.DeviceSpecification:
-          DeviceSpecification = other.DeviceSpecification.Clone();
+        case TypeOneofCase.Device:
+          Device = other.Device.Clone();
           break;
-        case TypeOneofCase.ServerSpecification:
-          ServerSpecification = other.ServerSpecification.Clone();
+        case TypeOneofCase.Server:
+          Server = other.Server.Clone();
           break;
-        case TypeOneofCase.SessionSpecification:
-          SessionSpecification = other.SessionSpecification.Clone();
+        case TypeOneofCase.Session:
+          Session = other.Session.Clone();
           break;
-        case TypeOneofCase.TopicList:
-          TopicList = other.TopicList.Clone();
+        case TypeOneofCase.StringList:
+          StringList = other.StringList.Clone();
           break;
       }
 
@@ -128,58 +126,58 @@ namespace Ubii.Services {
       }
     }
 
-    /// <summary>Field number for the "client_specification" field.</summary>
-    public const int ClientSpecificationFieldNumber = 3;
+    /// <summary>Field number for the "client" field.</summary>
+    public const int ClientFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Clients.Client ClientSpecification {
-      get { return typeCase_ == TypeOneofCase.ClientSpecification ? (global::Ubii.Clients.Client) type_ : null; }
+    public global::Ubii.Clients.Client Client {
+      get { return typeCase_ == TypeOneofCase.Client ? (global::Ubii.Clients.Client) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.ClientSpecification;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Client;
       }
     }
 
-    /// <summary>Field number for the "device_specification" field.</summary>
-    public const int DeviceSpecificationFieldNumber = 4;
+    /// <summary>Field number for the "device" field.</summary>
+    public const int DeviceFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Devices.Device DeviceSpecification {
-      get { return typeCase_ == TypeOneofCase.DeviceSpecification ? (global::Ubii.Devices.Device) type_ : null; }
+    public global::Ubii.Devices.Device Device {
+      get { return typeCase_ == TypeOneofCase.Device ? (global::Ubii.Devices.Device) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.DeviceSpecification;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Device;
       }
     }
 
-    /// <summary>Field number for the "server_specification" field.</summary>
-    public const int ServerSpecificationFieldNumber = 5;
+    /// <summary>Field number for the "server" field.</summary>
+    public const int ServerFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Servers.Server ServerSpecification {
-      get { return typeCase_ == TypeOneofCase.ServerSpecification ? (global::Ubii.Servers.Server) type_ : null; }
+    public global::Ubii.Servers.Server Server {
+      get { return typeCase_ == TypeOneofCase.Server ? (global::Ubii.Servers.Server) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.ServerSpecification;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Server;
       }
     }
 
-    /// <summary>Field number for the "session_specification" field.</summary>
-    public const int SessionSpecificationFieldNumber = 6;
+    /// <summary>Field number for the "session" field.</summary>
+    public const int SessionFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Sessions.Session SessionSpecification {
-      get { return typeCase_ == TypeOneofCase.SessionSpecification ? (global::Ubii.Sessions.Session) type_ : null; }
+    public global::Ubii.Sessions.Session Session {
+      get { return typeCase_ == TypeOneofCase.Session ? (global::Ubii.Sessions.Session) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.SessionSpecification;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Session;
       }
     }
 
-    /// <summary>Field number for the "topic_list" field.</summary>
-    public const int TopicListFieldNumber = 7;
+    /// <summary>Field number for the "string_list" field.</summary>
+    public const int StringListFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.General.StringList TopicList {
-      get { return typeCase_ == TypeOneofCase.TopicList ? (global::Ubii.General.StringList) type_ : null; }
+    public global::Ubii.General.StringList StringList {
+      get { return typeCase_ == TypeOneofCase.StringList ? (global::Ubii.General.StringList) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TopicList;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.StringList;
       }
     }
 
@@ -189,11 +187,11 @@ namespace Ubii.Services {
       None = 0,
       Success = 1,
       Error = 2,
-      ClientSpecification = 3,
-      DeviceSpecification = 4,
-      ServerSpecification = 5,
-      SessionSpecification = 6,
-      TopicList = 7,
+      Client = 3,
+      Device = 4,
+      Server = 5,
+      Session = 6,
+      StringList = 7,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -222,11 +220,11 @@ namespace Ubii.Services {
       }
       if (!object.Equals(Success, other.Success)) return false;
       if (!object.Equals(Error, other.Error)) return false;
-      if (!object.Equals(ClientSpecification, other.ClientSpecification)) return false;
-      if (!object.Equals(DeviceSpecification, other.DeviceSpecification)) return false;
-      if (!object.Equals(ServerSpecification, other.ServerSpecification)) return false;
-      if (!object.Equals(SessionSpecification, other.SessionSpecification)) return false;
-      if (!object.Equals(TopicList, other.TopicList)) return false;
+      if (!object.Equals(Client, other.Client)) return false;
+      if (!object.Equals(Device, other.Device)) return false;
+      if (!object.Equals(Server, other.Server)) return false;
+      if (!object.Equals(Session, other.Session)) return false;
+      if (!object.Equals(StringList, other.StringList)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -236,11 +234,11 @@ namespace Ubii.Services {
       int hash = 1;
       if (typeCase_ == TypeOneofCase.Success) hash ^= Success.GetHashCode();
       if (typeCase_ == TypeOneofCase.Error) hash ^= Error.GetHashCode();
-      if (typeCase_ == TypeOneofCase.ClientSpecification) hash ^= ClientSpecification.GetHashCode();
-      if (typeCase_ == TypeOneofCase.DeviceSpecification) hash ^= DeviceSpecification.GetHashCode();
-      if (typeCase_ == TypeOneofCase.ServerSpecification) hash ^= ServerSpecification.GetHashCode();
-      if (typeCase_ == TypeOneofCase.SessionSpecification) hash ^= SessionSpecification.GetHashCode();
-      if (typeCase_ == TypeOneofCase.TopicList) hash ^= TopicList.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Client) hash ^= Client.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Device) hash ^= Device.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Server) hash ^= Server.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Session) hash ^= Session.GetHashCode();
+      if (typeCase_ == TypeOneofCase.StringList) hash ^= StringList.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -263,25 +261,25 @@ namespace Ubii.Services {
         output.WriteRawTag(18);
         output.WriteMessage(Error);
       }
-      if (typeCase_ == TypeOneofCase.ClientSpecification) {
+      if (typeCase_ == TypeOneofCase.Client) {
         output.WriteRawTag(26);
-        output.WriteMessage(ClientSpecification);
+        output.WriteMessage(Client);
       }
-      if (typeCase_ == TypeOneofCase.DeviceSpecification) {
+      if (typeCase_ == TypeOneofCase.Device) {
         output.WriteRawTag(34);
-        output.WriteMessage(DeviceSpecification);
+        output.WriteMessage(Device);
       }
-      if (typeCase_ == TypeOneofCase.ServerSpecification) {
+      if (typeCase_ == TypeOneofCase.Server) {
         output.WriteRawTag(42);
-        output.WriteMessage(ServerSpecification);
+        output.WriteMessage(Server);
       }
-      if (typeCase_ == TypeOneofCase.SessionSpecification) {
+      if (typeCase_ == TypeOneofCase.Session) {
         output.WriteRawTag(50);
-        output.WriteMessage(SessionSpecification);
+        output.WriteMessage(Session);
       }
-      if (typeCase_ == TypeOneofCase.TopicList) {
+      if (typeCase_ == TypeOneofCase.StringList) {
         output.WriteRawTag(58);
-        output.WriteMessage(TopicList);
+        output.WriteMessage(StringList);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -297,20 +295,20 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.Error) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Error);
       }
-      if (typeCase_ == TypeOneofCase.ClientSpecification) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientSpecification);
+      if (typeCase_ == TypeOneofCase.Client) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Client);
       }
-      if (typeCase_ == TypeOneofCase.DeviceSpecification) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceSpecification);
+      if (typeCase_ == TypeOneofCase.Device) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Device);
       }
-      if (typeCase_ == TypeOneofCase.ServerSpecification) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerSpecification);
+      if (typeCase_ == TypeOneofCase.Server) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Server);
       }
-      if (typeCase_ == TypeOneofCase.SessionSpecification) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SessionSpecification);
+      if (typeCase_ == TypeOneofCase.Session) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Session);
       }
-      if (typeCase_ == TypeOneofCase.TopicList) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicList);
+      if (typeCase_ == TypeOneofCase.StringList) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(StringList);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -336,35 +334,35 @@ namespace Ubii.Services {
           }
           Error.MergeFrom(other.Error);
           break;
-        case TypeOneofCase.ClientSpecification:
-          if (ClientSpecification == null) {
-            ClientSpecification = new global::Ubii.Clients.Client();
+        case TypeOneofCase.Client:
+          if (Client == null) {
+            Client = new global::Ubii.Clients.Client();
           }
-          ClientSpecification.MergeFrom(other.ClientSpecification);
+          Client.MergeFrom(other.Client);
           break;
-        case TypeOneofCase.DeviceSpecification:
-          if (DeviceSpecification == null) {
-            DeviceSpecification = new global::Ubii.Devices.Device();
+        case TypeOneofCase.Device:
+          if (Device == null) {
+            Device = new global::Ubii.Devices.Device();
           }
-          DeviceSpecification.MergeFrom(other.DeviceSpecification);
+          Device.MergeFrom(other.Device);
           break;
-        case TypeOneofCase.ServerSpecification:
-          if (ServerSpecification == null) {
-            ServerSpecification = new global::Ubii.Servers.Server();
+        case TypeOneofCase.Server:
+          if (Server == null) {
+            Server = new global::Ubii.Servers.Server();
           }
-          ServerSpecification.MergeFrom(other.ServerSpecification);
+          Server.MergeFrom(other.Server);
           break;
-        case TypeOneofCase.SessionSpecification:
-          if (SessionSpecification == null) {
-            SessionSpecification = new global::Ubii.Sessions.Session();
+        case TypeOneofCase.Session:
+          if (Session == null) {
+            Session = new global::Ubii.Sessions.Session();
           }
-          SessionSpecification.MergeFrom(other.SessionSpecification);
+          Session.MergeFrom(other.Session);
           break;
-        case TypeOneofCase.TopicList:
-          if (TopicList == null) {
-            TopicList = new global::Ubii.General.StringList();
+        case TypeOneofCase.StringList:
+          if (StringList == null) {
+            StringList = new global::Ubii.General.StringList();
           }
-          TopicList.MergeFrom(other.TopicList);
+          StringList.MergeFrom(other.StringList);
           break;
       }
 
@@ -399,47 +397,47 @@ namespace Ubii.Services {
           }
           case 26: {
             global::Ubii.Clients.Client subBuilder = new global::Ubii.Clients.Client();
-            if (typeCase_ == TypeOneofCase.ClientSpecification) {
-              subBuilder.MergeFrom(ClientSpecification);
+            if (typeCase_ == TypeOneofCase.Client) {
+              subBuilder.MergeFrom(Client);
             }
             input.ReadMessage(subBuilder);
-            ClientSpecification = subBuilder;
+            Client = subBuilder;
             break;
           }
           case 34: {
             global::Ubii.Devices.Device subBuilder = new global::Ubii.Devices.Device();
-            if (typeCase_ == TypeOneofCase.DeviceSpecification) {
-              subBuilder.MergeFrom(DeviceSpecification);
+            if (typeCase_ == TypeOneofCase.Device) {
+              subBuilder.MergeFrom(Device);
             }
             input.ReadMessage(subBuilder);
-            DeviceSpecification = subBuilder;
+            Device = subBuilder;
             break;
           }
           case 42: {
             global::Ubii.Servers.Server subBuilder = new global::Ubii.Servers.Server();
-            if (typeCase_ == TypeOneofCase.ServerSpecification) {
-              subBuilder.MergeFrom(ServerSpecification);
+            if (typeCase_ == TypeOneofCase.Server) {
+              subBuilder.MergeFrom(Server);
             }
             input.ReadMessage(subBuilder);
-            ServerSpecification = subBuilder;
+            Server = subBuilder;
             break;
           }
           case 50: {
             global::Ubii.Sessions.Session subBuilder = new global::Ubii.Sessions.Session();
-            if (typeCase_ == TypeOneofCase.SessionSpecification) {
-              subBuilder.MergeFrom(SessionSpecification);
+            if (typeCase_ == TypeOneofCase.Session) {
+              subBuilder.MergeFrom(Session);
             }
             input.ReadMessage(subBuilder);
-            SessionSpecification = subBuilder;
+            Session = subBuilder;
             break;
           }
           case 58: {
             global::Ubii.General.StringList subBuilder = new global::Ubii.General.StringList();
-            if (typeCase_ == TypeOneofCase.TopicList) {
-              subBuilder.MergeFrom(TopicList);
+            if (typeCase_ == TypeOneofCase.StringList) {
+              subBuilder.MergeFrom(StringList);
             }
             input.ReadMessage(subBuilder);
-            TopicList = subBuilder;
+            StringList = subBuilder;
             break;
           }
         }

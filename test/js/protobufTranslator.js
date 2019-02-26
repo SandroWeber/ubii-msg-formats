@@ -20,7 +20,7 @@ test.beforeEach(t => {
       type: MSG_TYPES.SERVICE_REQUEST,
       validPayload: {
         topic: DEFAULT_TOPICS.SERVICES.CLIENT_REGISTRATION,
-        clientRegistration: {
+        client: {
           id: 'clientID',
           name: 'client name'
         }
@@ -29,7 +29,7 @@ test.beforeEach(t => {
     {
       type: MSG_TYPES.SERVICE_REPLY,
       validPayload: {
-        clientSpecification: {
+        client: {
           name: 'awesomeDeviceName',
           id: 'uuid'
         }

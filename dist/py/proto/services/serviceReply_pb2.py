@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n!proto/services/serviceReply.proto\x12\rubii.services\x1a\x1bproto/general/success.proto\x1a\x19proto/general/error.proto\x1a\x1aproto/clients/client.proto\x1a\x1aproto/devices/device.proto\x1a\x1aproto/servers/server.proto\x1a\x1cproto/sessions/session.proto\x1a\x1eproto/general/stringList.proto\"\xf1\x02\n\x0cServiceReply\x12(\n\x07success\x18\x01 \x01(\x0b\x32\x15.ubii.general.SuccessH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x12\x34\n\x14\x63lient_specification\x18\x03 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12\x34\n\x14\x64\x65vice_specification\x18\x04 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12\x34\n\x14server_specification\x18\x05 \x01(\x0b\x32\x14.ubii.servers.ServerH\x00\x12\x37\n\x15session_specification\x18\x06 \x01(\x0b\x32\x16.ubii.sessions.SessionH\x00\x12.\n\ntopic_list\x18\x07 \x01(\x0b\x32\x18.ubii.general.StringListH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n!proto/services/serviceReply.proto\x12\rubii.services\x1a\x1bproto/general/success.proto\x1a\x19proto/general/error.proto\x1a\x1aproto/clients/client.proto\x1a\x1aproto/devices/device.proto\x1a\x1aproto/servers/server.proto\x1a\x1cproto/sessions/session.proto\x1a\x1eproto/general/stringList.proto\"\xba\x02\n\x0cServiceReply\x12(\n\x07success\x18\x01 \x01(\x0b\x32\x15.ubii.general.SuccessH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x12&\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12&\n\x06\x64\x65vice\x18\x04 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12&\n\x06server\x18\x05 \x01(\x0b\x32\x14.ubii.servers.ServerH\x00\x12)\n\x07session\x18\x06 \x01(\x0b\x32\x16.ubii.sessions.SessionH\x00\x12/\n\x0bstring_list\x18\x07 \x01(\x0b\x32\x18.ubii.general.StringListH\x00\x42\x06\n\x04typeb\x06proto3')
   ,
   dependencies=[proto_dot_general_dot_success__pb2.DESCRIPTOR,proto_dot_general_dot_error__pb2.DESCRIPTOR,proto_dot_clients_dot_client__pb2.DESCRIPTOR,proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_servers_dot_server__pb2.DESCRIPTOR,proto_dot_sessions_dot_session__pb2.DESCRIPTOR,proto_dot_general_dot_stringList__pb2.DESCRIPTOR,])
 
@@ -55,35 +55,35 @@ _SERVICEREPLY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='client_specification', full_name='ubii.services.ServiceReply.client_specification', index=2,
+      name='client', full_name='ubii.services.ServiceReply.client', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='device_specification', full_name='ubii.services.ServiceReply.device_specification', index=3,
+      name='device', full_name='ubii.services.ServiceReply.device', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='server_specification', full_name='ubii.services.ServiceReply.server_specification', index=4,
+      name='server', full_name='ubii.services.ServiceReply.server', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='session_specification', full_name='ubii.services.ServiceReply.session_specification', index=5,
+      name='session', full_name='ubii.services.ServiceReply.session', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='topic_list', full_name='ubii.services.ServiceReply.topic_list', index=6,
+      name='string_list', full_name='ubii.services.ServiceReply.string_list', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -105,16 +105,16 @@ _SERVICEREPLY = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=255,
-  serialized_end=624,
+  serialized_end=569,
 )
 
 _SERVICEREPLY.fields_by_name['success'].message_type = proto_dot_general_dot_success__pb2._SUCCESS
 _SERVICEREPLY.fields_by_name['error'].message_type = proto_dot_general_dot_error__pb2._ERROR
-_SERVICEREPLY.fields_by_name['client_specification'].message_type = proto_dot_clients_dot_client__pb2._CLIENT
-_SERVICEREPLY.fields_by_name['device_specification'].message_type = proto_dot_devices_dot_device__pb2._DEVICE
-_SERVICEREPLY.fields_by_name['server_specification'].message_type = proto_dot_servers_dot_server__pb2._SERVER
-_SERVICEREPLY.fields_by_name['session_specification'].message_type = proto_dot_sessions_dot_session__pb2._SESSION
-_SERVICEREPLY.fields_by_name['topic_list'].message_type = proto_dot_general_dot_stringList__pb2._STRINGLIST
+_SERVICEREPLY.fields_by_name['client'].message_type = proto_dot_clients_dot_client__pb2._CLIENT
+_SERVICEREPLY.fields_by_name['device'].message_type = proto_dot_devices_dot_device__pb2._DEVICE
+_SERVICEREPLY.fields_by_name['server'].message_type = proto_dot_servers_dot_server__pb2._SERVER
+_SERVICEREPLY.fields_by_name['session'].message_type = proto_dot_sessions_dot_session__pb2._SESSION
+_SERVICEREPLY.fields_by_name['string_list'].message_type = proto_dot_general_dot_stringList__pb2._STRINGLIST
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
   _SERVICEREPLY.fields_by_name['success'])
 _SERVICEREPLY.fields_by_name['success'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
@@ -122,20 +122,20 @@ _SERVICEREPLY.oneofs_by_name['type'].fields.append(
   _SERVICEREPLY.fields_by_name['error'])
 _SERVICEREPLY.fields_by_name['error'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
-  _SERVICEREPLY.fields_by_name['client_specification'])
-_SERVICEREPLY.fields_by_name['client_specification'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
+  _SERVICEREPLY.fields_by_name['client'])
+_SERVICEREPLY.fields_by_name['client'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
-  _SERVICEREPLY.fields_by_name['device_specification'])
-_SERVICEREPLY.fields_by_name['device_specification'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
+  _SERVICEREPLY.fields_by_name['device'])
+_SERVICEREPLY.fields_by_name['device'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
-  _SERVICEREPLY.fields_by_name['server_specification'])
-_SERVICEREPLY.fields_by_name['server_specification'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
+  _SERVICEREPLY.fields_by_name['server'])
+_SERVICEREPLY.fields_by_name['server'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
-  _SERVICEREPLY.fields_by_name['session_specification'])
-_SERVICEREPLY.fields_by_name['session_specification'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
+  _SERVICEREPLY.fields_by_name['session'])
+_SERVICEREPLY.fields_by_name['session'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
-  _SERVICEREPLY.fields_by_name['topic_list'])
-_SERVICEREPLY.fields_by_name['topic_list'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
+  _SERVICEREPLY.fields_by_name['string_list'])
+_SERVICEREPLY.fields_by_name['string_list'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
 DESCRIPTOR.message_types_by_name['ServiceReply'] = _SERVICEREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
