@@ -4113,10 +4113,10 @@ $root.ubii = (function() {
              * @memberof ubii.services
              * @interface IServiceRequest
              * @property {string|null} [topic] ServiceRequest topic
-             * @property {ubii.clients.IClient|null} [client] ServiceRequest client
-             * @property {ubii.devices.IDevice|null} [device] ServiceRequest device
+             * @property {ubii.clients.IClient|null} [clienta] ServiceRequest clienta
+             * @property {ubii.devices.IDevice|null} [devicea] ServiceRequest devicea
              * @property {ubii.services.request.ITopicSubscription|null} [topicSubscription] ServiceRequest topicSubscription
-             * @property {ubii.sessions.ISession|null} [session] ServiceRequest session
+             * @property {ubii.sessions.ISession|null} [sessiona] ServiceRequest sessiona
              */
 
             /**
@@ -4143,20 +4143,20 @@ $root.ubii = (function() {
             ServiceRequest.prototype.topic = "";
 
             /**
-             * ServiceRequest client.
-             * @member {ubii.clients.IClient|null|undefined} client
+             * ServiceRequest clienta.
+             * @member {ubii.clients.IClient|null|undefined} clienta
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
-            ServiceRequest.prototype.client = null;
+            ServiceRequest.prototype.clienta = null;
 
             /**
-             * ServiceRequest device.
-             * @member {ubii.devices.IDevice|null|undefined} device
+             * ServiceRequest devicea.
+             * @member {ubii.devices.IDevice|null|undefined} devicea
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
-            ServiceRequest.prototype.device = null;
+            ServiceRequest.prototype.devicea = null;
 
             /**
              * ServiceRequest topicSubscription.
@@ -4167,24 +4167,24 @@ $root.ubii = (function() {
             ServiceRequest.prototype.topicSubscription = null;
 
             /**
-             * ServiceRequest session.
-             * @member {ubii.sessions.ISession|null|undefined} session
+             * ServiceRequest sessiona.
+             * @member {ubii.sessions.ISession|null|undefined} sessiona
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
-            ServiceRequest.prototype.session = null;
+            ServiceRequest.prototype.sessiona = null;
 
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|undefined} type
+             * @member {"clienta"|"devicea"|"topicSubscription"|"sessiona"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session"]),
+                get: $util.oneOfGetter($oneOfFields = ["clienta", "devicea", "topicSubscription", "sessiona"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4214,14 +4214,14 @@ $root.ubii = (function() {
                     writer = $Writer.create();
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
-                if (message.client != null && message.hasOwnProperty("client"))
-                    $root.ubii.clients.Client.encode(message.client, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.device != null && message.hasOwnProperty("device"))
-                    $root.ubii.devices.Device.encode(message.device, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.clienta != null && message.hasOwnProperty("clienta"))
+                    $root.ubii.clients.Client.encode(message.clienta, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.devicea != null && message.hasOwnProperty("devicea"))
+                    $root.ubii.devices.Device.encode(message.devicea, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.topicSubscription != null && message.hasOwnProperty("topicSubscription"))
                     $root.ubii.services.request.TopicSubscription.encode(message.topicSubscription, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.session != null && message.hasOwnProperty("session"))
-                    $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.sessiona != null && message.hasOwnProperty("sessiona"))
+                    $root.ubii.sessions.Session.encode(message.sessiona, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -4260,16 +4260,16 @@ $root.ubii = (function() {
                         message.topic = reader.string();
                         break;
                     case 2:
-                        message.client = $root.ubii.clients.Client.decode(reader, reader.uint32());
+                        message.clienta = $root.ubii.clients.Client.decode(reader, reader.uint32());
                         break;
                     case 3:
-                        message.device = $root.ubii.devices.Device.decode(reader, reader.uint32());
+                        message.devicea = $root.ubii.devices.Device.decode(reader, reader.uint32());
                         break;
                     case 4:
                         message.topicSubscription = $root.ubii.services.request.TopicSubscription.decode(reader, reader.uint32());
                         break;
                     case 5:
-                        message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
+                        message.sessiona = $root.ubii.sessions.Session.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4310,22 +4310,22 @@ $root.ubii = (function() {
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     if (!$util.isString(message.topic))
                         return "topic: string expected";
-                if (message.client != null && message.hasOwnProperty("client")) {
+                if (message.clienta != null && message.hasOwnProperty("clienta")) {
                     properties.type = 1;
                     {
-                        var error = $root.ubii.clients.Client.verify(message.client);
+                        var error = $root.ubii.clients.Client.verify(message.clienta);
                         if (error)
-                            return "client." + error;
+                            return "clienta." + error;
                     }
                 }
-                if (message.device != null && message.hasOwnProperty("device")) {
+                if (message.devicea != null && message.hasOwnProperty("devicea")) {
                     if (properties.type === 1)
                         return "type: multiple values";
                     properties.type = 1;
                     {
-                        var error = $root.ubii.devices.Device.verify(message.device);
+                        var error = $root.ubii.devices.Device.verify(message.devicea);
                         if (error)
-                            return "device." + error;
+                            return "devicea." + error;
                     }
                 }
                 if (message.topicSubscription != null && message.hasOwnProperty("topicSubscription")) {
@@ -4338,14 +4338,14 @@ $root.ubii = (function() {
                             return "topicSubscription." + error;
                     }
                 }
-                if (message.session != null && message.hasOwnProperty("session")) {
+                if (message.sessiona != null && message.hasOwnProperty("sessiona")) {
                     if (properties.type === 1)
                         return "type: multiple values";
                     properties.type = 1;
                     {
-                        var error = $root.ubii.sessions.Session.verify(message.session);
+                        var error = $root.ubii.sessions.Session.verify(message.sessiona);
                         if (error)
-                            return "session." + error;
+                            return "sessiona." + error;
                     }
                 }
                 return null;
@@ -4365,25 +4365,25 @@ $root.ubii = (function() {
                 var message = new $root.ubii.services.ServiceRequest();
                 if (object.topic != null)
                     message.topic = String(object.topic);
-                if (object.client != null) {
-                    if (typeof object.client !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.client: object expected");
-                    message.client = $root.ubii.clients.Client.fromObject(object.client);
+                if (object.clienta != null) {
+                    if (typeof object.clienta !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.clienta: object expected");
+                    message.clienta = $root.ubii.clients.Client.fromObject(object.clienta);
                 }
-                if (object.device != null) {
-                    if (typeof object.device !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.device: object expected");
-                    message.device = $root.ubii.devices.Device.fromObject(object.device);
+                if (object.devicea != null) {
+                    if (typeof object.devicea !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.devicea: object expected");
+                    message.devicea = $root.ubii.devices.Device.fromObject(object.devicea);
                 }
                 if (object.topicSubscription != null) {
                     if (typeof object.topicSubscription !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.topicSubscription: object expected");
                     message.topicSubscription = $root.ubii.services.request.TopicSubscription.fromObject(object.topicSubscription);
                 }
-                if (object.session != null) {
-                    if (typeof object.session !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.session: object expected");
-                    message.session = $root.ubii.sessions.Session.fromObject(object.session);
+                if (object.sessiona != null) {
+                    if (typeof object.sessiona !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.sessiona: object expected");
+                    message.sessiona = $root.ubii.sessions.Session.fromObject(object.sessiona);
                 }
                 return message;
             };
@@ -4405,25 +4405,25 @@ $root.ubii = (function() {
                     object.topic = "";
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     object.topic = message.topic;
-                if (message.client != null && message.hasOwnProperty("client")) {
-                    object.client = $root.ubii.clients.Client.toObject(message.client, options);
+                if (message.clienta != null && message.hasOwnProperty("clienta")) {
+                    object.clienta = $root.ubii.clients.Client.toObject(message.clienta, options);
                     if (options.oneofs)
-                        object.type = "client";
+                        object.type = "clienta";
                 }
-                if (message.device != null && message.hasOwnProperty("device")) {
-                    object.device = $root.ubii.devices.Device.toObject(message.device, options);
+                if (message.devicea != null && message.hasOwnProperty("devicea")) {
+                    object.devicea = $root.ubii.devices.Device.toObject(message.devicea, options);
                     if (options.oneofs)
-                        object.type = "device";
+                        object.type = "devicea";
                 }
                 if (message.topicSubscription != null && message.hasOwnProperty("topicSubscription")) {
                     object.topicSubscription = $root.ubii.services.request.TopicSubscription.toObject(message.topicSubscription, options);
                     if (options.oneofs)
                         object.type = "topicSubscription";
                 }
-                if (message.session != null && message.hasOwnProperty("session")) {
-                    object.session = $root.ubii.sessions.Session.toObject(message.session, options);
+                if (message.sessiona != null && message.hasOwnProperty("sessiona")) {
+                    object.sessiona = $root.ubii.sessions.Session.toObject(message.sessiona, options);
                     if (options.oneofs)
-                        object.type = "session";
+                        object.type = "sessiona";
                 }
                 return object;
             };
