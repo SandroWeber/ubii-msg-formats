@@ -16,6 +16,8 @@ var proto_general_error_pb = require('../../proto/general/error_pb.js');
 var proto_clients_client_pb = require('../../proto/clients/client_pb.js');
 var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
 var proto_servers_server_pb = require('../../proto/servers/server_pb.js');
+var proto_sessions_session_pb = require('../../proto/sessions/session_pb.js');
+var proto_general_stringList_pb = require('../../proto/general/stringList_pb.js');
 goog.exportSymbol('proto.ubii.services.ServiceReply', null, global);
 
 /**
@@ -43,7 +45,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7]];
 
 /**
  * @enum {number}
@@ -54,7 +56,9 @@ proto.ubii.services.ServiceReply.TypeCase = {
   ERROR: 2,
   CLIENT_SPECIFICATION: 3,
   DEVICE_SPECIFICATION: 4,
-  SERVER_SPECIFICATION: 5
+  SERVER_SPECIFICATION: 5,
+  SESSION_SPECIFICATION: 6,
+  TOPIC_LIST: 7
 };
 
 /**
@@ -97,7 +101,9 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     error: (f = msg.getError()) && proto_general_error_pb.Error.toObject(includeInstance, f),
     clientSpecification: (f = msg.getClientSpecification()) && proto_clients_client_pb.Client.toObject(includeInstance, f),
     deviceSpecification: (f = msg.getDeviceSpecification()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
-    serverSpecification: (f = msg.getServerSpecification()) && proto_servers_server_pb.Server.toObject(includeInstance, f)
+    serverSpecification: (f = msg.getServerSpecification()) && proto_servers_server_pb.Server.toObject(includeInstance, f),
+    sessionSpecification: (f = msg.getSessionSpecification()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
+    topicList: (f = msg.getTopicList()) && proto_general_stringList_pb.StringList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -158,6 +164,16 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto_servers_server_pb.Server;
       reader.readMessage(value,proto_servers_server_pb.Server.deserializeBinaryFromReader);
       msg.setServerSpecification(value);
+      break;
+    case 6:
+      var value = new proto_sessions_session_pb.Session;
+      reader.readMessage(value,proto_sessions_session_pb.Session.deserializeBinaryFromReader);
+      msg.setSessionSpecification(value);
+      break;
+    case 7:
+      var value = new proto_general_stringList_pb.StringList;
+      reader.readMessage(value,proto_general_stringList_pb.StringList.deserializeBinaryFromReader);
+      msg.setTopicList(value);
       break;
     default:
       reader.skipField();
@@ -226,6 +242,22 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       5,
       f,
       proto_servers_server_pb.Server.serializeBinaryToWriter
+    );
+  }
+  f = message.getSessionSpecification();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto_sessions_session_pb.Session.serializeBinaryToWriter
+    );
+  }
+  f = message.getTopicList();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto_general_stringList_pb.StringList.serializeBinaryToWriter
     );
   }
 };
@@ -378,6 +410,66 @@ proto.ubii.services.ServiceReply.prototype.clearServerSpecification = function()
  */
 proto.ubii.services.ServiceReply.prototype.hasServerSpecification = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional ubii.sessions.Session session_specification = 6;
+ * @return {?proto.ubii.sessions.Session}
+ */
+proto.ubii.services.ServiceReply.prototype.getSessionSpecification = function() {
+  return /** @type{?proto.ubii.sessions.Session} */ (
+    jspb.Message.getWrapperField(this, proto_sessions_session_pb.Session, 6));
+};
+
+
+/** @param {?proto.ubii.sessions.Session|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setSessionSpecification = function(value) {
+  jspb.Message.setOneofWrapperField(this, 6, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearSessionSpecification = function() {
+  this.setSessionSpecification(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasSessionSpecification = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional ubii.general.StringList topic_list = 7;
+ * @return {?proto.ubii.general.StringList}
+ */
+proto.ubii.services.ServiceReply.prototype.getTopicList = function() {
+  return /** @type{?proto.ubii.general.StringList} */ (
+    jspb.Message.getWrapperField(this, proto_general_stringList_pb.StringList, 7));
+};
+
+
+/** @param {?proto.ubii.general.StringList|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setTopicList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearTopicList = function() {
+  this.setTopicList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasTopicList = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

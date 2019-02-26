@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.interactions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\x9f\x01\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12+\n\x06inputs\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12,\n\x07outputs\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormatb\x06proto3')
+  serialized_pb=_b('\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\xad\x01\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12\x32\n\rinput_formats\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x33\n\x0eoutput_formats\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormatb\x06proto3')
   ,
   dependencies=[proto_dot_interactions_dot_ioFormat__pb2.DESCRIPTOR,])
 
@@ -56,14 +56,14 @@ _INTERACTION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='inputs', full_name='ubii.interactions.Interaction.inputs', index=3,
+      name='input_formats', full_name='ubii.interactions.Interaction.input_formats', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='outputs', full_name='ubii.interactions.Interaction.outputs', index=4,
+      name='output_formats', full_name='ubii.interactions.Interaction.output_formats', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -82,11 +82,11 @@ _INTERACTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=95,
-  serialized_end=254,
+  serialized_end=268,
 )
 
-_INTERACTION.fields_by_name['inputs'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT
-_INTERACTION.fields_by_name['outputs'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT
+_INTERACTION.fields_by_name['input_formats'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT
+_INTERACTION.fields_by_name['output_formats'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT
 DESCRIPTOR.message_types_by_name['Interaction'] = _INTERACTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

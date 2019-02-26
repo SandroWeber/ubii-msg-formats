@@ -2,5 +2,5 @@ syntax = "proto3";
 package ubii.general;
 
 message StringList {
-    repeated string elements = 1;
+    repeated string list = 1;
 }

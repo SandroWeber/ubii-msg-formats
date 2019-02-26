@@ -26,14 +26,15 @@ namespace Ubii.Interactions {
           string.Concat(
             "CiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8SEXViaWku",
             "aW50ZXJhY3Rpb25zGiFwcm90by9pbnRlcmFjdGlvbnMvaW9Gb3JtYXQucHJv",
-            "dG8inwEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
-            "GwoTcHJvY2Vzc2luZ19jYWxsYmFjaxgDIAEoCRIrCgZpbnB1dHMYBCADKAsy",
-            "Gy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1hdBIsCgdvdXRwdXRzGAUgAygL",
-            "MhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXRiBnByb3RvMw=="));
+            "dG8irQEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
+            "GwoTcHJvY2Vzc2luZ19jYWxsYmFjaxgDIAEoCRIyCg1pbnB1dF9mb3JtYXRz",
+            "GAQgAygLMhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXQSMwoOb3V0cHV0",
+            "X2Zvcm1hdHMYBSADKAsyGy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1hdGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.IoFormatReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "Inputs", "Outputs" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats" }, null, null, null)
           }));
     }
     #endregion
@@ -68,8 +69,8 @@ namespace Ubii.Interactions {
       id_ = other.id_;
       name_ = other.name_;
       processingCallback_ = other.processingCallback_;
-      inputs_ = other.inputs_.Clone();
-      outputs_ = other.outputs_.Clone();
+      inputFormats_ = other.inputFormats_.Clone();
+      outputFormats_ = other.outputFormats_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -111,24 +112,24 @@ namespace Ubii.Interactions {
       }
     }
 
-    /// <summary>Field number for the "inputs" field.</summary>
-    public const int InputsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Ubii.Interactions.IOFormat> _repeated_inputs_codec
+    /// <summary>Field number for the "input_formats" field.</summary>
+    public const int InputFormatsFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Ubii.Interactions.IOFormat> _repeated_inputFormats_codec
         = pb::FieldCodec.ForMessage(34, global::Ubii.Interactions.IOFormat.Parser);
-    private readonly pbc::RepeatedField<global::Ubii.Interactions.IOFormat> inputs_ = new pbc::RepeatedField<global::Ubii.Interactions.IOFormat>();
+    private readonly pbc::RepeatedField<global::Ubii.Interactions.IOFormat> inputFormats_ = new pbc::RepeatedField<global::Ubii.Interactions.IOFormat>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Ubii.Interactions.IOFormat> Inputs {
-      get { return inputs_; }
+    public pbc::RepeatedField<global::Ubii.Interactions.IOFormat> InputFormats {
+      get { return inputFormats_; }
     }
 
-    /// <summary>Field number for the "outputs" field.</summary>
-    public const int OutputsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Ubii.Interactions.IOFormat> _repeated_outputs_codec
+    /// <summary>Field number for the "output_formats" field.</summary>
+    public const int OutputFormatsFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Ubii.Interactions.IOFormat> _repeated_outputFormats_codec
         = pb::FieldCodec.ForMessage(42, global::Ubii.Interactions.IOFormat.Parser);
-    private readonly pbc::RepeatedField<global::Ubii.Interactions.IOFormat> outputs_ = new pbc::RepeatedField<global::Ubii.Interactions.IOFormat>();
+    private readonly pbc::RepeatedField<global::Ubii.Interactions.IOFormat> outputFormats_ = new pbc::RepeatedField<global::Ubii.Interactions.IOFormat>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Ubii.Interactions.IOFormat> Outputs {
-      get { return outputs_; }
+    public pbc::RepeatedField<global::Ubii.Interactions.IOFormat> OutputFormats {
+      get { return outputFormats_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,8 +148,8 @@ namespace Ubii.Interactions {
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
       if (ProcessingCallback != other.ProcessingCallback) return false;
-      if(!inputs_.Equals(other.inputs_)) return false;
-      if(!outputs_.Equals(other.outputs_)) return false;
+      if(!inputFormats_.Equals(other.inputFormats_)) return false;
+      if(!outputFormats_.Equals(other.outputFormats_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -158,8 +159,8 @@ namespace Ubii.Interactions {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (ProcessingCallback.Length != 0) hash ^= ProcessingCallback.GetHashCode();
-      hash ^= inputs_.GetHashCode();
-      hash ^= outputs_.GetHashCode();
+      hash ^= inputFormats_.GetHashCode();
+      hash ^= outputFormats_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,8 +186,8 @@ namespace Ubii.Interactions {
         output.WriteRawTag(26);
         output.WriteString(ProcessingCallback);
       }
-      inputs_.WriteTo(output, _repeated_inputs_codec);
-      outputs_.WriteTo(output, _repeated_outputs_codec);
+      inputFormats_.WriteTo(output, _repeated_inputFormats_codec);
+      outputFormats_.WriteTo(output, _repeated_outputFormats_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -204,8 +205,8 @@ namespace Ubii.Interactions {
       if (ProcessingCallback.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ProcessingCallback);
       }
-      size += inputs_.CalculateSize(_repeated_inputs_codec);
-      size += outputs_.CalculateSize(_repeated_outputs_codec);
+      size += inputFormats_.CalculateSize(_repeated_inputFormats_codec);
+      size += outputFormats_.CalculateSize(_repeated_outputFormats_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -226,8 +227,8 @@ namespace Ubii.Interactions {
       if (other.ProcessingCallback.Length != 0) {
         ProcessingCallback = other.ProcessingCallback;
       }
-      inputs_.Add(other.inputs_);
-      outputs_.Add(other.outputs_);
+      inputFormats_.Add(other.inputFormats_);
+      outputFormats_.Add(other.outputFormats_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -252,11 +253,11 @@ namespace Ubii.Interactions {
             break;
           }
           case 34: {
-            inputs_.AddEntriesFrom(input, _repeated_inputs_codec);
+            inputFormats_.AddEntriesFrom(input, _repeated_inputFormats_codec);
             break;
           }
           case 42: {
-            outputs_.AddEntriesFrom(input, _repeated_outputs_codec);
+            outputFormats_.AddEntriesFrom(input, _repeated_outputFormats_codec);
             break;
           }
         }

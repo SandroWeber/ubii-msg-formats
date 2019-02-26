@@ -70,9 +70,9 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     processingCallback: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    inputsList: jspb.Message.toObjectList(msg.getInputsList(),
+    inputFormatsList: jspb.Message.toObjectList(msg.getInputFormatsList(),
     proto_interactions_ioFormat_pb.IOFormat.toObject, includeInstance),
-    outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
+    outputFormatsList: jspb.Message.toObjectList(msg.getOutputFormatsList(),
     proto_interactions_ioFormat_pb.IOFormat.toObject, includeInstance)
   };
 
@@ -125,12 +125,12 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
     case 4:
       var value = new proto_interactions_ioFormat_pb.IOFormat;
       reader.readMessage(value,proto_interactions_ioFormat_pb.IOFormat.deserializeBinaryFromReader);
-      msg.addInputs(value);
+      msg.addInputFormats(value);
       break;
     case 5:
       var value = new proto_interactions_ioFormat_pb.IOFormat;
       reader.readMessage(value,proto_interactions_ioFormat_pb.IOFormat.deserializeBinaryFromReader);
-      msg.addOutputs(value);
+      msg.addOutputFormats(value);
       break;
     default:
       reader.skipField();
@@ -182,7 +182,7 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getInputsList();
+  f = message.getInputFormatsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -190,7 +190,7 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
       proto_interactions_ioFormat_pb.IOFormat.serializeBinaryToWriter
     );
   }
-  f = message.getOutputsList();
+  f = message.getOutputFormatsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
@@ -247,17 +247,17 @@ proto.ubii.interactions.Interaction.prototype.setProcessingCallback = function(v
 
 
 /**
- * repeated IOFormat inputs = 4;
+ * repeated IOFormat input_formats = 4;
  * @return {!Array<!proto.ubii.interactions.IOFormat>}
  */
-proto.ubii.interactions.Interaction.prototype.getInputsList = function() {
+proto.ubii.interactions.Interaction.prototype.getInputFormatsList = function() {
   return /** @type{!Array<!proto.ubii.interactions.IOFormat>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto_interactions_ioFormat_pb.IOFormat, 4));
 };
 
 
 /** @param {!Array<!proto.ubii.interactions.IOFormat>} value */
-proto.ubii.interactions.Interaction.prototype.setInputsList = function(value) {
+proto.ubii.interactions.Interaction.prototype.setInputFormatsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -267,28 +267,28 @@ proto.ubii.interactions.Interaction.prototype.setInputsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ubii.interactions.IOFormat}
  */
-proto.ubii.interactions.Interaction.prototype.addInputs = function(opt_value, opt_index) {
+proto.ubii.interactions.Interaction.prototype.addInputFormats = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ubii.interactions.IOFormat, opt_index);
 };
 
 
-proto.ubii.interactions.Interaction.prototype.clearInputsList = function() {
-  this.setInputsList([]);
+proto.ubii.interactions.Interaction.prototype.clearInputFormatsList = function() {
+  this.setInputFormatsList([]);
 };
 
 
 /**
- * repeated IOFormat outputs = 5;
+ * repeated IOFormat output_formats = 5;
  * @return {!Array<!proto.ubii.interactions.IOFormat>}
  */
-proto.ubii.interactions.Interaction.prototype.getOutputsList = function() {
+proto.ubii.interactions.Interaction.prototype.getOutputFormatsList = function() {
   return /** @type{!Array<!proto.ubii.interactions.IOFormat>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto_interactions_ioFormat_pb.IOFormat, 5));
 };
 
 
 /** @param {!Array<!proto.ubii.interactions.IOFormat>} value */
-proto.ubii.interactions.Interaction.prototype.setOutputsList = function(value) {
+proto.ubii.interactions.Interaction.prototype.setOutputFormatsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
@@ -298,13 +298,13 @@ proto.ubii.interactions.Interaction.prototype.setOutputsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ubii.interactions.IOFormat}
  */
-proto.ubii.interactions.Interaction.prototype.addOutputs = function(opt_value, opt_index) {
+proto.ubii.interactions.Interaction.prototype.addOutputFormats = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.ubii.interactions.IOFormat, opt_index);
 };
 
 
-proto.ubii.interactions.Interaction.prototype.clearOutputsList = function() {
-  this.setOutputsList([]);
+proto.ubii.interactions.Interaction.prototype.clearOutputFormatsList = function() {
+  this.setOutputFormatsList([]);
 };
 
 

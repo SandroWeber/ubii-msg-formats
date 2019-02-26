@@ -13,6 +13,7 @@ var global = Function('return this')();
 
 var proto_clients_client_pb = require('../../proto/clients/client_pb.js');
 var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
+var proto_sessions_session_pb = require('../../proto/sessions/session_pb.js');
 var proto_services_request_topicSubscription_pb = require('../../proto/services/request/topicSubscription_pb.js');
 goog.exportSymbol('proto.ubii.services.ServiceRequest', null, global);
 
@@ -41,7 +42,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5]];
 
 /**
  * @enum {number}
@@ -50,7 +51,8 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   TYPE_NOT_SET: 0,
   CLIENT_REGISTRATION: 2,
   DEVICE_REGISTRATION: 3,
-  TOPIC_SUBSCRIPTION: 4
+  TOPIC_SUBSCRIPTION: 4,
+  SESSION_REGISTRATION: 5
 };
 
 /**
@@ -92,7 +94,8 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
     clientRegistration: (f = msg.getClientRegistration()) && proto_clients_client_pb.Client.toObject(includeInstance, f),
     deviceRegistration: (f = msg.getDeviceRegistration()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
-    topicSubscription: (f = msg.getTopicSubscription()) && proto_services_request_topicSubscription_pb.TopicSubscription.toObject(includeInstance, f)
+    topicSubscription: (f = msg.getTopicSubscription()) && proto_services_request_topicSubscription_pb.TopicSubscription.toObject(includeInstance, f),
+    sessionRegistration: (f = msg.getSessionRegistration()) && proto_sessions_session_pb.Session.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -147,6 +150,11 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       var value = new proto_services_request_topicSubscription_pb.TopicSubscription;
       reader.readMessage(value,proto_services_request_topicSubscription_pb.TopicSubscription.deserializeBinaryFromReader);
       msg.setTopicSubscription(value);
+      break;
+    case 5:
+      var value = new proto_sessions_session_pb.Session;
+      reader.readMessage(value,proto_sessions_session_pb.Session.deserializeBinaryFromReader);
+      msg.setSessionRegistration(value);
       break;
     default:
       reader.skipField();
@@ -206,6 +214,14 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       4,
       f,
       proto_services_request_topicSubscription_pb.TopicSubscription.serializeBinaryToWriter
+    );
+  }
+  f = message.getSessionRegistration();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto_sessions_session_pb.Session.serializeBinaryToWriter
     );
   }
 };
@@ -313,6 +329,36 @@ proto.ubii.services.ServiceRequest.prototype.clearTopicSubscription = function()
  */
 proto.ubii.services.ServiceRequest.prototype.hasTopicSubscription = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional ubii.sessions.Session session_registration = 5;
+ * @return {?proto.ubii.sessions.Session}
+ */
+proto.ubii.services.ServiceRequest.prototype.getSessionRegistration = function() {
+  return /** @type{?proto.ubii.sessions.Session} */ (
+    jspb.Message.getWrapperField(this, proto_sessions_session_pb.Session, 5));
+};
+
+
+/** @param {?proto.ubii.sessions.Session|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setSessionRegistration = function(value) {
+  jspb.Message.setOneofWrapperField(this, 5, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearSessionRegistration = function() {
+  this.setSessionRegistration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasSessionRegistration = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

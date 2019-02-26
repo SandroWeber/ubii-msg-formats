@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.topicData',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1fproto/topicData/topicData.proto\x12\x0eubii.topicData\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\x1a\x19proto/general/error.proto\"\x8a\x01\n\tTopicData\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12<\n\x11topic_data_record\x18\x02 \x01(\x0b\x32\x1f.ubii.topicData.TopicDataRecordH\x00\x12$\n\x05\x65rror\x18\x03 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n\x1fproto/topicData/topicData.proto\x12\x0eubii.topicData\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\x1a\x19proto/general/error.proto\"w\n\tTopicData\x12<\n\x11topic_data_record\x18\x02 \x01(\x0b\x32\x1f.ubii.topicData.TopicDataRecordH\x00\x12$\n\x05\x65rror\x18\x03 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x42\x06\n\x04typeb\x06proto3')
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2.DESCRIPTOR,proto_dot_general_dot_error__pb2.DESCRIPTOR,])
 
@@ -36,21 +36,14 @@ _TOPICDATA = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='device_id', full_name='ubii.topicData.TopicData.device_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='topic_data_record', full_name='ubii.topicData.TopicData.topic_data_record', index=1,
+      name='topic_data_record', full_name='ubii.topicData.TopicData.topic_data_record', index=0,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='error', full_name='ubii.topicData.TopicData.error', index=2,
+      name='error', full_name='ubii.topicData.TopicData.error', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -71,8 +64,8 @@ _TOPICDATA = _descriptor.Descriptor(
       name='type', full_name='ubii.topicData.TopicData.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=134,
-  serialized_end=272,
+  serialized_start=133,
+  serialized_end=252,
 )
 
 _TOPICDATA.fields_by_name['topic_data_record'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORD

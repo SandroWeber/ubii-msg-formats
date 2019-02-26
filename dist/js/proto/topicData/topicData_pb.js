@@ -87,7 +87,6 @@ proto.ubii.topicData.TopicData.prototype.toObject = function(opt_includeInstance
  */
 proto.ubii.topicData.TopicData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     topicDataRecord: (f = msg.getTopicDataRecord()) && proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.toObject(includeInstance, f),
     error: (f = msg.getError()) && proto_general_error_pb.Error.toObject(includeInstance, f)
   };
@@ -126,10 +125,6 @@ proto.ubii.topicData.TopicData.deserializeBinaryFromReader = function(msg, reade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDeviceId(value);
-      break;
     case 2:
       var value = new proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord;
       reader.readMessage(value,proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.deserializeBinaryFromReader);
@@ -169,13 +164,6 @@ proto.ubii.topicData.TopicData.prototype.serializeBinary = function() {
  */
 proto.ubii.topicData.TopicData.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDeviceId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getTopicDataRecord();
   if (f != null) {
     writer.writeMessage(
@@ -192,21 +180,6 @@ proto.ubii.topicData.TopicData.serializeBinaryToWriter = function(message, write
       proto_general_error_pb.Error.serializeBinaryToWriter
     );
   }
-};
-
-
-/**
- * optional string device_id = 1;
- * @return {string}
- */
-proto.ubii.topicData.TopicData.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.ubii.topicData.TopicData.prototype.setDeviceId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
