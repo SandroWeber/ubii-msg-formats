@@ -38,7 +38,6 @@ test.beforeEach(t => {
     {
       type: MSG_TYPES.TOPIC_DATA,
       validPayload: {
-        deviceId: 'deviceIdentifier',
         topicDataRecord: {
           topic: 'topic',
           vector3: {

@@ -24,12 +24,19 @@ goog.exportSymbol('proto.ubii.services.request.TopicSubscription', null, global)
  * @constructor
  */
 proto.ubii.services.request.TopicSubscription = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.services.request.TopicSubscription.repeatedFields_, null);
 };
 goog.inherits(proto.ubii.services.request.TopicSubscription, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.ubii.services.request.TopicSubscription.displayName = 'proto.ubii.services.request.TopicSubscription';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.services.request.TopicSubscription.repeatedFields_ = [2,3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -59,8 +66,9 @@ proto.ubii.services.request.TopicSubscription.prototype.toObject = function(opt_
  */
 proto.ubii.services.request.TopicSubscription.toObject = function(includeInstance, msg) {
   var f, obj = {
-    topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    clientId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    clientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    subscribeTopicsList: jspb.Message.getRepeatedField(msg, 2),
+    unsubscribeTopicsList: jspb.Message.getRepeatedField(msg, 3)
   };
 
   if (includeInstance) {
@@ -99,11 +107,15 @@ proto.ubii.services.request.TopicSubscription.deserializeBinaryFromReader = func
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTopic(value);
+      msg.setClientId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClientId(value);
+      msg.addSubscribeTopics(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addUnsubscribeTopics(value);
       break;
     default:
       reader.skipField();
@@ -134,17 +146,24 @@ proto.ubii.services.request.TopicSubscription.prototype.serializeBinary = functi
  */
 proto.ubii.services.request.TopicSubscription.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTopic();
+  f = message.getClientId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getClientId();
+  f = message.getSubscribeTopicsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       2,
+      f
+    );
+  }
+  f = message.getUnsubscribeTopicsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
       f
     );
   }
@@ -152,32 +171,75 @@ proto.ubii.services.request.TopicSubscription.serializeBinaryToWriter = function
 
 
 /**
- * optional string topic = 1;
+ * optional string client_id = 1;
  * @return {string}
  */
-proto.ubii.services.request.TopicSubscription.prototype.getTopic = function() {
+proto.ubii.services.request.TopicSubscription.prototype.getClientId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.services.request.TopicSubscription.prototype.setTopic = function(value) {
+proto.ubii.services.request.TopicSubscription.prototype.setClientId = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string client_id = 2;
- * @return {string}
+ * repeated string subscribe_topics = 2;
+ * @return {!Array<string>}
  */
-proto.ubii.services.request.TopicSubscription.prototype.getClientId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.ubii.services.request.TopicSubscription.prototype.getSubscribeTopicsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {string} value */
-proto.ubii.services.request.TopicSubscription.prototype.setClientId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+/** @param {!Array<string>} value */
+proto.ubii.services.request.TopicSubscription.prototype.setSubscribeTopicsList = function(value) {
+  jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.services.request.TopicSubscription.prototype.addSubscribeTopics = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+proto.ubii.services.request.TopicSubscription.prototype.clearSubscribeTopicsList = function() {
+  this.setSubscribeTopicsList([]);
+};
+
+
+/**
+ * repeated string unsubscribe_topics = 3;
+ * @return {!Array<string>}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.getUnsubscribeTopicsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.services.request.TopicSubscription.prototype.setUnsubscribeTopicsList = function(value) {
+  jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.services.request.TopicSubscription.prototype.addUnsubscribeTopics = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+proto.ubii.services.request.TopicSubscription.prototype.clearUnsubscribeTopicsList = function() {
+  this.setUnsubscribeTopicsList([]);
 };
 
 

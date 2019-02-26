@@ -25,12 +25,13 @@ namespace Ubii.Services.Request {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5wcm90by9zZXJ2aWNlcy9yZXF1ZXN0L3RvcGljU3Vic2NyaXB0aW9uLnBy",
-            "b3RvEhV1YmlpLnNlcnZpY2VzLnJlcXVlc3QiNQoRVG9waWNTdWJzY3JpcHRp",
-            "b24SDQoFdG9waWMYASABKAkSEQoJY2xpZW50X2lkGAIgASgJYgZwcm90bzM="));
+            "b3RvEhV1YmlpLnNlcnZpY2VzLnJlcXVlc3QiXAoRVG9waWNTdWJzY3JpcHRp",
+            "b24SEQoJY2xpZW50X2lkGAEgASgJEhgKEHN1YnNjcmliZV90b3BpY3MYAiAD",
+            "KAkSGgoSdW5zdWJzY3JpYmVfdG9waWNzGAMgAygJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.Request.TopicSubscription), global::Ubii.Services.Request.TopicSubscription.Parser, new[]{ "Topic", "ClientId" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.Request.TopicSubscription), global::Ubii.Services.Request.TopicSubscription.Parser, new[]{ "ClientId", "SubscribeTopics", "UnsubscribeTopics" }, null, null, null)
           }));
     }
     #endregion
@@ -62,8 +63,9 @@ namespace Ubii.Services.Request {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TopicSubscription(TopicSubscription other) : this() {
-      topic_ = other.topic_;
       clientId_ = other.clientId_;
+      subscribeTopics_ = other.subscribeTopics_.Clone();
+      unsubscribeTopics_ = other.unsubscribeTopics_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -72,19 +74,8 @@ namespace Ubii.Services.Request {
       return new TopicSubscription(this);
     }
 
-    /// <summary>Field number for the "topic" field.</summary>
-    public const int TopicFieldNumber = 1;
-    private string topic_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Topic {
-      get { return topic_; }
-      set {
-        topic_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "client_id" field.</summary>
-    public const int ClientIdFieldNumber = 2;
+    public const int ClientIdFieldNumber = 1;
     private string clientId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ClientId {
@@ -92,6 +83,26 @@ namespace Ubii.Services.Request {
       set {
         clientId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+
+    /// <summary>Field number for the "subscribe_topics" field.</summary>
+    public const int SubscribeTopicsFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_subscribeTopics_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> subscribeTopics_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> SubscribeTopics {
+      get { return subscribeTopics_; }
+    }
+
+    /// <summary>Field number for the "unsubscribe_topics" field.</summary>
+    public const int UnsubscribeTopicsFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_unsubscribeTopics_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> unsubscribeTopics_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> UnsubscribeTopics {
+      get { return unsubscribeTopics_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -107,16 +118,18 @@ namespace Ubii.Services.Request {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Topic != other.Topic) return false;
       if (ClientId != other.ClientId) return false;
+      if(!subscribeTopics_.Equals(other.subscribeTopics_)) return false;
+      if(!unsubscribeTopics_.Equals(other.unsubscribeTopics_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Topic.Length != 0) hash ^= Topic.GetHashCode();
       if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
+      hash ^= subscribeTopics_.GetHashCode();
+      hash ^= unsubscribeTopics_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -130,14 +143,12 @@ namespace Ubii.Services.Request {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Topic.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Topic);
-      }
       if (ClientId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(ClientId);
       }
+      subscribeTopics_.WriteTo(output, _repeated_subscribeTopics_codec);
+      unsubscribeTopics_.WriteTo(output, _repeated_unsubscribeTopics_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -146,12 +157,11 @@ namespace Ubii.Services.Request {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Topic.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Topic);
-      }
       if (ClientId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientId);
       }
+      size += subscribeTopics_.CalculateSize(_repeated_subscribeTopics_codec);
+      size += unsubscribeTopics_.CalculateSize(_repeated_unsubscribeTopics_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -163,12 +173,11 @@ namespace Ubii.Services.Request {
       if (other == null) {
         return;
       }
-      if (other.Topic.Length != 0) {
-        Topic = other.Topic;
-      }
       if (other.ClientId.Length != 0) {
         ClientId = other.ClientId;
       }
+      subscribeTopics_.Add(other.subscribeTopics_);
+      unsubscribeTopics_.Add(other.unsubscribeTopics_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -181,11 +190,15 @@ namespace Ubii.Services.Request {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Topic = input.ReadString();
+            ClientId = input.ReadString();
             break;
           }
           case 18: {
-            ClientId = input.ReadString();
+            subscribeTopics_.AddEntriesFrom(input, _repeated_subscribeTopics_codec);
+            break;
+          }
+          case 26: {
+            unsubscribeTopics_.AddEntriesFrom(input, _repeated_unsubscribeTopics_codec);
             break;
           }
         }

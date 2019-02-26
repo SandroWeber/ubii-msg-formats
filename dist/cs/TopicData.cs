@@ -26,15 +26,14 @@ namespace Ubii.TopicData {
           string.Concat(
             "Ch9wcm90by90b3BpY0RhdGEvdG9waWNEYXRhLnByb3RvEg51YmlpLnRvcGlj",
             "RGF0YRo1cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC90b3BpY0Rh",
-            "dGFSZWNvcmQucHJvdG8aGXByb3RvL2dlbmVyYWwvZXJyb3IucHJvdG8iigEK",
-            "CVRvcGljRGF0YRIRCglkZXZpY2VfaWQYASABKAkSPAoRdG9waWNfZGF0YV9y",
-            "ZWNvcmQYAiABKAsyHy51YmlpLnRvcGljRGF0YS5Ub3BpY0RhdGFSZWNvcmRI",
-            "ABIkCgVlcnJvchgDIAEoCzITLnViaWkuZ2VuZXJhbC5FcnJvckgAQgYKBHR5",
-            "cGViBnByb3RvMw=="));
+            "dGFSZWNvcmQucHJvdG8aGXByb3RvL2dlbmVyYWwvZXJyb3IucHJvdG8idwoJ",
+            "VG9waWNEYXRhEjwKEXRvcGljX2RhdGFfcmVjb3JkGAIgASgLMh8udWJpaS50",
+            "b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkSAASJAoFZXJyb3IYAyABKAsyEy51",
+            "YmlpLmdlbmVyYWwuRXJyb3JIAEIGCgR0eXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.TopicData.TopicDataRecordReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicData), global::Ubii.TopicData.TopicData.Parser, new[]{ "DeviceId", "TopicDataRecord", "Error" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicData), global::Ubii.TopicData.TopicData.Parser, new[]{ "TopicDataRecord", "Error" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -66,7 +65,6 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TopicData(TopicData other) : this() {
-      deviceId_ = other.deviceId_;
       switch (other.TypeCase) {
         case TypeOneofCase.TopicDataRecord:
           TopicDataRecord = other.TopicDataRecord.Clone();
@@ -82,17 +80,6 @@ namespace Ubii.TopicData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TopicData Clone() {
       return new TopicData(this);
-    }
-
-    /// <summary>Field number for the "device_id" field.</summary>
-    public const int DeviceIdFieldNumber = 1;
-    private string deviceId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DeviceId {
-      get { return deviceId_; }
-      set {
-        deviceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     /// <summary>Field number for the "topic_data_record" field.</summary>
@@ -149,7 +136,6 @@ namespace Ubii.TopicData {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DeviceId != other.DeviceId) return false;
       if (!object.Equals(TopicDataRecord, other.TopicDataRecord)) return false;
       if (!object.Equals(Error, other.Error)) return false;
       if (TypeCase != other.TypeCase) return false;
@@ -159,7 +145,6 @@ namespace Ubii.TopicData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicDataRecord) hash ^= TopicDataRecord.GetHashCode();
       if (typeCase_ == TypeOneofCase.Error) hash ^= Error.GetHashCode();
       hash ^= (int) typeCase_;
@@ -176,10 +161,6 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (DeviceId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(DeviceId);
-      }
       if (typeCase_ == TypeOneofCase.TopicDataRecord) {
         output.WriteRawTag(18);
         output.WriteMessage(TopicDataRecord);
@@ -196,9 +177,6 @@ namespace Ubii.TopicData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (DeviceId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
-      }
       if (typeCase_ == TypeOneofCase.TopicDataRecord) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicDataRecord);
       }
@@ -215,9 +193,6 @@ namespace Ubii.TopicData {
     public void MergeFrom(TopicData other) {
       if (other == null) {
         return;
-      }
-      if (other.DeviceId.Length != 0) {
-        DeviceId = other.DeviceId;
       }
       switch (other.TypeCase) {
         case TypeOneofCase.TopicDataRecord:
@@ -245,10 +220,6 @@ namespace Ubii.TopicData {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            DeviceId = input.ReadString();
-            break;
-          }
           case 18: {
             global::Ubii.TopicData.TopicDataRecord subBuilder = new global::Ubii.TopicData.TopicDataRecord();
             if (typeCase_ == TypeOneofCase.TopicDataRecord) {

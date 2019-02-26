@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 
 from proto.clients import client_pb2 as proto_dot_clients_dot_client__pb2
 from proto.devices import device_pb2 as proto_dot_devices_dot_device__pb2
+from proto.sessions import session_pb2 as proto_dot_sessions_dot_session__pb2
 from proto.services.request import topicSubscription_pb2 as proto_dot_services_dot_request_dot_topicSubscription__pb2
 
 
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n#proto/services/serviceRequest.proto\x12\rubii.services\x1a\x1aproto/clients/client.proto\x1a\x1aproto/devices/device.proto\x1a.proto/services/request/topicSubscription.proto\"\xd9\x01\n\x0eServiceRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x33\n\x13\x63lient_registration\x18\x02 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12\x33\n\x13\x64\x65vice_registration\x18\x03 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12\x46\n\x12topic_subscription\x18\x04 \x01(\x0b\x32(.ubii.services.request.TopicSubscriptionH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n#proto/services/serviceRequest.proto\x12\rubii.services\x1a\x1aproto/clients/client.proto\x1a\x1aproto/devices/device.proto\x1a\x1cproto/sessions/session.proto\x1a.proto/services/request/topicSubscription.proto\"\x91\x02\n\x0eServiceRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x33\n\x13\x63lient_registration\x18\x02 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12\x33\n\x13\x64\x65vice_registration\x18\x03 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12\x46\n\x12topic_subscription\x18\x04 \x01(\x0b\x32(.ubii.services.request.TopicSubscriptionH\x00\x12\x36\n\x14session_registration\x18\x05 \x01(\x0b\x32\x16.ubii.sessions.SessionH\x00\x42\x06\n\x04typeb\x06proto3')
   ,
-  dependencies=[proto_dot_clients_dot_client__pb2.DESCRIPTOR,proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_services_dot_request_dot_topicSubscription__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_clients_dot_client__pb2.DESCRIPTOR,proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_sessions_dot_session__pb2.DESCRIPTOR,proto_dot_services_dot_request_dot_topicSubscription__pb2.DESCRIPTOR,])
 
 
 
@@ -64,6 +65,13 @@ _SERVICEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='session_registration', full_name='ubii.services.ServiceRequest.session_registration', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -79,13 +87,14 @@ _SERVICEREQUEST = _descriptor.Descriptor(
       name='type', full_name='ubii.services.ServiceRequest.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=159,
-  serialized_end=376,
+  serialized_start=189,
+  serialized_end=462,
 )
 
 _SERVICEREQUEST.fields_by_name['client_registration'].message_type = proto_dot_clients_dot_client__pb2._CLIENT
 _SERVICEREQUEST.fields_by_name['device_registration'].message_type = proto_dot_devices_dot_device__pb2._DEVICE
 _SERVICEREQUEST.fields_by_name['topic_subscription'].message_type = proto_dot_services_dot_request_dot_topicSubscription__pb2._TOPICSUBSCRIPTION
+_SERVICEREQUEST.fields_by_name['session_registration'].message_type = proto_dot_sessions_dot_session__pb2._SESSION
 _SERVICEREQUEST.oneofs_by_name['type'].fields.append(
   _SERVICEREQUEST.fields_by_name['client_registration'])
 _SERVICEREQUEST.fields_by_name['client_registration'].containing_oneof = _SERVICEREQUEST.oneofs_by_name['type']
@@ -95,6 +104,9 @@ _SERVICEREQUEST.fields_by_name['device_registration'].containing_oneof = _SERVIC
 _SERVICEREQUEST.oneofs_by_name['type'].fields.append(
   _SERVICEREQUEST.fields_by_name['topic_subscription'])
 _SERVICEREQUEST.fields_by_name['topic_subscription'].containing_oneof = _SERVICEREQUEST.oneofs_by_name['type']
+_SERVICEREQUEST.oneofs_by_name['type'].fields.append(
+  _SERVICEREQUEST.fields_by_name['session_registration'])
+_SERVICEREQUEST.fields_by_name['session_registration'].containing_oneof = _SERVICEREQUEST.oneofs_by_name['type']
 DESCRIPTOR.message_types_by_name['ServiceRequest'] = _SERVICEREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

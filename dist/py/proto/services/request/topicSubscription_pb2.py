@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services.request',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n.proto/services/request/topicSubscription.proto\x12\x15ubii.services.request\"5\n\x11TopicSubscription\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n.proto/services/request/topicSubscription.proto\x12\x15ubii.services.request\"\\\n\x11TopicSubscription\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x18\n\x10subscribe_topics\x18\x02 \x03(\t\x12\x1a\n\x12unsubscribe_topics\x18\x03 \x03(\tb\x06proto3')
 )
 
 
@@ -33,16 +33,23 @@ _TOPICSUBSCRIPTION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='topic', full_name='ubii.services.request.TopicSubscription.topic', index=0,
+      name='client_id', full_name='ubii.services.request.TopicSubscription.client_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='client_id', full_name='ubii.services.request.TopicSubscription.client_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='subscribe_topics', full_name='ubii.services.request.TopicSubscription.subscribe_topics', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unsubscribe_topics', full_name='ubii.services.request.TopicSubscription.unsubscribe_topics', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -59,7 +66,7 @@ _TOPICSUBSCRIPTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=73,
-  serialized_end=126,
+  serialized_end=165,
 )
 
 DESCRIPTOR.message_types_by_name['TopicSubscription'] = _TOPICSUBSCRIPTION
