@@ -3,5 +3,6 @@ node_modules/
 .devnotes/
 .node_modules/
 lib/tests/
+external/bin/
 *.log
 .vscode/
