@@ -10,3 +10,7 @@ message Interaction {
     repeated ubii.interactions.IOFormat input_formats = 4;
     repeated ubii.interactions.IOFormat output_formats = 5;
 }
+
+message InteractionList {
+    repeated ubii.interactions.Interaction list = 1;
+}

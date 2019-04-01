@@ -11,7 +11,7 @@ import "proto/topicData/topicDataRecord/dataStructure/color.proto";
 
 message TopicDataRecord {
     string topic = 1;
-    oneof type{
+    oneof type {
         double number = 2;
         bool boolean = 3;
         string string = 4;
@@ -23,4 +23,8 @@ message TopicDataRecord {
         ubii.dataStructure.Matrix4x4 matrix4x4 = 10;
         ubii.dataStructure.Color color = 11;
     }
+}
+
+message TopicDataRecordList {
+    repeated ubii.topicData.TopicDataRecord list = 1;
 }

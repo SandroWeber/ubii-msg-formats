@@ -30,11 +30,13 @@ namespace Ubii.Devices {
             "YmlpLmRldmljZXMuRGV2aWNlLkRldmljZVR5cGUSKwoKY29tcG9uZW50cxgE",
             "IAMoCzIXLnViaWkuZGV2aWNlcy5Db21wb25lbnQSEQoJY2xpZW50X2lkGAUg",
             "ASgJIioKCkRldmljZVR5cGUSDwoLUEFSVElDSVBBTlQQABILCgdXQVRDSEVS",
-            "EAFiBnByb3RvMw=="));
+            "EAEiMAoKRGV2aWNlTGlzdBIiCgRsaXN0GAEgAygLMhQudWJpaS5kZXZpY2Vz",
+            "LkRldmljZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Devices.ComponentReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Devices.Device), global::Ubii.Devices.Device.Parser, new[]{ "Id", "Name", "DeviceType", "Components", "ClientId" }, null, new[]{ typeof(global::Ubii.Devices.Device.Types.DeviceType) }, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Devices.Device), global::Ubii.Devices.Device.Parser, new[]{ "Id", "Name", "DeviceType", "Components", "ClientId" }, null, new[]{ typeof(global::Ubii.Devices.Device.Types.DeviceType) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Devices.DeviceList), global::Ubii.Devices.DeviceList.Parser, new[]{ "List" }, null, null, null)
           }));
     }
     #endregion
@@ -283,6 +285,127 @@ namespace Ubii.Devices {
 
     }
     #endregion
+
+  }
+
+  public sealed partial class DeviceList : pb::IMessage<DeviceList> {
+    private static readonly pb::MessageParser<DeviceList> _parser = new pb::MessageParser<DeviceList>(() => new DeviceList());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeviceList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ubii.Devices.DeviceReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceList(DeviceList other) : this() {
+      list_ = other.list_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeviceList Clone() {
+      return new DeviceList(this);
+    }
+
+    /// <summary>Field number for the "list" field.</summary>
+    public const int ListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ubii.Devices.Device> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::Ubii.Devices.Device.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.Devices.Device> list_ = new pbc::RepeatedField<global::Ubii.Devices.Device>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Ubii.Devices.Device> List {
+      get { return list_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeviceList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeviceList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!list_.Equals(other.list_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= list_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      list_.WriteTo(output, _repeated_list_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += list_.CalculateSize(_repeated_list_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeviceList other) {
+      if (other == null) {
+        return;
+      }
+      list_.Add(other.list_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
+            break;
+          }
+        }
+      }
+    }
 
   }
 

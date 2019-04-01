@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.topicData',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1fproto/topicData/topicData.proto\x12\x0eubii.topicData\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\x1a\x19proto/general/error.proto\"w\n\tTopicData\x12<\n\x11topic_data_record\x18\x02 \x01(\x0b\x32\x1f.ubii.topicData.TopicDataRecordH\x00\x12$\n\x05\x65rror\x18\x03 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n\x1fproto/topicData/topicData.proto\x12\x0eubii.topicData\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\x1a\x19proto/general/error.proto\"\xbe\x01\n\tTopicData\x12<\n\x11topic_data_record\x18\x02 \x01(\x0b\x32\x1f.ubii.topicData.TopicDataRecordH\x00\x12\x45\n\x16topic_data_record_list\x18\x03 \x01(\x0b\x32#.ubii.topicData.TopicDataRecordListH\x00\x12$\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x42\x06\n\x04typeb\x06proto3')
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2.DESCRIPTOR,proto_dot_general_dot_error__pb2.DESCRIPTOR,])
 
@@ -43,8 +43,15 @@ _TOPICDATA = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='error', full_name='ubii.topicData.TopicData.error', index=1,
+      name='topic_data_record_list', full_name='ubii.topicData.TopicData.topic_data_record_list', index=1,
       number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='error', full_name='ubii.topicData.TopicData.error', index=2,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -64,15 +71,19 @@ _TOPICDATA = _descriptor.Descriptor(
       name='type', full_name='ubii.topicData.TopicData.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=133,
-  serialized_end=252,
+  serialized_start=134,
+  serialized_end=324,
 )
 
 _TOPICDATA.fields_by_name['topic_data_record'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORD
+_TOPICDATA.fields_by_name['topic_data_record_list'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORDLIST
 _TOPICDATA.fields_by_name['error'].message_type = proto_dot_general_dot_error__pb2._ERROR
 _TOPICDATA.oneofs_by_name['type'].fields.append(
   _TOPICDATA.fields_by_name['topic_data_record'])
 _TOPICDATA.fields_by_name['topic_data_record'].containing_oneof = _TOPICDATA.oneofs_by_name['type']
+_TOPICDATA.oneofs_by_name['type'].fields.append(
+  _TOPICDATA.fields_by_name['topic_data_record_list'])
+_TOPICDATA.fields_by_name['topic_data_record_list'].containing_oneof = _TOPICDATA.oneofs_by_name['type']
 _TOPICDATA.oneofs_by_name['type'].fields.append(
   _TOPICDATA.fields_by_name['error'])
 _TOPICDATA.fields_by_name['error'].containing_oneof = _TOPICDATA.oneofs_by_name['type']

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.clients',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\"I\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Deviceb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\"I\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Device\"0\n\nClientList\x12\"\n\x04list\x18\x01 \x03(\x0b\x32\x14.ubii.clients.Clientb\x06proto3')
   ,
   dependencies=[proto_dot_devices_dot_device__pb2.DESCRIPTOR,])
 
@@ -71,8 +71,41 @@ _CLIENT = _descriptor.Descriptor(
   serialized_end=145,
 )
 
+
+_CLIENTLIST = _descriptor.Descriptor(
+  name='ClientList',
+  full_name='ubii.clients.ClientList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='list', full_name='ubii.clients.ClientList.list', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=147,
+  serialized_end=195,
+)
+
 _CLIENT.fields_by_name['devices'].message_type = proto_dot_devices_dot_device__pb2._DEVICE
+_CLIENTLIST.fields_by_name['list'].message_type = _CLIENT
 DESCRIPTOR.message_types_by_name['Client'] = _CLIENT
+DESCRIPTOR.message_types_by_name['ClientList'] = _CLIENTLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Client = _reflection.GeneratedProtocolMessageType('Client', (_message.Message,), dict(
@@ -81,6 +114,13 @@ Client = _reflection.GeneratedProtocolMessageType('Client', (_message.Message,),
   # @@protoc_insertion_point(class_scope:ubii.clients.Client)
   ))
 _sym_db.RegisterMessage(Client)
+
+ClientList = _reflection.GeneratedProtocolMessageType('ClientList', (_message.Message,), dict(
+  DESCRIPTOR = _CLIENTLIST,
+  __module__ = 'proto.clients.client_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.clients.ClientList)
+  ))
+_sym_db.RegisterMessage(ClientList)
 
 
 # @@protoc_insertion_point(module_scope)
