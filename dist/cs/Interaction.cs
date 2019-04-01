@@ -29,12 +29,14 @@ namespace Ubii.Interactions {
             "dG8irQEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
             "GwoTcHJvY2Vzc2luZ19jYWxsYmFjaxgDIAEoCRIyCg1pbnB1dF9mb3JtYXRz",
             "GAQgAygLMhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXQSMwoOb3V0cHV0",
-            "X2Zvcm1hdHMYBSADKAsyGy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1hdGIG",
-            "cHJvdG8z"));
+            "X2Zvcm1hdHMYBSADKAsyGy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1hdCI/",
+            "Cg9JbnRlcmFjdGlvbkxpc3QSLAoEbGlzdBgBIAMoCzIeLnViaWkuaW50ZXJh",
+            "Y3Rpb25zLkludGVyYWN0aW9uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.IoFormatReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.InteractionList), global::Ubii.Interactions.InteractionList.Parser, new[]{ "List" }, null, null, null)
           }));
     }
     #endregion
@@ -258,6 +260,127 @@ namespace Ubii.Interactions {
           }
           case 42: {
             outputFormats_.AddEntriesFrom(input, _repeated_outputFormats_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class InteractionList : pb::IMessage<InteractionList> {
+    private static readonly pb::MessageParser<InteractionList> _parser = new pb::MessageParser<InteractionList>(() => new InteractionList());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<InteractionList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ubii.Interactions.InteractionReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InteractionList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InteractionList(InteractionList other) : this() {
+      list_ = other.list_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InteractionList Clone() {
+      return new InteractionList(this);
+    }
+
+    /// <summary>Field number for the "list" field.</summary>
+    public const int ListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ubii.Interactions.Interaction> _repeated_list_codec
+        = pb::FieldCodec.ForMessage(10, global::Ubii.Interactions.Interaction.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.Interactions.Interaction> list_ = new pbc::RepeatedField<global::Ubii.Interactions.Interaction>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Ubii.Interactions.Interaction> List {
+      get { return list_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as InteractionList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(InteractionList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!list_.Equals(other.list_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= list_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      list_.WriteTo(output, _repeated_list_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += list_.CalculateSize(_repeated_list_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(InteractionList other) {
+      if (other == null) {
+        return;
+      }
+      list_.Add(other.list_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            list_.AddEntriesFrom(input, _repeated_list_codec);
             break;
           }
         }

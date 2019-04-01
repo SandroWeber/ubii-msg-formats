@@ -14,3 +14,7 @@ message Device {
     repeated ubii.devices.Component components = 4;
     string client_id = 5;
 }
+
+message DeviceList {
+    repeated ubii.devices.Device list = 1;
+}

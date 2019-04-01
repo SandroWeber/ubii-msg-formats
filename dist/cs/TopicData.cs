@@ -26,14 +26,16 @@ namespace Ubii.TopicData {
           string.Concat(
             "Ch9wcm90by90b3BpY0RhdGEvdG9waWNEYXRhLnByb3RvEg51YmlpLnRvcGlj",
             "RGF0YRo1cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC90b3BpY0Rh",
-            "dGFSZWNvcmQucHJvdG8aGXByb3RvL2dlbmVyYWwvZXJyb3IucHJvdG8idwoJ",
-            "VG9waWNEYXRhEjwKEXRvcGljX2RhdGFfcmVjb3JkGAIgASgLMh8udWJpaS50",
-            "b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkSAASJAoFZXJyb3IYAyABKAsyEy51",
-            "YmlpLmdlbmVyYWwuRXJyb3JIAEIGCgR0eXBlYgZwcm90bzM="));
+            "dGFSZWNvcmQucHJvdG8aGXByb3RvL2dlbmVyYWwvZXJyb3IucHJvdG8ivgEK",
+            "CVRvcGljRGF0YRI8ChF0b3BpY19kYXRhX3JlY29yZBgCIAEoCzIfLnViaWku",
+            "dG9waWNEYXRhLlRvcGljRGF0YVJlY29yZEgAEkUKFnRvcGljX2RhdGFfcmVj",
+            "b3JkX2xpc3QYAyABKAsyIy51YmlpLnRvcGljRGF0YS5Ub3BpY0RhdGFSZWNv",
+            "cmRMaXN0SAASJAoFZXJyb3IYBCABKAsyEy51YmlpLmdlbmVyYWwuRXJyb3JI",
+            "AEIGCgR0eXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.TopicData.TopicDataRecordReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicData), global::Ubii.TopicData.TopicData.Parser, new[]{ "TopicDataRecord", "Error" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicData), global::Ubii.TopicData.TopicData.Parser, new[]{ "TopicDataRecord", "TopicDataRecordList", "Error" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -69,6 +71,9 @@ namespace Ubii.TopicData {
         case TypeOneofCase.TopicDataRecord:
           TopicDataRecord = other.TopicDataRecord.Clone();
           break;
+        case TypeOneofCase.TopicDataRecordList:
+          TopicDataRecordList = other.TopicDataRecordList.Clone();
+          break;
         case TypeOneofCase.Error:
           Error = other.Error.Clone();
           break;
@@ -93,8 +98,19 @@ namespace Ubii.TopicData {
       }
     }
 
+    /// <summary>Field number for the "topic_data_record_list" field.</summary>
+    public const int TopicDataRecordListFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.TopicData.TopicDataRecordList TopicDataRecordList {
+      get { return typeCase_ == TypeOneofCase.TopicDataRecordList ? (global::Ubii.TopicData.TopicDataRecordList) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TopicDataRecordList;
+      }
+    }
+
     /// <summary>Field number for the "error" field.</summary>
-    public const int ErrorFieldNumber = 3;
+    public const int ErrorFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.General.Error Error {
       get { return typeCase_ == TypeOneofCase.Error ? (global::Ubii.General.Error) type_ : null; }
@@ -109,7 +125,8 @@ namespace Ubii.TopicData {
     public enum TypeOneofCase {
       None = 0,
       TopicDataRecord = 2,
-      Error = 3,
+      TopicDataRecordList = 3,
+      Error = 4,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,6 +154,7 @@ namespace Ubii.TopicData {
         return true;
       }
       if (!object.Equals(TopicDataRecord, other.TopicDataRecord)) return false;
+      if (!object.Equals(TopicDataRecordList, other.TopicDataRecordList)) return false;
       if (!object.Equals(Error, other.Error)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -146,6 +164,7 @@ namespace Ubii.TopicData {
     public override int GetHashCode() {
       int hash = 1;
       if (typeCase_ == TypeOneofCase.TopicDataRecord) hash ^= TopicDataRecord.GetHashCode();
+      if (typeCase_ == TypeOneofCase.TopicDataRecordList) hash ^= TopicDataRecordList.GetHashCode();
       if (typeCase_ == TypeOneofCase.Error) hash ^= Error.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
@@ -165,8 +184,12 @@ namespace Ubii.TopicData {
         output.WriteRawTag(18);
         output.WriteMessage(TopicDataRecord);
       }
-      if (typeCase_ == TypeOneofCase.Error) {
+      if (typeCase_ == TypeOneofCase.TopicDataRecordList) {
         output.WriteRawTag(26);
+        output.WriteMessage(TopicDataRecordList);
+      }
+      if (typeCase_ == TypeOneofCase.Error) {
+        output.WriteRawTag(34);
         output.WriteMessage(Error);
       }
       if (_unknownFields != null) {
@@ -179,6 +202,9 @@ namespace Ubii.TopicData {
       int size = 0;
       if (typeCase_ == TypeOneofCase.TopicDataRecord) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicDataRecord);
+      }
+      if (typeCase_ == TypeOneofCase.TopicDataRecordList) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicDataRecordList);
       }
       if (typeCase_ == TypeOneofCase.Error) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Error);
@@ -200,6 +226,12 @@ namespace Ubii.TopicData {
             TopicDataRecord = new global::Ubii.TopicData.TopicDataRecord();
           }
           TopicDataRecord.MergeFrom(other.TopicDataRecord);
+          break;
+        case TypeOneofCase.TopicDataRecordList:
+          if (TopicDataRecordList == null) {
+            TopicDataRecordList = new global::Ubii.TopicData.TopicDataRecordList();
+          }
+          TopicDataRecordList.MergeFrom(other.TopicDataRecordList);
           break;
         case TypeOneofCase.Error:
           if (Error == null) {
@@ -230,6 +262,15 @@ namespace Ubii.TopicData {
             break;
           }
           case 26: {
+            global::Ubii.TopicData.TopicDataRecordList subBuilder = new global::Ubii.TopicData.TopicDataRecordList();
+            if (typeCase_ == TypeOneofCase.TopicDataRecordList) {
+              subBuilder.MergeFrom(TopicDataRecordList);
+            }
+            input.ReadMessage(subBuilder);
+            TopicDataRecordList = subBuilder;
+            break;
+          }
+          case 34: {
             global::Ubii.General.Error subBuilder = new global::Ubii.General.Error();
             if (typeCase_ == TypeOneofCase.Error) {
               subBuilder.MergeFrom(Error);

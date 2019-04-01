@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.topicData',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n5proto/topicData/topicDataRecord/topicDataRecord.proto\x12\x0eubii.topicData\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector3.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector4.proto\x1a>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto\x1a\x39proto/topicData/topicDataRecord/dataStructure/color.proto\"\xb9\x03\n\x0fTopicDataRecord\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x10\n\x06number\x18\x02 \x01(\x01H\x00\x12\x11\n\x07\x62oolean\x18\x03 \x01(\x08H\x00\x12\x10\n\x06string\x18\x04 \x01(\tH\x00\x12.\n\x07vector2\x18\x05 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2H\x00\x12.\n\x07vector3\x18\x06 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector3H\x00\x12.\n\x07vector4\x18\x07 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector4H\x00\x12\x34\n\nquaternion\x18\x08 \x01(\x0b\x32\x1e.ubii.dataStructure.QuaternionH\x00\x12\x32\n\tmatrix3x2\x18\t \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix3x2H\x00\x12\x32\n\tmatrix4x4\x18\n \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix4x4H\x00\x12*\n\x05\x63olor\x18\x0b \x01(\x0b\x32\x19.ubii.dataStructure.ColorH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n5proto/topicData/topicDataRecord/topicDataRecord.proto\x12\x0eubii.topicData\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector3.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector4.proto\x1a>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto\x1a\x39proto/topicData/topicDataRecord/dataStructure/color.proto\"\xb9\x03\n\x0fTopicDataRecord\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x10\n\x06number\x18\x02 \x01(\x01H\x00\x12\x11\n\x07\x62oolean\x18\x03 \x01(\x08H\x00\x12\x10\n\x06string\x18\x04 \x01(\tH\x00\x12.\n\x07vector2\x18\x05 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2H\x00\x12.\n\x07vector3\x18\x06 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector3H\x00\x12.\n\x07vector4\x18\x07 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector4H\x00\x12\x34\n\nquaternion\x18\x08 \x01(\x0b\x32\x1e.ubii.dataStructure.QuaternionH\x00\x12\x32\n\tmatrix3x2\x18\t \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix3x2H\x00\x12\x32\n\tmatrix4x4\x18\n \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix4x4H\x00\x12*\n\x05\x63olor\x18\x0b \x01(\x0b\x32\x19.ubii.dataStructure.ColorH\x00\x42\x06\n\x04type\"D\n\x13TopicDataRecordList\x12-\n\x04list\x18\x01 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3')
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector3__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_quaternion__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix3x2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix4x4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_color__pb2.DESCRIPTOR,])
 
@@ -136,6 +136,37 @@ _TOPICDATARECORD = _descriptor.Descriptor(
   serialized_end=947,
 )
 
+
+_TOPICDATARECORDLIST = _descriptor.Descriptor(
+  name='TopicDataRecordList',
+  full_name='ubii.topicData.TopicDataRecordList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='list', full_name='ubii.topicData.TopicDataRecordList.list', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=949,
+  serialized_end=1017,
+)
+
 _TOPICDATARECORD.fields_by_name['vector2'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2._VECTOR2
 _TOPICDATARECORD.fields_by_name['vector3'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector3__pb2._VECTOR3
 _TOPICDATARECORD.fields_by_name['vector4'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector4__pb2._VECTOR4
@@ -173,7 +204,9 @@ _TOPICDATARECORD.fields_by_name['matrix4x4'].containing_oneof = _TOPICDATARECORD
 _TOPICDATARECORD.oneofs_by_name['type'].fields.append(
   _TOPICDATARECORD.fields_by_name['color'])
 _TOPICDATARECORD.fields_by_name['color'].containing_oneof = _TOPICDATARECORD.oneofs_by_name['type']
+_TOPICDATARECORDLIST.fields_by_name['list'].message_type = _TOPICDATARECORD
 DESCRIPTOR.message_types_by_name['TopicDataRecord'] = _TOPICDATARECORD
+DESCRIPTOR.message_types_by_name['TopicDataRecordList'] = _TOPICDATARECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 TopicDataRecord = _reflection.GeneratedProtocolMessageType('TopicDataRecord', (_message.Message,), dict(
@@ -182,6 +215,13 @@ TopicDataRecord = _reflection.GeneratedProtocolMessageType('TopicDataRecord', (_
   # @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
   ))
 _sym_db.RegisterMessage(TopicDataRecord)
+
+TopicDataRecordList = _reflection.GeneratedProtocolMessageType('TopicDataRecordList', (_message.Message,), dict(
+  DESCRIPTOR = _TOPICDATARECORDLIST,
+  __module__ = 'proto.topicData.topicDataRecord.topicDataRecord_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecordList)
+  ))
+_sym_db.RegisterMessage(TopicDataRecordList)
 
 
 # @@protoc_insertion_point(module_scope)

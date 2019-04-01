@@ -7,6 +7,7 @@ import "proto/clients/client.proto";
 import "proto/devices/device.proto";
 import "proto/servers/server.proto";
 import "proto/sessions/session.proto";
+import "proto/interactions/interaction.proto";
 import "proto/general/stringList.proto";
 
 message ServiceReply {
@@ -17,6 +18,9 @@ message ServiceReply {
         ubii.devices.Device device = 4;
         ubii.servers.Server server = 5;
         ubii.sessions.Session session = 6;
-        ubii.general.StringList string_list = 7;
+        ubii.sessions.SessionList session_list = 7;
+        ubii.interactions.Interaction interaction = 8;
+        ubii.interactions.InteractionList interaction_list = 9;
+        ubii.general.StringList string_list = 10;
     }
 }

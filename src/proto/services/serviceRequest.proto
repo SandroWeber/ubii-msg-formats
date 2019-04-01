@@ -4,6 +4,7 @@ package ubii.services;
 import "proto/clients/client.proto";
 import "proto/devices/device.proto";
 import "proto/sessions/session.proto";
+import "proto/interactions/interaction.proto";
 import "proto/services/request/topicSubscription.proto";
 
 message ServiceRequest {
@@ -13,5 +14,8 @@ message ServiceRequest {
         ubii.devices.Device device = 3;
         ubii.services.request.TopicSubscription topic_subscription = 4;
         ubii.sessions.Session session = 5;
+        ubii.sessions.SessionList session_list = 6;
+        ubii.interactions.Interaction interaction = 7;
+        ubii.interactions.InteractionList interaction_list = 8;
     }
 }
