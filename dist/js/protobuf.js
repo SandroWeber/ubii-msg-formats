@@ -2724,28 +2724,28 @@ $root.ubii = (function() {
             return Effect;
         })();
 
-        interactions.InteractionMsg = (function() {
+        interactions.Interaction = (function() {
 
             /**
-             * Properties of an InteractionMsg.
+             * Properties of an Interaction.
              * @memberof ubii.interactions
-             * @interface IInteractionMsg
-             * @property {string|null} [id] InteractionMsg id
-             * @property {string|null} [name] InteractionMsg name
-             * @property {string|null} [processingCallback] InteractionMsg processingCallback
-             * @property {Array.<ubii.interactions.IIOFormat>|null} [inputFormats] InteractionMsg inputFormats
-             * @property {Array.<ubii.interactions.IIOFormat>|null} [outputFormats] InteractionMsg outputFormats
+             * @interface IInteraction
+             * @property {string|null} [id] Interaction id
+             * @property {string|null} [name] Interaction name
+             * @property {string|null} [processingCallback] Interaction processingCallback
+             * @property {Array.<ubii.interactions.IIOFormat>|null} [inputFormats] Interaction inputFormats
+             * @property {Array.<ubii.interactions.IIOFormat>|null} [outputFormats] Interaction outputFormats
              */
 
             /**
-             * Constructs a new InteractionMsg.
+             * Constructs a new Interaction.
              * @memberof ubii.interactions
-             * @classdesc Represents an InteractionMsg.
-             * @implements IInteractionMsg
+             * @classdesc Represents an Interaction.
+             * @implements IInteraction
              * @constructor
-             * @param {ubii.interactions.IInteractionMsg=} [properties] Properties to set
+             * @param {ubii.interactions.IInteraction=} [properties] Properties to set
              */
-            function InteractionMsg(properties) {
+            function Interaction(properties) {
                 this.inputFormats = [];
                 this.outputFormats = [];
                 if (properties)
@@ -2755,67 +2755,67 @@ $root.ubii = (function() {
             }
 
             /**
-             * InteractionMsg id.
+             * Interaction id.
              * @member {string} id
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @instance
              */
-            InteractionMsg.prototype.id = "";
+            Interaction.prototype.id = "";
 
             /**
-             * InteractionMsg name.
+             * Interaction name.
              * @member {string} name
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @instance
              */
-            InteractionMsg.prototype.name = "";
+            Interaction.prototype.name = "";
 
             /**
-             * InteractionMsg processingCallback.
+             * Interaction processingCallback.
              * @member {string} processingCallback
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @instance
              */
-            InteractionMsg.prototype.processingCallback = "";
+            Interaction.prototype.processingCallback = "";
 
             /**
-             * InteractionMsg inputFormats.
+             * Interaction inputFormats.
              * @member {Array.<ubii.interactions.IIOFormat>} inputFormats
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @instance
              */
-            InteractionMsg.prototype.inputFormats = $util.emptyArray;
+            Interaction.prototype.inputFormats = $util.emptyArray;
 
             /**
-             * InteractionMsg outputFormats.
+             * Interaction outputFormats.
              * @member {Array.<ubii.interactions.IIOFormat>} outputFormats
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @instance
              */
-            InteractionMsg.prototype.outputFormats = $util.emptyArray;
+            Interaction.prototype.outputFormats = $util.emptyArray;
 
             /**
-             * Creates a new InteractionMsg instance using the specified properties.
+             * Creates a new Interaction instance using the specified properties.
              * @function create
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
-             * @param {ubii.interactions.IInteractionMsg=} [properties] Properties to set
-             * @returns {ubii.interactions.InteractionMsg} InteractionMsg instance
+             * @param {ubii.interactions.IInteraction=} [properties] Properties to set
+             * @returns {ubii.interactions.Interaction} Interaction instance
              */
-            InteractionMsg.create = function create(properties) {
-                return new InteractionMsg(properties);
+            Interaction.create = function create(properties) {
+                return new Interaction(properties);
             };
 
             /**
-             * Encodes the specified InteractionMsg message. Does not implicitly {@link ubii.interactions.InteractionMsg.verify|verify} messages.
+             * Encodes the specified Interaction message. Does not implicitly {@link ubii.interactions.Interaction.verify|verify} messages.
              * @function encode
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
-             * @param {ubii.interactions.IInteractionMsg} message InteractionMsg message or plain object to encode
+             * @param {ubii.interactions.IInteraction} message Interaction message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            InteractionMsg.encode = function encode(message, writer) {
+            Interaction.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.id != null && message.hasOwnProperty("id"))
@@ -2834,33 +2834,33 @@ $root.ubii = (function() {
             };
 
             /**
-             * Encodes the specified InteractionMsg message, length delimited. Does not implicitly {@link ubii.interactions.InteractionMsg.verify|verify} messages.
+             * Encodes the specified Interaction message, length delimited. Does not implicitly {@link ubii.interactions.Interaction.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
-             * @param {ubii.interactions.IInteractionMsg} message InteractionMsg message or plain object to encode
+             * @param {ubii.interactions.IInteraction} message Interaction message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            InteractionMsg.encodeDelimited = function encodeDelimited(message, writer) {
+            Interaction.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes an InteractionMsg message from the specified reader or buffer.
+             * Decodes an Interaction message from the specified reader or buffer.
              * @function decode
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.interactions.InteractionMsg} InteractionMsg
+             * @returns {ubii.interactions.Interaction} Interaction
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InteractionMsg.decode = function decode(reader, length) {
+            Interaction.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.interactions.InteractionMsg();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.interactions.Interaction();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -2892,30 +2892,30 @@ $root.ubii = (function() {
             };
 
             /**
-             * Decodes an InteractionMsg message from the specified reader or buffer, length delimited.
+             * Decodes an Interaction message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.interactions.InteractionMsg} InteractionMsg
+             * @returns {ubii.interactions.Interaction} Interaction
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            InteractionMsg.decodeDelimited = function decodeDelimited(reader) {
+            Interaction.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies an InteractionMsg message.
+             * Verifies an Interaction message.
              * @function verify
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            InteractionMsg.verify = function verify(message) {
+            Interaction.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.id != null && message.hasOwnProperty("id"))
@@ -2949,17 +2949,17 @@ $root.ubii = (function() {
             };
 
             /**
-             * Creates an InteractionMsg message from a plain object. Also converts values to their respective internal types.
+             * Creates an Interaction message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.interactions.InteractionMsg} InteractionMsg
+             * @returns {ubii.interactions.Interaction} Interaction
              */
-            InteractionMsg.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.interactions.InteractionMsg)
+            Interaction.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.interactions.Interaction)
                     return object;
-                var message = new $root.ubii.interactions.InteractionMsg();
+                var message = new $root.ubii.interactions.Interaction();
                 if (object.id != null)
                     message.id = String(object.id);
                 if (object.name != null)
@@ -2968,21 +2968,21 @@ $root.ubii = (function() {
                     message.processingCallback = String(object.processingCallback);
                 if (object.inputFormats) {
                     if (!Array.isArray(object.inputFormats))
-                        throw TypeError(".ubii.interactions.InteractionMsg.inputFormats: array expected");
+                        throw TypeError(".ubii.interactions.Interaction.inputFormats: array expected");
                     message.inputFormats = [];
                     for (var i = 0; i < object.inputFormats.length; ++i) {
                         if (typeof object.inputFormats[i] !== "object")
-                            throw TypeError(".ubii.interactions.InteractionMsg.inputFormats: object expected");
+                            throw TypeError(".ubii.interactions.Interaction.inputFormats: object expected");
                         message.inputFormats[i] = $root.ubii.interactions.IOFormat.fromObject(object.inputFormats[i]);
                     }
                 }
                 if (object.outputFormats) {
                     if (!Array.isArray(object.outputFormats))
-                        throw TypeError(".ubii.interactions.InteractionMsg.outputFormats: array expected");
+                        throw TypeError(".ubii.interactions.Interaction.outputFormats: array expected");
                     message.outputFormats = [];
                     for (var i = 0; i < object.outputFormats.length; ++i) {
                         if (typeof object.outputFormats[i] !== "object")
-                            throw TypeError(".ubii.interactions.InteractionMsg.outputFormats: object expected");
+                            throw TypeError(".ubii.interactions.Interaction.outputFormats: object expected");
                         message.outputFormats[i] = $root.ubii.interactions.IOFormat.fromObject(object.outputFormats[i]);
                     }
                 }
@@ -2990,15 +2990,15 @@ $root.ubii = (function() {
             };
 
             /**
-             * Creates a plain object from an InteractionMsg message. Also converts values to other types if specified.
+             * Creates a plain object from an Interaction message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @static
-             * @param {ubii.interactions.InteractionMsg} message InteractionMsg
+             * @param {ubii.interactions.Interaction} message Interaction
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            InteractionMsg.toObject = function toObject(message, options) {
+            Interaction.toObject = function toObject(message, options) {
                 if (!options)
                     options = {};
                 var object = {};
@@ -3031,17 +3031,17 @@ $root.ubii = (function() {
             };
 
             /**
-             * Converts this InteractionMsg to JSON.
+             * Converts this Interaction to JSON.
              * @function toJSON
-             * @memberof ubii.interactions.InteractionMsg
+             * @memberof ubii.interactions.Interaction
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            InteractionMsg.prototype.toJSON = function toJSON() {
+            Interaction.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
-            return InteractionMsg;
+            return Interaction;
         })();
 
         interactions.IOFormat = (function() {
@@ -4119,7 +4119,7 @@ $root.ubii = (function() {
              * @property {ubii.devices.IDevice|null} [device] ServiceReply device
              * @property {ubii.servers.IServer|null} [server] ServiceReply server
              * @property {ubii.sessions.ISession|null} [session] ServiceReply session
-             * @property {ubii.interactions.IInteractionMsg|null} [interaction] ServiceReply interaction
+             * @property {ubii.interactions.IInteraction|null} [interaction] ServiceReply interaction
              * @property {ubii.general.IStringList|null} [stringList] ServiceReply stringList
              */
 
@@ -4188,7 +4188,7 @@ $root.ubii = (function() {
 
             /**
              * ServiceReply interaction.
-             * @member {ubii.interactions.IInteractionMsg|null|undefined} interaction
+             * @member {ubii.interactions.IInteraction|null|undefined} interaction
              * @memberof ubii.services.ServiceReply
              * @instance
              */
@@ -4253,7 +4253,7 @@ $root.ubii = (function() {
                 if (message.session != null && message.hasOwnProperty("session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.interaction != null && message.hasOwnProperty("interaction"))
-                    $root.ubii.interactions.InteractionMsg.encode(message.interaction, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.stringList != null && message.hasOwnProperty("stringList"))
                     $root.ubii.general.StringList.encode(message.stringList, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
@@ -4309,7 +4309,7 @@ $root.ubii = (function() {
                         message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
                         break;
                     case 7:
-                        message.interaction = $root.ubii.interactions.InteractionMsg.decode(reader, reader.uint32());
+                        message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
                     case 8:
                         message.stringList = $root.ubii.general.StringList.decode(reader, reader.uint32());
@@ -4413,7 +4413,7 @@ $root.ubii = (function() {
                         return "type: multiple values";
                     properties.type = 1;
                     {
-                        var error = $root.ubii.interactions.InteractionMsg.verify(message.interaction);
+                        var error = $root.ubii.interactions.Interaction.verify(message.interaction);
                         if (error)
                             return "interaction." + error;
                     }
@@ -4476,7 +4476,7 @@ $root.ubii = (function() {
                 if (object.interaction != null) {
                     if (typeof object.interaction !== "object")
                         throw TypeError(".ubii.services.ServiceReply.interaction: object expected");
-                    message.interaction = $root.ubii.interactions.InteractionMsg.fromObject(object.interaction);
+                    message.interaction = $root.ubii.interactions.Interaction.fromObject(object.interaction);
                 }
                 if (object.stringList != null) {
                     if (typeof object.stringList !== "object")
@@ -4530,7 +4530,7 @@ $root.ubii = (function() {
                         object.type = "session";
                 }
                 if (message.interaction != null && message.hasOwnProperty("interaction")) {
-                    object.interaction = $root.ubii.interactions.InteractionMsg.toObject(message.interaction, options);
+                    object.interaction = $root.ubii.interactions.Interaction.toObject(message.interaction, options);
                     if (options.oneofs)
                         object.type = "interaction";
                 }
@@ -4567,7 +4567,7 @@ $root.ubii = (function() {
              * @property {ubii.devices.IDevice|null} [device] ServiceRequest device
              * @property {ubii.services.request.ITopicSubscription|null} [topicSubscription] ServiceRequest topicSubscription
              * @property {ubii.sessions.ISession|null} [session] ServiceRequest session
-             * @property {ubii.interactions.IInteractionMsg|null} [abcde] ServiceRequest abcde
+             * @property {ubii.interactions.IInteraction|null} [interaction] ServiceRequest interaction
              */
 
             /**
@@ -4626,24 +4626,24 @@ $root.ubii = (function() {
             ServiceRequest.prototype.session = null;
 
             /**
-             * ServiceRequest abcde.
-             * @member {ubii.interactions.IInteractionMsg|null|undefined} abcde
+             * ServiceRequest interaction.
+             * @member {ubii.interactions.IInteraction|null|undefined} interaction
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
-            ServiceRequest.prototype.abcde = null;
+            ServiceRequest.prototype.interaction = null;
 
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"abcde"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"interaction"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "abcde"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "interaction"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4681,8 +4681,8 @@ $root.ubii = (function() {
                     $root.ubii.services.request.TopicSubscription.encode(message.topicSubscription, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.session != null && message.hasOwnProperty("session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.abcde != null && message.hasOwnProperty("abcde"))
-                    $root.ubii.interactions.InteractionMsg.encode(message.abcde, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.interaction != null && message.hasOwnProperty("interaction"))
+                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -4733,7 +4733,7 @@ $root.ubii = (function() {
                         message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.abcde = $root.ubii.interactions.InteractionMsg.decode(reader, reader.uint32());
+                        message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4812,14 +4812,14 @@ $root.ubii = (function() {
                             return "session." + error;
                     }
                 }
-                if (message.abcde != null && message.hasOwnProperty("abcde")) {
+                if (message.interaction != null && message.hasOwnProperty("interaction")) {
                     if (properties.type === 1)
                         return "type: multiple values";
                     properties.type = 1;
                     {
-                        var error = $root.ubii.interactions.InteractionMsg.verify(message.abcde);
+                        var error = $root.ubii.interactions.Interaction.verify(message.interaction);
                         if (error)
-                            return "abcde." + error;
+                            return "interaction." + error;
                     }
                 }
                 return null;
@@ -4859,10 +4859,10 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceRequest.session: object expected");
                     message.session = $root.ubii.sessions.Session.fromObject(object.session);
                 }
-                if (object.abcde != null) {
-                    if (typeof object.abcde !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.abcde: object expected");
-                    message.abcde = $root.ubii.interactions.InteractionMsg.fromObject(object.abcde);
+                if (object.interaction != null) {
+                    if (typeof object.interaction !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.interaction: object expected");
+                    message.interaction = $root.ubii.interactions.Interaction.fromObject(object.interaction);
                 }
                 return message;
             };
@@ -4904,10 +4904,10 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "session";
                 }
-                if (message.abcde != null && message.hasOwnProperty("abcde")) {
-                    object.abcde = $root.ubii.interactions.InteractionMsg.toObject(message.abcde, options);
+                if (message.interaction != null && message.hasOwnProperty("interaction")) {
+                    object.interaction = $root.ubii.interactions.Interaction.toObject(message.interaction, options);
                     if (options.oneofs)
-                        object.type = "abcde";
+                        object.type = "interaction";
                 }
                 return object;
             };
@@ -5237,7 +5237,7 @@ $root.ubii = (function() {
              * @interface ISession
              * @property {string|null} [id] Session id
              * @property {string|null} [name] Session name
-             * @property {Array.<ubii.interactions.IInteractionMsg>|null} [interactions] Session interactions
+             * @property {Array.<ubii.interactions.IInteraction>|null} [interactions] Session interactions
              * @property {Array.<ubii.sessions.IIOMapping>|null} [ioMappings] Session ioMappings
              */
 
@@ -5276,7 +5276,7 @@ $root.ubii = (function() {
 
             /**
              * Session interactions.
-             * @member {Array.<ubii.interactions.IInteractionMsg>} interactions
+             * @member {Array.<ubii.interactions.IInteraction>} interactions
              * @memberof ubii.sessions.Session
              * @instance
              */
@@ -5320,7 +5320,7 @@ $root.ubii = (function() {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.interactions != null && message.interactions.length)
                     for (var i = 0; i < message.interactions.length; ++i)
-                        $root.ubii.interactions.InteractionMsg.encode(message.interactions[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.ubii.interactions.Interaction.encode(message.interactions[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.ioMappings != null && message.ioMappings.length)
                     for (var i = 0; i < message.ioMappings.length; ++i)
                         $root.ubii.sessions.IOMapping.encode(message.ioMappings[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
@@ -5367,7 +5367,7 @@ $root.ubii = (function() {
                     case 3:
                         if (!(message.interactions && message.interactions.length))
                             message.interactions = [];
-                        message.interactions.push($root.ubii.interactions.InteractionMsg.decode(reader, reader.uint32()));
+                        message.interactions.push($root.ubii.interactions.Interaction.decode(reader, reader.uint32()));
                         break;
                     case 4:
                         if (!(message.ioMappings && message.ioMappings.length))
@@ -5419,7 +5419,7 @@ $root.ubii = (function() {
                     if (!Array.isArray(message.interactions))
                         return "interactions: array expected";
                     for (var i = 0; i < message.interactions.length; ++i) {
-                        var error = $root.ubii.interactions.InteractionMsg.verify(message.interactions[i]);
+                        var error = $root.ubii.interactions.Interaction.verify(message.interactions[i]);
                         if (error)
                             return "interactions." + error;
                     }
@@ -5459,7 +5459,7 @@ $root.ubii = (function() {
                     for (var i = 0; i < object.interactions.length; ++i) {
                         if (typeof object.interactions[i] !== "object")
                             throw TypeError(".ubii.sessions.Session.interactions: object expected");
-                        message.interactions[i] = $root.ubii.interactions.InteractionMsg.fromObject(object.interactions[i]);
+                        message.interactions[i] = $root.ubii.interactions.Interaction.fromObject(object.interactions[i]);
                     }
                 }
                 if (object.ioMappings) {
@@ -5503,7 +5503,7 @@ $root.ubii = (function() {
                 if (message.interactions && message.interactions.length) {
                     object.interactions = [];
                     for (var j = 0; j < message.interactions.length; ++j)
-                        object.interactions[j] = $root.ubii.interactions.InteractionMsg.toObject(message.interactions[j], options);
+                        object.interactions[j] = $root.ubii.interactions.Interaction.toObject(message.interactions[j], options);
                 }
                 if (message.ioMappings && message.ioMappings.length) {
                     object.ioMappings = [];

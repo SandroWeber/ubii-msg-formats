@@ -26,26 +26,26 @@ namespace Ubii.Interactions {
           string.Concat(
             "CiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8SEXViaWku",
             "aW50ZXJhY3Rpb25zGiFwcm90by9pbnRlcmFjdGlvbnMvaW9Gb3JtYXQucHJv",
-            "dG8isAEKDkludGVyYWN0aW9uTXNnEgoKAmlkGAEgASgJEgwKBG5hbWUYAiAB",
-            "KAkSGwoTcHJvY2Vzc2luZ19jYWxsYmFjaxgDIAEoCRIyCg1pbnB1dF9mb3Jt",
-            "YXRzGAQgAygLMhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXQSMwoOb3V0",
-            "cHV0X2Zvcm1hdHMYBSADKAsyGy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1h",
-            "dGIGcHJvdG8z"));
+            "dG8irQEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
+            "GwoTcHJvY2Vzc2luZ19jYWxsYmFjaxgDIAEoCRIyCg1pbnB1dF9mb3JtYXRz",
+            "GAQgAygLMhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXQSMwoOb3V0cHV0",
+            "X2Zvcm1hdHMYBSADKAsyGy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1hdGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.IoFormatReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.InteractionMsg), global::Ubii.Interactions.InteractionMsg.Parser, new[]{ "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class InteractionMsg : pb::IMessage<InteractionMsg> {
-    private static readonly pb::MessageParser<InteractionMsg> _parser = new pb::MessageParser<InteractionMsg>(() => new InteractionMsg());
+  public sealed partial class Interaction : pb::IMessage<Interaction> {
+    private static readonly pb::MessageParser<Interaction> _parser = new pb::MessageParser<Interaction>(() => new Interaction());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<InteractionMsg> Parser { get { return _parser; } }
+    public static pb::MessageParser<Interaction> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -58,14 +58,14 @@ namespace Ubii.Interactions {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InteractionMsg() {
+    public Interaction() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InteractionMsg(InteractionMsg other) : this() {
+    public Interaction(Interaction other) : this() {
       id_ = other.id_;
       name_ = other.name_;
       processingCallback_ = other.processingCallback_;
@@ -75,8 +75,8 @@ namespace Ubii.Interactions {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InteractionMsg Clone() {
-      return new InteractionMsg(this);
+    public Interaction Clone() {
+      return new Interaction(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -134,11 +134,11 @@ namespace Ubii.Interactions {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as InteractionMsg);
+      return Equals(other as Interaction);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(InteractionMsg other) {
+    public bool Equals(Interaction other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -214,7 +214,7 @@ namespace Ubii.Interactions {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(InteractionMsg other) {
+    public void MergeFrom(Interaction other) {
       if (other == null) {
         return;
       }

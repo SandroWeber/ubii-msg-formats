@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.sessions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\x8b\x01\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x37\n\x0cinteractions\x18\x03 \x03(\x0b\x32!.ubii.interactions.InteractionMsg\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMappingb\x06proto3')
+  serialized_pb=_b('\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\x88\x01\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0cinteractions\x18\x03 \x03(\x0b\x32\x1e.ubii.interactions.Interaction\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMappingb\x06proto3')
   ,
   dependencies=[proto_dot_interactions_dot_interaction__pb2.DESCRIPTOR,proto_dot_sessions_dot_ioMapping__pb2.DESCRIPTOR,])
 
@@ -76,10 +76,10 @@ _SESSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=118,
-  serialized_end=257,
+  serialized_end=254,
 )
 
-_SESSION.fields_by_name['interactions'].message_type = proto_dot_interactions_dot_interaction__pb2._INTERACTIONMSG
+_SESSION.fields_by_name['interactions'].message_type = proto_dot_interactions_dot_interaction__pb2._INTERACTION
 _SESSION.fields_by_name['io_mappings'].message_type = proto_dot_sessions_dot_ioMapping__pb2._IOMAPPING
 DESCRIPTOR.message_types_by_name['Session'] = _SESSION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

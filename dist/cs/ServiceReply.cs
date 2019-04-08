@@ -30,15 +30,15 @@ namespace Ubii.Services {
             "GnByb3RvL2RldmljZXMvZGV2aWNlLnByb3RvGhpwcm90by9zZXJ2ZXJzL3Nl",
             "cnZlci5wcm90bxoccHJvdG8vc2Vzc2lvbnMvc2Vzc2lvbi5wcm90bxokcHJv",
             "dG8vaW50ZXJhY3Rpb25zL2ludGVyYWN0aW9uLnByb3RvGh5wcm90by9nZW5l",
-            "cmFsL3N0cmluZ0xpc3QucHJvdG8i9AIKDFNlcnZpY2VSZXBseRIoCgdzdWNj",
+            "cmFsL3N0cmluZ0xpc3QucHJvdG8i8QIKDFNlcnZpY2VSZXBseRIoCgdzdWNj",
             "ZXNzGAEgASgLMhUudWJpaS5nZW5lcmFsLlN1Y2Nlc3NIABIkCgVlcnJvchgC",
             "IAEoCzITLnViaWkuZ2VuZXJhbC5FcnJvckgAEiYKBmNsaWVudBgDIAEoCzIU",
             "LnViaWkuY2xpZW50cy5DbGllbnRIABImCgZkZXZpY2UYBCABKAsyFC51Ymlp",
             "LmRldmljZXMuRGV2aWNlSAASJgoGc2VydmVyGAUgASgLMhQudWJpaS5zZXJ2",
             "ZXJzLlNlcnZlckgAEikKB3Nlc3Npb24YBiABKAsyFi51YmlpLnNlc3Npb25z",
-            "LlNlc3Npb25IABI4CgtpbnRlcmFjdGlvbhgHIAEoCzIhLnViaWkuaW50ZXJh",
-            "Y3Rpb25zLkludGVyYWN0aW9uTXNnSAASLwoLc3RyaW5nX2xpc3QYCCABKAsy",
-            "GC51YmlpLmdlbmVyYWwuU3RyaW5nTGlzdEgAQgYKBHR5cGViBnByb3RvMw=="));
+            "LlNlc3Npb25IABI1CgtpbnRlcmFjdGlvbhgHIAEoCzIeLnViaWkuaW50ZXJh",
+            "Y3Rpb25zLkludGVyYWN0aW9uSAASLwoLc3RyaW5nX2xpc3QYCCABKAsyGC51",
+            "YmlpLmdlbmVyYWwuU3RyaW5nTGlzdEgAQgYKBHR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, global::Ubii.General.StringListReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -178,8 +178,8 @@ namespace Ubii.Services {
     /// <summary>Field number for the "interaction" field.</summary>
     public const int InteractionFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Interactions.InteractionMsg Interaction {
-      get { return typeCase_ == TypeOneofCase.Interaction ? (global::Ubii.Interactions.InteractionMsg) type_ : null; }
+    public global::Ubii.Interactions.Interaction Interaction {
+      get { return typeCase_ == TypeOneofCase.Interaction ? (global::Ubii.Interactions.Interaction) type_ : null; }
       set {
         type_ = value;
         typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Interaction;
@@ -386,7 +386,7 @@ namespace Ubii.Services {
           break;
         case TypeOneofCase.Interaction:
           if (Interaction == null) {
-            Interaction = new global::Ubii.Interactions.InteractionMsg();
+            Interaction = new global::Ubii.Interactions.Interaction();
           }
           Interaction.MergeFrom(other.Interaction);
           break;
@@ -464,7 +464,7 @@ namespace Ubii.Services {
             break;
           }
           case 58: {
-            global::Ubii.Interactions.InteractionMsg subBuilder = new global::Ubii.Interactions.InteractionMsg();
+            global::Ubii.Interactions.Interaction subBuilder = new global::Ubii.Interactions.Interaction();
             if (typeCase_ == TypeOneofCase.Interaction) {
               subBuilder.MergeFrom(Interaction);
             }

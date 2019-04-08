@@ -26,10 +26,10 @@ namespace Ubii.Sessions {
           string.Concat(
             "Chxwcm90by9zZXNzaW9ucy9zZXNzaW9uLnByb3RvEg11YmlpLnNlc3Npb25z",
             "GiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8aHnByb3Rv",
-            "L3Nlc3Npb25zL2lvTWFwcGluZy5wcm90byKLAQoHU2Vzc2lvbhIKCgJpZBgB",
-            "IAEoCRIMCgRuYW1lGAIgASgJEjcKDGludGVyYWN0aW9ucxgDIAMoCzIhLnVi",
-            "aWkuaW50ZXJhY3Rpb25zLkludGVyYWN0aW9uTXNnEi0KC2lvX21hcHBpbmdz",
-            "GAQgAygLMhgudWJpaS5zZXNzaW9ucy5JT01hcHBpbmdiBnByb3RvMw=="));
+            "L3Nlc3Npb25zL2lvTWFwcGluZy5wcm90byKIAQoHU2Vzc2lvbhIKCgJpZBgB",
+            "IAEoCRIMCgRuYW1lGAIgASgJEjQKDGludGVyYWN0aW9ucxgDIAMoCzIeLnVi",
+            "aWkuaW50ZXJhY3Rpb25zLkludGVyYWN0aW9uEi0KC2lvX21hcHBpbmdzGAQg",
+            "AygLMhgudWJpaS5zZXNzaW9ucy5JT01hcHBpbmdiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.InteractionReflection.Descriptor, global::Ubii.Sessions.IoMappingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,11 +101,11 @@ namespace Ubii.Sessions {
 
     /// <summary>Field number for the "interactions" field.</summary>
     public const int InteractionsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Ubii.Interactions.InteractionMsg> _repeated_interactions_codec
-        = pb::FieldCodec.ForMessage(26, global::Ubii.Interactions.InteractionMsg.Parser);
-    private readonly pbc::RepeatedField<global::Ubii.Interactions.InteractionMsg> interactions_ = new pbc::RepeatedField<global::Ubii.Interactions.InteractionMsg>();
+    private static readonly pb::FieldCodec<global::Ubii.Interactions.Interaction> _repeated_interactions_codec
+        = pb::FieldCodec.ForMessage(26, global::Ubii.Interactions.Interaction.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.Interactions.Interaction> interactions_ = new pbc::RepeatedField<global::Ubii.Interactions.Interaction>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Ubii.Interactions.InteractionMsg> Interactions {
+    public pbc::RepeatedField<global::Ubii.Interactions.Interaction> Interactions {
       get { return interactions_; }
     }
 

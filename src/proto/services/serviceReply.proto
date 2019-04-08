@@ -18,7 +18,7 @@ message ServiceReply {
         ubii.devices.Device device = 4;
         ubii.servers.Server server = 5;
         ubii.sessions.Session session = 6;
-        ubii.interactions.InteractionMsg interaction = 7;
+        ubii.interactions.Interaction interaction = 7;
         ubii.general.StringList string_list = 8;
     }
 }
