@@ -1,6 +1,6 @@
 {
   "name": "@tum-far/ubii-msg-formats",
-  "version": "0.8.11",
+  "version": "0.8.12",
   "description": "",
   "main": "src/js/index.js",
   "repository": "https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-formats",
