@@ -43,7 +43,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6]];
 
 /**
  * @enum {number}
@@ -54,8 +54,7 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   DEVICE: 3,
   TOPIC_SUBSCRIPTION: 4,
   SESSION: 5,
-  SESSION_LIST: 6,
-  INTERACTION: 7
+  INTERACTION: 6
 };
 
 /**
@@ -99,7 +98,6 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     device: (f = msg.getDevice()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
     topicSubscription: (f = msg.getTopicSubscription()) && proto_services_request_topicSubscription_pb.TopicSubscription.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
-    sessionList: (f = msg.getSessionList()) && proto_sessions_session_pb.SessionList.toObject(includeInstance, f),
     interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f)
   };
 
@@ -162,11 +160,6 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       msg.setSession(value);
       break;
     case 6:
-      var value = new proto_sessions_session_pb.SessionList;
-      reader.readMessage(value,proto_sessions_session_pb.SessionList.deserializeBinaryFromReader);
-      msg.setSessionList(value);
-      break;
-    case 7:
       var value = new proto_interactions_interaction_pb.Interaction;
       reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
       msg.setInteraction(value);
@@ -239,18 +232,10 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       proto_sessions_session_pb.Session.serializeBinaryToWriter
     );
   }
-  f = message.getSessionList();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      proto_sessions_session_pb.SessionList.serializeBinaryToWriter
-    );
-  }
   f = message.getInteraction();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
     );
@@ -394,48 +379,18 @@ proto.ubii.services.ServiceRequest.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.sessions.SessionList session_list = 6;
- * @return {?proto.ubii.sessions.SessionList}
- */
-proto.ubii.services.ServiceRequest.prototype.getSessionList = function() {
-  return /** @type{?proto.ubii.sessions.SessionList} */ (
-    jspb.Message.getWrapperField(this, proto_sessions_session_pb.SessionList, 6));
-};
-
-
-/** @param {?proto.ubii.sessions.SessionList|undefined} value */
-proto.ubii.services.ServiceRequest.prototype.setSessionList = function(value) {
-  jspb.Message.setOneofWrapperField(this, 6, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
-};
-
-
-proto.ubii.services.ServiceRequest.prototype.clearSessionList = function() {
-  this.setSessionList(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.services.ServiceRequest.prototype.hasSessionList = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional ubii.interactions.Interaction interaction = 7;
+ * optional ubii.interactions.Interaction interaction = 6;
  * @return {?proto.ubii.interactions.Interaction}
  */
 proto.ubii.services.ServiceRequest.prototype.getInteraction = function() {
   return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 7));
+    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 6));
 };
 
 
 /** @param {?proto.ubii.interactions.Interaction|undefined} value */
 proto.ubii.services.ServiceRequest.prototype.setInteraction = function(value) {
-  jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 6, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };
 
 
@@ -449,7 +404,7 @@ proto.ubii.services.ServiceRequest.prototype.clearInteraction = function() {
  * @return {!boolean}
  */
 proto.ubii.services.ServiceRequest.prototype.hasInteraction = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -46,7 +46,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8]];
 
 /**
  * @enum {number}
@@ -59,9 +59,8 @@ proto.ubii.services.ServiceReply.TypeCase = {
   DEVICE: 4,
   SERVER: 5,
   SESSION: 6,
-  SESSION_LIST: 7,
-  INTERACTION: 8,
-  STRING_LIST: 9
+  INTERACTION: 7,
+  STRING_LIST: 8
 };
 
 /**
@@ -106,7 +105,6 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     device: (f = msg.getDevice()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
     server: (f = msg.getServer()) && proto_servers_server_pb.Server.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
-    sessionList: (f = msg.getSessionList()) && proto_sessions_session_pb.SessionList.toObject(includeInstance, f),
     interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f),
     stringList: (f = msg.getStringList()) && proto_general_stringList_pb.StringList.toObject(includeInstance, f)
   };
@@ -176,16 +174,11 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       msg.setSession(value);
       break;
     case 7:
-      var value = new proto_sessions_session_pb.SessionList;
-      reader.readMessage(value,proto_sessions_session_pb.SessionList.deserializeBinaryFromReader);
-      msg.setSessionList(value);
-      break;
-    case 8:
       var value = new proto_interactions_interaction_pb.Interaction;
       reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
       msg.setInteraction(value);
       break;
-    case 9:
+    case 8:
       var value = new proto_general_stringList_pb.StringList;
       reader.readMessage(value,proto_general_stringList_pb.StringList.deserializeBinaryFromReader);
       msg.setStringList(value);
@@ -267,18 +260,10 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto_sessions_session_pb.Session.serializeBinaryToWriter
     );
   }
-  f = message.getSessionList();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      proto_sessions_session_pb.SessionList.serializeBinaryToWriter
-    );
-  }
   f = message.getInteraction();
   if (f != null) {
     writer.writeMessage(
-      8,
+      7,
       f,
       proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
     );
@@ -286,7 +271,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
   f = message.getStringList();
   if (f != null) {
     writer.writeMessage(
-      9,
+      8,
       f,
       proto_general_stringList_pb.StringList.serializeBinaryToWriter
     );
@@ -475,48 +460,18 @@ proto.ubii.services.ServiceReply.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.sessions.SessionList session_list = 7;
- * @return {?proto.ubii.sessions.SessionList}
- */
-proto.ubii.services.ServiceReply.prototype.getSessionList = function() {
-  return /** @type{?proto.ubii.sessions.SessionList} */ (
-    jspb.Message.getWrapperField(this, proto_sessions_session_pb.SessionList, 7));
-};
-
-
-/** @param {?proto.ubii.sessions.SessionList|undefined} value */
-proto.ubii.services.ServiceReply.prototype.setSessionList = function(value) {
-  jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
-};
-
-
-proto.ubii.services.ServiceReply.prototype.clearSessionList = function() {
-  this.setSessionList(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.services.ServiceReply.prototype.hasSessionList = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional ubii.interactions.Interaction interaction = 8;
+ * optional ubii.interactions.Interaction interaction = 7;
  * @return {?proto.ubii.interactions.Interaction}
  */
 proto.ubii.services.ServiceReply.prototype.getInteraction = function() {
   return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 8));
+    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 7));
 };
 
 
 /** @param {?proto.ubii.interactions.Interaction|undefined} value */
 proto.ubii.services.ServiceReply.prototype.setInteraction = function(value) {
-  jspb.Message.setOneofWrapperField(this, 8, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
@@ -530,23 +485,23 @@ proto.ubii.services.ServiceReply.prototype.clearInteraction = function() {
  * @return {!boolean}
  */
 proto.ubii.services.ServiceReply.prototype.hasInteraction = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional ubii.general.StringList string_list = 9;
+ * optional ubii.general.StringList string_list = 8;
  * @return {?proto.ubii.general.StringList}
  */
 proto.ubii.services.ServiceReply.prototype.getStringList = function() {
   return /** @type{?proto.ubii.general.StringList} */ (
-    jspb.Message.getWrapperField(this, proto_general_stringList_pb.StringList, 9));
+    jspb.Message.getWrapperField(this, proto_general_stringList_pb.StringList, 8));
 };
 
 
 /** @param {?proto.ubii.general.StringList|undefined} value */
 proto.ubii.services.ServiceReply.prototype.setStringList = function(value) {
-  jspb.Message.setOneofWrapperField(this, 9, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 8, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
@@ -560,7 +515,7 @@ proto.ubii.services.ServiceReply.prototype.clearStringList = function() {
  * @return {!boolean}
  */
 proto.ubii.services.ServiceReply.prototype.hasStringList = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

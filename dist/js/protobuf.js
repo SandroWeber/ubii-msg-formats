@@ -4119,7 +4119,6 @@ $root.ubii = (function() {
              * @property {ubii.devices.IDevice|null} [device] ServiceReply device
              * @property {ubii.servers.IServer|null} [server] ServiceReply server
              * @property {ubii.sessions.ISession|null} [session] ServiceReply session
-             * @property {ubii.sessions.ISessionList|null} [sessionList] ServiceReply sessionList
              * @property {ubii.interactions.IInteraction|null} [interaction] ServiceReply interaction
              * @property {ubii.general.IStringList|null} [stringList] ServiceReply stringList
              */
@@ -4188,14 +4187,6 @@ $root.ubii = (function() {
             ServiceReply.prototype.session = null;
 
             /**
-             * ServiceReply sessionList.
-             * @member {ubii.sessions.ISessionList|null|undefined} sessionList
-             * @memberof ubii.services.ServiceReply
-             * @instance
-             */
-            ServiceReply.prototype.sessionList = null;
-
-            /**
              * ServiceReply interaction.
              * @member {ubii.interactions.IInteraction|null|undefined} interaction
              * @memberof ubii.services.ServiceReply
@@ -4216,12 +4207,12 @@ $root.ubii = (function() {
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"stringList"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"interaction"|"stringList"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "stringList"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "interaction", "stringList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4261,12 +4252,10 @@ $root.ubii = (function() {
                     $root.ubii.servers.Server.encode(message.server, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.session != null && message.hasOwnProperty("session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.sessionList != null && message.hasOwnProperty("sessionList"))
-                    $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.interaction != null && message.hasOwnProperty("interaction"))
-                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.stringList != null && message.hasOwnProperty("stringList"))
-                    $root.ubii.general.StringList.encode(message.stringList, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                    $root.ubii.general.StringList.encode(message.stringList, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -4320,12 +4309,9 @@ $root.ubii = (function() {
                         message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
                         break;
                     case 7:
-                        message.sessionList = $root.ubii.sessions.SessionList.decode(reader, reader.uint32());
-                        break;
-                    case 8:
                         message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
-                    case 9:
+                    case 8:
                         message.stringList = $root.ubii.general.StringList.decode(reader, reader.uint32());
                         break;
                     default:
@@ -4422,16 +4408,6 @@ $root.ubii = (function() {
                             return "session." + error;
                     }
                 }
-                if (message.sessionList != null && message.hasOwnProperty("sessionList")) {
-                    if (properties.type === 1)
-                        return "type: multiple values";
-                    properties.type = 1;
-                    {
-                        var error = $root.ubii.sessions.SessionList.verify(message.sessionList);
-                        if (error)
-                            return "sessionList." + error;
-                    }
-                }
                 if (message.interaction != null && message.hasOwnProperty("interaction")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -4497,11 +4473,6 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceReply.session: object expected");
                     message.session = $root.ubii.sessions.Session.fromObject(object.session);
                 }
-                if (object.sessionList != null) {
-                    if (typeof object.sessionList !== "object")
-                        throw TypeError(".ubii.services.ServiceReply.sessionList: object expected");
-                    message.sessionList = $root.ubii.sessions.SessionList.fromObject(object.sessionList);
-                }
                 if (object.interaction != null) {
                     if (typeof object.interaction !== "object")
                         throw TypeError(".ubii.services.ServiceReply.interaction: object expected");
@@ -4558,11 +4529,6 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "session";
                 }
-                if (message.sessionList != null && message.hasOwnProperty("sessionList")) {
-                    object.sessionList = $root.ubii.sessions.SessionList.toObject(message.sessionList, options);
-                    if (options.oneofs)
-                        object.type = "sessionList";
-                }
                 if (message.interaction != null && message.hasOwnProperty("interaction")) {
                     object.interaction = $root.ubii.interactions.Interaction.toObject(message.interaction, options);
                     if (options.oneofs)
@@ -4601,7 +4567,6 @@ $root.ubii = (function() {
              * @property {ubii.devices.IDevice|null} [device] ServiceRequest device
              * @property {ubii.services.request.ITopicSubscription|null} [topicSubscription] ServiceRequest topicSubscription
              * @property {ubii.sessions.ISession|null} [session] ServiceRequest session
-             * @property {ubii.sessions.ISessionList|null} [sessionList] ServiceRequest sessionList
              * @property {ubii.interactions.IInteraction|null} [interaction] ServiceRequest interaction
              */
 
@@ -4661,14 +4626,6 @@ $root.ubii = (function() {
             ServiceRequest.prototype.session = null;
 
             /**
-             * ServiceRequest sessionList.
-             * @member {ubii.sessions.ISessionList|null|undefined} sessionList
-             * @memberof ubii.services.ServiceRequest
-             * @instance
-             */
-            ServiceRequest.prototype.sessionList = null;
-
-            /**
              * ServiceRequest interaction.
              * @member {ubii.interactions.IInteraction|null|undefined} interaction
              * @memberof ubii.services.ServiceRequest
@@ -4681,12 +4638,12 @@ $root.ubii = (function() {
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"interaction"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "interaction"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4724,10 +4681,8 @@ $root.ubii = (function() {
                     $root.ubii.services.request.TopicSubscription.encode(message.topicSubscription, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.session != null && message.hasOwnProperty("session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.sessionList != null && message.hasOwnProperty("sessionList"))
-                    $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.interaction != null && message.hasOwnProperty("interaction"))
-                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -4778,9 +4733,6 @@ $root.ubii = (function() {
                         message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.sessionList = $root.ubii.sessions.SessionList.decode(reader, reader.uint32());
-                        break;
-                    case 7:
                         message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
                     default:
@@ -4860,16 +4812,6 @@ $root.ubii = (function() {
                             return "session." + error;
                     }
                 }
-                if (message.sessionList != null && message.hasOwnProperty("sessionList")) {
-                    if (properties.type === 1)
-                        return "type: multiple values";
-                    properties.type = 1;
-                    {
-                        var error = $root.ubii.sessions.SessionList.verify(message.sessionList);
-                        if (error)
-                            return "sessionList." + error;
-                    }
-                }
                 if (message.interaction != null && message.hasOwnProperty("interaction")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -4917,11 +4859,6 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceRequest.session: object expected");
                     message.session = $root.ubii.sessions.Session.fromObject(object.session);
                 }
-                if (object.sessionList != null) {
-                    if (typeof object.sessionList !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.sessionList: object expected");
-                    message.sessionList = $root.ubii.sessions.SessionList.fromObject(object.sessionList);
-                }
                 if (object.interaction != null) {
                     if (typeof object.interaction !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.interaction: object expected");
@@ -4966,11 +4903,6 @@ $root.ubii = (function() {
                     object.session = $root.ubii.sessions.Session.toObject(message.session, options);
                     if (options.oneofs)
                         object.type = "session";
-                }
-                if (message.sessionList != null && message.hasOwnProperty("sessionList")) {
-                    object.sessionList = $root.ubii.sessions.SessionList.toObject(message.sessionList, options);
-                    if (options.oneofs)
-                        object.type = "sessionList";
                 }
                 if (message.interaction != null && message.hasOwnProperty("interaction")) {
                     object.interaction = $root.ubii.interactions.Interaction.toObject(message.interaction, options);
@@ -5593,214 +5525,6 @@ $root.ubii = (function() {
             };
 
             return Session;
-        })();
-
-        sessions.SessionList = (function() {
-
-            /**
-             * Properties of a SessionList.
-             * @memberof ubii.sessions
-             * @interface ISessionList
-             * @property {Array.<ubii.sessions.ISession>|null} [list] SessionList list
-             */
-
-            /**
-             * Constructs a new SessionList.
-             * @memberof ubii.sessions
-             * @classdesc Represents a SessionList.
-             * @implements ISessionList
-             * @constructor
-             * @param {ubii.sessions.ISessionList=} [properties] Properties to set
-             */
-            function SessionList(properties) {
-                this.list = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * SessionList list.
-             * @member {Array.<ubii.sessions.ISession>} list
-             * @memberof ubii.sessions.SessionList
-             * @instance
-             */
-            SessionList.prototype.list = $util.emptyArray;
-
-            /**
-             * Creates a new SessionList instance using the specified properties.
-             * @function create
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {ubii.sessions.ISessionList=} [properties] Properties to set
-             * @returns {ubii.sessions.SessionList} SessionList instance
-             */
-            SessionList.create = function create(properties) {
-                return new SessionList(properties);
-            };
-
-            /**
-             * Encodes the specified SessionList message. Does not implicitly {@link ubii.sessions.SessionList.verify|verify} messages.
-             * @function encode
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {ubii.sessions.ISessionList} message SessionList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            SessionList.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.list != null && message.list.length)
-                    for (var i = 0; i < message.list.length; ++i)
-                        $root.ubii.sessions.Session.encode(message.list[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Encodes the specified SessionList message, length delimited. Does not implicitly {@link ubii.sessions.SessionList.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {ubii.sessions.ISessionList} message SessionList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            SessionList.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a SessionList message from the specified reader or buffer.
-             * @function decode
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.sessions.SessionList} SessionList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            SessionList.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.sessions.SessionList();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.list && message.list.length))
-                            message.list = [];
-                        message.list.push($root.ubii.sessions.Session.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a SessionList message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.sessions.SessionList} SessionList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            SessionList.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a SessionList message.
-             * @function verify
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            SessionList.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.list != null && message.hasOwnProperty("list")) {
-                    if (!Array.isArray(message.list))
-                        return "list: array expected";
-                    for (var i = 0; i < message.list.length; ++i) {
-                        var error = $root.ubii.sessions.Session.verify(message.list[i]);
-                        if (error)
-                            return "list." + error;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Creates a SessionList message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.sessions.SessionList} SessionList
-             */
-            SessionList.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.sessions.SessionList)
-                    return object;
-                var message = new $root.ubii.sessions.SessionList();
-                if (object.list) {
-                    if (!Array.isArray(object.list))
-                        throw TypeError(".ubii.sessions.SessionList.list: array expected");
-                    message.list = [];
-                    for (var i = 0; i < object.list.length; ++i) {
-                        if (typeof object.list[i] !== "object")
-                            throw TypeError(".ubii.sessions.SessionList.list: object expected");
-                        message.list[i] = $root.ubii.sessions.Session.fromObject(object.list[i]);
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a SessionList message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof ubii.sessions.SessionList
-             * @static
-             * @param {ubii.sessions.SessionList} message SessionList
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            SessionList.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.arrays || options.defaults)
-                    object.list = [];
-                if (message.list && message.list.length) {
-                    object.list = [];
-                    for (var j = 0; j < message.list.length; ++j)
-                        object.list[j] = $root.ubii.sessions.Session.toObject(message.list[j], options);
-                }
-                return object;
-            };
-
-            /**
-             * Converts this SessionList to JSON.
-             * @function toJSON
-             * @memberof ubii.sessions.SessionList
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            SessionList.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return SessionList;
         })();
 
         return sessions;
