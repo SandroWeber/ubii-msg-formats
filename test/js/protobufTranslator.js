@@ -7,6 +7,25 @@ const {ProtobufTranslator, MSG_TYPES, DEFAULT_TOPICS} = require('../../src/js/in
 test.beforeEach(t => {
   t.context.msgTypeUndefined = 'ubii.service.reply.SomethingUndefined';
 
+  let client = {
+    id: 'clientID',
+    name: 'client name'
+  };
+
+  let interaction = {
+    id: 'interactionID',
+    name: 'interaction name',
+    processingCallback: '() => {};',
+    inputFormats: [
+      {internalName: 'internal_input_1', messageFormat: 'ubii.message.format.1'},
+      {internalName: 'internal_input_2', messageFormat: 'ubii.message.format.2'}
+    ],
+    outputFormats: [
+      {internalName: 'internal_output_1', messageFormat: 'ubii.message.format.3'},
+      {internalName: 'internal_output_2', messageFormat: 'ubii.message.format.4'}
+    ]
+  };
+
   t.context.messages = [
     {
       type: MSG_TYPES.ERROR,
@@ -20,20 +39,24 @@ test.beforeEach(t => {
       type: MSG_TYPES.SERVICE_REQUEST,
       validPayload: {
         topic: DEFAULT_TOPICS.SERVICES.CLIENT_REGISTRATION,
-        client: {
-          id: 'clientID',
-          name: 'client name'
-        }
-      }
+        client: client
+      },
+      oneofTypeExpected: 'client'
+    },
+    {
+      type: MSG_TYPES.SERVICE_REQUEST,
+      validPayload: {
+        topic: DEFAULT_TOPICS.SERVICES.CLIENT_REGISTRATION,
+        interaction: interaction
+      },
+      oneofTypeExpected: 'interaction'
     },
     {
       type: MSG_TYPES.SERVICE_REPLY,
       validPayload: {
-        client: {
-          name: 'awesomeDeviceName',
-          id: 'uuid'
-        }
-      }
+        client: client
+      },
+      oneofTypeExpected: 'client'
     },
     {
       type: MSG_TYPES.TOPIC_DATA,
@@ -46,7 +69,8 @@ test.beforeEach(t => {
             z: 567.000678
           }
         }
-      }
+      },
+      oneofTypeExpected: 'topicDataRecord'
     }
   ]
 });
@@ -66,8 +90,9 @@ test('createBufferFromMessage() -> createMessageFromBuffer()', t => {
   t.context.messages.forEach((msg) => {
     let translator = new ProtobufTranslator(msg.type);
     let message = translator.createMessageFromPayload(msg.validPayload);
-
-    console.info('### createBufferFromMessage');
+    if (msg.oneofTypeExpected) {
+      t.is(message.type, msg.oneofTypeExpected);
+    }
 
     let buffer = undefined;
     t.notThrows(() => {
@@ -86,11 +111,9 @@ test('createBufferFromPayload() -> createPayloadFromBuffer()', t => {
   t.context.messages.forEach((msg) => {
     let translator = new ProtobufTranslator(msg.type);
 
-    console.info('### createBufferFromPayload');
     t.notThrows(() => {
       let buffer = translator.createBufferFromPayload(msg.validPayload);
       let payload = translator.createPayloadFromBuffer(buffer);
-      console.info(payload.type);
 
       t.deepEqual(payload, msg.validPayload);
     });
