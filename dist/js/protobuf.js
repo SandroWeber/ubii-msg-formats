@@ -4844,7 +4844,7 @@ $root.ubii = (function() {
              * @property {ubii.services.request.ITopicSubscription|null} [topicSubscription] ServiceRequest topicSubscription
              * @property {ubii.sessions.ISession|null} [session] ServiceRequest session
              * @property {ubii.sessions.ISessionList|null} [sessionList] ServiceRequest sessionList
-             * @property {ubii.interactions.IInteraction|null} [interaction] ServiceRequest interaction
+             * @property {ubii.interactions.IInteraction|null} [interactionSpecs] ServiceRequest interactionSpecs
              * @property {ubii.interactions.IInteractionList|null} [interactionList] ServiceRequest interactionList
              */
 
@@ -4912,12 +4912,12 @@ $root.ubii = (function() {
             ServiceRequest.prototype.sessionList = null;
 
             /**
-             * ServiceRequest interaction.
-             * @member {ubii.interactions.IInteraction|null|undefined} interaction
+             * ServiceRequest interactionSpecs.
+             * @member {ubii.interactions.IInteraction|null|undefined} interactionSpecs
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
-            ServiceRequest.prototype.interaction = null;
+            ServiceRequest.prototype.interactionSpecs = null;
 
             /**
              * ServiceRequest interactionList.
@@ -4932,12 +4932,12 @@ $root.ubii = (function() {
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|"interactionList"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interactionSpecs"|"interactionList"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction", "interactionList"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interactionSpecs", "interactionList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4977,8 +4977,8 @@ $root.ubii = (function() {
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.sessionList != null && message.hasOwnProperty("sessionList"))
                     $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.interaction != null && message.hasOwnProperty("interaction"))
-                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.interactionSpecs != null && message.hasOwnProperty("interactionSpecs"))
+                    $root.ubii.interactions.Interaction.encode(message.interactionSpecs, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.interactionList != null && message.hasOwnProperty("interactionList"))
                     $root.ubii.interactions.InteractionList.encode(message.interactionList, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
@@ -5034,7 +5034,7 @@ $root.ubii = (function() {
                         message.sessionList = $root.ubii.sessions.SessionList.decode(reader, reader.uint32());
                         break;
                     case 7:
-                        message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
+                        message.interactionSpecs = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
                     case 8:
                         message.interactionList = $root.ubii.interactions.InteractionList.decode(reader, reader.uint32());
@@ -5126,14 +5126,14 @@ $root.ubii = (function() {
                             return "sessionList." + error;
                     }
                 }
-                if (message.interaction != null && message.hasOwnProperty("interaction")) {
+                if (message.interactionSpecs != null && message.hasOwnProperty("interactionSpecs")) {
                     if (properties.type === 1)
                         return "type: multiple values";
                     properties.type = 1;
                     {
-                        var error = $root.ubii.interactions.Interaction.verify(message.interaction);
+                        var error = $root.ubii.interactions.Interaction.verify(message.interactionSpecs);
                         if (error)
-                            return "interaction." + error;
+                            return "interactionSpecs." + error;
                     }
                 }
                 if (message.interactionList != null && message.hasOwnProperty("interactionList")) {
@@ -5188,10 +5188,10 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceRequest.sessionList: object expected");
                     message.sessionList = $root.ubii.sessions.SessionList.fromObject(object.sessionList);
                 }
-                if (object.interaction != null) {
-                    if (typeof object.interaction !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.interaction: object expected");
-                    message.interaction = $root.ubii.interactions.Interaction.fromObject(object.interaction);
+                if (object.interactionSpecs != null) {
+                    if (typeof object.interactionSpecs !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.interactionSpecs: object expected");
+                    message.interactionSpecs = $root.ubii.interactions.Interaction.fromObject(object.interactionSpecs);
                 }
                 if (object.interactionList != null) {
                     if (typeof object.interactionList !== "object")
@@ -5243,10 +5243,10 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "sessionList";
                 }
-                if (message.interaction != null && message.hasOwnProperty("interaction")) {
-                    object.interaction = $root.ubii.interactions.Interaction.toObject(message.interaction, options);
+                if (message.interactionSpecs != null && message.hasOwnProperty("interactionSpecs")) {
+                    object.interactionSpecs = $root.ubii.interactions.Interaction.toObject(message.interactionSpecs, options);
                     if (options.oneofs)
-                        object.type = "interaction";
+                        object.type = "interactionSpecs";
                 }
                 if (message.interactionList != null && message.hasOwnProperty("interactionList")) {
                     object.interactionList = $root.ubii.interactions.InteractionList.toObject(message.interactionList, options);

@@ -55,7 +55,7 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   TOPIC_SUBSCRIPTION: 4,
   SESSION: 5,
   SESSION_LIST: 6,
-  INTERACTION: 7,
+  INTERACTION_SPECS: 7,
   INTERACTION_LIST: 8
 };
 
@@ -101,7 +101,7 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     topicSubscription: (f = msg.getTopicSubscription()) && proto_services_request_topicSubscription_pb.TopicSubscription.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
     sessionList: (f = msg.getSessionList()) && proto_sessions_session_pb.SessionList.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f),
+    interactionSpecs: (f = msg.getInteractionSpecs()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f),
     interactionList: (f = msg.getInteractionList()) && proto_interactions_interaction_pb.InteractionList.toObject(includeInstance, f)
   };
 
@@ -171,7 +171,7 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
     case 7:
       var value = new proto_interactions_interaction_pb.Interaction;
       reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
-      msg.setInteraction(value);
+      msg.setInteractionSpecs(value);
       break;
     case 8:
       var value = new proto_interactions_interaction_pb.InteractionList;
@@ -254,7 +254,7 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       proto_sessions_session_pb.SessionList.serializeBinaryToWriter
     );
   }
-  f = message.getInteraction();
+  f = message.getInteractionSpecs();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -439,23 +439,23 @@ proto.ubii.services.ServiceRequest.prototype.hasSessionList = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 7;
+ * optional ubii.interactions.Interaction interaction_specs = 7;
  * @return {?proto.ubii.interactions.Interaction}
  */
-proto.ubii.services.ServiceRequest.prototype.getInteraction = function() {
+proto.ubii.services.ServiceRequest.prototype.getInteractionSpecs = function() {
   return /** @type{?proto.ubii.interactions.Interaction} */ (
     jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 7));
 };
 
 
 /** @param {?proto.ubii.interactions.Interaction|undefined} value */
-proto.ubii.services.ServiceRequest.prototype.setInteraction = function(value) {
+proto.ubii.services.ServiceRequest.prototype.setInteractionSpecs = function(value) {
   jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };
 
 
-proto.ubii.services.ServiceRequest.prototype.clearInteraction = function() {
-  this.setInteraction(undefined);
+proto.ubii.services.ServiceRequest.prototype.clearInteractionSpecs = function() {
+  this.setInteractionSpecs(undefined);
 };
 
 
@@ -463,7 +463,7 @@ proto.ubii.services.ServiceRequest.prototype.clearInteraction = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.services.ServiceRequest.prototype.hasInteraction = function() {
+proto.ubii.services.ServiceRequest.prototype.hasInteractionSpecs = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 

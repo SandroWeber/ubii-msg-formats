@@ -15,7 +15,7 @@ message ServiceRequest {
         ubii.services.request.TopicSubscription topic_subscription = 4;
         ubii.sessions.Session session = 5;
         ubii.sessions.SessionList session_list = 6;
-        ubii.interactions.Interaction interaction = 7;
+        ubii.interactions.Interaction interaction_specs = 7;
         ubii.interactions.InteractionList interaction_list = 8;
     }
 }
