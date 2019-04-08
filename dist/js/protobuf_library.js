@@ -7470,7 +7470,7 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   DEVICE: 3,
   TOPIC_SUBSCRIPTION: 4,
   SESSION: 5,
-  INTERACTION: 6
+  ABCDE: 6
 };
 
 /**
@@ -7514,7 +7514,7 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     device: (f = msg.getDevice()) && proto.ubii.devices.Device.toObject(includeInstance, f),
     topicSubscription: (f = msg.getTopicSubscription()) && proto.ubii.services.request.TopicSubscription.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto.ubii.sessions.Session.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f)
+    abcde: (f = msg.getAbcde()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7578,7 +7578,7 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
     case 6:
       var value = new proto.ubii.interactions.Interaction;
       reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
-      msg.setInteraction(value);
+      msg.setAbcde(value);
       break;
     default:
       reader.skipField();
@@ -7648,7 +7648,7 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       proto.ubii.sessions.Session.serializeBinaryToWriter
     );
   }
-  f = message.getInteraction();
+  f = message.getAbcde();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -7795,23 +7795,23 @@ proto.ubii.services.ServiceRequest.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 6;
+ * optional ubii.interactions.Interaction abcde = 6;
  * @return {?proto.ubii.interactions.Interaction}
  */
-proto.ubii.services.ServiceRequest.prototype.getInteraction = function() {
+proto.ubii.services.ServiceRequest.prototype.getAbcde = function() {
   return /** @type{?proto.ubii.interactions.Interaction} */ (
     jspb.Message.getWrapperField(this, proto.ubii.interactions.Interaction, 6));
 };
 
 
 /** @param {?proto.ubii.interactions.Interaction|undefined} value */
-proto.ubii.services.ServiceRequest.prototype.setInteraction = function(value) {
+proto.ubii.services.ServiceRequest.prototype.setAbcde = function(value) {
   jspb.Message.setOneofWrapperField(this, 6, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };
 
 
-proto.ubii.services.ServiceRequest.prototype.clearInteraction = function() {
-  this.setInteraction(undefined);
+proto.ubii.services.ServiceRequest.prototype.clearAbcde = function() {
+  this.setAbcde(undefined);
 };
 
 
@@ -7819,7 +7819,7 @@ proto.ubii.services.ServiceRequest.prototype.clearInteraction = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.services.ServiceRequest.prototype.hasInteraction = function() {
+proto.ubii.services.ServiceRequest.prototype.hasAbcde = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
