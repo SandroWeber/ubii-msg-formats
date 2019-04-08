@@ -71,7 +71,7 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     interactionsList: jspb.Message.toObjectList(msg.getInteractionsList(),
-    proto_interactions_interaction_pb.Interaction.toObject, includeInstance),
+    proto_interactions_interaction_pb.InteractionMsg.toObject, includeInstance),
     ioMappingsList: jspb.Message.toObjectList(msg.getIoMappingsList(),
     proto_sessions_ioMapping_pb.IOMapping.toObject, includeInstance)
   };
@@ -119,8 +119,8 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
       msg.setName(value);
       break;
     case 3:
-      var value = new proto_interactions_interaction_pb.Interaction;
-      reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
+      var value = new proto_interactions_interaction_pb.InteractionMsg;
+      reader.readMessage(value,proto_interactions_interaction_pb.InteractionMsg.deserializeBinaryFromReader);
       msg.addInteractions(value);
       break;
     case 4:
@@ -176,7 +176,7 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
     writer.writeRepeatedMessage(
       3,
       f,
-      proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
+      proto_interactions_interaction_pb.InteractionMsg.serializeBinaryToWriter
     );
   }
   f = message.getIoMappingsList();
@@ -221,28 +221,28 @@ proto.ubii.sessions.Session.prototype.setName = function(value) {
 
 
 /**
- * repeated ubii.interactions.Interaction interactions = 3;
- * @return {!Array<!proto.ubii.interactions.Interaction>}
+ * repeated ubii.interactions.InteractionMsg interactions = 3;
+ * @return {!Array<!proto.ubii.interactions.InteractionMsg>}
  */
 proto.ubii.sessions.Session.prototype.getInteractionsList = function() {
-  return /** @type{!Array<!proto.ubii.interactions.Interaction>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto_interactions_interaction_pb.Interaction, 3));
+  return /** @type{!Array<!proto.ubii.interactions.InteractionMsg>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_interactions_interaction_pb.InteractionMsg, 3));
 };
 
 
-/** @param {!Array<!proto.ubii.interactions.Interaction>} value */
+/** @param {!Array<!proto.ubii.interactions.InteractionMsg>} value */
 proto.ubii.sessions.Session.prototype.setInteractionsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.ubii.interactions.Interaction=} opt_value
+ * @param {!proto.ubii.interactions.InteractionMsg=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ubii.interactions.Interaction}
+ * @return {!proto.ubii.interactions.InteractionMsg}
  */
 proto.ubii.sessions.Session.prototype.addInteractions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.interactions.Interaction, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.interactions.InteractionMsg, opt_index);
 };
 
 

@@ -29,7 +29,7 @@ goog.provide('proto.ubii.interactions.Cause');
 goog.provide('proto.ubii.interactions.CauseEffectRelation');
 goog.provide('proto.ubii.interactions.Effect');
 goog.provide('proto.ubii.interactions.IOFormat');
-goog.provide('proto.ubii.interactions.Interaction');
+goog.provide('proto.ubii.interactions.InteractionMsg');
 goog.provide('proto.ubii.servers.Server');
 goog.provide('proto.ubii.services.Service');
 goog.provide('proto.ubii.services.ServiceReply');
@@ -5672,19 +5672,19 @@ proto.ubii.interactions.CauseEffectRelation.prototype.clearEffectsList = functio
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ubii.interactions.Interaction = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.interactions.Interaction.repeatedFields_, null);
+proto.ubii.interactions.InteractionMsg = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.interactions.InteractionMsg.repeatedFields_, null);
 };
-goog.inherits(proto.ubii.interactions.Interaction, jspb.Message);
+goog.inherits(proto.ubii.interactions.InteractionMsg, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.ubii.interactions.Interaction.displayName = 'proto.ubii.interactions.Interaction';
+  proto.ubii.interactions.InteractionMsg.displayName = 'proto.ubii.interactions.InteractionMsg';
 }
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.interactions.Interaction.repeatedFields_ = [4,5];
+proto.ubii.interactions.InteractionMsg.repeatedFields_ = [4,5];
 
 
 
@@ -5699,8 +5699,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ubii.interactions.Interaction.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.interactions.Interaction.toObject(opt_includeInstance, this);
+proto.ubii.interactions.InteractionMsg.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.interactions.InteractionMsg.toObject(opt_includeInstance, this);
 };
 
 
@@ -5709,11 +5709,11 @@ proto.ubii.interactions.Interaction.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ubii.interactions.Interaction} msg The msg instance to transform.
+ * @param {!proto.ubii.interactions.InteractionMsg} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
+proto.ubii.interactions.InteractionMsg.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -5735,23 +5735,23 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.interactions.Interaction}
+ * @return {!proto.ubii.interactions.InteractionMsg}
  */
-proto.ubii.interactions.Interaction.deserializeBinary = function(bytes) {
+proto.ubii.interactions.InteractionMsg.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.interactions.Interaction;
-  return proto.ubii.interactions.Interaction.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ubii.interactions.InteractionMsg;
+  return proto.ubii.interactions.InteractionMsg.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ubii.interactions.Interaction} msg The message object to deserialize into.
+ * @param {!proto.ubii.interactions.InteractionMsg} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.interactions.Interaction}
+ * @return {!proto.ubii.interactions.InteractionMsg}
  */
-proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, reader) {
+proto.ubii.interactions.InteractionMsg.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5793,9 +5793,9 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ubii.interactions.Interaction.prototype.serializeBinary = function() {
+proto.ubii.interactions.InteractionMsg.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ubii.interactions.Interaction.serializeBinaryToWriter(this, writer);
+  proto.ubii.interactions.InteractionMsg.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5803,11 +5803,11 @@ proto.ubii.interactions.Interaction.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.interactions.Interaction} message
+ * @param {!proto.ubii.interactions.InteractionMsg} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, writer) {
+proto.ubii.interactions.InteractionMsg.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -5853,13 +5853,13 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
  * optional string id = 1;
  * @return {string}
  */
-proto.ubii.interactions.Interaction.prototype.getId = function() {
+proto.ubii.interactions.InteractionMsg.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.interactions.Interaction.prototype.setId = function(value) {
+proto.ubii.interactions.InteractionMsg.prototype.setId = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5868,13 +5868,13 @@ proto.ubii.interactions.Interaction.prototype.setId = function(value) {
  * optional string name = 2;
  * @return {string}
  */
-proto.ubii.interactions.Interaction.prototype.getName = function() {
+proto.ubii.interactions.InteractionMsg.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.interactions.Interaction.prototype.setName = function(value) {
+proto.ubii.interactions.InteractionMsg.prototype.setName = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -5883,13 +5883,13 @@ proto.ubii.interactions.Interaction.prototype.setName = function(value) {
  * optional string processing_callback = 3;
  * @return {string}
  */
-proto.ubii.interactions.Interaction.prototype.getProcessingCallback = function() {
+proto.ubii.interactions.InteractionMsg.prototype.getProcessingCallback = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.interactions.Interaction.prototype.setProcessingCallback = function(value) {
+proto.ubii.interactions.InteractionMsg.prototype.setProcessingCallback = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -5898,14 +5898,14 @@ proto.ubii.interactions.Interaction.prototype.setProcessingCallback = function(v
  * repeated IOFormat input_formats = 4;
  * @return {!Array<!proto.ubii.interactions.IOFormat>}
  */
-proto.ubii.interactions.Interaction.prototype.getInputFormatsList = function() {
+proto.ubii.interactions.InteractionMsg.prototype.getInputFormatsList = function() {
   return /** @type{!Array<!proto.ubii.interactions.IOFormat>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.IOFormat, 4));
 };
 
 
 /** @param {!Array<!proto.ubii.interactions.IOFormat>} value */
-proto.ubii.interactions.Interaction.prototype.setInputFormatsList = function(value) {
+proto.ubii.interactions.InteractionMsg.prototype.setInputFormatsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -5915,12 +5915,12 @@ proto.ubii.interactions.Interaction.prototype.setInputFormatsList = function(val
  * @param {number=} opt_index
  * @return {!proto.ubii.interactions.IOFormat}
  */
-proto.ubii.interactions.Interaction.prototype.addInputFormats = function(opt_value, opt_index) {
+proto.ubii.interactions.InteractionMsg.prototype.addInputFormats = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ubii.interactions.IOFormat, opt_index);
 };
 
 
-proto.ubii.interactions.Interaction.prototype.clearInputFormatsList = function() {
+proto.ubii.interactions.InteractionMsg.prototype.clearInputFormatsList = function() {
   this.setInputFormatsList([]);
 };
 
@@ -5929,14 +5929,14 @@ proto.ubii.interactions.Interaction.prototype.clearInputFormatsList = function()
  * repeated IOFormat output_formats = 5;
  * @return {!Array<!proto.ubii.interactions.IOFormat>}
  */
-proto.ubii.interactions.Interaction.prototype.getOutputFormatsList = function() {
+proto.ubii.interactions.InteractionMsg.prototype.getOutputFormatsList = function() {
   return /** @type{!Array<!proto.ubii.interactions.IOFormat>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.IOFormat, 5));
 };
 
 
 /** @param {!Array<!proto.ubii.interactions.IOFormat>} value */
-proto.ubii.interactions.Interaction.prototype.setOutputFormatsList = function(value) {
+proto.ubii.interactions.InteractionMsg.prototype.setOutputFormatsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
@@ -5946,12 +5946,12 @@ proto.ubii.interactions.Interaction.prototype.setOutputFormatsList = function(va
  * @param {number=} opt_index
  * @return {!proto.ubii.interactions.IOFormat}
  */
-proto.ubii.interactions.Interaction.prototype.addOutputFormats = function(opt_value, opt_index) {
+proto.ubii.interactions.InteractionMsg.prototype.addOutputFormats = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.ubii.interactions.IOFormat, opt_index);
 };
 
 
-proto.ubii.interactions.Interaction.prototype.clearOutputFormatsList = function() {
+proto.ubii.interactions.InteractionMsg.prototype.clearOutputFormatsList = function() {
   this.setOutputFormatsList([]);
 };
 
@@ -6296,7 +6296,7 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     interactionsList: jspb.Message.toObjectList(msg.getInteractionsList(),
-    proto.ubii.interactions.Interaction.toObject, includeInstance),
+    proto.ubii.interactions.InteractionMsg.toObject, includeInstance),
     ioMappingsList: jspb.Message.toObjectList(msg.getIoMappingsList(),
     proto.ubii.sessions.IOMapping.toObject, includeInstance)
   };
@@ -6344,8 +6344,8 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
       msg.setName(value);
       break;
     case 3:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
+      var value = new proto.ubii.interactions.InteractionMsg;
+      reader.readMessage(value,proto.ubii.interactions.InteractionMsg.deserializeBinaryFromReader);
       msg.addInteractions(value);
       break;
     case 4:
@@ -6401,7 +6401,7 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
     writer.writeRepeatedMessage(
       3,
       f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
+      proto.ubii.interactions.InteractionMsg.serializeBinaryToWriter
     );
   }
   f = message.getIoMappingsList();
@@ -6446,28 +6446,28 @@ proto.ubii.sessions.Session.prototype.setName = function(value) {
 
 
 /**
- * repeated ubii.interactions.Interaction interactions = 3;
- * @return {!Array<!proto.ubii.interactions.Interaction>}
+ * repeated ubii.interactions.InteractionMsg interactions = 3;
+ * @return {!Array<!proto.ubii.interactions.InteractionMsg>}
  */
 proto.ubii.sessions.Session.prototype.getInteractionsList = function() {
-  return /** @type{!Array<!proto.ubii.interactions.Interaction>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.Interaction, 3));
+  return /** @type{!Array<!proto.ubii.interactions.InteractionMsg>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.InteractionMsg, 3));
 };
 
 
-/** @param {!Array<!proto.ubii.interactions.Interaction>} value */
+/** @param {!Array<!proto.ubii.interactions.InteractionMsg>} value */
 proto.ubii.sessions.Session.prototype.setInteractionsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.ubii.interactions.Interaction=} opt_value
+ * @param {!proto.ubii.interactions.InteractionMsg=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ubii.interactions.Interaction}
+ * @return {!proto.ubii.interactions.InteractionMsg}
  */
 proto.ubii.sessions.Session.prototype.addInteractions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.interactions.Interaction, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.interactions.InteractionMsg, opt_index);
 };
 
 
@@ -6788,7 +6788,7 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     device: (f = msg.getDevice()) && proto.ubii.devices.Device.toObject(includeInstance, f),
     server: (f = msg.getServer()) && proto.ubii.servers.Server.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto.ubii.sessions.Session.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f),
+    interaction: (f = msg.getInteraction()) && proto.ubii.interactions.InteractionMsg.toObject(includeInstance, f),
     stringList: (f = msg.getStringList()) && proto.ubii.general.StringList.toObject(includeInstance, f)
   };
 
@@ -6857,8 +6857,8 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       msg.setSession(value);
       break;
     case 7:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
+      var value = new proto.ubii.interactions.InteractionMsg;
+      reader.readMessage(value,proto.ubii.interactions.InteractionMsg.deserializeBinaryFromReader);
       msg.setInteraction(value);
       break;
     case 8:
@@ -6948,7 +6948,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
     writer.writeMessage(
       7,
       f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
+      proto.ubii.interactions.InteractionMsg.serializeBinaryToWriter
     );
   }
   f = message.getStringList();
@@ -7143,16 +7143,16 @@ proto.ubii.services.ServiceReply.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 7;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.interactions.InteractionMsg interaction = 7;
+ * @return {?proto.ubii.interactions.InteractionMsg}
  */
 proto.ubii.services.ServiceReply.prototype.getInteraction = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.interactions.Interaction, 7));
+  return /** @type{?proto.ubii.interactions.InteractionMsg} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.interactions.InteractionMsg, 7));
 };
 
 
-/** @param {?proto.ubii.interactions.Interaction|undefined} value */
+/** @param {?proto.ubii.interactions.InteractionMsg|undefined} value */
 proto.ubii.services.ServiceReply.prototype.setInteraction = function(value) {
   jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
@@ -7514,7 +7514,7 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     device: (f = msg.getDevice()) && proto.ubii.devices.Device.toObject(includeInstance, f),
     topicSubscription: (f = msg.getTopicSubscription()) && proto.ubii.services.request.TopicSubscription.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto.ubii.sessions.Session.toObject(includeInstance, f),
-    abcde: (f = msg.getAbcde()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f)
+    abcde: (f = msg.getAbcde()) && proto.ubii.interactions.InteractionMsg.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7576,8 +7576,8 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       msg.setSession(value);
       break;
     case 6:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
+      var value = new proto.ubii.interactions.InteractionMsg;
+      reader.readMessage(value,proto.ubii.interactions.InteractionMsg.deserializeBinaryFromReader);
       msg.setAbcde(value);
       break;
     default:
@@ -7653,7 +7653,7 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
     writer.writeMessage(
       6,
       f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
+      proto.ubii.interactions.InteractionMsg.serializeBinaryToWriter
     );
   }
 };
@@ -7795,16 +7795,16 @@ proto.ubii.services.ServiceRequest.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.interactions.Interaction abcde = 6;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.interactions.InteractionMsg abcde = 6;
+ * @return {?proto.ubii.interactions.InteractionMsg}
  */
 proto.ubii.services.ServiceRequest.prototype.getAbcde = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.interactions.Interaction, 6));
+  return /** @type{?proto.ubii.interactions.InteractionMsg} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.interactions.InteractionMsg, 6));
 };
 
 
-/** @param {?proto.ubii.interactions.Interaction|undefined} value */
+/** @param {?proto.ubii.interactions.InteractionMsg|undefined} value */
 proto.ubii.services.ServiceRequest.prototype.setAbcde = function(value) {
   jspb.Message.setOneofWrapperField(this, 6, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };

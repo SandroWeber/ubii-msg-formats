@@ -7,6 +7,6 @@ import "proto/sessions/ioMapping.proto";
 message Session {
     string id = 1;
     string name = 2;
-    repeated ubii.interactions.Interaction interactions = 3;
+    repeated ubii.interactions.InteractionMsg interactions = 3;
     repeated ubii.sessions.IOMapping io_mappings = 4;
 }

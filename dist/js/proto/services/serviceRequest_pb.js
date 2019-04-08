@@ -98,7 +98,7 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     device: (f = msg.getDevice()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
     topicSubscription: (f = msg.getTopicSubscription()) && proto_services_request_topicSubscription_pb.TopicSubscription.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
-    abcde: (f = msg.getAbcde()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f)
+    abcde: (f = msg.getAbcde()) && proto_interactions_interaction_pb.InteractionMsg.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -160,8 +160,8 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       msg.setSession(value);
       break;
     case 6:
-      var value = new proto_interactions_interaction_pb.Interaction;
-      reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
+      var value = new proto_interactions_interaction_pb.InteractionMsg;
+      reader.readMessage(value,proto_interactions_interaction_pb.InteractionMsg.deserializeBinaryFromReader);
       msg.setAbcde(value);
       break;
     default:
@@ -237,7 +237,7 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
     writer.writeMessage(
       6,
       f,
-      proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
+      proto_interactions_interaction_pb.InteractionMsg.serializeBinaryToWriter
     );
   }
 };
@@ -379,16 +379,16 @@ proto.ubii.services.ServiceRequest.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.interactions.Interaction abcde = 6;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.interactions.InteractionMsg abcde = 6;
+ * @return {?proto.ubii.interactions.InteractionMsg}
  */
 proto.ubii.services.ServiceRequest.prototype.getAbcde = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 6));
+  return /** @type{?proto.ubii.interactions.InteractionMsg} */ (
+    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.InteractionMsg, 6));
 };
 
 
-/** @param {?proto.ubii.interactions.Interaction|undefined} value */
+/** @param {?proto.ubii.interactions.InteractionMsg|undefined} value */
 proto.ubii.services.ServiceRequest.prototype.setAbcde = function(value) {
   jspb.Message.setOneofWrapperField(this, 6, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };

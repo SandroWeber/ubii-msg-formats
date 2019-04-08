@@ -3,7 +3,7 @@ package ubii.interactions;
 
 import "proto/interactions/ioFormat.proto";
 
-message Interaction {
+message InteractionMsg {
     string id = 1;
     string name = 2;
     string processing_callback = 3;

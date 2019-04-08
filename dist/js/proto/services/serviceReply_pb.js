@@ -105,7 +105,7 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     device: (f = msg.getDevice()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
     server: (f = msg.getServer()) && proto_servers_server_pb.Server.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f),
+    interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.InteractionMsg.toObject(includeInstance, f),
     stringList: (f = msg.getStringList()) && proto_general_stringList_pb.StringList.toObject(includeInstance, f)
   };
 
@@ -174,8 +174,8 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       msg.setSession(value);
       break;
     case 7:
-      var value = new proto_interactions_interaction_pb.Interaction;
-      reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
+      var value = new proto_interactions_interaction_pb.InteractionMsg;
+      reader.readMessage(value,proto_interactions_interaction_pb.InteractionMsg.deserializeBinaryFromReader);
       msg.setInteraction(value);
       break;
     case 8:
@@ -265,7 +265,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
     writer.writeMessage(
       7,
       f,
-      proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
+      proto_interactions_interaction_pb.InteractionMsg.serializeBinaryToWriter
     );
   }
   f = message.getStringList();
@@ -460,16 +460,16 @@ proto.ubii.services.ServiceReply.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 7;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.interactions.InteractionMsg interaction = 7;
+ * @return {?proto.ubii.interactions.InteractionMsg}
  */
 proto.ubii.services.ServiceReply.prototype.getInteraction = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 7));
+  return /** @type{?proto.ubii.interactions.InteractionMsg} */ (
+    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.InteractionMsg, 7));
 };
 
 
-/** @param {?proto.ubii.interactions.Interaction|undefined} value */
+/** @param {?proto.ubii.interactions.InteractionMsg|undefined} value */
 proto.ubii.services.ServiceReply.prototype.setInteraction = function(value) {
   jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };

@@ -29,13 +29,13 @@ namespace Ubii.Services {
             "dmljZXMvZGV2aWNlLnByb3RvGhxwcm90by9zZXNzaW9ucy9zZXNzaW9uLnBy",
             "b3RvGiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8aLnBy",
             "b3RvL3NlcnZpY2VzL3JlcXVlc3QvdG9waWNTdWJzY3JpcHRpb24ucHJvdG8i",
-            "mwIKDlNlcnZpY2VSZXF1ZXN0Eg0KBXRvcGljGAEgASgJEiYKBmNsaWVudBgC",
+            "ngIKDlNlcnZpY2VSZXF1ZXN0Eg0KBXRvcGljGAEgASgJEiYKBmNsaWVudBgC",
             "IAEoCzIULnViaWkuY2xpZW50cy5DbGllbnRIABImCgZkZXZpY2UYAyABKAsy",
             "FC51YmlpLmRldmljZXMuRGV2aWNlSAASRgoSdG9waWNfc3Vic2NyaXB0aW9u",
             "GAQgASgLMigudWJpaS5zZXJ2aWNlcy5yZXF1ZXN0LlRvcGljU3Vic2NyaXB0",
             "aW9uSAASKQoHc2Vzc2lvbhgFIAEoCzIWLnViaWkuc2Vzc2lvbnMuU2Vzc2lv",
-            "bkgAEi8KBWFiY2RlGAYgASgLMh4udWJpaS5pbnRlcmFjdGlvbnMuSW50ZXJh",
-            "Y3Rpb25IAEIGCgR0eXBlYgZwcm90bzM="));
+            "bkgAEjIKBWFiY2RlGAYgASgLMiEudWJpaS5pbnRlcmFjdGlvbnMuSW50ZXJh",
+            "Y3Rpb25Nc2dIAEIGCgR0eXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, global::Ubii.Services.Request.TopicSubscriptionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -156,8 +156,8 @@ namespace Ubii.Services {
     /// <summary>Field number for the "abcde" field.</summary>
     public const int AbcdeFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Interactions.Interaction Abcde {
-      get { return typeCase_ == TypeOneofCase.Abcde ? (global::Ubii.Interactions.Interaction) type_ : null; }
+    public global::Ubii.Interactions.InteractionMsg Abcde {
+      get { return typeCase_ == TypeOneofCase.Abcde ? (global::Ubii.Interactions.InteractionMsg) type_ : null; }
       set {
         type_ = value;
         typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Abcde;
@@ -323,7 +323,7 @@ namespace Ubii.Services {
           break;
         case TypeOneofCase.Abcde:
           if (Abcde == null) {
-            Abcde = new global::Ubii.Interactions.Interaction();
+            Abcde = new global::Ubii.Interactions.InteractionMsg();
           }
           Abcde.MergeFrom(other.Abcde);
           break;
@@ -381,7 +381,7 @@ namespace Ubii.Services {
             break;
           }
           case 50: {
-            global::Ubii.Interactions.Interaction subBuilder = new global::Ubii.Interactions.Interaction();
+            global::Ubii.Interactions.InteractionMsg subBuilder = new global::Ubii.Interactions.InteractionMsg();
             if (typeCase_ == TypeOneofCase.Abcde) {
               subBuilder.MergeFrom(Abcde);
             }
