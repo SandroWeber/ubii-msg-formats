@@ -46,7 +46,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9]];
 
 /**
  * @enum {number}
@@ -61,8 +61,7 @@ proto.ubii.services.ServiceReply.TypeCase = {
   SESSION: 6,
   SESSION_LIST: 7,
   INTERACTION: 8,
-  INTERACTION_LIST: 9,
-  STRING_LIST: 10
+  STRING_LIST: 9
 };
 
 /**
@@ -109,7 +108,6 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
     sessionList: (f = msg.getSessionList()) && proto_sessions_session_pb.SessionList.toObject(includeInstance, f),
     interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f),
-    interactionList: (f = msg.getInteractionList()) && proto_interactions_interaction_pb.InteractionList.toObject(includeInstance, f),
     stringList: (f = msg.getStringList()) && proto_general_stringList_pb.StringList.toObject(includeInstance, f)
   };
 
@@ -188,11 +186,6 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       msg.setInteraction(value);
       break;
     case 9:
-      var value = new proto_interactions_interaction_pb.InteractionList;
-      reader.readMessage(value,proto_interactions_interaction_pb.InteractionList.deserializeBinaryFromReader);
-      msg.setInteractionList(value);
-      break;
-    case 10:
       var value = new proto_general_stringList_pb.StringList;
       reader.readMessage(value,proto_general_stringList_pb.StringList.deserializeBinaryFromReader);
       msg.setStringList(value);
@@ -290,18 +283,10 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
     );
   }
-  f = message.getInteractionList();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      proto_interactions_interaction_pb.InteractionList.serializeBinaryToWriter
-    );
-  }
   f = message.getStringList();
   if (f != null) {
     writer.writeMessage(
-      10,
+      9,
       f,
       proto_general_stringList_pb.StringList.serializeBinaryToWriter
     );
@@ -550,48 +535,18 @@ proto.ubii.services.ServiceReply.prototype.hasInteraction = function() {
 
 
 /**
- * optional ubii.interactions.InteractionList interaction_list = 9;
- * @return {?proto.ubii.interactions.InteractionList}
- */
-proto.ubii.services.ServiceReply.prototype.getInteractionList = function() {
-  return /** @type{?proto.ubii.interactions.InteractionList} */ (
-    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.InteractionList, 9));
-};
-
-
-/** @param {?proto.ubii.interactions.InteractionList|undefined} value */
-proto.ubii.services.ServiceReply.prototype.setInteractionList = function(value) {
-  jspb.Message.setOneofWrapperField(this, 9, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
-};
-
-
-proto.ubii.services.ServiceReply.prototype.clearInteractionList = function() {
-  this.setInteractionList(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.services.ServiceReply.prototype.hasInteractionList = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional ubii.general.StringList string_list = 10;
+ * optional ubii.general.StringList string_list = 9;
  * @return {?proto.ubii.general.StringList}
  */
 proto.ubii.services.ServiceReply.prototype.getStringList = function() {
   return /** @type{?proto.ubii.general.StringList} */ (
-    jspb.Message.getWrapperField(this, proto_general_stringList_pb.StringList, 10));
+    jspb.Message.getWrapperField(this, proto_general_stringList_pb.StringList, 9));
 };
 
 
 /** @param {?proto.ubii.general.StringList|undefined} value */
 proto.ubii.services.ServiceReply.prototype.setStringList = function(value) {
-  jspb.Message.setOneofWrapperField(this, 10, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 9, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
@@ -605,7 +560,7 @@ proto.ubii.services.ServiceReply.prototype.clearStringList = function() {
  * @return {!boolean}
  */
 proto.ubii.services.ServiceReply.prototype.hasStringList = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

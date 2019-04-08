@@ -3044,214 +3044,6 @@ $root.ubii = (function() {
             return Interaction;
         })();
 
-        interactions.InteractionList = (function() {
-
-            /**
-             * Properties of an InteractionList.
-             * @memberof ubii.interactions
-             * @interface IInteractionList
-             * @property {Array.<ubii.interactions.IInteraction>|null} [list] InteractionList list
-             */
-
-            /**
-             * Constructs a new InteractionList.
-             * @memberof ubii.interactions
-             * @classdesc Represents an InteractionList.
-             * @implements IInteractionList
-             * @constructor
-             * @param {ubii.interactions.IInteractionList=} [properties] Properties to set
-             */
-            function InteractionList(properties) {
-                this.list = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * InteractionList list.
-             * @member {Array.<ubii.interactions.IInteraction>} list
-             * @memberof ubii.interactions.InteractionList
-             * @instance
-             */
-            InteractionList.prototype.list = $util.emptyArray;
-
-            /**
-             * Creates a new InteractionList instance using the specified properties.
-             * @function create
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {ubii.interactions.IInteractionList=} [properties] Properties to set
-             * @returns {ubii.interactions.InteractionList} InteractionList instance
-             */
-            InteractionList.create = function create(properties) {
-                return new InteractionList(properties);
-            };
-
-            /**
-             * Encodes the specified InteractionList message. Does not implicitly {@link ubii.interactions.InteractionList.verify|verify} messages.
-             * @function encode
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {ubii.interactions.IInteractionList} message InteractionList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            InteractionList.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.list != null && message.list.length)
-                    for (var i = 0; i < message.list.length; ++i)
-                        $root.ubii.interactions.Interaction.encode(message.list[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Encodes the specified InteractionList message, length delimited. Does not implicitly {@link ubii.interactions.InteractionList.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {ubii.interactions.IInteractionList} message InteractionList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            InteractionList.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes an InteractionList message from the specified reader or buffer.
-             * @function decode
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.interactions.InteractionList} InteractionList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            InteractionList.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.interactions.InteractionList();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.list && message.list.length))
-                            message.list = [];
-                        message.list.push($root.ubii.interactions.Interaction.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes an InteractionList message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.interactions.InteractionList} InteractionList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            InteractionList.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies an InteractionList message.
-             * @function verify
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            InteractionList.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.list != null && message.hasOwnProperty("list")) {
-                    if (!Array.isArray(message.list))
-                        return "list: array expected";
-                    for (var i = 0; i < message.list.length; ++i) {
-                        var error = $root.ubii.interactions.Interaction.verify(message.list[i]);
-                        if (error)
-                            return "list." + error;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Creates an InteractionList message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.interactions.InteractionList} InteractionList
-             */
-            InteractionList.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.interactions.InteractionList)
-                    return object;
-                var message = new $root.ubii.interactions.InteractionList();
-                if (object.list) {
-                    if (!Array.isArray(object.list))
-                        throw TypeError(".ubii.interactions.InteractionList.list: array expected");
-                    message.list = [];
-                    for (var i = 0; i < object.list.length; ++i) {
-                        if (typeof object.list[i] !== "object")
-                            throw TypeError(".ubii.interactions.InteractionList.list: object expected");
-                        message.list[i] = $root.ubii.interactions.Interaction.fromObject(object.list[i]);
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from an InteractionList message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof ubii.interactions.InteractionList
-             * @static
-             * @param {ubii.interactions.InteractionList} message InteractionList
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            InteractionList.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.arrays || options.defaults)
-                    object.list = [];
-                if (message.list && message.list.length) {
-                    object.list = [];
-                    for (var j = 0; j < message.list.length; ++j)
-                        object.list[j] = $root.ubii.interactions.Interaction.toObject(message.list[j], options);
-                }
-                return object;
-            };
-
-            /**
-             * Converts this InteractionList to JSON.
-             * @function toJSON
-             * @memberof ubii.interactions.InteractionList
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            InteractionList.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return InteractionList;
-        })();
-
         interactions.IOFormat = (function() {
 
             /**
@@ -4329,7 +4121,6 @@ $root.ubii = (function() {
              * @property {ubii.sessions.ISession|null} [session] ServiceReply session
              * @property {ubii.sessions.ISessionList|null} [sessionList] ServiceReply sessionList
              * @property {ubii.interactions.IInteraction|null} [interaction] ServiceReply interaction
-             * @property {ubii.interactions.IInteractionList|null} [interactionList] ServiceReply interactionList
              * @property {ubii.general.IStringList|null} [stringList] ServiceReply stringList
              */
 
@@ -4413,14 +4204,6 @@ $root.ubii = (function() {
             ServiceReply.prototype.interaction = null;
 
             /**
-             * ServiceReply interactionList.
-             * @member {ubii.interactions.IInteractionList|null|undefined} interactionList
-             * @memberof ubii.services.ServiceReply
-             * @instance
-             */
-            ServiceReply.prototype.interactionList = null;
-
-            /**
              * ServiceReply stringList.
              * @member {ubii.general.IStringList|null|undefined} stringList
              * @memberof ubii.services.ServiceReply
@@ -4433,12 +4216,12 @@ $root.ubii = (function() {
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"interactionList"|"stringList"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"stringList"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "interactionList", "stringList"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "stringList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4482,10 +4265,8 @@ $root.ubii = (function() {
                     $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.interaction != null && message.hasOwnProperty("interaction"))
                     $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.interactionList != null && message.hasOwnProperty("interactionList"))
-                    $root.ubii.interactions.InteractionList.encode(message.interactionList, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.stringList != null && message.hasOwnProperty("stringList"))
-                    $root.ubii.general.StringList.encode(message.stringList, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                    $root.ubii.general.StringList.encode(message.stringList, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -4545,9 +4326,6 @@ $root.ubii = (function() {
                         message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
                     case 9:
-                        message.interactionList = $root.ubii.interactions.InteractionList.decode(reader, reader.uint32());
-                        break;
-                    case 10:
                         message.stringList = $root.ubii.general.StringList.decode(reader, reader.uint32());
                         break;
                     default:
@@ -4664,16 +4442,6 @@ $root.ubii = (function() {
                             return "interaction." + error;
                     }
                 }
-                if (message.interactionList != null && message.hasOwnProperty("interactionList")) {
-                    if (properties.type === 1)
-                        return "type: multiple values";
-                    properties.type = 1;
-                    {
-                        var error = $root.ubii.interactions.InteractionList.verify(message.interactionList);
-                        if (error)
-                            return "interactionList." + error;
-                    }
-                }
                 if (message.stringList != null && message.hasOwnProperty("stringList")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -4739,11 +4507,6 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceReply.interaction: object expected");
                     message.interaction = $root.ubii.interactions.Interaction.fromObject(object.interaction);
                 }
-                if (object.interactionList != null) {
-                    if (typeof object.interactionList !== "object")
-                        throw TypeError(".ubii.services.ServiceReply.interactionList: object expected");
-                    message.interactionList = $root.ubii.interactions.InteractionList.fromObject(object.interactionList);
-                }
                 if (object.stringList != null) {
                     if (typeof object.stringList !== "object")
                         throw TypeError(".ubii.services.ServiceReply.stringList: object expected");
@@ -4805,11 +4568,6 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "interaction";
                 }
-                if (message.interactionList != null && message.hasOwnProperty("interactionList")) {
-                    object.interactionList = $root.ubii.interactions.InteractionList.toObject(message.interactionList, options);
-                    if (options.oneofs)
-                        object.type = "interactionList";
-                }
                 if (message.stringList != null && message.hasOwnProperty("stringList")) {
                     object.stringList = $root.ubii.general.StringList.toObject(message.stringList, options);
                     if (options.oneofs)
@@ -4844,8 +4602,7 @@ $root.ubii = (function() {
              * @property {ubii.services.request.ITopicSubscription|null} [topicSubscription] ServiceRequest topicSubscription
              * @property {ubii.sessions.ISession|null} [session] ServiceRequest session
              * @property {ubii.sessions.ISessionList|null} [sessionList] ServiceRequest sessionList
-             * @property {ubii.interactions.IInteraction|null} [interactionSpecs] ServiceRequest interactionSpecs
-             * @property {ubii.interactions.IInteractionList|null} [interactionList] ServiceRequest interactionList
+             * @property {ubii.interactions.IInteraction|null} [interaction] ServiceRequest interaction
              */
 
             /**
@@ -4912,32 +4669,24 @@ $root.ubii = (function() {
             ServiceRequest.prototype.sessionList = null;
 
             /**
-             * ServiceRequest interactionSpecs.
-             * @member {ubii.interactions.IInteraction|null|undefined} interactionSpecs
+             * ServiceRequest interaction.
+             * @member {ubii.interactions.IInteraction|null|undefined} interaction
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
-            ServiceRequest.prototype.interactionSpecs = null;
-
-            /**
-             * ServiceRequest interactionList.
-             * @member {ubii.interactions.IInteractionList|null|undefined} interactionList
-             * @memberof ubii.services.ServiceRequest
-             * @instance
-             */
-            ServiceRequest.prototype.interactionList = null;
+            ServiceRequest.prototype.interaction = null;
 
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interactionSpecs"|"interactionList"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interactionSpecs", "interactionList"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4977,10 +4726,8 @@ $root.ubii = (function() {
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.sessionList != null && message.hasOwnProperty("sessionList"))
                     $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.interactionSpecs != null && message.hasOwnProperty("interactionSpecs"))
-                    $root.ubii.interactions.Interaction.encode(message.interactionSpecs, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.interactionList != null && message.hasOwnProperty("interactionList"))
-                    $root.ubii.interactions.InteractionList.encode(message.interactionList, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.interaction != null && message.hasOwnProperty("interaction"))
+                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
             };
 
@@ -5034,10 +4781,7 @@ $root.ubii = (function() {
                         message.sessionList = $root.ubii.sessions.SessionList.decode(reader, reader.uint32());
                         break;
                     case 7:
-                        message.interactionSpecs = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
-                        break;
-                    case 8:
-                        message.interactionList = $root.ubii.interactions.InteractionList.decode(reader, reader.uint32());
+                        message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5126,24 +4870,14 @@ $root.ubii = (function() {
                             return "sessionList." + error;
                     }
                 }
-                if (message.interactionSpecs != null && message.hasOwnProperty("interactionSpecs")) {
+                if (message.interaction != null && message.hasOwnProperty("interaction")) {
                     if (properties.type === 1)
                         return "type: multiple values";
                     properties.type = 1;
                     {
-                        var error = $root.ubii.interactions.Interaction.verify(message.interactionSpecs);
+                        var error = $root.ubii.interactions.Interaction.verify(message.interaction);
                         if (error)
-                            return "interactionSpecs." + error;
-                    }
-                }
-                if (message.interactionList != null && message.hasOwnProperty("interactionList")) {
-                    if (properties.type === 1)
-                        return "type: multiple values";
-                    properties.type = 1;
-                    {
-                        var error = $root.ubii.interactions.InteractionList.verify(message.interactionList);
-                        if (error)
-                            return "interactionList." + error;
+                            return "interaction." + error;
                     }
                 }
                 return null;
@@ -5188,15 +4922,10 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceRequest.sessionList: object expected");
                     message.sessionList = $root.ubii.sessions.SessionList.fromObject(object.sessionList);
                 }
-                if (object.interactionSpecs != null) {
-                    if (typeof object.interactionSpecs !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.interactionSpecs: object expected");
-                    message.interactionSpecs = $root.ubii.interactions.Interaction.fromObject(object.interactionSpecs);
-                }
-                if (object.interactionList != null) {
-                    if (typeof object.interactionList !== "object")
-                        throw TypeError(".ubii.services.ServiceRequest.interactionList: object expected");
-                    message.interactionList = $root.ubii.interactions.InteractionList.fromObject(object.interactionList);
+                if (object.interaction != null) {
+                    if (typeof object.interaction !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.interaction: object expected");
+                    message.interaction = $root.ubii.interactions.Interaction.fromObject(object.interaction);
                 }
                 return message;
             };
@@ -5243,15 +4972,10 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "sessionList";
                 }
-                if (message.interactionSpecs != null && message.hasOwnProperty("interactionSpecs")) {
-                    object.interactionSpecs = $root.ubii.interactions.Interaction.toObject(message.interactionSpecs, options);
+                if (message.interaction != null && message.hasOwnProperty("interaction")) {
+                    object.interaction = $root.ubii.interactions.Interaction.toObject(message.interaction, options);
                     if (options.oneofs)
-                        object.type = "interactionSpecs";
-                }
-                if (message.interactionList != null && message.hasOwnProperty("interactionList")) {
-                    object.interactionList = $root.ubii.interactions.InteractionList.toObject(message.interactionList, options);
-                    if (options.oneofs)
-                        object.type = "interactionList";
+                        object.type = "interaction";
                 }
                 return object;
             };
