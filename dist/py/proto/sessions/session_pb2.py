@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.sessions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\x88\x01\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0cinteractions\x18\x03 \x03(\x0b\x32\x1e.ubii.interactions.Interaction\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMappingb\x06proto3')
+  serialized_pb=_b('\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\x88\x01\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0cinteractions\x18\x03 \x03(\x0b\x32\x1e.ubii.interactions.Interaction\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMapping\"7\n\x0bSessionList\x12(\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x16.ubii.sessions.Sessionb\x06proto3')
   ,
   dependencies=[proto_dot_interactions_dot_interaction__pb2.DESCRIPTOR,proto_dot_sessions_dot_ioMapping__pb2.DESCRIPTOR,])
 
@@ -79,9 +79,42 @@ _SESSION = _descriptor.Descriptor(
   serialized_end=254,
 )
 
+
+_SESSIONLIST = _descriptor.Descriptor(
+  name='SessionList',
+  full_name='ubii.sessions.SessionList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.sessions.SessionList.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=256,
+  serialized_end=311,
+)
+
 _SESSION.fields_by_name['interactions'].message_type = proto_dot_interactions_dot_interaction__pb2._INTERACTION
 _SESSION.fields_by_name['io_mappings'].message_type = proto_dot_sessions_dot_ioMapping__pb2._IOMAPPING
+_SESSIONLIST.fields_by_name['elements'].message_type = _SESSION
 DESCRIPTOR.message_types_by_name['Session'] = _SESSION
+DESCRIPTOR.message_types_by_name['SessionList'] = _SESSIONLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Session = _reflection.GeneratedProtocolMessageType('Session', (_message.Message,), dict(
@@ -90,6 +123,13 @@ Session = _reflection.GeneratedProtocolMessageType('Session', (_message.Message,
   # @@protoc_insertion_point(class_scope:ubii.sessions.Session)
   ))
 _sym_db.RegisterMessage(Session)
+
+SessionList = _reflection.GeneratedProtocolMessageType('SessionList', (_message.Message,), dict(
+  DESCRIPTOR = _SESSIONLIST,
+  __module__ = 'proto.sessions.session_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.sessions.SessionList)
+  ))
+_sym_db.RegisterMessage(SessionList)
 
 
 # @@protoc_insertion_point(module_scope)
