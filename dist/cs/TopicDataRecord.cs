@@ -35,23 +35,25 @@ namespace Ubii.TopicData {
             "Y3R1cmUvbWF0cml4M3gyLnByb3RvGj1wcm90by90b3BpY0RhdGEvdG9waWNE",
             "YXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvbWF0cml4NHg0LnByb3RvGjlwcm90",
             "by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvY29s",
-            "b3IucHJvdG8iuQMKD1RvcGljRGF0YVJlY29yZBINCgV0b3BpYxgBIAEoCRIQ",
-            "CgZudW1iZXIYAiABKAFIABIRCgdib29sZWFuGAMgASgISAASEAoGc3RyaW5n",
-            "GAQgASgJSAASLgoHdmVjdG9yMhgFIAEoCzIbLnViaWkuZGF0YVN0cnVjdHVy",
-            "ZS5WZWN0b3IySAASLgoHdmVjdG9yMxgGIAEoCzIbLnViaWkuZGF0YVN0cnVj",
-            "dHVyZS5WZWN0b3IzSAASLgoHdmVjdG9yNBgHIAEoCzIbLnViaWkuZGF0YVN0",
-            "cnVjdHVyZS5WZWN0b3I0SAASNAoKcXVhdGVybmlvbhgIIAEoCzIeLnViaWku",
-            "ZGF0YVN0cnVjdHVyZS5RdWF0ZXJuaW9uSAASMgoJbWF0cml4M3gyGAkgASgL",
-            "Mh0udWJpaS5kYXRhU3RydWN0dXJlLk1hdHJpeDN4MkgAEjIKCW1hdHJpeDR4",
-            "NBgKIAEoCzIdLnViaWkuZGF0YVN0cnVjdHVyZS5NYXRyaXg0eDRIABIqCgVj",
-            "b2xvchgLIAEoCzIZLnViaWkuZGF0YVN0cnVjdHVyZS5Db2xvckgAQgYKBHR5",
-            "cGUiRAoTVG9waWNEYXRhUmVjb3JkTGlzdBItCgRsaXN0GAEgAygLMh8udWJp",
-            "aS50b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkYgZwcm90bzM="));
+            "b3IucHJvdG8aL3Byb3RvL3RvcGljRGF0YS90b3BpY0RhdGFSZWNvcmQvdGlt",
+            "ZXN0YW1wLnByb3RvIucDCg9Ub3BpY0RhdGFSZWNvcmQSDQoFdG9waWMYASAB",
+            "KAkSEAoGbnVtYmVyGAIgASgBSAASEQoHYm9vbGVhbhgDIAEoCEgAEhAKBnN0",
+            "cmluZxgEIAEoCUgAEi4KB3ZlY3RvcjIYBSABKAsyGy51YmlpLmRhdGFTdHJ1",
+            "Y3R1cmUuVmVjdG9yMkgAEi4KB3ZlY3RvcjMYBiABKAsyGy51YmlpLmRhdGFT",
+            "dHJ1Y3R1cmUuVmVjdG9yM0gAEi4KB3ZlY3RvcjQYByABKAsyGy51YmlpLmRh",
+            "dGFTdHJ1Y3R1cmUuVmVjdG9yNEgAEjQKCnF1YXRlcm5pb24YCCABKAsyHi51",
+            "YmlpLmRhdGFTdHJ1Y3R1cmUuUXVhdGVybmlvbkgAEjIKCW1hdHJpeDN4MhgJ",
+            "IAEoCzIdLnViaWkuZGF0YVN0cnVjdHVyZS5NYXRyaXgzeDJIABIyCgltYXRy",
+            "aXg0eDQYCiABKAsyHS51YmlpLmRhdGFTdHJ1Y3R1cmUuTWF0cml4NHg0SAAS",
+            "KgoFY29sb3IYCyABKAsyGS51YmlpLmRhdGFTdHJ1Y3R1cmUuQ29sb3JIABIs",
+            "Cgl0aW1lc3RhbXAYDCABKAsyGS51YmlpLnRvcGljRGF0YS5UaW1lc3RhbXBC",
+            "BgoEdHlwZSJIChNUb3BpY0RhdGFSZWNvcmRMaXN0EjEKCGVsZW1lbnRzGAEg",
+            "AygLMh8udWJpaS50b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.TopicData.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Number", "Boolean", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color" }, new[]{ "Type" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecordList), global::Ubii.TopicData.TopicDataRecordList.Parser, new[]{ "List" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Number", "Boolean", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "Timestamp" }, new[]{ "Type" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecordList), global::Ubii.TopicData.TopicDataRecordList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
     #endregion
@@ -84,6 +86,7 @@ namespace Ubii.TopicData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TopicDataRecord(TopicDataRecord other) : this() {
       topic_ = other.topic_;
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       switch (other.TypeCase) {
         case TypeOneofCase.Number:
           Number = other.Number;
@@ -246,6 +249,17 @@ namespace Ubii.TopicData {
       }
     }
 
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 12;
+    private global::Ubii.TopicData.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.TopicData.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
     private object type_;
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
@@ -297,6 +311,7 @@ namespace Ubii.TopicData {
       if (!object.Equals(Matrix3X2, other.Matrix3X2)) return false;
       if (!object.Equals(Matrix4X4, other.Matrix4X4)) return false;
       if (!object.Equals(Color, other.Color)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -315,6 +330,7 @@ namespace Ubii.TopicData {
       if (typeCase_ == TypeOneofCase.Matrix3X2) hash ^= Matrix3X2.GetHashCode();
       if (typeCase_ == TypeOneofCase.Matrix4X4) hash ^= Matrix4X4.GetHashCode();
       if (typeCase_ == TypeOneofCase.Color) hash ^= Color.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -373,6 +389,10 @@ namespace Ubii.TopicData {
         output.WriteRawTag(90);
         output.WriteMessage(Color);
       }
+      if (timestamp_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Timestamp);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -414,6 +434,9 @@ namespace Ubii.TopicData {
       if (typeCase_ == TypeOneofCase.Color) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Color);
       }
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -427,6 +450,12 @@ namespace Ubii.TopicData {
       }
       if (other.Topic.Length != 0) {
         Topic = other.Topic;
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          timestamp_ = new global::Ubii.TopicData.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
       }
       switch (other.TypeCase) {
         case TypeOneofCase.Number:
@@ -572,6 +601,13 @@ namespace Ubii.TopicData {
             Color = subBuilder;
             break;
           }
+          case 98: {
+            if (timestamp_ == null) {
+              timestamp_ = new global::Ubii.TopicData.Timestamp();
+            }
+            input.ReadMessage(timestamp_);
+            break;
+          }
         }
       }
     }
@@ -603,7 +639,7 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TopicDataRecordList(TopicDataRecordList other) : this() {
-      list_ = other.list_.Clone();
+      elements_ = other.elements_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -612,14 +648,14 @@ namespace Ubii.TopicData {
       return new TopicDataRecordList(this);
     }
 
-    /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ubii.TopicData.TopicDataRecord> _repeated_list_codec
+    /// <summary>Field number for the "elements" field.</summary>
+    public const int ElementsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ubii.TopicData.TopicDataRecord> _repeated_elements_codec
         = pb::FieldCodec.ForMessage(10, global::Ubii.TopicData.TopicDataRecord.Parser);
-    private readonly pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> list_ = new pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord>();
+    private readonly pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> elements_ = new pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> List {
-      get { return list_; }
+    public pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> Elements {
+      get { return elements_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -635,14 +671,14 @@ namespace Ubii.TopicData {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!list_.Equals(other.list_)) return false;
+      if(!elements_.Equals(other.elements_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= list_.GetHashCode();
+      hash ^= elements_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -656,7 +692,7 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      list_.WriteTo(output, _repeated_list_codec);
+      elements_.WriteTo(output, _repeated_elements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -665,7 +701,7 @@ namespace Ubii.TopicData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      size += list_.CalculateSize(_repeated_list_codec);
+      size += elements_.CalculateSize(_repeated_elements_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -677,7 +713,7 @@ namespace Ubii.TopicData {
       if (other == null) {
         return;
       }
-      list_.Add(other.list_);
+      elements_.Add(other.elements_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -690,7 +726,7 @@ namespace Ubii.TopicData {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
+            elements_.AddEntriesFrom(input, _repeated_elements_codec);
             break;
           }
         }

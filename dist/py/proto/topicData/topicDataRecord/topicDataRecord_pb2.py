@@ -19,6 +19,7 @@ from proto.topicData.topicDataRecord.dataStructure import quaternion_pb2 as prot
 from proto.topicData.topicDataRecord.dataStructure import matrix3x2_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix3x2__pb2
 from proto.topicData.topicDataRecord.dataStructure import matrix4x4_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix4x4__pb2
 from proto.topicData.topicDataRecord.dataStructure import color_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_color__pb2
+from proto.topicData.topicDataRecord import timestamp_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_timestamp__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -26,9 +27,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.topicData',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n5proto/topicData/topicDataRecord/topicDataRecord.proto\x12\x0eubii.topicData\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector3.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector4.proto\x1a>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto\x1a\x39proto/topicData/topicDataRecord/dataStructure/color.proto\"\xb9\x03\n\x0fTopicDataRecord\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x10\n\x06number\x18\x02 \x01(\x01H\x00\x12\x11\n\x07\x62oolean\x18\x03 \x01(\x08H\x00\x12\x10\n\x06string\x18\x04 \x01(\tH\x00\x12.\n\x07vector2\x18\x05 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2H\x00\x12.\n\x07vector3\x18\x06 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector3H\x00\x12.\n\x07vector4\x18\x07 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector4H\x00\x12\x34\n\nquaternion\x18\x08 \x01(\x0b\x32\x1e.ubii.dataStructure.QuaternionH\x00\x12\x32\n\tmatrix3x2\x18\t \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix3x2H\x00\x12\x32\n\tmatrix4x4\x18\n \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix4x4H\x00\x12*\n\x05\x63olor\x18\x0b \x01(\x0b\x32\x19.ubii.dataStructure.ColorH\x00\x42\x06\n\x04type\"D\n\x13TopicDataRecordList\x12-\n\x04list\x18\x01 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3')
+  serialized_pb=_b('\n5proto/topicData/topicDataRecord/topicDataRecord.proto\x12\x0eubii.topicData\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector3.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector4.proto\x1a>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto\x1a\x39proto/topicData/topicDataRecord/dataStructure/color.proto\x1a/proto/topicData/topicDataRecord/timestamp.proto\"\xe7\x03\n\x0fTopicDataRecord\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x10\n\x06number\x18\x02 \x01(\x01H\x00\x12\x11\n\x07\x62oolean\x18\x03 \x01(\x08H\x00\x12\x10\n\x06string\x18\x04 \x01(\tH\x00\x12.\n\x07vector2\x18\x05 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2H\x00\x12.\n\x07vector3\x18\x06 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector3H\x00\x12.\n\x07vector4\x18\x07 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector4H\x00\x12\x34\n\nquaternion\x18\x08 \x01(\x0b\x32\x1e.ubii.dataStructure.QuaternionH\x00\x12\x32\n\tmatrix3x2\x18\t \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix3x2H\x00\x12\x32\n\tmatrix4x4\x18\n \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix4x4H\x00\x12*\n\x05\x63olor\x18\x0b \x01(\x0b\x32\x19.ubii.dataStructure.ColorH\x00\x12,\n\ttimestamp\x18\x0c \x01(\x0b\x32\x19.ubii.topicData.TimestampB\x06\n\x04type\"H\n\x13TopicDataRecordList\x12\x31\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3')
   ,
-  dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector3__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_quaternion__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix3x2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix4x4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_color__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector3__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_quaternion__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix3x2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix4x4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_color__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_timestamp__pb2.DESCRIPTOR,])
 
 
 
@@ -117,6 +118,13 @@ _TOPICDATARECORD = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='ubii.topicData.TopicDataRecord.timestamp', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -132,8 +140,8 @@ _TOPICDATARECORD = _descriptor.Descriptor(
       name='type', full_name='ubii.topicData.TopicDataRecord.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=506,
-  serialized_end=947,
+  serialized_start=555,
+  serialized_end=1042,
 )
 
 
@@ -145,7 +153,7 @@ _TOPICDATARECORDLIST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='list', full_name='ubii.topicData.TopicDataRecordList.list', index=0,
+      name='elements', full_name='ubii.topicData.TopicDataRecordList.elements', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -163,8 +171,8 @@ _TOPICDATARECORDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=949,
-  serialized_end=1017,
+  serialized_start=1044,
+  serialized_end=1116,
 )
 
 _TOPICDATARECORD.fields_by_name['vector2'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2._VECTOR2
@@ -174,6 +182,7 @@ _TOPICDATARECORD.fields_by_name['quaternion'].message_type = proto_dot_topicData
 _TOPICDATARECORD.fields_by_name['matrix3x2'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix3x2__pb2._MATRIX3X2
 _TOPICDATARECORD.fields_by_name['matrix4x4'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix4x4__pb2._MATRIX4X4
 _TOPICDATARECORD.fields_by_name['color'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_color__pb2._COLOR
+_TOPICDATARECORD.fields_by_name['timestamp'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_timestamp__pb2._TIMESTAMP
 _TOPICDATARECORD.oneofs_by_name['type'].fields.append(
   _TOPICDATARECORD.fields_by_name['number'])
 _TOPICDATARECORD.fields_by_name['number'].containing_oneof = _TOPICDATARECORD.oneofs_by_name['type']
@@ -204,7 +213,7 @@ _TOPICDATARECORD.fields_by_name['matrix4x4'].containing_oneof = _TOPICDATARECORD
 _TOPICDATARECORD.oneofs_by_name['type'].fields.append(
   _TOPICDATARECORD.fields_by_name['color'])
 _TOPICDATARECORD.fields_by_name['color'].containing_oneof = _TOPICDATARECORD.oneofs_by_name['type']
-_TOPICDATARECORDLIST.fields_by_name['list'].message_type = _TOPICDATARECORD
+_TOPICDATARECORDLIST.fields_by_name['elements'].message_type = _TOPICDATARECORD
 DESCRIPTOR.message_types_by_name['TopicDataRecord'] = _TOPICDATARECORD
 DESCRIPTOR.message_types_by_name['TopicDataRecordList'] = _TOPICDATARECORDLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
