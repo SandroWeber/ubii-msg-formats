@@ -24,15 +24,16 @@ namespace Ubii.Servers {
     static ServerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chpwcm90by9zZXJ2ZXJzL3NlcnZlci5wcm90bxIMdWJpaS5zZXJ2ZXJzIpwB",
-            "CgZTZXJ2ZXISCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIKCgJpcBgDIAEo",
-            "CRIYChBwb3J0X3NlcnZpY2Vfem1xGAQgASgJEhkKEXBvcnRfc2VydmljZV9y",
-            "ZXN0GAUgASgJEhsKE3BvcnRfdG9waWNfZGF0YV96bXEYBiABKAkSGgoScG9y",
-            "dF90b3BpY19kYXRhX3dzGAcgASgJYgZwcm90bzM="));
+            "Chpwcm90by9zZXJ2ZXJzL3NlcnZlci5wcm90bxIMdWJpaS5zZXJ2ZXJzIrYB",
+            "CgZTZXJ2ZXISCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtpcF9ldGhl",
+            "cm5ldBgDIAEoCRIPCgdpcF93bGFuGAQgASgJEhgKEHBvcnRfc2VydmljZV96",
+            "bXEYBSABKAkSGQoRcG9ydF9zZXJ2aWNlX3Jlc3QYBiABKAkSGwoTcG9ydF90",
+            "b3BpY19kYXRhX3ptcRgHIAEoCRIaChJwb3J0X3RvcGljX2RhdGFfd3MYCCAB",
+            "KAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Servers.Server), global::Ubii.Servers.Server.Parser, new[]{ "Id", "Name", "Ip", "PortServiceZmq", "PortServiceRest", "PortTopicDataZmq", "PortTopicDataWs" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Servers.Server), global::Ubii.Servers.Server.Parser, new[]{ "Id", "Name", "IpEthernet", "IpWlan", "PortServiceZmq", "PortServiceRest", "PortTopicDataZmq", "PortTopicDataWs" }, null, null, null)
           }));
     }
     #endregion
@@ -66,7 +67,8 @@ namespace Ubii.Servers {
     public Server(Server other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      ip_ = other.ip_;
+      ipEthernet_ = other.ipEthernet_;
+      ipWlan_ = other.ipWlan_;
       portServiceZmq_ = other.portServiceZmq_;
       portServiceRest_ = other.portServiceRest_;
       portTopicDataZmq_ = other.portTopicDataZmq_;
@@ -101,19 +103,30 @@ namespace Ubii.Servers {
       }
     }
 
-    /// <summary>Field number for the "ip" field.</summary>
-    public const int IpFieldNumber = 3;
-    private string ip_ = "";
+    /// <summary>Field number for the "ip_ethernet" field.</summary>
+    public const int IpEthernetFieldNumber = 3;
+    private string ipEthernet_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Ip {
-      get { return ip_; }
+    public string IpEthernet {
+      get { return ipEthernet_; }
       set {
-        ip_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        ipEthernet_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "ip_wlan" field.</summary>
+    public const int IpWlanFieldNumber = 4;
+    private string ipWlan_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IpWlan {
+      get { return ipWlan_; }
+      set {
+        ipWlan_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "port_service_zmq" field.</summary>
-    public const int PortServiceZmqFieldNumber = 4;
+    public const int PortServiceZmqFieldNumber = 5;
     private string portServiceZmq_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PortServiceZmq {
@@ -124,7 +137,7 @@ namespace Ubii.Servers {
     }
 
     /// <summary>Field number for the "port_service_rest" field.</summary>
-    public const int PortServiceRestFieldNumber = 5;
+    public const int PortServiceRestFieldNumber = 6;
     private string portServiceRest_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PortServiceRest {
@@ -135,7 +148,7 @@ namespace Ubii.Servers {
     }
 
     /// <summary>Field number for the "port_topic_data_zmq" field.</summary>
-    public const int PortTopicDataZmqFieldNumber = 6;
+    public const int PortTopicDataZmqFieldNumber = 7;
     private string portTopicDataZmq_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PortTopicDataZmq {
@@ -146,7 +159,7 @@ namespace Ubii.Servers {
     }
 
     /// <summary>Field number for the "port_topic_data_ws" field.</summary>
-    public const int PortTopicDataWsFieldNumber = 7;
+    public const int PortTopicDataWsFieldNumber = 8;
     private string portTopicDataWs_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PortTopicDataWs {
@@ -171,7 +184,8 @@ namespace Ubii.Servers {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Ip != other.Ip) return false;
+      if (IpEthernet != other.IpEthernet) return false;
+      if (IpWlan != other.IpWlan) return false;
       if (PortServiceZmq != other.PortServiceZmq) return false;
       if (PortServiceRest != other.PortServiceRest) return false;
       if (PortTopicDataZmq != other.PortTopicDataZmq) return false;
@@ -184,7 +198,8 @@ namespace Ubii.Servers {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Ip.Length != 0) hash ^= Ip.GetHashCode();
+      if (IpEthernet.Length != 0) hash ^= IpEthernet.GetHashCode();
+      if (IpWlan.Length != 0) hash ^= IpWlan.GetHashCode();
       if (PortServiceZmq.Length != 0) hash ^= PortServiceZmq.GetHashCode();
       if (PortServiceRest.Length != 0) hash ^= PortServiceRest.GetHashCode();
       if (PortTopicDataZmq.Length != 0) hash ^= PortTopicDataZmq.GetHashCode();
@@ -210,24 +225,28 @@ namespace Ubii.Servers {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Ip.Length != 0) {
+      if (IpEthernet.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Ip);
+        output.WriteString(IpEthernet);
+      }
+      if (IpWlan.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(IpWlan);
       }
       if (PortServiceZmq.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(PortServiceZmq);
       }
       if (PortServiceRest.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(PortServiceRest);
       }
       if (PortTopicDataZmq.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteString(PortTopicDataZmq);
       }
       if (PortTopicDataWs.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteString(PortTopicDataWs);
       }
       if (_unknownFields != null) {
@@ -244,8 +263,11 @@ namespace Ubii.Servers {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Ip.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Ip);
+      if (IpEthernet.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IpEthernet);
+      }
+      if (IpWlan.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IpWlan);
       }
       if (PortServiceZmq.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PortServiceZmq);
@@ -276,8 +298,11 @@ namespace Ubii.Servers {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Ip.Length != 0) {
-        Ip = other.Ip;
+      if (other.IpEthernet.Length != 0) {
+        IpEthernet = other.IpEthernet;
+      }
+      if (other.IpWlan.Length != 0) {
+        IpWlan = other.IpWlan;
       }
       if (other.PortServiceZmq.Length != 0) {
         PortServiceZmq = other.PortServiceZmq;
@@ -311,22 +336,26 @@ namespace Ubii.Servers {
             break;
           }
           case 26: {
-            Ip = input.ReadString();
+            IpEthernet = input.ReadString();
             break;
           }
           case 34: {
-            PortServiceZmq = input.ReadString();
+            IpWlan = input.ReadString();
             break;
           }
           case 42: {
-            PortServiceRest = input.ReadString();
+            PortServiceZmq = input.ReadString();
             break;
           }
           case 50: {
-            PortTopicDataZmq = input.ReadString();
+            PortServiceRest = input.ReadString();
             break;
           }
           case 58: {
+            PortTopicDataZmq = input.ReadString();
+            break;
+          }
+          case 66: {
             PortTopicDataWs = input.ReadString();
             break;
           }

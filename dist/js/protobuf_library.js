@@ -96,11 +96,12 @@ proto.ubii.servers.Server.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    ip: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    portServiceZmq: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    portServiceRest: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    portTopicDataZmq: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    portTopicDataWs: jspb.Message.getFieldWithDefault(msg, 7, "")
+    ipEthernet: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    ipWlan: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    portServiceZmq: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    portServiceRest: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    portTopicDataZmq: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    portTopicDataWs: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -147,21 +148,25 @@ proto.ubii.servers.Server.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setIp(value);
+      msg.setIpEthernet(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPortServiceZmq(value);
+      msg.setIpWlan(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPortServiceRest(value);
+      msg.setPortServiceZmq(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPortTopicDataZmq(value);
+      msg.setPortServiceRest(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPortTopicDataZmq(value);
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setPortTopicDataWs(value);
       break;
@@ -208,38 +213,45 @@ proto.ubii.servers.Server.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getIp();
+  f = message.getIpEthernet();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getPortServiceZmq();
+  f = message.getIpWlan();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getPortServiceRest();
+  f = message.getPortServiceZmq();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getPortTopicDataZmq();
+  f = message.getPortServiceRest();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getPortTopicDataWs();
+  f = message.getPortTopicDataZmq();
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getPortTopicDataWs();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -277,77 +289,92 @@ proto.ubii.servers.Server.prototype.setName = function(value) {
 
 
 /**
- * optional string ip = 3;
+ * optional string ip_ethernet = 3;
  * @return {string}
  */
-proto.ubii.servers.Server.prototype.getIp = function() {
+proto.ubii.servers.Server.prototype.getIpEthernet = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.servers.Server.prototype.setIp = function(value) {
+proto.ubii.servers.Server.prototype.setIpEthernet = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string port_service_zmq = 4;
+ * optional string ip_wlan = 4;
  * @return {string}
  */
-proto.ubii.servers.Server.prototype.getPortServiceZmq = function() {
+proto.ubii.servers.Server.prototype.getIpWlan = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.servers.Server.prototype.setPortServiceZmq = function(value) {
+proto.ubii.servers.Server.prototype.setIpWlan = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string port_service_rest = 5;
+ * optional string port_service_zmq = 5;
  * @return {string}
  */
-proto.ubii.servers.Server.prototype.getPortServiceRest = function() {
+proto.ubii.servers.Server.prototype.getPortServiceZmq = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.servers.Server.prototype.setPortServiceRest = function(value) {
+proto.ubii.servers.Server.prototype.setPortServiceZmq = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string port_topic_data_zmq = 6;
+ * optional string port_service_rest = 6;
  * @return {string}
  */
-proto.ubii.servers.Server.prototype.getPortTopicDataZmq = function() {
+proto.ubii.servers.Server.prototype.getPortServiceRest = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.servers.Server.prototype.setPortTopicDataZmq = function(value) {
+proto.ubii.servers.Server.prototype.setPortServiceRest = function(value) {
   jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string port_topic_data_ws = 7;
+ * optional string port_topic_data_zmq = 7;
  * @return {string}
  */
-proto.ubii.servers.Server.prototype.getPortTopicDataWs = function() {
+proto.ubii.servers.Server.prototype.getPortTopicDataZmq = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
-proto.ubii.servers.Server.prototype.setPortTopicDataWs = function(value) {
+proto.ubii.servers.Server.prototype.setPortTopicDataZmq = function(value) {
   jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string port_topic_data_ws = 8;
+ * @return {string}
+ */
+proto.ubii.servers.Server.prototype.getPortTopicDataWs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.servers.Server.prototype.setPortTopicDataWs = function(value) {
+  jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
