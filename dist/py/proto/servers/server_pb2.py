@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.servers',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1aproto/servers/server.proto\x12\x0cubii.servers\"\x9c\x01\n\x06Server\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02ip\x18\x03 \x01(\t\x12\x18\n\x10port_service_zmq\x18\x04 \x01(\t\x12\x19\n\x11port_service_rest\x18\x05 \x01(\t\x12\x1b\n\x13port_topic_data_zmq\x18\x06 \x01(\t\x12\x1a\n\x12port_topic_data_ws\x18\x07 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/servers/server.proto\x12\x0cubii.servers\"\xb6\x01\n\x06Server\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bip_ethernet\x18\x03 \x01(\t\x12\x0f\n\x07ip_wlan\x18\x04 \x01(\t\x12\x18\n\x10port_service_zmq\x18\x05 \x01(\t\x12\x19\n\x11port_service_rest\x18\x06 \x01(\t\x12\x1b\n\x13port_topic_data_zmq\x18\x07 \x01(\t\x12\x1a\n\x12port_topic_data_ws\x18\x08 \x01(\tb\x06proto3')
 )
 
 
@@ -47,36 +47,43 @@ _SERVER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='ubii.servers.Server.ip', index=2,
+      name='ip_ethernet', full_name='ubii.servers.Server.ip_ethernet', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='port_service_zmq', full_name='ubii.servers.Server.port_service_zmq', index=3,
+      name='ip_wlan', full_name='ubii.servers.Server.ip_wlan', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='port_service_rest', full_name='ubii.servers.Server.port_service_rest', index=4,
+      name='port_service_zmq', full_name='ubii.servers.Server.port_service_zmq', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='port_topic_data_zmq', full_name='ubii.servers.Server.port_topic_data_zmq', index=5,
+      name='port_service_rest', full_name='ubii.servers.Server.port_service_rest', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='port_topic_data_ws', full_name='ubii.servers.Server.port_topic_data_ws', index=6,
+      name='port_topic_data_zmq', full_name='ubii.servers.Server.port_topic_data_zmq', index=6,
       number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='port_topic_data_ws', full_name='ubii.servers.Server.port_topic_data_ws', index=7,
+      number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -94,7 +101,7 @@ _SERVER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=45,
-  serialized_end=201,
+  serialized_end=227,
 )
 
 DESCRIPTOR.message_types_by_name['Server'] = _SERVER

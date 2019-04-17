@@ -3353,7 +3353,8 @@ $root.ubii = (function() {
              * @interface IServer
              * @property {string|null} [id] Server id
              * @property {string|null} [name] Server name
-             * @property {string|null} [ip] Server ip
+             * @property {string|null} [ipEthernet] Server ipEthernet
+             * @property {string|null} [ipWlan] Server ipWlan
              * @property {string|null} [portServiceZmq] Server portServiceZmq
              * @property {string|null} [portServiceRest] Server portServiceRest
              * @property {string|null} [portTopicDataZmq] Server portTopicDataZmq
@@ -3392,12 +3393,20 @@ $root.ubii = (function() {
             Server.prototype.name = "";
 
             /**
-             * Server ip.
-             * @member {string} ip
+             * Server ipEthernet.
+             * @member {string} ipEthernet
              * @memberof ubii.servers.Server
              * @instance
              */
-            Server.prototype.ip = "";
+            Server.prototype.ipEthernet = "";
+
+            /**
+             * Server ipWlan.
+             * @member {string} ipWlan
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.ipWlan = "";
 
             /**
              * Server portServiceZmq.
@@ -3459,16 +3468,18 @@ $root.ubii = (function() {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
                 if (message.name != null && message.hasOwnProperty("name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.ip != null && message.hasOwnProperty("ip"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.ip);
+                if (message.ipEthernet != null && message.hasOwnProperty("ipEthernet"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.ipEthernet);
+                if (message.ipWlan != null && message.hasOwnProperty("ipWlan"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.ipWlan);
                 if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.portServiceZmq);
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.portServiceZmq);
                 if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.portServiceRest);
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.portServiceRest);
                 if (message.portTopicDataZmq != null && message.hasOwnProperty("portTopicDataZmq"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.portTopicDataZmq);
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.portTopicDataZmq);
                 if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
-                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.portTopicDataWs);
+                    writer.uint32(/* id 8, wireType 2 =*/66).string(message.portTopicDataWs);
                 return writer;
             };
 
@@ -3510,18 +3521,21 @@ $root.ubii = (function() {
                         message.name = reader.string();
                         break;
                     case 3:
-                        message.ip = reader.string();
+                        message.ipEthernet = reader.string();
                         break;
                     case 4:
-                        message.portServiceZmq = reader.string();
+                        message.ipWlan = reader.string();
                         break;
                     case 5:
-                        message.portServiceRest = reader.string();
+                        message.portServiceZmq = reader.string();
                         break;
                     case 6:
-                        message.portTopicDataZmq = reader.string();
+                        message.portServiceRest = reader.string();
                         break;
                     case 7:
+                        message.portTopicDataZmq = reader.string();
+                        break;
+                    case 8:
                         message.portTopicDataWs = reader.string();
                         break;
                     default:
@@ -3565,9 +3579,12 @@ $root.ubii = (function() {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                if (message.ip != null && message.hasOwnProperty("ip"))
-                    if (!$util.isString(message.ip))
-                        return "ip: string expected";
+                if (message.ipEthernet != null && message.hasOwnProperty("ipEthernet"))
+                    if (!$util.isString(message.ipEthernet))
+                        return "ipEthernet: string expected";
+                if (message.ipWlan != null && message.hasOwnProperty("ipWlan"))
+                    if (!$util.isString(message.ipWlan))
+                        return "ipWlan: string expected";
                 if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
                     if (!$util.isString(message.portServiceZmq))
                         return "portServiceZmq: string expected";
@@ -3599,8 +3616,10 @@ $root.ubii = (function() {
                     message.id = String(object.id);
                 if (object.name != null)
                     message.name = String(object.name);
-                if (object.ip != null)
-                    message.ip = String(object.ip);
+                if (object.ipEthernet != null)
+                    message.ipEthernet = String(object.ipEthernet);
+                if (object.ipWlan != null)
+                    message.ipWlan = String(object.ipWlan);
                 if (object.portServiceZmq != null)
                     message.portServiceZmq = String(object.portServiceZmq);
                 if (object.portServiceRest != null)
@@ -3628,7 +3647,8 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
-                    object.ip = "";
+                    object.ipEthernet = "";
+                    object.ipWlan = "";
                     object.portServiceZmq = "";
                     object.portServiceRest = "";
                     object.portTopicDataZmq = "";
@@ -3638,8 +3658,10 @@ $root.ubii = (function() {
                     object.id = message.id;
                 if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                if (message.ip != null && message.hasOwnProperty("ip"))
-                    object.ip = message.ip;
+                if (message.ipEthernet != null && message.hasOwnProperty("ipEthernet"))
+                    object.ipEthernet = message.ipEthernet;
+                if (message.ipWlan != null && message.hasOwnProperty("ipWlan"))
+                    object.ipWlan = message.ipWlan;
                 if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
                     object.portServiceZmq = message.portServiceZmq;
                 if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
