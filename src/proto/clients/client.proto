@@ -10,5 +10,5 @@ message Client {
 }
 
 message ClientList {
-    repeated ubii.clients.Client list = 1;
+    repeated ubii.clients.Client elements = 1;
 }

@@ -287,7 +287,7 @@ $root.ubii = (function() {
              * Properties of a ClientList.
              * @memberof ubii.clients
              * @interface IClientList
-             * @property {Array.<ubii.clients.IClient>|null} [list] ClientList list
+             * @property {Array.<ubii.clients.IClient>|null} [elements] ClientList elements
              */
 
             /**
@@ -299,7 +299,7 @@ $root.ubii = (function() {
              * @param {ubii.clients.IClientList=} [properties] Properties to set
              */
             function ClientList(properties) {
-                this.list = [];
+                this.elements = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -307,12 +307,12 @@ $root.ubii = (function() {
             }
 
             /**
-             * ClientList list.
-             * @member {Array.<ubii.clients.IClient>} list
+             * ClientList elements.
+             * @member {Array.<ubii.clients.IClient>} elements
              * @memberof ubii.clients.ClientList
              * @instance
              */
-            ClientList.prototype.list = $util.emptyArray;
+            ClientList.prototype.elements = $util.emptyArray;
 
             /**
              * Creates a new ClientList instance using the specified properties.
@@ -338,9 +338,9 @@ $root.ubii = (function() {
             ClientList.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.list != null && message.list.length)
-                    for (var i = 0; i < message.list.length; ++i)
-                        $root.ubii.clients.Client.encode(message.list[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.clients.Client.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -376,9 +376,9 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.list && message.list.length))
-                            message.list = [];
-                        message.list.push($root.ubii.clients.Client.decode(reader, reader.uint32()));
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.clients.Client.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -415,13 +415,13 @@ $root.ubii = (function() {
             ClientList.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.list != null && message.hasOwnProperty("list")) {
-                    if (!Array.isArray(message.list))
-                        return "list: array expected";
-                    for (var i = 0; i < message.list.length; ++i) {
-                        var error = $root.ubii.clients.Client.verify(message.list[i]);
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.clients.Client.verify(message.elements[i]);
                         if (error)
-                            return "list." + error;
+                            return "elements." + error;
                     }
                 }
                 return null;
@@ -439,14 +439,14 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.clients.ClientList)
                     return object;
                 var message = new $root.ubii.clients.ClientList();
-                if (object.list) {
-                    if (!Array.isArray(object.list))
-                        throw TypeError(".ubii.clients.ClientList.list: array expected");
-                    message.list = [];
-                    for (var i = 0; i < object.list.length; ++i) {
-                        if (typeof object.list[i] !== "object")
-                            throw TypeError(".ubii.clients.ClientList.list: object expected");
-                        message.list[i] = $root.ubii.clients.Client.fromObject(object.list[i]);
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.clients.ClientList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.clients.ClientList.elements: object expected");
+                        message.elements[i] = $root.ubii.clients.Client.fromObject(object.elements[i]);
                     }
                 }
                 return message;
@@ -466,11 +466,11 @@ $root.ubii = (function() {
                     options = {};
                 var object = {};
                 if (options.arrays || options.defaults)
-                    object.list = [];
-                if (message.list && message.list.length) {
-                    object.list = [];
-                    for (var j = 0; j < message.list.length; ++j)
-                        object.list[j] = $root.ubii.clients.Client.toObject(message.list[j], options);
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.clients.Client.toObject(message.elements[j], options);
                 }
                 return object;
             };
@@ -1091,7 +1091,7 @@ $root.ubii = (function() {
              * Properties of a DeviceList.
              * @memberof ubii.devices
              * @interface IDeviceList
-             * @property {Array.<ubii.devices.IDevice>|null} [list] DeviceList list
+             * @property {Array.<ubii.devices.IDevice>|null} [elements] DeviceList elements
              */
 
             /**
@@ -1103,7 +1103,7 @@ $root.ubii = (function() {
              * @param {ubii.devices.IDeviceList=} [properties] Properties to set
              */
             function DeviceList(properties) {
-                this.list = [];
+                this.elements = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -1111,12 +1111,12 @@ $root.ubii = (function() {
             }
 
             /**
-             * DeviceList list.
-             * @member {Array.<ubii.devices.IDevice>} list
+             * DeviceList elements.
+             * @member {Array.<ubii.devices.IDevice>} elements
              * @memberof ubii.devices.DeviceList
              * @instance
              */
-            DeviceList.prototype.list = $util.emptyArray;
+            DeviceList.prototype.elements = $util.emptyArray;
 
             /**
              * Creates a new DeviceList instance using the specified properties.
@@ -1142,9 +1142,9 @@ $root.ubii = (function() {
             DeviceList.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.list != null && message.list.length)
-                    for (var i = 0; i < message.list.length; ++i)
-                        $root.ubii.devices.Device.encode(message.list[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.devices.Device.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -1180,9 +1180,9 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.list && message.list.length))
-                            message.list = [];
-                        message.list.push($root.ubii.devices.Device.decode(reader, reader.uint32()));
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.devices.Device.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1219,13 +1219,13 @@ $root.ubii = (function() {
             DeviceList.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.list != null && message.hasOwnProperty("list")) {
-                    if (!Array.isArray(message.list))
-                        return "list: array expected";
-                    for (var i = 0; i < message.list.length; ++i) {
-                        var error = $root.ubii.devices.Device.verify(message.list[i]);
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.devices.Device.verify(message.elements[i]);
                         if (error)
-                            return "list." + error;
+                            return "elements." + error;
                     }
                 }
                 return null;
@@ -1243,14 +1243,14 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.devices.DeviceList)
                     return object;
                 var message = new $root.ubii.devices.DeviceList();
-                if (object.list) {
-                    if (!Array.isArray(object.list))
-                        throw TypeError(".ubii.devices.DeviceList.list: array expected");
-                    message.list = [];
-                    for (var i = 0; i < object.list.length; ++i) {
-                        if (typeof object.list[i] !== "object")
-                            throw TypeError(".ubii.devices.DeviceList.list: object expected");
-                        message.list[i] = $root.ubii.devices.Device.fromObject(object.list[i]);
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.devices.DeviceList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.devices.DeviceList.elements: object expected");
+                        message.elements[i] = $root.ubii.devices.Device.fromObject(object.elements[i]);
                     }
                 }
                 return message;
@@ -1270,11 +1270,11 @@ $root.ubii = (function() {
                     options = {};
                 var object = {};
                 if (options.arrays || options.defaults)
-                    object.list = [];
-                if (message.list && message.list.length) {
-                    object.list = [];
-                    for (var j = 0; j < message.list.length; ++j)
-                        object.list[j] = $root.ubii.devices.Device.toObject(message.list[j], options);
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.devices.Device.toObject(message.elements[j], options);
                 }
                 return object;
             };
@@ -6263,6 +6263,230 @@ $root.ubii = (function() {
             return TopicData;
         })();
 
+        topicData.Timestamp = (function() {
+
+            /**
+             * Properties of a Timestamp.
+             * @memberof ubii.topicData
+             * @interface ITimestamp
+             * @property {number|Long|null} [seconds] Timestamp seconds
+             * @property {number|null} [nanos] Timestamp nanos
+             */
+
+            /**
+             * Constructs a new Timestamp.
+             * @memberof ubii.topicData
+             * @classdesc Represents a Timestamp.
+             * @implements ITimestamp
+             * @constructor
+             * @param {ubii.topicData.ITimestamp=} [properties] Properties to set
+             */
+            function Timestamp(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Timestamp seconds.
+             * @member {number|Long} seconds
+             * @memberof ubii.topicData.Timestamp
+             * @instance
+             */
+            Timestamp.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Timestamp nanos.
+             * @member {number} nanos
+             * @memberof ubii.topicData.Timestamp
+             * @instance
+             */
+            Timestamp.prototype.nanos = 0;
+
+            /**
+             * Creates a new Timestamp instance using the specified properties.
+             * @function create
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {ubii.topicData.ITimestamp=} [properties] Properties to set
+             * @returns {ubii.topicData.Timestamp} Timestamp instance
+             */
+            Timestamp.create = function create(properties) {
+                return new Timestamp(properties);
+            };
+
+            /**
+             * Encodes the specified Timestamp message. Does not implicitly {@link ubii.topicData.Timestamp.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {ubii.topicData.ITimestamp} message Timestamp message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Timestamp.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
+                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link ubii.topicData.Timestamp.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {ubii.topicData.ITimestamp} message Timestamp message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Timestamp.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.topicData.Timestamp} Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Timestamp.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.topicData.Timestamp();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.seconds = reader.int64();
+                        break;
+                    case 2:
+                        message.nanos = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.topicData.Timestamp} Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Timestamp.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Timestamp message.
+             * @function verify
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Timestamp.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
+                        return "seconds: integer|Long expected";
+                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    if (!$util.isInteger(message.nanos))
+                        return "nanos: integer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.topicData.Timestamp} Timestamp
+             */
+            Timestamp.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.topicData.Timestamp)
+                    return object;
+                var message = new $root.ubii.topicData.Timestamp();
+                if (object.seconds != null)
+                    if ($util.Long)
+                        (message.seconds = $util.Long.fromValue(object.seconds)).unsigned = false;
+                    else if (typeof object.seconds === "string")
+                        message.seconds = parseInt(object.seconds, 10);
+                    else if (typeof object.seconds === "number")
+                        message.seconds = object.seconds;
+                    else if (typeof object.seconds === "object")
+                        message.seconds = new $util.LongBits(object.seconds.low >>> 0, object.seconds.high >>> 0).toNumber();
+                if (object.nanos != null)
+                    message.nanos = object.nanos | 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.topicData.Timestamp
+             * @static
+             * @param {ubii.topicData.Timestamp} message Timestamp
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Timestamp.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.seconds = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.seconds = options.longs === String ? "0" : 0;
+                    object.nanos = 0;
+                }
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    if (typeof message.seconds === "number")
+                        object.seconds = options.longs === String ? String(message.seconds) : message.seconds;
+                    else
+                        object.seconds = options.longs === String ? $util.Long.prototype.toString.call(message.seconds) : options.longs === Number ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber() : message.seconds;
+                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    object.nanos = message.nanos;
+                return object;
+            };
+
+            /**
+             * Converts this Timestamp to JSON.
+             * @function toJSON
+             * @memberof ubii.topicData.Timestamp
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Timestamp.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Timestamp;
+        })();
+
         topicData.TopicDataRecord = (function() {
 
             /**
@@ -6280,6 +6504,7 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IMatrix3x2|null} [matrix3x2] TopicDataRecord matrix3x2
              * @property {ubii.dataStructure.IMatrix4x4|null} [matrix4x4] TopicDataRecord matrix4x4
              * @property {ubii.dataStructure.IColor|null} [color] TopicDataRecord color
+             * @property {ubii.topicData.ITimestamp|null} [timestamp] TopicDataRecord timestamp
              */
 
             /**
@@ -6385,6 +6610,14 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.color = null;
 
+            /**
+             * TopicDataRecord timestamp.
+             * @member {ubii.topicData.ITimestamp|null|undefined} timestamp
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.timestamp = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
@@ -6445,6 +6678,8 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Matrix4x4.encode(message.matrix4x4, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.color != null && message.hasOwnProperty("color"))
                     $root.ubii.dataStructure.Color.encode(message.color, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    $root.ubii.topicData.Timestamp.encode(message.timestamp, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
                 return writer;
             };
 
@@ -6511,6 +6746,9 @@ $root.ubii = (function() {
                         break;
                     case 11:
                         message.color = $root.ubii.dataStructure.Color.decode(reader, reader.uint32());
+                        break;
+                    case 12:
+                        message.timestamp = $root.ubii.topicData.Timestamp.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6640,6 +6878,11 @@ $root.ubii = (function() {
                             return "color." + error;
                     }
                 }
+                if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
+                    var error = $root.ubii.topicData.Timestamp.verify(message.timestamp);
+                    if (error)
+                        return "timestamp." + error;
+                }
                 return null;
             };
 
@@ -6698,6 +6941,11 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.topicData.TopicDataRecord.color: object expected");
                     message.color = $root.ubii.dataStructure.Color.fromObject(object.color);
                 }
+                if (object.timestamp != null) {
+                    if (typeof object.timestamp !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.timestamp: object expected");
+                    message.timestamp = $root.ubii.topicData.Timestamp.fromObject(object.timestamp);
+                }
                 return message;
             };
 
@@ -6714,8 +6962,10 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults)
+                if (options.defaults) {
                     object.topic = "";
+                    object.timestamp = null;
+                }
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     object.topic = message.topic;
                 if (message.number != null && message.hasOwnProperty("number")) {
@@ -6768,6 +7018,8 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "color";
                 }
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    object.timestamp = $root.ubii.topicData.Timestamp.toObject(message.timestamp, options);
                 return object;
             };
 
@@ -6791,7 +7043,7 @@ $root.ubii = (function() {
              * Properties of a TopicDataRecordList.
              * @memberof ubii.topicData
              * @interface ITopicDataRecordList
-             * @property {Array.<ubii.topicData.ITopicDataRecord>|null} [list] TopicDataRecordList list
+             * @property {Array.<ubii.topicData.ITopicDataRecord>|null} [elements] TopicDataRecordList elements
              */
 
             /**
@@ -6803,7 +7055,7 @@ $root.ubii = (function() {
              * @param {ubii.topicData.ITopicDataRecordList=} [properties] Properties to set
              */
             function TopicDataRecordList(properties) {
-                this.list = [];
+                this.elements = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -6811,12 +7063,12 @@ $root.ubii = (function() {
             }
 
             /**
-             * TopicDataRecordList list.
-             * @member {Array.<ubii.topicData.ITopicDataRecord>} list
+             * TopicDataRecordList elements.
+             * @member {Array.<ubii.topicData.ITopicDataRecord>} elements
              * @memberof ubii.topicData.TopicDataRecordList
              * @instance
              */
-            TopicDataRecordList.prototype.list = $util.emptyArray;
+            TopicDataRecordList.prototype.elements = $util.emptyArray;
 
             /**
              * Creates a new TopicDataRecordList instance using the specified properties.
@@ -6842,9 +7094,9 @@ $root.ubii = (function() {
             TopicDataRecordList.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.list != null && message.list.length)
-                    for (var i = 0; i < message.list.length; ++i)
-                        $root.ubii.topicData.TopicDataRecord.encode(message.list[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.topicData.TopicDataRecord.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -6880,9 +7132,9 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.list && message.list.length))
-                            message.list = [];
-                        message.list.push($root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32()));
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6919,13 +7171,13 @@ $root.ubii = (function() {
             TopicDataRecordList.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.list != null && message.hasOwnProperty("list")) {
-                    if (!Array.isArray(message.list))
-                        return "list: array expected";
-                    for (var i = 0; i < message.list.length; ++i) {
-                        var error = $root.ubii.topicData.TopicDataRecord.verify(message.list[i]);
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.topicData.TopicDataRecord.verify(message.elements[i]);
                         if (error)
-                            return "list." + error;
+                            return "elements." + error;
                     }
                 }
                 return null;
@@ -6943,14 +7195,14 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.topicData.TopicDataRecordList)
                     return object;
                 var message = new $root.ubii.topicData.TopicDataRecordList();
-                if (object.list) {
-                    if (!Array.isArray(object.list))
-                        throw TypeError(".ubii.topicData.TopicDataRecordList.list: array expected");
-                    message.list = [];
-                    for (var i = 0; i < object.list.length; ++i) {
-                        if (typeof object.list[i] !== "object")
-                            throw TypeError(".ubii.topicData.TopicDataRecordList.list: object expected");
-                        message.list[i] = $root.ubii.topicData.TopicDataRecord.fromObject(object.list[i]);
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.topicData.TopicDataRecordList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.topicData.TopicDataRecordList.elements: object expected");
+                        message.elements[i] = $root.ubii.topicData.TopicDataRecord.fromObject(object.elements[i]);
                     }
                 }
                 return message;
@@ -6970,11 +7222,11 @@ $root.ubii = (function() {
                     options = {};
                 var object = {};
                 if (options.arrays || options.defaults)
-                    object.list = [];
-                if (message.list && message.list.length) {
-                    object.list = [];
-                    for (var j = 0; j < message.list.length; ++j)
-                        object.list[j] = $root.ubii.topicData.TopicDataRecord.toObject(message.list[j], options);
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.topicData.TopicDataRecord.toObject(message.elements[j], options);
                 }
                 return object;
             };
