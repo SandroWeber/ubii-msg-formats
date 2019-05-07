@@ -16,5 +16,5 @@ message Device {
 }
 
 message DeviceList {
-    repeated ubii.devices.Device list = 1;
+    repeated ubii.devices.Device elements = 1;
 }
