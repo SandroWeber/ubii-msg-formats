@@ -287,7 +287,7 @@ $root.ubii = (function() {
              * Properties of a ClientList.
              * @memberof ubii.clients
              * @interface IClientList
-             * @property {Array.<ubii.clients.IClient>|null} [list] ClientList list
+             * @property {Array.<ubii.clients.IClient>|null} [elements] ClientList elements
              */
 
             /**
@@ -299,7 +299,7 @@ $root.ubii = (function() {
              * @param {ubii.clients.IClientList=} [properties] Properties to set
              */
             function ClientList(properties) {
-                this.list = [];
+                this.elements = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -307,12 +307,12 @@ $root.ubii = (function() {
             }
 
             /**
-             * ClientList list.
-             * @member {Array.<ubii.clients.IClient>} list
+             * ClientList elements.
+             * @member {Array.<ubii.clients.IClient>} elements
              * @memberof ubii.clients.ClientList
              * @instance
              */
-            ClientList.prototype.list = $util.emptyArray;
+            ClientList.prototype.elements = $util.emptyArray;
 
             /**
              * Creates a new ClientList instance using the specified properties.
@@ -338,9 +338,9 @@ $root.ubii = (function() {
             ClientList.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.list != null && message.list.length)
-                    for (var i = 0; i < message.list.length; ++i)
-                        $root.ubii.clients.Client.encode(message.list[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.clients.Client.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -376,9 +376,9 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.list && message.list.length))
-                            message.list = [];
-                        message.list.push($root.ubii.clients.Client.decode(reader, reader.uint32()));
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.clients.Client.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -415,13 +415,13 @@ $root.ubii = (function() {
             ClientList.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.list != null && message.hasOwnProperty("list")) {
-                    if (!Array.isArray(message.list))
-                        return "list: array expected";
-                    for (var i = 0; i < message.list.length; ++i) {
-                        var error = $root.ubii.clients.Client.verify(message.list[i]);
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.clients.Client.verify(message.elements[i]);
                         if (error)
-                            return "list." + error;
+                            return "elements." + error;
                     }
                 }
                 return null;
@@ -439,14 +439,14 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.clients.ClientList)
                     return object;
                 var message = new $root.ubii.clients.ClientList();
-                if (object.list) {
-                    if (!Array.isArray(object.list))
-                        throw TypeError(".ubii.clients.ClientList.list: array expected");
-                    message.list = [];
-                    for (var i = 0; i < object.list.length; ++i) {
-                        if (typeof object.list[i] !== "object")
-                            throw TypeError(".ubii.clients.ClientList.list: object expected");
-                        message.list[i] = $root.ubii.clients.Client.fromObject(object.list[i]);
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.clients.ClientList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.clients.ClientList.elements: object expected");
+                        message.elements[i] = $root.ubii.clients.Client.fromObject(object.elements[i]);
                     }
                 }
                 return message;
@@ -466,11 +466,11 @@ $root.ubii = (function() {
                     options = {};
                 var object = {};
                 if (options.arrays || options.defaults)
-                    object.list = [];
-                if (message.list && message.list.length) {
-                    object.list = [];
-                    for (var j = 0; j < message.list.length; ++j)
-                        object.list[j] = $root.ubii.clients.Client.toObject(message.list[j], options);
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.clients.Client.toObject(message.elements[j], options);
                 }
                 return object;
             };
@@ -1091,7 +1091,7 @@ $root.ubii = (function() {
              * Properties of a DeviceList.
              * @memberof ubii.devices
              * @interface IDeviceList
-             * @property {Array.<ubii.devices.IDevice>|null} [list] DeviceList list
+             * @property {Array.<ubii.devices.IDevice>|null} [elements] DeviceList elements
              */
 
             /**
@@ -1103,7 +1103,7 @@ $root.ubii = (function() {
              * @param {ubii.devices.IDeviceList=} [properties] Properties to set
              */
             function DeviceList(properties) {
-                this.list = [];
+                this.elements = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -1111,12 +1111,12 @@ $root.ubii = (function() {
             }
 
             /**
-             * DeviceList list.
-             * @member {Array.<ubii.devices.IDevice>} list
+             * DeviceList elements.
+             * @member {Array.<ubii.devices.IDevice>} elements
              * @memberof ubii.devices.DeviceList
              * @instance
              */
-            DeviceList.prototype.list = $util.emptyArray;
+            DeviceList.prototype.elements = $util.emptyArray;
 
             /**
              * Creates a new DeviceList instance using the specified properties.
@@ -1142,9 +1142,9 @@ $root.ubii = (function() {
             DeviceList.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.list != null && message.list.length)
-                    for (var i = 0; i < message.list.length; ++i)
-                        $root.ubii.devices.Device.encode(message.list[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.devices.Device.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -1180,9 +1180,9 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.list && message.list.length))
-                            message.list = [];
-                        message.list.push($root.ubii.devices.Device.decode(reader, reader.uint32()));
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.devices.Device.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1219,13 +1219,13 @@ $root.ubii = (function() {
             DeviceList.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.list != null && message.hasOwnProperty("list")) {
-                    if (!Array.isArray(message.list))
-                        return "list: array expected";
-                    for (var i = 0; i < message.list.length; ++i) {
-                        var error = $root.ubii.devices.Device.verify(message.list[i]);
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.devices.Device.verify(message.elements[i]);
                         if (error)
-                            return "list." + error;
+                            return "elements." + error;
                     }
                 }
                 return null;
@@ -1243,14 +1243,14 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.devices.DeviceList)
                     return object;
                 var message = new $root.ubii.devices.DeviceList();
-                if (object.list) {
-                    if (!Array.isArray(object.list))
-                        throw TypeError(".ubii.devices.DeviceList.list: array expected");
-                    message.list = [];
-                    for (var i = 0; i < object.list.length; ++i) {
-                        if (typeof object.list[i] !== "object")
-                            throw TypeError(".ubii.devices.DeviceList.list: object expected");
-                        message.list[i] = $root.ubii.devices.Device.fromObject(object.list[i]);
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.devices.DeviceList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.devices.DeviceList.elements: object expected");
+                        message.elements[i] = $root.ubii.devices.Device.fromObject(object.elements[i]);
                     }
                 }
                 return message;
@@ -1270,11 +1270,11 @@ $root.ubii = (function() {
                     options = {};
                 var object = {};
                 if (options.arrays || options.defaults)
-                    object.list = [];
-                if (message.list && message.list.length) {
-                    object.list = [];
-                    for (var j = 0; j < message.list.length; ++j)
-                        object.list[j] = $root.ubii.devices.Device.toObject(message.list[j], options);
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.devices.Device.toObject(message.elements[j], options);
                 }
                 return object;
             };
@@ -3353,7 +3353,8 @@ $root.ubii = (function() {
              * @interface IServer
              * @property {string|null} [id] Server id
              * @property {string|null} [name] Server name
-             * @property {string|null} [ip] Server ip
+             * @property {string|null} [ipEthernet] Server ipEthernet
+             * @property {string|null} [ipWlan] Server ipWlan
              * @property {string|null} [portServiceZmq] Server portServiceZmq
              * @property {string|null} [portServiceRest] Server portServiceRest
              * @property {string|null} [portTopicDataZmq] Server portTopicDataZmq
@@ -3392,12 +3393,20 @@ $root.ubii = (function() {
             Server.prototype.name = "";
 
             /**
-             * Server ip.
-             * @member {string} ip
+             * Server ipEthernet.
+             * @member {string} ipEthernet
              * @memberof ubii.servers.Server
              * @instance
              */
-            Server.prototype.ip = "";
+            Server.prototype.ipEthernet = "";
+
+            /**
+             * Server ipWlan.
+             * @member {string} ipWlan
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.ipWlan = "";
 
             /**
              * Server portServiceZmq.
@@ -3459,16 +3468,18 @@ $root.ubii = (function() {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
                 if (message.name != null && message.hasOwnProperty("name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.ip != null && message.hasOwnProperty("ip"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.ip);
+                if (message.ipEthernet != null && message.hasOwnProperty("ipEthernet"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.ipEthernet);
+                if (message.ipWlan != null && message.hasOwnProperty("ipWlan"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.ipWlan);
                 if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.portServiceZmq);
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.portServiceZmq);
                 if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.portServiceRest);
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.portServiceRest);
                 if (message.portTopicDataZmq != null && message.hasOwnProperty("portTopicDataZmq"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.portTopicDataZmq);
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.portTopicDataZmq);
                 if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
-                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.portTopicDataWs);
+                    writer.uint32(/* id 8, wireType 2 =*/66).string(message.portTopicDataWs);
                 return writer;
             };
 
@@ -3510,18 +3521,21 @@ $root.ubii = (function() {
                         message.name = reader.string();
                         break;
                     case 3:
-                        message.ip = reader.string();
+                        message.ipEthernet = reader.string();
                         break;
                     case 4:
-                        message.portServiceZmq = reader.string();
+                        message.ipWlan = reader.string();
                         break;
                     case 5:
-                        message.portServiceRest = reader.string();
+                        message.portServiceZmq = reader.string();
                         break;
                     case 6:
-                        message.portTopicDataZmq = reader.string();
+                        message.portServiceRest = reader.string();
                         break;
                     case 7:
+                        message.portTopicDataZmq = reader.string();
+                        break;
+                    case 8:
                         message.portTopicDataWs = reader.string();
                         break;
                     default:
@@ -3565,9 +3579,12 @@ $root.ubii = (function() {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                if (message.ip != null && message.hasOwnProperty("ip"))
-                    if (!$util.isString(message.ip))
-                        return "ip: string expected";
+                if (message.ipEthernet != null && message.hasOwnProperty("ipEthernet"))
+                    if (!$util.isString(message.ipEthernet))
+                        return "ipEthernet: string expected";
+                if (message.ipWlan != null && message.hasOwnProperty("ipWlan"))
+                    if (!$util.isString(message.ipWlan))
+                        return "ipWlan: string expected";
                 if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
                     if (!$util.isString(message.portServiceZmq))
                         return "portServiceZmq: string expected";
@@ -3599,8 +3616,10 @@ $root.ubii = (function() {
                     message.id = String(object.id);
                 if (object.name != null)
                     message.name = String(object.name);
-                if (object.ip != null)
-                    message.ip = String(object.ip);
+                if (object.ipEthernet != null)
+                    message.ipEthernet = String(object.ipEthernet);
+                if (object.ipWlan != null)
+                    message.ipWlan = String(object.ipWlan);
                 if (object.portServiceZmq != null)
                     message.portServiceZmq = String(object.portServiceZmq);
                 if (object.portServiceRest != null)
@@ -3628,7 +3647,8 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
-                    object.ip = "";
+                    object.ipEthernet = "";
+                    object.ipWlan = "";
                     object.portServiceZmq = "";
                     object.portServiceRest = "";
                     object.portTopicDataZmq = "";
@@ -3638,8 +3658,10 @@ $root.ubii = (function() {
                     object.id = message.id;
                 if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                if (message.ip != null && message.hasOwnProperty("ip"))
-                    object.ip = message.ip;
+                if (message.ipEthernet != null && message.hasOwnProperty("ipEthernet"))
+                    object.ipEthernet = message.ipEthernet;
+                if (message.ipWlan != null && message.hasOwnProperty("ipWlan"))
+                    object.ipWlan = message.ipWlan;
                 if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
                     object.portServiceZmq = message.portServiceZmq;
                 if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
