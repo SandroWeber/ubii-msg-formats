@@ -91,7 +91,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::clients::ClientList, list_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::clients::ClientList, elements_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::clients::Client)},
@@ -127,12 +127,12 @@ void AddDescriptorsImpl() {
       "\n\032proto/clients/client.proto\022\014ubii.clien"
       "ts\032\032proto/devices/device.proto\"I\n\006Client"
       "\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030\003 "
-      "\003(\0132\024.ubii.devices.Device\"0\n\nClientList\022"
-      "\"\n\004list\030\001 \003(\0132\024.ubii.clients.Clientb\006pro"
-      "to3"
+      "\003(\0132\024.ubii.devices.Device\"4\n\nClientList\022"
+      "&\n\010elements\030\001 \003(\0132\024.ubii.clients.Clientb"
+      "\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 203);
+      descriptor, 207);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/clients/client.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fdevices_2fdevice_2eproto::AddDescriptors();
@@ -505,7 +505,7 @@ void Client::InternalSwap(Client* other) {
 void ClientList::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ClientList::kListFieldNumber;
+const int ClientList::kElementsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ClientList::ClientList()
@@ -518,7 +518,7 @@ ClientList::ClientList()
 ClientList::ClientList(const ClientList& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      list_(from.list_) {
+      elements_(from.elements_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.clients.ClientList)
 }
@@ -554,7 +554,7 @@ void ClientList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  list_.Clear();
+  elements_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -568,12 +568,12 @@ bool ClientList::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .ubii.clients.Client list = 1;
+      // repeated .ubii.clients.Client elements = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_list()));
+                input, add_elements()));
         } else {
           goto handle_unusual;
         }
@@ -606,12 +606,12 @@ void ClientList::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.clients.Client list = 1;
+  // repeated .ubii.clients.Client elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->list_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1,
-      this->list(static_cast<int>(i)),
+      this->elements(static_cast<int>(i)),
       output);
   }
 
@@ -629,12 +629,12 @@ void ClientList::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.clients.Client list = 1;
+  // repeated .ubii.clients.Client elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->list_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->list(static_cast<int>(i)), deterministic, target);
+        1, this->elements(static_cast<int>(i)), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -654,14 +654,14 @@ size_t ClientList::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // repeated .ubii.clients.Client list = 1;
+  // repeated .ubii.clients.Client elements = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->list_size());
+    unsigned int count = static_cast<unsigned int>(this->elements_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->list(static_cast<int>(i)));
+          this->elements(static_cast<int>(i)));
     }
   }
 
@@ -692,7 +692,7 @@ void ClientList::MergeFrom(const ClientList& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  list_.MergeFrom(from.list_);
+  elements_.MergeFrom(from.elements_);
 }
 
 void ClientList::CopyFrom(const ::google::protobuf::Message& from) {
@@ -719,7 +719,7 @@ void ClientList::Swap(ClientList* other) {
 }
 void ClientList::InternalSwap(ClientList* other) {
   using std::swap;
-  CastToBase(&list_)->InternalSwap(CastToBase(&other->list_));
+  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

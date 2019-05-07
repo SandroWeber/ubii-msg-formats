@@ -94,7 +94,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::DeviceList, list_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::DeviceList, elements_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::devices::Device)},
@@ -133,12 +133,12 @@ void AddDescriptorsImpl() {
       "_type\030\003 \001(\0162\037.ubii.devices.Device.Device"
       "Type\022+\n\ncomponents\030\004 \003(\0132\027.ubii.devices."
       "Component\022\021\n\tclient_id\030\005 \001(\t\"*\n\nDeviceTy"
-      "pe\022\017\n\013PARTICIPANT\020\000\022\013\n\007WATCHER\020\001\"0\n\nDevi"
-      "ceList\022\"\n\004list\030\001 \003(\0132\024.ubii.devices.Devi"
-      "ceb\006proto3"
+      "pe\022\017\n\013PARTICIPANT\020\000\022\013\n\007WATCHER\020\001\"4\n\nDevi"
+      "ceList\022&\n\010elements\030\001 \003(\0132\024.ubii.devices."
+      "Deviceb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 330);
+      descriptor, 334);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/devices/device.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fdevices_2fcomponent_2eproto::AddDescriptors();
@@ -631,7 +631,7 @@ void Device::InternalSwap(Device* other) {
 void DeviceList::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DeviceList::kListFieldNumber;
+const int DeviceList::kElementsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DeviceList::DeviceList()
@@ -644,7 +644,7 @@ DeviceList::DeviceList()
 DeviceList::DeviceList(const DeviceList& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      list_(from.list_) {
+      elements_(from.elements_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.devices.DeviceList)
 }
@@ -680,7 +680,7 @@ void DeviceList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  list_.Clear();
+  elements_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -694,12 +694,12 @@ bool DeviceList::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .ubii.devices.Device list = 1;
+      // repeated .ubii.devices.Device elements = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_list()));
+                input, add_elements()));
         } else {
           goto handle_unusual;
         }
@@ -732,12 +732,12 @@ void DeviceList::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.devices.Device list = 1;
+  // repeated .ubii.devices.Device elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->list_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1,
-      this->list(static_cast<int>(i)),
+      this->elements(static_cast<int>(i)),
       output);
   }
 
@@ -755,12 +755,12 @@ void DeviceList::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.devices.Device list = 1;
+  // repeated .ubii.devices.Device elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->list_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->list(static_cast<int>(i)), deterministic, target);
+        1, this->elements(static_cast<int>(i)), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -780,14 +780,14 @@ size_t DeviceList::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // repeated .ubii.devices.Device list = 1;
+  // repeated .ubii.devices.Device elements = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->list_size());
+    unsigned int count = static_cast<unsigned int>(this->elements_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->list(static_cast<int>(i)));
+          this->elements(static_cast<int>(i)));
     }
   }
 
@@ -818,7 +818,7 @@ void DeviceList::MergeFrom(const DeviceList& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  list_.MergeFrom(from.list_);
+  elements_.MergeFrom(from.elements_);
 }
 
 void DeviceList::CopyFrom(const ::google::protobuf::Message& from) {
@@ -845,7 +845,7 @@ void DeviceList::Swap(DeviceList* other) {
 }
 void DeviceList::InternalSwap(DeviceList* other) {
   using std::swap;
-  CastToBase(&list_)->InternalSwap(CastToBase(&other->list_));
+  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

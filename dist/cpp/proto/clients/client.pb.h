@@ -293,23 +293,23 @@ class ClientList : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // repeated .ubii.clients.Client list = 1;
-  int list_size() const;
-  void clear_list();
-  static const int kListFieldNumber = 1;
-  ::ubii::clients::Client* mutable_list(int index);
+  // repeated .ubii.clients.Client elements = 1;
+  int elements_size() const;
+  void clear_elements();
+  static const int kElementsFieldNumber = 1;
+  ::ubii::clients::Client* mutable_elements(int index);
   ::google::protobuf::RepeatedPtrField< ::ubii::clients::Client >*
-      mutable_list();
-  const ::ubii::clients::Client& list(int index) const;
-  ::ubii::clients::Client* add_list();
+      mutable_elements();
+  const ::ubii::clients::Client& elements(int index) const;
+  ::ubii::clients::Client* add_elements();
   const ::google::protobuf::RepeatedPtrField< ::ubii::clients::Client >&
-      list() const;
+      elements() const;
 
   // @@protoc_insertion_point(class_scope:ubii.clients.ClientList)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::ubii::clients::Client > list_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::clients::Client > elements_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fclients_2fclient_2eproto::TableStruct;
 };
@@ -461,34 +461,34 @@ Client::devices() const {
 
 // ClientList
 
-// repeated .ubii.clients.Client list = 1;
-inline int ClientList::list_size() const {
-  return list_.size();
+// repeated .ubii.clients.Client elements = 1;
+inline int ClientList::elements_size() const {
+  return elements_.size();
 }
-inline void ClientList::clear_list() {
-  list_.Clear();
+inline void ClientList::clear_elements() {
+  elements_.Clear();
 }
-inline ::ubii::clients::Client* ClientList::mutable_list(int index) {
-  // @@protoc_insertion_point(field_mutable:ubii.clients.ClientList.list)
-  return list_.Mutable(index);
+inline ::ubii::clients::Client* ClientList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.clients.ClientList.elements)
+  return elements_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::ubii::clients::Client >*
-ClientList::mutable_list() {
-  // @@protoc_insertion_point(field_mutable_list:ubii.clients.ClientList.list)
-  return &list_;
+ClientList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.clients.ClientList.elements)
+  return &elements_;
 }
-inline const ::ubii::clients::Client& ClientList::list(int index) const {
-  // @@protoc_insertion_point(field_get:ubii.clients.ClientList.list)
-  return list_.Get(index);
+inline const ::ubii::clients::Client& ClientList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.clients.ClientList.elements)
+  return elements_.Get(index);
 }
-inline ::ubii::clients::Client* ClientList::add_list() {
-  // @@protoc_insertion_point(field_add:ubii.clients.ClientList.list)
-  return list_.Add();
+inline ::ubii::clients::Client* ClientList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.clients.ClientList.elements)
+  return elements_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::ubii::clients::Client >&
-ClientList::list() const {
-  // @@protoc_insertion_point(field_list:ubii.clients.ClientList.list)
-  return list_;
+ClientList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.clients.ClientList.elements)
+  return elements_;
 }
 
 #ifdef __GNUC__

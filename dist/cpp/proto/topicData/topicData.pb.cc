@@ -24,7 +24,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fgeneral_2ferror_2eproto ::googl
 }  // namespace protobuf_proto_2fgeneral_2ferror_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicDataRecordList;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<7> scc_info_TopicDataRecord;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<8> scc_info_TopicDataRecord;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto
 namespace ubii {
 namespace topicData {

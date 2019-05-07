@@ -40,8 +40,11 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fd
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector4_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector4_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Vector4;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector4_2eproto
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<7> scc_info_TopicDataRecord;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<8> scc_info_TopicDataRecord;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto
 namespace ubii {
 namespace topicData {
@@ -79,15 +82,16 @@ static void InitDefaultsTopicDataRecord() {
   ::ubii::topicData::TopicDataRecord::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<7> scc_info_TopicDataRecord =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 7, InitDefaultsTopicDataRecord}, {
+::google::protobuf::internal::SCCInfo<8> scc_info_TopicDataRecord =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 8, InitDefaultsTopicDataRecord}, {
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto::scc_info_Vector2.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto::scc_info_Vector3.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector4_2eproto::scc_info_Vector4.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquaternion_2eproto::scc_info_Quaternion.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto::scc_info_Matrix3x2.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto::scc_info_Matrix4x4.base,
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto::scc_info_Color.base,}};
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto::scc_info_Color.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::scc_info_Timestamp.base,}};
 
 static void InitDefaultsTopicDataRecordList() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -128,17 +132,18 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, matrix3x2_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, matrix4x4_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, color_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, timestamp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, list_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, elements_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::topicData::TopicDataRecord)},
-  { 17, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
+  { 18, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -179,23 +184,26 @@ void AddDescriptorsImpl() {
       "cture/matrix3x2.proto\032=proto/topicData/t"
       "opicDataRecord/dataStructure/matrix4x4.p"
       "roto\0329proto/topicData/topicDataRecord/da"
-      "taStructure/color.proto\"\271\003\n\017TopicDataRec"
-      "ord\022\r\n\005topic\030\001 \001(\t\022\020\n\006number\030\002 \001(\001H\000\022\021\n\007"
-      "boolean\030\003 \001(\010H\000\022\020\n\006string\030\004 \001(\tH\000\022.\n\007vec"
-      "tor2\030\005 \001(\0132\033.ubii.dataStructure.Vector2H"
-      "\000\022.\n\007vector3\030\006 \001(\0132\033.ubii.dataStructure."
-      "Vector3H\000\022.\n\007vector4\030\007 \001(\0132\033.ubii.dataSt"
-      "ructure.Vector4H\000\0224\n\nquaternion\030\010 \001(\0132\036."
-      "ubii.dataStructure.QuaternionH\000\0222\n\tmatri"
-      "x3x2\030\t \001(\0132\035.ubii.dataStructure.Matrix3x"
-      "2H\000\0222\n\tmatrix4x4\030\n \001(\0132\035.ubii.dataStruct"
-      "ure.Matrix4x4H\000\022*\n\005color\030\013 \001(\0132\031.ubii.da"
-      "taStructure.ColorH\000B\006\n\004type\"D\n\023TopicData"
-      "RecordList\022-\n\004list\030\001 \003(\0132\037.ubii.topicDat"
-      "a.TopicDataRecordb\006proto3"
+      "taStructure/color.proto\032/proto/topicData"
+      "/topicDataRecord/timestamp.proto\"\347\003\n\017Top"
+      "icDataRecord\022\r\n\005topic\030\001 \001(\t\022\020\n\006number\030\002 "
+      "\001(\001H\000\022\021\n\007boolean\030\003 \001(\010H\000\022\020\n\006string\030\004 \001(\t"
+      "H\000\022.\n\007vector2\030\005 \001(\0132\033.ubii.dataStructure"
+      ".Vector2H\000\022.\n\007vector3\030\006 \001(\0132\033.ubii.dataS"
+      "tructure.Vector3H\000\022.\n\007vector4\030\007 \001(\0132\033.ub"
+      "ii.dataStructure.Vector4H\000\0224\n\nquaternion"
+      "\030\010 \001(\0132\036.ubii.dataStructure.QuaternionH\000"
+      "\0222\n\tmatrix3x2\030\t \001(\0132\035.ubii.dataStructure"
+      ".Matrix3x2H\000\0222\n\tmatrix4x4\030\n \001(\0132\035.ubii.d"
+      "ataStructure.Matrix4x4H\000\022*\n\005color\030\013 \001(\0132"
+      "\031.ubii.dataStructure.ColorH\000\022,\n\ttimestam"
+      "p\030\014 \001(\0132\031.ubii.topicData.TimestampB\006\n\004ty"
+      "pe\"H\n\023TopicDataRecordList\0221\n\010elements\030\001 "
+      "\003(\0132\037.ubii.topicData.TopicDataRecordb\006pr"
+      "oto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1025);
+      descriptor, 1124);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord/topicDataRecord.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto::AddDescriptors();
@@ -205,6 +213,7 @@ void AddDescriptorsImpl() {
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto::AddDescriptors();
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -242,6 +251,8 @@ void TopicDataRecord::InitAsDefaultInstance() {
       ::ubii::dataStructure::Matrix4x4::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.color_ = const_cast< ::ubii::dataStructure::Color*>(
       ::ubii::dataStructure::Color::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_._instance.get_mutable()->timestamp_ = const_cast< ::ubii::topicData::Timestamp*>(
+      ::ubii::topicData::Timestamp::internal_default_instance());
 }
 void TopicDataRecord::set_allocated_vector2(::ubii::dataStructure::Vector2* vector2) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -383,6 +394,12 @@ void TopicDataRecord::clear_color() {
     clear_has_type();
   }
 }
+void TopicDataRecord::clear_timestamp() {
+  if (GetArenaNoVirtual() == NULL && timestamp_ != NULL) {
+    delete timestamp_;
+  }
+  timestamp_ = NULL;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TopicDataRecord::kTopicFieldNumber;
 const int TopicDataRecord::kNumberFieldNumber;
@@ -395,6 +412,7 @@ const int TopicDataRecord::kQuaternionFieldNumber;
 const int TopicDataRecord::kMatrix3X2FieldNumber;
 const int TopicDataRecord::kMatrix4X4FieldNumber;
 const int TopicDataRecord::kColorFieldNumber;
+const int TopicDataRecord::kTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TopicDataRecord::TopicDataRecord()
@@ -411,6 +429,11 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
   topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.topic().size() > 0) {
     topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
+  }
+  if (from.has_timestamp()) {
+    timestamp_ = new ::ubii::topicData::Timestamp(*from.timestamp_);
+  } else {
+    timestamp_ = NULL;
   }
   clear_has_type();
   switch (from.type_case()) {
@@ -463,6 +486,7 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
 
 void TopicDataRecord::SharedCtor() {
   topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  timestamp_ = NULL;
   clear_has_type();
 }
 
@@ -473,6 +497,7 @@ TopicDataRecord::~TopicDataRecord() {
 
 void TopicDataRecord::SharedDtor() {
   topic_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete timestamp_;
   if (has_type()) {
     clear_type();
   }
@@ -550,6 +575,10 @@ void TopicDataRecord::Clear() {
   (void) cached_has_bits;
 
   topic_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && timestamp_ != NULL) {
+    delete timestamp_;
+  }
+  timestamp_ = NULL;
   clear_type();
   _internal_metadata_.Clear();
 }
@@ -710,6 +739,18 @@ bool TopicDataRecord::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.topicData.Timestamp timestamp = 12;
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_timestamp()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -808,6 +849,12 @@ void TopicDataRecord::SerializeWithCachedSizes(
       11, this->_internal_color(), output);
   }
 
+  // .ubii.topicData.Timestamp timestamp = 12;
+  if (this->has_timestamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      12, this->_internal_timestamp(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -903,6 +950,13 @@ void TopicDataRecord::SerializeWithCachedSizes(
         11, this->_internal_color(), deterministic, target);
   }
 
+  // .ubii.topicData.Timestamp timestamp = 12;
+  if (this->has_timestamp()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        12, this->_internal_timestamp(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -925,6 +979,13 @@ size_t TopicDataRecord::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->topic());
+  }
+
+  // .ubii.topicData.Timestamp timestamp = 12;
+  if (this->has_timestamp()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *timestamp_);
   }
 
   switch (type_case()) {
@@ -1029,6 +1090,9 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
 
     topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
   }
+  if (from.has_timestamp()) {
+    mutable_timestamp()->::ubii::topicData::Timestamp::MergeFrom(from.timestamp());
+  }
   switch (from.type_case()) {
     case kNumber: {
       set_number(from.number());
@@ -1102,6 +1166,7 @@ void TopicDataRecord::InternalSwap(TopicDataRecord* other) {
   using std::swap;
   topic_.Swap(&other->topic_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(timestamp_, other->timestamp_);
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -1118,7 +1183,7 @@ void TopicDataRecord::InternalSwap(TopicDataRecord* other) {
 void TopicDataRecordList::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TopicDataRecordList::kListFieldNumber;
+const int TopicDataRecordList::kElementsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TopicDataRecordList::TopicDataRecordList()
@@ -1131,7 +1196,7 @@ TopicDataRecordList::TopicDataRecordList()
 TopicDataRecordList::TopicDataRecordList(const TopicDataRecordList& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      list_(from.list_) {
+      elements_(from.elements_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.topicData.TopicDataRecordList)
 }
@@ -1167,7 +1232,7 @@ void TopicDataRecordList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  list_.Clear();
+  elements_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -1181,12 +1246,12 @@ bool TopicDataRecordList::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .ubii.topicData.TopicDataRecord list = 1;
+      // repeated .ubii.topicData.TopicDataRecord elements = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_list()));
+                input, add_elements()));
         } else {
           goto handle_unusual;
         }
@@ -1219,12 +1284,12 @@ void TopicDataRecordList::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.topicData.TopicDataRecord list = 1;
+  // repeated .ubii.topicData.TopicDataRecord elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->list_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1,
-      this->list(static_cast<int>(i)),
+      this->elements(static_cast<int>(i)),
       output);
   }
 
@@ -1242,12 +1307,12 @@ void TopicDataRecordList::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.topicData.TopicDataRecord list = 1;
+  // repeated .ubii.topicData.TopicDataRecord elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->list_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->list(static_cast<int>(i)), deterministic, target);
+        1, this->elements(static_cast<int>(i)), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1267,14 +1332,14 @@ size_t TopicDataRecordList::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // repeated .ubii.topicData.TopicDataRecord list = 1;
+  // repeated .ubii.topicData.TopicDataRecord elements = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->list_size());
+    unsigned int count = static_cast<unsigned int>(this->elements_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->list(static_cast<int>(i)));
+          this->elements(static_cast<int>(i)));
     }
   }
 
@@ -1305,7 +1370,7 @@ void TopicDataRecordList::MergeFrom(const TopicDataRecordList& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  list_.MergeFrom(from.list_);
+  elements_.MergeFrom(from.elements_);
 }
 
 void TopicDataRecordList::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1332,7 +1397,7 @@ void TopicDataRecordList::Swap(TopicDataRecordList* other) {
 }
 void TopicDataRecordList::InternalSwap(TopicDataRecordList* other) {
   using std::swap;
-  CastToBase(&list_)->InternalSwap(CastToBase(&other->list_));
+  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

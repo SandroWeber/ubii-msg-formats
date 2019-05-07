@@ -353,7 +353,7 @@ proto.ubii.devices.DeviceList.prototype.toObject = function(opt_includeInstance)
  */
 proto.ubii.devices.DeviceList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    listList: jspb.Message.toObjectList(msg.getListList(),
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
     proto.ubii.devices.Device.toObject, includeInstance)
   };
 
@@ -394,7 +394,7 @@ proto.ubii.devices.DeviceList.deserializeBinaryFromReader = function(msg, reader
     case 1:
       var value = new proto.ubii.devices.Device;
       reader.readMessage(value,proto.ubii.devices.Device.deserializeBinaryFromReader);
-      msg.addList(value);
+      msg.addElements(value);
       break;
     default:
       reader.skipField();
@@ -425,7 +425,7 @@ proto.ubii.devices.DeviceList.prototype.serializeBinary = function() {
  */
 proto.ubii.devices.DeviceList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getListList();
+  f = message.getElementsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -437,17 +437,17 @@ proto.ubii.devices.DeviceList.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * repeated Device list = 1;
+ * repeated Device elements = 1;
  * @return {!Array<!proto.ubii.devices.Device>}
  */
-proto.ubii.devices.DeviceList.prototype.getListList = function() {
+proto.ubii.devices.DeviceList.prototype.getElementsList = function() {
   return /** @type{!Array<!proto.ubii.devices.Device>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ubii.devices.Device, 1));
 };
 
 
 /** @param {!Array<!proto.ubii.devices.Device>} value */
-proto.ubii.devices.DeviceList.prototype.setListList = function(value) {
+proto.ubii.devices.DeviceList.prototype.setElementsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -457,13 +457,13 @@ proto.ubii.devices.DeviceList.prototype.setListList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ubii.devices.Device}
  */
-proto.ubii.devices.DeviceList.prototype.addList = function(opt_value, opt_index) {
+proto.ubii.devices.DeviceList.prototype.addElements = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.devices.Device, opt_index);
 };
 
 
-proto.ubii.devices.DeviceList.prototype.clearListList = function() {
-  this.setListList([]);
+proto.ubii.devices.DeviceList.prototype.clearElementsList = function() {
+  this.setElementsList([]);
 };
 
 

@@ -37,6 +37,7 @@
 #include "proto/topicData/topicDataRecord/dataStructure/matrix3x2.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/matrix4x4.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/color.pb.h"
+#include "proto/topicData/topicDataRecord/timestamp.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto 
 
@@ -188,6 +189,18 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::std::string* release_topic();
   void set_allocated_topic(::std::string* topic);
 
+  // .ubii.topicData.Timestamp timestamp = 12;
+  bool has_timestamp() const;
+  void clear_timestamp();
+  static const int kTimestampFieldNumber = 12;
+  private:
+  const ::ubii::topicData::Timestamp& _internal_timestamp() const;
+  public:
+  const ::ubii::topicData::Timestamp& timestamp() const;
+  ::ubii::topicData::Timestamp* release_timestamp();
+  ::ubii::topicData::Timestamp* mutable_timestamp();
+  void set_allocated_timestamp(::ubii::topicData::Timestamp* timestamp);
+
   // double number = 2;
   private:
   bool has_number() const;
@@ -327,6 +340,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr topic_;
+  ::ubii::topicData::Timestamp* timestamp_;
   union TypeUnion {
     TypeUnion() {}
     double number_;
@@ -434,23 +448,23 @@ class TopicDataRecordList : public ::google::protobuf::Message /* @@protoc_inser
 
   // accessors -------------------------------------------------------
 
-  // repeated .ubii.topicData.TopicDataRecord list = 1;
-  int list_size() const;
-  void clear_list();
-  static const int kListFieldNumber = 1;
-  ::ubii::topicData::TopicDataRecord* mutable_list(int index);
+  // repeated .ubii.topicData.TopicDataRecord elements = 1;
+  int elements_size() const;
+  void clear_elements();
+  static const int kElementsFieldNumber = 1;
+  ::ubii::topicData::TopicDataRecord* mutable_elements(int index);
   ::google::protobuf::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >*
-      mutable_list();
-  const ::ubii::topicData::TopicDataRecord& list(int index) const;
-  ::ubii::topicData::TopicDataRecord* add_list();
+      mutable_elements();
+  const ::ubii::topicData::TopicDataRecord& elements(int index) const;
+  ::ubii::topicData::TopicDataRecord* add_elements();
   const ::google::protobuf::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >&
-      list() const;
+      elements() const;
 
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecordList)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::ubii::topicData::TopicDataRecord > list_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::topicData::TopicDataRecord > elements_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::TableStruct;
 };
@@ -935,6 +949,54 @@ inline ::ubii::dataStructure::Color* TopicDataRecord::mutable_color() {
   return type_.color_;
 }
 
+// .ubii.topicData.Timestamp timestamp = 12;
+inline bool TopicDataRecord::has_timestamp() const {
+  return this != internal_default_instance() && timestamp_ != NULL;
+}
+inline const ::ubii::topicData::Timestamp& TopicDataRecord::_internal_timestamp() const {
+  return *timestamp_;
+}
+inline const ::ubii::topicData::Timestamp& TopicDataRecord::timestamp() const {
+  const ::ubii::topicData::Timestamp* p = timestamp_;
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.timestamp)
+  return p != NULL ? *p : *reinterpret_cast<const ::ubii::topicData::Timestamp*>(
+      &::ubii::topicData::_Timestamp_default_instance_);
+}
+inline ::ubii::topicData::Timestamp* TopicDataRecord::release_timestamp() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.timestamp)
+  
+  ::ubii::topicData::Timestamp* temp = timestamp_;
+  timestamp_ = NULL;
+  return temp;
+}
+inline ::ubii::topicData::Timestamp* TopicDataRecord::mutable_timestamp() {
+  
+  if (timestamp_ == NULL) {
+    auto* p = CreateMaybeMessage<::ubii::topicData::Timestamp>(GetArenaNoVirtual());
+    timestamp_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.timestamp)
+  return timestamp_;
+}
+inline void TopicDataRecord::set_allocated_timestamp(::ubii::topicData::Timestamp* timestamp) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(timestamp_);
+  }
+  if (timestamp) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      timestamp = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, timestamp, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  timestamp_ = timestamp;
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.timestamp)
+}
+
 inline bool TopicDataRecord::has_type() const {
   return type_case() != TYPE_NOT_SET;
 }
@@ -948,34 +1010,34 @@ inline TopicDataRecord::TypeCase TopicDataRecord::type_case() const {
 
 // TopicDataRecordList
 
-// repeated .ubii.topicData.TopicDataRecord list = 1;
-inline int TopicDataRecordList::list_size() const {
-  return list_.size();
+// repeated .ubii.topicData.TopicDataRecord elements = 1;
+inline int TopicDataRecordList::elements_size() const {
+  return elements_.size();
 }
-inline void TopicDataRecordList::clear_list() {
-  list_.Clear();
+inline void TopicDataRecordList::clear_elements() {
+  elements_.Clear();
 }
-inline ::ubii::topicData::TopicDataRecord* TopicDataRecordList::mutable_list(int index) {
-  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecordList.list)
-  return list_.Mutable(index);
+inline ::ubii::topicData::TopicDataRecord* TopicDataRecordList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecordList.elements)
+  return elements_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >*
-TopicDataRecordList::mutable_list() {
-  // @@protoc_insertion_point(field_mutable_list:ubii.topicData.TopicDataRecordList.list)
-  return &list_;
+TopicDataRecordList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.topicData.TopicDataRecordList.elements)
+  return &elements_;
 }
-inline const ::ubii::topicData::TopicDataRecord& TopicDataRecordList::list(int index) const {
-  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecordList.list)
-  return list_.Get(index);
+inline const ::ubii::topicData::TopicDataRecord& TopicDataRecordList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecordList.elements)
+  return elements_.Get(index);
 }
-inline ::ubii::topicData::TopicDataRecord* TopicDataRecordList::add_list() {
-  // @@protoc_insertion_point(field_add:ubii.topicData.TopicDataRecordList.list)
-  return list_.Add();
+inline ::ubii::topicData::TopicDataRecord* TopicDataRecordList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.topicData.TopicDataRecordList.elements)
+  return elements_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >&
-TopicDataRecordList::list() const {
-  // @@protoc_insertion_point(field_list:ubii.topicData.TopicDataRecordList.list)
-  return list_;
+TopicDataRecordList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.topicData.TopicDataRecordList.elements)
+  return elements_;
 }
 
 #ifdef __GNUC__

@@ -290,7 +290,7 @@ proto.ubii.clients.ClientList.prototype.toObject = function(opt_includeInstance)
  */
 proto.ubii.clients.ClientList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    listList: jspb.Message.toObjectList(msg.getListList(),
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
     proto.ubii.clients.Client.toObject, includeInstance)
   };
 
@@ -331,7 +331,7 @@ proto.ubii.clients.ClientList.deserializeBinaryFromReader = function(msg, reader
     case 1:
       var value = new proto.ubii.clients.Client;
       reader.readMessage(value,proto.ubii.clients.Client.deserializeBinaryFromReader);
-      msg.addList(value);
+      msg.addElements(value);
       break;
     default:
       reader.skipField();
@@ -362,7 +362,7 @@ proto.ubii.clients.ClientList.prototype.serializeBinary = function() {
  */
 proto.ubii.clients.ClientList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getListList();
+  f = message.getElementsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -374,17 +374,17 @@ proto.ubii.clients.ClientList.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * repeated Client list = 1;
+ * repeated Client elements = 1;
  * @return {!Array<!proto.ubii.clients.Client>}
  */
-proto.ubii.clients.ClientList.prototype.getListList = function() {
+proto.ubii.clients.ClientList.prototype.getElementsList = function() {
   return /** @type{!Array<!proto.ubii.clients.Client>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ubii.clients.Client, 1));
 };
 
 
 /** @param {!Array<!proto.ubii.clients.Client>} value */
-proto.ubii.clients.ClientList.prototype.setListList = function(value) {
+proto.ubii.clients.ClientList.prototype.setElementsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -394,13 +394,13 @@ proto.ubii.clients.ClientList.prototype.setListList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.ubii.clients.Client}
  */
-proto.ubii.clients.ClientList.prototype.addList = function(opt_value, opt_index) {
+proto.ubii.clients.ClientList.prototype.addElements = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.clients.Client, opt_index);
 };
 
 
-proto.ubii.clients.ClientList.prototype.clearListList = function() {
-  this.setListList([]);
+proto.ubii.clients.ClientList.prototype.clearElementsList = function() {
+  this.setElementsList([]);
 };
 
 

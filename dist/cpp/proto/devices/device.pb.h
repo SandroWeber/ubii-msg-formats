@@ -363,23 +363,23 @@ class DeviceList : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // repeated .ubii.devices.Device list = 1;
-  int list_size() const;
-  void clear_list();
-  static const int kListFieldNumber = 1;
-  ::ubii::devices::Device* mutable_list(int index);
+  // repeated .ubii.devices.Device elements = 1;
+  int elements_size() const;
+  void clear_elements();
+  static const int kElementsFieldNumber = 1;
+  ::ubii::devices::Device* mutable_elements(int index);
   ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device >*
-      mutable_list();
-  const ::ubii::devices::Device& list(int index) const;
-  ::ubii::devices::Device* add_list();
+      mutable_elements();
+  const ::ubii::devices::Device& elements(int index) const;
+  ::ubii::devices::Device* add_elements();
   const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device >&
-      list() const;
+      elements() const;
 
   // @@protoc_insertion_point(class_scope:ubii.devices.DeviceList)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device > list_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device > elements_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fdevices_2fdevice_2eproto::TableStruct;
 };
@@ -598,34 +598,34 @@ inline void Device::set_allocated_client_id(::std::string* client_id) {
 
 // DeviceList
 
-// repeated .ubii.devices.Device list = 1;
-inline int DeviceList::list_size() const {
-  return list_.size();
+// repeated .ubii.devices.Device elements = 1;
+inline int DeviceList::elements_size() const {
+  return elements_.size();
 }
-inline void DeviceList::clear_list() {
-  list_.Clear();
+inline void DeviceList::clear_elements() {
+  elements_.Clear();
 }
-inline ::ubii::devices::Device* DeviceList::mutable_list(int index) {
-  // @@protoc_insertion_point(field_mutable:ubii.devices.DeviceList.list)
-  return list_.Mutable(index);
+inline ::ubii::devices::Device* DeviceList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.devices.DeviceList.elements)
+  return elements_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device >*
-DeviceList::mutable_list() {
-  // @@protoc_insertion_point(field_mutable_list:ubii.devices.DeviceList.list)
-  return &list_;
+DeviceList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.devices.DeviceList.elements)
+  return &elements_;
 }
-inline const ::ubii::devices::Device& DeviceList::list(int index) const {
-  // @@protoc_insertion_point(field_get:ubii.devices.DeviceList.list)
-  return list_.Get(index);
+inline const ::ubii::devices::Device& DeviceList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.devices.DeviceList.elements)
+  return elements_.Get(index);
 }
-inline ::ubii::devices::Device* DeviceList::add_list() {
-  // @@protoc_insertion_point(field_add:ubii.devices.DeviceList.list)
-  return list_.Add();
+inline ::ubii::devices::Device* DeviceList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.devices.DeviceList.elements)
+  return elements_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device >&
-DeviceList::list() const {
-  // @@protoc_insertion_point(field_list:ubii.devices.DeviceList.list)
-  return list_;
+DeviceList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.devices.DeviceList.elements)
+  return elements_;
 }
 
 #ifdef __GNUC__

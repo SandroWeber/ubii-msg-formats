@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.devices',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1aproto/devices/device.proto\x12\x0cubii.devices\x1a\x1dproto/devices/component.proto\"\xc4\x01\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0b\x64\x65vice_type\x18\x03 \x01(\x0e\x32\x1f.ubii.devices.Device.DeviceType\x12+\n\ncomponents\x18\x04 \x03(\x0b\x32\x17.ubii.devices.Component\x12\x11\n\tclient_id\x18\x05 \x01(\t\"*\n\nDeviceType\x12\x0f\n\x0bPARTICIPANT\x10\x00\x12\x0b\n\x07WATCHER\x10\x01\"0\n\nDeviceList\x12\"\n\x04list\x18\x01 \x03(\x0b\x32\x14.ubii.devices.Deviceb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/devices/device.proto\x12\x0cubii.devices\x1a\x1dproto/devices/component.proto\"\xc4\x01\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0b\x64\x65vice_type\x18\x03 \x01(\x0e\x32\x1f.ubii.devices.Device.DeviceType\x12+\n\ncomponents\x18\x04 \x03(\x0b\x32\x17.ubii.devices.Component\x12\x11\n\tclient_id\x18\x05 \x01(\t\"*\n\nDeviceType\x12\x0f\n\x0bPARTICIPANT\x10\x00\x12\x0b\n\x07WATCHER\x10\x01\"4\n\nDeviceList\x12&\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x14.ubii.devices.Deviceb\x06proto3')
   ,
   dependencies=[proto_dot_devices_dot_component__pb2.DESCRIPTOR,])
 
@@ -117,7 +117,7 @@ _DEVICELIST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='list', full_name='ubii.devices.DeviceList.list', index=0,
+      name='elements', full_name='ubii.devices.DeviceList.elements', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -136,13 +136,13 @@ _DEVICELIST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=274,
-  serialized_end=322,
+  serialized_end=326,
 )
 
 _DEVICE.fields_by_name['device_type'].enum_type = _DEVICE_DEVICETYPE
 _DEVICE.fields_by_name['components'].message_type = proto_dot_devices_dot_component__pb2._COMPONENT
 _DEVICE_DEVICETYPE.containing_type = _DEVICE
-_DEVICELIST.fields_by_name['list'].message_type = _DEVICE
+_DEVICELIST.fields_by_name['elements'].message_type = _DEVICE
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 DESCRIPTOR.message_types_by_name['DeviceList'] = _DEVICELIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

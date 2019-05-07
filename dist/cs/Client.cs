@@ -27,13 +27,13 @@ namespace Ubii.Clients {
             "Chpwcm90by9jbGllbnRzL2NsaWVudC5wcm90bxIMdWJpaS5jbGllbnRzGhpw",
             "cm90by9kZXZpY2VzL2RldmljZS5wcm90byJJCgZDbGllbnQSCgoCaWQYASAB",
             "KAkSDAoEbmFtZRgCIAEoCRIlCgdkZXZpY2VzGAMgAygLMhQudWJpaS5kZXZp",
-            "Y2VzLkRldmljZSIwCgpDbGllbnRMaXN0EiIKBGxpc3QYASADKAsyFC51Ymlp",
-            "LmNsaWVudHMuQ2xpZW50YgZwcm90bzM="));
+            "Y2VzLkRldmljZSI0CgpDbGllbnRMaXN0EiYKCGVsZW1lbnRzGAEgAygLMhQu",
+            "dWJpaS5jbGllbnRzLkNsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Devices.DeviceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.Client), global::Ubii.Clients.Client.Parser, new[]{ "Id", "Name", "Devices" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.ClientList), global::Ubii.Clients.ClientList.Parser, new[]{ "List" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.ClientList), global::Ubii.Clients.ClientList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
     #endregion
@@ -242,7 +242,7 @@ namespace Ubii.Clients {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ClientList(ClientList other) : this() {
-      list_ = other.list_.Clone();
+      elements_ = other.elements_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -251,14 +251,14 @@ namespace Ubii.Clients {
       return new ClientList(this);
     }
 
-    /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Ubii.Clients.Client> _repeated_list_codec
+    /// <summary>Field number for the "elements" field.</summary>
+    public const int ElementsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ubii.Clients.Client> _repeated_elements_codec
         = pb::FieldCodec.ForMessage(10, global::Ubii.Clients.Client.Parser);
-    private readonly pbc::RepeatedField<global::Ubii.Clients.Client> list_ = new pbc::RepeatedField<global::Ubii.Clients.Client>();
+    private readonly pbc::RepeatedField<global::Ubii.Clients.Client> elements_ = new pbc::RepeatedField<global::Ubii.Clients.Client>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Ubii.Clients.Client> List {
-      get { return list_; }
+    public pbc::RepeatedField<global::Ubii.Clients.Client> Elements {
+      get { return elements_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -274,14 +274,14 @@ namespace Ubii.Clients {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!list_.Equals(other.list_)) return false;
+      if(!elements_.Equals(other.elements_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= list_.GetHashCode();
+      hash ^= elements_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -295,7 +295,7 @@ namespace Ubii.Clients {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      list_.WriteTo(output, _repeated_list_codec);
+      elements_.WriteTo(output, _repeated_elements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -304,7 +304,7 @@ namespace Ubii.Clients {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      size += list_.CalculateSize(_repeated_list_codec);
+      size += elements_.CalculateSize(_repeated_elements_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -316,7 +316,7 @@ namespace Ubii.Clients {
       if (other == null) {
         return;
       }
-      list_.Add(other.list_);
+      elements_.Add(other.elements_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -329,7 +329,7 @@ namespace Ubii.Clients {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
+            elements_.AddEntriesFrom(input, _repeated_elements_codec);
             break;
           }
         }
