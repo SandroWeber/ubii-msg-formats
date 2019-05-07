@@ -9,8 +9,11 @@ from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
 protoc_local = os.path.join(os.path.dirname(__file__), '../external/bin/protoc')
+protoc_local_windows = os.path.join(os.path.dirname(__file__), '../external/bin/protoc.exe')
 if os.path.isfile(protoc_local):
     protoc = protoc_local
+elif os.path.isfile(protoc_local_windows):
+    protoc = protoc_local_windows
 elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
     protoc = os.environ['PROTOC']
 else:
@@ -76,7 +79,7 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
 
     if protoc is None:
         sys.stderr.write(
-            "protoc is not installed nor found in ../src.  Please compile it "
+            "protoc is not installed nor found in /external/bin.  Please compile it "
             "or install the binary package.\n")
         sys.exit(-1)
 
@@ -127,6 +130,9 @@ def chosen_option(args):
     elif args.opt == 'cs' or args.opt == 'csharp':
         destination_directory = os.path.join(file_directory, '../dist/cs')
         generateProtos(destination_directory, proto_src_directory, src_directory, 'csharp')
+    elif args.opt == 'cpp' or args.opt == 'cplusplus':
+        destination_directory = os.path.join(file_directory, '../dist/cpp')
+        generateProtos(destination_directory, proto_src_directory, src_directory, 'cpp')
 
 
 def main():
