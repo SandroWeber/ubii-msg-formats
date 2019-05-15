@@ -1293,6 +1293,952 @@ $root.ubii = (function() {
             return DeviceList;
         })();
 
+        devices.TopicDemux = (function() {
+
+            /**
+             * Properties of a TopicDemux.
+             * @memberof ubii.devices
+             * @interface ITopicDemux
+             * @property {string|null} [id] TopicDemux id
+             * @property {string|null} [name] TopicDemux name
+             * @property {string|null} [dataType] TopicDemux dataType
+             * @property {string|null} [outputTopicFormat] TopicDemux outputTopicFormat
+             */
+
+            /**
+             * Constructs a new TopicDemux.
+             * @memberof ubii.devices
+             * @classdesc Represents a TopicDemux.
+             * @implements ITopicDemux
+             * @constructor
+             * @param {ubii.devices.ITopicDemux=} [properties] Properties to set
+             */
+            function TopicDemux(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TopicDemux id.
+             * @member {string} id
+             * @memberof ubii.devices.TopicDemux
+             * @instance
+             */
+            TopicDemux.prototype.id = "";
+
+            /**
+             * TopicDemux name.
+             * @member {string} name
+             * @memberof ubii.devices.TopicDemux
+             * @instance
+             */
+            TopicDemux.prototype.name = "";
+
+            /**
+             * TopicDemux dataType.
+             * @member {string} dataType
+             * @memberof ubii.devices.TopicDemux
+             * @instance
+             */
+            TopicDemux.prototype.dataType = "";
+
+            /**
+             * TopicDemux outputTopicFormat.
+             * @member {string} outputTopicFormat
+             * @memberof ubii.devices.TopicDemux
+             * @instance
+             */
+            TopicDemux.prototype.outputTopicFormat = "";
+
+            /**
+             * Creates a new TopicDemux instance using the specified properties.
+             * @function create
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {ubii.devices.ITopicDemux=} [properties] Properties to set
+             * @returns {ubii.devices.TopicDemux} TopicDemux instance
+             */
+            TopicDemux.create = function create(properties) {
+                return new TopicDemux(properties);
+            };
+
+            /**
+             * Encodes the specified TopicDemux message. Does not implicitly {@link ubii.devices.TopicDemux.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {ubii.devices.ITopicDemux} message TopicDemux message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDemux.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.dataType);
+                if (message.outputTopicFormat != null && message.hasOwnProperty("outputTopicFormat"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.outputTopicFormat);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TopicDemux message, length delimited. Does not implicitly {@link ubii.devices.TopicDemux.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {ubii.devices.ITopicDemux} message TopicDemux message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDemux.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TopicDemux message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.devices.TopicDemux} TopicDemux
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDemux.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.devices.TopicDemux();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.dataType = reader.string();
+                        break;
+                    case 4:
+                        message.outputTopicFormat = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TopicDemux message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.devices.TopicDemux} TopicDemux
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDemux.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TopicDemux message.
+             * @function verify
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TopicDemux.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                    if (!$util.isString(message.dataType))
+                        return "dataType: string expected";
+                if (message.outputTopicFormat != null && message.hasOwnProperty("outputTopicFormat"))
+                    if (!$util.isString(message.outputTopicFormat))
+                        return "outputTopicFormat: string expected";
+                return null;
+            };
+
+            /**
+             * Creates a TopicDemux message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.devices.TopicDemux} TopicDemux
+             */
+            TopicDemux.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.devices.TopicDemux)
+                    return object;
+                var message = new $root.ubii.devices.TopicDemux();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.dataType != null)
+                    message.dataType = String(object.dataType);
+                if (object.outputTopicFormat != null)
+                    message.outputTopicFormat = String(object.outputTopicFormat);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TopicDemux message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.devices.TopicDemux
+             * @static
+             * @param {ubii.devices.TopicDemux} message TopicDemux
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TopicDemux.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.name = "";
+                    object.dataType = "";
+                    object.outputTopicFormat = "";
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                    object.dataType = message.dataType;
+                if (message.outputTopicFormat != null && message.hasOwnProperty("outputTopicFormat"))
+                    object.outputTopicFormat = message.outputTopicFormat;
+                return object;
+            };
+
+            /**
+             * Converts this TopicDemux to JSON.
+             * @function toJSON
+             * @memberof ubii.devices.TopicDemux
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TopicDemux.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TopicDemux;
+        })();
+
+        devices.TopicDemuxList = (function() {
+
+            /**
+             * Properties of a TopicDemuxList.
+             * @memberof ubii.devices
+             * @interface ITopicDemuxList
+             * @property {Array.<ubii.devices.ITopicDemux>|null} [elements] TopicDemuxList elements
+             */
+
+            /**
+             * Constructs a new TopicDemuxList.
+             * @memberof ubii.devices
+             * @classdesc Represents a TopicDemuxList.
+             * @implements ITopicDemuxList
+             * @constructor
+             * @param {ubii.devices.ITopicDemuxList=} [properties] Properties to set
+             */
+            function TopicDemuxList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TopicDemuxList elements.
+             * @member {Array.<ubii.devices.ITopicDemux>} elements
+             * @memberof ubii.devices.TopicDemuxList
+             * @instance
+             */
+            TopicDemuxList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new TopicDemuxList instance using the specified properties.
+             * @function create
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {ubii.devices.ITopicDemuxList=} [properties] Properties to set
+             * @returns {ubii.devices.TopicDemuxList} TopicDemuxList instance
+             */
+            TopicDemuxList.create = function create(properties) {
+                return new TopicDemuxList(properties);
+            };
+
+            /**
+             * Encodes the specified TopicDemuxList message. Does not implicitly {@link ubii.devices.TopicDemuxList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {ubii.devices.ITopicDemuxList} message TopicDemuxList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDemuxList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.devices.TopicDemux.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TopicDemuxList message, length delimited. Does not implicitly {@link ubii.devices.TopicDemuxList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {ubii.devices.ITopicDemuxList} message TopicDemuxList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDemuxList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TopicDemuxList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.devices.TopicDemuxList} TopicDemuxList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDemuxList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.devices.TopicDemuxList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.devices.TopicDemux.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TopicDemuxList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.devices.TopicDemuxList} TopicDemuxList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDemuxList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TopicDemuxList message.
+             * @function verify
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TopicDemuxList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.devices.TopicDemux.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a TopicDemuxList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.devices.TopicDemuxList} TopicDemuxList
+             */
+            TopicDemuxList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.devices.TopicDemuxList)
+                    return object;
+                var message = new $root.ubii.devices.TopicDemuxList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.devices.TopicDemuxList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.devices.TopicDemuxList.elements: object expected");
+                        message.elements[i] = $root.ubii.devices.TopicDemux.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TopicDemuxList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.devices.TopicDemuxList
+             * @static
+             * @param {ubii.devices.TopicDemuxList} message TopicDemuxList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TopicDemuxList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.devices.TopicDemux.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this TopicDemuxList to JSON.
+             * @function toJSON
+             * @memberof ubii.devices.TopicDemuxList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TopicDemuxList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TopicDemuxList;
+        })();
+
+        devices.TopicMux = (function() {
+
+            /**
+             * Properties of a TopicMux.
+             * @memberof ubii.devices
+             * @interface ITopicMux
+             * @property {string|null} [id] TopicMux id
+             * @property {string|null} [name] TopicMux name
+             * @property {string|null} [dataType] TopicMux dataType
+             * @property {string|null} [topicSelector] TopicMux topicSelector
+             * @property {string|null} [identityMatchPattern] TopicMux identityMatchPattern
+             */
+
+            /**
+             * Constructs a new TopicMux.
+             * @memberof ubii.devices
+             * @classdesc Represents a TopicMux.
+             * @implements ITopicMux
+             * @constructor
+             * @param {ubii.devices.ITopicMux=} [properties] Properties to set
+             */
+            function TopicMux(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TopicMux id.
+             * @member {string} id
+             * @memberof ubii.devices.TopicMux
+             * @instance
+             */
+            TopicMux.prototype.id = "";
+
+            /**
+             * TopicMux name.
+             * @member {string} name
+             * @memberof ubii.devices.TopicMux
+             * @instance
+             */
+            TopicMux.prototype.name = "";
+
+            /**
+             * TopicMux dataType.
+             * @member {string} dataType
+             * @memberof ubii.devices.TopicMux
+             * @instance
+             */
+            TopicMux.prototype.dataType = "";
+
+            /**
+             * TopicMux topicSelector.
+             * @member {string} topicSelector
+             * @memberof ubii.devices.TopicMux
+             * @instance
+             */
+            TopicMux.prototype.topicSelector = "";
+
+            /**
+             * TopicMux identityMatchPattern.
+             * @member {string} identityMatchPattern
+             * @memberof ubii.devices.TopicMux
+             * @instance
+             */
+            TopicMux.prototype.identityMatchPattern = "";
+
+            /**
+             * Creates a new TopicMux instance using the specified properties.
+             * @function create
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {ubii.devices.ITopicMux=} [properties] Properties to set
+             * @returns {ubii.devices.TopicMux} TopicMux instance
+             */
+            TopicMux.create = function create(properties) {
+                return new TopicMux(properties);
+            };
+
+            /**
+             * Encodes the specified TopicMux message. Does not implicitly {@link ubii.devices.TopicMux.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {ubii.devices.ITopicMux} message TopicMux message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicMux.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.dataType);
+                if (message.topicSelector != null && message.hasOwnProperty("topicSelector"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.topicSelector);
+                if (message.identityMatchPattern != null && message.hasOwnProperty("identityMatchPattern"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.identityMatchPattern);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TopicMux message, length delimited. Does not implicitly {@link ubii.devices.TopicMux.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {ubii.devices.ITopicMux} message TopicMux message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicMux.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TopicMux message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.devices.TopicMux} TopicMux
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicMux.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.devices.TopicMux();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.dataType = reader.string();
+                        break;
+                    case 4:
+                        message.topicSelector = reader.string();
+                        break;
+                    case 5:
+                        message.identityMatchPattern = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TopicMux message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.devices.TopicMux} TopicMux
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicMux.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TopicMux message.
+             * @function verify
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TopicMux.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                    if (!$util.isString(message.dataType))
+                        return "dataType: string expected";
+                if (message.topicSelector != null && message.hasOwnProperty("topicSelector"))
+                    if (!$util.isString(message.topicSelector))
+                        return "topicSelector: string expected";
+                if (message.identityMatchPattern != null && message.hasOwnProperty("identityMatchPattern"))
+                    if (!$util.isString(message.identityMatchPattern))
+                        return "identityMatchPattern: string expected";
+                return null;
+            };
+
+            /**
+             * Creates a TopicMux message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.devices.TopicMux} TopicMux
+             */
+            TopicMux.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.devices.TopicMux)
+                    return object;
+                var message = new $root.ubii.devices.TopicMux();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.dataType != null)
+                    message.dataType = String(object.dataType);
+                if (object.topicSelector != null)
+                    message.topicSelector = String(object.topicSelector);
+                if (object.identityMatchPattern != null)
+                    message.identityMatchPattern = String(object.identityMatchPattern);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TopicMux message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.devices.TopicMux
+             * @static
+             * @param {ubii.devices.TopicMux} message TopicMux
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TopicMux.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.name = "";
+                    object.dataType = "";
+                    object.topicSelector = "";
+                    object.identityMatchPattern = "";
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                    object.dataType = message.dataType;
+                if (message.topicSelector != null && message.hasOwnProperty("topicSelector"))
+                    object.topicSelector = message.topicSelector;
+                if (message.identityMatchPattern != null && message.hasOwnProperty("identityMatchPattern"))
+                    object.identityMatchPattern = message.identityMatchPattern;
+                return object;
+            };
+
+            /**
+             * Converts this TopicMux to JSON.
+             * @function toJSON
+             * @memberof ubii.devices.TopicMux
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TopicMux.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TopicMux;
+        })();
+
+        devices.TopicMuxList = (function() {
+
+            /**
+             * Properties of a TopicMuxList.
+             * @memberof ubii.devices
+             * @interface ITopicMuxList
+             * @property {Array.<ubii.devices.ITopicMux>|null} [elements] TopicMuxList elements
+             */
+
+            /**
+             * Constructs a new TopicMuxList.
+             * @memberof ubii.devices
+             * @classdesc Represents a TopicMuxList.
+             * @implements ITopicMuxList
+             * @constructor
+             * @param {ubii.devices.ITopicMuxList=} [properties] Properties to set
+             */
+            function TopicMuxList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TopicMuxList elements.
+             * @member {Array.<ubii.devices.ITopicMux>} elements
+             * @memberof ubii.devices.TopicMuxList
+             * @instance
+             */
+            TopicMuxList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new TopicMuxList instance using the specified properties.
+             * @function create
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {ubii.devices.ITopicMuxList=} [properties] Properties to set
+             * @returns {ubii.devices.TopicMuxList} TopicMuxList instance
+             */
+            TopicMuxList.create = function create(properties) {
+                return new TopicMuxList(properties);
+            };
+
+            /**
+             * Encodes the specified TopicMuxList message. Does not implicitly {@link ubii.devices.TopicMuxList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {ubii.devices.ITopicMuxList} message TopicMuxList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicMuxList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.devices.TopicMux.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TopicMuxList message, length delimited. Does not implicitly {@link ubii.devices.TopicMuxList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {ubii.devices.ITopicMuxList} message TopicMuxList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicMuxList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TopicMuxList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.devices.TopicMuxList} TopicMuxList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicMuxList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.devices.TopicMuxList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.devices.TopicMux.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TopicMuxList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.devices.TopicMuxList} TopicMuxList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicMuxList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TopicMuxList message.
+             * @function verify
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TopicMuxList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.devices.TopicMux.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a TopicMuxList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.devices.TopicMuxList} TopicMuxList
+             */
+            TopicMuxList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.devices.TopicMuxList)
+                    return object;
+                var message = new $root.ubii.devices.TopicMuxList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.devices.TopicMuxList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.devices.TopicMuxList.elements: object expected");
+                        message.elements[i] = $root.ubii.devices.TopicMux.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TopicMuxList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.devices.TopicMuxList
+             * @static
+             * @param {ubii.devices.TopicMuxList} message TopicMuxList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TopicMuxList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.devices.TopicMux.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this TopicMuxList to JSON.
+             * @function toJSON
+             * @memberof ubii.devices.TopicMuxList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TopicMuxList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TopicMuxList;
+        })();
+
         return devices;
     })();
 
