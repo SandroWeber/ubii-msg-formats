@@ -118,21 +118,29 @@ def chosen_option(args):
     src_directory = os.path.join(file_directory, '../src')
 
     if args.opt == 'py' or args.opt == 'python':
-        destination_directory = os.path.join(file_directory, '../dist/py')
-        p = generateProtos(destination_directory, proto_src_directory, src_directory, 'python')
+        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
         generateInits(p)
     elif args.opt == 'j' or args.opt == 'java':
-        destination_directory = os.path.join(file_directory, '../dist/java')
-        generateProtos(destination_directory, proto_src_directory, src_directory, 'java')
+        generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
     elif args.opt == 'js' or args.opt == 'javascript':
-        destination_directory = os.path.join(file_directory, '../dist/js')
-        generateProtos(destination_directory, proto_src_directory, src_directory, 'js')
+        generateProtos(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
     elif args.opt == 'cs' or args.opt == 'csharp':
-        destination_directory = os.path.join(file_directory, '../dist/cs')
-        generateProtos(destination_directory, proto_src_directory, src_directory, 'csharp')
+        generateProtos(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
     elif args.opt == 'cpp' or args.opt == 'cplusplus':
-        destination_directory = os.path.join(file_directory, '../dist/cpp')
-        generateProtos(destination_directory, proto_src_directory, src_directory, 'cpp')
+        generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+    elif args.opt == 'all':
+        # python
+        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        generateInits(p)
+        # java
+        generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
+        # javascript
+        generateProtos(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
+        # C#
+        generateProtos(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
+        # C++
+        generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+
 
 
 def main():
