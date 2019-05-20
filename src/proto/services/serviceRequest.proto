@@ -3,6 +3,8 @@ package ubii.services;
 
 import "proto/clients/client.proto";
 import "proto/devices/device.proto";
+import "proto/devices/topicMux.proto";
+import "proto/devices/topicDemux.proto";
 import "proto/sessions/session.proto";
 import "proto/interactions/interaction.proto";
 import "proto/services/request/topicSubscription.proto";
@@ -17,5 +19,7 @@ message ServiceRequest {
         ubii.sessions.SessionList session_list = 6;
         ubii.interactions.Interaction interaction = 7;
         ubii.interactions.InteractionList interaction_list = 8;
+        ubii.devices.TopicMux topic_mux = 9;
+        ubii.devices.TopicDemux topic_demux = 10;
     }
 }
