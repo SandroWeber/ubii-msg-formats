@@ -13,6 +13,8 @@ var global = Function('return this')();
 
 var proto_clients_client_pb = require('../../proto/clients/client_pb.js');
 var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
+var proto_devices_topicMux_pb = require('../../proto/devices/topicMux_pb.js');
+var proto_devices_topicDemux_pb = require('../../proto/devices/topicDemux_pb.js');
 var proto_sessions_session_pb = require('../../proto/sessions/session_pb.js');
 var proto_interactions_interaction_pb = require('../../proto/interactions/interaction_pb.js');
 var proto_services_request_topicSubscription_pb = require('../../proto/services/request/topicSubscription_pb.js');
@@ -43,7 +45,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10]];
 
 /**
  * @enum {number}
@@ -56,7 +58,9 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   SESSION: 5,
   SESSION_LIST: 6,
   INTERACTION: 7,
-  INTERACTION_LIST: 8
+  INTERACTION_LIST: 8,
+  TOPIC_MUX: 9,
+  TOPIC_DEMUX: 10
 };
 
 /**
@@ -102,7 +106,9 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
     sessionList: (f = msg.getSessionList()) && proto_sessions_session_pb.SessionList.toObject(includeInstance, f),
     interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f),
-    interactionList: (f = msg.getInteractionList()) && proto_interactions_interaction_pb.InteractionList.toObject(includeInstance, f)
+    interactionList: (f = msg.getInteractionList()) && proto_interactions_interaction_pb.InteractionList.toObject(includeInstance, f),
+    topicMux: (f = msg.getTopicMux()) && proto_devices_topicMux_pb.TopicMux.toObject(includeInstance, f),
+    topicDemux: (f = msg.getTopicDemux()) && proto_devices_topicDemux_pb.TopicDemux.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -177,6 +183,16 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       var value = new proto_interactions_interaction_pb.InteractionList;
       reader.readMessage(value,proto_interactions_interaction_pb.InteractionList.deserializeBinaryFromReader);
       msg.setInteractionList(value);
+      break;
+    case 9:
+      var value = new proto_devices_topicMux_pb.TopicMux;
+      reader.readMessage(value,proto_devices_topicMux_pb.TopicMux.deserializeBinaryFromReader);
+      msg.setTopicMux(value);
+      break;
+    case 10:
+      var value = new proto_devices_topicDemux_pb.TopicDemux;
+      reader.readMessage(value,proto_devices_topicDemux_pb.TopicDemux.deserializeBinaryFromReader);
+      msg.setTopicDemux(value);
       break;
     default:
       reader.skipField();
@@ -268,6 +284,22 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       8,
       f,
       proto_interactions_interaction_pb.InteractionList.serializeBinaryToWriter
+    );
+  }
+  f = message.getTopicMux();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto_devices_topicMux_pb.TopicMux.serializeBinaryToWriter
+    );
+  }
+  f = message.getTopicDemux();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto_devices_topicDemux_pb.TopicDemux.serializeBinaryToWriter
     );
   }
 };
@@ -495,6 +527,66 @@ proto.ubii.services.ServiceRequest.prototype.clearInteractionList = function() {
  */
 proto.ubii.services.ServiceRequest.prototype.hasInteractionList = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional ubii.devices.TopicMux topic_mux = 9;
+ * @return {?proto.ubii.devices.TopicMux}
+ */
+proto.ubii.services.ServiceRequest.prototype.getTopicMux = function() {
+  return /** @type{?proto.ubii.devices.TopicMux} */ (
+    jspb.Message.getWrapperField(this, proto_devices_topicMux_pb.TopicMux, 9));
+};
+
+
+/** @param {?proto.ubii.devices.TopicMux|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setTopicMux = function(value) {
+  jspb.Message.setOneofWrapperField(this, 9, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearTopicMux = function() {
+  this.setTopicMux(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasTopicMux = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional ubii.devices.TopicDemux topic_demux = 10;
+ * @return {?proto.ubii.devices.TopicDemux}
+ */
+proto.ubii.services.ServiceRequest.prototype.getTopicDemux = function() {
+  return /** @type{?proto.ubii.devices.TopicDemux} */ (
+    jspb.Message.getWrapperField(this, proto_devices_topicDemux_pb.TopicDemux, 10));
+};
+
+
+/** @param {?proto.ubii.devices.TopicDemux|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setTopicDemux = function(value) {
+  jspb.Message.setOneofWrapperField(this, 10, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearTopicDemux = function() {
+  this.setTopicDemux(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasTopicDemux = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

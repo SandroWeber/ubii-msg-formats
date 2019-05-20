@@ -32,6 +32,8 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/clients/client.pb.h"
 #include "proto/devices/device.pb.h"
+#include "proto/devices/topicMux.pb.h"
+#include "proto/devices/topicDemux.pb.h"
 #include "proto/sessions/session.pb.h"
 #include "proto/interactions/interaction.pb.h"
 #include "proto/services/request/topicSubscription.pb.h"
@@ -104,6 +106,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     kSessionList = 6,
     kInteraction = 7,
     kInteractionList = 8,
+    kTopicMux = 9,
+    kTopicDemux = 10,
     TYPE_NOT_SET = 0,
   };
 
@@ -263,6 +267,30 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   ::ubii::interactions::InteractionList* mutable_interaction_list();
   void set_allocated_interaction_list(::ubii::interactions::InteractionList* interaction_list);
 
+  // .ubii.devices.TopicMux topic_mux = 9;
+  bool has_topic_mux() const;
+  void clear_topic_mux();
+  static const int kTopicMuxFieldNumber = 9;
+  private:
+  const ::ubii::devices::TopicMux& _internal_topic_mux() const;
+  public:
+  const ::ubii::devices::TopicMux& topic_mux() const;
+  ::ubii::devices::TopicMux* release_topic_mux();
+  ::ubii::devices::TopicMux* mutable_topic_mux();
+  void set_allocated_topic_mux(::ubii::devices::TopicMux* topic_mux);
+
+  // .ubii.devices.TopicDemux topic_demux = 10;
+  bool has_topic_demux() const;
+  void clear_topic_demux();
+  static const int kTopicDemuxFieldNumber = 10;
+  private:
+  const ::ubii::devices::TopicDemux& _internal_topic_demux() const;
+  public:
+  const ::ubii::devices::TopicDemux& topic_demux() const;
+  ::ubii::devices::TopicDemux* release_topic_demux();
+  ::ubii::devices::TopicDemux* mutable_topic_demux();
+  void set_allocated_topic_demux(::ubii::devices::TopicDemux* topic_demux);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.services.ServiceRequest)
@@ -274,6 +302,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   void set_has_session_list();
   void set_has_interaction();
   void set_has_interaction_list();
+  void set_has_topic_mux();
+  void set_has_topic_demux();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -289,6 +319,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     ::ubii::sessions::SessionList* session_list_;
     ::ubii::interactions::Interaction* interaction_;
     ::ubii::interactions::InteractionList* interaction_list_;
+    ::ubii::devices::TopicMux* topic_mux_;
+    ::ubii::devices::TopicDemux* topic_demux_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -623,6 +655,82 @@ inline ::ubii::interactions::InteractionList* ServiceRequest::mutable_interactio
   }
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.interaction_list)
   return type_.interaction_list_;
+}
+
+// .ubii.devices.TopicMux topic_mux = 9;
+inline bool ServiceRequest::has_topic_mux() const {
+  return type_case() == kTopicMux;
+}
+inline void ServiceRequest::set_has_topic_mux() {
+  _oneof_case_[0] = kTopicMux;
+}
+inline const ::ubii::devices::TopicMux& ServiceRequest::_internal_topic_mux() const {
+  return *type_.topic_mux_;
+}
+inline ::ubii::devices::TopicMux* ServiceRequest::release_topic_mux() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceRequest.topic_mux)
+  if (has_topic_mux()) {
+    clear_has_type();
+      ::ubii::devices::TopicMux* temp = type_.topic_mux_;
+    type_.topic_mux_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::TopicMux& ServiceRequest::topic_mux() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceRequest.topic_mux)
+  return has_topic_mux()
+      ? *type_.topic_mux_
+      : *reinterpret_cast< ::ubii::devices::TopicMux*>(&::ubii::devices::_TopicMux_default_instance_);
+}
+inline ::ubii::devices::TopicMux* ServiceRequest::mutable_topic_mux() {
+  if (!has_topic_mux()) {
+    clear_type();
+    set_has_topic_mux();
+    type_.topic_mux_ = CreateMaybeMessage< ::ubii::devices::TopicMux >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.topic_mux)
+  return type_.topic_mux_;
+}
+
+// .ubii.devices.TopicDemux topic_demux = 10;
+inline bool ServiceRequest::has_topic_demux() const {
+  return type_case() == kTopicDemux;
+}
+inline void ServiceRequest::set_has_topic_demux() {
+  _oneof_case_[0] = kTopicDemux;
+}
+inline const ::ubii::devices::TopicDemux& ServiceRequest::_internal_topic_demux() const {
+  return *type_.topic_demux_;
+}
+inline ::ubii::devices::TopicDemux* ServiceRequest::release_topic_demux() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceRequest.topic_demux)
+  if (has_topic_demux()) {
+    clear_has_type();
+      ::ubii::devices::TopicDemux* temp = type_.topic_demux_;
+    type_.topic_demux_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::TopicDemux& ServiceRequest::topic_demux() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceRequest.topic_demux)
+  return has_topic_demux()
+      ? *type_.topic_demux_
+      : *reinterpret_cast< ::ubii::devices::TopicDemux*>(&::ubii::devices::_TopicDemux_default_instance_);
+}
+inline ::ubii::devices::TopicDemux* ServiceRequest::mutable_topic_demux() {
+  if (!has_topic_demux()) {
+    clear_type();
+    set_has_topic_demux();
+    type_.topic_demux_ = CreateMaybeMessage< ::ubii::devices::TopicDemux >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.topic_demux)
+  return type_.topic_demux_;
 }
 
 inline bool ServiceRequest::has_type() const {

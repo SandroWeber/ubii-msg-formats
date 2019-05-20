@@ -119,6 +119,32 @@ public final class ServiceRequestOuterClass {
      */
     ubii.interactions.InteractionOuterClass.InteractionListOrBuilder getInteractionListOrBuilder();
 
+    /**
+     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     */
+    boolean hasTopicMux();
+    /**
+     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     */
+    ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux();
+    /**
+     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     */
+    ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder();
+
+    /**
+     * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+     */
+    boolean hasTopicDemux();
+    /**
+     * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+     */
+    ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux();
+    /**
+     * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+     */
+    ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder();
+
     public ubii.services.ServiceRequestOuterClass.ServiceRequest.TypeCase getTypeCase();
   }
   /**
@@ -265,6 +291,34 @@ public final class ServiceRequestOuterClass {
               typeCase_ = 8;
               break;
             }
+            case 74: {
+              ubii.devices.TopicMuxOuterClass.TopicMux.Builder subBuilder = null;
+              if (typeCase_ == 9) {
+                subBuilder = ((ubii.devices.TopicMuxOuterClass.TopicMux) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.TopicMuxOuterClass.TopicMux.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.TopicMuxOuterClass.TopicMux) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 9;
+              break;
+            }
+            case 82: {
+              ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder subBuilder = null;
+              if (typeCase_ == 10) {
+                subBuilder = ((ubii.devices.TopicDemuxOuterClass.TopicDemux) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.TopicDemuxOuterClass.TopicDemux.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.TopicDemuxOuterClass.TopicDemux) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 10;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -308,6 +362,8 @@ public final class ServiceRequestOuterClass {
       SESSION_LIST(6),
       INTERACTION(7),
       INTERACTION_LIST(8),
+      TOPIC_MUX(9),
+      TOPIC_DEMUX(10),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -330,6 +386,8 @@ public final class ServiceRequestOuterClass {
           case 6: return SESSION_LIST;
           case 7: return INTERACTION;
           case 8: return INTERACTION_LIST;
+          case 9: return TOPIC_MUX;
+          case 10: return TOPIC_DEMUX;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -561,6 +619,58 @@ public final class ServiceRequestOuterClass {
       return ubii.interactions.InteractionOuterClass.InteractionList.getDefaultInstance();
     }
 
+    public static final int TOPIC_MUX_FIELD_NUMBER = 9;
+    /**
+     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     */
+    public boolean hasTopicMux() {
+      return typeCase_ == 9;
+    }
+    /**
+     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     */
+    public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
+      if (typeCase_ == 9) {
+         return (ubii.devices.TopicMuxOuterClass.TopicMux) type_;
+      }
+      return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     */
+    public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
+      if (typeCase_ == 9) {
+         return (ubii.devices.TopicMuxOuterClass.TopicMux) type_;
+      }
+      return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
+    }
+
+    public static final int TOPIC_DEMUX_FIELD_NUMBER = 10;
+    /**
+     * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+     */
+    public boolean hasTopicDemux() {
+      return typeCase_ == 10;
+    }
+    /**
+     * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+     */
+    public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
+      if (typeCase_ == 10) {
+         return (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_;
+      }
+      return ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+     */
+    public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
+      if (typeCase_ == 10) {
+         return (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_;
+      }
+      return ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -598,6 +708,12 @@ public final class ServiceRequestOuterClass {
       }
       if (typeCase_ == 8) {
         output.writeMessage(8, (ubii.interactions.InteractionOuterClass.InteractionList) type_);
+      }
+      if (typeCase_ == 9) {
+        output.writeMessage(9, (ubii.devices.TopicMuxOuterClass.TopicMux) type_);
+      }
+      if (typeCase_ == 10) {
+        output.writeMessage(10, (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -638,6 +754,14 @@ public final class ServiceRequestOuterClass {
       if (typeCase_ == 8) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, (ubii.interactions.InteractionOuterClass.InteractionList) type_);
+      }
+      if (typeCase_ == 9) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, (ubii.devices.TopicMuxOuterClass.TopicMux) type_);
+      }
+      if (typeCase_ == 10) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -689,6 +813,14 @@ public final class ServiceRequestOuterClass {
           result = result && getInteractionList()
               .equals(other.getInteractionList());
           break;
+        case 9:
+          result = result && getTopicMux()
+              .equals(other.getTopicMux());
+          break;
+        case 10:
+          result = result && getTopicDemux()
+              .equals(other.getTopicDemux());
+          break;
         case 0:
         default:
       }
@@ -733,6 +865,14 @@ public final class ServiceRequestOuterClass {
         case 8:
           hash = (37 * hash) + INTERACTION_LIST_FIELD_NUMBER;
           hash = (53 * hash) + getInteractionList().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + TOPIC_MUX_FIELD_NUMBER;
+          hash = (53 * hash) + getTopicMux().hashCode();
+          break;
+        case 10:
+          hash = (37 * hash) + TOPIC_DEMUX_FIELD_NUMBER;
+          hash = (53 * hash) + getTopicDemux().hashCode();
           break;
         case 0:
         default:
@@ -950,6 +1090,20 @@ public final class ServiceRequestOuterClass {
             result.type_ = interactionListBuilder_.build();
           }
         }
+        if (typeCase_ == 9) {
+          if (topicMuxBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = topicMuxBuilder_.build();
+          }
+        }
+        if (typeCase_ == 10) {
+          if (topicDemuxBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = topicDemuxBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -1030,6 +1184,14 @@ public final class ServiceRequestOuterClass {
           }
           case INTERACTION_LIST: {
             mergeInteractionList(other.getInteractionList());
+            break;
+          }
+          case TOPIC_MUX: {
+            mergeTopicMux(other.getTopicMux());
+            break;
+          }
+          case TOPIC_DEMUX: {
+            mergeTopicDemux(other.getTopicDemux());
             break;
           }
           case TYPE_NOT_SET: {
@@ -2100,6 +2262,278 @@ public final class ServiceRequestOuterClass {
         onChanged();;
         return interactionListBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> topicMuxBuilder_;
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public boolean hasTopicMux() {
+        return typeCase_ == 9;
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
+        if (topicMuxBuilder_ == null) {
+          if (typeCase_ == 9) {
+            return (ubii.devices.TopicMuxOuterClass.TopicMux) type_;
+          }
+          return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
+        } else {
+          if (typeCase_ == 9) {
+            return topicMuxBuilder_.getMessage();
+          }
+          return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public Builder setTopicMux(ubii.devices.TopicMuxOuterClass.TopicMux value) {
+        if (topicMuxBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          topicMuxBuilder_.setMessage(value);
+        }
+        typeCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public Builder setTopicMux(
+          ubii.devices.TopicMuxOuterClass.TopicMux.Builder builderForValue) {
+        if (topicMuxBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          topicMuxBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public Builder mergeTopicMux(ubii.devices.TopicMuxOuterClass.TopicMux value) {
+        if (topicMuxBuilder_ == null) {
+          if (typeCase_ == 9 &&
+              type_ != ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance()) {
+            type_ = ubii.devices.TopicMuxOuterClass.TopicMux.newBuilder((ubii.devices.TopicMuxOuterClass.TopicMux) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 9) {
+            topicMuxBuilder_.mergeFrom(value);
+          }
+          topicMuxBuilder_.setMessage(value);
+        }
+        typeCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public Builder clearTopicMux() {
+        if (topicMuxBuilder_ == null) {
+          if (typeCase_ == 9) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 9) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          topicMuxBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public ubii.devices.TopicMuxOuterClass.TopicMux.Builder getTopicMuxBuilder() {
+        return getTopicMuxFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
+        if ((typeCase_ == 9) && (topicMuxBuilder_ != null)) {
+          return topicMuxBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 9) {
+            return (ubii.devices.TopicMuxOuterClass.TopicMux) type_;
+          }
+          return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> 
+          getTopicMuxFieldBuilder() {
+        if (topicMuxBuilder_ == null) {
+          if (!(typeCase_ == 9)) {
+            type_ = ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
+          }
+          topicMuxBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder>(
+                  (ubii.devices.TopicMuxOuterClass.TopicMux) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 9;
+        onChanged();;
+        return topicMuxBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> topicDemuxBuilder_;
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public boolean hasTopicDemux() {
+        return typeCase_ == 10;
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
+        if (topicDemuxBuilder_ == null) {
+          if (typeCase_ == 10) {
+            return (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_;
+          }
+          return ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
+        } else {
+          if (typeCase_ == 10) {
+            return topicDemuxBuilder_.getMessage();
+          }
+          return ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public Builder setTopicDemux(ubii.devices.TopicDemuxOuterClass.TopicDemux value) {
+        if (topicDemuxBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          topicDemuxBuilder_.setMessage(value);
+        }
+        typeCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public Builder setTopicDemux(
+          ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder builderForValue) {
+        if (topicDemuxBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          topicDemuxBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public Builder mergeTopicDemux(ubii.devices.TopicDemuxOuterClass.TopicDemux value) {
+        if (topicDemuxBuilder_ == null) {
+          if (typeCase_ == 10 &&
+              type_ != ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance()) {
+            type_ = ubii.devices.TopicDemuxOuterClass.TopicDemux.newBuilder((ubii.devices.TopicDemuxOuterClass.TopicDemux) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 10) {
+            topicDemuxBuilder_.mergeFrom(value);
+          }
+          topicDemuxBuilder_.setMessage(value);
+        }
+        typeCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public Builder clearTopicDemux() {
+        if (topicDemuxBuilder_ == null) {
+          if (typeCase_ == 10) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 10) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          topicDemuxBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder getTopicDemuxBuilder() {
+        return getTopicDemuxFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
+        if ((typeCase_ == 10) && (topicDemuxBuilder_ != null)) {
+          return topicDemuxBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 10) {
+            return (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_;
+          }
+          return ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.TopicDemux topic_demux = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> 
+          getTopicDemuxFieldBuilder() {
+        if (topicDemuxBuilder_ == null) {
+          if (!(typeCase_ == 10)) {
+            type_ = ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
+          }
+          topicDemuxBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder>(
+                  (ubii.devices.TopicDemuxOuterClass.TopicDemux) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 10;
+        onChanged();;
+        return topicDemuxBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2169,20 +2603,24 @@ public final class ServiceRequestOuterClass {
     java.lang.String[] descriptorData = {
       "\n#proto/services/serviceRequest.proto\022\ru" +
       "bii.services\032\032proto/clients/client.proto" +
-      "\032\032proto/devices/device.proto\032\034proto/sess" +
-      "ions/session.proto\032$proto/interactions/i" +
-      "nteraction.proto\032.proto/services/request" +
-      "/topicSubscription.proto\"\225\003\n\016ServiceRequ" +
-      "est\022\r\n\005topic\030\001 \001(\t\022&\n\006client\030\002 \001(\0132\024.ubi" +
-      "i.clients.ClientH\000\022&\n\006device\030\003 \001(\0132\024.ubi" +
-      "i.devices.DeviceH\000\022F\n\022topic_subscription" +
-      "\030\004 \001(\0132(.ubii.services.request.TopicSubs" +
-      "criptionH\000\022)\n\007session\030\005 \001(\0132\026.ubii.sessi" +
-      "ons.SessionH\000\0222\n\014session_list\030\006 \001(\0132\032.ub" +
-      "ii.sessions.SessionListH\000\0225\n\013interaction" +
-      "\030\007 \001(\0132\036.ubii.interactions.InteractionH\000" +
-      "\022>\n\020interaction_list\030\010 \001(\0132\".ubii.intera" +
-      "ctions.InteractionListH\000B\006\n\004typeb\006proto3"
+      "\032\032proto/devices/device.proto\032\034proto/devi" +
+      "ces/topicMux.proto\032\036proto/devices/topicD" +
+      "emux.proto\032\034proto/sessions/session.proto" +
+      "\032$proto/interactions/interaction.proto\032." +
+      "proto/services/request/topicSubscription" +
+      ".proto\"\363\003\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t" +
+      "\022&\n\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000" +
+      "\022&\n\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000" +
+      "\022F\n\022topic_subscription\030\004 \001(\0132(.ubii.serv" +
+      "ices.request.TopicSubscriptionH\000\022)\n\007sess" +
+      "ion\030\005 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014s" +
+      "ession_list\030\006 \001(\0132\032.ubii.sessions.Sessio" +
+      "nListH\000\0225\n\013interaction\030\007 \001(\0132\036.ubii.inte" +
+      "ractions.InteractionH\000\022>\n\020interaction_li" +
+      "st\030\010 \001(\0132\".ubii.interactions.Interaction" +
+      "ListH\000\022+\n\ttopic_mux\030\t \001(\0132\026.ubii.devices" +
+      ".TopicMuxH\000\022/\n\013topic_demux\030\n \001(\0132\030.ubii." +
+      "devices.TopicDemuxH\000B\006\n\004typeb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2197,6 +2635,8 @@ public final class ServiceRequestOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.clients.ClientOuterClass.getDescriptor(),
           ubii.devices.DeviceOuterClass.getDescriptor(),
+          ubii.devices.TopicMuxOuterClass.getDescriptor(),
+          ubii.devices.TopicDemuxOuterClass.getDescriptor(),
           ubii.sessions.SessionOuterClass.getDescriptor(),
           ubii.interactions.InteractionOuterClass.getDescriptor(),
           ubii.services.request.TopicSubscriptionOuterClass.getDescriptor(),
@@ -2206,9 +2646,11 @@ public final class ServiceRequestOuterClass {
     internal_static_ubii_services_ServiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_ServiceRequest_descriptor,
-        new java.lang.String[] { "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "Interaction", "InteractionList", "Type", });
+        new java.lang.String[] { "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "Interaction", "InteractionList", "TopicMux", "TopicDemux", "Type", });
     ubii.clients.ClientOuterClass.getDescriptor();
     ubii.devices.DeviceOuterClass.getDescriptor();
+    ubii.devices.TopicMuxOuterClass.getDescriptor();
+    ubii.devices.TopicDemuxOuterClass.getDescriptor();
     ubii.sessions.SessionOuterClass.getDescriptor();
     ubii.interactions.InteractionOuterClass.getDescriptor();
     ubii.services.request.TopicSubscriptionOuterClass.getDescriptor();

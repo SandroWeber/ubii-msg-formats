@@ -25,6 +25,12 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::goog
 namespace protobuf_proto_2fdevices_2fdevice_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Device;
 }  // namespace protobuf_proto_2fdevices_2fdevice_2eproto
+namespace protobuf_proto_2fdevices_2ftopicDemux_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicDemux_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicDemux;
+}  // namespace protobuf_proto_2fdevices_2ftopicDemux_2eproto
+namespace protobuf_proto_2fdevices_2ftopicMux_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicMux_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicMux;
+}  // namespace protobuf_proto_2fdevices_2ftopicMux_2eproto
 namespace protobuf_proto_2finteractions_2finteraction_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2finteractions_2finteraction_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Interaction;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2finteractions_2finteraction_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_InteractionList;
@@ -49,6 +55,8 @@ class ServiceRequestDefaultTypeInternal {
   const ::ubii::sessions::SessionList* session_list_;
   const ::ubii::interactions::Interaction* interaction_;
   const ::ubii::interactions::InteractionList* interaction_list_;
+  const ::ubii::devices::TopicMux* topic_mux_;
+  const ::ubii::devices::TopicDemux* topic_demux_;
 } _ServiceRequest_default_instance_;
 }  // namespace services
 }  // namespace ubii
@@ -64,15 +72,17 @@ static void InitDefaultsServiceRequest() {
   ::ubii::services::ServiceRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<7> scc_info_ServiceRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 7, InitDefaultsServiceRequest}, {
+::google::protobuf::internal::SCCInfo<9> scc_info_ServiceRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 9, InitDefaultsServiceRequest}, {
       &protobuf_proto_2fclients_2fclient_2eproto::scc_info_Client.base,
       &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_Device.base,
       &protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::scc_info_TopicSubscription.base,
       &protobuf_proto_2fsessions_2fsession_2eproto::scc_info_Session.base,
       &protobuf_proto_2fsessions_2fsession_2eproto::scc_info_SessionList.base,
       &protobuf_proto_2finteractions_2finteraction_2eproto::scc_info_Interaction.base,
-      &protobuf_proto_2finteractions_2finteraction_2eproto::scc_info_InteractionList.base,}};
+      &protobuf_proto_2finteractions_2finteraction_2eproto::scc_info_InteractionList.base,
+      &protobuf_proto_2fdevices_2ftopicMux_2eproto::scc_info_TopicMux.base,
+      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemux.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ServiceRequest.base);
@@ -94,6 +104,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, session_list_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, interaction_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, interaction_list_),
+  offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, topic_mux_),
+  offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, topic_demux_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceRequest, type_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -127,27 +139,33 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n#proto/services/serviceRequest.proto\022\ru"
       "bii.services\032\032proto/clients/client.proto"
-      "\032\032proto/devices/device.proto\032\034proto/sess"
-      "ions/session.proto\032$proto/interactions/i"
-      "nteraction.proto\032.proto/services/request"
-      "/topicSubscription.proto\"\225\003\n\016ServiceRequ"
-      "est\022\r\n\005topic\030\001 \001(\t\022&\n\006client\030\002 \001(\0132\024.ubi"
-      "i.clients.ClientH\000\022&\n\006device\030\003 \001(\0132\024.ubi"
-      "i.devices.DeviceH\000\022F\n\022topic_subscription"
-      "\030\004 \001(\0132(.ubii.services.request.TopicSubs"
-      "criptionH\000\022)\n\007session\030\005 \001(\0132\026.ubii.sessi"
-      "ons.SessionH\000\0222\n\014session_list\030\006 \001(\0132\032.ub"
-      "ii.sessions.SessionListH\000\0225\n\013interaction"
-      "\030\007 \001(\0132\036.ubii.interactions.InteractionH\000"
-      "\022>\n\020interaction_list\030\010 \001(\0132\".ubii.intera"
-      "ctions.InteractionListH\000B\006\n\004typeb\006proto3"
+      "\032\032proto/devices/device.proto\032\034proto/devi"
+      "ces/topicMux.proto\032\036proto/devices/topicD"
+      "emux.proto\032\034proto/sessions/session.proto"
+      "\032$proto/interactions/interaction.proto\032."
+      "proto/services/request/topicSubscription"
+      ".proto\"\363\003\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t"
+      "\022&\n\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000"
+      "\022&\n\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000"
+      "\022F\n\022topic_subscription\030\004 \001(\0132(.ubii.serv"
+      "ices.request.TopicSubscriptionH\000\022)\n\007sess"
+      "ion\030\005 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014s"
+      "ession_list\030\006 \001(\0132\032.ubii.sessions.Sessio"
+      "nListH\000\0225\n\013interaction\030\007 \001(\0132\036.ubii.inte"
+      "ractions.InteractionH\000\022>\n\020interaction_li"
+      "st\030\010 \001(\0132\".ubii.interactions.Interaction"
+      "ListH\000\022+\n\ttopic_mux\030\t \001(\0132\026.ubii.devices"
+      ".TopicMuxH\000\022/\n\013topic_demux\030\n \001(\0132\030.ubii."
+      "devices.TopicDemuxH\000B\006\n\004typeb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 640);
+      descriptor, 796);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/services/serviceRequest.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fclients_2fclient_2eproto::AddDescriptors();
   ::protobuf_proto_2fdevices_2fdevice_2eproto::AddDescriptors();
+  ::protobuf_proto_2fdevices_2ftopicMux_2eproto::AddDescriptors();
+  ::protobuf_proto_2fdevices_2ftopicDemux_2eproto::AddDescriptors();
   ::protobuf_proto_2fsessions_2fsession_2eproto::AddDescriptors();
   ::protobuf_proto_2finteractions_2finteraction_2eproto::AddDescriptors();
   ::protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::AddDescriptors();
@@ -184,6 +202,10 @@ void ServiceRequest::InitAsDefaultInstance() {
       ::ubii::interactions::Interaction::internal_default_instance());
   ::ubii::services::_ServiceRequest_default_instance_.interaction_list_ = const_cast< ::ubii::interactions::InteractionList*>(
       ::ubii::interactions::InteractionList::internal_default_instance());
+  ::ubii::services::_ServiceRequest_default_instance_.topic_mux_ = const_cast< ::ubii::devices::TopicMux*>(
+      ::ubii::devices::TopicMux::internal_default_instance());
+  ::ubii::services::_ServiceRequest_default_instance_.topic_demux_ = const_cast< ::ubii::devices::TopicDemux*>(
+      ::ubii::devices::TopicDemux::internal_default_instance());
 }
 void ServiceRequest::set_allocated_client(::ubii::clients::Client* client) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -325,6 +347,46 @@ void ServiceRequest::clear_interaction_list() {
     clear_has_type();
   }
 }
+void ServiceRequest::set_allocated_topic_mux(::ubii::devices::TopicMux* topic_mux) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (topic_mux) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      topic_mux = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, topic_mux, submessage_arena);
+    }
+    set_has_topic_mux();
+    type_.topic_mux_ = topic_mux;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.topic_mux)
+}
+void ServiceRequest::clear_topic_mux() {
+  if (has_topic_mux()) {
+    delete type_.topic_mux_;
+    clear_has_type();
+  }
+}
+void ServiceRequest::set_allocated_topic_demux(::ubii::devices::TopicDemux* topic_demux) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (topic_demux) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      topic_demux = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, topic_demux, submessage_arena);
+    }
+    set_has_topic_demux();
+    type_.topic_demux_ = topic_demux;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.topic_demux)
+}
+void ServiceRequest::clear_topic_demux() {
+  if (has_topic_demux()) {
+    delete type_.topic_demux_;
+    clear_has_type();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ServiceRequest::kTopicFieldNumber;
 const int ServiceRequest::kClientFieldNumber;
@@ -334,6 +396,8 @@ const int ServiceRequest::kSessionFieldNumber;
 const int ServiceRequest::kSessionListFieldNumber;
 const int ServiceRequest::kInteractionFieldNumber;
 const int ServiceRequest::kInteractionListFieldNumber;
+const int ServiceRequest::kTopicMuxFieldNumber;
+const int ServiceRequest::kTopicDemuxFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ServiceRequest::ServiceRequest()
@@ -379,6 +443,14 @@ ServiceRequest::ServiceRequest(const ServiceRequest& from)
     }
     case kInteractionList: {
       mutable_interaction_list()->::ubii::interactions::InteractionList::MergeFrom(from.interaction_list());
+      break;
+    }
+    case kTopicMux: {
+      mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from.topic_mux());
+      break;
+    }
+    case kTopicDemux: {
+      mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from.topic_demux());
       break;
     }
     case TYPE_NOT_SET: {
@@ -448,6 +520,14 @@ void ServiceRequest::clear_type() {
     }
     case kInteractionList: {
       delete type_.interaction_list_;
+      break;
+    }
+    case kTopicMux: {
+      delete type_.topic_mux_;
+      break;
+    }
+    case kTopicDemux: {
+      delete type_.topic_demux_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -579,6 +659,30 @@ bool ServiceRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.devices.TopicMux topic_mux = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_topic_mux()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.TopicDemux topic_demux = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_topic_demux()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -657,6 +761,18 @@ void ServiceRequest::SerializeWithCachedSizes(
       8, this->_internal_interaction_list(), output);
   }
 
+  // .ubii.devices.TopicMux topic_mux = 9;
+  if (has_topic_mux()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9, this->_internal_topic_mux(), output);
+  }
+
+  // .ubii.devices.TopicDemux topic_demux = 10;
+  if (has_topic_demux()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      10, this->_internal_topic_demux(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -729,6 +845,20 @@ void ServiceRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         8, this->_internal_interaction_list(), deterministic, target);
+  }
+
+  // .ubii.devices.TopicMux topic_mux = 9;
+  if (has_topic_mux()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        9, this->_internal_topic_mux(), deterministic, target);
+  }
+
+  // .ubii.devices.TopicDemux topic_demux = 10;
+  if (has_topic_demux()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        10, this->_internal_topic_demux(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -805,6 +935,20 @@ size_t ServiceRequest::ByteSizeLong() const {
           *type_.interaction_list_);
       break;
     }
+    // .ubii.devices.TopicMux topic_mux = 9;
+    case kTopicMux: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.topic_mux_);
+      break;
+    }
+    // .ubii.devices.TopicDemux topic_demux = 10;
+    case kTopicDemux: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.topic_demux_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -867,6 +1011,14 @@ void ServiceRequest::MergeFrom(const ServiceRequest& from) {
     }
     case kInteractionList: {
       mutable_interaction_list()->::ubii::interactions::InteractionList::MergeFrom(from.interaction_list());
+      break;
+    }
+    case kTopicMux: {
+      mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from.topic_mux());
+      break;
+    }
+    case kTopicDemux: {
+      mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from.topic_demux());
       break;
     }
     case TYPE_NOT_SET: {
