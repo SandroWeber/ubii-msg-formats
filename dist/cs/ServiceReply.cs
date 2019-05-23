@@ -28,24 +28,27 @@ namespace Ubii.Services {
             "dmljZXMaG3Byb3RvL2dlbmVyYWwvc3VjY2Vzcy5wcm90bxoZcHJvdG8vZ2Vu",
             "ZXJhbC9lcnJvci5wcm90bxoZcHJvdG8vZ2VuZXJhbC9saXN0cy5wcm90bxoa",
             "cHJvdG8vY2xpZW50cy9jbGllbnQucHJvdG8aGnByb3RvL2RldmljZXMvZGV2",
-            "aWNlLnByb3RvGhpwcm90by9zZXJ2ZXJzL3NlcnZlci5wcm90bxoccHJvdG8v",
-            "c2Vzc2lvbnMvc2Vzc2lvbi5wcm90bxokcHJvdG8vaW50ZXJhY3Rpb25zL2lu",
-            "dGVyYWN0aW9uLnByb3RvIuUDCgxTZXJ2aWNlUmVwbHkSKAoHc3VjY2VzcxgB",
-            "IAEoCzIVLnViaWkuZ2VuZXJhbC5TdWNjZXNzSAASJAoFZXJyb3IYAiABKAsy",
-            "Ey51YmlpLmdlbmVyYWwuRXJyb3JIABImCgZjbGllbnQYAyABKAsyFC51Ymlp",
-            "LmNsaWVudHMuQ2xpZW50SAASJgoGZGV2aWNlGAQgASgLMhQudWJpaS5kZXZp",
-            "Y2VzLkRldmljZUgAEiYKBnNlcnZlchgFIAEoCzIULnViaWkuc2VydmVycy5T",
-            "ZXJ2ZXJIABIpCgdzZXNzaW9uGAYgASgLMhYudWJpaS5zZXNzaW9ucy5TZXNz",
-            "aW9uSAASMgoMc2Vzc2lvbl9saXN0GAcgASgLMhoudWJpaS5zZXNzaW9ucy5T",
-            "ZXNzaW9uTGlzdEgAEjUKC2ludGVyYWN0aW9uGAggASgLMh4udWJpaS5pbnRl",
-            "cmFjdGlvbnMuSW50ZXJhY3Rpb25IABI+ChBpbnRlcmFjdGlvbl9saXN0GAkg",
-            "ASgLMiIudWJpaS5pbnRlcmFjdGlvbnMuSW50ZXJhY3Rpb25MaXN0SAASLwoL",
-            "c3RyaW5nX2xpc3QYCiABKAsyGC51YmlpLmdlbmVyYWwuU3RyaW5nTGlzdEgA",
-            "QgYKBHR5cGViBnByb3RvMw=="));
+            "aWNlLnByb3RvGhxwcm90by9kZXZpY2VzL3RvcGljTXV4LnByb3RvGh5wcm90",
+            "by9kZXZpY2VzL3RvcGljRGVtdXgucHJvdG8aGnByb3RvL3NlcnZlcnMvc2Vy",
+            "dmVyLnByb3RvGhxwcm90by9zZXNzaW9ucy9zZXNzaW9uLnByb3RvGiRwcm90",
+            "by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8iwwQKDFNlcnZpY2VS",
+            "ZXBseRIoCgdzdWNjZXNzGAEgASgLMhUudWJpaS5nZW5lcmFsLlN1Y2Nlc3NI",
+            "ABIkCgVlcnJvchgCIAEoCzITLnViaWkuZ2VuZXJhbC5FcnJvckgAEiYKBmNs",
+            "aWVudBgDIAEoCzIULnViaWkuY2xpZW50cy5DbGllbnRIABImCgZkZXZpY2UY",
+            "BCABKAsyFC51YmlpLmRldmljZXMuRGV2aWNlSAASJgoGc2VydmVyGAUgASgL",
+            "MhQudWJpaS5zZXJ2ZXJzLlNlcnZlckgAEikKB3Nlc3Npb24YBiABKAsyFi51",
+            "YmlpLnNlc3Npb25zLlNlc3Npb25IABIyCgxzZXNzaW9uX2xpc3QYByABKAsy",
+            "Gi51YmlpLnNlc3Npb25zLlNlc3Npb25MaXN0SAASNQoLaW50ZXJhY3Rpb24Y",
+            "CCABKAsyHi51YmlpLmludGVyYWN0aW9ucy5JbnRlcmFjdGlvbkgAEj4KEGlu",
+            "dGVyYWN0aW9uX2xpc3QYCSABKAsyIi51YmlpLmludGVyYWN0aW9ucy5JbnRl",
+            "cmFjdGlvbkxpc3RIABIvCgtzdHJpbmdfbGlzdBgKIAEoCzIYLnViaWkuZ2Vu",
+            "ZXJhbC5TdHJpbmdMaXN0SAASKwoJdG9waWNfbXV4GAsgASgLMhYudWJpaS5k",
+            "ZXZpY2VzLlRvcGljTXV4SAASLwoLdG9waWNfZGVtdXgYDCABKAsyGC51Ymlp",
+            "LmRldmljZXMuVG9waWNEZW11eEgAQgYKBHR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.General.ListsReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.General.ListsReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "Interaction", "InteractionList", "StringList" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "Interaction", "InteractionList", "StringList", "TopicMux", "TopicDemux" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -107,6 +110,12 @@ namespace Ubii.Services {
           break;
         case TypeOneofCase.StringList:
           StringList = other.StringList.Clone();
+          break;
+        case TypeOneofCase.TopicMux:
+          TopicMux = other.TopicMux.Clone();
+          break;
+        case TypeOneofCase.TopicDemux:
+          TopicDemux = other.TopicDemux.Clone();
           break;
       }
 
@@ -228,6 +237,28 @@ namespace Ubii.Services {
       }
     }
 
+    /// <summary>Field number for the "topic_mux" field.</summary>
+    public const int TopicMuxFieldNumber = 11;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Devices.TopicMux TopicMux {
+      get { return typeCase_ == TypeOneofCase.TopicMux ? (global::Ubii.Devices.TopicMux) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TopicMux;
+      }
+    }
+
+    /// <summary>Field number for the "topic_demux" field.</summary>
+    public const int TopicDemuxFieldNumber = 12;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Devices.TopicDemux TopicDemux {
+      get { return typeCase_ == TypeOneofCase.TopicDemux ? (global::Ubii.Devices.TopicDemux) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TopicDemux;
+      }
+    }
+
     private object type_;
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
@@ -242,6 +273,8 @@ namespace Ubii.Services {
       Interaction = 8,
       InteractionList = 9,
       StringList = 10,
+      TopicMux = 11,
+      TopicDemux = 12,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -278,6 +311,8 @@ namespace Ubii.Services {
       if (!object.Equals(Interaction, other.Interaction)) return false;
       if (!object.Equals(InteractionList, other.InteractionList)) return false;
       if (!object.Equals(StringList, other.StringList)) return false;
+      if (!object.Equals(TopicMux, other.TopicMux)) return false;
+      if (!object.Equals(TopicDemux, other.TopicDemux)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -295,6 +330,8 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.Interaction) hash ^= Interaction.GetHashCode();
       if (typeCase_ == TypeOneofCase.InteractionList) hash ^= InteractionList.GetHashCode();
       if (typeCase_ == TypeOneofCase.StringList) hash ^= StringList.GetHashCode();
+      if (typeCase_ == TypeOneofCase.TopicMux) hash ^= TopicMux.GetHashCode();
+      if (typeCase_ == TypeOneofCase.TopicDemux) hash ^= TopicDemux.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -349,6 +386,14 @@ namespace Ubii.Services {
         output.WriteRawTag(82);
         output.WriteMessage(StringList);
       }
+      if (typeCase_ == TypeOneofCase.TopicMux) {
+        output.WriteRawTag(90);
+        output.WriteMessage(TopicMux);
+      }
+      if (typeCase_ == TypeOneofCase.TopicDemux) {
+        output.WriteRawTag(98);
+        output.WriteMessage(TopicDemux);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -386,6 +431,12 @@ namespace Ubii.Services {
       }
       if (typeCase_ == TypeOneofCase.StringList) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StringList);
+      }
+      if (typeCase_ == TypeOneofCase.TopicMux) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicMux);
+      }
+      if (typeCase_ == TypeOneofCase.TopicDemux) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicDemux);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -458,6 +509,18 @@ namespace Ubii.Services {
             StringList = new global::Ubii.General.StringList();
           }
           StringList.MergeFrom(other.StringList);
+          break;
+        case TypeOneofCase.TopicMux:
+          if (TopicMux == null) {
+            TopicMux = new global::Ubii.Devices.TopicMux();
+          }
+          TopicMux.MergeFrom(other.TopicMux);
+          break;
+        case TypeOneofCase.TopicDemux:
+          if (TopicDemux == null) {
+            TopicDemux = new global::Ubii.Devices.TopicDemux();
+          }
+          TopicDemux.MergeFrom(other.TopicDemux);
           break;
       }
 
@@ -560,6 +623,24 @@ namespace Ubii.Services {
             }
             input.ReadMessage(subBuilder);
             StringList = subBuilder;
+            break;
+          }
+          case 90: {
+            global::Ubii.Devices.TopicMux subBuilder = new global::Ubii.Devices.TopicMux();
+            if (typeCase_ == TypeOneofCase.TopicMux) {
+              subBuilder.MergeFrom(TopicMux);
+            }
+            input.ReadMessage(subBuilder);
+            TopicMux = subBuilder;
+            break;
+          }
+          case 98: {
+            global::Ubii.Devices.TopicDemux subBuilder = new global::Ubii.Devices.TopicDemux();
+            if (typeCase_ == TypeOneofCase.TopicDemux) {
+              subBuilder.MergeFrom(TopicDemux);
+            }
+            input.ReadMessage(subBuilder);
+            TopicDemux = subBuilder;
             break;
           }
         }

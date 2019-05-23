@@ -17,6 +17,8 @@ from proto.general import error_pb2 as proto_dot_general_dot_error__pb2
 from proto.general import lists_pb2 as proto_dot_general_dot_lists__pb2
 from proto.clients import client_pb2 as proto_dot_clients_dot_client__pb2
 from proto.devices import device_pb2 as proto_dot_devices_dot_device__pb2
+from proto.devices import topicMux_pb2 as proto_dot_devices_dot_topicMux__pb2
+from proto.devices import topicDemux_pb2 as proto_dot_devices_dot_topicDemux__pb2
 from proto.servers import server_pb2 as proto_dot_servers_dot_server__pb2
 from proto.sessions import session_pb2 as proto_dot_sessions_dot_session__pb2
 from proto.interactions import interaction_pb2 as proto_dot_interactions_dot_interaction__pb2
@@ -27,9 +29,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n!proto/services/serviceReply.proto\x12\rubii.services\x1a\x1bproto/general/success.proto\x1a\x19proto/general/error.proto\x1a\x19proto/general/lists.proto\x1a\x1aproto/clients/client.proto\x1a\x1aproto/devices/device.proto\x1a\x1aproto/servers/server.proto\x1a\x1cproto/sessions/session.proto\x1a$proto/interactions/interaction.proto\"\xe5\x03\n\x0cServiceReply\x12(\n\x07success\x18\x01 \x01(\x0b\x32\x15.ubii.general.SuccessH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x12&\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12&\n\x06\x64\x65vice\x18\x04 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12&\n\x06server\x18\x05 \x01(\x0b\x32\x14.ubii.servers.ServerH\x00\x12)\n\x07session\x18\x06 \x01(\x0b\x32\x16.ubii.sessions.SessionH\x00\x12\x32\n\x0csession_list\x18\x07 \x01(\x0b\x32\x1a.ubii.sessions.SessionListH\x00\x12\x35\n\x0binteraction\x18\x08 \x01(\x0b\x32\x1e.ubii.interactions.InteractionH\x00\x12>\n\x10interaction_list\x18\t \x01(\x0b\x32\".ubii.interactions.InteractionListH\x00\x12/\n\x0bstring_list\x18\n \x01(\x0b\x32\x18.ubii.general.StringListH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n!proto/services/serviceReply.proto\x12\rubii.services\x1a\x1bproto/general/success.proto\x1a\x19proto/general/error.proto\x1a\x19proto/general/lists.proto\x1a\x1aproto/clients/client.proto\x1a\x1aproto/devices/device.proto\x1a\x1cproto/devices/topicMux.proto\x1a\x1eproto/devices/topicDemux.proto\x1a\x1aproto/servers/server.proto\x1a\x1cproto/sessions/session.proto\x1a$proto/interactions/interaction.proto\"\xc3\x04\n\x0cServiceReply\x12(\n\x07success\x18\x01 \x01(\x0b\x32\x15.ubii.general.SuccessH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x12&\n\x06\x63lient\x18\x03 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12&\n\x06\x64\x65vice\x18\x04 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12&\n\x06server\x18\x05 \x01(\x0b\x32\x14.ubii.servers.ServerH\x00\x12)\n\x07session\x18\x06 \x01(\x0b\x32\x16.ubii.sessions.SessionH\x00\x12\x32\n\x0csession_list\x18\x07 \x01(\x0b\x32\x1a.ubii.sessions.SessionListH\x00\x12\x35\n\x0binteraction\x18\x08 \x01(\x0b\x32\x1e.ubii.interactions.InteractionH\x00\x12>\n\x10interaction_list\x18\t \x01(\x0b\x32\".ubii.interactions.InteractionListH\x00\x12/\n\x0bstring_list\x18\n \x01(\x0b\x32\x18.ubii.general.StringListH\x00\x12+\n\ttopic_mux\x18\x0b \x01(\x0b\x32\x16.ubii.devices.TopicMuxH\x00\x12/\n\x0btopic_demux\x18\x0c \x01(\x0b\x32\x18.ubii.devices.TopicDemuxH\x00\x42\x06\n\x04typeb\x06proto3')
   ,
-  dependencies=[proto_dot_general_dot_success__pb2.DESCRIPTOR,proto_dot_general_dot_error__pb2.DESCRIPTOR,proto_dot_general_dot_lists__pb2.DESCRIPTOR,proto_dot_clients_dot_client__pb2.DESCRIPTOR,proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_servers_dot_server__pb2.DESCRIPTOR,proto_dot_sessions_dot_session__pb2.DESCRIPTOR,proto_dot_interactions_dot_interaction__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_general_dot_success__pb2.DESCRIPTOR,proto_dot_general_dot_error__pb2.DESCRIPTOR,proto_dot_general_dot_lists__pb2.DESCRIPTOR,proto_dot_clients_dot_client__pb2.DESCRIPTOR,proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_devices_dot_topicMux__pb2.DESCRIPTOR,proto_dot_devices_dot_topicDemux__pb2.DESCRIPTOR,proto_dot_servers_dot_server__pb2.DESCRIPTOR,proto_dot_sessions_dot_session__pb2.DESCRIPTOR,proto_dot_interactions_dot_interaction__pb2.DESCRIPTOR,])
 
 
 
@@ -111,6 +113,20 @@ _SERVICEREPLY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='topic_mux', full_name='ubii.services.ServiceReply.topic_mux', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='topic_demux', full_name='ubii.services.ServiceReply.topic_demux', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -126,8 +142,8 @@ _SERVICEREPLY = _descriptor.Descriptor(
       name='type', full_name='ubii.services.ServiceReply.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=288,
-  serialized_end=773,
+  serialized_start=350,
+  serialized_end=929,
 )
 
 _SERVICEREPLY.fields_by_name['success'].message_type = proto_dot_general_dot_success__pb2._SUCCESS
@@ -140,6 +156,8 @@ _SERVICEREPLY.fields_by_name['session_list'].message_type = proto_dot_sessions_d
 _SERVICEREPLY.fields_by_name['interaction'].message_type = proto_dot_interactions_dot_interaction__pb2._INTERACTION
 _SERVICEREPLY.fields_by_name['interaction_list'].message_type = proto_dot_interactions_dot_interaction__pb2._INTERACTIONLIST
 _SERVICEREPLY.fields_by_name['string_list'].message_type = proto_dot_general_dot_lists__pb2._STRINGLIST
+_SERVICEREPLY.fields_by_name['topic_mux'].message_type = proto_dot_devices_dot_topicMux__pb2._TOPICMUX
+_SERVICEREPLY.fields_by_name['topic_demux'].message_type = proto_dot_devices_dot_topicDemux__pb2._TOPICDEMUX
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
   _SERVICEREPLY.fields_by_name['success'])
 _SERVICEREPLY.fields_by_name['success'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
@@ -170,6 +188,12 @@ _SERVICEREPLY.fields_by_name['interaction_list'].containing_oneof = _SERVICEREPL
 _SERVICEREPLY.oneofs_by_name['type'].fields.append(
   _SERVICEREPLY.fields_by_name['string_list'])
 _SERVICEREPLY.fields_by_name['string_list'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
+_SERVICEREPLY.oneofs_by_name['type'].fields.append(
+  _SERVICEREPLY.fields_by_name['topic_mux'])
+_SERVICEREPLY.fields_by_name['topic_mux'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
+_SERVICEREPLY.oneofs_by_name['type'].fields.append(
+  _SERVICEREPLY.fields_by_name['topic_demux'])
+_SERVICEREPLY.fields_by_name['topic_demux'].containing_oneof = _SERVICEREPLY.oneofs_by_name['type']
 DESCRIPTOR.message_types_by_name['ServiceReply'] = _SERVICEREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

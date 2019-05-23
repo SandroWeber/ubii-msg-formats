@@ -7952,7 +7952,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12]];
 
 /**
  * @enum {number}
@@ -7968,7 +7968,9 @@ proto.ubii.services.ServiceReply.TypeCase = {
   SESSION_LIST: 7,
   INTERACTION: 8,
   INTERACTION_LIST: 9,
-  STRING_LIST: 10
+  STRING_LIST: 10,
+  TOPIC_MUX: 11,
+  TOPIC_DEMUX: 12
 };
 
 /**
@@ -8016,7 +8018,9 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     sessionList: (f = msg.getSessionList()) && proto.ubii.sessions.SessionList.toObject(includeInstance, f),
     interaction: (f = msg.getInteraction()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f),
     interactionList: (f = msg.getInteractionList()) && proto.ubii.interactions.InteractionList.toObject(includeInstance, f),
-    stringList: (f = msg.getStringList()) && proto.ubii.general.StringList.toObject(includeInstance, f)
+    stringList: (f = msg.getStringList()) && proto.ubii.general.StringList.toObject(includeInstance, f),
+    topicMux: (f = msg.getTopicMux()) && proto.ubii.devices.TopicMux.toObject(includeInstance, f),
+    topicDemux: (f = msg.getTopicDemux()) && proto.ubii.devices.TopicDemux.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8102,6 +8106,16 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.ubii.general.StringList;
       reader.readMessage(value,proto.ubii.general.StringList.deserializeBinaryFromReader);
       msg.setStringList(value);
+      break;
+    case 11:
+      var value = new proto.ubii.devices.TopicMux;
+      reader.readMessage(value,proto.ubii.devices.TopicMux.deserializeBinaryFromReader);
+      msg.setTopicMux(value);
+      break;
+    case 12:
+      var value = new proto.ubii.devices.TopicDemux;
+      reader.readMessage(value,proto.ubii.devices.TopicDemux.deserializeBinaryFromReader);
+      msg.setTopicDemux(value);
       break;
     default:
       reader.skipField();
@@ -8210,6 +8224,22 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       10,
       f,
       proto.ubii.general.StringList.serializeBinaryToWriter
+    );
+  }
+  f = message.getTopicMux();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.ubii.devices.TopicMux.serializeBinaryToWriter
+    );
+  }
+  f = message.getTopicDemux();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.ubii.devices.TopicDemux.serializeBinaryToWriter
     );
   }
 };
@@ -8512,6 +8542,66 @@ proto.ubii.services.ServiceReply.prototype.clearStringList = function() {
  */
 proto.ubii.services.ServiceReply.prototype.hasStringList = function() {
   return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional ubii.devices.TopicMux topic_mux = 11;
+ * @return {?proto.ubii.devices.TopicMux}
+ */
+proto.ubii.services.ServiceReply.prototype.getTopicMux = function() {
+  return /** @type{?proto.ubii.devices.TopicMux} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.TopicMux, 11));
+};
+
+
+/** @param {?proto.ubii.devices.TopicMux|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setTopicMux = function(value) {
+  jspb.Message.setOneofWrapperField(this, 11, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearTopicMux = function() {
+  this.setTopicMux(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasTopicMux = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional ubii.devices.TopicDemux topic_demux = 12;
+ * @return {?proto.ubii.devices.TopicDemux}
+ */
+proto.ubii.services.ServiceReply.prototype.getTopicDemux = function() {
+  return /** @type{?proto.ubii.devices.TopicDemux} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.TopicDemux, 12));
+};
+
+
+/** @param {?proto.ubii.devices.TopicDemux|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setTopicDemux = function(value) {
+  jspb.Message.setOneofWrapperField(this, 12, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearTopicDemux = function() {
+  this.setTopicDemux(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasTopicDemux = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
