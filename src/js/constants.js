@@ -29,7 +29,8 @@ const DEFAULT_TOPICS = {
     SESSION_DELETE: '/services/session/delete',
     SESSION_START: '/services/session/start',
     SESSION_STOP: '/services/session/stop',
-    TOPIC_MUX_DEMUX_REGISTRATION: '/services/devices/mux_demux_registration',
+    TOPIC_DEMUX_REGISTRATION: '/services/device/demux_registration',
+    TOPIC_MUX_DEMUX_REGISTRATION: '/services/device/mux_registration',
     TOPIC_LIST: '/services/topic_list',
     TOPIC_SUBSCRIPTION: '/services/topic_subscription',
   }
