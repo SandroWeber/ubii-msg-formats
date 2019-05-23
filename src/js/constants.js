@@ -30,7 +30,7 @@ const DEFAULT_TOPICS = {
     SESSION_START: '/services/session/start',
     SESSION_STOP: '/services/session/stop',
     TOPIC_DEMUX_REGISTRATION: '/services/device/demux_registration',
-    TOPIC_MUX_DEMUX_REGISTRATION: '/services/device/mux_registration',
+    TOPIC_MUX_REGISTRATION: '/services/device/mux_registration',
     TOPIC_LIST: '/services/topic_list',
     TOPIC_SUBSCRIPTION: '/services/topic_subscription',
   }
