@@ -17,8 +17,6 @@ const DEFAULT_TOPICS = {
     DEVICE_REGISTRATION: '/services/device_registration',
     DEVICE_GET_LIST: '/services/device/get_list',
     INTERACTION_REGISTRATION: '/services/interaction/registration',
-    INTERACTION_RUNTIME_GET: '/services/interaction/runtime/get',
-    INTERACTION_RUNTIME_GET_LIST: '/services/interaction/runtime/get_list',
     INTERACTION_DATABASE_GET: '/services/interaction/database/get',
     INTERACTION_DATABASE_GET_LIST: '/services/interaction/database/get_list',
     INTERACTION_REPLACE: '/services/interaction/replace',
