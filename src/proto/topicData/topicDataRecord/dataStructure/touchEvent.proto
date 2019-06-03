@@ -1,0 +1,10 @@
+syntax = "proto3";
+package ubii.dataStructure;
+
+import "proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto";
+import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
+
+message TouchEvent {
+    ubii.dataStructure.ButtonEventType type = 1;
+    ubii.dataStructure.Vector2 position = 2;
+}
