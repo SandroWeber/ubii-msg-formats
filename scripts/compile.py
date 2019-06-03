@@ -145,8 +145,8 @@ def chosen_option(args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--opt', type=str, default='python',
-                        help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp')
+    parser.add_argument('--opt', type=str, default='all',
+                        help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp, [all] all')
 
     args = parser.parse_args()
     sys.stdout.write(str(chosen_option(args)))
