@@ -42,14 +42,14 @@ public final class TopicDataRecordOuterClass {
     ubii.topicData.TimestampOuterClass.TimestampOrBuilder getTimestampOrBuilder();
 
     /**
-     * <code>double number = 3;</code>
+     * <code>double double = 3;</code>
      */
-    double getNumber();
+    double getDouble();
 
     /**
-     * <code>bool boolean = 4;</code>
+     * <code>bool bool = 4;</code>
      */
-    boolean getBoolean();
+    boolean getBool();
 
     /**
      * <code>string string = 5;</code>
@@ -153,41 +153,41 @@ public final class TopicDataRecordOuterClass {
     ubii.dataStructure.ColorOuterClass.ColorOrBuilder getColorOrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+     * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
      */
     boolean hasTouchEvent();
     /**
-     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+     * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
      */
     ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent();
     /**
-     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+     * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
      */
     ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
      */
     boolean hasKeyEvent();
     /**
-     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
      */
     ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent();
     /**
-     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
      */
     ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
      */
     boolean hasMouseEvent();
     /**
-     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
      */
     ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent();
     /**
-     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
      */
     ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder();
 
@@ -444,8 +444,8 @@ public final class TopicDataRecordOuterClass {
     private java.lang.Object type_;
     public enum TypeCase
         implements com.google.protobuf.Internal.EnumLite {
-      NUMBER(3),
-      BOOLEAN(4),
+      DOUBLE(3),
+      BOOL(4),
       STRING(5),
       VECTOR2(6),
       VECTOR3(7),
@@ -454,9 +454,9 @@ public final class TopicDataRecordOuterClass {
       MATRIX3X2(10),
       MATRIX4X4(11),
       COLOR(12),
-      TOUCHEVENT(13),
-      KEYEVENT(14),
-      MOUSEEVENT(15),
+      TOUCH_EVENT(13),
+      KEY_EVENT(14),
+      MOUSE_EVENT(15),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -472,8 +472,8 @@ public final class TopicDataRecordOuterClass {
 
       public static TypeCase forNumber(int value) {
         switch (value) {
-          case 3: return NUMBER;
-          case 4: return BOOLEAN;
+          case 3: return DOUBLE;
+          case 4: return BOOL;
           case 5: return STRING;
           case 6: return VECTOR2;
           case 7: return VECTOR3;
@@ -482,9 +482,9 @@ public final class TopicDataRecordOuterClass {
           case 10: return MATRIX3X2;
           case 11: return MATRIX4X4;
           case 12: return COLOR;
-          case 13: return TOUCHEVENT;
-          case 14: return KEYEVENT;
-          case 15: return MOUSEEVENT;
+          case 13: return TOUCH_EVENT;
+          case 14: return KEY_EVENT;
+          case 15: return MOUSE_EVENT;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -555,22 +555,22 @@ public final class TopicDataRecordOuterClass {
       return getTimestamp();
     }
 
-    public static final int NUMBER_FIELD_NUMBER = 3;
+    public static final int DOUBLE_FIELD_NUMBER = 3;
     /**
-     * <code>double number = 3;</code>
+     * <code>double double = 3;</code>
      */
-    public double getNumber() {
+    public double getDouble() {
       if (typeCase_ == 3) {
         return (java.lang.Double) type_;
       }
       return 0D;
     }
 
-    public static final int BOOLEAN_FIELD_NUMBER = 4;
+    public static final int BOOL_FIELD_NUMBER = 4;
     /**
-     * <code>bool boolean = 4;</code>
+     * <code>bool bool = 4;</code>
      */
-    public boolean getBoolean() {
+    public boolean getBool() {
       if (typeCase_ == 4) {
         return (java.lang.Boolean) type_;
       }
@@ -802,15 +802,15 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
     }
 
-    public static final int TOUCHEVENT_FIELD_NUMBER = 13;
+    public static final int TOUCH_EVENT_FIELD_NUMBER = 13;
     /**
-     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+     * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
      */
     public boolean hasTouchEvent() {
       return typeCase_ == 13;
     }
     /**
-     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+     * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
      */
     public ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent() {
       if (typeCase_ == 13) {
@@ -819,7 +819,7 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+     * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
      */
     public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder() {
       if (typeCase_ == 13) {
@@ -828,15 +828,15 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
     }
 
-    public static final int KEYEVENT_FIELD_NUMBER = 14;
+    public static final int KEY_EVENT_FIELD_NUMBER = 14;
     /**
-     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
      */
     public boolean hasKeyEvent() {
       return typeCase_ == 14;
     }
     /**
-     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
      */
     public ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent() {
       if (typeCase_ == 14) {
@@ -845,7 +845,7 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
      */
     public ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder() {
       if (typeCase_ == 14) {
@@ -854,15 +854,15 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
     }
 
-    public static final int MOUSEEVENT_FIELD_NUMBER = 15;
+    public static final int MOUSE_EVENT_FIELD_NUMBER = 15;
     /**
-     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
      */
     public boolean hasMouseEvent() {
       return typeCase_ == 15;
     }
     /**
-     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
      */
     public ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent() {
       if (typeCase_ == 15) {
@@ -871,7 +871,7 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
      */
     public ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder() {
       if (typeCase_ == 15) {
@@ -1039,13 +1039,13 @@ public final class TopicDataRecordOuterClass {
       switch (typeCase_) {
         case 3:
           result = result && (
-              java.lang.Double.doubleToLongBits(getNumber())
+              java.lang.Double.doubleToLongBits(getDouble())
               == java.lang.Double.doubleToLongBits(
-                  other.getNumber()));
+                  other.getDouble()));
           break;
         case 4:
-          result = result && (getBoolean()
-              == other.getBoolean());
+          result = result && (getBool()
+              == other.getBool());
           break;
         case 5:
           result = result && getString()
@@ -1113,14 +1113,14 @@ public final class TopicDataRecordOuterClass {
       }
       switch (typeCase_) {
         case 3:
-          hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+          hash = (37 * hash) + DOUBLE_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              java.lang.Double.doubleToLongBits(getNumber()));
+              java.lang.Double.doubleToLongBits(getDouble()));
           break;
         case 4:
-          hash = (37 * hash) + BOOLEAN_FIELD_NUMBER;
+          hash = (37 * hash) + BOOL_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-              getBoolean());
+              getBool());
           break;
         case 5:
           hash = (37 * hash) + STRING_FIELD_NUMBER;
@@ -1155,15 +1155,15 @@ public final class TopicDataRecordOuterClass {
           hash = (53 * hash) + getColor().hashCode();
           break;
         case 13:
-          hash = (37 * hash) + TOUCHEVENT_FIELD_NUMBER;
+          hash = (37 * hash) + TOUCH_EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getTouchEvent().hashCode();
           break;
         case 14:
-          hash = (37 * hash) + KEYEVENT_FIELD_NUMBER;
+          hash = (37 * hash) + KEY_EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getKeyEvent().hashCode();
           break;
         case 15:
-          hash = (37 * hash) + MOUSEEVENT_FIELD_NUMBER;
+          hash = (37 * hash) + MOUSE_EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getMouseEvent().hashCode();
           break;
         case 0:
@@ -1480,12 +1480,12 @@ public final class TopicDataRecordOuterClass {
           mergeTimestamp(other.getTimestamp());
         }
         switch (other.getTypeCase()) {
-          case NUMBER: {
-            setNumber(other.getNumber());
+          case DOUBLE: {
+            setDouble(other.getDouble());
             break;
           }
-          case BOOLEAN: {
-            setBoolean(other.getBoolean());
+          case BOOL: {
+            setBool(other.getBool());
             break;
           }
           case STRING: {
@@ -1522,15 +1522,15 @@ public final class TopicDataRecordOuterClass {
             mergeColor(other.getColor());
             break;
           }
-          case TOUCHEVENT: {
+          case TOUCH_EVENT: {
             mergeTouchEvent(other.getTouchEvent());
             break;
           }
-          case KEYEVENT: {
+          case KEY_EVENT: {
             mergeKeyEvent(other.getKeyEvent());
             break;
           }
-          case MOUSEEVENT: {
+          case MOUSE_EVENT: {
             mergeMouseEvent(other.getMouseEvent());
             break;
           }
@@ -1769,27 +1769,27 @@ public final class TopicDataRecordOuterClass {
       }
 
       /**
-       * <code>double number = 3;</code>
+       * <code>double double = 3;</code>
        */
-      public double getNumber() {
+      public double getDouble() {
         if (typeCase_ == 3) {
           return (java.lang.Double) type_;
         }
         return 0D;
       }
       /**
-       * <code>double number = 3;</code>
+       * <code>double double = 3;</code>
        */
-      public Builder setNumber(double value) {
+      public Builder setDouble(double value) {
         typeCase_ = 3;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double number = 3;</code>
+       * <code>double double = 3;</code>
        */
-      public Builder clearNumber() {
+      public Builder clearDouble() {
         if (typeCase_ == 3) {
           typeCase_ = 0;
           type_ = null;
@@ -1799,27 +1799,27 @@ public final class TopicDataRecordOuterClass {
       }
 
       /**
-       * <code>bool boolean = 4;</code>
+       * <code>bool bool = 4;</code>
        */
-      public boolean getBoolean() {
+      public boolean getBool() {
         if (typeCase_ == 4) {
           return (java.lang.Boolean) type_;
         }
         return false;
       }
       /**
-       * <code>bool boolean = 4;</code>
+       * <code>bool bool = 4;</code>
        */
-      public Builder setBoolean(boolean value) {
+      public Builder setBool(boolean value) {
         typeCase_ = 4;
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool boolean = 4;</code>
+       * <code>bool bool = 4;</code>
        */
-      public Builder clearBoolean() {
+      public Builder clearBool() {
         if (typeCase_ == 4) {
           typeCase_ = 0;
           type_ = null;
@@ -2863,13 +2863,13 @@ public final class TopicDataRecordOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.TouchEventOuterClass.TouchEvent, ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder, ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder> touchEventBuilder_;
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public boolean hasTouchEvent() {
         return typeCase_ == 13;
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent() {
         if (touchEventBuilder_ == null) {
@@ -2885,7 +2885,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public Builder setTouchEvent(ubii.dataStructure.TouchEventOuterClass.TouchEvent value) {
         if (touchEventBuilder_ == null) {
@@ -2901,7 +2901,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public Builder setTouchEvent(
           ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder builderForValue) {
@@ -2915,7 +2915,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public Builder mergeTouchEvent(ubii.dataStructure.TouchEventOuterClass.TouchEvent value) {
         if (touchEventBuilder_ == null) {
@@ -2937,7 +2937,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public Builder clearTouchEvent() {
         if (touchEventBuilder_ == null) {
@@ -2956,13 +2956,13 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder getTouchEventBuilder() {
         return getTouchEventFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder() {
         if ((typeCase_ == 13) && (touchEventBuilder_ != null)) {
@@ -2975,7 +2975,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       * <code>.ubii.dataStructure.TouchEvent touch_event = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.TouchEventOuterClass.TouchEvent, ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder, ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder> 
@@ -2999,13 +2999,13 @@ public final class TopicDataRecordOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.KeyEventOuterClass.KeyEvent, ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder, ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder> keyEventBuilder_;
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public boolean hasKeyEvent() {
         return typeCase_ == 14;
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent() {
         if (keyEventBuilder_ == null) {
@@ -3021,7 +3021,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public Builder setKeyEvent(ubii.dataStructure.KeyEventOuterClass.KeyEvent value) {
         if (keyEventBuilder_ == null) {
@@ -3037,7 +3037,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public Builder setKeyEvent(
           ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder builderForValue) {
@@ -3051,7 +3051,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public Builder mergeKeyEvent(ubii.dataStructure.KeyEventOuterClass.KeyEvent value) {
         if (keyEventBuilder_ == null) {
@@ -3073,7 +3073,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public Builder clearKeyEvent() {
         if (keyEventBuilder_ == null) {
@@ -3092,13 +3092,13 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder getKeyEventBuilder() {
         return getKeyEventFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       public ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder() {
         if ((typeCase_ == 14) && (keyEventBuilder_ != null)) {
@@ -3111,7 +3111,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       * <code>.ubii.dataStructure.KeyEvent key_event = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.KeyEventOuterClass.KeyEvent, ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder, ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder> 
@@ -3135,13 +3135,13 @@ public final class TopicDataRecordOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.MouseEventOuterClass.MouseEvent, ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder, ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder> mouseEventBuilder_;
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public boolean hasMouseEvent() {
         return typeCase_ == 15;
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent() {
         if (mouseEventBuilder_ == null) {
@@ -3157,7 +3157,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public Builder setMouseEvent(ubii.dataStructure.MouseEventOuterClass.MouseEvent value) {
         if (mouseEventBuilder_ == null) {
@@ -3173,7 +3173,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public Builder setMouseEvent(
           ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder builderForValue) {
@@ -3187,7 +3187,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public Builder mergeMouseEvent(ubii.dataStructure.MouseEventOuterClass.MouseEvent value) {
         if (mouseEventBuilder_ == null) {
@@ -3209,7 +3209,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public Builder clearMouseEvent() {
         if (mouseEventBuilder_ == null) {
@@ -3228,13 +3228,13 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder getMouseEventBuilder() {
         return getMouseEventFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       public ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder() {
         if ((typeCase_ == 15) && (mouseEventBuilder_ != null)) {
@@ -3247,7 +3247,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       * <code>.ubii.dataStructure.MouseEvent mouse_event = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.MouseEventOuterClass.MouseEvent, ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder, ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder> 
@@ -4141,20 +4141,20 @@ public final class TopicDataRecordOuterClass {
       "proto/topicData/topicDataRecord/dataStru" +
       "cture/mouseEvent.proto\"\205\005\n\017TopicDataReco" +
       "rd\022\r\n\005topic\030\001 \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.u" +
-      "bii.topicData.Timestamp\022\020\n\006number\030\003 \001(\001H" +
-      "\000\022\021\n\007boolean\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022." +
-      "\n\007vector2\030\006 \001(\0132\033.ubii.dataStructure.Vec" +
-      "tor2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStruc" +
-      "ture.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.d" +
-      "ataStructure.Vector4H\000\0224\n\nquaternion\030\t \001" +
-      "(\0132\036.ubii.dataStructure.QuaternionH\000\0222\n\t" +
-      "matrix3x2\030\n \001(\0132\035.ubii.dataStructure.Mat" +
-      "rix3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataS" +
-      "tructure.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ub" +
-      "ii.dataStructure.ColorH\000\0224\n\ntouchEvent\030\r" +
-      " \001(\0132\036.ubii.dataStructure.TouchEventH\000\0220" +
-      "\n\010keyEvent\030\016 \001(\0132\034.ubii.dataStructure.Ke" +
-      "yEventH\000\0224\n\nmouseEvent\030\017 \001(\0132\036.ubii.data" +
+      "bii.topicData.Timestamp\022\020\n\006double\030\003 \001(\001H" +
+      "\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022.\n\007v" +
+      "ector2\030\006 \001(\0132\033.ubii.dataStructure.Vector" +
+      "2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStructur" +
+      "e.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.data" +
+      "Structure.Vector4H\000\0224\n\nquaternion\030\t \001(\0132" +
+      "\036.ubii.dataStructure.QuaternionH\000\0222\n\tmat" +
+      "rix3x2\030\n \001(\0132\035.ubii.dataStructure.Matrix" +
+      "3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataStru" +
+      "cture.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ubii." +
+      "dataStructure.ColorH\000\0225\n\013touch_event\030\r \001" +
+      "(\0132\036.ubii.dataStructure.TouchEventH\000\0221\n\t" +
+      "key_event\030\016 \001(\0132\034.ubii.dataStructure.Key" +
+      "EventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.ubii.data" +
       "Structure.MouseEventH\000B\006\n\004type\"H\n\023TopicD" +
       "ataRecordList\0221\n\010elements\030\001 \003(\0132\037.ubii.t" +
       "opicData.TopicDataRecordb\006proto3"
@@ -4187,7 +4187,7 @@ public final class TopicDataRecordOuterClass {
     internal_static_ubii_topicData_TopicDataRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_topicData_TopicDataRecord_descriptor,
-        new java.lang.String[] { "Topic", "Timestamp", "Number", "Boolean", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "Type", });
+        new java.lang.String[] { "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "Type", });
     internal_static_ubii_topicData_TopicDataRecordList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_topicData_TopicDataRecordList_fieldAccessorTable = new

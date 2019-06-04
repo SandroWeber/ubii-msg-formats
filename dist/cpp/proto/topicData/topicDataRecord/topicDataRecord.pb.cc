@@ -61,8 +61,8 @@ class TopicDataRecordDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TopicDataRecord>
       _instance;
-  double number_;
-  bool boolean_;
+  double double__;
+  bool bool__;
   ::google::protobuf::internal::ArenaStringPtr string_;
   const ::ubii::dataStructure::Vector2* vector2_;
   const ::ubii::dataStructure::Vector3* vector3_;
@@ -71,9 +71,9 @@ class TopicDataRecordDefaultTypeInternal {
   const ::ubii::dataStructure::Matrix3x2* matrix3x2_;
   const ::ubii::dataStructure::Matrix4x4* matrix4x4_;
   const ::ubii::dataStructure::Color* color_;
-  const ::ubii::dataStructure::TouchEvent* touchevent_;
-  const ::ubii::dataStructure::KeyEvent* keyevent_;
-  const ::ubii::dataStructure::MouseEvent* mouseevent_;
+  const ::ubii::dataStructure::TouchEvent* touch_event_;
+  const ::ubii::dataStructure::KeyEvent* key_event_;
+  const ::ubii::dataStructure::MouseEvent* mouse_event_;
 } _TopicDataRecord_default_instance_;
 class TopicDataRecordListDefaultTypeInternal {
  public:
@@ -138,8 +138,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, topic_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, timestamp_),
-  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, number_),
-  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, boolean_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, double__),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, bool__),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, string_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, vector2_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, vector3_),
@@ -148,9 +148,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, matrix3x2_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, matrix4x4_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, color_),
-  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, touchevent_),
-  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, keyevent_),
-  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, mouseevent_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, touch_event_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, key_event_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, mouse_event_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, _internal_metadata_),
@@ -210,20 +210,20 @@ void AddDescriptorsImpl() {
       "proto/topicData/topicDataRecord/dataStru"
       "cture/mouseEvent.proto\"\205\005\n\017TopicDataReco"
       "rd\022\r\n\005topic\030\001 \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.u"
-      "bii.topicData.Timestamp\022\020\n\006number\030\003 \001(\001H"
-      "\000\022\021\n\007boolean\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022."
-      "\n\007vector2\030\006 \001(\0132\033.ubii.dataStructure.Vec"
-      "tor2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStruc"
-      "ture.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.d"
-      "ataStructure.Vector4H\000\0224\n\nquaternion\030\t \001"
-      "(\0132\036.ubii.dataStructure.QuaternionH\000\0222\n\t"
-      "matrix3x2\030\n \001(\0132\035.ubii.dataStructure.Mat"
-      "rix3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataS"
-      "tructure.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ub"
-      "ii.dataStructure.ColorH\000\0224\n\ntouchEvent\030\r"
-      " \001(\0132\036.ubii.dataStructure.TouchEventH\000\0220"
-      "\n\010keyEvent\030\016 \001(\0132\034.ubii.dataStructure.Ke"
-      "yEventH\000\0224\n\nmouseEvent\030\017 \001(\0132\036.ubii.data"
+      "bii.topicData.Timestamp\022\020\n\006double\030\003 \001(\001H"
+      "\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022.\n\007v"
+      "ector2\030\006 \001(\0132\033.ubii.dataStructure.Vector"
+      "2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStructur"
+      "e.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.data"
+      "Structure.Vector4H\000\0224\n\nquaternion\030\t \001(\0132"
+      "\036.ubii.dataStructure.QuaternionH\000\0222\n\tmat"
+      "rix3x2\030\n \001(\0132\035.ubii.dataStructure.Matrix"
+      "3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataStru"
+      "cture.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ubii."
+      "dataStructure.ColorH\000\0225\n\013touch_event\030\r \001"
+      "(\0132\036.ubii.dataStructure.TouchEventH\000\0221\n\t"
+      "key_event\030\016 \001(\0132\034.ubii.dataStructure.Key"
+      "EventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.ubii.data"
       "Structure.MouseEventH\000B\006\n\004type\"H\n\023TopicD"
       "ataRecordList\0221\n\010elements\030\001 \003(\0132\037.ubii.t"
       "opicData.TopicDataRecordb\006proto3"
@@ -264,8 +264,8 @@ namespace topicData {
 void TopicDataRecord::InitAsDefaultInstance() {
   ::ubii::topicData::_TopicDataRecord_default_instance_._instance.get_mutable()->timestamp_ = const_cast< ::ubii::topicData::Timestamp*>(
       ::ubii::topicData::Timestamp::internal_default_instance());
-  ::ubii::topicData::_TopicDataRecord_default_instance_.number_ = 0;
-  ::ubii::topicData::_TopicDataRecord_default_instance_.boolean_ = false;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.double__ = 0;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.bool__ = false;
   ::ubii::topicData::_TopicDataRecord_default_instance_.string_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::ubii::topicData::_TopicDataRecord_default_instance_.vector2_ = const_cast< ::ubii::dataStructure::Vector2*>(
@@ -282,11 +282,11 @@ void TopicDataRecord::InitAsDefaultInstance() {
       ::ubii::dataStructure::Matrix4x4::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.color_ = const_cast< ::ubii::dataStructure::Color*>(
       ::ubii::dataStructure::Color::internal_default_instance());
-  ::ubii::topicData::_TopicDataRecord_default_instance_.touchevent_ = const_cast< ::ubii::dataStructure::TouchEvent*>(
+  ::ubii::topicData::_TopicDataRecord_default_instance_.touch_event_ = const_cast< ::ubii::dataStructure::TouchEvent*>(
       ::ubii::dataStructure::TouchEvent::internal_default_instance());
-  ::ubii::topicData::_TopicDataRecord_default_instance_.keyevent_ = const_cast< ::ubii::dataStructure::KeyEvent*>(
+  ::ubii::topicData::_TopicDataRecord_default_instance_.key_event_ = const_cast< ::ubii::dataStructure::KeyEvent*>(
       ::ubii::dataStructure::KeyEvent::internal_default_instance());
-  ::ubii::topicData::_TopicDataRecord_default_instance_.mouseevent_ = const_cast< ::ubii::dataStructure::MouseEvent*>(
+  ::ubii::topicData::_TopicDataRecord_default_instance_.mouse_event_ = const_cast< ::ubii::dataStructure::MouseEvent*>(
       ::ubii::dataStructure::MouseEvent::internal_default_instance());
 }
 void TopicDataRecord::clear_timestamp() {
@@ -435,71 +435,71 @@ void TopicDataRecord::clear_color() {
     clear_has_type();
   }
 }
-void TopicDataRecord::set_allocated_touchevent(::ubii::dataStructure::TouchEvent* touchevent) {
+void TopicDataRecord::set_allocated_touch_event(::ubii::dataStructure::TouchEvent* touch_event) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
-  if (touchevent) {
+  if (touch_event) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      touchevent = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, touchevent, submessage_arena);
+      touch_event = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, touch_event, submessage_arena);
     }
-    set_has_touchevent();
-    type_.touchevent_ = touchevent;
+    set_has_touch_event();
+    type_.touch_event_ = touch_event;
   }
-  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.touchEvent)
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.touch_event)
 }
-void TopicDataRecord::clear_touchevent() {
-  if (has_touchevent()) {
-    delete type_.touchevent_;
+void TopicDataRecord::clear_touch_event() {
+  if (has_touch_event()) {
+    delete type_.touch_event_;
     clear_has_type();
   }
 }
-void TopicDataRecord::set_allocated_keyevent(::ubii::dataStructure::KeyEvent* keyevent) {
+void TopicDataRecord::set_allocated_key_event(::ubii::dataStructure::KeyEvent* key_event) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
-  if (keyevent) {
+  if (key_event) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      keyevent = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, keyevent, submessage_arena);
+      key_event = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, key_event, submessage_arena);
     }
-    set_has_keyevent();
-    type_.keyevent_ = keyevent;
+    set_has_key_event();
+    type_.key_event_ = key_event;
   }
-  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.keyEvent)
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.key_event)
 }
-void TopicDataRecord::clear_keyevent() {
-  if (has_keyevent()) {
-    delete type_.keyevent_;
+void TopicDataRecord::clear_key_event() {
+  if (has_key_event()) {
+    delete type_.key_event_;
     clear_has_type();
   }
 }
-void TopicDataRecord::set_allocated_mouseevent(::ubii::dataStructure::MouseEvent* mouseevent) {
+void TopicDataRecord::set_allocated_mouse_event(::ubii::dataStructure::MouseEvent* mouse_event) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
-  if (mouseevent) {
+  if (mouse_event) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      mouseevent = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, mouseevent, submessage_arena);
+      mouse_event = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, mouse_event, submessage_arena);
     }
-    set_has_mouseevent();
-    type_.mouseevent_ = mouseevent;
+    set_has_mouse_event();
+    type_.mouse_event_ = mouse_event;
   }
-  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.mouseEvent)
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.mouse_event)
 }
-void TopicDataRecord::clear_mouseevent() {
-  if (has_mouseevent()) {
-    delete type_.mouseevent_;
+void TopicDataRecord::clear_mouse_event() {
+  if (has_mouse_event()) {
+    delete type_.mouse_event_;
     clear_has_type();
   }
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TopicDataRecord::kTopicFieldNumber;
 const int TopicDataRecord::kTimestampFieldNumber;
-const int TopicDataRecord::kNumberFieldNumber;
-const int TopicDataRecord::kBooleanFieldNumber;
+const int TopicDataRecord::kDoubleFieldNumber;
+const int TopicDataRecord::kBoolFieldNumber;
 const int TopicDataRecord::kStringFieldNumber;
 const int TopicDataRecord::kVector2FieldNumber;
 const int TopicDataRecord::kVector3FieldNumber;
@@ -535,12 +535,12 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
   }
   clear_has_type();
   switch (from.type_case()) {
-    case kNumber: {
-      set_number(from.number());
+    case kDouble: {
+      set_double_(from.double_());
       break;
     }
-    case kBoolean: {
-      set_boolean(from.boolean());
+    case kBool: {
+      set_bool_(from.bool_());
       break;
     }
     case kString: {
@@ -576,15 +576,15 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
       break;
     }
     case kTouchEvent: {
-      mutable_touchevent()->::ubii::dataStructure::TouchEvent::MergeFrom(from.touchevent());
+      mutable_touch_event()->::ubii::dataStructure::TouchEvent::MergeFrom(from.touch_event());
       break;
     }
     case kKeyEvent: {
-      mutable_keyevent()->::ubii::dataStructure::KeyEvent::MergeFrom(from.keyevent());
+      mutable_key_event()->::ubii::dataStructure::KeyEvent::MergeFrom(from.key_event());
       break;
     }
     case kMouseEvent: {
-      mutable_mouseevent()->::ubii::dataStructure::MouseEvent::MergeFrom(from.mouseevent());
+      mutable_mouse_event()->::ubii::dataStructure::MouseEvent::MergeFrom(from.mouse_event());
       break;
     }
     case TYPE_NOT_SET: {
@@ -630,11 +630,11 @@ const TopicDataRecord& TopicDataRecord::default_instance() {
 void TopicDataRecord::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.topicData.TopicDataRecord)
   switch (type_case()) {
-    case kNumber: {
+    case kDouble: {
       // No need to clear
       break;
     }
-    case kBoolean: {
+    case kBool: {
       // No need to clear
       break;
     }
@@ -671,15 +671,15 @@ void TopicDataRecord::clear_type() {
       break;
     }
     case kTouchEvent: {
-      delete type_.touchevent_;
+      delete type_.touch_event_;
       break;
     }
     case kKeyEvent: {
-      delete type_.keyevent_;
+      delete type_.key_event_;
       break;
     }
     case kMouseEvent: {
-      delete type_.mouseevent_;
+      delete type_.mouse_event_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -743,30 +743,30 @@ bool TopicDataRecord::MergePartialFromCodedStream(
         break;
       }
 
-      // double number = 3;
+      // double double = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(25u /* 25 & 0xFF */)) {
           clear_type();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &type_.number_)));
-          set_has_number();
+                 input, &type_.double__)));
+          set_has_double_();
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // bool boolean = 4;
+      // bool bool = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
           clear_type();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &type_.boolean_)));
-          set_has_boolean();
+                 input, &type_.bool__)));
+          set_has_bool_();
         } else {
           goto handle_unusual;
         }
@@ -873,36 +873,36 @@ bool TopicDataRecord::MergePartialFromCodedStream(
         break;
       }
 
-      // .ubii.dataStructure.TouchEvent touchEvent = 13;
+      // .ubii.dataStructure.TouchEvent touch_event = 13;
       case 13: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_touchevent()));
+               input, mutable_touch_event()));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .ubii.dataStructure.KeyEvent keyEvent = 14;
+      // .ubii.dataStructure.KeyEvent key_event = 14;
       case 14: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_keyevent()));
+               input, mutable_key_event()));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .ubii.dataStructure.MouseEvent mouseEvent = 15;
+      // .ubii.dataStructure.MouseEvent mouse_event = 15;
       case 15: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(122u /* 122 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_mouseevent()));
+               input, mutable_mouse_event()));
         } else {
           goto handle_unusual;
         }
@@ -951,14 +951,14 @@ void TopicDataRecord::SerializeWithCachedSizes(
       2, this->_internal_timestamp(), output);
   }
 
-  // double number = 3;
-  if (has_number()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->number(), output);
+  // double double = 3;
+  if (has_double_()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->double_(), output);
   }
 
-  // bool boolean = 4;
-  if (has_boolean()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->boolean(), output);
+  // bool bool = 4;
+  if (has_bool_()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->bool_(), output);
   }
 
   // string string = 5;
@@ -1013,22 +1013,22 @@ void TopicDataRecord::SerializeWithCachedSizes(
       12, this->_internal_color(), output);
   }
 
-  // .ubii.dataStructure.TouchEvent touchEvent = 13;
-  if (has_touchevent()) {
+  // .ubii.dataStructure.TouchEvent touch_event = 13;
+  if (has_touch_event()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      13, this->_internal_touchevent(), output);
+      13, this->_internal_touch_event(), output);
   }
 
-  // .ubii.dataStructure.KeyEvent keyEvent = 14;
-  if (has_keyevent()) {
+  // .ubii.dataStructure.KeyEvent key_event = 14;
+  if (has_key_event()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      14, this->_internal_keyevent(), output);
+      14, this->_internal_key_event(), output);
   }
 
-  // .ubii.dataStructure.MouseEvent mouseEvent = 15;
-  if (has_mouseevent()) {
+  // .ubii.dataStructure.MouseEvent mouse_event = 15;
+  if (has_mouse_event()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      15, this->_internal_mouseevent(), output);
+      15, this->_internal_mouse_event(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1063,14 +1063,14 @@ void TopicDataRecord::SerializeWithCachedSizes(
         2, this->_internal_timestamp(), deterministic, target);
   }
 
-  // double number = 3;
-  if (has_number()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->number(), target);
+  // double double = 3;
+  if (has_double_()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->double_(), target);
   }
 
-  // bool boolean = 4;
-  if (has_boolean()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->boolean(), target);
+  // bool bool = 4;
+  if (has_bool_()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->bool_(), target);
   }
 
   // string string = 5;
@@ -1133,25 +1133,25 @@ void TopicDataRecord::SerializeWithCachedSizes(
         12, this->_internal_color(), deterministic, target);
   }
 
-  // .ubii.dataStructure.TouchEvent touchEvent = 13;
-  if (has_touchevent()) {
+  // .ubii.dataStructure.TouchEvent touch_event = 13;
+  if (has_touch_event()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        13, this->_internal_touchevent(), deterministic, target);
+        13, this->_internal_touch_event(), deterministic, target);
   }
 
-  // .ubii.dataStructure.KeyEvent keyEvent = 14;
-  if (has_keyevent()) {
+  // .ubii.dataStructure.KeyEvent key_event = 14;
+  if (has_key_event()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        14, this->_internal_keyevent(), deterministic, target);
+        14, this->_internal_key_event(), deterministic, target);
   }
 
-  // .ubii.dataStructure.MouseEvent mouseEvent = 15;
-  if (has_mouseevent()) {
+  // .ubii.dataStructure.MouseEvent mouse_event = 15;
+  if (has_mouse_event()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        15, this->_internal_mouseevent(), deterministic, target);
+        15, this->_internal_mouse_event(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1186,13 +1186,13 @@ size_t TopicDataRecord::ByteSizeLong() const {
   }
 
   switch (type_case()) {
-    // double number = 3;
-    case kNumber: {
+    // double double = 3;
+    case kDouble: {
       total_size += 1 + 8;
       break;
     }
-    // bool boolean = 4;
-    case kBoolean: {
+    // bool bool = 4;
+    case kBool: {
       total_size += 1 + 1;
       break;
     }
@@ -1252,25 +1252,25 @@ size_t TopicDataRecord::ByteSizeLong() const {
           *type_.color_);
       break;
     }
-    // .ubii.dataStructure.TouchEvent touchEvent = 13;
+    // .ubii.dataStructure.TouchEvent touch_event = 13;
     case kTouchEvent: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *type_.touchevent_);
+          *type_.touch_event_);
       break;
     }
-    // .ubii.dataStructure.KeyEvent keyEvent = 14;
+    // .ubii.dataStructure.KeyEvent key_event = 14;
     case kKeyEvent: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *type_.keyevent_);
+          *type_.key_event_);
       break;
     }
-    // .ubii.dataStructure.MouseEvent mouseEvent = 15;
+    // .ubii.dataStructure.MouseEvent mouse_event = 15;
     case kMouseEvent: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *type_.mouseevent_);
+          *type_.mouse_event_);
       break;
     }
     case TYPE_NOT_SET: {
@@ -1312,12 +1312,12 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
     mutable_timestamp()->::ubii::topicData::Timestamp::MergeFrom(from.timestamp());
   }
   switch (from.type_case()) {
-    case kNumber: {
-      set_number(from.number());
+    case kDouble: {
+      set_double_(from.double_());
       break;
     }
-    case kBoolean: {
-      set_boolean(from.boolean());
+    case kBool: {
+      set_bool_(from.bool_());
       break;
     }
     case kString: {
@@ -1353,15 +1353,15 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
       break;
     }
     case kTouchEvent: {
-      mutable_touchevent()->::ubii::dataStructure::TouchEvent::MergeFrom(from.touchevent());
+      mutable_touch_event()->::ubii::dataStructure::TouchEvent::MergeFrom(from.touch_event());
       break;
     }
     case kKeyEvent: {
-      mutable_keyevent()->::ubii::dataStructure::KeyEvent::MergeFrom(from.keyevent());
+      mutable_key_event()->::ubii::dataStructure::KeyEvent::MergeFrom(from.key_event());
       break;
     }
     case kMouseEvent: {
-      mutable_mouseevent()->::ubii::dataStructure::MouseEvent::MergeFrom(from.mouseevent());
+      mutable_mouse_event()->::ubii::dataStructure::MouseEvent::MergeFrom(from.mouse_event());
       break;
     }
     case TYPE_NOT_SET: {

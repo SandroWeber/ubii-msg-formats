@@ -3998,8 +3998,8 @@ proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,
  */
 proto.ubii.topicData.TopicDataRecord.TypeCase = {
   TYPE_NOT_SET: 0,
-  NUMBER: 3,
-  BOOLEAN: 4,
+  DOUBLE: 3,
+  BOOL: 4,
   STRING: 5,
   VECTOR2: 6,
   VECTOR3: 7,
@@ -4008,9 +4008,9 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   MATRIX3X2: 10,
   MATRIX4X4: 11,
   COLOR: 12,
-  TOUCHEVENT: 13,
-  KEYEVENT: 14,
-  MOUSEEVENT: 15
+  TOUCH_EVENT: 13,
+  KEY_EVENT: 14,
+  MOUSE_EVENT: 15
 };
 
 /**
@@ -4051,8 +4051,8 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
   var f, obj = {
     topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
     timestamp: (f = msg.getTimestamp()) && proto.ubii.topicData.Timestamp.toObject(includeInstance, f),
-    number: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
-    pb_boolean: jspb.Message.getFieldWithDefault(msg, 4, false),
+    pb_double: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
+    bool: jspb.Message.getFieldWithDefault(msg, 4, false),
     string: jspb.Message.getFieldWithDefault(msg, 5, ""),
     vector2: (f = msg.getVector2()) && proto.ubii.dataStructure.Vector2.toObject(includeInstance, f),
     vector3: (f = msg.getVector3()) && proto.ubii.dataStructure.Vector3.toObject(includeInstance, f),
@@ -4061,9 +4061,9 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     matrix3x2: (f = msg.getMatrix3x2()) && proto.ubii.dataStructure.Matrix3x2.toObject(includeInstance, f),
     matrix4x4: (f = msg.getMatrix4x4()) && proto.ubii.dataStructure.Matrix4x4.toObject(includeInstance, f),
     color: (f = msg.getColor()) && proto.ubii.dataStructure.Color.toObject(includeInstance, f),
-    touchevent: (f = msg.getTouchevent()) && proto.ubii.dataStructure.TouchEvent.toObject(includeInstance, f),
-    keyevent: (f = msg.getKeyevent()) && proto.ubii.dataStructure.KeyEvent.toObject(includeInstance, f),
-    mouseevent: (f = msg.getMouseevent()) && proto.ubii.dataStructure.MouseEvent.toObject(includeInstance, f)
+    touchEvent: (f = msg.getTouchEvent()) && proto.ubii.dataStructure.TouchEvent.toObject(includeInstance, f),
+    keyEvent: (f = msg.getKeyEvent()) && proto.ubii.dataStructure.KeyEvent.toObject(includeInstance, f),
+    mouseEvent: (f = msg.getMouseEvent()) && proto.ubii.dataStructure.MouseEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4111,11 +4111,11 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setNumber(value);
+      msg.setDouble(value);
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setBoolean(value);
+      msg.setBool(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -4159,17 +4159,17 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
     case 13:
       var value = new proto.ubii.dataStructure.TouchEvent;
       reader.readMessage(value,proto.ubii.dataStructure.TouchEvent.deserializeBinaryFromReader);
-      msg.setTouchevent(value);
+      msg.setTouchEvent(value);
       break;
     case 14:
       var value = new proto.ubii.dataStructure.KeyEvent;
       reader.readMessage(value,proto.ubii.dataStructure.KeyEvent.deserializeBinaryFromReader);
-      msg.setKeyevent(value);
+      msg.setKeyEvent(value);
       break;
     case 15:
       var value = new proto.ubii.dataStructure.MouseEvent;
       reader.readMessage(value,proto.ubii.dataStructure.MouseEvent.deserializeBinaryFromReader);
-      msg.setMouseevent(value);
+      msg.setMouseEvent(value);
       break;
     default:
       reader.skipField();
@@ -4292,7 +4292,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto.ubii.dataStructure.Color.serializeBinaryToWriter
     );
   }
-  f = message.getTouchevent();
+  f = message.getTouchEvent();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -4300,7 +4300,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto.ubii.dataStructure.TouchEvent.serializeBinaryToWriter
     );
   }
-  f = message.getKeyevent();
+  f = message.getKeyEvent();
   if (f != null) {
     writer.writeMessage(
       14,
@@ -4308,7 +4308,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto.ubii.dataStructure.KeyEvent.serializeBinaryToWriter
     );
   }
-  f = message.getMouseevent();
+  f = message.getMouseEvent();
   if (f != null) {
     writer.writeMessage(
       15,
@@ -4365,21 +4365,21 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasTimestamp = function() {
 
 
 /**
- * optional double number = 3;
+ * optional double double = 3;
  * @return {number}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getNumber = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.getDouble = function() {
   return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 3, 0.0));
 };
 
 
 /** @param {number} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setNumber = function(value) {
+proto.ubii.topicData.TopicDataRecord.prototype.setDouble = function(value) {
   jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-proto.ubii.topicData.TopicDataRecord.prototype.clearNumber = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.clearDouble = function() {
   jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
 };
 
@@ -4388,29 +4388,29 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearNumber = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasNumber = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasDouble = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional bool boolean = 4;
+ * optional bool bool = 4;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getBoolean = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.getBool = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
 };
 
 
 /** @param {boolean} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setBoolean = function(value) {
+proto.ubii.topicData.TopicDataRecord.prototype.setBool = function(value) {
   jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-proto.ubii.topicData.TopicDataRecord.prototype.clearBoolean = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.clearBool = function() {
   jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
 };
 
@@ -4419,7 +4419,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearBoolean = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasBoolean = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasBool = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -4664,23 +4664,23 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasColor = function() {
 
 
 /**
- * optional ubii.dataStructure.TouchEvent touchEvent = 13;
+ * optional ubii.dataStructure.TouchEvent touch_event = 13;
  * @return {?proto.ubii.dataStructure.TouchEvent}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getTouchevent = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.getTouchEvent = function() {
   return /** @type{?proto.ubii.dataStructure.TouchEvent} */ (
     jspb.Message.getWrapperField(this, proto.ubii.dataStructure.TouchEvent, 13));
 };
 
 
 /** @param {?proto.ubii.dataStructure.TouchEvent|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setTouchevent = function(value) {
+proto.ubii.topicData.TopicDataRecord.prototype.setTouchEvent = function(value) {
   jspb.Message.setOneofWrapperField(this, 13, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-proto.ubii.topicData.TopicDataRecord.prototype.clearTouchevent = function() {
-  this.setTouchevent(undefined);
+proto.ubii.topicData.TopicDataRecord.prototype.clearTouchEvent = function() {
+  this.setTouchEvent(undefined);
 };
 
 
@@ -4688,29 +4688,29 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearTouchevent = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasTouchevent = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasTouchEvent = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional ubii.dataStructure.KeyEvent keyEvent = 14;
+ * optional ubii.dataStructure.KeyEvent key_event = 14;
  * @return {?proto.ubii.dataStructure.KeyEvent}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getKeyevent = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.getKeyEvent = function() {
   return /** @type{?proto.ubii.dataStructure.KeyEvent} */ (
     jspb.Message.getWrapperField(this, proto.ubii.dataStructure.KeyEvent, 14));
 };
 
 
 /** @param {?proto.ubii.dataStructure.KeyEvent|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setKeyevent = function(value) {
+proto.ubii.topicData.TopicDataRecord.prototype.setKeyEvent = function(value) {
   jspb.Message.setOneofWrapperField(this, 14, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-proto.ubii.topicData.TopicDataRecord.prototype.clearKeyevent = function() {
-  this.setKeyevent(undefined);
+proto.ubii.topicData.TopicDataRecord.prototype.clearKeyEvent = function() {
+  this.setKeyEvent(undefined);
 };
 
 
@@ -4718,29 +4718,29 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearKeyevent = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasKeyevent = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasKeyEvent = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional ubii.dataStructure.MouseEvent mouseEvent = 15;
+ * optional ubii.dataStructure.MouseEvent mouse_event = 15;
  * @return {?proto.ubii.dataStructure.MouseEvent}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getMouseevent = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.getMouseEvent = function() {
   return /** @type{?proto.ubii.dataStructure.MouseEvent} */ (
     jspb.Message.getWrapperField(this, proto.ubii.dataStructure.MouseEvent, 15));
 };
 
 
 /** @param {?proto.ubii.dataStructure.MouseEvent|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setMouseevent = function(value) {
+proto.ubii.topicData.TopicDataRecord.prototype.setMouseEvent = function(value) {
   jspb.Message.setOneofWrapperField(this, 15, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-proto.ubii.topicData.TopicDataRecord.prototype.clearMouseevent = function() {
-  this.setMouseevent(undefined);
+proto.ubii.topicData.TopicDataRecord.prototype.clearMouseEvent = function() {
+  this.setMouseEvent(undefined);
 };
 
 
@@ -4748,7 +4748,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearMouseevent = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasMouseevent = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasMouseEvent = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 

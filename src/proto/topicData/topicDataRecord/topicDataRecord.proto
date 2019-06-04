@@ -17,8 +17,8 @@ message TopicDataRecord {
     string topic = 1;
     ubii.topicData.Timestamp timestamp = 2;
     oneof type {
-        double number = 3;
-        bool boolean = 4;
+        double double = 3;
+        bool bool = 4;
         string string = 5;
         ubii.dataStructure.Vector2 vector2 = 6;
         ubii.dataStructure.Vector3 vector3 = 7;
@@ -27,9 +27,9 @@ message TopicDataRecord {
         ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
         ubii.dataStructure.Matrix4x4 matrix4x4 = 11;
         ubii.dataStructure.Color color = 12;
-        ubii.dataStructure.TouchEvent touchEvent = 13;
-        ubii.dataStructure.KeyEvent keyEvent = 14;
-        ubii.dataStructure.MouseEvent mouseEvent = 15;
+        ubii.dataStructure.TouchEvent touch_event = 13;
+        ubii.dataStructure.KeyEvent key_event = 14;
+        ubii.dataStructure.MouseEvent mouse_event = 15;
     }    
 }
 
