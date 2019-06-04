@@ -11,6 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var proto_topicData_topicDataRecord_timestamp_pb = require('../../../proto/topicData/topicDataRecord/timestamp_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_vector2_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector2_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_vector3_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector3_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_vector4_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector4_pb.js');
@@ -18,7 +19,9 @@ var proto_topicData_topicDataRecord_dataStructure_quaternion_pb = require('../..
 var proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/matrix3x2_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/matrix4x4_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_color_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/color_pb.js');
-var proto_topicData_topicDataRecord_timestamp_pb = require('../../../proto/topicData/topicDataRecord/timestamp_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_touchEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/touchEvent_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_keyEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/keyEvent_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/mouseEvent_pb.js');
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecordList', null, global);
 
@@ -47,23 +50,26 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15]];
 
 /**
  * @enum {number}
  */
 proto.ubii.topicData.TopicDataRecord.TypeCase = {
   TYPE_NOT_SET: 0,
-  NUMBER: 2,
-  BOOLEAN: 3,
-  STRING: 4,
-  VECTOR2: 5,
-  VECTOR3: 6,
-  VECTOR4: 7,
-  QUATERNION: 8,
-  MATRIX3X2: 9,
-  MATRIX4X4: 10,
-  COLOR: 11
+  NUMBER: 3,
+  BOOLEAN: 4,
+  STRING: 5,
+  VECTOR2: 6,
+  VECTOR3: 7,
+  VECTOR4: 8,
+  QUATERNION: 9,
+  MATRIX3X2: 10,
+  MATRIX4X4: 11,
+  COLOR: 12,
+  TOUCHEVENT: 13,
+  KEYEVENT: 14,
+  MOUSEEVENT: 15
 };
 
 /**
@@ -103,9 +109,10 @@ proto.ubii.topicData.TopicDataRecord.prototype.toObject = function(opt_includeIn
 proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
   var f, obj = {
     topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    number: +jspb.Message.getFieldWithDefault(msg, 2, 0.0),
-    pb_boolean: jspb.Message.getFieldWithDefault(msg, 3, false),
-    string: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    timestamp: (f = msg.getTimestamp()) && proto_topicData_topicDataRecord_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    number: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
+    pb_boolean: jspb.Message.getFieldWithDefault(msg, 4, false),
+    string: jspb.Message.getFieldWithDefault(msg, 5, ""),
     vector2: (f = msg.getVector2()) && proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.toObject(includeInstance, f),
     vector3: (f = msg.getVector3()) && proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.toObject(includeInstance, f),
     vector4: (f = msg.getVector4()) && proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.toObject(includeInstance, f),
@@ -113,7 +120,9 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     matrix3x2: (f = msg.getMatrix3x2()) && proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2.toObject(includeInstance, f),
     matrix4x4: (f = msg.getMatrix4x4()) && proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4.toObject(includeInstance, f),
     color: (f = msg.getColor()) && proto_topicData_topicDataRecord_dataStructure_color_pb.Color.toObject(includeInstance, f),
-    timestamp: (f = msg.getTimestamp()) && proto_topicData_topicDataRecord_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    touchevent: (f = msg.getTouchevent()) && proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.toObject(includeInstance, f),
+    keyevent: (f = msg.getKeyevent()) && proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.toObject(includeInstance, f),
+    mouseevent: (f = msg.getMouseevent()) && proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -155,56 +164,71 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       msg.setTopic(value);
       break;
     case 2:
+      var value = new proto_topicData_topicDataRecord_timestamp_pb.Timestamp;
+      reader.readMessage(value,proto_topicData_topicDataRecord_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setTimestamp(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setNumber(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBoolean(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setString(value);
       break;
-    case 5:
+    case 6:
       var value = new proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.deserializeBinaryFromReader);
       msg.setVector2(value);
       break;
-    case 6:
+    case 7:
       var value = new proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.deserializeBinaryFromReader);
       msg.setVector3(value);
       break;
-    case 7:
+    case 8:
       var value = new proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.deserializeBinaryFromReader);
       msg.setVector4(value);
       break;
-    case 8:
+    case 9:
       var value = new proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.deserializeBinaryFromReader);
       msg.setQuaternion(value);
       break;
-    case 9:
+    case 10:
       var value = new proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2.deserializeBinaryFromReader);
       msg.setMatrix3x2(value);
       break;
-    case 10:
+    case 11:
       var value = new proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4.deserializeBinaryFromReader);
       msg.setMatrix4x4(value);
       break;
-    case 11:
+    case 12:
       var value = new proto_topicData_topicDataRecord_dataStructure_color_pb.Color;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_color_pb.Color.deserializeBinaryFromReader);
       msg.setColor(value);
       break;
-    case 12:
-      var value = new proto_topicData_topicDataRecord_timestamp_pb.Timestamp;
-      reader.readMessage(value,proto_topicData_topicDataRecord_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setTimestamp(value);
+    case 13:
+      var value = new proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.deserializeBinaryFromReader);
+      msg.setTouchevent(value);
+      break;
+    case 14:
+      var value = new proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.deserializeBinaryFromReader);
+      msg.setKeyevent(value);
+      break;
+    case 15:
+      var value = new proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.deserializeBinaryFromReader);
+      msg.setMouseevent(value);
       break;
     default:
       reader.skipField();
@@ -242,31 +266,39 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = message.getTimestamp();
   if (f != null) {
-    writer.writeDouble(
+    writer.writeMessage(
       2,
-      f
+      f,
+      proto_topicData_topicDataRecord_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeBool(
+    writer.writeDouble(
       3,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
   f = message.getVector2();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.serializeBinaryToWriter
     );
@@ -274,7 +306,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
   f = message.getVector3();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.serializeBinaryToWriter
     );
@@ -282,7 +314,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
   f = message.getVector4();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.serializeBinaryToWriter
     );
@@ -290,7 +322,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
   f = message.getQuaternion();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.serializeBinaryToWriter
     );
@@ -298,7 +330,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
   f = message.getMatrix3x2();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2.serializeBinaryToWriter
     );
@@ -306,7 +338,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
   f = message.getMatrix4x4();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4.serializeBinaryToWriter
     );
@@ -314,17 +346,33 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
   f = message.getColor();
   if (f != null) {
     writer.writeMessage(
-      11,
+      12,
       f,
       proto_topicData_topicDataRecord_dataStructure_color_pb.Color.serializeBinaryToWriter
     );
   }
-  f = message.getTimestamp();
+  f = message.getTouchevent();
   if (f != null) {
     writer.writeMessage(
-      12,
+      13,
       f,
-      proto_topicData_topicDataRecord_timestamp_pb.Timestamp.serializeBinaryToWriter
+      proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getKeyevent();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getMouseevent();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.serializeBinaryToWriter
     );
   }
 };
@@ -346,317 +394,18 @@ proto.ubii.topicData.TopicDataRecord.prototype.setTopic = function(value) {
 
 
 /**
- * optional double number = 2;
- * @return {number}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getNumber = function() {
-  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 2, 0.0));
-};
-
-
-/** @param {number} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setNumber = function(value) {
-  jspb.Message.setOneofField(this, 2, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearNumber = function() {
-  jspb.Message.setOneofField(this, 2, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasNumber = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional bool boolean = 3;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getBoolean = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
-};
-
-
-/** @param {boolean} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setBoolean = function(value) {
-  jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearBoolean = function() {
-  jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasBoolean = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string string = 4;
- * @return {string}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getString = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setString = function(value) {
-  jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearString = function() {
-  jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasString = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional ubii.dataStructure.Vector2 vector2 = 5;
- * @return {?proto.ubii.dataStructure.Vector2}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getVector2 = function() {
-  return /** @type{?proto.ubii.dataStructure.Vector2} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2, 5));
-};
-
-
-/** @param {?proto.ubii.dataStructure.Vector2|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setVector2 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 5, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearVector2 = function() {
-  this.setVector2(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasVector2 = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional ubii.dataStructure.Vector3 vector3 = 6;
- * @return {?proto.ubii.dataStructure.Vector3}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getVector3 = function() {
-  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3, 6));
-};
-
-
-/** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setVector3 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 6, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearVector3 = function() {
-  this.setVector3(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasVector3 = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional ubii.dataStructure.Vector4 vector4 = 7;
- * @return {?proto.ubii.dataStructure.Vector4}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getVector4 = function() {
-  return /** @type{?proto.ubii.dataStructure.Vector4} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4, 7));
-};
-
-
-/** @param {?proto.ubii.dataStructure.Vector4|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setVector4 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 7, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearVector4 = function() {
-  this.setVector4(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasVector4 = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional ubii.dataStructure.Quaternion quaternion = 8;
- * @return {?proto.ubii.dataStructure.Quaternion}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getQuaternion = function() {
-  return /** @type{?proto.ubii.dataStructure.Quaternion} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion, 8));
-};
-
-
-/** @param {?proto.ubii.dataStructure.Quaternion|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setQuaternion = function(value) {
-  jspb.Message.setOneofWrapperField(this, 8, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearQuaternion = function() {
-  this.setQuaternion(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasQuaternion = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional ubii.dataStructure.Matrix3x2 matrix3x2 = 9;
- * @return {?proto.ubii.dataStructure.Matrix3x2}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getMatrix3x2 = function() {
-  return /** @type{?proto.ubii.dataStructure.Matrix3x2} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2, 9));
-};
-
-
-/** @param {?proto.ubii.dataStructure.Matrix3x2|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setMatrix3x2 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 9, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix3x2 = function() {
-  this.setMatrix3x2(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix3x2 = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional ubii.dataStructure.Matrix4x4 matrix4x4 = 10;
- * @return {?proto.ubii.dataStructure.Matrix4x4}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getMatrix4x4 = function() {
-  return /** @type{?proto.ubii.dataStructure.Matrix4x4} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4, 10));
-};
-
-
-/** @param {?proto.ubii.dataStructure.Matrix4x4|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setMatrix4x4 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 10, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix4x4 = function() {
-  this.setMatrix4x4(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix4x4 = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional ubii.dataStructure.Color color = 11;
- * @return {?proto.ubii.dataStructure.Color}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getColor = function() {
-  return /** @type{?proto.ubii.dataStructure.Color} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_color_pb.Color, 11));
-};
-
-
-/** @param {?proto.ubii.dataStructure.Color|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setColor = function(value) {
-  jspb.Message.setOneofWrapperField(this, 11, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-proto.ubii.topicData.TopicDataRecord.prototype.clearColor = function() {
-  this.setColor(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasColor = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional Timestamp timestamp = 12;
+ * optional Timestamp timestamp = 2;
  * @return {?proto.ubii.topicData.Timestamp}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getTimestamp = function() {
   return /** @type{?proto.ubii.topicData.Timestamp} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_timestamp_pb.Timestamp, 12));
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_timestamp_pb.Timestamp, 2));
 };
 
 
 /** @param {?proto.ubii.topicData.Timestamp|undefined} value */
 proto.ubii.topicData.TopicDataRecord.prototype.setTimestamp = function(value) {
-  jspb.Message.setWrapperField(this, 12, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -670,7 +419,396 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearTimestamp = function() {
  * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasTimestamp = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional double number = 3;
+ * @return {number}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getNumber = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 3, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setNumber = function(value) {
+  jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearNumber = function() {
+  jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasNumber = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool boolean = 4;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getBoolean = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
+};
+
+
+/** @param {boolean} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setBoolean = function(value) {
+  jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearBoolean = function() {
+  jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasBoolean = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string string = 5;
+ * @return {string}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getString = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setString = function(value) {
+  jspb.Message.setOneofField(this, 5, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearString = function() {
+  jspb.Message.setOneofField(this, 5, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasString = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Vector2 vector2 = 6;
+ * @return {?proto.ubii.dataStructure.Vector2}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getVector2 = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector2} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2, 6));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector2|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setVector2 = function(value) {
+  jspb.Message.setOneofWrapperField(this, 6, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearVector2 = function() {
+  this.setVector2(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasVector2 = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Vector3 vector3 = 7;
+ * @return {?proto.ubii.dataStructure.Vector3}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getVector3 = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3, 7));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setVector3 = function(value) {
+  jspb.Message.setOneofWrapperField(this, 7, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearVector3 = function() {
+  this.setVector3(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasVector3 = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Vector4 vector4 = 8;
+ * @return {?proto.ubii.dataStructure.Vector4}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getVector4 = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector4} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4, 8));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector4|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setVector4 = function(value) {
+  jspb.Message.setOneofWrapperField(this, 8, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearVector4 = function() {
+  this.setVector4(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasVector4 = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Quaternion quaternion = 9;
+ * @return {?proto.ubii.dataStructure.Quaternion}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getQuaternion = function() {
+  return /** @type{?proto.ubii.dataStructure.Quaternion} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion, 9));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Quaternion|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setQuaternion = function(value) {
+  jspb.Message.setOneofWrapperField(this, 9, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearQuaternion = function() {
+  this.setQuaternion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasQuaternion = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
+ * @return {?proto.ubii.dataStructure.Matrix3x2}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getMatrix3x2 = function() {
+  return /** @type{?proto.ubii.dataStructure.Matrix3x2} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2, 10));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Matrix3x2|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setMatrix3x2 = function(value) {
+  jspb.Message.setOneofWrapperField(this, 10, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix3x2 = function() {
+  this.setMatrix3x2(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix3x2 = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Matrix4x4 matrix4x4 = 11;
+ * @return {?proto.ubii.dataStructure.Matrix4x4}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getMatrix4x4 = function() {
+  return /** @type{?proto.ubii.dataStructure.Matrix4x4} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4, 11));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Matrix4x4|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setMatrix4x4 = function(value) {
+  jspb.Message.setOneofWrapperField(this, 11, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix4x4 = function() {
+  this.setMatrix4x4(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix4x4 = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Color color = 12;
+ * @return {?proto.ubii.dataStructure.Color}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getColor = function() {
+  return /** @type{?proto.ubii.dataStructure.Color} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_color_pb.Color, 12));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Color|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setColor = function(value) {
+  jspb.Message.setOneofWrapperField(this, 12, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearColor = function() {
+  this.setColor(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasColor = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.TouchEvent touchEvent = 13;
+ * @return {?proto.ubii.dataStructure.TouchEvent}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getTouchevent = function() {
+  return /** @type{?proto.ubii.dataStructure.TouchEvent} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent, 13));
+};
+
+
+/** @param {?proto.ubii.dataStructure.TouchEvent|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setTouchevent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 13, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearTouchevent = function() {
+  this.setTouchevent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasTouchevent = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.KeyEvent keyEvent = 14;
+ * @return {?proto.ubii.dataStructure.KeyEvent}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getKeyevent = function() {
+  return /** @type{?proto.ubii.dataStructure.KeyEvent} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent, 14));
+};
+
+
+/** @param {?proto.ubii.dataStructure.KeyEvent|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setKeyevent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 14, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearKeyevent = function() {
+  this.setKeyevent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasKeyevent = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.MouseEvent mouseEvent = 15;
+ * @return {?proto.ubii.dataStructure.MouseEvent}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getMouseevent = function() {
+  return /** @type{?proto.ubii.dataStructure.MouseEvent} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent, 15));
+};
+
+
+/** @param {?proto.ubii.dataStructure.MouseEvent|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setMouseevent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 15, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearMouseevent = function() {
+  this.setMouseevent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasMouseevent = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 

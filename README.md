@@ -66,6 +66,9 @@ Beside general information this message contains a topic data pair. The `TopicDa
 - `Matrix3x2`
 - `Matrix4x4`
 - `Color`
+- `TouchEvent`
+- `KeyEvent`
+- `MouseEvent`
 
 You can send a `TopicData` message to a master node in order to publish topic data pairs to a master node.
 In return, master nodes will send `TopicData` messages to registered devices to inform them about changes of their subscribed topics.

@@ -29,128 +29,167 @@ public final class TopicDataRecordOuterClass {
         getTopicBytes();
 
     /**
-     * <code>double number = 2;</code>
+     * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     */
+    boolean hasTimestamp();
+    /**
+     * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     */
+    ubii.topicData.TimestampOuterClass.Timestamp getTimestamp();
+    /**
+     * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     */
+    ubii.topicData.TimestampOuterClass.TimestampOrBuilder getTimestampOrBuilder();
+
+    /**
+     * <code>double number = 3;</code>
      */
     double getNumber();
 
     /**
-     * <code>bool boolean = 3;</code>
+     * <code>bool boolean = 4;</code>
      */
     boolean getBoolean();
 
     /**
-     * <code>string string = 4;</code>
+     * <code>string string = 5;</code>
      */
     java.lang.String getString();
     /**
-     * <code>string string = 4;</code>
+     * <code>string string = 5;</code>
      */
     com.google.protobuf.ByteString
         getStringBytes();
 
     /**
-     * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
+     * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
      */
     boolean hasVector2();
     /**
-     * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
+     * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
      */
     ubii.dataStructure.Vector2OuterClass.Vector2 getVector2();
     /**
-     * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
+     * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
      */
     ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getVector2OrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
+     * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
      */
     boolean hasVector3();
     /**
-     * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
+     * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
      */
     ubii.dataStructure.Vector3OuterClass.Vector3 getVector3();
     /**
-     * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
+     * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
      */
     ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getVector3OrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
+     * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
      */
     boolean hasVector4();
     /**
-     * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
+     * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
      */
     ubii.dataStructure.Vector4OuterClass.Vector4 getVector4();
     /**
-     * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
+     * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
      */
     ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getVector4OrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
+     * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
      */
     boolean hasQuaternion();
     /**
-     * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
+     * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
      */
     ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion();
     /**
-     * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
+     * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
      */
     ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
+     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
      */
     boolean hasMatrix3X2();
     /**
-     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
+     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
      */
     ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2();
     /**
-     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
+     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
      */
     ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder getMatrix3X2OrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
+     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
      */
     boolean hasMatrix4X4();
     /**
-     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
+     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
      */
     ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4();
     /**
-     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
+     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
      */
     ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder getMatrix4X4OrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.Color color = 11;</code>
+     * <code>.ubii.dataStructure.Color color = 12;</code>
      */
     boolean hasColor();
     /**
-     * <code>.ubii.dataStructure.Color color = 11;</code>
+     * <code>.ubii.dataStructure.Color color = 12;</code>
      */
     ubii.dataStructure.ColorOuterClass.Color getColor();
     /**
-     * <code>.ubii.dataStructure.Color color = 11;</code>
+     * <code>.ubii.dataStructure.Color color = 12;</code>
      */
     ubii.dataStructure.ColorOuterClass.ColorOrBuilder getColorOrBuilder();
 
     /**
-     * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
      */
-    boolean hasTimestamp();
+    boolean hasTouchEvent();
     /**
-     * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
      */
-    ubii.topicData.TimestampOuterClass.Timestamp getTimestamp();
+    ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent();
     /**
-     * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
      */
-    ubii.topicData.TimestampOuterClass.TimestampOrBuilder getTimestampOrBuilder();
+    ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder();
+
+    /**
+     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     */
+    boolean hasKeyEvent();
+    /**
+     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     */
+    ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent();
+    /**
+     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     */
+    ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder();
+
+    /**
+     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     */
+    boolean hasMouseEvent();
+    /**
+     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     */
+    ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent();
+    /**
+     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     */
+    ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder();
 
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.TypeCase getTypeCase();
   }
@@ -200,121 +239,7 @@ public final class TopicDataRecordOuterClass {
               topic_ = s;
               break;
             }
-            case 17: {
-              typeCase_ = 2;
-              type_ = input.readDouble();
-              break;
-            }
-            case 24: {
-              typeCase_ = 3;
-              type_ = input.readBool();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              typeCase_ = 4;
-              type_ = s;
-              break;
-            }
-            case 42: {
-              ubii.dataStructure.Vector2OuterClass.Vector2.Builder subBuilder = null;
-              if (typeCase_ == 5) {
-                subBuilder = ((ubii.dataStructure.Vector2OuterClass.Vector2) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector2OuterClass.Vector2.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector2OuterClass.Vector2) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 5;
-              break;
-            }
-            case 50: {
-              ubii.dataStructure.Vector3OuterClass.Vector3.Builder subBuilder = null;
-              if (typeCase_ == 6) {
-                subBuilder = ((ubii.dataStructure.Vector3OuterClass.Vector3) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector3OuterClass.Vector3.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector3OuterClass.Vector3) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 6;
-              break;
-            }
-            case 58: {
-              ubii.dataStructure.Vector4OuterClass.Vector4.Builder subBuilder = null;
-              if (typeCase_ == 7) {
-                subBuilder = ((ubii.dataStructure.Vector4OuterClass.Vector4) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Vector4OuterClass.Vector4.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Vector4OuterClass.Vector4) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 7;
-              break;
-            }
-            case 66: {
-              ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder subBuilder = null;
-              if (typeCase_ == 8) {
-                subBuilder = ((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.QuaternionOuterClass.Quaternion.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 8;
-              break;
-            }
-            case 74: {
-              ubii.dataStructure.Matrix3X2.Matrix3x2.Builder subBuilder = null;
-              if (typeCase_ == 9) {
-                subBuilder = ((ubii.dataStructure.Matrix3X2.Matrix3x2) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Matrix3X2.Matrix3x2.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Matrix3X2.Matrix3x2) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 9;
-              break;
-            }
-            case 82: {
-              ubii.dataStructure.Matrix4X4.Matrix4x4.Builder subBuilder = null;
-              if (typeCase_ == 10) {
-                subBuilder = ((ubii.dataStructure.Matrix4X4.Matrix4x4) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.Matrix4X4.Matrix4x4.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.Matrix4X4.Matrix4x4) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 10;
-              break;
-            }
-            case 90: {
-              ubii.dataStructure.ColorOuterClass.Color.Builder subBuilder = null;
-              if (typeCase_ == 11) {
-                subBuilder = ((ubii.dataStructure.ColorOuterClass.Color) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(ubii.dataStructure.ColorOuterClass.Color.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.dataStructure.ColorOuterClass.Color) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 11;
-              break;
-            }
-            case 98: {
+            case 18: {
               ubii.topicData.TimestampOuterClass.Timestamp.Builder subBuilder = null;
               if (timestamp_ != null) {
                 subBuilder = timestamp_.toBuilder();
@@ -325,6 +250,162 @@ public final class TopicDataRecordOuterClass {
                 timestamp_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 25: {
+              typeCase_ = 3;
+              type_ = input.readDouble();
+              break;
+            }
+            case 32: {
+              typeCase_ = 4;
+              type_ = input.readBool();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              typeCase_ = 5;
+              type_ = s;
+              break;
+            }
+            case 50: {
+              ubii.dataStructure.Vector2OuterClass.Vector2.Builder subBuilder = null;
+              if (typeCase_ == 6) {
+                subBuilder = ((ubii.dataStructure.Vector2OuterClass.Vector2) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.Vector2OuterClass.Vector2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.Vector2OuterClass.Vector2) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 6;
+              break;
+            }
+            case 58: {
+              ubii.dataStructure.Vector3OuterClass.Vector3.Builder subBuilder = null;
+              if (typeCase_ == 7) {
+                subBuilder = ((ubii.dataStructure.Vector3OuterClass.Vector3) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.Vector3OuterClass.Vector3.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.Vector3OuterClass.Vector3) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 7;
+              break;
+            }
+            case 66: {
+              ubii.dataStructure.Vector4OuterClass.Vector4.Builder subBuilder = null;
+              if (typeCase_ == 8) {
+                subBuilder = ((ubii.dataStructure.Vector4OuterClass.Vector4) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.Vector4OuterClass.Vector4.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.Vector4OuterClass.Vector4) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 8;
+              break;
+            }
+            case 74: {
+              ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder subBuilder = null;
+              if (typeCase_ == 9) {
+                subBuilder = ((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.QuaternionOuterClass.Quaternion.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 9;
+              break;
+            }
+            case 82: {
+              ubii.dataStructure.Matrix3X2.Matrix3x2.Builder subBuilder = null;
+              if (typeCase_ == 10) {
+                subBuilder = ((ubii.dataStructure.Matrix3X2.Matrix3x2) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.Matrix3X2.Matrix3x2.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.Matrix3X2.Matrix3x2) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 10;
+              break;
+            }
+            case 90: {
+              ubii.dataStructure.Matrix4X4.Matrix4x4.Builder subBuilder = null;
+              if (typeCase_ == 11) {
+                subBuilder = ((ubii.dataStructure.Matrix4X4.Matrix4x4) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.Matrix4X4.Matrix4x4.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.Matrix4X4.Matrix4x4) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 11;
+              break;
+            }
+            case 98: {
+              ubii.dataStructure.ColorOuterClass.Color.Builder subBuilder = null;
+              if (typeCase_ == 12) {
+                subBuilder = ((ubii.dataStructure.ColorOuterClass.Color) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.ColorOuterClass.Color.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.ColorOuterClass.Color) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 12;
+              break;
+            }
+            case 106: {
+              ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder subBuilder = null;
+              if (typeCase_ == 13) {
+                subBuilder = ((ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.TouchEventOuterClass.TouchEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 13;
+              break;
+            }
+            case 114: {
+              ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder subBuilder = null;
+              if (typeCase_ == 14) {
+                subBuilder = ((ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.KeyEventOuterClass.KeyEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 14;
+              break;
+            }
+            case 122: {
+              ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder subBuilder = null;
+              if (typeCase_ == 15) {
+                subBuilder = ((ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.MouseEventOuterClass.MouseEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 15;
               break;
             }
             default: {
@@ -363,16 +444,19 @@ public final class TopicDataRecordOuterClass {
     private java.lang.Object type_;
     public enum TypeCase
         implements com.google.protobuf.Internal.EnumLite {
-      NUMBER(2),
-      BOOLEAN(3),
-      STRING(4),
-      VECTOR2(5),
-      VECTOR3(6),
-      VECTOR4(7),
-      QUATERNION(8),
-      MATRIX3X2(9),
-      MATRIX4X4(10),
-      COLOR(11),
+      NUMBER(3),
+      BOOLEAN(4),
+      STRING(5),
+      VECTOR2(6),
+      VECTOR3(7),
+      VECTOR4(8),
+      QUATERNION(9),
+      MATRIX3X2(10),
+      MATRIX4X4(11),
+      COLOR(12),
+      TOUCHEVENT(13),
+      KEYEVENT(14),
+      MOUSEEVENT(15),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -388,16 +472,19 @@ public final class TopicDataRecordOuterClass {
 
       public static TypeCase forNumber(int value) {
         switch (value) {
-          case 2: return NUMBER;
-          case 3: return BOOLEAN;
-          case 4: return STRING;
-          case 5: return VECTOR2;
-          case 6: return VECTOR3;
-          case 7: return VECTOR4;
-          case 8: return QUATERNION;
-          case 9: return MATRIX3X2;
-          case 10: return MATRIX4X4;
-          case 11: return COLOR;
+          case 3: return NUMBER;
+          case 4: return BOOLEAN;
+          case 5: return STRING;
+          case 6: return VECTOR2;
+          case 7: return VECTOR3;
+          case 8: return VECTOR4;
+          case 9: return QUATERNION;
+          case 10: return MATRIX3X2;
+          case 11: return MATRIX4X4;
+          case 12: return COLOR;
+          case 13: return TOUCHEVENT;
+          case 14: return KEYEVENT;
+          case 15: return MOUSEEVENT;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -447,35 +534,56 @@ public final class TopicDataRecordOuterClass {
       }
     }
 
-    public static final int NUMBER_FIELD_NUMBER = 2;
+    public static final int TIMESTAMP_FIELD_NUMBER = 2;
+    private ubii.topicData.TimestampOuterClass.Timestamp timestamp_;
     /**
-     * <code>double number = 2;</code>
+     * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     */
+    public boolean hasTimestamp() {
+      return timestamp_ != null;
+    }
+    /**
+     * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     */
+    public ubii.topicData.TimestampOuterClass.Timestamp getTimestamp() {
+      return timestamp_ == null ? ubii.topicData.TimestampOuterClass.Timestamp.getDefaultInstance() : timestamp_;
+    }
+    /**
+     * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
+     */
+    public ubii.topicData.TimestampOuterClass.TimestampOrBuilder getTimestampOrBuilder() {
+      return getTimestamp();
+    }
+
+    public static final int NUMBER_FIELD_NUMBER = 3;
+    /**
+     * <code>double number = 3;</code>
      */
     public double getNumber() {
-      if (typeCase_ == 2) {
+      if (typeCase_ == 3) {
         return (java.lang.Double) type_;
       }
       return 0D;
     }
 
-    public static final int BOOLEAN_FIELD_NUMBER = 3;
+    public static final int BOOLEAN_FIELD_NUMBER = 4;
     /**
-     * <code>bool boolean = 3;</code>
+     * <code>bool boolean = 4;</code>
      */
     public boolean getBoolean() {
-      if (typeCase_ == 3) {
+      if (typeCase_ == 4) {
         return (java.lang.Boolean) type_;
       }
       return false;
     }
 
-    public static final int STRING_FIELD_NUMBER = 4;
+    public static final int STRING_FIELD_NUMBER = 5;
     /**
-     * <code>string string = 4;</code>
+     * <code>string string = 5;</code>
      */
     public java.lang.String getString() {
       java.lang.Object ref = "";
-      if (typeCase_ == 4) {
+      if (typeCase_ == 5) {
         ref = type_;
       }
       if (ref instanceof java.lang.String) {
@@ -484,26 +592,26 @@ public final class TopicDataRecordOuterClass {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (typeCase_ == 4) {
+        if (typeCase_ == 5) {
           type_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>string string = 4;</code>
+     * <code>string string = 5;</code>
      */
     public com.google.protobuf.ByteString
         getStringBytes() {
       java.lang.Object ref = "";
-      if (typeCase_ == 4) {
+      if (typeCase_ == 5) {
         ref = type_;
       }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        if (typeCase_ == 4) {
+        if (typeCase_ == 5) {
           type_ = b;
         }
         return b;
@@ -512,207 +620,264 @@ public final class TopicDataRecordOuterClass {
       }
     }
 
-    public static final int VECTOR2_FIELD_NUMBER = 5;
+    public static final int VECTOR2_FIELD_NUMBER = 6;
     /**
-     * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
+     * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
      */
     public boolean hasVector2() {
-      return typeCase_ == 5;
-    }
-    /**
-     * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-     */
-    public ubii.dataStructure.Vector2OuterClass.Vector2 getVector2() {
-      if (typeCase_ == 5) {
-         return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
-      }
-      return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
-    }
-    /**
-     * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-     */
-    public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getVector2OrBuilder() {
-      if (typeCase_ == 5) {
-         return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
-      }
-      return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
-    }
-
-    public static final int VECTOR3_FIELD_NUMBER = 6;
-    /**
-     * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-     */
-    public boolean hasVector3() {
       return typeCase_ == 6;
     }
     /**
-     * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
+     * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
      */
-    public ubii.dataStructure.Vector3OuterClass.Vector3 getVector3() {
+    public ubii.dataStructure.Vector2OuterClass.Vector2 getVector2() {
       if (typeCase_ == 6) {
-         return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
+         return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
       }
-      return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
+      return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
+     * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
      */
-    public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getVector3OrBuilder() {
+    public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getVector2OrBuilder() {
       if (typeCase_ == 6) {
-         return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
+         return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
       }
-      return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
+      return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
     }
 
-    public static final int VECTOR4_FIELD_NUMBER = 7;
+    public static final int VECTOR3_FIELD_NUMBER = 7;
     /**
-     * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
+     * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
      */
-    public boolean hasVector4() {
+    public boolean hasVector3() {
       return typeCase_ == 7;
     }
     /**
-     * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
+     * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
      */
-    public ubii.dataStructure.Vector4OuterClass.Vector4 getVector4() {
+    public ubii.dataStructure.Vector3OuterClass.Vector3 getVector3() {
       if (typeCase_ == 7) {
-         return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
+         return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
       }
-      return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
+      return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
+     * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
      */
-    public ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getVector4OrBuilder() {
+    public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getVector3OrBuilder() {
       if (typeCase_ == 7) {
-         return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
+         return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
       }
-      return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
+      return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
     }
 
-    public static final int QUATERNION_FIELD_NUMBER = 8;
+    public static final int VECTOR4_FIELD_NUMBER = 8;
     /**
-     * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
+     * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
      */
-    public boolean hasQuaternion() {
+    public boolean hasVector4() {
       return typeCase_ == 8;
     }
     /**
-     * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
+     * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
      */
-    public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
+    public ubii.dataStructure.Vector4OuterClass.Vector4 getVector4() {
       if (typeCase_ == 8) {
-         return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
+         return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
       }
-      return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
+      return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
+     * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
      */
-    public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
+    public ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getVector4OrBuilder() {
       if (typeCase_ == 8) {
-         return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
+         return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
       }
-      return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
+      return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
     }
 
-    public static final int MATRIX3X2_FIELD_NUMBER = 9;
+    public static final int QUATERNION_FIELD_NUMBER = 9;
     /**
-     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
+     * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
      */
-    public boolean hasMatrix3X2() {
+    public boolean hasQuaternion() {
       return typeCase_ == 9;
     }
     /**
-     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
+     * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
      */
-    public ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2() {
+    public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
       if (typeCase_ == 9) {
-         return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
+         return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
       }
-      return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
+      return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
+     * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
      */
-    public ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder getMatrix3X2OrBuilder() {
+    public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
       if (typeCase_ == 9) {
-         return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
+         return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
       }
-      return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
+      return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
     }
 
-    public static final int MATRIX4X4_FIELD_NUMBER = 10;
+    public static final int MATRIX3X2_FIELD_NUMBER = 10;
     /**
-     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
+     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
      */
-    public boolean hasMatrix4X4() {
+    public boolean hasMatrix3X2() {
       return typeCase_ == 10;
     }
     /**
-     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
+     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
      */
-    public ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4() {
+    public ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2() {
       if (typeCase_ == 10) {
-         return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
+         return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
       }
-      return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+      return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
+     * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
      */
-    public ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder getMatrix4X4OrBuilder() {
+    public ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder getMatrix3X2OrBuilder() {
       if (typeCase_ == 10) {
-         return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
+         return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
       }
-      return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+      return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
     }
 
-    public static final int COLOR_FIELD_NUMBER = 11;
+    public static final int MATRIX4X4_FIELD_NUMBER = 11;
     /**
-     * <code>.ubii.dataStructure.Color color = 11;</code>
+     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
      */
-    public boolean hasColor() {
+    public boolean hasMatrix4X4() {
       return typeCase_ == 11;
     }
     /**
-     * <code>.ubii.dataStructure.Color color = 11;</code>
+     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+     */
+    public ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4() {
+      if (typeCase_ == 11) {
+         return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
+      }
+      return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+     */
+    public ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder getMatrix4X4OrBuilder() {
+      if (typeCase_ == 11) {
+         return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
+      }
+      return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+    }
+
+    public static final int COLOR_FIELD_NUMBER = 12;
+    /**
+     * <code>.ubii.dataStructure.Color color = 12;</code>
+     */
+    public boolean hasColor() {
+      return typeCase_ == 12;
+    }
+    /**
+     * <code>.ubii.dataStructure.Color color = 12;</code>
      */
     public ubii.dataStructure.ColorOuterClass.Color getColor() {
-      if (typeCase_ == 11) {
+      if (typeCase_ == 12) {
          return (ubii.dataStructure.ColorOuterClass.Color) type_;
       }
       return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.Color color = 11;</code>
+     * <code>.ubii.dataStructure.Color color = 12;</code>
      */
     public ubii.dataStructure.ColorOuterClass.ColorOrBuilder getColorOrBuilder() {
-      if (typeCase_ == 11) {
+      if (typeCase_ == 12) {
          return (ubii.dataStructure.ColorOuterClass.Color) type_;
       }
       return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 12;
-    private ubii.topicData.TimestampOuterClass.Timestamp timestamp_;
+    public static final int TOUCHEVENT_FIELD_NUMBER = 13;
     /**
-     * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
      */
-    public boolean hasTimestamp() {
-      return timestamp_ != null;
+    public boolean hasTouchEvent() {
+      return typeCase_ == 13;
     }
     /**
-     * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
      */
-    public ubii.topicData.TimestampOuterClass.Timestamp getTimestamp() {
-      return timestamp_ == null ? ubii.topicData.TimestampOuterClass.Timestamp.getDefaultInstance() : timestamp_;
+    public ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent() {
+      if (typeCase_ == 13) {
+         return (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_;
+      }
+      return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
     }
     /**
-     * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+     * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
      */
-    public ubii.topicData.TimestampOuterClass.TimestampOrBuilder getTimestampOrBuilder() {
-      return getTimestamp();
+    public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder() {
+      if (typeCase_ == 13) {
+         return (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_;
+      }
+      return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
+    }
+
+    public static final int KEYEVENT_FIELD_NUMBER = 14;
+    /**
+     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     */
+    public boolean hasKeyEvent() {
+      return typeCase_ == 14;
+    }
+    /**
+     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     */
+    public ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent() {
+      if (typeCase_ == 14) {
+         return (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_;
+      }
+      return ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+     */
+    public ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder() {
+      if (typeCase_ == 14) {
+         return (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_;
+      }
+      return ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
+    }
+
+    public static final int MOUSEEVENT_FIELD_NUMBER = 15;
+    /**
+     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     */
+    public boolean hasMouseEvent() {
+      return typeCase_ == 15;
+    }
+    /**
+     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     */
+    public ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent() {
+      if (typeCase_ == 15) {
+         return (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_;
+      }
+      return ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+     */
+    public ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder() {
+      if (typeCase_ == 15) {
+         return (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_;
+      }
+      return ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -732,40 +897,49 @@ public final class TopicDataRecordOuterClass {
       if (!getTopicBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
       }
-      if (typeCase_ == 2) {
-        output.writeDouble(
-            2, (double)((java.lang.Double) type_));
+      if (timestamp_ != null) {
+        output.writeMessage(2, getTimestamp());
       }
       if (typeCase_ == 3) {
-        output.writeBool(
-            3, (boolean)((java.lang.Boolean) type_));
+        output.writeDouble(
+            3, (double)((java.lang.Double) type_));
       }
       if (typeCase_ == 4) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type_);
+        output.writeBool(
+            4, (boolean)((java.lang.Boolean) type_));
       }
       if (typeCase_ == 5) {
-        output.writeMessage(5, (ubii.dataStructure.Vector2OuterClass.Vector2) type_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, type_);
       }
       if (typeCase_ == 6) {
-        output.writeMessage(6, (ubii.dataStructure.Vector3OuterClass.Vector3) type_);
+        output.writeMessage(6, (ubii.dataStructure.Vector2OuterClass.Vector2) type_);
       }
       if (typeCase_ == 7) {
-        output.writeMessage(7, (ubii.dataStructure.Vector4OuterClass.Vector4) type_);
+        output.writeMessage(7, (ubii.dataStructure.Vector3OuterClass.Vector3) type_);
       }
       if (typeCase_ == 8) {
-        output.writeMessage(8, (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
+        output.writeMessage(8, (ubii.dataStructure.Vector4OuterClass.Vector4) type_);
       }
       if (typeCase_ == 9) {
-        output.writeMessage(9, (ubii.dataStructure.Matrix3X2.Matrix3x2) type_);
+        output.writeMessage(9, (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
       }
       if (typeCase_ == 10) {
-        output.writeMessage(10, (ubii.dataStructure.Matrix4X4.Matrix4x4) type_);
+        output.writeMessage(10, (ubii.dataStructure.Matrix3X2.Matrix3x2) type_);
       }
       if (typeCase_ == 11) {
-        output.writeMessage(11, (ubii.dataStructure.ColorOuterClass.Color) type_);
+        output.writeMessage(11, (ubii.dataStructure.Matrix4X4.Matrix4x4) type_);
       }
-      if (timestamp_ != null) {
-        output.writeMessage(12, getTimestamp());
+      if (typeCase_ == 12) {
+        output.writeMessage(12, (ubii.dataStructure.ColorOuterClass.Color) type_);
+      }
+      if (typeCase_ == 13) {
+        output.writeMessage(13, (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_);
+      }
+      if (typeCase_ == 14) {
+        output.writeMessage(14, (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_);
+      }
+      if (typeCase_ == 15) {
+        output.writeMessage(15, (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -779,50 +953,62 @@ public final class TopicDataRecordOuterClass {
       if (!getTopicBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
       }
-      if (typeCase_ == 2) {
+      if (timestamp_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(
-              2, (double)((java.lang.Double) type_));
+          .computeMessageSize(2, getTimestamp());
       }
       if (typeCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(
-              3, (boolean)((java.lang.Boolean) type_));
+          .computeDoubleSize(
+              3, (double)((java.lang.Double) type_));
       }
       if (typeCase_ == 4) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(
+              4, (boolean)((java.lang.Boolean) type_));
       }
       if (typeCase_ == 5) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (ubii.dataStructure.Vector2OuterClass.Vector2) type_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, type_);
       }
       if (typeCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, (ubii.dataStructure.Vector3OuterClass.Vector3) type_);
+          .computeMessageSize(6, (ubii.dataStructure.Vector2OuterClass.Vector2) type_);
       }
       if (typeCase_ == 7) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, (ubii.dataStructure.Vector4OuterClass.Vector4) type_);
+          .computeMessageSize(7, (ubii.dataStructure.Vector3OuterClass.Vector3) type_);
       }
       if (typeCase_ == 8) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
+          .computeMessageSize(8, (ubii.dataStructure.Vector4OuterClass.Vector4) type_);
       }
       if (typeCase_ == 9) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, (ubii.dataStructure.Matrix3X2.Matrix3x2) type_);
+          .computeMessageSize(9, (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
       }
       if (typeCase_ == 10) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, (ubii.dataStructure.Matrix4X4.Matrix4x4) type_);
+          .computeMessageSize(10, (ubii.dataStructure.Matrix3X2.Matrix3x2) type_);
       }
       if (typeCase_ == 11) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, (ubii.dataStructure.ColorOuterClass.Color) type_);
+          .computeMessageSize(11, (ubii.dataStructure.Matrix4X4.Matrix4x4) type_);
       }
-      if (timestamp_ != null) {
+      if (typeCase_ == 12) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getTimestamp());
+          .computeMessageSize(12, (ubii.dataStructure.ColorOuterClass.Color) type_);
+      }
+      if (typeCase_ == 13) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_);
+      }
+      if (typeCase_ == 14) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_);
+      }
+      if (typeCase_ == 15) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -851,47 +1037,59 @@ public final class TopicDataRecordOuterClass {
           other.getTypeCase());
       if (!result) return false;
       switch (typeCase_) {
-        case 2:
+        case 3:
           result = result && (
               java.lang.Double.doubleToLongBits(getNumber())
               == java.lang.Double.doubleToLongBits(
                   other.getNumber()));
           break;
-        case 3:
+        case 4:
           result = result && (getBoolean()
               == other.getBoolean());
           break;
-        case 4:
+        case 5:
           result = result && getString()
               .equals(other.getString());
           break;
-        case 5:
+        case 6:
           result = result && getVector2()
               .equals(other.getVector2());
           break;
-        case 6:
+        case 7:
           result = result && getVector3()
               .equals(other.getVector3());
           break;
-        case 7:
+        case 8:
           result = result && getVector4()
               .equals(other.getVector4());
           break;
-        case 8:
+        case 9:
           result = result && getQuaternion()
               .equals(other.getQuaternion());
           break;
-        case 9:
+        case 10:
           result = result && getMatrix3X2()
               .equals(other.getMatrix3X2());
           break;
-        case 10:
+        case 11:
           result = result && getMatrix4X4()
               .equals(other.getMatrix4X4());
           break;
-        case 11:
+        case 12:
           result = result && getColor()
               .equals(other.getColor());
+          break;
+        case 13:
+          result = result && getTouchEvent()
+              .equals(other.getTouchEvent());
+          break;
+        case 14:
+          result = result && getKeyEvent()
+              .equals(other.getKeyEvent());
+          break;
+        case 15:
+          result = result && getMouseEvent()
+              .equals(other.getMouseEvent());
           break;
         case 0:
         default:
@@ -914,47 +1112,59 @@ public final class TopicDataRecordOuterClass {
         hash = (53 * hash) + getTimestamp().hashCode();
       }
       switch (typeCase_) {
-        case 2:
+        case 3:
           hash = (37 * hash) + NUMBER_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
               java.lang.Double.doubleToLongBits(getNumber()));
           break;
-        case 3:
+        case 4:
           hash = (37 * hash) + BOOLEAN_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getBoolean());
           break;
-        case 4:
+        case 5:
           hash = (37 * hash) + STRING_FIELD_NUMBER;
           hash = (53 * hash) + getString().hashCode();
           break;
-        case 5:
+        case 6:
           hash = (37 * hash) + VECTOR2_FIELD_NUMBER;
           hash = (53 * hash) + getVector2().hashCode();
           break;
-        case 6:
+        case 7:
           hash = (37 * hash) + VECTOR3_FIELD_NUMBER;
           hash = (53 * hash) + getVector3().hashCode();
           break;
-        case 7:
+        case 8:
           hash = (37 * hash) + VECTOR4_FIELD_NUMBER;
           hash = (53 * hash) + getVector4().hashCode();
           break;
-        case 8:
+        case 9:
           hash = (37 * hash) + QUATERNION_FIELD_NUMBER;
           hash = (53 * hash) + getQuaternion().hashCode();
           break;
-        case 9:
+        case 10:
           hash = (37 * hash) + MATRIX3X2_FIELD_NUMBER;
           hash = (53 * hash) + getMatrix3X2().hashCode();
           break;
-        case 10:
+        case 11:
           hash = (37 * hash) + MATRIX4X4_FIELD_NUMBER;
           hash = (53 * hash) + getMatrix4X4().hashCode();
           break;
-        case 11:
+        case 12:
           hash = (37 * hash) + COLOR_FIELD_NUMBER;
           hash = (53 * hash) + getColor().hashCode();
+          break;
+        case 13:
+          hash = (37 * hash) + TOUCHEVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getTouchEvent().hashCode();
+          break;
+        case 14:
+          hash = (37 * hash) + KEYEVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getKeyEvent().hashCode();
+          break;
+        case 15:
+          hash = (37 * hash) + MOUSEEVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getMouseEvent().hashCode();
           break;
         case 0:
         default:
@@ -1129,8 +1339,10 @@ public final class TopicDataRecordOuterClass {
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord buildPartial() {
         ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord result = new ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord(this);
         result.topic_ = topic_;
-        if (typeCase_ == 2) {
-          result.type_ = type_;
+        if (timestampBuilder_ == null) {
+          result.timestamp_ = timestamp_;
+        } else {
+          result.timestamp_ = timestampBuilder_.build();
         }
         if (typeCase_ == 3) {
           result.type_ = type_;
@@ -1139,58 +1351,77 @@ public final class TopicDataRecordOuterClass {
           result.type_ = type_;
         }
         if (typeCase_ == 5) {
+          result.type_ = type_;
+        }
+        if (typeCase_ == 6) {
           if (vector2Builder_ == null) {
             result.type_ = type_;
           } else {
             result.type_ = vector2Builder_.build();
           }
         }
-        if (typeCase_ == 6) {
+        if (typeCase_ == 7) {
           if (vector3Builder_ == null) {
             result.type_ = type_;
           } else {
             result.type_ = vector3Builder_.build();
           }
         }
-        if (typeCase_ == 7) {
+        if (typeCase_ == 8) {
           if (vector4Builder_ == null) {
             result.type_ = type_;
           } else {
             result.type_ = vector4Builder_.build();
           }
         }
-        if (typeCase_ == 8) {
+        if (typeCase_ == 9) {
           if (quaternionBuilder_ == null) {
             result.type_ = type_;
           } else {
             result.type_ = quaternionBuilder_.build();
           }
         }
-        if (typeCase_ == 9) {
+        if (typeCase_ == 10) {
           if (matrix3X2Builder_ == null) {
             result.type_ = type_;
           } else {
             result.type_ = matrix3X2Builder_.build();
           }
         }
-        if (typeCase_ == 10) {
+        if (typeCase_ == 11) {
           if (matrix4X4Builder_ == null) {
             result.type_ = type_;
           } else {
             result.type_ = matrix4X4Builder_.build();
           }
         }
-        if (typeCase_ == 11) {
+        if (typeCase_ == 12) {
           if (colorBuilder_ == null) {
             result.type_ = type_;
           } else {
             result.type_ = colorBuilder_.build();
           }
         }
-        if (timestampBuilder_ == null) {
-          result.timestamp_ = timestamp_;
-        } else {
-          result.timestamp_ = timestampBuilder_.build();
+        if (typeCase_ == 13) {
+          if (touchEventBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = touchEventBuilder_.build();
+          }
+        }
+        if (typeCase_ == 14) {
+          if (keyEventBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = keyEventBuilder_.build();
+          }
+        }
+        if (typeCase_ == 15) {
+          if (mouseEventBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = mouseEventBuilder_.build();
+          }
         }
         result.typeCase_ = typeCase_;
         onBuilt();
@@ -1258,7 +1489,7 @@ public final class TopicDataRecordOuterClass {
             break;
           }
           case STRING: {
-            typeCase_ = 4;
+            typeCase_ = 5;
             type_ = other.type_;
             onChanged();
             break;
@@ -1289,6 +1520,18 @@ public final class TopicDataRecordOuterClass {
           }
           case COLOR: {
             mergeColor(other.getColor());
+            break;
+          }
+          case TOUCHEVENT: {
+            mergeTouchEvent(other.getTouchEvent());
+            break;
+          }
+          case KEYEVENT: {
+            mergeKeyEvent(other.getKeyEvent());
+            break;
+          }
+          case MOUSEEVENT: {
+            mergeMouseEvent(other.getMouseEvent());
             break;
           }
           case TYPE_NOT_SET: {
@@ -1408,1109 +1651,17 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
 
-      /**
-       * <code>double number = 2;</code>
-       */
-      public double getNumber() {
-        if (typeCase_ == 2) {
-          return (java.lang.Double) type_;
-        }
-        return 0D;
-      }
-      /**
-       * <code>double number = 2;</code>
-       */
-      public Builder setNumber(double value) {
-        typeCase_ = 2;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double number = 2;</code>
-       */
-      public Builder clearNumber() {
-        if (typeCase_ == 2) {
-          typeCase_ = 0;
-          type_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <code>bool boolean = 3;</code>
-       */
-      public boolean getBoolean() {
-        if (typeCase_ == 3) {
-          return (java.lang.Boolean) type_;
-        }
-        return false;
-      }
-      /**
-       * <code>bool boolean = 3;</code>
-       */
-      public Builder setBoolean(boolean value) {
-        typeCase_ = 3;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool boolean = 3;</code>
-       */
-      public Builder clearBoolean() {
-        if (typeCase_ == 3) {
-          typeCase_ = 0;
-          type_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <code>string string = 4;</code>
-       */
-      public java.lang.String getString() {
-        java.lang.Object ref = "";
-        if (typeCase_ == 4) {
-          ref = type_;
-        }
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (typeCase_ == 4) {
-            type_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string string = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStringBytes() {
-        java.lang.Object ref = "";
-        if (typeCase_ == 4) {
-          ref = type_;
-        }
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          if (typeCase_ == 4) {
-            type_ = b;
-          }
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string string = 4;</code>
-       */
-      public Builder setString(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  typeCase_ = 4;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string string = 4;</code>
-       */
-      public Builder clearString() {
-        if (typeCase_ == 4) {
-          typeCase_ = 0;
-          type_ = null;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>string string = 4;</code>
-       */
-      public Builder setStringBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        typeCase_ = 4;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> vector2Builder_;
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public boolean hasVector2() {
-        return typeCase_ == 5;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public ubii.dataStructure.Vector2OuterClass.Vector2 getVector2() {
-        if (vector2Builder_ == null) {
-          if (typeCase_ == 5) {
-            return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
-          }
-          return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
-        } else {
-          if (typeCase_ == 5) {
-            return vector2Builder_.getMessage();
-          }
-          return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public Builder setVector2(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
-        if (vector2Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          vector2Builder_.setMessage(value);
-        }
-        typeCase_ = 5;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public Builder setVector2(
-          ubii.dataStructure.Vector2OuterClass.Vector2.Builder builderForValue) {
-        if (vector2Builder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          vector2Builder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 5;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public Builder mergeVector2(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
-        if (vector2Builder_ == null) {
-          if (typeCase_ == 5 &&
-              type_ != ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance()) {
-            type_ = ubii.dataStructure.Vector2OuterClass.Vector2.newBuilder((ubii.dataStructure.Vector2OuterClass.Vector2) type_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 5) {
-            vector2Builder_.mergeFrom(value);
-          }
-          vector2Builder_.setMessage(value);
-        }
-        typeCase_ = 5;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public Builder clearVector2() {
-        if (vector2Builder_ == null) {
-          if (typeCase_ == 5) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 5) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          vector2Builder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public ubii.dataStructure.Vector2OuterClass.Vector2.Builder getVector2Builder() {
-        return getVector2FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getVector2OrBuilder() {
-        if ((typeCase_ == 5) && (vector2Builder_ != null)) {
-          return vector2Builder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 5) {
-            return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
-          }
-          return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 vector2 = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> 
-          getVector2FieldBuilder() {
-        if (vector2Builder_ == null) {
-          if (!(typeCase_ == 5)) {
-            type_ = ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
-          }
-          vector2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder>(
-                  (ubii.dataStructure.Vector2OuterClass.Vector2) type_,
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        typeCase_ = 5;
-        onChanged();;
-        return vector2Builder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> vector3Builder_;
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public boolean hasVector3() {
-        return typeCase_ == 6;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public ubii.dataStructure.Vector3OuterClass.Vector3 getVector3() {
-        if (vector3Builder_ == null) {
-          if (typeCase_ == 6) {
-            return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
-          }
-          return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
-        } else {
-          if (typeCase_ == 6) {
-            return vector3Builder_.getMessage();
-          }
-          return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public Builder setVector3(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
-        if (vector3Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          vector3Builder_.setMessage(value);
-        }
-        typeCase_ = 6;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public Builder setVector3(
-          ubii.dataStructure.Vector3OuterClass.Vector3.Builder builderForValue) {
-        if (vector3Builder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          vector3Builder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 6;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public Builder mergeVector3(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
-        if (vector3Builder_ == null) {
-          if (typeCase_ == 6 &&
-              type_ != ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance()) {
-            type_ = ubii.dataStructure.Vector3OuterClass.Vector3.newBuilder((ubii.dataStructure.Vector3OuterClass.Vector3) type_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 6) {
-            vector3Builder_.mergeFrom(value);
-          }
-          vector3Builder_.setMessage(value);
-        }
-        typeCase_ = 6;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public Builder clearVector3() {
-        if (vector3Builder_ == null) {
-          if (typeCase_ == 6) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 6) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          vector3Builder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public ubii.dataStructure.Vector3OuterClass.Vector3.Builder getVector3Builder() {
-        return getVector3FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getVector3OrBuilder() {
-        if ((typeCase_ == 6) && (vector3Builder_ != null)) {
-          return vector3Builder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 6) {
-            return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
-          }
-          return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector3 vector3 = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> 
-          getVector3FieldBuilder() {
-        if (vector3Builder_ == null) {
-          if (!(typeCase_ == 6)) {
-            type_ = ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
-          }
-          vector3Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder>(
-                  (ubii.dataStructure.Vector3OuterClass.Vector3) type_,
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        typeCase_ = 6;
-        onChanged();;
-        return vector3Builder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Vector4OuterClass.Vector4, ubii.dataStructure.Vector4OuterClass.Vector4.Builder, ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder> vector4Builder_;
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public boolean hasVector4() {
-        return typeCase_ == 7;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public ubii.dataStructure.Vector4OuterClass.Vector4 getVector4() {
-        if (vector4Builder_ == null) {
-          if (typeCase_ == 7) {
-            return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
-          }
-          return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
-        } else {
-          if (typeCase_ == 7) {
-            return vector4Builder_.getMessage();
-          }
-          return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public Builder setVector4(ubii.dataStructure.Vector4OuterClass.Vector4 value) {
-        if (vector4Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          vector4Builder_.setMessage(value);
-        }
-        typeCase_ = 7;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public Builder setVector4(
-          ubii.dataStructure.Vector4OuterClass.Vector4.Builder builderForValue) {
-        if (vector4Builder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          vector4Builder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 7;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public Builder mergeVector4(ubii.dataStructure.Vector4OuterClass.Vector4 value) {
-        if (vector4Builder_ == null) {
-          if (typeCase_ == 7 &&
-              type_ != ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance()) {
-            type_ = ubii.dataStructure.Vector4OuterClass.Vector4.newBuilder((ubii.dataStructure.Vector4OuterClass.Vector4) type_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 7) {
-            vector4Builder_.mergeFrom(value);
-          }
-          vector4Builder_.setMessage(value);
-        }
-        typeCase_ = 7;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public Builder clearVector4() {
-        if (vector4Builder_ == null) {
-          if (typeCase_ == 7) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 7) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          vector4Builder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public ubii.dataStructure.Vector4OuterClass.Vector4.Builder getVector4Builder() {
-        return getVector4FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      public ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getVector4OrBuilder() {
-        if ((typeCase_ == 7) && (vector4Builder_ != null)) {
-          return vector4Builder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 7) {
-            return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
-          }
-          return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector4 vector4 = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Vector4OuterClass.Vector4, ubii.dataStructure.Vector4OuterClass.Vector4.Builder, ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder> 
-          getVector4FieldBuilder() {
-        if (vector4Builder_ == null) {
-          if (!(typeCase_ == 7)) {
-            type_ = ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
-          }
-          vector4Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.dataStructure.Vector4OuterClass.Vector4, ubii.dataStructure.Vector4OuterClass.Vector4.Builder, ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder>(
-                  (ubii.dataStructure.Vector4OuterClass.Vector4) type_,
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        typeCase_ = 7;
-        onChanged();;
-        return vector4Builder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> quaternionBuilder_;
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public boolean hasQuaternion() {
-        return typeCase_ == 8;
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
-        if (quaternionBuilder_ == null) {
-          if (typeCase_ == 8) {
-            return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
-          }
-          return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
-        } else {
-          if (typeCase_ == 8) {
-            return quaternionBuilder_.getMessage();
-          }
-          return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public Builder setQuaternion(ubii.dataStructure.QuaternionOuterClass.Quaternion value) {
-        if (quaternionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          quaternionBuilder_.setMessage(value);
-        }
-        typeCase_ = 8;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public Builder setQuaternion(
-          ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder builderForValue) {
-        if (quaternionBuilder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          quaternionBuilder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 8;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public Builder mergeQuaternion(ubii.dataStructure.QuaternionOuterClass.Quaternion value) {
-        if (quaternionBuilder_ == null) {
-          if (typeCase_ == 8 &&
-              type_ != ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance()) {
-            type_ = ubii.dataStructure.QuaternionOuterClass.Quaternion.newBuilder((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 8) {
-            quaternionBuilder_.mergeFrom(value);
-          }
-          quaternionBuilder_.setMessage(value);
-        }
-        typeCase_ = 8;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public Builder clearQuaternion() {
-        if (quaternionBuilder_ == null) {
-          if (typeCase_ == 8) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 8) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          quaternionBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder getQuaternionBuilder() {
-        return getQuaternionFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
-        if ((typeCase_ == 8) && (quaternionBuilder_ != null)) {
-          return quaternionBuilder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 8) {
-            return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
-          }
-          return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Quaternion quaternion = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> 
-          getQuaternionFieldBuilder() {
-        if (quaternionBuilder_ == null) {
-          if (!(typeCase_ == 8)) {
-            type_ = ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
-          }
-          quaternionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder>(
-                  (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_,
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        typeCase_ = 8;
-        onChanged();;
-        return quaternionBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Matrix3X2.Matrix3x2, ubii.dataStructure.Matrix3X2.Matrix3x2.Builder, ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder> matrix3X2Builder_;
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public boolean hasMatrix3X2() {
-        return typeCase_ == 9;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2() {
-        if (matrix3X2Builder_ == null) {
-          if (typeCase_ == 9) {
-            return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
-          }
-          return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
-        } else {
-          if (typeCase_ == 9) {
-            return matrix3X2Builder_.getMessage();
-          }
-          return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public Builder setMatrix3X2(ubii.dataStructure.Matrix3X2.Matrix3x2 value) {
-        if (matrix3X2Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          matrix3X2Builder_.setMessage(value);
-        }
-        typeCase_ = 9;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public Builder setMatrix3X2(
-          ubii.dataStructure.Matrix3X2.Matrix3x2.Builder builderForValue) {
-        if (matrix3X2Builder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          matrix3X2Builder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 9;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public Builder mergeMatrix3X2(ubii.dataStructure.Matrix3X2.Matrix3x2 value) {
-        if (matrix3X2Builder_ == null) {
-          if (typeCase_ == 9 &&
-              type_ != ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance()) {
-            type_ = ubii.dataStructure.Matrix3X2.Matrix3x2.newBuilder((ubii.dataStructure.Matrix3X2.Matrix3x2) type_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 9) {
-            matrix3X2Builder_.mergeFrom(value);
-          }
-          matrix3X2Builder_.setMessage(value);
-        }
-        typeCase_ = 9;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public Builder clearMatrix3X2() {
-        if (matrix3X2Builder_ == null) {
-          if (typeCase_ == 9) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 9) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          matrix3X2Builder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public ubii.dataStructure.Matrix3X2.Matrix3x2.Builder getMatrix3X2Builder() {
-        return getMatrix3X2FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      public ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder getMatrix3X2OrBuilder() {
-        if ((typeCase_ == 9) && (matrix3X2Builder_ != null)) {
-          return matrix3X2Builder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 9) {
-            return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
-          }
-          return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Matrix3X2.Matrix3x2, ubii.dataStructure.Matrix3X2.Matrix3x2.Builder, ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder> 
-          getMatrix3X2FieldBuilder() {
-        if (matrix3X2Builder_ == null) {
-          if (!(typeCase_ == 9)) {
-            type_ = ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
-          }
-          matrix3X2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.dataStructure.Matrix3X2.Matrix3x2, ubii.dataStructure.Matrix3X2.Matrix3x2.Builder, ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder>(
-                  (ubii.dataStructure.Matrix3X2.Matrix3x2) type_,
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        typeCase_ = 9;
-        onChanged();;
-        return matrix3X2Builder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Matrix4X4.Matrix4x4, ubii.dataStructure.Matrix4X4.Matrix4x4.Builder, ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder> matrix4X4Builder_;
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public boolean hasMatrix4X4() {
-        return typeCase_ == 10;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4() {
-        if (matrix4X4Builder_ == null) {
-          if (typeCase_ == 10) {
-            return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
-          }
-          return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
-        } else {
-          if (typeCase_ == 10) {
-            return matrix4X4Builder_.getMessage();
-          }
-          return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public Builder setMatrix4X4(ubii.dataStructure.Matrix4X4.Matrix4x4 value) {
-        if (matrix4X4Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          matrix4X4Builder_.setMessage(value);
-        }
-        typeCase_ = 10;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public Builder setMatrix4X4(
-          ubii.dataStructure.Matrix4X4.Matrix4x4.Builder builderForValue) {
-        if (matrix4X4Builder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          matrix4X4Builder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 10;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public Builder mergeMatrix4X4(ubii.dataStructure.Matrix4X4.Matrix4x4 value) {
-        if (matrix4X4Builder_ == null) {
-          if (typeCase_ == 10 &&
-              type_ != ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance()) {
-            type_ = ubii.dataStructure.Matrix4X4.Matrix4x4.newBuilder((ubii.dataStructure.Matrix4X4.Matrix4x4) type_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 10) {
-            matrix4X4Builder_.mergeFrom(value);
-          }
-          matrix4X4Builder_.setMessage(value);
-        }
-        typeCase_ = 10;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public Builder clearMatrix4X4() {
-        if (matrix4X4Builder_ == null) {
-          if (typeCase_ == 10) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 10) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          matrix4X4Builder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public ubii.dataStructure.Matrix4X4.Matrix4x4.Builder getMatrix4X4Builder() {
-        return getMatrix4X4FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      public ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder getMatrix4X4OrBuilder() {
-        if ((typeCase_ == 10) && (matrix4X4Builder_ != null)) {
-          return matrix4X4Builder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 10) {
-            return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
-          }
-          return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.Matrix4X4.Matrix4x4, ubii.dataStructure.Matrix4X4.Matrix4x4.Builder, ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder> 
-          getMatrix4X4FieldBuilder() {
-        if (matrix4X4Builder_ == null) {
-          if (!(typeCase_ == 10)) {
-            type_ = ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
-          }
-          matrix4X4Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.dataStructure.Matrix4X4.Matrix4x4, ubii.dataStructure.Matrix4X4.Matrix4x4.Builder, ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder>(
-                  (ubii.dataStructure.Matrix4X4.Matrix4x4) type_,
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        typeCase_ = 10;
-        onChanged();;
-        return matrix4X4Builder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.ColorOuterClass.Color, ubii.dataStructure.ColorOuterClass.Color.Builder, ubii.dataStructure.ColorOuterClass.ColorOrBuilder> colorBuilder_;
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public boolean hasColor() {
-        return typeCase_ == 11;
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public ubii.dataStructure.ColorOuterClass.Color getColor() {
-        if (colorBuilder_ == null) {
-          if (typeCase_ == 11) {
-            return (ubii.dataStructure.ColorOuterClass.Color) type_;
-          }
-          return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
-        } else {
-          if (typeCase_ == 11) {
-            return colorBuilder_.getMessage();
-          }
-          return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public Builder setColor(ubii.dataStructure.ColorOuterClass.Color value) {
-        if (colorBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          colorBuilder_.setMessage(value);
-        }
-        typeCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public Builder setColor(
-          ubii.dataStructure.ColorOuterClass.Color.Builder builderForValue) {
-        if (colorBuilder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          colorBuilder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public Builder mergeColor(ubii.dataStructure.ColorOuterClass.Color value) {
-        if (colorBuilder_ == null) {
-          if (typeCase_ == 11 &&
-              type_ != ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance()) {
-            type_ = ubii.dataStructure.ColorOuterClass.Color.newBuilder((ubii.dataStructure.ColorOuterClass.Color) type_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 11) {
-            colorBuilder_.mergeFrom(value);
-          }
-          colorBuilder_.setMessage(value);
-        }
-        typeCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public Builder clearColor() {
-        if (colorBuilder_ == null) {
-          if (typeCase_ == 11) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 11) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          colorBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public ubii.dataStructure.ColorOuterClass.Color.Builder getColorBuilder() {
-        return getColorFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      public ubii.dataStructure.ColorOuterClass.ColorOrBuilder getColorOrBuilder() {
-        if ((typeCase_ == 11) && (colorBuilder_ != null)) {
-          return colorBuilder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 11) {
-            return (ubii.dataStructure.ColorOuterClass.Color) type_;
-          }
-          return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.dataStructure.Color color = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.dataStructure.ColorOuterClass.Color, ubii.dataStructure.ColorOuterClass.Color.Builder, ubii.dataStructure.ColorOuterClass.ColorOrBuilder> 
-          getColorFieldBuilder() {
-        if (colorBuilder_ == null) {
-          if (!(typeCase_ == 11)) {
-            type_ = ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
-          }
-          colorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.dataStructure.ColorOuterClass.Color, ubii.dataStructure.ColorOuterClass.Color.Builder, ubii.dataStructure.ColorOuterClass.ColorOrBuilder>(
-                  (ubii.dataStructure.ColorOuterClass.Color) type_,
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        typeCase_ = 11;
-        onChanged();;
-        return colorBuilder_;
-      }
-
       private ubii.topicData.TimestampOuterClass.Timestamp timestamp_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.topicData.TimestampOuterClass.Timestamp, ubii.topicData.TimestampOuterClass.Timestamp.Builder, ubii.topicData.TimestampOuterClass.TimestampOrBuilder> timestampBuilder_;
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public boolean hasTimestamp() {
         return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public ubii.topicData.TimestampOuterClass.Timestamp getTimestamp() {
         if (timestampBuilder_ == null) {
@@ -2520,7 +1671,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public Builder setTimestamp(ubii.topicData.TimestampOuterClass.Timestamp value) {
         if (timestampBuilder_ == null) {
@@ -2536,7 +1687,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public Builder setTimestamp(
           ubii.topicData.TimestampOuterClass.Timestamp.Builder builderForValue) {
@@ -2550,7 +1701,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public Builder mergeTimestamp(ubii.topicData.TimestampOuterClass.Timestamp value) {
         if (timestampBuilder_ == null) {
@@ -2568,7 +1719,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public Builder clearTimestamp() {
         if (timestampBuilder_ == null) {
@@ -2582,7 +1733,7 @@ public final class TopicDataRecordOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public ubii.topicData.TimestampOuterClass.Timestamp.Builder getTimestampBuilder() {
         
@@ -2590,7 +1741,7 @@ public final class TopicDataRecordOuterClass {
         return getTimestampFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       public ubii.topicData.TimestampOuterClass.TimestampOrBuilder getTimestampOrBuilder() {
         if (timestampBuilder_ != null) {
@@ -2601,7 +1752,7 @@ public final class TopicDataRecordOuterClass {
         }
       }
       /**
-       * <code>.ubii.topicData.Timestamp timestamp = 12;</code>
+       * <code>.ubii.topicData.Timestamp timestamp = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.topicData.TimestampOuterClass.Timestamp, ubii.topicData.TimestampOuterClass.Timestamp.Builder, ubii.topicData.TimestampOuterClass.TimestampOrBuilder> 
@@ -2615,6 +1766,1506 @@ public final class TopicDataRecordOuterClass {
           timestamp_ = null;
         }
         return timestampBuilder_;
+      }
+
+      /**
+       * <code>double number = 3;</code>
+       */
+      public double getNumber() {
+        if (typeCase_ == 3) {
+          return (java.lang.Double) type_;
+        }
+        return 0D;
+      }
+      /**
+       * <code>double number = 3;</code>
+       */
+      public Builder setNumber(double value) {
+        typeCase_ = 3;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double number = 3;</code>
+       */
+      public Builder clearNumber() {
+        if (typeCase_ == 3) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>bool boolean = 4;</code>
+       */
+      public boolean getBoolean() {
+        if (typeCase_ == 4) {
+          return (java.lang.Boolean) type_;
+        }
+        return false;
+      }
+      /**
+       * <code>bool boolean = 4;</code>
+       */
+      public Builder setBoolean(boolean value) {
+        typeCase_ = 4;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool boolean = 4;</code>
+       */
+      public Builder clearBoolean() {
+        if (typeCase_ == 4) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>string string = 5;</code>
+       */
+      public java.lang.String getString() {
+        java.lang.Object ref = "";
+        if (typeCase_ == 5) {
+          ref = type_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (typeCase_ == 5) {
+            type_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string string = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStringBytes() {
+        java.lang.Object ref = "";
+        if (typeCase_ == 5) {
+          ref = type_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (typeCase_ == 5) {
+            type_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string string = 5;</code>
+       */
+      public Builder setString(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  typeCase_ = 5;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string string = 5;</code>
+       */
+      public Builder clearString() {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string string = 5;</code>
+       */
+      public Builder setStringBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        typeCase_ = 5;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> vector2Builder_;
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public boolean hasVector2() {
+        return typeCase_ == 6;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public ubii.dataStructure.Vector2OuterClass.Vector2 getVector2() {
+        if (vector2Builder_ == null) {
+          if (typeCase_ == 6) {
+            return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
+          }
+          return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
+        } else {
+          if (typeCase_ == 6) {
+            return vector2Builder_.getMessage();
+          }
+          return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public Builder setVector2(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
+        if (vector2Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          vector2Builder_.setMessage(value);
+        }
+        typeCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public Builder setVector2(
+          ubii.dataStructure.Vector2OuterClass.Vector2.Builder builderForValue) {
+        if (vector2Builder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          vector2Builder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public Builder mergeVector2(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
+        if (vector2Builder_ == null) {
+          if (typeCase_ == 6 &&
+              type_ != ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance()) {
+            type_ = ubii.dataStructure.Vector2OuterClass.Vector2.newBuilder((ubii.dataStructure.Vector2OuterClass.Vector2) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 6) {
+            vector2Builder_.mergeFrom(value);
+          }
+          vector2Builder_.setMessage(value);
+        }
+        typeCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public Builder clearVector2() {
+        if (vector2Builder_ == null) {
+          if (typeCase_ == 6) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 6) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          vector2Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public ubii.dataStructure.Vector2OuterClass.Vector2.Builder getVector2Builder() {
+        return getVector2FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getVector2OrBuilder() {
+        if ((typeCase_ == 6) && (vector2Builder_ != null)) {
+          return vector2Builder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 6) {
+            return (ubii.dataStructure.Vector2OuterClass.Vector2) type_;
+          }
+          return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector2 vector2 = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> 
+          getVector2FieldBuilder() {
+        if (vector2Builder_ == null) {
+          if (!(typeCase_ == 6)) {
+            type_ = ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
+          }
+          vector2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder>(
+                  (ubii.dataStructure.Vector2OuterClass.Vector2) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 6;
+        onChanged();;
+        return vector2Builder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> vector3Builder_;
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public boolean hasVector3() {
+        return typeCase_ == 7;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public ubii.dataStructure.Vector3OuterClass.Vector3 getVector3() {
+        if (vector3Builder_ == null) {
+          if (typeCase_ == 7) {
+            return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
+          }
+          return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
+        } else {
+          if (typeCase_ == 7) {
+            return vector3Builder_.getMessage();
+          }
+          return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public Builder setVector3(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
+        if (vector3Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          vector3Builder_.setMessage(value);
+        }
+        typeCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public Builder setVector3(
+          ubii.dataStructure.Vector3OuterClass.Vector3.Builder builderForValue) {
+        if (vector3Builder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          vector3Builder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public Builder mergeVector3(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
+        if (vector3Builder_ == null) {
+          if (typeCase_ == 7 &&
+              type_ != ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance()) {
+            type_ = ubii.dataStructure.Vector3OuterClass.Vector3.newBuilder((ubii.dataStructure.Vector3OuterClass.Vector3) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 7) {
+            vector3Builder_.mergeFrom(value);
+          }
+          vector3Builder_.setMessage(value);
+        }
+        typeCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public Builder clearVector3() {
+        if (vector3Builder_ == null) {
+          if (typeCase_ == 7) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 7) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          vector3Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public ubii.dataStructure.Vector3OuterClass.Vector3.Builder getVector3Builder() {
+        return getVector3FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getVector3OrBuilder() {
+        if ((typeCase_ == 7) && (vector3Builder_ != null)) {
+          return vector3Builder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 7) {
+            return (ubii.dataStructure.Vector3OuterClass.Vector3) type_;
+          }
+          return ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 vector3 = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> 
+          getVector3FieldBuilder() {
+        if (vector3Builder_ == null) {
+          if (!(typeCase_ == 7)) {
+            type_ = ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance();
+          }
+          vector3Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder>(
+                  (ubii.dataStructure.Vector3OuterClass.Vector3) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 7;
+        onChanged();;
+        return vector3Builder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector4OuterClass.Vector4, ubii.dataStructure.Vector4OuterClass.Vector4.Builder, ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder> vector4Builder_;
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public boolean hasVector4() {
+        return typeCase_ == 8;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public ubii.dataStructure.Vector4OuterClass.Vector4 getVector4() {
+        if (vector4Builder_ == null) {
+          if (typeCase_ == 8) {
+            return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
+          }
+          return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
+        } else {
+          if (typeCase_ == 8) {
+            return vector4Builder_.getMessage();
+          }
+          return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public Builder setVector4(ubii.dataStructure.Vector4OuterClass.Vector4 value) {
+        if (vector4Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          vector4Builder_.setMessage(value);
+        }
+        typeCase_ = 8;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public Builder setVector4(
+          ubii.dataStructure.Vector4OuterClass.Vector4.Builder builderForValue) {
+        if (vector4Builder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          vector4Builder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 8;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public Builder mergeVector4(ubii.dataStructure.Vector4OuterClass.Vector4 value) {
+        if (vector4Builder_ == null) {
+          if (typeCase_ == 8 &&
+              type_ != ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance()) {
+            type_ = ubii.dataStructure.Vector4OuterClass.Vector4.newBuilder((ubii.dataStructure.Vector4OuterClass.Vector4) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 8) {
+            vector4Builder_.mergeFrom(value);
+          }
+          vector4Builder_.setMessage(value);
+        }
+        typeCase_ = 8;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public Builder clearVector4() {
+        if (vector4Builder_ == null) {
+          if (typeCase_ == 8) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 8) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          vector4Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public ubii.dataStructure.Vector4OuterClass.Vector4.Builder getVector4Builder() {
+        return getVector4FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      public ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder getVector4OrBuilder() {
+        if ((typeCase_ == 8) && (vector4Builder_ != null)) {
+          return vector4Builder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 8) {
+            return (ubii.dataStructure.Vector4OuterClass.Vector4) type_;
+          }
+          return ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector4 vector4 = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector4OuterClass.Vector4, ubii.dataStructure.Vector4OuterClass.Vector4.Builder, ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder> 
+          getVector4FieldBuilder() {
+        if (vector4Builder_ == null) {
+          if (!(typeCase_ == 8)) {
+            type_ = ubii.dataStructure.Vector4OuterClass.Vector4.getDefaultInstance();
+          }
+          vector4Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.Vector4OuterClass.Vector4, ubii.dataStructure.Vector4OuterClass.Vector4.Builder, ubii.dataStructure.Vector4OuterClass.Vector4OrBuilder>(
+                  (ubii.dataStructure.Vector4OuterClass.Vector4) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 8;
+        onChanged();;
+        return vector4Builder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> quaternionBuilder_;
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public boolean hasQuaternion() {
+        return typeCase_ == 9;
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
+        if (quaternionBuilder_ == null) {
+          if (typeCase_ == 9) {
+            return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
+          }
+          return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
+        } else {
+          if (typeCase_ == 9) {
+            return quaternionBuilder_.getMessage();
+          }
+          return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public Builder setQuaternion(ubii.dataStructure.QuaternionOuterClass.Quaternion value) {
+        if (quaternionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          quaternionBuilder_.setMessage(value);
+        }
+        typeCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public Builder setQuaternion(
+          ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder builderForValue) {
+        if (quaternionBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          quaternionBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public Builder mergeQuaternion(ubii.dataStructure.QuaternionOuterClass.Quaternion value) {
+        if (quaternionBuilder_ == null) {
+          if (typeCase_ == 9 &&
+              type_ != ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance()) {
+            type_ = ubii.dataStructure.QuaternionOuterClass.Quaternion.newBuilder((ubii.dataStructure.QuaternionOuterClass.Quaternion) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 9) {
+            quaternionBuilder_.mergeFrom(value);
+          }
+          quaternionBuilder_.setMessage(value);
+        }
+        typeCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public Builder clearQuaternion() {
+        if (quaternionBuilder_ == null) {
+          if (typeCase_ == 9) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 9) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          quaternionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder getQuaternionBuilder() {
+        return getQuaternionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
+        if ((typeCase_ == 9) && (quaternionBuilder_ != null)) {
+          return quaternionBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 9) {
+            return (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_;
+          }
+          return ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Quaternion quaternion = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> 
+          getQuaternionFieldBuilder() {
+        if (quaternionBuilder_ == null) {
+          if (!(typeCase_ == 9)) {
+            type_ = ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance();
+          }
+          quaternionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder>(
+                  (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 9;
+        onChanged();;
+        return quaternionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Matrix3X2.Matrix3x2, ubii.dataStructure.Matrix3X2.Matrix3x2.Builder, ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder> matrix3X2Builder_;
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public boolean hasMatrix3X2() {
+        return typeCase_ == 10;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public ubii.dataStructure.Matrix3X2.Matrix3x2 getMatrix3X2() {
+        if (matrix3X2Builder_ == null) {
+          if (typeCase_ == 10) {
+            return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
+          }
+          return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
+        } else {
+          if (typeCase_ == 10) {
+            return matrix3X2Builder_.getMessage();
+          }
+          return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public Builder setMatrix3X2(ubii.dataStructure.Matrix3X2.Matrix3x2 value) {
+        if (matrix3X2Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          matrix3X2Builder_.setMessage(value);
+        }
+        typeCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public Builder setMatrix3X2(
+          ubii.dataStructure.Matrix3X2.Matrix3x2.Builder builderForValue) {
+        if (matrix3X2Builder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          matrix3X2Builder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public Builder mergeMatrix3X2(ubii.dataStructure.Matrix3X2.Matrix3x2 value) {
+        if (matrix3X2Builder_ == null) {
+          if (typeCase_ == 10 &&
+              type_ != ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance()) {
+            type_ = ubii.dataStructure.Matrix3X2.Matrix3x2.newBuilder((ubii.dataStructure.Matrix3X2.Matrix3x2) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 10) {
+            matrix3X2Builder_.mergeFrom(value);
+          }
+          matrix3X2Builder_.setMessage(value);
+        }
+        typeCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public Builder clearMatrix3X2() {
+        if (matrix3X2Builder_ == null) {
+          if (typeCase_ == 10) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 10) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          matrix3X2Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public ubii.dataStructure.Matrix3X2.Matrix3x2.Builder getMatrix3X2Builder() {
+        return getMatrix3X2FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      public ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder getMatrix3X2OrBuilder() {
+        if ((typeCase_ == 10) && (matrix3X2Builder_ != null)) {
+          return matrix3X2Builder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 10) {
+            return (ubii.dataStructure.Matrix3X2.Matrix3x2) type_;
+          }
+          return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix3x2 matrix3x2 = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Matrix3X2.Matrix3x2, ubii.dataStructure.Matrix3X2.Matrix3x2.Builder, ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder> 
+          getMatrix3X2FieldBuilder() {
+        if (matrix3X2Builder_ == null) {
+          if (!(typeCase_ == 10)) {
+            type_ = ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
+          }
+          matrix3X2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.Matrix3X2.Matrix3x2, ubii.dataStructure.Matrix3X2.Matrix3x2.Builder, ubii.dataStructure.Matrix3X2.Matrix3x2OrBuilder>(
+                  (ubii.dataStructure.Matrix3X2.Matrix3x2) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 10;
+        onChanged();;
+        return matrix3X2Builder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Matrix4X4.Matrix4x4, ubii.dataStructure.Matrix4X4.Matrix4x4.Builder, ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder> matrix4X4Builder_;
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public boolean hasMatrix4X4() {
+        return typeCase_ == 11;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public ubii.dataStructure.Matrix4X4.Matrix4x4 getMatrix4X4() {
+        if (matrix4X4Builder_ == null) {
+          if (typeCase_ == 11) {
+            return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
+          }
+          return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+        } else {
+          if (typeCase_ == 11) {
+            return matrix4X4Builder_.getMessage();
+          }
+          return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public Builder setMatrix4X4(ubii.dataStructure.Matrix4X4.Matrix4x4 value) {
+        if (matrix4X4Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          matrix4X4Builder_.setMessage(value);
+        }
+        typeCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public Builder setMatrix4X4(
+          ubii.dataStructure.Matrix4X4.Matrix4x4.Builder builderForValue) {
+        if (matrix4X4Builder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          matrix4X4Builder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public Builder mergeMatrix4X4(ubii.dataStructure.Matrix4X4.Matrix4x4 value) {
+        if (matrix4X4Builder_ == null) {
+          if (typeCase_ == 11 &&
+              type_ != ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance()) {
+            type_ = ubii.dataStructure.Matrix4X4.Matrix4x4.newBuilder((ubii.dataStructure.Matrix4X4.Matrix4x4) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 11) {
+            matrix4X4Builder_.mergeFrom(value);
+          }
+          matrix4X4Builder_.setMessage(value);
+        }
+        typeCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public Builder clearMatrix4X4() {
+        if (matrix4X4Builder_ == null) {
+          if (typeCase_ == 11) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 11) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          matrix4X4Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public ubii.dataStructure.Matrix4X4.Matrix4x4.Builder getMatrix4X4Builder() {
+        return getMatrix4X4FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      public ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder getMatrix4X4OrBuilder() {
+        if ((typeCase_ == 11) && (matrix4X4Builder_ != null)) {
+          return matrix4X4Builder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 11) {
+            return (ubii.dataStructure.Matrix4X4.Matrix4x4) type_;
+          }
+          return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Matrix4x4 matrix4x4 = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Matrix4X4.Matrix4x4, ubii.dataStructure.Matrix4X4.Matrix4x4.Builder, ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder> 
+          getMatrix4X4FieldBuilder() {
+        if (matrix4X4Builder_ == null) {
+          if (!(typeCase_ == 11)) {
+            type_ = ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
+          }
+          matrix4X4Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.Matrix4X4.Matrix4x4, ubii.dataStructure.Matrix4X4.Matrix4x4.Builder, ubii.dataStructure.Matrix4X4.Matrix4x4OrBuilder>(
+                  (ubii.dataStructure.Matrix4X4.Matrix4x4) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 11;
+        onChanged();;
+        return matrix4X4Builder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.ColorOuterClass.Color, ubii.dataStructure.ColorOuterClass.Color.Builder, ubii.dataStructure.ColorOuterClass.ColorOrBuilder> colorBuilder_;
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public boolean hasColor() {
+        return typeCase_ == 12;
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public ubii.dataStructure.ColorOuterClass.Color getColor() {
+        if (colorBuilder_ == null) {
+          if (typeCase_ == 12) {
+            return (ubii.dataStructure.ColorOuterClass.Color) type_;
+          }
+          return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
+        } else {
+          if (typeCase_ == 12) {
+            return colorBuilder_.getMessage();
+          }
+          return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public Builder setColor(ubii.dataStructure.ColorOuterClass.Color value) {
+        if (colorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          colorBuilder_.setMessage(value);
+        }
+        typeCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public Builder setColor(
+          ubii.dataStructure.ColorOuterClass.Color.Builder builderForValue) {
+        if (colorBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          colorBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public Builder mergeColor(ubii.dataStructure.ColorOuterClass.Color value) {
+        if (colorBuilder_ == null) {
+          if (typeCase_ == 12 &&
+              type_ != ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance()) {
+            type_ = ubii.dataStructure.ColorOuterClass.Color.newBuilder((ubii.dataStructure.ColorOuterClass.Color) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 12) {
+            colorBuilder_.mergeFrom(value);
+          }
+          colorBuilder_.setMessage(value);
+        }
+        typeCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public Builder clearColor() {
+        if (colorBuilder_ == null) {
+          if (typeCase_ == 12) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 12) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          colorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public ubii.dataStructure.ColorOuterClass.Color.Builder getColorBuilder() {
+        return getColorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      public ubii.dataStructure.ColorOuterClass.ColorOrBuilder getColorOrBuilder() {
+        if ((typeCase_ == 12) && (colorBuilder_ != null)) {
+          return colorBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 12) {
+            return (ubii.dataStructure.ColorOuterClass.Color) type_;
+          }
+          return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Color color = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.ColorOuterClass.Color, ubii.dataStructure.ColorOuterClass.Color.Builder, ubii.dataStructure.ColorOuterClass.ColorOrBuilder> 
+          getColorFieldBuilder() {
+        if (colorBuilder_ == null) {
+          if (!(typeCase_ == 12)) {
+            type_ = ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
+          }
+          colorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.ColorOuterClass.Color, ubii.dataStructure.ColorOuterClass.Color.Builder, ubii.dataStructure.ColorOuterClass.ColorOrBuilder>(
+                  (ubii.dataStructure.ColorOuterClass.Color) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 12;
+        onChanged();;
+        return colorBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.TouchEventOuterClass.TouchEvent, ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder, ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder> touchEventBuilder_;
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public boolean hasTouchEvent() {
+        return typeCase_ == 13;
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public ubii.dataStructure.TouchEventOuterClass.TouchEvent getTouchEvent() {
+        if (touchEventBuilder_ == null) {
+          if (typeCase_ == 13) {
+            return (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_;
+          }
+          return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
+        } else {
+          if (typeCase_ == 13) {
+            return touchEventBuilder_.getMessage();
+          }
+          return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public Builder setTouchEvent(ubii.dataStructure.TouchEventOuterClass.TouchEvent value) {
+        if (touchEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          touchEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public Builder setTouchEvent(
+          ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder builderForValue) {
+        if (touchEventBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          touchEventBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public Builder mergeTouchEvent(ubii.dataStructure.TouchEventOuterClass.TouchEvent value) {
+        if (touchEventBuilder_ == null) {
+          if (typeCase_ == 13 &&
+              type_ != ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance()) {
+            type_ = ubii.dataStructure.TouchEventOuterClass.TouchEvent.newBuilder((ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 13) {
+            touchEventBuilder_.mergeFrom(value);
+          }
+          touchEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public Builder clearTouchEvent() {
+        if (touchEventBuilder_ == null) {
+          if (typeCase_ == 13) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 13) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          touchEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder getTouchEventBuilder() {
+        return getTouchEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getTouchEventOrBuilder() {
+        if ((typeCase_ == 13) && (touchEventBuilder_ != null)) {
+          return touchEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 13) {
+            return (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_;
+          }
+          return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.TouchEvent touchEvent = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.TouchEventOuterClass.TouchEvent, ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder, ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder> 
+          getTouchEventFieldBuilder() {
+        if (touchEventBuilder_ == null) {
+          if (!(typeCase_ == 13)) {
+            type_ = ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDefaultInstance();
+          }
+          touchEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.TouchEventOuterClass.TouchEvent, ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder, ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder>(
+                  (ubii.dataStructure.TouchEventOuterClass.TouchEvent) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 13;
+        onChanged();;
+        return touchEventBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.KeyEventOuterClass.KeyEvent, ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder, ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder> keyEventBuilder_;
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public boolean hasKeyEvent() {
+        return typeCase_ == 14;
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public ubii.dataStructure.KeyEventOuterClass.KeyEvent getKeyEvent() {
+        if (keyEventBuilder_ == null) {
+          if (typeCase_ == 14) {
+            return (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_;
+          }
+          return ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
+        } else {
+          if (typeCase_ == 14) {
+            return keyEventBuilder_.getMessage();
+          }
+          return ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public Builder setKeyEvent(ubii.dataStructure.KeyEventOuterClass.KeyEvent value) {
+        if (keyEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          keyEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public Builder setKeyEvent(
+          ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder builderForValue) {
+        if (keyEventBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          keyEventBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public Builder mergeKeyEvent(ubii.dataStructure.KeyEventOuterClass.KeyEvent value) {
+        if (keyEventBuilder_ == null) {
+          if (typeCase_ == 14 &&
+              type_ != ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance()) {
+            type_ = ubii.dataStructure.KeyEventOuterClass.KeyEvent.newBuilder((ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 14) {
+            keyEventBuilder_.mergeFrom(value);
+          }
+          keyEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public Builder clearKeyEvent() {
+        if (keyEventBuilder_ == null) {
+          if (typeCase_ == 14) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 14) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          keyEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder getKeyEventBuilder() {
+        return getKeyEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      public ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder getKeyEventOrBuilder() {
+        if ((typeCase_ == 14) && (keyEventBuilder_ != null)) {
+          return keyEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 14) {
+            return (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_;
+          }
+          return ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.KeyEvent keyEvent = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.KeyEventOuterClass.KeyEvent, ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder, ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder> 
+          getKeyEventFieldBuilder() {
+        if (keyEventBuilder_ == null) {
+          if (!(typeCase_ == 14)) {
+            type_ = ubii.dataStructure.KeyEventOuterClass.KeyEvent.getDefaultInstance();
+          }
+          keyEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.KeyEventOuterClass.KeyEvent, ubii.dataStructure.KeyEventOuterClass.KeyEvent.Builder, ubii.dataStructure.KeyEventOuterClass.KeyEventOrBuilder>(
+                  (ubii.dataStructure.KeyEventOuterClass.KeyEvent) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 14;
+        onChanged();;
+        return keyEventBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.MouseEventOuterClass.MouseEvent, ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder, ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder> mouseEventBuilder_;
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public boolean hasMouseEvent() {
+        return typeCase_ == 15;
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public ubii.dataStructure.MouseEventOuterClass.MouseEvent getMouseEvent() {
+        if (mouseEventBuilder_ == null) {
+          if (typeCase_ == 15) {
+            return (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_;
+          }
+          return ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
+        } else {
+          if (typeCase_ == 15) {
+            return mouseEventBuilder_.getMessage();
+          }
+          return ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public Builder setMouseEvent(ubii.dataStructure.MouseEventOuterClass.MouseEvent value) {
+        if (mouseEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          mouseEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public Builder setMouseEvent(
+          ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder builderForValue) {
+        if (mouseEventBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          mouseEventBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public Builder mergeMouseEvent(ubii.dataStructure.MouseEventOuterClass.MouseEvent value) {
+        if (mouseEventBuilder_ == null) {
+          if (typeCase_ == 15 &&
+              type_ != ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance()) {
+            type_ = ubii.dataStructure.MouseEventOuterClass.MouseEvent.newBuilder((ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 15) {
+            mouseEventBuilder_.mergeFrom(value);
+          }
+          mouseEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public Builder clearMouseEvent() {
+        if (mouseEventBuilder_ == null) {
+          if (typeCase_ == 15) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 15) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          mouseEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder getMouseEventBuilder() {
+        return getMouseEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      public ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder() {
+        if ((typeCase_ == 15) && (mouseEventBuilder_ != null)) {
+          return mouseEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 15) {
+            return (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_;
+          }
+          return ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.MouseEvent mouseEvent = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.MouseEventOuterClass.MouseEvent, ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder, ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder> 
+          getMouseEventFieldBuilder() {
+        if (mouseEventBuilder_ == null) {
+          if (!(typeCase_ == 15)) {
+            type_ = ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
+          }
+          mouseEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.MouseEventOuterClass.MouseEvent, ubii.dataStructure.MouseEventOuterClass.MouseEvent.Builder, ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder>(
+                  (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 15;
+        onChanged();;
+        return mouseEventBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3471,34 +4122,42 @@ public final class TopicDataRecordOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n5proto/topicData/topicDataRecord/topicD" +
-      "ataRecord.proto\022\016ubii.topicData\032;proto/t" +
-      "opicData/topicDataRecord/dataStructure/v" +
-      "ector2.proto\032;proto/topicData/topicDataR" +
-      "ecord/dataStructure/vector3.proto\032;proto" +
-      "/topicData/topicDataRecord/dataStructure" +
-      "/vector4.proto\032>proto/topicData/topicDat" +
-      "aRecord/dataStructure/quaternion.proto\032=" +
+      "ataRecord.proto\022\016ubii.topicData\032/proto/t" +
+      "opicData/topicDataRecord/timestamp.proto" +
+      "\032;proto/topicData/topicDataRecord/dataSt" +
+      "ructure/vector2.proto\032;proto/topicData/t" +
+      "opicDataRecord/dataStructure/vector3.pro" +
+      "to\032;proto/topicData/topicDataRecord/data" +
+      "Structure/vector4.proto\032>proto/topicData" +
+      "/topicDataRecord/dataStructure/quaternio" +
+      "n.proto\032=proto/topicData/topicDataRecord" +
+      "/dataStructure/matrix3x2.proto\032=proto/to" +
+      "picData/topicDataRecord/dataStructure/ma" +
+      "trix4x4.proto\0329proto/topicData/topicData" +
+      "Record/dataStructure/color.proto\032>proto/" +
+      "topicData/topicDataRecord/dataStructure/" +
+      "touchEvent.proto\032<proto/topicData/topicD" +
+      "ataRecord/dataStructure/keyEvent.proto\032>" +
       "proto/topicData/topicDataRecord/dataStru" +
-      "cture/matrix3x2.proto\032=proto/topicData/t" +
-      "opicDataRecord/dataStructure/matrix4x4.p" +
-      "roto\0329proto/topicData/topicDataRecord/da" +
-      "taStructure/color.proto\032/proto/topicData" +
-      "/topicDataRecord/timestamp.proto\"\347\003\n\017Top" +
-      "icDataRecord\022\r\n\005topic\030\001 \001(\t\022\020\n\006number\030\002 " +
-      "\001(\001H\000\022\021\n\007boolean\030\003 \001(\010H\000\022\020\n\006string\030\004 \001(\t" +
-      "H\000\022.\n\007vector2\030\005 \001(\0132\033.ubii.dataStructure" +
-      ".Vector2H\000\022.\n\007vector3\030\006 \001(\0132\033.ubii.dataS" +
-      "tructure.Vector3H\000\022.\n\007vector4\030\007 \001(\0132\033.ub" +
-      "ii.dataStructure.Vector4H\000\0224\n\nquaternion" +
-      "\030\010 \001(\0132\036.ubii.dataStructure.QuaternionH\000" +
-      "\0222\n\tmatrix3x2\030\t \001(\0132\035.ubii.dataStructure" +
-      ".Matrix3x2H\000\0222\n\tmatrix4x4\030\n \001(\0132\035.ubii.d" +
-      "ataStructure.Matrix4x4H\000\022*\n\005color\030\013 \001(\0132" +
-      "\031.ubii.dataStructure.ColorH\000\022,\n\ttimestam" +
-      "p\030\014 \001(\0132\031.ubii.topicData.TimestampB\006\n\004ty" +
-      "pe\"H\n\023TopicDataRecordList\0221\n\010elements\030\001 " +
-      "\003(\0132\037.ubii.topicData.TopicDataRecordb\006pr" +
-      "oto3"
+      "cture/mouseEvent.proto\"\205\005\n\017TopicDataReco" +
+      "rd\022\r\n\005topic\030\001 \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.u" +
+      "bii.topicData.Timestamp\022\020\n\006number\030\003 \001(\001H" +
+      "\000\022\021\n\007boolean\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022." +
+      "\n\007vector2\030\006 \001(\0132\033.ubii.dataStructure.Vec" +
+      "tor2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStruc" +
+      "ture.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.d" +
+      "ataStructure.Vector4H\000\0224\n\nquaternion\030\t \001" +
+      "(\0132\036.ubii.dataStructure.QuaternionH\000\0222\n\t" +
+      "matrix3x2\030\n \001(\0132\035.ubii.dataStructure.Mat" +
+      "rix3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataS" +
+      "tructure.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ub" +
+      "ii.dataStructure.ColorH\000\0224\n\ntouchEvent\030\r" +
+      " \001(\0132\036.ubii.dataStructure.TouchEventH\000\0220" +
+      "\n\010keyEvent\030\016 \001(\0132\034.ubii.dataStructure.Ke" +
+      "yEventH\000\0224\n\nmouseEvent\030\017 \001(\0132\036.ubii.data" +
+      "Structure.MouseEventH\000B\006\n\004type\"H\n\023TopicD" +
+      "ataRecordList\0221\n\010elements\030\001 \003(\0132\037.ubii.t" +
+      "opicData.TopicDataRecordb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3511,6 +4170,7 @@ public final class TopicDataRecordOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          ubii.topicData.TimestampOuterClass.getDescriptor(),
           ubii.dataStructure.Vector2OuterClass.getDescriptor(),
           ubii.dataStructure.Vector3OuterClass.getDescriptor(),
           ubii.dataStructure.Vector4OuterClass.getDescriptor(),
@@ -3518,20 +4178,23 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Matrix3X2.getDescriptor(),
           ubii.dataStructure.Matrix4X4.getDescriptor(),
           ubii.dataStructure.ColorOuterClass.getDescriptor(),
-          ubii.topicData.TimestampOuterClass.getDescriptor(),
+          ubii.dataStructure.TouchEventOuterClass.getDescriptor(),
+          ubii.dataStructure.KeyEventOuterClass.getDescriptor(),
+          ubii.dataStructure.MouseEventOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_topicData_TopicDataRecord_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicDataRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_topicData_TopicDataRecord_descriptor,
-        new java.lang.String[] { "Topic", "Number", "Boolean", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "Timestamp", "Type", });
+        new java.lang.String[] { "Topic", "Timestamp", "Number", "Boolean", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "Type", });
     internal_static_ubii_topicData_TopicDataRecordList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_topicData_TopicDataRecordList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_topicData_TopicDataRecordList_descriptor,
         new java.lang.String[] { "Elements", });
+    ubii.topicData.TimestampOuterClass.getDescriptor();
     ubii.dataStructure.Vector2OuterClass.getDescriptor();
     ubii.dataStructure.Vector3OuterClass.getDescriptor();
     ubii.dataStructure.Vector4OuterClass.getDescriptor();
@@ -3539,7 +4202,9 @@ public final class TopicDataRecordOuterClass {
     ubii.dataStructure.Matrix3X2.getDescriptor();
     ubii.dataStructure.Matrix4X4.getDescriptor();
     ubii.dataStructure.ColorOuterClass.getDescriptor();
-    ubii.topicData.TimestampOuterClass.getDescriptor();
+    ubii.dataStructure.TouchEventOuterClass.getDescriptor();
+    ubii.dataStructure.KeyEventOuterClass.getDescriptor();
+    ubii.dataStructure.MouseEventOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
