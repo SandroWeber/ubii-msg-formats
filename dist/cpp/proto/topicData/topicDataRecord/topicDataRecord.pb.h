@@ -30,6 +30,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "proto/topicData/topicDataRecord/timestamp.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/vector2.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/vector3.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/vector4.pb.h"
@@ -37,7 +38,9 @@
 #include "proto/topicData/topicDataRecord/dataStructure/matrix3x2.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/matrix4x4.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/color.pb.h"
-#include "proto/topicData/topicDataRecord/timestamp.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/touchEvent.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/keyEvent.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/mouseEvent.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto 
 
@@ -104,16 +107,19 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   static const TopicDataRecord& default_instance();
 
   enum TypeCase {
-    kNumber = 2,
-    kBoolean = 3,
-    kString = 4,
-    kVector2 = 5,
-    kVector3 = 6,
-    kVector4 = 7,
-    kQuaternion = 8,
-    kMatrix3X2 = 9,
-    kMatrix4X4 = 10,
-    kColor = 11,
+    kNumber = 3,
+    kBoolean = 4,
+    kString = 5,
+    kVector2 = 6,
+    kVector3 = 7,
+    kVector4 = 8,
+    kQuaternion = 9,
+    kMatrix3X2 = 10,
+    kMatrix4X4 = 11,
+    kColor = 12,
+    kTouchEvent = 13,
+    kKeyEvent = 14,
+    kMouseEvent = 15,
     TYPE_NOT_SET = 0,
   };
 
@@ -189,10 +195,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::std::string* release_topic();
   void set_allocated_topic(::std::string* topic);
 
-  // .ubii.topicData.Timestamp timestamp = 12;
+  // .ubii.topicData.Timestamp timestamp = 2;
   bool has_timestamp() const;
   void clear_timestamp();
-  static const int kTimestampFieldNumber = 12;
+  static const int kTimestampFieldNumber = 2;
   private:
   const ::ubii::topicData::Timestamp& _internal_timestamp() const;
   public:
@@ -201,30 +207,30 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::topicData::Timestamp* mutable_timestamp();
   void set_allocated_timestamp(::ubii::topicData::Timestamp* timestamp);
 
-  // double number = 2;
+  // double number = 3;
   private:
   bool has_number() const;
   public:
   void clear_number();
-  static const int kNumberFieldNumber = 2;
+  static const int kNumberFieldNumber = 3;
   double number() const;
   void set_number(double value);
 
-  // bool boolean = 3;
+  // bool boolean = 4;
   private:
   bool has_boolean() const;
   public:
   void clear_boolean();
-  static const int kBooleanFieldNumber = 3;
+  static const int kBooleanFieldNumber = 4;
   bool boolean() const;
   void set_boolean(bool value);
 
-  // string string = 4;
+  // string string = 5;
   private:
   bool has_string() const;
   public:
   void clear_string();
-  static const int kStringFieldNumber = 4;
+  static const int kStringFieldNumber = 5;
   const ::std::string& string() const;
   void set_string(const ::std::string& value);
   #if LANG_CXX11
@@ -236,10 +242,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::std::string* release_string();
   void set_allocated_string(::std::string* string);
 
-  // .ubii.dataStructure.Vector2 vector2 = 5;
+  // .ubii.dataStructure.Vector2 vector2 = 6;
   bool has_vector2() const;
   void clear_vector2();
-  static const int kVector2FieldNumber = 5;
+  static const int kVector2FieldNumber = 6;
   private:
   const ::ubii::dataStructure::Vector2& _internal_vector2() const;
   public:
@@ -248,10 +254,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Vector2* mutable_vector2();
   void set_allocated_vector2(::ubii::dataStructure::Vector2* vector2);
 
-  // .ubii.dataStructure.Vector3 vector3 = 6;
+  // .ubii.dataStructure.Vector3 vector3 = 7;
   bool has_vector3() const;
   void clear_vector3();
-  static const int kVector3FieldNumber = 6;
+  static const int kVector3FieldNumber = 7;
   private:
   const ::ubii::dataStructure::Vector3& _internal_vector3() const;
   public:
@@ -260,10 +266,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Vector3* mutable_vector3();
   void set_allocated_vector3(::ubii::dataStructure::Vector3* vector3);
 
-  // .ubii.dataStructure.Vector4 vector4 = 7;
+  // .ubii.dataStructure.Vector4 vector4 = 8;
   bool has_vector4() const;
   void clear_vector4();
-  static const int kVector4FieldNumber = 7;
+  static const int kVector4FieldNumber = 8;
   private:
   const ::ubii::dataStructure::Vector4& _internal_vector4() const;
   public:
@@ -272,10 +278,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Vector4* mutable_vector4();
   void set_allocated_vector4(::ubii::dataStructure::Vector4* vector4);
 
-  // .ubii.dataStructure.Quaternion quaternion = 8;
+  // .ubii.dataStructure.Quaternion quaternion = 9;
   bool has_quaternion() const;
   void clear_quaternion();
-  static const int kQuaternionFieldNumber = 8;
+  static const int kQuaternionFieldNumber = 9;
   private:
   const ::ubii::dataStructure::Quaternion& _internal_quaternion() const;
   public:
@@ -284,10 +290,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Quaternion* mutable_quaternion();
   void set_allocated_quaternion(::ubii::dataStructure::Quaternion* quaternion);
 
-  // .ubii.dataStructure.Matrix3x2 matrix3x2 = 9;
+  // .ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
   bool has_matrix3x2() const;
   void clear_matrix3x2();
-  static const int kMatrix3X2FieldNumber = 9;
+  static const int kMatrix3X2FieldNumber = 10;
   private:
   const ::ubii::dataStructure::Matrix3x2& _internal_matrix3x2() const;
   public:
@@ -296,10 +302,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Matrix3x2* mutable_matrix3x2();
   void set_allocated_matrix3x2(::ubii::dataStructure::Matrix3x2* matrix3x2);
 
-  // .ubii.dataStructure.Matrix4x4 matrix4x4 = 10;
+  // .ubii.dataStructure.Matrix4x4 matrix4x4 = 11;
   bool has_matrix4x4() const;
   void clear_matrix4x4();
-  static const int kMatrix4X4FieldNumber = 10;
+  static const int kMatrix4X4FieldNumber = 11;
   private:
   const ::ubii::dataStructure::Matrix4x4& _internal_matrix4x4() const;
   public:
@@ -308,10 +314,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Matrix4x4* mutable_matrix4x4();
   void set_allocated_matrix4x4(::ubii::dataStructure::Matrix4x4* matrix4x4);
 
-  // .ubii.dataStructure.Color color = 11;
+  // .ubii.dataStructure.Color color = 12;
   bool has_color() const;
   void clear_color();
-  static const int kColorFieldNumber = 11;
+  static const int kColorFieldNumber = 12;
   private:
   const ::ubii::dataStructure::Color& _internal_color() const;
   public:
@@ -319,6 +325,42 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Color* release_color();
   ::ubii::dataStructure::Color* mutable_color();
   void set_allocated_color(::ubii::dataStructure::Color* color);
+
+  // .ubii.dataStructure.TouchEvent touchEvent = 13;
+  bool has_touchevent() const;
+  void clear_touchevent();
+  static const int kTouchEventFieldNumber = 13;
+  private:
+  const ::ubii::dataStructure::TouchEvent& _internal_touchevent() const;
+  public:
+  const ::ubii::dataStructure::TouchEvent& touchevent() const;
+  ::ubii::dataStructure::TouchEvent* release_touchevent();
+  ::ubii::dataStructure::TouchEvent* mutable_touchevent();
+  void set_allocated_touchevent(::ubii::dataStructure::TouchEvent* touchevent);
+
+  // .ubii.dataStructure.KeyEvent keyEvent = 14;
+  bool has_keyevent() const;
+  void clear_keyevent();
+  static const int kKeyEventFieldNumber = 14;
+  private:
+  const ::ubii::dataStructure::KeyEvent& _internal_keyevent() const;
+  public:
+  const ::ubii::dataStructure::KeyEvent& keyevent() const;
+  ::ubii::dataStructure::KeyEvent* release_keyevent();
+  ::ubii::dataStructure::KeyEvent* mutable_keyevent();
+  void set_allocated_keyevent(::ubii::dataStructure::KeyEvent* keyevent);
+
+  // .ubii.dataStructure.MouseEvent mouseEvent = 15;
+  bool has_mouseevent() const;
+  void clear_mouseevent();
+  static const int kMouseEventFieldNumber = 15;
+  private:
+  const ::ubii::dataStructure::MouseEvent& _internal_mouseevent() const;
+  public:
+  const ::ubii::dataStructure::MouseEvent& mouseevent() const;
+  ::ubii::dataStructure::MouseEvent* release_mouseevent();
+  ::ubii::dataStructure::MouseEvent* mutable_mouseevent();
+  void set_allocated_mouseevent(::ubii::dataStructure::MouseEvent* mouseevent);
 
   void clear_type();
   TypeCase type_case() const;
@@ -334,6 +376,9 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_matrix3x2();
   void set_has_matrix4x4();
   void set_has_color();
+  void set_has_touchevent();
+  void set_has_keyevent();
+  void set_has_mouseevent();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -353,6 +398,9 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::Matrix3x2* matrix3x2_;
     ::ubii::dataStructure::Matrix4x4* matrix4x4_;
     ::ubii::dataStructure::Color* color_;
+    ::ubii::dataStructure::TouchEvent* touchevent_;
+    ::ubii::dataStructure::KeyEvent* keyevent_;
+    ::ubii::dataStructure::MouseEvent* mouseevent_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -532,7 +580,55 @@ inline void TopicDataRecord::set_allocated_topic(::std::string* topic) {
   // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.topic)
 }
 
-// double number = 2;
+// .ubii.topicData.Timestamp timestamp = 2;
+inline bool TopicDataRecord::has_timestamp() const {
+  return this != internal_default_instance() && timestamp_ != NULL;
+}
+inline const ::ubii::topicData::Timestamp& TopicDataRecord::_internal_timestamp() const {
+  return *timestamp_;
+}
+inline const ::ubii::topicData::Timestamp& TopicDataRecord::timestamp() const {
+  const ::ubii::topicData::Timestamp* p = timestamp_;
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.timestamp)
+  return p != NULL ? *p : *reinterpret_cast<const ::ubii::topicData::Timestamp*>(
+      &::ubii::topicData::_Timestamp_default_instance_);
+}
+inline ::ubii::topicData::Timestamp* TopicDataRecord::release_timestamp() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.timestamp)
+  
+  ::ubii::topicData::Timestamp* temp = timestamp_;
+  timestamp_ = NULL;
+  return temp;
+}
+inline ::ubii::topicData::Timestamp* TopicDataRecord::mutable_timestamp() {
+  
+  if (timestamp_ == NULL) {
+    auto* p = CreateMaybeMessage<::ubii::topicData::Timestamp>(GetArenaNoVirtual());
+    timestamp_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.timestamp)
+  return timestamp_;
+}
+inline void TopicDataRecord::set_allocated_timestamp(::ubii::topicData::Timestamp* timestamp) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(timestamp_);
+  }
+  if (timestamp) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      timestamp = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, timestamp, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  timestamp_ = timestamp;
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.timestamp)
+}
+
+// double number = 3;
 inline bool TopicDataRecord::has_number() const {
   return type_case() == kNumber;
 }
@@ -561,7 +657,7 @@ inline void TopicDataRecord::set_number(double value) {
   // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.number)
 }
 
-// bool boolean = 3;
+// bool boolean = 4;
 inline bool TopicDataRecord::has_boolean() const {
   return type_case() == kBoolean;
 }
@@ -590,7 +686,7 @@ inline void TopicDataRecord::set_boolean(bool value) {
   // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.boolean)
 }
 
-// string string = 4;
+// string string = 5;
 inline bool TopicDataRecord::has_string() const {
   return type_case() == kString;
 }
@@ -683,7 +779,7 @@ inline void TopicDataRecord::set_allocated_string(::std::string* string) {
   // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.string)
 }
 
-// .ubii.dataStructure.Vector2 vector2 = 5;
+// .ubii.dataStructure.Vector2 vector2 = 6;
 inline bool TopicDataRecord::has_vector2() const {
   return type_case() == kVector2;
 }
@@ -721,7 +817,7 @@ inline ::ubii::dataStructure::Vector2* TopicDataRecord::mutable_vector2() {
   return type_.vector2_;
 }
 
-// .ubii.dataStructure.Vector3 vector3 = 6;
+// .ubii.dataStructure.Vector3 vector3 = 7;
 inline bool TopicDataRecord::has_vector3() const {
   return type_case() == kVector3;
 }
@@ -759,7 +855,7 @@ inline ::ubii::dataStructure::Vector3* TopicDataRecord::mutable_vector3() {
   return type_.vector3_;
 }
 
-// .ubii.dataStructure.Vector4 vector4 = 7;
+// .ubii.dataStructure.Vector4 vector4 = 8;
 inline bool TopicDataRecord::has_vector4() const {
   return type_case() == kVector4;
 }
@@ -797,7 +893,7 @@ inline ::ubii::dataStructure::Vector4* TopicDataRecord::mutable_vector4() {
   return type_.vector4_;
 }
 
-// .ubii.dataStructure.Quaternion quaternion = 8;
+// .ubii.dataStructure.Quaternion quaternion = 9;
 inline bool TopicDataRecord::has_quaternion() const {
   return type_case() == kQuaternion;
 }
@@ -835,7 +931,7 @@ inline ::ubii::dataStructure::Quaternion* TopicDataRecord::mutable_quaternion() 
   return type_.quaternion_;
 }
 
-// .ubii.dataStructure.Matrix3x2 matrix3x2 = 9;
+// .ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
 inline bool TopicDataRecord::has_matrix3x2() const {
   return type_case() == kMatrix3X2;
 }
@@ -873,7 +969,7 @@ inline ::ubii::dataStructure::Matrix3x2* TopicDataRecord::mutable_matrix3x2() {
   return type_.matrix3x2_;
 }
 
-// .ubii.dataStructure.Matrix4x4 matrix4x4 = 10;
+// .ubii.dataStructure.Matrix4x4 matrix4x4 = 11;
 inline bool TopicDataRecord::has_matrix4x4() const {
   return type_case() == kMatrix4X4;
 }
@@ -911,7 +1007,7 @@ inline ::ubii::dataStructure::Matrix4x4* TopicDataRecord::mutable_matrix4x4() {
   return type_.matrix4x4_;
 }
 
-// .ubii.dataStructure.Color color = 11;
+// .ubii.dataStructure.Color color = 12;
 inline bool TopicDataRecord::has_color() const {
   return type_case() == kColor;
 }
@@ -949,52 +1045,118 @@ inline ::ubii::dataStructure::Color* TopicDataRecord::mutable_color() {
   return type_.color_;
 }
 
-// .ubii.topicData.Timestamp timestamp = 12;
-inline bool TopicDataRecord::has_timestamp() const {
-  return this != internal_default_instance() && timestamp_ != NULL;
+// .ubii.dataStructure.TouchEvent touchEvent = 13;
+inline bool TopicDataRecord::has_touchevent() const {
+  return type_case() == kTouchEvent;
 }
-inline const ::ubii::topicData::Timestamp& TopicDataRecord::_internal_timestamp() const {
-  return *timestamp_;
+inline void TopicDataRecord::set_has_touchevent() {
+  _oneof_case_[0] = kTouchEvent;
 }
-inline const ::ubii::topicData::Timestamp& TopicDataRecord::timestamp() const {
-  const ::ubii::topicData::Timestamp* p = timestamp_;
-  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.timestamp)
-  return p != NULL ? *p : *reinterpret_cast<const ::ubii::topicData::Timestamp*>(
-      &::ubii::topicData::_Timestamp_default_instance_);
+inline const ::ubii::dataStructure::TouchEvent& TopicDataRecord::_internal_touchevent() const {
+  return *type_.touchevent_;
 }
-inline ::ubii::topicData::Timestamp* TopicDataRecord::release_timestamp() {
-  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.timestamp)
-  
-  ::ubii::topicData::Timestamp* temp = timestamp_;
-  timestamp_ = NULL;
-  return temp;
-}
-inline ::ubii::topicData::Timestamp* TopicDataRecord::mutable_timestamp() {
-  
-  if (timestamp_ == NULL) {
-    auto* p = CreateMaybeMessage<::ubii::topicData::Timestamp>(GetArenaNoVirtual());
-    timestamp_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.timestamp)
-  return timestamp_;
-}
-inline void TopicDataRecord::set_allocated_timestamp(::ubii::topicData::Timestamp* timestamp) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(timestamp_);
-  }
-  if (timestamp) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      timestamp = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, timestamp, submessage_arena);
-    }
-    
+inline ::ubii::dataStructure::TouchEvent* TopicDataRecord::release_touchevent() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.touchEvent)
+  if (has_touchevent()) {
+    clear_has_type();
+      ::ubii::dataStructure::TouchEvent* temp = type_.touchevent_;
+    type_.touchevent_ = NULL;
+    return temp;
   } else {
-    
+    return NULL;
   }
-  timestamp_ = timestamp;
-  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.timestamp)
+}
+inline const ::ubii::dataStructure::TouchEvent& TopicDataRecord::touchevent() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.touchEvent)
+  return has_touchevent()
+      ? *type_.touchevent_
+      : *reinterpret_cast< ::ubii::dataStructure::TouchEvent*>(&::ubii::dataStructure::_TouchEvent_default_instance_);
+}
+inline ::ubii::dataStructure::TouchEvent* TopicDataRecord::mutable_touchevent() {
+  if (!has_touchevent()) {
+    clear_type();
+    set_has_touchevent();
+    type_.touchevent_ = CreateMaybeMessage< ::ubii::dataStructure::TouchEvent >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.touchEvent)
+  return type_.touchevent_;
+}
+
+// .ubii.dataStructure.KeyEvent keyEvent = 14;
+inline bool TopicDataRecord::has_keyevent() const {
+  return type_case() == kKeyEvent;
+}
+inline void TopicDataRecord::set_has_keyevent() {
+  _oneof_case_[0] = kKeyEvent;
+}
+inline const ::ubii::dataStructure::KeyEvent& TopicDataRecord::_internal_keyevent() const {
+  return *type_.keyevent_;
+}
+inline ::ubii::dataStructure::KeyEvent* TopicDataRecord::release_keyevent() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.keyEvent)
+  if (has_keyevent()) {
+    clear_has_type();
+      ::ubii::dataStructure::KeyEvent* temp = type_.keyevent_;
+    type_.keyevent_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::KeyEvent& TopicDataRecord::keyevent() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.keyEvent)
+  return has_keyevent()
+      ? *type_.keyevent_
+      : *reinterpret_cast< ::ubii::dataStructure::KeyEvent*>(&::ubii::dataStructure::_KeyEvent_default_instance_);
+}
+inline ::ubii::dataStructure::KeyEvent* TopicDataRecord::mutable_keyevent() {
+  if (!has_keyevent()) {
+    clear_type();
+    set_has_keyevent();
+    type_.keyevent_ = CreateMaybeMessage< ::ubii::dataStructure::KeyEvent >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.keyEvent)
+  return type_.keyevent_;
+}
+
+// .ubii.dataStructure.MouseEvent mouseEvent = 15;
+inline bool TopicDataRecord::has_mouseevent() const {
+  return type_case() == kMouseEvent;
+}
+inline void TopicDataRecord::set_has_mouseevent() {
+  _oneof_case_[0] = kMouseEvent;
+}
+inline const ::ubii::dataStructure::MouseEvent& TopicDataRecord::_internal_mouseevent() const {
+  return *type_.mouseevent_;
+}
+inline ::ubii::dataStructure::MouseEvent* TopicDataRecord::release_mouseevent() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.mouseEvent)
+  if (has_mouseevent()) {
+    clear_has_type();
+      ::ubii::dataStructure::MouseEvent* temp = type_.mouseevent_;
+    type_.mouseevent_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::MouseEvent& TopicDataRecord::mouseevent() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.mouseEvent)
+  return has_mouseevent()
+      ? *type_.mouseevent_
+      : *reinterpret_cast< ::ubii::dataStructure::MouseEvent*>(&::ubii::dataStructure::_MouseEvent_default_instance_);
+}
+inline ::ubii::dataStructure::MouseEvent* TopicDataRecord::mutable_mouseevent() {
+  if (!has_mouseevent()) {
+    clear_type();
+    set_has_mouseevent();
+    type_.mouseevent_ = CreateMaybeMessage< ::ubii::dataStructure::MouseEvent >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.mouseEvent)
+  return type_.mouseevent_;
 }
 
 inline bool TopicDataRecord::has_type() const {

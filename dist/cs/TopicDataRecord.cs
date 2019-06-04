@@ -25,34 +25,42 @@ namespace Ubii.TopicData {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjVwcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL3RvcGljRGF0YVJl",
-            "Y29yZC5wcm90bxIOdWJpaS50b3BpY0RhdGEaO3Byb3RvL3RvcGljRGF0YS90",
-            "b3BpY0RhdGFSZWNvcmQvZGF0YVN0cnVjdHVyZS92ZWN0b3IyLnByb3RvGjtw",
-            "cm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUv",
-            "dmVjdG9yMy5wcm90bxo7cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29y",
-            "ZC9kYXRhU3RydWN0dXJlL3ZlY3RvcjQucHJvdG8aPnByb3RvL3RvcGljRGF0",
-            "YS90b3BpY0RhdGFSZWNvcmQvZGF0YVN0cnVjdHVyZS9xdWF0ZXJuaW9uLnBy",
-            "b3RvGj1wcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1",
-            "Y3R1cmUvbWF0cml4M3gyLnByb3RvGj1wcm90by90b3BpY0RhdGEvdG9waWNE",
-            "YXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvbWF0cml4NHg0LnByb3RvGjlwcm90",
-            "by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvY29s",
-            "b3IucHJvdG8aL3Byb3RvL3RvcGljRGF0YS90b3BpY0RhdGFSZWNvcmQvdGlt",
-            "ZXN0YW1wLnByb3RvIucDCg9Ub3BpY0RhdGFSZWNvcmQSDQoFdG9waWMYASAB",
-            "KAkSEAoGbnVtYmVyGAIgASgBSAASEQoHYm9vbGVhbhgDIAEoCEgAEhAKBnN0",
-            "cmluZxgEIAEoCUgAEi4KB3ZlY3RvcjIYBSABKAsyGy51YmlpLmRhdGFTdHJ1",
-            "Y3R1cmUuVmVjdG9yMkgAEi4KB3ZlY3RvcjMYBiABKAsyGy51YmlpLmRhdGFT",
-            "dHJ1Y3R1cmUuVmVjdG9yM0gAEi4KB3ZlY3RvcjQYByABKAsyGy51YmlpLmRh",
-            "dGFTdHJ1Y3R1cmUuVmVjdG9yNEgAEjQKCnF1YXRlcm5pb24YCCABKAsyHi51",
-            "YmlpLmRhdGFTdHJ1Y3R1cmUuUXVhdGVybmlvbkgAEjIKCW1hdHJpeDN4MhgJ",
-            "IAEoCzIdLnViaWkuZGF0YVN0cnVjdHVyZS5NYXRyaXgzeDJIABIyCgltYXRy",
-            "aXg0eDQYCiABKAsyHS51YmlpLmRhdGFTdHJ1Y3R1cmUuTWF0cml4NHg0SAAS",
-            "KgoFY29sb3IYCyABKAsyGS51YmlpLmRhdGFTdHJ1Y3R1cmUuQ29sb3JIABIs",
-            "Cgl0aW1lc3RhbXAYDCABKAsyGS51YmlpLnRvcGljRGF0YS5UaW1lc3RhbXBC",
-            "BgoEdHlwZSJIChNUb3BpY0RhdGFSZWNvcmRMaXN0EjEKCGVsZW1lbnRzGAEg",
-            "AygLMh8udWJpaS50b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkYgZwcm90bzM="));
+            "Y29yZC5wcm90bxIOdWJpaS50b3BpY0RhdGEaL3Byb3RvL3RvcGljRGF0YS90",
+            "b3BpY0RhdGFSZWNvcmQvdGltZXN0YW1wLnByb3RvGjtwcm90by90b3BpY0Rh",
+            "dGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvdmVjdG9yMi5wcm90",
+            "bxo7cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC9kYXRhU3RydWN0",
+            "dXJlL3ZlY3RvcjMucHJvdG8aO3Byb3RvL3RvcGljRGF0YS90b3BpY0RhdGFS",
+            "ZWNvcmQvZGF0YVN0cnVjdHVyZS92ZWN0b3I0LnByb3RvGj5wcm90by90b3Bp",
+            "Y0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvcXVhdGVybmlv",
+            "bi5wcm90bxo9cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC9kYXRh",
+            "U3RydWN0dXJlL21hdHJpeDN4Mi5wcm90bxo9cHJvdG8vdG9waWNEYXRhL3Rv",
+            "cGljRGF0YVJlY29yZC9kYXRhU3RydWN0dXJlL21hdHJpeDR4NC5wcm90bxo5",
+            "cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC9kYXRhU3RydWN0dXJl",
+            "L2NvbG9yLnByb3RvGj5wcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3Jk",
+            "L2RhdGFTdHJ1Y3R1cmUvdG91Y2hFdmVudC5wcm90bxo8cHJvdG8vdG9waWNE",
+            "YXRhL3RvcGljRGF0YVJlY29yZC9kYXRhU3RydWN0dXJlL2tleUV2ZW50LnBy",
+            "b3RvGj5wcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1",
+            "Y3R1cmUvbW91c2VFdmVudC5wcm90byKFBQoPVG9waWNEYXRhUmVjb3JkEg0K",
+            "BXRvcGljGAEgASgJEiwKCXRpbWVzdGFtcBgCIAEoCzIZLnViaWkudG9waWNE",
+            "YXRhLlRpbWVzdGFtcBIQCgZudW1iZXIYAyABKAFIABIRCgdib29sZWFuGAQg",
+            "ASgISAASEAoGc3RyaW5nGAUgASgJSAASLgoHdmVjdG9yMhgGIAEoCzIbLnVi",
+            "aWkuZGF0YVN0cnVjdHVyZS5WZWN0b3IySAASLgoHdmVjdG9yMxgHIAEoCzIb",
+            "LnViaWkuZGF0YVN0cnVjdHVyZS5WZWN0b3IzSAASLgoHdmVjdG9yNBgIIAEo",
+            "CzIbLnViaWkuZGF0YVN0cnVjdHVyZS5WZWN0b3I0SAASNAoKcXVhdGVybmlv",
+            "bhgJIAEoCzIeLnViaWkuZGF0YVN0cnVjdHVyZS5RdWF0ZXJuaW9uSAASMgoJ",
+            "bWF0cml4M3gyGAogASgLMh0udWJpaS5kYXRhU3RydWN0dXJlLk1hdHJpeDN4",
+            "MkgAEjIKCW1hdHJpeDR4NBgLIAEoCzIdLnViaWkuZGF0YVN0cnVjdHVyZS5N",
+            "YXRyaXg0eDRIABIqCgVjb2xvchgMIAEoCzIZLnViaWkuZGF0YVN0cnVjdHVy",
+            "ZS5Db2xvckgAEjQKCnRvdWNoRXZlbnQYDSABKAsyHi51YmlpLmRhdGFTdHJ1",
+            "Y3R1cmUuVG91Y2hFdmVudEgAEjAKCGtleUV2ZW50GA4gASgLMhwudWJpaS5k",
+            "YXRhU3RydWN0dXJlLktleUV2ZW50SAASNAoKbW91c2VFdmVudBgPIAEoCzIe",
+            "LnViaWkuZGF0YVN0cnVjdHVyZS5Nb3VzZUV2ZW50SABCBgoEdHlwZSJIChNU",
+            "b3BpY0RhdGFSZWNvcmRMaXN0EjEKCGVsZW1lbnRzGAEgAygLMh8udWJpaS50",
+            "b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.TopicData.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.TopicData.TimestampReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.DataStructure.TouchEventReflection.Descriptor, global::Ubii.DataStructure.KeyEventReflection.Descriptor, global::Ubii.DataStructure.MouseEventReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Number", "Boolean", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "Timestamp" }, new[]{ "Type" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Timestamp", "Number", "Boolean", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent" }, new[]{ "Type" }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecordList), global::Ubii.TopicData.TopicDataRecordList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
@@ -118,6 +126,15 @@ namespace Ubii.TopicData {
         case TypeOneofCase.Color:
           Color = other.Color.Clone();
           break;
+        case TypeOneofCase.TouchEvent:
+          TouchEvent = other.TouchEvent.Clone();
+          break;
+        case TypeOneofCase.KeyEvent:
+          KeyEvent = other.KeyEvent.Clone();
+          break;
+        case TypeOneofCase.MouseEvent:
+          MouseEvent = other.MouseEvent.Clone();
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -139,8 +156,19 @@ namespace Ubii.TopicData {
       }
     }
 
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 2;
+    private global::Ubii.TopicData.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.TopicData.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
     /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 2;
+    public const int NumberFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Number {
       get { return typeCase_ == TypeOneofCase.Number ? (double) type_ : 0D; }
@@ -151,7 +179,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "boolean" field.</summary>
-    public const int BooleanFieldNumber = 3;
+    public const int BooleanFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Boolean {
       get { return typeCase_ == TypeOneofCase.Boolean ? (bool) type_ : false; }
@@ -162,7 +190,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "string" field.</summary>
-    public const int StringFieldNumber = 4;
+    public const int StringFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string String {
       get { return typeCase_ == TypeOneofCase.String ? (string) type_ : ""; }
@@ -173,7 +201,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "vector2" field.</summary>
-    public const int Vector2FieldNumber = 5;
+    public const int Vector2FieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Vector2 Vector2 {
       get { return typeCase_ == TypeOneofCase.Vector2 ? (global::Ubii.DataStructure.Vector2) type_ : null; }
@@ -184,7 +212,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "vector3" field.</summary>
-    public const int Vector3FieldNumber = 6;
+    public const int Vector3FieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Vector3 Vector3 {
       get { return typeCase_ == TypeOneofCase.Vector3 ? (global::Ubii.DataStructure.Vector3) type_ : null; }
@@ -195,7 +223,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "vector4" field.</summary>
-    public const int Vector4FieldNumber = 7;
+    public const int Vector4FieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Vector4 Vector4 {
       get { return typeCase_ == TypeOneofCase.Vector4 ? (global::Ubii.DataStructure.Vector4) type_ : null; }
@@ -206,7 +234,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "quaternion" field.</summary>
-    public const int QuaternionFieldNumber = 8;
+    public const int QuaternionFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Quaternion Quaternion {
       get { return typeCase_ == TypeOneofCase.Quaternion ? (global::Ubii.DataStructure.Quaternion) type_ : null; }
@@ -217,7 +245,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "matrix3x2" field.</summary>
-    public const int Matrix3X2FieldNumber = 9;
+    public const int Matrix3X2FieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Matrix3x2 Matrix3X2 {
       get { return typeCase_ == TypeOneofCase.Matrix3X2 ? (global::Ubii.DataStructure.Matrix3x2) type_ : null; }
@@ -228,7 +256,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "matrix4x4" field.</summary>
-    public const int Matrix4X4FieldNumber = 10;
+    public const int Matrix4X4FieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Matrix4x4 Matrix4X4 {
       get { return typeCase_ == TypeOneofCase.Matrix4X4 ? (global::Ubii.DataStructure.Matrix4x4) type_ : null; }
@@ -239,7 +267,7 @@ namespace Ubii.TopicData {
     }
 
     /// <summary>Field number for the "color" field.</summary>
-    public const int ColorFieldNumber = 11;
+    public const int ColorFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Color Color {
       get { return typeCase_ == TypeOneofCase.Color ? (global::Ubii.DataStructure.Color) type_ : null; }
@@ -249,14 +277,36 @@ namespace Ubii.TopicData {
       }
     }
 
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 12;
-    private global::Ubii.TopicData.Timestamp timestamp_;
+    /// <summary>Field number for the "touchEvent" field.</summary>
+    public const int TouchEventFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.TopicData.Timestamp Timestamp {
-      get { return timestamp_; }
+    public global::Ubii.DataStructure.TouchEvent TouchEvent {
+      get { return typeCase_ == TypeOneofCase.TouchEvent ? (global::Ubii.DataStructure.TouchEvent) type_ : null; }
       set {
-        timestamp_ = value;
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TouchEvent;
+      }
+    }
+
+    /// <summary>Field number for the "keyEvent" field.</summary>
+    public const int KeyEventFieldNumber = 14;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.DataStructure.KeyEvent KeyEvent {
+      get { return typeCase_ == TypeOneofCase.KeyEvent ? (global::Ubii.DataStructure.KeyEvent) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.KeyEvent;
+      }
+    }
+
+    /// <summary>Field number for the "mouseEvent" field.</summary>
+    public const int MouseEventFieldNumber = 15;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.DataStructure.MouseEvent MouseEvent {
+      get { return typeCase_ == TypeOneofCase.MouseEvent ? (global::Ubii.DataStructure.MouseEvent) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.MouseEvent;
       }
     }
 
@@ -264,16 +314,19 @@ namespace Ubii.TopicData {
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
       None = 0,
-      Number = 2,
-      Boolean = 3,
-      String = 4,
-      Vector2 = 5,
-      Vector3 = 6,
-      Vector4 = 7,
-      Quaternion = 8,
-      Matrix3X2 = 9,
-      Matrix4X4 = 10,
-      Color = 11,
+      Number = 3,
+      Boolean = 4,
+      String = 5,
+      Vector2 = 6,
+      Vector3 = 7,
+      Vector4 = 8,
+      Quaternion = 9,
+      Matrix3X2 = 10,
+      Matrix4X4 = 11,
+      Color = 12,
+      TouchEvent = 13,
+      KeyEvent = 14,
+      MouseEvent = 15,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -301,6 +354,7 @@ namespace Ubii.TopicData {
         return true;
       }
       if (Topic != other.Topic) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Number, other.Number)) return false;
       if (Boolean != other.Boolean) return false;
       if (String != other.String) return false;
@@ -311,7 +365,9 @@ namespace Ubii.TopicData {
       if (!object.Equals(Matrix3X2, other.Matrix3X2)) return false;
       if (!object.Equals(Matrix4X4, other.Matrix4X4)) return false;
       if (!object.Equals(Color, other.Color)) return false;
-      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      if (!object.Equals(TouchEvent, other.TouchEvent)) return false;
+      if (!object.Equals(KeyEvent, other.KeyEvent)) return false;
+      if (!object.Equals(MouseEvent, other.MouseEvent)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -320,6 +376,7 @@ namespace Ubii.TopicData {
     public override int GetHashCode() {
       int hash = 1;
       if (Topic.Length != 0) hash ^= Topic.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (typeCase_ == TypeOneofCase.Number) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Number);
       if (typeCase_ == TypeOneofCase.Boolean) hash ^= Boolean.GetHashCode();
       if (typeCase_ == TypeOneofCase.String) hash ^= String.GetHashCode();
@@ -330,7 +387,9 @@ namespace Ubii.TopicData {
       if (typeCase_ == TypeOneofCase.Matrix3X2) hash ^= Matrix3X2.GetHashCode();
       if (typeCase_ == TypeOneofCase.Matrix4X4) hash ^= Matrix4X4.GetHashCode();
       if (typeCase_ == TypeOneofCase.Color) hash ^= Color.GetHashCode();
-      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (typeCase_ == TypeOneofCase.TouchEvent) hash ^= TouchEvent.GetHashCode();
+      if (typeCase_ == TypeOneofCase.KeyEvent) hash ^= KeyEvent.GetHashCode();
+      if (typeCase_ == TypeOneofCase.MouseEvent) hash ^= MouseEvent.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -349,49 +408,61 @@ namespace Ubii.TopicData {
         output.WriteRawTag(10);
         output.WriteString(Topic);
       }
+      if (timestamp_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Timestamp);
+      }
       if (typeCase_ == TypeOneofCase.Number) {
-        output.WriteRawTag(17);
+        output.WriteRawTag(25);
         output.WriteDouble(Number);
       }
       if (typeCase_ == TypeOneofCase.Boolean) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteBool(Boolean);
       }
       if (typeCase_ == TypeOneofCase.String) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(String);
       }
       if (typeCase_ == TypeOneofCase.Vector2) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteMessage(Vector2);
       }
       if (typeCase_ == TypeOneofCase.Vector3) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteMessage(Vector3);
       }
       if (typeCase_ == TypeOneofCase.Vector4) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteMessage(Vector4);
       }
       if (typeCase_ == TypeOneofCase.Quaternion) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(74);
         output.WriteMessage(Quaternion);
       }
       if (typeCase_ == TypeOneofCase.Matrix3X2) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(82);
         output.WriteMessage(Matrix3X2);
       }
       if (typeCase_ == TypeOneofCase.Matrix4X4) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(90);
         output.WriteMessage(Matrix4X4);
       }
       if (typeCase_ == TypeOneofCase.Color) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(98);
         output.WriteMessage(Color);
       }
-      if (timestamp_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Timestamp);
+      if (typeCase_ == TypeOneofCase.TouchEvent) {
+        output.WriteRawTag(106);
+        output.WriteMessage(TouchEvent);
+      }
+      if (typeCase_ == TypeOneofCase.KeyEvent) {
+        output.WriteRawTag(114);
+        output.WriteMessage(KeyEvent);
+      }
+      if (typeCase_ == TypeOneofCase.MouseEvent) {
+        output.WriteRawTag(122);
+        output.WriteMessage(MouseEvent);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -403,6 +474,9 @@ namespace Ubii.TopicData {
       int size = 0;
       if (Topic.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Topic);
+      }
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
       }
       if (typeCase_ == TypeOneofCase.Number) {
         size += 1 + 8;
@@ -434,8 +508,14 @@ namespace Ubii.TopicData {
       if (typeCase_ == TypeOneofCase.Color) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Color);
       }
-      if (timestamp_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      if (typeCase_ == TypeOneofCase.TouchEvent) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TouchEvent);
+      }
+      if (typeCase_ == TypeOneofCase.KeyEvent) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(KeyEvent);
+      }
+      if (typeCase_ == TypeOneofCase.MouseEvent) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MouseEvent);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -509,6 +589,24 @@ namespace Ubii.TopicData {
           }
           Color.MergeFrom(other.Color);
           break;
+        case TypeOneofCase.TouchEvent:
+          if (TouchEvent == null) {
+            TouchEvent = new global::Ubii.DataStructure.TouchEvent();
+          }
+          TouchEvent.MergeFrom(other.TouchEvent);
+          break;
+        case TypeOneofCase.KeyEvent:
+          if (KeyEvent == null) {
+            KeyEvent = new global::Ubii.DataStructure.KeyEvent();
+          }
+          KeyEvent.MergeFrom(other.KeyEvent);
+          break;
+        case TypeOneofCase.MouseEvent:
+          if (MouseEvent == null) {
+            MouseEvent = new global::Ubii.DataStructure.MouseEvent();
+          }
+          MouseEvent.MergeFrom(other.MouseEvent);
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -526,19 +624,26 @@ namespace Ubii.TopicData {
             Topic = input.ReadString();
             break;
           }
-          case 17: {
+          case 18: {
+            if (timestamp_ == null) {
+              timestamp_ = new global::Ubii.TopicData.Timestamp();
+            }
+            input.ReadMessage(timestamp_);
+            break;
+          }
+          case 25: {
             Number = input.ReadDouble();
             break;
           }
-          case 24: {
+          case 32: {
             Boolean = input.ReadBool();
             break;
           }
-          case 34: {
+          case 42: {
             String = input.ReadString();
             break;
           }
-          case 42: {
+          case 50: {
             global::Ubii.DataStructure.Vector2 subBuilder = new global::Ubii.DataStructure.Vector2();
             if (typeCase_ == TypeOneofCase.Vector2) {
               subBuilder.MergeFrom(Vector2);
@@ -547,7 +652,7 @@ namespace Ubii.TopicData {
             Vector2 = subBuilder;
             break;
           }
-          case 50: {
+          case 58: {
             global::Ubii.DataStructure.Vector3 subBuilder = new global::Ubii.DataStructure.Vector3();
             if (typeCase_ == TypeOneofCase.Vector3) {
               subBuilder.MergeFrom(Vector3);
@@ -556,7 +661,7 @@ namespace Ubii.TopicData {
             Vector3 = subBuilder;
             break;
           }
-          case 58: {
+          case 66: {
             global::Ubii.DataStructure.Vector4 subBuilder = new global::Ubii.DataStructure.Vector4();
             if (typeCase_ == TypeOneofCase.Vector4) {
               subBuilder.MergeFrom(Vector4);
@@ -565,7 +670,7 @@ namespace Ubii.TopicData {
             Vector4 = subBuilder;
             break;
           }
-          case 66: {
+          case 74: {
             global::Ubii.DataStructure.Quaternion subBuilder = new global::Ubii.DataStructure.Quaternion();
             if (typeCase_ == TypeOneofCase.Quaternion) {
               subBuilder.MergeFrom(Quaternion);
@@ -574,7 +679,7 @@ namespace Ubii.TopicData {
             Quaternion = subBuilder;
             break;
           }
-          case 74: {
+          case 82: {
             global::Ubii.DataStructure.Matrix3x2 subBuilder = new global::Ubii.DataStructure.Matrix3x2();
             if (typeCase_ == TypeOneofCase.Matrix3X2) {
               subBuilder.MergeFrom(Matrix3X2);
@@ -583,7 +688,7 @@ namespace Ubii.TopicData {
             Matrix3X2 = subBuilder;
             break;
           }
-          case 82: {
+          case 90: {
             global::Ubii.DataStructure.Matrix4x4 subBuilder = new global::Ubii.DataStructure.Matrix4x4();
             if (typeCase_ == TypeOneofCase.Matrix4X4) {
               subBuilder.MergeFrom(Matrix4X4);
@@ -592,7 +697,7 @@ namespace Ubii.TopicData {
             Matrix4X4 = subBuilder;
             break;
           }
-          case 90: {
+          case 98: {
             global::Ubii.DataStructure.Color subBuilder = new global::Ubii.DataStructure.Color();
             if (typeCase_ == TypeOneofCase.Color) {
               subBuilder.MergeFrom(Color);
@@ -601,11 +706,31 @@ namespace Ubii.TopicData {
             Color = subBuilder;
             break;
           }
-          case 98: {
-            if (timestamp_ == null) {
-              timestamp_ = new global::Ubii.TopicData.Timestamp();
+          case 106: {
+            global::Ubii.DataStructure.TouchEvent subBuilder = new global::Ubii.DataStructure.TouchEvent();
+            if (typeCase_ == TypeOneofCase.TouchEvent) {
+              subBuilder.MergeFrom(TouchEvent);
             }
-            input.ReadMessage(timestamp_);
+            input.ReadMessage(subBuilder);
+            TouchEvent = subBuilder;
+            break;
+          }
+          case 114: {
+            global::Ubii.DataStructure.KeyEvent subBuilder = new global::Ubii.DataStructure.KeyEvent();
+            if (typeCase_ == TypeOneofCase.KeyEvent) {
+              subBuilder.MergeFrom(KeyEvent);
+            }
+            input.ReadMessage(subBuilder);
+            KeyEvent = subBuilder;
+            break;
+          }
+          case 122: {
+            global::Ubii.DataStructure.MouseEvent subBuilder = new global::Ubii.DataStructure.MouseEvent();
+            if (typeCase_ == TypeOneofCase.MouseEvent) {
+              subBuilder.MergeFrom(MouseEvent);
+            }
+            input.ReadMessage(subBuilder);
+            MouseEvent = subBuilder;
             break;
           }
         }
