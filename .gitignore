@@ -6,3 +6,4 @@ lib/tests/
 external/bin/
 *.log
 .vscode/
+.idea/
