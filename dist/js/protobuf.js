@@ -7576,8 +7576,9 @@ $root.ubii = (function() {
              * @memberof ubii.topicData
              * @interface ITopicDataRecord
              * @property {string|null} [topic] TopicDataRecord topic
-             * @property {number|null} [number] TopicDataRecord number
-             * @property {boolean|null} [boolean] TopicDataRecord boolean
+             * @property {ubii.topicData.ITimestamp|null} [timestamp] TopicDataRecord timestamp
+             * @property {number|null} [double] TopicDataRecord double
+             * @property {boolean|null} [bool] TopicDataRecord bool
              * @property {string|null} [string] TopicDataRecord string
              * @property {ubii.dataStructure.IVector2|null} [vector2] TopicDataRecord vector2
              * @property {ubii.dataStructure.IVector3|null} [vector3] TopicDataRecord vector3
@@ -7586,7 +7587,9 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IMatrix3x2|null} [matrix3x2] TopicDataRecord matrix3x2
              * @property {ubii.dataStructure.IMatrix4x4|null} [matrix4x4] TopicDataRecord matrix4x4
              * @property {ubii.dataStructure.IColor|null} [color] TopicDataRecord color
-             * @property {ubii.topicData.ITimestamp|null} [timestamp] TopicDataRecord timestamp
+             * @property {ubii.dataStructure.ITouchEvent|null} [touchEvent] TopicDataRecord touchEvent
+             * @property {ubii.dataStructure.IKeyEvent|null} [keyEvent] TopicDataRecord keyEvent
+             * @property {ubii.dataStructure.IMouseEvent|null} [mouseEvent] TopicDataRecord mouseEvent
              */
 
             /**
@@ -7613,20 +7616,28 @@ $root.ubii = (function() {
             TopicDataRecord.prototype.topic = "";
 
             /**
-             * TopicDataRecord number.
-             * @member {number} number
+             * TopicDataRecord timestamp.
+             * @member {ubii.topicData.ITimestamp|null|undefined} timestamp
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.number = 0;
+            TopicDataRecord.prototype.timestamp = null;
 
             /**
-             * TopicDataRecord boolean.
-             * @member {boolean} boolean
+             * TopicDataRecord double.
+             * @member {number} double
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.boolean = false;
+            TopicDataRecord.prototype.double = 0;
+
+            /**
+             * TopicDataRecord bool.
+             * @member {boolean} bool
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.bool = false;
 
             /**
              * TopicDataRecord string.
@@ -7693,24 +7704,40 @@ $root.ubii = (function() {
             TopicDataRecord.prototype.color = null;
 
             /**
-             * TopicDataRecord timestamp.
-             * @member {ubii.topicData.ITimestamp|null|undefined} timestamp
+             * TopicDataRecord touchEvent.
+             * @member {ubii.dataStructure.ITouchEvent|null|undefined} touchEvent
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.timestamp = null;
+            TopicDataRecord.prototype.touchEvent = null;
+
+            /**
+             * TopicDataRecord keyEvent.
+             * @member {ubii.dataStructure.IKeyEvent|null|undefined} keyEvent
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.keyEvent = null;
+
+            /**
+             * TopicDataRecord mouseEvent.
+             * @member {ubii.dataStructure.IMouseEvent|null|undefined} mouseEvent
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.mouseEvent = null;
 
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"number"|"boolean"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["number", "boolean", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -7740,28 +7767,34 @@ $root.ubii = (function() {
                     writer = $Writer.create();
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
-                if (message.number != null && message.hasOwnProperty("number"))
-                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.number);
-                if (message.boolean != null && message.hasOwnProperty("boolean"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.boolean);
-                if (message.string != null && message.hasOwnProperty("string"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.string);
-                if (message.vector2 != null && message.hasOwnProperty("vector2"))
-                    $root.ubii.dataStructure.Vector2.encode(message.vector2, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.vector3 != null && message.hasOwnProperty("vector3"))
-                    $root.ubii.dataStructure.Vector3.encode(message.vector3, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.vector4 != null && message.hasOwnProperty("vector4"))
-                    $root.ubii.dataStructure.Vector4.encode(message.vector4, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.quaternion != null && message.hasOwnProperty("quaternion"))
-                    $root.ubii.dataStructure.Quaternion.encode(message.quaternion, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.matrix3x2 != null && message.hasOwnProperty("matrix3x2"))
-                    $root.ubii.dataStructure.Matrix3x2.encode(message.matrix3x2, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                if (message.matrix4x4 != null && message.hasOwnProperty("matrix4x4"))
-                    $root.ubii.dataStructure.Matrix4x4.encode(message.matrix4x4, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.color != null && message.hasOwnProperty("color"))
-                    $root.ubii.dataStructure.Color.encode(message.color, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.timestamp != null && message.hasOwnProperty("timestamp"))
-                    $root.ubii.topicData.Timestamp.encode(message.timestamp, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+                    $root.ubii.topicData.Timestamp.encode(message.timestamp, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.double != null && message.hasOwnProperty("double"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.double);
+                if (message.bool != null && message.hasOwnProperty("bool"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.bool);
+                if (message.string != null && message.hasOwnProperty("string"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.string);
+                if (message.vector2 != null && message.hasOwnProperty("vector2"))
+                    $root.ubii.dataStructure.Vector2.encode(message.vector2, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.vector3 != null && message.hasOwnProperty("vector3"))
+                    $root.ubii.dataStructure.Vector3.encode(message.vector3, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.vector4 != null && message.hasOwnProperty("vector4"))
+                    $root.ubii.dataStructure.Vector4.encode(message.vector4, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.quaternion != null && message.hasOwnProperty("quaternion"))
+                    $root.ubii.dataStructure.Quaternion.encode(message.quaternion, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.matrix3x2 != null && message.hasOwnProperty("matrix3x2"))
+                    $root.ubii.dataStructure.Matrix3x2.encode(message.matrix3x2, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                if (message.matrix4x4 != null && message.hasOwnProperty("matrix4x4"))
+                    $root.ubii.dataStructure.Matrix4x4.encode(message.matrix4x4, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                if (message.color != null && message.hasOwnProperty("color"))
+                    $root.ubii.dataStructure.Color.encode(message.color, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+                if (message.touchEvent != null && message.hasOwnProperty("touchEvent"))
+                    $root.ubii.dataStructure.TouchEvent.encode(message.touchEvent, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                if (message.keyEvent != null && message.hasOwnProperty("keyEvent"))
+                    $root.ubii.dataStructure.KeyEvent.encode(message.keyEvent, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+                if (message.mouseEvent != null && message.hasOwnProperty("mouseEvent"))
+                    $root.ubii.dataStructure.MouseEvent.encode(message.mouseEvent, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
 
@@ -7800,37 +7833,46 @@ $root.ubii = (function() {
                         message.topic = reader.string();
                         break;
                     case 2:
-                        message.number = reader.double();
+                        message.timestamp = $root.ubii.topicData.Timestamp.decode(reader, reader.uint32());
                         break;
                     case 3:
-                        message.boolean = reader.bool();
+                        message.double = reader.double();
                         break;
                     case 4:
-                        message.string = reader.string();
+                        message.bool = reader.bool();
                         break;
                     case 5:
-                        message.vector2 = $root.ubii.dataStructure.Vector2.decode(reader, reader.uint32());
+                        message.string = reader.string();
                         break;
                     case 6:
-                        message.vector3 = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
+                        message.vector2 = $root.ubii.dataStructure.Vector2.decode(reader, reader.uint32());
                         break;
                     case 7:
-                        message.vector4 = $root.ubii.dataStructure.Vector4.decode(reader, reader.uint32());
+                        message.vector3 = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
                         break;
                     case 8:
-                        message.quaternion = $root.ubii.dataStructure.Quaternion.decode(reader, reader.uint32());
+                        message.vector4 = $root.ubii.dataStructure.Vector4.decode(reader, reader.uint32());
                         break;
                     case 9:
-                        message.matrix3x2 = $root.ubii.dataStructure.Matrix3x2.decode(reader, reader.uint32());
+                        message.quaternion = $root.ubii.dataStructure.Quaternion.decode(reader, reader.uint32());
                         break;
                     case 10:
-                        message.matrix4x4 = $root.ubii.dataStructure.Matrix4x4.decode(reader, reader.uint32());
+                        message.matrix3x2 = $root.ubii.dataStructure.Matrix3x2.decode(reader, reader.uint32());
                         break;
                     case 11:
-                        message.color = $root.ubii.dataStructure.Color.decode(reader, reader.uint32());
+                        message.matrix4x4 = $root.ubii.dataStructure.Matrix4x4.decode(reader, reader.uint32());
                         break;
                     case 12:
-                        message.timestamp = $root.ubii.topicData.Timestamp.decode(reader, reader.uint32());
+                        message.color = $root.ubii.dataStructure.Color.decode(reader, reader.uint32());
+                        break;
+                    case 13:
+                        message.touchEvent = $root.ubii.dataStructure.TouchEvent.decode(reader, reader.uint32());
+                        break;
+                    case 14:
+                        message.keyEvent = $root.ubii.dataStructure.KeyEvent.decode(reader, reader.uint32());
+                        break;
+                    case 15:
+                        message.mouseEvent = $root.ubii.dataStructure.MouseEvent.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7871,17 +7913,22 @@ $root.ubii = (function() {
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     if (!$util.isString(message.topic))
                         return "topic: string expected";
-                if (message.number != null && message.hasOwnProperty("number")) {
-                    properties.type = 1;
-                    if (typeof message.number !== "number")
-                        return "number: number expected";
+                if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
+                    var error = $root.ubii.topicData.Timestamp.verify(message.timestamp);
+                    if (error)
+                        return "timestamp." + error;
                 }
-                if (message.boolean != null && message.hasOwnProperty("boolean")) {
+                if (message.double != null && message.hasOwnProperty("double")) {
+                    properties.type = 1;
+                    if (typeof message.double !== "number")
+                        return "double: number expected";
+                }
+                if (message.bool != null && message.hasOwnProperty("bool")) {
                     if (properties.type === 1)
                         return "type: multiple values";
                     properties.type = 1;
-                    if (typeof message.boolean !== "boolean")
-                        return "boolean: boolean expected";
+                    if (typeof message.bool !== "boolean")
+                        return "bool: boolean expected";
                 }
                 if (message.string != null && message.hasOwnProperty("string")) {
                     if (properties.type === 1)
@@ -7960,10 +8007,35 @@ $root.ubii = (function() {
                             return "color." + error;
                     }
                 }
-                if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
-                    var error = $root.ubii.topicData.Timestamp.verify(message.timestamp);
-                    if (error)
-                        return "timestamp." + error;
+                if (message.touchEvent != null && message.hasOwnProperty("touchEvent")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.TouchEvent.verify(message.touchEvent);
+                        if (error)
+                            return "touchEvent." + error;
+                    }
+                }
+                if (message.keyEvent != null && message.hasOwnProperty("keyEvent")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.KeyEvent.verify(message.keyEvent);
+                        if (error)
+                            return "keyEvent." + error;
+                    }
+                }
+                if (message.mouseEvent != null && message.hasOwnProperty("mouseEvent")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.MouseEvent.verify(message.mouseEvent);
+                        if (error)
+                            return "mouseEvent." + error;
+                    }
                 }
                 return null;
             };
@@ -7982,10 +8054,15 @@ $root.ubii = (function() {
                 var message = new $root.ubii.topicData.TopicDataRecord();
                 if (object.topic != null)
                     message.topic = String(object.topic);
-                if (object.number != null)
-                    message.number = Number(object.number);
-                if (object.boolean != null)
-                    message.boolean = Boolean(object.boolean);
+                if (object.timestamp != null) {
+                    if (typeof object.timestamp !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.timestamp: object expected");
+                    message.timestamp = $root.ubii.topicData.Timestamp.fromObject(object.timestamp);
+                }
+                if (object.double != null)
+                    message.double = Number(object.double);
+                if (object.bool != null)
+                    message.bool = Boolean(object.bool);
                 if (object.string != null)
                     message.string = String(object.string);
                 if (object.vector2 != null) {
@@ -8023,10 +8100,20 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.topicData.TopicDataRecord.color: object expected");
                     message.color = $root.ubii.dataStructure.Color.fromObject(object.color);
                 }
-                if (object.timestamp != null) {
-                    if (typeof object.timestamp !== "object")
-                        throw TypeError(".ubii.topicData.TopicDataRecord.timestamp: object expected");
-                    message.timestamp = $root.ubii.topicData.Timestamp.fromObject(object.timestamp);
+                if (object.touchEvent != null) {
+                    if (typeof object.touchEvent !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.touchEvent: object expected");
+                    message.touchEvent = $root.ubii.dataStructure.TouchEvent.fromObject(object.touchEvent);
+                }
+                if (object.keyEvent != null) {
+                    if (typeof object.keyEvent !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.keyEvent: object expected");
+                    message.keyEvent = $root.ubii.dataStructure.KeyEvent.fromObject(object.keyEvent);
+                }
+                if (object.mouseEvent != null) {
+                    if (typeof object.mouseEvent !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.mouseEvent: object expected");
+                    message.mouseEvent = $root.ubii.dataStructure.MouseEvent.fromObject(object.mouseEvent);
                 }
                 return message;
             };
@@ -8050,15 +8137,17 @@ $root.ubii = (function() {
                 }
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     object.topic = message.topic;
-                if (message.number != null && message.hasOwnProperty("number")) {
-                    object.number = options.json && !isFinite(message.number) ? String(message.number) : message.number;
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    object.timestamp = $root.ubii.topicData.Timestamp.toObject(message.timestamp, options);
+                if (message.double != null && message.hasOwnProperty("double")) {
+                    object.double = options.json && !isFinite(message.double) ? String(message.double) : message.double;
                     if (options.oneofs)
-                        object.type = "number";
+                        object.type = "double";
                 }
-                if (message.boolean != null && message.hasOwnProperty("boolean")) {
-                    object.boolean = message.boolean;
+                if (message.bool != null && message.hasOwnProperty("bool")) {
+                    object.bool = message.bool;
                     if (options.oneofs)
-                        object.type = "boolean";
+                        object.type = "bool";
                 }
                 if (message.string != null && message.hasOwnProperty("string")) {
                     object.string = message.string;
@@ -8100,8 +8189,21 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "color";
                 }
-                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
-                    object.timestamp = $root.ubii.topicData.Timestamp.toObject(message.timestamp, options);
+                if (message.touchEvent != null && message.hasOwnProperty("touchEvent")) {
+                    object.touchEvent = $root.ubii.dataStructure.TouchEvent.toObject(message.touchEvent, options);
+                    if (options.oneofs)
+                        object.type = "touchEvent";
+                }
+                if (message.keyEvent != null && message.hasOwnProperty("keyEvent")) {
+                    object.keyEvent = $root.ubii.dataStructure.KeyEvent.toObject(message.keyEvent, options);
+                    if (options.oneofs)
+                        object.type = "keyEvent";
+                }
+                if (message.mouseEvent != null && message.hasOwnProperty("mouseEvent")) {
+                    object.mouseEvent = $root.ubii.dataStructure.MouseEvent.toObject(message.mouseEvent, options);
+                    if (options.oneofs)
+                        object.type = "mouseEvent";
+                }
                 return object;
             };
 
@@ -8338,6 +8440,20 @@ $root.ubii = (function() {
          * @namespace
          */
         var dataStructure = {};
+
+        /**
+         * ButtonEventType enum.
+         * @name ubii.dataStructure.ButtonEventType
+         * @enum {string}
+         * @property {number} UP=0 UP value
+         * @property {number} DOWN=1 DOWN value
+         */
+        dataStructure.ButtonEventType = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "UP"] = 0;
+            values[valuesById[1] = "DOWN"] = 1;
+            return values;
+        })();
 
         dataStructure.Color = (function() {
 
@@ -8591,6 +8707,229 @@ $root.ubii = (function() {
             };
 
             return Color;
+        })();
+
+        dataStructure.KeyEvent = (function() {
+
+            /**
+             * Properties of a KeyEvent.
+             * @memberof ubii.dataStructure
+             * @interface IKeyEvent
+             * @property {ubii.dataStructure.ButtonEventType|null} [type] KeyEvent type
+             * @property {string|null} [key] KeyEvent key
+             */
+
+            /**
+             * Constructs a new KeyEvent.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a KeyEvent.
+             * @implements IKeyEvent
+             * @constructor
+             * @param {ubii.dataStructure.IKeyEvent=} [properties] Properties to set
+             */
+            function KeyEvent(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * KeyEvent type.
+             * @member {ubii.dataStructure.ButtonEventType} type
+             * @memberof ubii.dataStructure.KeyEvent
+             * @instance
+             */
+            KeyEvent.prototype.type = 0;
+
+            /**
+             * KeyEvent key.
+             * @member {string} key
+             * @memberof ubii.dataStructure.KeyEvent
+             * @instance
+             */
+            KeyEvent.prototype.key = "";
+
+            /**
+             * Creates a new KeyEvent instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {ubii.dataStructure.IKeyEvent=} [properties] Properties to set
+             * @returns {ubii.dataStructure.KeyEvent} KeyEvent instance
+             */
+            KeyEvent.create = function create(properties) {
+                return new KeyEvent(properties);
+            };
+
+            /**
+             * Encodes the specified KeyEvent message. Does not implicitly {@link ubii.dataStructure.KeyEvent.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {ubii.dataStructure.IKeyEvent} message KeyEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            KeyEvent.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.key);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified KeyEvent message, length delimited. Does not implicitly {@link ubii.dataStructure.KeyEvent.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {ubii.dataStructure.IKeyEvent} message KeyEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            KeyEvent.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a KeyEvent message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.KeyEvent} KeyEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            KeyEvent.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.KeyEvent();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = reader.int32();
+                        break;
+                    case 2:
+                        message.key = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a KeyEvent message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.KeyEvent} KeyEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            KeyEvent.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a KeyEvent message.
+             * @function verify
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            KeyEvent.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    switch (message.type) {
+                    default:
+                        return "type: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                return null;
+            };
+
+            /**
+             * Creates a KeyEvent message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.KeyEvent} KeyEvent
+             */
+            KeyEvent.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.KeyEvent)
+                    return object;
+                var message = new $root.ubii.dataStructure.KeyEvent();
+                switch (object.type) {
+                case "UP":
+                case 0:
+                    message.type = 0;
+                    break;
+                case "DOWN":
+                case 1:
+                    message.type = 1;
+                    break;
+                }
+                if (object.key != null)
+                    message.key = String(object.key);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a KeyEvent message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.KeyEvent
+             * @static
+             * @param {ubii.dataStructure.KeyEvent} message KeyEvent
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            KeyEvent.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.type = options.enums === String ? "UP" : 0;
+                    object.key = "";
+                }
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.ubii.dataStructure.ButtonEventType[message.type] : message.type;
+                if (message.key != null && message.hasOwnProperty("key"))
+                    object.key = message.key;
+                return object;
+            };
+
+            /**
+             * Converts this KeyEvent to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.KeyEvent
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            KeyEvent.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return KeyEvent;
         })();
 
         dataStructure.Matrix3x2 = (function() {
@@ -9409,6 +9748,229 @@ $root.ubii = (function() {
             return Matrix4x4;
         })();
 
+        dataStructure.MouseEvent = (function() {
+
+            /**
+             * Properties of a MouseEvent.
+             * @memberof ubii.dataStructure
+             * @interface IMouseEvent
+             * @property {ubii.dataStructure.ButtonEventType|null} [type] MouseEvent type
+             * @property {number|null} [button] MouseEvent button
+             */
+
+            /**
+             * Constructs a new MouseEvent.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a MouseEvent.
+             * @implements IMouseEvent
+             * @constructor
+             * @param {ubii.dataStructure.IMouseEvent=} [properties] Properties to set
+             */
+            function MouseEvent(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MouseEvent type.
+             * @member {ubii.dataStructure.ButtonEventType} type
+             * @memberof ubii.dataStructure.MouseEvent
+             * @instance
+             */
+            MouseEvent.prototype.type = 0;
+
+            /**
+             * MouseEvent button.
+             * @member {number} button
+             * @memberof ubii.dataStructure.MouseEvent
+             * @instance
+             */
+            MouseEvent.prototype.button = 0;
+
+            /**
+             * Creates a new MouseEvent instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {ubii.dataStructure.IMouseEvent=} [properties] Properties to set
+             * @returns {ubii.dataStructure.MouseEvent} MouseEvent instance
+             */
+            MouseEvent.create = function create(properties) {
+                return new MouseEvent(properties);
+            };
+
+            /**
+             * Encodes the specified MouseEvent message. Does not implicitly {@link ubii.dataStructure.MouseEvent.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {ubii.dataStructure.IMouseEvent} message MouseEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MouseEvent.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.button != null && message.hasOwnProperty("button"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.button);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified MouseEvent message, length delimited. Does not implicitly {@link ubii.dataStructure.MouseEvent.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {ubii.dataStructure.IMouseEvent} message MouseEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MouseEvent.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a MouseEvent message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.MouseEvent} MouseEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MouseEvent.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.MouseEvent();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = reader.int32();
+                        break;
+                    case 2:
+                        message.button = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a MouseEvent message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.MouseEvent} MouseEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MouseEvent.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a MouseEvent message.
+             * @function verify
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            MouseEvent.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    switch (message.type) {
+                    default:
+                        return "type: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                if (message.button != null && message.hasOwnProperty("button"))
+                    if (!$util.isInteger(message.button))
+                        return "button: integer expected";
+                return null;
+            };
+
+            /**
+             * Creates a MouseEvent message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.MouseEvent} MouseEvent
+             */
+            MouseEvent.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.MouseEvent)
+                    return object;
+                var message = new $root.ubii.dataStructure.MouseEvent();
+                switch (object.type) {
+                case "UP":
+                case 0:
+                    message.type = 0;
+                    break;
+                case "DOWN":
+                case 1:
+                    message.type = 1;
+                    break;
+                }
+                if (object.button != null)
+                    message.button = object.button | 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a MouseEvent message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.MouseEvent
+             * @static
+             * @param {ubii.dataStructure.MouseEvent} message MouseEvent
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            MouseEvent.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.type = options.enums === String ? "UP" : 0;
+                    object.button = 0;
+                }
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.ubii.dataStructure.ButtonEventType[message.type] : message.type;
+                if (message.button != null && message.hasOwnProperty("button"))
+                    object.button = message.button;
+                return object;
+            };
+
+            /**
+             * Converts this MouseEvent to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.MouseEvent
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            MouseEvent.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return MouseEvent;
+        })();
+
         dataStructure.Quaternion = (function() {
 
             /**
@@ -9661,6 +10223,234 @@ $root.ubii = (function() {
             };
 
             return Quaternion;
+        })();
+
+        dataStructure.TouchEvent = (function() {
+
+            /**
+             * Properties of a TouchEvent.
+             * @memberof ubii.dataStructure
+             * @interface ITouchEvent
+             * @property {ubii.dataStructure.ButtonEventType|null} [type] TouchEvent type
+             * @property {ubii.dataStructure.IVector2|null} [position] TouchEvent position
+             */
+
+            /**
+             * Constructs a new TouchEvent.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a TouchEvent.
+             * @implements ITouchEvent
+             * @constructor
+             * @param {ubii.dataStructure.ITouchEvent=} [properties] Properties to set
+             */
+            function TouchEvent(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TouchEvent type.
+             * @member {ubii.dataStructure.ButtonEventType} type
+             * @memberof ubii.dataStructure.TouchEvent
+             * @instance
+             */
+            TouchEvent.prototype.type = 0;
+
+            /**
+             * TouchEvent position.
+             * @member {ubii.dataStructure.IVector2|null|undefined} position
+             * @memberof ubii.dataStructure.TouchEvent
+             * @instance
+             */
+            TouchEvent.prototype.position = null;
+
+            /**
+             * Creates a new TouchEvent instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {ubii.dataStructure.ITouchEvent=} [properties] Properties to set
+             * @returns {ubii.dataStructure.TouchEvent} TouchEvent instance
+             */
+            TouchEvent.create = function create(properties) {
+                return new TouchEvent(properties);
+            };
+
+            /**
+             * Encodes the specified TouchEvent message. Does not implicitly {@link ubii.dataStructure.TouchEvent.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {ubii.dataStructure.ITouchEvent} message TouchEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TouchEvent.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.position != null && message.hasOwnProperty("position"))
+                    $root.ubii.dataStructure.Vector2.encode(message.position, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TouchEvent message, length delimited. Does not implicitly {@link ubii.dataStructure.TouchEvent.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {ubii.dataStructure.ITouchEvent} message TouchEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TouchEvent.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TouchEvent message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.TouchEvent} TouchEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TouchEvent.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.TouchEvent();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = reader.int32();
+                        break;
+                    case 2:
+                        message.position = $root.ubii.dataStructure.Vector2.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TouchEvent message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.TouchEvent} TouchEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TouchEvent.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TouchEvent message.
+             * @function verify
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TouchEvent.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    switch (message.type) {
+                    default:
+                        return "type: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                if (message.position != null && message.hasOwnProperty("position")) {
+                    var error = $root.ubii.dataStructure.Vector2.verify(message.position);
+                    if (error)
+                        return "position." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a TouchEvent message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.TouchEvent} TouchEvent
+             */
+            TouchEvent.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.TouchEvent)
+                    return object;
+                var message = new $root.ubii.dataStructure.TouchEvent();
+                switch (object.type) {
+                case "UP":
+                case 0:
+                    message.type = 0;
+                    break;
+                case "DOWN":
+                case 1:
+                    message.type = 1;
+                    break;
+                }
+                if (object.position != null) {
+                    if (typeof object.position !== "object")
+                        throw TypeError(".ubii.dataStructure.TouchEvent.position: object expected");
+                    message.position = $root.ubii.dataStructure.Vector2.fromObject(object.position);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TouchEvent message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.TouchEvent
+             * @static
+             * @param {ubii.dataStructure.TouchEvent} message TouchEvent
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TouchEvent.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.type = options.enums === String ? "UP" : 0;
+                    object.position = null;
+                }
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.ubii.dataStructure.ButtonEventType[message.type] : message.type;
+                if (message.position != null && message.hasOwnProperty("position"))
+                    object.position = $root.ubii.dataStructure.Vector2.toObject(message.position, options);
+                return object;
+            };
+
+            /**
+             * Converts this TouchEvent to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.TouchEvent
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TouchEvent.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TouchEvent;
         })();
 
         dataStructure.Vector2 = (function() {
