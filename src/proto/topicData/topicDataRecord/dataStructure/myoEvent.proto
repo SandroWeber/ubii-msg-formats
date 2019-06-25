@@ -6,7 +6,7 @@ import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
 import "proto/topicData/topicDataRecord/dataStructure/quaternion.proto";
 import "proto/topicData/topicDataRecord/dataStructure/handGestureType.proto";
 
-message MyoData {
+message MyoEvent {
     ubii.dataStructure.Vector8 emg = 1;
     ubii.dataStructure.Quaternion orientation = 2;
     ubii.dataStructure.Vector3 gyroscope = 3;
