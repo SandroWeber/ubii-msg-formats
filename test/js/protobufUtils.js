@@ -1,11 +1,11 @@
 import test from 'ava';
 
-const ProtobufUtils = require('../../src/js/protobufUtils');
+const {ProtobufUtils, MSG_TYPES} = require('../../src/js/index');
 
 /* run tests */
 
 test.beforeEach(t => {
-    t.context.msgType = 'ubii.service.reply.Error';
+    t.context.msgType = MSG_TYPES.ERROR;
     t.context.msgTypeUndefined = 'ubii.service.reply.SomethingUndefined';
 });
 

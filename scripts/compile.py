@@ -9,14 +9,15 @@ from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
 protoc_local = os.path.join(os.path.dirname(__file__), '../external/bin/protoc')
+protoc_local_windows = os.path.join(os.path.dirname(__file__), '../external/bin/protoc.exe')
 if os.path.isfile(protoc_local):
     protoc = protoc_local
+elif os.path.isfile(protoc_local_windows):
+    protoc = protoc_local_windows
 elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
     protoc = os.environ['PROTOC']
 else:
     protoc = find_executable("protoc")
-
-print(protoc)
 
 
 def generateInits(pathToOutput):
@@ -78,7 +79,7 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
 
     if protoc is None:
         sys.stderr.write(
-            "protoc is not installed nor found in ../src.  Please compile it "
+            "protoc is not installed nor found in /external/bin.  Please compile it "
             "or install the binary package.\n")
         sys.exit(-1)
 
@@ -89,7 +90,7 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
 
 def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto', includePath='./../src' , protoc_arg='python'):
     re = getAllProtos(pathToProtos)
-    #print(re)
+    print(re)
     os.makedirs(pathToOutput, exist_ok=True)
 
     if protoc_arg == 'js':
@@ -117,23 +118,35 @@ def chosen_option(args):
     src_directory = os.path.join(file_directory, '../src')
 
     if args.opt == 'py' or args.opt == 'python':
-        p = generateProtos()
+        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
         generateInits(p)
     elif args.opt == 'j' or args.opt == 'java':
-        destination_directory = os.path.join(file_directory, '../dist/java')
-        generateProtos(destination_directory, proto_src_directory, src_directory, 'java')
+        generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
     elif args.opt == 'js' or args.opt == 'javascript':
-        destination_directory = os.path.join(file_directory, '../dist/js')
-        generateProtos(destination_directory, proto_src_directory, src_directory, 'js')
+        generateProtos(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
     elif args.opt == 'cs' or args.opt == 'csharp':
-        destination_directory = os.path.join(file_directory, '../dist/cs')
-        generateProtos(destination_directory, proto_src_directory, src_directory, 'csharp')
+        generateProtos(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
+    elif args.opt == 'cpp' or args.opt == 'cplusplus':
+        generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+    elif args.opt == 'all':
+        # python
+        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        generateInits(p)
+        # java
+        generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
+        # javascript
+        generateProtos(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
+        # C#
+        generateProtos(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
+        # C++
+        generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--opt', type=str, default='python',
-                        help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp')
+    parser.add_argument('--opt', type=str, default='all',
+                        help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp, [all] all')
 
     args = parser.parse_args()
     sys.stdout.write(str(chosen_option(args)))

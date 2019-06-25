@@ -25,8 +25,9 @@ If you are interested in how they communicate with each other, visit the [ubii-m
 ## Compilation
 
 - required: python >=3.5
-- required: if 'protoc' compiler >=3.6.1 not available in system path, copy 'protoc' to /external/bin from distribution matching OS provided in /external. You can also get it from https://github.com/protocolbuffers/protobuf/releases.
+- required: 'protoc' compiler >=3.6.1. If compiler is not installed/available in system path, go to /external and copy 'protoc' from folder matching OS provided in to /external/bin. You can also get it from https://github.com/protocolbuffers/protobuf/releases.
 - run 'python scripts/compile.py --opt [language]' where [language] is one of py/python, j/java, js/javascript, cs/csharp
+- run 'node scripts/generate-protobuf-static.js'
 
 ## CLIs 
 
@@ -66,6 +67,9 @@ Beside general information this message contains a topic data pair. The `TopicDa
 - `Matrix3x2`
 - `Matrix4x4`
 - `Color`
+- `TouchEvent`
+- `KeyEvent`
+- `MouseEvent`
 
 You can send a `TopicData` message to a master node in order to publish topic data pairs to a master node.
 In return, master nodes will send `TopicData` messages to registered devices to inform them about changes of their subscribed topics.

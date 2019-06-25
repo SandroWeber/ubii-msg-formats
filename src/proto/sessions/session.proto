@@ -10,3 +10,7 @@ message Session {
     repeated ubii.interactions.Interaction interactions = 3;
     repeated ubii.sessions.IOMapping io_mappings = 4;
 }
+
+message SessionList {
+    repeated ubii.sessions.Session elements = 1;
+}

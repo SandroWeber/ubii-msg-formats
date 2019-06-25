@@ -1,0 +1,30 @@
+syntax = "proto3";
+package ubii.services;
+
+import "proto/general/success.proto";
+import "proto/general/error.proto";
+import "proto/general/lists.proto";
+import "proto/clients/client.proto";
+import "proto/devices/device.proto";
+import "proto/devices/topicMux.proto";
+import "proto/devices/topicDemux.proto";
+import "proto/servers/server.proto";
+import "proto/sessions/session.proto";
+import "proto/interactions/interaction.proto";
+
+message ServiceReply {
+    oneof type {
+        ubii.general.Success success = 1;
+        ubii.general.Error error = 2;
+        ubii.clients.Client client = 3;
+        ubii.devices.Device device = 4;
+        ubii.servers.Server server = 5;
+        ubii.sessions.Session session = 6;
+        ubii.sessions.SessionList session_list = 7;
+        ubii.interactions.Interaction interaction = 8;
+        ubii.interactions.InteractionList interaction_list = 9;
+        ubii.general.StringList string_list = 10;
+        ubii.devices.TopicMux topic_mux = 11;
+        ubii.devices.TopicDemux topic_demux = 12;
+    }
+}

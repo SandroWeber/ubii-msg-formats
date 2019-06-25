@@ -16,10 +16,10 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/general/error.proto',
-  package='ubii.service.reply',
+  package='ubii.general',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x19proto/general/error.proto\x12\x12ubii.service.reply\"6\n\x05\x45rror\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05stack\x18\x03 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x19proto/general/error.proto\x12\x0cubii.general\"6\n\x05\x45rror\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05stack\x18\x03 \x01(\tb\x06proto3')
 )
 
 
@@ -27,27 +27,27 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _ERROR = _descriptor.Descriptor(
   name='Error',
-  full_name='ubii.service.reply.Error',
+  full_name='ubii.general.Error',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='title', full_name='ubii.service.reply.Error.title', index=0,
+      name='title', full_name='ubii.general.Error.title', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='message', full_name='ubii.service.reply.Error.message', index=1,
+      name='message', full_name='ubii.general.Error.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='stack', full_name='ubii.service.reply.Error.stack', index=2,
+      name='stack', full_name='ubii.general.Error.stack', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -65,8 +65,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=49,
-  serialized_end=103,
+  serialized_start=43,
+  serialized_end=97,
 )
 
 DESCRIPTOR.message_types_by_name['Error'] = _ERROR
@@ -75,7 +75,7 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
   DESCRIPTOR = _ERROR,
   __module__ = 'proto.general.error_pb2'
-  # @@protoc_insertion_point(class_scope:ubii.service.reply.Error)
+  # @@protoc_insertion_point(class_scope:ubii.general.Error)
   ))
 _sym_db.RegisterMessage(Error)
 

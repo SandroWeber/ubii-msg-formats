@@ -8,3 +8,7 @@ message Client {
     string name = 2;
     repeated ubii.devices.Device devices = 3;
 }
+
+message ClientList {
+    repeated ubii.clients.Client elements = 1;
+}

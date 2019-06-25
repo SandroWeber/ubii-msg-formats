@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ubii.topicData;
 
+import "proto/topicData/topicDataRecord/timestamp.proto";
 import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
 import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
 import "proto/topicData/topicDataRecord/dataStructure/vector4.proto";
@@ -8,19 +9,30 @@ import "proto/topicData/topicDataRecord/dataStructure/quaternion.proto";
 import "proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto";
 import "proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto";
 import "proto/topicData/topicDataRecord/dataStructure/color.proto";
+import "proto/topicData/topicDataRecord/dataStructure/touchEvent.proto";
+import "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto";
+import "proto/topicData/topicDataRecord/dataStructure/mouseEvent.proto";
 
 message TopicDataRecord {
     string topic = 1;
-    oneof type{
-        double number = 2;
-        bool boolean = 3;
-        string string = 4;
-        ubii.dataStructure.Vector2 vector2 = 5;
-        ubii.dataStructure.Vector3 vector3 = 6;
-        ubii.dataStructure.Vector4 vector4 = 7;
-        ubii.dataStructure.Quaternion quaternion = 8;
-        ubii.dataStructure.Matrix3x2 matrix3x2 = 9;
-        ubii.dataStructure.Matrix4x4 matrix4x4 = 10;
-        ubii.dataStructure.Color color = 11;
-    }
+    ubii.topicData.Timestamp timestamp = 2;
+    oneof type {
+        double double = 3;
+        bool bool = 4;
+        string string = 5;
+        ubii.dataStructure.Vector2 vector2 = 6;
+        ubii.dataStructure.Vector3 vector3 = 7;
+        ubii.dataStructure.Vector4 vector4 = 8;
+        ubii.dataStructure.Quaternion quaternion = 9;
+        ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
+        ubii.dataStructure.Matrix4x4 matrix4x4 = 11;
+        ubii.dataStructure.Color color = 12;
+        ubii.dataStructure.TouchEvent touch_event = 13;
+        ubii.dataStructure.KeyEvent key_event = 14;
+        ubii.dataStructure.MouseEvent mouse_event = 15;
+    }    
+}
+
+message TopicDataRecordList {
+    repeated ubii.topicData.TopicDataRecord elements = 1;
 }

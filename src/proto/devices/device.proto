@@ -6,6 +6,15 @@ import "proto/devices/component.proto";
 message Device {
     string id = 1;
     string name = 2;
-    repeated ubii.devices.Component components = 3;
-    string client_id = 4;
+    enum DeviceType {
+        PARTICIPANT = 0;
+        WATCHER = 1;
+    }
+    ubii.devices.Device.DeviceType device_type = 3;
+    repeated ubii.devices.Component components = 4;
+    string client_id = 5;
+}
+
+message DeviceList {
+    repeated ubii.devices.Device elements = 1;
 }

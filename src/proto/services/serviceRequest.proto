@@ -1,0 +1,25 @@
+syntax = "proto3";
+package ubii.services;
+
+import "proto/clients/client.proto";
+import "proto/devices/device.proto";
+import "proto/devices/topicMux.proto";
+import "proto/devices/topicDemux.proto";
+import "proto/sessions/session.proto";
+import "proto/interactions/interaction.proto";
+import "proto/services/request/topicSubscription.proto";
+
+message ServiceRequest {
+    string topic = 1;
+    oneof type {
+        ubii.clients.Client client = 2;
+        ubii.devices.Device device = 3;
+        ubii.services.request.TopicSubscription topic_subscription = 4;
+        ubii.sessions.Session session = 5;
+        ubii.sessions.SessionList session_list = 6;
+        ubii.interactions.Interaction interaction = 7;
+        ubii.interactions.InteractionList interaction_list = 8;
+        ubii.devices.TopicMux topic_mux = 9;
+        ubii.devices.TopicDemux topic_demux = 10;
+    }
+}

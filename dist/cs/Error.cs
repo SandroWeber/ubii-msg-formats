@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Ubii.Service.Reply {
+namespace Ubii.General {
 
   /// <summary>Holder for reflection information generated from proto/general/error.proto</summary>
   public static partial class ErrorReflection {
@@ -24,13 +24,13 @@ namespace Ubii.Service.Reply {
     static ErrorReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chlwcm90by9nZW5lcmFsL2Vycm9yLnByb3RvEhJ1YmlpLnNlcnZpY2UucmVw",
-            "bHkiNgoFRXJyb3ISDQoFdGl0bGUYASABKAkSDwoHbWVzc2FnZRgCIAEoCRIN",
-            "CgVzdGFjaxgDIAEoCWIGcHJvdG8z"));
+            "Chlwcm90by9nZW5lcmFsL2Vycm9yLnByb3RvEgx1YmlpLmdlbmVyYWwiNgoF",
+            "RXJyb3ISDQoFdGl0bGUYASABKAkSDwoHbWVzc2FnZRgCIAEoCRINCgVzdGFj",
+            "axgDIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Service.Reply.Error), global::Ubii.Service.Reply.Error.Parser, new[]{ "Title", "Message", "Stack" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.General.Error), global::Ubii.General.Error.Parser, new[]{ "Title", "Message", "Stack" }, null, null, null)
           }));
     }
     #endregion
@@ -45,7 +45,7 @@ namespace Ubii.Service.Reply {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ubii.Service.Reply.ErrorReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Ubii.General.ErrorReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
