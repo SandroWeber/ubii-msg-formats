@@ -12,15 +12,18 @@ goog.provide('proto.ubii.clients.Client');
 goog.provide('proto.ubii.clients.ClientList');
 goog.provide('proto.ubii.dataStructure.ButtonEventType');
 goog.provide('proto.ubii.dataStructure.Color');
+goog.provide('proto.ubii.dataStructure.HandGestureType');
 goog.provide('proto.ubii.dataStructure.KeyEvent');
 goog.provide('proto.ubii.dataStructure.Matrix3x2');
 goog.provide('proto.ubii.dataStructure.Matrix4x4');
 goog.provide('proto.ubii.dataStructure.MouseEvent');
+goog.provide('proto.ubii.dataStructure.MyoEvent');
 goog.provide('proto.ubii.dataStructure.Quaternion');
 goog.provide('proto.ubii.dataStructure.TouchEvent');
 goog.provide('proto.ubii.dataStructure.Vector2');
 goog.provide('proto.ubii.dataStructure.Vector3');
 goog.provide('proto.ubii.dataStructure.Vector4');
+goog.provide('proto.ubii.dataStructure.Vector8');
 goog.provide('proto.ubii.devices.Component');
 goog.provide('proto.ubii.devices.Component.IOType');
 goog.provide('proto.ubii.devices.Device');
@@ -3976,6 +3979,667 @@ proto.ubii.dataStructure.MouseEvent.prototype.setButton = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ubii.dataStructure.Vector8 = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.dataStructure.Vector8, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.dataStructure.Vector8.displayName = 'proto.ubii.dataStructure.Vector8';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.dataStructure.Vector8.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.dataStructure.Vector8.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.dataStructure.Vector8} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Vector8.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    v0: +jspb.Message.getFieldWithDefault(msg, 1, 0.0),
+    v1: +jspb.Message.getFieldWithDefault(msg, 2, 0.0),
+    v2: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
+    v3: +jspb.Message.getFieldWithDefault(msg, 4, 0.0),
+    v4: +jspb.Message.getFieldWithDefault(msg, 5, 0.0),
+    v5: +jspb.Message.getFieldWithDefault(msg, 6, 0.0),
+    v6: +jspb.Message.getFieldWithDefault(msg, 7, 0.0),
+    v7: +jspb.Message.getFieldWithDefault(msg, 8, 0.0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.dataStructure.Vector8}
+ */
+proto.ubii.dataStructure.Vector8.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.dataStructure.Vector8;
+  return proto.ubii.dataStructure.Vector8.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.dataStructure.Vector8} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.dataStructure.Vector8}
+ */
+proto.ubii.dataStructure.Vector8.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV0(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV1(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV2(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV3(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV4(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV5(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV6(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setV7(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.dataStructure.Vector8.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.dataStructure.Vector8.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.dataStructure.Vector8} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Vector8.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getV0();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      1,
+      f
+    );
+  }
+  f = message.getV1();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      2,
+      f
+    );
+  }
+  f = message.getV2();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      3,
+      f
+    );
+  }
+  f = message.getV3();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      4,
+      f
+    );
+  }
+  f = message.getV4();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      5,
+      f
+    );
+  }
+  f = message.getV5();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      6,
+      f
+    );
+  }
+  f = message.getV6();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      7,
+      f
+    );
+  }
+  f = message.getV7();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      8,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional double v0 = 1;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV0 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 1, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV0 = function(value) {
+  jspb.Message.setProto3FloatField(this, 1, value);
+};
+
+
+/**
+ * optional double v1 = 2;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV1 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 2, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV1 = function(value) {
+  jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+/**
+ * optional double v2 = 3;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV2 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 3, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV2 = function(value) {
+  jspb.Message.setProto3FloatField(this, 3, value);
+};
+
+
+/**
+ * optional double v3 = 4;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV3 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 4, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV3 = function(value) {
+  jspb.Message.setProto3FloatField(this, 4, value);
+};
+
+
+/**
+ * optional double v4 = 5;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV4 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 5, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV4 = function(value) {
+  jspb.Message.setProto3FloatField(this, 5, value);
+};
+
+
+/**
+ * optional double v5 = 6;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV5 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 6, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV5 = function(value) {
+  jspb.Message.setProto3FloatField(this, 6, value);
+};
+
+
+/**
+ * optional double v6 = 7;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV6 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 7, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV6 = function(value) {
+  jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * optional double v7 = 8;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Vector8.prototype.getV7 = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 8, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Vector8.prototype.setV7 = function(value) {
+  jspb.Message.setProto3FloatField(this, 8, value);
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.ubii.dataStructure.HandGestureType = {
+  REST: 0,
+  FINGERS_SPREAD: 1,
+  WAVE_IN: 2,
+  WAVE_OUT: 3,
+  FIST: 4,
+  DOUBLE_TAP: 5
+};
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.dataStructure.MyoEvent = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.dataStructure.MyoEvent, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.dataStructure.MyoEvent.displayName = 'proto.ubii.dataStructure.MyoEvent';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.dataStructure.MyoEvent.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.dataStructure.MyoEvent} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.MyoEvent.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    emg: (f = msg.getEmg()) && proto.ubii.dataStructure.Vector8.toObject(includeInstance, f),
+    orientation: (f = msg.getOrientation()) && proto.ubii.dataStructure.Quaternion.toObject(includeInstance, f),
+    gyroscope: (f = msg.getGyroscope()) && proto.ubii.dataStructure.Vector3.toObject(includeInstance, f),
+    accelerometer: (f = msg.getAccelerometer()) && proto.ubii.dataStructure.Vector3.toObject(includeInstance, f),
+    gesture: jspb.Message.getFieldWithDefault(msg, 5, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.dataStructure.MyoEvent}
+ */
+proto.ubii.dataStructure.MyoEvent.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.dataStructure.MyoEvent;
+  return proto.ubii.dataStructure.MyoEvent.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.dataStructure.MyoEvent} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.dataStructure.MyoEvent}
+ */
+proto.ubii.dataStructure.MyoEvent.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.dataStructure.Vector8;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector8.deserializeBinaryFromReader);
+      msg.setEmg(value);
+      break;
+    case 2:
+      var value = new proto.ubii.dataStructure.Quaternion;
+      reader.readMessage(value,proto.ubii.dataStructure.Quaternion.deserializeBinaryFromReader);
+      msg.setOrientation(value);
+      break;
+    case 3:
+      var value = new proto.ubii.dataStructure.Vector3;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector3.deserializeBinaryFromReader);
+      msg.setGyroscope(value);
+      break;
+    case 4:
+      var value = new proto.ubii.dataStructure.Vector3;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector3.deserializeBinaryFromReader);
+      msg.setAccelerometer(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.ubii.dataStructure.HandGestureType} */ (reader.readEnum());
+      msg.setGesture(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.dataStructure.MyoEvent.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.dataStructure.MyoEvent} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.MyoEvent.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEmg();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.ubii.dataStructure.Vector8.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrientation();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.ubii.dataStructure.Quaternion.serializeBinaryToWriter
+    );
+  }
+  f = message.getGyroscope();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.dataStructure.Vector3.serializeBinaryToWriter
+    );
+  }
+  f = message.getAccelerometer();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.ubii.dataStructure.Vector3.serializeBinaryToWriter
+    );
+  }
+  f = message.getGesture();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional Vector8 emg = 1;
+ * @return {?proto.ubii.dataStructure.Vector8}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.getEmg = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector8} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector8, 1));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector8|undefined} value */
+proto.ubii.dataStructure.MyoEvent.prototype.setEmg = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.ubii.dataStructure.MyoEvent.prototype.clearEmg = function() {
+  this.setEmg(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.hasEmg = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Quaternion orientation = 2;
+ * @return {?proto.ubii.dataStructure.Quaternion}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.getOrientation = function() {
+  return /** @type{?proto.ubii.dataStructure.Quaternion} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Quaternion, 2));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Quaternion|undefined} value */
+proto.ubii.dataStructure.MyoEvent.prototype.setOrientation = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.ubii.dataStructure.MyoEvent.prototype.clearOrientation = function() {
+  this.setOrientation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.hasOrientation = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Vector3 gyroscope = 3;
+ * @return {?proto.ubii.dataStructure.Vector3}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.getGyroscope = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector3, 3));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
+proto.ubii.dataStructure.MyoEvent.prototype.setGyroscope = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.ubii.dataStructure.MyoEvent.prototype.clearGyroscope = function() {
+  this.setGyroscope(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.hasGyroscope = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional Vector3 accelerometer = 4;
+ * @return {?proto.ubii.dataStructure.Vector3}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.getAccelerometer = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector3, 4));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
+proto.ubii.dataStructure.MyoEvent.prototype.setAccelerometer = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.ubii.dataStructure.MyoEvent.prototype.clearAccelerometer = function() {
+  this.setAccelerometer(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.hasAccelerometer = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional HandGestureType gesture = 5;
+ * @return {!proto.ubii.dataStructure.HandGestureType}
+ */
+proto.ubii.dataStructure.MyoEvent.prototype.getGesture = function() {
+  return /** @type {!proto.ubii.dataStructure.HandGestureType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/** @param {!proto.ubii.dataStructure.HandGestureType} value */
+proto.ubii.dataStructure.MyoEvent.prototype.setGesture = function(value) {
+  jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ubii.topicData.TopicDataRecord = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.topicData.TopicDataRecord.oneofGroups_);
 };
@@ -3991,7 +4655,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16]];
 
 /**
  * @enum {number}
@@ -4010,7 +4674,8 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   COLOR: 12,
   TOUCH_EVENT: 13,
   KEY_EVENT: 14,
-  MOUSE_EVENT: 15
+  MOUSE_EVENT: 15,
+  MYO_EVENT: 16
 };
 
 /**
@@ -4063,7 +4728,8 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     color: (f = msg.getColor()) && proto.ubii.dataStructure.Color.toObject(includeInstance, f),
     touchEvent: (f = msg.getTouchEvent()) && proto.ubii.dataStructure.TouchEvent.toObject(includeInstance, f),
     keyEvent: (f = msg.getKeyEvent()) && proto.ubii.dataStructure.KeyEvent.toObject(includeInstance, f),
-    mouseEvent: (f = msg.getMouseEvent()) && proto.ubii.dataStructure.MouseEvent.toObject(includeInstance, f)
+    mouseEvent: (f = msg.getMouseEvent()) && proto.ubii.dataStructure.MouseEvent.toObject(includeInstance, f),
+    myoEvent: (f = msg.getMyoEvent()) && proto.ubii.dataStructure.MyoEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4170,6 +4836,11 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto.ubii.dataStructure.MouseEvent;
       reader.readMessage(value,proto.ubii.dataStructure.MouseEvent.deserializeBinaryFromReader);
       msg.setMouseEvent(value);
+      break;
+    case 16:
+      var value = new proto.ubii.dataStructure.MyoEvent;
+      reader.readMessage(value,proto.ubii.dataStructure.MyoEvent.deserializeBinaryFromReader);
+      msg.setMyoEvent(value);
       break;
     default:
       reader.skipField();
@@ -4314,6 +4985,14 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       15,
       f,
       proto.ubii.dataStructure.MouseEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getMyoEvent();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      proto.ubii.dataStructure.MyoEvent.serializeBinaryToWriter
     );
   }
 };
@@ -4750,6 +5429,36 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearMouseEvent = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMouseEvent = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.MyoEvent myo_event = 16;
+ * @return {?proto.ubii.dataStructure.MyoEvent}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getMyoEvent = function() {
+  return /** @type{?proto.ubii.dataStructure.MyoEvent} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.MyoEvent, 16));
+};
+
+
+/** @param {?proto.ubii.dataStructure.MyoEvent|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setMyoEvent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 16, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearMyoEvent = function() {
+  this.setMyoEvent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasMyoEvent = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
