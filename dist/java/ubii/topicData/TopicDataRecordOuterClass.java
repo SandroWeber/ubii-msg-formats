@@ -191,6 +191,19 @@ public final class TopicDataRecordOuterClass {
      */
     ubii.dataStructure.MouseEventOuterClass.MouseEventOrBuilder getMouseEventOrBuilder();
 
+    /**
+     * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     */
+    boolean hasMyoEvent();
+    /**
+     * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     */
+    ubii.dataStructure.MyoEventOuterClass.MyoEvent getMyoEvent();
+    /**
+     * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     */
+    ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder getMyoEventOrBuilder();
+
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.TypeCase getTypeCase();
   }
   /**
@@ -408,6 +421,20 @@ public final class TopicDataRecordOuterClass {
               typeCase_ = 15;
               break;
             }
+            case 130: {
+              ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder subBuilder = null;
+              if (typeCase_ == 16) {
+                subBuilder = ((ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.MyoEventOuterClass.MyoEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 16;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -457,6 +484,7 @@ public final class TopicDataRecordOuterClass {
       TOUCH_EVENT(13),
       KEY_EVENT(14),
       MOUSE_EVENT(15),
+      MYO_EVENT(16),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -485,6 +513,7 @@ public final class TopicDataRecordOuterClass {
           case 13: return TOUCH_EVENT;
           case 14: return KEY_EVENT;
           case 15: return MOUSE_EVENT;
+          case 16: return MYO_EVENT;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -880,6 +909,32 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.MouseEventOuterClass.MouseEvent.getDefaultInstance();
     }
 
+    public static final int MYO_EVENT_FIELD_NUMBER = 16;
+    /**
+     * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     */
+    public boolean hasMyoEvent() {
+      return typeCase_ == 16;
+    }
+    /**
+     * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     */
+    public ubii.dataStructure.MyoEventOuterClass.MyoEvent getMyoEvent() {
+      if (typeCase_ == 16) {
+         return (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_;
+      }
+      return ubii.dataStructure.MyoEventOuterClass.MyoEvent.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+     */
+    public ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder getMyoEventOrBuilder() {
+      if (typeCase_ == 16) {
+         return (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_;
+      }
+      return ubii.dataStructure.MyoEventOuterClass.MyoEvent.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -940,6 +995,9 @@ public final class TopicDataRecordOuterClass {
       }
       if (typeCase_ == 15) {
         output.writeMessage(15, (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_);
+      }
+      if (typeCase_ == 16) {
+        output.writeMessage(16, (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -1009,6 +1067,10 @@ public final class TopicDataRecordOuterClass {
       if (typeCase_ == 15) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, (ubii.dataStructure.MouseEventOuterClass.MouseEvent) type_);
+      }
+      if (typeCase_ == 16) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1091,6 +1153,10 @@ public final class TopicDataRecordOuterClass {
           result = result && getMouseEvent()
               .equals(other.getMouseEvent());
           break;
+        case 16:
+          result = result && getMyoEvent()
+              .equals(other.getMyoEvent());
+          break;
         case 0:
         default:
       }
@@ -1165,6 +1231,10 @@ public final class TopicDataRecordOuterClass {
         case 15:
           hash = (37 * hash) + MOUSE_EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getMouseEvent().hashCode();
+          break;
+        case 16:
+          hash = (37 * hash) + MYO_EVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getMyoEvent().hashCode();
           break;
         case 0:
         default:
@@ -1423,6 +1493,13 @@ public final class TopicDataRecordOuterClass {
             result.type_ = mouseEventBuilder_.build();
           }
         }
+        if (typeCase_ == 16) {
+          if (myoEventBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = myoEventBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -1532,6 +1609,10 @@ public final class TopicDataRecordOuterClass {
           }
           case MOUSE_EVENT: {
             mergeMouseEvent(other.getMouseEvent());
+            break;
+          }
+          case MYO_EVENT: {
+            mergeMyoEvent(other.getMyoEvent());
             break;
           }
           case TYPE_NOT_SET: {
@@ -3267,6 +3348,142 @@ public final class TopicDataRecordOuterClass {
         onChanged();;
         return mouseEventBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.MyoEventOuterClass.MyoEvent, ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder, ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder> myoEventBuilder_;
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public boolean hasMyoEvent() {
+        return typeCase_ == 16;
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public ubii.dataStructure.MyoEventOuterClass.MyoEvent getMyoEvent() {
+        if (myoEventBuilder_ == null) {
+          if (typeCase_ == 16) {
+            return (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_;
+          }
+          return ubii.dataStructure.MyoEventOuterClass.MyoEvent.getDefaultInstance();
+        } else {
+          if (typeCase_ == 16) {
+            return myoEventBuilder_.getMessage();
+          }
+          return ubii.dataStructure.MyoEventOuterClass.MyoEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public Builder setMyoEvent(ubii.dataStructure.MyoEventOuterClass.MyoEvent value) {
+        if (myoEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          myoEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public Builder setMyoEvent(
+          ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder builderForValue) {
+        if (myoEventBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          myoEventBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public Builder mergeMyoEvent(ubii.dataStructure.MyoEventOuterClass.MyoEvent value) {
+        if (myoEventBuilder_ == null) {
+          if (typeCase_ == 16 &&
+              type_ != ubii.dataStructure.MyoEventOuterClass.MyoEvent.getDefaultInstance()) {
+            type_ = ubii.dataStructure.MyoEventOuterClass.MyoEvent.newBuilder((ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 16) {
+            myoEventBuilder_.mergeFrom(value);
+          }
+          myoEventBuilder_.setMessage(value);
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public Builder clearMyoEvent() {
+        if (myoEventBuilder_ == null) {
+          if (typeCase_ == 16) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 16) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          myoEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder getMyoEventBuilder() {
+        return getMyoEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      public ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder getMyoEventOrBuilder() {
+        if ((typeCase_ == 16) && (myoEventBuilder_ != null)) {
+          return myoEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 16) {
+            return (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_;
+          }
+          return ubii.dataStructure.MyoEventOuterClass.MyoEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.MyoEvent myo_event = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.MyoEventOuterClass.MyoEvent, ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder, ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder> 
+          getMyoEventFieldBuilder() {
+        if (myoEventBuilder_ == null) {
+          if (!(typeCase_ == 16)) {
+            type_ = ubii.dataStructure.MyoEventOuterClass.MyoEvent.getDefaultInstance();
+          }
+          myoEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.MyoEventOuterClass.MyoEvent, ubii.dataStructure.MyoEventOuterClass.MyoEvent.Builder, ubii.dataStructure.MyoEventOuterClass.MyoEventOrBuilder>(
+                  (ubii.dataStructure.MyoEventOuterClass.MyoEvent) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 16;
+        onChanged();;
+        return myoEventBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4139,25 +4356,28 @@ public final class TopicDataRecordOuterClass {
       "touchEvent.proto\032<proto/topicData/topicD" +
       "ataRecord/dataStructure/keyEvent.proto\032>" +
       "proto/topicData/topicDataRecord/dataStru" +
-      "cture/mouseEvent.proto\"\205\005\n\017TopicDataReco" +
-      "rd\022\r\n\005topic\030\001 \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.u" +
-      "bii.topicData.Timestamp\022\020\n\006double\030\003 \001(\001H" +
-      "\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022.\n\007v" +
-      "ector2\030\006 \001(\0132\033.ubii.dataStructure.Vector" +
-      "2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStructur" +
-      "e.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.data" +
-      "Structure.Vector4H\000\0224\n\nquaternion\030\t \001(\0132" +
-      "\036.ubii.dataStructure.QuaternionH\000\0222\n\tmat" +
-      "rix3x2\030\n \001(\0132\035.ubii.dataStructure.Matrix" +
-      "3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataStru" +
-      "cture.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ubii." +
-      "dataStructure.ColorH\000\0225\n\013touch_event\030\r \001" +
-      "(\0132\036.ubii.dataStructure.TouchEventH\000\0221\n\t" +
-      "key_event\030\016 \001(\0132\034.ubii.dataStructure.Key" +
-      "EventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.ubii.data" +
-      "Structure.MouseEventH\000B\006\n\004type\"H\n\023TopicD" +
-      "ataRecordList\0221\n\010elements\030\001 \003(\0132\037.ubii.t" +
-      "opicData.TopicDataRecordb\006proto3"
+      "cture/mouseEvent.proto\032<proto/topicData/" +
+      "topicDataRecord/dataStructure/myoEvent.p" +
+      "roto\"\270\005\n\017TopicDataRecord\022\r\n\005topic\030\001 \001(\t\022" +
+      ",\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData.Time" +
+      "stamp\022\020\n\006double\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022" +
+      "\020\n\006string\030\005 \001(\tH\000\022.\n\007vector2\030\006 \001(\0132\033.ubi" +
+      "i.dataStructure.Vector2H\000\022.\n\007vector3\030\007 \001" +
+      "(\0132\033.ubii.dataStructure.Vector3H\000\022.\n\007vec" +
+      "tor4\030\010 \001(\0132\033.ubii.dataStructure.Vector4H" +
+      "\000\0224\n\nquaternion\030\t \001(\0132\036.ubii.dataStructu" +
+      "re.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.ubi" +
+      "i.dataStructure.Matrix3x2H\000\0222\n\tmatrix4x4" +
+      "\030\013 \001(\0132\035.ubii.dataStructure.Matrix4x4H\000\022" +
+      "*\n\005color\030\014 \001(\0132\031.ubii.dataStructure.Colo" +
+      "rH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.dataStru" +
+      "cture.TouchEventH\000\0221\n\tkey_event\030\016 \001(\0132\034." +
+      "ubii.dataStructure.KeyEventH\000\0225\n\013mouse_e" +
+      "vent\030\017 \001(\0132\036.ubii.dataStructure.MouseEve" +
+      "ntH\000\0221\n\tmyo_event\030\020 \001(\0132\034.ubii.dataStruc" +
+      "ture.MyoEventH\000B\006\n\004type\"H\n\023TopicDataReco" +
+      "rdList\0221\n\010elements\030\001 \003(\0132\037.ubii.topicDat" +
+      "a.TopicDataRecordb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4181,13 +4401,14 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.TouchEventOuterClass.getDescriptor(),
           ubii.dataStructure.KeyEventOuterClass.getDescriptor(),
           ubii.dataStructure.MouseEventOuterClass.getDescriptor(),
+          ubii.dataStructure.MyoEventOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_topicData_TopicDataRecord_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicDataRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_topicData_TopicDataRecord_descriptor,
-        new java.lang.String[] { "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "Type", });
+        new java.lang.String[] { "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Type", });
     internal_static_ubii_topicData_TopicDataRecordList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_topicData_TopicDataRecordList_fieldAccessorTable = new
@@ -4205,6 +4426,7 @@ public final class TopicDataRecordOuterClass {
     ubii.dataStructure.TouchEventOuterClass.getDescriptor();
     ubii.dataStructure.KeyEventOuterClass.getDescriptor();
     ubii.dataStructure.MouseEventOuterClass.getDescriptor();
+    ubii.dataStructure.MyoEventOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -41,6 +41,7 @@
 #include "proto/topicData/topicDataRecord/dataStructure/touchEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/keyEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/mouseEvent.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/myoEvent.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto 
 
@@ -120,6 +121,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     kTouchEvent = 13,
     kKeyEvent = 14,
     kMouseEvent = 15,
+    kMyoEvent = 16,
     TYPE_NOT_SET = 0,
   };
 
@@ -362,6 +364,18 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::MouseEvent* mutable_mouse_event();
   void set_allocated_mouse_event(::ubii::dataStructure::MouseEvent* mouse_event);
 
+  // .ubii.dataStructure.MyoEvent myo_event = 16;
+  bool has_myo_event() const;
+  void clear_myo_event();
+  static const int kMyoEventFieldNumber = 16;
+  private:
+  const ::ubii::dataStructure::MyoEvent& _internal_myo_event() const;
+  public:
+  const ::ubii::dataStructure::MyoEvent& myo_event() const;
+  ::ubii::dataStructure::MyoEvent* release_myo_event();
+  ::ubii::dataStructure::MyoEvent* mutable_myo_event();
+  void set_allocated_myo_event(::ubii::dataStructure::MyoEvent* myo_event);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
@@ -379,6 +393,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_touch_event();
   void set_has_key_event();
   void set_has_mouse_event();
+  void set_has_myo_event();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -401,6 +416,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::TouchEvent* touch_event_;
     ::ubii::dataStructure::KeyEvent* key_event_;
     ::ubii::dataStructure::MouseEvent* mouse_event_;
+    ::ubii::dataStructure::MyoEvent* myo_event_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1157,6 +1173,44 @@ inline ::ubii::dataStructure::MouseEvent* TopicDataRecord::mutable_mouse_event()
   }
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.mouse_event)
   return type_.mouse_event_;
+}
+
+// .ubii.dataStructure.MyoEvent myo_event = 16;
+inline bool TopicDataRecord::has_myo_event() const {
+  return type_case() == kMyoEvent;
+}
+inline void TopicDataRecord::set_has_myo_event() {
+  _oneof_case_[0] = kMyoEvent;
+}
+inline const ::ubii::dataStructure::MyoEvent& TopicDataRecord::_internal_myo_event() const {
+  return *type_.myo_event_;
+}
+inline ::ubii::dataStructure::MyoEvent* TopicDataRecord::release_myo_event() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.myo_event)
+  if (has_myo_event()) {
+    clear_has_type();
+      ::ubii::dataStructure::MyoEvent* temp = type_.myo_event_;
+    type_.myo_event_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::MyoEvent& TopicDataRecord::myo_event() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.myo_event)
+  return has_myo_event()
+      ? *type_.myo_event_
+      : *reinterpret_cast< ::ubii::dataStructure::MyoEvent*>(&::ubii::dataStructure::_MyoEvent_default_instance_);
+}
+inline ::ubii::dataStructure::MyoEvent* TopicDataRecord::mutable_myo_event() {
+  if (!has_myo_event()) {
+    clear_type();
+    set_has_myo_event();
+    type_.myo_event_ = CreateMaybeMessage< ::ubii::dataStructure::MyoEvent >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.myo_event)
+  return type_.myo_event_;
 }
 
 inline bool TopicDataRecord::has_type() const {

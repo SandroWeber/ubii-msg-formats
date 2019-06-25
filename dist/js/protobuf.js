@@ -7590,6 +7590,7 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.ITouchEvent|null} [touchEvent] TopicDataRecord touchEvent
              * @property {ubii.dataStructure.IKeyEvent|null} [keyEvent] TopicDataRecord keyEvent
              * @property {ubii.dataStructure.IMouseEvent|null} [mouseEvent] TopicDataRecord mouseEvent
+             * @property {ubii.dataStructure.IMyoEvent|null} [myoEvent] TopicDataRecord myoEvent
              */
 
             /**
@@ -7727,17 +7728,25 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.mouseEvent = null;
 
+            /**
+             * TopicDataRecord myoEvent.
+             * @member {ubii.dataStructure.IMyoEvent|null|undefined} myoEvent
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.myoEvent = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -7795,6 +7804,8 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.KeyEvent.encode(message.keyEvent, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 if (message.mouseEvent != null && message.hasOwnProperty("mouseEvent"))
                     $root.ubii.dataStructure.MouseEvent.encode(message.mouseEvent, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
+                if (message.myoEvent != null && message.hasOwnProperty("myoEvent"))
+                    $root.ubii.dataStructure.MyoEvent.encode(message.myoEvent, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
 
@@ -7873,6 +7884,9 @@ $root.ubii = (function() {
                         break;
                     case 15:
                         message.mouseEvent = $root.ubii.dataStructure.MouseEvent.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.myoEvent = $root.ubii.dataStructure.MyoEvent.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8037,6 +8051,16 @@ $root.ubii = (function() {
                             return "mouseEvent." + error;
                     }
                 }
+                if (message.myoEvent != null && message.hasOwnProperty("myoEvent")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.MyoEvent.verify(message.myoEvent);
+                        if (error)
+                            return "myoEvent." + error;
+                    }
+                }
                 return null;
             };
 
@@ -8114,6 +8138,11 @@ $root.ubii = (function() {
                     if (typeof object.mouseEvent !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.mouseEvent: object expected");
                     message.mouseEvent = $root.ubii.dataStructure.MouseEvent.fromObject(object.mouseEvent);
+                }
+                if (object.myoEvent != null) {
+                    if (typeof object.myoEvent !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.myoEvent: object expected");
+                    message.myoEvent = $root.ubii.dataStructure.MyoEvent.fromObject(object.myoEvent);
                 }
                 return message;
             };
@@ -8203,6 +8232,11 @@ $root.ubii = (function() {
                     object.mouseEvent = $root.ubii.dataStructure.MouseEvent.toObject(message.mouseEvent, options);
                     if (options.oneofs)
                         object.type = "mouseEvent";
+                }
+                if (message.myoEvent != null && message.hasOwnProperty("myoEvent")) {
+                    object.myoEvent = $root.ubii.dataStructure.MyoEvent.toObject(message.myoEvent, options);
+                    if (options.oneofs)
+                        object.type = "myoEvent";
                 }
                 return object;
             };
@@ -8707,6 +8741,28 @@ $root.ubii = (function() {
             };
 
             return Color;
+        })();
+
+        /**
+         * HandGestureType enum.
+         * @name ubii.dataStructure.HandGestureType
+         * @enum {string}
+         * @property {number} REST=0 REST value
+         * @property {number} FINGERS_SPREAD=1 FINGERS_SPREAD value
+         * @property {number} WAVE_IN=2 WAVE_IN value
+         * @property {number} WAVE_OUT=3 WAVE_OUT value
+         * @property {number} FIST=4 FIST value
+         * @property {number} DOUBLE_TAP=5 DOUBLE_TAP value
+         */
+        dataStructure.HandGestureType = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "REST"] = 0;
+            values[valuesById[1] = "FINGERS_SPREAD"] = 1;
+            values[valuesById[2] = "WAVE_IN"] = 2;
+            values[valuesById[3] = "WAVE_OUT"] = 3;
+            values[valuesById[4] = "FIST"] = 4;
+            values[valuesById[5] = "DOUBLE_TAP"] = 5;
+            return values;
         })();
 
         dataStructure.KeyEvent = (function() {
@@ -9971,6 +10027,335 @@ $root.ubii = (function() {
             return MouseEvent;
         })();
 
+        dataStructure.MyoEvent = (function() {
+
+            /**
+             * Properties of a MyoEvent.
+             * @memberof ubii.dataStructure
+             * @interface IMyoEvent
+             * @property {ubii.dataStructure.IVector8|null} [emg] MyoEvent emg
+             * @property {ubii.dataStructure.IQuaternion|null} [orientation] MyoEvent orientation
+             * @property {ubii.dataStructure.IVector3|null} [gyroscope] MyoEvent gyroscope
+             * @property {ubii.dataStructure.IVector3|null} [accelerometer] MyoEvent accelerometer
+             * @property {ubii.dataStructure.HandGestureType|null} [gesture] MyoEvent gesture
+             */
+
+            /**
+             * Constructs a new MyoEvent.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a MyoEvent.
+             * @implements IMyoEvent
+             * @constructor
+             * @param {ubii.dataStructure.IMyoEvent=} [properties] Properties to set
+             */
+            function MyoEvent(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MyoEvent emg.
+             * @member {ubii.dataStructure.IVector8|null|undefined} emg
+             * @memberof ubii.dataStructure.MyoEvent
+             * @instance
+             */
+            MyoEvent.prototype.emg = null;
+
+            /**
+             * MyoEvent orientation.
+             * @member {ubii.dataStructure.IQuaternion|null|undefined} orientation
+             * @memberof ubii.dataStructure.MyoEvent
+             * @instance
+             */
+            MyoEvent.prototype.orientation = null;
+
+            /**
+             * MyoEvent gyroscope.
+             * @member {ubii.dataStructure.IVector3|null|undefined} gyroscope
+             * @memberof ubii.dataStructure.MyoEvent
+             * @instance
+             */
+            MyoEvent.prototype.gyroscope = null;
+
+            /**
+             * MyoEvent accelerometer.
+             * @member {ubii.dataStructure.IVector3|null|undefined} accelerometer
+             * @memberof ubii.dataStructure.MyoEvent
+             * @instance
+             */
+            MyoEvent.prototype.accelerometer = null;
+
+            /**
+             * MyoEvent gesture.
+             * @member {ubii.dataStructure.HandGestureType} gesture
+             * @memberof ubii.dataStructure.MyoEvent
+             * @instance
+             */
+            MyoEvent.prototype.gesture = 0;
+
+            /**
+             * Creates a new MyoEvent instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {ubii.dataStructure.IMyoEvent=} [properties] Properties to set
+             * @returns {ubii.dataStructure.MyoEvent} MyoEvent instance
+             */
+            MyoEvent.create = function create(properties) {
+                return new MyoEvent(properties);
+            };
+
+            /**
+             * Encodes the specified MyoEvent message. Does not implicitly {@link ubii.dataStructure.MyoEvent.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {ubii.dataStructure.IMyoEvent} message MyoEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MyoEvent.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.emg != null && message.hasOwnProperty("emg"))
+                    $root.ubii.dataStructure.Vector8.encode(message.emg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.orientation != null && message.hasOwnProperty("orientation"))
+                    $root.ubii.dataStructure.Quaternion.encode(message.orientation, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.gyroscope != null && message.hasOwnProperty("gyroscope"))
+                    $root.ubii.dataStructure.Vector3.encode(message.gyroscope, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.accelerometer != null && message.hasOwnProperty("accelerometer"))
+                    $root.ubii.dataStructure.Vector3.encode(message.accelerometer, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.gesture != null && message.hasOwnProperty("gesture"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.gesture);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified MyoEvent message, length delimited. Does not implicitly {@link ubii.dataStructure.MyoEvent.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {ubii.dataStructure.IMyoEvent} message MyoEvent message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MyoEvent.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a MyoEvent message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.MyoEvent} MyoEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MyoEvent.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.MyoEvent();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.emg = $root.ubii.dataStructure.Vector8.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.orientation = $root.ubii.dataStructure.Quaternion.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.gyroscope = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.accelerometer = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.gesture = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a MyoEvent message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.MyoEvent} MyoEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MyoEvent.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a MyoEvent message.
+             * @function verify
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            MyoEvent.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.emg != null && message.hasOwnProperty("emg")) {
+                    var error = $root.ubii.dataStructure.Vector8.verify(message.emg);
+                    if (error)
+                        return "emg." + error;
+                }
+                if (message.orientation != null && message.hasOwnProperty("orientation")) {
+                    var error = $root.ubii.dataStructure.Quaternion.verify(message.orientation);
+                    if (error)
+                        return "orientation." + error;
+                }
+                if (message.gyroscope != null && message.hasOwnProperty("gyroscope")) {
+                    var error = $root.ubii.dataStructure.Vector3.verify(message.gyroscope);
+                    if (error)
+                        return "gyroscope." + error;
+                }
+                if (message.accelerometer != null && message.hasOwnProperty("accelerometer")) {
+                    var error = $root.ubii.dataStructure.Vector3.verify(message.accelerometer);
+                    if (error)
+                        return "accelerometer." + error;
+                }
+                if (message.gesture != null && message.hasOwnProperty("gesture"))
+                    switch (message.gesture) {
+                    default:
+                        return "gesture: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    }
+                return null;
+            };
+
+            /**
+             * Creates a MyoEvent message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.MyoEvent} MyoEvent
+             */
+            MyoEvent.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.MyoEvent)
+                    return object;
+                var message = new $root.ubii.dataStructure.MyoEvent();
+                if (object.emg != null) {
+                    if (typeof object.emg !== "object")
+                        throw TypeError(".ubii.dataStructure.MyoEvent.emg: object expected");
+                    message.emg = $root.ubii.dataStructure.Vector8.fromObject(object.emg);
+                }
+                if (object.orientation != null) {
+                    if (typeof object.orientation !== "object")
+                        throw TypeError(".ubii.dataStructure.MyoEvent.orientation: object expected");
+                    message.orientation = $root.ubii.dataStructure.Quaternion.fromObject(object.orientation);
+                }
+                if (object.gyroscope != null) {
+                    if (typeof object.gyroscope !== "object")
+                        throw TypeError(".ubii.dataStructure.MyoEvent.gyroscope: object expected");
+                    message.gyroscope = $root.ubii.dataStructure.Vector3.fromObject(object.gyroscope);
+                }
+                if (object.accelerometer != null) {
+                    if (typeof object.accelerometer !== "object")
+                        throw TypeError(".ubii.dataStructure.MyoEvent.accelerometer: object expected");
+                    message.accelerometer = $root.ubii.dataStructure.Vector3.fromObject(object.accelerometer);
+                }
+                switch (object.gesture) {
+                case "REST":
+                case 0:
+                    message.gesture = 0;
+                    break;
+                case "FINGERS_SPREAD":
+                case 1:
+                    message.gesture = 1;
+                    break;
+                case "WAVE_IN":
+                case 2:
+                    message.gesture = 2;
+                    break;
+                case "WAVE_OUT":
+                case 3:
+                    message.gesture = 3;
+                    break;
+                case "FIST":
+                case 4:
+                    message.gesture = 4;
+                    break;
+                case "DOUBLE_TAP":
+                case 5:
+                    message.gesture = 5;
+                    break;
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a MyoEvent message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.MyoEvent
+             * @static
+             * @param {ubii.dataStructure.MyoEvent} message MyoEvent
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            MyoEvent.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.emg = null;
+                    object.orientation = null;
+                    object.gyroscope = null;
+                    object.accelerometer = null;
+                    object.gesture = options.enums === String ? "REST" : 0;
+                }
+                if (message.emg != null && message.hasOwnProperty("emg"))
+                    object.emg = $root.ubii.dataStructure.Vector8.toObject(message.emg, options);
+                if (message.orientation != null && message.hasOwnProperty("orientation"))
+                    object.orientation = $root.ubii.dataStructure.Quaternion.toObject(message.orientation, options);
+                if (message.gyroscope != null && message.hasOwnProperty("gyroscope"))
+                    object.gyroscope = $root.ubii.dataStructure.Vector3.toObject(message.gyroscope, options);
+                if (message.accelerometer != null && message.hasOwnProperty("accelerometer"))
+                    object.accelerometer = $root.ubii.dataStructure.Vector3.toObject(message.accelerometer, options);
+                if (message.gesture != null && message.hasOwnProperty("gesture"))
+                    object.gesture = options.enums === String ? $root.ubii.dataStructure.HandGestureType[message.gesture] : message.gesture;
+                return object;
+            };
+
+            /**
+             * Converts this MyoEvent to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.MyoEvent
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            MyoEvent.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return MyoEvent;
+        })();
+
         dataStructure.Quaternion = (function() {
 
             /**
@@ -11147,6 +11532,348 @@ $root.ubii = (function() {
             };
 
             return Vector4;
+        })();
+
+        dataStructure.Vector8 = (function() {
+
+            /**
+             * Properties of a Vector8.
+             * @memberof ubii.dataStructure
+             * @interface IVector8
+             * @property {number|null} [v0] Vector8 v0
+             * @property {number|null} [v1] Vector8 v1
+             * @property {number|null} [v2] Vector8 v2
+             * @property {number|null} [v3] Vector8 v3
+             * @property {number|null} [v4] Vector8 v4
+             * @property {number|null} [v5] Vector8 v5
+             * @property {number|null} [v6] Vector8 v6
+             * @property {number|null} [v7] Vector8 v7
+             */
+
+            /**
+             * Constructs a new Vector8.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a Vector8.
+             * @implements IVector8
+             * @constructor
+             * @param {ubii.dataStructure.IVector8=} [properties] Properties to set
+             */
+            function Vector8(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Vector8 v0.
+             * @member {number} v0
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v0 = 0;
+
+            /**
+             * Vector8 v1.
+             * @member {number} v1
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v1 = 0;
+
+            /**
+             * Vector8 v2.
+             * @member {number} v2
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v2 = 0;
+
+            /**
+             * Vector8 v3.
+             * @member {number} v3
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v3 = 0;
+
+            /**
+             * Vector8 v4.
+             * @member {number} v4
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v4 = 0;
+
+            /**
+             * Vector8 v5.
+             * @member {number} v5
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v5 = 0;
+
+            /**
+             * Vector8 v6.
+             * @member {number} v6
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v6 = 0;
+
+            /**
+             * Vector8 v7.
+             * @member {number} v7
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             */
+            Vector8.prototype.v7 = 0;
+
+            /**
+             * Creates a new Vector8 instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {ubii.dataStructure.IVector8=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Vector8} Vector8 instance
+             */
+            Vector8.create = function create(properties) {
+                return new Vector8(properties);
+            };
+
+            /**
+             * Encodes the specified Vector8 message. Does not implicitly {@link ubii.dataStructure.Vector8.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {ubii.dataStructure.IVector8} message Vector8 message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector8.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.v0 != null && message.hasOwnProperty("v0"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.v0);
+                if (message.v1 != null && message.hasOwnProperty("v1"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.v1);
+                if (message.v2 != null && message.hasOwnProperty("v2"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.v2);
+                if (message.v3 != null && message.hasOwnProperty("v3"))
+                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.v3);
+                if (message.v4 != null && message.hasOwnProperty("v4"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.v4);
+                if (message.v5 != null && message.hasOwnProperty("v5"))
+                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.v5);
+                if (message.v6 != null && message.hasOwnProperty("v6"))
+                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.v6);
+                if (message.v7 != null && message.hasOwnProperty("v7"))
+                    writer.uint32(/* id 8, wireType 1 =*/65).double(message.v7);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Vector8 message, length delimited. Does not implicitly {@link ubii.dataStructure.Vector8.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {ubii.dataStructure.IVector8} message Vector8 message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector8.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Vector8 message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Vector8} Vector8
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector8.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Vector8();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.v0 = reader.double();
+                        break;
+                    case 2:
+                        message.v1 = reader.double();
+                        break;
+                    case 3:
+                        message.v2 = reader.double();
+                        break;
+                    case 4:
+                        message.v3 = reader.double();
+                        break;
+                    case 5:
+                        message.v4 = reader.double();
+                        break;
+                    case 6:
+                        message.v5 = reader.double();
+                        break;
+                    case 7:
+                        message.v6 = reader.double();
+                        break;
+                    case 8:
+                        message.v7 = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Vector8 message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Vector8} Vector8
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector8.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Vector8 message.
+             * @function verify
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Vector8.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.v0 != null && message.hasOwnProperty("v0"))
+                    if (typeof message.v0 !== "number")
+                        return "v0: number expected";
+                if (message.v1 != null && message.hasOwnProperty("v1"))
+                    if (typeof message.v1 !== "number")
+                        return "v1: number expected";
+                if (message.v2 != null && message.hasOwnProperty("v2"))
+                    if (typeof message.v2 !== "number")
+                        return "v2: number expected";
+                if (message.v3 != null && message.hasOwnProperty("v3"))
+                    if (typeof message.v3 !== "number")
+                        return "v3: number expected";
+                if (message.v4 != null && message.hasOwnProperty("v4"))
+                    if (typeof message.v4 !== "number")
+                        return "v4: number expected";
+                if (message.v5 != null && message.hasOwnProperty("v5"))
+                    if (typeof message.v5 !== "number")
+                        return "v5: number expected";
+                if (message.v6 != null && message.hasOwnProperty("v6"))
+                    if (typeof message.v6 !== "number")
+                        return "v6: number expected";
+                if (message.v7 != null && message.hasOwnProperty("v7"))
+                    if (typeof message.v7 !== "number")
+                        return "v7: number expected";
+                return null;
+            };
+
+            /**
+             * Creates a Vector8 message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Vector8} Vector8
+             */
+            Vector8.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Vector8)
+                    return object;
+                var message = new $root.ubii.dataStructure.Vector8();
+                if (object.v0 != null)
+                    message.v0 = Number(object.v0);
+                if (object.v1 != null)
+                    message.v1 = Number(object.v1);
+                if (object.v2 != null)
+                    message.v2 = Number(object.v2);
+                if (object.v3 != null)
+                    message.v3 = Number(object.v3);
+                if (object.v4 != null)
+                    message.v4 = Number(object.v4);
+                if (object.v5 != null)
+                    message.v5 = Number(object.v5);
+                if (object.v6 != null)
+                    message.v6 = Number(object.v6);
+                if (object.v7 != null)
+                    message.v7 = Number(object.v7);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Vector8 message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Vector8
+             * @static
+             * @param {ubii.dataStructure.Vector8} message Vector8
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Vector8.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.v0 = 0;
+                    object.v1 = 0;
+                    object.v2 = 0;
+                    object.v3 = 0;
+                    object.v4 = 0;
+                    object.v5 = 0;
+                    object.v6 = 0;
+                    object.v7 = 0;
+                }
+                if (message.v0 != null && message.hasOwnProperty("v0"))
+                    object.v0 = options.json && !isFinite(message.v0) ? String(message.v0) : message.v0;
+                if (message.v1 != null && message.hasOwnProperty("v1"))
+                    object.v1 = options.json && !isFinite(message.v1) ? String(message.v1) : message.v1;
+                if (message.v2 != null && message.hasOwnProperty("v2"))
+                    object.v2 = options.json && !isFinite(message.v2) ? String(message.v2) : message.v2;
+                if (message.v3 != null && message.hasOwnProperty("v3"))
+                    object.v3 = options.json && !isFinite(message.v3) ? String(message.v3) : message.v3;
+                if (message.v4 != null && message.hasOwnProperty("v4"))
+                    object.v4 = options.json && !isFinite(message.v4) ? String(message.v4) : message.v4;
+                if (message.v5 != null && message.hasOwnProperty("v5"))
+                    object.v5 = options.json && !isFinite(message.v5) ? String(message.v5) : message.v5;
+                if (message.v6 != null && message.hasOwnProperty("v6"))
+                    object.v6 = options.json && !isFinite(message.v6) ? String(message.v6) : message.v6;
+                if (message.v7 != null && message.hasOwnProperty("v7"))
+                    object.v7 = options.json && !isFinite(message.v7) ? String(message.v7) : message.v7;
+                return object;
+            };
+
+            /**
+             * Converts this Vector8 to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Vector8
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Vector8.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Vector8;
         })();
 
         return dataStructure;
