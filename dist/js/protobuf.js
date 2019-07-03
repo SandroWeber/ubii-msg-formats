@@ -6257,6 +6257,946 @@ $root.ubii = (function() {
          */
         var sessions = {};
 
+        sessions.InteractionInputMapping = (function() {
+
+            /**
+             * Properties of an InteractionInputMapping.
+             * @memberof ubii.sessions
+             * @interface IInteractionInputMapping
+             * @property {string|null} [name] InteractionInputMapping name
+             * @property {string|null} [topic] InteractionInputMapping topic
+             * @property {ubii.devices.ITopicMux|null} [topicMux] InteractionInputMapping topicMux
+             */
+
+            /**
+             * Constructs a new InteractionInputMapping.
+             * @memberof ubii.sessions
+             * @classdesc Represents an InteractionInputMapping.
+             * @implements IInteractionInputMapping
+             * @constructor
+             * @param {ubii.sessions.IInteractionInputMapping=} [properties] Properties to set
+             */
+            function InteractionInputMapping(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * InteractionInputMapping name.
+             * @member {string} name
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @instance
+             */
+            InteractionInputMapping.prototype.name = "";
+
+            /**
+             * InteractionInputMapping topic.
+             * @member {string} topic
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @instance
+             */
+            InteractionInputMapping.prototype.topic = "";
+
+            /**
+             * InteractionInputMapping topicMux.
+             * @member {ubii.devices.ITopicMux|null|undefined} topicMux
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @instance
+             */
+            InteractionInputMapping.prototype.topicMux = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * InteractionInputMapping topicSource.
+             * @member {"topic"|"topicMux"|undefined} topicSource
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @instance
+             */
+            Object.defineProperty(InteractionInputMapping.prototype, "topicSource", {
+                get: $util.oneOfGetter($oneOfFields = ["topic", "topicMux"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new InteractionInputMapping instance using the specified properties.
+             * @function create
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {ubii.sessions.IInteractionInputMapping=} [properties] Properties to set
+             * @returns {ubii.sessions.InteractionInputMapping} InteractionInputMapping instance
+             */
+            InteractionInputMapping.create = function create(properties) {
+                return new InteractionInputMapping(properties);
+            };
+
+            /**
+             * Encodes the specified InteractionInputMapping message. Does not implicitly {@link ubii.sessions.InteractionInputMapping.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {ubii.sessions.IInteractionInputMapping} message InteractionInputMapping message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionInputMapping.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                if (message.topic != null && message.hasOwnProperty("topic"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.topic);
+                if (message.topicMux != null && message.hasOwnProperty("topicMux"))
+                    $root.ubii.devices.TopicMux.encode(message.topicMux, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified InteractionInputMapping message, length delimited. Does not implicitly {@link ubii.sessions.InteractionInputMapping.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {ubii.sessions.IInteractionInputMapping} message InteractionInputMapping message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionInputMapping.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an InteractionInputMapping message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.sessions.InteractionInputMapping} InteractionInputMapping
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionInputMapping.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.sessions.InteractionInputMapping();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.name = reader.string();
+                        break;
+                    case 2:
+                        message.topic = reader.string();
+                        break;
+                    case 3:
+                        message.topicMux = $root.ubii.devices.TopicMux.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an InteractionInputMapping message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.sessions.InteractionInputMapping} InteractionInputMapping
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionInputMapping.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an InteractionInputMapping message.
+             * @function verify
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            InteractionInputMapping.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.topic != null && message.hasOwnProperty("topic")) {
+                    properties.topicSource = 1;
+                    if (!$util.isString(message.topic))
+                        return "topic: string expected";
+                }
+                if (message.topicMux != null && message.hasOwnProperty("topicMux")) {
+                    if (properties.topicSource === 1)
+                        return "topicSource: multiple values";
+                    properties.topicSource = 1;
+                    {
+                        var error = $root.ubii.devices.TopicMux.verify(message.topicMux);
+                        if (error)
+                            return "topicMux." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates an InteractionInputMapping message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.sessions.InteractionInputMapping} InteractionInputMapping
+             */
+            InteractionInputMapping.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.sessions.InteractionInputMapping)
+                    return object;
+                var message = new $root.ubii.sessions.InteractionInputMapping();
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.topic != null)
+                    message.topic = String(object.topic);
+                if (object.topicMux != null) {
+                    if (typeof object.topicMux !== "object")
+                        throw TypeError(".ubii.sessions.InteractionInputMapping.topicMux: object expected");
+                    message.topicMux = $root.ubii.devices.TopicMux.fromObject(object.topicMux);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an InteractionInputMapping message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @static
+             * @param {ubii.sessions.InteractionInputMapping} message InteractionInputMapping
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            InteractionInputMapping.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.name = "";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                if (message.topic != null && message.hasOwnProperty("topic")) {
+                    object.topic = message.topic;
+                    if (options.oneofs)
+                        object.topicSource = "topic";
+                }
+                if (message.topicMux != null && message.hasOwnProperty("topicMux")) {
+                    object.topicMux = $root.ubii.devices.TopicMux.toObject(message.topicMux, options);
+                    if (options.oneofs)
+                        object.topicSource = "topicMux";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this InteractionInputMapping to JSON.
+             * @function toJSON
+             * @memberof ubii.sessions.InteractionInputMapping
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            InteractionInputMapping.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return InteractionInputMapping;
+        })();
+
+        sessions.InteractionInputMappingList = (function() {
+
+            /**
+             * Properties of an InteractionInputMappingList.
+             * @memberof ubii.sessions
+             * @interface IInteractionInputMappingList
+             * @property {Array.<ubii.sessions.IInteractionInputMapping>|null} [elements] InteractionInputMappingList elements
+             */
+
+            /**
+             * Constructs a new InteractionInputMappingList.
+             * @memberof ubii.sessions
+             * @classdesc Represents an InteractionInputMappingList.
+             * @implements IInteractionInputMappingList
+             * @constructor
+             * @param {ubii.sessions.IInteractionInputMappingList=} [properties] Properties to set
+             */
+            function InteractionInputMappingList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * InteractionInputMappingList elements.
+             * @member {Array.<ubii.sessions.IInteractionInputMapping>} elements
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @instance
+             */
+            InteractionInputMappingList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new InteractionInputMappingList instance using the specified properties.
+             * @function create
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {ubii.sessions.IInteractionInputMappingList=} [properties] Properties to set
+             * @returns {ubii.sessions.InteractionInputMappingList} InteractionInputMappingList instance
+             */
+            InteractionInputMappingList.create = function create(properties) {
+                return new InteractionInputMappingList(properties);
+            };
+
+            /**
+             * Encodes the specified InteractionInputMappingList message. Does not implicitly {@link ubii.sessions.InteractionInputMappingList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {ubii.sessions.IInteractionInputMappingList} message InteractionInputMappingList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionInputMappingList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.sessions.InteractionInputMapping.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified InteractionInputMappingList message, length delimited. Does not implicitly {@link ubii.sessions.InteractionInputMappingList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {ubii.sessions.IInteractionInputMappingList} message InteractionInputMappingList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionInputMappingList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an InteractionInputMappingList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.sessions.InteractionInputMappingList} InteractionInputMappingList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionInputMappingList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.sessions.InteractionInputMappingList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.sessions.InteractionInputMapping.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an InteractionInputMappingList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.sessions.InteractionInputMappingList} InteractionInputMappingList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionInputMappingList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an InteractionInputMappingList message.
+             * @function verify
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            InteractionInputMappingList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.sessions.InteractionInputMapping.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates an InteractionInputMappingList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.sessions.InteractionInputMappingList} InteractionInputMappingList
+             */
+            InteractionInputMappingList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.sessions.InteractionInputMappingList)
+                    return object;
+                var message = new $root.ubii.sessions.InteractionInputMappingList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.sessions.InteractionInputMappingList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.sessions.InteractionInputMappingList.elements: object expected");
+                        message.elements[i] = $root.ubii.sessions.InteractionInputMapping.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an InteractionInputMappingList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @static
+             * @param {ubii.sessions.InteractionInputMappingList} message InteractionInputMappingList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            InteractionInputMappingList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.sessions.InteractionInputMapping.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this InteractionInputMappingList to JSON.
+             * @function toJSON
+             * @memberof ubii.sessions.InteractionInputMappingList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            InteractionInputMappingList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return InteractionInputMappingList;
+        })();
+
+        sessions.InteractionOutputMapping = (function() {
+
+            /**
+             * Properties of an InteractionOutputMapping.
+             * @memberof ubii.sessions
+             * @interface IInteractionOutputMapping
+             * @property {string|null} [name] InteractionOutputMapping name
+             * @property {string|null} [topic] InteractionOutputMapping topic
+             * @property {ubii.devices.ITopicDemux|null} [topicDemux] InteractionOutputMapping topicDemux
+             */
+
+            /**
+             * Constructs a new InteractionOutputMapping.
+             * @memberof ubii.sessions
+             * @classdesc Represents an InteractionOutputMapping.
+             * @implements IInteractionOutputMapping
+             * @constructor
+             * @param {ubii.sessions.IInteractionOutputMapping=} [properties] Properties to set
+             */
+            function InteractionOutputMapping(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * InteractionOutputMapping name.
+             * @member {string} name
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @instance
+             */
+            InteractionOutputMapping.prototype.name = "";
+
+            /**
+             * InteractionOutputMapping topic.
+             * @member {string} topic
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @instance
+             */
+            InteractionOutputMapping.prototype.topic = "";
+
+            /**
+             * InteractionOutputMapping topicDemux.
+             * @member {ubii.devices.ITopicDemux|null|undefined} topicDemux
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @instance
+             */
+            InteractionOutputMapping.prototype.topicDemux = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * InteractionOutputMapping topicDestination.
+             * @member {"topic"|"topicDemux"|undefined} topicDestination
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @instance
+             */
+            Object.defineProperty(InteractionOutputMapping.prototype, "topicDestination", {
+                get: $util.oneOfGetter($oneOfFields = ["topic", "topicDemux"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new InteractionOutputMapping instance using the specified properties.
+             * @function create
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {ubii.sessions.IInteractionOutputMapping=} [properties] Properties to set
+             * @returns {ubii.sessions.InteractionOutputMapping} InteractionOutputMapping instance
+             */
+            InteractionOutputMapping.create = function create(properties) {
+                return new InteractionOutputMapping(properties);
+            };
+
+            /**
+             * Encodes the specified InteractionOutputMapping message. Does not implicitly {@link ubii.sessions.InteractionOutputMapping.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {ubii.sessions.IInteractionOutputMapping} message InteractionOutputMapping message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionOutputMapping.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                if (message.topic != null && message.hasOwnProperty("topic"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.topic);
+                if (message.topicDemux != null && message.hasOwnProperty("topicDemux"))
+                    $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified InteractionOutputMapping message, length delimited. Does not implicitly {@link ubii.sessions.InteractionOutputMapping.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {ubii.sessions.IInteractionOutputMapping} message InteractionOutputMapping message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionOutputMapping.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an InteractionOutputMapping message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.sessions.InteractionOutputMapping} InteractionOutputMapping
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionOutputMapping.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.sessions.InteractionOutputMapping();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.name = reader.string();
+                        break;
+                    case 2:
+                        message.topic = reader.string();
+                        break;
+                    case 3:
+                        message.topicDemux = $root.ubii.devices.TopicDemux.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an InteractionOutputMapping message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.sessions.InteractionOutputMapping} InteractionOutputMapping
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionOutputMapping.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an InteractionOutputMapping message.
+             * @function verify
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            InteractionOutputMapping.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.topic != null && message.hasOwnProperty("topic")) {
+                    properties.topicDestination = 1;
+                    if (!$util.isString(message.topic))
+                        return "topic: string expected";
+                }
+                if (message.topicDemux != null && message.hasOwnProperty("topicDemux")) {
+                    if (properties.topicDestination === 1)
+                        return "topicDestination: multiple values";
+                    properties.topicDestination = 1;
+                    {
+                        var error = $root.ubii.devices.TopicDemux.verify(message.topicDemux);
+                        if (error)
+                            return "topicDemux." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates an InteractionOutputMapping message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.sessions.InteractionOutputMapping} InteractionOutputMapping
+             */
+            InteractionOutputMapping.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.sessions.InteractionOutputMapping)
+                    return object;
+                var message = new $root.ubii.sessions.InteractionOutputMapping();
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.topic != null)
+                    message.topic = String(object.topic);
+                if (object.topicDemux != null) {
+                    if (typeof object.topicDemux !== "object")
+                        throw TypeError(".ubii.sessions.InteractionOutputMapping.topicDemux: object expected");
+                    message.topicDemux = $root.ubii.devices.TopicDemux.fromObject(object.topicDemux);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an InteractionOutputMapping message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @static
+             * @param {ubii.sessions.InteractionOutputMapping} message InteractionOutputMapping
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            InteractionOutputMapping.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.name = "";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                if (message.topic != null && message.hasOwnProperty("topic")) {
+                    object.topic = message.topic;
+                    if (options.oneofs)
+                        object.topicDestination = "topic";
+                }
+                if (message.topicDemux != null && message.hasOwnProperty("topicDemux")) {
+                    object.topicDemux = $root.ubii.devices.TopicDemux.toObject(message.topicDemux, options);
+                    if (options.oneofs)
+                        object.topicDestination = "topicDemux";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this InteractionOutputMapping to JSON.
+             * @function toJSON
+             * @memberof ubii.sessions.InteractionOutputMapping
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            InteractionOutputMapping.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return InteractionOutputMapping;
+        })();
+
+        sessions.InteractionOutputMappingList = (function() {
+
+            /**
+             * Properties of an InteractionOutputMappingList.
+             * @memberof ubii.sessions
+             * @interface IInteractionOutputMappingList
+             * @property {Array.<ubii.sessions.IInteractionOutputMapping>|null} [elements] InteractionOutputMappingList elements
+             */
+
+            /**
+             * Constructs a new InteractionOutputMappingList.
+             * @memberof ubii.sessions
+             * @classdesc Represents an InteractionOutputMappingList.
+             * @implements IInteractionOutputMappingList
+             * @constructor
+             * @param {ubii.sessions.IInteractionOutputMappingList=} [properties] Properties to set
+             */
+            function InteractionOutputMappingList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * InteractionOutputMappingList elements.
+             * @member {Array.<ubii.sessions.IInteractionOutputMapping>} elements
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @instance
+             */
+            InteractionOutputMappingList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new InteractionOutputMappingList instance using the specified properties.
+             * @function create
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {ubii.sessions.IInteractionOutputMappingList=} [properties] Properties to set
+             * @returns {ubii.sessions.InteractionOutputMappingList} InteractionOutputMappingList instance
+             */
+            InteractionOutputMappingList.create = function create(properties) {
+                return new InteractionOutputMappingList(properties);
+            };
+
+            /**
+             * Encodes the specified InteractionOutputMappingList message. Does not implicitly {@link ubii.sessions.InteractionOutputMappingList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {ubii.sessions.IInteractionOutputMappingList} message InteractionOutputMappingList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionOutputMappingList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.sessions.InteractionOutputMapping.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified InteractionOutputMappingList message, length delimited. Does not implicitly {@link ubii.sessions.InteractionOutputMappingList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {ubii.sessions.IInteractionOutputMappingList} message InteractionOutputMappingList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InteractionOutputMappingList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an InteractionOutputMappingList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.sessions.InteractionOutputMappingList} InteractionOutputMappingList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionOutputMappingList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.sessions.InteractionOutputMappingList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.sessions.InteractionOutputMapping.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an InteractionOutputMappingList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.sessions.InteractionOutputMappingList} InteractionOutputMappingList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InteractionOutputMappingList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an InteractionOutputMappingList message.
+             * @function verify
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            InteractionOutputMappingList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.sessions.InteractionOutputMapping.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates an InteractionOutputMappingList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.sessions.InteractionOutputMappingList} InteractionOutputMappingList
+             */
+            InteractionOutputMappingList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.sessions.InteractionOutputMappingList)
+                    return object;
+                var message = new $root.ubii.sessions.InteractionOutputMappingList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.sessions.InteractionOutputMappingList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.sessions.InteractionOutputMappingList.elements: object expected");
+                        message.elements[i] = $root.ubii.sessions.InteractionOutputMapping.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an InteractionOutputMappingList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @static
+             * @param {ubii.sessions.InteractionOutputMappingList} message InteractionOutputMappingList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            InteractionOutputMappingList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.sessions.InteractionOutputMapping.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this InteractionOutputMappingList to JSON.
+             * @function toJSON
+             * @memberof ubii.sessions.InteractionOutputMappingList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            InteractionOutputMappingList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return InteractionOutputMappingList;
+        })();
+
         sessions.IOMapping = (function() {
 
             /**
@@ -6264,9 +7204,8 @@ $root.ubii = (function() {
              * @memberof ubii.sessions
              * @interface IIOMapping
              * @property {string|null} [interactionId] IOMapping interactionId
-             * @property {ubii.interactions.IIOFormat|null} [interactionInput] IOMapping interactionInput
-             * @property {ubii.interactions.IIOFormat|null} [interactionOutput] IOMapping interactionOutput
-             * @property {string|null} [topic] IOMapping topic
+             * @property {Array.<ubii.sessions.IInteractionInputMapping>|null} [inputMappings] IOMapping inputMappings
+             * @property {Array.<ubii.sessions.IInteractionOutputMapping>|null} [outputMappings] IOMapping outputMappings
              */
 
             /**
@@ -6278,6 +7217,8 @@ $root.ubii = (function() {
              * @param {ubii.sessions.IIOMapping=} [properties] Properties to set
              */
             function IOMapping(properties) {
+                this.inputMappings = [];
+                this.outputMappings = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -6293,42 +7234,20 @@ $root.ubii = (function() {
             IOMapping.prototype.interactionId = "";
 
             /**
-             * IOMapping interactionInput.
-             * @member {ubii.interactions.IIOFormat|null|undefined} interactionInput
+             * IOMapping inputMappings.
+             * @member {Array.<ubii.sessions.IInteractionInputMapping>} inputMappings
              * @memberof ubii.sessions.IOMapping
              * @instance
              */
-            IOMapping.prototype.interactionInput = null;
+            IOMapping.prototype.inputMappings = $util.emptyArray;
 
             /**
-             * IOMapping interactionOutput.
-             * @member {ubii.interactions.IIOFormat|null|undefined} interactionOutput
+             * IOMapping outputMappings.
+             * @member {Array.<ubii.sessions.IInteractionOutputMapping>} outputMappings
              * @memberof ubii.sessions.IOMapping
              * @instance
              */
-            IOMapping.prototype.interactionOutput = null;
-
-            /**
-             * IOMapping topic.
-             * @member {string} topic
-             * @memberof ubii.sessions.IOMapping
-             * @instance
-             */
-            IOMapping.prototype.topic = "";
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * IOMapping ioType.
-             * @member {"interactionInput"|"interactionOutput"|undefined} ioType
-             * @memberof ubii.sessions.IOMapping
-             * @instance
-             */
-            Object.defineProperty(IOMapping.prototype, "ioType", {
-                get: $util.oneOfGetter($oneOfFields = ["interactionInput", "interactionOutput"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
+            IOMapping.prototype.outputMappings = $util.emptyArray;
 
             /**
              * Creates a new IOMapping instance using the specified properties.
@@ -6356,12 +7275,12 @@ $root.ubii = (function() {
                     writer = $Writer.create();
                 if (message.interactionId != null && message.hasOwnProperty("interactionId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.interactionId);
-                if (message.interactionInput != null && message.hasOwnProperty("interactionInput"))
-                    $root.ubii.interactions.IOFormat.encode(message.interactionInput, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.interactionOutput != null && message.hasOwnProperty("interactionOutput"))
-                    $root.ubii.interactions.IOFormat.encode(message.interactionOutput, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.topic != null && message.hasOwnProperty("topic"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.topic);
+                if (message.inputMappings != null && message.inputMappings.length)
+                    for (var i = 0; i < message.inputMappings.length; ++i)
+                        $root.ubii.sessions.InteractionInputMapping.encode(message.inputMappings[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.outputMappings != null && message.outputMappings.length)
+                    for (var i = 0; i < message.outputMappings.length; ++i)
+                        $root.ubii.sessions.InteractionOutputMapping.encode(message.outputMappings[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -6400,13 +7319,14 @@ $root.ubii = (function() {
                         message.interactionId = reader.string();
                         break;
                     case 2:
-                        message.interactionInput = $root.ubii.interactions.IOFormat.decode(reader, reader.uint32());
+                        if (!(message.inputMappings && message.inputMappings.length))
+                            message.inputMappings = [];
+                        message.inputMappings.push($root.ubii.sessions.InteractionInputMapping.decode(reader, reader.uint32()));
                         break;
                     case 3:
-                        message.interactionOutput = $root.ubii.interactions.IOFormat.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.topic = reader.string();
+                        if (!(message.outputMappings && message.outputMappings.length))
+                            message.outputMappings = [];
+                        message.outputMappings.push($root.ubii.sessions.InteractionOutputMapping.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6443,31 +7363,27 @@ $root.ubii = (function() {
             IOMapping.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                var properties = {};
                 if (message.interactionId != null && message.hasOwnProperty("interactionId"))
                     if (!$util.isString(message.interactionId))
                         return "interactionId: string expected";
-                if (message.interactionInput != null && message.hasOwnProperty("interactionInput")) {
-                    properties.ioType = 1;
-                    {
-                        var error = $root.ubii.interactions.IOFormat.verify(message.interactionInput);
+                if (message.inputMappings != null && message.hasOwnProperty("inputMappings")) {
+                    if (!Array.isArray(message.inputMappings))
+                        return "inputMappings: array expected";
+                    for (var i = 0; i < message.inputMappings.length; ++i) {
+                        var error = $root.ubii.sessions.InteractionInputMapping.verify(message.inputMappings[i]);
                         if (error)
-                            return "interactionInput." + error;
+                            return "inputMappings." + error;
                     }
                 }
-                if (message.interactionOutput != null && message.hasOwnProperty("interactionOutput")) {
-                    if (properties.ioType === 1)
-                        return "ioType: multiple values";
-                    properties.ioType = 1;
-                    {
-                        var error = $root.ubii.interactions.IOFormat.verify(message.interactionOutput);
+                if (message.outputMappings != null && message.hasOwnProperty("outputMappings")) {
+                    if (!Array.isArray(message.outputMappings))
+                        return "outputMappings: array expected";
+                    for (var i = 0; i < message.outputMappings.length; ++i) {
+                        var error = $root.ubii.sessions.InteractionOutputMapping.verify(message.outputMappings[i]);
                         if (error)
-                            return "interactionOutput." + error;
+                            return "outputMappings." + error;
                     }
                 }
-                if (message.topic != null && message.hasOwnProperty("topic"))
-                    if (!$util.isString(message.topic))
-                        return "topic: string expected";
                 return null;
             };
 
@@ -6485,18 +7401,26 @@ $root.ubii = (function() {
                 var message = new $root.ubii.sessions.IOMapping();
                 if (object.interactionId != null)
                     message.interactionId = String(object.interactionId);
-                if (object.interactionInput != null) {
-                    if (typeof object.interactionInput !== "object")
-                        throw TypeError(".ubii.sessions.IOMapping.interactionInput: object expected");
-                    message.interactionInput = $root.ubii.interactions.IOFormat.fromObject(object.interactionInput);
+                if (object.inputMappings) {
+                    if (!Array.isArray(object.inputMappings))
+                        throw TypeError(".ubii.sessions.IOMapping.inputMappings: array expected");
+                    message.inputMappings = [];
+                    for (var i = 0; i < object.inputMappings.length; ++i) {
+                        if (typeof object.inputMappings[i] !== "object")
+                            throw TypeError(".ubii.sessions.IOMapping.inputMappings: object expected");
+                        message.inputMappings[i] = $root.ubii.sessions.InteractionInputMapping.fromObject(object.inputMappings[i]);
+                    }
                 }
-                if (object.interactionOutput != null) {
-                    if (typeof object.interactionOutput !== "object")
-                        throw TypeError(".ubii.sessions.IOMapping.interactionOutput: object expected");
-                    message.interactionOutput = $root.ubii.interactions.IOFormat.fromObject(object.interactionOutput);
+                if (object.outputMappings) {
+                    if (!Array.isArray(object.outputMappings))
+                        throw TypeError(".ubii.sessions.IOMapping.outputMappings: array expected");
+                    message.outputMappings = [];
+                    for (var i = 0; i < object.outputMappings.length; ++i) {
+                        if (typeof object.outputMappings[i] !== "object")
+                            throw TypeError(".ubii.sessions.IOMapping.outputMappings: object expected");
+                        message.outputMappings[i] = $root.ubii.sessions.InteractionOutputMapping.fromObject(object.outputMappings[i]);
+                    }
                 }
-                if (object.topic != null)
-                    message.topic = String(object.topic);
                 return message;
             };
 
@@ -6513,24 +7437,24 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
-                    object.interactionId = "";
-                    object.topic = "";
+                if (options.arrays || options.defaults) {
+                    object.inputMappings = [];
+                    object.outputMappings = [];
                 }
+                if (options.defaults)
+                    object.interactionId = "";
                 if (message.interactionId != null && message.hasOwnProperty("interactionId"))
                     object.interactionId = message.interactionId;
-                if (message.interactionInput != null && message.hasOwnProperty("interactionInput")) {
-                    object.interactionInput = $root.ubii.interactions.IOFormat.toObject(message.interactionInput, options);
-                    if (options.oneofs)
-                        object.ioType = "interactionInput";
+                if (message.inputMappings && message.inputMappings.length) {
+                    object.inputMappings = [];
+                    for (var j = 0; j < message.inputMappings.length; ++j)
+                        object.inputMappings[j] = $root.ubii.sessions.InteractionInputMapping.toObject(message.inputMappings[j], options);
                 }
-                if (message.interactionOutput != null && message.hasOwnProperty("interactionOutput")) {
-                    object.interactionOutput = $root.ubii.interactions.IOFormat.toObject(message.interactionOutput, options);
-                    if (options.oneofs)
-                        object.ioType = "interactionOutput";
+                if (message.outputMappings && message.outputMappings.length) {
+                    object.outputMappings = [];
+                    for (var j = 0; j < message.outputMappings.length; ++j)
+                        object.outputMappings[j] = $root.ubii.sessions.InteractionOutputMapping.toObject(message.outputMappings[j], options);
                 }
-                if (message.topic != null && message.hasOwnProperty("topic"))
-                    object.topic = message.topic;
                 return object;
             };
 
@@ -6546,6 +7470,214 @@ $root.ubii = (function() {
             };
 
             return IOMapping;
+        })();
+
+        sessions.IOMappingList = (function() {
+
+            /**
+             * Properties of a IOMappingList.
+             * @memberof ubii.sessions
+             * @interface IIOMappingList
+             * @property {Array.<ubii.sessions.IIOMapping>|null} [elements] IOMappingList elements
+             */
+
+            /**
+             * Constructs a new IOMappingList.
+             * @memberof ubii.sessions
+             * @classdesc Represents a IOMappingList.
+             * @implements IIOMappingList
+             * @constructor
+             * @param {ubii.sessions.IIOMappingList=} [properties] Properties to set
+             */
+            function IOMappingList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * IOMappingList elements.
+             * @member {Array.<ubii.sessions.IIOMapping>} elements
+             * @memberof ubii.sessions.IOMappingList
+             * @instance
+             */
+            IOMappingList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new IOMappingList instance using the specified properties.
+             * @function create
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {ubii.sessions.IIOMappingList=} [properties] Properties to set
+             * @returns {ubii.sessions.IOMappingList} IOMappingList instance
+             */
+            IOMappingList.create = function create(properties) {
+                return new IOMappingList(properties);
+            };
+
+            /**
+             * Encodes the specified IOMappingList message. Does not implicitly {@link ubii.sessions.IOMappingList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {ubii.sessions.IIOMappingList} message IOMappingList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IOMappingList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.sessions.IOMapping.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified IOMappingList message, length delimited. Does not implicitly {@link ubii.sessions.IOMappingList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {ubii.sessions.IIOMappingList} message IOMappingList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IOMappingList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a IOMappingList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.sessions.IOMappingList} IOMappingList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IOMappingList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.sessions.IOMappingList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.sessions.IOMapping.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a IOMappingList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.sessions.IOMappingList} IOMappingList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IOMappingList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a IOMappingList message.
+             * @function verify
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            IOMappingList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.sessions.IOMapping.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a IOMappingList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.sessions.IOMappingList} IOMappingList
+             */
+            IOMappingList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.sessions.IOMappingList)
+                    return object;
+                var message = new $root.ubii.sessions.IOMappingList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.sessions.IOMappingList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.sessions.IOMappingList.elements: object expected");
+                        message.elements[i] = $root.ubii.sessions.IOMapping.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a IOMappingList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.sessions.IOMappingList
+             * @static
+             * @param {ubii.sessions.IOMappingList} message IOMappingList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            IOMappingList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.sessions.IOMapping.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this IOMappingList to JSON.
+             * @function toJSON
+             * @memberof ubii.sessions.IOMappingList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            IOMappingList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return IOMappingList;
         })();
 
         sessions.Session = (function() {

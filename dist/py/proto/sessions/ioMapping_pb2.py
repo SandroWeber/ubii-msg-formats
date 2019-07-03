@@ -12,7 +12,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from proto.interactions import ioFormat_pb2 as proto_dot_interactions_dot_ioFormat__pb2
+from proto.sessions import interactionInputMapping_pb2 as proto_dot_sessions_dot_interactionInputMapping__pb2
+from proto.sessions import interactionOutputMapping_pb2 as proto_dot_sessions_dot_interactionOutputMapping__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.sessions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1eproto/sessions/ioMapping.proto\x12\rubii.sessions\x1a!proto/interactions/ioFormat.proto\"\xb2\x01\n\tIOMapping\x12\x16\n\x0einteraction_id\x18\x01 \x01(\t\x12\x38\n\x11interaction_input\x18\x02 \x01(\x0b\x32\x1b.ubii.interactions.IOFormatH\x00\x12\x39\n\x12interaction_output\x18\x03 \x01(\x0b\x32\x1b.ubii.interactions.IOFormatH\x00\x12\r\n\x05topic\x18\x04 \x01(\tB\t\n\x07io_typeb\x06proto3')
+  serialized_pb=_b('\n\x1eproto/sessions/ioMapping.proto\x12\rubii.sessions\x1a,proto/sessions/interactionInputMapping.proto\x1a-proto/sessions/interactionOutputMapping.proto\"\xa5\x01\n\tIOMapping\x12\x16\n\x0einteraction_id\x18\x01 \x01(\t\x12>\n\x0einput_mappings\x18\x02 \x03(\x0b\x32&.ubii.sessions.InteractionInputMapping\x12@\n\x0foutput_mappings\x18\x03 \x03(\x0b\x32\'.ubii.sessions.InteractionOutputMapping\";\n\rIOMappingList\x12*\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x18.ubii.sessions.IOMappingb\x06proto3')
   ,
-  dependencies=[proto_dot_interactions_dot_ioFormat__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_sessions_dot_interactionInputMapping__pb2.DESCRIPTOR,proto_dot_sessions_dot_interactionOutputMapping__pb2.DESCRIPTOR,])
 
 
 
@@ -42,23 +43,16 @@ _IOMAPPING = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='interaction_input', full_name='ubii.sessions.IOMapping.interaction_input', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='input_mappings', full_name='ubii.sessions.IOMapping.input_mappings', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='interaction_output', full_name='ubii.sessions.IOMapping.interaction_output', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='topic', full_name='ubii.sessions.IOMapping.topic', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='output_mappings', full_name='ubii.sessions.IOMapping.output_mappings', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -73,23 +67,47 @@ _IOMAPPING = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='io_type', full_name='ubii.sessions.IOMapping.io_type',
-      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=85,
-  serialized_end=263,
+  serialized_start=143,
+  serialized_end=308,
 )
 
-_IOMAPPING.fields_by_name['interaction_input'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT
-_IOMAPPING.fields_by_name['interaction_output'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT
-_IOMAPPING.oneofs_by_name['io_type'].fields.append(
-  _IOMAPPING.fields_by_name['interaction_input'])
-_IOMAPPING.fields_by_name['interaction_input'].containing_oneof = _IOMAPPING.oneofs_by_name['io_type']
-_IOMAPPING.oneofs_by_name['io_type'].fields.append(
-  _IOMAPPING.fields_by_name['interaction_output'])
-_IOMAPPING.fields_by_name['interaction_output'].containing_oneof = _IOMAPPING.oneofs_by_name['io_type']
+
+_IOMAPPINGLIST = _descriptor.Descriptor(
+  name='IOMappingList',
+  full_name='ubii.sessions.IOMappingList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.sessions.IOMappingList.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=310,
+  serialized_end=369,
+)
+
+_IOMAPPING.fields_by_name['input_mappings'].message_type = proto_dot_sessions_dot_interactionInputMapping__pb2._INTERACTIONINPUTMAPPING
+_IOMAPPING.fields_by_name['output_mappings'].message_type = proto_dot_sessions_dot_interactionOutputMapping__pb2._INTERACTIONOUTPUTMAPPING
+_IOMAPPINGLIST.fields_by_name['elements'].message_type = _IOMAPPING
 DESCRIPTOR.message_types_by_name['IOMapping'] = _IOMAPPING
+DESCRIPTOR.message_types_by_name['IOMappingList'] = _IOMAPPINGLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 IOMapping = _reflection.GeneratedProtocolMessageType('IOMapping', (_message.Message,), dict(
@@ -98,6 +116,13 @@ IOMapping = _reflection.GeneratedProtocolMessageType('IOMapping', (_message.Mess
   # @@protoc_insertion_point(class_scope:ubii.sessions.IOMapping)
   ))
 _sym_db.RegisterMessage(IOMapping)
+
+IOMappingList = _reflection.GeneratedProtocolMessageType('IOMappingList', (_message.Message,), dict(
+  DESCRIPTOR = _IOMAPPINGLIST,
+  __module__ = 'proto.sessions.ioMapping_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.sessions.IOMappingList)
+  ))
+_sym_db.RegisterMessage(IOMappingList)
 
 
 # @@protoc_insertion_point(module_scope)
