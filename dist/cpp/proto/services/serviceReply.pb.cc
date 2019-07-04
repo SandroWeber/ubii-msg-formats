@@ -27,9 +27,11 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::goog
 }  // namespace protobuf_proto_2fdevices_2fdevice_2eproto
 namespace protobuf_proto_2fdevices_2ftopicDemux_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicDemux_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicDemux;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicDemux_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicDemuxList;
 }  // namespace protobuf_proto_2fdevices_2ftopicDemux_2eproto
 namespace protobuf_proto_2fdevices_2ftopicMux_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicMux_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicMux;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicMux_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicMuxList;
 }  // namespace protobuf_proto_2fdevices_2ftopicMux_2eproto
 namespace protobuf_proto_2fgeneral_2ferror_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fgeneral_2ferror_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Error;
@@ -68,7 +70,9 @@ class ServiceReplyDefaultTypeInternal {
   const ::ubii::interactions::InteractionList* interaction_list_;
   const ::ubii::general::StringList* string_list_;
   const ::ubii::devices::TopicMux* topic_mux_;
+  const ::ubii::devices::TopicMuxList* topic_mux_list_;
   const ::ubii::devices::TopicDemux* topic_demux_;
+  const ::ubii::devices::TopicDemuxList* topic_demux_list_;
 } _ServiceReply_default_instance_;
 }  // namespace services
 }  // namespace ubii
@@ -84,8 +88,8 @@ static void InitDefaultsServiceReply() {
   ::ubii::services::ServiceReply::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<12> scc_info_ServiceReply =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 12, InitDefaultsServiceReply}, {
+::google::protobuf::internal::SCCInfo<14> scc_info_ServiceReply =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 14, InitDefaultsServiceReply}, {
       &protobuf_proto_2fgeneral_2fsuccess_2eproto::scc_info_Success.base,
       &protobuf_proto_2fgeneral_2ferror_2eproto::scc_info_Error.base,
       &protobuf_proto_2fclients_2fclient_2eproto::scc_info_Client.base,
@@ -97,7 +101,9 @@ static void InitDefaultsServiceReply() {
       &protobuf_proto_2finteractions_2finteraction_2eproto::scc_info_InteractionList.base,
       &protobuf_proto_2fgeneral_2flists_2eproto::scc_info_StringList.base,
       &protobuf_proto_2fdevices_2ftopicMux_2eproto::scc_info_TopicMux.base,
-      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemux.base,}};
+      &protobuf_proto_2fdevices_2ftopicMux_2eproto::scc_info_TopicMuxList.base,
+      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemux.base,
+      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemuxList.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ServiceReply.base);
@@ -122,7 +128,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, interaction_list_),
   offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, string_list_),
   offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_mux_),
+  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_mux_list_),
   offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_demux_),
+  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_demux_list_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceReply, type_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -162,7 +170,7 @@ void AddDescriptorsImpl() {
       "ices/topicMux.proto\032\036proto/devices/topic"
       "Demux.proto\032\032proto/servers/server.proto\032"
       "\034proto/sessions/session.proto\032$proto/int"
-      "eractions/interaction.proto\"\303\004\n\014ServiceR"
+      "eractions/interaction.proto\"\263\005\n\014ServiceR"
       "eply\022(\n\007success\030\001 \001(\0132\025.ubii.general.Suc"
       "cessH\000\022$\n\005error\030\002 \001(\0132\023.ubii.general.Err"
       "orH\000\022&\n\006client\030\003 \001(\0132\024.ubii.clients.Clie"
@@ -175,12 +183,15 @@ void AddDescriptorsImpl() {
       "teraction_list\030\t \001(\0132\".ubii.interactions"
       ".InteractionListH\000\022/\n\013string_list\030\n \001(\0132"
       "\030.ubii.general.StringListH\000\022+\n\ttopic_mux"
-      "\030\013 \001(\0132\026.ubii.devices.TopicMuxH\000\022/\n\013topi"
-      "c_demux\030\014 \001(\0132\030.ubii.devices.TopicDemuxH"
-      "\000B\006\n\004typeb\006proto3"
+      "\030\013 \001(\0132\026.ubii.devices.TopicMuxH\000\0224\n\016topi"
+      "c_mux_list\030\014 \001(\0132\032.ubii.devices.TopicMux"
+      "ListH\000\022/\n\013topic_demux\030\r \001(\0132\030.ubii.devic"
+      "es.TopicDemuxH\000\0228\n\020topic_demux_list\030\016 \001("
+      "\0132\034.ubii.devices.TopicDemuxListH\000B\006\n\004typ"
+      "eb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 937);
+      descriptor, 1049);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/services/serviceReply.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fgeneral_2fsuccess_2eproto::AddDescriptors();
@@ -234,8 +245,12 @@ void ServiceReply::InitAsDefaultInstance() {
       ::ubii::general::StringList::internal_default_instance());
   ::ubii::services::_ServiceReply_default_instance_.topic_mux_ = const_cast< ::ubii::devices::TopicMux*>(
       ::ubii::devices::TopicMux::internal_default_instance());
+  ::ubii::services::_ServiceReply_default_instance_.topic_mux_list_ = const_cast< ::ubii::devices::TopicMuxList*>(
+      ::ubii::devices::TopicMuxList::internal_default_instance());
   ::ubii::services::_ServiceReply_default_instance_.topic_demux_ = const_cast< ::ubii::devices::TopicDemux*>(
       ::ubii::devices::TopicDemux::internal_default_instance());
+  ::ubii::services::_ServiceReply_default_instance_.topic_demux_list_ = const_cast< ::ubii::devices::TopicDemuxList*>(
+      ::ubii::devices::TopicDemuxList::internal_default_instance());
 }
 void ServiceReply::set_allocated_success(::ubii::general::Success* success) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -457,6 +472,26 @@ void ServiceReply::clear_topic_mux() {
     clear_has_type();
   }
 }
+void ServiceReply::set_allocated_topic_mux_list(::ubii::devices::TopicMuxList* topic_mux_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (topic_mux_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      topic_mux_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, topic_mux_list, submessage_arena);
+    }
+    set_has_topic_mux_list();
+    type_.topic_mux_list_ = topic_mux_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceReply.topic_mux_list)
+}
+void ServiceReply::clear_topic_mux_list() {
+  if (has_topic_mux_list()) {
+    delete type_.topic_mux_list_;
+    clear_has_type();
+  }
+}
 void ServiceReply::set_allocated_topic_demux(::ubii::devices::TopicDemux* topic_demux) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
@@ -477,6 +512,26 @@ void ServiceReply::clear_topic_demux() {
     clear_has_type();
   }
 }
+void ServiceReply::set_allocated_topic_demux_list(::ubii::devices::TopicDemuxList* topic_demux_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (topic_demux_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      topic_demux_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, topic_demux_list, submessage_arena);
+    }
+    set_has_topic_demux_list();
+    type_.topic_demux_list_ = topic_demux_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceReply.topic_demux_list)
+}
+void ServiceReply::clear_topic_demux_list() {
+  if (has_topic_demux_list()) {
+    delete type_.topic_demux_list_;
+    clear_has_type();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ServiceReply::kSuccessFieldNumber;
 const int ServiceReply::kErrorFieldNumber;
@@ -489,7 +544,9 @@ const int ServiceReply::kInteractionFieldNumber;
 const int ServiceReply::kInteractionListFieldNumber;
 const int ServiceReply::kStringListFieldNumber;
 const int ServiceReply::kTopicMuxFieldNumber;
+const int ServiceReply::kTopicMuxListFieldNumber;
 const int ServiceReply::kTopicDemuxFieldNumber;
+const int ServiceReply::kTopicDemuxListFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ServiceReply::ServiceReply()
@@ -549,8 +606,16 @@ ServiceReply::ServiceReply(const ServiceReply& from)
       mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from.topic_mux());
       break;
     }
+    case kTopicMuxList: {
+      mutable_topic_mux_list()->::ubii::devices::TopicMuxList::MergeFrom(from.topic_mux_list());
+      break;
+    }
     case kTopicDemux: {
       mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from.topic_demux());
+      break;
+    }
+    case kTopicDemuxList: {
+      mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from.topic_demux_list());
       break;
     }
     case TYPE_NOT_SET: {
@@ -636,8 +701,16 @@ void ServiceReply::clear_type() {
       delete type_.topic_mux_;
       break;
     }
+    case kTopicMuxList: {
+      delete type_.topic_mux_list_;
+      break;
+    }
     case kTopicDemux: {
       delete type_.topic_demux_;
+      break;
+    }
+    case kTopicDemuxList: {
+      delete type_.topic_demux_list_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -800,12 +873,36 @@ bool ServiceReply::MergePartialFromCodedStream(
         break;
       }
 
-      // .ubii.devices.TopicDemux topic_demux = 12;
+      // .ubii.devices.TopicMuxList topic_mux_list = 12;
       case 12: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_topic_mux_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.TopicDemux topic_demux = 13;
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_topic_demux()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.TopicDemuxList topic_demux_list = 14;
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_topic_demux_list()));
         } else {
           goto handle_unusual;
         }
@@ -904,10 +1001,22 @@ void ServiceReply::SerializeWithCachedSizes(
       11, this->_internal_topic_mux(), output);
   }
 
-  // .ubii.devices.TopicDemux topic_demux = 12;
+  // .ubii.devices.TopicMuxList topic_mux_list = 12;
+  if (has_topic_mux_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      12, this->_internal_topic_mux_list(), output);
+  }
+
+  // .ubii.devices.TopicDemux topic_demux = 13;
   if (has_topic_demux()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      12, this->_internal_topic_demux(), output);
+      13, this->_internal_topic_demux(), output);
+  }
+
+  // .ubii.devices.TopicDemuxList topic_demux_list = 14;
+  if (has_topic_demux_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      14, this->_internal_topic_demux_list(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1001,11 +1110,25 @@ void ServiceReply::SerializeWithCachedSizes(
         11, this->_internal_topic_mux(), deterministic, target);
   }
 
-  // .ubii.devices.TopicDemux topic_demux = 12;
+  // .ubii.devices.TopicMuxList topic_mux_list = 12;
+  if (has_topic_mux_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        12, this->_internal_topic_mux_list(), deterministic, target);
+  }
+
+  // .ubii.devices.TopicDemux topic_demux = 13;
   if (has_topic_demux()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        12, this->_internal_topic_demux(), deterministic, target);
+        13, this->_internal_topic_demux(), deterministic, target);
+  }
+
+  // .ubii.devices.TopicDemuxList topic_demux_list = 14;
+  if (has_topic_demux_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        14, this->_internal_topic_demux_list(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1103,11 +1226,25 @@ size_t ServiceReply::ByteSizeLong() const {
           *type_.topic_mux_);
       break;
     }
-    // .ubii.devices.TopicDemux topic_demux = 12;
+    // .ubii.devices.TopicMuxList topic_mux_list = 12;
+    case kTopicMuxList: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.topic_mux_list_);
+      break;
+    }
+    // .ubii.devices.TopicDemux topic_demux = 13;
     case kTopicDemux: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           *type_.topic_demux_);
+      break;
+    }
+    // .ubii.devices.TopicDemuxList topic_demux_list = 14;
+    case kTopicDemuxList: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.topic_demux_list_);
       break;
     }
     case TYPE_NOT_SET: {
@@ -1186,8 +1323,16 @@ void ServiceReply::MergeFrom(const ServiceReply& from) {
       mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from.topic_mux());
       break;
     }
+    case kTopicMuxList: {
+      mutable_topic_mux_list()->::ubii::devices::TopicMuxList::MergeFrom(from.topic_mux_list());
+      break;
+    }
     case kTopicDemux: {
       mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from.topic_demux());
+      break;
+    }
+    case kTopicDemuxList: {
+      mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from.topic_demux_list());
       break;
     }
     case TYPE_NOT_SET: {

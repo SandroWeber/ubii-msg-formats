@@ -30,7 +30,7 @@ namespace Ubii.Services {
             "b3RvGh5wcm90by9kZXZpY2VzL3RvcGljRGVtdXgucHJvdG8aHHByb3RvL3Nl",
             "c3Npb25zL3Nlc3Npb24ucHJvdG8aJHByb3RvL2ludGVyYWN0aW9ucy9pbnRl",
             "cmFjdGlvbi5wcm90bxoucHJvdG8vc2VydmljZXMvcmVxdWVzdC90b3BpY1N1",
-            "YnNjcmlwdGlvbi5wcm90byLzAwoOU2VydmljZVJlcXVlc3QSDQoFdG9waWMY",
+            "YnNjcmlwdGlvbi5wcm90byLjBAoOU2VydmljZVJlcXVlc3QSDQoFdG9waWMY",
             "ASABKAkSJgoGY2xpZW50GAIgASgLMhQudWJpaS5jbGllbnRzLkNsaWVudEgA",
             "EiYKBmRldmljZRgDIAEoCzIULnViaWkuZGV2aWNlcy5EZXZpY2VIABJGChJ0",
             "b3BpY19zdWJzY3JpcHRpb24YBCABKAsyKC51YmlpLnNlcnZpY2VzLnJlcXVl",
@@ -40,12 +40,15 @@ namespace Ubii.Services {
             "ASgLMh4udWJpaS5pbnRlcmFjdGlvbnMuSW50ZXJhY3Rpb25IABI+ChBpbnRl",
             "cmFjdGlvbl9saXN0GAggASgLMiIudWJpaS5pbnRlcmFjdGlvbnMuSW50ZXJh",
             "Y3Rpb25MaXN0SAASKwoJdG9waWNfbXV4GAkgASgLMhYudWJpaS5kZXZpY2Vz",
-            "LlRvcGljTXV4SAASLwoLdG9waWNfZGVtdXgYCiABKAsyGC51YmlpLmRldmlj",
-            "ZXMuVG9waWNEZW11eEgAQgYKBHR5cGViBnByb3RvMw=="));
+            "LlRvcGljTXV4SAASNAoOdG9waWNfbXV4X2xpc3QYCiABKAsyGi51YmlpLmRl",
+            "dmljZXMuVG9waWNNdXhMaXN0SAASLwoLdG9waWNfZGVtdXgYCyABKAsyGC51",
+            "YmlpLmRldmljZXMuVG9waWNEZW11eEgAEjgKEHRvcGljX2RlbXV4X2xpc3QY",
+            "DCABKAsyHC51YmlpLmRldmljZXMuVG9waWNEZW11eExpc3RIAEIGCgR0eXBl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, global::Ubii.Services.Request.TopicSubscriptionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceRequest), global::Ubii.Services.ServiceRequest.Parser, new[]{ "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "Interaction", "InteractionList", "TopicMux", "TopicDemux" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceRequest), global::Ubii.Services.ServiceRequest.Parser, new[]{ "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "Interaction", "InteractionList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -103,8 +106,14 @@ namespace Ubii.Services {
         case TypeOneofCase.TopicMux:
           TopicMux = other.TopicMux.Clone();
           break;
+        case TypeOneofCase.TopicMuxList:
+          TopicMuxList = other.TopicMuxList.Clone();
+          break;
         case TypeOneofCase.TopicDemux:
           TopicDemux = other.TopicDemux.Clone();
+          break;
+        case TypeOneofCase.TopicDemuxList:
+          TopicDemuxList = other.TopicDemuxList.Clone();
           break;
       }
 
@@ -215,14 +224,36 @@ namespace Ubii.Services {
       }
     }
 
+    /// <summary>Field number for the "topic_mux_list" field.</summary>
+    public const int TopicMuxListFieldNumber = 10;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Devices.TopicMuxList TopicMuxList {
+      get { return typeCase_ == TypeOneofCase.TopicMuxList ? (global::Ubii.Devices.TopicMuxList) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TopicMuxList;
+      }
+    }
+
     /// <summary>Field number for the "topic_demux" field.</summary>
-    public const int TopicDemuxFieldNumber = 10;
+    public const int TopicDemuxFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.Devices.TopicDemux TopicDemux {
       get { return typeCase_ == TypeOneofCase.TopicDemux ? (global::Ubii.Devices.TopicDemux) type_ : null; }
       set {
         type_ = value;
         typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TopicDemux;
+      }
+    }
+
+    /// <summary>Field number for the "topic_demux_list" field.</summary>
+    public const int TopicDemuxListFieldNumber = 12;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Devices.TopicDemuxList TopicDemuxList {
+      get { return typeCase_ == TypeOneofCase.TopicDemuxList ? (global::Ubii.Devices.TopicDemuxList) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.TopicDemuxList;
       }
     }
 
@@ -238,7 +269,9 @@ namespace Ubii.Services {
       Interaction = 7,
       InteractionList = 8,
       TopicMux = 9,
-      TopicDemux = 10,
+      TopicMuxList = 10,
+      TopicDemux = 11,
+      TopicDemuxList = 12,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -274,7 +307,9 @@ namespace Ubii.Services {
       if (!object.Equals(Interaction, other.Interaction)) return false;
       if (!object.Equals(InteractionList, other.InteractionList)) return false;
       if (!object.Equals(TopicMux, other.TopicMux)) return false;
+      if (!object.Equals(TopicMuxList, other.TopicMuxList)) return false;
       if (!object.Equals(TopicDemux, other.TopicDemux)) return false;
+      if (!object.Equals(TopicDemuxList, other.TopicDemuxList)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -291,7 +326,9 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.Interaction) hash ^= Interaction.GetHashCode();
       if (typeCase_ == TypeOneofCase.InteractionList) hash ^= InteractionList.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicMux) hash ^= TopicMux.GetHashCode();
+      if (typeCase_ == TypeOneofCase.TopicMuxList) hash ^= TopicMuxList.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicDemux) hash ^= TopicDemux.GetHashCode();
+      if (typeCase_ == TypeOneofCase.TopicDemuxList) hash ^= TopicDemuxList.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -342,9 +379,17 @@ namespace Ubii.Services {
         output.WriteRawTag(74);
         output.WriteMessage(TopicMux);
       }
-      if (typeCase_ == TypeOneofCase.TopicDemux) {
+      if (typeCase_ == TypeOneofCase.TopicMuxList) {
         output.WriteRawTag(82);
+        output.WriteMessage(TopicMuxList);
+      }
+      if (typeCase_ == TypeOneofCase.TopicDemux) {
+        output.WriteRawTag(90);
         output.WriteMessage(TopicDemux);
+      }
+      if (typeCase_ == TypeOneofCase.TopicDemuxList) {
+        output.WriteRawTag(98);
+        output.WriteMessage(TopicDemuxList);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -381,8 +426,14 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.TopicMux) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicMux);
       }
+      if (typeCase_ == TypeOneofCase.TopicMuxList) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicMuxList);
+      }
       if (typeCase_ == TypeOneofCase.TopicDemux) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicDemux);
+      }
+      if (typeCase_ == TypeOneofCase.TopicDemuxList) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicDemuxList);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -447,11 +498,23 @@ namespace Ubii.Services {
           }
           TopicMux.MergeFrom(other.TopicMux);
           break;
+        case TypeOneofCase.TopicMuxList:
+          if (TopicMuxList == null) {
+            TopicMuxList = new global::Ubii.Devices.TopicMuxList();
+          }
+          TopicMuxList.MergeFrom(other.TopicMuxList);
+          break;
         case TypeOneofCase.TopicDemux:
           if (TopicDemux == null) {
             TopicDemux = new global::Ubii.Devices.TopicDemux();
           }
           TopicDemux.MergeFrom(other.TopicDemux);
+          break;
+        case TypeOneofCase.TopicDemuxList:
+          if (TopicDemuxList == null) {
+            TopicDemuxList = new global::Ubii.Devices.TopicDemuxList();
+          }
+          TopicDemuxList.MergeFrom(other.TopicDemuxList);
           break;
       }
 
@@ -543,12 +606,30 @@ namespace Ubii.Services {
             break;
           }
           case 82: {
+            global::Ubii.Devices.TopicMuxList subBuilder = new global::Ubii.Devices.TopicMuxList();
+            if (typeCase_ == TypeOneofCase.TopicMuxList) {
+              subBuilder.MergeFrom(TopicMuxList);
+            }
+            input.ReadMessage(subBuilder);
+            TopicMuxList = subBuilder;
+            break;
+          }
+          case 90: {
             global::Ubii.Devices.TopicDemux subBuilder = new global::Ubii.Devices.TopicDemux();
             if (typeCase_ == TypeOneofCase.TopicDemux) {
               subBuilder.MergeFrom(TopicDemux);
             }
             input.ReadMessage(subBuilder);
             TopicDemux = subBuilder;
+            break;
+          }
+          case 98: {
+            global::Ubii.Devices.TopicDemuxList subBuilder = new global::Ubii.Devices.TopicDemuxList();
+            if (typeCase_ == TypeOneofCase.TopicDemuxList) {
+              subBuilder.MergeFrom(TopicDemuxList);
+            }
+            input.ReadMessage(subBuilder);
+            TopicDemuxList = subBuilder;
             break;
           }
         }

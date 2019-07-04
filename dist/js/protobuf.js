@@ -5171,7 +5171,9 @@ $root.ubii = (function() {
              * @property {ubii.interactions.IInteractionList|null} [interactionList] ServiceReply interactionList
              * @property {ubii.general.IStringList|null} [stringList] ServiceReply stringList
              * @property {ubii.devices.ITopicMux|null} [topicMux] ServiceReply topicMux
+             * @property {ubii.devices.ITopicMuxList|null} [topicMuxList] ServiceReply topicMuxList
              * @property {ubii.devices.ITopicDemux|null} [topicDemux] ServiceReply topicDemux
+             * @property {ubii.devices.ITopicDemuxList|null} [topicDemuxList] ServiceReply topicDemuxList
              */
 
             /**
@@ -5278,6 +5280,14 @@ $root.ubii = (function() {
             ServiceReply.prototype.topicMux = null;
 
             /**
+             * ServiceReply topicMuxList.
+             * @member {ubii.devices.ITopicMuxList|null|undefined} topicMuxList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.topicMuxList = null;
+
+            /**
              * ServiceReply topicDemux.
              * @member {ubii.devices.ITopicDemux|null|undefined} topicDemux
              * @memberof ubii.services.ServiceReply
@@ -5285,17 +5295,25 @@ $root.ubii = (function() {
              */
             ServiceReply.prototype.topicDemux = null;
 
+            /**
+             * ServiceReply topicDemuxList.
+             * @member {ubii.devices.ITopicDemuxList|null|undefined} topicDemuxList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.topicDemuxList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"interactionList"|"stringList"|"topicMux"|"topicDemux"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"interactionList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "interactionList", "stringList", "topicMux", "topicDemux"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "interactionList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5345,8 +5363,12 @@ $root.ubii = (function() {
                     $root.ubii.general.StringList.encode(message.stringList, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.topicMux != null && message.hasOwnProperty("topicMux"))
                     $root.ubii.devices.TopicMux.encode(message.topicMux, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList"))
+                    $root.ubii.devices.TopicMuxList.encode(message.topicMuxList, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
                 if (message.topicDemux != null && message.hasOwnProperty("topicDemux"))
-                    $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+                    $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList"))
+                    $root.ubii.devices.TopicDemuxList.encode(message.topicDemuxList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 return writer;
             };
 
@@ -5415,7 +5437,13 @@ $root.ubii = (function() {
                         message.topicMux = $root.ubii.devices.TopicMux.decode(reader, reader.uint32());
                         break;
                     case 12:
+                        message.topicMuxList = $root.ubii.devices.TopicMuxList.decode(reader, reader.uint32());
+                        break;
+                    case 13:
                         message.topicDemux = $root.ubii.devices.TopicDemux.decode(reader, reader.uint32());
+                        break;
+                    case 14:
+                        message.topicDemuxList = $root.ubii.devices.TopicDemuxList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5561,6 +5589,16 @@ $root.ubii = (function() {
                             return "topicMux." + error;
                     }
                 }
+                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.TopicMuxList.verify(message.topicMuxList);
+                        if (error)
+                            return "topicMuxList." + error;
+                    }
+                }
                 if (message.topicDemux != null && message.hasOwnProperty("topicDemux")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -5569,6 +5607,16 @@ $root.ubii = (function() {
                         var error = $root.ubii.devices.TopicDemux.verify(message.topicDemux);
                         if (error)
                             return "topicDemux." + error;
+                    }
+                }
+                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.TopicDemuxList.verify(message.topicDemuxList);
+                        if (error)
+                            return "topicDemuxList." + error;
                     }
                 }
                 return null;
@@ -5641,10 +5689,20 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceReply.topicMux: object expected");
                     message.topicMux = $root.ubii.devices.TopicMux.fromObject(object.topicMux);
                 }
+                if (object.topicMuxList != null) {
+                    if (typeof object.topicMuxList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.topicMuxList: object expected");
+                    message.topicMuxList = $root.ubii.devices.TopicMuxList.fromObject(object.topicMuxList);
+                }
                 if (object.topicDemux != null) {
                     if (typeof object.topicDemux !== "object")
                         throw TypeError(".ubii.services.ServiceReply.topicDemux: object expected");
                     message.topicDemux = $root.ubii.devices.TopicDemux.fromObject(object.topicDemux);
+                }
+                if (object.topicDemuxList != null) {
+                    if (typeof object.topicDemuxList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.topicDemuxList: object expected");
+                    message.topicDemuxList = $root.ubii.devices.TopicDemuxList.fromObject(object.topicDemuxList);
                 }
                 return message;
             };
@@ -5717,10 +5775,20 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "topicMux";
                 }
+                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList")) {
+                    object.topicMuxList = $root.ubii.devices.TopicMuxList.toObject(message.topicMuxList, options);
+                    if (options.oneofs)
+                        object.type = "topicMuxList";
+                }
                 if (message.topicDemux != null && message.hasOwnProperty("topicDemux")) {
                     object.topicDemux = $root.ubii.devices.TopicDemux.toObject(message.topicDemux, options);
                     if (options.oneofs)
                         object.type = "topicDemux";
+                }
+                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList")) {
+                    object.topicDemuxList = $root.ubii.devices.TopicDemuxList.toObject(message.topicDemuxList, options);
+                    if (options.oneofs)
+                        object.type = "topicDemuxList";
                 }
                 return object;
             };
@@ -5754,7 +5822,9 @@ $root.ubii = (function() {
              * @property {ubii.interactions.IInteraction|null} [interaction] ServiceRequest interaction
              * @property {ubii.interactions.IInteractionList|null} [interactionList] ServiceRequest interactionList
              * @property {ubii.devices.ITopicMux|null} [topicMux] ServiceRequest topicMux
+             * @property {ubii.devices.ITopicMuxList|null} [topicMuxList] ServiceRequest topicMuxList
              * @property {ubii.devices.ITopicDemux|null} [topicDemux] ServiceRequest topicDemux
+             * @property {ubii.devices.ITopicDemuxList|null} [topicDemuxList] ServiceRequest topicDemuxList
              */
 
             /**
@@ -5845,6 +5915,14 @@ $root.ubii = (function() {
             ServiceRequest.prototype.topicMux = null;
 
             /**
+             * ServiceRequest topicMuxList.
+             * @member {ubii.devices.ITopicMuxList|null|undefined} topicMuxList
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.topicMuxList = null;
+
+            /**
              * ServiceRequest topicDemux.
              * @member {ubii.devices.ITopicDemux|null|undefined} topicDemux
              * @memberof ubii.services.ServiceRequest
@@ -5852,17 +5930,25 @@ $root.ubii = (function() {
              */
             ServiceRequest.prototype.topicDemux = null;
 
+            /**
+             * ServiceRequest topicDemuxList.
+             * @member {ubii.devices.ITopicDemuxList|null|undefined} topicDemuxList
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.topicDemuxList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|"interactionList"|"topicMux"|"topicDemux"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|"interactionList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction", "interactionList", "topicMux", "topicDemux"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction", "interactionList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5908,8 +5994,12 @@ $root.ubii = (function() {
                     $root.ubii.interactions.InteractionList.encode(message.interactionList, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.topicMux != null && message.hasOwnProperty("topicMux"))
                     $root.ubii.devices.TopicMux.encode(message.topicMux, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList"))
+                    $root.ubii.devices.TopicMuxList.encode(message.topicMuxList, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.topicDemux != null && message.hasOwnProperty("topicDemux"))
-                    $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                    $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList"))
+                    $root.ubii.devices.TopicDemuxList.encode(message.topicDemuxList, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
                 return writer;
             };
 
@@ -5972,7 +6062,13 @@ $root.ubii = (function() {
                         message.topicMux = $root.ubii.devices.TopicMux.decode(reader, reader.uint32());
                         break;
                     case 10:
+                        message.topicMuxList = $root.ubii.devices.TopicMuxList.decode(reader, reader.uint32());
+                        break;
+                    case 11:
                         message.topicDemux = $root.ubii.devices.TopicDemux.decode(reader, reader.uint32());
+                        break;
+                    case 12:
+                        message.topicDemuxList = $root.ubii.devices.TopicDemuxList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6091,6 +6187,16 @@ $root.ubii = (function() {
                             return "topicMux." + error;
                     }
                 }
+                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.TopicMuxList.verify(message.topicMuxList);
+                        if (error)
+                            return "topicMuxList." + error;
+                    }
+                }
                 if (message.topicDemux != null && message.hasOwnProperty("topicDemux")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -6099,6 +6205,16 @@ $root.ubii = (function() {
                         var error = $root.ubii.devices.TopicDemux.verify(message.topicDemux);
                         if (error)
                             return "topicDemux." + error;
+                    }
+                }
+                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.TopicDemuxList.verify(message.topicDemuxList);
+                        if (error)
+                            return "topicDemuxList." + error;
                     }
                 }
                 return null;
@@ -6158,10 +6274,20 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.services.ServiceRequest.topicMux: object expected");
                     message.topicMux = $root.ubii.devices.TopicMux.fromObject(object.topicMux);
                 }
+                if (object.topicMuxList != null) {
+                    if (typeof object.topicMuxList !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.topicMuxList: object expected");
+                    message.topicMuxList = $root.ubii.devices.TopicMuxList.fromObject(object.topicMuxList);
+                }
                 if (object.topicDemux != null) {
                     if (typeof object.topicDemux !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.topicDemux: object expected");
                     message.topicDemux = $root.ubii.devices.TopicDemux.fromObject(object.topicDemux);
+                }
+                if (object.topicDemuxList != null) {
+                    if (typeof object.topicDemuxList !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.topicDemuxList: object expected");
+                    message.topicDemuxList = $root.ubii.devices.TopicDemuxList.fromObject(object.topicDemuxList);
                 }
                 return message;
             };
@@ -6223,10 +6349,20 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "topicMux";
                 }
+                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList")) {
+                    object.topicMuxList = $root.ubii.devices.TopicMuxList.toObject(message.topicMuxList, options);
+                    if (options.oneofs)
+                        object.type = "topicMuxList";
+                }
                 if (message.topicDemux != null && message.hasOwnProperty("topicDemux")) {
                     object.topicDemux = $root.ubii.devices.TopicDemux.toObject(message.topicDemux, options);
                     if (options.oneofs)
                         object.type = "topicDemux";
+                }
+                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList")) {
+                    object.topicDemuxList = $root.ubii.devices.TopicDemuxList.toObject(message.topicDemuxList, options);
+                    if (options.oneofs)
+                        object.type = "topicDemuxList";
                 }
                 return object;
             };

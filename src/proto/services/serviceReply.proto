@@ -25,6 +25,8 @@ message ServiceReply {
         ubii.interactions.InteractionList interaction_list = 9;
         ubii.general.StringList string_list = 10;
         ubii.devices.TopicMux topic_mux = 11;
-        ubii.devices.TopicDemux topic_demux = 12;
+        ubii.devices.TopicMuxList topic_mux_list = 12;
+        ubii.devices.TopicDemux topic_demux = 13;
+        ubii.devices.TopicDemuxList topic_demux_list = 14;
     }
 }

@@ -20,6 +20,8 @@ message ServiceRequest {
         ubii.interactions.Interaction interaction = 7;
         ubii.interactions.InteractionList interaction_list = 8;
         ubii.devices.TopicMux topic_mux = 9;
-        ubii.devices.TopicDemux topic_demux = 10;
+        ubii.devices.TopicMuxList topic_mux_list = 10;
+        ubii.devices.TopicDemux topic_demux = 11;
+        ubii.devices.TopicDemuxList topic_demux_list = 12;
     }
 }
