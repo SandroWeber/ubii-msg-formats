@@ -23,7 +23,7 @@ namespace protobuf_proto_2finteractions_2finteraction_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2finteractions_2finteraction_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Interaction;
 }  // namespace protobuf_proto_2finteractions_2finteraction_2eproto
 namespace protobuf_proto_2fsessions_2fioMapping_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fioMapping_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_IOMapping;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fioMapping_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_IOMapping;
 }  // namespace protobuf_proto_2fsessions_2fioMapping_2eproto
 namespace protobuf_proto_2fsessions_2fsession_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fsession_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Session;

@@ -19,18 +19,27 @@
 #endif
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_proto_2finteractions_2fioFormat_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2finteractions_2fioFormat_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_IOFormat;
-}  // namespace protobuf_proto_2finteractions_2fioFormat_2eproto
+namespace protobuf_proto_2fsessions_2finteractionInputMapping_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2finteractionInputMapping_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_InteractionInputMapping;
+}  // namespace protobuf_proto_2fsessions_2finteractionInputMapping_2eproto
+namespace protobuf_proto_2fsessions_2finteractionOutputMapping_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2finteractionOutputMapping_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_InteractionOutputMapping;
+}  // namespace protobuf_proto_2fsessions_2finteractionOutputMapping_2eproto
+namespace protobuf_proto_2fsessions_2fioMapping_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fioMapping_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_IOMapping;
+}  // namespace protobuf_proto_2fsessions_2fioMapping_2eproto
 namespace ubii {
 namespace sessions {
 class IOMappingDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<IOMapping>
       _instance;
-  const ::ubii::interactions::IOFormat* interaction_input_;
-  const ::ubii::interactions::IOFormat* interaction_output_;
 } _IOMapping_default_instance_;
+class IOMappingListDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<IOMappingList>
+      _instance;
+} _IOMappingList_default_instance_;
 }  // namespace sessions
 }  // namespace ubii
 namespace protobuf_proto_2fsessions_2fioMapping_2eproto {
@@ -45,34 +54,57 @@ static void InitDefaultsIOMapping() {
   ::ubii::sessions::IOMapping::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_IOMapping =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsIOMapping}, {
-      &protobuf_proto_2finteractions_2fioFormat_2eproto::scc_info_IOFormat.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_IOMapping =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsIOMapping}, {
+      &protobuf_proto_2fsessions_2finteractionInputMapping_2eproto::scc_info_InteractionInputMapping.base,
+      &protobuf_proto_2fsessions_2finteractionOutputMapping_2eproto::scc_info_InteractionOutputMapping.base,}};
+
+static void InitDefaultsIOMappingList() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::ubii::sessions::_IOMappingList_default_instance_;
+    new (ptr) ::ubii::sessions::IOMappingList();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::ubii::sessions::IOMappingList::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_IOMappingList =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsIOMappingList}, {
+      &protobuf_proto_2fsessions_2fioMapping_2eproto::scc_info_IOMapping.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_IOMapping.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_IOMappingList.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[1];
+::google::protobuf::Metadata file_level_metadata[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMapping, _internal_metadata_),
   ~0u,  // no _extensions_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMapping, _oneof_case_[0]),
+  ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMapping, interaction_id_),
-  offsetof(::ubii::sessions::IOMappingDefaultTypeInternal, interaction_input_),
-  offsetof(::ubii::sessions::IOMappingDefaultTypeInternal, interaction_output_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMapping, topic_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMapping, io_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMapping, input_mappings_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMapping, output_mappings_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMappingList, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::IOMappingList, elements_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::sessions::IOMapping)},
+  { 8, -1, sizeof(::ubii::sessions::IOMappingList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::sessions::_IOMapping_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::sessions::_IOMappingList_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -90,25 +122,29 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\036proto/sessions/ioMapping.proto\022\rubii.s"
-      "essions\032!proto/interactions/ioFormat.pro"
-      "to\"\262\001\n\tIOMapping\022\026\n\016interaction_id\030\001 \001(\t"
-      "\0228\n\021interaction_input\030\002 \001(\0132\033.ubii.inter"
-      "actions.IOFormatH\000\0229\n\022interaction_output"
-      "\030\003 \001(\0132\033.ubii.interactions.IOFormatH\000\022\r\n"
-      "\005topic\030\004 \001(\tB\t\n\007io_typeb\006proto3"
+      "essions\032,proto/sessions/interactionInput"
+      "Mapping.proto\032-proto/sessions/interactio"
+      "nOutputMapping.proto\"\245\001\n\tIOMapping\022\026\n\016in"
+      "teraction_id\030\001 \001(\t\022>\n\016input_mappings\030\002 \003"
+      "(\0132&.ubii.sessions.InteractionInputMappi"
+      "ng\022@\n\017output_mappings\030\003 \003(\0132\'.ubii.sessi"
+      "ons.InteractionOutputMapping\";\n\rIOMappin"
+      "gList\022*\n\010elements\030\001 \003(\0132\030.ubii.sessions."
+      "IOMappingb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 271);
+      descriptor, 377);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/sessions/ioMapping.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2finteractions_2fioFormat_2eproto::AddDescriptors();
+  ::protobuf_proto_2fsessions_2finteractionInputMapping_2eproto::AddDescriptors();
+  ::protobuf_proto_2fsessions_2finteractionOutputMapping_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -128,56 +164,17 @@ namespace sessions {
 // ===================================================================
 
 void IOMapping::InitAsDefaultInstance() {
-  ::ubii::sessions::_IOMapping_default_instance_.interaction_input_ = const_cast< ::ubii::interactions::IOFormat*>(
-      ::ubii::interactions::IOFormat::internal_default_instance());
-  ::ubii::sessions::_IOMapping_default_instance_.interaction_output_ = const_cast< ::ubii::interactions::IOFormat*>(
-      ::ubii::interactions::IOFormat::internal_default_instance());
 }
-void IOMapping::set_allocated_interaction_input(::ubii::interactions::IOFormat* interaction_input) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_io_type();
-  if (interaction_input) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      interaction_input = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, interaction_input, submessage_arena);
-    }
-    set_has_interaction_input();
-    io_type_.interaction_input_ = interaction_input;
-  }
-  // @@protoc_insertion_point(field_set_allocated:ubii.sessions.IOMapping.interaction_input)
+void IOMapping::clear_input_mappings() {
+  input_mappings_.Clear();
 }
-void IOMapping::clear_interaction_input() {
-  if (has_interaction_input()) {
-    delete io_type_.interaction_input_;
-    clear_has_io_type();
-  }
-}
-void IOMapping::set_allocated_interaction_output(::ubii::interactions::IOFormat* interaction_output) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_io_type();
-  if (interaction_output) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      interaction_output = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, interaction_output, submessage_arena);
-    }
-    set_has_interaction_output();
-    io_type_.interaction_output_ = interaction_output;
-  }
-  // @@protoc_insertion_point(field_set_allocated:ubii.sessions.IOMapping.interaction_output)
-}
-void IOMapping::clear_interaction_output() {
-  if (has_interaction_output()) {
-    delete io_type_.interaction_output_;
-    clear_has_io_type();
-  }
+void IOMapping::clear_output_mappings() {
+  output_mappings_.Clear();
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int IOMapping::kInteractionIdFieldNumber;
-const int IOMapping::kInteractionInputFieldNumber;
-const int IOMapping::kInteractionOutputFieldNumber;
-const int IOMapping::kTopicFieldNumber;
+const int IOMapping::kInputMappingsFieldNumber;
+const int IOMapping::kOutputMappingsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 IOMapping::IOMapping()
@@ -189,37 +186,19 @@ IOMapping::IOMapping()
 }
 IOMapping::IOMapping(const IOMapping& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      input_mappings_(from.input_mappings_),
+      output_mappings_(from.output_mappings_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   interaction_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.interaction_id().size() > 0) {
     interaction_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.interaction_id_);
-  }
-  topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.topic().size() > 0) {
-    topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
-  }
-  clear_has_io_type();
-  switch (from.io_type_case()) {
-    case kInteractionInput: {
-      mutable_interaction_input()->::ubii::interactions::IOFormat::MergeFrom(from.interaction_input());
-      break;
-    }
-    case kInteractionOutput: {
-      mutable_interaction_output()->::ubii::interactions::IOFormat::MergeFrom(from.interaction_output());
-      break;
-    }
-    case IO_TYPE_NOT_SET: {
-      break;
-    }
   }
   // @@protoc_insertion_point(copy_constructor:ubii.sessions.IOMapping)
 }
 
 void IOMapping::SharedCtor() {
   interaction_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_io_type();
 }
 
 IOMapping::~IOMapping() {
@@ -229,10 +208,6 @@ IOMapping::~IOMapping() {
 
 void IOMapping::SharedDtor() {
   interaction_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  topic_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (has_io_type()) {
-    clear_io_type();
-  }
 }
 
 void IOMapping::SetCachedSize(int size) const {
@@ -249,34 +224,15 @@ const IOMapping& IOMapping::default_instance() {
 }
 
 
-void IOMapping::clear_io_type() {
-// @@protoc_insertion_point(one_of_clear_start:ubii.sessions.IOMapping)
-  switch (io_type_case()) {
-    case kInteractionInput: {
-      delete io_type_.interaction_input_;
-      break;
-    }
-    case kInteractionOutput: {
-      delete io_type_.interaction_output_;
-      break;
-    }
-    case IO_TYPE_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = IO_TYPE_NOT_SET;
-}
-
-
 void IOMapping::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.sessions.IOMapping)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  input_mappings_.Clear();
+  output_mappings_.Clear();
   interaction_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  topic_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_io_type();
   _internal_metadata_.Clear();
 }
 
@@ -306,40 +262,24 @@ bool IOMapping::MergePartialFromCodedStream(
         break;
       }
 
-      // .ubii.interactions.IOFormat interaction_input = 2;
+      // repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_interaction_input()));
+                input, add_input_mappings()));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .ubii.interactions.IOFormat interaction_output = 3;
+      // repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_interaction_output()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string topic = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_topic()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->topic().data(), static_cast<int>(this->topic().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.sessions.IOMapping.topic"));
+                input, add_output_mappings()));
         } else {
           goto handle_unusual;
         }
@@ -382,26 +322,22 @@ void IOMapping::SerializeWithCachedSizes(
       1, this->interaction_id(), output);
   }
 
-  // .ubii.interactions.IOFormat interaction_input = 2;
-  if (has_interaction_input()) {
+  // repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->input_mappings_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_interaction_input(), output);
+      2,
+      this->input_mappings(static_cast<int>(i)),
+      output);
   }
 
-  // .ubii.interactions.IOFormat interaction_output = 3;
-  if (has_interaction_output()) {
+  // repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->output_mappings_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_interaction_output(), output);
-  }
-
-  // string topic = 4;
-  if (this->topic().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->topic().data(), static_cast<int>(this->topic().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.sessions.IOMapping.topic");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->topic(), output);
+      3,
+      this->output_mappings(static_cast<int>(i)),
+      output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -429,29 +365,20 @@ void IOMapping::SerializeWithCachedSizes(
         1, this->interaction_id(), target);
   }
 
-  // .ubii.interactions.IOFormat interaction_input = 2;
-  if (has_interaction_input()) {
+  // repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->input_mappings_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->_internal_interaction_input(), deterministic, target);
+        2, this->input_mappings(static_cast<int>(i)), deterministic, target);
   }
 
-  // .ubii.interactions.IOFormat interaction_output = 3;
-  if (has_interaction_output()) {
+  // repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->output_mappings_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        3, this->_internal_interaction_output(), deterministic, target);
-  }
-
-  // string topic = 4;
-  if (this->topic().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->topic().data(), static_cast<int>(this->topic().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.sessions.IOMapping.topic");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->topic(), target);
+        3, this->output_mappings(static_cast<int>(i)), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -471,6 +398,28 @@ size_t IOMapping::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
+  // repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->input_mappings_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->input_mappings(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;
+  {
+    unsigned int count = static_cast<unsigned int>(this->output_mappings_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->output_mappings(static_cast<int>(i)));
+    }
+  }
+
   // string interaction_id = 1;
   if (this->interaction_id().size() > 0) {
     total_size += 1 +
@@ -478,32 +427,6 @@ size_t IOMapping::ByteSizeLong() const {
         this->interaction_id());
   }
 
-  // string topic = 4;
-  if (this->topic().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->topic());
-  }
-
-  switch (io_type_case()) {
-    // .ubii.interactions.IOFormat interaction_input = 2;
-    case kInteractionInput: {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *io_type_.interaction_input_);
-      break;
-    }
-    // .ubii.interactions.IOFormat interaction_output = 3;
-    case kInteractionOutput: {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *io_type_.interaction_output_);
-      break;
-    }
-    case IO_TYPE_NOT_SET: {
-      break;
-    }
-  }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -531,26 +454,11 @@ void IOMapping::MergeFrom(const IOMapping& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  input_mappings_.MergeFrom(from.input_mappings_);
+  output_mappings_.MergeFrom(from.output_mappings_);
   if (from.interaction_id().size() > 0) {
 
     interaction_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.interaction_id_);
-  }
-  if (from.topic().size() > 0) {
-
-    topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
-  }
-  switch (from.io_type_case()) {
-    case kInteractionInput: {
-      mutable_interaction_input()->::ubii::interactions::IOFormat::MergeFrom(from.interaction_input());
-      break;
-    }
-    case kInteractionOutput: {
-      mutable_interaction_output()->::ubii::interactions::IOFormat::MergeFrom(from.interaction_output());
-      break;
-    }
-    case IO_TYPE_NOT_SET: {
-      break;
-    }
   }
 }
 
@@ -578,16 +486,243 @@ void IOMapping::Swap(IOMapping* other) {
 }
 void IOMapping::InternalSwap(IOMapping* other) {
   using std::swap;
+  CastToBase(&input_mappings_)->InternalSwap(CastToBase(&other->input_mappings_));
+  CastToBase(&output_mappings_)->InternalSwap(CastToBase(&other->output_mappings_));
   interaction_id_.Swap(&other->interaction_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  topic_.Swap(&other->topic_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(io_type_, other->io_type_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata IOMapping::GetMetadata() const {
+  protobuf_proto_2fsessions_2fioMapping_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2fsessions_2fioMapping_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void IOMappingList::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int IOMappingList::kElementsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+IOMappingList::IOMappingList()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_proto_2fsessions_2fioMapping_2eproto::scc_info_IOMappingList.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ubii.sessions.IOMappingList)
+}
+IOMappingList::IOMappingList(const IOMappingList& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      elements_(from.elements_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:ubii.sessions.IOMappingList)
+}
+
+void IOMappingList::SharedCtor() {
+}
+
+IOMappingList::~IOMappingList() {
+  // @@protoc_insertion_point(destructor:ubii.sessions.IOMappingList)
+  SharedDtor();
+}
+
+void IOMappingList::SharedDtor() {
+}
+
+void IOMappingList::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* IOMappingList::descriptor() {
+  ::protobuf_proto_2fsessions_2fioMapping_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2fsessions_2fioMapping_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const IOMappingList& IOMappingList::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fsessions_2fioMapping_2eproto::scc_info_IOMappingList.base);
+  return *internal_default_instance();
+}
+
+
+void IOMappingList::Clear() {
+// @@protoc_insertion_point(message_clear_start:ubii.sessions.IOMappingList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  elements_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool IOMappingList::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ubii.sessions.IOMappingList)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .ubii.sessions.IOMapping elements = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_elements()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ubii.sessions.IOMappingList)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ubii.sessions.IOMappingList)
+  return false;
+#undef DO_
+}
+
+void IOMappingList::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ubii.sessions.IOMappingList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .ubii.sessions.IOMapping elements = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1,
+      this->elements(static_cast<int>(i)),
+      output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:ubii.sessions.IOMappingList)
+}
+
+::google::protobuf::uint8* IOMappingList::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:ubii.sessions.IOMappingList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .ubii.sessions.IOMapping elements = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->elements(static_cast<int>(i)), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:ubii.sessions.IOMappingList)
+  return target;
+}
+
+size_t IOMappingList::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ubii.sessions.IOMappingList)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated .ubii.sessions.IOMapping elements = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->elements_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->elements(static_cast<int>(i)));
+    }
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void IOMappingList::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:ubii.sessions.IOMappingList)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IOMappingList* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const IOMappingList>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.sessions.IOMappingList)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.sessions.IOMappingList)
+    MergeFrom(*source);
+  }
+}
+
+void IOMappingList::MergeFrom(const IOMappingList& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ubii.sessions.IOMappingList)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  elements_.MergeFrom(from.elements_);
+}
+
+void IOMappingList::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:ubii.sessions.IOMappingList)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void IOMappingList::CopyFrom(const IOMappingList& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ubii.sessions.IOMappingList)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IOMappingList::IsInitialized() const {
+  return true;
+}
+
+void IOMappingList::Swap(IOMappingList* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void IOMappingList::InternalSwap(IOMappingList* other) {
+  using std::swap;
+  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata IOMappingList::GetMetadata() const {
   protobuf_proto_2fsessions_2fioMapping_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_proto_2fsessions_2fioMapping_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -600,6 +735,9 @@ namespace google {
 namespace protobuf {
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::sessions::IOMapping* Arena::CreateMaybeMessage< ::ubii::sessions::IOMapping >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::sessions::IOMapping >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::sessions::IOMappingList* Arena::CreateMaybeMessage< ::ubii::sessions::IOMappingList >(Arena* arena) {
+  return Arena::CreateInternal< ::ubii::sessions::IOMappingList >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

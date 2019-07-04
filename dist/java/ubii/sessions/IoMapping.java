@@ -29,42 +29,52 @@ public final class IoMapping {
         getInteractionIdBytes();
 
     /**
-     * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    boolean hasInteractionInput();
+    java.util.List<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping> 
+        getInputMappingsList();
     /**
-     * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    ubii.interactions.IoFormat.IOFormat getInteractionInput();
+    ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping getInputMappings(int index);
     /**
-     * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    ubii.interactions.IoFormat.IOFormatOrBuilder getInteractionInputOrBuilder();
+    int getInputMappingsCount();
+    /**
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+     */
+    java.util.List<? extends ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder> 
+        getInputMappingsOrBuilderList();
+    /**
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+     */
+    ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder getInputMappingsOrBuilder(
+        int index);
 
     /**
-     * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
      */
-    boolean hasInteractionOutput();
+    java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> 
+        getOutputMappingsList();
     /**
-     * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
      */
-    ubii.interactions.IoFormat.IOFormat getInteractionOutput();
+    ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping getOutputMappings(int index);
     /**
-     * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
      */
-    ubii.interactions.IoFormat.IOFormatOrBuilder getInteractionOutputOrBuilder();
-
+    int getOutputMappingsCount();
     /**
-     * <code>string topic = 4;</code>
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
      */
-    java.lang.String getTopic();
+    java.util.List<? extends ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder> 
+        getOutputMappingsOrBuilderList();
     /**
-     * <code>string topic = 4;</code>
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getTopicBytes();
-
-    public ubii.sessions.IoMapping.IOMapping.IoTypeCase getIoTypeCase();
+    ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder getOutputMappingsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code ubii.sessions.IOMapping}
@@ -80,7 +90,8 @@ public final class IoMapping {
     }
     private IOMapping() {
       interactionId_ = "";
-      topic_ = "";
+      inputMappings_ = java.util.Collections.emptyList();
+      outputMappings_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -114,37 +125,21 @@ public final class IoMapping {
               break;
             }
             case 18: {
-              ubii.interactions.IoFormat.IOFormat.Builder subBuilder = null;
-              if (ioTypeCase_ == 2) {
-                subBuilder = ((ubii.interactions.IoFormat.IOFormat) ioType_).toBuilder();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                inputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping>();
+                mutable_bitField0_ |= 0x00000002;
               }
-              ioType_ =
-                  input.readMessage(ubii.interactions.IoFormat.IOFormat.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.interactions.IoFormat.IOFormat) ioType_);
-                ioType_ = subBuilder.buildPartial();
-              }
-              ioTypeCase_ = 2;
+              inputMappings_.add(
+                  input.readMessage(ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.parser(), extensionRegistry));
               break;
             }
             case 26: {
-              ubii.interactions.IoFormat.IOFormat.Builder subBuilder = null;
-              if (ioTypeCase_ == 3) {
-                subBuilder = ((ubii.interactions.IoFormat.IOFormat) ioType_).toBuilder();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                outputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping>();
+                mutable_bitField0_ |= 0x00000004;
               }
-              ioType_ =
-                  input.readMessage(ubii.interactions.IoFormat.IOFormat.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.interactions.IoFormat.IOFormat) ioType_);
-                ioType_ = subBuilder.buildPartial();
-              }
-              ioTypeCase_ = 3;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              topic_ = s;
+              outputMappings_.add(
+                  input.readMessage(ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -162,6 +157,12 @@ public final class IoMapping {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          inputMappings_ = java.util.Collections.unmodifiableList(inputMappings_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          outputMappings_ = java.util.Collections.unmodifiableList(outputMappings_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -179,44 +180,7 @@ public final class IoMapping {
               ubii.sessions.IoMapping.IOMapping.class, ubii.sessions.IoMapping.IOMapping.Builder.class);
     }
 
-    private int ioTypeCase_ = 0;
-    private java.lang.Object ioType_;
-    public enum IoTypeCase
-        implements com.google.protobuf.Internal.EnumLite {
-      INTERACTION_INPUT(2),
-      INTERACTION_OUTPUT(3),
-      IOTYPE_NOT_SET(0);
-      private final int value;
-      private IoTypeCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IoTypeCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static IoTypeCase forNumber(int value) {
-        switch (value) {
-          case 2: return INTERACTION_INPUT;
-          case 3: return INTERACTION_OUTPUT;
-          case 0: return IOTYPE_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public IoTypeCase
-    getIoTypeCase() {
-      return IoTypeCase.forNumber(
-          ioTypeCase_);
-    }
-
+    private int bitField0_;
     public static final int INTERACTION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object interactionId_;
     /**
@@ -251,90 +215,74 @@ public final class IoMapping {
       }
     }
 
-    public static final int INTERACTION_INPUT_FIELD_NUMBER = 2;
+    public static final int INPUT_MAPPINGS_FIELD_NUMBER = 2;
+    private java.util.List<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping> inputMappings_;
     /**
-     * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    public boolean hasInteractionInput() {
-      return ioTypeCase_ == 2;
+    public java.util.List<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping> getInputMappingsList() {
+      return inputMappings_;
     }
     /**
-     * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    public ubii.interactions.IoFormat.IOFormat getInteractionInput() {
-      if (ioTypeCase_ == 2) {
-         return (ubii.interactions.IoFormat.IOFormat) ioType_;
-      }
-      return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
+    public java.util.List<? extends ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder> 
+        getInputMappingsOrBuilderList() {
+      return inputMappings_;
     }
     /**
-     * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    public ubii.interactions.IoFormat.IOFormatOrBuilder getInteractionInputOrBuilder() {
-      if (ioTypeCase_ == 2) {
-         return (ubii.interactions.IoFormat.IOFormat) ioType_;
-      }
-      return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
-    }
-
-    public static final int INTERACTION_OUTPUT_FIELD_NUMBER = 3;
-    /**
-     * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
-     */
-    public boolean hasInteractionOutput() {
-      return ioTypeCase_ == 3;
+    public int getInputMappingsCount() {
+      return inputMappings_.size();
     }
     /**
-     * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    public ubii.interactions.IoFormat.IOFormat getInteractionOutput() {
-      if (ioTypeCase_ == 3) {
-         return (ubii.interactions.IoFormat.IOFormat) ioType_;
-      }
-      return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
+    public ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping getInputMappings(int index) {
+      return inputMappings_.get(index);
     }
     /**
-     * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+     * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
      */
-    public ubii.interactions.IoFormat.IOFormatOrBuilder getInteractionOutputOrBuilder() {
-      if (ioTypeCase_ == 3) {
-         return (ubii.interactions.IoFormat.IOFormat) ioType_;
-      }
-      return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
+    public ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder getInputMappingsOrBuilder(
+        int index) {
+      return inputMappings_.get(index);
     }
 
-    public static final int TOPIC_FIELD_NUMBER = 4;
-    private volatile java.lang.Object topic_;
+    public static final int OUTPUT_MAPPINGS_FIELD_NUMBER = 3;
+    private java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> outputMappings_;
     /**
-     * <code>string topic = 4;</code>
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
      */
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        topic_ = s;
-        return s;
-      }
+    public java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> getOutputMappingsList() {
+      return outputMappings_;
     }
     /**
-     * <code>string topic = 4;</code>
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public java.util.List<? extends ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder> 
+        getOutputMappingsOrBuilderList() {
+      return outputMappings_;
+    }
+    /**
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+     */
+    public int getOutputMappingsCount() {
+      return outputMappings_.size();
+    }
+    /**
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+     */
+    public ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping getOutputMappings(int index) {
+      return outputMappings_.get(index);
+    }
+    /**
+     * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+     */
+    public ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder getOutputMappingsOrBuilder(
+        int index) {
+      return outputMappings_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -354,14 +302,11 @@ public final class IoMapping {
       if (!getInteractionIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, interactionId_);
       }
-      if (ioTypeCase_ == 2) {
-        output.writeMessage(2, (ubii.interactions.IoFormat.IOFormat) ioType_);
+      for (int i = 0; i < inputMappings_.size(); i++) {
+        output.writeMessage(2, inputMappings_.get(i));
       }
-      if (ioTypeCase_ == 3) {
-        output.writeMessage(3, (ubii.interactions.IoFormat.IOFormat) ioType_);
-      }
-      if (!getTopicBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, topic_);
+      for (int i = 0; i < outputMappings_.size(); i++) {
+        output.writeMessage(3, outputMappings_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -375,16 +320,13 @@ public final class IoMapping {
       if (!getInteractionIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, interactionId_);
       }
-      if (ioTypeCase_ == 2) {
+      for (int i = 0; i < inputMappings_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (ubii.interactions.IoFormat.IOFormat) ioType_);
+          .computeMessageSize(2, inputMappings_.get(i));
       }
-      if (ioTypeCase_ == 3) {
+      for (int i = 0; i < outputMappings_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (ubii.interactions.IoFormat.IOFormat) ioType_);
-      }
-      if (!getTopicBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, topic_);
+          .computeMessageSize(3, outputMappings_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -404,23 +346,10 @@ public final class IoMapping {
       boolean result = true;
       result = result && getInteractionId()
           .equals(other.getInteractionId());
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && getIoTypeCase().equals(
-          other.getIoTypeCase());
-      if (!result) return false;
-      switch (ioTypeCase_) {
-        case 2:
-          result = result && getInteractionInput()
-              .equals(other.getInteractionInput());
-          break;
-        case 3:
-          result = result && getInteractionOutput()
-              .equals(other.getInteractionOutput());
-          break;
-        case 0:
-        default:
-      }
+      result = result && getInputMappingsList()
+          .equals(other.getInputMappingsList());
+      result = result && getOutputMappingsList()
+          .equals(other.getOutputMappingsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -434,19 +363,13 @@ public final class IoMapping {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INTERACTION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInteractionId().hashCode();
-      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-      hash = (53 * hash) + getTopic().hashCode();
-      switch (ioTypeCase_) {
-        case 2:
-          hash = (37 * hash) + INTERACTION_INPUT_FIELD_NUMBER;
-          hash = (53 * hash) + getInteractionInput().hashCode();
-          break;
-        case 3:
-          hash = (37 * hash) + INTERACTION_OUTPUT_FIELD_NUMBER;
-          hash = (53 * hash) + getInteractionOutput().hashCode();
-          break;
-        case 0:
-        default:
+      if (getInputMappingsCount() > 0) {
+        hash = (37 * hash) + INPUT_MAPPINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getInputMappingsList().hashCode();
+      }
+      if (getOutputMappingsCount() > 0) {
+        hash = (37 * hash) + OUTPUT_MAPPINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getOutputMappingsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -576,6 +499,8 @@ public final class IoMapping {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getInputMappingsFieldBuilder();
+          getOutputMappingsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -583,10 +508,18 @@ public final class IoMapping {
         super.clear();
         interactionId_ = "";
 
-        topic_ = "";
-
-        ioTypeCase_ = 0;
-        ioType_ = null;
+        if (inputMappingsBuilder_ == null) {
+          inputMappings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          inputMappingsBuilder_.clear();
+        }
+        if (outputMappingsBuilder_ == null) {
+          outputMappings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          outputMappingsBuilder_.clear();
+        }
         return this;
       }
 
@@ -613,23 +546,28 @@ public final class IoMapping {
       @java.lang.Override
       public ubii.sessions.IoMapping.IOMapping buildPartial() {
         ubii.sessions.IoMapping.IOMapping result = new ubii.sessions.IoMapping.IOMapping(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.interactionId_ = interactionId_;
-        if (ioTypeCase_ == 2) {
-          if (interactionInputBuilder_ == null) {
-            result.ioType_ = ioType_;
-          } else {
-            result.ioType_ = interactionInputBuilder_.build();
+        if (inputMappingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            inputMappings_ = java.util.Collections.unmodifiableList(inputMappings_);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
+          result.inputMappings_ = inputMappings_;
+        } else {
+          result.inputMappings_ = inputMappingsBuilder_.build();
         }
-        if (ioTypeCase_ == 3) {
-          if (interactionOutputBuilder_ == null) {
-            result.ioType_ = ioType_;
-          } else {
-            result.ioType_ = interactionOutputBuilder_.build();
+        if (outputMappingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            outputMappings_ = java.util.Collections.unmodifiableList(outputMappings_);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
+          result.outputMappings_ = outputMappings_;
+        } else {
+          result.outputMappings_ = outputMappingsBuilder_.build();
         }
-        result.topic_ = topic_;
-        result.ioTypeCase_ = ioTypeCase_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -682,21 +620,56 @@ public final class IoMapping {
           interactionId_ = other.interactionId_;
           onChanged();
         }
-        if (!other.getTopic().isEmpty()) {
-          topic_ = other.topic_;
-          onChanged();
+        if (inputMappingsBuilder_ == null) {
+          if (!other.inputMappings_.isEmpty()) {
+            if (inputMappings_.isEmpty()) {
+              inputMappings_ = other.inputMappings_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureInputMappingsIsMutable();
+              inputMappings_.addAll(other.inputMappings_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.inputMappings_.isEmpty()) {
+            if (inputMappingsBuilder_.isEmpty()) {
+              inputMappingsBuilder_.dispose();
+              inputMappingsBuilder_ = null;
+              inputMappings_ = other.inputMappings_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              inputMappingsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getInputMappingsFieldBuilder() : null;
+            } else {
+              inputMappingsBuilder_.addAllMessages(other.inputMappings_);
+            }
+          }
         }
-        switch (other.getIoTypeCase()) {
-          case INTERACTION_INPUT: {
-            mergeInteractionInput(other.getInteractionInput());
-            break;
+        if (outputMappingsBuilder_ == null) {
+          if (!other.outputMappings_.isEmpty()) {
+            if (outputMappings_.isEmpty()) {
+              outputMappings_ = other.outputMappings_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureOutputMappingsIsMutable();
+              outputMappings_.addAll(other.outputMappings_);
+            }
+            onChanged();
           }
-          case INTERACTION_OUTPUT: {
-            mergeInteractionOutput(other.getInteractionOutput());
-            break;
-          }
-          case IOTYPE_NOT_SET: {
-            break;
+        } else {
+          if (!other.outputMappings_.isEmpty()) {
+            if (outputMappingsBuilder_.isEmpty()) {
+              outputMappingsBuilder_.dispose();
+              outputMappingsBuilder_ = null;
+              outputMappings_ = other.outputMappings_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              outputMappingsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOutputMappingsFieldBuilder() : null;
+            } else {
+              outputMappingsBuilder_.addAllMessages(other.outputMappings_);
+            }
           }
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -727,21 +700,7 @@ public final class IoMapping {
         }
         return this;
       }
-      private int ioTypeCase_ = 0;
-      private java.lang.Object ioType_;
-      public IoTypeCase
-          getIoTypeCase() {
-        return IoTypeCase.forNumber(
-            ioTypeCase_);
-      }
-
-      public Builder clearIoType() {
-        ioTypeCase_ = 0;
-        ioType_ = null;
-        onChanged();
-        return this;
-      }
-
+      private int bitField0_;
 
       private java.lang.Object interactionId_ = "";
       /**
@@ -812,345 +771,484 @@ public final class IoMapping {
         return this;
       }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder> interactionInputBuilder_;
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
-       */
-      public boolean hasInteractionInput() {
-        return ioTypeCase_ == 2;
+      private java.util.List<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping> inputMappings_ =
+        java.util.Collections.emptyList();
+      private void ensureInputMappingsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          inputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping>(inputMappings_);
+          bitField0_ |= 0x00000002;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder> inputMappingsBuilder_;
+
       /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public ubii.interactions.IoFormat.IOFormat getInteractionInput() {
-        if (interactionInputBuilder_ == null) {
-          if (ioTypeCase_ == 2) {
-            return (ubii.interactions.IoFormat.IOFormat) ioType_;
-          }
-          return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
+      public java.util.List<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping> getInputMappingsList() {
+        if (inputMappingsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(inputMappings_);
         } else {
-          if (ioTypeCase_ == 2) {
-            return interactionInputBuilder_.getMessage();
-          }
-          return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
+          return inputMappingsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public Builder setInteractionInput(ubii.interactions.IoFormat.IOFormat value) {
-        if (interactionInputBuilder_ == null) {
+      public int getInputMappingsCount() {
+        if (inputMappingsBuilder_ == null) {
+          return inputMappings_.size();
+        } else {
+          return inputMappingsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping getInputMappings(int index) {
+        if (inputMappingsBuilder_ == null) {
+          return inputMappings_.get(index);
+        } else {
+          return inputMappingsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public Builder setInputMappings(
+          int index, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping value) {
+        if (inputMappingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ioType_ = value;
+          ensureInputMappingsIsMutable();
+          inputMappings_.set(index, value);
           onChanged();
         } else {
-          interactionInputBuilder_.setMessage(value);
+          inputMappingsBuilder_.setMessage(index, value);
         }
-        ioTypeCase_ = 2;
         return this;
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public Builder setInteractionInput(
-          ubii.interactions.IoFormat.IOFormat.Builder builderForValue) {
-        if (interactionInputBuilder_ == null) {
-          ioType_ = builderForValue.build();
+      public Builder setInputMappings(
+          int index, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder builderForValue) {
+        if (inputMappingsBuilder_ == null) {
+          ensureInputMappingsIsMutable();
+          inputMappings_.set(index, builderForValue.build());
           onChanged();
         } else {
-          interactionInputBuilder_.setMessage(builderForValue.build());
-        }
-        ioTypeCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
-       */
-      public Builder mergeInteractionInput(ubii.interactions.IoFormat.IOFormat value) {
-        if (interactionInputBuilder_ == null) {
-          if (ioTypeCase_ == 2 &&
-              ioType_ != ubii.interactions.IoFormat.IOFormat.getDefaultInstance()) {
-            ioType_ = ubii.interactions.IoFormat.IOFormat.newBuilder((ubii.interactions.IoFormat.IOFormat) ioType_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            ioType_ = value;
-          }
-          onChanged();
-        } else {
-          if (ioTypeCase_ == 2) {
-            interactionInputBuilder_.mergeFrom(value);
-          }
-          interactionInputBuilder_.setMessage(value);
-        }
-        ioTypeCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
-       */
-      public Builder clearInteractionInput() {
-        if (interactionInputBuilder_ == null) {
-          if (ioTypeCase_ == 2) {
-            ioTypeCase_ = 0;
-            ioType_ = null;
-            onChanged();
-          }
-        } else {
-          if (ioTypeCase_ == 2) {
-            ioTypeCase_ = 0;
-            ioType_ = null;
-          }
-          interactionInputBuilder_.clear();
+          inputMappingsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public ubii.interactions.IoFormat.IOFormat.Builder getInteractionInputBuilder() {
-        return getInteractionInputFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
-       */
-      public ubii.interactions.IoFormat.IOFormatOrBuilder getInteractionInputOrBuilder() {
-        if ((ioTypeCase_ == 2) && (interactionInputBuilder_ != null)) {
-          return interactionInputBuilder_.getMessageOrBuilder();
-        } else {
-          if (ioTypeCase_ == 2) {
-            return (ubii.interactions.IoFormat.IOFormat) ioType_;
-          }
-          return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_input = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder> 
-          getInteractionInputFieldBuilder() {
-        if (interactionInputBuilder_ == null) {
-          if (!(ioTypeCase_ == 2)) {
-            ioType_ = ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
-          }
-          interactionInputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder>(
-                  (ubii.interactions.IoFormat.IOFormat) ioType_,
-                  getParentForChildren(),
-                  isClean());
-          ioType_ = null;
-        }
-        ioTypeCase_ = 2;
-        onChanged();;
-        return interactionInputBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder> interactionOutputBuilder_;
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
-       */
-      public boolean hasInteractionOutput() {
-        return ioTypeCase_ == 3;
-      }
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
-       */
-      public ubii.interactions.IoFormat.IOFormat getInteractionOutput() {
-        if (interactionOutputBuilder_ == null) {
-          if (ioTypeCase_ == 3) {
-            return (ubii.interactions.IoFormat.IOFormat) ioType_;
-          }
-          return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
-        } else {
-          if (ioTypeCase_ == 3) {
-            return interactionOutputBuilder_.getMessage();
-          }
-          return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
-       */
-      public Builder setInteractionOutput(ubii.interactions.IoFormat.IOFormat value) {
-        if (interactionOutputBuilder_ == null) {
+      public Builder addInputMappings(ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping value) {
+        if (inputMappingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ioType_ = value;
+          ensureInputMappingsIsMutable();
+          inputMappings_.add(value);
           onChanged();
         } else {
-          interactionOutputBuilder_.setMessage(value);
+          inputMappingsBuilder_.addMessage(value);
         }
-        ioTypeCase_ = 3;
         return this;
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public Builder setInteractionOutput(
-          ubii.interactions.IoFormat.IOFormat.Builder builderForValue) {
-        if (interactionOutputBuilder_ == null) {
-          ioType_ = builderForValue.build();
+      public Builder addInputMappings(
+          int index, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping value) {
+        if (inputMappingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInputMappingsIsMutable();
+          inputMappings_.add(index, value);
           onChanged();
         } else {
-          interactionOutputBuilder_.setMessage(builderForValue.build());
+          inputMappingsBuilder_.addMessage(index, value);
         }
-        ioTypeCase_ = 3;
         return this;
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public Builder mergeInteractionOutput(ubii.interactions.IoFormat.IOFormat value) {
-        if (interactionOutputBuilder_ == null) {
-          if (ioTypeCase_ == 3 &&
-              ioType_ != ubii.interactions.IoFormat.IOFormat.getDefaultInstance()) {
-            ioType_ = ubii.interactions.IoFormat.IOFormat.newBuilder((ubii.interactions.IoFormat.IOFormat) ioType_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            ioType_ = value;
-          }
+      public Builder addInputMappings(
+          ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder builderForValue) {
+        if (inputMappingsBuilder_ == null) {
+          ensureInputMappingsIsMutable();
+          inputMappings_.add(builderForValue.build());
           onChanged();
         } else {
-          if (ioTypeCase_ == 3) {
-            interactionOutputBuilder_.mergeFrom(value);
-          }
-          interactionOutputBuilder_.setMessage(value);
-        }
-        ioTypeCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
-       */
-      public Builder clearInteractionOutput() {
-        if (interactionOutputBuilder_ == null) {
-          if (ioTypeCase_ == 3) {
-            ioTypeCase_ = 0;
-            ioType_ = null;
-            onChanged();
-          }
-        } else {
-          if (ioTypeCase_ == 3) {
-            ioTypeCase_ = 0;
-            ioType_ = null;
-          }
-          interactionOutputBuilder_.clear();
+          inputMappingsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public ubii.interactions.IoFormat.IOFormat.Builder getInteractionOutputBuilder() {
-        return getInteractionOutputFieldBuilder().getBuilder();
+      public Builder addInputMappings(
+          int index, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder builderForValue) {
+        if (inputMappingsBuilder_ == null) {
+          ensureInputMappingsIsMutable();
+          inputMappings_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          inputMappingsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      public ubii.interactions.IoFormat.IOFormatOrBuilder getInteractionOutputOrBuilder() {
-        if ((ioTypeCase_ == 3) && (interactionOutputBuilder_ != null)) {
-          return interactionOutputBuilder_.getMessageOrBuilder();
+      public Builder addAllInputMappings(
+          java.lang.Iterable<? extends ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping> values) {
+        if (inputMappingsBuilder_ == null) {
+          ensureInputMappingsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, inputMappings_);
+          onChanged();
         } else {
-          if (ioTypeCase_ == 3) {
-            return (ubii.interactions.IoFormat.IOFormat) ioType_;
-          }
-          return ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
+          inputMappingsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public Builder clearInputMappings() {
+        if (inputMappingsBuilder_ == null) {
+          inputMappings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          inputMappingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public Builder removeInputMappings(int index) {
+        if (inputMappingsBuilder_ == null) {
+          ensureInputMappingsIsMutable();
+          inputMappings_.remove(index);
+          onChanged();
+        } else {
+          inputMappingsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder getInputMappingsBuilder(
+          int index) {
+        return getInputMappingsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder getInputMappingsOrBuilder(
+          int index) {
+        if (inputMappingsBuilder_ == null) {
+          return inputMappings_.get(index);  } else {
+          return inputMappingsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>.ubii.interactions.IOFormat interaction_output = 3;</code>
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder> 
-          getInteractionOutputFieldBuilder() {
-        if (interactionOutputBuilder_ == null) {
-          if (!(ioTypeCase_ == 3)) {
-            ioType_ = ubii.interactions.IoFormat.IOFormat.getDefaultInstance();
-          }
-          interactionOutputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder>(
-                  (ubii.interactions.IoFormat.IOFormat) ioType_,
+      public java.util.List<? extends ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder> 
+           getInputMappingsOrBuilderList() {
+        if (inputMappingsBuilder_ != null) {
+          return inputMappingsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(inputMappings_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder addInputMappingsBuilder() {
+        return getInputMappingsFieldBuilder().addBuilder(
+            ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder addInputMappingsBuilder(
+          int index) {
+        return getInputMappingsFieldBuilder().addBuilder(
+            index, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;</code>
+       */
+      public java.util.List<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder> 
+           getInputMappingsBuilderList() {
+        return getInputMappingsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder> 
+          getInputMappingsFieldBuilder() {
+        if (inputMappingsBuilder_ == null) {
+          inputMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder>(
+                  inputMappings_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
-          ioType_ = null;
+          inputMappings_ = null;
         }
-        ioTypeCase_ = 3;
-        onChanged();;
-        return interactionOutputBuilder_;
+        return inputMappingsBuilder_;
       }
 
-      private java.lang.Object topic_ = "";
+      private java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> outputMappings_ =
+        java.util.Collections.emptyList();
+      private void ensureOutputMappingsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          outputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping>(outputMappings_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder> outputMappingsBuilder_;
+
       /**
-       * <code>string topic = 4;</code>
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
        */
-      public java.lang.String getTopic() {
-        java.lang.Object ref = topic_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          topic_ = s;
-          return s;
+      public java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> getOutputMappingsList() {
+        if (outputMappingsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(outputMappings_);
         } else {
-          return (java.lang.String) ref;
+          return outputMappingsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>string topic = 4;</code>
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getTopicBytes() {
-        java.lang.Object ref = topic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topic_ = b;
-          return b;
+      public int getOutputMappingsCount() {
+        if (outputMappingsBuilder_ == null) {
+          return outputMappings_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return outputMappingsBuilder_.getCount();
         }
       }
       /**
-       * <code>string topic = 4;</code>
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
        */
-      public Builder setTopic(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        topic_ = value;
-        onChanged();
+      public ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping getOutputMappings(int index) {
+        if (outputMappingsBuilder_ == null) {
+          return outputMappings_.get(index);
+        } else {
+          return outputMappingsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public Builder setOutputMappings(
+          int index, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping value) {
+        if (outputMappingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutputMappingsIsMutable();
+          outputMappings_.set(index, value);
+          onChanged();
+        } else {
+          outputMappingsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>string topic = 4;</code>
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
        */
-      public Builder clearTopic() {
-        
-        topic_ = getDefaultInstance().getTopic();
-        onChanged();
+      public Builder setOutputMappings(
+          int index, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder builderForValue) {
+        if (outputMappingsBuilder_ == null) {
+          ensureOutputMappingsIsMutable();
+          outputMappings_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          outputMappingsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
-       * <code>string topic = 4;</code>
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
        */
-      public Builder setTopicBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        topic_ = value;
-        onChanged();
+      public Builder addOutputMappings(ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping value) {
+        if (outputMappingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutputMappingsIsMutable();
+          outputMappings_.add(value);
+          onChanged();
+        } else {
+          outputMappingsBuilder_.addMessage(value);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public Builder addOutputMappings(
+          int index, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping value) {
+        if (outputMappingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutputMappingsIsMutable();
+          outputMappings_.add(index, value);
+          onChanged();
+        } else {
+          outputMappingsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public Builder addOutputMappings(
+          ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder builderForValue) {
+        if (outputMappingsBuilder_ == null) {
+          ensureOutputMappingsIsMutable();
+          outputMappings_.add(builderForValue.build());
+          onChanged();
+        } else {
+          outputMappingsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public Builder addOutputMappings(
+          int index, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder builderForValue) {
+        if (outputMappingsBuilder_ == null) {
+          ensureOutputMappingsIsMutable();
+          outputMappings_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          outputMappingsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public Builder addAllOutputMappings(
+          java.lang.Iterable<? extends ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> values) {
+        if (outputMappingsBuilder_ == null) {
+          ensureOutputMappingsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, outputMappings_);
+          onChanged();
+        } else {
+          outputMappingsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public Builder clearOutputMappings() {
+        if (outputMappingsBuilder_ == null) {
+          outputMappings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          outputMappingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public Builder removeOutputMappings(int index) {
+        if (outputMappingsBuilder_ == null) {
+          ensureOutputMappingsIsMutable();
+          outputMappings_.remove(index);
+          onChanged();
+        } else {
+          outputMappingsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder getOutputMappingsBuilder(
+          int index) {
+        return getOutputMappingsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder getOutputMappingsOrBuilder(
+          int index) {
+        if (outputMappingsBuilder_ == null) {
+          return outputMappings_.get(index);  } else {
+          return outputMappingsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public java.util.List<? extends ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder> 
+           getOutputMappingsOrBuilderList() {
+        if (outputMappingsBuilder_ != null) {
+          return outputMappingsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(outputMappings_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder addOutputMappingsBuilder() {
+        return getOutputMappingsFieldBuilder().addBuilder(
+            ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder addOutputMappingsBuilder(
+          int index) {
+        return getOutputMappingsFieldBuilder().addBuilder(
+            index, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;</code>
+       */
+      public java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder> 
+           getOutputMappingsBuilderList() {
+        return getOutputMappingsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder> 
+          getOutputMappingsFieldBuilder() {
+        if (outputMappingsBuilder_ == null) {
+          outputMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder>(
+                  outputMappings_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          outputMappings_ = null;
+        }
+        return outputMappingsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1205,11 +1303,798 @@ public final class IoMapping {
 
   }
 
+  public interface IOMappingListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ubii.sessions.IOMappingList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    java.util.List<ubii.sessions.IoMapping.IOMapping> 
+        getElementsList();
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    ubii.sessions.IoMapping.IOMapping getElements(int index);
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    int getElementsCount();
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    java.util.List<? extends ubii.sessions.IoMapping.IOMappingOrBuilder> 
+        getElementsOrBuilderList();
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    ubii.sessions.IoMapping.IOMappingOrBuilder getElementsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code ubii.sessions.IOMappingList}
+   */
+  public  static final class IOMappingList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ubii.sessions.IOMappingList)
+      IOMappingListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use IOMappingList.newBuilder() to construct.
+    private IOMappingList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private IOMappingList() {
+      elements_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IOMappingList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                elements_ = new java.util.ArrayList<ubii.sessions.IoMapping.IOMapping>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              elements_.add(
+                  input.readMessage(ubii.sessions.IoMapping.IOMapping.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ubii.sessions.IoMapping.internal_static_ubii_sessions_IOMappingList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ubii.sessions.IoMapping.internal_static_ubii_sessions_IOMappingList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ubii.sessions.IoMapping.IOMappingList.class, ubii.sessions.IoMapping.IOMappingList.Builder.class);
+    }
+
+    public static final int ELEMENTS_FIELD_NUMBER = 1;
+    private java.util.List<ubii.sessions.IoMapping.IOMapping> elements_;
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    public java.util.List<ubii.sessions.IoMapping.IOMapping> getElementsList() {
+      return elements_;
+    }
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    public java.util.List<? extends ubii.sessions.IoMapping.IOMappingOrBuilder> 
+        getElementsOrBuilderList() {
+      return elements_;
+    }
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    public int getElementsCount() {
+      return elements_.size();
+    }
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    public ubii.sessions.IoMapping.IOMapping getElements(int index) {
+      return elements_.get(index);
+    }
+    /**
+     * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+     */
+    public ubii.sessions.IoMapping.IOMappingOrBuilder getElementsOrBuilder(
+        int index) {
+      return elements_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < elements_.size(); i++) {
+        output.writeMessage(1, elements_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < elements_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, elements_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ubii.sessions.IoMapping.IOMappingList)) {
+        return super.equals(obj);
+      }
+      ubii.sessions.IoMapping.IOMappingList other = (ubii.sessions.IoMapping.IOMappingList) obj;
+
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getElementsCount() > 0) {
+        hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getElementsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ubii.sessions.IoMapping.IOMappingList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ubii.sessions.IoMapping.IOMappingList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ubii.sessions.IOMappingList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ubii.sessions.IOMappingList)
+        ubii.sessions.IoMapping.IOMappingListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ubii.sessions.IoMapping.internal_static_ubii_sessions_IOMappingList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ubii.sessions.IoMapping.internal_static_ubii_sessions_IOMappingList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ubii.sessions.IoMapping.IOMappingList.class, ubii.sessions.IoMapping.IOMappingList.Builder.class);
+      }
+
+      // Construct using ubii.sessions.IoMapping.IOMappingList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (elementsBuilder_ == null) {
+          elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          elementsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ubii.sessions.IoMapping.internal_static_ubii_sessions_IOMappingList_descriptor;
+      }
+
+      @java.lang.Override
+      public ubii.sessions.IoMapping.IOMappingList getDefaultInstanceForType() {
+        return ubii.sessions.IoMapping.IOMappingList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ubii.sessions.IoMapping.IOMappingList build() {
+        ubii.sessions.IoMapping.IOMappingList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ubii.sessions.IoMapping.IOMappingList buildPartial() {
+        ubii.sessions.IoMapping.IOMappingList result = new ubii.sessions.IoMapping.IOMappingList(this);
+        int from_bitField0_ = bitField0_;
+        if (elementsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            elements_ = java.util.Collections.unmodifiableList(elements_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.elements_ = elements_;
+        } else {
+          result.elements_ = elementsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ubii.sessions.IoMapping.IOMappingList) {
+          return mergeFrom((ubii.sessions.IoMapping.IOMappingList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ubii.sessions.IoMapping.IOMappingList other) {
+        if (other == ubii.sessions.IoMapping.IOMappingList.getDefaultInstance()) return this;
+        if (elementsBuilder_ == null) {
+          if (!other.elements_.isEmpty()) {
+            if (elements_.isEmpty()) {
+              elements_ = other.elements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureElementsIsMutable();
+              elements_.addAll(other.elements_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.elements_.isEmpty()) {
+            if (elementsBuilder_.isEmpty()) {
+              elementsBuilder_.dispose();
+              elementsBuilder_ = null;
+              elements_ = other.elements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              elementsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getElementsFieldBuilder() : null;
+            } else {
+              elementsBuilder_.addAllMessages(other.elements_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ubii.sessions.IoMapping.IOMappingList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.sessions.IoMapping.IOMappingList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<ubii.sessions.IoMapping.IOMapping> elements_ =
+        java.util.Collections.emptyList();
+      private void ensureElementsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = new java.util.ArrayList<ubii.sessions.IoMapping.IOMapping>(elements_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.sessions.IoMapping.IOMapping, ubii.sessions.IoMapping.IOMapping.Builder, ubii.sessions.IoMapping.IOMappingOrBuilder> elementsBuilder_;
+
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public java.util.List<ubii.sessions.IoMapping.IOMapping> getElementsList() {
+        if (elementsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(elements_);
+        } else {
+          return elementsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public int getElementsCount() {
+        if (elementsBuilder_ == null) {
+          return elements_.size();
+        } else {
+          return elementsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public ubii.sessions.IoMapping.IOMapping getElements(int index) {
+        if (elementsBuilder_ == null) {
+          return elements_.get(index);
+        } else {
+          return elementsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder setElements(
+          int index, ubii.sessions.IoMapping.IOMapping value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.set(index, value);
+          onChanged();
+        } else {
+          elementsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder setElements(
+          int index, ubii.sessions.IoMapping.IOMapping.Builder builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder addElements(ubii.sessions.IoMapping.IOMapping value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.add(value);
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder addElements(
+          int index, ubii.sessions.IoMapping.IOMapping value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.add(index, value);
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder addElements(
+          ubii.sessions.IoMapping.IOMapping.Builder builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.add(builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder addElements(
+          int index, ubii.sessions.IoMapping.IOMapping.Builder builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder addAllElements(
+          java.lang.Iterable<? extends ubii.sessions.IoMapping.IOMapping> values) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, elements_);
+          onChanged();
+        } else {
+          elementsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder clearElements() {
+        if (elementsBuilder_ == null) {
+          elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          elementsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public Builder removeElements(int index) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.remove(index);
+          onChanged();
+        } else {
+          elementsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public ubii.sessions.IoMapping.IOMapping.Builder getElementsBuilder(
+          int index) {
+        return getElementsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public ubii.sessions.IoMapping.IOMappingOrBuilder getElementsOrBuilder(
+          int index) {
+        if (elementsBuilder_ == null) {
+          return elements_.get(index);  } else {
+          return elementsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public java.util.List<? extends ubii.sessions.IoMapping.IOMappingOrBuilder> 
+           getElementsOrBuilderList() {
+        if (elementsBuilder_ != null) {
+          return elementsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(elements_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public ubii.sessions.IoMapping.IOMapping.Builder addElementsBuilder() {
+        return getElementsFieldBuilder().addBuilder(
+            ubii.sessions.IoMapping.IOMapping.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public ubii.sessions.IoMapping.IOMapping.Builder addElementsBuilder(
+          int index) {
+        return getElementsFieldBuilder().addBuilder(
+            index, ubii.sessions.IoMapping.IOMapping.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.sessions.IOMapping elements = 1;</code>
+       */
+      public java.util.List<ubii.sessions.IoMapping.IOMapping.Builder> 
+           getElementsBuilderList() {
+        return getElementsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.sessions.IoMapping.IOMapping, ubii.sessions.IoMapping.IOMapping.Builder, ubii.sessions.IoMapping.IOMappingOrBuilder> 
+          getElementsFieldBuilder() {
+        if (elementsBuilder_ == null) {
+          elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.sessions.IoMapping.IOMapping, ubii.sessions.IoMapping.IOMapping.Builder, ubii.sessions.IoMapping.IOMappingOrBuilder>(
+                  elements_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          elements_ = null;
+        }
+        return elementsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ubii.sessions.IOMappingList)
+    }
+
+    // @@protoc_insertion_point(class_scope:ubii.sessions.IOMappingList)
+    private static final ubii.sessions.IoMapping.IOMappingList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ubii.sessions.IoMapping.IOMappingList();
+    }
+
+    public static ubii.sessions.IoMapping.IOMappingList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IOMappingList>
+        PARSER = new com.google.protobuf.AbstractParser<IOMappingList>() {
+      @java.lang.Override
+      public IOMappingList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IOMappingList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<IOMappingList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IOMappingList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ubii.sessions.IoMapping.IOMappingList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ubii_sessions_IOMapping_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ubii_sessions_IOMapping_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ubii_sessions_IOMappingList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ubii_sessions_IOMappingList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1220,12 +2105,15 @@ public final class IoMapping {
   static {
     java.lang.String[] descriptorData = {
       "\n\036proto/sessions/ioMapping.proto\022\rubii.s" +
-      "essions\032!proto/interactions/ioFormat.pro" +
-      "to\"\262\001\n\tIOMapping\022\026\n\016interaction_id\030\001 \001(\t" +
-      "\0228\n\021interaction_input\030\002 \001(\0132\033.ubii.inter" +
-      "actions.IOFormatH\000\0229\n\022interaction_output" +
-      "\030\003 \001(\0132\033.ubii.interactions.IOFormatH\000\022\r\n" +
-      "\005topic\030\004 \001(\tB\t\n\007io_typeb\006proto3"
+      "essions\032,proto/sessions/interactionInput" +
+      "Mapping.proto\032-proto/sessions/interactio" +
+      "nOutputMapping.proto\"\245\001\n\tIOMapping\022\026\n\016in" +
+      "teraction_id\030\001 \001(\t\022>\n\016input_mappings\030\002 \003" +
+      "(\0132&.ubii.sessions.InteractionInputMappi" +
+      "ng\022@\n\017output_mappings\030\003 \003(\0132\'.ubii.sessi" +
+      "ons.InteractionOutputMapping\";\n\rIOMappin" +
+      "gList\022*\n\010elements\030\001 \003(\0132\030.ubii.sessions." +
+      "IOMappingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1238,15 +2126,23 @@ public final class IoMapping {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          ubii.interactions.IoFormat.getDescriptor(),
+          ubii.sessions.InteractionInputMappingOuterClass.getDescriptor(),
+          ubii.sessions.InteractionOutputMappingOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_sessions_IOMapping_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_sessions_IOMapping_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_IOMapping_descriptor,
-        new java.lang.String[] { "InteractionId", "InteractionInput", "InteractionOutput", "Topic", "IoType", });
-    ubii.interactions.IoFormat.getDescriptor();
+        new java.lang.String[] { "InteractionId", "InputMappings", "OutputMappings", });
+    internal_static_ubii_sessions_IOMappingList_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_ubii_sessions_IOMappingList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ubii_sessions_IOMappingList_descriptor,
+        new java.lang.String[] { "Elements", });
+    ubii.sessions.InteractionInputMappingOuterClass.getDescriptor();
+    ubii.sessions.InteractionOutputMappingOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

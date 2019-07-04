@@ -30,7 +30,8 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
-#include "proto/interactions/ioFormat.pb.h"
+#include "proto/sessions/interactionInputMapping.pb.h"
+#include "proto/sessions/interactionOutputMapping.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fioMapping_2eproto 
 
@@ -39,7 +40,7 @@ namespace protobuf_proto_2fsessions_2fioMapping_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[1];
+  static const ::google::protobuf::internal::ParseTable schema[2];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -51,11 +52,15 @@ namespace sessions {
 class IOMapping;
 class IOMappingDefaultTypeInternal;
 extern IOMappingDefaultTypeInternal _IOMapping_default_instance_;
+class IOMappingList;
+class IOMappingListDefaultTypeInternal;
+extern IOMappingListDefaultTypeInternal _IOMappingList_default_instance_;
 }  // namespace sessions
 }  // namespace ubii
 namespace google {
 namespace protobuf {
 template<> ::ubii::sessions::IOMapping* Arena::CreateMaybeMessage<::ubii::sessions::IOMapping>(Arena*);
+template<> ::ubii::sessions::IOMappingList* Arena::CreateMaybeMessage<::ubii::sessions::IOMappingList>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace ubii {
@@ -91,12 +96,6 @@ class IOMapping : public ::google::protobuf::Message /* @@protoc_insertion_point
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
   static const IOMapping& default_instance();
-
-  enum IoTypeCase {
-    kInteractionInput = 2,
-    kInteractionOutput = 3,
-    IO_TYPE_NOT_SET = 0,
-  };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const IOMapping* internal_default_instance() {
@@ -156,6 +155,30 @@ class IOMapping : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   // accessors -------------------------------------------------------
 
+  // repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;
+  int input_mappings_size() const;
+  void clear_input_mappings();
+  static const int kInputMappingsFieldNumber = 2;
+  ::ubii::sessions::InteractionInputMapping* mutable_input_mappings(int index);
+  ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionInputMapping >*
+      mutable_input_mappings();
+  const ::ubii::sessions::InteractionInputMapping& input_mappings(int index) const;
+  ::ubii::sessions::InteractionInputMapping* add_input_mappings();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionInputMapping >&
+      input_mappings() const;
+
+  // repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;
+  int output_mappings_size() const;
+  void clear_output_mappings();
+  static const int kOutputMappingsFieldNumber = 3;
+  ::ubii::sessions::InteractionOutputMapping* mutable_output_mappings(int index);
+  ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionOutputMapping >*
+      mutable_output_mappings();
+  const ::ubii::sessions::InteractionOutputMapping& output_mappings(int index) const;
+  ::ubii::sessions::InteractionOutputMapping* add_output_mappings();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionOutputMapping >&
+      output_mappings() const;
+
   // string interaction_id = 1;
   void clear_interaction_id();
   static const int kInteractionIdFieldNumber = 1;
@@ -170,65 +193,123 @@ class IOMapping : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::std::string* release_interaction_id();
   void set_allocated_interaction_id(::std::string* interaction_id);
 
-  // string topic = 4;
-  void clear_topic();
-  static const int kTopicFieldNumber = 4;
-  const ::std::string& topic() const;
-  void set_topic(const ::std::string& value);
-  #if LANG_CXX11
-  void set_topic(::std::string&& value);
-  #endif
-  void set_topic(const char* value);
-  void set_topic(const char* value, size_t size);
-  ::std::string* mutable_topic();
-  ::std::string* release_topic();
-  void set_allocated_topic(::std::string* topic);
-
-  // .ubii.interactions.IOFormat interaction_input = 2;
-  bool has_interaction_input() const;
-  void clear_interaction_input();
-  static const int kInteractionInputFieldNumber = 2;
-  private:
-  const ::ubii::interactions::IOFormat& _internal_interaction_input() const;
-  public:
-  const ::ubii::interactions::IOFormat& interaction_input() const;
-  ::ubii::interactions::IOFormat* release_interaction_input();
-  ::ubii::interactions::IOFormat* mutable_interaction_input();
-  void set_allocated_interaction_input(::ubii::interactions::IOFormat* interaction_input);
-
-  // .ubii.interactions.IOFormat interaction_output = 3;
-  bool has_interaction_output() const;
-  void clear_interaction_output();
-  static const int kInteractionOutputFieldNumber = 3;
-  private:
-  const ::ubii::interactions::IOFormat& _internal_interaction_output() const;
-  public:
-  const ::ubii::interactions::IOFormat& interaction_output() const;
-  ::ubii::interactions::IOFormat* release_interaction_output();
-  ::ubii::interactions::IOFormat* mutable_interaction_output();
-  void set_allocated_interaction_output(::ubii::interactions::IOFormat* interaction_output);
-
-  void clear_io_type();
-  IoTypeCase io_type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.sessions.IOMapping)
  private:
-  void set_has_interaction_input();
-  void set_has_interaction_output();
-
-  inline bool has_io_type() const;
-  inline void clear_has_io_type();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionInputMapping > input_mappings_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionOutputMapping > output_mappings_;
   ::google::protobuf::internal::ArenaStringPtr interaction_id_;
-  ::google::protobuf::internal::ArenaStringPtr topic_;
-  union IoTypeUnion {
-    IoTypeUnion() {}
-    ::ubii::interactions::IOFormat* interaction_input_;
-    ::ubii::interactions::IOFormat* interaction_output_;
-  } io_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::uint32 _oneof_case_[1];
+  friend struct ::protobuf_proto_2fsessions_2fioMapping_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
+class IOMappingList : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.sessions.IOMappingList) */ {
+ public:
+  IOMappingList();
+  virtual ~IOMappingList();
+
+  IOMappingList(const IOMappingList& from);
+
+  inline IOMappingList& operator=(const IOMappingList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  IOMappingList(IOMappingList&& from) noexcept
+    : IOMappingList() {
+    *this = ::std::move(from);
+  }
+
+  inline IOMappingList& operator=(IOMappingList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const IOMappingList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const IOMappingList* internal_default_instance() {
+    return reinterpret_cast<const IOMappingList*>(
+               &_IOMappingList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(IOMappingList* other);
+  friend void swap(IOMappingList& a, IOMappingList& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline IOMappingList* New() const final {
+    return CreateMaybeMessage<IOMappingList>(NULL);
+  }
+
+  IOMappingList* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<IOMappingList>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const IOMappingList& from);
+  void MergeFrom(const IOMappingList& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(IOMappingList* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .ubii.sessions.IOMapping elements = 1;
+  int elements_size() const;
+  void clear_elements();
+  static const int kElementsFieldNumber = 1;
+  ::ubii::sessions::IOMapping* mutable_elements(int index);
+  ::google::protobuf::RepeatedPtrField< ::ubii::sessions::IOMapping >*
+      mutable_elements();
+  const ::ubii::sessions::IOMapping& elements(int index) const;
+  ::ubii::sessions::IOMapping* add_elements();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::sessions::IOMapping >&
+      elements() const;
+
+  // @@protoc_insertion_point(class_scope:ubii.sessions.IOMappingList)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::sessions::IOMapping > elements_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fsessions_2fioMapping_2eproto::TableStruct;
 };
 // ===================================================================
@@ -295,147 +376,99 @@ inline void IOMapping::set_allocated_interaction_id(::std::string* interaction_i
   // @@protoc_insertion_point(field_set_allocated:ubii.sessions.IOMapping.interaction_id)
 }
 
-// .ubii.interactions.IOFormat interaction_input = 2;
-inline bool IOMapping::has_interaction_input() const {
-  return io_type_case() == kInteractionInput;
+// repeated .ubii.sessions.InteractionInputMapping input_mappings = 2;
+inline int IOMapping::input_mappings_size() const {
+  return input_mappings_.size();
 }
-inline void IOMapping::set_has_interaction_input() {
-  _oneof_case_[0] = kInteractionInput;
+inline ::ubii::sessions::InteractionInputMapping* IOMapping::mutable_input_mappings(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.sessions.IOMapping.input_mappings)
+  return input_mappings_.Mutable(index);
 }
-inline const ::ubii::interactions::IOFormat& IOMapping::_internal_interaction_input() const {
-  return *io_type_.interaction_input_;
+inline ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionInputMapping >*
+IOMapping::mutable_input_mappings() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.sessions.IOMapping.input_mappings)
+  return &input_mappings_;
 }
-inline ::ubii::interactions::IOFormat* IOMapping::release_interaction_input() {
-  // @@protoc_insertion_point(field_release:ubii.sessions.IOMapping.interaction_input)
-  if (has_interaction_input()) {
-    clear_has_io_type();
-      ::ubii::interactions::IOFormat* temp = io_type_.interaction_input_;
-    io_type_.interaction_input_ = NULL;
-    return temp;
-  } else {
-    return NULL;
-  }
+inline const ::ubii::sessions::InteractionInputMapping& IOMapping::input_mappings(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.IOMapping.input_mappings)
+  return input_mappings_.Get(index);
 }
-inline const ::ubii::interactions::IOFormat& IOMapping::interaction_input() const {
-  // @@protoc_insertion_point(field_get:ubii.sessions.IOMapping.interaction_input)
-  return has_interaction_input()
-      ? *io_type_.interaction_input_
-      : *reinterpret_cast< ::ubii::interactions::IOFormat*>(&::ubii::interactions::_IOFormat_default_instance_);
+inline ::ubii::sessions::InteractionInputMapping* IOMapping::add_input_mappings() {
+  // @@protoc_insertion_point(field_add:ubii.sessions.IOMapping.input_mappings)
+  return input_mappings_.Add();
 }
-inline ::ubii::interactions::IOFormat* IOMapping::mutable_interaction_input() {
-  if (!has_interaction_input()) {
-    clear_io_type();
-    set_has_interaction_input();
-    io_type_.interaction_input_ = CreateMaybeMessage< ::ubii::interactions::IOFormat >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:ubii.sessions.IOMapping.interaction_input)
-  return io_type_.interaction_input_;
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionInputMapping >&
+IOMapping::input_mappings() const {
+  // @@protoc_insertion_point(field_list:ubii.sessions.IOMapping.input_mappings)
+  return input_mappings_;
 }
 
-// .ubii.interactions.IOFormat interaction_output = 3;
-inline bool IOMapping::has_interaction_output() const {
-  return io_type_case() == kInteractionOutput;
+// repeated .ubii.sessions.InteractionOutputMapping output_mappings = 3;
+inline int IOMapping::output_mappings_size() const {
+  return output_mappings_.size();
 }
-inline void IOMapping::set_has_interaction_output() {
-  _oneof_case_[0] = kInteractionOutput;
+inline ::ubii::sessions::InteractionOutputMapping* IOMapping::mutable_output_mappings(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.sessions.IOMapping.output_mappings)
+  return output_mappings_.Mutable(index);
 }
-inline const ::ubii::interactions::IOFormat& IOMapping::_internal_interaction_output() const {
-  return *io_type_.interaction_output_;
+inline ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionOutputMapping >*
+IOMapping::mutable_output_mappings() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.sessions.IOMapping.output_mappings)
+  return &output_mappings_;
 }
-inline ::ubii::interactions::IOFormat* IOMapping::release_interaction_output() {
-  // @@protoc_insertion_point(field_release:ubii.sessions.IOMapping.interaction_output)
-  if (has_interaction_output()) {
-    clear_has_io_type();
-      ::ubii::interactions::IOFormat* temp = io_type_.interaction_output_;
-    io_type_.interaction_output_ = NULL;
-    return temp;
-  } else {
-    return NULL;
-  }
+inline const ::ubii::sessions::InteractionOutputMapping& IOMapping::output_mappings(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.IOMapping.output_mappings)
+  return output_mappings_.Get(index);
 }
-inline const ::ubii::interactions::IOFormat& IOMapping::interaction_output() const {
-  // @@protoc_insertion_point(field_get:ubii.sessions.IOMapping.interaction_output)
-  return has_interaction_output()
-      ? *io_type_.interaction_output_
-      : *reinterpret_cast< ::ubii::interactions::IOFormat*>(&::ubii::interactions::_IOFormat_default_instance_);
+inline ::ubii::sessions::InteractionOutputMapping* IOMapping::add_output_mappings() {
+  // @@protoc_insertion_point(field_add:ubii.sessions.IOMapping.output_mappings)
+  return output_mappings_.Add();
 }
-inline ::ubii::interactions::IOFormat* IOMapping::mutable_interaction_output() {
-  if (!has_interaction_output()) {
-    clear_io_type();
-    set_has_interaction_output();
-    io_type_.interaction_output_ = CreateMaybeMessage< ::ubii::interactions::IOFormat >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:ubii.sessions.IOMapping.interaction_output)
-  return io_type_.interaction_output_;
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::sessions::InteractionOutputMapping >&
+IOMapping::output_mappings() const {
+  // @@protoc_insertion_point(field_list:ubii.sessions.IOMapping.output_mappings)
+  return output_mappings_;
 }
 
-// string topic = 4;
-inline void IOMapping::clear_topic() {
-  topic_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// -------------------------------------------------------------------
+
+// IOMappingList
+
+// repeated .ubii.sessions.IOMapping elements = 1;
+inline int IOMappingList::elements_size() const {
+  return elements_.size();
 }
-inline const ::std::string& IOMapping::topic() const {
-  // @@protoc_insertion_point(field_get:ubii.sessions.IOMapping.topic)
-  return topic_.GetNoArena();
+inline void IOMappingList::clear_elements() {
+  elements_.Clear();
 }
-inline void IOMapping::set_topic(const ::std::string& value) {
-  
-  topic_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ubii.sessions.IOMapping.topic)
+inline ::ubii::sessions::IOMapping* IOMappingList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.sessions.IOMappingList.elements)
+  return elements_.Mutable(index);
 }
-#if LANG_CXX11
-inline void IOMapping::set_topic(::std::string&& value) {
-  
-  topic_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:ubii.sessions.IOMapping.topic)
+inline ::google::protobuf::RepeatedPtrField< ::ubii::sessions::IOMapping >*
+IOMappingList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.sessions.IOMappingList.elements)
+  return &elements_;
 }
-#endif
-inline void IOMapping::set_topic(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  topic_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ubii.sessions.IOMapping.topic)
+inline const ::ubii::sessions::IOMapping& IOMappingList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.IOMappingList.elements)
+  return elements_.Get(index);
 }
-inline void IOMapping::set_topic(const char* value, size_t size) {
-  
-  topic_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ubii.sessions.IOMapping.topic)
+inline ::ubii::sessions::IOMapping* IOMappingList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.sessions.IOMappingList.elements)
+  return elements_.Add();
 }
-inline ::std::string* IOMapping::mutable_topic() {
-  
-  // @@protoc_insertion_point(field_mutable:ubii.sessions.IOMapping.topic)
-  return topic_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* IOMapping::release_topic() {
-  // @@protoc_insertion_point(field_release:ubii.sessions.IOMapping.topic)
-  
-  return topic_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void IOMapping::set_allocated_topic(::std::string* topic) {
-  if (topic != NULL) {
-    
-  } else {
-    
-  }
-  topic_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), topic);
-  // @@protoc_insertion_point(field_set_allocated:ubii.sessions.IOMapping.topic)
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::sessions::IOMapping >&
+IOMappingList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.sessions.IOMappingList.elements)
+  return elements_;
 }
 
-inline bool IOMapping::has_io_type() const {
-  return io_type_case() != IO_TYPE_NOT_SET;
-}
-inline void IOMapping::clear_has_io_type() {
-  _oneof_case_[0] = IO_TYPE_NOT_SET;
-}
-inline IOMapping::IoTypeCase IOMapping::io_type_case() const {
-  return IOMapping::IoTypeCase(_oneof_case_[0]);
-}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
