@@ -16,9 +16,10 @@ const MSG_TYPES = {
 
 const DEFAULT_TOPICS = {
   SERVICES: {
-    CLIENT_REGISTRATION: '/services/client_registration',
+    CLIENT_REGISTRATION: '/services/client/registration',
+    CLIENT_DEREGISTRATION: '/services/client/deregistration',
     CLIENT_GET_LIST: '/services/client/get_list',
-    DEVICE_REGISTRATION: '/services/device_registration',
+    DEVICE_REGISTRATION: '/services/device/registration',
     DEVICE_GET_LIST: '/services/device/get_list',
     /* interactions */
     INTERACTION_REGISTRATION: '/services/interaction/registration',
