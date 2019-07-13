@@ -42,6 +42,7 @@
 #include "proto/topicData/topicDataRecord/dataStructure/keyEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/mouseEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/myoEvent.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/pose.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto 
 
@@ -122,6 +123,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     kKeyEvent = 14,
     kMouseEvent = 15,
     kMyoEvent = 16,
+    kPose = 17,
     TYPE_NOT_SET = 0,
   };
 
@@ -376,6 +378,18 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::MyoEvent* mutable_myo_event();
   void set_allocated_myo_event(::ubii::dataStructure::MyoEvent* myo_event);
 
+  // .ubii.dataStructure.Pose pose = 17;
+  bool has_pose() const;
+  void clear_pose();
+  static const int kPoseFieldNumber = 17;
+  private:
+  const ::ubii::dataStructure::Pose& _internal_pose() const;
+  public:
+  const ::ubii::dataStructure::Pose& pose() const;
+  ::ubii::dataStructure::Pose* release_pose();
+  ::ubii::dataStructure::Pose* mutable_pose();
+  void set_allocated_pose(::ubii::dataStructure::Pose* pose);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
@@ -394,6 +408,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_key_event();
   void set_has_mouse_event();
   void set_has_myo_event();
+  void set_has_pose();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -417,6 +432,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::KeyEvent* key_event_;
     ::ubii::dataStructure::MouseEvent* mouse_event_;
     ::ubii::dataStructure::MyoEvent* myo_event_;
+    ::ubii::dataStructure::Pose* pose_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1211,6 +1227,44 @@ inline ::ubii::dataStructure::MyoEvent* TopicDataRecord::mutable_myo_event() {
   }
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.myo_event)
   return type_.myo_event_;
+}
+
+// .ubii.dataStructure.Pose pose = 17;
+inline bool TopicDataRecord::has_pose() const {
+  return type_case() == kPose;
+}
+inline void TopicDataRecord::set_has_pose() {
+  _oneof_case_[0] = kPose;
+}
+inline const ::ubii::dataStructure::Pose& TopicDataRecord::_internal_pose() const {
+  return *type_.pose_;
+}
+inline ::ubii::dataStructure::Pose* TopicDataRecord::release_pose() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.pose)
+  if (has_pose()) {
+    clear_has_type();
+      ::ubii::dataStructure::Pose* temp = type_.pose_;
+    type_.pose_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Pose& TopicDataRecord::pose() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.pose)
+  return has_pose()
+      ? *type_.pose_
+      : *reinterpret_cast< ::ubii::dataStructure::Pose*>(&::ubii::dataStructure::_Pose_default_instance_);
+}
+inline ::ubii::dataStructure::Pose* TopicDataRecord::mutable_pose() {
+  if (!has_pose()) {
+    clear_type();
+    set_has_pose();
+    type_.pose_ = CreateMaybeMessage< ::ubii::dataStructure::Pose >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.pose)
+  return type_.pose_;
 }
 
 inline bool TopicDataRecord::has_type() const {

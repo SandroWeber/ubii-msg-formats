@@ -23,6 +23,7 @@ var proto_topicData_topicDataRecord_dataStructure_touchEvent_pb = require('../..
 var proto_topicData_topicDataRecord_dataStructure_keyEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/keyEvent_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/mouseEvent_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_myoEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/myoEvent_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_pose_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/pose_pb.js');
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecordList', null, global);
 
@@ -51,7 +52,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]];
 
 /**
  * @enum {number}
@@ -71,7 +72,8 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   TOUCH_EVENT: 13,
   KEY_EVENT: 14,
   MOUSE_EVENT: 15,
-  MYO_EVENT: 16
+  MYO_EVENT: 16,
+  POSE: 17
 };
 
 /**
@@ -125,7 +127,8 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     touchEvent: (f = msg.getTouchEvent()) && proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.toObject(includeInstance, f),
     keyEvent: (f = msg.getKeyEvent()) && proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.toObject(includeInstance, f),
     mouseEvent: (f = msg.getMouseEvent()) && proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.toObject(includeInstance, f),
-    myoEvent: (f = msg.getMyoEvent()) && proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.toObject(includeInstance, f)
+    myoEvent: (f = msg.getMyoEvent()) && proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.toObject(includeInstance, f),
+    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -237,6 +240,11 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.deserializeBinaryFromReader);
       msg.setMyoEvent(value);
+      break;
+    case 17:
+      var value = new proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.deserializeBinaryFromReader);
+      msg.setPose(value);
       break;
     default:
       reader.skipField();
@@ -389,6 +397,14 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       16,
       f,
       proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getPose();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.serializeBinaryToWriter
     );
   }
 };
@@ -855,6 +871,36 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearMyoEvent = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMyoEvent = function() {
   return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Pose pose = 17;
+ * @return {?proto.ubii.dataStructure.Pose}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getPose = function() {
+  return /** @type{?proto.ubii.dataStructure.Pose} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose, 17));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Pose|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setPose = function(value) {
+  jspb.Message.setOneofWrapperField(this, 17, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearPose = function() {
+  this.setPose(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasPose = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

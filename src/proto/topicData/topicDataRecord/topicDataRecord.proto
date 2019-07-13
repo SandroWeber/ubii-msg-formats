@@ -13,6 +13,7 @@ import "proto/topicData/topicDataRecord/dataStructure/touchEvent.proto";
 import "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto";
 import "proto/topicData/topicDataRecord/dataStructure/mouseEvent.proto";
 import "proto/topicData/topicDataRecord/dataStructure/myoEvent.proto";
+import "proto/topicData/topicDataRecord/dataStructure/pose.proto";
 
 message TopicDataRecord {
     string topic = 1;
@@ -32,6 +33,7 @@ message TopicDataRecord {
         ubii.dataStructure.KeyEvent key_event = 14;
         ubii.dataStructure.MouseEvent mouse_event = 15;
         ubii.dataStructure.MyoEvent myo_event = 16;
+        ubii.dataStructure.Pose pose = 17;
     }    
 }
 

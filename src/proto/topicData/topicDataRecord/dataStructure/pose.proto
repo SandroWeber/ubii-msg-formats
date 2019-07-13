@@ -1,0 +1,10 @@
+syntax = "proto3";
+package ubii.dataStructure;
+
+import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
+import "proto/topicData/topicDataRecord/dataStructure/quaternion.proto";
+
+message Pose {
+    ubii.dataStructure.Vector3 vector3 = 1;
+    ubii.dataStructure.Quaternion quaternion = 2;
+}

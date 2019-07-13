@@ -8859,6 +8859,7 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IKeyEvent|null} [keyEvent] TopicDataRecord keyEvent
              * @property {ubii.dataStructure.IMouseEvent|null} [mouseEvent] TopicDataRecord mouseEvent
              * @property {ubii.dataStructure.IMyoEvent|null} [myoEvent] TopicDataRecord myoEvent
+             * @property {ubii.dataStructure.IPose|null} [pose] TopicDataRecord pose
              */
 
             /**
@@ -9004,17 +9005,25 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.myoEvent = null;
 
+            /**
+             * TopicDataRecord pose.
+             * @member {ubii.dataStructure.IPose|null|undefined} pose
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.pose = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -9074,6 +9083,8 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.MouseEvent.encode(message.mouseEvent, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 if (message.myoEvent != null && message.hasOwnProperty("myoEvent"))
                     $root.ubii.dataStructure.MyoEvent.encode(message.myoEvent, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.pose != null && message.hasOwnProperty("pose"))
+                    $root.ubii.dataStructure.Pose.encode(message.pose, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -9155,6 +9166,9 @@ $root.ubii = (function() {
                         break;
                     case 16:
                         message.myoEvent = $root.ubii.dataStructure.MyoEvent.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.pose = $root.ubii.dataStructure.Pose.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9329,6 +9343,16 @@ $root.ubii = (function() {
                             return "myoEvent." + error;
                     }
                 }
+                if (message.pose != null && message.hasOwnProperty("pose")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Pose.verify(message.pose);
+                        if (error)
+                            return "pose." + error;
+                    }
+                }
                 return null;
             };
 
@@ -9411,6 +9435,11 @@ $root.ubii = (function() {
                     if (typeof object.myoEvent !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.myoEvent: object expected");
                     message.myoEvent = $root.ubii.dataStructure.MyoEvent.fromObject(object.myoEvent);
+                }
+                if (object.pose != null) {
+                    if (typeof object.pose !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.pose: object expected");
+                    message.pose = $root.ubii.dataStructure.Pose.fromObject(object.pose);
                 }
                 return message;
             };
@@ -9505,6 +9534,11 @@ $root.ubii = (function() {
                     object.myoEvent = $root.ubii.dataStructure.MyoEvent.toObject(message.myoEvent, options);
                     if (options.oneofs)
                         object.type = "myoEvent";
+                }
+                if (message.pose != null && message.hasOwnProperty("pose")) {
+                    object.pose = $root.ubii.dataStructure.Pose.toObject(message.pose, options);
+                    if (options.oneofs)
+                        object.type = "pose";
                 }
                 return object;
             };
@@ -11622,6 +11656,226 @@ $root.ubii = (function() {
             };
 
             return MyoEvent;
+        })();
+
+        dataStructure.Pose = (function() {
+
+            /**
+             * Properties of a Pose.
+             * @memberof ubii.dataStructure
+             * @interface IPose
+             * @property {ubii.dataStructure.IVector3|null} [vector3] Pose vector3
+             * @property {ubii.dataStructure.IQuaternion|null} [quaternion] Pose quaternion
+             */
+
+            /**
+             * Constructs a new Pose.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a Pose.
+             * @implements IPose
+             * @constructor
+             * @param {ubii.dataStructure.IPose=} [properties] Properties to set
+             */
+            function Pose(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Pose vector3.
+             * @member {ubii.dataStructure.IVector3|null|undefined} vector3
+             * @memberof ubii.dataStructure.Pose
+             * @instance
+             */
+            Pose.prototype.vector3 = null;
+
+            /**
+             * Pose quaternion.
+             * @member {ubii.dataStructure.IQuaternion|null|undefined} quaternion
+             * @memberof ubii.dataStructure.Pose
+             * @instance
+             */
+            Pose.prototype.quaternion = null;
+
+            /**
+             * Creates a new Pose instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {ubii.dataStructure.IPose=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Pose} Pose instance
+             */
+            Pose.create = function create(properties) {
+                return new Pose(properties);
+            };
+
+            /**
+             * Encodes the specified Pose message. Does not implicitly {@link ubii.dataStructure.Pose.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {ubii.dataStructure.IPose} message Pose message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Pose.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.vector3 != null && message.hasOwnProperty("vector3"))
+                    $root.ubii.dataStructure.Vector3.encode(message.vector3, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.quaternion != null && message.hasOwnProperty("quaternion"))
+                    $root.ubii.dataStructure.Quaternion.encode(message.quaternion, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Pose message, length delimited. Does not implicitly {@link ubii.dataStructure.Pose.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {ubii.dataStructure.IPose} message Pose message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Pose.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Pose message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Pose} Pose
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Pose.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Pose();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.vector3 = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.quaternion = $root.ubii.dataStructure.Quaternion.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Pose message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Pose} Pose
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Pose.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Pose message.
+             * @function verify
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Pose.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.vector3 != null && message.hasOwnProperty("vector3")) {
+                    var error = $root.ubii.dataStructure.Vector3.verify(message.vector3);
+                    if (error)
+                        return "vector3." + error;
+                }
+                if (message.quaternion != null && message.hasOwnProperty("quaternion")) {
+                    var error = $root.ubii.dataStructure.Quaternion.verify(message.quaternion);
+                    if (error)
+                        return "quaternion." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a Pose message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Pose} Pose
+             */
+            Pose.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Pose)
+                    return object;
+                var message = new $root.ubii.dataStructure.Pose();
+                if (object.vector3 != null) {
+                    if (typeof object.vector3 !== "object")
+                        throw TypeError(".ubii.dataStructure.Pose.vector3: object expected");
+                    message.vector3 = $root.ubii.dataStructure.Vector3.fromObject(object.vector3);
+                }
+                if (object.quaternion != null) {
+                    if (typeof object.quaternion !== "object")
+                        throw TypeError(".ubii.dataStructure.Pose.quaternion: object expected");
+                    message.quaternion = $root.ubii.dataStructure.Quaternion.fromObject(object.quaternion);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Pose message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Pose
+             * @static
+             * @param {ubii.dataStructure.Pose} message Pose
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Pose.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.vector3 = null;
+                    object.quaternion = null;
+                }
+                if (message.vector3 != null && message.hasOwnProperty("vector3"))
+                    object.vector3 = $root.ubii.dataStructure.Vector3.toObject(message.vector3, options);
+                if (message.quaternion != null && message.hasOwnProperty("quaternion"))
+                    object.quaternion = $root.ubii.dataStructure.Quaternion.toObject(message.quaternion, options);
+                return object;
+            };
+
+            /**
+             * Converts this Pose to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Pose
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Pose.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Pose;
         })();
 
         dataStructure.Quaternion = (function() {
