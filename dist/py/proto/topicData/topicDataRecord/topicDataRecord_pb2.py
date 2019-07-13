@@ -25,6 +25,7 @@ from proto.topicData.topicDataRecord.dataStructure import keyEvent_pb2 as proto_
 from proto.topicData.topicDataRecord.dataStructure import mouseEvent_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_mouseEvent__pb2
 from proto.topicData.topicDataRecord.dataStructure import myoEvent_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_myoEvent__pb2
 from proto.topicData.topicDataRecord.dataStructure import pose_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose__pb2
+from proto.topicData.topicDataRecord.dataStructure import object3d_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_object3d__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -32,9 +33,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.topicData',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n5proto/topicData/topicDataRecord/topicDataRecord.proto\x12\x0eubii.topicData\x1a/proto/topicData/topicDataRecord/timestamp.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector3.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector4.proto\x1a>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto\x1a\x39proto/topicData/topicDataRecord/dataStructure/color.proto\x1a>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x1a<proto/topicData/topicDataRecord/dataStructure/keyEvent.proto\x1a>proto/topicData/topicDataRecord/dataStructure/mouseEvent.proto\x1a<proto/topicData/topicDataRecord/dataStructure/myoEvent.proto\x1a\x38proto/topicData/topicDataRecord/dataStructure/pose.proto\"\xe2\x05\n\x0fTopicDataRecord\x12\r\n\x05topic\x18\x01 \x01(\t\x12,\n\ttimestamp\x18\x02 \x01(\x0b\x32\x19.ubii.topicData.Timestamp\x12\x10\n\x06\x64ouble\x18\x03 \x01(\x01H\x00\x12\x0e\n\x04\x62ool\x18\x04 \x01(\x08H\x00\x12\x10\n\x06string\x18\x05 \x01(\tH\x00\x12.\n\x07vector2\x18\x06 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2H\x00\x12.\n\x07vector3\x18\x07 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector3H\x00\x12.\n\x07vector4\x18\x08 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector4H\x00\x12\x34\n\nquaternion\x18\t \x01(\x0b\x32\x1e.ubii.dataStructure.QuaternionH\x00\x12\x32\n\tmatrix3x2\x18\n \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix3x2H\x00\x12\x32\n\tmatrix4x4\x18\x0b \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix4x4H\x00\x12*\n\x05\x63olor\x18\x0c \x01(\x0b\x32\x19.ubii.dataStructure.ColorH\x00\x12\x35\n\x0btouch_event\x18\r \x01(\x0b\x32\x1e.ubii.dataStructure.TouchEventH\x00\x12\x31\n\tkey_event\x18\x0e \x01(\x0b\x32\x1c.ubii.dataStructure.KeyEventH\x00\x12\x35\n\x0bmouse_event\x18\x0f \x01(\x0b\x32\x1e.ubii.dataStructure.MouseEventH\x00\x12\x31\n\tmyo_event\x18\x10 \x01(\x0b\x32\x1c.ubii.dataStructure.MyoEventH\x00\x12(\n\x04pose\x18\x11 \x01(\x0b\x32\x18.ubii.dataStructure.PoseH\x00\x42\x06\n\x04type\"H\n\x13TopicDataRecordList\x12\x31\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3')
+  serialized_pb=_b('\n5proto/topicData/topicDataRecord/topicDataRecord.proto\x12\x0eubii.topicData\x1a/proto/topicData/topicDataRecord/timestamp.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector3.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector4.proto\x1a>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto\x1a=proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto\x1a\x39proto/topicData/topicDataRecord/dataStructure/color.proto\x1a>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x1a<proto/topicData/topicDataRecord/dataStructure/keyEvent.proto\x1a>proto/topicData/topicDataRecord/dataStructure/mouseEvent.proto\x1a<proto/topicData/topicDataRecord/dataStructure/myoEvent.proto\x1a\x38proto/topicData/topicDataRecord/dataStructure/pose.proto\x1a<proto/topicData/topicDataRecord/dataStructure/object3d.proto\"\x94\x06\n\x0fTopicDataRecord\x12\r\n\x05topic\x18\x01 \x01(\t\x12,\n\ttimestamp\x18\x02 \x01(\x0b\x32\x19.ubii.topicData.Timestamp\x12\x10\n\x06\x64ouble\x18\x03 \x01(\x01H\x00\x12\x0e\n\x04\x62ool\x18\x04 \x01(\x08H\x00\x12\x10\n\x06string\x18\x05 \x01(\tH\x00\x12.\n\x07vector2\x18\x06 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2H\x00\x12.\n\x07vector3\x18\x07 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector3H\x00\x12.\n\x07vector4\x18\x08 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector4H\x00\x12\x34\n\nquaternion\x18\t \x01(\x0b\x32\x1e.ubii.dataStructure.QuaternionH\x00\x12\x32\n\tmatrix3x2\x18\n \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix3x2H\x00\x12\x32\n\tmatrix4x4\x18\x0b \x01(\x0b\x32\x1d.ubii.dataStructure.Matrix4x4H\x00\x12*\n\x05\x63olor\x18\x0c \x01(\x0b\x32\x19.ubii.dataStructure.ColorH\x00\x12\x35\n\x0btouch_event\x18\r \x01(\x0b\x32\x1e.ubii.dataStructure.TouchEventH\x00\x12\x31\n\tkey_event\x18\x0e \x01(\x0b\x32\x1c.ubii.dataStructure.KeyEventH\x00\x12\x35\n\x0bmouse_event\x18\x0f \x01(\x0b\x32\x1e.ubii.dataStructure.MouseEventH\x00\x12\x31\n\tmyo_event\x18\x10 \x01(\x0b\x32\x1c.ubii.dataStructure.MyoEventH\x00\x12(\n\x04pose\x18\x11 \x01(\x0b\x32\x18.ubii.dataStructure.PoseH\x00\x12\x30\n\x08object3D\x18\x12 \x01(\x0b\x32\x1c.ubii.dataStructure.Object3DH\x00\x42\x06\n\x04type\"H\n\x13TopicDataRecordList\x12\x31\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3')
   ,
-  dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_timestamp__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector3__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_quaternion__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix3x2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix4x4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_color__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_touchEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_keyEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_mouseEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_myoEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_timestamp__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector3__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_quaternion__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix3x2__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_matrix4x4__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_color__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_touchEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_keyEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_mouseEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_myoEvent__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_object3d__pb2.DESCRIPTOR,])
 
 
 
@@ -165,6 +166,13 @@ _TOPICDATARECORD = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='object3D', full_name='ubii.topicData.TopicDataRecord.object3D', index=17,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -180,8 +188,8 @@ _TOPICDATARECORD = _descriptor.Descriptor(
       name='type', full_name='ubii.topicData.TopicDataRecord.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=865,
-  serialized_end=1603,
+  serialized_start=927,
+  serialized_end=1715,
 )
 
 
@@ -211,8 +219,8 @@ _TOPICDATARECORDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1605,
-  serialized_end=1677,
+  serialized_start=1717,
+  serialized_end=1789,
 )
 
 _TOPICDATARECORD.fields_by_name['timestamp'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_timestamp__pb2._TIMESTAMP
@@ -228,6 +236,7 @@ _TOPICDATARECORD.fields_by_name['key_event'].message_type = proto_dot_topicData_
 _TOPICDATARECORD.fields_by_name['mouse_event'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_mouseEvent__pb2._MOUSEEVENT
 _TOPICDATARECORD.fields_by_name['myo_event'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_myoEvent__pb2._MYOEVENT
 _TOPICDATARECORD.fields_by_name['pose'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose__pb2._POSE
+_TOPICDATARECORD.fields_by_name['object3D'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_object3d__pb2._OBJECT3D
 _TOPICDATARECORD.oneofs_by_name['type'].fields.append(
   _TOPICDATARECORD.fields_by_name['double'])
 _TOPICDATARECORD.fields_by_name['double'].containing_oneof = _TOPICDATARECORD.oneofs_by_name['type']
@@ -273,6 +282,9 @@ _TOPICDATARECORD.fields_by_name['myo_event'].containing_oneof = _TOPICDATARECORD
 _TOPICDATARECORD.oneofs_by_name['type'].fields.append(
   _TOPICDATARECORD.fields_by_name['pose'])
 _TOPICDATARECORD.fields_by_name['pose'].containing_oneof = _TOPICDATARECORD.oneofs_by_name['type']
+_TOPICDATARECORD.oneofs_by_name['type'].fields.append(
+  _TOPICDATARECORD.fields_by_name['object3D'])
+_TOPICDATARECORD.fields_by_name['object3D'].containing_oneof = _TOPICDATARECORD.oneofs_by_name['type']
 _TOPICDATARECORDLIST.fields_by_name['elements'].message_type = _TOPICDATARECORD
 DESCRIPTOR.message_types_by_name['TopicDataRecord'] = _TOPICDATARECORD
 DESCRIPTOR.message_types_by_name['TopicDataRecordList'] = _TOPICDATARECORDLIST

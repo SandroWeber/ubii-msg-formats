@@ -37,6 +37,9 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fd
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_MyoEvent;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Object3D;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Pose;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose_2eproto
@@ -59,7 +62,7 @@ namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<13> scc_info_TopicDataRecord;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<14> scc_info_TopicDataRecord;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto
 namespace ubii {
 namespace topicData {
@@ -82,6 +85,7 @@ class TopicDataRecordDefaultTypeInternal {
   const ::ubii::dataStructure::MouseEvent* mouse_event_;
   const ::ubii::dataStructure::MyoEvent* myo_event_;
   const ::ubii::dataStructure::Pose* pose_;
+  const ::ubii::dataStructure::Object3D* object3d_;
 } _TopicDataRecord_default_instance_;
 class TopicDataRecordListDefaultTypeInternal {
  public:
@@ -102,8 +106,8 @@ static void InitDefaultsTopicDataRecord() {
   ::ubii::topicData::TopicDataRecord::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<13> scc_info_TopicDataRecord =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 13, InitDefaultsTopicDataRecord}, {
+::google::protobuf::internal::SCCInfo<14> scc_info_TopicDataRecord =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 14, InitDefaultsTopicDataRecord}, {
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::scc_info_Timestamp.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto::scc_info_Vector2.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto::scc_info_Vector3.base,
@@ -116,7 +120,8 @@ static void InitDefaultsTopicDataRecord() {
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::scc_info_KeyEvent.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmouseEvent_2eproto::scc_info_MouseEvent.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto::scc_info_MyoEvent.base,
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose_2eproto::scc_info_Pose.base,}};
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose_2eproto::scc_info_Pose.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::scc_info_Object3D.base,}};
 
 static void InitDefaultsTopicDataRecordList() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -163,6 +168,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, mouse_event_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, myo_event_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, pose_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object3d_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, _internal_metadata_),
@@ -173,7 +179,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::topicData::TopicDataRecord)},
-  { 23, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
+  { 24, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -223,31 +229,33 @@ void AddDescriptorsImpl() {
       "cture/mouseEvent.proto\032<proto/topicData/"
       "topicDataRecord/dataStructure/myoEvent.p"
       "roto\0328proto/topicData/topicDataRecord/da"
-      "taStructure/pose.proto\"\342\005\n\017TopicDataReco"
-      "rd\022\r\n\005topic\030\001 \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.u"
-      "bii.topicData.Timestamp\022\020\n\006double\030\003 \001(\001H"
-      "\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022.\n\007v"
-      "ector2\030\006 \001(\0132\033.ubii.dataStructure.Vector"
-      "2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStructur"
-      "e.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.data"
-      "Structure.Vector4H\000\0224\n\nquaternion\030\t \001(\0132"
-      "\036.ubii.dataStructure.QuaternionH\000\0222\n\tmat"
-      "rix3x2\030\n \001(\0132\035.ubii.dataStructure.Matrix"
-      "3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataStru"
-      "cture.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ubii."
-      "dataStructure.ColorH\000\0225\n\013touch_event\030\r \001"
-      "(\0132\036.ubii.dataStructure.TouchEventH\000\0221\n\t"
-      "key_event\030\016 \001(\0132\034.ubii.dataStructure.Key"
-      "EventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.ubii.data"
-      "Structure.MouseEventH\000\0221\n\tmyo_event\030\020 \001("
-      "\0132\034.ubii.dataStructure.MyoEventH\000\022(\n\004pos"
-      "e\030\021 \001(\0132\030.ubii.dataStructure.PoseH\000B\006\n\004t"
-      "ype\"H\n\023TopicDataRecordList\0221\n\010elements\030\001"
-      " \003(\0132\037.ubii.topicData.TopicDataRecordb\006p"
-      "roto3"
+      "taStructure/pose.proto\032<proto/topicData/"
+      "topicDataRecord/dataStructure/object3d.p"
+      "roto\"\224\006\n\017TopicDataRecord\022\r\n\005topic\030\001 \001(\t\022"
+      ",\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData.Time"
+      "stamp\022\020\n\006double\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022"
+      "\020\n\006string\030\005 \001(\tH\000\022.\n\007vector2\030\006 \001(\0132\033.ubi"
+      "i.dataStructure.Vector2H\000\022.\n\007vector3\030\007 \001"
+      "(\0132\033.ubii.dataStructure.Vector3H\000\022.\n\007vec"
+      "tor4\030\010 \001(\0132\033.ubii.dataStructure.Vector4H"
+      "\000\0224\n\nquaternion\030\t \001(\0132\036.ubii.dataStructu"
+      "re.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.ubi"
+      "i.dataStructure.Matrix3x2H\000\0222\n\tmatrix4x4"
+      "\030\013 \001(\0132\035.ubii.dataStructure.Matrix4x4H\000\022"
+      "*\n\005color\030\014 \001(\0132\031.ubii.dataStructure.Colo"
+      "rH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.dataStru"
+      "cture.TouchEventH\000\0221\n\tkey_event\030\016 \001(\0132\034."
+      "ubii.dataStructure.KeyEventH\000\0225\n\013mouse_e"
+      "vent\030\017 \001(\0132\036.ubii.dataStructure.MouseEve"
+      "ntH\000\0221\n\tmyo_event\030\020 \001(\0132\034.ubii.dataStruc"
+      "ture.MyoEventH\000\022(\n\004pose\030\021 \001(\0132\030.ubii.dat"
+      "aStructure.PoseH\000\0220\n\010object3D\030\022 \001(\0132\034.ub"
+      "ii.dataStructure.Object3DH\000B\006\n\004type\"H\n\023T"
+      "opicDataRecordList\0221\n\010elements\030\001 \003(\0132\037.u"
+      "bii.topicData.TopicDataRecordb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1685);
+      descriptor, 1797);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord/topicDataRecord.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::AddDescriptors();
@@ -263,6 +271,7 @@ void AddDescriptorsImpl() {
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmouseEvent_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose_2eproto::AddDescriptors();
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -312,6 +321,8 @@ void TopicDataRecord::InitAsDefaultInstance() {
       ::ubii::dataStructure::MyoEvent::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.pose_ = const_cast< ::ubii::dataStructure::Pose*>(
       ::ubii::dataStructure::Pose::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.object3d_ = const_cast< ::ubii::dataStructure::Object3D*>(
+      ::ubii::dataStructure::Object3D::internal_default_instance());
 }
 void TopicDataRecord::clear_timestamp() {
   if (GetArenaNoVirtual() == NULL && timestamp_ != NULL) {
@@ -559,6 +570,26 @@ void TopicDataRecord::clear_pose() {
     clear_has_type();
   }
 }
+void TopicDataRecord::set_allocated_object3d(::ubii::dataStructure::Object3D* object3d) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (object3d) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      object3d = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, object3d, submessage_arena);
+    }
+    set_has_object3d();
+    type_.object3d_ = object3d;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.object3D)
+}
+void TopicDataRecord::clear_object3d() {
+  if (has_object3d()) {
+    delete type_.object3d_;
+    clear_has_type();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TopicDataRecord::kTopicFieldNumber;
 const int TopicDataRecord::kTimestampFieldNumber;
@@ -577,6 +608,7 @@ const int TopicDataRecord::kKeyEventFieldNumber;
 const int TopicDataRecord::kMouseEventFieldNumber;
 const int TopicDataRecord::kMyoEventFieldNumber;
 const int TopicDataRecord::kPoseFieldNumber;
+const int TopicDataRecord::kObject3DFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TopicDataRecord::TopicDataRecord()
@@ -659,6 +691,10 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
     }
     case kPose: {
       mutable_pose()->::ubii::dataStructure::Pose::MergeFrom(from.pose());
+      break;
+    }
+    case kObject3D: {
+      mutable_object3d()->::ubii::dataStructure::Object3D::MergeFrom(from.object3d());
       break;
     }
     case TYPE_NOT_SET: {
@@ -762,6 +798,10 @@ void TopicDataRecord::clear_type() {
     }
     case kPose: {
       delete type_.pose_;
+      break;
+    }
+    case kObject3D: {
+      delete type_.object3d_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -1015,6 +1055,18 @@ bool TopicDataRecord::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.dataStructure.Object3D object3D = 18;
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_object3d()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1147,6 +1199,12 @@ void TopicDataRecord::SerializeWithCachedSizes(
   if (has_pose()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       17, this->_internal_pose(), output);
+  }
+
+  // .ubii.dataStructure.Object3D object3D = 18;
+  if (has_object3d()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      18, this->_internal_object3d(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1286,6 +1344,13 @@ void TopicDataRecord::SerializeWithCachedSizes(
         17, this->_internal_pose(), deterministic, target);
   }
 
+  // .ubii.dataStructure.Object3D object3D = 18;
+  if (has_object3d()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        18, this->_internal_object3d(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -1419,6 +1484,13 @@ size_t TopicDataRecord::ByteSizeLong() const {
           *type_.pose_);
       break;
     }
+    // .ubii.dataStructure.Object3D object3D = 18;
+    case kObject3D: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.object3d_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -1516,6 +1588,10 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
     }
     case kPose: {
       mutable_pose()->::ubii::dataStructure::Pose::MergeFrom(from.pose());
+      break;
+    }
+    case kObject3D: {
+      mutable_object3d()->::ubii::dataStructure::Object3D::MergeFrom(from.object3d());
       break;
     }
     case TYPE_NOT_SET: {

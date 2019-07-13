@@ -43,29 +43,31 @@ namespace Ubii.TopicData {
             "Y3R1cmUvbW91c2VFdmVudC5wcm90bxo8cHJvdG8vdG9waWNEYXRhL3RvcGlj",
             "RGF0YVJlY29yZC9kYXRhU3RydWN0dXJlL215b0V2ZW50LnByb3RvGjhwcm90",
             "by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvcG9z",
-            "ZS5wcm90byLiBQoPVG9waWNEYXRhUmVjb3JkEg0KBXRvcGljGAEgASgJEiwK",
-            "CXRpbWVzdGFtcBgCIAEoCzIZLnViaWkudG9waWNEYXRhLlRpbWVzdGFtcBIQ",
-            "CgZkb3VibGUYAyABKAFIABIOCgRib29sGAQgASgISAASEAoGc3RyaW5nGAUg",
-            "ASgJSAASLgoHdmVjdG9yMhgGIAEoCzIbLnViaWkuZGF0YVN0cnVjdHVyZS5W",
-            "ZWN0b3IySAASLgoHdmVjdG9yMxgHIAEoCzIbLnViaWkuZGF0YVN0cnVjdHVy",
-            "ZS5WZWN0b3IzSAASLgoHdmVjdG9yNBgIIAEoCzIbLnViaWkuZGF0YVN0cnVj",
-            "dHVyZS5WZWN0b3I0SAASNAoKcXVhdGVybmlvbhgJIAEoCzIeLnViaWkuZGF0",
-            "YVN0cnVjdHVyZS5RdWF0ZXJuaW9uSAASMgoJbWF0cml4M3gyGAogASgLMh0u",
-            "dWJpaS5kYXRhU3RydWN0dXJlLk1hdHJpeDN4MkgAEjIKCW1hdHJpeDR4NBgL",
-            "IAEoCzIdLnViaWkuZGF0YVN0cnVjdHVyZS5NYXRyaXg0eDRIABIqCgVjb2xv",
-            "chgMIAEoCzIZLnViaWkuZGF0YVN0cnVjdHVyZS5Db2xvckgAEjUKC3RvdWNo",
-            "X2V2ZW50GA0gASgLMh4udWJpaS5kYXRhU3RydWN0dXJlLlRvdWNoRXZlbnRI",
-            "ABIxCglrZXlfZXZlbnQYDiABKAsyHC51YmlpLmRhdGFTdHJ1Y3R1cmUuS2V5",
-            "RXZlbnRIABI1Cgttb3VzZV9ldmVudBgPIAEoCzIeLnViaWkuZGF0YVN0cnVj",
-            "dHVyZS5Nb3VzZUV2ZW50SAASMQoJbXlvX2V2ZW50GBAgASgLMhwudWJpaS5k",
-            "YXRhU3RydWN0dXJlLk15b0V2ZW50SAASKAoEcG9zZRgRIAEoCzIYLnViaWku",
-            "ZGF0YVN0cnVjdHVyZS5Qb3NlSABCBgoEdHlwZSJIChNUb3BpY0RhdGFSZWNv",
-            "cmRMaXN0EjEKCGVsZW1lbnRzGAEgAygLMh8udWJpaS50b3BpY0RhdGEuVG9w",
-            "aWNEYXRhUmVjb3JkYgZwcm90bzM="));
+            "ZS5wcm90bxo8cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC9kYXRh",
+            "U3RydWN0dXJlL29iamVjdDNkLnByb3RvIpQGCg9Ub3BpY0RhdGFSZWNvcmQS",
+            "DQoFdG9waWMYASABKAkSLAoJdGltZXN0YW1wGAIgASgLMhkudWJpaS50b3Bp",
+            "Y0RhdGEuVGltZXN0YW1wEhAKBmRvdWJsZRgDIAEoAUgAEg4KBGJvb2wYBCAB",
+            "KAhIABIQCgZzdHJpbmcYBSABKAlIABIuCgd2ZWN0b3IyGAYgASgLMhsudWJp",
+            "aS5kYXRhU3RydWN0dXJlLlZlY3RvcjJIABIuCgd2ZWN0b3IzGAcgASgLMhsu",
+            "dWJpaS5kYXRhU3RydWN0dXJlLlZlY3RvcjNIABIuCgd2ZWN0b3I0GAggASgL",
+            "MhsudWJpaS5kYXRhU3RydWN0dXJlLlZlY3RvcjRIABI0CgpxdWF0ZXJuaW9u",
+            "GAkgASgLMh4udWJpaS5kYXRhU3RydWN0dXJlLlF1YXRlcm5pb25IABIyCglt",
+            "YXRyaXgzeDIYCiABKAsyHS51YmlpLmRhdGFTdHJ1Y3R1cmUuTWF0cml4M3gy",
+            "SAASMgoJbWF0cml4NHg0GAsgASgLMh0udWJpaS5kYXRhU3RydWN0dXJlLk1h",
+            "dHJpeDR4NEgAEioKBWNvbG9yGAwgASgLMhkudWJpaS5kYXRhU3RydWN0dXJl",
+            "LkNvbG9ySAASNQoLdG91Y2hfZXZlbnQYDSABKAsyHi51YmlpLmRhdGFTdHJ1",
+            "Y3R1cmUuVG91Y2hFdmVudEgAEjEKCWtleV9ldmVudBgOIAEoCzIcLnViaWku",
+            "ZGF0YVN0cnVjdHVyZS5LZXlFdmVudEgAEjUKC21vdXNlX2V2ZW50GA8gASgL",
+            "Mh4udWJpaS5kYXRhU3RydWN0dXJlLk1vdXNlRXZlbnRIABIxCglteW9fZXZl",
+            "bnQYECABKAsyHC51YmlpLmRhdGFTdHJ1Y3R1cmUuTXlvRXZlbnRIABIoCgRw",
+            "b3NlGBEgASgLMhgudWJpaS5kYXRhU3RydWN0dXJlLlBvc2VIABIwCghvYmpl",
+            "Y3QzRBgSIAEoCzIcLnViaWkuZGF0YVN0cnVjdHVyZS5PYmplY3QzREgAQgYK",
+            "BHR5cGUiSAoTVG9waWNEYXRhUmVjb3JkTGlzdBIxCghlbGVtZW50cxgBIAMo",
+            "CzIfLnViaWkudG9waWNEYXRhLlRvcGljRGF0YVJlY29yZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.TopicData.TimestampReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.DataStructure.TouchEventReflection.Descriptor, global::Ubii.DataStructure.KeyEventReflection.Descriptor, global::Ubii.DataStructure.MouseEventReflection.Descriptor, global::Ubii.DataStructure.MyoEventReflection.Descriptor, global::Ubii.DataStructure.PoseReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.TopicData.TimestampReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.DataStructure.TouchEventReflection.Descriptor, global::Ubii.DataStructure.KeyEventReflection.Descriptor, global::Ubii.DataStructure.MouseEventReflection.Descriptor, global::Ubii.DataStructure.MyoEventReflection.Descriptor, global::Ubii.DataStructure.PoseReflection.Descriptor, global::Ubii.DataStructure.Object3DReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose" }, new[]{ "Type" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose", "Object3D" }, new[]{ "Type" }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecordList), global::Ubii.TopicData.TopicDataRecordList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
@@ -145,6 +147,9 @@ namespace Ubii.TopicData {
           break;
         case TypeOneofCase.Pose:
           Pose = other.Pose.Clone();
+          break;
+        case TypeOneofCase.Object3D:
+          Object3D = other.Object3D.Clone();
           break;
       }
 
@@ -343,6 +348,17 @@ namespace Ubii.TopicData {
       }
     }
 
+    /// <summary>Field number for the "object3D" field.</summary>
+    public const int Object3DFieldNumber = 18;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.DataStructure.Object3D Object3D {
+      get { return typeCase_ == TypeOneofCase.Object3D ? (global::Ubii.DataStructure.Object3D) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Object3D;
+      }
+    }
+
     private object type_;
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
@@ -362,6 +378,7 @@ namespace Ubii.TopicData {
       MouseEvent = 15,
       MyoEvent = 16,
       Pose = 17,
+      Object3D = 18,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -405,6 +422,7 @@ namespace Ubii.TopicData {
       if (!object.Equals(MouseEvent, other.MouseEvent)) return false;
       if (!object.Equals(MyoEvent, other.MyoEvent)) return false;
       if (!object.Equals(Pose, other.Pose)) return false;
+      if (!object.Equals(Object3D, other.Object3D)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -429,6 +447,7 @@ namespace Ubii.TopicData {
       if (typeCase_ == TypeOneofCase.MouseEvent) hash ^= MouseEvent.GetHashCode();
       if (typeCase_ == TypeOneofCase.MyoEvent) hash ^= MyoEvent.GetHashCode();
       if (typeCase_ == TypeOneofCase.Pose) hash ^= Pose.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Object3D) hash ^= Object3D.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -511,6 +530,10 @@ namespace Ubii.TopicData {
         output.WriteRawTag(138, 1);
         output.WriteMessage(Pose);
       }
+      if (typeCase_ == TypeOneofCase.Object3D) {
+        output.WriteRawTag(146, 1);
+        output.WriteMessage(Object3D);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -569,6 +592,9 @@ namespace Ubii.TopicData {
       }
       if (typeCase_ == TypeOneofCase.Pose) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Pose);
+      }
+      if (typeCase_ == TypeOneofCase.Object3D) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Object3D);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -671,6 +697,12 @@ namespace Ubii.TopicData {
             Pose = new global::Ubii.DataStructure.Pose();
           }
           Pose.MergeFrom(other.Pose);
+          break;
+        case TypeOneofCase.Object3D:
+          if (Object3D == null) {
+            Object3D = new global::Ubii.DataStructure.Object3D();
+          }
+          Object3D.MergeFrom(other.Object3D);
           break;
       }
 
@@ -814,6 +846,15 @@ namespace Ubii.TopicData {
             }
             input.ReadMessage(subBuilder);
             Pose = subBuilder;
+            break;
+          }
+          case 146: {
+            global::Ubii.DataStructure.Object3D subBuilder = new global::Ubii.DataStructure.Object3D();
+            if (typeCase_ == TypeOneofCase.Object3D) {
+              subBuilder.MergeFrom(Object3D);
+            }
+            input.ReadMessage(subBuilder);
+            Object3D = subBuilder;
             break;
           }
         }

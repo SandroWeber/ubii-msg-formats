@@ -24,6 +24,7 @@ var proto_topicData_topicDataRecord_dataStructure_keyEvent_pb = require('../../.
 var proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/mouseEvent_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_myoEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/myoEvent_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_pose_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/pose_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_object3d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/object3d_pb.js');
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecordList', null, global);
 
@@ -52,7 +53,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]];
 
 /**
  * @enum {number}
@@ -73,7 +74,8 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   KEY_EVENT: 14,
   MOUSE_EVENT: 15,
   MYO_EVENT: 16,
-  POSE: 17
+  POSE: 17,
+  OBJECT3D: 18
 };
 
 /**
@@ -128,7 +130,8 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     keyEvent: (f = msg.getKeyEvent()) && proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.toObject(includeInstance, f),
     mouseEvent: (f = msg.getMouseEvent()) && proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.toObject(includeInstance, f),
     myoEvent: (f = msg.getMyoEvent()) && proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.toObject(includeInstance, f),
-    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.toObject(includeInstance, f)
+    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.toObject(includeInstance, f),
+    object3d: (f = msg.getObject3d()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -245,6 +248,11 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.deserializeBinaryFromReader);
       msg.setPose(value);
+      break;
+    case 18:
+      var value = new proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.deserializeBinaryFromReader);
+      msg.setObject3d(value);
       break;
     default:
       reader.skipField();
@@ -405,6 +413,14 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       17,
       f,
       proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.serializeBinaryToWriter
+    );
+  }
+  f = message.getObject3d();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.serializeBinaryToWriter
     );
   }
 };
@@ -901,6 +917,36 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearPose = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasPose = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object3D object3D = 18;
+ * @return {?proto.ubii.dataStructure.Object3D}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getObject3d = function() {
+  return /** @type{?proto.ubii.dataStructure.Object3D} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D, 18));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Object3D|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setObject3d = function(value) {
+  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearObject3d = function() {
+  this.setObject3d(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasObject3d = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 

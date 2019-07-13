@@ -217,6 +217,19 @@ public final class TopicDataRecordOuterClass {
      */
     ubii.dataStructure.PoseOuterClass.PoseOrBuilder getPoseOrBuilder();
 
+    /**
+     * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+     */
+    boolean hasObject3D();
+    /**
+     * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+     */
+    ubii.dataStructure.Object3DOuterClass.Object3D getObject3D();
+    /**
+     * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+     */
+    ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder getObject3DOrBuilder();
+
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.TypeCase getTypeCase();
   }
   /**
@@ -462,6 +475,20 @@ public final class TopicDataRecordOuterClass {
               typeCase_ = 17;
               break;
             }
+            case 146: {
+              ubii.dataStructure.Object3DOuterClass.Object3D.Builder subBuilder = null;
+              if (typeCase_ == 18) {
+                subBuilder = ((ubii.dataStructure.Object3DOuterClass.Object3D) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.dataStructure.Object3DOuterClass.Object3D.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.dataStructure.Object3DOuterClass.Object3D) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 18;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -513,6 +540,7 @@ public final class TopicDataRecordOuterClass {
       MOUSE_EVENT(15),
       MYO_EVENT(16),
       POSE(17),
+      OBJECT3D(18),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -543,6 +571,7 @@ public final class TopicDataRecordOuterClass {
           case 15: return MOUSE_EVENT;
           case 16: return MYO_EVENT;
           case 17: return POSE;
+          case 18: return OBJECT3D;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -990,6 +1019,32 @@ public final class TopicDataRecordOuterClass {
       return ubii.dataStructure.PoseOuterClass.Pose.getDefaultInstance();
     }
 
+    public static final int OBJECT3D_FIELD_NUMBER = 18;
+    /**
+     * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+     */
+    public boolean hasObject3D() {
+      return typeCase_ == 18;
+    }
+    /**
+     * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+     */
+    public ubii.dataStructure.Object3DOuterClass.Object3D getObject3D() {
+      if (typeCase_ == 18) {
+         return (ubii.dataStructure.Object3DOuterClass.Object3D) type_;
+      }
+      return ubii.dataStructure.Object3DOuterClass.Object3D.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+     */
+    public ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder getObject3DOrBuilder() {
+      if (typeCase_ == 18) {
+         return (ubii.dataStructure.Object3DOuterClass.Object3D) type_;
+      }
+      return ubii.dataStructure.Object3DOuterClass.Object3D.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1056,6 +1111,9 @@ public final class TopicDataRecordOuterClass {
       }
       if (typeCase_ == 17) {
         output.writeMessage(17, (ubii.dataStructure.PoseOuterClass.Pose) type_);
+      }
+      if (typeCase_ == 18) {
+        output.writeMessage(18, (ubii.dataStructure.Object3DOuterClass.Object3D) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -1133,6 +1191,10 @@ public final class TopicDataRecordOuterClass {
       if (typeCase_ == 17) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, (ubii.dataStructure.PoseOuterClass.Pose) type_);
+      }
+      if (typeCase_ == 18) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, (ubii.dataStructure.Object3DOuterClass.Object3D) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1223,6 +1285,10 @@ public final class TopicDataRecordOuterClass {
           result = result && getPose()
               .equals(other.getPose());
           break;
+        case 18:
+          result = result && getObject3D()
+              .equals(other.getObject3D());
+          break;
         case 0:
         default:
       }
@@ -1305,6 +1371,10 @@ public final class TopicDataRecordOuterClass {
         case 17:
           hash = (37 * hash) + POSE_FIELD_NUMBER;
           hash = (53 * hash) + getPose().hashCode();
+          break;
+        case 18:
+          hash = (37 * hash) + OBJECT3D_FIELD_NUMBER;
+          hash = (53 * hash) + getObject3D().hashCode();
           break;
         case 0:
         default:
@@ -1577,6 +1647,13 @@ public final class TopicDataRecordOuterClass {
             result.type_ = poseBuilder_.build();
           }
         }
+        if (typeCase_ == 18) {
+          if (object3DBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = object3DBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -1694,6 +1771,10 @@ public final class TopicDataRecordOuterClass {
           }
           case POSE: {
             mergePose(other.getPose());
+            break;
+          }
+          case OBJECT3D: {
+            mergeObject3D(other.getObject3D());
             break;
           }
           case TYPE_NOT_SET: {
@@ -3701,6 +3782,142 @@ public final class TopicDataRecordOuterClass {
         onChanged();;
         return poseBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Object3DOuterClass.Object3D, ubii.dataStructure.Object3DOuterClass.Object3D.Builder, ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder> object3DBuilder_;
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public boolean hasObject3D() {
+        return typeCase_ == 18;
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public ubii.dataStructure.Object3DOuterClass.Object3D getObject3D() {
+        if (object3DBuilder_ == null) {
+          if (typeCase_ == 18) {
+            return (ubii.dataStructure.Object3DOuterClass.Object3D) type_;
+          }
+          return ubii.dataStructure.Object3DOuterClass.Object3D.getDefaultInstance();
+        } else {
+          if (typeCase_ == 18) {
+            return object3DBuilder_.getMessage();
+          }
+          return ubii.dataStructure.Object3DOuterClass.Object3D.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public Builder setObject3D(ubii.dataStructure.Object3DOuterClass.Object3D value) {
+        if (object3DBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          object3DBuilder_.setMessage(value);
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public Builder setObject3D(
+          ubii.dataStructure.Object3DOuterClass.Object3D.Builder builderForValue) {
+        if (object3DBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          object3DBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public Builder mergeObject3D(ubii.dataStructure.Object3DOuterClass.Object3D value) {
+        if (object3DBuilder_ == null) {
+          if (typeCase_ == 18 &&
+              type_ != ubii.dataStructure.Object3DOuterClass.Object3D.getDefaultInstance()) {
+            type_ = ubii.dataStructure.Object3DOuterClass.Object3D.newBuilder((ubii.dataStructure.Object3DOuterClass.Object3D) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 18) {
+            object3DBuilder_.mergeFrom(value);
+          }
+          object3DBuilder_.setMessage(value);
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public Builder clearObject3D() {
+        if (object3DBuilder_ == null) {
+          if (typeCase_ == 18) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 18) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          object3DBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public ubii.dataStructure.Object3DOuterClass.Object3D.Builder getObject3DBuilder() {
+        return getObject3DFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      public ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder getObject3DOrBuilder() {
+        if ((typeCase_ == 18) && (object3DBuilder_ != null)) {
+          return object3DBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 18) {
+            return (ubii.dataStructure.Object3DOuterClass.Object3D) type_;
+          }
+          return ubii.dataStructure.Object3DOuterClass.Object3D.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Object3D object3D = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Object3DOuterClass.Object3D, ubii.dataStructure.Object3DOuterClass.Object3D.Builder, ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder> 
+          getObject3DFieldBuilder() {
+        if (object3DBuilder_ == null) {
+          if (!(typeCase_ == 18)) {
+            type_ = ubii.dataStructure.Object3DOuterClass.Object3D.getDefaultInstance();
+          }
+          object3DBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.Object3DOuterClass.Object3D, ubii.dataStructure.Object3DOuterClass.Object3D.Builder, ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder>(
+                  (ubii.dataStructure.Object3DOuterClass.Object3D) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 18;
+        onChanged();;
+        return object3DBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4576,28 +4793,30 @@ public final class TopicDataRecordOuterClass {
       "cture/mouseEvent.proto\032<proto/topicData/" +
       "topicDataRecord/dataStructure/myoEvent.p" +
       "roto\0328proto/topicData/topicDataRecord/da" +
-      "taStructure/pose.proto\"\342\005\n\017TopicDataReco" +
-      "rd\022\r\n\005topic\030\001 \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.u" +
-      "bii.topicData.Timestamp\022\020\n\006double\030\003 \001(\001H" +
-      "\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022.\n\007v" +
-      "ector2\030\006 \001(\0132\033.ubii.dataStructure.Vector" +
-      "2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.dataStructur" +
-      "e.Vector3H\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.data" +
-      "Structure.Vector4H\000\0224\n\nquaternion\030\t \001(\0132" +
-      "\036.ubii.dataStructure.QuaternionH\000\0222\n\tmat" +
-      "rix3x2\030\n \001(\0132\035.ubii.dataStructure.Matrix" +
-      "3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.ubii.dataStru" +
-      "cture.Matrix4x4H\000\022*\n\005color\030\014 \001(\0132\031.ubii." +
-      "dataStructure.ColorH\000\0225\n\013touch_event\030\r \001" +
-      "(\0132\036.ubii.dataStructure.TouchEventH\000\0221\n\t" +
-      "key_event\030\016 \001(\0132\034.ubii.dataStructure.Key" +
-      "EventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.ubii.data" +
-      "Structure.MouseEventH\000\0221\n\tmyo_event\030\020 \001(" +
-      "\0132\034.ubii.dataStructure.MyoEventH\000\022(\n\004pos" +
-      "e\030\021 \001(\0132\030.ubii.dataStructure.PoseH\000B\006\n\004t" +
-      "ype\"H\n\023TopicDataRecordList\0221\n\010elements\030\001" +
-      " \003(\0132\037.ubii.topicData.TopicDataRecordb\006p" +
-      "roto3"
+      "taStructure/pose.proto\032<proto/topicData/" +
+      "topicDataRecord/dataStructure/object3d.p" +
+      "roto\"\224\006\n\017TopicDataRecord\022\r\n\005topic\030\001 \001(\t\022" +
+      ",\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData.Time" +
+      "stamp\022\020\n\006double\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022" +
+      "\020\n\006string\030\005 \001(\tH\000\022.\n\007vector2\030\006 \001(\0132\033.ubi" +
+      "i.dataStructure.Vector2H\000\022.\n\007vector3\030\007 \001" +
+      "(\0132\033.ubii.dataStructure.Vector3H\000\022.\n\007vec" +
+      "tor4\030\010 \001(\0132\033.ubii.dataStructure.Vector4H" +
+      "\000\0224\n\nquaternion\030\t \001(\0132\036.ubii.dataStructu" +
+      "re.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.ubi" +
+      "i.dataStructure.Matrix3x2H\000\0222\n\tmatrix4x4" +
+      "\030\013 \001(\0132\035.ubii.dataStructure.Matrix4x4H\000\022" +
+      "*\n\005color\030\014 \001(\0132\031.ubii.dataStructure.Colo" +
+      "rH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.dataStru" +
+      "cture.TouchEventH\000\0221\n\tkey_event\030\016 \001(\0132\034." +
+      "ubii.dataStructure.KeyEventH\000\0225\n\013mouse_e" +
+      "vent\030\017 \001(\0132\036.ubii.dataStructure.MouseEve" +
+      "ntH\000\0221\n\tmyo_event\030\020 \001(\0132\034.ubii.dataStruc" +
+      "ture.MyoEventH\000\022(\n\004pose\030\021 \001(\0132\030.ubii.dat" +
+      "aStructure.PoseH\000\0220\n\010object3D\030\022 \001(\0132\034.ub" +
+      "ii.dataStructure.Object3DH\000B\006\n\004type\"H\n\023T" +
+      "opicDataRecordList\0221\n\010elements\030\001 \003(\0132\037.u" +
+      "bii.topicData.TopicDataRecordb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4623,13 +4842,14 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.MouseEventOuterClass.getDescriptor(),
           ubii.dataStructure.MyoEventOuterClass.getDescriptor(),
           ubii.dataStructure.PoseOuterClass.getDescriptor(),
+          ubii.dataStructure.Object3DOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_topicData_TopicDataRecord_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicDataRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_topicData_TopicDataRecord_descriptor,
-        new java.lang.String[] { "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose", "Type", });
+        new java.lang.String[] { "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose", "Object3D", "Type", });
     internal_static_ubii_topicData_TopicDataRecordList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_topicData_TopicDataRecordList_fieldAccessorTable = new
@@ -4649,6 +4869,7 @@ public final class TopicDataRecordOuterClass {
     ubii.dataStructure.MouseEventOuterClass.getDescriptor();
     ubii.dataStructure.MyoEventOuterClass.getDescriptor();
     ubii.dataStructure.PoseOuterClass.getDescriptor();
+    ubii.dataStructure.Object3DOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

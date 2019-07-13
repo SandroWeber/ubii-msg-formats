@@ -8860,6 +8860,7 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IMouseEvent|null} [mouseEvent] TopicDataRecord mouseEvent
              * @property {ubii.dataStructure.IMyoEvent|null} [myoEvent] TopicDataRecord myoEvent
              * @property {ubii.dataStructure.IPose|null} [pose] TopicDataRecord pose
+             * @property {ubii.dataStructure.IObject3D|null} [object3D] TopicDataRecord object3D
              */
 
             /**
@@ -9013,17 +9014,25 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.pose = null;
 
+            /**
+             * TopicDataRecord object3D.
+             * @member {ubii.dataStructure.IObject3D|null|undefined} object3D
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.object3D = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose"|"object3D"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose", "object3D"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -9085,6 +9094,8 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.MyoEvent.encode(message.myoEvent, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.pose != null && message.hasOwnProperty("pose"))
                     $root.ubii.dataStructure.Pose.encode(message.pose, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+                if (message.object3D != null && message.hasOwnProperty("object3D"))
+                    $root.ubii.dataStructure.Object3D.encode(message.object3D, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 return writer;
             };
 
@@ -9169,6 +9180,9 @@ $root.ubii = (function() {
                         break;
                     case 17:
                         message.pose = $root.ubii.dataStructure.Pose.decode(reader, reader.uint32());
+                        break;
+                    case 18:
+                        message.object3D = $root.ubii.dataStructure.Object3D.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9353,6 +9367,16 @@ $root.ubii = (function() {
                             return "pose." + error;
                     }
                 }
+                if (message.object3D != null && message.hasOwnProperty("object3D")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Object3D.verify(message.object3D);
+                        if (error)
+                            return "object3D." + error;
+                    }
+                }
                 return null;
             };
 
@@ -9440,6 +9464,11 @@ $root.ubii = (function() {
                     if (typeof object.pose !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.pose: object expected");
                     message.pose = $root.ubii.dataStructure.Pose.fromObject(object.pose);
+                }
+                if (object.object3D != null) {
+                    if (typeof object.object3D !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.object3D: object expected");
+                    message.object3D = $root.ubii.dataStructure.Object3D.fromObject(object.object3D);
                 }
                 return message;
             };
@@ -9539,6 +9568,11 @@ $root.ubii = (function() {
                     object.pose = $root.ubii.dataStructure.Pose.toObject(message.pose, options);
                     if (options.oneofs)
                         object.type = "pose";
+                }
+                if (message.object3D != null && message.hasOwnProperty("object3D")) {
+                    object.object3D = $root.ubii.dataStructure.Object3D.toObject(message.object3D, options);
+                    if (options.oneofs)
+                        object.type = "object3D";
                 }
                 return object;
             };
@@ -11656,6 +11690,221 @@ $root.ubii = (function() {
             };
 
             return MyoEvent;
+        })();
+
+        dataStructure.Object3D = (function() {
+
+            /**
+             * Properties of an Object3D.
+             * @memberof ubii.dataStructure
+             * @interface IObject3D
+             * @property {string|null} [id] Object3D id
+             * @property {ubii.dataStructure.IPose|null} [pose] Object3D pose
+             */
+
+            /**
+             * Constructs a new Object3D.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents an Object3D.
+             * @implements IObject3D
+             * @constructor
+             * @param {ubii.dataStructure.IObject3D=} [properties] Properties to set
+             */
+            function Object3D(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Object3D id.
+             * @member {string} id
+             * @memberof ubii.dataStructure.Object3D
+             * @instance
+             */
+            Object3D.prototype.id = "";
+
+            /**
+             * Object3D pose.
+             * @member {ubii.dataStructure.IPose|null|undefined} pose
+             * @memberof ubii.dataStructure.Object3D
+             * @instance
+             */
+            Object3D.prototype.pose = null;
+
+            /**
+             * Creates a new Object3D instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {ubii.dataStructure.IObject3D=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Object3D} Object3D instance
+             */
+            Object3D.create = function create(properties) {
+                return new Object3D(properties);
+            };
+
+            /**
+             * Encodes the specified Object3D message. Does not implicitly {@link ubii.dataStructure.Object3D.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {ubii.dataStructure.IObject3D} message Object3D message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Object3D.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.pose != null && message.hasOwnProperty("pose"))
+                    $root.ubii.dataStructure.Pose.encode(message.pose, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Object3D message, length delimited. Does not implicitly {@link ubii.dataStructure.Object3D.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {ubii.dataStructure.IObject3D} message Object3D message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Object3D.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an Object3D message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Object3D} Object3D
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Object3D.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Object3D();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.pose = $root.ubii.dataStructure.Pose.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an Object3D message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Object3D} Object3D
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Object3D.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an Object3D message.
+             * @function verify
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Object3D.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.pose != null && message.hasOwnProperty("pose")) {
+                    var error = $root.ubii.dataStructure.Pose.verify(message.pose);
+                    if (error)
+                        return "pose." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates an Object3D message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Object3D} Object3D
+             */
+            Object3D.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Object3D)
+                    return object;
+                var message = new $root.ubii.dataStructure.Object3D();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.pose != null) {
+                    if (typeof object.pose !== "object")
+                        throw TypeError(".ubii.dataStructure.Object3D.pose: object expected");
+                    message.pose = $root.ubii.dataStructure.Pose.fromObject(object.pose);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an Object3D message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Object3D
+             * @static
+             * @param {ubii.dataStructure.Object3D} message Object3D
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Object3D.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.pose = null;
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.pose != null && message.hasOwnProperty("pose"))
+                    object.pose = $root.ubii.dataStructure.Pose.toObject(message.pose, options);
+                return object;
+            };
+
+            /**
+             * Converts this Object3D to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Object3D
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Object3D.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Object3D;
         })();
 
         dataStructure.Pose = (function() {

@@ -43,6 +43,7 @@
 #include "proto/topicData/topicDataRecord/dataStructure/mouseEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/myoEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/pose.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/object3d.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto 
 
@@ -124,6 +125,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     kMouseEvent = 15,
     kMyoEvent = 16,
     kPose = 17,
+    kObject3D = 18,
     TYPE_NOT_SET = 0,
   };
 
@@ -390,6 +392,18 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Pose* mutable_pose();
   void set_allocated_pose(::ubii::dataStructure::Pose* pose);
 
+  // .ubii.dataStructure.Object3D object3D = 18;
+  bool has_object3d() const;
+  void clear_object3d();
+  static const int kObject3DFieldNumber = 18;
+  private:
+  const ::ubii::dataStructure::Object3D& _internal_object3d() const;
+  public:
+  const ::ubii::dataStructure::Object3D& object3d() const;
+  ::ubii::dataStructure::Object3D* release_object3d();
+  ::ubii::dataStructure::Object3D* mutable_object3d();
+  void set_allocated_object3d(::ubii::dataStructure::Object3D* object3d);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
@@ -409,6 +423,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_mouse_event();
   void set_has_myo_event();
   void set_has_pose();
+  void set_has_object3d();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -433,6 +448,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::MouseEvent* mouse_event_;
     ::ubii::dataStructure::MyoEvent* myo_event_;
     ::ubii::dataStructure::Pose* pose_;
+    ::ubii::dataStructure::Object3D* object3d_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1265,6 +1281,44 @@ inline ::ubii::dataStructure::Pose* TopicDataRecord::mutable_pose() {
   }
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.pose)
   return type_.pose_;
+}
+
+// .ubii.dataStructure.Object3D object3D = 18;
+inline bool TopicDataRecord::has_object3d() const {
+  return type_case() == kObject3D;
+}
+inline void TopicDataRecord::set_has_object3d() {
+  _oneof_case_[0] = kObject3D;
+}
+inline const ::ubii::dataStructure::Object3D& TopicDataRecord::_internal_object3d() const {
+  return *type_.object3d_;
+}
+inline ::ubii::dataStructure::Object3D* TopicDataRecord::release_object3d() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.object3D)
+  if (has_object3d()) {
+    clear_has_type();
+      ::ubii::dataStructure::Object3D* temp = type_.object3d_;
+    type_.object3d_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Object3D& TopicDataRecord::object3d() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.object3D)
+  return has_object3d()
+      ? *type_.object3d_
+      : *reinterpret_cast< ::ubii::dataStructure::Object3D*>(&::ubii::dataStructure::_Object3D_default_instance_);
+}
+inline ::ubii::dataStructure::Object3D* TopicDataRecord::mutable_object3d() {
+  if (!has_object3d()) {
+    clear_type();
+    set_has_object3d();
+    type_.object3d_ = CreateMaybeMessage< ::ubii::dataStructure::Object3D >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.object3D)
+  return type_.object3d_;
 }
 
 inline bool TopicDataRecord::has_type() const {
