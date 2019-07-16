@@ -20,6 +20,7 @@ const DEFAULT_TOPICS = {
     CLIENT_DEREGISTRATION: '/services/client/deregistration',
     CLIENT_GET_LIST: '/services/client/get_list',
     DEVICE_REGISTRATION: '/services/device/registration',
+    DEVICE_DEREGISTRATION: '/services/device/deregistration',
     DEVICE_GET_LIST: '/services/device/get_list',
     /* interactions */
     INTERACTION_REGISTRATION: '/services/interaction/registration',
