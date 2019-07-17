@@ -41,33 +41,38 @@ namespace Ubii.TopicData {
             "YXRhL3RvcGljRGF0YVJlY29yZC9kYXRhU3RydWN0dXJlL2tleUV2ZW50LnBy",
             "b3RvGj5wcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1",
             "Y3R1cmUvbW91c2VFdmVudC5wcm90bxo8cHJvdG8vdG9waWNEYXRhL3RvcGlj",
-            "RGF0YVJlY29yZC9kYXRhU3RydWN0dXJlL215b0V2ZW50LnByb3RvGjhwcm90",
+            "RGF0YVJlY29yZC9kYXRhU3RydWN0dXJlL215b0V2ZW50LnByb3RvGjpwcm90",
             "by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvcG9z",
-            "ZS5wcm90bxo8cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC9kYXRh",
-            "U3RydWN0dXJlL29iamVjdDNkLnByb3RvIpQGCg9Ub3BpY0RhdGFSZWNvcmQS",
-            "DQoFdG9waWMYASABKAkSLAoJdGltZXN0YW1wGAIgASgLMhkudWJpaS50b3Bp",
-            "Y0RhdGEuVGltZXN0YW1wEhAKBmRvdWJsZRgDIAEoAUgAEg4KBGJvb2wYBCAB",
-            "KAhIABIQCgZzdHJpbmcYBSABKAlIABIuCgd2ZWN0b3IyGAYgASgLMhsudWJp",
-            "aS5kYXRhU3RydWN0dXJlLlZlY3RvcjJIABIuCgd2ZWN0b3IzGAcgASgLMhsu",
-            "dWJpaS5kYXRhU3RydWN0dXJlLlZlY3RvcjNIABIuCgd2ZWN0b3I0GAggASgL",
-            "MhsudWJpaS5kYXRhU3RydWN0dXJlLlZlY3RvcjRIABI0CgpxdWF0ZXJuaW9u",
-            "GAkgASgLMh4udWJpaS5kYXRhU3RydWN0dXJlLlF1YXRlcm5pb25IABIyCglt",
-            "YXRyaXgzeDIYCiABKAsyHS51YmlpLmRhdGFTdHJ1Y3R1cmUuTWF0cml4M3gy",
-            "SAASMgoJbWF0cml4NHg0GAsgASgLMh0udWJpaS5kYXRhU3RydWN0dXJlLk1h",
-            "dHJpeDR4NEgAEioKBWNvbG9yGAwgASgLMhkudWJpaS5kYXRhU3RydWN0dXJl",
-            "LkNvbG9ySAASNQoLdG91Y2hfZXZlbnQYDSABKAsyHi51YmlpLmRhdGFTdHJ1",
-            "Y3R1cmUuVG91Y2hFdmVudEgAEjEKCWtleV9ldmVudBgOIAEoCzIcLnViaWku",
-            "ZGF0YVN0cnVjdHVyZS5LZXlFdmVudEgAEjUKC21vdXNlX2V2ZW50GA8gASgL",
-            "Mh4udWJpaS5kYXRhU3RydWN0dXJlLk1vdXNlRXZlbnRIABIxCglteW9fZXZl",
-            "bnQYECABKAsyHC51YmlpLmRhdGFTdHJ1Y3R1cmUuTXlvRXZlbnRIABIoCgRw",
-            "b3NlGBEgASgLMhgudWJpaS5kYXRhU3RydWN0dXJlLlBvc2VIABIwCghvYmpl",
-            "Y3QzRBgSIAEoCzIcLnViaWkuZGF0YVN0cnVjdHVyZS5PYmplY3QzREgAQgYK",
-            "BHR5cGUiSAoTVG9waWNEYXRhUmVjb3JkTGlzdBIxCghlbGVtZW50cxgBIAMo",
-            "CzIfLnViaWkudG9waWNEYXRhLlRvcGljRGF0YVJlY29yZGIGcHJvdG8z"));
+            "ZTJkLnByb3RvGjpwcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2Rh",
+            "dGFTdHJ1Y3R1cmUvcG9zZTNkLnByb3RvGjxwcm90by90b3BpY0RhdGEvdG9w",
+            "aWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvb2JqZWN0MmQucHJvdG8aPHBy",
+            "b3RvL3RvcGljRGF0YS90b3BpY0RhdGFSZWNvcmQvZGF0YVN0cnVjdHVyZS9v",
+            "YmplY3QzZC5wcm90byL4BgoPVG9waWNEYXRhUmVjb3JkEg0KBXRvcGljGAEg",
+            "ASgJEiwKCXRpbWVzdGFtcBgCIAEoCzIZLnViaWkudG9waWNEYXRhLlRpbWVz",
+            "dGFtcBIQCgZkb3VibGUYAyABKAFIABIOCgRib29sGAQgASgISAASEAoGc3Ry",
+            "aW5nGAUgASgJSAASLgoHdmVjdG9yMhgGIAEoCzIbLnViaWkuZGF0YVN0cnVj",
+            "dHVyZS5WZWN0b3IySAASLgoHdmVjdG9yMxgHIAEoCzIbLnViaWkuZGF0YVN0",
+            "cnVjdHVyZS5WZWN0b3IzSAASLgoHdmVjdG9yNBgIIAEoCzIbLnViaWkuZGF0",
+            "YVN0cnVjdHVyZS5WZWN0b3I0SAASNAoKcXVhdGVybmlvbhgJIAEoCzIeLnVi",
+            "aWkuZGF0YVN0cnVjdHVyZS5RdWF0ZXJuaW9uSAASMgoJbWF0cml4M3gyGAog",
+            "ASgLMh0udWJpaS5kYXRhU3RydWN0dXJlLk1hdHJpeDN4MkgAEjIKCW1hdHJp",
+            "eDR4NBgLIAEoCzIdLnViaWkuZGF0YVN0cnVjdHVyZS5NYXRyaXg0eDRIABIq",
+            "CgVjb2xvchgMIAEoCzIZLnViaWkuZGF0YVN0cnVjdHVyZS5Db2xvckgAEjUK",
+            "C3RvdWNoX2V2ZW50GA0gASgLMh4udWJpaS5kYXRhU3RydWN0dXJlLlRvdWNo",
+            "RXZlbnRIABIxCglrZXlfZXZlbnQYDiABKAsyHC51YmlpLmRhdGFTdHJ1Y3R1",
+            "cmUuS2V5RXZlbnRIABI1Cgttb3VzZV9ldmVudBgPIAEoCzIeLnViaWkuZGF0",
+            "YVN0cnVjdHVyZS5Nb3VzZUV2ZW50SAASMQoJbXlvX2V2ZW50GBAgASgLMhwu",
+            "dWJpaS5kYXRhU3RydWN0dXJlLk15b0V2ZW50SAASLAoGcG9zZTJEGBEgASgL",
+            "MhoudWJpaS5kYXRhU3RydWN0dXJlLlBvc2UyREgAEiwKBnBvc2UzRBgSIAEo",
+            "CzIaLnViaWkuZGF0YVN0cnVjdHVyZS5Qb3NlM0RIABIwCghvYmplY3QyRBgT",
+            "IAEoCzIcLnViaWkuZGF0YVN0cnVjdHVyZS5PYmplY3QyREgAEjAKCG9iamVj",
+            "dDNEGBQgASgLMhwudWJpaS5kYXRhU3RydWN0dXJlLk9iamVjdDNESABCBgoE",
+            "dHlwZSJIChNUb3BpY0RhdGFSZWNvcmRMaXN0EjEKCGVsZW1lbnRzGAEgAygL",
+            "Mh8udWJpaS50b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.TopicData.TimestampReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.DataStructure.TouchEventReflection.Descriptor, global::Ubii.DataStructure.KeyEventReflection.Descriptor, global::Ubii.DataStructure.MouseEventReflection.Descriptor, global::Ubii.DataStructure.MyoEventReflection.Descriptor, global::Ubii.DataStructure.PoseReflection.Descriptor, global::Ubii.DataStructure.Object3DReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.TopicData.TimestampReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.DataStructure.TouchEventReflection.Descriptor, global::Ubii.DataStructure.KeyEventReflection.Descriptor, global::Ubii.DataStructure.MouseEventReflection.Descriptor, global::Ubii.DataStructure.MyoEventReflection.Descriptor, global::Ubii.DataStructure.Pose2DReflection.Descriptor, global::Ubii.DataStructure.Pose3DReflection.Descriptor, global::Ubii.DataStructure.Object2DReflection.Descriptor, global::Ubii.DataStructure.Object3DReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose", "Object3D" }, new[]{ "Type" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose2D", "Pose3D", "Object2D", "Object3D" }, new[]{ "Type" }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecordList), global::Ubii.TopicData.TopicDataRecordList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
@@ -145,8 +150,14 @@ namespace Ubii.TopicData {
         case TypeOneofCase.MyoEvent:
           MyoEvent = other.MyoEvent.Clone();
           break;
-        case TypeOneofCase.Pose:
-          Pose = other.Pose.Clone();
+        case TypeOneofCase.Pose2D:
+          Pose2D = other.Pose2D.Clone();
+          break;
+        case TypeOneofCase.Pose3D:
+          Pose3D = other.Pose3D.Clone();
+          break;
+        case TypeOneofCase.Object2D:
+          Object2D = other.Object2D.Clone();
           break;
         case TypeOneofCase.Object3D:
           Object3D = other.Object3D.Clone();
@@ -337,19 +348,41 @@ namespace Ubii.TopicData {
       }
     }
 
-    /// <summary>Field number for the "pose" field.</summary>
-    public const int PoseFieldNumber = 17;
+    /// <summary>Field number for the "pose2D" field.</summary>
+    public const int Pose2DFieldNumber = 17;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.DataStructure.Pose Pose {
-      get { return typeCase_ == TypeOneofCase.Pose ? (global::Ubii.DataStructure.Pose) type_ : null; }
+    public global::Ubii.DataStructure.Pose2D Pose2D {
+      get { return typeCase_ == TypeOneofCase.Pose2D ? (global::Ubii.DataStructure.Pose2D) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Pose;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Pose2D;
+      }
+    }
+
+    /// <summary>Field number for the "pose3D" field.</summary>
+    public const int Pose3DFieldNumber = 18;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.DataStructure.Pose3D Pose3D {
+      get { return typeCase_ == TypeOneofCase.Pose3D ? (global::Ubii.DataStructure.Pose3D) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Pose3D;
+      }
+    }
+
+    /// <summary>Field number for the "object2D" field.</summary>
+    public const int Object2DFieldNumber = 19;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.DataStructure.Object2D Object2D {
+      get { return typeCase_ == TypeOneofCase.Object2D ? (global::Ubii.DataStructure.Object2D) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Object2D;
       }
     }
 
     /// <summary>Field number for the "object3D" field.</summary>
-    public const int Object3DFieldNumber = 18;
+    public const int Object3DFieldNumber = 20;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.DataStructure.Object3D Object3D {
       get { return typeCase_ == TypeOneofCase.Object3D ? (global::Ubii.DataStructure.Object3D) type_ : null; }
@@ -377,8 +410,10 @@ namespace Ubii.TopicData {
       KeyEvent = 14,
       MouseEvent = 15,
       MyoEvent = 16,
-      Pose = 17,
-      Object3D = 18,
+      Pose2D = 17,
+      Pose3D = 18,
+      Object2D = 19,
+      Object3D = 20,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -421,7 +456,9 @@ namespace Ubii.TopicData {
       if (!object.Equals(KeyEvent, other.KeyEvent)) return false;
       if (!object.Equals(MouseEvent, other.MouseEvent)) return false;
       if (!object.Equals(MyoEvent, other.MyoEvent)) return false;
-      if (!object.Equals(Pose, other.Pose)) return false;
+      if (!object.Equals(Pose2D, other.Pose2D)) return false;
+      if (!object.Equals(Pose3D, other.Pose3D)) return false;
+      if (!object.Equals(Object2D, other.Object2D)) return false;
       if (!object.Equals(Object3D, other.Object3D)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -446,7 +483,9 @@ namespace Ubii.TopicData {
       if (typeCase_ == TypeOneofCase.KeyEvent) hash ^= KeyEvent.GetHashCode();
       if (typeCase_ == TypeOneofCase.MouseEvent) hash ^= MouseEvent.GetHashCode();
       if (typeCase_ == TypeOneofCase.MyoEvent) hash ^= MyoEvent.GetHashCode();
-      if (typeCase_ == TypeOneofCase.Pose) hash ^= Pose.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Pose2D) hash ^= Pose2D.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Pose3D) hash ^= Pose3D.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Object2D) hash ^= Object2D.GetHashCode();
       if (typeCase_ == TypeOneofCase.Object3D) hash ^= Object3D.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
@@ -526,12 +565,20 @@ namespace Ubii.TopicData {
         output.WriteRawTag(130, 1);
         output.WriteMessage(MyoEvent);
       }
-      if (typeCase_ == TypeOneofCase.Pose) {
+      if (typeCase_ == TypeOneofCase.Pose2D) {
         output.WriteRawTag(138, 1);
-        output.WriteMessage(Pose);
+        output.WriteMessage(Pose2D);
+      }
+      if (typeCase_ == TypeOneofCase.Pose3D) {
+        output.WriteRawTag(146, 1);
+        output.WriteMessage(Pose3D);
+      }
+      if (typeCase_ == TypeOneofCase.Object2D) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(Object2D);
       }
       if (typeCase_ == TypeOneofCase.Object3D) {
-        output.WriteRawTag(146, 1);
+        output.WriteRawTag(162, 1);
         output.WriteMessage(Object3D);
       }
       if (_unknownFields != null) {
@@ -590,8 +637,14 @@ namespace Ubii.TopicData {
       if (typeCase_ == TypeOneofCase.MyoEvent) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(MyoEvent);
       }
-      if (typeCase_ == TypeOneofCase.Pose) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Pose);
+      if (typeCase_ == TypeOneofCase.Pose2D) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Pose2D);
+      }
+      if (typeCase_ == TypeOneofCase.Pose3D) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Pose3D);
+      }
+      if (typeCase_ == TypeOneofCase.Object2D) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Object2D);
       }
       if (typeCase_ == TypeOneofCase.Object3D) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Object3D);
@@ -692,11 +745,23 @@ namespace Ubii.TopicData {
           }
           MyoEvent.MergeFrom(other.MyoEvent);
           break;
-        case TypeOneofCase.Pose:
-          if (Pose == null) {
-            Pose = new global::Ubii.DataStructure.Pose();
+        case TypeOneofCase.Pose2D:
+          if (Pose2D == null) {
+            Pose2D = new global::Ubii.DataStructure.Pose2D();
           }
-          Pose.MergeFrom(other.Pose);
+          Pose2D.MergeFrom(other.Pose2D);
+          break;
+        case TypeOneofCase.Pose3D:
+          if (Pose3D == null) {
+            Pose3D = new global::Ubii.DataStructure.Pose3D();
+          }
+          Pose3D.MergeFrom(other.Pose3D);
+          break;
+        case TypeOneofCase.Object2D:
+          if (Object2D == null) {
+            Object2D = new global::Ubii.DataStructure.Object2D();
+          }
+          Object2D.MergeFrom(other.Object2D);
           break;
         case TypeOneofCase.Object3D:
           if (Object3D == null) {
@@ -840,15 +905,33 @@ namespace Ubii.TopicData {
             break;
           }
           case 138: {
-            global::Ubii.DataStructure.Pose subBuilder = new global::Ubii.DataStructure.Pose();
-            if (typeCase_ == TypeOneofCase.Pose) {
-              subBuilder.MergeFrom(Pose);
+            global::Ubii.DataStructure.Pose2D subBuilder = new global::Ubii.DataStructure.Pose2D();
+            if (typeCase_ == TypeOneofCase.Pose2D) {
+              subBuilder.MergeFrom(Pose2D);
             }
             input.ReadMessage(subBuilder);
-            Pose = subBuilder;
+            Pose2D = subBuilder;
             break;
           }
           case 146: {
+            global::Ubii.DataStructure.Pose3D subBuilder = new global::Ubii.DataStructure.Pose3D();
+            if (typeCase_ == TypeOneofCase.Pose3D) {
+              subBuilder.MergeFrom(Pose3D);
+            }
+            input.ReadMessage(subBuilder);
+            Pose3D = subBuilder;
+            break;
+          }
+          case 154: {
+            global::Ubii.DataStructure.Object2D subBuilder = new global::Ubii.DataStructure.Object2D();
+            if (typeCase_ == TypeOneofCase.Object2D) {
+              subBuilder.MergeFrom(Object2D);
+            }
+            input.ReadMessage(subBuilder);
+            Object2D = subBuilder;
+            break;
+          }
+          case 162: {
             global::Ubii.DataStructure.Object3D subBuilder = new global::Ubii.DataStructure.Object3D();
             if (typeCase_ == TypeOneofCase.Object3D) {
               subBuilder.MergeFrom(Object3D);

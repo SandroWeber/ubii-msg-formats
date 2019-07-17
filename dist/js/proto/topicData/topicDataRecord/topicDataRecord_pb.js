@@ -23,7 +23,9 @@ var proto_topicData_topicDataRecord_dataStructure_touchEvent_pb = require('../..
 var proto_topicData_topicDataRecord_dataStructure_keyEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/keyEvent_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/mouseEvent_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_myoEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/myoEvent_pb.js');
-var proto_topicData_topicDataRecord_dataStructure_pose_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/pose_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_pose2d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/pose2d_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_pose3d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/pose3d_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_object2d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/object2d_pb.js');
 var proto_topicData_topicDataRecord_dataStructure_object3d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/object3d_pb.js');
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecordList', null, global);
@@ -53,7 +55,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]];
 
 /**
  * @enum {number}
@@ -74,8 +76,10 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   KEY_EVENT: 14,
   MOUSE_EVENT: 15,
   MYO_EVENT: 16,
-  POSE: 17,
-  OBJECT3D: 18
+  POSE2D: 17,
+  POSE3D: 18,
+  OBJECT2D: 19,
+  OBJECT3D: 20
 };
 
 /**
@@ -130,7 +134,9 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     keyEvent: (f = msg.getKeyEvent()) && proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.toObject(includeInstance, f),
     mouseEvent: (f = msg.getMouseEvent()) && proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.toObject(includeInstance, f),
     myoEvent: (f = msg.getMyoEvent()) && proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.toObject(includeInstance, f),
-    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.toObject(includeInstance, f),
+    pose2d: (f = msg.getPose2d()) && proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.toObject(includeInstance, f),
+    pose3d: (f = msg.getPose3d()) && proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.toObject(includeInstance, f),
+    object2d: (f = msg.getObject2d()) && proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D.toObject(includeInstance, f),
     object3d: (f = msg.getObject3d()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.toObject(includeInstance, f)
   };
 
@@ -245,11 +251,21 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       msg.setMyoEvent(value);
       break;
     case 17:
-      var value = new proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose;
-      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.deserializeBinaryFromReader);
-      msg.setPose(value);
+      var value = new proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.deserializeBinaryFromReader);
+      msg.setPose2d(value);
       break;
     case 18:
+      var value = new proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.deserializeBinaryFromReader);
+      msg.setPose3d(value);
+      break;
+    case 19:
+      var value = new proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D.deserializeBinaryFromReader);
+      msg.setObject2d(value);
+      break;
+    case 20:
       var value = new proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.deserializeBinaryFromReader);
       msg.setObject3d(value);
@@ -407,18 +423,34 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.serializeBinaryToWriter
     );
   }
-  f = message.getPose();
+  f = message.getPose2d();
   if (f != null) {
     writer.writeMessage(
       17,
       f,
-      proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose.serializeBinaryToWriter
+      proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.serializeBinaryToWriter
+    );
+  }
+  f = message.getPose3d();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.serializeBinaryToWriter
+    );
+  }
+  f = message.getObject2d();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D.serializeBinaryToWriter
     );
   }
   f = message.getObject3d();
   if (f != null) {
     writer.writeMessage(
-      18,
+      20,
       f,
       proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.serializeBinaryToWriter
     );
@@ -891,23 +923,23 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasMyoEvent = function() {
 
 
 /**
- * optional ubii.dataStructure.Pose pose = 17;
- * @return {?proto.ubii.dataStructure.Pose}
+ * optional ubii.dataStructure.Pose2D pose2D = 17;
+ * @return {?proto.ubii.dataStructure.Pose2D}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getPose = function() {
-  return /** @type{?proto.ubii.dataStructure.Pose} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose_pb.Pose, 17));
+proto.ubii.topicData.TopicDataRecord.prototype.getPose2d = function() {
+  return /** @type{?proto.ubii.dataStructure.Pose2D} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D, 17));
 };
 
 
-/** @param {?proto.ubii.dataStructure.Pose|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setPose = function(value) {
+/** @param {?proto.ubii.dataStructure.Pose2D|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setPose2d = function(value) {
   jspb.Message.setOneofWrapperField(this, 17, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-proto.ubii.topicData.TopicDataRecord.prototype.clearPose = function() {
-  this.setPose(undefined);
+proto.ubii.topicData.TopicDataRecord.prototype.clearPose2d = function() {
+  this.setPose2d(undefined);
 };
 
 
@@ -915,24 +947,84 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearPose = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasPose = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasPose2d = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional ubii.dataStructure.Object3D object3D = 18;
+ * optional ubii.dataStructure.Pose3D pose3D = 18;
+ * @return {?proto.ubii.dataStructure.Pose3D}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getPose3d = function() {
+  return /** @type{?proto.ubii.dataStructure.Pose3D} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D, 18));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Pose3D|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setPose3d = function(value) {
+  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearPose3d = function() {
+  this.setPose3d(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasPose3d = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object2D object2D = 19;
+ * @return {?proto.ubii.dataStructure.Object2D}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getObject2d = function() {
+  return /** @type{?proto.ubii.dataStructure.Object2D} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D, 19));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Object2D|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setObject2d = function(value) {
+  jspb.Message.setOneofWrapperField(this, 19, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearObject2d = function() {
+  this.setObject2d(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasObject2d = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object3D object3D = 20;
  * @return {?proto.ubii.dataStructure.Object3D}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getObject3d = function() {
   return /** @type{?proto.ubii.dataStructure.Object3D} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D, 18));
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D, 20));
 };
 
 
 /** @param {?proto.ubii.dataStructure.Object3D|undefined} value */
 proto.ubii.topicData.TopicDataRecord.prototype.setObject3d = function(value) {
-  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 20, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
@@ -946,7 +1038,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearObject3d = function() {
  * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject3d = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 20) != null;
 };
 
 

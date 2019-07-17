@@ -42,7 +42,9 @@
 #include "proto/topicData/topicDataRecord/dataStructure/keyEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/mouseEvent.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/myoEvent.pb.h"
-#include "proto/topicData/topicDataRecord/dataStructure/pose.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/pose2d.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/pose3d.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/object2d.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/object3d.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto 
@@ -124,8 +126,10 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     kKeyEvent = 14,
     kMouseEvent = 15,
     kMyoEvent = 16,
-    kPose = 17,
-    kObject3D = 18,
+    kPose2D = 17,
+    kPose3D = 18,
+    kObject2D = 19,
+    kObject3D = 20,
     TYPE_NOT_SET = 0,
   };
 
@@ -380,22 +384,46 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::MyoEvent* mutable_myo_event();
   void set_allocated_myo_event(::ubii::dataStructure::MyoEvent* myo_event);
 
-  // .ubii.dataStructure.Pose pose = 17;
-  bool has_pose() const;
-  void clear_pose();
-  static const int kPoseFieldNumber = 17;
+  // .ubii.dataStructure.Pose2D pose2D = 17;
+  bool has_pose2d() const;
+  void clear_pose2d();
+  static const int kPose2DFieldNumber = 17;
   private:
-  const ::ubii::dataStructure::Pose& _internal_pose() const;
+  const ::ubii::dataStructure::Pose2D& _internal_pose2d() const;
   public:
-  const ::ubii::dataStructure::Pose& pose() const;
-  ::ubii::dataStructure::Pose* release_pose();
-  ::ubii::dataStructure::Pose* mutable_pose();
-  void set_allocated_pose(::ubii::dataStructure::Pose* pose);
+  const ::ubii::dataStructure::Pose2D& pose2d() const;
+  ::ubii::dataStructure::Pose2D* release_pose2d();
+  ::ubii::dataStructure::Pose2D* mutable_pose2d();
+  void set_allocated_pose2d(::ubii::dataStructure::Pose2D* pose2d);
 
-  // .ubii.dataStructure.Object3D object3D = 18;
+  // .ubii.dataStructure.Pose3D pose3D = 18;
+  bool has_pose3d() const;
+  void clear_pose3d();
+  static const int kPose3DFieldNumber = 18;
+  private:
+  const ::ubii::dataStructure::Pose3D& _internal_pose3d() const;
+  public:
+  const ::ubii::dataStructure::Pose3D& pose3d() const;
+  ::ubii::dataStructure::Pose3D* release_pose3d();
+  ::ubii::dataStructure::Pose3D* mutable_pose3d();
+  void set_allocated_pose3d(::ubii::dataStructure::Pose3D* pose3d);
+
+  // .ubii.dataStructure.Object2D object2D = 19;
+  bool has_object2d() const;
+  void clear_object2d();
+  static const int kObject2DFieldNumber = 19;
+  private:
+  const ::ubii::dataStructure::Object2D& _internal_object2d() const;
+  public:
+  const ::ubii::dataStructure::Object2D& object2d() const;
+  ::ubii::dataStructure::Object2D* release_object2d();
+  ::ubii::dataStructure::Object2D* mutable_object2d();
+  void set_allocated_object2d(::ubii::dataStructure::Object2D* object2d);
+
+  // .ubii.dataStructure.Object3D object3D = 20;
   bool has_object3d() const;
   void clear_object3d();
-  static const int kObject3DFieldNumber = 18;
+  static const int kObject3DFieldNumber = 20;
   private:
   const ::ubii::dataStructure::Object3D& _internal_object3d() const;
   public:
@@ -422,7 +450,9 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_key_event();
   void set_has_mouse_event();
   void set_has_myo_event();
-  void set_has_pose();
+  void set_has_pose2d();
+  void set_has_pose3d();
+  void set_has_object2d();
   void set_has_object3d();
 
   inline bool has_type() const;
@@ -447,7 +477,9 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::KeyEvent* key_event_;
     ::ubii::dataStructure::MouseEvent* mouse_event_;
     ::ubii::dataStructure::MyoEvent* myo_event_;
-    ::ubii::dataStructure::Pose* pose_;
+    ::ubii::dataStructure::Pose2D* pose2d_;
+    ::ubii::dataStructure::Pose3D* pose3d_;
+    ::ubii::dataStructure::Object2D* object2d_;
     ::ubii::dataStructure::Object3D* object3d_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1245,45 +1277,121 @@ inline ::ubii::dataStructure::MyoEvent* TopicDataRecord::mutable_myo_event() {
   return type_.myo_event_;
 }
 
-// .ubii.dataStructure.Pose pose = 17;
-inline bool TopicDataRecord::has_pose() const {
-  return type_case() == kPose;
+// .ubii.dataStructure.Pose2D pose2D = 17;
+inline bool TopicDataRecord::has_pose2d() const {
+  return type_case() == kPose2D;
 }
-inline void TopicDataRecord::set_has_pose() {
-  _oneof_case_[0] = kPose;
+inline void TopicDataRecord::set_has_pose2d() {
+  _oneof_case_[0] = kPose2D;
 }
-inline const ::ubii::dataStructure::Pose& TopicDataRecord::_internal_pose() const {
-  return *type_.pose_;
+inline const ::ubii::dataStructure::Pose2D& TopicDataRecord::_internal_pose2d() const {
+  return *type_.pose2d_;
 }
-inline ::ubii::dataStructure::Pose* TopicDataRecord::release_pose() {
-  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.pose)
-  if (has_pose()) {
+inline ::ubii::dataStructure::Pose2D* TopicDataRecord::release_pose2d() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.pose2D)
+  if (has_pose2d()) {
     clear_has_type();
-      ::ubii::dataStructure::Pose* temp = type_.pose_;
-    type_.pose_ = NULL;
+      ::ubii::dataStructure::Pose2D* temp = type_.pose2d_;
+    type_.pose2d_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-inline const ::ubii::dataStructure::Pose& TopicDataRecord::pose() const {
-  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.pose)
-  return has_pose()
-      ? *type_.pose_
-      : *reinterpret_cast< ::ubii::dataStructure::Pose*>(&::ubii::dataStructure::_Pose_default_instance_);
+inline const ::ubii::dataStructure::Pose2D& TopicDataRecord::pose2d() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.pose2D)
+  return has_pose2d()
+      ? *type_.pose2d_
+      : *reinterpret_cast< ::ubii::dataStructure::Pose2D*>(&::ubii::dataStructure::_Pose2D_default_instance_);
 }
-inline ::ubii::dataStructure::Pose* TopicDataRecord::mutable_pose() {
-  if (!has_pose()) {
+inline ::ubii::dataStructure::Pose2D* TopicDataRecord::mutable_pose2d() {
+  if (!has_pose2d()) {
     clear_type();
-    set_has_pose();
-    type_.pose_ = CreateMaybeMessage< ::ubii::dataStructure::Pose >(
+    set_has_pose2d();
+    type_.pose2d_ = CreateMaybeMessage< ::ubii::dataStructure::Pose2D >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.pose)
-  return type_.pose_;
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.pose2D)
+  return type_.pose2d_;
 }
 
-// .ubii.dataStructure.Object3D object3D = 18;
+// .ubii.dataStructure.Pose3D pose3D = 18;
+inline bool TopicDataRecord::has_pose3d() const {
+  return type_case() == kPose3D;
+}
+inline void TopicDataRecord::set_has_pose3d() {
+  _oneof_case_[0] = kPose3D;
+}
+inline const ::ubii::dataStructure::Pose3D& TopicDataRecord::_internal_pose3d() const {
+  return *type_.pose3d_;
+}
+inline ::ubii::dataStructure::Pose3D* TopicDataRecord::release_pose3d() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.pose3D)
+  if (has_pose3d()) {
+    clear_has_type();
+      ::ubii::dataStructure::Pose3D* temp = type_.pose3d_;
+    type_.pose3d_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Pose3D& TopicDataRecord::pose3d() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.pose3D)
+  return has_pose3d()
+      ? *type_.pose3d_
+      : *reinterpret_cast< ::ubii::dataStructure::Pose3D*>(&::ubii::dataStructure::_Pose3D_default_instance_);
+}
+inline ::ubii::dataStructure::Pose3D* TopicDataRecord::mutable_pose3d() {
+  if (!has_pose3d()) {
+    clear_type();
+    set_has_pose3d();
+    type_.pose3d_ = CreateMaybeMessage< ::ubii::dataStructure::Pose3D >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.pose3D)
+  return type_.pose3d_;
+}
+
+// .ubii.dataStructure.Object2D object2D = 19;
+inline bool TopicDataRecord::has_object2d() const {
+  return type_case() == kObject2D;
+}
+inline void TopicDataRecord::set_has_object2d() {
+  _oneof_case_[0] = kObject2D;
+}
+inline const ::ubii::dataStructure::Object2D& TopicDataRecord::_internal_object2d() const {
+  return *type_.object2d_;
+}
+inline ::ubii::dataStructure::Object2D* TopicDataRecord::release_object2d() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.object2D)
+  if (has_object2d()) {
+    clear_has_type();
+      ::ubii::dataStructure::Object2D* temp = type_.object2d_;
+    type_.object2d_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Object2D& TopicDataRecord::object2d() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.object2D)
+  return has_object2d()
+      ? *type_.object2d_
+      : *reinterpret_cast< ::ubii::dataStructure::Object2D*>(&::ubii::dataStructure::_Object2D_default_instance_);
+}
+inline ::ubii::dataStructure::Object2D* TopicDataRecord::mutable_object2d() {
+  if (!has_object2d()) {
+    clear_type();
+    set_has_object2d();
+    type_.object2d_ = CreateMaybeMessage< ::ubii::dataStructure::Object2D >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.object2D)
+  return type_.object2d_;
+}
+
+// .ubii.dataStructure.Object3D object3D = 20;
 inline bool TopicDataRecord::has_object3d() const {
   return type_case() == kObject3D;
 }

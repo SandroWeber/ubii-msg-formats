@@ -18,8 +18,10 @@ goog.provide('proto.ubii.dataStructure.Matrix3x2');
 goog.provide('proto.ubii.dataStructure.Matrix4x4');
 goog.provide('proto.ubii.dataStructure.MouseEvent');
 goog.provide('proto.ubii.dataStructure.MyoEvent');
+goog.provide('proto.ubii.dataStructure.Object2D');
 goog.provide('proto.ubii.dataStructure.Object3D');
-goog.provide('proto.ubii.dataStructure.Pose');
+goog.provide('proto.ubii.dataStructure.Pose2D');
+goog.provide('proto.ubii.dataStructure.Pose3D');
 goog.provide('proto.ubii.dataStructure.Quaternion');
 goog.provide('proto.ubii.dataStructure.TouchEvent');
 goog.provide('proto.ubii.dataStructure.Vector2');
@@ -4647,13 +4649,39 @@ proto.ubii.dataStructure.MyoEvent.prototype.setGesture = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ubii.dataStructure.Pose = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.ubii.dataStructure.Pose2D = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.dataStructure.Pose2D.oneofGroups_);
 };
-goog.inherits(proto.ubii.dataStructure.Pose, jspb.Message);
+goog.inherits(proto.ubii.dataStructure.Pose2D, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.ubii.dataStructure.Pose.displayName = 'proto.ubii.dataStructure.Pose';
+  proto.ubii.dataStructure.Pose2D.displayName = 'proto.ubii.dataStructure.Pose2D';
 }
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.ubii.dataStructure.Pose2D.oneofGroups_ = [[2,3]];
+
+/**
+ * @enum {number}
+ */
+proto.ubii.dataStructure.Pose2D.OrientationCase = {
+  ORIENTATION_NOT_SET: 0,
+  DIRECTION: 2,
+  ANGLE: 3
+};
+
+/**
+ * @return {proto.ubii.dataStructure.Pose2D.OrientationCase}
+ */
+proto.ubii.dataStructure.Pose2D.prototype.getOrientationCase = function() {
+  return /** @type {proto.ubii.dataStructure.Pose2D.OrientationCase} */(jspb.Message.computeOneofCase(this, proto.ubii.dataStructure.Pose2D.oneofGroups_[0]));
+};
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4667,8 +4695,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ubii.dataStructure.Pose.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.dataStructure.Pose.toObject(opt_includeInstance, this);
+proto.ubii.dataStructure.Pose2D.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.dataStructure.Pose2D.toObject(opt_includeInstance, this);
 };
 
 
@@ -4677,14 +4705,15 @@ proto.ubii.dataStructure.Pose.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ubii.dataStructure.Pose} msg The msg instance to transform.
+ * @param {!proto.ubii.dataStructure.Pose2D} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ubii.dataStructure.Pose.toObject = function(includeInstance, msg) {
+proto.ubii.dataStructure.Pose2D.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vector3: (f = msg.getVector3()) && proto.ubii.dataStructure.Vector3.toObject(includeInstance, f),
-    quaternion: (f = msg.getQuaternion()) && proto.ubii.dataStructure.Quaternion.toObject(includeInstance, f)
+    position: (f = msg.getPosition()) && proto.ubii.dataStructure.Vector2.toObject(includeInstance, f),
+    direction: (f = msg.getDirection()) && proto.ubii.dataStructure.Vector2.toObject(includeInstance, f),
+    angle: +jspb.Message.getFieldWithDefault(msg, 3, 0.0)
   };
 
   if (includeInstance) {
@@ -4698,23 +4727,23 @@ proto.ubii.dataStructure.Pose.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.dataStructure.Pose}
+ * @return {!proto.ubii.dataStructure.Pose2D}
  */
-proto.ubii.dataStructure.Pose.deserializeBinary = function(bytes) {
+proto.ubii.dataStructure.Pose2D.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.dataStructure.Pose;
-  return proto.ubii.dataStructure.Pose.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ubii.dataStructure.Pose2D;
+  return proto.ubii.dataStructure.Pose2D.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ubii.dataStructure.Pose} msg The message object to deserialize into.
+ * @param {!proto.ubii.dataStructure.Pose2D} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.dataStructure.Pose}
+ * @return {!proto.ubii.dataStructure.Pose2D}
  */
-proto.ubii.dataStructure.Pose.deserializeBinaryFromReader = function(msg, reader) {
+proto.ubii.dataStructure.Pose2D.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4722,14 +4751,18 @@ proto.ubii.dataStructure.Pose.deserializeBinaryFromReader = function(msg, reader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.ubii.dataStructure.Vector3;
-      reader.readMessage(value,proto.ubii.dataStructure.Vector3.deserializeBinaryFromReader);
-      msg.setVector3(value);
+      var value = new proto.ubii.dataStructure.Vector2;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector2.deserializeBinaryFromReader);
+      msg.setPosition(value);
       break;
     case 2:
-      var value = new proto.ubii.dataStructure.Quaternion;
-      reader.readMessage(value,proto.ubii.dataStructure.Quaternion.deserializeBinaryFromReader);
-      msg.setQuaternion(value);
+      var value = new proto.ubii.dataStructure.Vector2;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector2.deserializeBinaryFromReader);
+      msg.setDirection(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAngle(value);
       break;
     default:
       reader.skipField();
@@ -4744,9 +4777,9 @@ proto.ubii.dataStructure.Pose.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ubii.dataStructure.Pose.prototype.serializeBinary = function() {
+proto.ubii.dataStructure.Pose2D.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ubii.dataStructure.Pose.serializeBinaryToWriter(this, writer);
+  proto.ubii.dataStructure.Pose2D.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4754,13 +4787,284 @@ proto.ubii.dataStructure.Pose.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.dataStructure.Pose} message
+ * @param {!proto.ubii.dataStructure.Pose2D} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ubii.dataStructure.Pose.serializeBinaryToWriter = function(message, writer) {
+proto.ubii.dataStructure.Pose2D.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVector3();
+  f = message.getPosition();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.ubii.dataStructure.Vector2.serializeBinaryToWriter
+    );
+  }
+  f = message.getDirection();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.ubii.dataStructure.Vector2.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeFloat(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional Vector2 position = 1;
+ * @return {?proto.ubii.dataStructure.Vector2}
+ */
+proto.ubii.dataStructure.Pose2D.prototype.getPosition = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector2} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector2, 1));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector2|undefined} value */
+proto.ubii.dataStructure.Pose2D.prototype.setPosition = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.ubii.dataStructure.Pose2D.prototype.clearPosition = function() {
+  this.setPosition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Pose2D.prototype.hasPosition = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Vector2 direction = 2;
+ * @return {?proto.ubii.dataStructure.Vector2}
+ */
+proto.ubii.dataStructure.Pose2D.prototype.getDirection = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector2} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector2, 2));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector2|undefined} value */
+proto.ubii.dataStructure.Pose2D.prototype.setDirection = function(value) {
+  jspb.Message.setOneofWrapperField(this, 2, proto.ubii.dataStructure.Pose2D.oneofGroups_[0], value);
+};
+
+
+proto.ubii.dataStructure.Pose2D.prototype.clearDirection = function() {
+  this.setDirection(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Pose2D.prototype.hasDirection = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional float angle = 3;
+ * @return {number}
+ */
+proto.ubii.dataStructure.Pose2D.prototype.getAngle = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 3, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.dataStructure.Pose2D.prototype.setAngle = function(value) {
+  jspb.Message.setOneofField(this, 3, proto.ubii.dataStructure.Pose2D.oneofGroups_[0], value);
+};
+
+
+proto.ubii.dataStructure.Pose2D.prototype.clearAngle = function() {
+  jspb.Message.setOneofField(this, 3, proto.ubii.dataStructure.Pose2D.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Pose2D.prototype.hasAngle = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.dataStructure.Pose3D = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.dataStructure.Pose3D.oneofGroups_);
+};
+goog.inherits(proto.ubii.dataStructure.Pose3D, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.dataStructure.Pose3D.displayName = 'proto.ubii.dataStructure.Pose3D';
+}
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.ubii.dataStructure.Pose3D.oneofGroups_ = [[2,3]];
+
+/**
+ * @enum {number}
+ */
+proto.ubii.dataStructure.Pose3D.OrientationCase = {
+  ORIENTATION_NOT_SET: 0,
+  QUATERNION: 2,
+  EULER: 3
+};
+
+/**
+ * @return {proto.ubii.dataStructure.Pose3D.OrientationCase}
+ */
+proto.ubii.dataStructure.Pose3D.prototype.getOrientationCase = function() {
+  return /** @type {proto.ubii.dataStructure.Pose3D.OrientationCase} */(jspb.Message.computeOneofCase(this, proto.ubii.dataStructure.Pose3D.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.dataStructure.Pose3D.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.dataStructure.Pose3D.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.dataStructure.Pose3D} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Pose3D.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    position: (f = msg.getPosition()) && proto.ubii.dataStructure.Vector3.toObject(includeInstance, f),
+    quaternion: (f = msg.getQuaternion()) && proto.ubii.dataStructure.Quaternion.toObject(includeInstance, f),
+    euler: (f = msg.getEuler()) && proto.ubii.dataStructure.Vector3.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.dataStructure.Pose3D}
+ */
+proto.ubii.dataStructure.Pose3D.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.dataStructure.Pose3D;
+  return proto.ubii.dataStructure.Pose3D.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.dataStructure.Pose3D} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.dataStructure.Pose3D}
+ */
+proto.ubii.dataStructure.Pose3D.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.dataStructure.Vector3;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector3.deserializeBinaryFromReader);
+      msg.setPosition(value);
+      break;
+    case 2:
+      var value = new proto.ubii.dataStructure.Quaternion;
+      reader.readMessage(value,proto.ubii.dataStructure.Quaternion.deserializeBinaryFromReader);
+      msg.setQuaternion(value);
+      break;
+    case 3:
+      var value = new proto.ubii.dataStructure.Vector3;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector3.deserializeBinaryFromReader);
+      msg.setEuler(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.dataStructure.Pose3D.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.dataStructure.Pose3D.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.dataStructure.Pose3D} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Pose3D.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPosition();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -4776,27 +5080,35 @@ proto.ubii.dataStructure.Pose.serializeBinaryToWriter = function(message, writer
       proto.ubii.dataStructure.Quaternion.serializeBinaryToWriter
     );
   }
+  f = message.getEuler();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.dataStructure.Vector3.serializeBinaryToWriter
+    );
+  }
 };
 
 
 /**
- * optional Vector3 vector3 = 1;
+ * optional Vector3 position = 1;
  * @return {?proto.ubii.dataStructure.Vector3}
  */
-proto.ubii.dataStructure.Pose.prototype.getVector3 = function() {
+proto.ubii.dataStructure.Pose3D.prototype.getPosition = function() {
   return /** @type{?proto.ubii.dataStructure.Vector3} */ (
     jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector3, 1));
 };
 
 
 /** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
-proto.ubii.dataStructure.Pose.prototype.setVector3 = function(value) {
+proto.ubii.dataStructure.Pose3D.prototype.setPosition = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
 
 
-proto.ubii.dataStructure.Pose.prototype.clearVector3 = function() {
-  this.setVector3(undefined);
+proto.ubii.dataStructure.Pose3D.prototype.clearPosition = function() {
+  this.setPosition(undefined);
 };
 
 
@@ -4804,7 +5116,7 @@ proto.ubii.dataStructure.Pose.prototype.clearVector3 = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.dataStructure.Pose.prototype.hasVector3 = function() {
+proto.ubii.dataStructure.Pose3D.prototype.hasPosition = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -4813,19 +5125,19 @@ proto.ubii.dataStructure.Pose.prototype.hasVector3 = function() {
  * optional Quaternion quaternion = 2;
  * @return {?proto.ubii.dataStructure.Quaternion}
  */
-proto.ubii.dataStructure.Pose.prototype.getQuaternion = function() {
+proto.ubii.dataStructure.Pose3D.prototype.getQuaternion = function() {
   return /** @type{?proto.ubii.dataStructure.Quaternion} */ (
     jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Quaternion, 2));
 };
 
 
 /** @param {?proto.ubii.dataStructure.Quaternion|undefined} value */
-proto.ubii.dataStructure.Pose.prototype.setQuaternion = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+proto.ubii.dataStructure.Pose3D.prototype.setQuaternion = function(value) {
+  jspb.Message.setOneofWrapperField(this, 2, proto.ubii.dataStructure.Pose3D.oneofGroups_[0], value);
 };
 
 
-proto.ubii.dataStructure.Pose.prototype.clearQuaternion = function() {
+proto.ubii.dataStructure.Pose3D.prototype.clearQuaternion = function() {
   this.setQuaternion(undefined);
 };
 
@@ -4834,7 +5146,223 @@ proto.ubii.dataStructure.Pose.prototype.clearQuaternion = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.dataStructure.Pose.prototype.hasQuaternion = function() {
+proto.ubii.dataStructure.Pose3D.prototype.hasQuaternion = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Vector3 euler = 3;
+ * @return {?proto.ubii.dataStructure.Vector3}
+ */
+proto.ubii.dataStructure.Pose3D.prototype.getEuler = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector3, 3));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
+proto.ubii.dataStructure.Pose3D.prototype.setEuler = function(value) {
+  jspb.Message.setOneofWrapperField(this, 3, proto.ubii.dataStructure.Pose3D.oneofGroups_[0], value);
+};
+
+
+proto.ubii.dataStructure.Pose3D.prototype.clearEuler = function() {
+  this.setEuler(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Pose3D.prototype.hasEuler = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.dataStructure.Object2D = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.dataStructure.Object2D, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.dataStructure.Object2D.displayName = 'proto.ubii.dataStructure.Object2D';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.dataStructure.Object2D.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.dataStructure.Object2D.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.dataStructure.Object2D} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Object2D.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose2D.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.dataStructure.Object2D}
+ */
+proto.ubii.dataStructure.Object2D.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.dataStructure.Object2D;
+  return proto.ubii.dataStructure.Object2D.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.dataStructure.Object2D} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.dataStructure.Object2D}
+ */
+proto.ubii.dataStructure.Object2D.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = new proto.ubii.dataStructure.Pose2D;
+      reader.readMessage(value,proto.ubii.dataStructure.Pose2D.deserializeBinaryFromReader);
+      msg.setPose(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.dataStructure.Object2D.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.dataStructure.Object2D.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.dataStructure.Object2D} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Object2D.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPose();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.ubii.dataStructure.Pose2D.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string id = 1;
+ * @return {string}
+ */
+proto.ubii.dataStructure.Object2D.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.dataStructure.Object2D.prototype.setId = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional Pose2D pose = 2;
+ * @return {?proto.ubii.dataStructure.Pose2D}
+ */
+proto.ubii.dataStructure.Object2D.prototype.getPose = function() {
+  return /** @type{?proto.ubii.dataStructure.Pose2D} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose2D, 2));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Pose2D|undefined} value */
+proto.ubii.dataStructure.Object2D.prototype.setPose = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.ubii.dataStructure.Object2D.prototype.clearPose = function() {
+  this.setPose(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Object2D.prototype.hasPose = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -4887,7 +5415,7 @@ proto.ubii.dataStructure.Object3D.prototype.toObject = function(opt_includeInsta
 proto.ubii.dataStructure.Object3D.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose.toObject(includeInstance, f)
+    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose3D.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4928,9 +5456,9 @@ proto.ubii.dataStructure.Object3D.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
-    case 2:
-      var value = new proto.ubii.dataStructure.Pose;
-      reader.readMessage(value,proto.ubii.dataStructure.Pose.deserializeBinaryFromReader);
+    case 3:
+      var value = new proto.ubii.dataStructure.Pose3D;
+      reader.readMessage(value,proto.ubii.dataStructure.Pose3D.deserializeBinaryFromReader);
       msg.setPose(value);
       break;
     default:
@@ -4972,9 +5500,9 @@ proto.ubii.dataStructure.Object3D.serializeBinaryToWriter = function(message, wr
   f = message.getPose();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
-      proto.ubii.dataStructure.Pose.serializeBinaryToWriter
+      proto.ubii.dataStructure.Pose3D.serializeBinaryToWriter
     );
   }
 };
@@ -4996,18 +5524,18 @@ proto.ubii.dataStructure.Object3D.prototype.setId = function(value) {
 
 
 /**
- * optional Pose pose = 2;
- * @return {?proto.ubii.dataStructure.Pose}
+ * optional Pose3D pose = 3;
+ * @return {?proto.ubii.dataStructure.Pose3D}
  */
 proto.ubii.dataStructure.Object3D.prototype.getPose = function() {
-  return /** @type{?proto.ubii.dataStructure.Pose} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose, 2));
+  return /** @type{?proto.ubii.dataStructure.Pose3D} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose3D, 3));
 };
 
 
-/** @param {?proto.ubii.dataStructure.Pose|undefined} value */
+/** @param {?proto.ubii.dataStructure.Pose3D|undefined} value */
 proto.ubii.dataStructure.Object3D.prototype.setPose = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -5021,7 +5549,7 @@ proto.ubii.dataStructure.Object3D.prototype.clearPose = function() {
  * @return {!boolean}
  */
 proto.ubii.dataStructure.Object3D.prototype.hasPose = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -5051,7 +5579,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]];
 
 /**
  * @enum {number}
@@ -5072,8 +5600,10 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   KEY_EVENT: 14,
   MOUSE_EVENT: 15,
   MYO_EVENT: 16,
-  POSE: 17,
-  OBJECT3D: 18
+  POSE2D: 17,
+  POSE3D: 18,
+  OBJECT2D: 19,
+  OBJECT3D: 20
 };
 
 /**
@@ -5128,7 +5658,9 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     keyEvent: (f = msg.getKeyEvent()) && proto.ubii.dataStructure.KeyEvent.toObject(includeInstance, f),
     mouseEvent: (f = msg.getMouseEvent()) && proto.ubii.dataStructure.MouseEvent.toObject(includeInstance, f),
     myoEvent: (f = msg.getMyoEvent()) && proto.ubii.dataStructure.MyoEvent.toObject(includeInstance, f),
-    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose.toObject(includeInstance, f),
+    pose2d: (f = msg.getPose2d()) && proto.ubii.dataStructure.Pose2D.toObject(includeInstance, f),
+    pose3d: (f = msg.getPose3d()) && proto.ubii.dataStructure.Pose3D.toObject(includeInstance, f),
+    object2d: (f = msg.getObject2d()) && proto.ubii.dataStructure.Object2D.toObject(includeInstance, f),
     object3d: (f = msg.getObject3d()) && proto.ubii.dataStructure.Object3D.toObject(includeInstance, f)
   };
 
@@ -5243,11 +5775,21 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       msg.setMyoEvent(value);
       break;
     case 17:
-      var value = new proto.ubii.dataStructure.Pose;
-      reader.readMessage(value,proto.ubii.dataStructure.Pose.deserializeBinaryFromReader);
-      msg.setPose(value);
+      var value = new proto.ubii.dataStructure.Pose2D;
+      reader.readMessage(value,proto.ubii.dataStructure.Pose2D.deserializeBinaryFromReader);
+      msg.setPose2d(value);
       break;
     case 18:
+      var value = new proto.ubii.dataStructure.Pose3D;
+      reader.readMessage(value,proto.ubii.dataStructure.Pose3D.deserializeBinaryFromReader);
+      msg.setPose3d(value);
+      break;
+    case 19:
+      var value = new proto.ubii.dataStructure.Object2D;
+      reader.readMessage(value,proto.ubii.dataStructure.Object2D.deserializeBinaryFromReader);
+      msg.setObject2d(value);
+      break;
+    case 20:
       var value = new proto.ubii.dataStructure.Object3D;
       reader.readMessage(value,proto.ubii.dataStructure.Object3D.deserializeBinaryFromReader);
       msg.setObject3d(value);
@@ -5405,18 +5947,34 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto.ubii.dataStructure.MyoEvent.serializeBinaryToWriter
     );
   }
-  f = message.getPose();
+  f = message.getPose2d();
   if (f != null) {
     writer.writeMessage(
       17,
       f,
-      proto.ubii.dataStructure.Pose.serializeBinaryToWriter
+      proto.ubii.dataStructure.Pose2D.serializeBinaryToWriter
+    );
+  }
+  f = message.getPose3d();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto.ubii.dataStructure.Pose3D.serializeBinaryToWriter
+    );
+  }
+  f = message.getObject2d();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      proto.ubii.dataStructure.Object2D.serializeBinaryToWriter
     );
   }
   f = message.getObject3d();
   if (f != null) {
     writer.writeMessage(
-      18,
+      20,
       f,
       proto.ubii.dataStructure.Object3D.serializeBinaryToWriter
     );
@@ -5889,23 +6447,23 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasMyoEvent = function() {
 
 
 /**
- * optional ubii.dataStructure.Pose pose = 17;
- * @return {?proto.ubii.dataStructure.Pose}
+ * optional ubii.dataStructure.Pose2D pose2D = 17;
+ * @return {?proto.ubii.dataStructure.Pose2D}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getPose = function() {
-  return /** @type{?proto.ubii.dataStructure.Pose} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose, 17));
+proto.ubii.topicData.TopicDataRecord.prototype.getPose2d = function() {
+  return /** @type{?proto.ubii.dataStructure.Pose2D} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose2D, 17));
 };
 
 
-/** @param {?proto.ubii.dataStructure.Pose|undefined} value */
-proto.ubii.topicData.TopicDataRecord.prototype.setPose = function(value) {
+/** @param {?proto.ubii.dataStructure.Pose2D|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setPose2d = function(value) {
   jspb.Message.setOneofWrapperField(this, 17, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-proto.ubii.topicData.TopicDataRecord.prototype.clearPose = function() {
-  this.setPose(undefined);
+proto.ubii.topicData.TopicDataRecord.prototype.clearPose2d = function() {
+  this.setPose2d(undefined);
 };
 
 
@@ -5913,24 +6471,84 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearPose = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasPose = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasPose2d = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional ubii.dataStructure.Object3D object3D = 18;
+ * optional ubii.dataStructure.Pose3D pose3D = 18;
+ * @return {?proto.ubii.dataStructure.Pose3D}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getPose3d = function() {
+  return /** @type{?proto.ubii.dataStructure.Pose3D} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose3D, 18));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Pose3D|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setPose3d = function(value) {
+  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearPose3d = function() {
+  this.setPose3d(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasPose3d = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object2D object2D = 19;
+ * @return {?proto.ubii.dataStructure.Object2D}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getObject2d = function() {
+  return /** @type{?proto.ubii.dataStructure.Object2D} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Object2D, 19));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Object2D|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setObject2d = function(value) {
+  jspb.Message.setOneofWrapperField(this, 19, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearObject2d = function() {
+  this.setObject2d(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasObject2d = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object3D object3D = 20;
  * @return {?proto.ubii.dataStructure.Object3D}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getObject3d = function() {
   return /** @type{?proto.ubii.dataStructure.Object3D} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Object3D, 18));
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Object3D, 20));
 };
 
 
 /** @param {?proto.ubii.dataStructure.Object3D|undefined} value */
 proto.ubii.topicData.TopicDataRecord.prototype.setObject3d = function(value) {
-  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 20, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
@@ -5944,7 +6562,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearObject3d = function() {
  * @return {!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject3d = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 20) != null;
 };
 
 
