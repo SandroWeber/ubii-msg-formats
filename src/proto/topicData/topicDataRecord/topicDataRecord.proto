@@ -13,7 +13,9 @@ import "proto/topicData/topicDataRecord/dataStructure/touchEvent.proto";
 import "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto";
 import "proto/topicData/topicDataRecord/dataStructure/mouseEvent.proto";
 import "proto/topicData/topicDataRecord/dataStructure/myoEvent.proto";
-import "proto/topicData/topicDataRecord/dataStructure/pose.proto";
+import "proto/topicData/topicDataRecord/dataStructure/pose2d.proto";
+import "proto/topicData/topicDataRecord/dataStructure/pose3d.proto";
+import "proto/topicData/topicDataRecord/dataStructure/object2d.proto";
 import "proto/topicData/topicDataRecord/dataStructure/object3d.proto";
 
 message TopicDataRecord {
@@ -34,8 +36,10 @@ message TopicDataRecord {
         ubii.dataStructure.KeyEvent key_event = 14;
         ubii.dataStructure.MouseEvent mouse_event = 15;
         ubii.dataStructure.MyoEvent myo_event = 16;
-        ubii.dataStructure.Pose pose = 17;
-        ubii.dataStructure.Object3D object3D = 18;
+        ubii.dataStructure.Pose2D pose2D = 17;
+        ubii.dataStructure.Pose3D pose3D = 18;
+        ubii.dataStructure.Object2D object2D = 19;
+        ubii.dataStructure.Object3D object3D = 20;
     }    
 }
 

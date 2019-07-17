@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ubii.dataStructure;
+
+import "proto/topicData/topicDataRecord/dataStructure/pose2d.proto";
+
+message Object2D {
+    string id = 1;
+    ubii.dataStructure.Pose2D pose = 2;
+}
