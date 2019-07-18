@@ -28,11 +28,14 @@ namespace Ubii.DataStructure {
             "cmUvb2JqZWN0MmQucHJvdG8SEnViaWkuZGF0YVN0cnVjdHVyZRo6cHJvdG8v",
             "dG9waWNEYXRhL3RvcGljRGF0YVJlY29yZC9kYXRhU3RydWN0dXJlL3Bvc2Uy",
             "ZC5wcm90byJACghPYmplY3QyRBIKCgJpZBgBIAEoCRIoCgRwb3NlGAIgASgL",
-            "MhoudWJpaS5kYXRhU3RydWN0dXJlLlBvc2UyRGIGcHJvdG8z"));
+            "MhoudWJpaS5kYXRhU3RydWN0dXJlLlBvc2UyRCI+CgxPYmplY3QyRExpc3QS",
+            "LgoIZWxlbWVudHMYASADKAsyHC51YmlpLmRhdGFTdHJ1Y3R1cmUuT2JqZWN0",
+            "MkRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.DataStructure.Pose2DReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Object2D), global::Ubii.DataStructure.Object2D.Parser, new[]{ "Id", "Pose" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Object2D), global::Ubii.DataStructure.Object2D.Parser, new[]{ "Id", "Pose" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.Object2DList), global::Ubii.DataStructure.Object2DList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
     #endregion
@@ -194,6 +197,127 @@ namespace Ubii.DataStructure {
               pose_ = new global::Ubii.DataStructure.Pose2D();
             }
             input.ReadMessage(pose_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Object2DList : pb::IMessage<Object2DList> {
+    private static readonly pb::MessageParser<Object2DList> _parser = new pb::MessageParser<Object2DList>(() => new Object2DList());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Object2DList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ubii.DataStructure.Object2DReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Object2DList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Object2DList(Object2DList other) : this() {
+      elements_ = other.elements_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Object2DList Clone() {
+      return new Object2DList(this);
+    }
+
+    /// <summary>Field number for the "elements" field.</summary>
+    public const int ElementsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ubii.DataStructure.Object2D> _repeated_elements_codec
+        = pb::FieldCodec.ForMessage(10, global::Ubii.DataStructure.Object2D.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.DataStructure.Object2D> elements_ = new pbc::RepeatedField<global::Ubii.DataStructure.Object2D>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Ubii.DataStructure.Object2D> Elements {
+      get { return elements_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Object2DList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Object2DList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!elements_.Equals(other.elements_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= elements_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      elements_.WriteTo(output, _repeated_elements_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += elements_.CalculateSize(_repeated_elements_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Object2DList other) {
+      if (other == null) {
+        return;
+      }
+      elements_.Add(other.elements_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            elements_.AddEntriesFrom(input, _repeated_elements_codec);
             break;
           }
         }

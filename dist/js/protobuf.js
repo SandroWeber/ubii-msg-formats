@@ -8863,6 +8863,8 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IPose3D|null} [pose3D] TopicDataRecord pose3D
              * @property {ubii.dataStructure.IObject2D|null} [object2D] TopicDataRecord object2D
              * @property {ubii.dataStructure.IObject3D|null} [object3D] TopicDataRecord object3D
+             * @property {ubii.dataStructure.IObject2DList|null} [object2DList] TopicDataRecord object2DList
+             * @property {ubii.dataStructure.IObject3DList|null} [object3DList] TopicDataRecord object3DList
              */
 
             /**
@@ -9040,17 +9042,33 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.object3D = null;
 
+            /**
+             * TopicDataRecord object2DList.
+             * @member {ubii.dataStructure.IObject2DList|null|undefined} object2DList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.object2DList = null;
+
+            /**
+             * TopicDataRecord object3DList.
+             * @member {ubii.dataStructure.IObject3DList|null|undefined} object3DList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.object3DList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -9118,6 +9136,10 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Object2D.encode(message.object2D, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
                 if (message.object3D != null && message.hasOwnProperty("object3D"))
                     $root.ubii.dataStructure.Object3D.encode(message.object3D, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
+                if (message.object2DList != null && message.hasOwnProperty("object2DList"))
+                    $root.ubii.dataStructure.Object2DList.encode(message.object2DList, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                if (message.object3DList != null && message.hasOwnProperty("object3DList"))
+                    $root.ubii.dataStructure.Object3DList.encode(message.object3DList, writer.uint32(/* id 22, wireType 2 =*/178).fork()).ldelim();
                 return writer;
             };
 
@@ -9211,6 +9233,12 @@ $root.ubii = (function() {
                         break;
                     case 20:
                         message.object3D = $root.ubii.dataStructure.Object3D.decode(reader, reader.uint32());
+                        break;
+                    case 21:
+                        message.object2DList = $root.ubii.dataStructure.Object2DList.decode(reader, reader.uint32());
+                        break;
+                    case 22:
+                        message.object3DList = $root.ubii.dataStructure.Object3DList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9425,6 +9453,26 @@ $root.ubii = (function() {
                             return "object3D." + error;
                     }
                 }
+                if (message.object2DList != null && message.hasOwnProperty("object2DList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Object2DList.verify(message.object2DList);
+                        if (error)
+                            return "object2DList." + error;
+                    }
+                }
+                if (message.object3DList != null && message.hasOwnProperty("object3DList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Object3DList.verify(message.object3DList);
+                        if (error)
+                            return "object3DList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -9527,6 +9575,16 @@ $root.ubii = (function() {
                     if (typeof object.object3D !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.object3D: object expected");
                     message.object3D = $root.ubii.dataStructure.Object3D.fromObject(object.object3D);
+                }
+                if (object.object2DList != null) {
+                    if (typeof object.object2DList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.object2DList: object expected");
+                    message.object2DList = $root.ubii.dataStructure.Object2DList.fromObject(object.object2DList);
+                }
+                if (object.object3DList != null) {
+                    if (typeof object.object3DList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.object3DList: object expected");
+                    message.object3DList = $root.ubii.dataStructure.Object3DList.fromObject(object.object3DList);
                 }
                 return message;
             };
@@ -9641,6 +9699,16 @@ $root.ubii = (function() {
                     object.object3D = $root.ubii.dataStructure.Object3D.toObject(message.object3D, options);
                     if (options.oneofs)
                         object.type = "object3D";
+                }
+                if (message.object2DList != null && message.hasOwnProperty("object2DList")) {
+                    object.object2DList = $root.ubii.dataStructure.Object2DList.toObject(message.object2DList, options);
+                    if (options.oneofs)
+                        object.type = "object2DList";
+                }
+                if (message.object3DList != null && message.hasOwnProperty("object3DList")) {
+                    object.object3DList = $root.ubii.dataStructure.Object3DList.toObject(message.object3DList, options);
+                    if (options.oneofs)
+                        object.type = "object3DList";
                 }
                 return object;
             };
@@ -11975,6 +12043,214 @@ $root.ubii = (function() {
             return Object2D;
         })();
 
+        dataStructure.Object2DList = (function() {
+
+            /**
+             * Properties of an Object2DList.
+             * @memberof ubii.dataStructure
+             * @interface IObject2DList
+             * @property {Array.<ubii.dataStructure.IObject2D>|null} [elements] Object2DList elements
+             */
+
+            /**
+             * Constructs a new Object2DList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents an Object2DList.
+             * @implements IObject2DList
+             * @constructor
+             * @param {ubii.dataStructure.IObject2DList=} [properties] Properties to set
+             */
+            function Object2DList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Object2DList elements.
+             * @member {Array.<ubii.dataStructure.IObject2D>} elements
+             * @memberof ubii.dataStructure.Object2DList
+             * @instance
+             */
+            Object2DList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Object2DList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {ubii.dataStructure.IObject2DList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Object2DList} Object2DList instance
+             */
+            Object2DList.create = function create(properties) {
+                return new Object2DList(properties);
+            };
+
+            /**
+             * Encodes the specified Object2DList message. Does not implicitly {@link ubii.dataStructure.Object2DList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {ubii.dataStructure.IObject2DList} message Object2DList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Object2DList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Object2D.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Object2DList message, length delimited. Does not implicitly {@link ubii.dataStructure.Object2DList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {ubii.dataStructure.IObject2DList} message Object2DList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Object2DList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an Object2DList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Object2DList} Object2DList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Object2DList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Object2DList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Object2D.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an Object2DList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Object2DList} Object2DList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Object2DList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an Object2DList message.
+             * @function verify
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Object2DList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Object2D.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates an Object2DList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Object2DList} Object2DList
+             */
+            Object2DList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Object2DList)
+                    return object;
+                var message = new $root.ubii.dataStructure.Object2DList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Object2DList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.Object2DList.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Object2D.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an Object2DList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Object2DList
+             * @static
+             * @param {ubii.dataStructure.Object2DList} message Object2DList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Object2DList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Object2D.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Object2DList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Object2DList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Object2DList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Object2DList;
+        })();
+
         dataStructure.Object3D = (function() {
 
             /**
@@ -12188,6 +12464,214 @@ $root.ubii = (function() {
             };
 
             return Object3D;
+        })();
+
+        dataStructure.Object3DList = (function() {
+
+            /**
+             * Properties of an Object3DList.
+             * @memberof ubii.dataStructure
+             * @interface IObject3DList
+             * @property {Array.<ubii.dataStructure.IObject3D>|null} [elements] Object3DList elements
+             */
+
+            /**
+             * Constructs a new Object3DList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents an Object3DList.
+             * @implements IObject3DList
+             * @constructor
+             * @param {ubii.dataStructure.IObject3DList=} [properties] Properties to set
+             */
+            function Object3DList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Object3DList elements.
+             * @member {Array.<ubii.dataStructure.IObject3D>} elements
+             * @memberof ubii.dataStructure.Object3DList
+             * @instance
+             */
+            Object3DList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Object3DList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {ubii.dataStructure.IObject3DList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Object3DList} Object3DList instance
+             */
+            Object3DList.create = function create(properties) {
+                return new Object3DList(properties);
+            };
+
+            /**
+             * Encodes the specified Object3DList message. Does not implicitly {@link ubii.dataStructure.Object3DList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {ubii.dataStructure.IObject3DList} message Object3DList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Object3DList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Object3D.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Object3DList message, length delimited. Does not implicitly {@link ubii.dataStructure.Object3DList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {ubii.dataStructure.IObject3DList} message Object3DList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Object3DList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an Object3DList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Object3DList} Object3DList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Object3DList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Object3DList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Object3D.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an Object3DList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Object3DList} Object3DList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Object3DList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an Object3DList message.
+             * @function verify
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Object3DList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Object3D.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates an Object3DList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Object3DList} Object3DList
+             */
+            Object3DList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Object3DList)
+                    return object;
+                var message = new $root.ubii.dataStructure.Object3DList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Object3DList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.Object3DList.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Object3D.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an Object3DList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Object3DList
+             * @static
+             * @param {ubii.dataStructure.Object3DList} message Object3DList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Object3DList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Object3D.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Object3DList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Object3DList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Object3DList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Object3DList;
         })();
 
         dataStructure.Pose2D = (function() {

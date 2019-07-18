@@ -19,7 +19,9 @@ goog.provide('proto.ubii.dataStructure.Matrix4x4');
 goog.provide('proto.ubii.dataStructure.MouseEvent');
 goog.provide('proto.ubii.dataStructure.MyoEvent');
 goog.provide('proto.ubii.dataStructure.Object2D');
+goog.provide('proto.ubii.dataStructure.Object2DList');
 goog.provide('proto.ubii.dataStructure.Object3D');
+goog.provide('proto.ubii.dataStructure.Object3DList');
 goog.provide('proto.ubii.dataStructure.Pose2D');
 goog.provide('proto.ubii.dataStructure.Pose3D');
 goog.provide('proto.ubii.dataStructure.Quaternion');
@@ -5378,6 +5380,174 @@ proto.ubii.dataStructure.Object2D.prototype.hasPose = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ubii.dataStructure.Object2DList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.dataStructure.Object2DList.repeatedFields_, null);
+};
+goog.inherits(proto.ubii.dataStructure.Object2DList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.dataStructure.Object2DList.displayName = 'proto.ubii.dataStructure.Object2DList';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.dataStructure.Object2DList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.dataStructure.Object2DList.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.dataStructure.Object2DList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.dataStructure.Object2DList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Object2DList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.ubii.dataStructure.Object2D.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.dataStructure.Object2DList}
+ */
+proto.ubii.dataStructure.Object2DList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.dataStructure.Object2DList;
+  return proto.ubii.dataStructure.Object2DList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.dataStructure.Object2DList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.dataStructure.Object2DList}
+ */
+proto.ubii.dataStructure.Object2DList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.dataStructure.Object2D;
+      reader.readMessage(value,proto.ubii.dataStructure.Object2D.deserializeBinaryFromReader);
+      msg.addElements(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.dataStructure.Object2DList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.dataStructure.Object2DList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.dataStructure.Object2DList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Object2DList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.ubii.dataStructure.Object2D.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Object2D elements = 1;
+ * @return {!Array<!proto.ubii.dataStructure.Object2D>}
+ */
+proto.ubii.dataStructure.Object2DList.prototype.getElementsList = function() {
+  return /** @type{!Array<!proto.ubii.dataStructure.Object2D>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.dataStructure.Object2D, 1));
+};
+
+
+/** @param {!Array<!proto.ubii.dataStructure.Object2D>} value */
+proto.ubii.dataStructure.Object2DList.prototype.setElementsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.ubii.dataStructure.Object2D=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.dataStructure.Object2D}
+ */
+proto.ubii.dataStructure.Object2DList.prototype.addElements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.dataStructure.Object2D, opt_index);
+};
+
+
+proto.ubii.dataStructure.Object2DList.prototype.clearElementsList = function() {
+  this.setElementsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ubii.dataStructure.Object3D = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -5564,6 +5734,174 @@ proto.ubii.dataStructure.Object3D.prototype.hasPose = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ubii.dataStructure.Object3DList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.dataStructure.Object3DList.repeatedFields_, null);
+};
+goog.inherits(proto.ubii.dataStructure.Object3DList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.dataStructure.Object3DList.displayName = 'proto.ubii.dataStructure.Object3DList';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.dataStructure.Object3DList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.dataStructure.Object3DList.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.dataStructure.Object3DList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.dataStructure.Object3DList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Object3DList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.ubii.dataStructure.Object3D.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.dataStructure.Object3DList}
+ */
+proto.ubii.dataStructure.Object3DList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.dataStructure.Object3DList;
+  return proto.ubii.dataStructure.Object3DList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.dataStructure.Object3DList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.dataStructure.Object3DList}
+ */
+proto.ubii.dataStructure.Object3DList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.dataStructure.Object3D;
+      reader.readMessage(value,proto.ubii.dataStructure.Object3D.deserializeBinaryFromReader);
+      msg.addElements(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.dataStructure.Object3DList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.dataStructure.Object3DList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.dataStructure.Object3DList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.dataStructure.Object3DList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.ubii.dataStructure.Object3D.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Object3D elements = 1;
+ * @return {!Array<!proto.ubii.dataStructure.Object3D>}
+ */
+proto.ubii.dataStructure.Object3DList.prototype.getElementsList = function() {
+  return /** @type{!Array<!proto.ubii.dataStructure.Object3D>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.dataStructure.Object3D, 1));
+};
+
+
+/** @param {!Array<!proto.ubii.dataStructure.Object3D>} value */
+proto.ubii.dataStructure.Object3DList.prototype.setElementsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.ubii.dataStructure.Object3D=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.dataStructure.Object3D}
+ */
+proto.ubii.dataStructure.Object3DList.prototype.addElements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.dataStructure.Object3D, opt_index);
+};
+
+
+proto.ubii.dataStructure.Object3DList.prototype.clearElementsList = function() {
+  this.setElementsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ubii.topicData.TopicDataRecord = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.topicData.TopicDataRecord.oneofGroups_);
 };
@@ -5579,7 +5917,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]];
 
 /**
  * @enum {number}
@@ -5603,7 +5941,9 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   POSE2D: 17,
   POSE3D: 18,
   OBJECT2D: 19,
-  OBJECT3D: 20
+  OBJECT3D: 20,
+  OBJECT2D_LIST: 21,
+  OBJECT3D_LIST: 22
 };
 
 /**
@@ -5661,7 +6001,9 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     pose2d: (f = msg.getPose2d()) && proto.ubii.dataStructure.Pose2D.toObject(includeInstance, f),
     pose3d: (f = msg.getPose3d()) && proto.ubii.dataStructure.Pose3D.toObject(includeInstance, f),
     object2d: (f = msg.getObject2d()) && proto.ubii.dataStructure.Object2D.toObject(includeInstance, f),
-    object3d: (f = msg.getObject3d()) && proto.ubii.dataStructure.Object3D.toObject(includeInstance, f)
+    object3d: (f = msg.getObject3d()) && proto.ubii.dataStructure.Object3D.toObject(includeInstance, f),
+    object2dList: (f = msg.getObject2dList()) && proto.ubii.dataStructure.Object2DList.toObject(includeInstance, f),
+    object3dList: (f = msg.getObject3dList()) && proto.ubii.dataStructure.Object3DList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5793,6 +6135,16 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto.ubii.dataStructure.Object3D;
       reader.readMessage(value,proto.ubii.dataStructure.Object3D.deserializeBinaryFromReader);
       msg.setObject3d(value);
+      break;
+    case 21:
+      var value = new proto.ubii.dataStructure.Object2DList;
+      reader.readMessage(value,proto.ubii.dataStructure.Object2DList.deserializeBinaryFromReader);
+      msg.setObject2dList(value);
+      break;
+    case 22:
+      var value = new proto.ubii.dataStructure.Object3DList;
+      reader.readMessage(value,proto.ubii.dataStructure.Object3DList.deserializeBinaryFromReader);
+      msg.setObject3dList(value);
       break;
     default:
       reader.skipField();
@@ -5977,6 +6329,22 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       20,
       f,
       proto.ubii.dataStructure.Object3D.serializeBinaryToWriter
+    );
+  }
+  f = message.getObject2dList();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      proto.ubii.dataStructure.Object2DList.serializeBinaryToWriter
+    );
+  }
+  f = message.getObject3dList();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      proto.ubii.dataStructure.Object3DList.serializeBinaryToWriter
     );
   }
 };
@@ -6563,6 +6931,66 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearObject3d = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject3d = function() {
   return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object2DList object2D_list = 21;
+ * @return {?proto.ubii.dataStructure.Object2DList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getObject2dList = function() {
+  return /** @type{?proto.ubii.dataStructure.Object2DList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Object2DList, 21));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Object2DList|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setObject2dList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 21, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearObject2dList = function() {
+  this.setObject2dList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasObject2dList = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object3DList object3D_list = 22;
+ * @return {?proto.ubii.dataStructure.Object3DList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getObject3dList = function() {
+  return /** @type{?proto.ubii.dataStructure.Object3DList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Object3DList, 22));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Object3DList|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setObject3dList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 22, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearObject3dList = function() {
+  this.setObject3dList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasObject3dList = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

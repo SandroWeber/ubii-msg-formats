@@ -39,7 +39,7 @@ namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[1];
+  static const ::google::protobuf::internal::ParseTable schema[2];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -51,11 +51,15 @@ namespace dataStructure {
 class Object3D;
 class Object3DDefaultTypeInternal;
 extern Object3DDefaultTypeInternal _Object3D_default_instance_;
+class Object3DList;
+class Object3DListDefaultTypeInternal;
+extern Object3DListDefaultTypeInternal _Object3DList_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
 namespace google {
 namespace protobuf {
 template<> ::ubii::dataStructure::Object3D* Arena::CreateMaybeMessage<::ubii::dataStructure::Object3D>(Arena*);
+template<> ::ubii::dataStructure::Object3DList* Arena::CreateMaybeMessage<::ubii::dataStructure::Object3DList>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace ubii {
@@ -185,6 +189,115 @@ class Object3D : public ::google::protobuf::Message /* @@protoc_insertion_point(
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class Object3DList : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.dataStructure.Object3DList) */ {
+ public:
+  Object3DList();
+  virtual ~Object3DList();
+
+  Object3DList(const Object3DList& from);
+
+  inline Object3DList& operator=(const Object3DList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Object3DList(Object3DList&& from) noexcept
+    : Object3DList() {
+    *this = ::std::move(from);
+  }
+
+  inline Object3DList& operator=(Object3DList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Object3DList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Object3DList* internal_default_instance() {
+    return reinterpret_cast<const Object3DList*>(
+               &_Object3DList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(Object3DList* other);
+  friend void swap(Object3DList& a, Object3DList& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Object3DList* New() const final {
+    return CreateMaybeMessage<Object3DList>(NULL);
+  }
+
+  Object3DList* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Object3DList>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Object3DList& from);
+  void MergeFrom(const Object3DList& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Object3DList* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .ubii.dataStructure.Object3D elements = 1;
+  int elements_size() const;
+  void clear_elements();
+  static const int kElementsFieldNumber = 1;
+  ::ubii::dataStructure::Object3D* mutable_elements(int index);
+  ::google::protobuf::RepeatedPtrField< ::ubii::dataStructure::Object3D >*
+      mutable_elements();
+  const ::ubii::dataStructure::Object3D& elements(int index) const;
+  ::ubii::dataStructure::Object3D* add_elements();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::dataStructure::Object3D >&
+      elements() const;
+
+  // @@protoc_insertion_point(class_scope:ubii.dataStructure.Object3DList)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::dataStructure::Object3D > elements_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -297,9 +410,45 @@ inline void Object3D::set_allocated_pose(::ubii::dataStructure::Pose3D* pose) {
   // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Object3D.pose)
 }
 
+// -------------------------------------------------------------------
+
+// Object3DList
+
+// repeated .ubii.dataStructure.Object3D elements = 1;
+inline int Object3DList::elements_size() const {
+  return elements_.size();
+}
+inline void Object3DList::clear_elements() {
+  elements_.Clear();
+}
+inline ::ubii::dataStructure::Object3D* Object3DList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.dataStructure.Object3DList.elements)
+  return elements_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::ubii::dataStructure::Object3D >*
+Object3DList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.dataStructure.Object3DList.elements)
+  return &elements_;
+}
+inline const ::ubii::dataStructure::Object3D& Object3DList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.dataStructure.Object3DList.elements)
+  return elements_.Get(index);
+}
+inline ::ubii::dataStructure::Object3D* Object3DList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.dataStructure.Object3DList.elements)
+  return elements_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::dataStructure::Object3D >&
+Object3DList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.dataStructure.Object3DList.elements)
+  return elements_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

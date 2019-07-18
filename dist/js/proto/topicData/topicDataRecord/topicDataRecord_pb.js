@@ -55,7 +55,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]];
 
 /**
  * @enum {number}
@@ -79,7 +79,9 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   POSE2D: 17,
   POSE3D: 18,
   OBJECT2D: 19,
-  OBJECT3D: 20
+  OBJECT3D: 20,
+  OBJECT2D_LIST: 21,
+  OBJECT3D_LIST: 22
 };
 
 /**
@@ -137,7 +139,9 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     pose2d: (f = msg.getPose2d()) && proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.toObject(includeInstance, f),
     pose3d: (f = msg.getPose3d()) && proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.toObject(includeInstance, f),
     object2d: (f = msg.getObject2d()) && proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D.toObject(includeInstance, f),
-    object3d: (f = msg.getObject3d()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.toObject(includeInstance, f)
+    object3d: (f = msg.getObject3d()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.toObject(includeInstance, f),
+    object2dList: (f = msg.getObject2dList()) && proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList.toObject(includeInstance, f),
+    object3dList: (f = msg.getObject3dList()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -269,6 +273,16 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.deserializeBinaryFromReader);
       msg.setObject3d(value);
+      break;
+    case 21:
+      var value = new proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList.deserializeBinaryFromReader);
+      msg.setObject2dList(value);
+      break;
+    case 22:
+      var value = new proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.deserializeBinaryFromReader);
+      msg.setObject3dList(value);
       break;
     default:
       reader.skipField();
@@ -453,6 +467,22 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       20,
       f,
       proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.serializeBinaryToWriter
+    );
+  }
+  f = message.getObject2dList();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList.serializeBinaryToWriter
+    );
+  }
+  f = message.getObject3dList();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.serializeBinaryToWriter
     );
   }
 };
@@ -1039,6 +1069,66 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearObject3d = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject3d = function() {
   return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object2DList object2D_list = 21;
+ * @return {?proto.ubii.dataStructure.Object2DList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getObject2dList = function() {
+  return /** @type{?proto.ubii.dataStructure.Object2DList} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList, 21));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Object2DList|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setObject2dList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 21, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearObject2dList = function() {
+  this.setObject2dList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasObject2dList = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Object3DList object3D_list = 22;
+ * @return {?proto.ubii.dataStructure.Object3DList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getObject3dList = function() {
+  return /** @type{?proto.ubii.dataStructure.Object3DList} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList, 22));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Object3DList|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setObject3dList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 22, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearObject3dList = function() {
+  this.setObject3dList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasObject3dList = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n<proto/topicData/topicDataRecord/dataStructure/object2d.proto\x12\x12ubii.dataStructure\x1a:proto/topicData/topicDataRecord/dataStructure/pose2d.proto\"@\n\x08Object2D\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.ubii.dataStructure.Pose2Db\x06proto3')
+  serialized_pb=_b('\n<proto/topicData/topicDataRecord/dataStructure/object2d.proto\x12\x12ubii.dataStructure\x1a:proto/topicData/topicDataRecord/dataStructure/pose2d.proto\"@\n\x08Object2D\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.ubii.dataStructure.Pose2D\">\n\x0cObject2DList\x12.\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1c.ubii.dataStructure.Object2Db\x06proto3')
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose2d__pb2.DESCRIPTOR,])
 
@@ -64,8 +64,41 @@ _OBJECT2D = _descriptor.Descriptor(
   serialized_end=208,
 )
 
+
+_OBJECT2DLIST = _descriptor.Descriptor(
+  name='Object2DList',
+  full_name='ubii.dataStructure.Object2DList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.dataStructure.Object2DList.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=210,
+  serialized_end=272,
+)
+
 _OBJECT2D.fields_by_name['pose'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose2d__pb2._POSE2D
+_OBJECT2DLIST.fields_by_name['elements'].message_type = _OBJECT2D
 DESCRIPTOR.message_types_by_name['Object2D'] = _OBJECT2D
+DESCRIPTOR.message_types_by_name['Object2DList'] = _OBJECT2DLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Object2D = _reflection.GeneratedProtocolMessageType('Object2D', (_message.Message,), dict(
@@ -74,6 +107,13 @@ Object2D = _reflection.GeneratedProtocolMessageType('Object2D', (_message.Messag
   # @@protoc_insertion_point(class_scope:ubii.dataStructure.Object2D)
   ))
 _sym_db.RegisterMessage(Object2D)
+
+Object2DList = _reflection.GeneratedProtocolMessageType('Object2DList', (_message.Message,), dict(
+  DESCRIPTOR = _OBJECT2DLIST,
+  __module__ = 'proto.topicData.topicDataRecord.dataStructure.object2d_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.dataStructure.Object2DList)
+  ))
+_sym_db.RegisterMessage(Object2DList)
 
 
 # @@protoc_insertion_point(module_scope)

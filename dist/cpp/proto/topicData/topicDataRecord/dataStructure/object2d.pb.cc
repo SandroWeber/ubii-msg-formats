@@ -19,6 +19,9 @@
 #endif
 // @@protoc_insertion_point(includes)
 
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Object2D;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Pose2D;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto
@@ -29,6 +32,11 @@ class Object2DDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Object2D>
       _instance;
 } _Object2D_default_instance_;
+class Object2DListDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Object2DList>
+      _instance;
+} _Object2DList_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto {
@@ -47,11 +55,27 @@ static void InitDefaultsObject2D() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsObject2D}, {
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto::scc_info_Pose2D.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Object2D.base);
+static void InitDefaultsObject2DList() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::ubii::dataStructure::_Object2DList_default_instance_;
+    new (ptr) ::ubii::dataStructure::Object2DList();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::ubii::dataStructure::Object2DList::InitAsDefaultInstance();
 }
 
-::google::protobuf::Metadata file_level_metadata[1];
+::google::protobuf::internal::SCCInfo<1> scc_info_Object2DList =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsObject2DList}, {
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::scc_info_Object2D.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Object2D.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Object2DList.base);
+}
+
+::google::protobuf::Metadata file_level_metadata[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -61,13 +85,21 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object2D, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object2D, pose_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object2DList, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object2DList, elements_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::Object2D)},
+  { 7, -1, sizeof(::ubii::dataStructure::Object2DList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::dataStructure::_Object2D_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::dataStructure::_Object2DList_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -85,7 +117,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
 }
 
 void AddDescriptorsImpl() {
@@ -96,10 +128,11 @@ void AddDescriptorsImpl() {
       "re\032:proto/topicData/topicDataRecord/data"
       "Structure/pose2d.proto\"@\n\010Object2D\022\n\n\002id"
       "\030\001 \001(\t\022(\n\004pose\030\002 \001(\0132\032.ubii.dataStructur"
-      "e.Pose2Db\006proto3"
+      "e.Pose2D\">\n\014Object2DList\022.\n\010elements\030\001 \003"
+      "(\0132\034.ubii.dataStructure.Object2Db\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 216);
+      descriptor, 280);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord/dataStructure/object2d.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto::AddDescriptors();
@@ -417,6 +450,235 @@ void Object2D::InternalSwap(Object2D* other) {
 }
 
 
+// ===================================================================
+
+void Object2DList::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Object2DList::kElementsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Object2DList::Object2DList()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::scc_info_Object2DList.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Object2DList)
+}
+Object2DList::Object2DList(const Object2DList& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      elements_(from.elements_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.Object2DList)
+}
+
+void Object2DList::SharedCtor() {
+}
+
+Object2DList::~Object2DList() {
+  // @@protoc_insertion_point(destructor:ubii.dataStructure.Object2DList)
+  SharedDtor();
+}
+
+void Object2DList::SharedDtor() {
+}
+
+void Object2DList::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Object2DList::descriptor() {
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Object2DList& Object2DList::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::scc_info_Object2DList.base);
+  return *internal_default_instance();
+}
+
+
+void Object2DList::Clear() {
+// @@protoc_insertion_point(message_clear_start:ubii.dataStructure.Object2DList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  elements_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool Object2DList::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ubii.dataStructure.Object2DList)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .ubii.dataStructure.Object2D elements = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_elements()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ubii.dataStructure.Object2DList)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ubii.dataStructure.Object2DList)
+  return false;
+#undef DO_
+}
+
+void Object2DList::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ubii.dataStructure.Object2DList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .ubii.dataStructure.Object2D elements = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1,
+      this->elements(static_cast<int>(i)),
+      output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:ubii.dataStructure.Object2DList)
+}
+
+::google::protobuf::uint8* Object2DList::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:ubii.dataStructure.Object2DList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .ubii.dataStructure.Object2D elements = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->elements(static_cast<int>(i)), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Object2DList)
+  return target;
+}
+
+size_t Object2DList::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ubii.dataStructure.Object2DList)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated .ubii.dataStructure.Object2D elements = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->elements_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->elements(static_cast<int>(i)));
+    }
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Object2DList::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:ubii.dataStructure.Object2DList)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Object2DList* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Object2DList>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.dataStructure.Object2DList)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.dataStructure.Object2DList)
+    MergeFrom(*source);
+  }
+}
+
+void Object2DList::MergeFrom(const Object2DList& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Object2DList)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  elements_.MergeFrom(from.elements_);
+}
+
+void Object2DList::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:ubii.dataStructure.Object2DList)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Object2DList::CopyFrom(const Object2DList& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ubii.dataStructure.Object2DList)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Object2DList::IsInitialized() const {
+  return true;
+}
+
+void Object2DList::Swap(Object2DList* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Object2DList::InternalSwap(Object2DList* other) {
+  using std::swap;
+  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Object2DList::GetMetadata() const {
+  protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dataStructure
 }  // namespace ubii
@@ -424,6 +686,9 @@ namespace google {
 namespace protobuf {
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::dataStructure::Object2D* Arena::CreateMaybeMessage< ::ubii::dataStructure::Object2D >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::dataStructure::Object2D >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::dataStructure::Object2DList* Arena::CreateMaybeMessage< ::ubii::dataStructure::Object2DList >(Arena* arena) {
+  return Arena::CreateInternal< ::ubii::dataStructure::Object2DList >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

@@ -130,6 +130,8 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     kPose3D = 18,
     kObject2D = 19,
     kObject3D = 20,
+    kObject2DList = 21,
+    kObject3DList = 22,
     TYPE_NOT_SET = 0,
   };
 
@@ -432,6 +434,30 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Object3D* mutable_object3d();
   void set_allocated_object3d(::ubii::dataStructure::Object3D* object3d);
 
+  // .ubii.dataStructure.Object2DList object2D_list = 21;
+  bool has_object2d_list() const;
+  void clear_object2d_list();
+  static const int kObject2DListFieldNumber = 21;
+  private:
+  const ::ubii::dataStructure::Object2DList& _internal_object2d_list() const;
+  public:
+  const ::ubii::dataStructure::Object2DList& object2d_list() const;
+  ::ubii::dataStructure::Object2DList* release_object2d_list();
+  ::ubii::dataStructure::Object2DList* mutable_object2d_list();
+  void set_allocated_object2d_list(::ubii::dataStructure::Object2DList* object2d_list);
+
+  // .ubii.dataStructure.Object3DList object3D_list = 22;
+  bool has_object3d_list() const;
+  void clear_object3d_list();
+  static const int kObject3DListFieldNumber = 22;
+  private:
+  const ::ubii::dataStructure::Object3DList& _internal_object3d_list() const;
+  public:
+  const ::ubii::dataStructure::Object3DList& object3d_list() const;
+  ::ubii::dataStructure::Object3DList* release_object3d_list();
+  ::ubii::dataStructure::Object3DList* mutable_object3d_list();
+  void set_allocated_object3d_list(::ubii::dataStructure::Object3DList* object3d_list);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
@@ -454,6 +480,8 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_pose3d();
   void set_has_object2d();
   void set_has_object3d();
+  void set_has_object2d_list();
+  void set_has_object3d_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -481,6 +509,8 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::Pose3D* pose3d_;
     ::ubii::dataStructure::Object2D* object2d_;
     ::ubii::dataStructure::Object3D* object3d_;
+    ::ubii::dataStructure::Object2DList* object2d_list_;
+    ::ubii::dataStructure::Object3DList* object3d_list_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1427,6 +1457,82 @@ inline ::ubii::dataStructure::Object3D* TopicDataRecord::mutable_object3d() {
   }
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.object3D)
   return type_.object3d_;
+}
+
+// .ubii.dataStructure.Object2DList object2D_list = 21;
+inline bool TopicDataRecord::has_object2d_list() const {
+  return type_case() == kObject2DList;
+}
+inline void TopicDataRecord::set_has_object2d_list() {
+  _oneof_case_[0] = kObject2DList;
+}
+inline const ::ubii::dataStructure::Object2DList& TopicDataRecord::_internal_object2d_list() const {
+  return *type_.object2d_list_;
+}
+inline ::ubii::dataStructure::Object2DList* TopicDataRecord::release_object2d_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.object2D_list)
+  if (has_object2d_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Object2DList* temp = type_.object2d_list_;
+    type_.object2d_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Object2DList& TopicDataRecord::object2d_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.object2D_list)
+  return has_object2d_list()
+      ? *type_.object2d_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Object2DList*>(&::ubii::dataStructure::_Object2DList_default_instance_);
+}
+inline ::ubii::dataStructure::Object2DList* TopicDataRecord::mutable_object2d_list() {
+  if (!has_object2d_list()) {
+    clear_type();
+    set_has_object2d_list();
+    type_.object2d_list_ = CreateMaybeMessage< ::ubii::dataStructure::Object2DList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.object2D_list)
+  return type_.object2d_list_;
+}
+
+// .ubii.dataStructure.Object3DList object3D_list = 22;
+inline bool TopicDataRecord::has_object3d_list() const {
+  return type_case() == kObject3DList;
+}
+inline void TopicDataRecord::set_has_object3d_list() {
+  _oneof_case_[0] = kObject3DList;
+}
+inline const ::ubii::dataStructure::Object3DList& TopicDataRecord::_internal_object3d_list() const {
+  return *type_.object3d_list_;
+}
+inline ::ubii::dataStructure::Object3DList* TopicDataRecord::release_object3d_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.object3D_list)
+  if (has_object3d_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Object3DList* temp = type_.object3d_list_;
+    type_.object3d_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Object3DList& TopicDataRecord::object3d_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.object3D_list)
+  return has_object3d_list()
+      ? *type_.object3d_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Object3DList*>(&::ubii::dataStructure::_Object3DList_default_instance_);
+}
+inline ::ubii::dataStructure::Object3DList* TopicDataRecord::mutable_object3d_list() {
+  if (!has_object3d_list()) {
+    clear_type();
+    set_has_object3d_list();
+    type_.object3d_list_ = CreateMaybeMessage< ::ubii::dataStructure::Object3DList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.object3D_list)
+  return type_.object3d_list_;
 }
 
 inline bool TopicDataRecord::has_type() const {
