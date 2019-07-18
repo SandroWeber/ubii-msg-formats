@@ -7,3 +7,7 @@ message Object2D {
     string id = 1;
     ubii.dataStructure.Pose2D pose = 2;
 }
+
+message Object2DList {
+    repeated ubii.dataStructure.Object2D elements = 1;
+}

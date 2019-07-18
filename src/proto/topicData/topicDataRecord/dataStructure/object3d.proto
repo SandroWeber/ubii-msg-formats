@@ -7,3 +7,8 @@ message Object3D {
     string id = 1;
     ubii.dataStructure.Pose3D pose = 3;
 }
+
+message Object3DList {
+    repeated ubii.dataStructure.Object3D elements = 1;
+}
+
