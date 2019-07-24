@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.interactions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\xad\x01\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12\x32\n\rinput_formats\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x33\n\x0eoutput_formats\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\"C\n\x0fInteractionList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.interactions.Interactionb\x06proto3')
+  serialized_pb=_b('\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\xc1\x01\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12\x32\n\rinput_formats\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x33\n\x0eoutput_formats\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x12\n\non_created\x18\x06 \x01(\t\"C\n\x0fInteractionList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.interactions.Interactionb\x06proto3')
   ,
   dependencies=[proto_dot_interactions_dot_ioFormat__pb2.DESCRIPTOR,])
 
@@ -69,6 +69,13 @@ _INTERACTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='on_created', full_name='ubii.interactions.Interaction.on_created', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -82,7 +89,7 @@ _INTERACTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=95,
-  serialized_end=268,
+  serialized_end=288,
 )
 
 
@@ -112,8 +119,8 @@ _INTERACTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=337,
+  serialized_start=290,
+  serialized_end=357,
 )
 
 _INTERACTION.fields_by_name['input_formats'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT

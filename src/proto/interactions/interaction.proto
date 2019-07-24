@@ -9,6 +9,7 @@ message Interaction {
     string processing_callback = 3;
     repeated ubii.interactions.IOFormat input_formats = 4;
     repeated ubii.interactions.IOFormat output_formats = 5;
+    string on_created = 6;
 }
 
 message InteractionList {

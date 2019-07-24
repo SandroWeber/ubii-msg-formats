@@ -95,6 +95,16 @@ public final class InteractionOuterClass {
      */
     ubii.interactions.IoFormat.IOFormatOrBuilder getOutputFormatsOrBuilder(
         int index);
+
+    /**
+     * <code>string on_created = 6;</code>
+     */
+    java.lang.String getOnCreated();
+    /**
+     * <code>string on_created = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getOnCreatedBytes();
   }
   /**
    * Protobuf type {@code ubii.interactions.Interaction}
@@ -114,6 +124,7 @@ public final class InteractionOuterClass {
       processingCallback_ = "";
       inputFormats_ = java.util.Collections.emptyList();
       outputFormats_ = java.util.Collections.emptyList();
+      onCreated_ = "";
     }
 
     @java.lang.Override
@@ -174,6 +185,12 @@ public final class InteractionOuterClass {
               }
               outputFormats_.add(
                   input.readMessage(ubii.interactions.IoFormat.IOFormat.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onCreated_ = s;
               break;
             }
             default: {
@@ -387,6 +404,40 @@ public final class InteractionOuterClass {
       return outputFormats_.get(index);
     }
 
+    public static final int ON_CREATED_FIELD_NUMBER = 6;
+    private volatile java.lang.Object onCreated_;
+    /**
+     * <code>string on_created = 6;</code>
+     */
+    public java.lang.String getOnCreated() {
+      java.lang.Object ref = onCreated_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onCreated_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string on_created = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOnCreatedBytes() {
+      java.lang.Object ref = onCreated_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        onCreated_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -416,6 +467,9 @@ public final class InteractionOuterClass {
       for (int i = 0; i < outputFormats_.size(); i++) {
         output.writeMessage(5, outputFormats_.get(i));
       }
+      if (!getOnCreatedBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, onCreated_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -441,6 +495,9 @@ public final class InteractionOuterClass {
       for (int i = 0; i < outputFormats_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, outputFormats_.get(i));
+      }
+      if (!getOnCreatedBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, onCreated_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -468,6 +525,8 @@ public final class InteractionOuterClass {
           .equals(other.getInputFormatsList());
       result = result && getOutputFormatsList()
           .equals(other.getOutputFormatsList());
+      result = result && getOnCreated()
+          .equals(other.getOnCreated());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -493,6 +552,8 @@ public final class InteractionOuterClass {
         hash = (37 * hash) + OUTPUT_FORMATS_FIELD_NUMBER;
         hash = (53 * hash) + getOutputFormatsList().hashCode();
       }
+      hash = (37 * hash) + ON_CREATED_FIELD_NUMBER;
+      hash = (53 * hash) + getOnCreated().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -646,6 +707,8 @@ public final class InteractionOuterClass {
         } else {
           outputFormatsBuilder_.clear();
         }
+        onCreated_ = "";
+
         return this;
       }
 
@@ -695,6 +758,7 @@ public final class InteractionOuterClass {
         } else {
           result.outputFormats_ = outputFormatsBuilder_.build();
         }
+        result.onCreated_ = onCreated_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -807,6 +871,10 @@ public final class InteractionOuterClass {
               outputFormatsBuilder_.addAllMessages(other.outputFormats_);
             }
           }
+        }
+        if (!other.getOnCreated().isEmpty()) {
+          onCreated_ = other.onCreated_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1523,6 +1591,75 @@ public final class InteractionOuterClass {
           outputFormats_ = null;
         }
         return outputFormatsBuilder_;
+      }
+
+      private java.lang.Object onCreated_ = "";
+      /**
+       * <code>string on_created = 6;</code>
+       */
+      public java.lang.String getOnCreated() {
+        java.lang.Object ref = onCreated_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          onCreated_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string on_created = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOnCreatedBytes() {
+        java.lang.Object ref = onCreated_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          onCreated_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string on_created = 6;</code>
+       */
+      public Builder setOnCreated(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        onCreated_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string on_created = 6;</code>
+       */
+      public Builder clearOnCreated() {
+        
+        onCreated_ = getDefaultInstance().getOnCreated();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string on_created = 6;</code>
+       */
+      public Builder setOnCreatedBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        onCreated_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2380,13 +2517,14 @@ public final class InteractionOuterClass {
     java.lang.String[] descriptorData = {
       "\n$proto/interactions/interaction.proto\022\021" +
       "ubii.interactions\032!proto/interactions/io" +
-      "Format.proto\"\255\001\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
+      "Format.proto\"\301\001\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
       "\022\014\n\004name\030\002 \001(\t\022\033\n\023processing_callback\030\003 " +
       "\001(\t\0222\n\rinput_formats\030\004 \003(\0132\033.ubii.intera" +
       "ctions.IOFormat\0223\n\016output_formats\030\005 \003(\0132" +
-      "\033.ubii.interactions.IOFormat\"C\n\017Interact" +
-      "ionList\0220\n\010elements\030\001 \003(\0132\036.ubii.interac" +
-      "tions.Interactionb\006proto3"
+      "\033.ubii.interactions.IOFormat\022\022\n\non_creat" +
+      "ed\030\006 \001(\t\"C\n\017InteractionList\0220\n\010elements\030" +
+      "\001 \003(\0132\036.ubii.interactions.Interactionb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2406,7 +2544,7 @@ public final class InteractionOuterClass {
     internal_static_ubii_interactions_Interaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_interactions_Interaction_descriptor,
-        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", });
+        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", });
     internal_static_ubii_interactions_InteractionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_interactions_InteractionList_fieldAccessorTable = new

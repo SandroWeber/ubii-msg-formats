@@ -8711,7 +8711,8 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
     inputFormatsList: jspb.Message.toObjectList(msg.getInputFormatsList(),
     proto.ubii.interactions.IOFormat.toObject, includeInstance),
     outputFormatsList: jspb.Message.toObjectList(msg.getOutputFormatsList(),
-    proto.ubii.interactions.IOFormat.toObject, includeInstance)
+    proto.ubii.interactions.IOFormat.toObject, includeInstance),
+    onCreated: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -8769,6 +8770,10 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
       var value = new proto.ubii.interactions.IOFormat;
       reader.readMessage(value,proto.ubii.interactions.IOFormat.deserializeBinaryFromReader);
       msg.addOutputFormats(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnCreated(value);
       break;
     default:
       reader.skipField();
@@ -8834,6 +8839,13 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
       5,
       f,
       proto.ubii.interactions.IOFormat.serializeBinaryToWriter
+    );
+  }
+  f = message.getOnCreated();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -8943,6 +8955,21 @@ proto.ubii.interactions.Interaction.prototype.addOutputFormats = function(opt_va
 
 proto.ubii.interactions.Interaction.prototype.clearOutputFormatsList = function() {
   this.setOutputFormatsList([]);
+};
+
+
+/**
+ * optional string on_created = 6;
+ * @return {string}
+ */
+proto.ubii.interactions.Interaction.prototype.getOnCreated = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.interactions.Interaction.prototype.setOnCreated = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

@@ -3552,6 +3552,7 @@ $root.ubii = (function() {
              * @property {string|null} [processingCallback] Interaction processingCallback
              * @property {Array.<ubii.interactions.IIOFormat>|null} [inputFormats] Interaction inputFormats
              * @property {Array.<ubii.interactions.IIOFormat>|null} [outputFormats] Interaction outputFormats
+             * @property {string|null} [onCreated] Interaction onCreated
              */
 
             /**
@@ -3612,6 +3613,14 @@ $root.ubii = (function() {
             Interaction.prototype.outputFormats = $util.emptyArray;
 
             /**
+             * Interaction onCreated.
+             * @member {string} onCreated
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.onCreated = "";
+
+            /**
              * Creates a new Interaction instance using the specified properties.
              * @function create
              * @memberof ubii.interactions.Interaction
@@ -3647,6 +3656,8 @@ $root.ubii = (function() {
                 if (message.outputFormats != null && message.outputFormats.length)
                     for (var i = 0; i < message.outputFormats.length; ++i)
                         $root.ubii.interactions.IOFormat.encode(message.outputFormats[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.onCreated);
                 return writer;
             };
 
@@ -3699,6 +3710,9 @@ $root.ubii = (function() {
                         if (!(message.outputFormats && message.outputFormats.length))
                             message.outputFormats = [];
                         message.outputFormats.push($root.ubii.interactions.IOFormat.decode(reader, reader.uint32()));
+                        break;
+                    case 6:
+                        message.onCreated = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3762,6 +3776,9 @@ $root.ubii = (function() {
                             return "outputFormats." + error;
                     }
                 }
+                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
+                    if (!$util.isString(message.onCreated))
+                        return "onCreated: string expected";
                 return null;
             };
 
@@ -3803,6 +3820,8 @@ $root.ubii = (function() {
                         message.outputFormats[i] = $root.ubii.interactions.IOFormat.fromObject(object.outputFormats[i]);
                     }
                 }
+                if (object.onCreated != null)
+                    message.onCreated = String(object.onCreated);
                 return message;
             };
 
@@ -3827,6 +3846,7 @@ $root.ubii = (function() {
                     object.id = "";
                     object.name = "";
                     object.processingCallback = "";
+                    object.onCreated = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -3844,6 +3864,8 @@ $root.ubii = (function() {
                     for (var j = 0; j < message.outputFormats.length; ++j)
                         object.outputFormats[j] = $root.ubii.interactions.IOFormat.toObject(message.outputFormats[j], options);
                 }
+                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
+                    object.onCreated = message.onCreated;
                 return object;
             };
 

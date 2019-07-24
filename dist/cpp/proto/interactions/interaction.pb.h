@@ -220,6 +220,20 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_processing_callback();
   void set_allocated_processing_callback(::std::string* processing_callback);
 
+  // string on_created = 6;
+  void clear_on_created();
+  static const int kOnCreatedFieldNumber = 6;
+  const ::std::string& on_created() const;
+  void set_on_created(const ::std::string& value);
+  #if LANG_CXX11
+  void set_on_created(::std::string&& value);
+  #endif
+  void set_on_created(const char* value);
+  void set_on_created(const char* value, size_t size);
+  ::std::string* mutable_on_created();
+  ::std::string* release_on_created();
+  void set_allocated_on_created(::std::string* on_created);
+
   // @@protoc_insertion_point(class_scope:ubii.interactions.Interaction)
  private:
 
@@ -229,6 +243,7 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr processing_callback_;
+  ::google::protobuf::internal::ArenaStringPtr on_created_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2finteractions_2finteraction_2eproto::TableStruct;
 };
@@ -563,6 +578,59 @@ inline const ::google::protobuf::RepeatedPtrField< ::ubii::interactions::IOForma
 Interaction::output_formats() const {
   // @@protoc_insertion_point(field_list:ubii.interactions.Interaction.output_formats)
   return output_formats_;
+}
+
+// string on_created = 6;
+inline void Interaction::clear_on_created() {
+  on_created_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Interaction::on_created() const {
+  // @@protoc_insertion_point(field_get:ubii.interactions.Interaction.on_created)
+  return on_created_.GetNoArena();
+}
+inline void Interaction::set_on_created(const ::std::string& value) {
+  
+  on_created_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.on_created)
+}
+#if LANG_CXX11
+inline void Interaction::set_on_created(::std::string&& value) {
+  
+  on_created_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.interactions.Interaction.on_created)
+}
+#endif
+inline void Interaction::set_on_created(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  on_created_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.interactions.Interaction.on_created)
+}
+inline void Interaction::set_on_created(const char* value, size_t size) {
+  
+  on_created_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.interactions.Interaction.on_created)
+}
+inline ::std::string* Interaction::mutable_on_created() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.interactions.Interaction.on_created)
+  return on_created_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Interaction::release_on_created() {
+  // @@protoc_insertion_point(field_release:ubii.interactions.Interaction.on_created)
+  
+  return on_created_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Interaction::set_allocated_on_created(::std::string* on_created) {
+  if (on_created != NULL) {
+    
+  } else {
+    
+  }
+  on_created_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), on_created);
+  // @@protoc_insertion_point(field_set_allocated:ubii.interactions.Interaction.on_created)
 }
 
 // -------------------------------------------------------------------
