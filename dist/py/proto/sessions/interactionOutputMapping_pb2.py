@@ -12,7 +12,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from proto.interactions import ioFormat_pb2 as proto_dot_interactions_dot_ioFormat__pb2
 from proto.devices import topicDemux_pb2 as proto_dot_devices_dot_topicDemux__pb2
 
 
@@ -21,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.sessions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n-proto/sessions/interactionOutputMapping.proto\x12\rubii.sessions\x1a!proto/interactions/ioFormat.proto\x1a\x1eproto/devices/topicDemux.proto\"\x7f\n\x18InteractionOutputMapping\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x05topic\x18\x02 \x01(\tH\x00\x12/\n\x0btopic_demux\x18\x03 \x01(\x0b\x32\x18.ubii.devices.TopicDemuxH\x00\x42\x13\n\x11topic_destination\"Y\n\x1cInteractionOutputMappingList\x12\x39\n\x08\x65lements\x18\x01 \x03(\x0b\x32\'.ubii.sessions.InteractionOutputMappingb\x06proto3')
+  serialized_pb=_b('\n-proto/sessions/interactionOutputMapping.proto\x12\rubii.sessions\x1a\x1eproto/devices/topicDemux.proto\"\x7f\n\x18InteractionOutputMapping\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x05topic\x18\x02 \x01(\tH\x00\x12/\n\x0btopic_demux\x18\x03 \x01(\x0b\x32\x18.ubii.devices.TopicDemuxH\x00\x42\x13\n\x11topic_destination\"Y\n\x1cInteractionOutputMappingList\x12\x39\n\x08\x65lements\x18\x01 \x03(\x0b\x32\'.ubii.sessions.InteractionOutputMappingb\x06proto3')
   ,
-  dependencies=[proto_dot_interactions_dot_ioFormat__pb2.DESCRIPTOR,proto_dot_devices_dot_topicDemux__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_devices_dot_topicDemux__pb2.DESCRIPTOR,])
 
 
 
@@ -71,8 +70,8 @@ _INTERACTIONOUTPUTMAPPING = _descriptor.Descriptor(
       name='topic_destination', full_name='ubii.sessions.InteractionOutputMapping.topic_destination',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=131,
-  serialized_end=258,
+  serialized_start=96,
+  serialized_end=223,
 )
 
 
@@ -102,8 +101,8 @@ _INTERACTIONOUTPUTMAPPINGLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=260,
-  serialized_end=349,
+  serialized_start=225,
+  serialized_end=314,
 )
 
 _INTERACTIONOUTPUTMAPPING.fields_by_name['topic_demux'].message_type = proto_dot_devices_dot_topicDemux__pb2._TOPICDEMUX

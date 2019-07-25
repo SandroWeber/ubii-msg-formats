@@ -13,7 +13,7 @@ var global = Function('return this')();
 
 var proto_general_success_pb = require('../../proto/general/success_pb.js');
 var proto_general_error_pb = require('../../proto/general/error_pb.js');
-var proto_general_lists_pb = require('../../proto/general/lists_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_lists_pb = require('../../proto/topicData/topicDataRecord/dataStructure/lists_pb.js');
 var proto_clients_client_pb = require('../../proto/clients/client_pb.js');
 var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
 var proto_devices_topicMux_pb = require('../../proto/devices/topicMux_pb.js');
@@ -116,7 +116,7 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     sessionList: (f = msg.getSessionList()) && proto_sessions_session_pb.SessionList.toObject(includeInstance, f),
     interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f),
     interactionList: (f = msg.getInteractionList()) && proto_interactions_interaction_pb.InteractionList.toObject(includeInstance, f),
-    stringList: (f = msg.getStringList()) && proto_general_lists_pb.StringList.toObject(includeInstance, f),
+    stringList: (f = msg.getStringList()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.StringList.toObject(includeInstance, f),
     topicMux: (f = msg.getTopicMux()) && proto_devices_topicMux_pb.TopicMux.toObject(includeInstance, f),
     topicMuxList: (f = msg.getTopicMuxList()) && proto_devices_topicMux_pb.TopicMuxList.toObject(includeInstance, f),
     topicDemux: (f = msg.getTopicDemux()) && proto_devices_topicDemux_pb.TopicDemux.toObject(includeInstance, f),
@@ -203,8 +203,8 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       msg.setInteractionList(value);
       break;
     case 10:
-      var value = new proto_general_lists_pb.StringList;
-      reader.readMessage(value,proto_general_lists_pb.StringList.deserializeBinaryFromReader);
+      var value = new proto_topicData_topicDataRecord_dataStructure_lists_pb.StringList;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_lists_pb.StringList.deserializeBinaryFromReader);
       msg.setStringList(value);
       break;
     case 11:
@@ -333,7 +333,7 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
     writer.writeMessage(
       10,
       f,
-      proto_general_lists_pb.StringList.serializeBinaryToWriter
+      proto_topicData_topicDataRecord_dataStructure_lists_pb.StringList.serializeBinaryToWriter
     );
   }
   f = message.getTopicMux();
@@ -642,16 +642,16 @@ proto.ubii.services.ServiceReply.prototype.hasInteractionList = function() {
 
 
 /**
- * optional ubii.general.StringList string_list = 10;
- * @return {?proto.ubii.general.StringList}
+ * optional ubii.dataStructure.StringList string_list = 10;
+ * @return {?proto.ubii.dataStructure.StringList}
  */
 proto.ubii.services.ServiceReply.prototype.getStringList = function() {
-  return /** @type{?proto.ubii.general.StringList} */ (
-    jspb.Message.getWrapperField(this, proto_general_lists_pb.StringList, 10));
+  return /** @type{?proto.ubii.dataStructure.StringList} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_lists_pb.StringList, 10));
 };
 
 
-/** @param {?proto.ubii.general.StringList|undefined} value */
+/** @param {?proto.ubii.dataStructure.StringList|undefined} value */
 proto.ubii.services.ServiceReply.prototype.setStringList = function(value) {
   jspb.Message.setOneofWrapperField(this, 10, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };

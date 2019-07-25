@@ -1817,14 +1817,14 @@ public final class InteractionOutputMappingOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-proto/sessions/interactionOutputMappin" +
-      "g.proto\022\rubii.sessions\032!proto/interactio" +
-      "ns/ioFormat.proto\032\036proto/devices/topicDe" +
-      "mux.proto\"\177\n\030InteractionOutputMapping\022\014\n" +
-      "\004name\030\001 \001(\t\022\017\n\005topic\030\002 \001(\tH\000\022/\n\013topic_de" +
-      "mux\030\003 \001(\0132\030.ubii.devices.TopicDemuxH\000B\023\n" +
-      "\021topic_destination\"Y\n\034InteractionOutputM" +
-      "appingList\0229\n\010elements\030\001 \003(\0132\'.ubii.sess" +
-      "ions.InteractionOutputMappingb\006proto3"
+      "g.proto\022\rubii.sessions\032\036proto/devices/to" +
+      "picDemux.proto\"\177\n\030InteractionOutputMappi" +
+      "ng\022\014\n\004name\030\001 \001(\t\022\017\n\005topic\030\002 \001(\tH\000\022/\n\013top" +
+      "ic_demux\030\003 \001(\0132\030.ubii.devices.TopicDemux" +
+      "H\000B\023\n\021topic_destination\"Y\n\034InteractionOu" +
+      "tputMappingList\0229\n\010elements\030\001 \003(\0132\'.ubii" +
+      ".sessions.InteractionOutputMappingb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1837,7 +1837,6 @@ public final class InteractionOutputMappingOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          ubii.interactions.IoFormat.getDescriptor(),
           ubii.devices.TopicDemuxOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_sessions_InteractionOutputMapping_descriptor =
@@ -1852,7 +1851,6 @@ public final class InteractionOutputMappingOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_InteractionOutputMappingList_descriptor,
         new java.lang.String[] { "Elements", });
-    ubii.interactions.IoFormat.getDescriptor();
     ubii.devices.TopicDemuxOuterClass.getDescriptor();
   }
 

@@ -26,30 +26,31 @@ namespace Ubii.Services {
           string.Concat(
             "CiFwcm90by9zZXJ2aWNlcy9zZXJ2aWNlUmVwbHkucHJvdG8SDXViaWkuc2Vy",
             "dmljZXMaG3Byb3RvL2dlbmVyYWwvc3VjY2Vzcy5wcm90bxoZcHJvdG8vZ2Vu",
-            "ZXJhbC9lcnJvci5wcm90bxoZcHJvdG8vZ2VuZXJhbC9saXN0cy5wcm90bxoa",
-            "cHJvdG8vY2xpZW50cy9jbGllbnQucHJvdG8aGnByb3RvL2RldmljZXMvZGV2",
-            "aWNlLnByb3RvGhxwcm90by9kZXZpY2VzL3RvcGljTXV4LnByb3RvGh5wcm90",
-            "by9kZXZpY2VzL3RvcGljRGVtdXgucHJvdG8aGnByb3RvL3NlcnZlcnMvc2Vy",
-            "dmVyLnByb3RvGhxwcm90by9zZXNzaW9ucy9zZXNzaW9uLnByb3RvGiRwcm90",
-            "by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8iswUKDFNlcnZpY2VS",
-            "ZXBseRIoCgdzdWNjZXNzGAEgASgLMhUudWJpaS5nZW5lcmFsLlN1Y2Nlc3NI",
-            "ABIkCgVlcnJvchgCIAEoCzITLnViaWkuZ2VuZXJhbC5FcnJvckgAEiYKBmNs",
-            "aWVudBgDIAEoCzIULnViaWkuY2xpZW50cy5DbGllbnRIABImCgZkZXZpY2UY",
-            "BCABKAsyFC51YmlpLmRldmljZXMuRGV2aWNlSAASJgoGc2VydmVyGAUgASgL",
-            "MhQudWJpaS5zZXJ2ZXJzLlNlcnZlckgAEikKB3Nlc3Npb24YBiABKAsyFi51",
-            "YmlpLnNlc3Npb25zLlNlc3Npb25IABIyCgxzZXNzaW9uX2xpc3QYByABKAsy",
-            "Gi51YmlpLnNlc3Npb25zLlNlc3Npb25MaXN0SAASNQoLaW50ZXJhY3Rpb24Y",
-            "CCABKAsyHi51YmlpLmludGVyYWN0aW9ucy5JbnRlcmFjdGlvbkgAEj4KEGlu",
-            "dGVyYWN0aW9uX2xpc3QYCSABKAsyIi51YmlpLmludGVyYWN0aW9ucy5JbnRl",
-            "cmFjdGlvbkxpc3RIABIvCgtzdHJpbmdfbGlzdBgKIAEoCzIYLnViaWkuZ2Vu",
-            "ZXJhbC5TdHJpbmdMaXN0SAASKwoJdG9waWNfbXV4GAsgASgLMhYudWJpaS5k",
-            "ZXZpY2VzLlRvcGljTXV4SAASNAoOdG9waWNfbXV4X2xpc3QYDCABKAsyGi51",
-            "YmlpLmRldmljZXMuVG9waWNNdXhMaXN0SAASLwoLdG9waWNfZGVtdXgYDSAB",
-            "KAsyGC51YmlpLmRldmljZXMuVG9waWNEZW11eEgAEjgKEHRvcGljX2RlbXV4",
-            "X2xpc3QYDiABKAsyHC51YmlpLmRldmljZXMuVG9waWNEZW11eExpc3RIAEIG",
-            "CgR0eXBlYgZwcm90bzM="));
+            "ZXJhbC9lcnJvci5wcm90bxo5cHJvdG8vdG9waWNEYXRhL3RvcGljRGF0YVJl",
+            "Y29yZC9kYXRhU3RydWN0dXJlL2xpc3RzLnByb3RvGhpwcm90by9jbGllbnRz",
+            "L2NsaWVudC5wcm90bxoacHJvdG8vZGV2aWNlcy9kZXZpY2UucHJvdG8aHHBy",
+            "b3RvL2RldmljZXMvdG9waWNNdXgucHJvdG8aHnByb3RvL2RldmljZXMvdG9w",
+            "aWNEZW11eC5wcm90bxoacHJvdG8vc2VydmVycy9zZXJ2ZXIucHJvdG8aHHBy",
+            "b3RvL3Nlc3Npb25zL3Nlc3Npb24ucHJvdG8aJHByb3RvL2ludGVyYWN0aW9u",
+            "cy9pbnRlcmFjdGlvbi5wcm90byK5BQoMU2VydmljZVJlcGx5EigKB3N1Y2Nl",
+            "c3MYASABKAsyFS51YmlpLmdlbmVyYWwuU3VjY2Vzc0gAEiQKBWVycm9yGAIg",
+            "ASgLMhMudWJpaS5nZW5lcmFsLkVycm9ySAASJgoGY2xpZW50GAMgASgLMhQu",
+            "dWJpaS5jbGllbnRzLkNsaWVudEgAEiYKBmRldmljZRgEIAEoCzIULnViaWku",
+            "ZGV2aWNlcy5EZXZpY2VIABImCgZzZXJ2ZXIYBSABKAsyFC51YmlpLnNlcnZl",
+            "cnMuU2VydmVySAASKQoHc2Vzc2lvbhgGIAEoCzIWLnViaWkuc2Vzc2lvbnMu",
+            "U2Vzc2lvbkgAEjIKDHNlc3Npb25fbGlzdBgHIAEoCzIaLnViaWkuc2Vzc2lv",
+            "bnMuU2Vzc2lvbkxpc3RIABI1CgtpbnRlcmFjdGlvbhgIIAEoCzIeLnViaWku",
+            "aW50ZXJhY3Rpb25zLkludGVyYWN0aW9uSAASPgoQaW50ZXJhY3Rpb25fbGlz",
+            "dBgJIAEoCzIiLnViaWkuaW50ZXJhY3Rpb25zLkludGVyYWN0aW9uTGlzdEgA",
+            "EjUKC3N0cmluZ19saXN0GAogASgLMh4udWJpaS5kYXRhU3RydWN0dXJlLlN0",
+            "cmluZ0xpc3RIABIrCgl0b3BpY19tdXgYCyABKAsyFi51YmlpLmRldmljZXMu",
+            "VG9waWNNdXhIABI0Cg50b3BpY19tdXhfbGlzdBgMIAEoCzIaLnViaWkuZGV2",
+            "aWNlcy5Ub3BpY011eExpc3RIABIvCgt0b3BpY19kZW11eBgNIAEoCzIYLnVi",
+            "aWkuZGV2aWNlcy5Ub3BpY0RlbXV4SAASOAoQdG9waWNfZGVtdXhfbGlzdBgO",
+            "IAEoCzIcLnViaWkuZGV2aWNlcy5Ub3BpY0RlbXV4TGlzdEgAQgYKBHR5cGVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.General.ListsReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.DataStructure.ListsReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "Interaction", "InteractionList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList" }, new[]{ "Type" }, null, null)
           }));
@@ -238,8 +239,8 @@ namespace Ubii.Services {
     /// <summary>Field number for the "string_list" field.</summary>
     public const int StringListFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.General.StringList StringList {
-      get { return typeCase_ == TypeOneofCase.StringList ? (global::Ubii.General.StringList) type_ : null; }
+    public global::Ubii.DataStructure.StringList StringList {
+      get { return typeCase_ == TypeOneofCase.StringList ? (global::Ubii.DataStructure.StringList) type_ : null; }
       set {
         type_ = value;
         typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.StringList;
@@ -557,7 +558,7 @@ namespace Ubii.Services {
           break;
         case TypeOneofCase.StringList:
           if (StringList == null) {
-            StringList = new global::Ubii.General.StringList();
+            StringList = new global::Ubii.DataStructure.StringList();
           }
           StringList.MergeFrom(other.StringList);
           break;
@@ -680,7 +681,7 @@ namespace Ubii.Services {
             break;
           }
           case 82: {
-            global::Ubii.General.StringList subBuilder = new global::Ubii.General.StringList();
+            global::Ubii.DataStructure.StringList subBuilder = new global::Ubii.DataStructure.StringList();
             if (typeCase_ == TypeOneofCase.StringList) {
               subBuilder.MergeFrom(StringList);
             }

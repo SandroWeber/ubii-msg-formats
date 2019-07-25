@@ -2483,842 +2483,6 @@ $root.ubii = (function() {
             return Error;
         })();
 
-        general.StringList = (function() {
-
-            /**
-             * Properties of a StringList.
-             * @memberof ubii.general
-             * @interface IStringList
-             * @property {Array.<string>|null} [elements] StringList elements
-             */
-
-            /**
-             * Constructs a new StringList.
-             * @memberof ubii.general
-             * @classdesc Represents a StringList.
-             * @implements IStringList
-             * @constructor
-             * @param {ubii.general.IStringList=} [properties] Properties to set
-             */
-            function StringList(properties) {
-                this.elements = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * StringList elements.
-             * @member {Array.<string>} elements
-             * @memberof ubii.general.StringList
-             * @instance
-             */
-            StringList.prototype.elements = $util.emptyArray;
-
-            /**
-             * Creates a new StringList instance using the specified properties.
-             * @function create
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {ubii.general.IStringList=} [properties] Properties to set
-             * @returns {ubii.general.StringList} StringList instance
-             */
-            StringList.create = function create(properties) {
-                return new StringList(properties);
-            };
-
-            /**
-             * Encodes the specified StringList message. Does not implicitly {@link ubii.general.StringList.verify|verify} messages.
-             * @function encode
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {ubii.general.IStringList} message StringList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            StringList.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.elements != null && message.elements.length)
-                    for (var i = 0; i < message.elements.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.elements[i]);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified StringList message, length delimited. Does not implicitly {@link ubii.general.StringList.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {ubii.general.IStringList} message StringList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            StringList.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a StringList message from the specified reader or buffer.
-             * @function decode
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.general.StringList} StringList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            StringList.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.general.StringList();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.elements && message.elements.length))
-                            message.elements = [];
-                        message.elements.push(reader.string());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a StringList message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.general.StringList} StringList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            StringList.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a StringList message.
-             * @function verify
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            StringList.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.elements != null && message.hasOwnProperty("elements")) {
-                    if (!Array.isArray(message.elements))
-                        return "elements: array expected";
-                    for (var i = 0; i < message.elements.length; ++i)
-                        if (!$util.isString(message.elements[i]))
-                            return "elements: string[] expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a StringList message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.general.StringList} StringList
-             */
-            StringList.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.general.StringList)
-                    return object;
-                var message = new $root.ubii.general.StringList();
-                if (object.elements) {
-                    if (!Array.isArray(object.elements))
-                        throw TypeError(".ubii.general.StringList.elements: array expected");
-                    message.elements = [];
-                    for (var i = 0; i < object.elements.length; ++i)
-                        message.elements[i] = String(object.elements[i]);
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a StringList message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof ubii.general.StringList
-             * @static
-             * @param {ubii.general.StringList} message StringList
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            StringList.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.arrays || options.defaults)
-                    object.elements = [];
-                if (message.elements && message.elements.length) {
-                    object.elements = [];
-                    for (var j = 0; j < message.elements.length; ++j)
-                        object.elements[j] = message.elements[j];
-                }
-                return object;
-            };
-
-            /**
-             * Converts this StringList to JSON.
-             * @function toJSON
-             * @memberof ubii.general.StringList
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            StringList.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return StringList;
-        })();
-
-        general.DoubleList = (function() {
-
-            /**
-             * Properties of a DoubleList.
-             * @memberof ubii.general
-             * @interface IDoubleList
-             * @property {Array.<number>|null} [elements] DoubleList elements
-             */
-
-            /**
-             * Constructs a new DoubleList.
-             * @memberof ubii.general
-             * @classdesc Represents a DoubleList.
-             * @implements IDoubleList
-             * @constructor
-             * @param {ubii.general.IDoubleList=} [properties] Properties to set
-             */
-            function DoubleList(properties) {
-                this.elements = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * DoubleList elements.
-             * @member {Array.<number>} elements
-             * @memberof ubii.general.DoubleList
-             * @instance
-             */
-            DoubleList.prototype.elements = $util.emptyArray;
-
-            /**
-             * Creates a new DoubleList instance using the specified properties.
-             * @function create
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {ubii.general.IDoubleList=} [properties] Properties to set
-             * @returns {ubii.general.DoubleList} DoubleList instance
-             */
-            DoubleList.create = function create(properties) {
-                return new DoubleList(properties);
-            };
-
-            /**
-             * Encodes the specified DoubleList message. Does not implicitly {@link ubii.general.DoubleList.verify|verify} messages.
-             * @function encode
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {ubii.general.IDoubleList} message DoubleList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            DoubleList.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.elements != null && message.elements.length) {
-                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
-                    for (var i = 0; i < message.elements.length; ++i)
-                        writer.double(message.elements[i]);
-                    writer.ldelim();
-                }
-                return writer;
-            };
-
-            /**
-             * Encodes the specified DoubleList message, length delimited. Does not implicitly {@link ubii.general.DoubleList.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {ubii.general.IDoubleList} message DoubleList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            DoubleList.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a DoubleList message from the specified reader or buffer.
-             * @function decode
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.general.DoubleList} DoubleList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            DoubleList.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.general.DoubleList();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.elements && message.elements.length))
-                            message.elements = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.elements.push(reader.double());
-                        } else
-                            message.elements.push(reader.double());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a DoubleList message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.general.DoubleList} DoubleList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            DoubleList.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a DoubleList message.
-             * @function verify
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            DoubleList.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.elements != null && message.hasOwnProperty("elements")) {
-                    if (!Array.isArray(message.elements))
-                        return "elements: array expected";
-                    for (var i = 0; i < message.elements.length; ++i)
-                        if (typeof message.elements[i] !== "number")
-                            return "elements: number[] expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a DoubleList message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.general.DoubleList} DoubleList
-             */
-            DoubleList.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.general.DoubleList)
-                    return object;
-                var message = new $root.ubii.general.DoubleList();
-                if (object.elements) {
-                    if (!Array.isArray(object.elements))
-                        throw TypeError(".ubii.general.DoubleList.elements: array expected");
-                    message.elements = [];
-                    for (var i = 0; i < object.elements.length; ++i)
-                        message.elements[i] = Number(object.elements[i]);
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a DoubleList message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof ubii.general.DoubleList
-             * @static
-             * @param {ubii.general.DoubleList} message DoubleList
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            DoubleList.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.arrays || options.defaults)
-                    object.elements = [];
-                if (message.elements && message.elements.length) {
-                    object.elements = [];
-                    for (var j = 0; j < message.elements.length; ++j)
-                        object.elements[j] = options.json && !isFinite(message.elements[j]) ? String(message.elements[j]) : message.elements[j];
-                }
-                return object;
-            };
-
-            /**
-             * Converts this DoubleList to JSON.
-             * @function toJSON
-             * @memberof ubii.general.DoubleList
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            DoubleList.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return DoubleList;
-        })();
-
-        general.FloatList = (function() {
-
-            /**
-             * Properties of a FloatList.
-             * @memberof ubii.general
-             * @interface IFloatList
-             * @property {Array.<number>|null} [elements] FloatList elements
-             */
-
-            /**
-             * Constructs a new FloatList.
-             * @memberof ubii.general
-             * @classdesc Represents a FloatList.
-             * @implements IFloatList
-             * @constructor
-             * @param {ubii.general.IFloatList=} [properties] Properties to set
-             */
-            function FloatList(properties) {
-                this.elements = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * FloatList elements.
-             * @member {Array.<number>} elements
-             * @memberof ubii.general.FloatList
-             * @instance
-             */
-            FloatList.prototype.elements = $util.emptyArray;
-
-            /**
-             * Creates a new FloatList instance using the specified properties.
-             * @function create
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {ubii.general.IFloatList=} [properties] Properties to set
-             * @returns {ubii.general.FloatList} FloatList instance
-             */
-            FloatList.create = function create(properties) {
-                return new FloatList(properties);
-            };
-
-            /**
-             * Encodes the specified FloatList message. Does not implicitly {@link ubii.general.FloatList.verify|verify} messages.
-             * @function encode
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {ubii.general.IFloatList} message FloatList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            FloatList.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.elements != null && message.elements.length) {
-                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
-                    for (var i = 0; i < message.elements.length; ++i)
-                        writer.float(message.elements[i]);
-                    writer.ldelim();
-                }
-                return writer;
-            };
-
-            /**
-             * Encodes the specified FloatList message, length delimited. Does not implicitly {@link ubii.general.FloatList.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {ubii.general.IFloatList} message FloatList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            FloatList.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a FloatList message from the specified reader or buffer.
-             * @function decode
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.general.FloatList} FloatList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            FloatList.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.general.FloatList();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.elements && message.elements.length))
-                            message.elements = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.elements.push(reader.float());
-                        } else
-                            message.elements.push(reader.float());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a FloatList message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.general.FloatList} FloatList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            FloatList.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a FloatList message.
-             * @function verify
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            FloatList.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.elements != null && message.hasOwnProperty("elements")) {
-                    if (!Array.isArray(message.elements))
-                        return "elements: array expected";
-                    for (var i = 0; i < message.elements.length; ++i)
-                        if (typeof message.elements[i] !== "number")
-                            return "elements: number[] expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a FloatList message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.general.FloatList} FloatList
-             */
-            FloatList.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.general.FloatList)
-                    return object;
-                var message = new $root.ubii.general.FloatList();
-                if (object.elements) {
-                    if (!Array.isArray(object.elements))
-                        throw TypeError(".ubii.general.FloatList.elements: array expected");
-                    message.elements = [];
-                    for (var i = 0; i < object.elements.length; ++i)
-                        message.elements[i] = Number(object.elements[i]);
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a FloatList message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof ubii.general.FloatList
-             * @static
-             * @param {ubii.general.FloatList} message FloatList
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            FloatList.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.arrays || options.defaults)
-                    object.elements = [];
-                if (message.elements && message.elements.length) {
-                    object.elements = [];
-                    for (var j = 0; j < message.elements.length; ++j)
-                        object.elements[j] = options.json && !isFinite(message.elements[j]) ? String(message.elements[j]) : message.elements[j];
-                }
-                return object;
-            };
-
-            /**
-             * Converts this FloatList to JSON.
-             * @function toJSON
-             * @memberof ubii.general.FloatList
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            FloatList.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return FloatList;
-        })();
-
-        general.BoolList = (function() {
-
-            /**
-             * Properties of a BoolList.
-             * @memberof ubii.general
-             * @interface IBoolList
-             * @property {Array.<boolean>|null} [elements] BoolList elements
-             */
-
-            /**
-             * Constructs a new BoolList.
-             * @memberof ubii.general
-             * @classdesc Represents a BoolList.
-             * @implements IBoolList
-             * @constructor
-             * @param {ubii.general.IBoolList=} [properties] Properties to set
-             */
-            function BoolList(properties) {
-                this.elements = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * BoolList elements.
-             * @member {Array.<boolean>} elements
-             * @memberof ubii.general.BoolList
-             * @instance
-             */
-            BoolList.prototype.elements = $util.emptyArray;
-
-            /**
-             * Creates a new BoolList instance using the specified properties.
-             * @function create
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {ubii.general.IBoolList=} [properties] Properties to set
-             * @returns {ubii.general.BoolList} BoolList instance
-             */
-            BoolList.create = function create(properties) {
-                return new BoolList(properties);
-            };
-
-            /**
-             * Encodes the specified BoolList message. Does not implicitly {@link ubii.general.BoolList.verify|verify} messages.
-             * @function encode
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {ubii.general.IBoolList} message BoolList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BoolList.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.elements != null && message.elements.length) {
-                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
-                    for (var i = 0; i < message.elements.length; ++i)
-                        writer.bool(message.elements[i]);
-                    writer.ldelim();
-                }
-                return writer;
-            };
-
-            /**
-             * Encodes the specified BoolList message, length delimited. Does not implicitly {@link ubii.general.BoolList.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {ubii.general.IBoolList} message BoolList message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BoolList.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a BoolList message from the specified reader or buffer.
-             * @function decode
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {ubii.general.BoolList} BoolList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BoolList.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.general.BoolList();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.elements && message.elements.length))
-                            message.elements = [];
-                        if ((tag & 7) === 2) {
-                            var end2 = reader.uint32() + reader.pos;
-                            while (reader.pos < end2)
-                                message.elements.push(reader.bool());
-                        } else
-                            message.elements.push(reader.bool());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a BoolList message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {ubii.general.BoolList} BoolList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BoolList.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a BoolList message.
-             * @function verify
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            BoolList.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.elements != null && message.hasOwnProperty("elements")) {
-                    if (!Array.isArray(message.elements))
-                        return "elements: array expected";
-                    for (var i = 0; i < message.elements.length; ++i)
-                        if (typeof message.elements[i] !== "boolean")
-                            return "elements: boolean[] expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a BoolList message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {ubii.general.BoolList} BoolList
-             */
-            BoolList.fromObject = function fromObject(object) {
-                if (object instanceof $root.ubii.general.BoolList)
-                    return object;
-                var message = new $root.ubii.general.BoolList();
-                if (object.elements) {
-                    if (!Array.isArray(object.elements))
-                        throw TypeError(".ubii.general.BoolList.elements: array expected");
-                    message.elements = [];
-                    for (var i = 0; i < object.elements.length; ++i)
-                        message.elements[i] = Boolean(object.elements[i]);
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a BoolList message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof ubii.general.BoolList
-             * @static
-             * @param {ubii.general.BoolList} message BoolList
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            BoolList.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.arrays || options.defaults)
-                    object.elements = [];
-                if (message.elements && message.elements.length) {
-                    object.elements = [];
-                    for (var j = 0; j < message.elements.length; ++j)
-                        object.elements[j] = message.elements[j];
-                }
-                return object;
-            };
-
-            /**
-             * Converts this BoolList to JSON.
-             * @function toJSON
-             * @memberof ubii.general.BoolList
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            BoolList.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            return BoolList;
-        })();
-
         general.Success = (function() {
 
             /**
@@ -5191,7 +4355,7 @@ $root.ubii = (function() {
              * @property {ubii.sessions.ISessionList|null} [sessionList] ServiceReply sessionList
              * @property {ubii.interactions.IInteraction|null} [interaction] ServiceReply interaction
              * @property {ubii.interactions.IInteractionList|null} [interactionList] ServiceReply interactionList
-             * @property {ubii.general.IStringList|null} [stringList] ServiceReply stringList
+             * @property {ubii.dataStructure.IStringList|null} [stringList] ServiceReply stringList
              * @property {ubii.devices.ITopicMux|null} [topicMux] ServiceReply topicMux
              * @property {ubii.devices.ITopicMuxList|null} [topicMuxList] ServiceReply topicMuxList
              * @property {ubii.devices.ITopicDemux|null} [topicDemux] ServiceReply topicDemux
@@ -5287,7 +4451,7 @@ $root.ubii = (function() {
 
             /**
              * ServiceReply stringList.
-             * @member {ubii.general.IStringList|null|undefined} stringList
+             * @member {ubii.dataStructure.IStringList|null|undefined} stringList
              * @memberof ubii.services.ServiceReply
              * @instance
              */
@@ -5382,7 +4546,7 @@ $root.ubii = (function() {
                 if (message.interactionList != null && message.hasOwnProperty("interactionList"))
                     $root.ubii.interactions.InteractionList.encode(message.interactionList, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.stringList != null && message.hasOwnProperty("stringList"))
-                    $root.ubii.general.StringList.encode(message.stringList, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                    $root.ubii.dataStructure.StringList.encode(message.stringList, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.topicMux != null && message.hasOwnProperty("topicMux"))
                     $root.ubii.devices.TopicMux.encode(message.topicMux, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList"))
@@ -5453,7 +4617,7 @@ $root.ubii = (function() {
                         message.interactionList = $root.ubii.interactions.InteractionList.decode(reader, reader.uint32());
                         break;
                     case 10:
-                        message.stringList = $root.ubii.general.StringList.decode(reader, reader.uint32());
+                        message.stringList = $root.ubii.dataStructure.StringList.decode(reader, reader.uint32());
                         break;
                     case 11:
                         message.topicMux = $root.ubii.devices.TopicMux.decode(reader, reader.uint32());
@@ -5596,7 +4760,7 @@ $root.ubii = (function() {
                         return "type: multiple values";
                     properties.type = 1;
                     {
-                        var error = $root.ubii.general.StringList.verify(message.stringList);
+                        var error = $root.ubii.dataStructure.StringList.verify(message.stringList);
                         if (error)
                             return "stringList." + error;
                     }
@@ -5704,7 +4868,7 @@ $root.ubii = (function() {
                 if (object.stringList != null) {
                     if (typeof object.stringList !== "object")
                         throw TypeError(".ubii.services.ServiceReply.stringList: object expected");
-                    message.stringList = $root.ubii.general.StringList.fromObject(object.stringList);
+                    message.stringList = $root.ubii.dataStructure.StringList.fromObject(object.stringList);
                 }
                 if (object.topicMux != null) {
                     if (typeof object.topicMux !== "object")
@@ -5788,7 +4952,7 @@ $root.ubii = (function() {
                         object.type = "interactionList";
                 }
                 if (message.stringList != null && message.hasOwnProperty("stringList")) {
-                    object.stringList = $root.ubii.general.StringList.toObject(message.stringList, options);
+                    object.stringList = $root.ubii.dataStructure.StringList.toObject(message.stringList, options);
                     if (options.oneofs)
                         object.type = "stringList";
                 }
@@ -8887,6 +8051,15 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IObject3D|null} [object3D] TopicDataRecord object3D
              * @property {ubii.dataStructure.IObject2DList|null} [object2DList] TopicDataRecord object2DList
              * @property {ubii.dataStructure.IObject3DList|null} [object3DList] TopicDataRecord object3DList
+             * @property {number|null} [int32] TopicDataRecord int32
+             * @property {number|null} [float] TopicDataRecord float
+             * @property {ubii.dataStructure.IInt32List|null} [int32List] TopicDataRecord int32List
+             * @property {ubii.dataStructure.IFloatList|null} [floatList] TopicDataRecord floatList
+             * @property {ubii.dataStructure.IDoubleList|null} [doubleList] TopicDataRecord doubleList
+             * @property {ubii.dataStructure.IStringList|null} [stringList] TopicDataRecord stringList
+             * @property {ubii.dataStructure.IBoolList|null} [boolList] TopicDataRecord boolList
+             * @property {ubii.dataStructure.IImage2D|null} [image2D] TopicDataRecord image2D
+             * @property {ubii.dataStructure.IImage2DList|null} [image2DList] TopicDataRecord image2DList
              */
 
             /**
@@ -9080,17 +8253,89 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.object3DList = null;
 
+            /**
+             * TopicDataRecord int32.
+             * @member {number} int32
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.int32 = 0;
+
+            /**
+             * TopicDataRecord float.
+             * @member {number} float
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.float = 0;
+
+            /**
+             * TopicDataRecord int32List.
+             * @member {ubii.dataStructure.IInt32List|null|undefined} int32List
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.int32List = null;
+
+            /**
+             * TopicDataRecord floatList.
+             * @member {ubii.dataStructure.IFloatList|null|undefined} floatList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.floatList = null;
+
+            /**
+             * TopicDataRecord doubleList.
+             * @member {ubii.dataStructure.IDoubleList|null|undefined} doubleList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.doubleList = null;
+
+            /**
+             * TopicDataRecord stringList.
+             * @member {ubii.dataStructure.IStringList|null|undefined} stringList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.stringList = null;
+
+            /**
+             * TopicDataRecord boolList.
+             * @member {ubii.dataStructure.IBoolList|null|undefined} boolList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.boolList = null;
+
+            /**
+             * TopicDataRecord image2D.
+             * @member {ubii.dataStructure.IImage2D|null|undefined} image2D
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.image2D = null;
+
+            /**
+             * TopicDataRecord image2DList.
+             * @member {ubii.dataStructure.IImage2DList|null|undefined} image2DList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.image2DList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32"|"float"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32", "float", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -9162,6 +8407,24 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Object2DList.encode(message.object2DList, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                 if (message.object3DList != null && message.hasOwnProperty("object3DList"))
                     $root.ubii.dataStructure.Object3DList.encode(message.object3DList, writer.uint32(/* id 22, wireType 2 =*/178).fork()).ldelim();
+                if (message.int32 != null && message.hasOwnProperty("int32"))
+                    writer.uint32(/* id 23, wireType 0 =*/184).int32(message.int32);
+                if (message.float != null && message.hasOwnProperty("float"))
+                    writer.uint32(/* id 24, wireType 5 =*/197).float(message.float);
+                if (message.int32List != null && message.hasOwnProperty("int32List"))
+                    $root.ubii.dataStructure.Int32List.encode(message.int32List, writer.uint32(/* id 25, wireType 2 =*/202).fork()).ldelim();
+                if (message.floatList != null && message.hasOwnProperty("floatList"))
+                    $root.ubii.dataStructure.FloatList.encode(message.floatList, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
+                if (message.doubleList != null && message.hasOwnProperty("doubleList"))
+                    $root.ubii.dataStructure.DoubleList.encode(message.doubleList, writer.uint32(/* id 27, wireType 2 =*/218).fork()).ldelim();
+                if (message.stringList != null && message.hasOwnProperty("stringList"))
+                    $root.ubii.dataStructure.StringList.encode(message.stringList, writer.uint32(/* id 28, wireType 2 =*/226).fork()).ldelim();
+                if (message.boolList != null && message.hasOwnProperty("boolList"))
+                    $root.ubii.dataStructure.BoolList.encode(message.boolList, writer.uint32(/* id 29, wireType 2 =*/234).fork()).ldelim();
+                if (message.image2D != null && message.hasOwnProperty("image2D"))
+                    $root.ubii.dataStructure.Image2D.encode(message.image2D, writer.uint32(/* id 30, wireType 2 =*/242).fork()).ldelim();
+                if (message.image2DList != null && message.hasOwnProperty("image2DList"))
+                    $root.ubii.dataStructure.Image2DList.encode(message.image2DList, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
                 return writer;
             };
 
@@ -9261,6 +8524,33 @@ $root.ubii = (function() {
                         break;
                     case 22:
                         message.object3DList = $root.ubii.dataStructure.Object3DList.decode(reader, reader.uint32());
+                        break;
+                    case 23:
+                        message.int32 = reader.int32();
+                        break;
+                    case 24:
+                        message.float = reader.float();
+                        break;
+                    case 25:
+                        message.int32List = $root.ubii.dataStructure.Int32List.decode(reader, reader.uint32());
+                        break;
+                    case 26:
+                        message.floatList = $root.ubii.dataStructure.FloatList.decode(reader, reader.uint32());
+                        break;
+                    case 27:
+                        message.doubleList = $root.ubii.dataStructure.DoubleList.decode(reader, reader.uint32());
+                        break;
+                    case 28:
+                        message.stringList = $root.ubii.dataStructure.StringList.decode(reader, reader.uint32());
+                        break;
+                    case 29:
+                        message.boolList = $root.ubii.dataStructure.BoolList.decode(reader, reader.uint32());
+                        break;
+                    case 30:
+                        message.image2D = $root.ubii.dataStructure.Image2D.decode(reader, reader.uint32());
+                        break;
+                    case 31:
+                        message.image2DList = $root.ubii.dataStructure.Image2DList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9495,6 +8785,90 @@ $root.ubii = (function() {
                             return "object3DList." + error;
                     }
                 }
+                if (message.int32 != null && message.hasOwnProperty("int32")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    if (!$util.isInteger(message.int32))
+                        return "int32: integer expected";
+                }
+                if (message.float != null && message.hasOwnProperty("float")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    if (typeof message.float !== "number")
+                        return "float: number expected";
+                }
+                if (message.int32List != null && message.hasOwnProperty("int32List")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Int32List.verify(message.int32List);
+                        if (error)
+                            return "int32List." + error;
+                    }
+                }
+                if (message.floatList != null && message.hasOwnProperty("floatList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.FloatList.verify(message.floatList);
+                        if (error)
+                            return "floatList." + error;
+                    }
+                }
+                if (message.doubleList != null && message.hasOwnProperty("doubleList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.DoubleList.verify(message.doubleList);
+                        if (error)
+                            return "doubleList." + error;
+                    }
+                }
+                if (message.stringList != null && message.hasOwnProperty("stringList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.StringList.verify(message.stringList);
+                        if (error)
+                            return "stringList." + error;
+                    }
+                }
+                if (message.boolList != null && message.hasOwnProperty("boolList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.BoolList.verify(message.boolList);
+                        if (error)
+                            return "boolList." + error;
+                    }
+                }
+                if (message.image2D != null && message.hasOwnProperty("image2D")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Image2D.verify(message.image2D);
+                        if (error)
+                            return "image2D." + error;
+                    }
+                }
+                if (message.image2DList != null && message.hasOwnProperty("image2DList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Image2DList.verify(message.image2DList);
+                        if (error)
+                            return "image2DList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -9607,6 +8981,45 @@ $root.ubii = (function() {
                     if (typeof object.object3DList !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.object3DList: object expected");
                     message.object3DList = $root.ubii.dataStructure.Object3DList.fromObject(object.object3DList);
+                }
+                if (object.int32 != null)
+                    message.int32 = object.int32 | 0;
+                if (object.float != null)
+                    message.float = Number(object.float);
+                if (object.int32List != null) {
+                    if (typeof object.int32List !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.int32List: object expected");
+                    message.int32List = $root.ubii.dataStructure.Int32List.fromObject(object.int32List);
+                }
+                if (object.floatList != null) {
+                    if (typeof object.floatList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.floatList: object expected");
+                    message.floatList = $root.ubii.dataStructure.FloatList.fromObject(object.floatList);
+                }
+                if (object.doubleList != null) {
+                    if (typeof object.doubleList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.doubleList: object expected");
+                    message.doubleList = $root.ubii.dataStructure.DoubleList.fromObject(object.doubleList);
+                }
+                if (object.stringList != null) {
+                    if (typeof object.stringList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.stringList: object expected");
+                    message.stringList = $root.ubii.dataStructure.StringList.fromObject(object.stringList);
+                }
+                if (object.boolList != null) {
+                    if (typeof object.boolList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.boolList: object expected");
+                    message.boolList = $root.ubii.dataStructure.BoolList.fromObject(object.boolList);
+                }
+                if (object.image2D != null) {
+                    if (typeof object.image2D !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.image2D: object expected");
+                    message.image2D = $root.ubii.dataStructure.Image2D.fromObject(object.image2D);
+                }
+                if (object.image2DList != null) {
+                    if (typeof object.image2DList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.image2DList: object expected");
+                    message.image2DList = $root.ubii.dataStructure.Image2DList.fromObject(object.image2DList);
                 }
                 return message;
             };
@@ -9731,6 +9144,51 @@ $root.ubii = (function() {
                     object.object3DList = $root.ubii.dataStructure.Object3DList.toObject(message.object3DList, options);
                     if (options.oneofs)
                         object.type = "object3DList";
+                }
+                if (message.int32 != null && message.hasOwnProperty("int32")) {
+                    object.int32 = message.int32;
+                    if (options.oneofs)
+                        object.type = "int32";
+                }
+                if (message.float != null && message.hasOwnProperty("float")) {
+                    object.float = options.json && !isFinite(message.float) ? String(message.float) : message.float;
+                    if (options.oneofs)
+                        object.type = "float";
+                }
+                if (message.int32List != null && message.hasOwnProperty("int32List")) {
+                    object.int32List = $root.ubii.dataStructure.Int32List.toObject(message.int32List, options);
+                    if (options.oneofs)
+                        object.type = "int32List";
+                }
+                if (message.floatList != null && message.hasOwnProperty("floatList")) {
+                    object.floatList = $root.ubii.dataStructure.FloatList.toObject(message.floatList, options);
+                    if (options.oneofs)
+                        object.type = "floatList";
+                }
+                if (message.doubleList != null && message.hasOwnProperty("doubleList")) {
+                    object.doubleList = $root.ubii.dataStructure.DoubleList.toObject(message.doubleList, options);
+                    if (options.oneofs)
+                        object.type = "doubleList";
+                }
+                if (message.stringList != null && message.hasOwnProperty("stringList")) {
+                    object.stringList = $root.ubii.dataStructure.StringList.toObject(message.stringList, options);
+                    if (options.oneofs)
+                        object.type = "stringList";
+                }
+                if (message.boolList != null && message.hasOwnProperty("boolList")) {
+                    object.boolList = $root.ubii.dataStructure.BoolList.toObject(message.boolList, options);
+                    if (options.oneofs)
+                        object.type = "boolList";
+                }
+                if (message.image2D != null && message.hasOwnProperty("image2D")) {
+                    object.image2D = $root.ubii.dataStructure.Image2D.toObject(message.image2D, options);
+                    if (options.oneofs)
+                        object.type = "image2D";
+                }
+                if (message.image2DList != null && message.hasOwnProperty("image2DList")) {
+                    object.image2DList = $root.ubii.dataStructure.Image2DList.toObject(message.image2DList, options);
+                    if (options.oneofs)
+                        object.type = "image2DList";
                 }
                 return object;
             };
@@ -10259,6 +9717,471 @@ $root.ubii = (function() {
             return values;
         })();
 
+        dataStructure.Image2D = (function() {
+
+            /**
+             * Properties of an Image2D.
+             * @memberof ubii.dataStructure
+             * @interface IImage2D
+             * @property {number|null} [width] Image2D width
+             * @property {number|null} [height] Image2D height
+             * @property {string|null} [dataFormat] Image2D dataFormat
+             * @property {Uint8Array|null} [data] Image2D data
+             */
+
+            /**
+             * Constructs a new Image2D.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents an Image2D.
+             * @implements IImage2D
+             * @constructor
+             * @param {ubii.dataStructure.IImage2D=} [properties] Properties to set
+             */
+            function Image2D(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Image2D width.
+             * @member {number} width
+             * @memberof ubii.dataStructure.Image2D
+             * @instance
+             */
+            Image2D.prototype.width = 0;
+
+            /**
+             * Image2D height.
+             * @member {number} height
+             * @memberof ubii.dataStructure.Image2D
+             * @instance
+             */
+            Image2D.prototype.height = 0;
+
+            /**
+             * Image2D dataFormat.
+             * @member {string} dataFormat
+             * @memberof ubii.dataStructure.Image2D
+             * @instance
+             */
+            Image2D.prototype.dataFormat = "";
+
+            /**
+             * Image2D data.
+             * @member {Uint8Array} data
+             * @memberof ubii.dataStructure.Image2D
+             * @instance
+             */
+            Image2D.prototype.data = $util.newBuffer([]);
+
+            /**
+             * Creates a new Image2D instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {ubii.dataStructure.IImage2D=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Image2D} Image2D instance
+             */
+            Image2D.create = function create(properties) {
+                return new Image2D(properties);
+            };
+
+            /**
+             * Encodes the specified Image2D message. Does not implicitly {@link ubii.dataStructure.Image2D.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {ubii.dataStructure.IImage2D} message Image2D message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Image2D.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.width != null && message.hasOwnProperty("width"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.width);
+                if (message.height != null && message.hasOwnProperty("height"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.height);
+                if (message.dataFormat != null && message.hasOwnProperty("dataFormat"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.dataFormat);
+                if (message.data != null && message.hasOwnProperty("data"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.data);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Image2D message, length delimited. Does not implicitly {@link ubii.dataStructure.Image2D.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {ubii.dataStructure.IImage2D} message Image2D message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Image2D.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an Image2D message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Image2D} Image2D
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Image2D.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Image2D();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.width = reader.int32();
+                        break;
+                    case 2:
+                        message.height = reader.int32();
+                        break;
+                    case 3:
+                        message.dataFormat = reader.string();
+                        break;
+                    case 4:
+                        message.data = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an Image2D message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Image2D} Image2D
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Image2D.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an Image2D message.
+             * @function verify
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Image2D.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.width != null && message.hasOwnProperty("width"))
+                    if (!$util.isInteger(message.width))
+                        return "width: integer expected";
+                if (message.height != null && message.hasOwnProperty("height"))
+                    if (!$util.isInteger(message.height))
+                        return "height: integer expected";
+                if (message.dataFormat != null && message.hasOwnProperty("dataFormat"))
+                    if (!$util.isString(message.dataFormat))
+                        return "dataFormat: string expected";
+                if (message.data != null && message.hasOwnProperty("data"))
+                    if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                        return "data: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates an Image2D message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Image2D} Image2D
+             */
+            Image2D.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Image2D)
+                    return object;
+                var message = new $root.ubii.dataStructure.Image2D();
+                if (object.width != null)
+                    message.width = object.width | 0;
+                if (object.height != null)
+                    message.height = object.height | 0;
+                if (object.dataFormat != null)
+                    message.dataFormat = String(object.dataFormat);
+                if (object.data != null)
+                    if (typeof object.data === "string")
+                        $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
+                    else if (object.data.length)
+                        message.data = object.data;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an Image2D message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Image2D
+             * @static
+             * @param {ubii.dataStructure.Image2D} message Image2D
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Image2D.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.width = 0;
+                    object.height = 0;
+                    object.dataFormat = "";
+                    object.data = options.bytes === String ? "" : [];
+                }
+                if (message.width != null && message.hasOwnProperty("width"))
+                    object.width = message.width;
+                if (message.height != null && message.hasOwnProperty("height"))
+                    object.height = message.height;
+                if (message.dataFormat != null && message.hasOwnProperty("dataFormat"))
+                    object.dataFormat = message.dataFormat;
+                if (message.data != null && message.hasOwnProperty("data"))
+                    object.data = options.bytes === String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === Array ? Array.prototype.slice.call(message.data) : message.data;
+                return object;
+            };
+
+            /**
+             * Converts this Image2D to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Image2D
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Image2D.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Image2D;
+        })();
+
+        dataStructure.Image2DList = (function() {
+
+            /**
+             * Properties of an Image2DList.
+             * @memberof ubii.dataStructure
+             * @interface IImage2DList
+             * @property {Array.<ubii.dataStructure.IImage2D>|null} [elements] Image2DList elements
+             */
+
+            /**
+             * Constructs a new Image2DList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents an Image2DList.
+             * @implements IImage2DList
+             * @constructor
+             * @param {ubii.dataStructure.IImage2DList=} [properties] Properties to set
+             */
+            function Image2DList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Image2DList elements.
+             * @member {Array.<ubii.dataStructure.IImage2D>} elements
+             * @memberof ubii.dataStructure.Image2DList
+             * @instance
+             */
+            Image2DList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Image2DList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {ubii.dataStructure.IImage2DList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Image2DList} Image2DList instance
+             */
+            Image2DList.create = function create(properties) {
+                return new Image2DList(properties);
+            };
+
+            /**
+             * Encodes the specified Image2DList message. Does not implicitly {@link ubii.dataStructure.Image2DList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {ubii.dataStructure.IImage2DList} message Image2DList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Image2DList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Image2D.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Image2DList message, length delimited. Does not implicitly {@link ubii.dataStructure.Image2DList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {ubii.dataStructure.IImage2DList} message Image2DList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Image2DList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an Image2DList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Image2DList} Image2DList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Image2DList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Image2DList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Image2D.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an Image2DList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Image2DList} Image2DList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Image2DList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an Image2DList message.
+             * @function verify
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Image2DList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Image2D.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates an Image2DList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Image2DList} Image2DList
+             */
+            Image2DList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Image2DList)
+                    return object;
+                var message = new $root.ubii.dataStructure.Image2DList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Image2DList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.Image2DList.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Image2D.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an Image2DList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Image2DList
+             * @static
+             * @param {ubii.dataStructure.Image2DList} message Image2DList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Image2DList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Image2D.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Image2DList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Image2DList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Image2DList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Image2DList;
+        })();
+
         dataStructure.KeyEvent = (function() {
 
             /**
@@ -10480,6 +10403,1053 @@ $root.ubii = (function() {
             };
 
             return KeyEvent;
+        })();
+
+        dataStructure.StringList = (function() {
+
+            /**
+             * Properties of a StringList.
+             * @memberof ubii.dataStructure
+             * @interface IStringList
+             * @property {Array.<string>|null} [elements] StringList elements
+             */
+
+            /**
+             * Constructs a new StringList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a StringList.
+             * @implements IStringList
+             * @constructor
+             * @param {ubii.dataStructure.IStringList=} [properties] Properties to set
+             */
+            function StringList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * StringList elements.
+             * @member {Array.<string>} elements
+             * @memberof ubii.dataStructure.StringList
+             * @instance
+             */
+            StringList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new StringList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {ubii.dataStructure.IStringList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.StringList} StringList instance
+             */
+            StringList.create = function create(properties) {
+                return new StringList(properties);
+            };
+
+            /**
+             * Encodes the specified StringList message. Does not implicitly {@link ubii.dataStructure.StringList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {ubii.dataStructure.IStringList} message StringList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StringList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.elements[i]);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified StringList message, length delimited. Does not implicitly {@link ubii.dataStructure.StringList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {ubii.dataStructure.IStringList} message StringList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StringList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a StringList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.StringList} StringList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StringList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.StringList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a StringList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.StringList} StringList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StringList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a StringList message.
+             * @function verify
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            StringList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i)
+                        if (!$util.isString(message.elements[i]))
+                            return "elements: string[] expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a StringList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.StringList} StringList
+             */
+            StringList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.StringList)
+                    return object;
+                var message = new $root.ubii.dataStructure.StringList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.StringList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i)
+                        message.elements[i] = String(object.elements[i]);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a StringList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.StringList
+             * @static
+             * @param {ubii.dataStructure.StringList} message StringList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            StringList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = message.elements[j];
+                }
+                return object;
+            };
+
+            /**
+             * Converts this StringList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.StringList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            StringList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return StringList;
+        })();
+
+        dataStructure.DoubleList = (function() {
+
+            /**
+             * Properties of a DoubleList.
+             * @memberof ubii.dataStructure
+             * @interface IDoubleList
+             * @property {Array.<number>|null} [elements] DoubleList elements
+             */
+
+            /**
+             * Constructs a new DoubleList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a DoubleList.
+             * @implements IDoubleList
+             * @constructor
+             * @param {ubii.dataStructure.IDoubleList=} [properties] Properties to set
+             */
+            function DoubleList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DoubleList elements.
+             * @member {Array.<number>} elements
+             * @memberof ubii.dataStructure.DoubleList
+             * @instance
+             */
+            DoubleList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new DoubleList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {ubii.dataStructure.IDoubleList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.DoubleList} DoubleList instance
+             */
+            DoubleList.create = function create(properties) {
+                return new DoubleList(properties);
+            };
+
+            /**
+             * Encodes the specified DoubleList message. Does not implicitly {@link ubii.dataStructure.DoubleList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {ubii.dataStructure.IDoubleList} message DoubleList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DoubleList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (var i = 0; i < message.elements.length; ++i)
+                        writer.double(message.elements[i]);
+                    writer.ldelim();
+                }
+                return writer;
+            };
+
+            /**
+             * Encodes the specified DoubleList message, length delimited. Does not implicitly {@link ubii.dataStructure.DoubleList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {ubii.dataStructure.IDoubleList} message DoubleList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DoubleList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a DoubleList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.DoubleList} DoubleList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DoubleList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.DoubleList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.elements.push(reader.double());
+                        } else
+                            message.elements.push(reader.double());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a DoubleList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.DoubleList} DoubleList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DoubleList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a DoubleList message.
+             * @function verify
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DoubleList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i)
+                        if (typeof message.elements[i] !== "number")
+                            return "elements: number[] expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a DoubleList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.DoubleList} DoubleList
+             */
+            DoubleList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.DoubleList)
+                    return object;
+                var message = new $root.ubii.dataStructure.DoubleList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.DoubleList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i)
+                        message.elements[i] = Number(object.elements[i]);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a DoubleList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.DoubleList
+             * @static
+             * @param {ubii.dataStructure.DoubleList} message DoubleList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DoubleList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = options.json && !isFinite(message.elements[j]) ? String(message.elements[j]) : message.elements[j];
+                }
+                return object;
+            };
+
+            /**
+             * Converts this DoubleList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.DoubleList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DoubleList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return DoubleList;
+        })();
+
+        dataStructure.FloatList = (function() {
+
+            /**
+             * Properties of a FloatList.
+             * @memberof ubii.dataStructure
+             * @interface IFloatList
+             * @property {Array.<number>|null} [elements] FloatList elements
+             */
+
+            /**
+             * Constructs a new FloatList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a FloatList.
+             * @implements IFloatList
+             * @constructor
+             * @param {ubii.dataStructure.IFloatList=} [properties] Properties to set
+             */
+            function FloatList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FloatList elements.
+             * @member {Array.<number>} elements
+             * @memberof ubii.dataStructure.FloatList
+             * @instance
+             */
+            FloatList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new FloatList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {ubii.dataStructure.IFloatList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.FloatList} FloatList instance
+             */
+            FloatList.create = function create(properties) {
+                return new FloatList(properties);
+            };
+
+            /**
+             * Encodes the specified FloatList message. Does not implicitly {@link ubii.dataStructure.FloatList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {ubii.dataStructure.IFloatList} message FloatList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FloatList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (var i = 0; i < message.elements.length; ++i)
+                        writer.float(message.elements[i]);
+                    writer.ldelim();
+                }
+                return writer;
+            };
+
+            /**
+             * Encodes the specified FloatList message, length delimited. Does not implicitly {@link ubii.dataStructure.FloatList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {ubii.dataStructure.IFloatList} message FloatList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FloatList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a FloatList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.FloatList} FloatList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FloatList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.FloatList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.elements.push(reader.float());
+                        } else
+                            message.elements.push(reader.float());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a FloatList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.FloatList} FloatList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FloatList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a FloatList message.
+             * @function verify
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FloatList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i)
+                        if (typeof message.elements[i] !== "number")
+                            return "elements: number[] expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a FloatList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.FloatList} FloatList
+             */
+            FloatList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.FloatList)
+                    return object;
+                var message = new $root.ubii.dataStructure.FloatList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.FloatList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i)
+                        message.elements[i] = Number(object.elements[i]);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a FloatList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.FloatList
+             * @static
+             * @param {ubii.dataStructure.FloatList} message FloatList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            FloatList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = options.json && !isFinite(message.elements[j]) ? String(message.elements[j]) : message.elements[j];
+                }
+                return object;
+            };
+
+            /**
+             * Converts this FloatList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.FloatList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            FloatList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return FloatList;
+        })();
+
+        dataStructure.BoolList = (function() {
+
+            /**
+             * Properties of a BoolList.
+             * @memberof ubii.dataStructure
+             * @interface IBoolList
+             * @property {Array.<boolean>|null} [elements] BoolList elements
+             */
+
+            /**
+             * Constructs a new BoolList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a BoolList.
+             * @implements IBoolList
+             * @constructor
+             * @param {ubii.dataStructure.IBoolList=} [properties] Properties to set
+             */
+            function BoolList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BoolList elements.
+             * @member {Array.<boolean>} elements
+             * @memberof ubii.dataStructure.BoolList
+             * @instance
+             */
+            BoolList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new BoolList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {ubii.dataStructure.IBoolList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.BoolList} BoolList instance
+             */
+            BoolList.create = function create(properties) {
+                return new BoolList(properties);
+            };
+
+            /**
+             * Encodes the specified BoolList message. Does not implicitly {@link ubii.dataStructure.BoolList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {ubii.dataStructure.IBoolList} message BoolList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BoolList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (var i = 0; i < message.elements.length; ++i)
+                        writer.bool(message.elements[i]);
+                    writer.ldelim();
+                }
+                return writer;
+            };
+
+            /**
+             * Encodes the specified BoolList message, length delimited. Does not implicitly {@link ubii.dataStructure.BoolList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {ubii.dataStructure.IBoolList} message BoolList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BoolList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a BoolList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.BoolList} BoolList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BoolList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.BoolList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.elements.push(reader.bool());
+                        } else
+                            message.elements.push(reader.bool());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a BoolList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.BoolList} BoolList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BoolList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a BoolList message.
+             * @function verify
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BoolList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i)
+                        if (typeof message.elements[i] !== "boolean")
+                            return "elements: boolean[] expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a BoolList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.BoolList} BoolList
+             */
+            BoolList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.BoolList)
+                    return object;
+                var message = new $root.ubii.dataStructure.BoolList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.BoolList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i)
+                        message.elements[i] = Boolean(object.elements[i]);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a BoolList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.BoolList
+             * @static
+             * @param {ubii.dataStructure.BoolList} message BoolList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            BoolList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = message.elements[j];
+                }
+                return object;
+            };
+
+            /**
+             * Converts this BoolList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.BoolList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            BoolList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return BoolList;
+        })();
+
+        dataStructure.Int32List = (function() {
+
+            /**
+             * Properties of an Int32List.
+             * @memberof ubii.dataStructure
+             * @interface IInt32List
+             * @property {Array.<number>|null} [elements] Int32List elements
+             */
+
+            /**
+             * Constructs a new Int32List.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents an Int32List.
+             * @implements IInt32List
+             * @constructor
+             * @param {ubii.dataStructure.IInt32List=} [properties] Properties to set
+             */
+            function Int32List(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Int32List elements.
+             * @member {Array.<number>} elements
+             * @memberof ubii.dataStructure.Int32List
+             * @instance
+             */
+            Int32List.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Int32List instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {ubii.dataStructure.IInt32List=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Int32List} Int32List instance
+             */
+            Int32List.create = function create(properties) {
+                return new Int32List(properties);
+            };
+
+            /**
+             * Encodes the specified Int32List message. Does not implicitly {@link ubii.dataStructure.Int32List.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {ubii.dataStructure.IInt32List} message Int32List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Int32List.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (var i = 0; i < message.elements.length; ++i)
+                        writer.int32(message.elements[i]);
+                    writer.ldelim();
+                }
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Int32List message, length delimited. Does not implicitly {@link ubii.dataStructure.Int32List.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {ubii.dataStructure.IInt32List} message Int32List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Int32List.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an Int32List message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Int32List} Int32List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Int32List.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Int32List();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.elements.push(reader.int32());
+                        } else
+                            message.elements.push(reader.int32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an Int32List message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Int32List} Int32List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Int32List.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an Int32List message.
+             * @function verify
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Int32List.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i)
+                        if (!$util.isInteger(message.elements[i]))
+                            return "elements: integer[] expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates an Int32List message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Int32List} Int32List
+             */
+            Int32List.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Int32List)
+                    return object;
+                var message = new $root.ubii.dataStructure.Int32List();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Int32List.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i)
+                        message.elements[i] = object.elements[i] | 0;
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an Int32List message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Int32List
+             * @static
+             * @param {ubii.dataStructure.Int32List} message Int32List
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Int32List.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = message.elements[j];
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Int32List to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Int32List
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Int32List.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Int32List;
         })();
 
         dataStructure.Matrix3x2 = (function() {

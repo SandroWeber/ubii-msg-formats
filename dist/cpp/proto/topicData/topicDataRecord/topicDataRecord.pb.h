@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/topicData/topicDataRecord/timestamp.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/lists.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/vector2.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/vector3.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/vector4.pb.h"
@@ -46,6 +47,7 @@
 #include "proto/topicData/topicDataRecord/dataStructure/pose3d.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/object2d.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/object3d.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/image.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto 
 
@@ -132,6 +134,15 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     kObject3D = 20,
     kObject2DList = 21,
     kObject3DList = 22,
+    kInt32 = 23,
+    kFloat = 24,
+    kInt32List = 25,
+    kFloatList = 26,
+    kDoubleList = 27,
+    kStringList = 28,
+    kBoolList = 29,
+    kImage2D = 30,
+    kImage2DList = 31,
     TYPE_NOT_SET = 0,
   };
 
@@ -458,6 +469,108 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::dataStructure::Object3DList* mutable_object3d_list();
   void set_allocated_object3d_list(::ubii::dataStructure::Object3DList* object3d_list);
 
+  // int32 int32 = 23;
+  private:
+  bool has_int32() const;
+  public:
+  void clear_int32();
+  static const int kInt32FieldNumber = 23;
+  ::google::protobuf::int32 int32() const;
+  void set_int32(::google::protobuf::int32 value);
+
+  // float float = 24;
+  private:
+  bool has_float_() const;
+  public:
+  void clear_float_();
+  static const int kFloatFieldNumber = 24;
+  float float_() const;
+  void set_float_(float value);
+
+  // .ubii.dataStructure.Int32List int32_list = 25;
+  bool has_int32_list() const;
+  void clear_int32_list();
+  static const int kInt32ListFieldNumber = 25;
+  private:
+  const ::ubii::dataStructure::Int32List& _internal_int32_list() const;
+  public:
+  const ::ubii::dataStructure::Int32List& int32_list() const;
+  ::ubii::dataStructure::Int32List* release_int32_list();
+  ::ubii::dataStructure::Int32List* mutable_int32_list();
+  void set_allocated_int32_list(::ubii::dataStructure::Int32List* int32_list);
+
+  // .ubii.dataStructure.FloatList float_list = 26;
+  bool has_float_list() const;
+  void clear_float_list();
+  static const int kFloatListFieldNumber = 26;
+  private:
+  const ::ubii::dataStructure::FloatList& _internal_float_list() const;
+  public:
+  const ::ubii::dataStructure::FloatList& float_list() const;
+  ::ubii::dataStructure::FloatList* release_float_list();
+  ::ubii::dataStructure::FloatList* mutable_float_list();
+  void set_allocated_float_list(::ubii::dataStructure::FloatList* float_list);
+
+  // .ubii.dataStructure.DoubleList double_list = 27;
+  bool has_double_list() const;
+  void clear_double_list();
+  static const int kDoubleListFieldNumber = 27;
+  private:
+  const ::ubii::dataStructure::DoubleList& _internal_double_list() const;
+  public:
+  const ::ubii::dataStructure::DoubleList& double_list() const;
+  ::ubii::dataStructure::DoubleList* release_double_list();
+  ::ubii::dataStructure::DoubleList* mutable_double_list();
+  void set_allocated_double_list(::ubii::dataStructure::DoubleList* double_list);
+
+  // .ubii.dataStructure.StringList string_list = 28;
+  bool has_string_list() const;
+  void clear_string_list();
+  static const int kStringListFieldNumber = 28;
+  private:
+  const ::ubii::dataStructure::StringList& _internal_string_list() const;
+  public:
+  const ::ubii::dataStructure::StringList& string_list() const;
+  ::ubii::dataStructure::StringList* release_string_list();
+  ::ubii::dataStructure::StringList* mutable_string_list();
+  void set_allocated_string_list(::ubii::dataStructure::StringList* string_list);
+
+  // .ubii.dataStructure.BoolList bool_list = 29;
+  bool has_bool_list() const;
+  void clear_bool_list();
+  static const int kBoolListFieldNumber = 29;
+  private:
+  const ::ubii::dataStructure::BoolList& _internal_bool_list() const;
+  public:
+  const ::ubii::dataStructure::BoolList& bool_list() const;
+  ::ubii::dataStructure::BoolList* release_bool_list();
+  ::ubii::dataStructure::BoolList* mutable_bool_list();
+  void set_allocated_bool_list(::ubii::dataStructure::BoolList* bool_list);
+
+  // .ubii.dataStructure.Image2D image2D = 30;
+  bool has_image2d() const;
+  void clear_image2d();
+  static const int kImage2DFieldNumber = 30;
+  private:
+  const ::ubii::dataStructure::Image2D& _internal_image2d() const;
+  public:
+  const ::ubii::dataStructure::Image2D& image2d() const;
+  ::ubii::dataStructure::Image2D* release_image2d();
+  ::ubii::dataStructure::Image2D* mutable_image2d();
+  void set_allocated_image2d(::ubii::dataStructure::Image2D* image2d);
+
+  // .ubii.dataStructure.Image2DList image2D_list = 31;
+  bool has_image2d_list() const;
+  void clear_image2d_list();
+  static const int kImage2DListFieldNumber = 31;
+  private:
+  const ::ubii::dataStructure::Image2DList& _internal_image2d_list() const;
+  public:
+  const ::ubii::dataStructure::Image2DList& image2d_list() const;
+  ::ubii::dataStructure::Image2DList* release_image2d_list();
+  ::ubii::dataStructure::Image2DList* mutable_image2d_list();
+  void set_allocated_image2d_list(::ubii::dataStructure::Image2DList* image2d_list);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
@@ -482,6 +595,15 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_object3d();
   void set_has_object2d_list();
   void set_has_object3d_list();
+  void set_has_int32();
+  void set_has_float_();
+  void set_has_int32_list();
+  void set_has_float_list();
+  void set_has_double_list();
+  void set_has_string_list();
+  void set_has_bool_list();
+  void set_has_image2d();
+  void set_has_image2d_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -511,6 +633,15 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::Object3D* object3d_;
     ::ubii::dataStructure::Object2DList* object2d_list_;
     ::ubii::dataStructure::Object3DList* object3d_list_;
+    ::google::protobuf::int32 int32_;
+    float float__;
+    ::ubii::dataStructure::Int32List* int32_list_;
+    ::ubii::dataStructure::FloatList* float_list_;
+    ::ubii::dataStructure::DoubleList* double_list_;
+    ::ubii::dataStructure::StringList* string_list_;
+    ::ubii::dataStructure::BoolList* bool_list_;
+    ::ubii::dataStructure::Image2D* image2d_;
+    ::ubii::dataStructure::Image2DList* image2d_list_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1533,6 +1664,330 @@ inline ::ubii::dataStructure::Object3DList* TopicDataRecord::mutable_object3d_li
   }
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.object3D_list)
   return type_.object3d_list_;
+}
+
+// int32 int32 = 23;
+inline bool TopicDataRecord::has_int32() const {
+  return type_case() == kInt32;
+}
+inline void TopicDataRecord::set_has_int32() {
+  _oneof_case_[0] = kInt32;
+}
+inline void TopicDataRecord::clear_int32() {
+  if (has_int32()) {
+    type_.int32_ = 0;
+    clear_has_type();
+  }
+}
+inline ::google::protobuf::int32 TopicDataRecord::int32() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.int32)
+  if (has_int32()) {
+    return type_.int32_;
+  }
+  return 0;
+}
+inline void TopicDataRecord::set_int32(::google::protobuf::int32 value) {
+  if (!has_int32()) {
+    clear_type();
+    set_has_int32();
+  }
+  type_.int32_ = value;
+  // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.int32)
+}
+
+// float float = 24;
+inline bool TopicDataRecord::has_float_() const {
+  return type_case() == kFloat;
+}
+inline void TopicDataRecord::set_has_float_() {
+  _oneof_case_[0] = kFloat;
+}
+inline void TopicDataRecord::clear_float_() {
+  if (has_float_()) {
+    type_.float__ = 0;
+    clear_has_type();
+  }
+}
+inline float TopicDataRecord::float_() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.float)
+  if (has_float_()) {
+    return type_.float__;
+  }
+  return 0;
+}
+inline void TopicDataRecord::set_float_(float value) {
+  if (!has_float_()) {
+    clear_type();
+    set_has_float_();
+  }
+  type_.float__ = value;
+  // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.float)
+}
+
+// .ubii.dataStructure.Int32List int32_list = 25;
+inline bool TopicDataRecord::has_int32_list() const {
+  return type_case() == kInt32List;
+}
+inline void TopicDataRecord::set_has_int32_list() {
+  _oneof_case_[0] = kInt32List;
+}
+inline const ::ubii::dataStructure::Int32List& TopicDataRecord::_internal_int32_list() const {
+  return *type_.int32_list_;
+}
+inline ::ubii::dataStructure::Int32List* TopicDataRecord::release_int32_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.int32_list)
+  if (has_int32_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Int32List* temp = type_.int32_list_;
+    type_.int32_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Int32List& TopicDataRecord::int32_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.int32_list)
+  return has_int32_list()
+      ? *type_.int32_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Int32List*>(&::ubii::dataStructure::_Int32List_default_instance_);
+}
+inline ::ubii::dataStructure::Int32List* TopicDataRecord::mutable_int32_list() {
+  if (!has_int32_list()) {
+    clear_type();
+    set_has_int32_list();
+    type_.int32_list_ = CreateMaybeMessage< ::ubii::dataStructure::Int32List >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.int32_list)
+  return type_.int32_list_;
+}
+
+// .ubii.dataStructure.FloatList float_list = 26;
+inline bool TopicDataRecord::has_float_list() const {
+  return type_case() == kFloatList;
+}
+inline void TopicDataRecord::set_has_float_list() {
+  _oneof_case_[0] = kFloatList;
+}
+inline const ::ubii::dataStructure::FloatList& TopicDataRecord::_internal_float_list() const {
+  return *type_.float_list_;
+}
+inline ::ubii::dataStructure::FloatList* TopicDataRecord::release_float_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.float_list)
+  if (has_float_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::FloatList* temp = type_.float_list_;
+    type_.float_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::FloatList& TopicDataRecord::float_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.float_list)
+  return has_float_list()
+      ? *type_.float_list_
+      : *reinterpret_cast< ::ubii::dataStructure::FloatList*>(&::ubii::dataStructure::_FloatList_default_instance_);
+}
+inline ::ubii::dataStructure::FloatList* TopicDataRecord::mutable_float_list() {
+  if (!has_float_list()) {
+    clear_type();
+    set_has_float_list();
+    type_.float_list_ = CreateMaybeMessage< ::ubii::dataStructure::FloatList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.float_list)
+  return type_.float_list_;
+}
+
+// .ubii.dataStructure.DoubleList double_list = 27;
+inline bool TopicDataRecord::has_double_list() const {
+  return type_case() == kDoubleList;
+}
+inline void TopicDataRecord::set_has_double_list() {
+  _oneof_case_[0] = kDoubleList;
+}
+inline const ::ubii::dataStructure::DoubleList& TopicDataRecord::_internal_double_list() const {
+  return *type_.double_list_;
+}
+inline ::ubii::dataStructure::DoubleList* TopicDataRecord::release_double_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.double_list)
+  if (has_double_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::DoubleList* temp = type_.double_list_;
+    type_.double_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::DoubleList& TopicDataRecord::double_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.double_list)
+  return has_double_list()
+      ? *type_.double_list_
+      : *reinterpret_cast< ::ubii::dataStructure::DoubleList*>(&::ubii::dataStructure::_DoubleList_default_instance_);
+}
+inline ::ubii::dataStructure::DoubleList* TopicDataRecord::mutable_double_list() {
+  if (!has_double_list()) {
+    clear_type();
+    set_has_double_list();
+    type_.double_list_ = CreateMaybeMessage< ::ubii::dataStructure::DoubleList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.double_list)
+  return type_.double_list_;
+}
+
+// .ubii.dataStructure.StringList string_list = 28;
+inline bool TopicDataRecord::has_string_list() const {
+  return type_case() == kStringList;
+}
+inline void TopicDataRecord::set_has_string_list() {
+  _oneof_case_[0] = kStringList;
+}
+inline const ::ubii::dataStructure::StringList& TopicDataRecord::_internal_string_list() const {
+  return *type_.string_list_;
+}
+inline ::ubii::dataStructure::StringList* TopicDataRecord::release_string_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.string_list)
+  if (has_string_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::StringList* temp = type_.string_list_;
+    type_.string_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::StringList& TopicDataRecord::string_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.string_list)
+  return has_string_list()
+      ? *type_.string_list_
+      : *reinterpret_cast< ::ubii::dataStructure::StringList*>(&::ubii::dataStructure::_StringList_default_instance_);
+}
+inline ::ubii::dataStructure::StringList* TopicDataRecord::mutable_string_list() {
+  if (!has_string_list()) {
+    clear_type();
+    set_has_string_list();
+    type_.string_list_ = CreateMaybeMessage< ::ubii::dataStructure::StringList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.string_list)
+  return type_.string_list_;
+}
+
+// .ubii.dataStructure.BoolList bool_list = 29;
+inline bool TopicDataRecord::has_bool_list() const {
+  return type_case() == kBoolList;
+}
+inline void TopicDataRecord::set_has_bool_list() {
+  _oneof_case_[0] = kBoolList;
+}
+inline const ::ubii::dataStructure::BoolList& TopicDataRecord::_internal_bool_list() const {
+  return *type_.bool_list_;
+}
+inline ::ubii::dataStructure::BoolList* TopicDataRecord::release_bool_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.bool_list)
+  if (has_bool_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::BoolList* temp = type_.bool_list_;
+    type_.bool_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::BoolList& TopicDataRecord::bool_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.bool_list)
+  return has_bool_list()
+      ? *type_.bool_list_
+      : *reinterpret_cast< ::ubii::dataStructure::BoolList*>(&::ubii::dataStructure::_BoolList_default_instance_);
+}
+inline ::ubii::dataStructure::BoolList* TopicDataRecord::mutable_bool_list() {
+  if (!has_bool_list()) {
+    clear_type();
+    set_has_bool_list();
+    type_.bool_list_ = CreateMaybeMessage< ::ubii::dataStructure::BoolList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.bool_list)
+  return type_.bool_list_;
+}
+
+// .ubii.dataStructure.Image2D image2D = 30;
+inline bool TopicDataRecord::has_image2d() const {
+  return type_case() == kImage2D;
+}
+inline void TopicDataRecord::set_has_image2d() {
+  _oneof_case_[0] = kImage2D;
+}
+inline const ::ubii::dataStructure::Image2D& TopicDataRecord::_internal_image2d() const {
+  return *type_.image2d_;
+}
+inline ::ubii::dataStructure::Image2D* TopicDataRecord::release_image2d() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.image2D)
+  if (has_image2d()) {
+    clear_has_type();
+      ::ubii::dataStructure::Image2D* temp = type_.image2d_;
+    type_.image2d_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Image2D& TopicDataRecord::image2d() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.image2D)
+  return has_image2d()
+      ? *type_.image2d_
+      : *reinterpret_cast< ::ubii::dataStructure::Image2D*>(&::ubii::dataStructure::_Image2D_default_instance_);
+}
+inline ::ubii::dataStructure::Image2D* TopicDataRecord::mutable_image2d() {
+  if (!has_image2d()) {
+    clear_type();
+    set_has_image2d();
+    type_.image2d_ = CreateMaybeMessage< ::ubii::dataStructure::Image2D >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.image2D)
+  return type_.image2d_;
+}
+
+// .ubii.dataStructure.Image2DList image2D_list = 31;
+inline bool TopicDataRecord::has_image2d_list() const {
+  return type_case() == kImage2DList;
+}
+inline void TopicDataRecord::set_has_image2d_list() {
+  _oneof_case_[0] = kImage2DList;
+}
+inline const ::ubii::dataStructure::Image2DList& TopicDataRecord::_internal_image2d_list() const {
+  return *type_.image2d_list_;
+}
+inline ::ubii::dataStructure::Image2DList* TopicDataRecord::release_image2d_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.image2D_list)
+  if (has_image2d_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Image2DList* temp = type_.image2d_list_;
+    type_.image2d_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::dataStructure::Image2DList& TopicDataRecord::image2d_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.image2D_list)
+  return has_image2d_list()
+      ? *type_.image2d_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Image2DList*>(&::ubii::dataStructure::_Image2DList_default_instance_);
+}
+inline ::ubii::dataStructure::Image2DList* TopicDataRecord::mutable_image2d_list() {
+  if (!has_image2d_list()) {
+    clear_type();
+    set_has_image2d_list();
+    type_.image2d_list_ = CreateMaybeMessage< ::ubii::dataStructure::Image2DList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.image2D_list)
+  return type_.image2d_list_;
 }
 
 inline bool TopicDataRecord::has_type() const {

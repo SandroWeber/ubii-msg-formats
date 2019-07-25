@@ -32,7 +32,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/general/success.pb.h"
 #include "proto/general/error.pb.h"
-#include "proto/general/lists.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/lists.pb.h"
 #include "proto/clients/client.pb.h"
 #include "proto/devices/device.pb.h"
 #include "proto/devices/topicMux.pb.h"
@@ -285,17 +285,17 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::ubii::interactions::InteractionList* mutable_interaction_list();
   void set_allocated_interaction_list(::ubii::interactions::InteractionList* interaction_list);
 
-  // .ubii.general.StringList string_list = 10;
+  // .ubii.dataStructure.StringList string_list = 10;
   bool has_string_list() const;
   void clear_string_list();
   static const int kStringListFieldNumber = 10;
   private:
-  const ::ubii::general::StringList& _internal_string_list() const;
+  const ::ubii::dataStructure::StringList& _internal_string_list() const;
   public:
-  const ::ubii::general::StringList& string_list() const;
-  ::ubii::general::StringList* release_string_list();
-  ::ubii::general::StringList* mutable_string_list();
-  void set_allocated_string_list(::ubii::general::StringList* string_list);
+  const ::ubii::dataStructure::StringList& string_list() const;
+  ::ubii::dataStructure::StringList* release_string_list();
+  ::ubii::dataStructure::StringList* mutable_string_list();
+  void set_allocated_string_list(::ubii::dataStructure::StringList* string_list);
 
   // .ubii.devices.TopicMux topic_mux = 11;
   bool has_topic_mux() const;
@@ -379,7 +379,7 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
     ::ubii::sessions::SessionList* session_list_;
     ::ubii::interactions::Interaction* interaction_;
     ::ubii::interactions::InteractionList* interaction_list_;
-    ::ubii::general::StringList* string_list_;
+    ::ubii::dataStructure::StringList* string_list_;
     ::ubii::devices::TopicMux* topic_mux_;
     ::ubii::devices::TopicMuxList* topic_mux_list_;
     ::ubii::devices::TopicDemux* topic_demux_;
@@ -743,38 +743,38 @@ inline ::ubii::interactions::InteractionList* ServiceReply::mutable_interaction_
   return type_.interaction_list_;
 }
 
-// .ubii.general.StringList string_list = 10;
+// .ubii.dataStructure.StringList string_list = 10;
 inline bool ServiceReply::has_string_list() const {
   return type_case() == kStringList;
 }
 inline void ServiceReply::set_has_string_list() {
   _oneof_case_[0] = kStringList;
 }
-inline const ::ubii::general::StringList& ServiceReply::_internal_string_list() const {
+inline const ::ubii::dataStructure::StringList& ServiceReply::_internal_string_list() const {
   return *type_.string_list_;
 }
-inline ::ubii::general::StringList* ServiceReply::release_string_list() {
+inline ::ubii::dataStructure::StringList* ServiceReply::release_string_list() {
   // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.string_list)
   if (has_string_list()) {
     clear_has_type();
-      ::ubii::general::StringList* temp = type_.string_list_;
+      ::ubii::dataStructure::StringList* temp = type_.string_list_;
     type_.string_list_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-inline const ::ubii::general::StringList& ServiceReply::string_list() const {
+inline const ::ubii::dataStructure::StringList& ServiceReply::string_list() const {
   // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.string_list)
   return has_string_list()
       ? *type_.string_list_
-      : *reinterpret_cast< ::ubii::general::StringList*>(&::ubii::general::_StringList_default_instance_);
+      : *reinterpret_cast< ::ubii::dataStructure::StringList*>(&::ubii::dataStructure::_StringList_default_instance_);
 }
-inline ::ubii::general::StringList* ServiceReply::mutable_string_list() {
+inline ::ubii::dataStructure::StringList* ServiceReply::mutable_string_list() {
   if (!has_string_list()) {
     clear_type();
     set_has_string_list();
-    type_.string_list_ = CreateMaybeMessage< ::ubii::general::StringList >(
+    type_.string_list_ = CreateMaybeMessage< ::ubii::dataStructure::StringList >(
         GetArenaNoVirtual());
   }
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.string_list)

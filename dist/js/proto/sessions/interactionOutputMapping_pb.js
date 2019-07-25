@@ -11,7 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var proto_interactions_ioFormat_pb = require('../../proto/interactions/ioFormat_pb.js');
 var proto_devices_topicDemux_pb = require('../../proto/devices/topicDemux_pb.js');
 goog.exportSymbol('proto.ubii.sessions.InteractionOutputMapping', null, global);
 goog.exportSymbol('proto.ubii.sessions.InteractionOutputMappingList', null, global);

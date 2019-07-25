@@ -22,9 +22,20 @@
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Color;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Image2D;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Image2DList;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_KeyEvent;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BoolList;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DoubleList;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FloatList;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Int32List;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_StringList;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Matrix3x2;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto
@@ -70,7 +81,7 @@ namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<18> scc_info_TopicDataRecord;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<25> scc_info_TopicDataRecord;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto
 namespace ubii {
 namespace topicData {
@@ -98,6 +109,15 @@ class TopicDataRecordDefaultTypeInternal {
   const ::ubii::dataStructure::Object3D* object3d_;
   const ::ubii::dataStructure::Object2DList* object2d_list_;
   const ::ubii::dataStructure::Object3DList* object3d_list_;
+  ::google::protobuf::int32 int32_;
+  float float__;
+  const ::ubii::dataStructure::Int32List* int32_list_;
+  const ::ubii::dataStructure::FloatList* float_list_;
+  const ::ubii::dataStructure::DoubleList* double_list_;
+  const ::ubii::dataStructure::StringList* string_list_;
+  const ::ubii::dataStructure::BoolList* bool_list_;
+  const ::ubii::dataStructure::Image2D* image2d_;
+  const ::ubii::dataStructure::Image2DList* image2d_list_;
 } _TopicDataRecord_default_instance_;
 class TopicDataRecordListDefaultTypeInternal {
  public:
@@ -118,8 +138,8 @@ static void InitDefaultsTopicDataRecord() {
   ::ubii::topicData::TopicDataRecord::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<18> scc_info_TopicDataRecord =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 18, InitDefaultsTopicDataRecord}, {
+::google::protobuf::internal::SCCInfo<25> scc_info_TopicDataRecord =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 25, InitDefaultsTopicDataRecord}, {
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::scc_info_Timestamp.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto::scc_info_Vector2.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto::scc_info_Vector3.base,
@@ -137,7 +157,14 @@ static void InitDefaultsTopicDataRecord() {
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::scc_info_Object2D.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::scc_info_Object3D.base,
       &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::scc_info_Object2DList.base,
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::scc_info_Object3DList.base,}};
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::scc_info_Object3DList.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto::scc_info_Int32List.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto::scc_info_FloatList.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto::scc_info_DoubleList.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto::scc_info_StringList.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto::scc_info_BoolList.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto::scc_info_Image2D.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto::scc_info_Image2DList.base,}};
 
 static void InitDefaultsTopicDataRecordList() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -189,6 +216,15 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object3d_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object2d_list_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object3d_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, int32_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, float__),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, int32_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, float_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, double_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, string_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, bool_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, image2d_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, image2d_list_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, _internal_metadata_),
@@ -199,7 +235,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::topicData::TopicDataRecord)},
-  { 28, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
+  { 37, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -231,63 +267,77 @@ void AddDescriptorsImpl() {
       "\n5proto/topicData/topicDataRecord/topicD"
       "ataRecord.proto\022\016ubii.topicData\032/proto/t"
       "opicData/topicDataRecord/timestamp.proto"
+      "\0329proto/topicData/topicDataRecord/dataSt"
+      "ructure/lists.proto\032;proto/topicData/top"
+      "icDataRecord/dataStructure/vector2.proto"
       "\032;proto/topicData/topicDataRecord/dataSt"
-      "ructure/vector2.proto\032;proto/topicData/t"
-      "opicDataRecord/dataStructure/vector3.pro"
-      "to\032;proto/topicData/topicDataRecord/data"
-      "Structure/vector4.proto\032>proto/topicData"
-      "/topicDataRecord/dataStructure/quaternio"
-      "n.proto\032=proto/topicData/topicDataRecord"
-      "/dataStructure/matrix3x2.proto\032=proto/to"
-      "picData/topicDataRecord/dataStructure/ma"
-      "trix4x4.proto\0329proto/topicData/topicData"
-      "Record/dataStructure/color.proto\032>proto/"
+      "ructure/vector3.proto\032;proto/topicData/t"
+      "opicDataRecord/dataStructure/vector4.pro"
+      "to\032>proto/topicData/topicDataRecord/data"
+      "Structure/quaternion.proto\032=proto/topicD"
+      "ata/topicDataRecord/dataStructure/matrix"
+      "3x2.proto\032=proto/topicData/topicDataReco"
+      "rd/dataStructure/matrix4x4.proto\0329proto/"
       "topicData/topicDataRecord/dataStructure/"
-      "touchEvent.proto\032<proto/topicData/topicD"
-      "ataRecord/dataStructure/keyEvent.proto\032>"
-      "proto/topicData/topicDataRecord/dataStru"
-      "cture/mouseEvent.proto\032<proto/topicData/"
-      "topicDataRecord/dataStructure/myoEvent.p"
-      "roto\032:proto/topicData/topicDataRecord/da"
-      "taStructure/pose2d.proto\032:proto/topicDat"
-      "a/topicDataRecord/dataStructure/pose3d.p"
-      "roto\032<proto/topicData/topicDataRecord/da"
-      "taStructure/object2d.proto\032<proto/topicD"
-      "ata/topicDataRecord/dataStructure/object"
-      "3d.proto\"\356\007\n\017TopicDataRecord\022\r\n\005topic\030\001 "
-      "\001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData."
-      "Timestamp\022\020\n\006double\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001("
-      "\010H\000\022\020\n\006string\030\005 \001(\tH\000\022.\n\007vector2\030\006 \001(\0132\033"
-      ".ubii.dataStructure.Vector2H\000\022.\n\007vector3"
-      "\030\007 \001(\0132\033.ubii.dataStructure.Vector3H\000\022.\n"
-      "\007vector4\030\010 \001(\0132\033.ubii.dataStructure.Vect"
-      "or4H\000\0224\n\nquaternion\030\t \001(\0132\036.ubii.dataStr"
-      "ucture.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035"
-      ".ubii.dataStructure.Matrix3x2H\000\0222\n\tmatri"
-      "x4x4\030\013 \001(\0132\035.ubii.dataStructure.Matrix4x"
-      "4H\000\022*\n\005color\030\014 \001(\0132\031.ubii.dataStructure."
-      "ColorH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.data"
-      "Structure.TouchEventH\000\0221\n\tkey_event\030\016 \001("
-      "\0132\034.ubii.dataStructure.KeyEventH\000\0225\n\013mou"
-      "se_event\030\017 \001(\0132\036.ubii.dataStructure.Mous"
-      "eEventH\000\0221\n\tmyo_event\030\020 \001(\0132\034.ubii.dataS"
-      "tructure.MyoEventH\000\022,\n\006pose2D\030\021 \001(\0132\032.ub"
-      "ii.dataStructure.Pose2DH\000\022,\n\006pose3D\030\022 \001("
-      "\0132\032.ubii.dataStructure.Pose3DH\000\0220\n\010objec"
-      "t2D\030\023 \001(\0132\034.ubii.dataStructure.Object2DH"
-      "\000\0220\n\010object3D\030\024 \001(\0132\034.ubii.dataStructure"
-      ".Object3DH\000\0229\n\robject2D_list\030\025 \001(\0132 .ubi"
-      "i.dataStructure.Object2DListH\000\0229\n\robject"
-      "3D_list\030\026 \001(\0132 .ubii.dataStructure.Objec"
-      "t3DListH\000B\006\n\004type\"H\n\023TopicDataRecordList"
-      "\0221\n\010elements\030\001 \003(\0132\037.ubii.topicData.Topi"
-      "cDataRecordb\006proto3"
+      "color.proto\032>proto/topicData/topicDataRe"
+      "cord/dataStructure/touchEvent.proto\032<pro"
+      "to/topicData/topicDataRecord/dataStructu"
+      "re/keyEvent.proto\032>proto/topicData/topic"
+      "DataRecord/dataStructure/mouseEvent.prot"
+      "o\032<proto/topicData/topicDataRecord/dataS"
+      "tructure/myoEvent.proto\032:proto/topicData"
+      "/topicDataRecord/dataStructure/pose2d.pr"
+      "oto\032:proto/topicData/topicDataRecord/dat"
+      "aStructure/pose3d.proto\032<proto/topicData"
+      "/topicDataRecord/dataStructure/object2d."
+      "proto\032<proto/topicData/topicDataRecord/d"
+      "ataStructure/object3d.proto\0329proto/topic"
+      "Data/topicDataRecord/dataStructure/image"
+      ".proto\"\204\013\n\017TopicDataRecord\022\r\n\005topic\030\001 \001("
+      "\t\022,\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData.Ti"
+      "mestamp\022\020\n\006double\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001(\010H"
+      "\000\022\020\n\006string\030\005 \001(\tH\000\022.\n\007vector2\030\006 \001(\0132\033.u"
+      "bii.dataStructure.Vector2H\000\022.\n\007vector3\030\007"
+      " \001(\0132\033.ubii.dataStructure.Vector3H\000\022.\n\007v"
+      "ector4\030\010 \001(\0132\033.ubii.dataStructure.Vector"
+      "4H\000\0224\n\nquaternion\030\t \001(\0132\036.ubii.dataStruc"
+      "ture.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.u"
+      "bii.dataStructure.Matrix3x2H\000\0222\n\tmatrix4"
+      "x4\030\013 \001(\0132\035.ubii.dataStructure.Matrix4x4H"
+      "\000\022*\n\005color\030\014 \001(\0132\031.ubii.dataStructure.Co"
+      "lorH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.dataSt"
+      "ructure.TouchEventH\000\0221\n\tkey_event\030\016 \001(\0132"
+      "\034.ubii.dataStructure.KeyEventH\000\0225\n\013mouse"
+      "_event\030\017 \001(\0132\036.ubii.dataStructure.MouseE"
+      "ventH\000\0221\n\tmyo_event\030\020 \001(\0132\034.ubii.dataStr"
+      "ucture.MyoEventH\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii"
+      ".dataStructure.Pose2DH\000\022,\n\006pose3D\030\022 \001(\0132"
+      "\032.ubii.dataStructure.Pose3DH\000\0220\n\010object2"
+      "D\030\023 \001(\0132\034.ubii.dataStructure.Object2DH\000\022"
+      "0\n\010object3D\030\024 \001(\0132\034.ubii.dataStructure.O"
+      "bject3DH\000\0229\n\robject2D_list\030\025 \001(\0132 .ubii."
+      "dataStructure.Object2DListH\000\0229\n\robject3D"
+      "_list\030\026 \001(\0132 .ubii.dataStructure.Object3"
+      "DListH\000\022\017\n\005int32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H"
+      "\000\0223\n\nint32_list\030\031 \001(\0132\035.ubii.dataStructu"
+      "re.Int32ListH\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubi"
+      "i.dataStructure.FloatListH\000\0225\n\013double_li"
+      "st\030\033 \001(\0132\036.ubii.dataStructure.DoubleList"
+      "H\000\0225\n\013string_list\030\034 \001(\0132\036.ubii.dataStruc"
+      "ture.StringListH\000\0221\n\tbool_list\030\035 \001(\0132\034.u"
+      "bii.dataStructure.BoolListH\000\022.\n\007image2D\030"
+      "\036 \001(\0132\033.ubii.dataStructure.Image2DH\000\0227\n\014"
+      "image2D_list\030\037 \001(\0132\037.ubii.dataStructure."
+      "Image2DListH\000B\006\n\004type\"H\n\023TopicDataRecord"
+      "List\0221\n\010elements\030\001 \003(\0132\037.ubii.topicData."
+      "TopicDataRecordb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2139);
+      descriptor, 2663);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord/topicDataRecord.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::AddDescriptors();
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector4_2eproto::AddDescriptors();
@@ -303,6 +353,7 @@ void AddDescriptorsImpl() {
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::AddDescriptors();
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto::AddDescriptors();
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -362,6 +413,22 @@ void TopicDataRecord::InitAsDefaultInstance() {
       ::ubii::dataStructure::Object2DList::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.object3d_list_ = const_cast< ::ubii::dataStructure::Object3DList*>(
       ::ubii::dataStructure::Object3DList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.int32_ = 0;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.float__ = 0;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.int32_list_ = const_cast< ::ubii::dataStructure::Int32List*>(
+      ::ubii::dataStructure::Int32List::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.float_list_ = const_cast< ::ubii::dataStructure::FloatList*>(
+      ::ubii::dataStructure::FloatList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.double_list_ = const_cast< ::ubii::dataStructure::DoubleList*>(
+      ::ubii::dataStructure::DoubleList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.string_list_ = const_cast< ::ubii::dataStructure::StringList*>(
+      ::ubii::dataStructure::StringList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.bool_list_ = const_cast< ::ubii::dataStructure::BoolList*>(
+      ::ubii::dataStructure::BoolList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.image2d_ = const_cast< ::ubii::dataStructure::Image2D*>(
+      ::ubii::dataStructure::Image2D::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.image2d_list_ = const_cast< ::ubii::dataStructure::Image2DList*>(
+      ::ubii::dataStructure::Image2DList::internal_default_instance());
 }
 void TopicDataRecord::clear_timestamp() {
   if (GetArenaNoVirtual() == NULL && timestamp_ != NULL) {
@@ -709,6 +776,146 @@ void TopicDataRecord::clear_object3d_list() {
     clear_has_type();
   }
 }
+void TopicDataRecord::set_allocated_int32_list(::ubii::dataStructure::Int32List* int32_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (int32_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      int32_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, int32_list, submessage_arena);
+    }
+    set_has_int32_list();
+    type_.int32_list_ = int32_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.int32_list)
+}
+void TopicDataRecord::clear_int32_list() {
+  if (has_int32_list()) {
+    delete type_.int32_list_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_float_list(::ubii::dataStructure::FloatList* float_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (float_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      float_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, float_list, submessage_arena);
+    }
+    set_has_float_list();
+    type_.float_list_ = float_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.float_list)
+}
+void TopicDataRecord::clear_float_list() {
+  if (has_float_list()) {
+    delete type_.float_list_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_double_list(::ubii::dataStructure::DoubleList* double_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (double_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      double_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, double_list, submessage_arena);
+    }
+    set_has_double_list();
+    type_.double_list_ = double_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.double_list)
+}
+void TopicDataRecord::clear_double_list() {
+  if (has_double_list()) {
+    delete type_.double_list_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_string_list(::ubii::dataStructure::StringList* string_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (string_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      string_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, string_list, submessage_arena);
+    }
+    set_has_string_list();
+    type_.string_list_ = string_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.string_list)
+}
+void TopicDataRecord::clear_string_list() {
+  if (has_string_list()) {
+    delete type_.string_list_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_bool_list(::ubii::dataStructure::BoolList* bool_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (bool_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      bool_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, bool_list, submessage_arena);
+    }
+    set_has_bool_list();
+    type_.bool_list_ = bool_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.bool_list)
+}
+void TopicDataRecord::clear_bool_list() {
+  if (has_bool_list()) {
+    delete type_.bool_list_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_image2d(::ubii::dataStructure::Image2D* image2d) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (image2d) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      image2d = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, image2d, submessage_arena);
+    }
+    set_has_image2d();
+    type_.image2d_ = image2d;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.image2D)
+}
+void TopicDataRecord::clear_image2d() {
+  if (has_image2d()) {
+    delete type_.image2d_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_image2d_list(::ubii::dataStructure::Image2DList* image2d_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (image2d_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      image2d_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, image2d_list, submessage_arena);
+    }
+    set_has_image2d_list();
+    type_.image2d_list_ = image2d_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.image2D_list)
+}
+void TopicDataRecord::clear_image2d_list() {
+  if (has_image2d_list()) {
+    delete type_.image2d_list_;
+    clear_has_type();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TopicDataRecord::kTopicFieldNumber;
 const int TopicDataRecord::kTimestampFieldNumber;
@@ -732,6 +939,15 @@ const int TopicDataRecord::kObject2DFieldNumber;
 const int TopicDataRecord::kObject3DFieldNumber;
 const int TopicDataRecord::kObject2DListFieldNumber;
 const int TopicDataRecord::kObject3DListFieldNumber;
+const int TopicDataRecord::kInt32FieldNumber;
+const int TopicDataRecord::kFloatFieldNumber;
+const int TopicDataRecord::kInt32ListFieldNumber;
+const int TopicDataRecord::kFloatListFieldNumber;
+const int TopicDataRecord::kDoubleListFieldNumber;
+const int TopicDataRecord::kStringListFieldNumber;
+const int TopicDataRecord::kBoolListFieldNumber;
+const int TopicDataRecord::kImage2DFieldNumber;
+const int TopicDataRecord::kImage2DListFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TopicDataRecord::TopicDataRecord()
@@ -834,6 +1050,42 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
     }
     case kObject3DList: {
       mutable_object3d_list()->::ubii::dataStructure::Object3DList::MergeFrom(from.object3d_list());
+      break;
+    }
+    case kInt32: {
+      set_int32(from.int32());
+      break;
+    }
+    case kFloat: {
+      set_float_(from.float_());
+      break;
+    }
+    case kInt32List: {
+      mutable_int32_list()->::ubii::dataStructure::Int32List::MergeFrom(from.int32_list());
+      break;
+    }
+    case kFloatList: {
+      mutable_float_list()->::ubii::dataStructure::FloatList::MergeFrom(from.float_list());
+      break;
+    }
+    case kDoubleList: {
+      mutable_double_list()->::ubii::dataStructure::DoubleList::MergeFrom(from.double_list());
+      break;
+    }
+    case kStringList: {
+      mutable_string_list()->::ubii::dataStructure::StringList::MergeFrom(from.string_list());
+      break;
+    }
+    case kBoolList: {
+      mutable_bool_list()->::ubii::dataStructure::BoolList::MergeFrom(from.bool_list());
+      break;
+    }
+    case kImage2D: {
+      mutable_image2d()->::ubii::dataStructure::Image2D::MergeFrom(from.image2d());
+      break;
+    }
+    case kImage2DList: {
+      mutable_image2d_list()->::ubii::dataStructure::Image2DList::MergeFrom(from.image2d_list());
       break;
     }
     case TYPE_NOT_SET: {
@@ -957,6 +1209,42 @@ void TopicDataRecord::clear_type() {
     }
     case kObject3DList: {
       delete type_.object3d_list_;
+      break;
+    }
+    case kInt32: {
+      // No need to clear
+      break;
+    }
+    case kFloat: {
+      // No need to clear
+      break;
+    }
+    case kInt32List: {
+      delete type_.int32_list_;
+      break;
+    }
+    case kFloatList: {
+      delete type_.float_list_;
+      break;
+    }
+    case kDoubleList: {
+      delete type_.double_list_;
+      break;
+    }
+    case kStringList: {
+      delete type_.string_list_;
+      break;
+    }
+    case kBoolList: {
+      delete type_.bool_list_;
+      break;
+    }
+    case kImage2D: {
+      delete type_.image2d_;
+      break;
+    }
+    case kImage2DList: {
+      delete type_.image2d_list_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -1270,6 +1558,120 @@ bool TopicDataRecord::MergePartialFromCodedStream(
         break;
       }
 
+      // int32 int32 = 23;
+      case 23: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(184u /* 184 & 0xFF */)) {
+          clear_type();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &type_.int32_)));
+          set_has_int32();
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float float = 24;
+      case 24: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(197u /* 197 & 0xFF */)) {
+          clear_type();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &type_.float__)));
+          set_has_float_();
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.Int32List int32_list = 25;
+      case 25: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(202u /* 202 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_int32_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.FloatList float_list = 26;
+      case 26: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(210u /* 210 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_float_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.DoubleList double_list = 27;
+      case 27: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(218u /* 218 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_double_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.StringList string_list = 28;
+      case 28: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(226u /* 226 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_string_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.BoolList bool_list = 29;
+      case 29: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(234u /* 234 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_bool_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.Image2D image2D = 30;
+      case 30: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(242u /* 242 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_image2d()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.Image2DList image2D_list = 31;
+      case 31: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(250u /* 250 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_image2d_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1432,6 +1834,58 @@ void TopicDataRecord::SerializeWithCachedSizes(
   if (has_object3d_list()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       22, this->_internal_object3d_list(), output);
+  }
+
+  // int32 int32 = 23;
+  if (has_int32()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(23, this->int32(), output);
+  }
+
+  // float float = 24;
+  if (has_float_()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(24, this->float_(), output);
+  }
+
+  // .ubii.dataStructure.Int32List int32_list = 25;
+  if (has_int32_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      25, this->_internal_int32_list(), output);
+  }
+
+  // .ubii.dataStructure.FloatList float_list = 26;
+  if (has_float_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      26, this->_internal_float_list(), output);
+  }
+
+  // .ubii.dataStructure.DoubleList double_list = 27;
+  if (has_double_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      27, this->_internal_double_list(), output);
+  }
+
+  // .ubii.dataStructure.StringList string_list = 28;
+  if (has_string_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      28, this->_internal_string_list(), output);
+  }
+
+  // .ubii.dataStructure.BoolList bool_list = 29;
+  if (has_bool_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      29, this->_internal_bool_list(), output);
+  }
+
+  // .ubii.dataStructure.Image2D image2D = 30;
+  if (has_image2d()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      30, this->_internal_image2d(), output);
+  }
+
+  // .ubii.dataStructure.Image2DList image2D_list = 31;
+  if (has_image2d_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      31, this->_internal_image2d_list(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1606,6 +2060,65 @@ void TopicDataRecord::SerializeWithCachedSizes(
         22, this->_internal_object3d_list(), deterministic, target);
   }
 
+  // int32 int32 = 23;
+  if (has_int32()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(23, this->int32(), target);
+  }
+
+  // float float = 24;
+  if (has_float_()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(24, this->float_(), target);
+  }
+
+  // .ubii.dataStructure.Int32List int32_list = 25;
+  if (has_int32_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        25, this->_internal_int32_list(), deterministic, target);
+  }
+
+  // .ubii.dataStructure.FloatList float_list = 26;
+  if (has_float_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        26, this->_internal_float_list(), deterministic, target);
+  }
+
+  // .ubii.dataStructure.DoubleList double_list = 27;
+  if (has_double_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        27, this->_internal_double_list(), deterministic, target);
+  }
+
+  // .ubii.dataStructure.StringList string_list = 28;
+  if (has_string_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        28, this->_internal_string_list(), deterministic, target);
+  }
+
+  // .ubii.dataStructure.BoolList bool_list = 29;
+  if (has_bool_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        29, this->_internal_bool_list(), deterministic, target);
+  }
+
+  // .ubii.dataStructure.Image2D image2D = 30;
+  if (has_image2d()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        30, this->_internal_image2d(), deterministic, target);
+  }
+
+  // .ubii.dataStructure.Image2DList image2D_list = 31;
+  if (has_image2d_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        31, this->_internal_image2d_list(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -1774,6 +2287,67 @@ size_t TopicDataRecord::ByteSizeLong() const {
           *type_.object3d_list_);
       break;
     }
+    // int32 int32 = 23;
+    case kInt32: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->int32());
+      break;
+    }
+    // float float = 24;
+    case kFloat: {
+      total_size += 2 + 4;
+      break;
+    }
+    // .ubii.dataStructure.Int32List int32_list = 25;
+    case kInt32List: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.int32_list_);
+      break;
+    }
+    // .ubii.dataStructure.FloatList float_list = 26;
+    case kFloatList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.float_list_);
+      break;
+    }
+    // .ubii.dataStructure.DoubleList double_list = 27;
+    case kDoubleList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.double_list_);
+      break;
+    }
+    // .ubii.dataStructure.StringList string_list = 28;
+    case kStringList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.string_list_);
+      break;
+    }
+    // .ubii.dataStructure.BoolList bool_list = 29;
+    case kBoolList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.bool_list_);
+      break;
+    }
+    // .ubii.dataStructure.Image2D image2D = 30;
+    case kImage2D: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.image2d_);
+      break;
+    }
+    // .ubii.dataStructure.Image2DList image2D_list = 31;
+    case kImage2DList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.image2d_list_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -1891,6 +2465,42 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
     }
     case kObject3DList: {
       mutable_object3d_list()->::ubii::dataStructure::Object3DList::MergeFrom(from.object3d_list());
+      break;
+    }
+    case kInt32: {
+      set_int32(from.int32());
+      break;
+    }
+    case kFloat: {
+      set_float_(from.float_());
+      break;
+    }
+    case kInt32List: {
+      mutable_int32_list()->::ubii::dataStructure::Int32List::MergeFrom(from.int32_list());
+      break;
+    }
+    case kFloatList: {
+      mutable_float_list()->::ubii::dataStructure::FloatList::MergeFrom(from.float_list());
+      break;
+    }
+    case kDoubleList: {
+      mutable_double_list()->::ubii::dataStructure::DoubleList::MergeFrom(from.double_list());
+      break;
+    }
+    case kStringList: {
+      mutable_string_list()->::ubii::dataStructure::StringList::MergeFrom(from.string_list());
+      break;
+    }
+    case kBoolList: {
+      mutable_bool_list()->::ubii::dataStructure::BoolList::MergeFrom(from.bool_list());
+      break;
+    }
+    case kImage2D: {
+      mutable_image2d()->::ubii::dataStructure::Image2D::MergeFrom(from.image2d());
+      break;
+    }
+    case kImage2DList: {
+      mutable_image2d_list()->::ubii::dataStructure::Image2DList::MergeFrom(from.image2d_list());
       break;
     }
     case TYPE_NOT_SET: {

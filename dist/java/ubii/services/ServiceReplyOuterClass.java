@@ -136,17 +136,17 @@ public final class ServiceReplyOuterClass {
     ubii.interactions.InteractionOuterClass.InteractionListOrBuilder getInteractionListOrBuilder();
 
     /**
-     * <code>.ubii.general.StringList string_list = 10;</code>
+     * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      */
     boolean hasStringList();
     /**
-     * <code>.ubii.general.StringList string_list = 10;</code>
+     * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      */
-    ubii.general.Lists.StringList getStringList();
+    ubii.dataStructure.Lists.StringList getStringList();
     /**
-     * <code>.ubii.general.StringList string_list = 10;</code>
+     * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      */
-    ubii.general.Lists.StringListOrBuilder getStringListOrBuilder();
+    ubii.dataStructure.Lists.StringListOrBuilder getStringListOrBuilder();
 
     /**
      * <code>.ubii.devices.TopicMux topic_mux = 11;</code>
@@ -368,14 +368,14 @@ public final class ServiceReplyOuterClass {
               break;
             }
             case 82: {
-              ubii.general.Lists.StringList.Builder subBuilder = null;
+              ubii.dataStructure.Lists.StringList.Builder subBuilder = null;
               if (typeCase_ == 10) {
-                subBuilder = ((ubii.general.Lists.StringList) type_).toBuilder();
+                subBuilder = ((ubii.dataStructure.Lists.StringList) type_).toBuilder();
               }
               type_ =
-                  input.readMessage(ubii.general.Lists.StringList.parser(), extensionRegistry);
+                  input.readMessage(ubii.dataStructure.Lists.StringList.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.general.Lists.StringList) type_);
+                subBuilder.mergeFrom((ubii.dataStructure.Lists.StringList) type_);
                 type_ = subBuilder.buildPartial();
               }
               typeCase_ = 10;
@@ -767,28 +767,28 @@ public final class ServiceReplyOuterClass {
 
     public static final int STRING_LIST_FIELD_NUMBER = 10;
     /**
-     * <code>.ubii.general.StringList string_list = 10;</code>
+     * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      */
     public boolean hasStringList() {
       return typeCase_ == 10;
     }
     /**
-     * <code>.ubii.general.StringList string_list = 10;</code>
+     * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      */
-    public ubii.general.Lists.StringList getStringList() {
+    public ubii.dataStructure.Lists.StringList getStringList() {
       if (typeCase_ == 10) {
-         return (ubii.general.Lists.StringList) type_;
+         return (ubii.dataStructure.Lists.StringList) type_;
       }
-      return ubii.general.Lists.StringList.getDefaultInstance();
+      return ubii.dataStructure.Lists.StringList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.general.StringList string_list = 10;</code>
+     * <code>.ubii.dataStructure.StringList string_list = 10;</code>
      */
-    public ubii.general.Lists.StringListOrBuilder getStringListOrBuilder() {
+    public ubii.dataStructure.Lists.StringListOrBuilder getStringListOrBuilder() {
       if (typeCase_ == 10) {
-         return (ubii.general.Lists.StringList) type_;
+         return (ubii.dataStructure.Lists.StringList) type_;
       }
-      return ubii.general.Lists.StringList.getDefaultInstance();
+      return ubii.dataStructure.Lists.StringList.getDefaultInstance();
     }
 
     public static final int TOPIC_MUX_FIELD_NUMBER = 11;
@@ -937,7 +937,7 @@ public final class ServiceReplyOuterClass {
         output.writeMessage(9, (ubii.interactions.InteractionOuterClass.InteractionList) type_);
       }
       if (typeCase_ == 10) {
-        output.writeMessage(10, (ubii.general.Lists.StringList) type_);
+        output.writeMessage(10, (ubii.dataStructure.Lists.StringList) type_);
       }
       if (typeCase_ == 11) {
         output.writeMessage(11, (ubii.devices.TopicMuxOuterClass.TopicMux) type_);
@@ -998,7 +998,7 @@ public final class ServiceReplyOuterClass {
       }
       if (typeCase_ == 10) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, (ubii.general.Lists.StringList) type_);
+          .computeMessageSize(10, (ubii.dataStructure.Lists.StringList) type_);
       }
       if (typeCase_ == 11) {
         size += com.google.protobuf.CodedOutputStream
@@ -2804,33 +2804,33 @@ public final class ServiceReplyOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.general.Lists.StringList, ubii.general.Lists.StringList.Builder, ubii.general.Lists.StringListOrBuilder> stringListBuilder_;
+          ubii.dataStructure.Lists.StringList, ubii.dataStructure.Lists.StringList.Builder, ubii.dataStructure.Lists.StringListOrBuilder> stringListBuilder_;
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
       public boolean hasStringList() {
         return typeCase_ == 10;
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
-      public ubii.general.Lists.StringList getStringList() {
+      public ubii.dataStructure.Lists.StringList getStringList() {
         if (stringListBuilder_ == null) {
           if (typeCase_ == 10) {
-            return (ubii.general.Lists.StringList) type_;
+            return (ubii.dataStructure.Lists.StringList) type_;
           }
-          return ubii.general.Lists.StringList.getDefaultInstance();
+          return ubii.dataStructure.Lists.StringList.getDefaultInstance();
         } else {
           if (typeCase_ == 10) {
             return stringListBuilder_.getMessage();
           }
-          return ubii.general.Lists.StringList.getDefaultInstance();
+          return ubii.dataStructure.Lists.StringList.getDefaultInstance();
         }
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
-      public Builder setStringList(ubii.general.Lists.StringList value) {
+      public Builder setStringList(ubii.dataStructure.Lists.StringList value) {
         if (stringListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2844,10 +2844,10 @@ public final class ServiceReplyOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
       public Builder setStringList(
-          ubii.general.Lists.StringList.Builder builderForValue) {
+          ubii.dataStructure.Lists.StringList.Builder builderForValue) {
         if (stringListBuilder_ == null) {
           type_ = builderForValue.build();
           onChanged();
@@ -2858,13 +2858,13 @@ public final class ServiceReplyOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
-      public Builder mergeStringList(ubii.general.Lists.StringList value) {
+      public Builder mergeStringList(ubii.dataStructure.Lists.StringList value) {
         if (stringListBuilder_ == null) {
           if (typeCase_ == 10 &&
-              type_ != ubii.general.Lists.StringList.getDefaultInstance()) {
-            type_ = ubii.general.Lists.StringList.newBuilder((ubii.general.Lists.StringList) type_)
+              type_ != ubii.dataStructure.Lists.StringList.getDefaultInstance()) {
+            type_ = ubii.dataStructure.Lists.StringList.newBuilder((ubii.dataStructure.Lists.StringList) type_)
                 .mergeFrom(value).buildPartial();
           } else {
             type_ = value;
@@ -2880,7 +2880,7 @@ public final class ServiceReplyOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
       public Builder clearStringList() {
         if (stringListBuilder_ == null) {
@@ -2899,37 +2899,37 @@ public final class ServiceReplyOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
-      public ubii.general.Lists.StringList.Builder getStringListBuilder() {
+      public ubii.dataStructure.Lists.StringList.Builder getStringListBuilder() {
         return getStringListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
-      public ubii.general.Lists.StringListOrBuilder getStringListOrBuilder() {
+      public ubii.dataStructure.Lists.StringListOrBuilder getStringListOrBuilder() {
         if ((typeCase_ == 10) && (stringListBuilder_ != null)) {
           return stringListBuilder_.getMessageOrBuilder();
         } else {
           if (typeCase_ == 10) {
-            return (ubii.general.Lists.StringList) type_;
+            return (ubii.dataStructure.Lists.StringList) type_;
           }
-          return ubii.general.Lists.StringList.getDefaultInstance();
+          return ubii.dataStructure.Lists.StringList.getDefaultInstance();
         }
       }
       /**
-       * <code>.ubii.general.StringList string_list = 10;</code>
+       * <code>.ubii.dataStructure.StringList string_list = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.general.Lists.StringList, ubii.general.Lists.StringList.Builder, ubii.general.Lists.StringListOrBuilder> 
+          ubii.dataStructure.Lists.StringList, ubii.dataStructure.Lists.StringList.Builder, ubii.dataStructure.Lists.StringListOrBuilder> 
           getStringListFieldBuilder() {
         if (stringListBuilder_ == null) {
           if (!(typeCase_ == 10)) {
-            type_ = ubii.general.Lists.StringList.getDefaultInstance();
+            type_ = ubii.dataStructure.Lists.StringList.getDefaultInstance();
           }
           stringListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.general.Lists.StringList, ubii.general.Lists.StringList.Builder, ubii.general.Lists.StringListOrBuilder>(
-                  (ubii.general.Lists.StringList) type_,
+              ubii.dataStructure.Lists.StringList, ubii.dataStructure.Lists.StringList.Builder, ubii.dataStructure.Lists.StringListOrBuilder>(
+                  (ubii.dataStructure.Lists.StringList) type_,
                   getParentForChildren(),
                   isClean());
           type_ = null;
@@ -3551,31 +3551,32 @@ public final class ServiceReplyOuterClass {
     java.lang.String[] descriptorData = {
       "\n!proto/services/serviceReply.proto\022\rubi" +
       "i.services\032\033proto/general/success.proto\032" +
-      "\031proto/general/error.proto\032\031proto/genera" +
-      "l/lists.proto\032\032proto/clients/client.prot" +
-      "o\032\032proto/devices/device.proto\032\034proto/dev" +
-      "ices/topicMux.proto\032\036proto/devices/topic" +
-      "Demux.proto\032\032proto/servers/server.proto\032" +
-      "\034proto/sessions/session.proto\032$proto/int" +
-      "eractions/interaction.proto\"\263\005\n\014ServiceR" +
-      "eply\022(\n\007success\030\001 \001(\0132\025.ubii.general.Suc" +
-      "cessH\000\022$\n\005error\030\002 \001(\0132\023.ubii.general.Err" +
-      "orH\000\022&\n\006client\030\003 \001(\0132\024.ubii.clients.Clie" +
-      "ntH\000\022&\n\006device\030\004 \001(\0132\024.ubii.devices.Devi" +
-      "ceH\000\022&\n\006server\030\005 \001(\0132\024.ubii.servers.Serv" +
-      "erH\000\022)\n\007session\030\006 \001(\0132\026.ubii.sessions.Se" +
-      "ssionH\000\0222\n\014session_list\030\007 \001(\0132\032.ubii.ses" +
-      "sions.SessionListH\000\0225\n\013interaction\030\010 \001(\013" +
-      "2\036.ubii.interactions.InteractionH\000\022>\n\020in" +
-      "teraction_list\030\t \001(\0132\".ubii.interactions" +
-      ".InteractionListH\000\022/\n\013string_list\030\n \001(\0132" +
-      "\030.ubii.general.StringListH\000\022+\n\ttopic_mux" +
-      "\030\013 \001(\0132\026.ubii.devices.TopicMuxH\000\0224\n\016topi" +
-      "c_mux_list\030\014 \001(\0132\032.ubii.devices.TopicMux" +
-      "ListH\000\022/\n\013topic_demux\030\r \001(\0132\030.ubii.devic" +
-      "es.TopicDemuxH\000\0228\n\020topic_demux_list\030\016 \001(" +
-      "\0132\034.ubii.devices.TopicDemuxListH\000B\006\n\004typ" +
-      "eb\006proto3"
+      "\031proto/general/error.proto\0329proto/topicD" +
+      "ata/topicDataRecord/dataStructure/lists." +
+      "proto\032\032proto/clients/client.proto\032\032proto" +
+      "/devices/device.proto\032\034proto/devices/top" +
+      "icMux.proto\032\036proto/devices/topicDemux.pr" +
+      "oto\032\032proto/servers/server.proto\032\034proto/s" +
+      "essions/session.proto\032$proto/interaction" +
+      "s/interaction.proto\"\271\005\n\014ServiceReply\022(\n\007" +
+      "success\030\001 \001(\0132\025.ubii.general.SuccessH\000\022$" +
+      "\n\005error\030\002 \001(\0132\023.ubii.general.ErrorH\000\022&\n\006" +
+      "client\030\003 \001(\0132\024.ubii.clients.ClientH\000\022&\n\006" +
+      "device\030\004 \001(\0132\024.ubii.devices.DeviceH\000\022&\n\006" +
+      "server\030\005 \001(\0132\024.ubii.servers.ServerH\000\022)\n\007" +
+      "session\030\006 \001(\0132\026.ubii.sessions.SessionH\000\022" +
+      "2\n\014session_list\030\007 \001(\0132\032.ubii.sessions.Se" +
+      "ssionListH\000\0225\n\013interaction\030\010 \001(\0132\036.ubii." +
+      "interactions.InteractionH\000\022>\n\020interactio" +
+      "n_list\030\t \001(\0132\".ubii.interactions.Interac" +
+      "tionListH\000\0225\n\013string_list\030\n \001(\0132\036.ubii.d" +
+      "ataStructure.StringListH\000\022+\n\ttopic_mux\030\013" +
+      " \001(\0132\026.ubii.devices.TopicMuxH\000\0224\n\016topic_" +
+      "mux_list\030\014 \001(\0132\032.ubii.devices.TopicMuxLi" +
+      "stH\000\022/\n\013topic_demux\030\r \001(\0132\030.ubii.devices" +
+      ".TopicDemuxH\000\0228\n\020topic_demux_list\030\016 \001(\0132" +
+      "\034.ubii.devices.TopicDemuxListH\000B\006\n\004typeb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3590,7 +3591,7 @@ public final class ServiceReplyOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.general.SuccessOuterClass.getDescriptor(),
           ubii.general.ErrorOuterClass.getDescriptor(),
-          ubii.general.Lists.getDescriptor(),
+          ubii.dataStructure.Lists.getDescriptor(),
           ubii.clients.ClientOuterClass.getDescriptor(),
           ubii.devices.DeviceOuterClass.getDescriptor(),
           ubii.devices.TopicMuxOuterClass.getDescriptor(),
@@ -3607,7 +3608,7 @@ public final class ServiceReplyOuterClass {
         new java.lang.String[] { "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "Interaction", "InteractionList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "Type", });
     ubii.general.SuccessOuterClass.getDescriptor();
     ubii.general.ErrorOuterClass.getDescriptor();
-    ubii.general.Lists.getDescriptor();
+    ubii.dataStructure.Lists.getDescriptor();
     ubii.clients.ClientOuterClass.getDescriptor();
     ubii.devices.DeviceOuterClass.getDescriptor();
     ubii.devices.TopicMuxOuterClass.getDescriptor();

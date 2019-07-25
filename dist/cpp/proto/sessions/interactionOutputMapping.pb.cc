@@ -128,20 +128,19 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n-proto/sessions/interactionOutputMappin"
-      "g.proto\022\rubii.sessions\032!proto/interactio"
-      "ns/ioFormat.proto\032\036proto/devices/topicDe"
-      "mux.proto\"\177\n\030InteractionOutputMapping\022\014\n"
-      "\004name\030\001 \001(\t\022\017\n\005topic\030\002 \001(\tH\000\022/\n\013topic_de"
-      "mux\030\003 \001(\0132\030.ubii.devices.TopicDemuxH\000B\023\n"
-      "\021topic_destination\"Y\n\034InteractionOutputM"
-      "appingList\0229\n\010elements\030\001 \003(\0132\'.ubii.sess"
-      "ions.InteractionOutputMappingb\006proto3"
+      "g.proto\022\rubii.sessions\032\036proto/devices/to"
+      "picDemux.proto\"\177\n\030InteractionOutputMappi"
+      "ng\022\014\n\004name\030\001 \001(\t\022\017\n\005topic\030\002 \001(\tH\000\022/\n\013top"
+      "ic_demux\030\003 \001(\0132\030.ubii.devices.TopicDemux"
+      "H\000B\023\n\021topic_destination\"Y\n\034InteractionOu"
+      "tputMappingList\0229\n\010elements\030\001 \003(\0132\'.ubii"
+      ".sessions.InteractionOutputMappingb\006prot"
+      "o3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 357);
+      descriptor, 322);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/sessions/interactionOutputMapping.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2finteractions_2fioFormat_2eproto::AddDescriptors();
   ::protobuf_proto_2fdevices_2ftopicDemux_2eproto::AddDescriptors();
 }
 
