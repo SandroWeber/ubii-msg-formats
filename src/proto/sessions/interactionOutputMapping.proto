@@ -1,7 +1,6 @@
 syntax = "proto3";
 package ubii.sessions;
 
-import "proto/interactions/ioFormat.proto";
 import "proto/devices/topicDemux.proto";
 
 message InteractionOutputMapping {
