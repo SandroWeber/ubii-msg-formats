@@ -2,6 +2,7 @@ syntax = "proto3";
 package ubii.topicData;
 
 import "proto/topicData/topicDataRecord/timestamp.proto";
+import "proto/topicData/topicDataRecord/dataStructure/lists.proto";
 import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
 import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
 import "proto/topicData/topicDataRecord/dataStructure/vector4.proto";
@@ -17,6 +18,7 @@ import "proto/topicData/topicDataRecord/dataStructure/pose2d.proto";
 import "proto/topicData/topicDataRecord/dataStructure/pose3d.proto";
 import "proto/topicData/topicDataRecord/dataStructure/object2d.proto";
 import "proto/topicData/topicDataRecord/dataStructure/object3d.proto";
+import "proto/topicData/topicDataRecord/dataStructure/image.proto";
 
 message TopicDataRecord {
     string topic = 1;
@@ -42,6 +44,15 @@ message TopicDataRecord {
         ubii.dataStructure.Object3D object3D = 20;
         ubii.dataStructure.Object2DList object2D_list = 21;
         ubii.dataStructure.Object3DList object3D_list = 22;
+        int32 int32 = 23;
+        float float = 24;
+        ubii.dataStructure.Int32List int32_list = 25;
+        ubii.dataStructure.FloatList float_list = 26;
+        ubii.dataStructure.DoubleList double_list = 27;
+        ubii.dataStructure.StringList string_list = 28;
+        ubii.dataStructure.BoolList bool_list = 29;
+        ubii.dataStructure.Image2D image2D = 30;
+        ubii.dataStructure.Image2DList image2D_list = 31;
     }    
 }
 

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package ubii.general;
+package ubii.dataStructure;
 
 message StringList {
     repeated string elements = 1;
@@ -15,4 +15,8 @@ message FloatList {
 
 message BoolList {
     repeated bool elements = 1;
+}
+
+message Int32List {
+    repeated int32 elements = 1;
 }

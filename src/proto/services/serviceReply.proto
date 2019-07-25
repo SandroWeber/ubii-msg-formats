@@ -3,7 +3,7 @@ package ubii.services;
 
 import "proto/general/success.proto";
 import "proto/general/error.proto";
-import "proto/general/lists.proto";
+import "proto/topicData/topicDataRecord/dataStructure/lists.proto";
 import "proto/clients/client.proto";
 import "proto/devices/device.proto";
 import "proto/devices/topicMux.proto";
@@ -23,7 +23,7 @@ message ServiceReply {
         ubii.sessions.SessionList session_list = 7;
         ubii.interactions.Interaction interaction = 8;
         ubii.interactions.InteractionList interaction_list = 9;
-        ubii.general.StringList string_list = 10;
+        ubii.dataStructure.StringList string_list = 10;
         ubii.devices.TopicMux topic_mux = 11;
         ubii.devices.TopicMuxList topic_mux_list = 12;
         ubii.devices.TopicDemux topic_demux = 13;
