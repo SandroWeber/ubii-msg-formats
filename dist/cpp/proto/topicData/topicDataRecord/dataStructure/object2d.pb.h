@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/topicData/topicDataRecord/dataStructure/pose2d.pb.h"
+#include "proto/topicData/topicDataRecord/dataStructure/vector2.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto 
 
@@ -180,12 +181,25 @@ class Object2D : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::ubii::dataStructure::Pose2D* mutable_pose();
   void set_allocated_pose(::ubii::dataStructure::Pose2D* pose);
 
+  // .ubii.dataStructure.Vector2 size = 3;
+  bool has_size() const;
+  void clear_size();
+  static const int kSizeFieldNumber = 3;
+  private:
+  const ::ubii::dataStructure::Vector2& _internal_size() const;
+  public:
+  const ::ubii::dataStructure::Vector2& size() const;
+  ::ubii::dataStructure::Vector2* release_size();
+  ::ubii::dataStructure::Vector2* mutable_size();
+  void set_allocated_size(::ubii::dataStructure::Vector2* size);
+
   // @@protoc_insertion_point(class_scope:ubii.dataStructure.Object2D)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::ubii::dataStructure::Pose2D* pose_;
+  ::ubii::dataStructure::Vector2* size_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject2d_2eproto::TableStruct;
 };
@@ -408,6 +422,54 @@ inline void Object2D::set_allocated_pose(::ubii::dataStructure::Pose2D* pose) {
   }
   pose_ = pose;
   // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Object2D.pose)
+}
+
+// .ubii.dataStructure.Vector2 size = 3;
+inline bool Object2D::has_size() const {
+  return this != internal_default_instance() && size_ != NULL;
+}
+inline const ::ubii::dataStructure::Vector2& Object2D::_internal_size() const {
+  return *size_;
+}
+inline const ::ubii::dataStructure::Vector2& Object2D::size() const {
+  const ::ubii::dataStructure::Vector2* p = size_;
+  // @@protoc_insertion_point(field_get:ubii.dataStructure.Object2D.size)
+  return p != NULL ? *p : *reinterpret_cast<const ::ubii::dataStructure::Vector2*>(
+      &::ubii::dataStructure::_Vector2_default_instance_);
+}
+inline ::ubii::dataStructure::Vector2* Object2D::release_size() {
+  // @@protoc_insertion_point(field_release:ubii.dataStructure.Object2D.size)
+  
+  ::ubii::dataStructure::Vector2* temp = size_;
+  size_ = NULL;
+  return temp;
+}
+inline ::ubii::dataStructure::Vector2* Object2D::mutable_size() {
+  
+  if (size_ == NULL) {
+    auto* p = CreateMaybeMessage<::ubii::dataStructure::Vector2>(GetArenaNoVirtual());
+    size_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.dataStructure.Object2D.size)
+  return size_;
+}
+inline void Object2D::set_allocated_size(::ubii::dataStructure::Vector2* size) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(size_);
+  }
+  if (size) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      size = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, size, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  size_ = size;
+  // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Object2D.size)
 }
 
 // -------------------------------------------------------------------

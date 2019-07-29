@@ -178,6 +178,50 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   const ::google::protobuf::RepeatedPtrField< ::ubii::interactions::IOFormat >&
       output_formats() const;
 
+  // repeated string authors = 8;
+  int authors_size() const;
+  void clear_authors();
+  static const int kAuthorsFieldNumber = 8;
+  const ::std::string& authors(int index) const;
+  ::std::string* mutable_authors(int index);
+  void set_authors(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_authors(int index, ::std::string&& value);
+  #endif
+  void set_authors(int index, const char* value);
+  void set_authors(int index, const char* value, size_t size);
+  ::std::string* add_authors();
+  void add_authors(const ::std::string& value);
+  #if LANG_CXX11
+  void add_authors(::std::string&& value);
+  #endif
+  void add_authors(const char* value);
+  void add_authors(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& authors() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_authors();
+
+  // repeated string tags = 9;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 9;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_tags();
+
   // string id = 1;
   void clear_id();
   static const int kIdFieldNumber = 1;
@@ -234,16 +278,25 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_on_created();
   void set_allocated_on_created(::std::string* on_created);
 
+  // float process_frequency = 7;
+  void clear_process_frequency();
+  static const int kProcessFrequencyFieldNumber = 7;
+  float process_frequency() const;
+  void set_process_frequency(float value);
+
   // @@protoc_insertion_point(class_scope:ubii.interactions.Interaction)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::ubii::interactions::IOFormat > input_formats_;
   ::google::protobuf::RepeatedPtrField< ::ubii::interactions::IOFormat > output_formats_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> authors_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr processing_callback_;
   ::google::protobuf::internal::ArenaStringPtr on_created_;
+  float process_frequency_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2finteractions_2finteraction_2eproto::TableStruct;
 };
@@ -631,6 +684,158 @@ inline void Interaction::set_allocated_on_created(::std::string* on_created) {
   }
   on_created_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), on_created);
   // @@protoc_insertion_point(field_set_allocated:ubii.interactions.Interaction.on_created)
+}
+
+// float process_frequency = 7;
+inline void Interaction::clear_process_frequency() {
+  process_frequency_ = 0;
+}
+inline float Interaction::process_frequency() const {
+  // @@protoc_insertion_point(field_get:ubii.interactions.Interaction.process_frequency)
+  return process_frequency_;
+}
+inline void Interaction::set_process_frequency(float value) {
+  
+  process_frequency_ = value;
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.process_frequency)
+}
+
+// repeated string authors = 8;
+inline int Interaction::authors_size() const {
+  return authors_.size();
+}
+inline void Interaction::clear_authors() {
+  authors_.Clear();
+}
+inline const ::std::string& Interaction::authors(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.interactions.Interaction.authors)
+  return authors_.Get(index);
+}
+inline ::std::string* Interaction::mutable_authors(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.interactions.Interaction.authors)
+  return authors_.Mutable(index);
+}
+inline void Interaction::set_authors(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.authors)
+  authors_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Interaction::set_authors(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.authors)
+  authors_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Interaction::set_authors(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  authors_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.interactions.Interaction.authors)
+}
+inline void Interaction::set_authors(int index, const char* value, size_t size) {
+  authors_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.interactions.Interaction.authors)
+}
+inline ::std::string* Interaction::add_authors() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.interactions.Interaction.authors)
+  return authors_.Add();
+}
+inline void Interaction::add_authors(const ::std::string& value) {
+  authors_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.interactions.Interaction.authors)
+}
+#if LANG_CXX11
+inline void Interaction::add_authors(::std::string&& value) {
+  authors_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.interactions.Interaction.authors)
+}
+#endif
+inline void Interaction::add_authors(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  authors_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.interactions.Interaction.authors)
+}
+inline void Interaction::add_authors(const char* value, size_t size) {
+  authors_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.interactions.Interaction.authors)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Interaction::authors() const {
+  // @@protoc_insertion_point(field_list:ubii.interactions.Interaction.authors)
+  return authors_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Interaction::mutable_authors() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.interactions.Interaction.authors)
+  return &authors_;
+}
+
+// repeated string tags = 9;
+inline int Interaction::tags_size() const {
+  return tags_.size();
+}
+inline void Interaction::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& Interaction::tags(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.interactions.Interaction.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* Interaction::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.interactions.Interaction.tags)
+  return tags_.Mutable(index);
+}
+inline void Interaction::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Interaction::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Interaction::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.interactions.Interaction.tags)
+}
+inline void Interaction::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.interactions.Interaction.tags)
+}
+inline ::std::string* Interaction::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.interactions.Interaction.tags)
+  return tags_.Add();
+}
+inline void Interaction::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.interactions.Interaction.tags)
+}
+#if LANG_CXX11
+inline void Interaction::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.interactions.Interaction.tags)
+}
+#endif
+inline void Interaction::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.interactions.Interaction.tags)
+}
+inline void Interaction::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.interactions.Interaction.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Interaction::tags() const {
+  // @@protoc_insertion_point(field_list:ubii.interactions.Interaction.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Interaction::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.interactions.Interaction.tags)
+  return &tags_;
 }
 
 // -------------------------------------------------------------------

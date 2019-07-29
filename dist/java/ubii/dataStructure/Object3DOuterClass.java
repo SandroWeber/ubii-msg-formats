@@ -29,17 +29,30 @@ public final class Object3DOuterClass {
         getIdBytes();
 
     /**
-     * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+     * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      */
     boolean hasPose();
     /**
-     * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+     * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      */
     ubii.dataStructure.Pose3DOuterClass.Pose3D getPose();
     /**
-     * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+     * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      */
     ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder getPoseOrBuilder();
+
+    /**
+     * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+     */
+    boolean hasSize();
+    /**
+     * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+     */
+    ubii.dataStructure.Vector3OuterClass.Vector3 getSize();
+    /**
+     * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+     */
+    ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getSizeOrBuilder();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.Object3D}
@@ -87,7 +100,7 @@ public final class Object3DOuterClass {
               id_ = s;
               break;
             }
-            case 26: {
+            case 18: {
               ubii.dataStructure.Pose3DOuterClass.Pose3D.Builder subBuilder = null;
               if (pose_ != null) {
                 subBuilder = pose_.toBuilder();
@@ -96,6 +109,19 @@ public final class Object3DOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pose_);
                 pose_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              ubii.dataStructure.Vector3OuterClass.Vector3.Builder subBuilder = null;
+              if (size_ != null) {
+                subBuilder = size_.toBuilder();
+              }
+              size_ = input.readMessage(ubii.dataStructure.Vector3OuterClass.Vector3.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(size_);
+                size_ = subBuilder.buildPartial();
               }
 
               break;
@@ -166,25 +192,46 @@ public final class Object3DOuterClass {
       }
     }
 
-    public static final int POSE_FIELD_NUMBER = 3;
+    public static final int POSE_FIELD_NUMBER = 2;
     private ubii.dataStructure.Pose3DOuterClass.Pose3D pose_;
     /**
-     * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+     * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      */
     public boolean hasPose() {
       return pose_ != null;
     }
     /**
-     * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+     * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      */
     public ubii.dataStructure.Pose3DOuterClass.Pose3D getPose() {
       return pose_ == null ? ubii.dataStructure.Pose3DOuterClass.Pose3D.getDefaultInstance() : pose_;
     }
     /**
-     * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+     * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      */
     public ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder getPoseOrBuilder() {
       return getPose();
+    }
+
+    public static final int SIZE_FIELD_NUMBER = 3;
+    private ubii.dataStructure.Vector3OuterClass.Vector3 size_;
+    /**
+     * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+     */
+    public boolean hasSize() {
+      return size_ != null;
+    }
+    /**
+     * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+     */
+    public ubii.dataStructure.Vector3OuterClass.Vector3 getSize() {
+      return size_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : size_;
+    }
+    /**
+     * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+     */
+    public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getSizeOrBuilder() {
+      return getSize();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -205,7 +252,10 @@ public final class Object3DOuterClass {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (pose_ != null) {
-        output.writeMessage(3, getPose());
+        output.writeMessage(2, getPose());
+      }
+      if (size_ != null) {
+        output.writeMessage(3, getSize());
       }
       unknownFields.writeTo(output);
     }
@@ -221,7 +271,11 @@ public final class Object3DOuterClass {
       }
       if (pose_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getPose());
+          .computeMessageSize(2, getPose());
+      }
+      if (size_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getSize());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -246,6 +300,11 @@ public final class Object3DOuterClass {
         result = result && getPose()
             .equals(other.getPose());
       }
+      result = result && (hasSize() == other.hasSize());
+      if (hasSize()) {
+        result = result && getSize()
+            .equals(other.getSize());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -262,6 +321,10 @@ public final class Object3DOuterClass {
       if (hasPose()) {
         hash = (37 * hash) + POSE_FIELD_NUMBER;
         hash = (53 * hash) + getPose().hashCode();
+      }
+      if (hasSize()) {
+        hash = (37 * hash) + SIZE_FIELD_NUMBER;
+        hash = (53 * hash) + getSize().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -404,6 +467,12 @@ public final class Object3DOuterClass {
           pose_ = null;
           poseBuilder_ = null;
         }
+        if (sizeBuilder_ == null) {
+          size_ = null;
+        } else {
+          size_ = null;
+          sizeBuilder_ = null;
+        }
         return this;
       }
 
@@ -435,6 +504,11 @@ public final class Object3DOuterClass {
           result.pose_ = pose_;
         } else {
           result.pose_ = poseBuilder_.build();
+        }
+        if (sizeBuilder_ == null) {
+          result.size_ = size_;
+        } else {
+          result.size_ = sizeBuilder_.build();
         }
         onBuilt();
         return result;
@@ -490,6 +564,9 @@ public final class Object3DOuterClass {
         }
         if (other.hasPose()) {
           mergePose(other.getPose());
+        }
+        if (other.hasSize()) {
+          mergeSize(other.getSize());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -593,13 +670,13 @@ public final class Object3DOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Pose3DOuterClass.Pose3D, ubii.dataStructure.Pose3DOuterClass.Pose3D.Builder, ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder> poseBuilder_;
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public boolean hasPose() {
         return poseBuilder_ != null || pose_ != null;
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public ubii.dataStructure.Pose3DOuterClass.Pose3D getPose() {
         if (poseBuilder_ == null) {
@@ -609,7 +686,7 @@ public final class Object3DOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public Builder setPose(ubii.dataStructure.Pose3DOuterClass.Pose3D value) {
         if (poseBuilder_ == null) {
@@ -625,7 +702,7 @@ public final class Object3DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public Builder setPose(
           ubii.dataStructure.Pose3DOuterClass.Pose3D.Builder builderForValue) {
@@ -639,7 +716,7 @@ public final class Object3DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public Builder mergePose(ubii.dataStructure.Pose3DOuterClass.Pose3D value) {
         if (poseBuilder_ == null) {
@@ -657,7 +734,7 @@ public final class Object3DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public Builder clearPose() {
         if (poseBuilder_ == null) {
@@ -671,7 +748,7 @@ public final class Object3DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public ubii.dataStructure.Pose3DOuterClass.Pose3D.Builder getPoseBuilder() {
         
@@ -679,7 +756,7 @@ public final class Object3DOuterClass {
         return getPoseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       public ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder getPoseOrBuilder() {
         if (poseBuilder_ != null) {
@@ -690,7 +767,7 @@ public final class Object3DOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.Pose3D pose = 3;</code>
+       * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Pose3DOuterClass.Pose3D, ubii.dataStructure.Pose3DOuterClass.Pose3D.Builder, ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder> 
@@ -704,6 +781,123 @@ public final class Object3DOuterClass {
           pose_ = null;
         }
         return poseBuilder_;
+      }
+
+      private ubii.dataStructure.Vector3OuterClass.Vector3 size_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> sizeBuilder_;
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public boolean hasSize() {
+        return sizeBuilder_ != null || size_ != null;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public ubii.dataStructure.Vector3OuterClass.Vector3 getSize() {
+        if (sizeBuilder_ == null) {
+          return size_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : size_;
+        } else {
+          return sizeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public Builder setSize(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
+        if (sizeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          size_ = value;
+          onChanged();
+        } else {
+          sizeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public Builder setSize(
+          ubii.dataStructure.Vector3OuterClass.Vector3.Builder builderForValue) {
+        if (sizeBuilder_ == null) {
+          size_ = builderForValue.build();
+          onChanged();
+        } else {
+          sizeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public Builder mergeSize(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
+        if (sizeBuilder_ == null) {
+          if (size_ != null) {
+            size_ =
+              ubii.dataStructure.Vector3OuterClass.Vector3.newBuilder(size_).mergeFrom(value).buildPartial();
+          } else {
+            size_ = value;
+          }
+          onChanged();
+        } else {
+          sizeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public Builder clearSize() {
+        if (sizeBuilder_ == null) {
+          size_ = null;
+          onChanged();
+        } else {
+          size_ = null;
+          sizeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public ubii.dataStructure.Vector3OuterClass.Vector3.Builder getSizeBuilder() {
+        
+        onChanged();
+        return getSizeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getSizeOrBuilder() {
+        if (sizeBuilder_ != null) {
+          return sizeBuilder_.getMessageOrBuilder();
+        } else {
+          return size_ == null ?
+              ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : size_;
+        }
+      }
+      /**
+       * <code>.ubii.dataStructure.Vector3 size = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> 
+          getSizeFieldBuilder() {
+        if (sizeBuilder_ == null) {
+          sizeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder>(
+                  getSize(),
+                  getParentForChildren(),
+                  isClean());
+          size_ = null;
+        }
+        return sizeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1562,10 +1756,13 @@ public final class Object3DOuterClass {
       "\n<proto/topicData/topicDataRecord/dataSt" +
       "ructure/object3d.proto\022\022ubii.dataStructu" +
       "re\032:proto/topicData/topicDataRecord/data" +
-      "Structure/pose3d.proto\"@\n\010Object3D\022\n\n\002id" +
-      "\030\001 \001(\t\022(\n\004pose\030\003 \001(\0132\032.ubii.dataStructur" +
-      "e.Pose3D\">\n\014Object3DList\022.\n\010elements\030\001 \003" +
-      "(\0132\034.ubii.dataStructure.Object3Db\006proto3"
+      "Structure/pose3d.proto\032;proto/topicData/" +
+      "topicDataRecord/dataStructure/vector3.pr" +
+      "oto\"k\n\010Object3D\022\n\n\002id\030\001 \001(\t\022(\n\004pose\030\002 \001(" +
+      "\0132\032.ubii.dataStructure.Pose3D\022)\n\004size\030\003 " +
+      "\001(\0132\033.ubii.dataStructure.Vector3\">\n\014Obje" +
+      "ct3DList\022.\n\010elements\030\001 \003(\0132\034.ubii.dataSt" +
+      "ructure.Object3Db\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1579,13 +1776,14 @@ public final class Object3DOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.dataStructure.Pose3DOuterClass.getDescriptor(),
+          ubii.dataStructure.Vector3OuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_dataStructure_Object3D_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Object3D_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_dataStructure_Object3D_descriptor,
-        new java.lang.String[] { "Id", "Pose", });
+        new java.lang.String[] { "Id", "Pose", "Size", });
     internal_static_ubii_dataStructure_Object3DList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_dataStructure_Object3DList_fieldAccessorTable = new
@@ -1593,6 +1791,7 @@ public final class Object3DOuterClass {
         internal_static_ubii_dataStructure_Object3DList_descriptor,
         new java.lang.String[] { "Elements", });
     ubii.dataStructure.Pose3DOuterClass.getDescriptor();
+    ubii.dataStructure.Vector3OuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

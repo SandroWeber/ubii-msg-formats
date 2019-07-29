@@ -2717,6 +2717,9 @@ $root.ubii = (function() {
              * @property {Array.<ubii.interactions.IIOFormat>|null} [inputFormats] Interaction inputFormats
              * @property {Array.<ubii.interactions.IIOFormat>|null} [outputFormats] Interaction outputFormats
              * @property {string|null} [onCreated] Interaction onCreated
+             * @property {number|null} [processFrequency] Interaction processFrequency
+             * @property {Array.<string>|null} [authors] Interaction authors
+             * @property {Array.<string>|null} [tags] Interaction tags
              */
 
             /**
@@ -2730,6 +2733,8 @@ $root.ubii = (function() {
             function Interaction(properties) {
                 this.inputFormats = [];
                 this.outputFormats = [];
+                this.authors = [];
+                this.tags = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2785,6 +2790,30 @@ $root.ubii = (function() {
             Interaction.prototype.onCreated = "";
 
             /**
+             * Interaction processFrequency.
+             * @member {number} processFrequency
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.processFrequency = 0;
+
+            /**
+             * Interaction authors.
+             * @member {Array.<string>} authors
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.authors = $util.emptyArray;
+
+            /**
+             * Interaction tags.
+             * @member {Array.<string>} tags
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.tags = $util.emptyArray;
+
+            /**
              * Creates a new Interaction instance using the specified properties.
              * @function create
              * @memberof ubii.interactions.Interaction
@@ -2822,6 +2851,14 @@ $root.ubii = (function() {
                         $root.ubii.interactions.IOFormat.encode(message.outputFormats[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.onCreated != null && message.hasOwnProperty("onCreated"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.onCreated);
+                if (message.processFrequency != null && message.hasOwnProperty("processFrequency"))
+                    writer.uint32(/* id 7, wireType 5 =*/61).float(message.processFrequency);
+                if (message.authors != null && message.authors.length)
+                    for (var i = 0; i < message.authors.length; ++i)
+                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.authors[i]);
+                if (message.tags != null && message.tags.length)
+                    for (var i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 9, wireType 2 =*/74).string(message.tags[i]);
                 return writer;
             };
 
@@ -2877,6 +2914,19 @@ $root.ubii = (function() {
                         break;
                     case 6:
                         message.onCreated = reader.string();
+                        break;
+                    case 7:
+                        message.processFrequency = reader.float();
+                        break;
+                    case 8:
+                        if (!(message.authors && message.authors.length))
+                            message.authors = [];
+                        message.authors.push(reader.string());
+                        break;
+                    case 9:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -2943,6 +2993,23 @@ $root.ubii = (function() {
                 if (message.onCreated != null && message.hasOwnProperty("onCreated"))
                     if (!$util.isString(message.onCreated))
                         return "onCreated: string expected";
+                if (message.processFrequency != null && message.hasOwnProperty("processFrequency"))
+                    if (typeof message.processFrequency !== "number")
+                        return "processFrequency: number expected";
+                if (message.authors != null && message.hasOwnProperty("authors")) {
+                    if (!Array.isArray(message.authors))
+                        return "authors: array expected";
+                    for (var i = 0; i < message.authors.length; ++i)
+                        if (!$util.isString(message.authors[i]))
+                            return "authors: string[] expected";
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (var i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
                 return null;
             };
 
@@ -2986,6 +3053,22 @@ $root.ubii = (function() {
                 }
                 if (object.onCreated != null)
                     message.onCreated = String(object.onCreated);
+                if (object.processFrequency != null)
+                    message.processFrequency = Number(object.processFrequency);
+                if (object.authors) {
+                    if (!Array.isArray(object.authors))
+                        throw TypeError(".ubii.interactions.Interaction.authors: array expected");
+                    message.authors = [];
+                    for (var i = 0; i < object.authors.length; ++i)
+                        message.authors[i] = String(object.authors[i]);
+                }
+                if (object.tags) {
+                    if (!Array.isArray(object.tags))
+                        throw TypeError(".ubii.interactions.Interaction.tags: array expected");
+                    message.tags = [];
+                    for (var i = 0; i < object.tags.length; ++i)
+                        message.tags[i] = String(object.tags[i]);
+                }
                 return message;
             };
 
@@ -3005,12 +3088,15 @@ $root.ubii = (function() {
                 if (options.arrays || options.defaults) {
                     object.inputFormats = [];
                     object.outputFormats = [];
+                    object.authors = [];
+                    object.tags = [];
                 }
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
                     object.processingCallback = "";
                     object.onCreated = "";
+                    object.processFrequency = 0;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -3030,6 +3116,18 @@ $root.ubii = (function() {
                 }
                 if (message.onCreated != null && message.hasOwnProperty("onCreated"))
                     object.onCreated = message.onCreated;
+                if (message.processFrequency != null && message.hasOwnProperty("processFrequency"))
+                    object.processFrequency = options.json && !isFinite(message.processFrequency) ? String(message.processFrequency) : message.processFrequency;
+                if (message.authors && message.authors.length) {
+                    object.authors = [];
+                    for (var j = 0; j < message.authors.length; ++j)
+                        object.authors[j] = message.authors[j];
+                }
+                if (message.tags && message.tags.length) {
+                    object.tags = [];
+                    for (var j = 0; j < message.tags.length; ++j)
+                        object.tags[j] = message.tags[j];
+                }
                 return object;
             };
 
@@ -12828,6 +12926,7 @@ $root.ubii = (function() {
              * @interface IObject2D
              * @property {string|null} [id] Object2D id
              * @property {ubii.dataStructure.IPose2D|null} [pose] Object2D pose
+             * @property {ubii.dataStructure.IVector2|null} [size] Object2D size
              */
 
             /**
@@ -12862,6 +12961,14 @@ $root.ubii = (function() {
             Object2D.prototype.pose = null;
 
             /**
+             * Object2D size.
+             * @member {ubii.dataStructure.IVector2|null|undefined} size
+             * @memberof ubii.dataStructure.Object2D
+             * @instance
+             */
+            Object2D.prototype.size = null;
+
+            /**
              * Creates a new Object2D instance using the specified properties.
              * @function create
              * @memberof ubii.dataStructure.Object2D
@@ -12889,6 +12996,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
                 if (message.pose != null && message.hasOwnProperty("pose"))
                     $root.ubii.dataStructure.Pose2D.encode(message.pose, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.size != null && message.hasOwnProperty("size"))
+                    $root.ubii.dataStructure.Vector2.encode(message.size, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -12928,6 +13037,9 @@ $root.ubii = (function() {
                         break;
                     case 2:
                         message.pose = $root.ubii.dataStructure.Pose2D.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.size = $root.ubii.dataStructure.Vector2.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -12972,6 +13084,11 @@ $root.ubii = (function() {
                     if (error)
                         return "pose." + error;
                 }
+                if (message.size != null && message.hasOwnProperty("size")) {
+                    var error = $root.ubii.dataStructure.Vector2.verify(message.size);
+                    if (error)
+                        return "size." + error;
+                }
                 return null;
             };
 
@@ -12994,6 +13111,11 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.dataStructure.Object2D.pose: object expected");
                     message.pose = $root.ubii.dataStructure.Pose2D.fromObject(object.pose);
                 }
+                if (object.size != null) {
+                    if (typeof object.size !== "object")
+                        throw TypeError(".ubii.dataStructure.Object2D.size: object expected");
+                    message.size = $root.ubii.dataStructure.Vector2.fromObject(object.size);
+                }
                 return message;
             };
 
@@ -13013,11 +13135,14 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.id = "";
                     object.pose = null;
+                    object.size = null;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 if (message.pose != null && message.hasOwnProperty("pose"))
                     object.pose = $root.ubii.dataStructure.Pose2D.toObject(message.pose, options);
+                if (message.size != null && message.hasOwnProperty("size"))
+                    object.size = $root.ubii.dataStructure.Vector2.toObject(message.size, options);
                 return object;
             };
 
@@ -13251,6 +13376,7 @@ $root.ubii = (function() {
              * @interface IObject3D
              * @property {string|null} [id] Object3D id
              * @property {ubii.dataStructure.IPose3D|null} [pose] Object3D pose
+             * @property {ubii.dataStructure.IVector3|null} [size] Object3D size
              */
 
             /**
@@ -13285,6 +13411,14 @@ $root.ubii = (function() {
             Object3D.prototype.pose = null;
 
             /**
+             * Object3D size.
+             * @member {ubii.dataStructure.IVector3|null|undefined} size
+             * @memberof ubii.dataStructure.Object3D
+             * @instance
+             */
+            Object3D.prototype.size = null;
+
+            /**
              * Creates a new Object3D instance using the specified properties.
              * @function create
              * @memberof ubii.dataStructure.Object3D
@@ -13311,7 +13445,9 @@ $root.ubii = (function() {
                 if (message.id != null && message.hasOwnProperty("id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
                 if (message.pose != null && message.hasOwnProperty("pose"))
-                    $root.ubii.dataStructure.Pose3D.encode(message.pose, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.ubii.dataStructure.Pose3D.encode(message.pose, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.size != null && message.hasOwnProperty("size"))
+                    $root.ubii.dataStructure.Vector3.encode(message.size, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -13349,8 +13485,11 @@ $root.ubii = (function() {
                     case 1:
                         message.id = reader.string();
                         break;
-                    case 3:
+                    case 2:
                         message.pose = $root.ubii.dataStructure.Pose3D.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.size = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13395,6 +13534,11 @@ $root.ubii = (function() {
                     if (error)
                         return "pose." + error;
                 }
+                if (message.size != null && message.hasOwnProperty("size")) {
+                    var error = $root.ubii.dataStructure.Vector3.verify(message.size);
+                    if (error)
+                        return "size." + error;
+                }
                 return null;
             };
 
@@ -13417,6 +13561,11 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.dataStructure.Object3D.pose: object expected");
                     message.pose = $root.ubii.dataStructure.Pose3D.fromObject(object.pose);
                 }
+                if (object.size != null) {
+                    if (typeof object.size !== "object")
+                        throw TypeError(".ubii.dataStructure.Object3D.size: object expected");
+                    message.size = $root.ubii.dataStructure.Vector3.fromObject(object.size);
+                }
                 return message;
             };
 
@@ -13436,11 +13585,14 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.id = "";
                     object.pose = null;
+                    object.size = null;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 if (message.pose != null && message.hasOwnProperty("pose"))
                     object.pose = $root.ubii.dataStructure.Pose3D.toObject(message.pose, options);
+                if (message.size != null && message.hasOwnProperty("size"))
+                    object.size = $root.ubii.dataStructure.Vector3.toObject(message.size, options);
                 return object;
             };
 

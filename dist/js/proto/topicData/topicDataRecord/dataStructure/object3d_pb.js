@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_topicData_topicDataRecord_dataStructure_pose3d_pb = require('../../../../proto/topicData/topicDataRecord/dataStructure/pose3d_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_vector3_pb = require('../../../../proto/topicData/topicDataRecord/dataStructure/vector3_pb.js');
 goog.exportSymbol('proto.ubii.dataStructure.Object3D', null, global);
 goog.exportSymbol('proto.ubii.dataStructure.Object3DList', null, global);
 
@@ -62,7 +63,8 @@ proto.ubii.dataStructure.Object3D.prototype.toObject = function(opt_includeInsta
 proto.ubii.dataStructure.Object3D.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.toObject(includeInstance, f)
+    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.toObject(includeInstance, f),
+    size: (f = msg.getSize()) && proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -103,10 +105,15 @@ proto.ubii.dataStructure.Object3D.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
-    case 3:
+    case 2:
       var value = new proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.deserializeBinaryFromReader);
       msg.setPose(value);
+      break;
+    case 3:
+      var value = new proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.deserializeBinaryFromReader);
+      msg.setSize(value);
       break;
     default:
       reader.skipField();
@@ -147,9 +154,17 @@ proto.ubii.dataStructure.Object3D.serializeBinaryToWriter = function(message, wr
   f = message.getPose();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.serializeBinaryToWriter
+    );
+  }
+  f = message.getSize();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.serializeBinaryToWriter
     );
   }
 };
@@ -171,18 +186,18 @@ proto.ubii.dataStructure.Object3D.prototype.setId = function(value) {
 
 
 /**
- * optional Pose3D pose = 3;
+ * optional Pose3D pose = 2;
  * @return {?proto.ubii.dataStructure.Pose3D}
  */
 proto.ubii.dataStructure.Object3D.prototype.getPose = function() {
   return /** @type{?proto.ubii.dataStructure.Pose3D} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D, 3));
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D, 2));
 };
 
 
 /** @param {?proto.ubii.dataStructure.Pose3D|undefined} value */
 proto.ubii.dataStructure.Object3D.prototype.setPose = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -196,6 +211,36 @@ proto.ubii.dataStructure.Object3D.prototype.clearPose = function() {
  * @return {!boolean}
  */
 proto.ubii.dataStructure.Object3D.prototype.hasPose = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Vector3 size = 3;
+ * @return {?proto.ubii.dataStructure.Vector3}
+ */
+proto.ubii.dataStructure.Object3D.prototype.getSize = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3, 3));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
+proto.ubii.dataStructure.Object3D.prototype.setSize = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.ubii.dataStructure.Object3D.prototype.clearSize = function() {
+  this.setSize(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Object3D.prototype.hasSize = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

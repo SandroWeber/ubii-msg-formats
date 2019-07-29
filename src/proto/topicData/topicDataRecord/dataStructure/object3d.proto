@@ -2,10 +2,12 @@ syntax = "proto3";
 package ubii.dataStructure;
 
 import "proto/topicData/topicDataRecord/dataStructure/pose3d.proto";
+import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
 
 message Object3D {
     string id = 1;
-    ubii.dataStructure.Pose3D pose = 3;
+    ubii.dataStructure.Pose3D pose = 2;
+    ubii.dataStructure.Vector3 size = 3;
 }
 
 message Object3DList {

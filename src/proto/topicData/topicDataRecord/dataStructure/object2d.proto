@@ -2,10 +2,12 @@ syntax = "proto3";
 package ubii.dataStructure;
 
 import "proto/topicData/topicDataRecord/dataStructure/pose2d.proto";
+import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
 
 message Object2D {
     string id = 1;
     ubii.dataStructure.Pose2D pose = 2;
+    ubii.dataStructure.Vector2 size = 3;
 }
 
 message Object2DList {

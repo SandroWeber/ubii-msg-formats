@@ -37,7 +37,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.interactions.Interaction.repeatedFields_ = [4,5];
+proto.ubii.interactions.Interaction.repeatedFields_ = [4,5,8,9];
 
 
 
@@ -75,7 +75,10 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
     proto_interactions_ioFormat_pb.IOFormat.toObject, includeInstance),
     outputFormatsList: jspb.Message.toObjectList(msg.getOutputFormatsList(),
     proto_interactions_ioFormat_pb.IOFormat.toObject, includeInstance),
-    onCreated: jspb.Message.getFieldWithDefault(msg, 6, "")
+    onCreated: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    processFrequency: +jspb.Message.getFieldWithDefault(msg, 7, 0.0),
+    authorsList: jspb.Message.getRepeatedField(msg, 8),
+    tagsList: jspb.Message.getRepeatedField(msg, 9)
   };
 
   if (includeInstance) {
@@ -137,6 +140,18 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setOnCreated(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setProcessFrequency(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAuthors(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
       break;
     default:
       reader.skipField();
@@ -208,6 +223,27 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getProcessFrequency();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
+      f
+    );
+  }
+  f = message.getAuthorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      8,
+      f
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      9,
       f
     );
   }
@@ -333,6 +369,79 @@ proto.ubii.interactions.Interaction.prototype.getOnCreated = function() {
 /** @param {string} value */
 proto.ubii.interactions.Interaction.prototype.setOnCreated = function(value) {
   jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional float process_frequency = 7;
+ * @return {number}
+ */
+proto.ubii.interactions.Interaction.prototype.getProcessFrequency = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 7, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.interactions.Interaction.prototype.setProcessFrequency = function(value) {
+  jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * repeated string authors = 8;
+ * @return {!Array<string>}
+ */
+proto.ubii.interactions.Interaction.prototype.getAuthorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.interactions.Interaction.prototype.setAuthorsList = function(value) {
+  jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.interactions.Interaction.prototype.addAuthors = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+proto.ubii.interactions.Interaction.prototype.clearAuthorsList = function() {
+  this.setAuthorsList([]);
+};
+
+
+/**
+ * repeated string tags = 9;
+ * @return {!Array<string>}
+ */
+proto.ubii.interactions.Interaction.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.interactions.Interaction.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.interactions.Interaction.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+proto.ubii.interactions.Interaction.prototype.clearTagsList = function() {
+  this.setTagsList([]);
 };
 
 

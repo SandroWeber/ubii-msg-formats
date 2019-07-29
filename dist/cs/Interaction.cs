@@ -26,17 +26,18 @@ namespace Ubii.Interactions {
           string.Concat(
             "CiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8SEXViaWku",
             "aW50ZXJhY3Rpb25zGiFwcm90by9pbnRlcmFjdGlvbnMvaW9Gb3JtYXQucHJv",
-            "dG8iwQEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
+            "dG8i+wEKC0ludGVyYWN0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
             "GwoTcHJvY2Vzc2luZ19jYWxsYmFjaxgDIAEoCRIyCg1pbnB1dF9mb3JtYXRz",
             "GAQgAygLMhsudWJpaS5pbnRlcmFjdGlvbnMuSU9Gb3JtYXQSMwoOb3V0cHV0",
             "X2Zvcm1hdHMYBSADKAsyGy51YmlpLmludGVyYWN0aW9ucy5JT0Zvcm1hdBIS",
-            "Cgpvbl9jcmVhdGVkGAYgASgJIkMKD0ludGVyYWN0aW9uTGlzdBIwCghlbGVt",
-            "ZW50cxgBIAMoCzIeLnViaWkuaW50ZXJhY3Rpb25zLkludGVyYWN0aW9uYgZw",
-            "cm90bzM="));
+            "Cgpvbl9jcmVhdGVkGAYgASgJEhkKEXByb2Nlc3NfZnJlcXVlbmN5GAcgASgC",
+            "Eg8KB2F1dGhvcnMYCCADKAkSDAoEdGFncxgJIAMoCSJDCg9JbnRlcmFjdGlv",
+            "bkxpc3QSMAoIZWxlbWVudHMYASADKAsyHi51YmlpLmludGVyYWN0aW9ucy5J",
+            "bnRlcmFjdGlvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.IoFormatReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.Interaction), global::Ubii.Interactions.Interaction.Parser, new[]{ "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Interactions.InteractionList), global::Ubii.Interactions.InteractionList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
@@ -75,6 +76,9 @@ namespace Ubii.Interactions {
       inputFormats_ = other.inputFormats_.Clone();
       outputFormats_ = other.outputFormats_.Clone();
       onCreated_ = other.onCreated_;
+      processFrequency_ = other.processFrequency_;
+      authors_ = other.authors_.Clone();
+      tags_ = other.tags_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -147,6 +151,37 @@ namespace Ubii.Interactions {
       }
     }
 
+    /// <summary>Field number for the "process_frequency" field.</summary>
+    public const int ProcessFrequencyFieldNumber = 7;
+    private float processFrequency_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float ProcessFrequency {
+      get { return processFrequency_; }
+      set {
+        processFrequency_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "authors" field.</summary>
+    public const int AuthorsFieldNumber = 8;
+    private static readonly pb::FieldCodec<string> _repeated_authors_codec
+        = pb::FieldCodec.ForString(66);
+    private readonly pbc::RepeatedField<string> authors_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Authors {
+      get { return authors_; }
+    }
+
+    /// <summary>Field number for the "tags" field.</summary>
+    public const int TagsFieldNumber = 9;
+    private static readonly pb::FieldCodec<string> _repeated_tags_codec
+        = pb::FieldCodec.ForString(74);
+    private readonly pbc::RepeatedField<string> tags_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Tags {
+      get { return tags_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Interaction);
@@ -166,6 +201,9 @@ namespace Ubii.Interactions {
       if(!inputFormats_.Equals(other.inputFormats_)) return false;
       if(!outputFormats_.Equals(other.outputFormats_)) return false;
       if (OnCreated != other.OnCreated) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(ProcessFrequency, other.ProcessFrequency)) return false;
+      if(!authors_.Equals(other.authors_)) return false;
+      if(!tags_.Equals(other.tags_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -178,6 +216,9 @@ namespace Ubii.Interactions {
       hash ^= inputFormats_.GetHashCode();
       hash ^= outputFormats_.GetHashCode();
       if (OnCreated.Length != 0) hash ^= OnCreated.GetHashCode();
+      if (ProcessFrequency != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(ProcessFrequency);
+      hash ^= authors_.GetHashCode();
+      hash ^= tags_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -209,6 +250,12 @@ namespace Ubii.Interactions {
         output.WriteRawTag(50);
         output.WriteString(OnCreated);
       }
+      if (ProcessFrequency != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(ProcessFrequency);
+      }
+      authors_.WriteTo(output, _repeated_authors_codec);
+      tags_.WriteTo(output, _repeated_tags_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -231,6 +278,11 @@ namespace Ubii.Interactions {
       if (OnCreated.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OnCreated);
       }
+      if (ProcessFrequency != 0F) {
+        size += 1 + 4;
+      }
+      size += authors_.CalculateSize(_repeated_authors_codec);
+      size += tags_.CalculateSize(_repeated_tags_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -256,6 +308,11 @@ namespace Ubii.Interactions {
       if (other.OnCreated.Length != 0) {
         OnCreated = other.OnCreated;
       }
+      if (other.ProcessFrequency != 0F) {
+        ProcessFrequency = other.ProcessFrequency;
+      }
+      authors_.Add(other.authors_);
+      tags_.Add(other.tags_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -289,6 +346,18 @@ namespace Ubii.Interactions {
           }
           case 50: {
             OnCreated = input.ReadString();
+            break;
+          }
+          case 61: {
+            ProcessFrequency = input.ReadFloat();
+            break;
+          }
+          case 66: {
+            authors_.AddEntriesFrom(input, _repeated_authors_codec);
+            break;
+          }
+          case 74: {
+            tags_.AddEntriesFrom(input, _repeated_tags_codec);
             break;
           }
         }

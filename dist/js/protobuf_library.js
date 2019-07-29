@@ -5397,7 +5397,8 @@ proto.ubii.dataStructure.Object2D.prototype.toObject = function(opt_includeInsta
 proto.ubii.dataStructure.Object2D.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose2D.toObject(includeInstance, f)
+    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose2D.toObject(includeInstance, f),
+    size: (f = msg.getSize()) && proto.ubii.dataStructure.Vector2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5443,6 +5444,11 @@ proto.ubii.dataStructure.Object2D.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value,proto.ubii.dataStructure.Pose2D.deserializeBinaryFromReader);
       msg.setPose(value);
       break;
+    case 3:
+      var value = new proto.ubii.dataStructure.Vector2;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector2.deserializeBinaryFromReader);
+      msg.setSize(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5485,6 +5491,14 @@ proto.ubii.dataStructure.Object2D.serializeBinaryToWriter = function(message, wr
       2,
       f,
       proto.ubii.dataStructure.Pose2D.serializeBinaryToWriter
+    );
+  }
+  f = message.getSize();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.dataStructure.Vector2.serializeBinaryToWriter
     );
   }
 };
@@ -5532,6 +5546,36 @@ proto.ubii.dataStructure.Object2D.prototype.clearPose = function() {
  */
 proto.ubii.dataStructure.Object2D.prototype.hasPose = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Vector2 size = 3;
+ * @return {?proto.ubii.dataStructure.Vector2}
+ */
+proto.ubii.dataStructure.Object2D.prototype.getSize = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector2} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector2, 3));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector2|undefined} value */
+proto.ubii.dataStructure.Object2D.prototype.setSize = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.ubii.dataStructure.Object2D.prototype.clearSize = function() {
+  this.setSize(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Object2D.prototype.hasSize = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -5751,7 +5795,8 @@ proto.ubii.dataStructure.Object3D.prototype.toObject = function(opt_includeInsta
 proto.ubii.dataStructure.Object3D.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose3D.toObject(includeInstance, f)
+    pose: (f = msg.getPose()) && proto.ubii.dataStructure.Pose3D.toObject(includeInstance, f),
+    size: (f = msg.getSize()) && proto.ubii.dataStructure.Vector3.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5792,10 +5837,15 @@ proto.ubii.dataStructure.Object3D.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
-    case 3:
+    case 2:
       var value = new proto.ubii.dataStructure.Pose3D;
       reader.readMessage(value,proto.ubii.dataStructure.Pose3D.deserializeBinaryFromReader);
       msg.setPose(value);
+      break;
+    case 3:
+      var value = new proto.ubii.dataStructure.Vector3;
+      reader.readMessage(value,proto.ubii.dataStructure.Vector3.deserializeBinaryFromReader);
+      msg.setSize(value);
       break;
     default:
       reader.skipField();
@@ -5836,9 +5886,17 @@ proto.ubii.dataStructure.Object3D.serializeBinaryToWriter = function(message, wr
   f = message.getPose();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       proto.ubii.dataStructure.Pose3D.serializeBinaryToWriter
+    );
+  }
+  f = message.getSize();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.dataStructure.Vector3.serializeBinaryToWriter
     );
   }
 };
@@ -5860,18 +5918,18 @@ proto.ubii.dataStructure.Object3D.prototype.setId = function(value) {
 
 
 /**
- * optional Pose3D pose = 3;
+ * optional Pose3D pose = 2;
  * @return {?proto.ubii.dataStructure.Pose3D}
  */
 proto.ubii.dataStructure.Object3D.prototype.getPose = function() {
   return /** @type{?proto.ubii.dataStructure.Pose3D} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose3D, 3));
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Pose3D, 2));
 };
 
 
 /** @param {?proto.ubii.dataStructure.Pose3D|undefined} value */
 proto.ubii.dataStructure.Object3D.prototype.setPose = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -5885,6 +5943,36 @@ proto.ubii.dataStructure.Object3D.prototype.clearPose = function() {
  * @return {!boolean}
  */
 proto.ubii.dataStructure.Object3D.prototype.hasPose = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Vector3 size = 3;
+ * @return {?proto.ubii.dataStructure.Vector3}
+ */
+proto.ubii.dataStructure.Object3D.prototype.getSize = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.dataStructure.Vector3, 3));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector3|undefined} value */
+proto.ubii.dataStructure.Object3D.prototype.setSize = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.ubii.dataStructure.Object3D.prototype.clearSize = function() {
+  this.setSize(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Object3D.prototype.hasSize = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -9654,7 +9742,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.interactions.Interaction.repeatedFields_ = [4,5];
+proto.ubii.interactions.Interaction.repeatedFields_ = [4,5,8,9];
 
 
 
@@ -9692,7 +9780,10 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
     proto.ubii.interactions.IOFormat.toObject, includeInstance),
     outputFormatsList: jspb.Message.toObjectList(msg.getOutputFormatsList(),
     proto.ubii.interactions.IOFormat.toObject, includeInstance),
-    onCreated: jspb.Message.getFieldWithDefault(msg, 6, "")
+    onCreated: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    processFrequency: +jspb.Message.getFieldWithDefault(msg, 7, 0.0),
+    authorsList: jspb.Message.getRepeatedField(msg, 8),
+    tagsList: jspb.Message.getRepeatedField(msg, 9)
   };
 
   if (includeInstance) {
@@ -9754,6 +9845,18 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setOnCreated(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setProcessFrequency(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAuthors(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
       break;
     default:
       reader.skipField();
@@ -9825,6 +9928,27 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getProcessFrequency();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
+      f
+    );
+  }
+  f = message.getAuthorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      8,
+      f
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      9,
       f
     );
   }
@@ -9950,6 +10074,79 @@ proto.ubii.interactions.Interaction.prototype.getOnCreated = function() {
 /** @param {string} value */
 proto.ubii.interactions.Interaction.prototype.setOnCreated = function(value) {
   jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional float process_frequency = 7;
+ * @return {number}
+ */
+proto.ubii.interactions.Interaction.prototype.getProcessFrequency = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 7, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.interactions.Interaction.prototype.setProcessFrequency = function(value) {
+  jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * repeated string authors = 8;
+ * @return {!Array<string>}
+ */
+proto.ubii.interactions.Interaction.prototype.getAuthorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.interactions.Interaction.prototype.setAuthorsList = function(value) {
+  jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.interactions.Interaction.prototype.addAuthors = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+proto.ubii.interactions.Interaction.prototype.clearAuthorsList = function() {
+  this.setAuthorsList([]);
+};
+
+
+/**
+ * repeated string tags = 9;
+ * @return {!Array<string>}
+ */
+proto.ubii.interactions.Interaction.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.interactions.Interaction.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.interactions.Interaction.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+proto.ubii.interactions.Interaction.prototype.clearTagsList = function() {
+  this.setTagsList([]);
 };
 
 

@@ -105,6 +105,49 @@ public final class InteractionOuterClass {
      */
     com.google.protobuf.ByteString
         getOnCreatedBytes();
+
+    /**
+     * <code>float process_frequency = 7;</code>
+     */
+    float getProcessFrequency();
+
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    java.util.List<java.lang.String>
+        getAuthorsList();
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    int getAuthorsCount();
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    java.lang.String getAuthors(int index);
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getAuthorsBytes(int index);
+
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
   }
   /**
    * Protobuf type {@code ubii.interactions.Interaction}
@@ -125,6 +168,9 @@ public final class InteractionOuterClass {
       inputFormats_ = java.util.Collections.emptyList();
       outputFormats_ = java.util.Collections.emptyList();
       onCreated_ = "";
+      processFrequency_ = 0F;
+      authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -193,6 +239,29 @@ public final class InteractionOuterClass {
               onCreated_ = s;
               break;
             }
+            case 61: {
+
+              processFrequency_ = input.readFloat();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                authors_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              authors_.add(s);
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              tags_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -213,6 +282,12 @@ public final class InteractionOuterClass {
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           outputFormats_ = java.util.Collections.unmodifiableList(outputFormats_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          authors_ = authors_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -438,6 +513,73 @@ public final class InteractionOuterClass {
       }
     }
 
+    public static final int PROCESS_FREQUENCY_FIELD_NUMBER = 7;
+    private float processFrequency_;
+    /**
+     * <code>float process_frequency = 7;</code>
+     */
+    public float getProcessFrequency() {
+      return processFrequency_;
+    }
+
+    public static final int AUTHORS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList authors_;
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAuthorsList() {
+      return authors_;
+    }
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    public int getAuthorsCount() {
+      return authors_.size();
+    }
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    public java.lang.String getAuthors(int index) {
+      return authors_.get(index);
+    }
+    /**
+     * <code>repeated string authors = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAuthorsBytes(int index) {
+      return authors_.getByteString(index);
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 9;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -470,6 +612,15 @@ public final class InteractionOuterClass {
       if (!getOnCreatedBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, onCreated_);
       }
+      if (processFrequency_ != 0F) {
+        output.writeFloat(7, processFrequency_);
+      }
+      for (int i = 0; i < authors_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, authors_.getRaw(i));
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, tags_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -499,6 +650,26 @@ public final class InteractionOuterClass {
       if (!getOnCreatedBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, onCreated_);
       }
+      if (processFrequency_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(7, processFrequency_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < authors_.size(); i++) {
+          dataSize += computeStringSizeNoTag(authors_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAuthorsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -527,6 +698,14 @@ public final class InteractionOuterClass {
           .equals(other.getOutputFormatsList());
       result = result && getOnCreated()
           .equals(other.getOnCreated());
+      result = result && (
+          java.lang.Float.floatToIntBits(getProcessFrequency())
+          == java.lang.Float.floatToIntBits(
+              other.getProcessFrequency()));
+      result = result && getAuthorsList()
+          .equals(other.getAuthorsList());
+      result = result && getTagsList()
+          .equals(other.getTagsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -554,6 +733,17 @@ public final class InteractionOuterClass {
       }
       hash = (37 * hash) + ON_CREATED_FIELD_NUMBER;
       hash = (53 * hash) + getOnCreated().hashCode();
+      hash = (37 * hash) + PROCESS_FREQUENCY_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getProcessFrequency());
+      if (getAuthorsCount() > 0) {
+        hash = (37 * hash) + AUTHORS_FIELD_NUMBER;
+        hash = (53 * hash) + getAuthorsList().hashCode();
+      }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -709,6 +899,12 @@ public final class InteractionOuterClass {
         }
         onCreated_ = "";
 
+        processFrequency_ = 0F;
+
+        authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -759,6 +955,17 @@ public final class InteractionOuterClass {
           result.outputFormats_ = outputFormatsBuilder_.build();
         }
         result.onCreated_ = onCreated_;
+        result.processFrequency_ = processFrequency_;
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          authors_ = authors_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.authors_ = authors_;
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -874,6 +1081,29 @@ public final class InteractionOuterClass {
         }
         if (!other.getOnCreated().isEmpty()) {
           onCreated_ = other.onCreated_;
+          onChanged();
+        }
+        if (other.getProcessFrequency() != 0F) {
+          setProcessFrequency(other.getProcessFrequency());
+        }
+        if (!other.authors_.isEmpty()) {
+          if (authors_.isEmpty()) {
+            authors_ = other.authors_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureAuthorsIsMutable();
+            authors_.addAll(other.authors_);
+          }
+          onChanged();
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1658,6 +1888,220 @@ public final class InteractionOuterClass {
   checkByteStringIsUtf8(value);
         
         onCreated_ = value;
+        onChanged();
+        return this;
+      }
+
+      private float processFrequency_ ;
+      /**
+       * <code>float process_frequency = 7;</code>
+       */
+      public float getProcessFrequency() {
+        return processFrequency_;
+      }
+      /**
+       * <code>float process_frequency = 7;</code>
+       */
+      public Builder setProcessFrequency(float value) {
+        
+        processFrequency_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float process_frequency = 7;</code>
+       */
+      public Builder clearProcessFrequency() {
+        
+        processFrequency_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureAuthorsIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          authors_ = new com.google.protobuf.LazyStringArrayList(authors_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAuthorsList() {
+        return authors_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public int getAuthorsCount() {
+        return authors_.size();
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public java.lang.String getAuthors(int index) {
+        return authors_.get(index);
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAuthorsBytes(int index) {
+        return authors_.getByteString(index);
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public Builder setAuthors(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorsIsMutable();
+        authors_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public Builder addAuthors(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorsIsMutable();
+        authors_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public Builder addAllAuthors(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAuthorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, authors_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public Builder clearAuthors() {
+        authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 8;</code>
+       */
+      public Builder addAuthorsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureAuthorsIsMutable();
+        authors_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 9;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
         onChanged();
         return this;
       }
@@ -2517,14 +2961,15 @@ public final class InteractionOuterClass {
     java.lang.String[] descriptorData = {
       "\n$proto/interactions/interaction.proto\022\021" +
       "ubii.interactions\032!proto/interactions/io" +
-      "Format.proto\"\301\001\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
+      "Format.proto\"\373\001\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
       "\022\014\n\004name\030\002 \001(\t\022\033\n\023processing_callback\030\003 " +
       "\001(\t\0222\n\rinput_formats\030\004 \003(\0132\033.ubii.intera" +
       "ctions.IOFormat\0223\n\016output_formats\030\005 \003(\0132" +
       "\033.ubii.interactions.IOFormat\022\022\n\non_creat" +
-      "ed\030\006 \001(\t\"C\n\017InteractionList\0220\n\010elements\030" +
-      "\001 \003(\0132\036.ubii.interactions.Interactionb\006p" +
-      "roto3"
+      "ed\030\006 \001(\t\022\031\n\021process_frequency\030\007 \001(\002\022\017\n\007a" +
+      "uthors\030\010 \003(\t\022\014\n\004tags\030\t \003(\t\"C\n\017Interactio" +
+      "nList\0220\n\010elements\030\001 \003(\0132\036.ubii.interacti" +
+      "ons.Interactionb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2544,7 +2989,7 @@ public final class InteractionOuterClass {
     internal_static_ubii_interactions_Interaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_interactions_Interaction_descriptor,
-        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", });
+        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags", });
     internal_static_ubii_interactions_InteractionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_interactions_InteractionList_fieldAccessorTable = new

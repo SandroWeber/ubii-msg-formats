@@ -89,6 +89,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::Interaction, input_formats_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::Interaction, output_formats_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::Interaction, on_created_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::Interaction, process_frequency_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::Interaction, authors_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::Interaction, tags_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::InteractionList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -98,7 +101,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::interactions::Interaction)},
-  { 11, -1, sizeof(::ubii::interactions::InteractionList)},
+  { 14, -1, sizeof(::ubii::interactions::InteractionList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -129,17 +132,18 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n$proto/interactions/interaction.proto\022\021"
       "ubii.interactions\032!proto/interactions/io"
-      "Format.proto\"\301\001\n\013Interaction\022\n\n\002id\030\001 \001(\t"
+      "Format.proto\"\373\001\n\013Interaction\022\n\n\002id\030\001 \001(\t"
       "\022\014\n\004name\030\002 \001(\t\022\033\n\023processing_callback\030\003 "
       "\001(\t\0222\n\rinput_formats\030\004 \003(\0132\033.ubii.intera"
       "ctions.IOFormat\0223\n\016output_formats\030\005 \003(\0132"
       "\033.ubii.interactions.IOFormat\022\022\n\non_creat"
-      "ed\030\006 \001(\t\"C\n\017InteractionList\0220\n\010elements\030"
-      "\001 \003(\0132\036.ubii.interactions.Interactionb\006p"
-      "roto3"
+      "ed\030\006 \001(\t\022\031\n\021process_frequency\030\007 \001(\002\022\017\n\007a"
+      "uthors\030\010 \003(\t\022\014\n\004tags\030\t \003(\t\"C\n\017Interactio"
+      "nList\0220\n\010elements\030\001 \003(\0132\036.ubii.interacti"
+      "ons.Interactionb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 365);
+      descriptor, 423);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/interactions/interaction.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2finteractions_2fioFormat_2eproto::AddDescriptors();
@@ -176,6 +180,9 @@ const int Interaction::kProcessingCallbackFieldNumber;
 const int Interaction::kInputFormatsFieldNumber;
 const int Interaction::kOutputFormatsFieldNumber;
 const int Interaction::kOnCreatedFieldNumber;
+const int Interaction::kProcessFrequencyFieldNumber;
+const int Interaction::kAuthorsFieldNumber;
+const int Interaction::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Interaction::Interaction()
@@ -189,7 +196,9 @@ Interaction::Interaction(const Interaction& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       input_formats_(from.input_formats_),
-      output_formats_(from.output_formats_) {
+      output_formats_(from.output_formats_),
+      authors_(from.authors_),
+      tags_(from.tags_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -207,6 +216,7 @@ Interaction::Interaction(const Interaction& from)
   if (from.on_created().size() > 0) {
     on_created_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.on_created_);
   }
+  process_frequency_ = from.process_frequency_;
   // @@protoc_insertion_point(copy_constructor:ubii.interactions.Interaction)
 }
 
@@ -215,6 +225,7 @@ void Interaction::SharedCtor() {
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   processing_callback_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   on_created_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  process_frequency_ = 0;
 }
 
 Interaction::~Interaction() {
@@ -251,10 +262,13 @@ void Interaction::Clear() {
 
   input_formats_.Clear();
   output_formats_.Clear();
+  authors_.Clear();
+  tags_.Clear();
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   processing_callback_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   on_created_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  process_frequency_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -356,6 +370,54 @@ bool Interaction::MergePartialFromCodedStream(
         break;
       }
 
+      // float process_frequency = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &process_frequency_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string authors = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_authors()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->authors(this->authors_size() - 1).data(),
+            static_cast<int>(this->authors(this->authors_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.interactions.Interaction.authors"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string tags = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_tags()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tags(this->tags_size() - 1).data(),
+            static_cast<int>(this->tags(this->tags_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.interactions.Interaction.tags"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -440,6 +502,31 @@ void Interaction::SerializeWithCachedSizes(
       6, this->on_created(), output);
   }
 
+  // float process_frequency = 7;
+  if (this->process_frequency() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->process_frequency(), output);
+  }
+
+  // repeated string authors = 8;
+  for (int i = 0, n = this->authors_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->authors(i).data(), static_cast<int>(this->authors(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.interactions.Interaction.authors");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      8, this->authors(i), output);
+  }
+
+  // repeated string tags = 9;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.interactions.Interaction.tags");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      9, this->tags(i), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -514,6 +601,31 @@ void Interaction::SerializeWithCachedSizes(
         6, this->on_created(), target);
   }
 
+  // float process_frequency = 7;
+  if (this->process_frequency() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->process_frequency(), target);
+  }
+
+  // repeated string authors = 8;
+  for (int i = 0, n = this->authors_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->authors(i).data(), static_cast<int>(this->authors(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.interactions.Interaction.authors");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(8, this->authors(i), target);
+  }
+
+  // repeated string tags = 9;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.interactions.Interaction.tags");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(9, this->tags(i), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -553,6 +665,22 @@ size_t Interaction::ByteSizeLong() const {
     }
   }
 
+  // repeated string authors = 8;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->authors_size());
+  for (int i = 0, n = this->authors_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->authors(i));
+  }
+
+  // repeated string tags = 9;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->tags_size());
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->tags(i));
+  }
+
   // string id = 1;
   if (this->id().size() > 0) {
     total_size += 1 +
@@ -579,6 +707,11 @@ size_t Interaction::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->on_created());
+  }
+
+  // float process_frequency = 7;
+  if (this->process_frequency() != 0) {
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -610,6 +743,8 @@ void Interaction::MergeFrom(const Interaction& from) {
 
   input_formats_.MergeFrom(from.input_formats_);
   output_formats_.MergeFrom(from.output_formats_);
+  authors_.MergeFrom(from.authors_);
+  tags_.MergeFrom(from.tags_);
   if (from.id().size() > 0) {
 
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
@@ -625,6 +760,9 @@ void Interaction::MergeFrom(const Interaction& from) {
   if (from.on_created().size() > 0) {
 
     on_created_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.on_created_);
+  }
+  if (from.process_frequency() != 0) {
+    set_process_frequency(from.process_frequency());
   }
 }
 
@@ -654,6 +792,8 @@ void Interaction::InternalSwap(Interaction* other) {
   using std::swap;
   CastToBase(&input_formats_)->InternalSwap(CastToBase(&other->input_formats_));
   CastToBase(&output_formats_)->InternalSwap(CastToBase(&other->output_formats_));
+  authors_.InternalSwap(CastToBase(&other->authors_));
+  tags_.InternalSwap(CastToBase(&other->tags_));
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -662,6 +802,7 @@ void Interaction::InternalSwap(Interaction* other) {
     GetArenaNoVirtual());
   on_created_.Swap(&other->on_created_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(process_frequency_, other->process_frequency_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

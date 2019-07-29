@@ -20,11 +20,14 @@
 // @@protoc_insertion_point(includes)
 
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Object3D;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Object3D;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fobject3d_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Pose3D;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Vector3;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto
 namespace ubii {
 namespace dataStructure {
 class Object3DDefaultTypeInternal {
@@ -51,9 +54,10 @@ static void InitDefaultsObject3D() {
   ::ubii::dataStructure::Object3D::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Object3D =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsObject3D}, {
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto::scc_info_Pose3D.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_Object3D =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsObject3D}, {
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto::scc_info_Pose3D.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto::scc_info_Vector3.base,}};
 
 static void InitDefaultsObject3DList() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -85,6 +89,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3D, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3D, pose_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3D, size_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3DList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -94,7 +99,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::Object3D)},
-  { 7, -1, sizeof(::ubii::dataStructure::Object3DList)},
+  { 8, -1, sizeof(::ubii::dataStructure::Object3DList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -126,16 +131,20 @@ void AddDescriptorsImpl() {
       "\n<proto/topicData/topicDataRecord/dataSt"
       "ructure/object3d.proto\022\022ubii.dataStructu"
       "re\032:proto/topicData/topicDataRecord/data"
-      "Structure/pose3d.proto\"@\n\010Object3D\022\n\n\002id"
-      "\030\001 \001(\t\022(\n\004pose\030\003 \001(\0132\032.ubii.dataStructur"
-      "e.Pose3D\">\n\014Object3DList\022.\n\010elements\030\001 \003"
-      "(\0132\034.ubii.dataStructure.Object3Db\006proto3"
+      "Structure/pose3d.proto\032;proto/topicData/"
+      "topicDataRecord/dataStructure/vector3.pr"
+      "oto\"k\n\010Object3D\022\n\n\002id\030\001 \001(\t\022(\n\004pose\030\002 \001("
+      "\0132\032.ubii.dataStructure.Pose3D\022)\n\004size\030\003 "
+      "\001(\0132\033.ubii.dataStructure.Vector3\">\n\014Obje"
+      "ct3DList\022.\n\010elements\030\001 \003(\0132\034.ubii.dataSt"
+      "ructure.Object3Db\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 280);
+      descriptor, 384);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord/dataStructure/object3d.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto::AddDescriptors();
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -157,6 +166,8 @@ namespace dataStructure {
 void Object3D::InitAsDefaultInstance() {
   ::ubii::dataStructure::_Object3D_default_instance_._instance.get_mutable()->pose_ = const_cast< ::ubii::dataStructure::Pose3D*>(
       ::ubii::dataStructure::Pose3D::internal_default_instance());
+  ::ubii::dataStructure::_Object3D_default_instance_._instance.get_mutable()->size_ = const_cast< ::ubii::dataStructure::Vector3*>(
+      ::ubii::dataStructure::Vector3::internal_default_instance());
 }
 void Object3D::clear_pose() {
   if (GetArenaNoVirtual() == NULL && pose_ != NULL) {
@@ -164,9 +175,16 @@ void Object3D::clear_pose() {
   }
   pose_ = NULL;
 }
+void Object3D::clear_size() {
+  if (GetArenaNoVirtual() == NULL && size_ != NULL) {
+    delete size_;
+  }
+  size_ = NULL;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Object3D::kIdFieldNumber;
 const int Object3D::kPoseFieldNumber;
+const int Object3D::kSizeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Object3D::Object3D()
@@ -189,12 +207,19 @@ Object3D::Object3D(const Object3D& from)
   } else {
     pose_ = NULL;
   }
+  if (from.has_size()) {
+    size_ = new ::ubii::dataStructure::Vector3(*from.size_);
+  } else {
+    size_ = NULL;
+  }
   // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.Object3D)
 }
 
 void Object3D::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  pose_ = NULL;
+  ::memset(&pose_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&size_) -
+      reinterpret_cast<char*>(&pose_)) + sizeof(size_));
 }
 
 Object3D::~Object3D() {
@@ -205,6 +230,7 @@ Object3D::~Object3D() {
 void Object3D::SharedDtor() {
   id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete pose_;
+  if (this != internal_default_instance()) delete size_;
 }
 
 void Object3D::SetCachedSize(int size) const {
@@ -232,6 +258,10 @@ void Object3D::Clear() {
     delete pose_;
   }
   pose_ = NULL;
+  if (GetArenaNoVirtual() == NULL && size_ != NULL) {
+    delete size_;
+  }
+  size_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -261,12 +291,24 @@ bool Object3D::MergePartialFromCodedStream(
         break;
       }
 
-      // .ubii.dataStructure.Pose3D pose = 3;
+      // .ubii.dataStructure.Pose3D pose = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_pose()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.dataStructure.Vector3 size = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_pose()));
+               input, mutable_size()));
         } else {
           goto handle_unusual;
         }
@@ -309,10 +351,16 @@ void Object3D::SerializeWithCachedSizes(
       1, this->id(), output);
   }
 
-  // .ubii.dataStructure.Pose3D pose = 3;
+  // .ubii.dataStructure.Pose3D pose = 2;
   if (this->has_pose()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_pose(), output);
+      2, this->_internal_pose(), output);
+  }
+
+  // .ubii.dataStructure.Vector3 size = 3;
+  if (this->has_size()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->_internal_size(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -340,11 +388,18 @@ void Object3D::SerializeWithCachedSizes(
         1, this->id(), target);
   }
 
-  // .ubii.dataStructure.Pose3D pose = 3;
+  // .ubii.dataStructure.Pose3D pose = 2;
   if (this->has_pose()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        3, this->_internal_pose(), deterministic, target);
+        2, this->_internal_pose(), deterministic, target);
+  }
+
+  // .ubii.dataStructure.Vector3 size = 3;
+  if (this->has_size()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, this->_internal_size(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -371,11 +426,18 @@ size_t Object3D::ByteSizeLong() const {
         this->id());
   }
 
-  // .ubii.dataStructure.Pose3D pose = 3;
+  // .ubii.dataStructure.Pose3D pose = 2;
   if (this->has_pose()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *pose_);
+  }
+
+  // .ubii.dataStructure.Vector3 size = 3;
+  if (this->has_size()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *size_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -412,6 +474,9 @@ void Object3D::MergeFrom(const Object3D& from) {
   if (from.has_pose()) {
     mutable_pose()->::ubii::dataStructure::Pose3D::MergeFrom(from.pose());
   }
+  if (from.has_size()) {
+    mutable_size()->::ubii::dataStructure::Vector3::MergeFrom(from.size());
+  }
 }
 
 void Object3D::CopyFrom(const ::google::protobuf::Message& from) {
@@ -441,6 +506,7 @@ void Object3D::InternalSwap(Object3D* other) {
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(pose_, other->pose_);
+  swap(size_, other->size_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

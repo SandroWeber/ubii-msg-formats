@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_topicData_topicDataRecord_dataStructure_pose2d_pb = require('../../../../proto/topicData/topicDataRecord/dataStructure/pose2d_pb.js');
+var proto_topicData_topicDataRecord_dataStructure_vector2_pb = require('../../../../proto/topicData/topicDataRecord/dataStructure/vector2_pb.js');
 goog.exportSymbol('proto.ubii.dataStructure.Object2D', null, global);
 goog.exportSymbol('proto.ubii.dataStructure.Object2DList', null, global);
 
@@ -62,7 +63,8 @@ proto.ubii.dataStructure.Object2D.prototype.toObject = function(opt_includeInsta
 proto.ubii.dataStructure.Object2D.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.toObject(includeInstance, f)
+    pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.toObject(includeInstance, f),
+    size: (f = msg.getSize()) && proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -108,6 +110,11 @@ proto.ubii.dataStructure.Object2D.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.deserializeBinaryFromReader);
       msg.setPose(value);
       break;
+    case 3:
+      var value = new proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.deserializeBinaryFromReader);
+      msg.setSize(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -150,6 +157,14 @@ proto.ubii.dataStructure.Object2D.serializeBinaryToWriter = function(message, wr
       2,
       f,
       proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.serializeBinaryToWriter
+    );
+  }
+  f = message.getSize();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.serializeBinaryToWriter
     );
   }
 };
@@ -197,6 +212,36 @@ proto.ubii.dataStructure.Object2D.prototype.clearPose = function() {
  */
 proto.ubii.dataStructure.Object2D.prototype.hasPose = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Vector2 size = 3;
+ * @return {?proto.ubii.dataStructure.Vector2}
+ */
+proto.ubii.dataStructure.Object2D.prototype.getSize = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector2} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2, 3));
+};
+
+
+/** @param {?proto.ubii.dataStructure.Vector2|undefined} value */
+proto.ubii.dataStructure.Object2D.prototype.setSize = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.ubii.dataStructure.Object2D.prototype.clearSize = function() {
+  this.setSize(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.dataStructure.Object2D.prototype.hasSize = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
