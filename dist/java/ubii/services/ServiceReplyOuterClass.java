@@ -200,6 +200,58 @@ public final class ServiceReplyOuterClass {
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder getTopicDemuxListOrBuilder();
 
+    /**
+     * <code>.ubii.clients.ClientList client_list = 15;</code>
+     */
+    boolean hasClientList();
+    /**
+     * <code>.ubii.clients.ClientList client_list = 15;</code>
+     */
+    ubii.clients.ClientOuterClass.ClientList getClientList();
+    /**
+     * <code>.ubii.clients.ClientList client_list = 15;</code>
+     */
+    ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder();
+
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 16;</code>
+     */
+    boolean hasDeviceList();
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 16;</code>
+     */
+    ubii.devices.DeviceOuterClass.DeviceList getDeviceList();
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 16;</code>
+     */
+    ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder();
+
+    /**
+     * <code>.ubii.services.Service service = 17;</code>
+     */
+    boolean hasService();
+    /**
+     * <code>.ubii.services.Service service = 17;</code>
+     */
+    ubii.services.ServiceOuterClass.Service getService();
+    /**
+     * <code>.ubii.services.Service service = 17;</code>
+     */
+    ubii.services.ServiceOuterClass.ServiceOrBuilder getServiceOrBuilder();
+
+    /**
+     * <code>.ubii.services.ServiceList service_list = 18;</code>
+     */
+    boolean hasServiceList();
+    /**
+     * <code>.ubii.services.ServiceList service_list = 18;</code>
+     */
+    ubii.services.ServiceOuterClass.ServiceList getServiceList();
+    /**
+     * <code>.ubii.services.ServiceList service_list = 18;</code>
+     */
+    ubii.services.ServiceOuterClass.ServiceListOrBuilder getServiceListOrBuilder();
+
     public ubii.services.ServiceReplyOuterClass.ServiceReply.TypeCase getTypeCase();
   }
   /**
@@ -437,6 +489,62 @@ public final class ServiceReplyOuterClass {
               typeCase_ = 14;
               break;
             }
+            case 122: {
+              ubii.clients.ClientOuterClass.ClientList.Builder subBuilder = null;
+              if (typeCase_ == 15) {
+                subBuilder = ((ubii.clients.ClientOuterClass.ClientList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.clients.ClientOuterClass.ClientList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.clients.ClientOuterClass.ClientList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 15;
+              break;
+            }
+            case 130: {
+              ubii.devices.DeviceOuterClass.DeviceList.Builder subBuilder = null;
+              if (typeCase_ == 16) {
+                subBuilder = ((ubii.devices.DeviceOuterClass.DeviceList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.DeviceOuterClass.DeviceList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.DeviceOuterClass.DeviceList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 16;
+              break;
+            }
+            case 138: {
+              ubii.services.ServiceOuterClass.Service.Builder subBuilder = null;
+              if (typeCase_ == 17) {
+                subBuilder = ((ubii.services.ServiceOuterClass.Service) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.services.ServiceOuterClass.Service.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.services.ServiceOuterClass.Service) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 17;
+              break;
+            }
+            case 146: {
+              ubii.services.ServiceOuterClass.ServiceList.Builder subBuilder = null;
+              if (typeCase_ == 18) {
+                subBuilder = ((ubii.services.ServiceOuterClass.ServiceList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.services.ServiceOuterClass.ServiceList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.services.ServiceOuterClass.ServiceList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 18;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -487,6 +595,10 @@ public final class ServiceReplyOuterClass {
       TOPIC_MUX_LIST(12),
       TOPIC_DEMUX(13),
       TOPIC_DEMUX_LIST(14),
+      CLIENT_LIST(15),
+      DEVICE_LIST(16),
+      SERVICE(17),
+      SERVICE_LIST(18),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -516,6 +628,10 @@ public final class ServiceReplyOuterClass {
           case 12: return TOPIC_MUX_LIST;
           case 13: return TOPIC_DEMUX;
           case 14: return TOPIC_DEMUX_LIST;
+          case 15: return CLIENT_LIST;
+          case 16: return DEVICE_LIST;
+          case 17: return SERVICE;
+          case 18: return SERVICE_LIST;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -895,6 +1011,110 @@ public final class ServiceReplyOuterClass {
       return ubii.devices.TopicDemuxOuterClass.TopicDemuxList.getDefaultInstance();
     }
 
+    public static final int CLIENT_LIST_FIELD_NUMBER = 15;
+    /**
+     * <code>.ubii.clients.ClientList client_list = 15;</code>
+     */
+    public boolean hasClientList() {
+      return typeCase_ == 15;
+    }
+    /**
+     * <code>.ubii.clients.ClientList client_list = 15;</code>
+     */
+    public ubii.clients.ClientOuterClass.ClientList getClientList() {
+      if (typeCase_ == 15) {
+         return (ubii.clients.ClientOuterClass.ClientList) type_;
+      }
+      return ubii.clients.ClientOuterClass.ClientList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.clients.ClientList client_list = 15;</code>
+     */
+    public ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder() {
+      if (typeCase_ == 15) {
+         return (ubii.clients.ClientOuterClass.ClientList) type_;
+      }
+      return ubii.clients.ClientOuterClass.ClientList.getDefaultInstance();
+    }
+
+    public static final int DEVICE_LIST_FIELD_NUMBER = 16;
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 16;</code>
+     */
+    public boolean hasDeviceList() {
+      return typeCase_ == 16;
+    }
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 16;</code>
+     */
+    public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
+      if (typeCase_ == 16) {
+         return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+      }
+      return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 16;</code>
+     */
+    public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
+      if (typeCase_ == 16) {
+         return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+      }
+      return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+    }
+
+    public static final int SERVICE_FIELD_NUMBER = 17;
+    /**
+     * <code>.ubii.services.Service service = 17;</code>
+     */
+    public boolean hasService() {
+      return typeCase_ == 17;
+    }
+    /**
+     * <code>.ubii.services.Service service = 17;</code>
+     */
+    public ubii.services.ServiceOuterClass.Service getService() {
+      if (typeCase_ == 17) {
+         return (ubii.services.ServiceOuterClass.Service) type_;
+      }
+      return ubii.services.ServiceOuterClass.Service.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.services.Service service = 17;</code>
+     */
+    public ubii.services.ServiceOuterClass.ServiceOrBuilder getServiceOrBuilder() {
+      if (typeCase_ == 17) {
+         return (ubii.services.ServiceOuterClass.Service) type_;
+      }
+      return ubii.services.ServiceOuterClass.Service.getDefaultInstance();
+    }
+
+    public static final int SERVICE_LIST_FIELD_NUMBER = 18;
+    /**
+     * <code>.ubii.services.ServiceList service_list = 18;</code>
+     */
+    public boolean hasServiceList() {
+      return typeCase_ == 18;
+    }
+    /**
+     * <code>.ubii.services.ServiceList service_list = 18;</code>
+     */
+    public ubii.services.ServiceOuterClass.ServiceList getServiceList() {
+      if (typeCase_ == 18) {
+         return (ubii.services.ServiceOuterClass.ServiceList) type_;
+      }
+      return ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.services.ServiceList service_list = 18;</code>
+     */
+    public ubii.services.ServiceOuterClass.ServiceListOrBuilder getServiceListOrBuilder() {
+      if (typeCase_ == 18) {
+         return (ubii.services.ServiceOuterClass.ServiceList) type_;
+      }
+      return ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -950,6 +1170,18 @@ public final class ServiceReplyOuterClass {
       }
       if (typeCase_ == 14) {
         output.writeMessage(14, (ubii.devices.TopicDemuxOuterClass.TopicDemuxList) type_);
+      }
+      if (typeCase_ == 15) {
+        output.writeMessage(15, (ubii.clients.ClientOuterClass.ClientList) type_);
+      }
+      if (typeCase_ == 16) {
+        output.writeMessage(16, (ubii.devices.DeviceOuterClass.DeviceList) type_);
+      }
+      if (typeCase_ == 17) {
+        output.writeMessage(17, (ubii.services.ServiceOuterClass.Service) type_);
+      }
+      if (typeCase_ == 18) {
+        output.writeMessage(18, (ubii.services.ServiceOuterClass.ServiceList) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -1015,6 +1247,22 @@ public final class ServiceReplyOuterClass {
       if (typeCase_ == 14) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (ubii.devices.TopicDemuxOuterClass.TopicDemuxList) type_);
+      }
+      if (typeCase_ == 15) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, (ubii.clients.ClientOuterClass.ClientList) type_);
+      }
+      if (typeCase_ == 16) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, (ubii.devices.DeviceOuterClass.DeviceList) type_);
+      }
+      if (typeCase_ == 17) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, (ubii.services.ServiceOuterClass.Service) type_);
+      }
+      if (typeCase_ == 18) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, (ubii.services.ServiceOuterClass.ServiceList) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1092,6 +1340,22 @@ public final class ServiceReplyOuterClass {
           result = result && getTopicDemuxList()
               .equals(other.getTopicDemuxList());
           break;
+        case 15:
+          result = result && getClientList()
+              .equals(other.getClientList());
+          break;
+        case 16:
+          result = result && getDeviceList()
+              .equals(other.getDeviceList());
+          break;
+        case 17:
+          result = result && getService()
+              .equals(other.getService());
+          break;
+        case 18:
+          result = result && getServiceList()
+              .equals(other.getServiceList());
+          break;
         case 0:
         default:
       }
@@ -1162,6 +1426,22 @@ public final class ServiceReplyOuterClass {
         case 14:
           hash = (37 * hash) + TOPIC_DEMUX_LIST_FIELD_NUMBER;
           hash = (53 * hash) + getTopicDemuxList().hashCode();
+          break;
+        case 15:
+          hash = (37 * hash) + CLIENT_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getClientList().hashCode();
+          break;
+        case 16:
+          hash = (37 * hash) + DEVICE_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getDeviceList().hashCode();
+          break;
+        case 17:
+          hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+          hash = (53 * hash) + getService().hashCode();
+          break;
+        case 18:
+          hash = (37 * hash) + SERVICE_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getServiceList().hashCode();
           break;
         case 0:
         default:
@@ -1425,6 +1705,34 @@ public final class ServiceReplyOuterClass {
             result.type_ = topicDemuxListBuilder_.build();
           }
         }
+        if (typeCase_ == 15) {
+          if (clientListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = clientListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 16) {
+          if (deviceListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = deviceListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 17) {
+          if (serviceBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = serviceBuilder_.build();
+          }
+        }
+        if (typeCase_ == 18) {
+          if (serviceListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = serviceListBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -1529,6 +1837,22 @@ public final class ServiceReplyOuterClass {
           }
           case TOPIC_DEMUX_LIST: {
             mergeTopicDemuxList(other.getTopicDemuxList());
+            break;
+          }
+          case CLIENT_LIST: {
+            mergeClientList(other.getClientList());
+            break;
+          }
+          case DEVICE_LIST: {
+            mergeDeviceList(other.getDeviceList());
+            break;
+          }
+          case SERVICE: {
+            mergeService(other.getService());
+            break;
+          }
+          case SERVICE_LIST: {
+            mergeServiceList(other.getServiceList());
             break;
           }
           case TYPE_NOT_SET: {
@@ -3482,6 +3806,550 @@ public final class ServiceReplyOuterClass {
         onChanged();;
         return topicDemuxListBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.clients.ClientOuterClass.ClientList, ubii.clients.ClientOuterClass.ClientList.Builder, ubii.clients.ClientOuterClass.ClientListOrBuilder> clientListBuilder_;
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public boolean hasClientList() {
+        return typeCase_ == 15;
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public ubii.clients.ClientOuterClass.ClientList getClientList() {
+        if (clientListBuilder_ == null) {
+          if (typeCase_ == 15) {
+            return (ubii.clients.ClientOuterClass.ClientList) type_;
+          }
+          return ubii.clients.ClientOuterClass.ClientList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 15) {
+            return clientListBuilder_.getMessage();
+          }
+          return ubii.clients.ClientOuterClass.ClientList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public Builder setClientList(ubii.clients.ClientOuterClass.ClientList value) {
+        if (clientListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          clientListBuilder_.setMessage(value);
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public Builder setClientList(
+          ubii.clients.ClientOuterClass.ClientList.Builder builderForValue) {
+        if (clientListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public Builder mergeClientList(ubii.clients.ClientOuterClass.ClientList value) {
+        if (clientListBuilder_ == null) {
+          if (typeCase_ == 15 &&
+              type_ != ubii.clients.ClientOuterClass.ClientList.getDefaultInstance()) {
+            type_ = ubii.clients.ClientOuterClass.ClientList.newBuilder((ubii.clients.ClientOuterClass.ClientList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 15) {
+            clientListBuilder_.mergeFrom(value);
+          }
+          clientListBuilder_.setMessage(value);
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public Builder clearClientList() {
+        if (clientListBuilder_ == null) {
+          if (typeCase_ == 15) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 15) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          clientListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public ubii.clients.ClientOuterClass.ClientList.Builder getClientListBuilder() {
+        return getClientListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      public ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder() {
+        if ((typeCase_ == 15) && (clientListBuilder_ != null)) {
+          return clientListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 15) {
+            return (ubii.clients.ClientOuterClass.ClientList) type_;
+          }
+          return ubii.clients.ClientOuterClass.ClientList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.clients.ClientList client_list = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.clients.ClientOuterClass.ClientList, ubii.clients.ClientOuterClass.ClientList.Builder, ubii.clients.ClientOuterClass.ClientListOrBuilder> 
+          getClientListFieldBuilder() {
+        if (clientListBuilder_ == null) {
+          if (!(typeCase_ == 15)) {
+            type_ = ubii.clients.ClientOuterClass.ClientList.getDefaultInstance();
+          }
+          clientListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.clients.ClientOuterClass.ClientList, ubii.clients.ClientOuterClass.ClientList.Builder, ubii.clients.ClientOuterClass.ClientListOrBuilder>(
+                  (ubii.clients.ClientOuterClass.ClientList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 15;
+        onChanged();;
+        return clientListBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> deviceListBuilder_;
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public boolean hasDeviceList() {
+        return typeCase_ == 16;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
+        if (deviceListBuilder_ == null) {
+          if (typeCase_ == 16) {
+            return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+          }
+          return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 16) {
+            return deviceListBuilder_.getMessage();
+          }
+          return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public Builder setDeviceList(ubii.devices.DeviceOuterClass.DeviceList value) {
+        if (deviceListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          deviceListBuilder_.setMessage(value);
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public Builder setDeviceList(
+          ubii.devices.DeviceOuterClass.DeviceList.Builder builderForValue) {
+        if (deviceListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          deviceListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public Builder mergeDeviceList(ubii.devices.DeviceOuterClass.DeviceList value) {
+        if (deviceListBuilder_ == null) {
+          if (typeCase_ == 16 &&
+              type_ != ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance()) {
+            type_ = ubii.devices.DeviceOuterClass.DeviceList.newBuilder((ubii.devices.DeviceOuterClass.DeviceList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 16) {
+            deviceListBuilder_.mergeFrom(value);
+          }
+          deviceListBuilder_.setMessage(value);
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public Builder clearDeviceList() {
+        if (deviceListBuilder_ == null) {
+          if (typeCase_ == 16) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 16) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          deviceListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public ubii.devices.DeviceOuterClass.DeviceList.Builder getDeviceListBuilder() {
+        return getDeviceListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
+        if ((typeCase_ == 16) && (deviceListBuilder_ != null)) {
+          return deviceListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 16) {
+            return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+          }
+          return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> 
+          getDeviceListFieldBuilder() {
+        if (deviceListBuilder_ == null) {
+          if (!(typeCase_ == 16)) {
+            type_ = ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+          }
+          deviceListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder>(
+                  (ubii.devices.DeviceOuterClass.DeviceList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 16;
+        onChanged();;
+        return deviceListBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.services.ServiceOuterClass.Service, ubii.services.ServiceOuterClass.Service.Builder, ubii.services.ServiceOuterClass.ServiceOrBuilder> serviceBuilder_;
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public boolean hasService() {
+        return typeCase_ == 17;
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public ubii.services.ServiceOuterClass.Service getService() {
+        if (serviceBuilder_ == null) {
+          if (typeCase_ == 17) {
+            return (ubii.services.ServiceOuterClass.Service) type_;
+          }
+          return ubii.services.ServiceOuterClass.Service.getDefaultInstance();
+        } else {
+          if (typeCase_ == 17) {
+            return serviceBuilder_.getMessage();
+          }
+          return ubii.services.ServiceOuterClass.Service.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public Builder setService(ubii.services.ServiceOuterClass.Service value) {
+        if (serviceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          serviceBuilder_.setMessage(value);
+        }
+        typeCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public Builder setService(
+          ubii.services.ServiceOuterClass.Service.Builder builderForValue) {
+        if (serviceBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          serviceBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public Builder mergeService(ubii.services.ServiceOuterClass.Service value) {
+        if (serviceBuilder_ == null) {
+          if (typeCase_ == 17 &&
+              type_ != ubii.services.ServiceOuterClass.Service.getDefaultInstance()) {
+            type_ = ubii.services.ServiceOuterClass.Service.newBuilder((ubii.services.ServiceOuterClass.Service) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 17) {
+            serviceBuilder_.mergeFrom(value);
+          }
+          serviceBuilder_.setMessage(value);
+        }
+        typeCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public Builder clearService() {
+        if (serviceBuilder_ == null) {
+          if (typeCase_ == 17) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 17) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          serviceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public ubii.services.ServiceOuterClass.Service.Builder getServiceBuilder() {
+        return getServiceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      public ubii.services.ServiceOuterClass.ServiceOrBuilder getServiceOrBuilder() {
+        if ((typeCase_ == 17) && (serviceBuilder_ != null)) {
+          return serviceBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 17) {
+            return (ubii.services.ServiceOuterClass.Service) type_;
+          }
+          return ubii.services.ServiceOuterClass.Service.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.services.Service service = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.services.ServiceOuterClass.Service, ubii.services.ServiceOuterClass.Service.Builder, ubii.services.ServiceOuterClass.ServiceOrBuilder> 
+          getServiceFieldBuilder() {
+        if (serviceBuilder_ == null) {
+          if (!(typeCase_ == 17)) {
+            type_ = ubii.services.ServiceOuterClass.Service.getDefaultInstance();
+          }
+          serviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.services.ServiceOuterClass.Service, ubii.services.ServiceOuterClass.Service.Builder, ubii.services.ServiceOuterClass.ServiceOrBuilder>(
+                  (ubii.services.ServiceOuterClass.Service) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 17;
+        onChanged();;
+        return serviceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.services.ServiceOuterClass.ServiceList, ubii.services.ServiceOuterClass.ServiceList.Builder, ubii.services.ServiceOuterClass.ServiceListOrBuilder> serviceListBuilder_;
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public boolean hasServiceList() {
+        return typeCase_ == 18;
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public ubii.services.ServiceOuterClass.ServiceList getServiceList() {
+        if (serviceListBuilder_ == null) {
+          if (typeCase_ == 18) {
+            return (ubii.services.ServiceOuterClass.ServiceList) type_;
+          }
+          return ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 18) {
+            return serviceListBuilder_.getMessage();
+          }
+          return ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public Builder setServiceList(ubii.services.ServiceOuterClass.ServiceList value) {
+        if (serviceListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          serviceListBuilder_.setMessage(value);
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public Builder setServiceList(
+          ubii.services.ServiceOuterClass.ServiceList.Builder builderForValue) {
+        if (serviceListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          serviceListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public Builder mergeServiceList(ubii.services.ServiceOuterClass.ServiceList value) {
+        if (serviceListBuilder_ == null) {
+          if (typeCase_ == 18 &&
+              type_ != ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance()) {
+            type_ = ubii.services.ServiceOuterClass.ServiceList.newBuilder((ubii.services.ServiceOuterClass.ServiceList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 18) {
+            serviceListBuilder_.mergeFrom(value);
+          }
+          serviceListBuilder_.setMessage(value);
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public Builder clearServiceList() {
+        if (serviceListBuilder_ == null) {
+          if (typeCase_ == 18) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 18) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          serviceListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public ubii.services.ServiceOuterClass.ServiceList.Builder getServiceListBuilder() {
+        return getServiceListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      public ubii.services.ServiceOuterClass.ServiceListOrBuilder getServiceListOrBuilder() {
+        if ((typeCase_ == 18) && (serviceListBuilder_ != null)) {
+          return serviceListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 18) {
+            return (ubii.services.ServiceOuterClass.ServiceList) type_;
+          }
+          return ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.services.ServiceList service_list = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.services.ServiceOuterClass.ServiceList, ubii.services.ServiceOuterClass.ServiceList.Builder, ubii.services.ServiceOuterClass.ServiceListOrBuilder> 
+          getServiceListFieldBuilder() {
+        if (serviceListBuilder_ == null) {
+          if (!(typeCase_ == 18)) {
+            type_ = ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance();
+          }
+          serviceListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.services.ServiceOuterClass.ServiceList, ubii.services.ServiceOuterClass.ServiceList.Builder, ubii.services.ServiceOuterClass.ServiceListOrBuilder>(
+                  (ubii.services.ServiceOuterClass.ServiceList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 18;
+        onChanged();;
+        return serviceListBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3558,25 +4426,30 @@ public final class ServiceReplyOuterClass {
       "icMux.proto\032\036proto/devices/topicDemux.pr" +
       "oto\032\032proto/servers/server.proto\032\034proto/s" +
       "essions/session.proto\032$proto/interaction" +
-      "s/interaction.proto\"\271\005\n\014ServiceReply\022(\n\007" +
-      "success\030\001 \001(\0132\025.ubii.general.SuccessH\000\022$" +
-      "\n\005error\030\002 \001(\0132\023.ubii.general.ErrorH\000\022&\n\006" +
-      "client\030\003 \001(\0132\024.ubii.clients.ClientH\000\022&\n\006" +
-      "device\030\004 \001(\0132\024.ubii.devices.DeviceH\000\022&\n\006" +
-      "server\030\005 \001(\0132\024.ubii.servers.ServerH\000\022)\n\007" +
-      "session\030\006 \001(\0132\026.ubii.sessions.SessionH\000\022" +
-      "2\n\014session_list\030\007 \001(\0132\032.ubii.sessions.Se" +
-      "ssionListH\000\0225\n\013interaction\030\010 \001(\0132\036.ubii." +
-      "interactions.InteractionH\000\022>\n\020interactio" +
-      "n_list\030\t \001(\0132\".ubii.interactions.Interac" +
-      "tionListH\000\0225\n\013string_list\030\n \001(\0132\036.ubii.d" +
-      "ataStructure.StringListH\000\022+\n\ttopic_mux\030\013" +
-      " \001(\0132\026.ubii.devices.TopicMuxH\000\0224\n\016topic_" +
-      "mux_list\030\014 \001(\0132\032.ubii.devices.TopicMuxLi" +
-      "stH\000\022/\n\013topic_demux\030\r \001(\0132\030.ubii.devices" +
-      ".TopicDemuxH\000\0228\n\020topic_demux_list\030\016 \001(\0132" +
-      "\034.ubii.devices.TopicDemuxListH\000B\006\n\004typeb" +
-      "\006proto3"
+      "s/interaction.proto\032\034proto/services/serv" +
+      "ice.proto\"\372\006\n\014ServiceReply\022(\n\007success\030\001 " +
+      "\001(\0132\025.ubii.general.SuccessH\000\022$\n\005error\030\002 " +
+      "\001(\0132\023.ubii.general.ErrorH\000\022&\n\006client\030\003 \001" +
+      "(\0132\024.ubii.clients.ClientH\000\022&\n\006device\030\004 \001" +
+      "(\0132\024.ubii.devices.DeviceH\000\022&\n\006server\030\005 \001" +
+      "(\0132\024.ubii.servers.ServerH\000\022)\n\007session\030\006 " +
+      "\001(\0132\026.ubii.sessions.SessionH\000\0222\n\014session" +
+      "_list\030\007 \001(\0132\032.ubii.sessions.SessionListH" +
+      "\000\0225\n\013interaction\030\010 \001(\0132\036.ubii.interactio" +
+      "ns.InteractionH\000\022>\n\020interaction_list\030\t \001" +
+      "(\0132\".ubii.interactions.InteractionListH\000" +
+      "\0225\n\013string_list\030\n \001(\0132\036.ubii.dataStructu" +
+      "re.StringListH\000\022+\n\ttopic_mux\030\013 \001(\0132\026.ubi" +
+      "i.devices.TopicMuxH\000\0224\n\016topic_mux_list\030\014" +
+      " \001(\0132\032.ubii.devices.TopicMuxListH\000\022/\n\013to" +
+      "pic_demux\030\r \001(\0132\030.ubii.devices.TopicDemu" +
+      "xH\000\0228\n\020topic_demux_list\030\016 \001(\0132\034.ubii.dev" +
+      "ices.TopicDemuxListH\000\022/\n\013client_list\030\017 \001" +
+      "(\0132\030.ubii.clients.ClientListH\000\022/\n\013device" +
+      "_list\030\020 \001(\0132\030.ubii.devices.DeviceListH\000\022" +
+      ")\n\007service\030\021 \001(\0132\026.ubii.services.Service" +
+      "H\000\0222\n\014service_list\030\022 \001(\0132\032.ubii.services" +
+      ".ServiceListH\000B\006\n\004typeb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3599,13 +4472,14 @@ public final class ServiceReplyOuterClass {
           ubii.servers.ServerOuterClass.getDescriptor(),
           ubii.sessions.SessionOuterClass.getDescriptor(),
           ubii.interactions.InteractionOuterClass.getDescriptor(),
+          ubii.services.ServiceOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_services_ServiceReply_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_services_ServiceReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_ServiceReply_descriptor,
-        new java.lang.String[] { "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "Interaction", "InteractionList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "Type", });
+        new java.lang.String[] { "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "Interaction", "InteractionList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "Service", "ServiceList", "Type", });
     ubii.general.SuccessOuterClass.getDescriptor();
     ubii.general.ErrorOuterClass.getDescriptor();
     ubii.dataStructure.Lists.getDescriptor();
@@ -3616,6 +4490,7 @@ public final class ServiceReplyOuterClass {
     ubii.servers.ServerOuterClass.getDescriptor();
     ubii.sessions.SessionOuterClass.getDescriptor();
     ubii.interactions.InteractionOuterClass.getDescriptor();
+    ubii.services.ServiceOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

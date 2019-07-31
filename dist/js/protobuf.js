@@ -2720,6 +2720,7 @@ $root.ubii = (function() {
              * @property {number|null} [processFrequency] Interaction processFrequency
              * @property {Array.<string>|null} [authors] Interaction authors
              * @property {Array.<string>|null} [tags] Interaction tags
+             * @property {string|null} [description] Interaction description
              */
 
             /**
@@ -2814,6 +2815,14 @@ $root.ubii = (function() {
             Interaction.prototype.tags = $util.emptyArray;
 
             /**
+             * Interaction description.
+             * @member {string} description
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.description = "";
+
+            /**
              * Creates a new Interaction instance using the specified properties.
              * @function create
              * @memberof ubii.interactions.Interaction
@@ -2859,6 +2868,8 @@ $root.ubii = (function() {
                 if (message.tags != null && message.tags.length)
                     for (var i = 0; i < message.tags.length; ++i)
                         writer.uint32(/* id 9, wireType 2 =*/74).string(message.tags[i]);
+                if (message.description != null && message.hasOwnProperty("description"))
+                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.description);
                 return writer;
             };
 
@@ -2927,6 +2938,9 @@ $root.ubii = (function() {
                         if (!(message.tags && message.tags.length))
                             message.tags = [];
                         message.tags.push(reader.string());
+                        break;
+                    case 10:
+                        message.description = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3010,6 +3024,9 @@ $root.ubii = (function() {
                         if (!$util.isString(message.tags[i]))
                             return "tags: string[] expected";
                 }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    if (!$util.isString(message.description))
+                        return "description: string expected";
                 return null;
             };
 
@@ -3069,6 +3086,8 @@ $root.ubii = (function() {
                     for (var i = 0; i < object.tags.length; ++i)
                         message.tags[i] = String(object.tags[i]);
                 }
+                if (object.description != null)
+                    message.description = String(object.description);
                 return message;
             };
 
@@ -3097,6 +3116,7 @@ $root.ubii = (function() {
                     object.processingCallback = "";
                     object.onCreated = "";
                     object.processFrequency = 0;
+                    object.description = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -3128,6 +3148,8 @@ $root.ubii = (function() {
                     for (var j = 0; j < message.tags.length; ++j)
                         object.tags[j] = message.tags[j];
                 }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    object.description = message.description;
                 return object;
             };
 
@@ -4438,6 +4460,214 @@ $root.ubii = (function() {
             return Service;
         })();
 
+        services.ServiceList = (function() {
+
+            /**
+             * Properties of a ServiceList.
+             * @memberof ubii.services
+             * @interface IServiceList
+             * @property {Array.<ubii.services.IService>|null} [elements] ServiceList elements
+             */
+
+            /**
+             * Constructs a new ServiceList.
+             * @memberof ubii.services
+             * @classdesc Represents a ServiceList.
+             * @implements IServiceList
+             * @constructor
+             * @param {ubii.services.IServiceList=} [properties] Properties to set
+             */
+            function ServiceList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ServiceList elements.
+             * @member {Array.<ubii.services.IService>} elements
+             * @memberof ubii.services.ServiceList
+             * @instance
+             */
+            ServiceList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new ServiceList instance using the specified properties.
+             * @function create
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {ubii.services.IServiceList=} [properties] Properties to set
+             * @returns {ubii.services.ServiceList} ServiceList instance
+             */
+            ServiceList.create = function create(properties) {
+                return new ServiceList(properties);
+            };
+
+            /**
+             * Encodes the specified ServiceList message. Does not implicitly {@link ubii.services.ServiceList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {ubii.services.IServiceList} message ServiceList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ServiceList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.services.Service.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ServiceList message, length delimited. Does not implicitly {@link ubii.services.ServiceList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {ubii.services.IServiceList} message ServiceList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ServiceList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ServiceList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.services.ServiceList} ServiceList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ServiceList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.services.ServiceList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.services.Service.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ServiceList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.services.ServiceList} ServiceList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ServiceList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ServiceList message.
+             * @function verify
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ServiceList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.services.Service.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a ServiceList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.services.ServiceList} ServiceList
+             */
+            ServiceList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.services.ServiceList)
+                    return object;
+                var message = new $root.ubii.services.ServiceList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.services.ServiceList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.services.ServiceList.elements: object expected");
+                        message.elements[i] = $root.ubii.services.Service.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ServiceList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.services.ServiceList
+             * @static
+             * @param {ubii.services.ServiceList} message ServiceList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ServiceList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.services.Service.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this ServiceList to JSON.
+             * @function toJSON
+             * @memberof ubii.services.ServiceList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ServiceList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ServiceList;
+        })();
+
         services.ServiceReply = (function() {
 
             /**
@@ -4458,6 +4688,10 @@ $root.ubii = (function() {
              * @property {ubii.devices.ITopicMuxList|null} [topicMuxList] ServiceReply topicMuxList
              * @property {ubii.devices.ITopicDemux|null} [topicDemux] ServiceReply topicDemux
              * @property {ubii.devices.ITopicDemuxList|null} [topicDemuxList] ServiceReply topicDemuxList
+             * @property {ubii.clients.IClientList|null} [clientList] ServiceReply clientList
+             * @property {ubii.devices.IDeviceList|null} [deviceList] ServiceReply deviceList
+             * @property {ubii.services.IService|null} [service] ServiceReply service
+             * @property {ubii.services.IServiceList|null} [serviceList] ServiceReply serviceList
              */
 
             /**
@@ -4587,17 +4821,49 @@ $root.ubii = (function() {
              */
             ServiceReply.prototype.topicDemuxList = null;
 
+            /**
+             * ServiceReply clientList.
+             * @member {ubii.clients.IClientList|null|undefined} clientList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.clientList = null;
+
+            /**
+             * ServiceReply deviceList.
+             * @member {ubii.devices.IDeviceList|null|undefined} deviceList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.deviceList = null;
+
+            /**
+             * ServiceReply service.
+             * @member {ubii.services.IService|null|undefined} service
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.service = null;
+
+            /**
+             * ServiceReply serviceList.
+             * @member {ubii.services.IServiceList|null|undefined} serviceList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.serviceList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"interactionList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"interactionList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "interactionList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "interactionList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4653,6 +4919,14 @@ $root.ubii = (function() {
                     $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
                 if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList"))
                     $root.ubii.devices.TopicDemuxList.encode(message.topicDemuxList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+                if (message.clientList != null && message.hasOwnProperty("clientList"))
+                    $root.ubii.clients.ClientList.encode(message.clientList, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
+                if (message.deviceList != null && message.hasOwnProperty("deviceList"))
+                    $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.service != null && message.hasOwnProperty("service"))
+                    $root.ubii.services.Service.encode(message.service, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+                if (message.serviceList != null && message.hasOwnProperty("serviceList"))
+                    $root.ubii.services.ServiceList.encode(message.serviceList, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 return writer;
             };
 
@@ -4728,6 +5002,18 @@ $root.ubii = (function() {
                         break;
                     case 14:
                         message.topicDemuxList = $root.ubii.devices.TopicDemuxList.decode(reader, reader.uint32());
+                        break;
+                    case 15:
+                        message.clientList = $root.ubii.clients.ClientList.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.deviceList = $root.ubii.devices.DeviceList.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.service = $root.ubii.services.Service.decode(reader, reader.uint32());
+                        break;
+                    case 18:
+                        message.serviceList = $root.ubii.services.ServiceList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4903,6 +5189,46 @@ $root.ubii = (function() {
                             return "topicDemuxList." + error;
                     }
                 }
+                if (message.clientList != null && message.hasOwnProperty("clientList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.clients.ClientList.verify(message.clientList);
+                        if (error)
+                            return "clientList." + error;
+                    }
+                }
+                if (message.deviceList != null && message.hasOwnProperty("deviceList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.DeviceList.verify(message.deviceList);
+                        if (error)
+                            return "deviceList." + error;
+                    }
+                }
+                if (message.service != null && message.hasOwnProperty("service")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.services.Service.verify(message.service);
+                        if (error)
+                            return "service." + error;
+                    }
+                }
+                if (message.serviceList != null && message.hasOwnProperty("serviceList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.services.ServiceList.verify(message.serviceList);
+                        if (error)
+                            return "serviceList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -4987,6 +5313,26 @@ $root.ubii = (function() {
                     if (typeof object.topicDemuxList !== "object")
                         throw TypeError(".ubii.services.ServiceReply.topicDemuxList: object expected");
                     message.topicDemuxList = $root.ubii.devices.TopicDemuxList.fromObject(object.topicDemuxList);
+                }
+                if (object.clientList != null) {
+                    if (typeof object.clientList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.clientList: object expected");
+                    message.clientList = $root.ubii.clients.ClientList.fromObject(object.clientList);
+                }
+                if (object.deviceList != null) {
+                    if (typeof object.deviceList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.deviceList: object expected");
+                    message.deviceList = $root.ubii.devices.DeviceList.fromObject(object.deviceList);
+                }
+                if (object.service != null) {
+                    if (typeof object.service !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.service: object expected");
+                    message.service = $root.ubii.services.Service.fromObject(object.service);
+                }
+                if (object.serviceList != null) {
+                    if (typeof object.serviceList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.serviceList: object expected");
+                    message.serviceList = $root.ubii.services.ServiceList.fromObject(object.serviceList);
                 }
                 return message;
             };
@@ -5074,6 +5420,26 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "topicDemuxList";
                 }
+                if (message.clientList != null && message.hasOwnProperty("clientList")) {
+                    object.clientList = $root.ubii.clients.ClientList.toObject(message.clientList, options);
+                    if (options.oneofs)
+                        object.type = "clientList";
+                }
+                if (message.deviceList != null && message.hasOwnProperty("deviceList")) {
+                    object.deviceList = $root.ubii.devices.DeviceList.toObject(message.deviceList, options);
+                    if (options.oneofs)
+                        object.type = "deviceList";
+                }
+                if (message.service != null && message.hasOwnProperty("service")) {
+                    object.service = $root.ubii.services.Service.toObject(message.service, options);
+                    if (options.oneofs)
+                        object.type = "service";
+                }
+                if (message.serviceList != null && message.hasOwnProperty("serviceList")) {
+                    object.serviceList = $root.ubii.services.ServiceList.toObject(message.serviceList, options);
+                    if (options.oneofs)
+                        object.type = "serviceList";
+                }
                 return object;
             };
 
@@ -5109,6 +5475,8 @@ $root.ubii = (function() {
              * @property {ubii.devices.ITopicMuxList|null} [topicMuxList] ServiceRequest topicMuxList
              * @property {ubii.devices.ITopicDemux|null} [topicDemux] ServiceRequest topicDemux
              * @property {ubii.devices.ITopicDemuxList|null} [topicDemuxList] ServiceRequest topicDemuxList
+             * @property {ubii.clients.IClientList|null} [clientList] ServiceRequest clientList
+             * @property {ubii.devices.IDeviceList|null} [deviceList] ServiceRequest deviceList
              */
 
             /**
@@ -5222,17 +5590,33 @@ $root.ubii = (function() {
              */
             ServiceRequest.prototype.topicDemuxList = null;
 
+            /**
+             * ServiceRequest clientList.
+             * @member {ubii.clients.IClientList|null|undefined} clientList
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.clientList = null;
+
+            /**
+             * ServiceRequest deviceList.
+             * @member {ubii.devices.IDeviceList|null|undefined} deviceList
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.deviceList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|"interactionList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|"interactionList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction", "interactionList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction", "interactionList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5284,6 +5668,10 @@ $root.ubii = (function() {
                     $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList"))
                     $root.ubii.devices.TopicDemuxList.encode(message.topicDemuxList, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+                if (message.clientList != null && message.hasOwnProperty("clientList"))
+                    $root.ubii.clients.ClientList.encode(message.clientList, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                if (message.deviceList != null && message.hasOwnProperty("deviceList"))
+                    $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 return writer;
             };
 
@@ -5353,6 +5741,12 @@ $root.ubii = (function() {
                         break;
                     case 12:
                         message.topicDemuxList = $root.ubii.devices.TopicDemuxList.decode(reader, reader.uint32());
+                        break;
+                    case 13:
+                        message.clientList = $root.ubii.clients.ClientList.decode(reader, reader.uint32());
+                        break;
+                    case 14:
+                        message.deviceList = $root.ubii.devices.DeviceList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5501,6 +5895,26 @@ $root.ubii = (function() {
                             return "topicDemuxList." + error;
                     }
                 }
+                if (message.clientList != null && message.hasOwnProperty("clientList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.clients.ClientList.verify(message.clientList);
+                        if (error)
+                            return "clientList." + error;
+                    }
+                }
+                if (message.deviceList != null && message.hasOwnProperty("deviceList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.DeviceList.verify(message.deviceList);
+                        if (error)
+                            return "deviceList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -5572,6 +5986,16 @@ $root.ubii = (function() {
                     if (typeof object.topicDemuxList !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.topicDemuxList: object expected");
                     message.topicDemuxList = $root.ubii.devices.TopicDemuxList.fromObject(object.topicDemuxList);
+                }
+                if (object.clientList != null) {
+                    if (typeof object.clientList !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.clientList: object expected");
+                    message.clientList = $root.ubii.clients.ClientList.fromObject(object.clientList);
+                }
+                if (object.deviceList != null) {
+                    if (typeof object.deviceList !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.deviceList: object expected");
+                    message.deviceList = $root.ubii.devices.DeviceList.fromObject(object.deviceList);
                 }
                 return message;
             };
@@ -5647,6 +6071,16 @@ $root.ubii = (function() {
                     object.topicDemuxList = $root.ubii.devices.TopicDemuxList.toObject(message.topicDemuxList, options);
                     if (options.oneofs)
                         object.type = "topicDemuxList";
+                }
+                if (message.clientList != null && message.hasOwnProperty("clientList")) {
+                    object.clientList = $root.ubii.clients.ClientList.toObject(message.clientList, options);
+                    if (options.oneofs)
+                        object.type = "clientList";
+                }
+                if (message.deviceList != null && message.hasOwnProperty("deviceList")) {
+                    object.deviceList = $root.ubii.devices.DeviceList.toObject(message.deviceList, options);
+                    if (options.oneofs)
+                        object.type = "deviceList";
                 }
                 return object;
             };

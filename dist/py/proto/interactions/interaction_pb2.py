@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.interactions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\xfb\x01\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12\x32\n\rinput_formats\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x33\n\x0eoutput_formats\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x12\n\non_created\x18\x06 \x01(\t\x12\x19\n\x11process_frequency\x18\x07 \x01(\x02\x12\x0f\n\x07\x61uthors\x18\x08 \x03(\t\x12\x0c\n\x04tags\x18\t \x03(\t\"C\n\x0fInteractionList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.interactions.Interactionb\x06proto3')
+  serialized_pb=_b('\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\x90\x02\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12\x32\n\rinput_formats\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x33\n\x0eoutput_formats\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x12\n\non_created\x18\x06 \x01(\t\x12\x19\n\x11process_frequency\x18\x07 \x01(\x02\x12\x0f\n\x07\x61uthors\x18\x08 \x03(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\n \x01(\t\"C\n\x0fInteractionList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.interactions.Interactionb\x06proto3')
   ,
   dependencies=[proto_dot_interactions_dot_ioFormat__pb2.DESCRIPTOR,])
 
@@ -97,6 +97,13 @@ _INTERACTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='ubii.interactions.Interaction.description', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -110,7 +117,7 @@ _INTERACTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=95,
-  serialized_end=346,
+  serialized_end=367,
 )
 
 
@@ -140,8 +147,8 @@ _INTERACTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=348,
-  serialized_end=415,
+  serialized_start=369,
+  serialized_end=436,
 )
 
 _INTERACTION.fields_by_name['input_formats'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT

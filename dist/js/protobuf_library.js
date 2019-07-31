@@ -53,6 +53,7 @@ goog.provide('proto.ubii.interactions.Interaction');
 goog.provide('proto.ubii.interactions.InteractionList');
 goog.provide('proto.ubii.servers.Server');
 goog.provide('proto.ubii.services.Service');
+goog.provide('proto.ubii.services.ServiceList');
 goog.provide('proto.ubii.services.ServiceReply');
 goog.provide('proto.ubii.services.ServiceRequest');
 goog.provide('proto.ubii.services.request.TopicSubscription');
@@ -9783,7 +9784,8 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
     onCreated: jspb.Message.getFieldWithDefault(msg, 6, ""),
     processFrequency: +jspb.Message.getFieldWithDefault(msg, 7, 0.0),
     authorsList: jspb.Message.getRepeatedField(msg, 8),
-    tagsList: jspb.Message.getRepeatedField(msg, 9)
+    tagsList: jspb.Message.getRepeatedField(msg, 9),
+    description: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -9857,6 +9859,10 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.addTags(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -9949,6 +9955,13 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeRepeatedString(
       9,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -10147,6 +10160,21 @@ proto.ubii.interactions.Interaction.prototype.addTags = function(value, opt_inde
 
 proto.ubii.interactions.Interaction.prototype.clearTagsList = function() {
   this.setTagsList([]);
+};
+
+
+/**
+ * optional string description = 10;
+ * @return {string}
+ */
+proto.ubii.interactions.Interaction.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.interactions.Interaction.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
@@ -13021,6 +13049,174 @@ proto.ubii.services.Service.prototype.setResponseMessageFormat = function(value)
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ubii.services.ServiceList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.services.ServiceList.repeatedFields_, null);
+};
+goog.inherits(proto.ubii.services.ServiceList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.services.ServiceList.displayName = 'proto.ubii.services.ServiceList';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.services.ServiceList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.services.ServiceList.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.services.ServiceList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.services.ServiceList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.services.ServiceList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.ubii.services.Service.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.services.ServiceList}
+ */
+proto.ubii.services.ServiceList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.services.ServiceList;
+  return proto.ubii.services.ServiceList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.services.ServiceList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.services.ServiceList}
+ */
+proto.ubii.services.ServiceList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.services.Service;
+      reader.readMessage(value,proto.ubii.services.Service.deserializeBinaryFromReader);
+      msg.addElements(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.services.ServiceList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.services.ServiceList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.services.ServiceList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.services.ServiceList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.ubii.services.Service.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Service elements = 1;
+ * @return {!Array<!proto.ubii.services.Service>}
+ */
+proto.ubii.services.ServiceList.prototype.getElementsList = function() {
+  return /** @type{!Array<!proto.ubii.services.Service>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.services.Service, 1));
+};
+
+
+/** @param {!Array<!proto.ubii.services.Service>} value */
+proto.ubii.services.ServiceList.prototype.setElementsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.ubii.services.Service=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.services.Service}
+ */
+proto.ubii.services.ServiceList.prototype.addElements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.services.Service, opt_index);
+};
+
+
+proto.ubii.services.ServiceList.prototype.clearElementsList = function() {
+  this.setElementsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ubii.services.ServiceReply = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.services.ServiceReply.oneofGroups_);
 };
@@ -13036,7 +13232,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]];
 
 /**
  * @enum {number}
@@ -13056,7 +13252,11 @@ proto.ubii.services.ServiceReply.TypeCase = {
   TOPIC_MUX: 11,
   TOPIC_MUX_LIST: 12,
   TOPIC_DEMUX: 13,
-  TOPIC_DEMUX_LIST: 14
+  TOPIC_DEMUX_LIST: 14,
+  CLIENT_LIST: 15,
+  DEVICE_LIST: 16,
+  SERVICE: 17,
+  SERVICE_LIST: 18
 };
 
 /**
@@ -13108,7 +13308,11 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     topicMux: (f = msg.getTopicMux()) && proto.ubii.devices.TopicMux.toObject(includeInstance, f),
     topicMuxList: (f = msg.getTopicMuxList()) && proto.ubii.devices.TopicMuxList.toObject(includeInstance, f),
     topicDemux: (f = msg.getTopicDemux()) && proto.ubii.devices.TopicDemux.toObject(includeInstance, f),
-    topicDemuxList: (f = msg.getTopicDemuxList()) && proto.ubii.devices.TopicDemuxList.toObject(includeInstance, f)
+    topicDemuxList: (f = msg.getTopicDemuxList()) && proto.ubii.devices.TopicDemuxList.toObject(includeInstance, f),
+    clientList: (f = msg.getClientList()) && proto.ubii.clients.ClientList.toObject(includeInstance, f),
+    deviceList: (f = msg.getDeviceList()) && proto.ubii.devices.DeviceList.toObject(includeInstance, f),
+    service: (f = msg.getService()) && proto.ubii.services.Service.toObject(includeInstance, f),
+    serviceList: (f = msg.getServiceList()) && proto.ubii.services.ServiceList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13214,6 +13418,26 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.ubii.devices.TopicDemuxList;
       reader.readMessage(value,proto.ubii.devices.TopicDemuxList.deserializeBinaryFromReader);
       msg.setTopicDemuxList(value);
+      break;
+    case 15:
+      var value = new proto.ubii.clients.ClientList;
+      reader.readMessage(value,proto.ubii.clients.ClientList.deserializeBinaryFromReader);
+      msg.setClientList(value);
+      break;
+    case 16:
+      var value = new proto.ubii.devices.DeviceList;
+      reader.readMessage(value,proto.ubii.devices.DeviceList.deserializeBinaryFromReader);
+      msg.setDeviceList(value);
+      break;
+    case 17:
+      var value = new proto.ubii.services.Service;
+      reader.readMessage(value,proto.ubii.services.Service.deserializeBinaryFromReader);
+      msg.setService(value);
+      break;
+    case 18:
+      var value = new proto.ubii.services.ServiceList;
+      reader.readMessage(value,proto.ubii.services.ServiceList.deserializeBinaryFromReader);
+      msg.setServiceList(value);
       break;
     default:
       reader.skipField();
@@ -13354,6 +13578,38 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       14,
       f,
       proto.ubii.devices.TopicDemuxList.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientList();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      proto.ubii.clients.ClientList.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeviceList();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      proto.ubii.devices.DeviceList.serializeBinaryToWriter
+    );
+  }
+  f = message.getService();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      proto.ubii.services.Service.serializeBinaryToWriter
+    );
+  }
+  f = message.getServiceList();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto.ubii.services.ServiceList.serializeBinaryToWriter
     );
   }
 };
@@ -13779,6 +14035,126 @@ proto.ubii.services.ServiceReply.prototype.hasTopicDemuxList = function() {
 };
 
 
+/**
+ * optional ubii.clients.ClientList client_list = 15;
+ * @return {?proto.ubii.clients.ClientList}
+ */
+proto.ubii.services.ServiceReply.prototype.getClientList = function() {
+  return /** @type{?proto.ubii.clients.ClientList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.clients.ClientList, 15));
+};
+
+
+/** @param {?proto.ubii.clients.ClientList|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setClientList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 15, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearClientList = function() {
+  this.setClientList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasClientList = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional ubii.devices.DeviceList device_list = 16;
+ * @return {?proto.ubii.devices.DeviceList}
+ */
+proto.ubii.services.ServiceReply.prototype.getDeviceList = function() {
+  return /** @type{?proto.ubii.devices.DeviceList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.DeviceList, 16));
+};
+
+
+/** @param {?proto.ubii.devices.DeviceList|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setDeviceList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 16, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearDeviceList = function() {
+  this.setDeviceList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasDeviceList = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional Service service = 17;
+ * @return {?proto.ubii.services.Service}
+ */
+proto.ubii.services.ServiceReply.prototype.getService = function() {
+  return /** @type{?proto.ubii.services.Service} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.services.Service, 17));
+};
+
+
+/** @param {?proto.ubii.services.Service|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setService = function(value) {
+  jspb.Message.setOneofWrapperField(this, 17, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearService = function() {
+  this.setService(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasService = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional ServiceList service_list = 18;
+ * @return {?proto.ubii.services.ServiceList}
+ */
+proto.ubii.services.ServiceReply.prototype.getServiceList = function() {
+  return /** @type{?proto.ubii.services.ServiceList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.services.ServiceList, 18));
+};
+
+
+/** @param {?proto.ubii.services.ServiceList|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setServiceList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearServiceList = function() {
+  this.setServiceList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasServiceList = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
 
 /**
  * Generated by JsPbCodeGenerator.
@@ -14036,7 +14412,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14]];
 
 /**
  * @enum {number}
@@ -14053,7 +14429,9 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   TOPIC_MUX: 9,
   TOPIC_MUX_LIST: 10,
   TOPIC_DEMUX: 11,
-  TOPIC_DEMUX_LIST: 12
+  TOPIC_DEMUX_LIST: 12,
+  CLIENT_LIST: 13,
+  DEVICE_LIST: 14
 };
 
 /**
@@ -14103,7 +14481,9 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     topicMux: (f = msg.getTopicMux()) && proto.ubii.devices.TopicMux.toObject(includeInstance, f),
     topicMuxList: (f = msg.getTopicMuxList()) && proto.ubii.devices.TopicMuxList.toObject(includeInstance, f),
     topicDemux: (f = msg.getTopicDemux()) && proto.ubii.devices.TopicDemux.toObject(includeInstance, f),
-    topicDemuxList: (f = msg.getTopicDemuxList()) && proto.ubii.devices.TopicDemuxList.toObject(includeInstance, f)
+    topicDemuxList: (f = msg.getTopicDemuxList()) && proto.ubii.devices.TopicDemuxList.toObject(includeInstance, f),
+    clientList: (f = msg.getClientList()) && proto.ubii.clients.ClientList.toObject(includeInstance, f),
+    deviceList: (f = msg.getDeviceList()) && proto.ubii.devices.DeviceList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14198,6 +14578,16 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       var value = new proto.ubii.devices.TopicDemuxList;
       reader.readMessage(value,proto.ubii.devices.TopicDemuxList.deserializeBinaryFromReader);
       msg.setTopicDemuxList(value);
+      break;
+    case 13:
+      var value = new proto.ubii.clients.ClientList;
+      reader.readMessage(value,proto.ubii.clients.ClientList.deserializeBinaryFromReader);
+      msg.setClientList(value);
+      break;
+    case 14:
+      var value = new proto.ubii.devices.DeviceList;
+      reader.readMessage(value,proto.ubii.devices.DeviceList.deserializeBinaryFromReader);
+      msg.setDeviceList(value);
       break;
     default:
       reader.skipField();
@@ -14321,6 +14711,22 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       12,
       f,
       proto.ubii.devices.TopicDemuxList.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientList();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.ubii.clients.ClientList.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeviceList();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      proto.ubii.devices.DeviceList.serializeBinaryToWriter
     );
   }
 };
@@ -14668,6 +15074,66 @@ proto.ubii.services.ServiceRequest.prototype.clearTopicDemuxList = function() {
  */
 proto.ubii.services.ServiceRequest.prototype.hasTopicDemuxList = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional ubii.clients.ClientList client_list = 13;
+ * @return {?proto.ubii.clients.ClientList}
+ */
+proto.ubii.services.ServiceRequest.prototype.getClientList = function() {
+  return /** @type{?proto.ubii.clients.ClientList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.clients.ClientList, 13));
+};
+
+
+/** @param {?proto.ubii.clients.ClientList|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setClientList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 13, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearClientList = function() {
+  this.setClientList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasClientList = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional ubii.devices.DeviceList device_list = 14;
+ * @return {?proto.ubii.devices.DeviceList}
+ */
+proto.ubii.services.ServiceRequest.prototype.getDeviceList = function() {
+  return /** @type{?proto.ubii.devices.DeviceList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.DeviceList, 14));
+};
+
+
+/** @param {?proto.ubii.devices.DeviceList|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setDeviceList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 14, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearDeviceList = function() {
+  this.setDeviceList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasDeviceList = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

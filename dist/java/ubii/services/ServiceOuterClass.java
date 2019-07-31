@@ -838,11 +838,798 @@ public final class ServiceOuterClass {
 
   }
 
+  public interface ServiceListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ubii.services.ServiceList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    java.util.List<ubii.services.ServiceOuterClass.Service> 
+        getElementsList();
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    ubii.services.ServiceOuterClass.Service getElements(int index);
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    int getElementsCount();
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    java.util.List<? extends ubii.services.ServiceOuterClass.ServiceOrBuilder> 
+        getElementsOrBuilderList();
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    ubii.services.ServiceOuterClass.ServiceOrBuilder getElementsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code ubii.services.ServiceList}
+   */
+  public  static final class ServiceList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ubii.services.ServiceList)
+      ServiceListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ServiceList.newBuilder() to construct.
+    private ServiceList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ServiceList() {
+      elements_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ServiceList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                elements_ = new java.util.ArrayList<ubii.services.ServiceOuterClass.Service>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              elements_.add(
+                  input.readMessage(ubii.services.ServiceOuterClass.Service.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ubii.services.ServiceOuterClass.internal_static_ubii_services_ServiceList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ubii.services.ServiceOuterClass.internal_static_ubii_services_ServiceList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ubii.services.ServiceOuterClass.ServiceList.class, ubii.services.ServiceOuterClass.ServiceList.Builder.class);
+    }
+
+    public static final int ELEMENTS_FIELD_NUMBER = 1;
+    private java.util.List<ubii.services.ServiceOuterClass.Service> elements_;
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    public java.util.List<ubii.services.ServiceOuterClass.Service> getElementsList() {
+      return elements_;
+    }
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    public java.util.List<? extends ubii.services.ServiceOuterClass.ServiceOrBuilder> 
+        getElementsOrBuilderList() {
+      return elements_;
+    }
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    public int getElementsCount() {
+      return elements_.size();
+    }
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    public ubii.services.ServiceOuterClass.Service getElements(int index) {
+      return elements_.get(index);
+    }
+    /**
+     * <code>repeated .ubii.services.Service elements = 1;</code>
+     */
+    public ubii.services.ServiceOuterClass.ServiceOrBuilder getElementsOrBuilder(
+        int index) {
+      return elements_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < elements_.size(); i++) {
+        output.writeMessage(1, elements_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < elements_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, elements_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ubii.services.ServiceOuterClass.ServiceList)) {
+        return super.equals(obj);
+      }
+      ubii.services.ServiceOuterClass.ServiceList other = (ubii.services.ServiceOuterClass.ServiceList) obj;
+
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getElementsCount() > 0) {
+        hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getElementsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ubii.services.ServiceOuterClass.ServiceList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ubii.services.ServiceOuterClass.ServiceList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ubii.services.ServiceList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ubii.services.ServiceList)
+        ubii.services.ServiceOuterClass.ServiceListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ubii.services.ServiceOuterClass.internal_static_ubii_services_ServiceList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ubii.services.ServiceOuterClass.internal_static_ubii_services_ServiceList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ubii.services.ServiceOuterClass.ServiceList.class, ubii.services.ServiceOuterClass.ServiceList.Builder.class);
+      }
+
+      // Construct using ubii.services.ServiceOuterClass.ServiceList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getElementsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (elementsBuilder_ == null) {
+          elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          elementsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ubii.services.ServiceOuterClass.internal_static_ubii_services_ServiceList_descriptor;
+      }
+
+      @java.lang.Override
+      public ubii.services.ServiceOuterClass.ServiceList getDefaultInstanceForType() {
+        return ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ubii.services.ServiceOuterClass.ServiceList build() {
+        ubii.services.ServiceOuterClass.ServiceList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ubii.services.ServiceOuterClass.ServiceList buildPartial() {
+        ubii.services.ServiceOuterClass.ServiceList result = new ubii.services.ServiceOuterClass.ServiceList(this);
+        int from_bitField0_ = bitField0_;
+        if (elementsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            elements_ = java.util.Collections.unmodifiableList(elements_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.elements_ = elements_;
+        } else {
+          result.elements_ = elementsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ubii.services.ServiceOuterClass.ServiceList) {
+          return mergeFrom((ubii.services.ServiceOuterClass.ServiceList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ubii.services.ServiceOuterClass.ServiceList other) {
+        if (other == ubii.services.ServiceOuterClass.ServiceList.getDefaultInstance()) return this;
+        if (elementsBuilder_ == null) {
+          if (!other.elements_.isEmpty()) {
+            if (elements_.isEmpty()) {
+              elements_ = other.elements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureElementsIsMutable();
+              elements_.addAll(other.elements_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.elements_.isEmpty()) {
+            if (elementsBuilder_.isEmpty()) {
+              elementsBuilder_.dispose();
+              elementsBuilder_ = null;
+              elements_ = other.elements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              elementsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getElementsFieldBuilder() : null;
+            } else {
+              elementsBuilder_.addAllMessages(other.elements_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ubii.services.ServiceOuterClass.ServiceList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ubii.services.ServiceOuterClass.ServiceList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<ubii.services.ServiceOuterClass.Service> elements_ =
+        java.util.Collections.emptyList();
+      private void ensureElementsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = new java.util.ArrayList<ubii.services.ServiceOuterClass.Service>(elements_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.services.ServiceOuterClass.Service, ubii.services.ServiceOuterClass.Service.Builder, ubii.services.ServiceOuterClass.ServiceOrBuilder> elementsBuilder_;
+
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public java.util.List<ubii.services.ServiceOuterClass.Service> getElementsList() {
+        if (elementsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(elements_);
+        } else {
+          return elementsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public int getElementsCount() {
+        if (elementsBuilder_ == null) {
+          return elements_.size();
+        } else {
+          return elementsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public ubii.services.ServiceOuterClass.Service getElements(int index) {
+        if (elementsBuilder_ == null) {
+          return elements_.get(index);
+        } else {
+          return elementsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder setElements(
+          int index, ubii.services.ServiceOuterClass.Service value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.set(index, value);
+          onChanged();
+        } else {
+          elementsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder setElements(
+          int index, ubii.services.ServiceOuterClass.Service.Builder builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder addElements(ubii.services.ServiceOuterClass.Service value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.add(value);
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder addElements(
+          int index, ubii.services.ServiceOuterClass.Service value) {
+        if (elementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureElementsIsMutable();
+          elements_.add(index, value);
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder addElements(
+          ubii.services.ServiceOuterClass.Service.Builder builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.add(builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder addElements(
+          int index, ubii.services.ServiceOuterClass.Service.Builder builderForValue) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          elementsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder addAllElements(
+          java.lang.Iterable<? extends ubii.services.ServiceOuterClass.Service> values) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, elements_);
+          onChanged();
+        } else {
+          elementsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder clearElements() {
+        if (elementsBuilder_ == null) {
+          elements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          elementsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public Builder removeElements(int index) {
+        if (elementsBuilder_ == null) {
+          ensureElementsIsMutable();
+          elements_.remove(index);
+          onChanged();
+        } else {
+          elementsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public ubii.services.ServiceOuterClass.Service.Builder getElementsBuilder(
+          int index) {
+        return getElementsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public ubii.services.ServiceOuterClass.ServiceOrBuilder getElementsOrBuilder(
+          int index) {
+        if (elementsBuilder_ == null) {
+          return elements_.get(index);  } else {
+          return elementsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public java.util.List<? extends ubii.services.ServiceOuterClass.ServiceOrBuilder> 
+           getElementsOrBuilderList() {
+        if (elementsBuilder_ != null) {
+          return elementsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(elements_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public ubii.services.ServiceOuterClass.Service.Builder addElementsBuilder() {
+        return getElementsFieldBuilder().addBuilder(
+            ubii.services.ServiceOuterClass.Service.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public ubii.services.ServiceOuterClass.Service.Builder addElementsBuilder(
+          int index) {
+        return getElementsFieldBuilder().addBuilder(
+            index, ubii.services.ServiceOuterClass.Service.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.services.Service elements = 1;</code>
+       */
+      public java.util.List<ubii.services.ServiceOuterClass.Service.Builder> 
+           getElementsBuilderList() {
+        return getElementsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.services.ServiceOuterClass.Service, ubii.services.ServiceOuterClass.Service.Builder, ubii.services.ServiceOuterClass.ServiceOrBuilder> 
+          getElementsFieldBuilder() {
+        if (elementsBuilder_ == null) {
+          elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.services.ServiceOuterClass.Service, ubii.services.ServiceOuterClass.Service.Builder, ubii.services.ServiceOuterClass.ServiceOrBuilder>(
+                  elements_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          elements_ = null;
+        }
+        return elementsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ubii.services.ServiceList)
+    }
+
+    // @@protoc_insertion_point(class_scope:ubii.services.ServiceList)
+    private static final ubii.services.ServiceOuterClass.ServiceList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ubii.services.ServiceOuterClass.ServiceList();
+    }
+
+    public static ubii.services.ServiceOuterClass.ServiceList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ServiceList>
+        PARSER = new com.google.protobuf.AbstractParser<ServiceList>() {
+      @java.lang.Override
+      public ServiceList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ServiceList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ServiceList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ServiceList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ubii.services.ServiceOuterClass.ServiceList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ubii_services_Service_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ubii_services_Service_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ubii_services_ServiceList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ubii_services_ServiceList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -855,7 +1642,9 @@ public final class ServiceOuterClass {
       "\n\034proto/services/service.proto\022\rubii.ser" +
       "vices\"Y\n\007Service\022\r\n\005topic\030\001 \001(\t\022\036\n\026reque" +
       "st_message_format\030\002 \001(\t\022\037\n\027response_mess" +
-      "age_format\030\003 \001(\tb\006proto3"
+      "age_format\030\003 \001(\t\"7\n\013ServiceList\022(\n\010eleme" +
+      "nts\030\001 \003(\0132\026.ubii.services.Serviceb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -875,6 +1664,12 @@ public final class ServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_Service_descriptor,
         new java.lang.String[] { "Topic", "RequestMessageFormat", "ResponseMessageFormat", });
+    internal_static_ubii_services_ServiceList_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_ubii_services_ServiceList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ubii_services_ServiceList_descriptor,
+        new java.lang.String[] { "Elements", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

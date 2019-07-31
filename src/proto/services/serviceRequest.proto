@@ -23,5 +23,7 @@ message ServiceRequest {
         ubii.devices.TopicMuxList topic_mux_list = 10;
         ubii.devices.TopicDemux topic_demux = 11;
         ubii.devices.TopicDemuxList topic_demux_list = 12;
+        ubii.clients.ClientList client_list = 13;
+        ubii.devices.DeviceList device_list = 14;
     }
 }

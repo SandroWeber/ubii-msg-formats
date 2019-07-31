@@ -11,6 +11,7 @@ import "proto/devices/topicDemux.proto";
 import "proto/servers/server.proto";
 import "proto/sessions/session.proto";
 import "proto/interactions/interaction.proto";
+import "proto/services/service.proto";
 
 message ServiceReply {
     oneof type {
@@ -28,5 +29,9 @@ message ServiceReply {
         ubii.devices.TopicMuxList topic_mux_list = 12;
         ubii.devices.TopicDemux topic_demux = 13;
         ubii.devices.TopicDemuxList topic_demux_list = 14;
+        ubii.clients.ClientList client_list = 15;
+        ubii.devices.DeviceList device_list = 16;
+        ubii.services.Service service = 17;
+        ubii.services.ServiceList service_list = 18;
     }
 }

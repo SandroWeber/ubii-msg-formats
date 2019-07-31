@@ -148,6 +148,16 @@ public final class InteractionOuterClass {
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
+
+    /**
+     * <code>string description = 10;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
   }
   /**
    * Protobuf type {@code ubii.interactions.Interaction}
@@ -171,6 +181,7 @@ public final class InteractionOuterClass {
       processFrequency_ = 0F;
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      description_ = "";
     }
 
     @java.lang.Override
@@ -260,6 +271,12 @@ public final class InteractionOuterClass {
                 mutable_bitField0_ |= 0x00000100;
               }
               tags_.add(s);
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
             default: {
@@ -580,6 +597,40 @@ public final class InteractionOuterClass {
       return tags_.getByteString(index);
     }
 
+    public static final int DESCRIPTION_FIELD_NUMBER = 10;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 10;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -620,6 +671,9 @@ public final class InteractionOuterClass {
       }
       for (int i = 0; i < tags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, tags_.getRaw(i));
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, description_);
       }
       unknownFields.writeTo(output);
     }
@@ -670,6 +724,9 @@ public final class InteractionOuterClass {
         size += dataSize;
         size += 1 * getTagsList().size();
       }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, description_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -706,6 +763,8 @@ public final class InteractionOuterClass {
           .equals(other.getAuthorsList());
       result = result && getTagsList()
           .equals(other.getTagsList());
+      result = result && getDescription()
+          .equals(other.getDescription());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -744,6 +803,8 @@ public final class InteractionOuterClass {
         hash = (37 * hash) + TAGS_FIELD_NUMBER;
         hash = (53 * hash) + getTagsList().hashCode();
       }
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -905,6 +966,8 @@ public final class InteractionOuterClass {
         bitField0_ = (bitField0_ & ~0x00000080);
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000100);
+        description_ = "";
+
         return this;
       }
 
@@ -966,6 +1029,7 @@ public final class InteractionOuterClass {
           bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.tags_ = tags_;
+        result.description_ = description_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1104,6 +1168,10 @@ public final class InteractionOuterClass {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
           }
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2105,6 +2173,75 @@ public final class InteractionOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 10;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 10;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 10;</code>
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 10;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2961,15 +3098,16 @@ public final class InteractionOuterClass {
     java.lang.String[] descriptorData = {
       "\n$proto/interactions/interaction.proto\022\021" +
       "ubii.interactions\032!proto/interactions/io" +
-      "Format.proto\"\373\001\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
+      "Format.proto\"\220\002\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
       "\022\014\n\004name\030\002 \001(\t\022\033\n\023processing_callback\030\003 " +
       "\001(\t\0222\n\rinput_formats\030\004 \003(\0132\033.ubii.intera" +
       "ctions.IOFormat\0223\n\016output_formats\030\005 \003(\0132" +
       "\033.ubii.interactions.IOFormat\022\022\n\non_creat" +
       "ed\030\006 \001(\t\022\031\n\021process_frequency\030\007 \001(\002\022\017\n\007a" +
-      "uthors\030\010 \003(\t\022\014\n\004tags\030\t \003(\t\"C\n\017Interactio" +
-      "nList\0220\n\010elements\030\001 \003(\0132\036.ubii.interacti" +
-      "ons.Interactionb\006proto3"
+      "uthors\030\010 \003(\t\022\014\n\004tags\030\t \003(\t\022\023\n\013descriptio" +
+      "n\030\n \001(\t\"C\n\017InteractionList\0220\n\010elements\030\001" +
+      " \003(\0132\036.ubii.interactions.Interactionb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2989,7 +3127,7 @@ public final class InteractionOuterClass {
     internal_static_ubii_interactions_Interaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_interactions_Interaction_descriptor,
-        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags", });
+        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags", "Description", });
     internal_static_ubii_interactions_InteractionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_interactions_InteractionList_fieldAccessorTable = new

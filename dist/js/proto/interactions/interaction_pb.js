@@ -78,7 +78,8 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
     onCreated: jspb.Message.getFieldWithDefault(msg, 6, ""),
     processFrequency: +jspb.Message.getFieldWithDefault(msg, 7, 0.0),
     authorsList: jspb.Message.getRepeatedField(msg, 8),
-    tagsList: jspb.Message.getRepeatedField(msg, 9)
+    tagsList: jspb.Message.getRepeatedField(msg, 9),
+    description: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -152,6 +153,10 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.addTags(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -244,6 +249,13 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeRepeatedString(
       9,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -442,6 +454,21 @@ proto.ubii.interactions.Interaction.prototype.addTags = function(value, opt_inde
 
 proto.ubii.interactions.Interaction.prototype.clearTagsList = function() {
   this.setTagsList([]);
+};
+
+
+/**
+ * optional string description = 10;
+ * @return {string}
+ */
+proto.ubii.interactions.Interaction.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.interactions.Interaction.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

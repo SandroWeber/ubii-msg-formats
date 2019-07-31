@@ -278,6 +278,20 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_on_created();
   void set_allocated_on_created(::std::string* on_created);
 
+  // string description = 10;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 10;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
   // float process_frequency = 7;
   void clear_process_frequency();
   static const int kProcessFrequencyFieldNumber = 7;
@@ -296,6 +310,7 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr processing_callback_;
   ::google::protobuf::internal::ArenaStringPtr on_created_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
   float process_frequency_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2finteractions_2finteraction_2eproto::TableStruct;
@@ -836,6 +851,59 @@ inline ::google::protobuf::RepeatedPtrField< ::std::string>*
 Interaction::mutable_tags() {
   // @@protoc_insertion_point(field_mutable_list:ubii.interactions.Interaction.tags)
   return &tags_;
+}
+
+// string description = 10;
+inline void Interaction::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Interaction::description() const {
+  // @@protoc_insertion_point(field_get:ubii.interactions.Interaction.description)
+  return description_.GetNoArena();
+}
+inline void Interaction::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.description)
+}
+#if LANG_CXX11
+inline void Interaction::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.interactions.Interaction.description)
+}
+#endif
+inline void Interaction::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.interactions.Interaction.description)
+}
+inline void Interaction::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.interactions.Interaction.description)
+}
+inline ::std::string* Interaction::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.interactions.Interaction.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Interaction::release_description() {
+  // @@protoc_insertion_point(field_release:ubii.interactions.Interaction.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Interaction::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:ubii.interactions.Interaction.description)
 }
 
 // -------------------------------------------------------------------

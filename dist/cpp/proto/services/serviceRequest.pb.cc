@@ -21,9 +21,11 @@
 
 namespace protobuf_proto_2fclients_2fclient_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Client;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ClientList;
 }  // namespace protobuf_proto_2fclients_2fclient_2eproto
 namespace protobuf_proto_2fdevices_2fdevice_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Device;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_DeviceList;
 }  // namespace protobuf_proto_2fdevices_2fdevice_2eproto
 namespace protobuf_proto_2fdevices_2ftopicDemux_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicDemux_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicDemux;
@@ -61,6 +63,8 @@ class ServiceRequestDefaultTypeInternal {
   const ::ubii::devices::TopicMuxList* topic_mux_list_;
   const ::ubii::devices::TopicDemux* topic_demux_;
   const ::ubii::devices::TopicDemuxList* topic_demux_list_;
+  const ::ubii::clients::ClientList* client_list_;
+  const ::ubii::devices::DeviceList* device_list_;
 } _ServiceRequest_default_instance_;
 }  // namespace services
 }  // namespace ubii
@@ -76,8 +80,8 @@ static void InitDefaultsServiceRequest() {
   ::ubii::services::ServiceRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<11> scc_info_ServiceRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 11, InitDefaultsServiceRequest}, {
+::google::protobuf::internal::SCCInfo<13> scc_info_ServiceRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 13, InitDefaultsServiceRequest}, {
       &protobuf_proto_2fclients_2fclient_2eproto::scc_info_Client.base,
       &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_Device.base,
       &protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::scc_info_TopicSubscription.base,
@@ -88,7 +92,9 @@ static void InitDefaultsServiceRequest() {
       &protobuf_proto_2fdevices_2ftopicMux_2eproto::scc_info_TopicMux.base,
       &protobuf_proto_2fdevices_2ftopicMux_2eproto::scc_info_TopicMuxList.base,
       &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemux.base,
-      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemuxList.base,}};
+      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemuxList.base,
+      &protobuf_proto_2fclients_2fclient_2eproto::scc_info_ClientList.base,
+      &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_DeviceList.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ServiceRequest.base);
@@ -114,6 +120,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, topic_mux_list_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, topic_demux_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, topic_demux_list_),
+  offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, client_list_),
+  offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, device_list_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceRequest, type_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -152,7 +160,7 @@ void AddDescriptorsImpl() {
       "emux.proto\032\034proto/sessions/session.proto"
       "\032$proto/interactions/interaction.proto\032."
       "proto/services/request/topicSubscription"
-      ".proto\"\343\004\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t"
+      ".proto\"\305\005\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t"
       "\022&\n\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000"
       "\022&\n\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000"
       "\022F\n\022topic_subscription\030\004 \001(\0132(.ubii.serv"
@@ -167,10 +175,13 @@ void AddDescriptorsImpl() {
       "ii.devices.TopicMuxListH\000\022/\n\013topic_demux"
       "\030\013 \001(\0132\030.ubii.devices.TopicDemuxH\000\0228\n\020to"
       "pic_demux_list\030\014 \001(\0132\034.ubii.devices.Topi"
-      "cDemuxListH\000B\006\n\004typeb\006proto3"
+      "cDemuxListH\000\022/\n\013client_list\030\r \001(\0132\030.ubii"
+      ".clients.ClientListH\000\022/\n\013device_list\030\016 \001"
+      "(\0132\030.ubii.devices.DeviceListH\000B\006\n\004typeb\006"
+      "proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 908);
+      descriptor, 1006);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/services/serviceRequest.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fclients_2fclient_2eproto::AddDescriptors();
@@ -221,6 +232,10 @@ void ServiceRequest::InitAsDefaultInstance() {
       ::ubii::devices::TopicDemux::internal_default_instance());
   ::ubii::services::_ServiceRequest_default_instance_.topic_demux_list_ = const_cast< ::ubii::devices::TopicDemuxList*>(
       ::ubii::devices::TopicDemuxList::internal_default_instance());
+  ::ubii::services::_ServiceRequest_default_instance_.client_list_ = const_cast< ::ubii::clients::ClientList*>(
+      ::ubii::clients::ClientList::internal_default_instance());
+  ::ubii::services::_ServiceRequest_default_instance_.device_list_ = const_cast< ::ubii::devices::DeviceList*>(
+      ::ubii::devices::DeviceList::internal_default_instance());
 }
 void ServiceRequest::set_allocated_client(::ubii::clients::Client* client) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -442,6 +457,46 @@ void ServiceRequest::clear_topic_demux_list() {
     clear_has_type();
   }
 }
+void ServiceRequest::set_allocated_client_list(::ubii::clients::ClientList* client_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (client_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      client_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, client_list, submessage_arena);
+    }
+    set_has_client_list();
+    type_.client_list_ = client_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.client_list)
+}
+void ServiceRequest::clear_client_list() {
+  if (has_client_list()) {
+    delete type_.client_list_;
+    clear_has_type();
+  }
+}
+void ServiceRequest::set_allocated_device_list(::ubii::devices::DeviceList* device_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (device_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      device_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_list, submessage_arena);
+    }
+    set_has_device_list();
+    type_.device_list_ = device_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.device_list)
+}
+void ServiceRequest::clear_device_list() {
+  if (has_device_list()) {
+    delete type_.device_list_;
+    clear_has_type();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ServiceRequest::kTopicFieldNumber;
 const int ServiceRequest::kClientFieldNumber;
@@ -455,6 +510,8 @@ const int ServiceRequest::kTopicMuxFieldNumber;
 const int ServiceRequest::kTopicMuxListFieldNumber;
 const int ServiceRequest::kTopicDemuxFieldNumber;
 const int ServiceRequest::kTopicDemuxListFieldNumber;
+const int ServiceRequest::kClientListFieldNumber;
+const int ServiceRequest::kDeviceListFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ServiceRequest::ServiceRequest()
@@ -516,6 +573,14 @@ ServiceRequest::ServiceRequest(const ServiceRequest& from)
     }
     case kTopicDemuxList: {
       mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from.topic_demux_list());
+      break;
+    }
+    case kClientList: {
+      mutable_client_list()->::ubii::clients::ClientList::MergeFrom(from.client_list());
+      break;
+    }
+    case kDeviceList: {
+      mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from.device_list());
       break;
     }
     case TYPE_NOT_SET: {
@@ -601,6 +666,14 @@ void ServiceRequest::clear_type() {
     }
     case kTopicDemuxList: {
       delete type_.topic_demux_list_;
+      break;
+    }
+    case kClientList: {
+      delete type_.client_list_;
+      break;
+    }
+    case kDeviceList: {
+      delete type_.device_list_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -780,6 +853,30 @@ bool ServiceRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.clients.ClientList client_list = 13;
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_client_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.DeviceList device_list = 14;
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_device_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -880,6 +977,18 @@ void ServiceRequest::SerializeWithCachedSizes(
   if (has_topic_demux_list()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       12, this->_internal_topic_demux_list(), output);
+  }
+
+  // .ubii.clients.ClientList client_list = 13;
+  if (has_client_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      13, this->_internal_client_list(), output);
+  }
+
+  // .ubii.devices.DeviceList device_list = 14;
+  if (has_device_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      14, this->_internal_device_list(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -984,6 +1093,20 @@ void ServiceRequest::SerializeWithCachedSizes(
         12, this->_internal_topic_demux_list(), deterministic, target);
   }
 
+  // .ubii.clients.ClientList client_list = 13;
+  if (has_client_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        13, this->_internal_client_list(), deterministic, target);
+  }
+
+  // .ubii.devices.DeviceList device_list = 14;
+  if (has_device_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        14, this->_internal_device_list(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -1086,6 +1209,20 @@ size_t ServiceRequest::ByteSizeLong() const {
           *type_.topic_demux_list_);
       break;
     }
+    // .ubii.clients.ClientList client_list = 13;
+    case kClientList: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.client_list_);
+      break;
+    }
+    // .ubii.devices.DeviceList device_list = 14;
+    case kDeviceList: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.device_list_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -1164,6 +1301,14 @@ void ServiceRequest::MergeFrom(const ServiceRequest& from) {
     }
     case kTopicDemuxList: {
       mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from.topic_demux_list());
+      break;
+    }
+    case kClientList: {
+      mutable_client_list()->::ubii::clients::ClientList::MergeFrom(from.client_list());
+      break;
+    }
+    case kDeviceList: {
+      mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from.device_list());
       break;
     }
     case TYPE_NOT_SET: {

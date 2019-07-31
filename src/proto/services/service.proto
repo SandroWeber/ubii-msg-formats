@@ -7,3 +7,7 @@ message Service {
     string request_message_format = 2;
     string response_message_format = 3;
 }
+
+message ServiceList {
+    repeated ubii.services.Service elements = 1;
+}

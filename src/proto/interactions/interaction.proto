@@ -13,6 +13,7 @@ message Interaction {
     float process_frequency = 7;
     repeated string authors = 8;
     repeated string tags = 9;
+    string description = 10;
 }
 
 message InteractionList {

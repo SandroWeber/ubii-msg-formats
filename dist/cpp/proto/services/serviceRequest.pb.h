@@ -110,6 +110,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     kTopicMuxList = 10,
     kTopicDemux = 11,
     kTopicDemuxList = 12,
+    kClientList = 13,
+    kDeviceList = 14,
     TYPE_NOT_SET = 0,
   };
 
@@ -317,6 +319,30 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   ::ubii::devices::TopicDemuxList* mutable_topic_demux_list();
   void set_allocated_topic_demux_list(::ubii::devices::TopicDemuxList* topic_demux_list);
 
+  // .ubii.clients.ClientList client_list = 13;
+  bool has_client_list() const;
+  void clear_client_list();
+  static const int kClientListFieldNumber = 13;
+  private:
+  const ::ubii::clients::ClientList& _internal_client_list() const;
+  public:
+  const ::ubii::clients::ClientList& client_list() const;
+  ::ubii::clients::ClientList* release_client_list();
+  ::ubii::clients::ClientList* mutable_client_list();
+  void set_allocated_client_list(::ubii::clients::ClientList* client_list);
+
+  // .ubii.devices.DeviceList device_list = 14;
+  bool has_device_list() const;
+  void clear_device_list();
+  static const int kDeviceListFieldNumber = 14;
+  private:
+  const ::ubii::devices::DeviceList& _internal_device_list() const;
+  public:
+  const ::ubii::devices::DeviceList& device_list() const;
+  ::ubii::devices::DeviceList* release_device_list();
+  ::ubii::devices::DeviceList* mutable_device_list();
+  void set_allocated_device_list(::ubii::devices::DeviceList* device_list);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.services.ServiceRequest)
@@ -332,6 +358,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   void set_has_topic_mux_list();
   void set_has_topic_demux();
   void set_has_topic_demux_list();
+  void set_has_client_list();
+  void set_has_device_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -351,6 +379,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     ::ubii::devices::TopicMuxList* topic_mux_list_;
     ::ubii::devices::TopicDemux* topic_demux_;
     ::ubii::devices::TopicDemuxList* topic_demux_list_;
+    ::ubii::clients::ClientList* client_list_;
+    ::ubii::devices::DeviceList* device_list_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -837,6 +867,82 @@ inline ::ubii::devices::TopicDemuxList* ServiceRequest::mutable_topic_demux_list
   }
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.topic_demux_list)
   return type_.topic_demux_list_;
+}
+
+// .ubii.clients.ClientList client_list = 13;
+inline bool ServiceRequest::has_client_list() const {
+  return type_case() == kClientList;
+}
+inline void ServiceRequest::set_has_client_list() {
+  _oneof_case_[0] = kClientList;
+}
+inline const ::ubii::clients::ClientList& ServiceRequest::_internal_client_list() const {
+  return *type_.client_list_;
+}
+inline ::ubii::clients::ClientList* ServiceRequest::release_client_list() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceRequest.client_list)
+  if (has_client_list()) {
+    clear_has_type();
+      ::ubii::clients::ClientList* temp = type_.client_list_;
+    type_.client_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::clients::ClientList& ServiceRequest::client_list() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceRequest.client_list)
+  return has_client_list()
+      ? *type_.client_list_
+      : *reinterpret_cast< ::ubii::clients::ClientList*>(&::ubii::clients::_ClientList_default_instance_);
+}
+inline ::ubii::clients::ClientList* ServiceRequest::mutable_client_list() {
+  if (!has_client_list()) {
+    clear_type();
+    set_has_client_list();
+    type_.client_list_ = CreateMaybeMessage< ::ubii::clients::ClientList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.client_list)
+  return type_.client_list_;
+}
+
+// .ubii.devices.DeviceList device_list = 14;
+inline bool ServiceRequest::has_device_list() const {
+  return type_case() == kDeviceList;
+}
+inline void ServiceRequest::set_has_device_list() {
+  _oneof_case_[0] = kDeviceList;
+}
+inline const ::ubii::devices::DeviceList& ServiceRequest::_internal_device_list() const {
+  return *type_.device_list_;
+}
+inline ::ubii::devices::DeviceList* ServiceRequest::release_device_list() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceRequest.device_list)
+  if (has_device_list()) {
+    clear_has_type();
+      ::ubii::devices::DeviceList* temp = type_.device_list_;
+    type_.device_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::DeviceList& ServiceRequest::device_list() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceRequest.device_list)
+  return has_device_list()
+      ? *type_.device_list_
+      : *reinterpret_cast< ::ubii::devices::DeviceList*>(&::ubii::devices::_DeviceList_default_instance_);
+}
+inline ::ubii::devices::DeviceList* ServiceRequest::mutable_device_list() {
+  if (!has_device_list()) {
+    clear_type();
+    set_has_device_list();
+    type_.device_list_ = CreateMaybeMessage< ::ubii::devices::DeviceList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.device_list)
+  return type_.device_list_;
 }
 
 inline bool ServiceRequest::has_type() const {

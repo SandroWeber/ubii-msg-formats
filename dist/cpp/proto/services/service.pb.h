@@ -38,7 +38,7 @@ namespace protobuf_proto_2fservices_2fservice_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[1];
+  static const ::google::protobuf::internal::ParseTable schema[2];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -50,11 +50,15 @@ namespace services {
 class Service;
 class ServiceDefaultTypeInternal;
 extern ServiceDefaultTypeInternal _Service_default_instance_;
+class ServiceList;
+class ServiceListDefaultTypeInternal;
+extern ServiceListDefaultTypeInternal _ServiceList_default_instance_;
 }  // namespace services
 }  // namespace ubii
 namespace google {
 namespace protobuf {
 template<> ::ubii::services::Service* Arena::CreateMaybeMessage<::ubii::services::Service>(Arena*);
+template<> ::ubii::services::ServiceList* Arena::CreateMaybeMessage<::ubii::services::ServiceList>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace ubii {
@@ -198,6 +202,115 @@ class Service : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::ArenaStringPtr topic_;
   ::google::protobuf::internal::ArenaStringPtr request_message_format_;
   ::google::protobuf::internal::ArenaStringPtr response_message_format_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_proto_2fservices_2fservice_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class ServiceList : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.services.ServiceList) */ {
+ public:
+  ServiceList();
+  virtual ~ServiceList();
+
+  ServiceList(const ServiceList& from);
+
+  inline ServiceList& operator=(const ServiceList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ServiceList(ServiceList&& from) noexcept
+    : ServiceList() {
+    *this = ::std::move(from);
+  }
+
+  inline ServiceList& operator=(ServiceList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ServiceList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServiceList* internal_default_instance() {
+    return reinterpret_cast<const ServiceList*>(
+               &_ServiceList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(ServiceList* other);
+  friend void swap(ServiceList& a, ServiceList& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServiceList* New() const final {
+    return CreateMaybeMessage<ServiceList>(NULL);
+  }
+
+  ServiceList* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ServiceList>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ServiceList& from);
+  void MergeFrom(const ServiceList& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServiceList* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .ubii.services.Service elements = 1;
+  int elements_size() const;
+  void clear_elements();
+  static const int kElementsFieldNumber = 1;
+  ::ubii::services::Service* mutable_elements(int index);
+  ::google::protobuf::RepeatedPtrField< ::ubii::services::Service >*
+      mutable_elements();
+  const ::ubii::services::Service& elements(int index) const;
+  ::ubii::services::Service* add_elements();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::services::Service >&
+      elements() const;
+
+  // @@protoc_insertion_point(class_scope:ubii.services.ServiceList)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::services::Service > elements_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fservices_2fservice_2eproto::TableStruct;
 };
@@ -371,9 +484,45 @@ inline void Service::set_allocated_response_message_format(::std::string* respon
   // @@protoc_insertion_point(field_set_allocated:ubii.services.Service.response_message_format)
 }
 
+// -------------------------------------------------------------------
+
+// ServiceList
+
+// repeated .ubii.services.Service elements = 1;
+inline int ServiceList::elements_size() const {
+  return elements_.size();
+}
+inline void ServiceList::clear_elements() {
+  elements_.Clear();
+}
+inline ::ubii::services::Service* ServiceList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceList.elements)
+  return elements_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::ubii::services::Service >*
+ServiceList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.services.ServiceList.elements)
+  return &elements_;
+}
+inline const ::ubii::services::Service& ServiceList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceList.elements)
+  return elements_.Get(index);
+}
+inline ::ubii::services::Service* ServiceList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.services.ServiceList.elements)
+  return elements_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::services::Service >&
+ServiceList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.services.ServiceList.elements)
+  return elements_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
