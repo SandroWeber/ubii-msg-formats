@@ -65,6 +65,16 @@ public final class TopicSubscriptionOuterClass {
      */
     com.google.protobuf.ByteString
         getUnsubscribeTopicsBytes(int index);
+
+    /**
+     * <code>string subscribe_topic_regexp = 4;</code>
+     */
+    java.lang.String getSubscribeTopicRegexp();
+    /**
+     * <code>string subscribe_topic_regexp = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getSubscribeTopicRegexpBytes();
   }
   /**
    * Protobuf type {@code ubii.services.request.TopicSubscription}
@@ -82,6 +92,7 @@ public final class TopicSubscriptionOuterClass {
       clientId_ = "";
       subscribeTopics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       unsubscribeTopics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subscribeTopicRegexp_ = "";
     }
 
     @java.lang.Override
@@ -130,6 +141,12 @@ public final class TopicSubscriptionOuterClass {
                 mutable_bitField0_ |= 0x00000004;
               }
               unsubscribeTopics_.add(s);
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subscribeTopicRegexp_ = s;
               break;
             }
             default: {
@@ -263,6 +280,40 @@ public final class TopicSubscriptionOuterClass {
       return unsubscribeTopics_.getByteString(index);
     }
 
+    public static final int SUBSCRIBE_TOPIC_REGEXP_FIELD_NUMBER = 4;
+    private volatile java.lang.Object subscribeTopicRegexp_;
+    /**
+     * <code>string subscribe_topic_regexp = 4;</code>
+     */
+    public java.lang.String getSubscribeTopicRegexp() {
+      java.lang.Object ref = subscribeTopicRegexp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subscribeTopicRegexp_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string subscribe_topic_regexp = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSubscribeTopicRegexpBytes() {
+      java.lang.Object ref = subscribeTopicRegexp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subscribeTopicRegexp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -285,6 +336,9 @@ public final class TopicSubscriptionOuterClass {
       }
       for (int i = 0; i < unsubscribeTopics_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unsubscribeTopics_.getRaw(i));
+      }
+      if (!getSubscribeTopicRegexpBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subscribeTopicRegexp_);
       }
       unknownFields.writeTo(output);
     }
@@ -314,6 +368,9 @@ public final class TopicSubscriptionOuterClass {
         size += dataSize;
         size += 1 * getUnsubscribeTopicsList().size();
       }
+      if (!getSubscribeTopicRegexpBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subscribeTopicRegexp_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -336,6 +393,8 @@ public final class TopicSubscriptionOuterClass {
           .equals(other.getSubscribeTopicsList());
       result = result && getUnsubscribeTopicsList()
           .equals(other.getUnsubscribeTopicsList());
+      result = result && getSubscribeTopicRegexp()
+          .equals(other.getSubscribeTopicRegexp());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -357,6 +416,8 @@ public final class TopicSubscriptionOuterClass {
         hash = (37 * hash) + UNSUBSCRIBE_TOPICS_FIELD_NUMBER;
         hash = (53 * hash) + getUnsubscribeTopicsList().hashCode();
       }
+      hash = (37 * hash) + SUBSCRIBE_TOPIC_REGEXP_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscribeTopicRegexp().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -496,6 +557,8 @@ public final class TopicSubscriptionOuterClass {
         bitField0_ = (bitField0_ & ~0x00000002);
         unsubscribeTopics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
+        subscribeTopicRegexp_ = "";
+
         return this;
       }
 
@@ -535,6 +598,7 @@ public final class TopicSubscriptionOuterClass {
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.unsubscribeTopics_ = unsubscribeTopics_;
+        result.subscribeTopicRegexp_ = subscribeTopicRegexp_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -606,6 +670,10 @@ public final class TopicSubscriptionOuterClass {
             ensureUnsubscribeTopicsIsMutable();
             unsubscribeTopics_.addAll(other.unsubscribeTopics_);
           }
+          onChanged();
+        }
+        if (!other.getSubscribeTopicRegexp().isEmpty()) {
+          subscribeTopicRegexp_ = other.subscribeTopicRegexp_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -894,6 +962,75 @@ public final class TopicSubscriptionOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object subscribeTopicRegexp_ = "";
+      /**
+       * <code>string subscribe_topic_regexp = 4;</code>
+       */
+      public java.lang.String getSubscribeTopicRegexp() {
+        java.lang.Object ref = subscribeTopicRegexp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subscribeTopicRegexp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string subscribe_topic_regexp = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSubscribeTopicRegexpBytes() {
+        java.lang.Object ref = subscribeTopicRegexp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          subscribeTopicRegexp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string subscribe_topic_regexp = 4;</code>
+       */
+      public Builder setSubscribeTopicRegexp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        subscribeTopicRegexp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscribe_topic_regexp = 4;</code>
+       */
+      public Builder clearSubscribeTopicRegexp() {
+        
+        subscribeTopicRegexp_ = getDefaultInstance().getSubscribeTopicRegexp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscribe_topic_regexp = 4;</code>
+       */
+      public Builder setSubscribeTopicRegexpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        subscribeTopicRegexp_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -962,10 +1099,11 @@ public final class TopicSubscriptionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n.proto/services/request/topicSubscripti" +
-      "on.proto\022\025ubii.services.request\"\\\n\021Topic" +
+      "on.proto\022\025ubii.services.request\"|\n\021Topic" +
       "Subscription\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subsc" +
       "ribe_topics\030\002 \003(\t\022\032\n\022unsubscribe_topics\030" +
-      "\003 \003(\tb\006proto3"
+      "\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \001(\tb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -984,7 +1122,7 @@ public final class TopicSubscriptionOuterClass {
     internal_static_ubii_services_request_TopicSubscription_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_request_TopicSubscription_descriptor,
-        new java.lang.String[] { "ClientId", "SubscribeTopics", "UnsubscribeTopics", });
+        new java.lang.String[] { "ClientId", "SubscribeTopics", "UnsubscribeTopics", "SubscribeTopicRegexp", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

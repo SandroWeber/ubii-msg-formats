@@ -60,6 +60,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, client_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, subscribe_topics_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, unsubscribe_topics_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, subscribe_topic_regexp_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::services::request::TopicSubscription)},
@@ -91,13 +92,14 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n.proto/services/request/topicSubscripti"
-      "on.proto\022\025ubii.services.request\"\\\n\021Topic"
+      "on.proto\022\025ubii.services.request\"|\n\021Topic"
       "Subscription\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subsc"
       "ribe_topics\030\002 \003(\t\022\032\n\022unsubscribe_topics\030"
-      "\003 \003(\tb\006proto3"
+      "\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \001(\tb\006p"
+      "roto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 173);
+      descriptor, 205);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/services/request/topicSubscription.proto", &protobuf_RegisterTypes);
 }
@@ -125,6 +127,7 @@ void TopicSubscription::InitAsDefaultInstance() {
 const int TopicSubscription::kClientIdFieldNumber;
 const int TopicSubscription::kSubscribeTopicsFieldNumber;
 const int TopicSubscription::kUnsubscribeTopicsFieldNumber;
+const int TopicSubscription::kSubscribeTopicRegexpFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TopicSubscription::TopicSubscription()
@@ -144,11 +147,16 @@ TopicSubscription::TopicSubscription(const TopicSubscription& from)
   if (from.client_id().size() > 0) {
     client_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.client_id_);
   }
+  subscribe_topic_regexp_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.subscribe_topic_regexp().size() > 0) {
+    subscribe_topic_regexp_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subscribe_topic_regexp_);
+  }
   // @@protoc_insertion_point(copy_constructor:ubii.services.request.TopicSubscription)
 }
 
 void TopicSubscription::SharedCtor() {
   client_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  subscribe_topic_regexp_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 TopicSubscription::~TopicSubscription() {
@@ -158,6 +166,7 @@ TopicSubscription::~TopicSubscription() {
 
 void TopicSubscription::SharedDtor() {
   client_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  subscribe_topic_regexp_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void TopicSubscription::SetCachedSize(int size) const {
@@ -183,6 +192,7 @@ void TopicSubscription::Clear() {
   subscribe_topics_.Clear();
   unsubscribe_topics_.Clear();
   client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  subscribe_topic_regexp_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -246,6 +256,22 @@ bool TopicSubscription::MergePartialFromCodedStream(
         break;
       }
 
+      // string subscribe_topic_regexp = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_subscribe_topic_regexp()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->subscribe_topic_regexp().data(), static_cast<int>(this->subscribe_topic_regexp().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.services.request.TopicSubscription.subscribe_topic_regexp"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -302,6 +328,16 @@ void TopicSubscription::SerializeWithCachedSizes(
       3, this->unsubscribe_topics(i), output);
   }
 
+  // string subscribe_topic_regexp = 4;
+  if (this->subscribe_topic_regexp().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->subscribe_topic_regexp().data(), static_cast<int>(this->subscribe_topic_regexp().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.services.request.TopicSubscription.subscribe_topic_regexp");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->subscribe_topic_regexp(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -347,6 +383,17 @@ void TopicSubscription::SerializeWithCachedSizes(
       WriteStringToArray(3, this->unsubscribe_topics(i), target);
   }
 
+  // string subscribe_topic_regexp = 4;
+  if (this->subscribe_topic_regexp().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->subscribe_topic_regexp().data(), static_cast<int>(this->subscribe_topic_regexp().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.services.request.TopicSubscription.subscribe_topic_regexp");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->subscribe_topic_regexp(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -387,6 +434,13 @@ size_t TopicSubscription::ByteSizeLong() const {
         this->client_id());
   }
 
+  // string subscribe_topic_regexp = 4;
+  if (this->subscribe_topic_regexp().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->subscribe_topic_regexp());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -420,6 +474,10 @@ void TopicSubscription::MergeFrom(const TopicSubscription& from) {
 
     client_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.client_id_);
   }
+  if (from.subscribe_topic_regexp().size() > 0) {
+
+    subscribe_topic_regexp_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subscribe_topic_regexp_);
+  }
 }
 
 void TopicSubscription::CopyFrom(const ::google::protobuf::Message& from) {
@@ -449,6 +507,8 @@ void TopicSubscription::InternalSwap(TopicSubscription* other) {
   subscribe_topics_.InternalSwap(CastToBase(&other->subscribe_topics_));
   unsubscribe_topics_.InternalSwap(CastToBase(&other->unsubscribe_topics_));
   client_id_.Swap(&other->client_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  subscribe_topic_regexp_.Swap(&other->subscribe_topic_regexp_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }

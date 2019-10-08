@@ -210,6 +210,20 @@ class TopicSubscription : public ::google::protobuf::Message /* @@protoc_inserti
   ::std::string* release_client_id();
   void set_allocated_client_id(::std::string* client_id);
 
+  // string subscribe_topic_regexp = 4;
+  void clear_subscribe_topic_regexp();
+  static const int kSubscribeTopicRegexpFieldNumber = 4;
+  const ::std::string& subscribe_topic_regexp() const;
+  void set_subscribe_topic_regexp(const ::std::string& value);
+  #if LANG_CXX11
+  void set_subscribe_topic_regexp(::std::string&& value);
+  #endif
+  void set_subscribe_topic_regexp(const char* value);
+  void set_subscribe_topic_regexp(const char* value, size_t size);
+  ::std::string* mutable_subscribe_topic_regexp();
+  ::std::string* release_subscribe_topic_regexp();
+  void set_allocated_subscribe_topic_regexp(::std::string* subscribe_topic_regexp);
+
   // @@protoc_insertion_point(class_scope:ubii.services.request.TopicSubscription)
  private:
 
@@ -217,6 +231,7 @@ class TopicSubscription : public ::google::protobuf::Message /* @@protoc_inserti
   ::google::protobuf::RepeatedPtrField< ::std::string> subscribe_topics_;
   ::google::protobuf::RepeatedPtrField< ::std::string> unsubscribe_topics_;
   ::google::protobuf::internal::ArenaStringPtr client_id_;
+  ::google::protobuf::internal::ArenaStringPtr subscribe_topic_regexp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::TableStruct;
 };
@@ -420,6 +435,59 @@ inline ::google::protobuf::RepeatedPtrField< ::std::string>*
 TopicSubscription::mutable_unsubscribe_topics() {
   // @@protoc_insertion_point(field_mutable_list:ubii.services.request.TopicSubscription.unsubscribe_topics)
   return &unsubscribe_topics_;
+}
+
+// string subscribe_topic_regexp = 4;
+inline void TopicSubscription::clear_subscribe_topic_regexp() {
+  subscribe_topic_regexp_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TopicSubscription::subscribe_topic_regexp() const {
+  // @@protoc_insertion_point(field_get:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+  return subscribe_topic_regexp_.GetNoArena();
+}
+inline void TopicSubscription::set_subscribe_topic_regexp(const ::std::string& value) {
+  
+  subscribe_topic_regexp_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+}
+#if LANG_CXX11
+inline void TopicSubscription::set_subscribe_topic_regexp(::std::string&& value) {
+  
+  subscribe_topic_regexp_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+}
+#endif
+inline void TopicSubscription::set_subscribe_topic_regexp(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  subscribe_topic_regexp_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+}
+inline void TopicSubscription::set_subscribe_topic_regexp(const char* value, size_t size) {
+  
+  subscribe_topic_regexp_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+}
+inline ::std::string* TopicSubscription::mutable_subscribe_topic_regexp() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+  return subscribe_topic_regexp_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TopicSubscription::release_subscribe_topic_regexp() {
+  // @@protoc_insertion_point(field_release:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+  
+  return subscribe_topic_regexp_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TopicSubscription::set_allocated_subscribe_topic_regexp(::std::string* subscribe_topic_regexp) {
+  if (subscribe_topic_regexp != NULL) {
+    
+  } else {
+    
+  }
+  subscribe_topic_regexp_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subscribe_topic_regexp);
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
 }
 
 #ifdef __GNUC__
