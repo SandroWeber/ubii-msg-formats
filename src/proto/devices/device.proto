@@ -13,6 +13,8 @@ message Device {
     ubii.devices.Device.DeviceType device_type = 3;
     repeated ubii.devices.Component components = 4;
     string client_id = 5;
+    repeated string tags = 6;
+    string description = 7;
 }
 
 message DeviceList {
