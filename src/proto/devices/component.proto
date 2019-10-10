@@ -4,10 +4,12 @@ package ubii.devices;
 message Component {
     string topic = 1;
     string message_format = 2;
-
     enum IOType {
         INPUT = 0;
         OUTPUT = 1;
     }
     IOType io_type = 3;
+    string device_id = 4;
+    repeated string tags = 5;
+    string description = 6;
 }

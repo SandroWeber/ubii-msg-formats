@@ -9,6 +9,9 @@ message Session {
     string name = 2;
     repeated ubii.interactions.Interaction interactions = 3;
     repeated ubii.sessions.IOMapping io_mappings = 4;
+    repeated string tags = 5;
+    string description = 6;
+    repeated string authors = 7;
 }
 
 message SessionList {

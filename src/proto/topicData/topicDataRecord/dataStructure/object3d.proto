@@ -8,6 +8,7 @@ message Object3D {
     string id = 1;
     ubii.dataStructure.Pose3D pose = 2;
     ubii.dataStructure.Vector3 size = 3;
+    string user_data_json = 4;
 }
 
 message Object3DList {
