@@ -153,6 +153,28 @@ class Service : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
+  // repeated string tags = 4;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 4;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_tags();
+
   // string topic = 1;
   void clear_topic();
   static const int kTopicFieldNumber = 1;
@@ -195,13 +217,29 @@ class Service : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::std::string* release_response_message_format();
   void set_allocated_response_message_format(::std::string* response_message_format);
 
+  // string description = 5;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 5;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
   // @@protoc_insertion_point(class_scope:ubii.services.Service)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr topic_;
   ::google::protobuf::internal::ArenaStringPtr request_message_format_;
   ::google::protobuf::internal::ArenaStringPtr response_message_format_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fservices_2fservice_2eproto::TableStruct;
 };
@@ -482,6 +520,128 @@ inline void Service::set_allocated_response_message_format(::std::string* respon
   }
   response_message_format_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), response_message_format);
   // @@protoc_insertion_point(field_set_allocated:ubii.services.Service.response_message_format)
+}
+
+// repeated string tags = 4;
+inline int Service::tags_size() const {
+  return tags_.size();
+}
+inline void Service::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& Service::tags(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.services.Service.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* Service::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.services.Service.tags)
+  return tags_.Mutable(index);
+}
+inline void Service::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.services.Service.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Service::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.services.Service.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Service::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.services.Service.tags)
+}
+inline void Service::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.services.Service.tags)
+}
+inline ::std::string* Service::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.services.Service.tags)
+  return tags_.Add();
+}
+inline void Service::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.services.Service.tags)
+}
+#if LANG_CXX11
+inline void Service::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.services.Service.tags)
+}
+#endif
+inline void Service::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.services.Service.tags)
+}
+inline void Service::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.services.Service.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Service::tags() const {
+  // @@protoc_insertion_point(field_list:ubii.services.Service.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Service::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.services.Service.tags)
+  return &tags_;
+}
+
+// string description = 5;
+inline void Service::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Service::description() const {
+  // @@protoc_insertion_point(field_get:ubii.services.Service.description)
+  return description_.GetNoArena();
+}
+inline void Service::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.services.Service.description)
+}
+#if LANG_CXX11
+inline void Service::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.services.Service.description)
+}
+#endif
+inline void Service::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.services.Service.description)
+}
+inline void Service::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.services.Service.description)
+}
+inline ::std::string* Service::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.services.Service.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Service::release_description() {
+  // @@protoc_insertion_point(field_release:ubii.services.Service.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Service::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.Service.description)
 }
 
 // -------------------------------------------------------------------

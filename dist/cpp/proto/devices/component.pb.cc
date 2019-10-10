@@ -59,6 +59,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, topic_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, message_format_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, io_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, device_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, tags_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, description_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::devices::Component)},
@@ -90,13 +93,15 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\035proto/devices/component.proto\022\014ubii.de"
-      "vices\"\204\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me"
+      "vices\"\272\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me"
       "ssage_format\030\002 \001(\t\022/\n\007io_type\030\003 \001(\0162\036.ub"
-      "ii.devices.Component.IOType\"\037\n\006IOType\022\t\n"
-      "\005INPUT\020\000\022\n\n\006OUTPUT\020\001b\006proto3"
+      "ii.devices.Component.IOType\022\021\n\tdevice_id"
+      "\030\004 \001(\t\022\014\n\004tags\030\005 \003(\t\022\023\n\013description\030\006 \001("
+      "\t\"\037\n\006IOType\022\t\n\005INPUT\020\000\022\n\n\006OUTPUT\020\001b\006prot"
+      "o3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 188);
+      descriptor, 242);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/devices/component.proto", &protobuf_RegisterTypes);
 }
@@ -144,6 +149,9 @@ void Component::InitAsDefaultInstance() {
 const int Component::kTopicFieldNumber;
 const int Component::kMessageFormatFieldNumber;
 const int Component::kIoTypeFieldNumber;
+const int Component::kDeviceIdFieldNumber;
+const int Component::kTagsFieldNumber;
+const int Component::kDescriptionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Component::Component()
@@ -155,7 +163,8 @@ Component::Component()
 }
 Component::Component(const Component& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      tags_(from.tags_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.topic().size() > 0) {
@@ -165,6 +174,14 @@ Component::Component(const Component& from)
   if (from.message_format().size() > 0) {
     message_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_format_);
   }
+  device_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.device_id().size() > 0) {
+    device_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.device_id_);
+  }
+  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.description().size() > 0) {
+    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
   io_type_ = from.io_type_;
   // @@protoc_insertion_point(copy_constructor:ubii.devices.Component)
 }
@@ -172,6 +189,8 @@ Component::Component(const Component& from)
 void Component::SharedCtor() {
   topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  device_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   io_type_ = 0;
 }
 
@@ -183,6 +202,8 @@ Component::~Component() {
 void Component::SharedDtor() {
   topic_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_format_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  device_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Component::SetCachedSize(int size) const {
@@ -205,8 +226,11 @@ void Component::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  tags_.Clear();
   topic_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  device_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   io_type_ = 0;
   _internal_metadata_.Clear();
 }
@@ -268,6 +292,55 @@ bool Component::MergePartialFromCodedStream(
         break;
       }
 
+      // string device_id = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_device_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->device_id().data(), static_cast<int>(this->device_id().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.devices.Component.device_id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string tags = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_tags()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tags(this->tags_size() - 1).data(),
+            static_cast<int>(this->tags(this->tags_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.devices.Component.tags"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string description = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_description()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->description().data(), static_cast<int>(this->description().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.devices.Component.description"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -320,6 +393,36 @@ void Component::SerializeWithCachedSizes(
       3, this->io_type(), output);
   }
 
+  // string device_id = 4;
+  if (this->device_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->device_id().data(), static_cast<int>(this->device_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.device_id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->device_id(), output);
+  }
+
+  // repeated string tags = 5;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.tags");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      5, this->tags(i), output);
+  }
+
+  // string description = 6;
+  if (this->description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->description().data(), static_cast<int>(this->description().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.description");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->description(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -362,6 +465,38 @@ void Component::SerializeWithCachedSizes(
       3, this->io_type(), target);
   }
 
+  // string device_id = 4;
+  if (this->device_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->device_id().data(), static_cast<int>(this->device_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.device_id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->device_id(), target);
+  }
+
+  // repeated string tags = 5;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.tags");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(5, this->tags(i), target);
+  }
+
+  // string description = 6;
+  if (this->description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->description().data(), static_cast<int>(this->description().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.description");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->description(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -379,6 +514,14 @@ size_t Component::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
+  // repeated string tags = 5;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->tags_size());
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->tags(i));
+  }
+
   // string topic = 1;
   if (this->topic().size() > 0) {
     total_size += 1 +
@@ -391,6 +534,20 @@ size_t Component::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->message_format());
+  }
+
+  // string device_id = 4;
+  if (this->device_id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->device_id());
+  }
+
+  // string description = 6;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->description());
   }
 
   // .ubii.devices.Component.IOType io_type = 3;
@@ -426,6 +583,7 @@ void Component::MergeFrom(const Component& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  tags_.MergeFrom(from.tags_);
   if (from.topic().size() > 0) {
 
     topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
@@ -433,6 +591,14 @@ void Component::MergeFrom(const Component& from) {
   if (from.message_format().size() > 0) {
 
     message_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_format_);
+  }
+  if (from.device_id().size() > 0) {
+
+    device_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.device_id_);
+  }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   if (from.io_type() != 0) {
     set_io_type(from.io_type());
@@ -463,9 +629,14 @@ void Component::Swap(Component* other) {
 }
 void Component::InternalSwap(Component* other) {
   using std::swap;
+  tags_.InternalSwap(CastToBase(&other->tags_));
   topic_.Swap(&other->topic_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   message_format_.Swap(&other->message_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  device_id_.Swap(&other->device_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(io_type_, other->io_type_);
   _internal_metadata_.Swap(&other->_internal_metadata_);

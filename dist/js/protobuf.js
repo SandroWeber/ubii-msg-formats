@@ -36,6 +36,8 @@ $root.ubii = (function() {
              * @property {string|null} [id] Client id
              * @property {string|null} [name] Client name
              * @property {Array.<ubii.devices.IDevice>|null} [devices] Client devices
+             * @property {Array.<string>|null} [tags] Client tags
+             * @property {string|null} [description] Client description
              */
 
             /**
@@ -48,6 +50,7 @@ $root.ubii = (function() {
              */
             function Client(properties) {
                 this.devices = [];
+                this.tags = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -77,6 +80,22 @@ $root.ubii = (function() {
              * @instance
              */
             Client.prototype.devices = $util.emptyArray;
+
+            /**
+             * Client tags.
+             * @member {Array.<string>} tags
+             * @memberof ubii.clients.Client
+             * @instance
+             */
+            Client.prototype.tags = $util.emptyArray;
+
+            /**
+             * Client description.
+             * @member {string} description
+             * @memberof ubii.clients.Client
+             * @instance
+             */
+            Client.prototype.description = "";
 
             /**
              * Creates a new Client instance using the specified properties.
@@ -109,6 +128,11 @@ $root.ubii = (function() {
                 if (message.devices != null && message.devices.length)
                     for (var i = 0; i < message.devices.length; ++i)
                         $root.ubii.devices.Device.encode(message.devices[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (var i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                if (message.description != null && message.hasOwnProperty("description"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
                 return writer;
             };
 
@@ -153,6 +177,14 @@ $root.ubii = (function() {
                         if (!(message.devices && message.devices.length))
                             message.devices = [];
                         message.devices.push($root.ubii.devices.Device.decode(reader, reader.uint32()));
+                        break;
+                    case 4:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    case 5:
+                        message.description = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -204,6 +236,16 @@ $root.ubii = (function() {
                             return "devices." + error;
                     }
                 }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (var i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    if (!$util.isString(message.description))
+                        return "description: string expected";
                 return null;
             };
 
@@ -233,6 +275,15 @@ $root.ubii = (function() {
                         message.devices[i] = $root.ubii.devices.Device.fromObject(object.devices[i]);
                     }
                 }
+                if (object.tags) {
+                    if (!Array.isArray(object.tags))
+                        throw TypeError(".ubii.clients.Client.tags: array expected");
+                    message.tags = [];
+                    for (var i = 0; i < object.tags.length; ++i)
+                        message.tags[i] = String(object.tags[i]);
+                }
+                if (object.description != null)
+                    message.description = String(object.description);
                 return message;
             };
 
@@ -249,11 +300,14 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
                     object.devices = [];
+                    object.tags = [];
+                }
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
+                    object.description = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -264,6 +318,13 @@ $root.ubii = (function() {
                     for (var j = 0; j < message.devices.length; ++j)
                         object.devices[j] = $root.ubii.devices.Device.toObject(message.devices[j], options);
                 }
+                if (message.tags && message.tags.length) {
+                    object.tags = [];
+                    for (var j = 0; j < message.tags.length; ++j)
+                        object.tags[j] = message.tags[j];
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    object.description = message.description;
                 return object;
             };
 
@@ -510,6 +571,9 @@ $root.ubii = (function() {
              * @property {string|null} [topic] Component topic
              * @property {string|null} [messageFormat] Component messageFormat
              * @property {ubii.devices.Component.IOType|null} [ioType] Component ioType
+             * @property {string|null} [deviceId] Component deviceId
+             * @property {Array.<string>|null} [tags] Component tags
+             * @property {string|null} [description] Component description
              */
 
             /**
@@ -521,6 +585,7 @@ $root.ubii = (function() {
              * @param {ubii.devices.IComponent=} [properties] Properties to set
              */
             function Component(properties) {
+                this.tags = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -552,6 +617,30 @@ $root.ubii = (function() {
             Component.prototype.ioType = 0;
 
             /**
+             * Component deviceId.
+             * @member {string} deviceId
+             * @memberof ubii.devices.Component
+             * @instance
+             */
+            Component.prototype.deviceId = "";
+
+            /**
+             * Component tags.
+             * @member {Array.<string>} tags
+             * @memberof ubii.devices.Component
+             * @instance
+             */
+            Component.prototype.tags = $util.emptyArray;
+
+            /**
+             * Component description.
+             * @member {string} description
+             * @memberof ubii.devices.Component
+             * @instance
+             */
+            Component.prototype.description = "";
+
+            /**
              * Creates a new Component instance using the specified properties.
              * @function create
              * @memberof ubii.devices.Component
@@ -581,6 +670,13 @@ $root.ubii = (function() {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.messageFormat);
                 if (message.ioType != null && message.hasOwnProperty("ioType"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.ioType);
+                if (message.deviceId != null && message.hasOwnProperty("deviceId"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.deviceId);
+                if (message.tags != null && message.tags.length)
+                    for (var i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
+                if (message.description != null && message.hasOwnProperty("description"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
                 return writer;
             };
 
@@ -623,6 +719,17 @@ $root.ubii = (function() {
                         break;
                     case 3:
                         message.ioType = reader.int32();
+                        break;
+                    case 4:
+                        message.deviceId = reader.string();
+                        break;
+                    case 5:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    case 6:
+                        message.description = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -673,6 +780,19 @@ $root.ubii = (function() {
                     case 1:
                         break;
                     }
+                if (message.deviceId != null && message.hasOwnProperty("deviceId"))
+                    if (!$util.isString(message.deviceId))
+                        return "deviceId: string expected";
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (var i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    if (!$util.isString(message.description))
+                        return "description: string expected";
                 return null;
             };
 
@@ -702,6 +822,17 @@ $root.ubii = (function() {
                     message.ioType = 1;
                     break;
                 }
+                if (object.deviceId != null)
+                    message.deviceId = String(object.deviceId);
+                if (object.tags) {
+                    if (!Array.isArray(object.tags))
+                        throw TypeError(".ubii.devices.Component.tags: array expected");
+                    message.tags = [];
+                    for (var i = 0; i < object.tags.length; ++i)
+                        message.tags[i] = String(object.tags[i]);
+                }
+                if (object.description != null)
+                    message.description = String(object.description);
                 return message;
             };
 
@@ -718,10 +849,14 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
+                if (options.arrays || options.defaults)
+                    object.tags = [];
                 if (options.defaults) {
                     object.topic = "";
                     object.messageFormat = "";
                     object.ioType = options.enums === String ? "INPUT" : 0;
+                    object.deviceId = "";
+                    object.description = "";
                 }
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     object.topic = message.topic;
@@ -729,6 +864,15 @@ $root.ubii = (function() {
                     object.messageFormat = message.messageFormat;
                 if (message.ioType != null && message.hasOwnProperty("ioType"))
                     object.ioType = options.enums === String ? $root.ubii.devices.Component.IOType[message.ioType] : message.ioType;
+                if (message.deviceId != null && message.hasOwnProperty("deviceId"))
+                    object.deviceId = message.deviceId;
+                if (message.tags && message.tags.length) {
+                    object.tags = [];
+                    for (var j = 0; j < message.tags.length; ++j)
+                        object.tags[j] = message.tags[j];
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    object.description = message.description;
                 return object;
             };
 
@@ -771,6 +915,8 @@ $root.ubii = (function() {
              * @property {ubii.devices.Device.DeviceType|null} [deviceType] Device deviceType
              * @property {Array.<ubii.devices.IComponent>|null} [components] Device components
              * @property {string|null} [clientId] Device clientId
+             * @property {Array.<string>|null} [tags] Device tags
+             * @property {string|null} [description] Device description
              */
 
             /**
@@ -783,6 +929,7 @@ $root.ubii = (function() {
              */
             function Device(properties) {
                 this.components = [];
+                this.tags = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -830,6 +977,22 @@ $root.ubii = (function() {
             Device.prototype.clientId = "";
 
             /**
+             * Device tags.
+             * @member {Array.<string>} tags
+             * @memberof ubii.devices.Device
+             * @instance
+             */
+            Device.prototype.tags = $util.emptyArray;
+
+            /**
+             * Device description.
+             * @member {string} description
+             * @memberof ubii.devices.Device
+             * @instance
+             */
+            Device.prototype.description = "";
+
+            /**
              * Creates a new Device instance using the specified properties.
              * @function create
              * @memberof ubii.devices.Device
@@ -864,6 +1027,11 @@ $root.ubii = (function() {
                         $root.ubii.devices.Component.encode(message.components[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.clientId != null && message.hasOwnProperty("clientId"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.clientId);
+                if (message.tags != null && message.tags.length)
+                    for (var i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.tags[i]);
+                if (message.description != null && message.hasOwnProperty("description"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.description);
                 return writer;
             };
 
@@ -914,6 +1082,14 @@ $root.ubii = (function() {
                         break;
                     case 5:
                         message.clientId = reader.string();
+                        break;
+                    case 6:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    case 7:
+                        message.description = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -976,6 +1152,16 @@ $root.ubii = (function() {
                 if (message.clientId != null && message.hasOwnProperty("clientId"))
                     if (!$util.isString(message.clientId))
                         return "clientId: string expected";
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (var i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    if (!$util.isString(message.description))
+                        return "description: string expected";
                 return null;
             };
 
@@ -1017,6 +1203,15 @@ $root.ubii = (function() {
                 }
                 if (object.clientId != null)
                     message.clientId = String(object.clientId);
+                if (object.tags) {
+                    if (!Array.isArray(object.tags))
+                        throw TypeError(".ubii.devices.Device.tags: array expected");
+                    message.tags = [];
+                    for (var i = 0; i < object.tags.length; ++i)
+                        message.tags[i] = String(object.tags[i]);
+                }
+                if (object.description != null)
+                    message.description = String(object.description);
                 return message;
             };
 
@@ -1033,13 +1228,16 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
                     object.components = [];
+                    object.tags = [];
+                }
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
                     object.deviceType = options.enums === String ? "PARTICIPANT" : 0;
                     object.clientId = "";
+                    object.description = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -1054,6 +1252,13 @@ $root.ubii = (function() {
                 }
                 if (message.clientId != null && message.hasOwnProperty("clientId"))
                     object.clientId = message.clientId;
+                if (message.tags && message.tags.length) {
+                    object.tags = [];
+                    for (var j = 0; j < message.tags.length; ++j)
+                        object.tags[j] = message.tags[j];
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    object.description = message.description;
                 return object;
             };
 
@@ -4260,6 +4465,8 @@ $root.ubii = (function() {
              * @property {string|null} [topic] Service topic
              * @property {string|null} [requestMessageFormat] Service requestMessageFormat
              * @property {string|null} [responseMessageFormat] Service responseMessageFormat
+             * @property {Array.<string>|null} [tags] Service tags
+             * @property {string|null} [description] Service description
              */
 
             /**
@@ -4271,6 +4478,7 @@ $root.ubii = (function() {
              * @param {ubii.services.IService=} [properties] Properties to set
              */
             function Service(properties) {
+                this.tags = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4302,6 +4510,22 @@ $root.ubii = (function() {
             Service.prototype.responseMessageFormat = "";
 
             /**
+             * Service tags.
+             * @member {Array.<string>} tags
+             * @memberof ubii.services.Service
+             * @instance
+             */
+            Service.prototype.tags = $util.emptyArray;
+
+            /**
+             * Service description.
+             * @member {string} description
+             * @memberof ubii.services.Service
+             * @instance
+             */
+            Service.prototype.description = "";
+
+            /**
              * Creates a new Service instance using the specified properties.
              * @function create
              * @memberof ubii.services.Service
@@ -4331,6 +4555,11 @@ $root.ubii = (function() {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.requestMessageFormat);
                 if (message.responseMessageFormat != null && message.hasOwnProperty("responseMessageFormat"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.responseMessageFormat);
+                if (message.tags != null && message.tags.length)
+                    for (var i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                if (message.description != null && message.hasOwnProperty("description"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
                 return writer;
             };
 
@@ -4373,6 +4602,14 @@ $root.ubii = (function() {
                         break;
                     case 3:
                         message.responseMessageFormat = reader.string();
+                        break;
+                    case 4:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    case 5:
+                        message.description = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4418,6 +4655,16 @@ $root.ubii = (function() {
                 if (message.responseMessageFormat != null && message.hasOwnProperty("responseMessageFormat"))
                     if (!$util.isString(message.responseMessageFormat))
                         return "responseMessageFormat: string expected";
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (var i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    if (!$util.isString(message.description))
+                        return "description: string expected";
                 return null;
             };
 
@@ -4439,6 +4686,15 @@ $root.ubii = (function() {
                     message.requestMessageFormat = String(object.requestMessageFormat);
                 if (object.responseMessageFormat != null)
                     message.responseMessageFormat = String(object.responseMessageFormat);
+                if (object.tags) {
+                    if (!Array.isArray(object.tags))
+                        throw TypeError(".ubii.services.Service.tags: array expected");
+                    message.tags = [];
+                    for (var i = 0; i < object.tags.length; ++i)
+                        message.tags[i] = String(object.tags[i]);
+                }
+                if (object.description != null)
+                    message.description = String(object.description);
                 return message;
             };
 
@@ -4455,10 +4711,13 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
+                if (options.arrays || options.defaults)
+                    object.tags = [];
                 if (options.defaults) {
                     object.topic = "";
                     object.requestMessageFormat = "";
                     object.responseMessageFormat = "";
+                    object.description = "";
                 }
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     object.topic = message.topic;
@@ -4466,6 +4725,13 @@ $root.ubii = (function() {
                     object.requestMessageFormat = message.requestMessageFormat;
                 if (message.responseMessageFormat != null && message.hasOwnProperty("responseMessageFormat"))
                     object.responseMessageFormat = message.responseMessageFormat;
+                if (message.tags && message.tags.length) {
+                    object.tags = [];
+                    for (var j = 0; j < message.tags.length; ++j)
+                        object.tags[j] = message.tags[j];
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    object.description = message.description;
                 return object;
             };
 
@@ -7567,6 +7833,9 @@ $root.ubii = (function() {
              * @property {string|null} [name] Session name
              * @property {Array.<ubii.interactions.IInteraction>|null} [interactions] Session interactions
              * @property {Array.<ubii.sessions.IIOMapping>|null} [ioMappings] Session ioMappings
+             * @property {Array.<string>|null} [tags] Session tags
+             * @property {string|null} [description] Session description
+             * @property {Array.<string>|null} [authors] Session authors
              */
 
             /**
@@ -7580,6 +7849,8 @@ $root.ubii = (function() {
             function Session(properties) {
                 this.interactions = [];
                 this.ioMappings = [];
+                this.tags = [];
+                this.authors = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -7619,6 +7890,30 @@ $root.ubii = (function() {
             Session.prototype.ioMappings = $util.emptyArray;
 
             /**
+             * Session tags.
+             * @member {Array.<string>} tags
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.tags = $util.emptyArray;
+
+            /**
+             * Session description.
+             * @member {string} description
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.description = "";
+
+            /**
+             * Session authors.
+             * @member {Array.<string>} authors
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.authors = $util.emptyArray;
+
+            /**
              * Creates a new Session instance using the specified properties.
              * @function create
              * @memberof ubii.sessions.Session
@@ -7652,6 +7947,14 @@ $root.ubii = (function() {
                 if (message.ioMappings != null && message.ioMappings.length)
                     for (var i = 0; i < message.ioMappings.length; ++i)
                         $root.ubii.sessions.IOMapping.encode(message.ioMappings[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (var i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
+                if (message.description != null && message.hasOwnProperty("description"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
+                if (message.authors != null && message.authors.length)
+                    for (var i = 0; i < message.authors.length; ++i)
+                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.authors[i]);
                 return writer;
             };
 
@@ -7701,6 +8004,19 @@ $root.ubii = (function() {
                         if (!(message.ioMappings && message.ioMappings.length))
                             message.ioMappings = [];
                         message.ioMappings.push($root.ubii.sessions.IOMapping.decode(reader, reader.uint32()));
+                        break;
+                    case 5:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    case 6:
+                        message.description = reader.string();
+                        break;
+                    case 7:
+                        if (!(message.authors && message.authors.length))
+                            message.authors = [];
+                        message.authors.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7761,6 +8077,23 @@ $root.ubii = (function() {
                             return "ioMappings." + error;
                     }
                 }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (var i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    if (!$util.isString(message.description))
+                        return "description: string expected";
+                if (message.authors != null && message.hasOwnProperty("authors")) {
+                    if (!Array.isArray(message.authors))
+                        return "authors: array expected";
+                    for (var i = 0; i < message.authors.length; ++i)
+                        if (!$util.isString(message.authors[i]))
+                            return "authors: string[] expected";
+                }
                 return null;
             };
 
@@ -7800,6 +8133,22 @@ $root.ubii = (function() {
                         message.ioMappings[i] = $root.ubii.sessions.IOMapping.fromObject(object.ioMappings[i]);
                     }
                 }
+                if (object.tags) {
+                    if (!Array.isArray(object.tags))
+                        throw TypeError(".ubii.sessions.Session.tags: array expected");
+                    message.tags = [];
+                    for (var i = 0; i < object.tags.length; ++i)
+                        message.tags[i] = String(object.tags[i]);
+                }
+                if (object.description != null)
+                    message.description = String(object.description);
+                if (object.authors) {
+                    if (!Array.isArray(object.authors))
+                        throw TypeError(".ubii.sessions.Session.authors: array expected");
+                    message.authors = [];
+                    for (var i = 0; i < object.authors.length; ++i)
+                        message.authors[i] = String(object.authors[i]);
+                }
                 return message;
             };
 
@@ -7819,10 +8168,13 @@ $root.ubii = (function() {
                 if (options.arrays || options.defaults) {
                     object.interactions = [];
                     object.ioMappings = [];
+                    object.tags = [];
+                    object.authors = [];
                 }
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
+                    object.description = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -7837,6 +8189,18 @@ $root.ubii = (function() {
                     object.ioMappings = [];
                     for (var j = 0; j < message.ioMappings.length; ++j)
                         object.ioMappings[j] = $root.ubii.sessions.IOMapping.toObject(message.ioMappings[j], options);
+                }
+                if (message.tags && message.tags.length) {
+                    object.tags = [];
+                    for (var j = 0; j < message.tags.length; ++j)
+                        object.tags[j] = message.tags[j];
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    object.description = message.description;
+                if (message.authors && message.authors.length) {
+                    object.authors = [];
+                    for (var j = 0; j < message.authors.length; ++j)
+                        object.authors[j] = message.authors[j];
                 }
                 return object;
             };
@@ -13384,6 +13748,7 @@ $root.ubii = (function() {
              * @property {string|null} [id] Object2D id
              * @property {ubii.dataStructure.IPose2D|null} [pose] Object2D pose
              * @property {ubii.dataStructure.IVector2|null} [size] Object2D size
+             * @property {string|null} [userDataJson] Object2D userDataJson
              */
 
             /**
@@ -13426,6 +13791,14 @@ $root.ubii = (function() {
             Object2D.prototype.size = null;
 
             /**
+             * Object2D userDataJson.
+             * @member {string} userDataJson
+             * @memberof ubii.dataStructure.Object2D
+             * @instance
+             */
+            Object2D.prototype.userDataJson = "";
+
+            /**
              * Creates a new Object2D instance using the specified properties.
              * @function create
              * @memberof ubii.dataStructure.Object2D
@@ -13455,6 +13828,8 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Pose2D.encode(message.pose, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.size != null && message.hasOwnProperty("size"))
                     $root.ubii.dataStructure.Vector2.encode(message.size, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.userDataJson);
                 return writer;
             };
 
@@ -13497,6 +13872,9 @@ $root.ubii = (function() {
                         break;
                     case 3:
                         message.size = $root.ubii.dataStructure.Vector2.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.userDataJson = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13546,6 +13924,9 @@ $root.ubii = (function() {
                     if (error)
                         return "size." + error;
                 }
+                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                    if (!$util.isString(message.userDataJson))
+                        return "userDataJson: string expected";
                 return null;
             };
 
@@ -13573,6 +13954,8 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.dataStructure.Object2D.size: object expected");
                     message.size = $root.ubii.dataStructure.Vector2.fromObject(object.size);
                 }
+                if (object.userDataJson != null)
+                    message.userDataJson = String(object.userDataJson);
                 return message;
             };
 
@@ -13593,6 +13976,7 @@ $root.ubii = (function() {
                     object.id = "";
                     object.pose = null;
                     object.size = null;
+                    object.userDataJson = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -13600,6 +13984,8 @@ $root.ubii = (function() {
                     object.pose = $root.ubii.dataStructure.Pose2D.toObject(message.pose, options);
                 if (message.size != null && message.hasOwnProperty("size"))
                     object.size = $root.ubii.dataStructure.Vector2.toObject(message.size, options);
+                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                    object.userDataJson = message.userDataJson;
                 return object;
             };
 
@@ -13834,6 +14220,7 @@ $root.ubii = (function() {
              * @property {string|null} [id] Object3D id
              * @property {ubii.dataStructure.IPose3D|null} [pose] Object3D pose
              * @property {ubii.dataStructure.IVector3|null} [size] Object3D size
+             * @property {string|null} [userDataJson] Object3D userDataJson
              */
 
             /**
@@ -13876,6 +14263,14 @@ $root.ubii = (function() {
             Object3D.prototype.size = null;
 
             /**
+             * Object3D userDataJson.
+             * @member {string} userDataJson
+             * @memberof ubii.dataStructure.Object3D
+             * @instance
+             */
+            Object3D.prototype.userDataJson = "";
+
+            /**
              * Creates a new Object3D instance using the specified properties.
              * @function create
              * @memberof ubii.dataStructure.Object3D
@@ -13905,6 +14300,8 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Pose3D.encode(message.pose, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.size != null && message.hasOwnProperty("size"))
                     $root.ubii.dataStructure.Vector3.encode(message.size, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.userDataJson);
                 return writer;
             };
 
@@ -13947,6 +14344,9 @@ $root.ubii = (function() {
                         break;
                     case 3:
                         message.size = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.userDataJson = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13996,6 +14396,9 @@ $root.ubii = (function() {
                     if (error)
                         return "size." + error;
                 }
+                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                    if (!$util.isString(message.userDataJson))
+                        return "userDataJson: string expected";
                 return null;
             };
 
@@ -14023,6 +14426,8 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.dataStructure.Object3D.size: object expected");
                     message.size = $root.ubii.dataStructure.Vector3.fromObject(object.size);
                 }
+                if (object.userDataJson != null)
+                    message.userDataJson = String(object.userDataJson);
                 return message;
             };
 
@@ -14043,6 +14448,7 @@ $root.ubii = (function() {
                     object.id = "";
                     object.pose = null;
                     object.size = null;
+                    object.userDataJson = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -14050,6 +14456,8 @@ $root.ubii = (function() {
                     object.pose = $root.ubii.dataStructure.Pose3D.toObject(message.pose, options);
                 if (message.size != null && message.hasOwnProperty("size"))
                     object.size = $root.ubii.dataStructure.Vector3.toObject(message.size, options);
+                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                    object.userDataJson = message.userDataJson;
                 return object;
             };
 

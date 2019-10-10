@@ -53,6 +53,16 @@ public final class Object3DOuterClass {
      * <code>.ubii.dataStructure.Vector3 size = 3;</code>
      */
     ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getSizeOrBuilder();
+
+    /**
+     * <code>string user_data_json = 4;</code>
+     */
+    java.lang.String getUserDataJson();
+    /**
+     * <code>string user_data_json = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserDataJsonBytes();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.Object3D}
@@ -68,6 +78,7 @@ public final class Object3DOuterClass {
     }
     private Object3D() {
       id_ = "";
+      userDataJson_ = "";
     }
 
     @java.lang.Override
@@ -124,6 +135,12 @@ public final class Object3DOuterClass {
                 size_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userDataJson_ = s;
               break;
             }
             default: {
@@ -234,6 +251,40 @@ public final class Object3DOuterClass {
       return getSize();
     }
 
+    public static final int USER_DATA_JSON_FIELD_NUMBER = 4;
+    private volatile java.lang.Object userDataJson_;
+    /**
+     * <code>string user_data_json = 4;</code>
+     */
+    public java.lang.String getUserDataJson() {
+      java.lang.Object ref = userDataJson_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userDataJson_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_data_json = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserDataJsonBytes() {
+      java.lang.Object ref = userDataJson_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userDataJson_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -257,6 +308,9 @@ public final class Object3DOuterClass {
       if (size_ != null) {
         output.writeMessage(3, getSize());
       }
+      if (!getUserDataJsonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userDataJson_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -276,6 +330,9 @@ public final class Object3DOuterClass {
       if (size_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSize());
+      }
+      if (!getUserDataJsonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userDataJson_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -305,6 +362,8 @@ public final class Object3DOuterClass {
         result = result && getSize()
             .equals(other.getSize());
       }
+      result = result && getUserDataJson()
+          .equals(other.getUserDataJson());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -326,6 +385,8 @@ public final class Object3DOuterClass {
         hash = (37 * hash) + SIZE_FIELD_NUMBER;
         hash = (53 * hash) + getSize().hashCode();
       }
+      hash = (37 * hash) + USER_DATA_JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getUserDataJson().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -473,6 +534,8 @@ public final class Object3DOuterClass {
           size_ = null;
           sizeBuilder_ = null;
         }
+        userDataJson_ = "";
+
         return this;
       }
 
@@ -510,6 +573,7 @@ public final class Object3DOuterClass {
         } else {
           result.size_ = sizeBuilder_.build();
         }
+        result.userDataJson_ = userDataJson_;
         onBuilt();
         return result;
       }
@@ -567,6 +631,10 @@ public final class Object3DOuterClass {
         }
         if (other.hasSize()) {
           mergeSize(other.getSize());
+        }
+        if (!other.getUserDataJson().isEmpty()) {
+          userDataJson_ = other.userDataJson_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -898,6 +966,75 @@ public final class Object3DOuterClass {
           size_ = null;
         }
         return sizeBuilder_;
+      }
+
+      private java.lang.Object userDataJson_ = "";
+      /**
+       * <code>string user_data_json = 4;</code>
+       */
+      public java.lang.String getUserDataJson() {
+        java.lang.Object ref = userDataJson_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userDataJson_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_data_json = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserDataJsonBytes() {
+        java.lang.Object ref = userDataJson_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userDataJson_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_data_json = 4;</code>
+       */
+      public Builder setUserDataJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userDataJson_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_data_json = 4;</code>
+       */
+      public Builder clearUserDataJson() {
+        
+        userDataJson_ = getDefaultInstance().getUserDataJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_data_json = 4;</code>
+       */
+      public Builder setUserDataJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userDataJson_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1758,11 +1895,12 @@ public final class Object3DOuterClass {
       "re\032:proto/topicData/topicDataRecord/data" +
       "Structure/pose3d.proto\032;proto/topicData/" +
       "topicDataRecord/dataStructure/vector3.pr" +
-      "oto\"k\n\010Object3D\022\n\n\002id\030\001 \001(\t\022(\n\004pose\030\002 \001(" +
-      "\0132\032.ubii.dataStructure.Pose3D\022)\n\004size\030\003 " +
-      "\001(\0132\033.ubii.dataStructure.Vector3\">\n\014Obje" +
-      "ct3DList\022.\n\010elements\030\001 \003(\0132\034.ubii.dataSt" +
-      "ructure.Object3Db\006proto3"
+      "oto\"\203\001\n\010Object3D\022\n\n\002id\030\001 \001(\t\022(\n\004pose\030\002 \001" +
+      "(\0132\032.ubii.dataStructure.Pose3D\022)\n\004size\030\003" +
+      " \001(\0132\033.ubii.dataStructure.Vector3\022\026\n\016use" +
+      "r_data_json\030\004 \001(\t\">\n\014Object3DList\022.\n\010ele" +
+      "ments\030\001 \003(\0132\034.ubii.dataStructure.Object3" +
+      "Db\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1783,7 +1921,7 @@ public final class Object3DOuterClass {
     internal_static_ubii_dataStructure_Object3D_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_dataStructure_Object3D_descriptor,
-        new java.lang.String[] { "Id", "Pose", "Size", });
+        new java.lang.String[] { "Id", "Pose", "Size", "UserDataJson", });
     internal_static_ubii_dataStructure_Object3DList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_dataStructure_Object3DList_fieldAccessorTable = new

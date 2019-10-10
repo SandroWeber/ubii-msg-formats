@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.sessions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\x88\x01\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0cinteractions\x18\x03 \x03(\x0b\x32\x1e.ubii.interactions.Interaction\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMapping\"7\n\x0bSessionList\x12(\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x16.ubii.sessions.Sessionb\x06proto3')
+  serialized_pb=_b('\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\xbc\x01\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0cinteractions\x18\x03 \x03(\x0b\x32\x1e.ubii.interactions.Interaction\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMapping\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x07 \x03(\t\"7\n\x0bSessionList\x12(\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x16.ubii.sessions.Sessionb\x06proto3')
   ,
   dependencies=[proto_dot_interactions_dot_interaction__pb2.DESCRIPTOR,proto_dot_sessions_dot_ioMapping__pb2.DESCRIPTOR,])
 
@@ -63,6 +63,27 @@ _SESSION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='ubii.sessions.Session.tags', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='ubii.sessions.Session.description', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='authors', full_name='ubii.sessions.Session.authors', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -76,7 +97,7 @@ _SESSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=118,
-  serialized_end=254,
+  serialized_end=306,
 )
 
 
@@ -106,8 +127,8 @@ _SESSIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=256,
-  serialized_end=311,
+  serialized_start=308,
+  serialized_end=363,
 )
 
 _SESSION.fields_by_name['interactions'].message_type = proto_dot_interactions_dot_interaction__pb2._INTERACTION

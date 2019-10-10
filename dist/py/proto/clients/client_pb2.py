@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.clients',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\"I\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Device\"4\n\nClientList\x12&\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x14.ubii.clients.Clientb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\"l\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Device\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"4\n\nClientList\x12&\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x14.ubii.clients.Clientb\x06proto3')
   ,
   dependencies=[proto_dot_devices_dot_device__pb2.DESCRIPTOR,])
 
@@ -55,6 +55,20 @@ _CLIENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='ubii.clients.Client.tags', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='ubii.clients.Client.description', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -68,7 +82,7 @@ _CLIENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=72,
-  serialized_end=145,
+  serialized_end=180,
 )
 
 
@@ -98,8 +112,8 @@ _CLIENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=147,
-  serialized_end=199,
+  serialized_start=182,
+  serialized_end=234,
 )
 
 _CLIENT.fields_by_name['devices'].message_type = proto_dot_devices_dot_device__pb2._DEVICE

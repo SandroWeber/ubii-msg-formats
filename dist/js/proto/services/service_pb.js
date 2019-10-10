@@ -25,12 +25,19 @@ goog.exportSymbol('proto.ubii.services.ServiceList', null, global);
  * @constructor
  */
 proto.ubii.services.Service = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.services.Service.repeatedFields_, null);
 };
 goog.inherits(proto.ubii.services.Service, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.ubii.services.Service.displayName = 'proto.ubii.services.Service';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.services.Service.repeatedFields_ = [4];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -62,7 +69,9 @@ proto.ubii.services.Service.toObject = function(includeInstance, msg) {
   var f, obj = {
     topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
     requestMessageFormat: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    responseMessageFormat: jspb.Message.getFieldWithDefault(msg, 3, "")
+    responseMessageFormat: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    tagsList: jspb.Message.getRepeatedField(msg, 4),
+    description: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -110,6 +119,14 @@ proto.ubii.services.Service.deserializeBinaryFromReader = function(msg, reader) 
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setResponseMessageFormat(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -161,6 +178,20 @@ proto.ubii.services.Service.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -206,6 +237,50 @@ proto.ubii.services.Service.prototype.getResponseMessageFormat = function() {
 /** @param {string} value */
 proto.ubii.services.Service.prototype.setResponseMessageFormat = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated string tags = 4;
+ * @return {!Array<string>}
+ */
+proto.ubii.services.Service.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.services.Service.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.services.Service.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+proto.ubii.services.Service.prototype.clearTagsList = function() {
+  this.setTagsList([]);
+};
+
+
+/**
+ * optional string description = 5;
+ * @return {string}
+ */
+proto.ubii.services.Service.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.services.Service.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

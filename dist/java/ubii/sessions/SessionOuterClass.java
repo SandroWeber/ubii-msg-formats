@@ -85,6 +85,54 @@ public final class SessionOuterClass {
      */
     ubii.sessions.IoMapping.IOMappingOrBuilder getIoMappingsOrBuilder(
         int index);
+
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <code>string description = 6;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    java.util.List<java.lang.String>
+        getAuthorsList();
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    int getAuthorsCount();
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    java.lang.String getAuthors(int index);
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getAuthorsBytes(int index);
   }
   /**
    * Protobuf type {@code ubii.sessions.Session}
@@ -103,6 +151,9 @@ public final class SessionOuterClass {
       name_ = "";
       interactions_ = java.util.Collections.emptyList();
       ioMappings_ = java.util.Collections.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      description_ = "";
+      authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -159,6 +210,30 @@ public final class SessionOuterClass {
                   input.readMessage(ubii.sessions.IoMapping.IOMapping.parser(), extensionRegistry));
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                authors_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              authors_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -179,6 +254,12 @@ public final class SessionOuterClass {
         }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           ioMappings_ = java.util.Collections.unmodifiableList(ioMappings_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          authors_ = authors_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -336,6 +417,98 @@ public final class SessionOuterClass {
       return ioMappings_.get(index);
     }
 
+    public static final int TAGS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 6;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUTHORS_FIELD_NUMBER = 7;
+    private com.google.protobuf.LazyStringList authors_;
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAuthorsList() {
+      return authors_;
+    }
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    public int getAuthorsCount() {
+      return authors_.size();
+    }
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    public java.lang.String getAuthors(int index) {
+      return authors_.get(index);
+    }
+    /**
+     * <code>repeated string authors = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAuthorsBytes(int index) {
+      return authors_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -362,6 +535,15 @@ public final class SessionOuterClass {
       for (int i = 0; i < ioMappings_.size(); i++) {
         output.writeMessage(4, ioMappings_.get(i));
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
+      }
+      for (int i = 0; i < authors_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, authors_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -384,6 +566,25 @@ public final class SessionOuterClass {
       for (int i = 0; i < ioMappings_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, ioMappings_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < authors_.size(); i++) {
+          dataSize += computeStringSizeNoTag(authors_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAuthorsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -409,6 +610,12 @@ public final class SessionOuterClass {
           .equals(other.getInteractionsList());
       result = result && getIoMappingsList()
           .equals(other.getIoMappingsList());
+      result = result && getTagsList()
+          .equals(other.getTagsList());
+      result = result && getDescription()
+          .equals(other.getDescription());
+      result = result && getAuthorsList()
+          .equals(other.getAuthorsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -431,6 +638,16 @@ public final class SessionOuterClass {
       if (getIoMappingsCount() > 0) {
         hash = (37 * hash) + IO_MAPPINGS_FIELD_NUMBER;
         hash = (53 * hash) + getIoMappingsList().hashCode();
+      }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      if (getAuthorsCount() > 0) {
+        hash = (37 * hash) + AUTHORS_FIELD_NUMBER;
+        hash = (53 * hash) + getAuthorsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -583,6 +800,12 @@ public final class SessionOuterClass {
         } else {
           ioMappingsBuilder_.clear();
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        description_ = "";
+
+        authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -631,6 +854,17 @@ public final class SessionOuterClass {
         } else {
           result.ioMappings_ = ioMappingsBuilder_.build();
         }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.tags_ = tags_;
+        result.description_ = description_;
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          authors_ = authors_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.authors_ = authors_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -739,6 +973,30 @@ public final class SessionOuterClass {
               ioMappingsBuilder_.addAllMessages(other.ioMappings_);
             }
           }
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.authors_.isEmpty()) {
+          if (authors_.isEmpty()) {
+            authors_ = other.authors_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureAuthorsIsMutable();
+            authors_.addAll(other.authors_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1386,6 +1644,263 @@ public final class SessionOuterClass {
           ioMappings_ = null;
         }
         return ioMappingsBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 6;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureAuthorsIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          authors_ = new com.google.protobuf.LazyStringArrayList(authors_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAuthorsList() {
+        return authors_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public int getAuthorsCount() {
+        return authors_.size();
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public java.lang.String getAuthors(int index) {
+        return authors_.get(index);
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAuthorsBytes(int index) {
+        return authors_.getByteString(index);
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public Builder setAuthors(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorsIsMutable();
+        authors_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public Builder addAuthors(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorsIsMutable();
+        authors_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public Builder addAllAuthors(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAuthorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, authors_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public Builder clearAuthors() {
+        authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string authors = 7;</code>
+       */
+      public Builder addAuthorsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureAuthorsIsMutable();
+        authors_.add(value);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2243,12 +2758,14 @@ public final class SessionOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034proto/sessions/session.proto\022\rubii.ses" +
       "sions\032$proto/interactions/interaction.pr" +
-      "oto\032\036proto/sessions/ioMapping.proto\"\210\001\n\007" +
+      "oto\032\036proto/sessions/ioMapping.proto\"\274\001\n\007" +
       "Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014int" +
       "eractions\030\003 \003(\0132\036.ubii.interactions.Inte" +
       "raction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.sess" +
-      "ions.IOMapping\"7\n\013SessionList\022(\n\010element" +
-      "s\030\001 \003(\0132\026.ubii.sessions.Sessionb\006proto3"
+      "ions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descript" +
+      "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\"7\n\013SessionLis" +
+      "t\022(\n\010elements\030\001 \003(\0132\026.ubii.sessions.Sess" +
+      "ionb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2269,7 +2786,7 @@ public final class SessionOuterClass {
     internal_static_ubii_sessions_Session_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_Session_descriptor,
-        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", });
+        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", });
     internal_static_ubii_sessions_SessionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_sessions_SessionList_fieldAccessorTable = new

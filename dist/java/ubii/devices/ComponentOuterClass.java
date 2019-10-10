@@ -46,6 +46,45 @@ public final class ComponentOuterClass {
      * <code>.ubii.devices.Component.IOType io_type = 3;</code>
      */
     ubii.devices.ComponentOuterClass.Component.IOType getIoType();
+
+    /**
+     * <code>string device_id = 4;</code>
+     */
+    java.lang.String getDeviceId();
+    /**
+     * <code>string device_id = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceIdBytes();
+
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <code>string description = 6;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
   }
   /**
    * Protobuf type {@code ubii.devices.Component}
@@ -63,6 +102,9 @@ public final class ComponentOuterClass {
       topic_ = "";
       messageFormat_ = "";
       ioType_ = 0;
+      deviceId_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      description_ = "";
     }
 
     @java.lang.Override
@@ -107,6 +149,27 @@ public final class ComponentOuterClass {
               ioType_ = rawValue;
               break;
             }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceId_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -122,6 +185,9 @@ public final class ComponentOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -237,6 +303,7 @@ public final class ComponentOuterClass {
       // @@protoc_insertion_point(enum_scope:ubii.devices.Component.IOType)
     }
 
+    private int bitField0_;
     public static final int TOPIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object topic_;
     /**
@@ -322,6 +389,103 @@ public final class ComponentOuterClass {
       return result == null ? ubii.devices.ComponentOuterClass.Component.IOType.UNRECOGNIZED : result;
     }
 
+    public static final int DEVICE_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object deviceId_;
+    /**
+     * <code>string device_id = 4;</code>
+     */
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string device_id = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 6;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -345,6 +509,15 @@ public final class ComponentOuterClass {
       if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.INPUT.getNumber()) {
         output.writeEnum(3, ioType_);
       }
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deviceId_);
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -363,6 +536,20 @@ public final class ComponentOuterClass {
       if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.INPUT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, ioType_);
+      }
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deviceId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -385,6 +572,12 @@ public final class ComponentOuterClass {
       result = result && getMessageFormat()
           .equals(other.getMessageFormat());
       result = result && ioType_ == other.ioType_;
+      result = result && getDeviceId()
+          .equals(other.getDeviceId());
+      result = result && getTagsList()
+          .equals(other.getTagsList());
+      result = result && getDescription()
+          .equals(other.getDescription());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -402,6 +595,14 @@ public final class ComponentOuterClass {
       hash = (53 * hash) + getMessageFormat().hashCode();
       hash = (37 * hash) + IO_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + ioType_;
+      hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -541,6 +742,12 @@ public final class ComponentOuterClass {
 
         ioType_ = 0;
 
+        deviceId_ = "";
+
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        description_ = "";
+
         return this;
       }
 
@@ -567,9 +774,19 @@ public final class ComponentOuterClass {
       @java.lang.Override
       public ubii.devices.ComponentOuterClass.Component buildPartial() {
         ubii.devices.ComponentOuterClass.Component result = new ubii.devices.ComponentOuterClass.Component(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.topic_ = topic_;
         result.messageFormat_ = messageFormat_;
         result.ioType_ = ioType_;
+        result.deviceId_ = deviceId_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.tags_ = tags_;
+        result.description_ = description_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -629,6 +846,24 @@ public final class ComponentOuterClass {
         if (other.ioType_ != 0) {
           setIoTypeValue(other.getIoTypeValue());
         }
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
+          onChanged();
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -657,6 +892,7 @@ public final class ComponentOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object topic_ = "";
       /**
@@ -840,6 +1076,238 @@ public final class ComponentOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object deviceId_ = "";
+      /**
+       * <code>string device_id = 4;</code>
+       */
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string device_id = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string device_id = 4;</code>
+       */
+      public Builder setDeviceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_id = 4;</code>
+       */
+      public Builder clearDeviceId() {
+        
+        deviceId_ = getDefaultInstance().getDeviceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_id = 4;</code>
+       */
+      public Builder setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 6;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 6;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -908,10 +1376,12 @@ public final class ComponentOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035proto/devices/component.proto\022\014ubii.de" +
-      "vices\"\204\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
+      "vices\"\272\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
       "ssage_format\030\002 \001(\t\022/\n\007io_type\030\003 \001(\0162\036.ub" +
-      "ii.devices.Component.IOType\"\037\n\006IOType\022\t\n" +
-      "\005INPUT\020\000\022\n\n\006OUTPUT\020\001b\006proto3"
+      "ii.devices.Component.IOType\022\021\n\tdevice_id" +
+      "\030\004 \001(\t\022\014\n\004tags\030\005 \003(\t\022\023\n\013description\030\006 \001(" +
+      "\t\"\037\n\006IOType\022\t\n\005INPUT\020\000\022\n\n\006OUTPUT\020\001b\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -930,7 +1400,7 @@ public final class ComponentOuterClass {
     internal_static_ubii_devices_Component_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_devices_Component_descriptor,
-        new java.lang.String[] { "Topic", "MessageFormat", "IoType", });
+        new java.lang.String[] { "Topic", "MessageFormat", "IoType", "DeviceId", "Tags", "Description", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

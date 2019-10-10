@@ -37,7 +37,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.clients.Client.repeatedFields_ = [3];
+proto.ubii.clients.Client.repeatedFields_ = [3,4];
 
 
 
@@ -71,7 +71,9 @@ proto.ubii.clients.Client.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     devicesList: jspb.Message.toObjectList(msg.getDevicesList(),
-    proto_devices_device_pb.Device.toObject, includeInstance)
+    proto_devices_device_pb.Device.toObject, includeInstance),
+    tagsList: jspb.Message.getRepeatedField(msg, 4),
+    description: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -120,6 +122,14 @@ proto.ubii.clients.Client.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto_devices_device_pb.Device;
       reader.readMessage(value,proto_devices_device_pb.Device.deserializeBinaryFromReader);
       msg.addDevices(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -170,6 +180,20 @@ proto.ubii.clients.Client.serializeBinaryToWriter = function(message, writer) {
       3,
       f,
       proto_devices_device_pb.Device.serializeBinaryToWriter
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -233,6 +257,50 @@ proto.ubii.clients.Client.prototype.addDevices = function(opt_value, opt_index) 
 
 proto.ubii.clients.Client.prototype.clearDevicesList = function() {
   this.setDevicesList([]);
+};
+
+
+/**
+ * repeated string tags = 4;
+ * @return {!Array<string>}
+ */
+proto.ubii.clients.Client.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.clients.Client.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.clients.Client.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+proto.ubii.clients.Client.prototype.clearTagsList = function() {
+  this.setTagsList([]);
+};
+
+
+/**
+ * optional string description = 5;
+ * @return {string}
+ */
+proto.ubii.clients.Client.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.clients.Client.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1cproto/services/service.proto\x12\rubii.services\"Y\n\x07Service\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x1e\n\x16request_message_format\x18\x02 \x01(\t\x12\x1f\n\x17response_message_format\x18\x03 \x01(\t\"7\n\x0bServiceList\x12(\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x16.ubii.services.Serviceb\x06proto3')
+  serialized_pb=_b('\n\x1cproto/services/service.proto\x12\rubii.services\"|\n\x07Service\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x1e\n\x16request_message_format\x18\x02 \x01(\t\x12\x1f\n\x17response_message_format\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"7\n\x0bServiceList\x12(\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x16.ubii.services.Serviceb\x06proto3')
 )
 
 
@@ -53,6 +53,20 @@ _SERVICE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='ubii.services.Service.tags', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='ubii.services.Service.description', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -66,7 +80,7 @@ _SERVICE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=47,
-  serialized_end=136,
+  serialized_end=171,
 )
 
 
@@ -96,8 +110,8 @@ _SERVICELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=138,
-  serialized_end=193,
+  serialized_start=173,
+  serialized_end=228,
 )
 
 _SERVICELIST.fields_by_name['elements'].message_type = _SERVICE

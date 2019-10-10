@@ -25,12 +25,19 @@ goog.exportSymbol('proto.ubii.devices.Component.IOType', null, global);
  * @constructor
  */
 proto.ubii.devices.Component = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.devices.Component.repeatedFields_, null);
 };
 goog.inherits(proto.ubii.devices.Component, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.ubii.devices.Component.displayName = 'proto.ubii.devices.Component';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.devices.Component.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -62,7 +69,10 @@ proto.ubii.devices.Component.toObject = function(includeInstance, msg) {
   var f, obj = {
     topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
     messageFormat: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    ioType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    ioType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    deviceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    tagsList: jspb.Message.getRepeatedField(msg, 5),
+    description: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -111,6 +121,18 @@ proto.ubii.devices.Component.deserializeBinaryFromReader = function(msg, reader)
       var value = /** @type {!proto.ubii.devices.Component.IOType} */ (reader.readEnum());
       msg.setIoType(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDeviceId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -158,6 +180,27 @@ proto.ubii.devices.Component.serializeBinaryToWriter = function(message, writer)
   if (f !== 0.0) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = message.getDeviceId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -214,6 +257,65 @@ proto.ubii.devices.Component.prototype.getIoType = function() {
 /** @param {!proto.ubii.devices.Component.IOType} value */
 proto.ubii.devices.Component.prototype.setIoType = function(value) {
   jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional string device_id = 4;
+ * @return {string}
+ */
+proto.ubii.devices.Component.prototype.getDeviceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.devices.Component.prototype.setDeviceId = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * repeated string tags = 5;
+ * @return {!Array<string>}
+ */
+proto.ubii.devices.Component.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.devices.Component.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.devices.Component.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+proto.ubii.devices.Component.prototype.clearTagsList = function() {
+  this.setTagsList([]);
+};
+
+
+/**
+ * optional string description = 6;
+ * @return {string}
+ */
+proto.ubii.devices.Component.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.devices.Component.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

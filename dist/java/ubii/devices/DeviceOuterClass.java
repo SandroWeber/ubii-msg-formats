@@ -80,6 +80,35 @@ public final class DeviceOuterClass {
      */
     com.google.protobuf.ByteString
         getClientIdBytes();
+
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <code>string description = 7;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
   }
   /**
    * Protobuf type {@code ubii.devices.Device}
@@ -99,6 +128,8 @@ public final class DeviceOuterClass {
       deviceType_ = 0;
       components_ = java.util.Collections.emptyList();
       clientId_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      description_ = "";
     }
 
     @java.lang.Override
@@ -158,6 +189,21 @@ public final class DeviceOuterClass {
               clientId_ = s;
               break;
             }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -175,6 +221,9 @@ public final class DeviceOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           components_ = java.util.Collections.unmodifiableList(components_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -446,6 +495,69 @@ public final class DeviceOuterClass {
       }
     }
 
+    public static final int TAGS_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 7;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 7;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -475,6 +587,12 @@ public final class DeviceOuterClass {
       if (!getClientIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, clientId_);
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tags_.getRaw(i));
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -501,6 +619,17 @@ public final class DeviceOuterClass {
       if (!getClientIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, clientId_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -526,6 +655,10 @@ public final class DeviceOuterClass {
           .equals(other.getComponentsList());
       result = result && getClientId()
           .equals(other.getClientId());
+      result = result && getTagsList()
+          .equals(other.getTagsList());
+      result = result && getDescription()
+          .equals(other.getDescription());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -549,6 +682,12 @@ public final class DeviceOuterClass {
       }
       hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClientId().hashCode();
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -697,6 +836,10 @@ public final class DeviceOuterClass {
         }
         clientId_ = "";
 
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        description_ = "";
+
         return this;
       }
 
@@ -738,6 +881,12 @@ public final class DeviceOuterClass {
           result.components_ = componentsBuilder_.build();
         }
         result.clientId_ = clientId_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.tags_ = tags_;
+        result.description_ = description_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -826,6 +975,20 @@ public final class DeviceOuterClass {
         }
         if (!other.getClientId().isEmpty()) {
           clientId_ = other.clientId_;
+          onChanged();
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1346,6 +1509,169 @@ public final class DeviceOuterClass {
   checkByteStringIsUtf8(value);
         
         clientId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 6;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 7;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 7;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
         onChanged();
         return this;
       }
@@ -2204,14 +2530,15 @@ public final class DeviceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032proto/devices/device.proto\022\014ubii.devic" +
-      "es\032\035proto/devices/component.proto\"\304\001\n\006De" +
+      "es\032\035proto/devices/component.proto\"\347\001\n\006De" +
       "vice\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\013device" +
       "_type\030\003 \001(\0162\037.ubii.devices.Device.Device" +
       "Type\022+\n\ncomponents\030\004 \003(\0132\027.ubii.devices." +
-      "Component\022\021\n\tclient_id\030\005 \001(\t\"*\n\nDeviceTy" +
-      "pe\022\017\n\013PARTICIPANT\020\000\022\013\n\007WATCHER\020\001\"4\n\nDevi" +
-      "ceList\022&\n\010elements\030\001 \003(\0132\024.ubii.devices." +
-      "Deviceb\006proto3"
+      "Component\022\021\n\tclient_id\030\005 \001(\t\022\014\n\004tags\030\006 \003" +
+      "(\t\022\023\n\013description\030\007 \001(\t\"*\n\nDeviceType\022\017\n" +
+      "\013PARTICIPANT\020\000\022\013\n\007WATCHER\020\001\"4\n\nDeviceLis" +
+      "t\022&\n\010elements\030\001 \003(\0132\024.ubii.devices.Devic" +
+      "eb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2231,7 +2558,7 @@ public final class DeviceOuterClass {
     internal_static_ubii_devices_Device_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_devices_Device_descriptor,
-        new java.lang.String[] { "Id", "Name", "DeviceType", "Components", "ClientId", });
+        new java.lang.String[] { "Id", "Name", "DeviceType", "Components", "ClientId", "Tags", "Description", });
     internal_static_ubii_devices_DeviceList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_devices_DeviceList_fieldAccessorTable = new

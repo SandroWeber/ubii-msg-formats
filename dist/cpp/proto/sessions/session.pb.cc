@@ -91,6 +91,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, interactions_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, io_mappings_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, tags_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, description_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, authors_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::SessionList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -100,7 +103,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::sessions::Session)},
-  { 9, -1, sizeof(::ubii::sessions::SessionList)},
+  { 12, -1, sizeof(::ubii::sessions::SessionList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -131,15 +134,17 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\034proto/sessions/session.proto\022\rubii.ses"
       "sions\032$proto/interactions/interaction.pr"
-      "oto\032\036proto/sessions/ioMapping.proto\"\210\001\n\007"
+      "oto\032\036proto/sessions/ioMapping.proto\"\274\001\n\007"
       "Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014int"
       "eractions\030\003 \003(\0132\036.ubii.interactions.Inte"
       "raction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.sess"
-      "ions.IOMapping\"7\n\013SessionList\022(\n\010element"
-      "s\030\001 \003(\0132\026.ubii.sessions.Sessionb\006proto3"
+      "ions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descript"
+      "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\"7\n\013SessionLis"
+      "t\022(\n\010elements\030\001 \003(\0132\026.ubii.sessions.Sess"
+      "ionb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 319);
+      descriptor, 371);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/sessions/session.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2finteractions_2finteraction_2eproto::AddDescriptors();
@@ -175,6 +180,9 @@ const int Session::kIdFieldNumber;
 const int Session::kNameFieldNumber;
 const int Session::kInteractionsFieldNumber;
 const int Session::kIoMappingsFieldNumber;
+const int Session::kTagsFieldNumber;
+const int Session::kDescriptionFieldNumber;
+const int Session::kAuthorsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Session::Session()
@@ -188,7 +196,9 @@ Session::Session(const Session& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       interactions_(from.interactions_),
-      io_mappings_(from.io_mappings_) {
+      io_mappings_(from.io_mappings_),
+      tags_(from.tags_),
+      authors_(from.authors_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
@@ -198,12 +208,17 @@ Session::Session(const Session& from)
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.description().size() > 0) {
+    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
   // @@protoc_insertion_point(copy_constructor:ubii.sessions.Session)
 }
 
 void Session::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 Session::~Session() {
@@ -214,6 +229,7 @@ Session::~Session() {
 void Session::SharedDtor() {
   id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Session::SetCachedSize(int size) const {
@@ -238,8 +254,11 @@ void Session::Clear() {
 
   interactions_.Clear();
   io_mappings_.Clear();
+  tags_.Clear();
+  authors_.Clear();
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -303,6 +322,56 @@ bool Session::MergePartialFromCodedStream(
             static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_io_mappings()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string tags = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_tags()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tags(this->tags_size() - 1).data(),
+            static_cast<int>(this->tags(this->tags_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.sessions.Session.tags"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string description = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_description()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->description().data(), static_cast<int>(this->description().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.sessions.Session.description"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string authors = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_authors()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->authors(this->authors_size() - 1).data(),
+            static_cast<int>(this->authors(this->authors_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.sessions.Session.authors"));
         } else {
           goto handle_unusual;
         }
@@ -373,6 +442,36 @@ void Session::SerializeWithCachedSizes(
       output);
   }
 
+  // repeated string tags = 5;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.sessions.Session.tags");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      5, this->tags(i), output);
+  }
+
+  // string description = 6;
+  if (this->description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->description().data(), static_cast<int>(this->description().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.sessions.Session.description");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->description(), output);
+  }
+
+  // repeated string authors = 7;
+  for (int i = 0, n = this->authors_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->authors(i).data(), static_cast<int>(this->authors(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.sessions.Session.authors");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      7, this->authors(i), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -425,6 +524,37 @@ void Session::SerializeWithCachedSizes(
         4, this->io_mappings(static_cast<int>(i)), deterministic, target);
   }
 
+  // repeated string tags = 5;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.sessions.Session.tags");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(5, this->tags(i), target);
+  }
+
+  // string description = 6;
+  if (this->description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->description().data(), static_cast<int>(this->description().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.sessions.Session.description");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->description(), target);
+  }
+
+  // repeated string authors = 7;
+  for (int i = 0, n = this->authors_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->authors(i).data(), static_cast<int>(this->authors(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.sessions.Session.authors");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(7, this->authors(i), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -464,6 +594,22 @@ size_t Session::ByteSizeLong() const {
     }
   }
 
+  // repeated string tags = 5;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->tags_size());
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->tags(i));
+  }
+
+  // repeated string authors = 7;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->authors_size());
+  for (int i = 0, n = this->authors_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->authors(i));
+  }
+
   // string id = 1;
   if (this->id().size() > 0) {
     total_size += 1 +
@@ -476,6 +622,13 @@ size_t Session::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->name());
+  }
+
+  // string description = 6;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->description());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -507,6 +660,8 @@ void Session::MergeFrom(const Session& from) {
 
   interactions_.MergeFrom(from.interactions_);
   io_mappings_.MergeFrom(from.io_mappings_);
+  tags_.MergeFrom(from.tags_);
+  authors_.MergeFrom(from.authors_);
   if (from.id().size() > 0) {
 
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
@@ -514,6 +669,10 @@ void Session::MergeFrom(const Session& from) {
   if (from.name().size() > 0) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
 }
 
@@ -543,9 +702,13 @@ void Session::InternalSwap(Session* other) {
   using std::swap;
   CastToBase(&interactions_)->InternalSwap(CastToBase(&other->interactions_));
   CastToBase(&io_mappings_)->InternalSwap(CastToBase(&other->io_mappings_));
+  tags_.InternalSwap(CastToBase(&other->tags_));
+  authors_.InternalSwap(CastToBase(&other->authors_));
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }

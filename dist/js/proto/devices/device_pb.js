@@ -38,7 +38,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.devices.Device.repeatedFields_ = [4];
+proto.ubii.devices.Device.repeatedFields_ = [4,6];
 
 
 
@@ -74,7 +74,9 @@ proto.ubii.devices.Device.toObject = function(includeInstance, msg) {
     deviceType: jspb.Message.getFieldWithDefault(msg, 3, 0),
     componentsList: jspb.Message.toObjectList(msg.getComponentsList(),
     proto_devices_component_pb.Component.toObject, includeInstance),
-    clientId: jspb.Message.getFieldWithDefault(msg, 5, "")
+    clientId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    tagsList: jspb.Message.getRepeatedField(msg, 6),
+    description: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -131,6 +133,14 @@ proto.ubii.devices.Device.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setClientId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -194,6 +204,20 @@ proto.ubii.devices.Device.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -296,6 +320,50 @@ proto.ubii.devices.Device.prototype.getClientId = function() {
 /** @param {string} value */
 proto.ubii.devices.Device.prototype.setClientId = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * repeated string tags = 6;
+ * @return {!Array<string>}
+ */
+proto.ubii.devices.Device.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.devices.Device.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.devices.Device.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+proto.ubii.devices.Device.prototype.clearTagsList = function() {
+  this.setTagsList([]);
+};
+
+
+/**
+ * optional string description = 7;
+ * @return {string}
+ */
+proto.ubii.devices.Device.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.devices.Device.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

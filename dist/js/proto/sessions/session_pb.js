@@ -38,7 +38,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.sessions.Session.repeatedFields_ = [3,4];
+proto.ubii.sessions.Session.repeatedFields_ = [3,4,5,7];
 
 
 
@@ -74,7 +74,10 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
     interactionsList: jspb.Message.toObjectList(msg.getInteractionsList(),
     proto_interactions_interaction_pb.Interaction.toObject, includeInstance),
     ioMappingsList: jspb.Message.toObjectList(msg.getIoMappingsList(),
-    proto_sessions_ioMapping_pb.IOMapping.toObject, includeInstance)
+    proto_sessions_ioMapping_pb.IOMapping.toObject, includeInstance),
+    tagsList: jspb.Message.getRepeatedField(msg, 5),
+    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    authorsList: jspb.Message.getRepeatedField(msg, 7)
   };
 
   if (includeInstance) {
@@ -128,6 +131,18 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
       var value = new proto_sessions_ioMapping_pb.IOMapping;
       reader.readMessage(value,proto_sessions_ioMapping_pb.IOMapping.deserializeBinaryFromReader);
       msg.addIoMappings(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAuthors(value);
       break;
     default:
       reader.skipField();
@@ -186,6 +201,27 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
       4,
       f,
       proto_sessions_ioMapping_pb.IOMapping.serializeBinaryToWriter
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getAuthorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      7,
+      f
     );
   }
 };
@@ -280,6 +316,79 @@ proto.ubii.sessions.Session.prototype.addIoMappings = function(opt_value, opt_in
 
 proto.ubii.sessions.Session.prototype.clearIoMappingsList = function() {
   this.setIoMappingsList([]);
+};
+
+
+/**
+ * repeated string tags = 5;
+ * @return {!Array<string>}
+ */
+proto.ubii.sessions.Session.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.sessions.Session.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.sessions.Session.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+proto.ubii.sessions.Session.prototype.clearTagsList = function() {
+  this.setTagsList([]);
+};
+
+
+/**
+ * optional string description = 6;
+ * @return {string}
+ */
+proto.ubii.sessions.Session.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.sessions.Session.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * repeated string authors = 7;
+ * @return {!Array<string>}
+ */
+proto.ubii.sessions.Session.prototype.getAuthorsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 7));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.sessions.Session.prototype.setAuthorsList = function(value) {
+  jspb.Message.setField(this, 7, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.sessions.Session.prototype.addAuthors = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+};
+
+
+proto.ubii.sessions.Session.prototype.clearAuthorsList = function() {
+  this.setAuthorsList([]);
 };
 
 

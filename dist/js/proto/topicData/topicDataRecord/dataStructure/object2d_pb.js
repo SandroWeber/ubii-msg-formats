@@ -64,7 +64,8 @@ proto.ubii.dataStructure.Object2D.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pose: (f = msg.getPose()) && proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.toObject(includeInstance, f),
-    size: (f = msg.getSize()) && proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.toObject(includeInstance, f)
+    size: (f = msg.getSize()) && proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.toObject(includeInstance, f),
+    userDataJson: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -114,6 +115,10 @@ proto.ubii.dataStructure.Object2D.deserializeBinaryFromReader = function(msg, re
       var value = new proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.deserializeBinaryFromReader);
       msg.setSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserDataJson(value);
       break;
     default:
       reader.skipField();
@@ -165,6 +170,13 @@ proto.ubii.dataStructure.Object2D.serializeBinaryToWriter = function(message, wr
       3,
       f,
       proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserDataJson();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -242,6 +254,21 @@ proto.ubii.dataStructure.Object2D.prototype.clearSize = function() {
  */
 proto.ubii.dataStructure.Object2D.prototype.hasSize = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string user_data_json = 4;
+ * @return {string}
+ */
+proto.ubii.dataStructure.Object2D.prototype.getUserDataJson = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.dataStructure.Object2D.prototype.setUserDataJson = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

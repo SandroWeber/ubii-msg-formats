@@ -47,6 +47,35 @@ public final class ServiceOuterClass {
      */
     com.google.protobuf.ByteString
         getResponseMessageFormatBytes();
+
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+
+    /**
+     * <code>string description = 5;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
   }
   /**
    * Protobuf type {@code ubii.services.Service}
@@ -64,6 +93,8 @@ public final class ServiceOuterClass {
       topic_ = "";
       requestMessageFormat_ = "";
       responseMessageFormat_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      description_ = "";
     }
 
     @java.lang.Override
@@ -108,6 +139,21 @@ public final class ServiceOuterClass {
               responseMessageFormat_ = s;
               break;
             }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              tags_.add(s);
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -123,6 +169,9 @@ public final class ServiceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -140,6 +189,7 @@ public final class ServiceOuterClass {
               ubii.services.ServiceOuterClass.Service.class, ubii.services.ServiceOuterClass.Service.Builder.class);
     }
 
+    private int bitField0_;
     public static final int TOPIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object topic_;
     /**
@@ -242,6 +292,69 @@ public final class ServiceOuterClass {
       }
     }
 
+    public static final int TAGS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 5;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -265,6 +378,12 @@ public final class ServiceOuterClass {
       if (!getResponseMessageFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, responseMessageFormat_);
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -282,6 +401,17 @@ public final class ServiceOuterClass {
       }
       if (!getResponseMessageFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, responseMessageFormat_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -305,6 +435,10 @@ public final class ServiceOuterClass {
           .equals(other.getRequestMessageFormat());
       result = result && getResponseMessageFormat()
           .equals(other.getResponseMessageFormat());
+      result = result && getTagsList()
+          .equals(other.getTagsList());
+      result = result && getDescription()
+          .equals(other.getDescription());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -322,6 +456,12 @@ public final class ServiceOuterClass {
       hash = (53 * hash) + getRequestMessageFormat().hashCode();
       hash = (37 * hash) + RESPONSE_MESSAGE_FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + getResponseMessageFormat().hashCode();
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -461,6 +601,10 @@ public final class ServiceOuterClass {
 
         responseMessageFormat_ = "";
 
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        description_ = "";
+
         return this;
       }
 
@@ -487,9 +631,18 @@ public final class ServiceOuterClass {
       @java.lang.Override
       public ubii.services.ServiceOuterClass.Service buildPartial() {
         ubii.services.ServiceOuterClass.Service result = new ubii.services.ServiceOuterClass.Service(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.topic_ = topic_;
         result.requestMessageFormat_ = requestMessageFormat_;
         result.responseMessageFormat_ = responseMessageFormat_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.tags_ = tags_;
+        result.description_ = description_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -550,6 +703,20 @@ public final class ServiceOuterClass {
           responseMessageFormat_ = other.responseMessageFormat_;
           onChanged();
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -578,6 +745,7 @@ public final class ServiceOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object topic_ = "";
       /**
@@ -782,6 +950,169 @@ public final class ServiceOuterClass {
   checkByteStringIsUtf8(value);
         
         responseMessageFormat_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 4;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 5;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 5;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 5;</code>
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 5;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
         onChanged();
         return this;
       }
@@ -1640,11 +1971,11 @@ public final class ServiceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034proto/services/service.proto\022\rubii.ser" +
-      "vices\"Y\n\007Service\022\r\n\005topic\030\001 \001(\t\022\036\n\026reque" +
+      "vices\"|\n\007Service\022\r\n\005topic\030\001 \001(\t\022\036\n\026reque" +
       "st_message_format\030\002 \001(\t\022\037\n\027response_mess" +
-      "age_format\030\003 \001(\t\"7\n\013ServiceList\022(\n\010eleme" +
-      "nts\030\001 \003(\0132\026.ubii.services.Serviceb\006proto" +
-      "3"
+      "age_format\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\022\023\n\013descri" +
+      "ption\030\005 \001(\t\"7\n\013ServiceList\022(\n\010elements\030\001" +
+      " \003(\0132\026.ubii.services.Serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1663,7 +1994,7 @@ public final class ServiceOuterClass {
     internal_static_ubii_services_Service_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_Service_descriptor,
-        new java.lang.String[] { "Topic", "RequestMessageFormat", "ResponseMessageFormat", });
+        new java.lang.String[] { "Topic", "RequestMessageFormat", "ResponseMessageFormat", "Tags", "Description", });
     internal_static_ubii_services_ServiceList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_services_ServiceList_fieldAccessorTable = new

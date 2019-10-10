@@ -166,6 +166,28 @@ class Client : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device >&
       devices() const;
 
+  // repeated string tags = 4;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 4;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_tags();
+
   // string id = 1;
   void clear_id();
   static const int kIdFieldNumber = 1;
@@ -194,13 +216,29 @@ class Client : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
+  // string description = 5;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 5;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
   // @@protoc_insertion_point(class_scope:ubii.clients.Client)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device > devices_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fclients_2fclient_2eproto::TableStruct;
 };
@@ -455,6 +493,128 @@ inline const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device >&
 Client::devices() const {
   // @@protoc_insertion_point(field_list:ubii.clients.Client.devices)
   return devices_;
+}
+
+// repeated string tags = 4;
+inline int Client::tags_size() const {
+  return tags_.size();
+}
+inline void Client::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& Client::tags(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* Client::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.clients.Client.tags)
+  return tags_.Mutable(index);
+}
+inline void Client::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Client::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Client::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.clients.Client.tags)
+}
+inline void Client::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.clients.Client.tags)
+}
+inline ::std::string* Client::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.clients.Client.tags)
+  return tags_.Add();
+}
+inline void Client::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.clients.Client.tags)
+}
+#if LANG_CXX11
+inline void Client::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.clients.Client.tags)
+}
+#endif
+inline void Client::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.clients.Client.tags)
+}
+inline void Client::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.clients.Client.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Client::tags() const {
+  // @@protoc_insertion_point(field_list:ubii.clients.Client.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Client::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.clients.Client.tags)
+  return &tags_;
+}
+
+// string description = 5;
+inline void Client::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Client::description() const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.description)
+  return description_.GetNoArena();
+}
+inline void Client::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.description)
+}
+#if LANG_CXX11
+inline void Client::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.clients.Client.description)
+}
+#endif
+inline void Client::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.clients.Client.description)
+}
+inline void Client::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.clients.Client.description)
+}
+inline ::std::string* Client::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.clients.Client.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Client::release_description() {
+  // @@protoc_insertion_point(field_release:ubii.clients.Client.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Client::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:ubii.clients.Client.description)
 }
 
 // -------------------------------------------------------------------

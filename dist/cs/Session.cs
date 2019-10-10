@@ -26,16 +26,17 @@ namespace Ubii.Sessions {
           string.Concat(
             "Chxwcm90by9zZXNzaW9ucy9zZXNzaW9uLnByb3RvEg11YmlpLnNlc3Npb25z",
             "GiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8aHnByb3Rv",
-            "L3Nlc3Npb25zL2lvTWFwcGluZy5wcm90byKIAQoHU2Vzc2lvbhIKCgJpZBgB",
+            "L3Nlc3Npb25zL2lvTWFwcGluZy5wcm90byK8AQoHU2Vzc2lvbhIKCgJpZBgB",
             "IAEoCRIMCgRuYW1lGAIgASgJEjQKDGludGVyYWN0aW9ucxgDIAMoCzIeLnVi",
             "aWkuaW50ZXJhY3Rpb25zLkludGVyYWN0aW9uEi0KC2lvX21hcHBpbmdzGAQg",
-            "AygLMhgudWJpaS5zZXNzaW9ucy5JT01hcHBpbmciNwoLU2Vzc2lvbkxpc3QS",
-            "KAoIZWxlbWVudHMYASADKAsyFi51YmlpLnNlc3Npb25zLlNlc3Npb25iBnBy",
-            "b3RvMw=="));
+            "AygLMhgudWJpaS5zZXNzaW9ucy5JT01hcHBpbmcSDAoEdGFncxgFIAMoCRIT",
+            "CgtkZXNjcmlwdGlvbhgGIAEoCRIPCgdhdXRob3JzGAcgAygJIjcKC1Nlc3Np",
+            "b25MaXN0EigKCGVsZW1lbnRzGAEgAygLMhYudWJpaS5zZXNzaW9ucy5TZXNz",
+            "aW9uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.InteractionReflection.Descriptor, global::Ubii.Sessions.IoMappingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.Session), global::Ubii.Sessions.Session.Parser, new[]{ "Id", "Name", "Interactions", "IoMappings" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.Session), global::Ubii.Sessions.Session.Parser, new[]{ "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.SessionList), global::Ubii.Sessions.SessionList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
@@ -72,6 +73,9 @@ namespace Ubii.Sessions {
       name_ = other.name_;
       interactions_ = other.interactions_.Clone();
       ioMappings_ = other.ioMappings_.Clone();
+      tags_ = other.tags_.Clone();
+      description_ = other.description_;
+      authors_ = other.authors_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -122,6 +126,37 @@ namespace Ubii.Sessions {
       get { return ioMappings_; }
     }
 
+    /// <summary>Field number for the "tags" field.</summary>
+    public const int TagsFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_tags_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> tags_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Tags {
+      get { return tags_; }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 6;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "authors" field.</summary>
+    public const int AuthorsFieldNumber = 7;
+    private static readonly pb::FieldCodec<string> _repeated_authors_codec
+        = pb::FieldCodec.ForString(58);
+    private readonly pbc::RepeatedField<string> authors_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Authors {
+      get { return authors_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Session);
@@ -139,6 +174,9 @@ namespace Ubii.Sessions {
       if (Name != other.Name) return false;
       if(!interactions_.Equals(other.interactions_)) return false;
       if(!ioMappings_.Equals(other.ioMappings_)) return false;
+      if(!tags_.Equals(other.tags_)) return false;
+      if (Description != other.Description) return false;
+      if(!authors_.Equals(other.authors_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,6 +187,9 @@ namespace Ubii.Sessions {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       hash ^= interactions_.GetHashCode();
       hash ^= ioMappings_.GetHashCode();
+      hash ^= tags_.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      hash ^= authors_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,6 +213,12 @@ namespace Ubii.Sessions {
       }
       interactions_.WriteTo(output, _repeated_interactions_codec);
       ioMappings_.WriteTo(output, _repeated_ioMappings_codec);
+      tags_.WriteTo(output, _repeated_tags_codec);
+      if (Description.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Description);
+      }
+      authors_.WriteTo(output, _repeated_authors_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -188,6 +235,11 @@ namespace Ubii.Sessions {
       }
       size += interactions_.CalculateSize(_repeated_interactions_codec);
       size += ioMappings_.CalculateSize(_repeated_ioMappings_codec);
+      size += tags_.CalculateSize(_repeated_tags_codec);
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      size += authors_.CalculateSize(_repeated_authors_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -207,6 +259,11 @@ namespace Ubii.Sessions {
       }
       interactions_.Add(other.interactions_);
       ioMappings_.Add(other.ioMappings_);
+      tags_.Add(other.tags_);
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      authors_.Add(other.authors_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -232,6 +289,18 @@ namespace Ubii.Sessions {
           }
           case 34: {
             ioMappings_.AddEntriesFrom(input, _repeated_ioMappings_codec);
+            break;
+          }
+          case 42: {
+            tags_.AddEntriesFrom(input, _repeated_tags_codec);
+            break;
+          }
+          case 50: {
+            Description = input.ReadString();
+            break;
+          }
+          case 58: {
+            authors_.AddEntriesFrom(input, _repeated_authors_codec);
             break;
           }
         }

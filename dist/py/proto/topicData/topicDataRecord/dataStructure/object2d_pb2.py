@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n<proto/topicData/topicDataRecord/dataStructure/object2d.proto\x12\x12ubii.dataStructure\x1a:proto/topicData/topicDataRecord/dataStructure/pose2d.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"k\n\x08Object2D\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.ubii.dataStructure.Pose2D\x12)\n\x04size\x18\x03 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2\">\n\x0cObject2DList\x12.\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1c.ubii.dataStructure.Object2Db\x06proto3')
+  serialized_pb=_b('\n<proto/topicData/topicDataRecord/dataStructure/object2d.proto\x12\x12ubii.dataStructure\x1a:proto/topicData/topicDataRecord/dataStructure/pose2d.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"\x83\x01\n\x08Object2D\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x04pose\x18\x02 \x01(\x0b\x32\x1a.ubii.dataStructure.Pose2D\x12)\n\x04size\x18\x03 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2\x12\x16\n\x0euser_data_json\x18\x04 \x01(\t\">\n\x0cObject2DList\x12.\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1c.ubii.dataStructure.Object2Db\x06proto3')
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose2d__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,])
 
@@ -56,6 +56,13 @@ _OBJECT2D = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user_data_json', full_name='ubii.dataStructure.Object2D.user_data_json', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -68,8 +75,8 @@ _OBJECT2D = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=205,
-  serialized_end=312,
+  serialized_start=206,
+  serialized_end=337,
 )
 
 
@@ -99,8 +106,8 @@ _OBJECT2DLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=314,
-  serialized_end=376,
+  serialized_start=339,
+  serialized_end=401,
 )
 
 _OBJECT2D.fields_by_name['pose'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_pose2d__pb2._POSE2D

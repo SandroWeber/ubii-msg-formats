@@ -169,6 +169,20 @@ class Object3D : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_id();
   void set_allocated_id(::std::string* id);
 
+  // string user_data_json = 4;
+  void clear_user_data_json();
+  static const int kUserDataJsonFieldNumber = 4;
+  const ::std::string& user_data_json() const;
+  void set_user_data_json(const ::std::string& value);
+  #if LANG_CXX11
+  void set_user_data_json(::std::string&& value);
+  #endif
+  void set_user_data_json(const char* value);
+  void set_user_data_json(const char* value, size_t size);
+  ::std::string* mutable_user_data_json();
+  ::std::string* release_user_data_json();
+  void set_allocated_user_data_json(::std::string* user_data_json);
+
   // .ubii.dataStructure.Pose3D pose = 2;
   bool has_pose() const;
   void clear_pose();
@@ -198,6 +212,7 @@ class Object3D : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr user_data_json_;
   ::ubii::dataStructure::Pose3D* pose_;
   ::ubii::dataStructure::Vector3* size_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -470,6 +485,59 @@ inline void Object3D::set_allocated_size(::ubii::dataStructure::Vector3* size) {
   }
   size_ = size;
   // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Object3D.size)
+}
+
+// string user_data_json = 4;
+inline void Object3D::clear_user_data_json() {
+  user_data_json_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Object3D::user_data_json() const {
+  // @@protoc_insertion_point(field_get:ubii.dataStructure.Object3D.user_data_json)
+  return user_data_json_.GetNoArena();
+}
+inline void Object3D::set_user_data_json(const ::std::string& value) {
+  
+  user_data_json_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.dataStructure.Object3D.user_data_json)
+}
+#if LANG_CXX11
+inline void Object3D::set_user_data_json(::std::string&& value) {
+  
+  user_data_json_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.dataStructure.Object3D.user_data_json)
+}
+#endif
+inline void Object3D::set_user_data_json(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  user_data_json_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.dataStructure.Object3D.user_data_json)
+}
+inline void Object3D::set_user_data_json(const char* value, size_t size) {
+  
+  user_data_json_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.dataStructure.Object3D.user_data_json)
+}
+inline ::std::string* Object3D::mutable_user_data_json() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.dataStructure.Object3D.user_data_json)
+  return user_data_json_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Object3D::release_user_data_json() {
+  // @@protoc_insertion_point(field_release:ubii.dataStructure.Object3D.user_data_json)
+  
+  return user_data_json_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Object3D::set_allocated_user_data_json(::std::string* user_data_json) {
+  if (user_data_json != NULL) {
+    
+  } else {
+    
+  }
+  user_data_json_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_data_json);
+  // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Object3D.user_data_json)
 }
 
 // -------------------------------------------------------------------

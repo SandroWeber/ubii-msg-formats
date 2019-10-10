@@ -197,6 +197,28 @@ class Component : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   // accessors -------------------------------------------------------
 
+  // repeated string tags = 5;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 5;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_tags();
+
   // string topic = 1;
   void clear_topic();
   static const int kTopicFieldNumber = 1;
@@ -225,6 +247,34 @@ class Component : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::std::string* release_message_format();
   void set_allocated_message_format(::std::string* message_format);
 
+  // string device_id = 4;
+  void clear_device_id();
+  static const int kDeviceIdFieldNumber = 4;
+  const ::std::string& device_id() const;
+  void set_device_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_device_id(::std::string&& value);
+  #endif
+  void set_device_id(const char* value);
+  void set_device_id(const char* value, size_t size);
+  ::std::string* mutable_device_id();
+  ::std::string* release_device_id();
+  void set_allocated_device_id(::std::string* device_id);
+
+  // string description = 6;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 6;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
   // .ubii.devices.Component.IOType io_type = 3;
   void clear_io_type();
   static const int kIoTypeFieldNumber = 3;
@@ -235,8 +285,11 @@ class Component : public ::google::protobuf::Message /* @@protoc_insertion_point
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr topic_;
   ::google::protobuf::internal::ArenaStringPtr message_format_;
+  ::google::protobuf::internal::ArenaStringPtr device_id_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
   int io_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fdevices_2fcomponent_2eproto::TableStruct;
@@ -370,6 +423,181 @@ inline void Component::set_io_type(::ubii::devices::Component_IOType value) {
   
   io_type_ = value;
   // @@protoc_insertion_point(field_set:ubii.devices.Component.io_type)
+}
+
+// string device_id = 4;
+inline void Component::clear_device_id() {
+  device_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Component::device_id() const {
+  // @@protoc_insertion_point(field_get:ubii.devices.Component.device_id)
+  return device_id_.GetNoArena();
+}
+inline void Component::set_device_id(const ::std::string& value) {
+  
+  device_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.device_id)
+}
+#if LANG_CXX11
+inline void Component::set_device_id(::std::string&& value) {
+  
+  device_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.devices.Component.device_id)
+}
+#endif
+inline void Component::set_device_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  device_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.devices.Component.device_id)
+}
+inline void Component::set_device_id(const char* value, size_t size) {
+  
+  device_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.devices.Component.device_id)
+}
+inline ::std::string* Component::mutable_device_id() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.devices.Component.device_id)
+  return device_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Component::release_device_id() {
+  // @@protoc_insertion_point(field_release:ubii.devices.Component.device_id)
+  
+  return device_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Component::set_allocated_device_id(::std::string* device_id) {
+  if (device_id != NULL) {
+    
+  } else {
+    
+  }
+  device_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), device_id);
+  // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.device_id)
+}
+
+// repeated string tags = 5;
+inline int Component::tags_size() const {
+  return tags_.size();
+}
+inline void Component::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& Component::tags(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.devices.Component.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* Component::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.devices.Component.tags)
+  return tags_.Mutable(index);
+}
+inline void Component::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Component::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Component::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.devices.Component.tags)
+}
+inline void Component::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.devices.Component.tags)
+}
+inline ::std::string* Component::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.devices.Component.tags)
+  return tags_.Add();
+}
+inline void Component::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.devices.Component.tags)
+}
+#if LANG_CXX11
+inline void Component::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.devices.Component.tags)
+}
+#endif
+inline void Component::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.devices.Component.tags)
+}
+inline void Component::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.devices.Component.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Component::tags() const {
+  // @@protoc_insertion_point(field_list:ubii.devices.Component.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Component::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.devices.Component.tags)
+  return &tags_;
+}
+
+// string description = 6;
+inline void Component::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Component::description() const {
+  // @@protoc_insertion_point(field_get:ubii.devices.Component.description)
+  return description_.GetNoArena();
+}
+inline void Component::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.description)
+}
+#if LANG_CXX11
+inline void Component::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.devices.Component.description)
+}
+#endif
+inline void Component::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.devices.Component.description)
+}
+inline void Component::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.devices.Component.description)
+}
+inline ::std::string* Component::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.devices.Component.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Component::release_description() {
+  // @@protoc_insertion_point(field_release:ubii.devices.Component.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Component::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.description)
 }
 
 #ifdef __GNUC__

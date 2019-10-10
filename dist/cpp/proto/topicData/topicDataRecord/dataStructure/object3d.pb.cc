@@ -90,6 +90,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3D, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3D, pose_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3D, size_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3D, user_data_json_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Object3DList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -99,7 +100,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::Object3D)},
-  { 8, -1, sizeof(::ubii::dataStructure::Object3DList)},
+  { 9, -1, sizeof(::ubii::dataStructure::Object3DList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -133,14 +134,15 @@ void AddDescriptorsImpl() {
       "re\032:proto/topicData/topicDataRecord/data"
       "Structure/pose3d.proto\032;proto/topicData/"
       "topicDataRecord/dataStructure/vector3.pr"
-      "oto\"k\n\010Object3D\022\n\n\002id\030\001 \001(\t\022(\n\004pose\030\002 \001("
-      "\0132\032.ubii.dataStructure.Pose3D\022)\n\004size\030\003 "
-      "\001(\0132\033.ubii.dataStructure.Vector3\">\n\014Obje"
-      "ct3DList\022.\n\010elements\030\001 \003(\0132\034.ubii.dataSt"
-      "ructure.Object3Db\006proto3"
+      "oto\"\203\001\n\010Object3D\022\n\n\002id\030\001 \001(\t\022(\n\004pose\030\002 \001"
+      "(\0132\032.ubii.dataStructure.Pose3D\022)\n\004size\030\003"
+      " \001(\0132\033.ubii.dataStructure.Vector3\022\026\n\016use"
+      "r_data_json\030\004 \001(\t\">\n\014Object3DList\022.\n\010ele"
+      "ments\030\001 \003(\0132\034.ubii.dataStructure.Object3"
+      "Db\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 384);
+      descriptor, 409);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord/dataStructure/object3d.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto::AddDescriptors();
@@ -185,6 +187,7 @@ void Object3D::clear_size() {
 const int Object3D::kIdFieldNumber;
 const int Object3D::kPoseFieldNumber;
 const int Object3D::kSizeFieldNumber;
+const int Object3D::kUserDataJsonFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Object3D::Object3D()
@@ -202,6 +205,10 @@ Object3D::Object3D(const Object3D& from)
   if (from.id().size() > 0) {
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
+  user_data_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.user_data_json().size() > 0) {
+    user_data_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.user_data_json_);
+  }
   if (from.has_pose()) {
     pose_ = new ::ubii::dataStructure::Pose3D(*from.pose_);
   } else {
@@ -217,6 +224,7 @@ Object3D::Object3D(const Object3D& from)
 
 void Object3D::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  user_data_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&pose_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&size_) -
       reinterpret_cast<char*>(&pose_)) + sizeof(size_));
@@ -229,6 +237,7 @@ Object3D::~Object3D() {
 
 void Object3D::SharedDtor() {
   id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  user_data_json_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete pose_;
   if (this != internal_default_instance()) delete size_;
 }
@@ -254,6 +263,7 @@ void Object3D::Clear() {
   (void) cached_has_bits;
 
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  user_data_json_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == NULL && pose_ != NULL) {
     delete pose_;
   }
@@ -315,6 +325,22 @@ bool Object3D::MergePartialFromCodedStream(
         break;
       }
 
+      // string user_data_json = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_user_data_json()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->user_data_json().data(), static_cast<int>(this->user_data_json().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.dataStructure.Object3D.user_data_json"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -363,6 +389,16 @@ void Object3D::SerializeWithCachedSizes(
       3, this->_internal_size(), output);
   }
 
+  // string user_data_json = 4;
+  if (this->user_data_json().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->user_data_json().data(), static_cast<int>(this->user_data_json().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.dataStructure.Object3D.user_data_json");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->user_data_json(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -402,6 +438,17 @@ void Object3D::SerializeWithCachedSizes(
         3, this->_internal_size(), deterministic, target);
   }
 
+  // string user_data_json = 4;
+  if (this->user_data_json().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->user_data_json().data(), static_cast<int>(this->user_data_json().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.dataStructure.Object3D.user_data_json");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->user_data_json(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -424,6 +471,13 @@ size_t Object3D::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->id());
+  }
+
+  // string user_data_json = 4;
+  if (this->user_data_json().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->user_data_json());
   }
 
   // .ubii.dataStructure.Pose3D pose = 2;
@@ -471,6 +525,10 @@ void Object3D::MergeFrom(const Object3D& from) {
 
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
+  if (from.user_data_json().size() > 0) {
+
+    user_data_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.user_data_json_);
+  }
   if (from.has_pose()) {
     mutable_pose()->::ubii::dataStructure::Pose3D::MergeFrom(from.pose());
   }
@@ -504,6 +562,8 @@ void Object3D::Swap(Object3D* other) {
 void Object3D::InternalSwap(Object3D* other) {
   using std::swap;
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  user_data_json_.Swap(&other->user_data_json_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(pose_, other->pose_);
   swap(size_, other->size_);
