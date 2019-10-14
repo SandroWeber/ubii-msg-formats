@@ -14,6 +14,7 @@ var global = Function('return this')();
 var proto_interactions_interaction_pb = require('../../proto/interactions/interaction_pb.js');
 var proto_sessions_ioMapping_pb = require('../../proto/sessions/ioMapping_pb.js');
 goog.exportSymbol('proto.ubii.sessions.Session', null, global);
+goog.exportSymbol('proto.ubii.sessions.Session.ProcessMode', null, global);
 goog.exportSymbol('proto.ubii.sessions.SessionList', null, global);
 
 /**
@@ -77,7 +78,8 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
     proto_sessions_ioMapping_pb.IOMapping.toObject, includeInstance),
     tagsList: jspb.Message.getRepeatedField(msg, 5),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    authorsList: jspb.Message.getRepeatedField(msg, 7)
+    authorsList: jspb.Message.getRepeatedField(msg, 7),
+    processMode: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -143,6 +145,10 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.addAuthors(value);
+      break;
+    case 8:
+      var value = /** @type {!proto.ubii.sessions.Session.ProcessMode} */ (reader.readEnum());
+      msg.setProcessMode(value);
       break;
     default:
       reader.skipField();
@@ -224,8 +230,23 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
+  f = message.getProcessMode();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      8,
+      f
+    );
+  }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.ubii.sessions.Session.ProcessMode = {
+  CYCLE_INTERACTIONS: 0,
+  INDIVIDUAL_PROCESS_FREQUENCIES: 1
+};
 
 /**
  * optional string id = 1;
@@ -389,6 +410,21 @@ proto.ubii.sessions.Session.prototype.addAuthors = function(value, opt_index) {
 
 proto.ubii.sessions.Session.prototype.clearAuthorsList = function() {
   this.setAuthorsList([]);
+};
+
+
+/**
+ * optional ProcessMode process_mode = 8;
+ * @return {!proto.ubii.sessions.Session.ProcessMode}
+ */
+proto.ubii.sessions.Session.prototype.getProcessMode = function() {
+  return /** @type {!proto.ubii.sessions.Session.ProcessMode} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/** @param {!proto.ubii.sessions.Session.ProcessMode} value */
+proto.ubii.sessions.Session.prototype.setProcessMode = function(value) {
+  jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 

@@ -7836,6 +7836,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [tags] Session tags
              * @property {string|null} [description] Session description
              * @property {Array.<string>|null} [authors] Session authors
+             * @property {ubii.sessions.Session.ProcessMode|null} [processMode] Session processMode
              */
 
             /**
@@ -7914,6 +7915,14 @@ $root.ubii = (function() {
             Session.prototype.authors = $util.emptyArray;
 
             /**
+             * Session processMode.
+             * @member {ubii.sessions.Session.ProcessMode} processMode
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.processMode = 0;
+
+            /**
              * Creates a new Session instance using the specified properties.
              * @function create
              * @memberof ubii.sessions.Session
@@ -7955,6 +7964,8 @@ $root.ubii = (function() {
                 if (message.authors != null && message.authors.length)
                     for (var i = 0; i < message.authors.length; ++i)
                         writer.uint32(/* id 7, wireType 2 =*/58).string(message.authors[i]);
+                if (message.processMode != null && message.hasOwnProperty("processMode"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int32(message.processMode);
                 return writer;
             };
 
@@ -8017,6 +8028,9 @@ $root.ubii = (function() {
                         if (!(message.authors && message.authors.length))
                             message.authors = [];
                         message.authors.push(reader.string());
+                        break;
+                    case 8:
+                        message.processMode = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8094,6 +8108,14 @@ $root.ubii = (function() {
                         if (!$util.isString(message.authors[i]))
                             return "authors: string[] expected";
                 }
+                if (message.processMode != null && message.hasOwnProperty("processMode"))
+                    switch (message.processMode) {
+                    default:
+                        return "processMode: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 return null;
             };
 
@@ -8149,6 +8171,16 @@ $root.ubii = (function() {
                     for (var i = 0; i < object.authors.length; ++i)
                         message.authors[i] = String(object.authors[i]);
                 }
+                switch (object.processMode) {
+                case "CYCLE_INTERACTIONS":
+                case 0:
+                    message.processMode = 0;
+                    break;
+                case "INDIVIDUAL_PROCESS_FREQUENCIES":
+                case 1:
+                    message.processMode = 1;
+                    break;
+                }
                 return message;
             };
 
@@ -8175,6 +8207,7 @@ $root.ubii = (function() {
                     object.id = "";
                     object.name = "";
                     object.description = "";
+                    object.processMode = options.enums === String ? "CYCLE_INTERACTIONS" : 0;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -8202,6 +8235,8 @@ $root.ubii = (function() {
                     for (var j = 0; j < message.authors.length; ++j)
                         object.authors[j] = message.authors[j];
                 }
+                if (message.processMode != null && message.hasOwnProperty("processMode"))
+                    object.processMode = options.enums === String ? $root.ubii.sessions.Session.ProcessMode[message.processMode] : message.processMode;
                 return object;
             };
 
@@ -8215,6 +8250,20 @@ $root.ubii = (function() {
             Session.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
+
+            /**
+             * ProcessMode enum.
+             * @name ubii.sessions.Session.ProcessMode
+             * @enum {string}
+             * @property {number} CYCLE_INTERACTIONS=0 CYCLE_INTERACTIONS value
+             * @property {number} INDIVIDUAL_PROCESS_FREQUENCIES=1 INDIVIDUAL_PROCESS_FREQUENCIES value
+             */
+            Session.ProcessMode = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "CYCLE_INTERACTIONS"] = 0;
+                values[valuesById[1] = "INDIVIDUAL_PROCESS_FREQUENCIES"] = 1;
+                return values;
+            })();
 
             return Session;
         })();

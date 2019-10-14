@@ -29,6 +29,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/interactions/interaction.pb.h"
 #include "proto/sessions/ioMapping.pb.h"
@@ -66,6 +67,27 @@ template<> ::ubii::sessions::SessionList* Arena::CreateMaybeMessage<::ubii::sess
 namespace ubii {
 namespace sessions {
 
+enum Session_ProcessMode {
+  Session_ProcessMode_CYCLE_INTERACTIONS = 0,
+  Session_ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES = 1,
+  Session_ProcessMode_Session_ProcessMode_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  Session_ProcessMode_Session_ProcessMode_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool Session_ProcessMode_IsValid(int value);
+const Session_ProcessMode Session_ProcessMode_ProcessMode_MIN = Session_ProcessMode_CYCLE_INTERACTIONS;
+const Session_ProcessMode Session_ProcessMode_ProcessMode_MAX = Session_ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES;
+const int Session_ProcessMode_ProcessMode_ARRAYSIZE = Session_ProcessMode_ProcessMode_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Session_ProcessMode_descriptor();
+inline const ::std::string& Session_ProcessMode_Name(Session_ProcessMode value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Session_ProcessMode_descriptor(), value);
+}
+inline bool Session_ProcessMode_Parse(
+    const ::std::string& name, Session_ProcessMode* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Session_ProcessMode>(
+    Session_ProcessMode_descriptor(), name, value);
+}
 // ===================================================================
 
 class Session : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.sessions.Session) */ {
@@ -152,6 +174,32 @@ class Session : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
+
+  typedef Session_ProcessMode ProcessMode;
+  static const ProcessMode CYCLE_INTERACTIONS =
+    Session_ProcessMode_CYCLE_INTERACTIONS;
+  static const ProcessMode INDIVIDUAL_PROCESS_FREQUENCIES =
+    Session_ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES;
+  static inline bool ProcessMode_IsValid(int value) {
+    return Session_ProcessMode_IsValid(value);
+  }
+  static const ProcessMode ProcessMode_MIN =
+    Session_ProcessMode_ProcessMode_MIN;
+  static const ProcessMode ProcessMode_MAX =
+    Session_ProcessMode_ProcessMode_MAX;
+  static const int ProcessMode_ARRAYSIZE =
+    Session_ProcessMode_ProcessMode_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  ProcessMode_descriptor() {
+    return Session_ProcessMode_descriptor();
+  }
+  static inline const ::std::string& ProcessMode_Name(ProcessMode value) {
+    return Session_ProcessMode_Name(value);
+  }
+  static inline bool ProcessMode_Parse(const ::std::string& name,
+      ProcessMode* value) {
+    return Session_ProcessMode_Parse(name, value);
+  }
 
   // accessors -------------------------------------------------------
 
@@ -265,6 +313,12 @@ class Session : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::std::string* release_description();
   void set_allocated_description(::std::string* description);
 
+  // .ubii.sessions.Session.ProcessMode process_mode = 8;
+  void clear_process_mode();
+  static const int kProcessModeFieldNumber = 8;
+  ::ubii::sessions::Session_ProcessMode process_mode() const;
+  void set_process_mode(::ubii::sessions::Session_ProcessMode value);
+
   // @@protoc_insertion_point(class_scope:ubii.sessions.Session)
  private:
 
@@ -276,6 +330,7 @@ class Session : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr description_;
+  int process_mode_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fsessions_2fsession_2eproto::TableStruct;
 };
@@ -750,6 +805,20 @@ Session::mutable_authors() {
   return &authors_;
 }
 
+// .ubii.sessions.Session.ProcessMode process_mode = 8;
+inline void Session::clear_process_mode() {
+  process_mode_ = 0;
+}
+inline ::ubii::sessions::Session_ProcessMode Session::process_mode() const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.Session.process_mode)
+  return static_cast< ::ubii::sessions::Session_ProcessMode >(process_mode_);
+}
+inline void Session::set_process_mode(::ubii::sessions::Session_ProcessMode value) {
+  
+  process_mode_ = value;
+  // @@protoc_insertion_point(field_set:ubii.sessions.Session.process_mode)
+}
+
 // -------------------------------------------------------------------
 
 // SessionList
@@ -794,6 +863,18 @@ SessionList::elements() const {
 
 }  // namespace sessions
 }  // namespace ubii
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::ubii::sessions::Session_ProcessMode> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::sessions::Session_ProcessMode>() {
+  return ::ubii::sessions::Session_ProcessMode_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

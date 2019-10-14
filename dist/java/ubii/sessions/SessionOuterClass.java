@@ -133,6 +133,15 @@ public final class SessionOuterClass {
      */
     com.google.protobuf.ByteString
         getAuthorsBytes(int index);
+
+    /**
+     * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+     */
+    int getProcessModeValue();
+    /**
+     * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+     */
+    ubii.sessions.SessionOuterClass.Session.ProcessMode getProcessMode();
   }
   /**
    * Protobuf type {@code ubii.sessions.Session}
@@ -154,6 +163,7 @@ public final class SessionOuterClass {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      processMode_ = 0;
     }
 
     @java.lang.Override
@@ -234,6 +244,12 @@ public final class SessionOuterClass {
               authors_.add(s);
               break;
             }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              processMode_ = rawValue;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -276,6 +292,104 @@ public final class SessionOuterClass {
       return ubii.sessions.SessionOuterClass.internal_static_ubii_sessions_Session_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ubii.sessions.SessionOuterClass.Session.class, ubii.sessions.SessionOuterClass.Session.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code ubii.sessions.Session.ProcessMode}
+     */
+    public enum ProcessMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CYCLE_INTERACTIONS = 0;</code>
+       */
+      CYCLE_INTERACTIONS(0),
+      /**
+       * <code>INDIVIDUAL_PROCESS_FREQUENCIES = 1;</code>
+       */
+      INDIVIDUAL_PROCESS_FREQUENCIES(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CYCLE_INTERACTIONS = 0;</code>
+       */
+      public static final int CYCLE_INTERACTIONS_VALUE = 0;
+      /**
+       * <code>INDIVIDUAL_PROCESS_FREQUENCIES = 1;</code>
+       */
+      public static final int INDIVIDUAL_PROCESS_FREQUENCIES_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ProcessMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ProcessMode forNumber(int value) {
+        switch (value) {
+          case 0: return CYCLE_INTERACTIONS;
+          case 1: return INDIVIDUAL_PROCESS_FREQUENCIES;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ProcessMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ProcessMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ProcessMode>() {
+              public ProcessMode findValueByNumber(int number) {
+                return ProcessMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return ubii.sessions.SessionOuterClass.Session.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ProcessMode[] VALUES = values();
+
+      public static ProcessMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ProcessMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ubii.sessions.Session.ProcessMode)
     }
 
     private int bitField0_;
@@ -509,6 +623,23 @@ public final class SessionOuterClass {
       return authors_.getByteString(index);
     }
 
+    public static final int PROCESS_MODE_FIELD_NUMBER = 8;
+    private int processMode_;
+    /**
+     * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+     */
+    public int getProcessModeValue() {
+      return processMode_;
+    }
+    /**
+     * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+     */
+    public ubii.sessions.SessionOuterClass.Session.ProcessMode getProcessMode() {
+      @SuppressWarnings("deprecation")
+      ubii.sessions.SessionOuterClass.Session.ProcessMode result = ubii.sessions.SessionOuterClass.Session.ProcessMode.valueOf(processMode_);
+      return result == null ? ubii.sessions.SessionOuterClass.Session.ProcessMode.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -543,6 +674,9 @@ public final class SessionOuterClass {
       }
       for (int i = 0; i < authors_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, authors_.getRaw(i));
+      }
+      if (processMode_ != ubii.sessions.SessionOuterClass.Session.ProcessMode.CYCLE_INTERACTIONS.getNumber()) {
+        output.writeEnum(8, processMode_);
       }
       unknownFields.writeTo(output);
     }
@@ -586,6 +720,10 @@ public final class SessionOuterClass {
         size += dataSize;
         size += 1 * getAuthorsList().size();
       }
+      if (processMode_ != ubii.sessions.SessionOuterClass.Session.ProcessMode.CYCLE_INTERACTIONS.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, processMode_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -616,6 +754,7 @@ public final class SessionOuterClass {
           .equals(other.getDescription());
       result = result && getAuthorsList()
           .equals(other.getAuthorsList());
+      result = result && processMode_ == other.processMode_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -649,6 +788,8 @@ public final class SessionOuterClass {
         hash = (37 * hash) + AUTHORS_FIELD_NUMBER;
         hash = (53 * hash) + getAuthorsList().hashCode();
       }
+      hash = (37 * hash) + PROCESS_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + processMode_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -806,6 +947,8 @@ public final class SessionOuterClass {
 
         authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000040);
+        processMode_ = 0;
+
         return this;
       }
 
@@ -865,6 +1008,7 @@ public final class SessionOuterClass {
           bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.authors_ = authors_;
+        result.processMode_ = processMode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -997,6 +1141,9 @@ public final class SessionOuterClass {
             authors_.addAll(other.authors_);
           }
           onChanged();
+        }
+        if (other.processMode_ != 0) {
+          setProcessModeValue(other.getProcessModeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1902,6 +2049,51 @@ public final class SessionOuterClass {
         onChanged();
         return this;
       }
+
+      private int processMode_ = 0;
+      /**
+       * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+       */
+      public int getProcessModeValue() {
+        return processMode_;
+      }
+      /**
+       * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+       */
+      public Builder setProcessModeValue(int value) {
+        processMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+       */
+      public ubii.sessions.SessionOuterClass.Session.ProcessMode getProcessMode() {
+        @SuppressWarnings("deprecation")
+        ubii.sessions.SessionOuterClass.Session.ProcessMode result = ubii.sessions.SessionOuterClass.Session.ProcessMode.valueOf(processMode_);
+        return result == null ? ubii.sessions.SessionOuterClass.Session.ProcessMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+       */
+      public Builder setProcessMode(ubii.sessions.SessionOuterClass.Session.ProcessMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        processMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ubii.sessions.Session.ProcessMode process_mode = 8;</code>
+       */
+      public Builder clearProcessMode() {
+        
+        processMode_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2758,14 +2950,17 @@ public final class SessionOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034proto/sessions/session.proto\022\rubii.ses" +
       "sions\032$proto/interactions/interaction.pr" +
-      "oto\032\036proto/sessions/ioMapping.proto\"\274\001\n\007" +
+      "oto\032\036proto/sessions/ioMapping.proto\"\301\002\n\007" +
       "Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014int" +
       "eractions\030\003 \003(\0132\036.ubii.interactions.Inte" +
       "raction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.sess" +
       "ions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descript" +
-      "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\"7\n\013SessionLis" +
-      "t\022(\n\010elements\030\001 \003(\0132\026.ubii.sessions.Sess" +
-      "ionb\006proto3"
+      "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\0228\n\014process_mo" +
+      "de\030\010 \001(\0162\".ubii.sessions.Session.Process" +
+      "Mode\"I\n\013ProcessMode\022\026\n\022CYCLE_INTERACTION" +
+      "S\020\000\022\"\n\036INDIVIDUAL_PROCESS_FREQUENCIES\020\001\"" +
+      "7\n\013SessionList\022(\n\010elements\030\001 \003(\0132\026.ubii." +
+      "sessions.Sessionb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2786,7 +2981,7 @@ public final class SessionOuterClass {
     internal_static_ubii_sessions_Session_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_Session_descriptor,
-        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", });
+        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode", });
     internal_static_ubii_sessions_SessionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_sessions_SessionList_fieldAccessorTable = new

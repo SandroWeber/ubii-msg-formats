@@ -80,6 +80,7 @@ void InitDefaults() {
 }
 
 ::google::protobuf::Metadata file_level_metadata[2];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -94,6 +95,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, tags_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, description_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, authors_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::Session, process_mode_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::sessions::SessionList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -103,7 +105,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::sessions::Session)},
-  { 12, -1, sizeof(::ubii::sessions::SessionList)},
+  { 13, -1, sizeof(::ubii::sessions::SessionList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -115,7 +117,7 @@ void protobuf_AssignDescriptors() {
   AddDescriptors();
   AssignDescriptors(
       "proto/sessions/session.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -134,17 +136,20 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\034proto/sessions/session.proto\022\rubii.ses"
       "sions\032$proto/interactions/interaction.pr"
-      "oto\032\036proto/sessions/ioMapping.proto\"\274\001\n\007"
+      "oto\032\036proto/sessions/ioMapping.proto\"\301\002\n\007"
       "Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014int"
       "eractions\030\003 \003(\0132\036.ubii.interactions.Inte"
       "raction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.sess"
       "ions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descript"
-      "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\"7\n\013SessionLis"
-      "t\022(\n\010elements\030\001 \003(\0132\026.ubii.sessions.Sess"
-      "ionb\006proto3"
+      "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\0228\n\014process_mo"
+      "de\030\010 \001(\0162\".ubii.sessions.Session.Process"
+      "Mode\"I\n\013ProcessMode\022\026\n\022CYCLE_INTERACTION"
+      "S\020\000\022\"\n\036INDIVIDUAL_PROCESS_FREQUENCIES\020\001\""
+      "7\n\013SessionList\022(\n\010elements\030\001 \003(\0132\026.ubii."
+      "sessions.Sessionb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 371);
+      descriptor, 504);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/sessions/session.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2finteractions_2finteraction_2eproto::AddDescriptors();
@@ -164,6 +169,27 @@ struct StaticDescriptorInitializer {
 }  // namespace protobuf_proto_2fsessions_2fsession_2eproto
 namespace ubii {
 namespace sessions {
+const ::google::protobuf::EnumDescriptor* Session_ProcessMode_descriptor() {
+  protobuf_proto_2fsessions_2fsession_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_proto_2fsessions_2fsession_2eproto::file_level_enum_descriptors[0];
+}
+bool Session_ProcessMode_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Session_ProcessMode Session::CYCLE_INTERACTIONS;
+const Session_ProcessMode Session::INDIVIDUAL_PROCESS_FREQUENCIES;
+const Session_ProcessMode Session::ProcessMode_MIN;
+const Session_ProcessMode Session::ProcessMode_MAX;
+const int Session::ProcessMode_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -183,6 +209,7 @@ const int Session::kIoMappingsFieldNumber;
 const int Session::kTagsFieldNumber;
 const int Session::kDescriptionFieldNumber;
 const int Session::kAuthorsFieldNumber;
+const int Session::kProcessModeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Session::Session()
@@ -212,6 +239,7 @@ Session::Session(const Session& from)
   if (from.description().size() > 0) {
     description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
+  process_mode_ = from.process_mode_;
   // @@protoc_insertion_point(copy_constructor:ubii.sessions.Session)
 }
 
@@ -219,6 +247,7 @@ void Session::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  process_mode_ = 0;
 }
 
 Session::~Session() {
@@ -259,6 +288,7 @@ void Session::Clear() {
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  process_mode_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -378,6 +408,21 @@ bool Session::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.sessions.Session.ProcessMode process_mode = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_process_mode(static_cast< ::ubii::sessions::Session_ProcessMode >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -472,6 +517,12 @@ void Session::SerializeWithCachedSizes(
       7, this->authors(i), output);
   }
 
+  // .ubii.sessions.Session.ProcessMode process_mode = 8;
+  if (this->process_mode() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      8, this->process_mode(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -555,6 +606,12 @@ void Session::SerializeWithCachedSizes(
       WriteStringToArray(7, this->authors(i), target);
   }
 
+  // .ubii.sessions.Session.ProcessMode process_mode = 8;
+  if (this->process_mode() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      8, this->process_mode(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -631,6 +688,12 @@ size_t Session::ByteSizeLong() const {
         this->description());
   }
 
+  // .ubii.sessions.Session.ProcessMode process_mode = 8;
+  if (this->process_mode() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->process_mode());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -674,6 +737,9 @@ void Session::MergeFrom(const Session& from) {
 
     description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
+  if (from.process_mode() != 0) {
+    set_process_mode(from.process_mode());
+  }
 }
 
 void Session::CopyFrom(const ::google::protobuf::Message& from) {
@@ -710,6 +776,7 @@ void Session::InternalSwap(Session* other) {
     GetArenaNoVirtual());
   description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(process_mode_, other->process_mode_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
