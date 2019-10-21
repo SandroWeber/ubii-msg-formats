@@ -4,11 +4,19 @@ package ubii.sessions;
 import "proto/interactions/interaction.proto";
 import "proto/sessions/ioMapping.proto";
 
+enum ProcessMode {
+    CYCLE_INTERACTIONS = 0;
+    INDIVIDUAL_PROCESS_FREQUENCIES = 1;
+}
+
+enum SessionStatus {
+    CREATED = 0;
+    RUNNING = 1;
+    PAUSED = 2;
+    STOPPED = 3;
+}
+
 message Session {
-    enum ProcessMode {
-        CYCLE_INTERACTIONS = 0;
-        INDIVIDUAL_PROCESS_FREQUENCIES = 1;
-    }
 
     string id = 1;
     string name = 2;
@@ -18,6 +26,7 @@ message Session {
     string description = 6;
     repeated string authors = 7;
     ProcessMode process_mode = 8;
+    SessionStatus status = 9;
 }
 
 message SessionList {

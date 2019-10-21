@@ -67,26 +67,49 @@ template<> ::ubii::sessions::SessionList* Arena::CreateMaybeMessage<::ubii::sess
 namespace ubii {
 namespace sessions {
 
-enum Session_ProcessMode {
-  Session_ProcessMode_CYCLE_INTERACTIONS = 0,
-  Session_ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES = 1,
-  Session_ProcessMode_Session_ProcessMode_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
-  Session_ProcessMode_Session_ProcessMode_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+enum ProcessMode {
+  CYCLE_INTERACTIONS = 0,
+  INDIVIDUAL_PROCESS_FREQUENCIES = 1,
+  ProcessMode_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  ProcessMode_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
-bool Session_ProcessMode_IsValid(int value);
-const Session_ProcessMode Session_ProcessMode_ProcessMode_MIN = Session_ProcessMode_CYCLE_INTERACTIONS;
-const Session_ProcessMode Session_ProcessMode_ProcessMode_MAX = Session_ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES;
-const int Session_ProcessMode_ProcessMode_ARRAYSIZE = Session_ProcessMode_ProcessMode_MAX + 1;
+bool ProcessMode_IsValid(int value);
+const ProcessMode ProcessMode_MIN = CYCLE_INTERACTIONS;
+const ProcessMode ProcessMode_MAX = INDIVIDUAL_PROCESS_FREQUENCIES;
+const int ProcessMode_ARRAYSIZE = ProcessMode_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* Session_ProcessMode_descriptor();
-inline const ::std::string& Session_ProcessMode_Name(Session_ProcessMode value) {
+const ::google::protobuf::EnumDescriptor* ProcessMode_descriptor();
+inline const ::std::string& ProcessMode_Name(ProcessMode value) {
   return ::google::protobuf::internal::NameOfEnum(
-    Session_ProcessMode_descriptor(), value);
+    ProcessMode_descriptor(), value);
 }
-inline bool Session_ProcessMode_Parse(
-    const ::std::string& name, Session_ProcessMode* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Session_ProcessMode>(
-    Session_ProcessMode_descriptor(), name, value);
+inline bool ProcessMode_Parse(
+    const ::std::string& name, ProcessMode* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ProcessMode>(
+    ProcessMode_descriptor(), name, value);
+}
+enum SessionStatus {
+  CREATED = 0,
+  RUNNING = 1,
+  PAUSED = 2,
+  STOPPED = 3,
+  SessionStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  SessionStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool SessionStatus_IsValid(int value);
+const SessionStatus SessionStatus_MIN = CREATED;
+const SessionStatus SessionStatus_MAX = STOPPED;
+const int SessionStatus_ARRAYSIZE = SessionStatus_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* SessionStatus_descriptor();
+inline const ::std::string& SessionStatus_Name(SessionStatus value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    SessionStatus_descriptor(), value);
+}
+inline bool SessionStatus_Parse(
+    const ::std::string& name, SessionStatus* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<SessionStatus>(
+    SessionStatus_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -174,32 +197,6 @@ class Session : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
-
-  typedef Session_ProcessMode ProcessMode;
-  static const ProcessMode CYCLE_INTERACTIONS =
-    Session_ProcessMode_CYCLE_INTERACTIONS;
-  static const ProcessMode INDIVIDUAL_PROCESS_FREQUENCIES =
-    Session_ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES;
-  static inline bool ProcessMode_IsValid(int value) {
-    return Session_ProcessMode_IsValid(value);
-  }
-  static const ProcessMode ProcessMode_MIN =
-    Session_ProcessMode_ProcessMode_MIN;
-  static const ProcessMode ProcessMode_MAX =
-    Session_ProcessMode_ProcessMode_MAX;
-  static const int ProcessMode_ARRAYSIZE =
-    Session_ProcessMode_ProcessMode_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor*
-  ProcessMode_descriptor() {
-    return Session_ProcessMode_descriptor();
-  }
-  static inline const ::std::string& ProcessMode_Name(ProcessMode value) {
-    return Session_ProcessMode_Name(value);
-  }
-  static inline bool ProcessMode_Parse(const ::std::string& name,
-      ProcessMode* value) {
-    return Session_ProcessMode_Parse(name, value);
-  }
 
   // accessors -------------------------------------------------------
 
@@ -313,11 +310,17 @@ class Session : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::std::string* release_description();
   void set_allocated_description(::std::string* description);
 
-  // .ubii.sessions.Session.ProcessMode process_mode = 8;
+  // .ubii.sessions.ProcessMode process_mode = 8;
   void clear_process_mode();
   static const int kProcessModeFieldNumber = 8;
-  ::ubii::sessions::Session_ProcessMode process_mode() const;
-  void set_process_mode(::ubii::sessions::Session_ProcessMode value);
+  ::ubii::sessions::ProcessMode process_mode() const;
+  void set_process_mode(::ubii::sessions::ProcessMode value);
+
+  // .ubii.sessions.SessionStatus status = 9;
+  void clear_status();
+  static const int kStatusFieldNumber = 9;
+  ::ubii::sessions::SessionStatus status() const;
+  void set_status(::ubii::sessions::SessionStatus value);
 
   // @@protoc_insertion_point(class_scope:ubii.sessions.Session)
  private:
@@ -331,6 +334,7 @@ class Session : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   int process_mode_;
+  int status_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fsessions_2fsession_2eproto::TableStruct;
 };
@@ -805,18 +809,32 @@ Session::mutable_authors() {
   return &authors_;
 }
 
-// .ubii.sessions.Session.ProcessMode process_mode = 8;
+// .ubii.sessions.ProcessMode process_mode = 8;
 inline void Session::clear_process_mode() {
   process_mode_ = 0;
 }
-inline ::ubii::sessions::Session_ProcessMode Session::process_mode() const {
+inline ::ubii::sessions::ProcessMode Session::process_mode() const {
   // @@protoc_insertion_point(field_get:ubii.sessions.Session.process_mode)
-  return static_cast< ::ubii::sessions::Session_ProcessMode >(process_mode_);
+  return static_cast< ::ubii::sessions::ProcessMode >(process_mode_);
 }
-inline void Session::set_process_mode(::ubii::sessions::Session_ProcessMode value) {
+inline void Session::set_process_mode(::ubii::sessions::ProcessMode value) {
   
   process_mode_ = value;
   // @@protoc_insertion_point(field_set:ubii.sessions.Session.process_mode)
+}
+
+// .ubii.sessions.SessionStatus status = 9;
+inline void Session::clear_status() {
+  status_ = 0;
+}
+inline ::ubii::sessions::SessionStatus Session::status() const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.Session.status)
+  return static_cast< ::ubii::sessions::SessionStatus >(status_);
+}
+inline void Session::set_status(::ubii::sessions::SessionStatus value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:ubii.sessions.Session.status)
 }
 
 // -------------------------------------------------------------------
@@ -867,10 +885,15 @@ SessionList::elements() const {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::ubii::sessions::Session_ProcessMode> : ::std::true_type {};
+template <> struct is_proto_enum< ::ubii::sessions::ProcessMode> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ubii::sessions::Session_ProcessMode>() {
-  return ::ubii::sessions::Session_ProcessMode_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::sessions::ProcessMode>() {
+  return ::ubii::sessions::ProcessMode_descriptor();
+}
+template <> struct is_proto_enum< ::ubii::sessions::SessionStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::sessions::SessionStatus>() {
+  return ::ubii::sessions::SessionStatus_descriptor();
 }
 
 }  // namespace protobuf

@@ -29,6 +29,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/interactions/ioFormat.pb.h"
 // @@protoc_insertion_point(includes)
@@ -65,6 +66,29 @@ template<> ::ubii::interactions::InteractionList* Arena::CreateMaybeMessage<::ub
 namespace ubii {
 namespace interactions {
 
+enum InteractionStatus {
+  CREATED = 0,
+  INITIALIZED = 1,
+  PROCESSING = 2,
+  HALTED = 3,
+  InteractionStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  InteractionStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool InteractionStatus_IsValid(int value);
+const InteractionStatus InteractionStatus_MIN = CREATED;
+const InteractionStatus InteractionStatus_MAX = HALTED;
+const int InteractionStatus_ARRAYSIZE = InteractionStatus_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* InteractionStatus_descriptor();
+inline const ::std::string& InteractionStatus_Name(InteractionStatus value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    InteractionStatus_descriptor(), value);
+}
+inline bool InteractionStatus_Parse(
+    const ::std::string& name, InteractionStatus* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<InteractionStatus>(
+    InteractionStatus_descriptor(), name, value);
+}
 // ===================================================================
 
 class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.interactions.Interaction) */ {
@@ -298,6 +322,12 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   float process_frequency() const;
   void set_process_frequency(float value);
 
+  // .ubii.interactions.InteractionStatus status = 11;
+  void clear_status();
+  static const int kStatusFieldNumber = 11;
+  ::ubii::interactions::InteractionStatus status() const;
+  void set_status(::ubii::interactions::InteractionStatus value);
+
   // @@protoc_insertion_point(class_scope:ubii.interactions.Interaction)
  private:
 
@@ -312,6 +342,7 @@ class Interaction : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::internal::ArenaStringPtr on_created_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   float process_frequency_;
+  int status_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2finteractions_2finteraction_2eproto::TableStruct;
 };
@@ -906,6 +937,20 @@ inline void Interaction::set_allocated_description(::std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:ubii.interactions.Interaction.description)
 }
 
+// .ubii.interactions.InteractionStatus status = 11;
+inline void Interaction::clear_status() {
+  status_ = 0;
+}
+inline ::ubii::interactions::InteractionStatus Interaction::status() const {
+  // @@protoc_insertion_point(field_get:ubii.interactions.Interaction.status)
+  return static_cast< ::ubii::interactions::InteractionStatus >(status_);
+}
+inline void Interaction::set_status(::ubii::interactions::InteractionStatus value) {
+  
+  status_ = value;
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.status)
+}
+
 // -------------------------------------------------------------------
 
 // InteractionList
@@ -950,6 +995,18 @@ InteractionList::elements() const {
 
 }  // namespace interactions
 }  // namespace ubii
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::ubii::interactions::InteractionStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::interactions::InteractionStatus>() {
+  return ::ubii::interactions::InteractionStatus_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

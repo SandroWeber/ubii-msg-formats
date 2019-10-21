@@ -26,26 +26,43 @@ namespace Ubii.Sessions {
           string.Concat(
             "Chxwcm90by9zZXNzaW9ucy9zZXNzaW9uLnByb3RvEg11YmlpLnNlc3Npb25z",
             "GiRwcm90by9pbnRlcmFjdGlvbnMvaW50ZXJhY3Rpb24ucHJvdG8aHnByb3Rv",
-            "L3Nlc3Npb25zL2lvTWFwcGluZy5wcm90byLBAgoHU2Vzc2lvbhIKCgJpZBgB",
+            "L3Nlc3Npb25zL2lvTWFwcGluZy5wcm90byKcAgoHU2Vzc2lvbhIKCgJpZBgB",
             "IAEoCRIMCgRuYW1lGAIgASgJEjQKDGludGVyYWN0aW9ucxgDIAMoCzIeLnVi",
             "aWkuaW50ZXJhY3Rpb25zLkludGVyYWN0aW9uEi0KC2lvX21hcHBpbmdzGAQg",
             "AygLMhgudWJpaS5zZXNzaW9ucy5JT01hcHBpbmcSDAoEdGFncxgFIAMoCRIT",
-            "CgtkZXNjcmlwdGlvbhgGIAEoCRIPCgdhdXRob3JzGAcgAygJEjgKDHByb2Nl",
-            "c3NfbW9kZRgIIAEoDjIiLnViaWkuc2Vzc2lvbnMuU2Vzc2lvbi5Qcm9jZXNz",
-            "TW9kZSJJCgtQcm9jZXNzTW9kZRIWChJDWUNMRV9JTlRFUkFDVElPTlMQABIi",
-            "Ch5JTkRJVklEVUFMX1BST0NFU1NfRlJFUVVFTkNJRVMQASI3CgtTZXNzaW9u",
-            "TGlzdBIoCghlbGVtZW50cxgBIAMoCzIWLnViaWkuc2Vzc2lvbnMuU2Vzc2lv",
-            "bmIGcHJvdG8z"));
+            "CgtkZXNjcmlwdGlvbhgGIAEoCRIPCgdhdXRob3JzGAcgAygJEjAKDHByb2Nl",
+            "c3NfbW9kZRgIIAEoDjIaLnViaWkuc2Vzc2lvbnMuUHJvY2Vzc01vZGUSLAoG",
+            "c3RhdHVzGAkgASgOMhwudWJpaS5zZXNzaW9ucy5TZXNzaW9uU3RhdHVzIjcK",
+            "C1Nlc3Npb25MaXN0EigKCGVsZW1lbnRzGAEgAygLMhYudWJpaS5zZXNzaW9u",
+            "cy5TZXNzaW9uKkkKC1Byb2Nlc3NNb2RlEhYKEkNZQ0xFX0lOVEVSQUNUSU9O",
+            "UxAAEiIKHklORElWSURVQUxfUFJPQ0VTU19GUkVRVUVOQ0lFUxABKkIKDVNl",
+            "c3Npb25TdGF0dXMSCwoHQ1JFQVRFRBAAEgsKB1JVTk5JTkcQARIKCgZQQVVT",
+            "RUQQAhILCgdTVE9QUEVEEANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Interactions.InteractionReflection.Descriptor, global::Ubii.Sessions.IoMappingReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.Session), global::Ubii.Sessions.Session.Parser, new[]{ "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode" }, null, new[]{ typeof(global::Ubii.Sessions.Session.Types.ProcessMode) }, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ubii.Sessions.ProcessMode), typeof(global::Ubii.Sessions.SessionStatus), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.Session), global::Ubii.Sessions.Session.Parser, new[]{ "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode", "Status" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Sessions.SessionList), global::Ubii.Sessions.SessionList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum ProcessMode {
+    [pbr::OriginalName("CYCLE_INTERACTIONS")] CycleInteractions = 0,
+    [pbr::OriginalName("INDIVIDUAL_PROCESS_FREQUENCIES")] IndividualProcessFrequencies = 1,
+  }
+
+  public enum SessionStatus {
+    [pbr::OriginalName("CREATED")] Created = 0,
+    [pbr::OriginalName("RUNNING")] Running = 1,
+    [pbr::OriginalName("PAUSED")] Paused = 2,
+    [pbr::OriginalName("STOPPED")] Stopped = 3,
+  }
+
+  #endregion
+
   #region Messages
   public sealed partial class Session : pb::IMessage<Session> {
     private static readonly pb::MessageParser<Session> _parser = new pb::MessageParser<Session>(() => new Session());
@@ -80,6 +97,7 @@ namespace Ubii.Sessions {
       description_ = other.description_;
       authors_ = other.authors_.Clone();
       processMode_ = other.processMode_;
+      status_ = other.status_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -163,12 +181,23 @@ namespace Ubii.Sessions {
 
     /// <summary>Field number for the "process_mode" field.</summary>
     public const int ProcessModeFieldNumber = 8;
-    private global::Ubii.Sessions.Session.Types.ProcessMode processMode_ = 0;
+    private global::Ubii.Sessions.ProcessMode processMode_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Sessions.Session.Types.ProcessMode ProcessMode {
+    public global::Ubii.Sessions.ProcessMode ProcessMode {
       get { return processMode_; }
       set {
         processMode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 9;
+    private global::Ubii.Sessions.SessionStatus status_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Sessions.SessionStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
       }
     }
 
@@ -193,6 +222,7 @@ namespace Ubii.Sessions {
       if (Description != other.Description) return false;
       if(!authors_.Equals(other.authors_)) return false;
       if (ProcessMode != other.ProcessMode) return false;
+      if (Status != other.Status) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -207,6 +237,7 @@ namespace Ubii.Sessions {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       hash ^= authors_.GetHashCode();
       if (ProcessMode != 0) hash ^= ProcessMode.GetHashCode();
+      if (Status != 0) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -240,6 +271,10 @@ namespace Ubii.Sessions {
         output.WriteRawTag(64);
         output.WriteEnum((int) ProcessMode);
       }
+      if (Status != 0) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) Status);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -263,6 +298,9 @@ namespace Ubii.Sessions {
       size += authors_.CalculateSize(_repeated_authors_codec);
       if (ProcessMode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ProcessMode);
+      }
+      if (Status != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -290,6 +328,9 @@ namespace Ubii.Sessions {
       authors_.Add(other.authors_);
       if (other.ProcessMode != 0) {
         ProcessMode = other.ProcessMode;
+      }
+      if (other.Status != 0) {
+        Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -331,24 +372,16 @@ namespace Ubii.Sessions {
             break;
           }
           case 64: {
-            processMode_ = (global::Ubii.Sessions.Session.Types.ProcessMode) input.ReadEnum();
+            processMode_ = (global::Ubii.Sessions.ProcessMode) input.ReadEnum();
+            break;
+          }
+          case 72: {
+            status_ = (global::Ubii.Sessions.SessionStatus) input.ReadEnum();
             break;
           }
         }
       }
     }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the Session message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public enum ProcessMode {
-        [pbr::OriginalName("CYCLE_INTERACTIONS")] CycleInteractions = 0,
-        [pbr::OriginalName("INDIVIDUAL_PROCESS_FREQUENCIES")] IndividualProcessFrequencies = 1,
-      }
-
-    }
-    #endregion
 
   }
 

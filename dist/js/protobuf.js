@@ -2910,6 +2910,24 @@ $root.ubii = (function() {
          */
         var interactions = {};
 
+        /**
+         * InteractionStatus enum.
+         * @name ubii.interactions.InteractionStatus
+         * @enum {string}
+         * @property {number} CREATED=0 CREATED value
+         * @property {number} INITIALIZED=1 INITIALIZED value
+         * @property {number} PROCESSING=2 PROCESSING value
+         * @property {number} HALTED=3 HALTED value
+         */
+        interactions.InteractionStatus = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "CREATED"] = 0;
+            values[valuesById[1] = "INITIALIZED"] = 1;
+            values[valuesById[2] = "PROCESSING"] = 2;
+            values[valuesById[3] = "HALTED"] = 3;
+            return values;
+        })();
+
         interactions.Interaction = (function() {
 
             /**
@@ -2926,6 +2944,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [authors] Interaction authors
              * @property {Array.<string>|null} [tags] Interaction tags
              * @property {string|null} [description] Interaction description
+             * @property {ubii.interactions.InteractionStatus|null} [status] Interaction status
              */
 
             /**
@@ -3028,6 +3047,14 @@ $root.ubii = (function() {
             Interaction.prototype.description = "";
 
             /**
+             * Interaction status.
+             * @member {ubii.interactions.InteractionStatus} status
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.status = 0;
+
+            /**
              * Creates a new Interaction instance using the specified properties.
              * @function create
              * @memberof ubii.interactions.Interaction
@@ -3075,6 +3102,8 @@ $root.ubii = (function() {
                         writer.uint32(/* id 9, wireType 2 =*/74).string(message.tags[i]);
                 if (message.description != null && message.hasOwnProperty("description"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.description);
+                if (message.status != null && message.hasOwnProperty("status"))
+                    writer.uint32(/* id 11, wireType 0 =*/88).int32(message.status);
                 return writer;
             };
 
@@ -3146,6 +3175,9 @@ $root.ubii = (function() {
                         break;
                     case 10:
                         message.description = reader.string();
+                        break;
+                    case 11:
+                        message.status = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3232,6 +3264,16 @@ $root.ubii = (function() {
                 if (message.description != null && message.hasOwnProperty("description"))
                     if (!$util.isString(message.description))
                         return "description: string expected";
+                if (message.status != null && message.hasOwnProperty("status"))
+                    switch (message.status) {
+                    default:
+                        return "status: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
                 return null;
             };
 
@@ -3293,6 +3335,24 @@ $root.ubii = (function() {
                 }
                 if (object.description != null)
                     message.description = String(object.description);
+                switch (object.status) {
+                case "CREATED":
+                case 0:
+                    message.status = 0;
+                    break;
+                case "INITIALIZED":
+                case 1:
+                    message.status = 1;
+                    break;
+                case "PROCESSING":
+                case 2:
+                    message.status = 2;
+                    break;
+                case "HALTED":
+                case 3:
+                    message.status = 3;
+                    break;
+                }
                 return message;
             };
 
@@ -3322,6 +3382,7 @@ $root.ubii = (function() {
                     object.onCreated = "";
                     object.processFrequency = 0;
                     object.description = "";
+                    object.status = options.enums === String ? "CREATED" : 0;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -3355,6 +3416,8 @@ $root.ubii = (function() {
                 }
                 if (message.description != null && message.hasOwnProperty("description"))
                     object.description = message.description;
+                if (message.status != null && message.hasOwnProperty("status"))
+                    object.status = options.enums === String ? $root.ubii.interactions.InteractionStatus[message.status] : message.status;
                 return object;
             };
 
@@ -7823,6 +7886,38 @@ $root.ubii = (function() {
             return IOMappingList;
         })();
 
+        /**
+         * ProcessMode enum.
+         * @name ubii.sessions.ProcessMode
+         * @enum {string}
+         * @property {number} CYCLE_INTERACTIONS=0 CYCLE_INTERACTIONS value
+         * @property {number} INDIVIDUAL_PROCESS_FREQUENCIES=1 INDIVIDUAL_PROCESS_FREQUENCIES value
+         */
+        sessions.ProcessMode = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "CYCLE_INTERACTIONS"] = 0;
+            values[valuesById[1] = "INDIVIDUAL_PROCESS_FREQUENCIES"] = 1;
+            return values;
+        })();
+
+        /**
+         * SessionStatus enum.
+         * @name ubii.sessions.SessionStatus
+         * @enum {string}
+         * @property {number} CREATED=0 CREATED value
+         * @property {number} RUNNING=1 RUNNING value
+         * @property {number} PAUSED=2 PAUSED value
+         * @property {number} STOPPED=3 STOPPED value
+         */
+        sessions.SessionStatus = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "CREATED"] = 0;
+            values[valuesById[1] = "RUNNING"] = 1;
+            values[valuesById[2] = "PAUSED"] = 2;
+            values[valuesById[3] = "STOPPED"] = 3;
+            return values;
+        })();
+
         sessions.Session = (function() {
 
             /**
@@ -7836,7 +7931,8 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [tags] Session tags
              * @property {string|null} [description] Session description
              * @property {Array.<string>|null} [authors] Session authors
-             * @property {ubii.sessions.Session.ProcessMode|null} [processMode] Session processMode
+             * @property {ubii.sessions.ProcessMode|null} [processMode] Session processMode
+             * @property {ubii.sessions.SessionStatus|null} [status] Session status
              */
 
             /**
@@ -7916,11 +8012,19 @@ $root.ubii = (function() {
 
             /**
              * Session processMode.
-             * @member {ubii.sessions.Session.ProcessMode} processMode
+             * @member {ubii.sessions.ProcessMode} processMode
              * @memberof ubii.sessions.Session
              * @instance
              */
             Session.prototype.processMode = 0;
+
+            /**
+             * Session status.
+             * @member {ubii.sessions.SessionStatus} status
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.status = 0;
 
             /**
              * Creates a new Session instance using the specified properties.
@@ -7966,6 +8070,8 @@ $root.ubii = (function() {
                         writer.uint32(/* id 7, wireType 2 =*/58).string(message.authors[i]);
                 if (message.processMode != null && message.hasOwnProperty("processMode"))
                     writer.uint32(/* id 8, wireType 0 =*/64).int32(message.processMode);
+                if (message.status != null && message.hasOwnProperty("status"))
+                    writer.uint32(/* id 9, wireType 0 =*/72).int32(message.status);
                 return writer;
             };
 
@@ -8031,6 +8137,9 @@ $root.ubii = (function() {
                         break;
                     case 8:
                         message.processMode = reader.int32();
+                        break;
+                    case 9:
+                        message.status = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8116,6 +8225,16 @@ $root.ubii = (function() {
                     case 1:
                         break;
                     }
+                if (message.status != null && message.hasOwnProperty("status"))
+                    switch (message.status) {
+                    default:
+                        return "status: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
                 return null;
             };
 
@@ -8181,6 +8300,24 @@ $root.ubii = (function() {
                     message.processMode = 1;
                     break;
                 }
+                switch (object.status) {
+                case "CREATED":
+                case 0:
+                    message.status = 0;
+                    break;
+                case "RUNNING":
+                case 1:
+                    message.status = 1;
+                    break;
+                case "PAUSED":
+                case 2:
+                    message.status = 2;
+                    break;
+                case "STOPPED":
+                case 3:
+                    message.status = 3;
+                    break;
+                }
                 return message;
             };
 
@@ -8208,6 +8345,7 @@ $root.ubii = (function() {
                     object.name = "";
                     object.description = "";
                     object.processMode = options.enums === String ? "CYCLE_INTERACTIONS" : 0;
+                    object.status = options.enums === String ? "CREATED" : 0;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -8236,7 +8374,9 @@ $root.ubii = (function() {
                         object.authors[j] = message.authors[j];
                 }
                 if (message.processMode != null && message.hasOwnProperty("processMode"))
-                    object.processMode = options.enums === String ? $root.ubii.sessions.Session.ProcessMode[message.processMode] : message.processMode;
+                    object.processMode = options.enums === String ? $root.ubii.sessions.ProcessMode[message.processMode] : message.processMode;
+                if (message.status != null && message.hasOwnProperty("status"))
+                    object.status = options.enums === String ? $root.ubii.sessions.SessionStatus[message.status] : message.status;
                 return object;
             };
 
@@ -8250,20 +8390,6 @@ $root.ubii = (function() {
             Session.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
-
-            /**
-             * ProcessMode enum.
-             * @name ubii.sessions.Session.ProcessMode
-             * @enum {string}
-             * @property {number} CYCLE_INTERACTIONS=0 CYCLE_INTERACTIONS value
-             * @property {number} INDIVIDUAL_PROCESS_FREQUENCIES=1 INDIVIDUAL_PROCESS_FREQUENCIES value
-             */
-            Session.ProcessMode = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "CYCLE_INTERACTIONS"] = 0;
-                values[valuesById[1] = "INDIVIDUAL_PROCESS_FREQUENCIES"] = 1;
-                return values;
-            })();
 
             return Session;
         })();

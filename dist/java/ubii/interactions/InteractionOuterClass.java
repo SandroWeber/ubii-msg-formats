@@ -14,6 +14,122 @@ public final class InteractionOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code ubii.interactions.InteractionStatus}
+   */
+  public enum InteractionStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CREATED = 0;</code>
+     */
+    CREATED(0),
+    /**
+     * <code>INITIALIZED = 1;</code>
+     */
+    INITIALIZED(1),
+    /**
+     * <code>PROCESSING = 2;</code>
+     */
+    PROCESSING(2),
+    /**
+     * <code>HALTED = 3;</code>
+     */
+    HALTED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CREATED = 0;</code>
+     */
+    public static final int CREATED_VALUE = 0;
+    /**
+     * <code>INITIALIZED = 1;</code>
+     */
+    public static final int INITIALIZED_VALUE = 1;
+    /**
+     * <code>PROCESSING = 2;</code>
+     */
+    public static final int PROCESSING_VALUE = 2;
+    /**
+     * <code>HALTED = 3;</code>
+     */
+    public static final int HALTED_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InteractionStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static InteractionStatus forNumber(int value) {
+      switch (value) {
+        case 0: return CREATED;
+        case 1: return INITIALIZED;
+        case 2: return PROCESSING;
+        case 3: return HALTED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<InteractionStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        InteractionStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<InteractionStatus>() {
+            public InteractionStatus findValueByNumber(int number) {
+              return InteractionStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return ubii.interactions.InteractionOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final InteractionStatus[] VALUES = values();
+
+    public static InteractionStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private InteractionStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ubii.interactions.InteractionStatus)
+  }
+
   public interface InteractionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ubii.interactions.Interaction)
       com.google.protobuf.MessageOrBuilder {
@@ -158,6 +274,15 @@ public final class InteractionOuterClass {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     */
+    int getStatusValue();
+    /**
+     * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     */
+    ubii.interactions.InteractionOuterClass.InteractionStatus getStatus();
   }
   /**
    * Protobuf type {@code ubii.interactions.Interaction}
@@ -182,6 +307,7 @@ public final class InteractionOuterClass {
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
+      status_ = 0;
     }
 
     @java.lang.Override
@@ -277,6 +403,12 @@ public final class InteractionOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
               break;
             }
             default: {
@@ -631,6 +763,23 @@ public final class InteractionOuterClass {
       }
     }
 
+    public static final int STATUS_FIELD_NUMBER = 11;
+    private int status_;
+    /**
+     * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     */
+    public ubii.interactions.InteractionOuterClass.InteractionStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      ubii.interactions.InteractionOuterClass.InteractionStatus result = ubii.interactions.InteractionOuterClass.InteractionStatus.valueOf(status_);
+      return result == null ? ubii.interactions.InteractionOuterClass.InteractionStatus.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -674,6 +823,9 @@ public final class InteractionOuterClass {
       }
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, description_);
+      }
+      if (status_ != ubii.interactions.InteractionOuterClass.InteractionStatus.CREATED.getNumber()) {
+        output.writeEnum(11, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -727,6 +879,10 @@ public final class InteractionOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, description_);
       }
+      if (status_ != ubii.interactions.InteractionOuterClass.InteractionStatus.CREATED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, status_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -765,6 +921,7 @@ public final class InteractionOuterClass {
           .equals(other.getTagsList());
       result = result && getDescription()
           .equals(other.getDescription());
+      result = result && status_ == other.status_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -805,6 +962,8 @@ public final class InteractionOuterClass {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -968,6 +1127,8 @@ public final class InteractionOuterClass {
         bitField0_ = (bitField0_ & ~0x00000100);
         description_ = "";
 
+        status_ = 0;
+
         return this;
       }
 
@@ -1030,6 +1191,7 @@ public final class InteractionOuterClass {
         }
         result.tags_ = tags_;
         result.description_ = description_;
+        result.status_ = status_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1173,6 +1335,9 @@ public final class InteractionOuterClass {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2242,6 +2407,51 @@ public final class InteractionOuterClass {
         onChanged();
         return this;
       }
+
+      private int status_ = 0;
+      /**
+       * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       */
+      public ubii.interactions.InteractionOuterClass.InteractionStatus getStatus() {
+        @SuppressWarnings("deprecation")
+        ubii.interactions.InteractionOuterClass.InteractionStatus result = ubii.interactions.InteractionOuterClass.InteractionStatus.valueOf(status_);
+        return result == null ? ubii.interactions.InteractionOuterClass.InteractionStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       */
+      public Builder setStatus(ubii.interactions.InteractionOuterClass.InteractionStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3098,16 +3308,19 @@ public final class InteractionOuterClass {
     java.lang.String[] descriptorData = {
       "\n$proto/interactions/interaction.proto\022\021" +
       "ubii.interactions\032!proto/interactions/io" +
-      "Format.proto\"\220\002\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
+      "Format.proto\"\306\002\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
       "\022\014\n\004name\030\002 \001(\t\022\033\n\023processing_callback\030\003 " +
       "\001(\t\0222\n\rinput_formats\030\004 \003(\0132\033.ubii.intera" +
       "ctions.IOFormat\0223\n\016output_formats\030\005 \003(\0132" +
       "\033.ubii.interactions.IOFormat\022\022\n\non_creat" +
       "ed\030\006 \001(\t\022\031\n\021process_frequency\030\007 \001(\002\022\017\n\007a" +
       "uthors\030\010 \003(\t\022\014\n\004tags\030\t \003(\t\022\023\n\013descriptio" +
-      "n\030\n \001(\t\"C\n\017InteractionList\0220\n\010elements\030\001" +
-      " \003(\0132\036.ubii.interactions.Interactionb\006pr" +
-      "oto3"
+      "n\030\n \001(\t\0224\n\006status\030\013 \001(\0162$.ubii.interacti" +
+      "ons.InteractionStatus\"C\n\017InteractionList" +
+      "\0220\n\010elements\030\001 \003(\0132\036.ubii.interactions.I" +
+      "nteraction*M\n\021InteractionStatus\022\013\n\007CREAT" +
+      "ED\020\000\022\017\n\013INITIALIZED\020\001\022\016\n\nPROCESSING\020\002\022\n\n" +
+      "\006HALTED\020\003b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3127,7 +3340,7 @@ public final class InteractionOuterClass {
     internal_static_ubii_interactions_Interaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_interactions_Interaction_descriptor,
-        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags", "Description", });
+        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags", "Description", "Status", });
     internal_static_ubii_interactions_InteractionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_interactions_InteractionList_fieldAccessorTable = new
