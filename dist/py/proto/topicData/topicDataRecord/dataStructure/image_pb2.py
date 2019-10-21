@@ -19,10 +19,36 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n9proto/topicData/topicDataRecord/dataStructure/image.proto\x12\x12ubii.dataStructure\"K\n\x07Image2D\x12\r\n\x05width\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05\x12\x13\n\x0b\x64\x61ta_format\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\"<\n\x0bImage2DList\x12-\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1b.ubii.dataStructure.Image2Db\x06proto3')
+  serialized_pb=_b('\n9proto/topicData/topicDataRecord/dataStructure/image.proto\x12\x12ubii.dataStructure\"\xa1\x01\n\x07Image2D\x12\r\n\x05width\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05\x12;\n\x0b\x64\x61ta_format\x18\x03 \x01(\x0e\x32&.ubii.dataStructure.Image2D.DataFormat\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\",\n\nDataFormat\x12\t\n\x05GRAY8\x10\x00\x12\x08\n\x04RGB8\x10\x01\x12\t\n\x05RGBA8\x10\x02\"<\n\x0bImage2DList\x12-\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1b.ubii.dataStructure.Image2Db\x06proto3')
 )
 
 
+
+_IMAGE2D_DATAFORMAT = _descriptor.EnumDescriptor(
+  name='DataFormat',
+  full_name='ubii.dataStructure.Image2D.DataFormat',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='GRAY8', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RGB8', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RGBA8', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=199,
+  serialized_end=243,
+)
+_sym_db.RegisterEnumDescriptor(_IMAGE2D_DATAFORMAT)
 
 
 _IMAGE2D = _descriptor.Descriptor(
@@ -48,8 +74,8 @@ _IMAGE2D = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data_format', full_name='ubii.dataStructure.Image2D.data_format', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -65,6 +91,7 @@ _IMAGE2D = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _IMAGE2D_DATAFORMAT,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -72,8 +99,8 @@ _IMAGE2D = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=81,
-  serialized_end=156,
+  serialized_start=82,
+  serialized_end=243,
 )
 
 
@@ -103,10 +130,12 @@ _IMAGE2DLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=158,
-  serialized_end=218,
+  serialized_start=245,
+  serialized_end=305,
 )
 
+_IMAGE2D.fields_by_name['data_format'].enum_type = _IMAGE2D_DATAFORMAT
+_IMAGE2D_DATAFORMAT.containing_type = _IMAGE2D
 _IMAGE2DLIST.fields_by_name['elements'].message_type = _IMAGE2D
 DESCRIPTOR.message_types_by_name['Image2D'] = _IMAGE2D
 DESCRIPTOR.message_types_by_name['Image2DList'] = _IMAGE2DLIST

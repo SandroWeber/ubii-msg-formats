@@ -72,6 +72,7 @@ void InitDefaults() {
 }
 
 ::google::protobuf::Metadata file_level_metadata[2];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -104,7 +105,7 @@ void protobuf_AssignDescriptors() {
   AddDescriptors();
   AssignDescriptors(
       "proto/topicData/topicDataRecord/dataStructure/image.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -123,13 +124,15 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n9proto/topicData/topicDataRecord/dataSt"
       "ructure/image.proto\022\022ubii.dataStructure\""
-      "K\n\007Image2D\022\r\n\005width\030\001 \001(\005\022\016\n\006height\030\002 \001("
-      "\005\022\023\n\013data_format\030\003 \001(\t\022\014\n\004data\030\004 \001(\014\"<\n\013"
-      "Image2DList\022-\n\010elements\030\001 \003(\0132\033.ubii.dat"
-      "aStructure.Image2Db\006proto3"
+      "\241\001\n\007Image2D\022\r\n\005width\030\001 \001(\005\022\016\n\006height\030\002 \001"
+      "(\005\022;\n\013data_format\030\003 \001(\0162&.ubii.dataStruc"
+      "ture.Image2D.DataFormat\022\014\n\004data\030\004 \001(\014\",\n"
+      "\nDataFormat\022\t\n\005GRAY8\020\000\022\010\n\004RGB8\020\001\022\t\n\005RGBA"
+      "8\020\002\"<\n\013Image2DList\022-\n\010elements\030\001 \003(\0132\033.u"
+      "bii.dataStructure.Image2Db\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 226);
+      descriptor, 313);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord/dataStructure/image.proto", &protobuf_RegisterTypes);
 }
@@ -147,6 +150,29 @@ struct StaticDescriptorInitializer {
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto
 namespace ubii {
 namespace dataStructure {
+const ::google::protobuf::EnumDescriptor* Image2D_DataFormat_descriptor() {
+  protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto::file_level_enum_descriptors[0];
+}
+bool Image2D_DataFormat_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Image2D_DataFormat Image2D::GRAY8;
+const Image2D_DataFormat Image2D::RGB8;
+const Image2D_DataFormat Image2D::RGBA8;
+const Image2D_DataFormat Image2D::DataFormat_MIN;
+const Image2D_DataFormat Image2D::DataFormat_MAX;
+const int Image2D::DataFormat_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -170,26 +196,21 @@ Image2D::Image2D(const Image2D& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  data_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.data_format().size() > 0) {
-    data_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_format_);
-  }
   data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.data().size() > 0) {
     data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
   }
   ::memcpy(&width_, &from.width_,
-    static_cast<size_t>(reinterpret_cast<char*>(&height_) -
-    reinterpret_cast<char*>(&width_)) + sizeof(height_));
+    static_cast<size_t>(reinterpret_cast<char*>(&data_format_) -
+    reinterpret_cast<char*>(&width_)) + sizeof(data_format_));
   // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.Image2D)
 }
 
 void Image2D::SharedCtor() {
-  data_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&width_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&width_)) + sizeof(height_));
+      reinterpret_cast<char*>(&data_format_) -
+      reinterpret_cast<char*>(&width_)) + sizeof(data_format_));
 }
 
 Image2D::~Image2D() {
@@ -198,7 +219,6 @@ Image2D::~Image2D() {
 }
 
 void Image2D::SharedDtor() {
-  data_format_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -222,11 +242,10 @@ void Image2D::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  data_format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&width_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&width_)) + sizeof(height_));
+      reinterpret_cast<char*>(&data_format_) -
+      reinterpret_cast<char*>(&width_)) + sizeof(data_format_));
   _internal_metadata_.Clear();
 }
 
@@ -268,16 +287,15 @@ bool Image2D::MergePartialFromCodedStream(
         break;
       }
 
-      // string data_format = 3;
+      // .ubii.dataStructure.Image2D.DataFormat data_format = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_data_format()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->data_format().data(), static_cast<int>(this->data_format().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.dataStructure.Image2D.data_format"));
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_data_format(static_cast< ::ubii::dataStructure::Image2D_DataFormat >(value));
         } else {
           goto handle_unusual;
         }
@@ -332,13 +350,9 @@ void Image2D::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->height(), output);
   }
 
-  // string data_format = 3;
-  if (this->data_format().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->data_format().data(), static_cast<int>(this->data_format().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.dataStructure.Image2D.data_format");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+  // .ubii.dataStructure.Image2D.DataFormat data_format = 3;
+  if (this->data_format() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
       3, this->data_format(), output);
   }
 
@@ -372,15 +386,10 @@ void Image2D::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->height(), target);
   }
 
-  // string data_format = 3;
-  if (this->data_format().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->data_format().data(), static_cast<int>(this->data_format().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.dataStructure.Image2D.data_format");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->data_format(), target);
+  // .ubii.dataStructure.Image2D.DataFormat data_format = 3;
+  if (this->data_format() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->data_format(), target);
   }
 
   // bytes data = 4;
@@ -407,13 +416,6 @@ size_t Image2D::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string data_format = 3;
-  if (this->data_format().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->data_format());
-  }
-
   // bytes data = 4;
   if (this->data().size() > 0) {
     total_size += 1 +
@@ -433,6 +435,12 @@ size_t Image2D::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->height());
+  }
+
+  // .ubii.dataStructure.Image2D.DataFormat data_format = 3;
+  if (this->data_format() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->data_format());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -462,10 +470,6 @@ void Image2D::MergeFrom(const Image2D& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.data_format().size() > 0) {
-
-    data_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_format_);
-  }
   if (from.data().size() > 0) {
 
     data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
@@ -475,6 +479,9 @@ void Image2D::MergeFrom(const Image2D& from) {
   }
   if (from.height() != 0) {
     set_height(from.height());
+  }
+  if (from.data_format() != 0) {
+    set_data_format(from.data_format());
   }
 }
 
@@ -502,12 +509,11 @@ void Image2D::Swap(Image2D* other) {
 }
 void Image2D::InternalSwap(Image2D* other) {
   using std::swap;
-  data_format_.Swap(&other->data_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   data_.Swap(&other->data_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(width_, other->width_);
   swap(height_, other->height_);
+  swap(data_format_, other->data_format_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

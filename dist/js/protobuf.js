@@ -10819,7 +10819,7 @@ $root.ubii = (function() {
              * @interface IImage2D
              * @property {number|null} [width] Image2D width
              * @property {number|null} [height] Image2D height
-             * @property {string|null} [dataFormat] Image2D dataFormat
+             * @property {ubii.dataStructure.Image2D.DataFormat|null} [dataFormat] Image2D dataFormat
              * @property {Uint8Array|null} [data] Image2D data
              */
 
@@ -10856,11 +10856,11 @@ $root.ubii = (function() {
 
             /**
              * Image2D dataFormat.
-             * @member {string} dataFormat
+             * @member {ubii.dataStructure.Image2D.DataFormat} dataFormat
              * @memberof ubii.dataStructure.Image2D
              * @instance
              */
-            Image2D.prototype.dataFormat = "";
+            Image2D.prototype.dataFormat = 0;
 
             /**
              * Image2D data.
@@ -10899,7 +10899,7 @@ $root.ubii = (function() {
                 if (message.height != null && message.hasOwnProperty("height"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.height);
                 if (message.dataFormat != null && message.hasOwnProperty("dataFormat"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.dataFormat);
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.dataFormat);
                 if (message.data != null && message.hasOwnProperty("data"))
                     writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.data);
                 return writer;
@@ -10943,7 +10943,7 @@ $root.ubii = (function() {
                         message.height = reader.int32();
                         break;
                     case 3:
-                        message.dataFormat = reader.string();
+                        message.dataFormat = reader.int32();
                         break;
                     case 4:
                         message.data = reader.bytes();
@@ -10990,8 +10990,14 @@ $root.ubii = (function() {
                     if (!$util.isInteger(message.height))
                         return "height: integer expected";
                 if (message.dataFormat != null && message.hasOwnProperty("dataFormat"))
-                    if (!$util.isString(message.dataFormat))
-                        return "dataFormat: string expected";
+                    switch (message.dataFormat) {
+                    default:
+                        return "dataFormat: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 if (message.data != null && message.hasOwnProperty("data"))
                     if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
                         return "data: buffer expected";
@@ -11014,8 +11020,20 @@ $root.ubii = (function() {
                     message.width = object.width | 0;
                 if (object.height != null)
                     message.height = object.height | 0;
-                if (object.dataFormat != null)
-                    message.dataFormat = String(object.dataFormat);
+                switch (object.dataFormat) {
+                case "GRAY8":
+                case 0:
+                    message.dataFormat = 0;
+                    break;
+                case "RGB8":
+                case 1:
+                    message.dataFormat = 1;
+                    break;
+                case "RGBA8":
+                case 2:
+                    message.dataFormat = 2;
+                    break;
+                }
                 if (object.data != null)
                     if (typeof object.data === "string")
                         $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
@@ -11040,7 +11058,7 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.width = 0;
                     object.height = 0;
-                    object.dataFormat = "";
+                    object.dataFormat = options.enums === String ? "GRAY8" : 0;
                     object.data = options.bytes === String ? "" : [];
                 }
                 if (message.width != null && message.hasOwnProperty("width"))
@@ -11048,7 +11066,7 @@ $root.ubii = (function() {
                 if (message.height != null && message.hasOwnProperty("height"))
                     object.height = message.height;
                 if (message.dataFormat != null && message.hasOwnProperty("dataFormat"))
-                    object.dataFormat = message.dataFormat;
+                    object.dataFormat = options.enums === String ? $root.ubii.dataStructure.Image2D.DataFormat[message.dataFormat] : message.dataFormat;
                 if (message.data != null && message.hasOwnProperty("data"))
                     object.data = options.bytes === String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === Array ? Array.prototype.slice.call(message.data) : message.data;
                 return object;
@@ -11064,6 +11082,22 @@ $root.ubii = (function() {
             Image2D.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
+
+            /**
+             * DataFormat enum.
+             * @name ubii.dataStructure.Image2D.DataFormat
+             * @enum {string}
+             * @property {number} GRAY8=0 GRAY8 value
+             * @property {number} RGB8=1 RGB8 value
+             * @property {number} RGBA8=2 RGBA8 value
+             */
+            Image2D.DataFormat = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "GRAY8"] = 0;
+                values[valuesById[1] = "RGB8"] = 1;
+                values[valuesById[2] = "RGBA8"] = 2;
+                return values;
+            })();
 
             return Image2D;
         })();

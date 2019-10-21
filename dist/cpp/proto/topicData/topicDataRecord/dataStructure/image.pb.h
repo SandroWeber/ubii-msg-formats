@@ -29,6 +29,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto 
@@ -64,6 +65,28 @@ template<> ::ubii::dataStructure::Image2DList* Arena::CreateMaybeMessage<::ubii:
 namespace ubii {
 namespace dataStructure {
 
+enum Image2D_DataFormat {
+  Image2D_DataFormat_GRAY8 = 0,
+  Image2D_DataFormat_RGB8 = 1,
+  Image2D_DataFormat_RGBA8 = 2,
+  Image2D_DataFormat_Image2D_DataFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  Image2D_DataFormat_Image2D_DataFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool Image2D_DataFormat_IsValid(int value);
+const Image2D_DataFormat Image2D_DataFormat_DataFormat_MIN = Image2D_DataFormat_GRAY8;
+const Image2D_DataFormat Image2D_DataFormat_DataFormat_MAX = Image2D_DataFormat_RGBA8;
+const int Image2D_DataFormat_DataFormat_ARRAYSIZE = Image2D_DataFormat_DataFormat_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Image2D_DataFormat_descriptor();
+inline const ::std::string& Image2D_DataFormat_Name(Image2D_DataFormat value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Image2D_DataFormat_descriptor(), value);
+}
+inline bool Image2D_DataFormat_Parse(
+    const ::std::string& name, Image2D_DataFormat* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Image2D_DataFormat>(
+    Image2D_DataFormat_descriptor(), name, value);
+}
 // ===================================================================
 
 class Image2D : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.dataStructure.Image2D) */ {
@@ -151,21 +174,35 @@ class Image2D : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // nested types ----------------------------------------------------
 
-  // accessors -------------------------------------------------------
+  typedef Image2D_DataFormat DataFormat;
+  static const DataFormat GRAY8 =
+    Image2D_DataFormat_GRAY8;
+  static const DataFormat RGB8 =
+    Image2D_DataFormat_RGB8;
+  static const DataFormat RGBA8 =
+    Image2D_DataFormat_RGBA8;
+  static inline bool DataFormat_IsValid(int value) {
+    return Image2D_DataFormat_IsValid(value);
+  }
+  static const DataFormat DataFormat_MIN =
+    Image2D_DataFormat_DataFormat_MIN;
+  static const DataFormat DataFormat_MAX =
+    Image2D_DataFormat_DataFormat_MAX;
+  static const int DataFormat_ARRAYSIZE =
+    Image2D_DataFormat_DataFormat_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  DataFormat_descriptor() {
+    return Image2D_DataFormat_descriptor();
+  }
+  static inline const ::std::string& DataFormat_Name(DataFormat value) {
+    return Image2D_DataFormat_Name(value);
+  }
+  static inline bool DataFormat_Parse(const ::std::string& name,
+      DataFormat* value) {
+    return Image2D_DataFormat_Parse(name, value);
+  }
 
-  // string data_format = 3;
-  void clear_data_format();
-  static const int kDataFormatFieldNumber = 3;
-  const ::std::string& data_format() const;
-  void set_data_format(const ::std::string& value);
-  #if LANG_CXX11
-  void set_data_format(::std::string&& value);
-  #endif
-  void set_data_format(const char* value);
-  void set_data_format(const char* value, size_t size);
-  ::std::string* mutable_data_format();
-  ::std::string* release_data_format();
-  void set_allocated_data_format(::std::string* data_format);
+  // accessors -------------------------------------------------------
 
   // bytes data = 4;
   void clear_data();
@@ -193,14 +230,20 @@ class Image2D : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::int32 height() const;
   void set_height(::google::protobuf::int32 value);
 
+  // .ubii.dataStructure.Image2D.DataFormat data_format = 3;
+  void clear_data_format();
+  static const int kDataFormatFieldNumber = 3;
+  ::ubii::dataStructure::Image2D_DataFormat data_format() const;
+  void set_data_format(::ubii::dataStructure::Image2D_DataFormat value);
+
   // @@protoc_insertion_point(class_scope:ubii.dataStructure.Image2D)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr data_format_;
   ::google::protobuf::internal::ArenaStringPtr data_;
   ::google::protobuf::int32 width_;
   ::google::protobuf::int32 height_;
+  int data_format_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto::TableStruct;
 };
@@ -352,57 +395,18 @@ inline void Image2D::set_height(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:ubii.dataStructure.Image2D.height)
 }
 
-// string data_format = 3;
+// .ubii.dataStructure.Image2D.DataFormat data_format = 3;
 inline void Image2D::clear_data_format() {
-  data_format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_format_ = 0;
 }
-inline const ::std::string& Image2D::data_format() const {
+inline ::ubii::dataStructure::Image2D_DataFormat Image2D::data_format() const {
   // @@protoc_insertion_point(field_get:ubii.dataStructure.Image2D.data_format)
-  return data_format_.GetNoArena();
+  return static_cast< ::ubii::dataStructure::Image2D_DataFormat >(data_format_);
 }
-inline void Image2D::set_data_format(const ::std::string& value) {
+inline void Image2D::set_data_format(::ubii::dataStructure::Image2D_DataFormat value) {
   
-  data_format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  data_format_ = value;
   // @@protoc_insertion_point(field_set:ubii.dataStructure.Image2D.data_format)
-}
-#if LANG_CXX11
-inline void Image2D::set_data_format(::std::string&& value) {
-  
-  data_format_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:ubii.dataStructure.Image2D.data_format)
-}
-#endif
-inline void Image2D::set_data_format(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  data_format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ubii.dataStructure.Image2D.data_format)
-}
-inline void Image2D::set_data_format(const char* value, size_t size) {
-  
-  data_format_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ubii.dataStructure.Image2D.data_format)
-}
-inline ::std::string* Image2D::mutable_data_format() {
-  
-  // @@protoc_insertion_point(field_mutable:ubii.dataStructure.Image2D.data_format)
-  return data_format_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Image2D::release_data_format() {
-  // @@protoc_insertion_point(field_release:ubii.dataStructure.Image2D.data_format)
-  
-  return data_format_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Image2D::set_allocated_data_format(::std::string* data_format) {
-  if (data_format != NULL) {
-    
-  } else {
-    
-  }
-  data_format_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data_format);
-  // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Image2D.data_format)
 }
 
 // bytes data = 4;
@@ -502,6 +506,18 @@ Image2DList::elements() const {
 
 }  // namespace dataStructure
 }  // namespace ubii
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::ubii::dataStructure::Image2D_DataFormat> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::dataStructure::Image2D_DataFormat>() {
+  return ::ubii::dataStructure::Image2D_DataFormat_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

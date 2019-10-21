@@ -29,14 +29,13 @@ public final class Image {
     int getHeight();
 
     /**
-     * <code>string data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
      */
-    java.lang.String getDataFormat();
+    int getDataFormatValue();
     /**
-     * <code>string data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getDataFormatBytes();
+    ubii.dataStructure.Image.Image2D.DataFormat getDataFormat();
 
     /**
      * <code>bytes data = 4;</code>
@@ -58,7 +57,7 @@ public final class Image {
     private Image2D() {
       width_ = 0;
       height_ = 0;
-      dataFormat_ = "";
+      dataFormat_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -96,10 +95,10 @@ public final class Image {
               height_ = input.readInt32();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
+              int rawValue = input.readEnum();
 
-              dataFormat_ = s;
+              dataFormat_ = rawValue;
               break;
             }
             case 34: {
@@ -139,6 +138,113 @@ public final class Image {
               ubii.dataStructure.Image.Image2D.class, ubii.dataStructure.Image.Image2D.Builder.class);
     }
 
+    /**
+     * Protobuf enum {@code ubii.dataStructure.Image2D.DataFormat}
+     */
+    public enum DataFormat
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>GRAY8 = 0;</code>
+       */
+      GRAY8(0),
+      /**
+       * <code>RGB8 = 1;</code>
+       */
+      RGB8(1),
+      /**
+       * <code>RGBA8 = 2;</code>
+       */
+      RGBA8(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>GRAY8 = 0;</code>
+       */
+      public static final int GRAY8_VALUE = 0;
+      /**
+       * <code>RGB8 = 1;</code>
+       */
+      public static final int RGB8_VALUE = 1;
+      /**
+       * <code>RGBA8 = 2;</code>
+       */
+      public static final int RGBA8_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataFormat forNumber(int value) {
+        switch (value) {
+          case 0: return GRAY8;
+          case 1: return RGB8;
+          case 2: return RGBA8;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DataFormat>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          DataFormat> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DataFormat>() {
+              public DataFormat findValueByNumber(int number) {
+                return DataFormat.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return ubii.dataStructure.Image.Image2D.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final DataFormat[] VALUES = values();
+
+      public static DataFormat valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DataFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ubii.dataStructure.Image2D.DataFormat)
+    }
+
     public static final int WIDTH_FIELD_NUMBER = 1;
     private int width_;
     /**
@@ -158,37 +264,20 @@ public final class Image {
     }
 
     public static final int DATA_FORMAT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object dataFormat_;
+    private int dataFormat_;
     /**
-     * <code>string data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
      */
-    public java.lang.String getDataFormat() {
-      java.lang.Object ref = dataFormat_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dataFormat_ = s;
-        return s;
-      }
+    public int getDataFormatValue() {
+      return dataFormat_;
     }
     /**
-     * <code>string data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDataFormatBytes() {
-      java.lang.Object ref = dataFormat_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dataFormat_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
+      @SuppressWarnings("deprecation")
+      ubii.dataStructure.Image.Image2D.DataFormat result = ubii.dataStructure.Image.Image2D.DataFormat.valueOf(dataFormat_);
+      return result == null ? ubii.dataStructure.Image.Image2D.DataFormat.UNRECOGNIZED : result;
     }
 
     public static final int DATA_FIELD_NUMBER = 4;
@@ -220,8 +309,8 @@ public final class Image {
       if (height_ != 0) {
         output.writeInt32(2, height_);
       }
-      if (!getDataFormatBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dataFormat_);
+      if (dataFormat_ != ubii.dataStructure.Image.Image2D.DataFormat.GRAY8.getNumber()) {
+        output.writeEnum(3, dataFormat_);
       }
       if (!data_.isEmpty()) {
         output.writeBytes(4, data_);
@@ -243,8 +332,9 @@ public final class Image {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, height_);
       }
-      if (!getDataFormatBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dataFormat_);
+      if (dataFormat_ != ubii.dataStructure.Image.Image2D.DataFormat.GRAY8.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, dataFormat_);
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -270,8 +360,7 @@ public final class Image {
           == other.getWidth());
       result = result && (getHeight()
           == other.getHeight());
-      result = result && getDataFormat()
-          .equals(other.getDataFormat());
+      result = result && dataFormat_ == other.dataFormat_;
       result = result && getData()
           .equals(other.getData());
       result = result && unknownFields.equals(other.unknownFields);
@@ -290,7 +379,7 @@ public final class Image {
       hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + getHeight();
       hash = (37 * hash) + DATA_FORMAT_FIELD_NUMBER;
-      hash = (53 * hash) + getDataFormat().hashCode();
+      hash = (53 * hash) + dataFormat_;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -430,7 +519,7 @@ public final class Image {
 
         height_ = 0;
 
-        dataFormat_ = "";
+        dataFormat_ = 0;
 
         data_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -518,9 +607,8 @@ public final class Image {
         if (other.getHeight() != 0) {
           setHeight(other.getHeight());
         }
-        if (!other.getDataFormat().isEmpty()) {
-          dataFormat_ = other.dataFormat_;
-          onChanged();
+        if (other.dataFormat_ != 0) {
+          setDataFormatValue(other.getDataFormatValue());
         }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
@@ -606,71 +694,47 @@ public final class Image {
         return this;
       }
 
-      private java.lang.Object dataFormat_ = "";
+      private int dataFormat_ = 0;
       /**
-       * <code>string data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
        */
-      public java.lang.String getDataFormat() {
-        java.lang.Object ref = dataFormat_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dataFormat_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getDataFormatValue() {
+        return dataFormat_;
       }
       /**
-       * <code>string data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getDataFormatBytes() {
-        java.lang.Object ref = dataFormat_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dataFormat_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string data_format = 3;</code>
-       */
-      public Builder setDataFormat(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setDataFormatValue(int value) {
         dataFormat_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       */
+      public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
+        @SuppressWarnings("deprecation")
+        ubii.dataStructure.Image.Image2D.DataFormat result = ubii.dataStructure.Image.Image2D.DataFormat.valueOf(dataFormat_);
+        return result == null ? ubii.dataStructure.Image.Image2D.DataFormat.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       */
+      public Builder setDataFormat(ubii.dataStructure.Image.Image2D.DataFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        dataFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
        */
       public Builder clearDataFormat() {
         
-        dataFormat_ = getDefaultInstance().getDataFormat();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string data_format = 3;</code>
-       */
-      public Builder setDataFormatBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dataFormat_ = value;
+        dataFormat_ = 0;
         onChanged();
         return this;
       }
@@ -1559,10 +1623,12 @@ public final class Image {
     java.lang.String[] descriptorData = {
       "\n9proto/topicData/topicDataRecord/dataSt" +
       "ructure/image.proto\022\022ubii.dataStructure\"" +
-      "K\n\007Image2D\022\r\n\005width\030\001 \001(\005\022\016\n\006height\030\002 \001(" +
-      "\005\022\023\n\013data_format\030\003 \001(\t\022\014\n\004data\030\004 \001(\014\"<\n\013" +
-      "Image2DList\022-\n\010elements\030\001 \003(\0132\033.ubii.dat" +
-      "aStructure.Image2Db\006proto3"
+      "\241\001\n\007Image2D\022\r\n\005width\030\001 \001(\005\022\016\n\006height\030\002 \001" +
+      "(\005\022;\n\013data_format\030\003 \001(\0162&.ubii.dataStruc" +
+      "ture.Image2D.DataFormat\022\014\n\004data\030\004 \001(\014\",\n" +
+      "\nDataFormat\022\t\n\005GRAY8\020\000\022\010\n\004RGB8\020\001\022\t\n\005RGBA" +
+      "8\020\002\"<\n\013Image2DList\022-\n\010elements\030\001 \003(\0132\033.u" +
+      "bii.dataStructure.Image2Db\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

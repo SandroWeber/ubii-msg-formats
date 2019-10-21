@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 goog.exportSymbol('proto.ubii.dataStructure.Image2D', null, global);
+goog.exportSymbol('proto.ubii.dataStructure.Image2D.DataFormat', null, global);
 goog.exportSymbol('proto.ubii.dataStructure.Image2DList', null, global);
 
 /**
@@ -62,7 +63,7 @@ proto.ubii.dataStructure.Image2D.toObject = function(includeInstance, msg) {
   var f, obj = {
     width: jspb.Message.getFieldWithDefault(msg, 1, 0),
     height: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    dataFormat: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    dataFormat: jspb.Message.getFieldWithDefault(msg, 3, 0),
     data: msg.getData_asB64()
   };
 
@@ -109,7 +110,7 @@ proto.ubii.dataStructure.Image2D.deserializeBinaryFromReader = function(msg, rea
       msg.setHeight(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {!proto.ubii.dataStructure.Image2D.DataFormat} */ (reader.readEnum());
       msg.setDataFormat(value);
       break;
     case 4:
@@ -160,8 +161,8 @@ proto.ubii.dataStructure.Image2D.serializeBinaryToWriter = function(message, wri
     );
   }
   f = message.getDataFormat();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0.0) {
+    writer.writeEnum(
       3,
       f
     );
@@ -175,6 +176,15 @@ proto.ubii.dataStructure.Image2D.serializeBinaryToWriter = function(message, wri
   }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.ubii.dataStructure.Image2D.DataFormat = {
+  GRAY8: 0,
+  RGB8: 1,
+  RGBA8: 2
+};
 
 /**
  * optional int32 width = 1;
@@ -207,17 +217,17 @@ proto.ubii.dataStructure.Image2D.prototype.setHeight = function(value) {
 
 
 /**
- * optional string data_format = 3;
- * @return {string}
+ * optional DataFormat data_format = 3;
+ * @return {!proto.ubii.dataStructure.Image2D.DataFormat}
  */
 proto.ubii.dataStructure.Image2D.prototype.getDataFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {!proto.ubii.dataStructure.Image2D.DataFormat} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {string} value */
+/** @param {!proto.ubii.dataStructure.Image2D.DataFormat} value */
 proto.ubii.dataStructure.Image2D.prototype.setDataFormat = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
