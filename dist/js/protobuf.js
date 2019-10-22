@@ -1,4 +1,4 @@
-/*eslint-disable block-scoped-var, no-redeclare, no-control-regex, no-prototype-builtins*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
@@ -11059,7 +11059,13 @@ $root.ubii = (function() {
                     object.width = 0;
                     object.height = 0;
                     object.dataFormat = options.enums === String ? "GRAY8" : 0;
-                    object.data = options.bytes === String ? "" : [];
+                    if (options.bytes === String)
+                        object.data = "";
+                    else {
+                        object.data = [];
+                        if (options.bytes !== Array)
+                            object.data = $util.newBuffer(object.data);
+                    }
                 }
                 if (message.width != null && message.hasOwnProperty("width"))
                     object.width = message.width;
