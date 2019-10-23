@@ -20,30 +20,36 @@ public final class DeviceOuterClass {
 
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+     * @return The enum numeric value on the wire for deviceType.
      */
     int getDeviceTypeValue();
     /**
      * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+     * @return The deviceType.
      */
     ubii.devices.DeviceOuterClass.Device.DeviceType getDeviceType();
 
@@ -73,39 +79,49 @@ public final class DeviceOuterClass {
 
     /**
      * <code>string client_id = 5;</code>
+     * @return The clientId.
      */
     java.lang.String getClientId();
     /**
      * <code>string client_id = 5;</code>
+     * @return The bytes for clientId.
      */
     com.google.protobuf.ByteString
         getClientIdBytes();
 
     /**
      * <code>repeated string tags = 6;</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 6;</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 6;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 7;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 7;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -130,6 +146,13 @@ public final class DeviceOuterClass {
       clientId_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Device();
     }
 
     @java.lang.Override
@@ -175,9 +198,9 @@ public final class DeviceOuterClass {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 components_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               components_.add(
                   input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry));
@@ -191,9 +214,9 @@ public final class DeviceOuterClass {
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               tags_.add(s);
               break;
@@ -205,7 +228,7 @@ public final class DeviceOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -219,10 +242,10 @@ public final class DeviceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           components_ = java.util.Collections.unmodifiableList(components_);
         }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -277,6 +300,8 @@ public final class DeviceOuterClass {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -284,6 +309,10 @@ public final class DeviceOuterClass {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static DeviceType forNumber(int value) {
         switch (value) {
           case 0: return PARTICIPANT;
@@ -340,11 +369,11 @@ public final class DeviceOuterClass {
       // @@protoc_insertion_point(enum_scope:ubii.devices.Device.DeviceType)
     }
 
-    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -360,6 +389,7 @@ public final class DeviceOuterClass {
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -379,6 +409,7 @@ public final class DeviceOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -394,6 +425,7 @@ public final class DeviceOuterClass {
     }
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -413,12 +445,14 @@ public final class DeviceOuterClass {
     private int deviceType_;
     /**
      * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+     * @return The enum numeric value on the wire for deviceType.
      */
     public int getDeviceTypeValue() {
       return deviceType_;
     }
     /**
      * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+     * @return The deviceType.
      */
     public ubii.devices.DeviceOuterClass.Device.DeviceType getDeviceType() {
       @SuppressWarnings("deprecation")
@@ -465,6 +499,7 @@ public final class DeviceOuterClass {
     private volatile java.lang.Object clientId_;
     /**
      * <code>string client_id = 5;</code>
+     * @return The clientId.
      */
     public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
@@ -480,6 +515,7 @@ public final class DeviceOuterClass {
     }
     /**
      * <code>string client_id = 5;</code>
+     * @return The bytes for clientId.
      */
     public com.google.protobuf.ByteString
         getClientIdBytes() {
@@ -499,6 +535,7 @@ public final class DeviceOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 6;</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -506,18 +543,23 @@ public final class DeviceOuterClass {
     }
     /**
      * <code>repeated string tags = 6;</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 6;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -528,6 +570,7 @@ public final class DeviceOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 7;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -543,6 +586,7 @@ public final class DeviceOuterClass {
     }
     /**
      * <code>string description = 7;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -645,22 +689,21 @@ public final class DeviceOuterClass {
       }
       ubii.devices.DeviceOuterClass.Device other = (ubii.devices.DeviceOuterClass.Device) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && deviceType_ == other.deviceType_;
-      result = result && getComponentsList()
-          .equals(other.getComponentsList());
-      result = result && getClientId()
-          .equals(other.getClientId());
-      result = result && getTagsList()
-          .equals(other.getTagsList());
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (deviceType_ != other.deviceType_) return false;
+      if (!getComponentsList()
+          .equals(other.getComponentsList())) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -830,14 +873,14 @@ public final class DeviceOuterClass {
 
         if (componentsBuilder_ == null) {
           components_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           componentsBuilder_.clear();
         }
         clientId_ = "";
 
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         description_ = "";
 
         return this;
@@ -867,62 +910,60 @@ public final class DeviceOuterClass {
       public ubii.devices.DeviceOuterClass.Device buildPartial() {
         ubii.devices.DeviceOuterClass.Device result = new ubii.devices.DeviceOuterClass.Device(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.id_ = id_;
         result.name_ = name_;
         result.deviceType_ = deviceType_;
         if (componentsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             components_ = java.util.Collections.unmodifiableList(components_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.components_ = components_;
         } else {
           result.components_ = componentsBuilder_.build();
         }
         result.clientId_ = clientId_;
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.tags_ = tags_;
         result.description_ = description_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -951,7 +992,7 @@ public final class DeviceOuterClass {
           if (!other.components_.isEmpty()) {
             if (components_.isEmpty()) {
               components_ = other.components_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureComponentsIsMutable();
               components_.addAll(other.components_);
@@ -964,7 +1005,7 @@ public final class DeviceOuterClass {
               componentsBuilder_.dispose();
               componentsBuilder_ = null;
               components_ = other.components_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               componentsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getComponentsFieldBuilder() : null;
@@ -980,7 +1021,7 @@ public final class DeviceOuterClass {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1024,6 +1065,7 @@ public final class DeviceOuterClass {
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1039,6 +1081,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1055,6 +1098,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
@@ -1068,6 +1113,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -1077,6 +1123,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1093,6 +1141,7 @@ public final class DeviceOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1108,6 +1157,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1124,6 +1174,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1137,6 +1189,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1146,6 +1199,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1162,12 +1217,15 @@ public final class DeviceOuterClass {
       private int deviceType_ = 0;
       /**
        * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+       * @return The enum numeric value on the wire for deviceType.
        */
       public int getDeviceTypeValue() {
         return deviceType_;
       }
       /**
        * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+       * @param value The enum numeric value on the wire for deviceType to set.
+       * @return This builder for chaining.
        */
       public Builder setDeviceTypeValue(int value) {
         deviceType_ = value;
@@ -1176,6 +1234,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+       * @return The deviceType.
        */
       public ubii.devices.DeviceOuterClass.Device.DeviceType getDeviceType() {
         @SuppressWarnings("deprecation")
@@ -1184,6 +1243,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+       * @param value The deviceType to set.
+       * @return This builder for chaining.
        */
       public Builder setDeviceType(ubii.devices.DeviceOuterClass.Device.DeviceType value) {
         if (value == null) {
@@ -1196,6 +1257,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDeviceType() {
         
@@ -1207,9 +1269,9 @@ public final class DeviceOuterClass {
       private java.util.List<ubii.devices.ComponentOuterClass.Component> components_ =
         java.util.Collections.emptyList();
       private void ensureComponentsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           components_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>(components_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1359,7 +1421,7 @@ public final class DeviceOuterClass {
       public Builder clearComponents() {
         if (componentsBuilder_ == null) {
           components_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           componentsBuilder_.clear();
@@ -1436,7 +1498,7 @@ public final class DeviceOuterClass {
           componentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder>(
                   components_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           components_ = null;
@@ -1447,6 +1509,7 @@ public final class DeviceOuterClass {
       private java.lang.Object clientId_ = "";
       /**
        * <code>string client_id = 5;</code>
+       * @return The clientId.
        */
       public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
@@ -1462,6 +1525,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string client_id = 5;</code>
+       * @return The bytes for clientId.
        */
       public com.google.protobuf.ByteString
           getClientIdBytes() {
@@ -1478,6 +1542,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string client_id = 5;</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
        */
       public Builder setClientId(
           java.lang.String value) {
@@ -1491,6 +1557,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string client_id = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearClientId() {
         
@@ -1500,6 +1567,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string client_id = 5;</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
        */
       public Builder setClientIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1515,13 +1584,14 @@ public final class DeviceOuterClass {
 
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000002;
          }
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -1529,18 +1599,23 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1548,6 +1623,9 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1561,6 +1639,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1574,6 +1654,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1585,15 +1667,18 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 6;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -1610,6 +1695,7 @@ public final class DeviceOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 7;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1625,6 +1711,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string description = 7;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1641,6 +1728,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string description = 7;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -1654,6 +1743,7 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string description = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -1663,6 +1753,8 @@ public final class DeviceOuterClass {
       }
       /**
        * <code>string description = 7;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -1678,7 +1770,7 @@ public final class DeviceOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1773,6 +1865,13 @@ public final class DeviceOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DeviceList();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1797,7 +1896,7 @@ public final class DeviceOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 elements_ = new java.util.ArrayList<ubii.devices.DeviceOuterClass.Device>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -1806,7 +1905,7 @@ public final class DeviceOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1820,7 +1919,7 @@ public final class DeviceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
@@ -1920,11 +2019,10 @@ public final class DeviceOuterClass {
       }
       ubii.devices.DeviceOuterClass.DeviceList other = (ubii.devices.DeviceOuterClass.DeviceList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2106,7 +2204,7 @@ public final class DeviceOuterClass {
         ubii.devices.DeviceOuterClass.DeviceList result = new ubii.devices.DeviceOuterClass.DeviceList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2120,35 +2218,35 @@ public final class DeviceOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2221,7 +2319,7 @@ public final class DeviceOuterClass {
       private java.util.List<ubii.devices.DeviceOuterClass.Device> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.devices.DeviceOuterClass.Device>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -2450,7 +2548,7 @@ public final class DeviceOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -2460,7 +2558,7 @@ public final class DeviceOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2540,19 +2638,11 @@ public final class DeviceOuterClass {
       "t\022&\n\010elements\030\001 \003(\0132\024.ubii.devices.Devic" +
       "eb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.devices.ComponentOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_devices_Device_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_devices_Device_fieldAccessorTable = new

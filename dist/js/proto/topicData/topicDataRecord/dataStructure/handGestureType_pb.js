@@ -1,3 +1,4 @@
+// source: proto/topicData/topicDataRecord/dataStructure/handGestureType.proto
 /**
  * @fileoverview
  * @enhanceable

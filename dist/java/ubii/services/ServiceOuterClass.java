@@ -20,59 +20,73 @@ public final class ServiceOuterClass {
 
     /**
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
      * <code>string request_message_format = 2;</code>
+     * @return The requestMessageFormat.
      */
     java.lang.String getRequestMessageFormat();
     /**
      * <code>string request_message_format = 2;</code>
+     * @return The bytes for requestMessageFormat.
      */
     com.google.protobuf.ByteString
         getRequestMessageFormatBytes();
 
     /**
      * <code>string response_message_format = 3;</code>
+     * @return The responseMessageFormat.
      */
     java.lang.String getResponseMessageFormat();
     /**
      * <code>string response_message_format = 3;</code>
+     * @return The bytes for responseMessageFormat.
      */
     com.google.protobuf.ByteString
         getResponseMessageFormatBytes();
 
     /**
      * <code>repeated string tags = 4;</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 4;</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 5;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 5;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -95,6 +109,13 @@ public final class ServiceOuterClass {
       responseMessageFormat_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Service();
     }
 
     @java.lang.Override
@@ -141,9 +162,9 @@ public final class ServiceOuterClass {
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               tags_.add(s);
               break;
@@ -155,7 +176,7 @@ public final class ServiceOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -169,7 +190,7 @@ public final class ServiceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -189,11 +210,11 @@ public final class ServiceOuterClass {
               ubii.services.ServiceOuterClass.Service.class, ubii.services.ServiceOuterClass.Service.Builder.class);
     }
 
-    private int bitField0_;
     public static final int TOPIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object topic_;
     /**
      * <code>string topic = 1;</code>
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -209,6 +230,7 @@ public final class ServiceOuterClass {
     }
     /**
      * <code>string topic = 1;</code>
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -228,6 +250,7 @@ public final class ServiceOuterClass {
     private volatile java.lang.Object requestMessageFormat_;
     /**
      * <code>string request_message_format = 2;</code>
+     * @return The requestMessageFormat.
      */
     public java.lang.String getRequestMessageFormat() {
       java.lang.Object ref = requestMessageFormat_;
@@ -243,6 +266,7 @@ public final class ServiceOuterClass {
     }
     /**
      * <code>string request_message_format = 2;</code>
+     * @return The bytes for requestMessageFormat.
      */
     public com.google.protobuf.ByteString
         getRequestMessageFormatBytes() {
@@ -262,6 +286,7 @@ public final class ServiceOuterClass {
     private volatile java.lang.Object responseMessageFormat_;
     /**
      * <code>string response_message_format = 3;</code>
+     * @return The responseMessageFormat.
      */
     public java.lang.String getResponseMessageFormat() {
       java.lang.Object ref = responseMessageFormat_;
@@ -277,6 +302,7 @@ public final class ServiceOuterClass {
     }
     /**
      * <code>string response_message_format = 3;</code>
+     * @return The bytes for responseMessageFormat.
      */
     public com.google.protobuf.ByteString
         getResponseMessageFormatBytes() {
@@ -296,6 +322,7 @@ public final class ServiceOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 4;</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -303,18 +330,23 @@ public final class ServiceOuterClass {
     }
     /**
      * <code>repeated string tags = 4;</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -325,6 +357,7 @@ public final class ServiceOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 5;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -340,6 +373,7 @@ public final class ServiceOuterClass {
     }
     /**
      * <code>string description = 5;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -428,19 +462,18 @@ public final class ServiceOuterClass {
       }
       ubii.services.ServiceOuterClass.Service other = (ubii.services.ServiceOuterClass.Service) obj;
 
-      boolean result = true;
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && getRequestMessageFormat()
-          .equals(other.getRequestMessageFormat());
-      result = result && getResponseMessageFormat()
-          .equals(other.getResponseMessageFormat());
-      result = result && getTagsList()
-          .equals(other.getTagsList());
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getTopic()
+          .equals(other.getTopic())) return false;
+      if (!getRequestMessageFormat()
+          .equals(other.getRequestMessageFormat())) return false;
+      if (!getResponseMessageFormat()
+          .equals(other.getResponseMessageFormat())) return false;
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -602,7 +635,7 @@ public final class ServiceOuterClass {
         responseMessageFormat_ = "";
 
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         description_ = "";
 
         return this;
@@ -632,52 +665,50 @@ public final class ServiceOuterClass {
       public ubii.services.ServiceOuterClass.Service buildPartial() {
         ubii.services.ServiceOuterClass.Service result = new ubii.services.ServiceOuterClass.Service(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.topic_ = topic_;
         result.requestMessageFormat_ = requestMessageFormat_;
         result.responseMessageFormat_ = responseMessageFormat_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tags_ = tags_;
         result.description_ = description_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -706,7 +737,7 @@ public final class ServiceOuterClass {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -750,6 +781,7 @@ public final class ServiceOuterClass {
       private java.lang.Object topic_ = "";
       /**
        * <code>string topic = 1;</code>
+       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -765,6 +797,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -781,6 +814,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -794,6 +829,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
         
@@ -803,6 +839,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -819,6 +857,7 @@ public final class ServiceOuterClass {
       private java.lang.Object requestMessageFormat_ = "";
       /**
        * <code>string request_message_format = 2;</code>
+       * @return The requestMessageFormat.
        */
       public java.lang.String getRequestMessageFormat() {
         java.lang.Object ref = requestMessageFormat_;
@@ -834,6 +873,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string request_message_format = 2;</code>
+       * @return The bytes for requestMessageFormat.
        */
       public com.google.protobuf.ByteString
           getRequestMessageFormatBytes() {
@@ -850,6 +890,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string request_message_format = 2;</code>
+       * @param value The requestMessageFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setRequestMessageFormat(
           java.lang.String value) {
@@ -863,6 +905,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string request_message_format = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRequestMessageFormat() {
         
@@ -872,6 +915,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string request_message_format = 2;</code>
+       * @param value The bytes for requestMessageFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setRequestMessageFormatBytes(
           com.google.protobuf.ByteString value) {
@@ -888,6 +933,7 @@ public final class ServiceOuterClass {
       private java.lang.Object responseMessageFormat_ = "";
       /**
        * <code>string response_message_format = 3;</code>
+       * @return The responseMessageFormat.
        */
       public java.lang.String getResponseMessageFormat() {
         java.lang.Object ref = responseMessageFormat_;
@@ -903,6 +949,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string response_message_format = 3;</code>
+       * @return The bytes for responseMessageFormat.
        */
       public com.google.protobuf.ByteString
           getResponseMessageFormatBytes() {
@@ -919,6 +966,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string response_message_format = 3;</code>
+       * @param value The responseMessageFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setResponseMessageFormat(
           java.lang.String value) {
@@ -932,6 +981,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string response_message_format = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearResponseMessageFormat() {
         
@@ -941,6 +991,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string response_message_format = 3;</code>
+       * @param value The bytes for responseMessageFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setResponseMessageFormatBytes(
           com.google.protobuf.ByteString value) {
@@ -956,13 +1008,14 @@ public final class ServiceOuterClass {
 
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -970,18 +1023,23 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -989,6 +1047,9 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1002,6 +1063,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1015,6 +1078,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1026,15 +1091,18 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 4;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -1051,6 +1119,7 @@ public final class ServiceOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 5;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -1066,6 +1135,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string description = 5;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -1082,6 +1152,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string description = 5;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -1095,6 +1167,7 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string description = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -1104,6 +1177,8 @@ public final class ServiceOuterClass {
       }
       /**
        * <code>string description = 5;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -1119,7 +1194,7 @@ public final class ServiceOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1214,6 +1289,13 @@ public final class ServiceOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ServiceList();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1238,7 +1320,7 @@ public final class ServiceOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 elements_ = new java.util.ArrayList<ubii.services.ServiceOuterClass.Service>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -1247,7 +1329,7 @@ public final class ServiceOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1261,7 +1343,7 @@ public final class ServiceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
@@ -1361,11 +1443,10 @@ public final class ServiceOuterClass {
       }
       ubii.services.ServiceOuterClass.ServiceList other = (ubii.services.ServiceOuterClass.ServiceList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1547,7 +1628,7 @@ public final class ServiceOuterClass {
         ubii.services.ServiceOuterClass.ServiceList result = new ubii.services.ServiceOuterClass.ServiceList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1561,35 +1642,35 @@ public final class ServiceOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1662,7 +1743,7 @@ public final class ServiceOuterClass {
       private java.util.List<ubii.services.ServiceOuterClass.Service> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.services.ServiceOuterClass.Service>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1891,7 +1972,7 @@ public final class ServiceOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.services.ServiceOuterClass.Service, ubii.services.ServiceOuterClass.Service.Builder, ubii.services.ServiceOuterClass.ServiceOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -1901,7 +1982,7 @@ public final class ServiceOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1977,18 +2058,10 @@ public final class ServiceOuterClass {
       "ption\030\005 \001(\t\"7\n\013ServiceList\022(\n\010elements\030\001" +
       " \003(\0132\026.ubii.services.Serviceb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_services_Service_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_services_Service_fieldAccessorTable = new

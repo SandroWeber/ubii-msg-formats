@@ -5,110 +5,80 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
+#include <google/protobuf/port_def.inc>
 namespace ubii {
 namespace interactions {
 class IOFormatDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<IOFormat>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<IOFormat> _instance;
 } _IOFormat_default_instance_;
 }  // namespace interactions
 }  // namespace ubii
-namespace protobuf_proto_2finteractions_2fioFormat_2eproto {
-static void InitDefaultsIOFormat() {
+static void InitDefaultsscc_info_IOFormat_proto_2finteractions_2fioFormat_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::interactions::_IOFormat_default_instance_;
     new (ptr) ::ubii::interactions::IOFormat();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::interactions::IOFormat::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_IOFormat =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsIOFormat}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IOFormat_proto_2finteractions_2fioFormat_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_IOFormat_proto_2finteractions_2fioFormat_2eproto}, {}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_IOFormat.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2finteractions_2fioFormat_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2finteractions_2fioFormat_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2finteractions_2fioFormat_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[1];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2finteractions_2fioFormat_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::IOFormat, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::interactions::IOFormat, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::IOFormat, internal_name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::interactions::IOFormat, message_format_),
+  PROTOBUF_FIELD_OFFSET(::ubii::interactions::IOFormat, internal_name_),
+  PROTOBUF_FIELD_OFFSET(::ubii::interactions::IOFormat, message_format_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::interactions::IOFormat)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::interactions::_IOFormat_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::interactions::_IOFormat_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/interactions/ioFormat.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_proto_2finteractions_2fioFormat_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n!proto/interactions/ioFormat.proto\022\021ubi"
+  "i.interactions\"9\n\010IOFormat\022\025\n\rinternal_n"
+  "ame\030\001 \001(\t\022\026\n\016message_format\030\002 \001(\tb\006proto"
+  "3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2finteractions_2fioFormat_2eproto_deps[1] = {
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2finteractions_2fioFormat_2eproto_sccs[1] = {
+  &scc_info_IOFormat_proto_2finteractions_2fioFormat_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2finteractions_2fioFormat_2eproto_once;
+static bool descriptor_table_proto_2finteractions_2fioFormat_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2finteractions_2fioFormat_2eproto = {
+  &descriptor_table_proto_2finteractions_2fioFormat_2eproto_initialized, descriptor_table_protodef_proto_2finteractions_2fioFormat_2eproto, "proto/interactions/ioFormat.proto", 121,
+  &descriptor_table_proto_2finteractions_2fioFormat_2eproto_once, descriptor_table_proto_2finteractions_2fioFormat_2eproto_sccs, descriptor_table_proto_2finteractions_2fioFormat_2eproto_deps, 1, 0,
+  schemas, file_default_instances, TableStruct_proto_2finteractions_2fioFormat_2eproto::offsets,
+  file_level_metadata_proto_2finteractions_2fioFormat_2eproto, 1, file_level_enum_descriptors_proto_2finteractions_2fioFormat_2eproto, file_level_service_descriptors_proto_2finteractions_2fioFormat_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n!proto/interactions/ioFormat.proto\022\021ubi"
-      "i.interactions\"9\n\010IOFormat\022\025\n\rinternal_n"
-      "ame\030\001 \001(\t\022\026\n\016message_format\030\002 \001(\tb\006proto"
-      "3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 121);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/interactions/ioFormat.proto", &protobuf_RegisterTypes);
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2finteractions_2fioFormat_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2finteractions_2fioFormat_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2finteractions_2fioFormat_2eproto), true);
 namespace ubii {
 namespace interactions {
 
@@ -116,36 +86,34 @@ namespace interactions {
 
 void IOFormat::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int IOFormat::kInternalNameFieldNumber;
-const int IOFormat::kMessageFormatFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class IOFormat::_Internal {
+ public:
+};
 
 IOFormat::IOFormat()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2finteractions_2fioFormat_2eproto::scc_info_IOFormat.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.interactions.IOFormat)
 }
 IOFormat::IOFormat(const IOFormat& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  internal_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.internal_name().size() > 0) {
-    internal_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.internal_name_);
+  internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_internal_name().empty()) {
+    internal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.internal_name_);
   }
-  message_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.message_format().size() > 0) {
-    message_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_format_);
+  message_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_message_format().empty()) {
+    message_format_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_format_);
   }
   // @@protoc_insertion_point(copy_constructor:ubii.interactions.IOFormat)
 }
 
 void IOFormat::SharedCtor() {
-  internal_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  message_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_IOFormat_proto_2finteractions_2fioFormat_2eproto.base);
+  internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 IOFormat::~IOFormat() {
@@ -154,162 +122,100 @@ IOFormat::~IOFormat() {
 }
 
 void IOFormat::SharedDtor() {
-  internal_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  message_format_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  internal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_format_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void IOFormat::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* IOFormat::descriptor() {
-  ::protobuf_proto_2finteractions_2fioFormat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2finteractions_2fioFormat_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const IOFormat& IOFormat::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2finteractions_2fioFormat_2eproto::scc_info_IOFormat.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_IOFormat_proto_2finteractions_2fioFormat_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void IOFormat::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.interactions.IOFormat)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  internal_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  message_format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  internal_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_format_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
-bool IOFormat::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.interactions.IOFormat)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* IOFormat::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // string internal_name = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_internal_name()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->internal_name().data(), static_cast<int>(this->internal_name().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.interactions.IOFormat.internal_name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(_internal_mutable_internal_name(), ptr, ctx, "ubii.interactions.IOFormat.internal_name");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string message_format = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_message_format()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->message_format().data(), static_cast<int>(this->message_format().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.interactions.IOFormat.message_format"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(_internal_mutable_message_format(), ptr, ctx, "ubii.interactions.IOFormat.message_format");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.interactions.IOFormat)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.interactions.IOFormat)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void IOFormat::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.interactions.IOFormat)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string internal_name = 1;
-  if (this->internal_name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->internal_name().data(), static_cast<int>(this->internal_name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.interactions.IOFormat.internal_name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->internal_name(), output);
-  }
-
-  // string message_format = 2;
-  if (this->message_format().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->message_format().data(), static_cast<int>(this->message_format().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.interactions.IOFormat.message_format");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->message_format(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.interactions.IOFormat)
-}
-
-::google::protobuf::uint8* IOFormat::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* IOFormat::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.interactions.IOFormat)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string internal_name = 1;
   if (this->internal_name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->internal_name().data(), static_cast<int>(this->internal_name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_internal_name().data(), static_cast<int>(this->_internal_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.interactions.IOFormat.internal_name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->internal_name(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_internal_name(), target);
   }
 
   // string message_format = 2;
   if (this->message_format().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->message_format().data(), static_cast<int>(this->message_format().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message_format().data(), static_cast<int>(this->_internal_message_format().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.interactions.IOFormat.message_format");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->message_format(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message_format(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.interactions.IOFormat)
   return target;
@@ -319,39 +225,42 @@ size_t IOFormat::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.interactions.IOFormat)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string internal_name = 1;
   if (this->internal_name().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->internal_name());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_internal_name());
   }
 
   // string message_format = 2;
   if (this->message_format().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->message_format());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message_format());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void IOFormat::MergeFrom(const ::google::protobuf::Message& from) {
+void IOFormat::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.interactions.IOFormat)
   GOOGLE_DCHECK_NE(&from, this);
   const IOFormat* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const IOFormat>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IOFormat>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.interactions.IOFormat)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.interactions.IOFormat)
     MergeFrom(*source);
@@ -362,20 +271,20 @@ void IOFormat::MergeFrom(const IOFormat& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.interactions.IOFormat)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.internal_name().size() > 0) {
 
-    internal_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.internal_name_);
+    internal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.internal_name_);
   }
   if (from.message_format().size() > 0) {
 
-    message_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_format_);
+    message_format_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_format_);
   }
 }
 
-void IOFormat::CopyFrom(const ::google::protobuf::Message& from) {
+void IOFormat::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.interactions.IOFormat)
   if (&from == this) return;
   Clear();
@@ -393,34 +302,28 @@ bool IOFormat::IsInitialized() const {
   return true;
 }
 
-void IOFormat::Swap(IOFormat* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void IOFormat::InternalSwap(IOFormat* other) {
   using std::swap;
-  internal_name_.Swap(&other->internal_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  message_format_.Swap(&other->message_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  internal_name_.Swap(&other->internal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  message_format_.Swap(&other->message_format_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
-::google::protobuf::Metadata IOFormat::GetMetadata() const {
-  protobuf_proto_2finteractions_2fioFormat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2finteractions_2fioFormat_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata IOFormat::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace interactions
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::interactions::IOFormat* Arena::CreateMaybeMessage< ::ubii::interactions::IOFormat >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::interactions::IOFormat* Arena::CreateMaybeMessage< ::ubii::interactions::IOFormat >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::interactions::IOFormat >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

@@ -20,30 +20,36 @@ public final class InteractionOutputMappingOuterClass {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>string topic = 2;</code>
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
      * <code>string topic = 2;</code>
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+     * @return Whether the topicDemux field is set.
      */
     boolean hasTopicDemux();
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+     * @return The topicDemux.
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux();
     /**
@@ -70,6 +76,13 @@ public final class InteractionOutputMappingOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InteractionOutputMapping();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -82,7 +95,6 @@ public final class InteractionOutputMappingOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -120,7 +132,7 @@ public final class InteractionOutputMappingOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -154,7 +166,8 @@ public final class InteractionOutputMappingOuterClass {
     private int topicDestinationCase_ = 0;
     private java.lang.Object topicDestination_;
     public enum TopicDestinationCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       TOPIC(2),
       TOPIC_DEMUX(3),
       TOPICDESTINATION_NOT_SET(0);
@@ -163,6 +176,8 @@ public final class InteractionOutputMappingOuterClass {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -193,6 +208,7 @@ public final class InteractionOutputMappingOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -208,6 +224,7 @@ public final class InteractionOutputMappingOuterClass {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -226,6 +243,7 @@ public final class InteractionOutputMappingOuterClass {
     public static final int TOPIC_FIELD_NUMBER = 2;
     /**
      * <code>string topic = 2;</code>
+     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = "";
@@ -246,6 +264,7 @@ public final class InteractionOutputMappingOuterClass {
     }
     /**
      * <code>string topic = 2;</code>
+     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -269,12 +288,14 @@ public final class InteractionOutputMappingOuterClass {
     public static final int TOPIC_DEMUX_FIELD_NUMBER = 3;
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+     * @return Whether the topicDemux field is set.
      */
     public boolean hasTopicDemux() {
       return topicDestinationCase_ == 3;
     }
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+     * @return The topicDemux.
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
       if (topicDestinationCase_ == 3) {
@@ -349,26 +370,23 @@ public final class InteractionOutputMappingOuterClass {
       }
       ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping other = (ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getTopicDestinationCase().equals(
-          other.getTopicDestinationCase());
-      if (!result) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getTopicDestinationCase().equals(other.getTopicDestinationCase())) return false;
       switch (topicDestinationCase_) {
         case 2:
-          result = result && getTopic()
-              .equals(other.getTopic());
+          if (!getTopic()
+              .equals(other.getTopic())) return false;
           break;
         case 3:
-          result = result && getTopicDemux()
-              .equals(other.getTopicDemux());
+          if (!getTopicDemux()
+              .equals(other.getTopicDemux())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -573,35 +591,35 @@ public final class InteractionOutputMappingOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -681,6 +699,7 @@ public final class InteractionOutputMappingOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -696,6 +715,7 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -712,6 +732,8 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -725,6 +747,7 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -734,6 +757,8 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -749,6 +774,7 @@ public final class InteractionOutputMappingOuterClass {
 
       /**
        * <code>string topic = 2;</code>
+       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = "";
@@ -769,6 +795,7 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string topic = 2;</code>
+       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -790,6 +817,8 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string topic = 2;</code>
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -803,6 +832,7 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string topic = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
         if (topicDestinationCase_ == 2) {
@@ -814,6 +844,8 @@ public final class InteractionOutputMappingOuterClass {
       }
       /**
        * <code>string topic = 2;</code>
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -831,12 +863,14 @@ public final class InteractionOutputMappingOuterClass {
           ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> topicDemuxBuilder_;
       /**
        * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * @return Whether the topicDemux field is set.
        */
       public boolean hasTopicDemux() {
         return topicDestinationCase_ == 3;
       }
       /**
        * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * @return The topicDemux.
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
         if (topicDemuxBuilder_ == null) {
@@ -965,7 +999,7 @@ public final class InteractionOutputMappingOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1060,6 +1094,13 @@ public final class InteractionOutputMappingOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InteractionOutputMappingList();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1084,7 +1125,7 @@ public final class InteractionOutputMappingOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 elements_ = new java.util.ArrayList<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -1093,7 +1134,7 @@ public final class InteractionOutputMappingOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1107,7 +1148,7 @@ public final class InteractionOutputMappingOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
@@ -1207,11 +1248,10 @@ public final class InteractionOutputMappingOuterClass {
       }
       ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingList other = (ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1393,7 +1433,7 @@ public final class InteractionOutputMappingOuterClass {
         ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingList result = new ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1407,35 +1447,35 @@ public final class InteractionOutputMappingOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1508,7 +1548,7 @@ public final class InteractionOutputMappingOuterClass {
       private java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1737,7 +1777,7 @@ public final class InteractionOutputMappingOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -1747,7 +1787,7 @@ public final class InteractionOutputMappingOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1826,19 +1866,11 @@ public final class InteractionOutputMappingOuterClass {
       ".sessions.InteractionOutputMappingb\006prot" +
       "o3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.devices.TopicDemuxOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_sessions_InteractionOutputMapping_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_sessions_InteractionOutputMapping_fieldAccessorTable = new
