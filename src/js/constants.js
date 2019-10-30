@@ -26,6 +26,7 @@ const DEFAULT_TOPICS = {
     INTERACTION_REGISTRATION: '/services/interaction/registration',
     INTERACTION_DATABASE_GET: '/services/interaction/database/get',
     INTERACTION_DATABASE_GET_LIST: '/services/interaction/database/get_list',
+    INTERACTION_ONLINE_DATABASE_GET_LIST: '/services/interaction/online_database/get_list',
     INTERACTION_REPLACE: '/services/interaction/replace',
     INTERACTION_DELETE: '/services/interaction/delete',
     SERVER_CONFIG: '/services/server_configuration',
