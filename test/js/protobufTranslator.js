@@ -1,6 +1,13 @@
 import test from 'ava';
 
-const {ProtobufTranslator, MSG_TYPES, DEFAULT_TOPICS} = require('../../src/js/index');
+import fs from 'fs';
+import path from 'path';
+
+let constants = JSON.parse(fs.readFileSync(path.join(__dirname, '../../dist/constants.json')));
+let MSG_TYPES = constants.MSG_TYPES;
+let DEFAULT_TOPICS = constants.DEFAULT_TOPICS;
+
+const { ProtobufTranslator } = require('../../src/js/index');
 
 /* run tests */
 
@@ -17,12 +24,12 @@ test.beforeEach(t => {
     name: 'interaction name',
     processingCallback: '() => {};',
     inputFormats: [
-      {internalName: 'internal_input_1', messageFormat: 'ubii.message.format.1'},
-      {internalName: 'internal_input_2', messageFormat: 'ubii.message.format.2'}
+      { internalName: 'internal_input_1', messageFormat: 'ubii.message.format.1' },
+      { internalName: 'internal_input_2', messageFormat: 'ubii.message.format.2' }
     ],
     outputFormats: [
-      {internalName: 'internal_output_1', messageFormat: 'ubii.message.format.3'},
-      {internalName: 'internal_output_2', messageFormat: 'ubii.message.format.4'}
+      { internalName: 'internal_output_1', messageFormat: 'ubii.message.format.3' },
+      { internalName: 'internal_output_2', messageFormat: 'ubii.message.format.4' }
     ]
   };
 
@@ -32,7 +39,7 @@ test.beforeEach(t => {
       validPayload: {
         title: 'title',
         message: 'message',
-        stack: 'stack',
+        stack: 'stack'
       }
     },
     {
@@ -72,7 +79,7 @@ test.beforeEach(t => {
       },
       oneofTypeExpected: 'topicDataRecord'
     }
-  ]
+  ];
 });
 
 test('constructor() - defined format', t => {
@@ -87,7 +94,7 @@ test('constructor() - undefined format', t => {
 });
 
 test('createBufferFromMessage() -> createMessageFromBuffer()', t => {
-  t.context.messages.forEach((msg) => {
+  t.context.messages.forEach(msg => {
     let translator = new ProtobufTranslator(msg.type);
     let message = translator.createMessageFromPayload(msg.validPayload);
     if (msg.oneofTypeExpected) {
@@ -104,11 +111,11 @@ test('createBufferFromMessage() -> createMessageFromBuffer()', t => {
     });
 
     t.deepEqual(JSON.stringify(decodedMessage), JSON.stringify(message));
-  })
+  });
 });
 
 test('createBufferFromPayload() -> createPayloadFromBuffer()', t => {
-  t.context.messages.forEach((msg) => {
+  t.context.messages.forEach(msg => {
     let translator = new ProtobufTranslator(msg.type);
 
     t.notThrows(() => {
@@ -117,5 +124,5 @@ test('createBufferFromPayload() -> createPayloadFromBuffer()', t => {
 
       t.deepEqual(payload, msg.validPayload);
     });
-  })
+  });
 });
