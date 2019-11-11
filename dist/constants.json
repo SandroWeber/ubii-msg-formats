@@ -60,5 +60,20 @@
       "DELETE_SESSION": "/info/session/delete",
       "CHANGE_SESSION": "/info/session/change"
     }
+  },
+  "MSG_TYPES": {
+    "ERROR": "ubii.general.Error",
+    "SUCCESS": "ubii.general.Success",
+    "CLIENT": "ubii.clients.Client",
+    "DEVICE": "ubii.devices.Device",
+    "TOPIC_MUX": "ubii.devices.TopicMux",
+    "TOPIC_MUX_LIST": "ubii.devices.TopicMuxList",
+    "TOPIC_DEMUX": "ubii.devices.TopicDemux",
+    "TOPIC_DEMUX_LIST": "ubii.devices.TopicDemuxList",
+    "INTERACTION": "ubii.interactions.Interaction",
+    "SERVICE_REQUEST": "ubii.services.ServiceRequest",
+    "SERVICE_REPLY": "ubii.services.ServiceReply",
+    "SESSION": "ubii.sessions.Session",
+    "TOPIC_DATA": "ubii.topicData.TopicData"
   }
 }
