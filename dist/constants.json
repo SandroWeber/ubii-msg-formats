@@ -1,9 +1,12 @@
 {
   "DEFAULT_TOPICS": {
     "SERVICES": {
+      "SERVER_CONFIG": "/services/server_configuration",
+
       "CLIENT_REGISTRATION": "/services/client/registration",
       "CLIENT_DEREGISTRATION": "/services/client/deregistration",
       "CLIENT_GET_LIST": "/services/client/get_list",
+
       "DEVICE_REGISTRATION": "/services/device/registration",
       "DEVICE_DEREGISTRATION": "/services/device/deregistration",
       "DEVICE_GET_LIST": "/services/device/get_list",
@@ -15,7 +18,6 @@
       "INTERACTION_ONLINE_DATABASE_GET_LIST": "/services/interaction/database/online/get_list",
       "INTERACTION_REPLACE": "/services/interaction/replace",
       "INTERACTION_DELETE": "/services/interaction/delete",
-      "SERVER_CONFIG": "/services/server_configuration",
 
       "SESSION_REGISTRATION": "/services/session/registration",
       "SESSION_RUNTIME_GET": "/services/session/runtime/get",
@@ -52,7 +54,11 @@
     },
     "INFO_TOPICS": {
       "NEW_INTERACTION": "/info/interaction/new",
-      "NEW_SESSION": "/info/session/new"
+      "DELETE_INTERACTION": "/info/interaction/delete",
+      "CHANGE_INTERACTION": "/info/interaction/change",
+      "NEW_SESSION": "/info/session/new",
+      "DELETE_SESSION": "/info/session/delete",
+      "CHANGE_SESSION": "/info/session/change"
     }
   }
 }
