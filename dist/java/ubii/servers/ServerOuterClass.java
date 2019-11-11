@@ -113,6 +113,18 @@ public final class ServerOuterClass {
      */
     com.google.protobuf.ByteString
         getPortTopicDataWsBytes();
+
+    /**
+     * <code>string constants_json = 9;</code>
+     * @return The constantsJson.
+     */
+    java.lang.String getConstantsJson();
+    /**
+     * <code>string constants_json = 9;</code>
+     * @return The bytes for constantsJson.
+     */
+    com.google.protobuf.ByteString
+        getConstantsJsonBytes();
   }
   /**
    * Protobuf type {@code ubii.servers.Server}
@@ -135,6 +147,7 @@ public final class ServerOuterClass {
       portServiceRest_ = "";
       portTopicDataZmq_ = "";
       portTopicDataWs_ = "";
+      constantsJson_ = "";
     }
 
     @java.lang.Override
@@ -213,6 +226,12 @@ public final class ServerOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               portTopicDataWs_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              constantsJson_ = s;
               break;
             }
             default: {
@@ -535,6 +554,42 @@ public final class ServerOuterClass {
       }
     }
 
+    public static final int CONSTANTS_JSON_FIELD_NUMBER = 9;
+    private volatile java.lang.Object constantsJson_;
+    /**
+     * <code>string constants_json = 9;</code>
+     * @return The constantsJson.
+     */
+    public java.lang.String getConstantsJson() {
+      java.lang.Object ref = constantsJson_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        constantsJson_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string constants_json = 9;</code>
+     * @return The bytes for constantsJson.
+     */
+    public com.google.protobuf.ByteString
+        getConstantsJsonBytes() {
+      java.lang.Object ref = constantsJson_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        constantsJson_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -573,6 +628,9 @@ public final class ServerOuterClass {
       if (!getPortTopicDataWsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, portTopicDataWs_);
       }
+      if (!getConstantsJsonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, constantsJson_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -606,6 +664,9 @@ public final class ServerOuterClass {
       if (!getPortTopicDataWsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, portTopicDataWs_);
       }
+      if (!getConstantsJsonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, constantsJson_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -637,6 +698,8 @@ public final class ServerOuterClass {
           .equals(other.getPortTopicDataZmq())) return false;
       if (!getPortTopicDataWs()
           .equals(other.getPortTopicDataWs())) return false;
+      if (!getConstantsJson()
+          .equals(other.getConstantsJson())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -664,6 +727,8 @@ public final class ServerOuterClass {
       hash = (53 * hash) + getPortTopicDataZmq().hashCode();
       hash = (37 * hash) + PORT_TOPIC_DATA_WS_FIELD_NUMBER;
       hash = (53 * hash) + getPortTopicDataWs().hashCode();
+      hash = (37 * hash) + CONSTANTS_JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getConstantsJson().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -813,6 +878,8 @@ public final class ServerOuterClass {
 
         portTopicDataWs_ = "";
 
+        constantsJson_ = "";
+
         return this;
       }
 
@@ -847,6 +914,7 @@ public final class ServerOuterClass {
         result.portServiceRest_ = portServiceRest_;
         result.portTopicDataZmq_ = portTopicDataZmq_;
         result.portTopicDataWs_ = portTopicDataWs_;
+        result.constantsJson_ = constantsJson_;
         onBuilt();
         return result;
       }
@@ -925,6 +993,10 @@ public final class ServerOuterClass {
         }
         if (!other.getPortTopicDataWs().isEmpty()) {
           portTopicDataWs_ = other.portTopicDataWs_;
+          onChanged();
+        }
+        if (!other.getConstantsJson().isEmpty()) {
+          constantsJson_ = other.constantsJson_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1563,6 +1635,82 @@ public final class ServerOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object constantsJson_ = "";
+      /**
+       * <code>string constants_json = 9;</code>
+       * @return The constantsJson.
+       */
+      public java.lang.String getConstantsJson() {
+        java.lang.Object ref = constantsJson_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          constantsJson_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string constants_json = 9;</code>
+       * @return The bytes for constantsJson.
+       */
+      public com.google.protobuf.ByteString
+          getConstantsJsonBytes() {
+        java.lang.Object ref = constantsJson_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          constantsJson_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string constants_json = 9;</code>
+       * @param value The constantsJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConstantsJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        constantsJson_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string constants_json = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConstantsJson() {
+        
+        constantsJson_ = getDefaultInstance().getConstantsJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string constants_json = 9;</code>
+       * @param value The bytes for constantsJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConstantsJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        constantsJson_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1631,11 +1779,12 @@ public final class ServerOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032proto/servers/server.proto\022\014ubii.serve" +
-      "rs\"\266\001\n\006Server\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022" +
+      "rs\"\316\001\n\006Server\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022" +
       "\023\n\013ip_ethernet\030\003 \001(\t\022\017\n\007ip_wlan\030\004 \001(\t\022\030\n" +
       "\020port_service_zmq\030\005 \001(\t\022\031\n\021port_service_" +
       "rest\030\006 \001(\t\022\033\n\023port_topic_data_zmq\030\007 \001(\t\022" +
-      "\032\n\022port_topic_data_ws\030\010 \001(\tb\006proto3"
+      "\032\n\022port_topic_data_ws\030\010 \001(\t\022\026\n\016constants" +
+      "_json\030\t \001(\tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1646,7 +1795,7 @@ public final class ServerOuterClass {
     internal_static_ubii_servers_Server_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_servers_Server_descriptor,
-        new java.lang.String[] { "Id", "Name", "IpEthernet", "IpWlan", "PortServiceZmq", "PortServiceRest", "PortTopicDataZmq", "PortTopicDataWs", });
+        new java.lang.String[] { "Id", "Name", "IpEthernet", "IpWlan", "PortServiceZmq", "PortServiceRest", "PortTopicDataZmq", "PortTopicDataWs", "ConstantsJson", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

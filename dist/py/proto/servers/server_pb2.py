@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.servers',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1aproto/servers/server.proto\x12\x0cubii.servers\"\xb6\x01\n\x06Server\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bip_ethernet\x18\x03 \x01(\t\x12\x0f\n\x07ip_wlan\x18\x04 \x01(\t\x12\x18\n\x10port_service_zmq\x18\x05 \x01(\t\x12\x19\n\x11port_service_rest\x18\x06 \x01(\t\x12\x1b\n\x13port_topic_data_zmq\x18\x07 \x01(\t\x12\x1a\n\x12port_topic_data_ws\x18\x08 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/servers/server.proto\x12\x0cubii.servers\"\xce\x01\n\x06Server\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bip_ethernet\x18\x03 \x01(\t\x12\x0f\n\x07ip_wlan\x18\x04 \x01(\t\x12\x18\n\x10port_service_zmq\x18\x05 \x01(\t\x12\x19\n\x11port_service_rest\x18\x06 \x01(\t\x12\x1b\n\x13port_topic_data_zmq\x18\x07 \x01(\t\x12\x1a\n\x12port_topic_data_ws\x18\x08 \x01(\t\x12\x16\n\x0e\x63onstants_json\x18\t \x01(\tb\x06proto3')
 )
 
 
@@ -89,6 +89,13 @@ _SERVER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='constants_json', full_name='ubii.servers.Server.constants_json', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -102,7 +109,7 @@ _SERVER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=45,
-  serialized_end=227,
+  serialized_end=251,
 )
 
 DESCRIPTOR.message_types_by_name['Server'] = _SERVER

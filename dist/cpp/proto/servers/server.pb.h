@@ -183,6 +183,7 @@ class Server :
     kPortServiceRestFieldNumber = 6,
     kPortTopicDataZmqFieldNumber = 7,
     kPortTopicDataWsFieldNumber = 8,
+    kConstantsJsonFieldNumber = 9,
   };
   // string id = 1;
   void clear_id();
@@ -312,6 +313,22 @@ class Server :
   std::string* _internal_mutable_port_topic_data_ws();
   public:
 
+  // string constants_json = 9;
+  void clear_constants_json();
+  const std::string& constants_json() const;
+  void set_constants_json(const std::string& value);
+  void set_constants_json(std::string&& value);
+  void set_constants_json(const char* value);
+  void set_constants_json(const char* value, size_t size);
+  std::string* mutable_constants_json();
+  std::string* release_constants_json();
+  void set_allocated_constants_json(std::string* constants_json);
+  private:
+  const std::string& _internal_constants_json() const;
+  void _internal_set_constants_json(const std::string& value);
+  std::string* _internal_mutable_constants_json();
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.servers.Server)
  private:
   class _Internal;
@@ -325,6 +342,7 @@ class Server :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_service_rest_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_topic_data_zmq_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_topic_data_ws_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr constants_json_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fservers_2fserver_2eproto;
 };
@@ -817,6 +835,66 @@ inline void Server::set_allocated_port_topic_data_ws(std::string* port_topic_dat
   }
   port_topic_data_ws_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), port_topic_data_ws);
   // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.port_topic_data_ws)
+}
+
+// string constants_json = 9;
+inline void Server::clear_constants_json() {
+  constants_json_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Server::constants_json() const {
+  // @@protoc_insertion_point(field_get:ubii.servers.Server.constants_json)
+  return _internal_constants_json();
+}
+inline void Server::set_constants_json(const std::string& value) {
+  _internal_set_constants_json(value);
+  // @@protoc_insertion_point(field_set:ubii.servers.Server.constants_json)
+}
+inline std::string* Server::mutable_constants_json() {
+  // @@protoc_insertion_point(field_mutable:ubii.servers.Server.constants_json)
+  return _internal_mutable_constants_json();
+}
+inline const std::string& Server::_internal_constants_json() const {
+  return constants_json_.GetNoArena();
+}
+inline void Server::_internal_set_constants_json(const std::string& value) {
+  
+  constants_json_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Server::set_constants_json(std::string&& value) {
+  
+  constants_json_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.servers.Server.constants_json)
+}
+inline void Server::set_constants_json(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  constants_json_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.servers.Server.constants_json)
+}
+inline void Server::set_constants_json(const char* value, size_t size) {
+  
+  constants_json_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.servers.Server.constants_json)
+}
+inline std::string* Server::_internal_mutable_constants_json() {
+  
+  return constants_json_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Server::release_constants_json() {
+  // @@protoc_insertion_point(field_release:ubii.servers.Server.constants_json)
+  
+  return constants_json_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Server::set_allocated_constants_json(std::string* constants_json) {
+  if (constants_json != nullptr) {
+    
+  } else {
+    
+  }
+  constants_json_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), constants_json);
+  // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.constants_json)
 }
 
 #ifdef __GNUC__

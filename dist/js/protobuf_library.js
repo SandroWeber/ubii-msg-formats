@@ -146,7 +146,8 @@ proto.ubii.servers.Server.toObject = function(includeInstance, msg) {
     portServiceZmq: jspb.Message.getFieldWithDefault(msg, 5, ""),
     portServiceRest: jspb.Message.getFieldWithDefault(msg, 6, ""),
     portTopicDataZmq: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    portTopicDataWs: jspb.Message.getFieldWithDefault(msg, 8, "")
+    portTopicDataWs: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    constantsJson: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -214,6 +215,10 @@ proto.ubii.servers.Server.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setPortTopicDataWs(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConstantsJson(value);
       break;
     default:
       reader.skipField();
@@ -297,6 +302,13 @@ proto.ubii.servers.Server.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getConstantsJson();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -444,6 +456,24 @@ proto.ubii.servers.Server.prototype.getPortTopicDataWs = function() {
  */
 proto.ubii.servers.Server.prototype.setPortTopicDataWs = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string constants_json = 9;
+ * @return {string}
+ */
+proto.ubii.servers.Server.prototype.getConstantsJson = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.servers.Server} returns this
+ */
+proto.ubii.servers.Server.prototype.setConstantsJson = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

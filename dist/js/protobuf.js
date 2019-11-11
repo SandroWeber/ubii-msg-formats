@@ -3879,6 +3879,7 @@ $root.ubii = (function() {
              * @property {string|null} [portServiceRest] Server portServiceRest
              * @property {string|null} [portTopicDataZmq] Server portTopicDataZmq
              * @property {string|null} [portTopicDataWs] Server portTopicDataWs
+             * @property {string|null} [constantsJson] Server constantsJson
              */
 
             /**
@@ -3961,6 +3962,14 @@ $root.ubii = (function() {
             Server.prototype.portTopicDataWs = "";
 
             /**
+             * Server constantsJson.
+             * @member {string} constantsJson
+             * @memberof ubii.servers.Server
+             * @instance
+             */
+            Server.prototype.constantsJson = "";
+
+            /**
              * Creates a new Server instance using the specified properties.
              * @function create
              * @memberof ubii.servers.Server
@@ -4000,6 +4009,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.portTopicDataZmq);
                 if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.portTopicDataWs);
+                if (message.constantsJson != null && message.hasOwnProperty("constantsJson"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.constantsJson);
                 return writer;
             };
 
@@ -4057,6 +4068,9 @@ $root.ubii = (function() {
                         break;
                     case 8:
                         message.portTopicDataWs = reader.string();
+                        break;
+                    case 9:
+                        message.constantsJson = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4117,6 +4131,9 @@ $root.ubii = (function() {
                 if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
                     if (!$util.isString(message.portTopicDataWs))
                         return "portTopicDataWs: string expected";
+                if (message.constantsJson != null && message.hasOwnProperty("constantsJson"))
+                    if (!$util.isString(message.constantsJson))
+                        return "constantsJson: string expected";
                 return null;
             };
 
@@ -4148,6 +4165,8 @@ $root.ubii = (function() {
                     message.portTopicDataZmq = String(object.portTopicDataZmq);
                 if (object.portTopicDataWs != null)
                     message.portTopicDataWs = String(object.portTopicDataWs);
+                if (object.constantsJson != null)
+                    message.constantsJson = String(object.constantsJson);
                 return message;
             };
 
@@ -4173,6 +4192,7 @@ $root.ubii = (function() {
                     object.portServiceRest = "";
                     object.portTopicDataZmq = "";
                     object.portTopicDataWs = "";
+                    object.constantsJson = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -4190,6 +4210,8 @@ $root.ubii = (function() {
                     object.portTopicDataZmq = message.portTopicDataZmq;
                 if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
                     object.portTopicDataWs = message.portTopicDataWs;
+                if (message.constantsJson != null && message.hasOwnProperty("constantsJson"))
+                    object.constantsJson = message.constantsJson;
                 return object;
             };
 
