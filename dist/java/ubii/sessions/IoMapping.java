@@ -20,12 +20,10 @@ public final class IoMapping {
 
     /**
      * <code>string interaction_id = 1;</code>
-     * @return The interactionId.
      */
     java.lang.String getInteractionId();
     /**
      * <code>string interaction_id = 1;</code>
-     * @return The bytes for interactionId.
      */
     com.google.protobuf.ByteString
         getInteractionIdBytes();
@@ -97,13 +95,6 @@ public final class IoMapping {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new IOMapping();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -134,25 +125,25 @@ public final class IoMapping {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 inputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               inputMappings_.add(
                   input.readMessage(ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.parser(), extensionRegistry));
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 outputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               outputMappings_.add(
                   input.readMessage(ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.parser(), extensionRegistry));
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -166,10 +157,10 @@ public final class IoMapping {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           inputMappings_ = java.util.Collections.unmodifiableList(inputMappings_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           outputMappings_ = java.util.Collections.unmodifiableList(outputMappings_);
         }
         this.unknownFields = unknownFields.build();
@@ -189,11 +180,11 @@ public final class IoMapping {
               ubii.sessions.IoMapping.IOMapping.class, ubii.sessions.IoMapping.IOMapping.Builder.class);
     }
 
+    private int bitField0_;
     public static final int INTERACTION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object interactionId_;
     /**
      * <code>string interaction_id = 1;</code>
-     * @return The interactionId.
      */
     public java.lang.String getInteractionId() {
       java.lang.Object ref = interactionId_;
@@ -209,7 +200,6 @@ public final class IoMapping {
     }
     /**
      * <code>string interaction_id = 1;</code>
-     * @return The bytes for interactionId.
      */
     public com.google.protobuf.ByteString
         getInteractionIdBytes() {
@@ -353,14 +343,15 @@ public final class IoMapping {
       }
       ubii.sessions.IoMapping.IOMapping other = (ubii.sessions.IoMapping.IOMapping) obj;
 
-      if (!getInteractionId()
-          .equals(other.getInteractionId())) return false;
-      if (!getInputMappingsList()
-          .equals(other.getInputMappingsList())) return false;
-      if (!getOutputMappingsList()
-          .equals(other.getOutputMappingsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getInteractionId()
+          .equals(other.getInteractionId());
+      result = result && getInputMappingsList()
+          .equals(other.getInputMappingsList());
+      result = result && getOutputMappingsList()
+          .equals(other.getOutputMappingsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -519,13 +510,13 @@ public final class IoMapping {
 
         if (inputMappingsBuilder_ == null) {
           inputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           inputMappingsBuilder_.clear();
         }
         if (outputMappingsBuilder_ == null) {
           outputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           outputMappingsBuilder_.clear();
         }
@@ -556,60 +547,62 @@ public final class IoMapping {
       public ubii.sessions.IoMapping.IOMapping buildPartial() {
         ubii.sessions.IoMapping.IOMapping result = new ubii.sessions.IoMapping.IOMapping(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.interactionId_ = interactionId_;
         if (inputMappingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             inputMappings_ = java.util.Collections.unmodifiableList(inputMappings_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.inputMappings_ = inputMappings_;
         } else {
           result.inputMappings_ = inputMappingsBuilder_.build();
         }
         if (outputMappingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             outputMappings_ = java.util.Collections.unmodifiableList(outputMappings_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.outputMappings_ = outputMappings_;
         } else {
           result.outputMappings_ = outputMappingsBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -631,7 +624,7 @@ public final class IoMapping {
           if (!other.inputMappings_.isEmpty()) {
             if (inputMappings_.isEmpty()) {
               inputMappings_ = other.inputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureInputMappingsIsMutable();
               inputMappings_.addAll(other.inputMappings_);
@@ -644,7 +637,7 @@ public final class IoMapping {
               inputMappingsBuilder_.dispose();
               inputMappingsBuilder_ = null;
               inputMappings_ = other.inputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               inputMappingsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInputMappingsFieldBuilder() : null;
@@ -657,7 +650,7 @@ public final class IoMapping {
           if (!other.outputMappings_.isEmpty()) {
             if (outputMappings_.isEmpty()) {
               outputMappings_ = other.outputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureOutputMappingsIsMutable();
               outputMappings_.addAll(other.outputMappings_);
@@ -670,7 +663,7 @@ public final class IoMapping {
               outputMappingsBuilder_.dispose();
               outputMappingsBuilder_ = null;
               outputMappings_ = other.outputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               outputMappingsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOutputMappingsFieldBuilder() : null;
@@ -712,7 +705,6 @@ public final class IoMapping {
       private java.lang.Object interactionId_ = "";
       /**
        * <code>string interaction_id = 1;</code>
-       * @return The interactionId.
        */
       public java.lang.String getInteractionId() {
         java.lang.Object ref = interactionId_;
@@ -728,7 +720,6 @@ public final class IoMapping {
       }
       /**
        * <code>string interaction_id = 1;</code>
-       * @return The bytes for interactionId.
        */
       public com.google.protobuf.ByteString
           getInteractionIdBytes() {
@@ -745,8 +736,6 @@ public final class IoMapping {
       }
       /**
        * <code>string interaction_id = 1;</code>
-       * @param value The interactionId to set.
-       * @return This builder for chaining.
        */
       public Builder setInteractionId(
           java.lang.String value) {
@@ -760,7 +749,6 @@ public final class IoMapping {
       }
       /**
        * <code>string interaction_id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearInteractionId() {
         
@@ -770,8 +758,6 @@ public final class IoMapping {
       }
       /**
        * <code>string interaction_id = 1;</code>
-       * @param value The bytes for interactionId to set.
-       * @return This builder for chaining.
        */
       public Builder setInteractionIdBytes(
           com.google.protobuf.ByteString value) {
@@ -788,9 +774,9 @@ public final class IoMapping {
       private java.util.List<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping> inputMappings_ =
         java.util.Collections.emptyList();
       private void ensureInputMappingsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           inputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping>(inputMappings_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -940,7 +926,7 @@ public final class IoMapping {
       public Builder clearInputMappings() {
         if (inputMappingsBuilder_ == null) {
           inputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           inputMappingsBuilder_.clear();
@@ -1017,7 +1003,7 @@ public final class IoMapping {
           inputMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMapping.Builder, ubii.sessions.InteractionInputMappingOuterClass.InteractionInputMappingOrBuilder>(
                   inputMappings_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           inputMappings_ = null;
@@ -1028,9 +1014,9 @@ public final class IoMapping {
       private java.util.List<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping> outputMappings_ =
         java.util.Collections.emptyList();
       private void ensureOutputMappingsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           outputMappings_ = new java.util.ArrayList<ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping>(outputMappings_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1180,7 +1166,7 @@ public final class IoMapping {
       public Builder clearOutputMappings() {
         if (outputMappingsBuilder_ == null) {
           outputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           outputMappingsBuilder_.clear();
@@ -1257,7 +1243,7 @@ public final class IoMapping {
           outputMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMapping.Builder, ubii.sessions.InteractionOutputMappingOuterClass.InteractionOutputMappingOrBuilder>(
                   outputMappings_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
           outputMappings_ = null;
@@ -1267,7 +1253,7 @@ public final class IoMapping {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1362,13 +1348,6 @@ public final class IoMapping {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new IOMappingList();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1393,7 +1372,7 @@ public final class IoMapping {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 elements_ = new java.util.ArrayList<ubii.sessions.IoMapping.IOMapping>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -1402,7 +1381,7 @@ public final class IoMapping {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1416,7 +1395,7 @@ public final class IoMapping {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
@@ -1516,10 +1495,11 @@ public final class IoMapping {
       }
       ubii.sessions.IoMapping.IOMappingList other = (ubii.sessions.IoMapping.IOMappingList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1701,7 +1681,7 @@ public final class IoMapping {
         ubii.sessions.IoMapping.IOMappingList result = new ubii.sessions.IoMapping.IOMappingList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1715,35 +1695,35 @@ public final class IoMapping {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1816,7 +1796,7 @@ public final class IoMapping {
       private java.util.List<ubii.sessions.IoMapping.IOMapping> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = new java.util.ArrayList<ubii.sessions.IoMapping.IOMapping>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -2045,7 +2025,7 @@ public final class IoMapping {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMapping.IOMapping, ubii.sessions.IoMapping.IOMapping.Builder, ubii.sessions.IoMapping.IOMappingOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -2055,7 +2035,7 @@ public final class IoMapping {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -2135,12 +2115,20 @@ public final class IoMapping {
       "gList\022*\n\010elements\030\001 \003(\0132\030.ubii.sessions." +
       "IOMappingb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.sessions.InteractionInputMappingOuterClass.getDescriptor(),
           ubii.sessions.InteractionOutputMappingOuterClass.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_sessions_IOMapping_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_sessions_IOMapping_fieldAccessorTable = new

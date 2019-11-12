@@ -1,4 +1,4 @@
-/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
+/*eslint-disable block-scoped-var, no-redeclare, no-control-regex, no-prototype-builtins*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
@@ -9176,6 +9176,8 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IBoolList|null} [boolList] TopicDataRecord boolList
              * @property {ubii.dataStructure.IImage2D|null} [image2D] TopicDataRecord image2D
              * @property {ubii.dataStructure.IImage2DList|null} [image2DList] TopicDataRecord image2DList
+             * @property {ubii.sessions.ISession|null} [session] TopicDataRecord session
+             * @property {ubii.interactions.IInteraction|null} [interaction] TopicDataRecord interaction
              */
 
             /**
@@ -9441,17 +9443,33 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.image2DList = null;
 
+            /**
+             * TopicDataRecord session.
+             * @member {ubii.sessions.ISession|null|undefined} session
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.session = null;
+
+            /**
+             * TopicDataRecord interaction.
+             * @member {ubii.interactions.IInteraction|null|undefined} interaction
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.interaction = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32"|"float"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32"|"float"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|"interaction"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32", "float", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32", "float", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList", "session", "interaction"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -9541,6 +9559,10 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Image2D.encode(message.image2D, writer.uint32(/* id 30, wireType 2 =*/242).fork()).ldelim();
                 if (message.image2DList != null && message.hasOwnProperty("image2DList"))
                     $root.ubii.dataStructure.Image2DList.encode(message.image2DList, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
+                if (message.session != null && message.hasOwnProperty("session"))
+                    $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
+                if (message.interaction != null && message.hasOwnProperty("interaction"))
+                    $root.ubii.interactions.Interaction.encode(message.interaction, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
                 return writer;
             };
 
@@ -9667,6 +9689,12 @@ $root.ubii = (function() {
                         break;
                     case 31:
                         message.image2DList = $root.ubii.dataStructure.Image2DList.decode(reader, reader.uint32());
+                        break;
+                    case 32:
+                        message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
+                        break;
+                    case 33:
+                        message.interaction = $root.ubii.interactions.Interaction.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9985,6 +10013,26 @@ $root.ubii = (function() {
                             return "image2DList." + error;
                     }
                 }
+                if (message.session != null && message.hasOwnProperty("session")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.sessions.Session.verify(message.session);
+                        if (error)
+                            return "session." + error;
+                    }
+                }
+                if (message.interaction != null && message.hasOwnProperty("interaction")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.interactions.Interaction.verify(message.interaction);
+                        if (error)
+                            return "interaction." + error;
+                    }
+                }
                 return null;
             };
 
@@ -10136,6 +10184,16 @@ $root.ubii = (function() {
                     if (typeof object.image2DList !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.image2DList: object expected");
                     message.image2DList = $root.ubii.dataStructure.Image2DList.fromObject(object.image2DList);
+                }
+                if (object.session != null) {
+                    if (typeof object.session !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.session: object expected");
+                    message.session = $root.ubii.sessions.Session.fromObject(object.session);
+                }
+                if (object.interaction != null) {
+                    if (typeof object.interaction !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.interaction: object expected");
+                    message.interaction = $root.ubii.interactions.Interaction.fromObject(object.interaction);
                 }
                 return message;
             };
@@ -10305,6 +10363,16 @@ $root.ubii = (function() {
                     object.image2DList = $root.ubii.dataStructure.Image2DList.toObject(message.image2DList, options);
                     if (options.oneofs)
                         object.type = "image2DList";
+                }
+                if (message.session != null && message.hasOwnProperty("session")) {
+                    object.session = $root.ubii.sessions.Session.toObject(message.session, options);
+                    if (options.oneofs)
+                        object.type = "session";
+                }
+                if (message.interaction != null && message.hasOwnProperty("interaction")) {
+                    object.interaction = $root.ubii.interactions.Interaction.toObject(message.interaction, options);
+                    if (options.oneofs)
+                        object.type = "interaction";
                 }
                 return object;
             };
@@ -11081,13 +11149,7 @@ $root.ubii = (function() {
                     object.width = 0;
                     object.height = 0;
                     object.dataFormat = options.enums === String ? "GRAY8" : 0;
-                    if (options.bytes === String)
-                        object.data = "";
-                    else {
-                        object.data = [];
-                        if (options.bytes !== Array)
-                            object.data = $util.newBuffer(object.data);
-                    }
+                    object.data = options.bytes === String ? "" : [];
                 }
                 if (message.width != null && message.hasOwnProperty("width"))
                     object.width = message.width;

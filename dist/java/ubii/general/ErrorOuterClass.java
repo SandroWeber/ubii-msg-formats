@@ -20,36 +20,30 @@ public final class ErrorOuterClass {
 
     /**
      * <code>string title = 1;</code>
-     * @return The title.
      */
     java.lang.String getTitle();
     /**
      * <code>string title = 1;</code>
-     * @return The bytes for title.
      */
     com.google.protobuf.ByteString
         getTitleBytes();
 
     /**
      * <code>string message = 2;</code>
-     * @return The message.
      */
     java.lang.String getMessage();
     /**
      * <code>string message = 2;</code>
-     * @return The bytes for message.
      */
     com.google.protobuf.ByteString
         getMessageBytes();
 
     /**
      * <code>string stack = 3;</code>
-     * @return The stack.
      */
     java.lang.String getStack();
     /**
      * <code>string stack = 3;</code>
-     * @return The bytes for stack.
      */
     com.google.protobuf.ByteString
         getStackBytes();
@@ -73,13 +67,6 @@ public final class ErrorOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Error();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -92,6 +79,7 @@ public final class ErrorOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -121,7 +109,7 @@ public final class ErrorOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -156,7 +144,6 @@ public final class ErrorOuterClass {
     private volatile java.lang.Object title_;
     /**
      * <code>string title = 1;</code>
-     * @return The title.
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -172,7 +159,6 @@ public final class ErrorOuterClass {
     }
     /**
      * <code>string title = 1;</code>
-     * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
         getTitleBytes() {
@@ -192,7 +178,6 @@ public final class ErrorOuterClass {
     private volatile java.lang.Object message_;
     /**
      * <code>string message = 2;</code>
-     * @return The message.
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -208,7 +193,6 @@ public final class ErrorOuterClass {
     }
     /**
      * <code>string message = 2;</code>
-     * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
@@ -228,7 +212,6 @@ public final class ErrorOuterClass {
     private volatile java.lang.Object stack_;
     /**
      * <code>string stack = 3;</code>
-     * @return The stack.
      */
     public java.lang.String getStack() {
       java.lang.Object ref = stack_;
@@ -244,7 +227,6 @@ public final class ErrorOuterClass {
     }
     /**
      * <code>string stack = 3;</code>
-     * @return The bytes for stack.
      */
     public com.google.protobuf.ByteString
         getStackBytes() {
@@ -316,14 +298,15 @@ public final class ErrorOuterClass {
       }
       ubii.general.ErrorOuterClass.Error other = (ubii.general.ErrorOuterClass.Error) obj;
 
-      if (!getTitle()
-          .equals(other.getTitle())) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
-      if (!getStack()
-          .equals(other.getStack())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getTitle()
+          .equals(other.getTitle());
+      result = result && getMessage()
+          .equals(other.getMessage());
+      result = result && getStack()
+          .equals(other.getStack());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -513,35 +496,35 @@ public final class ErrorOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -599,7 +582,6 @@ public final class ErrorOuterClass {
       private java.lang.Object title_ = "";
       /**
        * <code>string title = 1;</code>
-       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -615,7 +597,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string title = 1;</code>
-       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString
           getTitleBytes() {
@@ -632,8 +613,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string title = 1;</code>
-       * @param value The title to set.
-       * @return This builder for chaining.
        */
       public Builder setTitle(
           java.lang.String value) {
@@ -647,7 +626,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string title = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTitle() {
         
@@ -657,8 +635,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string title = 1;</code>
-       * @param value The bytes for title to set.
-       * @return This builder for chaining.
        */
       public Builder setTitleBytes(
           com.google.protobuf.ByteString value) {
@@ -675,7 +651,6 @@ public final class ErrorOuterClass {
       private java.lang.Object message_ = "";
       /**
        * <code>string message = 2;</code>
-       * @return The message.
        */
       public java.lang.String getMessage() {
         java.lang.Object ref = message_;
@@ -691,7 +666,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string message = 2;</code>
-       * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
@@ -708,8 +682,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string message = 2;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
        */
       public Builder setMessage(
           java.lang.String value) {
@@ -723,7 +695,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string message = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMessage() {
         
@@ -733,8 +704,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string message = 2;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
        */
       public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
@@ -751,7 +720,6 @@ public final class ErrorOuterClass {
       private java.lang.Object stack_ = "";
       /**
        * <code>string stack = 3;</code>
-       * @return The stack.
        */
       public java.lang.String getStack() {
         java.lang.Object ref = stack_;
@@ -767,7 +735,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string stack = 3;</code>
-       * @return The bytes for stack.
        */
       public com.google.protobuf.ByteString
           getStackBytes() {
@@ -784,8 +751,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string stack = 3;</code>
-       * @param value The stack to set.
-       * @return This builder for chaining.
        */
       public Builder setStack(
           java.lang.String value) {
@@ -799,7 +764,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string stack = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStack() {
         
@@ -809,8 +773,6 @@ public final class ErrorOuterClass {
       }
       /**
        * <code>string stack = 3;</code>
-       * @param value The bytes for stack to set.
-       * @return This builder for chaining.
        */
       public Builder setStackBytes(
           com.google.protobuf.ByteString value) {
@@ -826,7 +788,7 @@ public final class ErrorOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -894,10 +856,18 @@ public final class ErrorOuterClass {
       "l\"6\n\005Error\022\r\n\005title\030\001 \001(\t\022\017\n\007message\030\002 \001" +
       "(\t\022\r\n\005stack\030\003 \001(\tb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_ubii_general_Error_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_general_Error_fieldAccessorTable = new

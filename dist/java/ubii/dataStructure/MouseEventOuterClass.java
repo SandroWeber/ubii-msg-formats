@@ -20,18 +20,15 @@ public final class MouseEventOuterClass {
 
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The type.
      */
     ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType();
 
     /**
      * <code>int32 button = 2;</code>
-     * @return The button.
      */
     int getButton();
   }
@@ -49,13 +46,7 @@ public final class MouseEventOuterClass {
     }
     private MouseEvent() {
       type_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MouseEvent();
+      button_ = 0;
     }
 
     @java.lang.Override
@@ -71,6 +62,7 @@ public final class MouseEventOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -93,7 +85,7 @@ public final class MouseEventOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -128,14 +120,12 @@ public final class MouseEventOuterClass {
     private int type_;
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The type.
      */
     public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
       @SuppressWarnings("deprecation")
@@ -147,7 +137,6 @@ public final class MouseEventOuterClass {
     private int button_;
     /**
      * <code>int32 button = 2;</code>
-     * @return The button.
      */
     public int getButton() {
       return button_;
@@ -205,11 +194,12 @@ public final class MouseEventOuterClass {
       }
       ubii.dataStructure.MouseEventOuterClass.MouseEvent other = (ubii.dataStructure.MouseEventOuterClass.MouseEvent) obj;
 
-      if (type_ != other.type_) return false;
-      if (getButton()
-          != other.getButton()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && type_ == other.type_;
+      result = result && (getButton()
+          == other.getButton());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -394,35 +384,35 @@ public final class MouseEventOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -474,15 +464,12 @@ public final class MouseEventOuterClass {
       private int type_ = 0;
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -491,7 +478,6 @@ public final class MouseEventOuterClass {
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @return The type.
        */
       public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
         @SuppressWarnings("deprecation")
@@ -500,8 +486,6 @@ public final class MouseEventOuterClass {
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
        */
       public Builder setType(ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType value) {
         if (value == null) {
@@ -514,7 +498,6 @@ public final class MouseEventOuterClass {
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -526,15 +509,12 @@ public final class MouseEventOuterClass {
       private int button_ ;
       /**
        * <code>int32 button = 2;</code>
-       * @return The button.
        */
       public int getButton() {
         return button_;
       }
       /**
        * <code>int32 button = 2;</code>
-       * @param value The button to set.
-       * @return This builder for chaining.
        */
       public Builder setButton(int value) {
         
@@ -544,7 +524,6 @@ public final class MouseEventOuterClass {
       }
       /**
        * <code>int32 button = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearButton() {
         
@@ -555,7 +534,7 @@ public final class MouseEventOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -627,11 +606,19 @@ public final class MouseEventOuterClass {
       "re.ButtonEventType\022\016\n\006button\030\002 \001(\005b\006prot" +
       "o3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.dataStructure.ButtonEventTypeOuterClass.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_dataStructure_MouseEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_MouseEvent_fieldAccessorTable = new

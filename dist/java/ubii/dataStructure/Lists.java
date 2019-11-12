@@ -20,25 +20,19 @@ public final class Lists {
 
     /**
      * <code>repeated string elements = 1;</code>
-     * @return A list containing the elements.
      */
     java.util.List<java.lang.String>
         getElementsList();
     /**
      * <code>repeated string elements = 1;</code>
-     * @return The count of elements.
      */
     int getElementsCount();
     /**
      * <code>repeated string elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     java.lang.String getElements(int index);
     /**
      * <code>repeated string elements = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the elements at the given index.
      */
     com.google.protobuf.ByteString
         getElementsBytes(int index);
@@ -57,13 +51,6 @@ public final class Lists {
     }
     private StringList() {
       elements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new StringList();
     }
 
     @java.lang.Override
@@ -92,7 +79,7 @@ public final class Lists {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 elements_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -100,7 +87,7 @@ public final class Lists {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -114,7 +101,7 @@ public final class Lists {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = elements_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -138,7 +125,6 @@ public final class Lists {
     private com.google.protobuf.LazyStringList elements_;
     /**
      * <code>repeated string elements = 1;</code>
-     * @return A list containing the elements.
      */
     public com.google.protobuf.ProtocolStringList
         getElementsList() {
@@ -146,23 +132,18 @@ public final class Lists {
     }
     /**
      * <code>repeated string elements = 1;</code>
-     * @return The count of elements.
      */
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated string elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     public java.lang.String getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated string elements = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the elements at the given index.
      */
     public com.google.protobuf.ByteString
         getElementsBytes(int index) {
@@ -218,10 +199,11 @@ public final class Lists {
       }
       ubii.dataStructure.Lists.StringList other = (ubii.dataStructure.Lists.StringList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -397,7 +379,7 @@ public final class Lists {
       public ubii.dataStructure.Lists.StringList buildPartial() {
         ubii.dataStructure.Lists.StringList result = new ubii.dataStructure.Lists.StringList(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = elements_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -408,35 +390,35 @@ public final class Lists {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -492,14 +474,13 @@ public final class Lists {
 
       private com.google.protobuf.LazyStringList elements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = new com.google.protobuf.LazyStringArrayList(elements_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @return A list containing the elements.
        */
       public com.google.protobuf.ProtocolStringList
           getElementsList() {
@@ -507,23 +488,18 @@ public final class Lists {
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @return The count of elements.
        */
       public int getElementsCount() {
         return elements_.size();
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @param index The index of the element to return.
-       * @return The elements at the given index.
        */
       public java.lang.String getElements(int index) {
         return elements_.get(index);
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the elements at the given index.
        */
       public com.google.protobuf.ByteString
           getElementsBytes(int index) {
@@ -531,9 +507,6 @@ public final class Lists {
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The elements to set.
-       * @return This builder for chaining.
        */
       public Builder setElements(
           int index, java.lang.String value) {
@@ -547,8 +520,6 @@ public final class Lists {
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @param value The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addElements(
           java.lang.String value) {
@@ -562,8 +533,6 @@ public final class Lists {
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @param values The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addAllElements(
           java.lang.Iterable<java.lang.String> values) {
@@ -575,7 +544,6 @@ public final class Lists {
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearElements() {
         elements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -585,8 +553,6 @@ public final class Lists {
       }
       /**
        * <code>repeated string elements = 1;</code>
-       * @param value The bytes of the elements to add.
-       * @return This builder for chaining.
        */
       public Builder addElementsBytes(
           com.google.protobuf.ByteString value) {
@@ -602,7 +568,7 @@ public final class Lists {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -658,18 +624,14 @@ public final class Lists {
 
     /**
      * <code>repeated double elements = 1;</code>
-     * @return A list containing the elements.
      */
     java.util.List<java.lang.Double> getElementsList();
     /**
      * <code>repeated double elements = 1;</code>
-     * @return The count of elements.
      */
     int getElementsCount();
     /**
      * <code>repeated double elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     double getElements(int index);
   }
@@ -686,14 +648,7 @@ public final class Lists {
       super(builder);
     }
     private DoubleList() {
-      elements_ = emptyDoubleList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DoubleList();
+      elements_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -721,28 +676,28 @@ public final class Lists {
               done = true;
               break;
             case 9: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                elements_ = newDoubleList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                elements_ = new java.util.ArrayList<java.lang.Double>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              elements_.addDouble(input.readDouble());
+              elements_.add(input.readDouble());
               break;
             }
             case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                elements_ = newDoubleList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                elements_ = new java.util.ArrayList<java.lang.Double>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                elements_.addDouble(input.readDouble());
+                elements_.add(input.readDouble());
               }
               input.popLimit(limit);
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -756,8 +711,8 @@ public final class Lists {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -777,10 +732,9 @@ public final class Lists {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.DoubleList elements_;
+    private java.util.List<java.lang.Double> elements_;
     /**
      * <code>repeated double elements = 1;</code>
-     * @return A list containing the elements.
      */
     public java.util.List<java.lang.Double>
         getElementsList() {
@@ -788,18 +742,15 @@ public final class Lists {
     }
     /**
      * <code>repeated double elements = 1;</code>
-     * @return The count of elements.
      */
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated double elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     public double getElements(int index) {
-      return elements_.getDouble(index);
+      return elements_.get(index);
     }
     private int elementsMemoizedSerializedSize = -1;
 
@@ -823,7 +774,7 @@ public final class Lists {
         output.writeUInt32NoTag(elementsMemoizedSerializedSize);
       }
       for (int i = 0; i < elements_.size(); i++) {
-        output.writeDoubleNoTag(elements_.getDouble(i));
+        output.writeDoubleNoTag(elements_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -860,10 +811,11 @@ public final class Lists {
       }
       ubii.dataStructure.Lists.DoubleList other = (ubii.dataStructure.Lists.DoubleList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1010,7 +962,7 @@ public final class Lists {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        elements_ = emptyDoubleList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -1039,8 +991,8 @@ public final class Lists {
       public ubii.dataStructure.Lists.DoubleList buildPartial() {
         ubii.dataStructure.Lists.DoubleList result = new ubii.dataStructure.Lists.DoubleList(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.elements_ = elements_;
@@ -1050,35 +1002,35 @@ public final class Lists {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1132,65 +1084,53 @@ public final class Lists {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.DoubleList elements_ = emptyDoubleList();
+      private java.util.List<java.lang.Double> elements_ = java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          elements_ = mutableCopy(elements_);
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = new java.util.ArrayList<java.lang.Double>(elements_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated double elements = 1;</code>
-       * @return A list containing the elements.
        */
       public java.util.List<java.lang.Double>
           getElementsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(elements_) : elements_;
+        return java.util.Collections.unmodifiableList(elements_);
       }
       /**
        * <code>repeated double elements = 1;</code>
-       * @return The count of elements.
        */
       public int getElementsCount() {
         return elements_.size();
       }
       /**
        * <code>repeated double elements = 1;</code>
-       * @param index The index of the element to return.
-       * @return The elements at the given index.
        */
       public double getElements(int index) {
-        return elements_.getDouble(index);
+        return elements_.get(index);
       }
       /**
        * <code>repeated double elements = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The elements to set.
-       * @return This builder for chaining.
        */
       public Builder setElements(
           int index, double value) {
         ensureElementsIsMutable();
-        elements_.setDouble(index, value);
+        elements_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated double elements = 1;</code>
-       * @param value The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addElements(double value) {
         ensureElementsIsMutable();
-        elements_.addDouble(value);
+        elements_.add(value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated double elements = 1;</code>
-       * @param values The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addAllElements(
           java.lang.Iterable<? extends java.lang.Double> values) {
@@ -1202,10 +1142,9 @@ public final class Lists {
       }
       /**
        * <code>repeated double elements = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearElements() {
-        elements_ = emptyDoubleList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -1213,7 +1152,7 @@ public final class Lists {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1269,18 +1208,14 @@ public final class Lists {
 
     /**
      * <code>repeated float elements = 1;</code>
-     * @return A list containing the elements.
      */
     java.util.List<java.lang.Float> getElementsList();
     /**
      * <code>repeated float elements = 1;</code>
-     * @return The count of elements.
      */
     int getElementsCount();
     /**
      * <code>repeated float elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     float getElements(int index);
   }
@@ -1297,14 +1232,7 @@ public final class Lists {
       super(builder);
     }
     private FloatList() {
-      elements_ = emptyFloatList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FloatList();
+      elements_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1332,28 +1260,28 @@ public final class Lists {
               done = true;
               break;
             case 13: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                elements_ = newFloatList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                elements_ = new java.util.ArrayList<java.lang.Float>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              elements_.addFloat(input.readFloat());
+              elements_.add(input.readFloat());
               break;
             }
             case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                elements_ = newFloatList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                elements_ = new java.util.ArrayList<java.lang.Float>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                elements_.addFloat(input.readFloat());
+                elements_.add(input.readFloat());
               }
               input.popLimit(limit);
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1367,8 +1295,8 @@ public final class Lists {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1388,10 +1316,9 @@ public final class Lists {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.FloatList elements_;
+    private java.util.List<java.lang.Float> elements_;
     /**
      * <code>repeated float elements = 1;</code>
-     * @return A list containing the elements.
      */
     public java.util.List<java.lang.Float>
         getElementsList() {
@@ -1399,18 +1326,15 @@ public final class Lists {
     }
     /**
      * <code>repeated float elements = 1;</code>
-     * @return The count of elements.
      */
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated float elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     public float getElements(int index) {
-      return elements_.getFloat(index);
+      return elements_.get(index);
     }
     private int elementsMemoizedSerializedSize = -1;
 
@@ -1434,7 +1358,7 @@ public final class Lists {
         output.writeUInt32NoTag(elementsMemoizedSerializedSize);
       }
       for (int i = 0; i < elements_.size(); i++) {
-        output.writeFloatNoTag(elements_.getFloat(i));
+        output.writeFloatNoTag(elements_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1471,10 +1395,11 @@ public final class Lists {
       }
       ubii.dataStructure.Lists.FloatList other = (ubii.dataStructure.Lists.FloatList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1621,7 +1546,7 @@ public final class Lists {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        elements_ = emptyFloatList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -1650,8 +1575,8 @@ public final class Lists {
       public ubii.dataStructure.Lists.FloatList buildPartial() {
         ubii.dataStructure.Lists.FloatList result = new ubii.dataStructure.Lists.FloatList(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.elements_ = elements_;
@@ -1661,35 +1586,35 @@ public final class Lists {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1743,65 +1668,53 @@ public final class Lists {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.FloatList elements_ = emptyFloatList();
+      private java.util.List<java.lang.Float> elements_ = java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          elements_ = mutableCopy(elements_);
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = new java.util.ArrayList<java.lang.Float>(elements_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated float elements = 1;</code>
-       * @return A list containing the elements.
        */
       public java.util.List<java.lang.Float>
           getElementsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(elements_) : elements_;
+        return java.util.Collections.unmodifiableList(elements_);
       }
       /**
        * <code>repeated float elements = 1;</code>
-       * @return The count of elements.
        */
       public int getElementsCount() {
         return elements_.size();
       }
       /**
        * <code>repeated float elements = 1;</code>
-       * @param index The index of the element to return.
-       * @return The elements at the given index.
        */
       public float getElements(int index) {
-        return elements_.getFloat(index);
+        return elements_.get(index);
       }
       /**
        * <code>repeated float elements = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The elements to set.
-       * @return This builder for chaining.
        */
       public Builder setElements(
           int index, float value) {
         ensureElementsIsMutable();
-        elements_.setFloat(index, value);
+        elements_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated float elements = 1;</code>
-       * @param value The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addElements(float value) {
         ensureElementsIsMutable();
-        elements_.addFloat(value);
+        elements_.add(value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated float elements = 1;</code>
-       * @param values The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addAllElements(
           java.lang.Iterable<? extends java.lang.Float> values) {
@@ -1813,10 +1726,9 @@ public final class Lists {
       }
       /**
        * <code>repeated float elements = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearElements() {
-        elements_ = emptyFloatList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -1824,7 +1736,7 @@ public final class Lists {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1880,18 +1792,14 @@ public final class Lists {
 
     /**
      * <code>repeated bool elements = 1;</code>
-     * @return A list containing the elements.
      */
     java.util.List<java.lang.Boolean> getElementsList();
     /**
      * <code>repeated bool elements = 1;</code>
-     * @return The count of elements.
      */
     int getElementsCount();
     /**
      * <code>repeated bool elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     boolean getElements(int index);
   }
@@ -1908,14 +1816,7 @@ public final class Lists {
       super(builder);
     }
     private BoolList() {
-      elements_ = emptyBooleanList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new BoolList();
+      elements_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1943,28 +1844,28 @@ public final class Lists {
               done = true;
               break;
             case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                elements_ = newBooleanList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                elements_ = new java.util.ArrayList<java.lang.Boolean>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              elements_.addBoolean(input.readBool());
+              elements_.add(input.readBool());
               break;
             }
             case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                elements_ = newBooleanList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                elements_ = new java.util.ArrayList<java.lang.Boolean>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                elements_.addBoolean(input.readBool());
+                elements_.add(input.readBool());
               }
               input.popLimit(limit);
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1978,8 +1879,8 @@ public final class Lists {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1999,10 +1900,9 @@ public final class Lists {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.BooleanList elements_;
+    private java.util.List<java.lang.Boolean> elements_;
     /**
      * <code>repeated bool elements = 1;</code>
-     * @return A list containing the elements.
      */
     public java.util.List<java.lang.Boolean>
         getElementsList() {
@@ -2010,18 +1910,15 @@ public final class Lists {
     }
     /**
      * <code>repeated bool elements = 1;</code>
-     * @return The count of elements.
      */
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated bool elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     public boolean getElements(int index) {
-      return elements_.getBoolean(index);
+      return elements_.get(index);
     }
     private int elementsMemoizedSerializedSize = -1;
 
@@ -2045,7 +1942,7 @@ public final class Lists {
         output.writeUInt32NoTag(elementsMemoizedSerializedSize);
       }
       for (int i = 0; i < elements_.size(); i++) {
-        output.writeBoolNoTag(elements_.getBoolean(i));
+        output.writeBoolNoTag(elements_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2082,10 +1979,11 @@ public final class Lists {
       }
       ubii.dataStructure.Lists.BoolList other = (ubii.dataStructure.Lists.BoolList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2232,7 +2130,7 @@ public final class Lists {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        elements_ = emptyBooleanList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -2261,8 +2159,8 @@ public final class Lists {
       public ubii.dataStructure.Lists.BoolList buildPartial() {
         ubii.dataStructure.Lists.BoolList result = new ubii.dataStructure.Lists.BoolList(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.elements_ = elements_;
@@ -2272,35 +2170,35 @@ public final class Lists {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2354,65 +2252,53 @@ public final class Lists {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.BooleanList elements_ = emptyBooleanList();
+      private java.util.List<java.lang.Boolean> elements_ = java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          elements_ = mutableCopy(elements_);
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = new java.util.ArrayList<java.lang.Boolean>(elements_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated bool elements = 1;</code>
-       * @return A list containing the elements.
        */
       public java.util.List<java.lang.Boolean>
           getElementsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(elements_) : elements_;
+        return java.util.Collections.unmodifiableList(elements_);
       }
       /**
        * <code>repeated bool elements = 1;</code>
-       * @return The count of elements.
        */
       public int getElementsCount() {
         return elements_.size();
       }
       /**
        * <code>repeated bool elements = 1;</code>
-       * @param index The index of the element to return.
-       * @return The elements at the given index.
        */
       public boolean getElements(int index) {
-        return elements_.getBoolean(index);
+        return elements_.get(index);
       }
       /**
        * <code>repeated bool elements = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The elements to set.
-       * @return This builder for chaining.
        */
       public Builder setElements(
           int index, boolean value) {
         ensureElementsIsMutable();
-        elements_.setBoolean(index, value);
+        elements_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated bool elements = 1;</code>
-       * @param value The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addElements(boolean value) {
         ensureElementsIsMutable();
-        elements_.addBoolean(value);
+        elements_.add(value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated bool elements = 1;</code>
-       * @param values The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addAllElements(
           java.lang.Iterable<? extends java.lang.Boolean> values) {
@@ -2424,10 +2310,9 @@ public final class Lists {
       }
       /**
        * <code>repeated bool elements = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearElements() {
-        elements_ = emptyBooleanList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -2435,7 +2320,7 @@ public final class Lists {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -2491,18 +2376,14 @@ public final class Lists {
 
     /**
      * <code>repeated int32 elements = 1;</code>
-     * @return A list containing the elements.
      */
     java.util.List<java.lang.Integer> getElementsList();
     /**
      * <code>repeated int32 elements = 1;</code>
-     * @return The count of elements.
      */
     int getElementsCount();
     /**
      * <code>repeated int32 elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     int getElements(int index);
   }
@@ -2519,14 +2400,7 @@ public final class Lists {
       super(builder);
     }
     private Int32List() {
-      elements_ = emptyIntList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Int32List();
+      elements_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2554,28 +2428,28 @@ public final class Lists {
               done = true;
               break;
             case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                elements_ = newIntList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                elements_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              elements_.addInt(input.readInt32());
+              elements_.add(input.readInt32());
               break;
             }
             case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                elements_ = newIntList();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                elements_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                elements_.addInt(input.readInt32());
+                elements_.add(input.readInt32());
               }
               input.popLimit(limit);
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -2589,8 +2463,8 @@ public final class Lists {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2610,10 +2484,9 @@ public final class Lists {
     }
 
     public static final int ELEMENTS_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.IntList elements_;
+    private java.util.List<java.lang.Integer> elements_;
     /**
      * <code>repeated int32 elements = 1;</code>
-     * @return A list containing the elements.
      */
     public java.util.List<java.lang.Integer>
         getElementsList() {
@@ -2621,18 +2494,15 @@ public final class Lists {
     }
     /**
      * <code>repeated int32 elements = 1;</code>
-     * @return The count of elements.
      */
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated int32 elements = 1;</code>
-     * @param index The index of the element to return.
-     * @return The elements at the given index.
      */
     public int getElements(int index) {
-      return elements_.getInt(index);
+      return elements_.get(index);
     }
     private int elementsMemoizedSerializedSize = -1;
 
@@ -2656,7 +2526,7 @@ public final class Lists {
         output.writeUInt32NoTag(elementsMemoizedSerializedSize);
       }
       for (int i = 0; i < elements_.size(); i++) {
-        output.writeInt32NoTag(elements_.getInt(i));
+        output.writeInt32NoTag(elements_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2671,7 +2541,7 @@ public final class Lists {
         int dataSize = 0;
         for (int i = 0; i < elements_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(elements_.getInt(i));
+            .computeInt32SizeNoTag(elements_.get(i));
         }
         size += dataSize;
         if (!getElementsList().isEmpty()) {
@@ -2696,10 +2566,11 @@ public final class Lists {
       }
       ubii.dataStructure.Lists.Int32List other = (ubii.dataStructure.Lists.Int32List) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2846,7 +2717,7 @@ public final class Lists {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        elements_ = emptyIntList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -2875,8 +2746,8 @@ public final class Lists {
       public ubii.dataStructure.Lists.Int32List buildPartial() {
         ubii.dataStructure.Lists.Int32List result = new ubii.dataStructure.Lists.Int32List(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          elements_.makeImmutable();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = java.util.Collections.unmodifiableList(elements_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.elements_ = elements_;
@@ -2886,35 +2757,35 @@ public final class Lists {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2968,65 +2839,53 @@ public final class Lists {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList elements_ = emptyIntList();
+      private java.util.List<java.lang.Integer> elements_ = java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          elements_ = mutableCopy(elements_);
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          elements_ = new java.util.ArrayList<java.lang.Integer>(elements_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated int32 elements = 1;</code>
-       * @return A list containing the elements.
        */
       public java.util.List<java.lang.Integer>
           getElementsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(elements_) : elements_;
+        return java.util.Collections.unmodifiableList(elements_);
       }
       /**
        * <code>repeated int32 elements = 1;</code>
-       * @return The count of elements.
        */
       public int getElementsCount() {
         return elements_.size();
       }
       /**
        * <code>repeated int32 elements = 1;</code>
-       * @param index The index of the element to return.
-       * @return The elements at the given index.
        */
       public int getElements(int index) {
-        return elements_.getInt(index);
+        return elements_.get(index);
       }
       /**
        * <code>repeated int32 elements = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The elements to set.
-       * @return This builder for chaining.
        */
       public Builder setElements(
           int index, int value) {
         ensureElementsIsMutable();
-        elements_.setInt(index, value);
+        elements_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated int32 elements = 1;</code>
-       * @param value The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addElements(int value) {
         ensureElementsIsMutable();
-        elements_.addInt(value);
+        elements_.add(value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated int32 elements = 1;</code>
-       * @param values The elements to add.
-       * @return This builder for chaining.
        */
       public Builder addAllElements(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -3038,10 +2897,9 @@ public final class Lists {
       }
       /**
        * <code>repeated int32 elements = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearElements() {
-        elements_ = emptyIntList();
+        elements_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -3049,7 +2907,7 @@ public final class Lists {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -3141,10 +2999,18 @@ public final class Lists {
       " \003(\010\"\035\n\tInt32List\022\020\n\010elements\030\001 \003(\005b\006pro" +
       "to3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_ubii_dataStructure_StringList_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_StringList_fieldAccessorTable = new

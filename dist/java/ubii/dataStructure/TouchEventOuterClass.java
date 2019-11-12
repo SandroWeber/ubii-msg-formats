@@ -20,23 +20,19 @@ public final class TouchEventOuterClass {
 
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The type.
      */
     ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType();
 
     /**
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
-     * @return Whether the position field is set.
      */
     boolean hasPosition();
     /**
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
-     * @return The position.
      */
     ubii.dataStructure.Vector2OuterClass.Vector2 getPosition();
     /**
@@ -61,13 +57,6 @@ public final class TouchEventOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TouchEvent();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -80,6 +69,7 @@ public final class TouchEventOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -110,7 +100,7 @@ public final class TouchEventOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -145,14 +135,12 @@ public final class TouchEventOuterClass {
     private int type_;
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-     * @return The type.
      */
     public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
       @SuppressWarnings("deprecation")
@@ -164,14 +152,12 @@ public final class TouchEventOuterClass {
     private ubii.dataStructure.Vector2OuterClass.Vector2 position_;
     /**
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
-     * @return Whether the position field is set.
      */
     public boolean hasPosition() {
       return position_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
-     * @return The position.
      */
     public ubii.dataStructure.Vector2OuterClass.Vector2 getPosition() {
       return position_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : position_;
@@ -235,14 +221,15 @@ public final class TouchEventOuterClass {
       }
       ubii.dataStructure.TouchEventOuterClass.TouchEvent other = (ubii.dataStructure.TouchEventOuterClass.TouchEvent) obj;
 
-      if (type_ != other.type_) return false;
-      if (hasPosition() != other.hasPosition()) return false;
+      boolean result = true;
+      result = result && type_ == other.type_;
+      result = result && (hasPosition() == other.hasPosition());
       if (hasPosition()) {
-        if (!getPosition()
-            .equals(other.getPosition())) return false;
+        result = result && getPosition()
+            .equals(other.getPosition());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -437,35 +424,35 @@ public final class TouchEventOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -517,15 +504,12 @@ public final class TouchEventOuterClass {
       private int type_ = 0;
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -534,7 +518,6 @@ public final class TouchEventOuterClass {
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @return The type.
        */
       public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
         @SuppressWarnings("deprecation")
@@ -543,8 +526,6 @@ public final class TouchEventOuterClass {
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
        */
       public Builder setType(ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType value) {
         if (value == null) {
@@ -557,7 +538,6 @@ public final class TouchEventOuterClass {
       }
       /**
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -566,19 +546,17 @@ public final class TouchEventOuterClass {
         return this;
       }
 
-      private ubii.dataStructure.Vector2OuterClass.Vector2 position_;
+      private ubii.dataStructure.Vector2OuterClass.Vector2 position_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> positionBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector2 position = 2;</code>
-       * @return Whether the position field is set.
        */
       public boolean hasPosition() {
         return positionBuilder_ != null || position_ != null;
       }
       /**
        * <code>.ubii.dataStructure.Vector2 position = 2;</code>
-       * @return The position.
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2 getPosition() {
         if (positionBuilder_ == null) {
@@ -687,7 +665,7 @@ public final class TouchEventOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -761,12 +739,20 @@ public final class TouchEventOuterClass {
       "-\n\010position\030\002 \001(\0132\033.ubii.dataStructure.V" +
       "ector2b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.dataStructure.ButtonEventTypeOuterClass.getDescriptor(),
           ubii.dataStructure.Vector2OuterClass.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_dataStructure_TouchEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_TouchEvent_fieldAccessorTable = new

@@ -20,12 +20,10 @@ public final class Pose3DOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector3 position = 1;</code>
-     * @return Whether the position field is set.
      */
     boolean hasPosition();
     /**
      * <code>.ubii.dataStructure.Vector3 position = 1;</code>
-     * @return The position.
      */
     ubii.dataStructure.Vector3OuterClass.Vector3 getPosition();
     /**
@@ -35,12 +33,10 @@ public final class Pose3DOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
-     * @return Whether the quaternion field is set.
      */
     boolean hasQuaternion();
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
-     * @return The quaternion.
      */
     ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion();
     /**
@@ -50,12 +46,10 @@ public final class Pose3DOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
-     * @return Whether the euler field is set.
      */
     boolean hasEuler();
     /**
      * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
-     * @return The euler.
      */
     ubii.dataStructure.Vector3OuterClass.Vector3 getEuler();
     /**
@@ -81,13 +75,6 @@ public final class Pose3DOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Pose3D();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -100,6 +87,7 @@ public final class Pose3DOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -152,7 +140,7 @@ public final class Pose3DOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -186,8 +174,7 @@ public final class Pose3DOuterClass {
     private int orientationCase_ = 0;
     private java.lang.Object orientation_;
     public enum OrientationCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       QUATERNION(2),
       EULER(3),
       ORIENTATION_NOT_SET(0);
@@ -196,8 +183,6 @@ public final class Pose3DOuterClass {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -228,14 +213,12 @@ public final class Pose3DOuterClass {
     private ubii.dataStructure.Vector3OuterClass.Vector3 position_;
     /**
      * <code>.ubii.dataStructure.Vector3 position = 1;</code>
-     * @return Whether the position field is set.
      */
     public boolean hasPosition() {
       return position_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 position = 1;</code>
-     * @return The position.
      */
     public ubii.dataStructure.Vector3OuterClass.Vector3 getPosition() {
       return position_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : position_;
@@ -250,14 +233,12 @@ public final class Pose3DOuterClass {
     public static final int QUATERNION_FIELD_NUMBER = 2;
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
-     * @return Whether the quaternion field is set.
      */
     public boolean hasQuaternion() {
       return orientationCase_ == 2;
     }
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
-     * @return The quaternion.
      */
     public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
       if (orientationCase_ == 2) {
@@ -278,14 +259,12 @@ public final class Pose3DOuterClass {
     public static final int EULER_FIELD_NUMBER = 3;
     /**
      * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
-     * @return Whether the euler field is set.
      */
     public boolean hasEuler() {
       return orientationCase_ == 3;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
-     * @return The euler.
      */
     public ubii.dataStructure.Vector3OuterClass.Vector3 getEuler() {
       if (orientationCase_ == 3) {
@@ -362,26 +341,29 @@ public final class Pose3DOuterClass {
       }
       ubii.dataStructure.Pose3DOuterClass.Pose3D other = (ubii.dataStructure.Pose3DOuterClass.Pose3D) obj;
 
-      if (hasPosition() != other.hasPosition()) return false;
+      boolean result = true;
+      result = result && (hasPosition() == other.hasPosition());
       if (hasPosition()) {
-        if (!getPosition()
-            .equals(other.getPosition())) return false;
+        result = result && getPosition()
+            .equals(other.getPosition());
       }
-      if (!getOrientationCase().equals(other.getOrientationCase())) return false;
+      result = result && getOrientationCase().equals(
+          other.getOrientationCase());
+      if (!result) return false;
       switch (orientationCase_) {
         case 2:
-          if (!getQuaternion()
-              .equals(other.getQuaternion())) return false;
+          result = result && getQuaternion()
+              .equals(other.getQuaternion());
           break;
         case 3:
-          if (!getEuler()
-              .equals(other.getEuler())) return false;
+          result = result && getEuler()
+              .equals(other.getEuler());
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -600,35 +582,35 @@ public final class Pose3DOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -702,19 +684,17 @@ public final class Pose3DOuterClass {
       }
 
 
-      private ubii.dataStructure.Vector3OuterClass.Vector3 position_;
+      private ubii.dataStructure.Vector3OuterClass.Vector3 position_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> positionBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector3 position = 1;</code>
-       * @return Whether the position field is set.
        */
       public boolean hasPosition() {
         return positionBuilder_ != null || position_ != null;
       }
       /**
        * <code>.ubii.dataStructure.Vector3 position = 1;</code>
-       * @return The position.
        */
       public ubii.dataStructure.Vector3OuterClass.Vector3 getPosition() {
         if (positionBuilder_ == null) {
@@ -825,14 +805,12 @@ public final class Pose3DOuterClass {
           ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> quaternionBuilder_;
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
-       * @return Whether the quaternion field is set.
        */
       public boolean hasQuaternion() {
         return orientationCase_ == 2;
       }
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
-       * @return The quaternion.
        */
       public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
         if (quaternionBuilder_ == null) {
@@ -963,14 +941,12 @@ public final class Pose3DOuterClass {
           ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> eulerBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
-       * @return Whether the euler field is set.
        */
       public boolean hasEuler() {
         return orientationCase_ == 3;
       }
       /**
        * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
-       * @return The euler.
        */
       public ubii.dataStructure.Vector3OuterClass.Vector3 getEuler() {
         if (eulerBuilder_ == null) {
@@ -1099,7 +1075,7 @@ public final class Pose3DOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1174,12 +1150,20 @@ public final class Pose3DOuterClass {
       "\005euler\030\003 \001(\0132\033.ubii.dataStructure.Vector" +
       "3H\000B\r\n\013orientationb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.dataStructure.Vector3OuterClass.getDescriptor(),
           ubii.dataStructure.QuaternionOuterClass.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_dataStructure_Pose3D_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Pose3D_fieldAccessorTable = new

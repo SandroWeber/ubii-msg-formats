@@ -20,6 +20,9 @@ import "proto/topicData/topicDataRecord/dataStructure/object2d.proto";
 import "proto/topicData/topicDataRecord/dataStructure/object3d.proto";
 import "proto/topicData/topicDataRecord/dataStructure/image.proto";
 
+import "proto/sessions/session.proto";
+import "proto/interactions/interaction.proto";
+
 message TopicDataRecord {
     string topic = 1;
     ubii.topicData.Timestamp timestamp = 2;
@@ -53,6 +56,8 @@ message TopicDataRecord {
         ubii.dataStructure.BoolList bool_list = 29;
         ubii.dataStructure.Image2D image2D = 30;
         ubii.dataStructure.Image2DList image2D_list = 31;
+        ubii.sessions.Session session = 32;
+        ubii.interactions.Interaction interaction = 33;
     }    
 }
 
