@@ -1,13 +1,6 @@
 import test from 'ava';
 
-import fs from 'fs';
-import path from 'path';
-
-let constants = JSON.parse(fs.readFileSync(path.join(__dirname, '../../dist/constants.json')));
-let MSG_TYPES = constants.MSG_TYPES;
-let DEFAULT_TOPICS = constants.DEFAULT_TOPICS;
-
-const { ProtobufTranslator } = require('../../src/js/index');
+const { ProtobufTranslator, MSG_TYPES, DEFAULT_TOPICS } = require('../../src/js/index');
 
 /* run tests */
 

@@ -3,10 +3,7 @@ import test from 'ava';
 import fs from 'fs';
 import path from 'path';
 
-let constants = JSON.parse(fs.readFileSync(path.join(__dirname, '../../dist/constants.json')));
-let MSG_TYPES = constants.MSG_TYPES;
-
-const { ProtobufUtils } = require('../../src/js/index');
+const { ProtobufUtils, MSG_TYPES } = require('../../src/js/index');
 
 /* run tests */
 
