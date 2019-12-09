@@ -20,41 +20,49 @@ public final class Vector8OuterClass {
 
     /**
      * <code>double v0 = 1;</code>
+     * @return The v0.
      */
     double getV0();
 
     /**
      * <code>double v1 = 2;</code>
+     * @return The v1.
      */
     double getV1();
 
     /**
      * <code>double v2 = 3;</code>
+     * @return The v2.
      */
     double getV2();
 
     /**
      * <code>double v3 = 4;</code>
+     * @return The v3.
      */
     double getV3();
 
     /**
      * <code>double v4 = 5;</code>
+     * @return The v4.
      */
     double getV4();
 
     /**
      * <code>double v5 = 6;</code>
+     * @return The v5.
      */
     double getV5();
 
     /**
      * <code>double v6 = 7;</code>
+     * @return The v6.
      */
     double getV6();
 
     /**
      * <code>double v7 = 8;</code>
+     * @return The v7.
      */
     double getV7();
   }
@@ -71,14 +79,13 @@ public final class Vector8OuterClass {
       super(builder);
     }
     private Vector8() {
-      v0_ = 0D;
-      v1_ = 0D;
-      v2_ = 0D;
-      v3_ = 0D;
-      v4_ = 0D;
-      v5_ = 0D;
-      v6_ = 0D;
-      v7_ = 0D;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Vector8();
     }
 
     @java.lang.Override
@@ -94,7 +101,6 @@ public final class Vector8OuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -146,7 +152,7 @@ public final class Vector8OuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -181,6 +187,7 @@ public final class Vector8OuterClass {
     private double v0_;
     /**
      * <code>double v0 = 1;</code>
+     * @return The v0.
      */
     public double getV0() {
       return v0_;
@@ -190,6 +197,7 @@ public final class Vector8OuterClass {
     private double v1_;
     /**
      * <code>double v1 = 2;</code>
+     * @return The v1.
      */
     public double getV1() {
       return v1_;
@@ -199,6 +207,7 @@ public final class Vector8OuterClass {
     private double v2_;
     /**
      * <code>double v2 = 3;</code>
+     * @return The v2.
      */
     public double getV2() {
       return v2_;
@@ -208,6 +217,7 @@ public final class Vector8OuterClass {
     private double v3_;
     /**
      * <code>double v3 = 4;</code>
+     * @return The v3.
      */
     public double getV3() {
       return v3_;
@@ -217,6 +227,7 @@ public final class Vector8OuterClass {
     private double v4_;
     /**
      * <code>double v4 = 5;</code>
+     * @return The v4.
      */
     public double getV4() {
       return v4_;
@@ -226,6 +237,7 @@ public final class Vector8OuterClass {
     private double v5_;
     /**
      * <code>double v5 = 6;</code>
+     * @return The v5.
      */
     public double getV5() {
       return v5_;
@@ -235,6 +247,7 @@ public final class Vector8OuterClass {
     private double v6_;
     /**
      * <code>double v6 = 7;</code>
+     * @return The v6.
      */
     public double getV6() {
       return v6_;
@@ -244,6 +257,7 @@ public final class Vector8OuterClass {
     private double v7_;
     /**
      * <code>double v7 = 8;</code>
+     * @return The v7.
      */
     public double getV7() {
       return v7_;
@@ -343,41 +357,32 @@ public final class Vector8OuterClass {
       }
       ubii.dataStructure.Vector8OuterClass.Vector8 other = (ubii.dataStructure.Vector8OuterClass.Vector8) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV0())
-          == java.lang.Double.doubleToLongBits(
-              other.getV0()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV1())
-          == java.lang.Double.doubleToLongBits(
-              other.getV1()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV2())
-          == java.lang.Double.doubleToLongBits(
-              other.getV2()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV3())
-          == java.lang.Double.doubleToLongBits(
-              other.getV3()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV4())
-          == java.lang.Double.doubleToLongBits(
-              other.getV4()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV5())
-          == java.lang.Double.doubleToLongBits(
-              other.getV5()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV6())
-          == java.lang.Double.doubleToLongBits(
-              other.getV6()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getV7())
-          == java.lang.Double.doubleToLongBits(
-              other.getV7()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Double.doubleToLongBits(getV0())
+          != java.lang.Double.doubleToLongBits(
+              other.getV0())) return false;
+      if (java.lang.Double.doubleToLongBits(getV1())
+          != java.lang.Double.doubleToLongBits(
+              other.getV1())) return false;
+      if (java.lang.Double.doubleToLongBits(getV2())
+          != java.lang.Double.doubleToLongBits(
+              other.getV2())) return false;
+      if (java.lang.Double.doubleToLongBits(getV3())
+          != java.lang.Double.doubleToLongBits(
+              other.getV3())) return false;
+      if (java.lang.Double.doubleToLongBits(getV4())
+          != java.lang.Double.doubleToLongBits(
+              other.getV4())) return false;
+      if (java.lang.Double.doubleToLongBits(getV5())
+          != java.lang.Double.doubleToLongBits(
+              other.getV5())) return false;
+      if (java.lang.Double.doubleToLongBits(getV6())
+          != java.lang.Double.doubleToLongBits(
+              other.getV6())) return false;
+      if (java.lang.Double.doubleToLongBits(getV7())
+          != java.lang.Double.doubleToLongBits(
+              other.getV7())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -600,35 +605,35 @@ public final class Vector8OuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -698,12 +703,15 @@ public final class Vector8OuterClass {
       private double v0_ ;
       /**
        * <code>double v0 = 1;</code>
+       * @return The v0.
        */
       public double getV0() {
         return v0_;
       }
       /**
        * <code>double v0 = 1;</code>
+       * @param value The v0 to set.
+       * @return This builder for chaining.
        */
       public Builder setV0(double value) {
         
@@ -713,6 +721,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v0 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV0() {
         
@@ -724,12 +733,15 @@ public final class Vector8OuterClass {
       private double v1_ ;
       /**
        * <code>double v1 = 2;</code>
+       * @return The v1.
        */
       public double getV1() {
         return v1_;
       }
       /**
        * <code>double v1 = 2;</code>
+       * @param value The v1 to set.
+       * @return This builder for chaining.
        */
       public Builder setV1(double value) {
         
@@ -739,6 +751,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v1 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV1() {
         
@@ -750,12 +763,15 @@ public final class Vector8OuterClass {
       private double v2_ ;
       /**
        * <code>double v2 = 3;</code>
+       * @return The v2.
        */
       public double getV2() {
         return v2_;
       }
       /**
        * <code>double v2 = 3;</code>
+       * @param value The v2 to set.
+       * @return This builder for chaining.
        */
       public Builder setV2(double value) {
         
@@ -765,6 +781,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v2 = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV2() {
         
@@ -776,12 +793,15 @@ public final class Vector8OuterClass {
       private double v3_ ;
       /**
        * <code>double v3 = 4;</code>
+       * @return The v3.
        */
       public double getV3() {
         return v3_;
       }
       /**
        * <code>double v3 = 4;</code>
+       * @param value The v3 to set.
+       * @return This builder for chaining.
        */
       public Builder setV3(double value) {
         
@@ -791,6 +811,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v3 = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV3() {
         
@@ -802,12 +823,15 @@ public final class Vector8OuterClass {
       private double v4_ ;
       /**
        * <code>double v4 = 5;</code>
+       * @return The v4.
        */
       public double getV4() {
         return v4_;
       }
       /**
        * <code>double v4 = 5;</code>
+       * @param value The v4 to set.
+       * @return This builder for chaining.
        */
       public Builder setV4(double value) {
         
@@ -817,6 +841,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v4 = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV4() {
         
@@ -828,12 +853,15 @@ public final class Vector8OuterClass {
       private double v5_ ;
       /**
        * <code>double v5 = 6;</code>
+       * @return The v5.
        */
       public double getV5() {
         return v5_;
       }
       /**
        * <code>double v5 = 6;</code>
+       * @param value The v5 to set.
+       * @return This builder for chaining.
        */
       public Builder setV5(double value) {
         
@@ -843,6 +871,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v5 = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV5() {
         
@@ -854,12 +883,15 @@ public final class Vector8OuterClass {
       private double v6_ ;
       /**
        * <code>double v6 = 7;</code>
+       * @return The v6.
        */
       public double getV6() {
         return v6_;
       }
       /**
        * <code>double v6 = 7;</code>
+       * @param value The v6 to set.
+       * @return This builder for chaining.
        */
       public Builder setV6(double value) {
         
@@ -869,6 +901,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v6 = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV6() {
         
@@ -880,12 +913,15 @@ public final class Vector8OuterClass {
       private double v7_ ;
       /**
        * <code>double v7 = 8;</code>
+       * @return The v7.
        */
       public double getV7() {
         return v7_;
       }
       /**
        * <code>double v7 = 8;</code>
+       * @param value The v7 to set.
+       * @return This builder for chaining.
        */
       public Builder setV7(double value) {
         
@@ -895,6 +931,7 @@ public final class Vector8OuterClass {
       }
       /**
        * <code>double v7 = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearV7() {
         
@@ -905,7 +942,7 @@ public final class Vector8OuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -975,18 +1012,10 @@ public final class Vector8OuterClass {
       "v2\030\003 \001(\001\022\n\n\002v3\030\004 \001(\001\022\n\n\002v4\030\005 \001(\001\022\n\n\002v5\030\006" +
       " \001(\001\022\n\n\002v6\030\007 \001(\001\022\n\n\002v7\030\010 \001(\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Vector8_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Vector8_fieldAccessorTable = new

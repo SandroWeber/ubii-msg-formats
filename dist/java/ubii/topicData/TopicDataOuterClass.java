@@ -20,10 +20,12 @@ public final class TopicDataOuterClass {
 
     /**
      * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
+     * @return Whether the topicDataRecord field is set.
      */
     boolean hasTopicDataRecord();
     /**
      * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
+     * @return The topicDataRecord.
      */
     ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getTopicDataRecord();
     /**
@@ -33,10 +35,12 @@ public final class TopicDataOuterClass {
 
     /**
      * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
+     * @return Whether the topicDataRecordList field is set.
      */
     boolean hasTopicDataRecordList();
     /**
      * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
+     * @return The topicDataRecordList.
      */
     ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList getTopicDataRecordList();
     /**
@@ -46,10 +50,12 @@ public final class TopicDataOuterClass {
 
     /**
      * <code>.ubii.general.Error error = 4;</code>
+     * @return Whether the error field is set.
      */
     boolean hasError();
     /**
      * <code>.ubii.general.Error error = 4;</code>
+     * @return The error.
      */
     ubii.general.ErrorOuterClass.Error getError();
     /**
@@ -75,6 +81,13 @@ public final class TopicDataOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TopicData();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -87,7 +100,6 @@ public final class TopicDataOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -141,7 +153,7 @@ public final class TopicDataOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -175,7 +187,8 @@ public final class TopicDataOuterClass {
     private int typeCase_ = 0;
     private java.lang.Object type_;
     public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       TOPIC_DATA_RECORD(2),
       TOPIC_DATA_RECORD_LIST(3),
       ERROR(4),
@@ -185,6 +198,8 @@ public final class TopicDataOuterClass {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -215,12 +230,14 @@ public final class TopicDataOuterClass {
     public static final int TOPIC_DATA_RECORD_FIELD_NUMBER = 2;
     /**
      * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
+     * @return Whether the topicDataRecord field is set.
      */
     public boolean hasTopicDataRecord() {
       return typeCase_ == 2;
     }
     /**
      * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
+     * @return The topicDataRecord.
      */
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getTopicDataRecord() {
       if (typeCase_ == 2) {
@@ -241,12 +258,14 @@ public final class TopicDataOuterClass {
     public static final int TOPIC_DATA_RECORD_LIST_FIELD_NUMBER = 3;
     /**
      * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
+     * @return Whether the topicDataRecordList field is set.
      */
     public boolean hasTopicDataRecordList() {
       return typeCase_ == 3;
     }
     /**
      * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
+     * @return The topicDataRecordList.
      */
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList getTopicDataRecordList() {
       if (typeCase_ == 3) {
@@ -267,12 +286,14 @@ public final class TopicDataOuterClass {
     public static final int ERROR_FIELD_NUMBER = 4;
     /**
      * <code>.ubii.general.Error error = 4;</code>
+     * @return Whether the error field is set.
      */
     public boolean hasError() {
       return typeCase_ == 4;
     }
     /**
      * <code>.ubii.general.Error error = 4;</code>
+     * @return The error.
      */
     public ubii.general.ErrorOuterClass.Error getError() {
       if (typeCase_ == 4) {
@@ -349,28 +370,25 @@ public final class TopicDataOuterClass {
       }
       ubii.topicData.TopicDataOuterClass.TopicData other = (ubii.topicData.TopicDataOuterClass.TopicData) obj;
 
-      boolean result = true;
-      result = result && getTypeCase().equals(
-          other.getTypeCase());
-      if (!result) return false;
+      if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
         case 2:
-          result = result && getTopicDataRecord()
-              .equals(other.getTopicDataRecord());
+          if (!getTopicDataRecord()
+              .equals(other.getTopicDataRecord())) return false;
           break;
         case 3:
-          result = result && getTopicDataRecordList()
-              .equals(other.getTopicDataRecordList());
+          if (!getTopicDataRecordList()
+              .equals(other.getTopicDataRecordList())) return false;
           break;
         case 4:
-          result = result && getError()
-              .equals(other.getError());
+          if (!getError()
+              .equals(other.getError())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -585,35 +603,35 @@ public final class TopicDataOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -692,12 +710,14 @@ public final class TopicDataOuterClass {
           ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.Builder, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder> topicDataRecordBuilder_;
       /**
        * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
+       * @return Whether the topicDataRecord field is set.
        */
       public boolean hasTopicDataRecord() {
         return typeCase_ == 2;
       }
       /**
        * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
+       * @return The topicDataRecord.
        */
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getTopicDataRecord() {
         if (topicDataRecordBuilder_ == null) {
@@ -828,12 +848,14 @@ public final class TopicDataOuterClass {
           ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList.Builder, ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordListOrBuilder> topicDataRecordListBuilder_;
       /**
        * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
+       * @return Whether the topicDataRecordList field is set.
        */
       public boolean hasTopicDataRecordList() {
         return typeCase_ == 3;
       }
       /**
        * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
+       * @return The topicDataRecordList.
        */
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList getTopicDataRecordList() {
         if (topicDataRecordListBuilder_ == null) {
@@ -964,12 +986,14 @@ public final class TopicDataOuterClass {
           ubii.general.ErrorOuterClass.Error, ubii.general.ErrorOuterClass.Error.Builder, ubii.general.ErrorOuterClass.ErrorOrBuilder> errorBuilder_;
       /**
        * <code>.ubii.general.Error error = 4;</code>
+       * @return Whether the error field is set.
        */
       public boolean hasError() {
         return typeCase_ == 4;
       }
       /**
        * <code>.ubii.general.Error error = 4;</code>
+       * @return The error.
        */
       public ubii.general.ErrorOuterClass.Error getError() {
         if (errorBuilder_ == null) {
@@ -1098,7 +1122,7 @@ public final class TopicDataOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1172,20 +1196,12 @@ public final class TopicDataOuterClass {
       "\n\005error\030\004 \001(\0132\023.ubii.general.ErrorH\000B\006\n\004" +
       "typeb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.topicData.TopicDataRecordOuterClass.getDescriptor(),
           ubii.general.ErrorOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_topicData_TopicData_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicData_fieldAccessorTable = new
