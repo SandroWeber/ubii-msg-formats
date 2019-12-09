@@ -65,6 +65,8 @@ public final class InteractionOuterClass {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -72,6 +74,10 @@ public final class InteractionOuterClass {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static InteractionStatus forNumber(int value) {
       switch (value) {
         case 0: return CREATED;
@@ -136,30 +142,36 @@ public final class InteractionOuterClass {
 
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>string processing_callback = 3;</code>
+     * @return The processingCallback.
      */
     java.lang.String getProcessingCallback();
     /**
      * <code>string processing_callback = 3;</code>
+     * @return The bytes for processingCallback.
      */
     com.google.protobuf.ByteString
         getProcessingCallbackBytes();
@@ -214,73 +226,92 @@ public final class InteractionOuterClass {
 
     /**
      * <code>string on_created = 6;</code>
+     * @return The onCreated.
      */
     java.lang.String getOnCreated();
     /**
      * <code>string on_created = 6;</code>
+     * @return The bytes for onCreated.
      */
     com.google.protobuf.ByteString
         getOnCreatedBytes();
 
     /**
      * <code>float process_frequency = 7;</code>
+     * @return The processFrequency.
      */
     float getProcessFrequency();
 
     /**
      * <code>repeated string authors = 8;</code>
+     * @return A list containing the authors.
      */
     java.util.List<java.lang.String>
         getAuthorsList();
     /**
      * <code>repeated string authors = 8;</code>
+     * @return The count of authors.
      */
     int getAuthorsCount();
     /**
      * <code>repeated string authors = 8;</code>
+     * @param index The index of the element to return.
+     * @return The authors at the given index.
      */
     java.lang.String getAuthors(int index);
     /**
      * <code>repeated string authors = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the authors at the given index.
      */
     com.google.protobuf.ByteString
         getAuthorsBytes(int index);
 
     /**
      * <code>repeated string tags = 9;</code>
+     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 9;</code>
+     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 9;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 10;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 10;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
     /**
      * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     * @return The status.
      */
     ubii.interactions.InteractionOuterClass.InteractionStatus getStatus();
   }
@@ -303,11 +334,17 @@ public final class InteractionOuterClass {
       inputFormats_ = java.util.Collections.emptyList();
       outputFormats_ = java.util.Collections.emptyList();
       onCreated_ = "";
-      processFrequency_ = 0F;
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
       status_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Interaction();
     }
 
     @java.lang.Override
@@ -353,18 +390,18 @@ public final class InteractionOuterClass {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 inputFormats_ = new java.util.ArrayList<ubii.interactions.IoFormat.IOFormat>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               inputFormats_.add(
                   input.readMessage(ubii.interactions.IoFormat.IOFormat.parser(), extensionRegistry));
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 outputFormats_ = new java.util.ArrayList<ubii.interactions.IoFormat.IOFormat>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               outputFormats_.add(
                   input.readMessage(ubii.interactions.IoFormat.IOFormat.parser(), extensionRegistry));
@@ -383,18 +420,18 @@ public final class InteractionOuterClass {
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 authors_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000004;
               }
               authors_.add(s);
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000008;
               }
               tags_.add(s);
               break;
@@ -412,7 +449,7 @@ public final class InteractionOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -426,16 +463,16 @@ public final class InteractionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           inputFormats_ = java.util.Collections.unmodifiableList(inputFormats_);
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           outputFormats_ = java.util.Collections.unmodifiableList(outputFormats_);
         }
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           authors_ = authors_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -455,11 +492,11 @@ public final class InteractionOuterClass {
               ubii.interactions.InteractionOuterClass.Interaction.class, ubii.interactions.InteractionOuterClass.Interaction.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -475,6 +512,7 @@ public final class InteractionOuterClass {
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -494,6 +532,7 @@ public final class InteractionOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -509,6 +548,7 @@ public final class InteractionOuterClass {
     }
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -528,6 +568,7 @@ public final class InteractionOuterClass {
     private volatile java.lang.Object processingCallback_;
     /**
      * <code>string processing_callback = 3;</code>
+     * @return The processingCallback.
      */
     public java.lang.String getProcessingCallback() {
       java.lang.Object ref = processingCallback_;
@@ -543,6 +584,7 @@ public final class InteractionOuterClass {
     }
     /**
      * <code>string processing_callback = 3;</code>
+     * @return The bytes for processingCallback.
      */
     public com.google.protobuf.ByteString
         getProcessingCallbackBytes() {
@@ -632,6 +674,7 @@ public final class InteractionOuterClass {
     private volatile java.lang.Object onCreated_;
     /**
      * <code>string on_created = 6;</code>
+     * @return The onCreated.
      */
     public java.lang.String getOnCreated() {
       java.lang.Object ref = onCreated_;
@@ -647,6 +690,7 @@ public final class InteractionOuterClass {
     }
     /**
      * <code>string on_created = 6;</code>
+     * @return The bytes for onCreated.
      */
     public com.google.protobuf.ByteString
         getOnCreatedBytes() {
@@ -666,6 +710,7 @@ public final class InteractionOuterClass {
     private float processFrequency_;
     /**
      * <code>float process_frequency = 7;</code>
+     * @return The processFrequency.
      */
     public float getProcessFrequency() {
       return processFrequency_;
@@ -675,6 +720,7 @@ public final class InteractionOuterClass {
     private com.google.protobuf.LazyStringList authors_;
     /**
      * <code>repeated string authors = 8;</code>
+     * @return A list containing the authors.
      */
     public com.google.protobuf.ProtocolStringList
         getAuthorsList() {
@@ -682,18 +728,23 @@ public final class InteractionOuterClass {
     }
     /**
      * <code>repeated string authors = 8;</code>
+     * @return The count of authors.
      */
     public int getAuthorsCount() {
       return authors_.size();
     }
     /**
      * <code>repeated string authors = 8;</code>
+     * @param index The index of the element to return.
+     * @return The authors at the given index.
      */
     public java.lang.String getAuthors(int index) {
       return authors_.get(index);
     }
     /**
      * <code>repeated string authors = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the authors at the given index.
      */
     public com.google.protobuf.ByteString
         getAuthorsBytes(int index) {
@@ -704,6 +755,7 @@ public final class InteractionOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 9;</code>
+     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -711,18 +763,23 @@ public final class InteractionOuterClass {
     }
     /**
      * <code>repeated string tags = 9;</code>
+     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 9;</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -733,6 +790,7 @@ public final class InteractionOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 10;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -748,6 +806,7 @@ public final class InteractionOuterClass {
     }
     /**
      * <code>string description = 10;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -767,12 +826,14 @@ public final class InteractionOuterClass {
     private int status_;
     /**
      * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
     }
     /**
      * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+     * @return The status.
      */
     public ubii.interactions.InteractionOuterClass.InteractionStatus getStatus() {
       @SuppressWarnings("deprecation")
@@ -898,32 +959,30 @@ public final class InteractionOuterClass {
       }
       ubii.interactions.InteractionOuterClass.Interaction other = (ubii.interactions.InteractionOuterClass.Interaction) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getProcessingCallback()
-          .equals(other.getProcessingCallback());
-      result = result && getInputFormatsList()
-          .equals(other.getInputFormatsList());
-      result = result && getOutputFormatsList()
-          .equals(other.getOutputFormatsList());
-      result = result && getOnCreated()
-          .equals(other.getOnCreated());
-      result = result && (
-          java.lang.Float.floatToIntBits(getProcessFrequency())
-          == java.lang.Float.floatToIntBits(
-              other.getProcessFrequency()));
-      result = result && getAuthorsList()
-          .equals(other.getAuthorsList());
-      result = result && getTagsList()
-          .equals(other.getTagsList());
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && status_ == other.status_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getProcessingCallback()
+          .equals(other.getProcessingCallback())) return false;
+      if (!getInputFormatsList()
+          .equals(other.getInputFormatsList())) return false;
+      if (!getOutputFormatsList()
+          .equals(other.getOutputFormatsList())) return false;
+      if (!getOnCreated()
+          .equals(other.getOnCreated())) return false;
+      if (java.lang.Float.floatToIntBits(getProcessFrequency())
+          != java.lang.Float.floatToIntBits(
+              other.getProcessFrequency())) return false;
+      if (!getAuthorsList()
+          .equals(other.getAuthorsList())) return false;
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (status_ != other.status_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1107,13 +1166,13 @@ public final class InteractionOuterClass {
 
         if (inputFormatsBuilder_ == null) {
           inputFormats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           inputFormatsBuilder_.clear();
         }
         if (outputFormatsBuilder_ == null) {
           outputFormats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           outputFormatsBuilder_.clear();
         }
@@ -1122,9 +1181,9 @@ public final class InteractionOuterClass {
         processFrequency_ = 0F;
 
         authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000004);
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000008);
         description_ = "";
 
         status_ = 0;
@@ -1156,23 +1215,22 @@ public final class InteractionOuterClass {
       public ubii.interactions.InteractionOuterClass.Interaction buildPartial() {
         ubii.interactions.InteractionOuterClass.Interaction result = new ubii.interactions.InteractionOuterClass.Interaction(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.id_ = id_;
         result.name_ = name_;
         result.processingCallback_ = processingCallback_;
         if (inputFormatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             inputFormats_ = java.util.Collections.unmodifiableList(inputFormats_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.inputFormats_ = inputFormats_;
         } else {
           result.inputFormats_ = inputFormatsBuilder_.build();
         }
         if (outputFormatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             outputFormats_ = java.util.Collections.unmodifiableList(outputFormats_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.outputFormats_ = outputFormats_;
         } else {
@@ -1180,54 +1238,53 @@ public final class InteractionOuterClass {
         }
         result.onCreated_ = onCreated_;
         result.processFrequency_ = processFrequency_;
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           authors_ = authors_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.authors_ = authors_;
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.tags_ = tags_;
         result.description_ = description_;
         result.status_ = status_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1257,7 +1314,7 @@ public final class InteractionOuterClass {
           if (!other.inputFormats_.isEmpty()) {
             if (inputFormats_.isEmpty()) {
               inputFormats_ = other.inputFormats_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureInputFormatsIsMutable();
               inputFormats_.addAll(other.inputFormats_);
@@ -1270,7 +1327,7 @@ public final class InteractionOuterClass {
               inputFormatsBuilder_.dispose();
               inputFormatsBuilder_ = null;
               inputFormats_ = other.inputFormats_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               inputFormatsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInputFormatsFieldBuilder() : null;
@@ -1283,7 +1340,7 @@ public final class InteractionOuterClass {
           if (!other.outputFormats_.isEmpty()) {
             if (outputFormats_.isEmpty()) {
               outputFormats_ = other.outputFormats_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureOutputFormatsIsMutable();
               outputFormats_.addAll(other.outputFormats_);
@@ -1296,7 +1353,7 @@ public final class InteractionOuterClass {
               outputFormatsBuilder_.dispose();
               outputFormatsBuilder_ = null;
               outputFormats_ = other.outputFormats_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
               outputFormatsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOutputFormatsFieldBuilder() : null;
@@ -1315,7 +1372,7 @@ public final class InteractionOuterClass {
         if (!other.authors_.isEmpty()) {
           if (authors_.isEmpty()) {
             authors_ = other.authors_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAuthorsIsMutable();
             authors_.addAll(other.authors_);
@@ -1325,7 +1382,7 @@ public final class InteractionOuterClass {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1372,6 +1429,7 @@ public final class InteractionOuterClass {
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1387,6 +1445,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1403,6 +1462,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
@@ -1416,6 +1477,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -1425,6 +1487,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1441,6 +1505,7 @@ public final class InteractionOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1456,6 +1521,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1472,6 +1538,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1485,6 +1553,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1494,6 +1563,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1510,6 +1581,7 @@ public final class InteractionOuterClass {
       private java.lang.Object processingCallback_ = "";
       /**
        * <code>string processing_callback = 3;</code>
+       * @return The processingCallback.
        */
       public java.lang.String getProcessingCallback() {
         java.lang.Object ref = processingCallback_;
@@ -1525,6 +1597,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string processing_callback = 3;</code>
+       * @return The bytes for processingCallback.
        */
       public com.google.protobuf.ByteString
           getProcessingCallbackBytes() {
@@ -1541,6 +1614,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string processing_callback = 3;</code>
+       * @param value The processingCallback to set.
+       * @return This builder for chaining.
        */
       public Builder setProcessingCallback(
           java.lang.String value) {
@@ -1554,6 +1629,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string processing_callback = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProcessingCallback() {
         
@@ -1563,6 +1639,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string processing_callback = 3;</code>
+       * @param value The bytes for processingCallback to set.
+       * @return This builder for chaining.
        */
       public Builder setProcessingCallbackBytes(
           com.google.protobuf.ByteString value) {
@@ -1579,9 +1657,9 @@ public final class InteractionOuterClass {
       private java.util.List<ubii.interactions.IoFormat.IOFormat> inputFormats_ =
         java.util.Collections.emptyList();
       private void ensureInputFormatsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           inputFormats_ = new java.util.ArrayList<ubii.interactions.IoFormat.IOFormat>(inputFormats_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1731,7 +1809,7 @@ public final class InteractionOuterClass {
       public Builder clearInputFormats() {
         if (inputFormatsBuilder_ == null) {
           inputFormats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           inputFormatsBuilder_.clear();
@@ -1808,7 +1886,7 @@ public final class InteractionOuterClass {
           inputFormatsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder>(
                   inputFormats_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           inputFormats_ = null;
@@ -1819,9 +1897,9 @@ public final class InteractionOuterClass {
       private java.util.List<ubii.interactions.IoFormat.IOFormat> outputFormats_ =
         java.util.Collections.emptyList();
       private void ensureOutputFormatsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           outputFormats_ = new java.util.ArrayList<ubii.interactions.IoFormat.IOFormat>(outputFormats_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1971,7 +2049,7 @@ public final class InteractionOuterClass {
       public Builder clearOutputFormats() {
         if (outputFormatsBuilder_ == null) {
           outputFormats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           outputFormatsBuilder_.clear();
@@ -2048,7 +2126,7 @@ public final class InteractionOuterClass {
           outputFormatsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.interactions.IoFormat.IOFormat, ubii.interactions.IoFormat.IOFormat.Builder, ubii.interactions.IoFormat.IOFormatOrBuilder>(
                   outputFormats_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           outputFormats_ = null;
@@ -2059,6 +2137,7 @@ public final class InteractionOuterClass {
       private java.lang.Object onCreated_ = "";
       /**
        * <code>string on_created = 6;</code>
+       * @return The onCreated.
        */
       public java.lang.String getOnCreated() {
         java.lang.Object ref = onCreated_;
@@ -2074,6 +2153,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string on_created = 6;</code>
+       * @return The bytes for onCreated.
        */
       public com.google.protobuf.ByteString
           getOnCreatedBytes() {
@@ -2090,6 +2170,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string on_created = 6;</code>
+       * @param value The onCreated to set.
+       * @return This builder for chaining.
        */
       public Builder setOnCreated(
           java.lang.String value) {
@@ -2103,6 +2185,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string on_created = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOnCreated() {
         
@@ -2112,6 +2195,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string on_created = 6;</code>
+       * @param value The bytes for onCreated to set.
+       * @return This builder for chaining.
        */
       public Builder setOnCreatedBytes(
           com.google.protobuf.ByteString value) {
@@ -2128,12 +2213,15 @@ public final class InteractionOuterClass {
       private float processFrequency_ ;
       /**
        * <code>float process_frequency = 7;</code>
+       * @return The processFrequency.
        */
       public float getProcessFrequency() {
         return processFrequency_;
       }
       /**
        * <code>float process_frequency = 7;</code>
+       * @param value The processFrequency to set.
+       * @return This builder for chaining.
        */
       public Builder setProcessFrequency(float value) {
         
@@ -2143,6 +2231,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>float process_frequency = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearProcessFrequency() {
         
@@ -2153,13 +2242,14 @@ public final class InteractionOuterClass {
 
       private com.google.protobuf.LazyStringList authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureAuthorsIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           authors_ = new com.google.protobuf.LazyStringArrayList(authors_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000004;
          }
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @return A list containing the authors.
        */
       public com.google.protobuf.ProtocolStringList
           getAuthorsList() {
@@ -2167,18 +2257,23 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @return The count of authors.
        */
       public int getAuthorsCount() {
         return authors_.size();
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @param index The index of the element to return.
+       * @return The authors at the given index.
        */
       public java.lang.String getAuthors(int index) {
         return authors_.get(index);
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the authors at the given index.
        */
       public com.google.protobuf.ByteString
           getAuthorsBytes(int index) {
@@ -2186,6 +2281,9 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The authors to set.
+       * @return This builder for chaining.
        */
       public Builder setAuthors(
           int index, java.lang.String value) {
@@ -2199,6 +2297,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @param value The authors to add.
+       * @return This builder for chaining.
        */
       public Builder addAuthors(
           java.lang.String value) {
@@ -2212,6 +2312,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @param values The authors to add.
+       * @return This builder for chaining.
        */
       public Builder addAllAuthors(
           java.lang.Iterable<java.lang.String> values) {
@@ -2223,15 +2325,18 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAuthors() {
         authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
        * <code>repeated string authors = 8;</code>
+       * @param value The bytes of the authors to add.
+       * @return This builder for chaining.
        */
       public Builder addAuthorsBytes(
           com.google.protobuf.ByteString value) {
@@ -2247,13 +2352,14 @@ public final class InteractionOuterClass {
 
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000008;
          }
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -2261,18 +2367,23 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -2280,6 +2391,9 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -2293,6 +2407,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @param value The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -2306,6 +2422,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @param values The tags to add.
+       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -2317,15 +2435,18 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 9;</code>
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -2342,6 +2463,7 @@ public final class InteractionOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 10;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -2357,6 +2479,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string description = 10;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -2373,6 +2496,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string description = 10;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -2386,6 +2511,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string description = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -2395,6 +2521,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>string description = 10;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -2411,12 +2539,15 @@ public final class InteractionOuterClass {
       private int status_ = 0;
       /**
        * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       * @return The enum numeric value on the wire for status.
        */
       public int getStatusValue() {
         return status_;
       }
       /**
        * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
         status_ = value;
@@ -2425,6 +2556,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       * @return The status.
        */
       public ubii.interactions.InteractionOuterClass.InteractionStatus getStatus() {
         @SuppressWarnings("deprecation")
@@ -2433,6 +2565,8 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
        */
       public Builder setStatus(ubii.interactions.InteractionOuterClass.InteractionStatus value) {
         if (value == null) {
@@ -2445,6 +2579,7 @@ public final class InteractionOuterClass {
       }
       /**
        * <code>.ubii.interactions.InteractionStatus status = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStatus() {
         
@@ -2455,7 +2590,7 @@ public final class InteractionOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2550,6 +2685,13 @@ public final class InteractionOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InteractionList();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2574,7 +2716,7 @@ public final class InteractionOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 elements_ = new java.util.ArrayList<ubii.interactions.InteractionOuterClass.Interaction>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -2583,7 +2725,7 @@ public final class InteractionOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -2597,7 +2739,7 @@ public final class InteractionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
@@ -2697,11 +2839,10 @@ public final class InteractionOuterClass {
       }
       ubii.interactions.InteractionOuterClass.InteractionList other = (ubii.interactions.InteractionOuterClass.InteractionList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2883,7 +3024,7 @@ public final class InteractionOuterClass {
         ubii.interactions.InteractionOuterClass.InteractionList result = new ubii.interactions.InteractionOuterClass.InteractionList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2897,35 +3038,35 @@ public final class InteractionOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2998,7 +3139,7 @@ public final class InteractionOuterClass {
       private java.util.List<ubii.interactions.InteractionOuterClass.Interaction> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.interactions.InteractionOuterClass.Interaction>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -3227,7 +3368,7 @@ public final class InteractionOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.interactions.InteractionOuterClass.Interaction, ubii.interactions.InteractionOuterClass.Interaction.Builder, ubii.interactions.InteractionOuterClass.InteractionOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -3237,7 +3378,7 @@ public final class InteractionOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3322,19 +3463,11 @@ public final class InteractionOuterClass {
       "ED\020\000\022\017\n\013INITIALIZED\020\001\022\016\n\nPROCESSING\020\002\022\n\n" +
       "\006HALTED\020\003b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.interactions.IoFormat.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_interactions_Interaction_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_interactions_Interaction_fieldAccessorTable = new

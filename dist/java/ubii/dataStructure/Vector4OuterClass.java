@@ -20,21 +20,25 @@ public final class Vector4OuterClass {
 
     /**
      * <code>double x = 1;</code>
+     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 2;</code>
+     * @return The y.
      */
     double getY();
 
     /**
      * <code>double z = 3;</code>
+     * @return The z.
      */
     double getZ();
 
     /**
      * <code>double w = 4;</code>
+     * @return The w.
      */
     double getW();
   }
@@ -51,10 +55,13 @@ public final class Vector4OuterClass {
       super(builder);
     }
     private Vector4() {
-      x_ = 0D;
-      y_ = 0D;
-      z_ = 0D;
-      w_ = 0D;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Vector4();
     }
 
     @java.lang.Override
@@ -70,7 +77,6 @@ public final class Vector4OuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -102,7 +108,7 @@ public final class Vector4OuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -137,6 +143,7 @@ public final class Vector4OuterClass {
     private double x_;
     /**
      * <code>double x = 1;</code>
+     * @return The x.
      */
     public double getX() {
       return x_;
@@ -146,6 +153,7 @@ public final class Vector4OuterClass {
     private double y_;
     /**
      * <code>double y = 2;</code>
+     * @return The y.
      */
     public double getY() {
       return y_;
@@ -155,6 +163,7 @@ public final class Vector4OuterClass {
     private double z_;
     /**
      * <code>double z = 3;</code>
+     * @return The z.
      */
     public double getZ() {
       return z_;
@@ -164,6 +173,7 @@ public final class Vector4OuterClass {
     private double w_;
     /**
      * <code>double w = 4;</code>
+     * @return The w.
      */
     public double getW() {
       return w_;
@@ -235,25 +245,20 @@ public final class Vector4OuterClass {
       }
       ubii.dataStructure.Vector4OuterClass.Vector4 other = (ubii.dataStructure.Vector4OuterClass.Vector4) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getX())
-          == java.lang.Double.doubleToLongBits(
-              other.getX()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getY())
-          == java.lang.Double.doubleToLongBits(
-              other.getY()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getZ())
-          == java.lang.Double.doubleToLongBits(
-              other.getZ()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getW())
-          == java.lang.Double.doubleToLongBits(
-              other.getW()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Double.doubleToLongBits(getX())
+          != java.lang.Double.doubleToLongBits(
+              other.getX())) return false;
+      if (java.lang.Double.doubleToLongBits(getY())
+          != java.lang.Double.doubleToLongBits(
+              other.getY())) return false;
+      if (java.lang.Double.doubleToLongBits(getZ())
+          != java.lang.Double.doubleToLongBits(
+              other.getZ())) return false;
+      if (java.lang.Double.doubleToLongBits(getW())
+          != java.lang.Double.doubleToLongBits(
+              other.getW())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -452,35 +457,35 @@ public final class Vector4OuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -538,12 +543,15 @@ public final class Vector4OuterClass {
       private double x_ ;
       /**
        * <code>double x = 1;</code>
+       * @return The x.
        */
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 1;</code>
+       * @param value The x to set.
+       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -553,6 +561,7 @@ public final class Vector4OuterClass {
       }
       /**
        * <code>double x = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -564,12 +573,15 @@ public final class Vector4OuterClass {
       private double y_ ;
       /**
        * <code>double y = 2;</code>
+       * @return The y.
        */
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 2;</code>
+       * @param value The y to set.
+       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -579,6 +591,7 @@ public final class Vector4OuterClass {
       }
       /**
        * <code>double y = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -590,12 +603,15 @@ public final class Vector4OuterClass {
       private double z_ ;
       /**
        * <code>double z = 3;</code>
+       * @return The z.
        */
       public double getZ() {
         return z_;
       }
       /**
        * <code>double z = 3;</code>
+       * @param value The z to set.
+       * @return This builder for chaining.
        */
       public Builder setZ(double value) {
         
@@ -605,6 +621,7 @@ public final class Vector4OuterClass {
       }
       /**
        * <code>double z = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearZ() {
         
@@ -616,12 +633,15 @@ public final class Vector4OuterClass {
       private double w_ ;
       /**
        * <code>double w = 4;</code>
+       * @return The w.
        */
       public double getW() {
         return w_;
       }
       /**
        * <code>double w = 4;</code>
+       * @param value The w to set.
+       * @return This builder for chaining.
        */
       public Builder setW(double value) {
         
@@ -631,6 +651,7 @@ public final class Vector4OuterClass {
       }
       /**
        * <code>double w = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearW() {
         
@@ -641,7 +662,7 @@ public final class Vector4OuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -710,18 +731,10 @@ public final class Vector4OuterClass {
       "e\"5\n\007Vector4\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030" +
       "\003 \001(\001\022\t\n\001w\030\004 \001(\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Vector4_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Vector4_fieldAccessorTable = new

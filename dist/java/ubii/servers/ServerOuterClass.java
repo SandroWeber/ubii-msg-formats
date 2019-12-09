@@ -20,90 +20,108 @@ public final class ServerOuterClass {
 
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The ipEthernet.
      */
     java.lang.String getIpEthernet();
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The bytes for ipEthernet.
      */
     com.google.protobuf.ByteString
         getIpEthernetBytes();
 
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The ipWlan.
      */
     java.lang.String getIpWlan();
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The bytes for ipWlan.
      */
     com.google.protobuf.ByteString
         getIpWlanBytes();
 
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The portServiceZmq.
      */
     java.lang.String getPortServiceZmq();
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The bytes for portServiceZmq.
      */
     com.google.protobuf.ByteString
         getPortServiceZmqBytes();
 
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The portServiceRest.
      */
     java.lang.String getPortServiceRest();
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The bytes for portServiceRest.
      */
     com.google.protobuf.ByteString
         getPortServiceRestBytes();
 
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The portTopicDataZmq.
      */
     java.lang.String getPortTopicDataZmq();
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The bytes for portTopicDataZmq.
      */
     com.google.protobuf.ByteString
         getPortTopicDataZmqBytes();
 
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The portTopicDataWs.
      */
     java.lang.String getPortTopicDataWs();
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The bytes for portTopicDataWs.
      */
     com.google.protobuf.ByteString
         getPortTopicDataWsBytes();
 
     /**
      * <code>string constants_json = 9;</code>
+     * @return The constantsJson.
      */
     java.lang.String getConstantsJson();
     /**
      * <code>string constants_json = 9;</code>
+     * @return The bytes for constantsJson.
      */
     com.google.protobuf.ByteString
         getConstantsJsonBytes();
@@ -133,6 +151,13 @@ public final class ServerOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Server();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -145,7 +170,6 @@ public final class ServerOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -211,7 +235,7 @@ public final class ServerOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -246,6 +270,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -261,6 +286,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -280,6 +306,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -295,6 +322,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -314,6 +342,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object ipEthernet_;
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The ipEthernet.
      */
     public java.lang.String getIpEthernet() {
       java.lang.Object ref = ipEthernet_;
@@ -329,6 +358,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string ip_ethernet = 3;</code>
+     * @return The bytes for ipEthernet.
      */
     public com.google.protobuf.ByteString
         getIpEthernetBytes() {
@@ -348,6 +378,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object ipWlan_;
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The ipWlan.
      */
     public java.lang.String getIpWlan() {
       java.lang.Object ref = ipWlan_;
@@ -363,6 +394,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string ip_wlan = 4;</code>
+     * @return The bytes for ipWlan.
      */
     public com.google.protobuf.ByteString
         getIpWlanBytes() {
@@ -382,6 +414,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object portServiceZmq_;
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The portServiceZmq.
      */
     public java.lang.String getPortServiceZmq() {
       java.lang.Object ref = portServiceZmq_;
@@ -397,6 +430,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_service_zmq = 5;</code>
+     * @return The bytes for portServiceZmq.
      */
     public com.google.protobuf.ByteString
         getPortServiceZmqBytes() {
@@ -416,6 +450,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object portServiceRest_;
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The portServiceRest.
      */
     public java.lang.String getPortServiceRest() {
       java.lang.Object ref = portServiceRest_;
@@ -431,6 +466,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_service_rest = 6;</code>
+     * @return The bytes for portServiceRest.
      */
     public com.google.protobuf.ByteString
         getPortServiceRestBytes() {
@@ -450,6 +486,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object portTopicDataZmq_;
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The portTopicDataZmq.
      */
     public java.lang.String getPortTopicDataZmq() {
       java.lang.Object ref = portTopicDataZmq_;
@@ -465,6 +502,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_topic_data_zmq = 7;</code>
+     * @return The bytes for portTopicDataZmq.
      */
     public com.google.protobuf.ByteString
         getPortTopicDataZmqBytes() {
@@ -484,6 +522,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object portTopicDataWs_;
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The portTopicDataWs.
      */
     public java.lang.String getPortTopicDataWs() {
       java.lang.Object ref = portTopicDataWs_;
@@ -499,6 +538,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string port_topic_data_ws = 8;</code>
+     * @return The bytes for portTopicDataWs.
      */
     public com.google.protobuf.ByteString
         getPortTopicDataWsBytes() {
@@ -518,6 +558,7 @@ public final class ServerOuterClass {
     private volatile java.lang.Object constantsJson_;
     /**
      * <code>string constants_json = 9;</code>
+     * @return The constantsJson.
      */
     public java.lang.String getConstantsJson() {
       java.lang.Object ref = constantsJson_;
@@ -533,6 +574,7 @@ public final class ServerOuterClass {
     }
     /**
      * <code>string constants_json = 9;</code>
+     * @return The bytes for constantsJson.
      */
     public com.google.protobuf.ByteString
         getConstantsJsonBytes() {
@@ -640,27 +682,26 @@ public final class ServerOuterClass {
       }
       ubii.servers.ServerOuterClass.Server other = (ubii.servers.ServerOuterClass.Server) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getIpEthernet()
-          .equals(other.getIpEthernet());
-      result = result && getIpWlan()
-          .equals(other.getIpWlan());
-      result = result && getPortServiceZmq()
-          .equals(other.getPortServiceZmq());
-      result = result && getPortServiceRest()
-          .equals(other.getPortServiceRest());
-      result = result && getPortTopicDataZmq()
-          .equals(other.getPortTopicDataZmq());
-      result = result && getPortTopicDataWs()
-          .equals(other.getPortTopicDataWs());
-      result = result && getConstantsJson()
-          .equals(other.getConstantsJson());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getIpEthernet()
+          .equals(other.getIpEthernet())) return false;
+      if (!getIpWlan()
+          .equals(other.getIpWlan())) return false;
+      if (!getPortServiceZmq()
+          .equals(other.getPortServiceZmq())) return false;
+      if (!getPortServiceRest()
+          .equals(other.getPortServiceRest())) return false;
+      if (!getPortTopicDataZmq()
+          .equals(other.getPortTopicDataZmq())) return false;
+      if (!getPortTopicDataWs()
+          .equals(other.getPortTopicDataWs())) return false;
+      if (!getConstantsJson()
+          .equals(other.getConstantsJson())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -880,35 +921,35 @@ public final class ServerOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -990,6 +1031,7 @@ public final class ServerOuterClass {
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1005,6 +1047,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1021,6 +1064,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
@@ -1034,6 +1079,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -1043,6 +1089,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1059,6 +1107,7 @@ public final class ServerOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1074,6 +1123,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1090,6 +1140,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1103,6 +1155,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1112,6 +1165,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1128,6 +1183,7 @@ public final class ServerOuterClass {
       private java.lang.Object ipEthernet_ = "";
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @return The ipEthernet.
        */
       public java.lang.String getIpEthernet() {
         java.lang.Object ref = ipEthernet_;
@@ -1143,6 +1199,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @return The bytes for ipEthernet.
        */
       public com.google.protobuf.ByteString
           getIpEthernetBytes() {
@@ -1159,6 +1216,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @param value The ipEthernet to set.
+       * @return This builder for chaining.
        */
       public Builder setIpEthernet(
           java.lang.String value) {
@@ -1172,6 +1231,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIpEthernet() {
         
@@ -1181,6 +1241,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_ethernet = 3;</code>
+       * @param value The bytes for ipEthernet to set.
+       * @return This builder for chaining.
        */
       public Builder setIpEthernetBytes(
           com.google.protobuf.ByteString value) {
@@ -1197,6 +1259,7 @@ public final class ServerOuterClass {
       private java.lang.Object ipWlan_ = "";
       /**
        * <code>string ip_wlan = 4;</code>
+       * @return The ipWlan.
        */
       public java.lang.String getIpWlan() {
         java.lang.Object ref = ipWlan_;
@@ -1212,6 +1275,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @return The bytes for ipWlan.
        */
       public com.google.protobuf.ByteString
           getIpWlanBytes() {
@@ -1228,6 +1292,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @param value The ipWlan to set.
+       * @return This builder for chaining.
        */
       public Builder setIpWlan(
           java.lang.String value) {
@@ -1241,6 +1307,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIpWlan() {
         
@@ -1250,6 +1317,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string ip_wlan = 4;</code>
+       * @param value The bytes for ipWlan to set.
+       * @return This builder for chaining.
        */
       public Builder setIpWlanBytes(
           com.google.protobuf.ByteString value) {
@@ -1266,6 +1335,7 @@ public final class ServerOuterClass {
       private java.lang.Object portServiceZmq_ = "";
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @return The portServiceZmq.
        */
       public java.lang.String getPortServiceZmq() {
         java.lang.Object ref = portServiceZmq_;
@@ -1281,6 +1351,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @return The bytes for portServiceZmq.
        */
       public com.google.protobuf.ByteString
           getPortServiceZmqBytes() {
@@ -1297,6 +1368,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @param value The portServiceZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceZmq(
           java.lang.String value) {
@@ -1310,6 +1383,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortServiceZmq() {
         
@@ -1319,6 +1393,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_zmq = 5;</code>
+       * @param value The bytes for portServiceZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceZmqBytes(
           com.google.protobuf.ByteString value) {
@@ -1335,6 +1411,7 @@ public final class ServerOuterClass {
       private java.lang.Object portServiceRest_ = "";
       /**
        * <code>string port_service_rest = 6;</code>
+       * @return The portServiceRest.
        */
       public java.lang.String getPortServiceRest() {
         java.lang.Object ref = portServiceRest_;
@@ -1350,6 +1427,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @return The bytes for portServiceRest.
        */
       public com.google.protobuf.ByteString
           getPortServiceRestBytes() {
@@ -1366,6 +1444,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @param value The portServiceRest to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceRest(
           java.lang.String value) {
@@ -1379,6 +1459,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortServiceRest() {
         
@@ -1388,6 +1469,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_service_rest = 6;</code>
+       * @param value The bytes for portServiceRest to set.
+       * @return This builder for chaining.
        */
       public Builder setPortServiceRestBytes(
           com.google.protobuf.ByteString value) {
@@ -1404,6 +1487,7 @@ public final class ServerOuterClass {
       private java.lang.Object portTopicDataZmq_ = "";
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @return The portTopicDataZmq.
        */
       public java.lang.String getPortTopicDataZmq() {
         java.lang.Object ref = portTopicDataZmq_;
@@ -1419,6 +1503,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @return The bytes for portTopicDataZmq.
        */
       public com.google.protobuf.ByteString
           getPortTopicDataZmqBytes() {
@@ -1435,6 +1520,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @param value The portTopicDataZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataZmq(
           java.lang.String value) {
@@ -1448,6 +1535,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortTopicDataZmq() {
         
@@ -1457,6 +1545,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_zmq = 7;</code>
+       * @param value The bytes for portTopicDataZmq to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataZmqBytes(
           com.google.protobuf.ByteString value) {
@@ -1473,6 +1563,7 @@ public final class ServerOuterClass {
       private java.lang.Object portTopicDataWs_ = "";
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @return The portTopicDataWs.
        */
       public java.lang.String getPortTopicDataWs() {
         java.lang.Object ref = portTopicDataWs_;
@@ -1488,6 +1579,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @return The bytes for portTopicDataWs.
        */
       public com.google.protobuf.ByteString
           getPortTopicDataWsBytes() {
@@ -1504,6 +1596,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @param value The portTopicDataWs to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataWs(
           java.lang.String value) {
@@ -1517,6 +1611,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPortTopicDataWs() {
         
@@ -1526,6 +1621,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string port_topic_data_ws = 8;</code>
+       * @param value The bytes for portTopicDataWs to set.
+       * @return This builder for chaining.
        */
       public Builder setPortTopicDataWsBytes(
           com.google.protobuf.ByteString value) {
@@ -1542,6 +1639,7 @@ public final class ServerOuterClass {
       private java.lang.Object constantsJson_ = "";
       /**
        * <code>string constants_json = 9;</code>
+       * @return The constantsJson.
        */
       public java.lang.String getConstantsJson() {
         java.lang.Object ref = constantsJson_;
@@ -1557,6 +1655,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @return The bytes for constantsJson.
        */
       public com.google.protobuf.ByteString
           getConstantsJsonBytes() {
@@ -1573,6 +1672,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @param value The constantsJson to set.
+       * @return This builder for chaining.
        */
       public Builder setConstantsJson(
           java.lang.String value) {
@@ -1586,6 +1687,7 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearConstantsJson() {
         
@@ -1595,6 +1697,8 @@ public final class ServerOuterClass {
       }
       /**
        * <code>string constants_json = 9;</code>
+       * @param value The bytes for constantsJson to set.
+       * @return This builder for chaining.
        */
       public Builder setConstantsJsonBytes(
           com.google.protobuf.ByteString value) {
@@ -1610,7 +1714,7 @@ public final class ServerOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1682,18 +1786,10 @@ public final class ServerOuterClass {
       "\032\n\022port_topic_data_ws\030\010 \001(\t\022\026\n\016constants" +
       "_json\030\t \001(\tb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_servers_Server_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_servers_Server_fieldAccessorTable = new

@@ -25,8 +25,8 @@ If you are interested in how they communicate with each other, visit the [ubii-m
 ## Compilation
 
 - required: python >=3.5
-- required: 'protoc' compiler >=3.10.0. If compiler is not installed/available in system path, go to /external and copy 'protoc' from folder matching OS provided in to /external/bin. You can also get it from https://github.com/protocolbuffers/protobuf/releases.
-- run 'python scripts/compile.py --opt [language]' where [language] is one of py/python, j/java, js/javascript, cs/csharp
+- required: 'protoc' compiler =3.11.1. If compiler is not installed/available in system path, get the release matching your OS from https://github.com/protocolbuffers/protobuf/releases and copy the executable (/bin/protoc) to ubii-msg-formats/external/bin.
+- run 'python scripts/compile.py --opt [language]' where [language] is one of py/python, j/java, js/javascript, cs/csharp, all
 - run 'node scripts/generate-protobuf-static.js'
 
 ## CLIs 
