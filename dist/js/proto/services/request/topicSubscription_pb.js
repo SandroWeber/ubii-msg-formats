@@ -76,7 +76,8 @@ proto.ubii.services.request.TopicSubscription.toObject = function(includeInstanc
     clientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     subscribeTopicsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     unsubscribeTopicsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    subscribeTopicRegexp: jspb.Message.getFieldWithDefault(msg, 4, "")
+    subscribeTopicRegexp: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    unsubscribeTopicRegexp: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -128,6 +129,10 @@ proto.ubii.services.request.TopicSubscription.deserializeBinaryFromReader = func
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setSubscribeTopicRegexp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUnsubscribeTopicRegexp(value);
       break;
     default:
       reader.skipField();
@@ -183,6 +188,13 @@ proto.ubii.services.request.TopicSubscription.serializeBinaryToWriter = function
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getUnsubscribeTopicRegexp();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -296,6 +308,24 @@ proto.ubii.services.request.TopicSubscription.prototype.getSubscribeTopicRegexp 
  */
 proto.ubii.services.request.TopicSubscription.prototype.setSubscribeTopicRegexp = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string unsubscribe_topic_regexp = 5;
+ * @return {string}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.getUnsubscribeTopicRegexp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.services.request.TopicSubscription} returns this
+ */
+proto.ubii.services.request.TopicSubscription.prototype.setUnsubscribeTopicRegexp = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

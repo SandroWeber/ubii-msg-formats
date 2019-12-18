@@ -182,6 +182,7 @@ class TopicSubscription :
     kUnsubscribeTopicsFieldNumber = 3,
     kClientIdFieldNumber = 1,
     kSubscribeTopicRegexpFieldNumber = 4,
+    kUnsubscribeTopicRegexpFieldNumber = 5,
   };
   // repeated string subscribe_topics = 2;
   int subscribe_topics_size() const;
@@ -263,6 +264,22 @@ class TopicSubscription :
   std::string* _internal_mutable_subscribe_topic_regexp();
   public:
 
+  // string unsubscribe_topic_regexp = 5;
+  void clear_unsubscribe_topic_regexp();
+  const std::string& unsubscribe_topic_regexp() const;
+  void set_unsubscribe_topic_regexp(const std::string& value);
+  void set_unsubscribe_topic_regexp(std::string&& value);
+  void set_unsubscribe_topic_regexp(const char* value);
+  void set_unsubscribe_topic_regexp(const char* value, size_t size);
+  std::string* mutable_unsubscribe_topic_regexp();
+  std::string* release_unsubscribe_topic_regexp();
+  void set_allocated_unsubscribe_topic_regexp(std::string* unsubscribe_topic_regexp);
+  private:
+  const std::string& _internal_unsubscribe_topic_regexp() const;
+  void _internal_set_unsubscribe_topic_regexp(const std::string& value);
+  std::string* _internal_mutable_unsubscribe_topic_regexp();
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.services.request.TopicSubscription)
  private:
   class _Internal;
@@ -272,6 +289,7 @@ class TopicSubscription :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> unsubscribe_topics_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subscribe_topic_regexp_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr unsubscribe_topic_regexp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fservices_2frequest_2ftopicSubscription_2eproto;
 };
@@ -552,6 +570,66 @@ inline void TopicSubscription::set_allocated_subscribe_topic_regexp(std::string*
   }
   subscribe_topic_regexp_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subscribe_topic_regexp);
   // @@protoc_insertion_point(field_set_allocated:ubii.services.request.TopicSubscription.subscribe_topic_regexp)
+}
+
+// string unsubscribe_topic_regexp = 5;
+inline void TopicSubscription::clear_unsubscribe_topic_regexp() {
+  unsubscribe_topic_regexp_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& TopicSubscription::unsubscribe_topic_regexp() const {
+  // @@protoc_insertion_point(field_get:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
+  return _internal_unsubscribe_topic_regexp();
+}
+inline void TopicSubscription::set_unsubscribe_topic_regexp(const std::string& value) {
+  _internal_set_unsubscribe_topic_regexp(value);
+  // @@protoc_insertion_point(field_set:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
+}
+inline std::string* TopicSubscription::mutable_unsubscribe_topic_regexp() {
+  // @@protoc_insertion_point(field_mutable:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
+  return _internal_mutable_unsubscribe_topic_regexp();
+}
+inline const std::string& TopicSubscription::_internal_unsubscribe_topic_regexp() const {
+  return unsubscribe_topic_regexp_.GetNoArena();
+}
+inline void TopicSubscription::_internal_set_unsubscribe_topic_regexp(const std::string& value) {
+  
+  unsubscribe_topic_regexp_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void TopicSubscription::set_unsubscribe_topic_regexp(std::string&& value) {
+  
+  unsubscribe_topic_regexp_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
+}
+inline void TopicSubscription::set_unsubscribe_topic_regexp(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  unsubscribe_topic_regexp_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
+}
+inline void TopicSubscription::set_unsubscribe_topic_regexp(const char* value, size_t size) {
+  
+  unsubscribe_topic_regexp_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
+}
+inline std::string* TopicSubscription::_internal_mutable_unsubscribe_topic_regexp() {
+  
+  return unsubscribe_topic_regexp_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* TopicSubscription::release_unsubscribe_topic_regexp() {
+  // @@protoc_insertion_point(field_release:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
+  
+  return unsubscribe_topic_regexp_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void TopicSubscription::set_allocated_unsubscribe_topic_regexp(std::string* unsubscribe_topic_regexp) {
+  if (unsubscribe_topic_regexp != nullptr) {
+    
+  } else {
+    
+  }
+  unsubscribe_topic_regexp_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), unsubscribe_topic_regexp);
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
 }
 
 #ifdef __GNUC__
