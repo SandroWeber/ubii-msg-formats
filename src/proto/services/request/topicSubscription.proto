@@ -6,4 +6,5 @@ message TopicSubscription {
     repeated string subscribe_topics = 2;
     repeated string unsubscribe_topics = 3;
     string subscribe_topic_regexp = 4;
+    string unsubscribe_topic_regexp = 5;
 }

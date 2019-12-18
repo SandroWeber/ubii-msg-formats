@@ -52,6 +52,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fservices_2frequest_2ft
   PROTOBUF_FIELD_OFFSET(::ubii::services::request::TopicSubscription, subscribe_topics_),
   PROTOBUF_FIELD_OFFSET(::ubii::services::request::TopicSubscription, unsubscribe_topics_),
   PROTOBUF_FIELD_OFFSET(::ubii::services::request::TopicSubscription, subscribe_topic_regexp_),
+  PROTOBUF_FIELD_OFFSET(::ubii::services::request::TopicSubscription, unsubscribe_topic_regexp_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::services::request::TopicSubscription)},
@@ -63,11 +64,11 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_proto_2fservices_2frequest_2ftopicSubscription_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n.proto/services/request/topicSubscripti"
-  "on.proto\022\025ubii.services.request\"|\n\021Topic"
-  "Subscription\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subsc"
-  "ribe_topics\030\002 \003(\t\022\032\n\022unsubscribe_topics\030"
-  "\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \001(\tb\006p"
-  "roto3"
+  "on.proto\022\025ubii.services.request\"\236\001\n\021Topi"
+  "cSubscription\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subs"
+  "cribe_topics\030\002 \003(\t\022\032\n\022unsubscribe_topics"
+  "\030\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \001(\t\022 "
+  "\n\030unsubscribe_topic_regexp\030\005 \001(\tb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_deps[1] = {
 };
@@ -77,7 +78,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_once;
 static bool descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto = {
-  &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_initialized, descriptor_table_protodef_proto_2fservices_2frequest_2ftopicSubscription_2eproto, "proto/services/request/topicSubscription.proto", 205,
+  &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_initialized, descriptor_table_protodef_proto_2fservices_2frequest_2ftopicSubscription_2eproto, "proto/services/request/topicSubscription.proto", 240,
   &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_once, descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_sccs, descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2fservices_2frequest_2ftopicSubscription_2eproto::offsets,
   file_level_metadata_proto_2fservices_2frequest_2ftopicSubscription_2eproto, 1, file_level_enum_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto, file_level_service_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto,
@@ -116,6 +117,10 @@ TopicSubscription::TopicSubscription(const TopicSubscription& from)
   if (!from._internal_subscribe_topic_regexp().empty()) {
     subscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.subscribe_topic_regexp_);
   }
+  unsubscribe_topic_regexp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_unsubscribe_topic_regexp().empty()) {
+    unsubscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unsubscribe_topic_regexp_);
+  }
   // @@protoc_insertion_point(copy_constructor:ubii.services.request.TopicSubscription)
 }
 
@@ -123,6 +128,7 @@ void TopicSubscription::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto.base);
   client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   subscribe_topic_regexp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  unsubscribe_topic_regexp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 TopicSubscription::~TopicSubscription() {
@@ -133,6 +139,7 @@ TopicSubscription::~TopicSubscription() {
 void TopicSubscription::SharedDtor() {
   client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   subscribe_topic_regexp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  unsubscribe_topic_regexp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TopicSubscription::SetCachedSize(int size) const {
@@ -154,6 +161,7 @@ void TopicSubscription::Clear() {
   unsubscribe_topics_.Clear();
   client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   subscribe_topic_regexp_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  unsubscribe_topic_regexp_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -207,6 +215,15 @@ const char* TopicSubscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           auto str = _internal_mutable_subscribe_topic_regexp();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.services.request.TopicSubscription.subscribe_topic_regexp"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string unsubscribe_topic_regexp = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_unsubscribe_topic_regexp();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.services.request.TopicSubscription.unsubscribe_topic_regexp"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -276,6 +293,16 @@ failure:
         4, this->_internal_subscribe_topic_regexp(), target);
   }
 
+  // string unsubscribe_topic_regexp = 5;
+  if (this->unsubscribe_topic_regexp().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_unsubscribe_topic_regexp().data(), static_cast<int>(this->_internal_unsubscribe_topic_regexp().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ubii.services.request.TopicSubscription.unsubscribe_topic_regexp");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_unsubscribe_topic_regexp(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -322,6 +349,13 @@ size_t TopicSubscription::ByteSizeLong() const {
         this->_internal_subscribe_topic_regexp());
   }
 
+  // string unsubscribe_topic_regexp = 5;
+  if (this->unsubscribe_topic_regexp().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_unsubscribe_topic_regexp());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -363,6 +397,10 @@ void TopicSubscription::MergeFrom(const TopicSubscription& from) {
 
     subscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.subscribe_topic_regexp_);
   }
+  if (from.unsubscribe_topic_regexp().size() > 0) {
+
+    unsubscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unsubscribe_topic_regexp_);
+  }
 }
 
 void TopicSubscription::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -391,6 +429,8 @@ void TopicSubscription::InternalSwap(TopicSubscription* other) {
   client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   subscribe_topic_regexp_.Swap(&other->subscribe_topic_regexp_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  unsubscribe_topic_regexp_.Swap(&other->unsubscribe_topic_regexp_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 

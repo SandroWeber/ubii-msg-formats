@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services.request',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n.proto/services/request/topicSubscription.proto\x12\x15ubii.services.request\"|\n\x11TopicSubscription\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x18\n\x10subscribe_topics\x18\x02 \x03(\t\x12\x1a\n\x12unsubscribe_topics\x18\x03 \x03(\t\x12\x1e\n\x16subscribe_topic_regexp\x18\x04 \x01(\tb\x06proto3'
+  serialized_pb=b'\n.proto/services/request/topicSubscription.proto\x12\x15ubii.services.request\"\x9e\x01\n\x11TopicSubscription\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x18\n\x10subscribe_topics\x18\x02 \x03(\t\x12\x1a\n\x12unsubscribe_topics\x18\x03 \x03(\t\x12\x1e\n\x16subscribe_topic_regexp\x18\x04 \x01(\t\x12 \n\x18unsubscribe_topic_regexp\x18\x05 \x01(\tb\x06proto3'
 )
 
 
@@ -59,6 +59,13 @@ _TOPICSUBSCRIPTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unsubscribe_topic_regexp', full_name='ubii.services.request.TopicSubscription.unsubscribe_topic_regexp', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -71,8 +78,8 @@ _TOPICSUBSCRIPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=73,
-  serialized_end=197,
+  serialized_start=74,
+  serialized_end=232,
 )
 
 DESCRIPTOR.message_types_by_name['TopicSubscription'] = _TOPICSUBSCRIPTION

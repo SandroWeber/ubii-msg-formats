@@ -4260,6 +4260,7 @@ $root.ubii = (function() {
                  * @property {Array.<string>|null} [subscribeTopics] TopicSubscription subscribeTopics
                  * @property {Array.<string>|null} [unsubscribeTopics] TopicSubscription unsubscribeTopics
                  * @property {string|null} [subscribeTopicRegexp] TopicSubscription subscribeTopicRegexp
+                 * @property {string|null} [unsubscribeTopicRegexp] TopicSubscription unsubscribeTopicRegexp
                  */
 
                 /**
@@ -4312,6 +4313,14 @@ $root.ubii = (function() {
                 TopicSubscription.prototype.subscribeTopicRegexp = "";
 
                 /**
+                 * TopicSubscription unsubscribeTopicRegexp.
+                 * @member {string} unsubscribeTopicRegexp
+                 * @memberof ubii.services.request.TopicSubscription
+                 * @instance
+                 */
+                TopicSubscription.prototype.unsubscribeTopicRegexp = "";
+
+                /**
                  * Creates a new TopicSubscription instance using the specified properties.
                  * @function create
                  * @memberof ubii.services.request.TopicSubscription
@@ -4345,6 +4354,8 @@ $root.ubii = (function() {
                             writer.uint32(/* id 3, wireType 2 =*/26).string(message.unsubscribeTopics[i]);
                     if (message.subscribeTopicRegexp != null && message.hasOwnProperty("subscribeTopicRegexp"))
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.subscribeTopicRegexp);
+                    if (message.unsubscribeTopicRegexp != null && message.hasOwnProperty("unsubscribeTopicRegexp"))
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.unsubscribeTopicRegexp);
                     return writer;
                 };
 
@@ -4394,6 +4405,9 @@ $root.ubii = (function() {
                             break;
                         case 4:
                             message.subscribeTopicRegexp = reader.string();
+                            break;
+                        case 5:
+                            message.unsubscribeTopicRegexp = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -4450,6 +4464,9 @@ $root.ubii = (function() {
                     if (message.subscribeTopicRegexp != null && message.hasOwnProperty("subscribeTopicRegexp"))
                         if (!$util.isString(message.subscribeTopicRegexp))
                             return "subscribeTopicRegexp: string expected";
+                    if (message.unsubscribeTopicRegexp != null && message.hasOwnProperty("unsubscribeTopicRegexp"))
+                        if (!$util.isString(message.unsubscribeTopicRegexp))
+                            return "unsubscribeTopicRegexp: string expected";
                     return null;
                 };
 
@@ -4483,6 +4500,8 @@ $root.ubii = (function() {
                     }
                     if (object.subscribeTopicRegexp != null)
                         message.subscribeTopicRegexp = String(object.subscribeTopicRegexp);
+                    if (object.unsubscribeTopicRegexp != null)
+                        message.unsubscribeTopicRegexp = String(object.unsubscribeTopicRegexp);
                     return message;
                 };
 
@@ -4506,6 +4525,7 @@ $root.ubii = (function() {
                     if (options.defaults) {
                         object.clientId = "";
                         object.subscribeTopicRegexp = "";
+                        object.unsubscribeTopicRegexp = "";
                     }
                     if (message.clientId != null && message.hasOwnProperty("clientId"))
                         object.clientId = message.clientId;
@@ -4521,6 +4541,8 @@ $root.ubii = (function() {
                     }
                     if (message.subscribeTopicRegexp != null && message.hasOwnProperty("subscribeTopicRegexp"))
                         object.subscribeTopicRegexp = message.subscribeTopicRegexp;
+                    if (message.unsubscribeTopicRegexp != null && message.hasOwnProperty("unsubscribeTopicRegexp"))
+                        object.unsubscribeTopicRegexp = message.unsubscribeTopicRegexp;
                     return object;
                 };
 
