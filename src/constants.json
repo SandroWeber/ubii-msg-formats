@@ -53,12 +53,18 @@
       "TOPIC_SUBSCRIPTION": "/services/topic_subscription"
     },
     "INFO_TOPICS": {
+      "REGEX_ALL_INFOS": "/info/*",
+      "REGEX_INTERACTION_INFOS": "/info/interaction/*",
       "NEW_INTERACTION": "/info/interaction/new",
       "DELETE_INTERACTION": "/info/interaction/delete",
       "CHANGE_INTERACTION": "/info/interaction/change",
+      "PROCESSED_INTERACTION": "/info/interaction/processed",
+      "REGEX_SESSION_INFOS": "/info/session/*",
       "NEW_SESSION": "/info/session/new",
       "DELETE_SESSION": "/info/session/delete",
-      "CHANGE_SESSION": "/info/session/change"
+      "CHANGE_SESSION": "/info/session/change",
+      "START_SESSION": "/info/session/start",
+      "STOP_SESSION": "/info/session/stop"
     }
   },
   "MSG_TYPES": {
