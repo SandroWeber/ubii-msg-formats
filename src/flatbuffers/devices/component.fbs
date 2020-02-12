@@ -1,0 +1,19 @@
+namespace ubii.devices;
+
+enum IOType : byte {
+    INPUT = 0,
+    OUTPUT = 1
+}
+
+table Component {
+    id:string;
+    name:string;
+    tags:[string];
+    description:string;
+    device_id:string;
+    topic:string;
+    message_format:string;
+    io_type:ubii.devices.IOType;
+}
+
+root_type Component;

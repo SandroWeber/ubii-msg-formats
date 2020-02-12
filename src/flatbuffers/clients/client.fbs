@@ -1,0 +1,11 @@
+namespace ubii.clients;
+
+table Client {
+    id:string;
+    name:string;
+    tags:[string];
+    description:string;
+    devices:[string];
+}
+
+root_type Client;
