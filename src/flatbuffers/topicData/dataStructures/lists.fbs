@@ -1,0 +1,22 @@
+syntax = "proto3";
+package ubii.dataStructure;
+
+message StringList {
+    repeated string elements = 1;
+}
+
+message DoubleList {
+    repeated double elements = 1;
+}
+
+message FloatList {
+    repeated float elements = 1;
+}
+
+message BoolList {
+    repeated bool elements = 1;
+}
+
+message Int32List {
+    repeated int32 elements = 1;
+}

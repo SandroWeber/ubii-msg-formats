@@ -1,0 +1,19 @@
+syntax = "proto3";
+package ubii.dataStructure;
+
+message Image2D {
+    enum DataFormat {
+        GRAY8 = 0;
+        RGB8 = 1;
+        RGBA8 = 2;
+    }
+
+    int32 width = 1;
+    int32 height = 2;
+    DataFormat data_format = 3;
+    bytes data = 4;
+}
+
+message Image2DList {
+    repeated ubii.dataStructure.Image2D elements = 1;
+}

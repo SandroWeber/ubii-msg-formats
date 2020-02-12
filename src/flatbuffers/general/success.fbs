@@ -1,0 +1,8 @@
+namespace ubii.general;
+
+table Success {
+    title:string;
+    message:string;
+}
+
+root_type Success;

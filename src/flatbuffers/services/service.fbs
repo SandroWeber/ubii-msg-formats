@@ -1,0 +1,14 @@
+namespace ubii.services;
+
+table Service {
+    id:string;
+    name:string;
+    tags:[string];
+    description:string;
+
+    topic:string;
+    request_message_format:string;
+    response_message_format:string;
+}
+
+root_type Service;

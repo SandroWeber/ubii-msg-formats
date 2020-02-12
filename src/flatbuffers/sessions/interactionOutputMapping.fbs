@@ -1,0 +1,13 @@
+include "devices/topicDemux.fbs";
+
+namespace ubii.sessions;
+
+union TopicDestination {
+    topic:string,
+    topic_demux:ubii.devices.TopicDemux
+}
+
+struct InteractionOutputMapping {
+    name:string;
+    topic_destination:ubii.sessions.TopicDestination;
+}

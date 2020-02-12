@@ -1,0 +1,46 @@
+include "general/success.fbs";
+include "general/error.fbs";
+include "topicData/topicDataRecord/dataStructure/lists.fbs";
+include "clients/client.fbs";
+include "devices/device.fbs";
+include "devices/topicMux.fbs";
+include "devices/topicDemux.fbs";
+include "servers/server.fbs";
+include "sessions/session.fbs";
+include "interactions/interaction.fbs";
+include "services/service.fbs";
+
+namespace ubii.services;
+
+union Reply {
+  success:ubii.general.Success,
+  error:ubii.general.Error,
+
+  server:ubii.servers.Server,
+
+  client:ubii.clients.Client,
+  client_list:[ubii.clients.Client],
+
+  device:ubii.devices.Device,
+  device_list:[ubii.devices.Device],
+  topic_mux:ubii.devices.TopicMux,
+  topic_mux_list:[ubii.devices.TopicMux],
+  topic_demux:ubii.devices.TopicDemux,
+  topic_demux_list:[ubii.devices.TopicDemux],
+
+  session:ubii.sessions.Session,
+  session_list:[ubii.sessions.Session],
+
+  interaction:ubii.interactions.Interaction,
+  interaction_list:[ubii.interactions.Interaction],
+
+  string_list:[string],
+  service:ubii.services.Service,
+  service_list:[ubii.services.Service]
+}
+
+table ServiceReply {
+    reply:ubii.services.Reply;
+}
+
+root_type ServiceReply;

@@ -1,0 +1,12 @@
+include "sessions/interactionInputMapping.fbs";
+include "sessions/interactionOutputMapping.fbs";
+
+namespace ubii.sessions;
+
+table IOMapping {
+    interaction_id:string;
+    input_mappings:[ubii.sessions.InteractionInputMapping];
+    output_mappings:[ubii.sessions.InteractionOutputMapping];
+}
+
+root_type IOMapping;

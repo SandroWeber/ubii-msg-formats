@@ -1,0 +1,6 @@
+namespace ubii.dataStructure;
+
+enum ButtonEventType {
+    UP = 0,
+    DOWN = 1
+}

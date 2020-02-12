@@ -1,0 +1,28 @@
+include "interactions/ioFormat.fbs";
+
+namespace ubii.interactions;
+
+enum InteractionStatus : byte {
+    CREATED = 0,
+    INITIALIZED = 1,
+    PROCESSING = 2,
+    HALTED = 3
+}
+
+table Interaction {
+    id:string;
+    name:string;
+    authors:[string];
+    tags:[string];
+    description:string;
+
+    status:ubii.interactions.InteractionStatus;
+    input_formats:[ubii.interactions.IOFormat];
+    output_formats:[ubii.interactions.IOFormat];
+
+    on_created:string;
+    processing_callback:string;
+    process_frequency:float;
+}
+
+root_type Interaction;

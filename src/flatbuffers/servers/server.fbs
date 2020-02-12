@@ -1,0 +1,17 @@
+namespace ubii.servers;
+
+table Server {
+    id:string;
+    name:string;
+
+    ip_ethernet:string;
+    ip_wlan:string;
+    port_service_zmq:string;
+    port_service_rest:string;
+    port_topic_data_zmq:string;
+    port_topic_data_ws:string;
+
+    constants_json:string;
+}
+
+root_type Server;

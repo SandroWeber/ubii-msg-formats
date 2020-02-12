@@ -1,0 +1,9 @@
+namespace ubii.dataStructure;
+
+include "topicData/dataStructure/buttonEventType.proto";
+include "topicData/dataStructure/vector2.proto";
+
+struct TouchEvent {
+    type:ubii.dataStructure.ButtonEventType;
+    position:ubii.dataStructure.Vector2;
+}
