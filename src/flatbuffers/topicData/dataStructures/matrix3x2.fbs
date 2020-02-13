@@ -1,11 +1,10 @@
-syntax = "proto3";
-package ubii.dataStructure;
+namespace ubii.dataStructure;
 
-message Matrix3x2 {
-    double m00 = 1;
-    double m01 = 2;
-    double m10 = 3;
-    double m11 = 4;
-    double m20 = 5;
-    double m21 = 6;
+struct Matrix3x2 {
+    m00:float;
+    m01:float;
+    m10:float;
+    m11:float;
+    m20:float;
+    m21:float;
 }

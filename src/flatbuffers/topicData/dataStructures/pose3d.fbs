@@ -1,13 +1,14 @@
-syntax = "proto3";
-package ubii.dataStructure;
+include "topicData/dataStructure/vector3.fbs";
+include "topicData/dataStructure/quaternion.fbs";
 
-import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
-import "proto/topicData/topicDataRecord/dataStructure/quaternion.proto";
+namespace ubii.dataStructure;
 
-message Pose3D {
-    ubii.dataStructure.Vector3 position = 1;
-    oneof orientation {
-        ubii.dataStructure.Quaternion quaternion = 2;
-        ubii.dataStructure.Vector3 euler = 3;
-    }
+union Orientation3D {
+    quaternion:ubii.dataStructure.Quaternion;
+    euler:ubii.dataStructure.Vector3;
+}
+
+struct Pose3D {
+    position:ubii.dataStructure.Vector3;
+    orientation:Orientation3D;
 }

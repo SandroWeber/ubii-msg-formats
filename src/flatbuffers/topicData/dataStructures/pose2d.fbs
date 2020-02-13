@@ -1,12 +1,13 @@
-syntax = "proto3";
-package ubii.dataStructure;
+include "topicData/dataStructure/vector2.fbs";
 
-import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
+namespace ubii.dataStructure;
 
-message Pose2D {
-    ubii.dataStructure.Vector2 position = 1;
-    oneof orientation {
-        ubii.dataStructure.Vector2 direction = 2;
-        float angle = 3;
-    }
+union Orientation2D {
+    angle:float;
+    direction:ubii.dataStructure.Vector2;
+}
+
+struct Pose2D {
+    position:ubii.dataStructure.Vector2;
+    orientation:Orientation2D;
 }

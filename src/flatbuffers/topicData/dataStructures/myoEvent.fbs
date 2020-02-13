@@ -1,15 +1,16 @@
-syntax = "proto3";
-package ubii.dataStructure;
+include "topicData/dataStructure/vector8.fbs";
+include "topicData/dataStructure/vector3.fbs";
+include "topicData/dataStructure/quaternion.fbs";
+include "topicData/dataStructure/handGestureType.fbs";
 
-import "proto/topicData/topicDataRecord/dataStructure/vector8.proto";
-import "proto/topicData/topicDataRecord/dataStructure/vector3.proto";
-import "proto/topicData/topicDataRecord/dataStructure/quaternion.proto";
-import "proto/topicData/topicDataRecord/dataStructure/handGestureType.proto";
+namespace ubii.dataStructure;
 
-message MyoEvent {
-    ubii.dataStructure.Vector8 emg = 1;
-    ubii.dataStructure.Quaternion orientation = 2;
-    ubii.dataStructure.Vector3 gyroscope = 3;
-    ubii.dataStructure.Vector3 accelerometer = 4;
-    ubii.dataStructure.HandGestureType gesture = 5;
+table MyoEvent {
+    emg:ubii.dataStructure.Vector8;
+    orientation:ubii.dataStructure.Quaternion;
+    gyroscope:ubii.dataStructure.Vector3;
+    accelerometer:ubii.dataStructure.Vector3;
+    gesture:ubii.dataStructure.HandGestureType;
 }
+
+root_type MyoEvent;

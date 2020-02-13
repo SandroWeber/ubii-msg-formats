@@ -1,16 +1,14 @@
-syntax = "proto3";
-package ubii.dataStructure;
+include "topicData/dataStructure/pose2d.fbs";
+include "topicData/dataStructure/vector2.fbs";
 
-import "proto/topicData/topicDataRecord/dataStructure/pose2d.proto";
-import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
+namespace ubii.dataStructure;
 
-message Object2D {
-    string id = 1;
-    ubii.dataStructure.Pose2D pose = 2;
-    ubii.dataStructure.Vector2 size = 3;
-    string user_data_json = 4;
+table Object2D {
+    id:string;
+    name:string;
+    pose:ubii.dataStructure.Pose2D;
+    size:ubii.dataStructure.Vector2;
+    user_data_json:string;
 }
 
-message Object2DList {
-    repeated ubii.dataStructure.Object2D elements = 1;
-}
+root_type Object2D;

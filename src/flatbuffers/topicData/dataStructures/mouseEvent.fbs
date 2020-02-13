@@ -1,9 +1,8 @@
-syntax = "proto3";
-package ubii.dataStructure;
+include "topicData/dataStructure/buttonEventType.fbs";
 
-import "proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto";
+namespace ubii.dataStructure;
 
-message MouseEvent {
-    ubii.dataStructure.ButtonEventType type = 1;
-    int32 button = 2;
+struct MouseEvent {
+    type:ubii.dataStructure.ButtonEventType;
+    button:int8;
 }
