@@ -113,39 +113,40 @@ def compileAllFBS(outputPath = './../dist/flatbuffers/py', sourceRoot='./../src/
 
 def chosen_option(args):
     file_directory = os.path.dirname(__file__)
-    proto_src_directory = os.path.join(file_directory, '../src/proto')
-    src_directory = os.path.join(file_directory, '../src')
+    fbs_src_directory = os.path.join(file_directory, '../src/flatbuffers')
+    include_directory = fbs_src_directory
 
+    destination_root = '../dist/flatbuffers'
     if args.opt == 'py' or args.opt == 'python':
-        p = compileAllFBS(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        p = compileAllFBS(os.path.join(file_directory, destination_root+'/py'), fbs_src_directory, include_directory, 'python')
         generateInits(p)
     elif args.opt == 'j' or args.opt == 'java':
-        compileAllFBS(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/java'), fbs_src_directory, include_directory, 'java')
     elif args.opt == 'js' or args.opt == 'javascript':
-        compileAllFBS(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/js'), fbs_src_directory, include_directory, 'js')
     elif args.opt == 'cs' or args.opt == 'csharp':
-        compileAllFBS(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/cs'), fbs_src_directory, include_directory, 'csharp')
     elif args.opt == 'cpp' or args.opt == 'cplusplus':
-        compileAllFBS(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/cpp'), fbs_src_directory, include_directory, 'cpp')
     elif args.opt == 'all':
         # python
-        p = compileAllFBS(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        p = compileAllFBS(os.path.join(file_directory, destination_root+'/py'), fbs_src_directory, include_directory, 'python')
         generateInits(p)
         # java
-        compileAllFBS(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/java'), fbs_src_directory, include_directory, 'java')
         # javascript
-        compileAllFBS(os.path.join(file_directory, '../dist/js'), proto_src_directory, src_directory, 'js')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/js'), fbs_src_directory, include_directory, 'js')
         # C#
-        compileAllFBS(os.path.join(file_directory, '../dist/cs'), proto_src_directory, src_directory, 'csharp')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/cs'), fbs_src_directory, src_directory, 'csharp')
         # C++
-        compileAllFBS(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
+        compileAllFBS(os.path.join(file_directory, destination_root+'/cpp'), fbs_src_directory, src_directory, 'cpp')
 
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--opt', type=str, default='all',
-                        help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp, [all] all')
+    parser.add_argument('--lang', type=str, default='all',
+                        help='Supported options: [cpp] cplusplus, [py] python, [j] java, [js] javascript, [cs] csharp, [all] all')
 
     args = parser.parse_args()
     sys.stdout.write(str(chosen_option(args)))
