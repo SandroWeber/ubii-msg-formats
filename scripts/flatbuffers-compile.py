@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-import sys, argparse
+import sys
+import argparse
 import os
 import platform
 import subprocess
@@ -9,7 +10,8 @@ from distutils.spawn import find_executable
 
 # Find the Protocol Compiler.
 flatc_local = os.path.join(os.path.dirname(__file__), '../external/bin/flatc')
-flatc_local_windows = os.path.join(os.path.dirname(__file__), '../external/bin/flatc.exe')
+flatc_local_windows = os.path.join(
+    os.path.dirname(__file__), '../external/bin/flatc.exe')
 if os.path.isfile(flatc_local):
     flatc = flatc_local
 elif os.path.isfile(flatc_local_windows):
@@ -21,19 +23,20 @@ else:
 
 
 def generateInits(pathToOutput):
-   
+
     dirn = []
     start = True
 
     while len(dirn) != 0 or start:
-        if start: p = pathToOutput 
-        else: p = dirn.pop(0)
-        
-       
+        if start:
+            p = pathToOutput
+        else:
+            p = dirn.pop(0)
+
         for (dirpath, dirnames, filenames) in os.walk(p):
             dirn.extend([p+"/"+x for x in dirnames])
             filename = dirpath+'/__init__.py'
-            #print(filename)
+            # print(filename)
             os.makedirs(os.path.dirname(filename), exist_ok=True)
             if start != True:
                 with open(filename, "w") as f:
@@ -50,8 +53,10 @@ def getAllSourceFilesFBS(rootDirectory):
     start = True
 
     while len(dirn) != 0 or start:
-        if start: p = rootDirectory 
-        else: p = dirn.pop(0)
+        if start:
+            p = rootDirectory
+        else:
+            p = dirn.pop(0)
 
         start = False
         for (dirpath, dirnames, filenames) in os.walk(p):
@@ -59,10 +64,11 @@ def getAllSourceFilesFBS(rootDirectory):
             #destdir.extend([po+"/"+x for x in dirnames])
             files.extend(p+"/"+x for x in filenames)
             break
-        
+
     return files
 
-def compileFBS(sourceFile, outputPath, includePath, targetLanguage, require = True):
+
+def compileFBS(sourceFile, outputPath, includePath, targetLanguage, require=True):
     """Invokes the Protocol Compiler to generate a language specific from the given
     .fbs file.  Does nothing if the output already exists and is newer than
     the input."""
@@ -82,14 +88,17 @@ def compileFBS(sourceFile, outputPath, includePath, targetLanguage, require = Tr
             "or install the binary package.\n")
         sys.exit(-1)
 
-    flatc_command = [ flatc, "-I " + includePath, "-I .", "--" + targetLanguage, "-o " + outputPath, sourceFile ]
+    # , "-I " + includePath, "-o " + outputPath, "--" + targetLanguage, sourceFile
+    flatc_command = [flatc, "--" + targetLanguage, "-I", includePath, "-o", outputPath,
+                     sourceFile]
     print(flatc_command)
     if subprocess.call(flatc_command) != 0:
         sys.exit(-1)
 
-def compileAllFBS(outputPath = './../dist/flatbuffers/py', sourceRoot='./../src/flatbuffers', includePath='./../src/flatbuffers' , targetLanguage='python'):
+
+def compileAllFBS(outputPath='./../dist/flatbuffers/py', sourceRoot='./../src/flatbuffers', includePath='./../src/flatbuffers', targetLanguage='python'):
     fileList = getAllSourceFilesFBS(sourceRoot)
-    #print(fileList)
+    # print(fileList)
     os.makedirs(outputPath, exist_ok=True)
 
     """ if targetLanguage == 'js':
@@ -117,30 +126,39 @@ def chosen_option(args):
     include_directory = fbs_src_directory
 
     destination_root = '../dist/flatbuffers'
-    if args.opt == 'py' or args.opt == 'python':
-        p = compileAllFBS(os.path.join(file_directory, destination_root+'/py'), fbs_src_directory, include_directory, 'python')
+    if args.lang == 'py' or args.lang == 'python':
+        p = compileAllFBS(os.path.join(file_directory, destination_root+'/py'),
+                          fbs_src_directory, include_directory, 'python')
         generateInits(p)
-    elif args.opt == 'j' or args.opt == 'java':
-        compileAllFBS(os.path.join(file_directory, destination_root+'/java'), fbs_src_directory, include_directory, 'java')
-    elif args.opt == 'js' or args.opt == 'javascript':
-        compileAllFBS(os.path.join(file_directory, destination_root+'/js'), fbs_src_directory, include_directory, 'js')
-    elif args.opt == 'cs' or args.opt == 'csharp':
-        compileAllFBS(os.path.join(file_directory, destination_root+'/cs'), fbs_src_directory, include_directory, 'csharp')
-    elif args.opt == 'cpp' or args.opt == 'cplusplus':
-        compileAllFBS(os.path.join(file_directory, destination_root+'/cpp'), fbs_src_directory, include_directory, 'cpp')
-    elif args.opt == 'all':
+    elif args.lang == 'j' or args.lang == 'java':
+        compileAllFBS(os.path.join(file_directory, destination_root +
+                                   '/java'), fbs_src_directory, include_directory, 'java')
+    elif args.lang == 'js' or args.lang == 'javascript':
+        compileAllFBS(os.path.join(file_directory, destination_root +
+                                   '/js'), fbs_src_directory, include_directory, 'js')
+    elif args.lang == 'cs' or args.lang == 'csharp':
+        compileAllFBS(os.path.join(file_directory, destination_root+'/cs'),
+                      fbs_src_directory, include_directory, 'csharp')
+    elif args.lang == 'cpp' or args.lang == 'cplusplus':
+        compileAllFBS(os.path.join(file_directory, destination_root +
+                                   '/cpp'), fbs_src_directory, include_directory, 'cpp')
+    elif args.lang == 'all':
         # python
-        p = compileAllFBS(os.path.join(file_directory, destination_root+'/py'), fbs_src_directory, include_directory, 'python')
+        p = compileAllFBS(os.path.join(file_directory, destination_root+'/py'),
+                          fbs_src_directory, include_directory, 'python')
         generateInits(p)
         # java
-        compileAllFBS(os.path.join(file_directory, destination_root+'/java'), fbs_src_directory, include_directory, 'java')
+        compileAllFBS(os.path.join(file_directory, destination_root +
+                                   '/java'), fbs_src_directory, include_directory, 'java')
         # javascript
-        compileAllFBS(os.path.join(file_directory, destination_root+'/js'), fbs_src_directory, include_directory, 'js')
+        compileAllFBS(os.path.join(file_directory, destination_root +
+                                   '/js'), fbs_src_directory, include_directory, 'js')
         # C#
-        compileAllFBS(os.path.join(file_directory, destination_root+'/cs'), fbs_src_directory, src_directory, 'csharp')
+        compileAllFBS(os.path.join(file_directory, destination_root +
+                                   '/cs'), fbs_src_directory, src_directory, 'csharp')
         # C++
-        compileAllFBS(os.path.join(file_directory, destination_root+'/cpp'), fbs_src_directory, src_directory, 'cpp')
-
+        compileAllFBS(os.path.join(file_directory, destination_root +
+                                   '/cpp'), fbs_src_directory, src_directory, 'cpp')
 
 
 def main():
