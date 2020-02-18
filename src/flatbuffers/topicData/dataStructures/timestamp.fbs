@@ -1,0 +1,6 @@
+namespace ubii.dataStructure;
+
+struct Timestamp {
+    seconds:int64;
+    nanos:int32;
+}

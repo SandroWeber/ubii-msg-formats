@@ -1,6 +1,6 @@
 namespace ubii.dataStructure;
 
-enum HandGestureType {
+enum HandGestureType : byte {
     REST = 0,
     FINGERS_SPREAD = 1,
     WAVE_IN = 2,

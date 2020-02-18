@@ -1,6 +1,6 @@
 namespace ubii.dataStructure;
 
-enum ButtonEventType {
+enum ButtonEventType : byte {
     UP = 0,
     DOWN = 1
 }

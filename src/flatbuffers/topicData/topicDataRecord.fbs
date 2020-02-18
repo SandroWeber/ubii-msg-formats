@@ -1,25 +1,24 @@
-include "topicData/timestamp.proto";
+include "topicData/dataStructures/timestamp.fbs";
 
-include "topicData/dataStructures/lists.proto";
-include "topicData/dataStructures/vector2.proto";
-include "topicData/dataStructures/vector3.proto";
-include "topicData/dataStructures/vector4.proto";
-include "topicData/dataStructures/quaternion.proto";
-include "topicData/dataStructures/matrix3x2.proto";
-include "topicData/dataStructures/matrix4x4.proto";
-include "topicData/dataStructures/color.proto";
-include "topicData/dataStructures/touchEvent.proto";
-include "topicData/dataStructures/keyEvent.proto";
-include "topicData/dataStructures/mouseEvent.proto";
-include "topicData/dataStructures/myoEvent.proto";
-include "topicData/dataStructures/pose2d.proto";
-include "topicData/dataStructures/pose3d.proto";
-include "topicData/dataStructures/object2d.proto";
-include "topicData/dataStructures/object3d.proto";
-include "topicData/dataStructures/image.proto";
+include "topicData/dataStructures/vector2.fbs";
+include "topicData/dataStructures/vector3.fbs";
+include "topicData/dataStructures/vector4.fbs";
+include "topicData/dataStructures/quaternion.fbs";
+include "topicData/dataStructures/matrix3x2.fbs";
+include "topicData/dataStructures/matrix4x4.fbs";
+include "topicData/dataStructures/color.fbs";
+include "topicData/dataStructures/touchEvent.fbs";
+include "topicData/dataStructures/keyEvent.fbs";
+include "topicData/dataStructures/mouseEvent.fbs";
+include "topicData/dataStructures/myoEvent.fbs";
+include "topicData/dataStructures/pose2d.fbs";
+include "topicData/dataStructures/pose3d.fbs";
+include "topicData/dataStructures/object2d.fbs";
+include "topicData/dataStructures/object3d.fbs";
+include "topicData/dataStructures/image.fbs";
 
-include "sessions/session.proto";
-include "interactions/interaction.proto";
+include "sessions/session.fbs";
+include "interactions/interaction.fbs";
 
 namespace ubii.topicData;
 
@@ -61,7 +60,7 @@ union DataStructure {
 
 table TopicDataRecord {
     topic:string;
-    timestamp:ubii.topicData.Timestamp;
+    timestamp:ubii.dataStructure.Timestamp;
     data:ubii.topicData.DataStructure;
 }
 

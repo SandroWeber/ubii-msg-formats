@@ -1,5 +1,5 @@
-include "topicData/dataStructure/buttonEventType.fbs";
-include "topicData/dataStructure/vector2.fbs";
+include "topicData/dataStructures/buttonEventType.fbs";
+include "topicData/dataStructures/vector2.fbs";
 
 namespace ubii.dataStructure;
 

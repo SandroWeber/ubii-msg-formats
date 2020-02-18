@@ -88,10 +88,9 @@ def compileFBS(sourceFile, outputPath, includePath, targetLanguage, require=True
             "or install the binary package.\n")
         sys.exit(-1)
 
-    # , "-I " + includePath, "-o " + outputPath, "--" + targetLanguage, sourceFile
     flatc_command = [flatc, "--" + targetLanguage, "-I", includePath, "-o", outputPath,
                      sourceFile]
-    print(flatc_command)
+    # print(flatc_command)
     if subprocess.call(flatc_command) != 0:
         sys.exit(-1)
 

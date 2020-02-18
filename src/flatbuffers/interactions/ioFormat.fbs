@@ -1,6 +1,8 @@
 namespace ubii.interactions;
 
-struct IOFormat {
+table IOFormat {
     internal_name:string;
     message_format:string;
 }
+
+root_type IOFormat;

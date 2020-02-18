@@ -6,9 +6,11 @@ enum ImageDataFormat : byte {
     RGBA8 = 2
 }
 
-struct Image2D {
+table Image2D {
     width:int32;
     height:int32;
     data_format:ImageDataFormat;
     data:[byte];
 }
+
+root_type Image2D;

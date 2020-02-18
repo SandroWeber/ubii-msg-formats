@@ -1,4 +1,4 @@
-include "topicData/dataStructure/buttonEventType.fbs";
+include "topicData/dataStructures/buttonEventType.fbs";
 
 namespace ubii.dataStructure;
 

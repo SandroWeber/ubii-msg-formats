@@ -1,5 +1,5 @@
-include "topicData/dataStructure/pose3d.fbs";
-include "topicData/dataStructure/vector3.fbs";
+include "topicData/dataStructures/pose3d.fbs";
+include "topicData/dataStructures/vector3.fbs";
 
 namespace ubii.dataStructure;
 

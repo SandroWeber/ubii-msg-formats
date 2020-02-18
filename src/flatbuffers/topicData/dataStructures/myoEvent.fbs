@@ -1,7 +1,7 @@
-include "topicData/dataStructure/vector8.fbs";
-include "topicData/dataStructure/vector3.fbs";
-include "topicData/dataStructure/quaternion.fbs";
-include "topicData/dataStructure/handGestureType.fbs";
+include "topicData/dataStructures/vector8.fbs";
+include "topicData/dataStructures/vector3.fbs";
+include "topicData/dataStructures/quaternion.fbs";
+include "topicData/dataStructures/handGestureType.fbs";
 
 namespace ubii.dataStructure;
 

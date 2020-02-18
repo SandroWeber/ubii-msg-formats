@@ -7,7 +7,9 @@ union TopicDestination {
     topic_demux:ubii.devices.TopicDemux
 }
 
-struct InteractionOutputMapping {
+table InteractionOutputMapping {
     name:string;
     topic_destination:ubii.sessions.TopicDestination;
 }
+
+root_type InteractionOutputMapping;

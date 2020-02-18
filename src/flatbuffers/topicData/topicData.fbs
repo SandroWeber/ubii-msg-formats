@@ -1,4 +1,4 @@
-include "topicData/topicDataRecord/topicDataRecord.fbs";
+include "topicData/topicDataRecord.fbs";
 include "general/error.fbs";
 
 namespace ubii.topicData;
