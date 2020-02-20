@@ -3,14 +3,14 @@ include "topicData/dataStructures/vector3.fbs";
 include "topicData/dataStructures/quaternion.fbs";
 include "topicData/dataStructures/handGestureType.fbs";
 
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 table MyoEvent {
-    emg:ubii.dataStructure.Vector8;
-    orientation:ubii.dataStructure.Quaternion;
-    gyroscope:ubii.dataStructure.Vector3;
-    accelerometer:ubii.dataStructure.Vector3;
-    gesture:ubii.dataStructure.HandGestureType;
+    emg:ubii.dataStructures.Vector8;
+    orientation:ubii.dataStructures.Quaternion;
+    gyroscope:ubii.dataStructures.Vector3;
+    accelerometer:ubii.dataStructures.Vector3;
+    gesture:ubii.dataStructures.HandGestureType;
 }
 
 root_type MyoEvent;

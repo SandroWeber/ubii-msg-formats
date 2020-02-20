@@ -1,4 +1,4 @@
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 struct Matrix4x4 {
     m00:float;

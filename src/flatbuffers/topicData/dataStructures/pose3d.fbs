@@ -1,15 +1,15 @@
 include "topicData/dataStructures/vector3.fbs";
 include "topicData/dataStructures/quaternion.fbs";
 
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 union Orientation3D {
-    quaternion:ubii.dataStructure.Quaternion,
-    euler:ubii.dataStructure.Vector3
+    quaternion:ubii.dataStructures.Quaternion,
+    euler:ubii.dataStructures.Vector3
 }
 
 table Pose3D {
-    position:ubii.dataStructure.Vector3;
+    position:ubii.dataStructures.Vector3;
     orientation:Orientation3D;
 }
 

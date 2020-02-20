@@ -1,9 +1,11 @@
 include "topicData/dataStructures/buttonEventType.fbs";
 include "topicData/dataStructures/vector2.fbs";
 
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
-struct TouchEvent {
-    type:ubii.dataStructure.ButtonEventType;
-    position:ubii.dataStructure.Vector2;
+table TouchEvent {
+    type:ubii.dataStructures.ButtonEventType;
+    position:ubii.dataStructures.Vector2;
 }
+
+root_type TouchEvent;

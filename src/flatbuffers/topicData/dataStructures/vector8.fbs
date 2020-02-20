@@ -1,4 +1,4 @@
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 struct Vector8 {
     v0:float;

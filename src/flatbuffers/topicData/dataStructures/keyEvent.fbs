@@ -1,9 +1,9 @@
 include "topicData/dataStructures/buttonEventType.fbs";
 
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 table KeyEvent {
-    type:ubii.dataStructure.ButtonEventType;
+    type:ubii.dataStructures.ButtonEventType;
     key:string;
 }
 

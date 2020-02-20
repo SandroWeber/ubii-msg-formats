@@ -1,19 +1,19 @@
 include "topicData/dataStructures/vector2.fbs";
 
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 table AngleOrientation {
-    zeroDirection:ubii.dataStructure.Vector2;
+    zeroDirection:ubii.dataStructures.Vector2;
     angle:float;
 }
 
 union Orientation2D {
-    angle:ubii.dataStructure.AngleOrientation,
-    direction:ubii.dataStructure.Vector2
+    angle:ubii.dataStructures.AngleOrientation,
+    direction:ubii.dataStructures.Vector2
 }
 
 table Pose2D {
-    position:ubii.dataStructure.Vector2;
+    position:ubii.dataStructures.Vector2;
     orientation:Orientation2D;
 }
 

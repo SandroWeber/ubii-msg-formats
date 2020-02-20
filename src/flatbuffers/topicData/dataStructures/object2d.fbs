@@ -1,13 +1,13 @@
 include "topicData/dataStructures/pose2d.fbs";
 include "topicData/dataStructures/vector2.fbs";
 
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 table Object2D {
     id:string;
     name:string;
-    pose:ubii.dataStructure.Pose2D;
-    size:ubii.dataStructure.Vector2;
+    pose:ubii.dataStructures.Pose2D;
+    size:ubii.dataStructures.Vector2;
     user_data_json:string;
 }
 

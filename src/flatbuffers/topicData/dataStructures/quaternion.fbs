@@ -1,4 +1,4 @@
-namespace ubii.dataStructure;
+namespace ubii.dataStructures;
 
 struct Quaternion {
     x:float;
