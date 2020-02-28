@@ -88,8 +88,11 @@ def compileFBS(sourceFile, outputPath, includePath, targetLanguage, require=True
             "or install the binary package.\n")
         sys.exit(-1)
 
-    flatc_command = [flatc, "--" + targetLanguage, "-I", includePath, "-o", outputPath,
-                     sourceFile]
+    flatc_command = [flatc, "--" + targetLanguage,
+                     "-I", includePath, "-o", outputPath]
+    if targetLanguage == "js":
+        flatc_command.append("--es6-js-export")
+    flatc_command.append(sourceFile)
     # print(flatc_command)
     if subprocess.call(flatc_command) != 0:
         sys.exit(-1)
