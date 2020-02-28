@@ -7,9 +7,9 @@ table AngleOrientation {
     angle:float;
 }
 
-union Orientation2D {
-    angle:ubii.dataStructures.AngleOrientation,
-    direction:ubii.dataStructures.Vector2
+table Orientation2D {
+    angle:ubii.dataStructures.AngleOrientation;
+    direction:ubii.dataStructures.Vector2;
 }
 
 table Pose2D {

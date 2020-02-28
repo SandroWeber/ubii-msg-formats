@@ -154,10 +154,10 @@ def chosen_option(args):
                                    '/js'), fbs_src_directory, include_directory, 'js')
         # C#
         compileAllFBS(os.path.join(file_directory, destination_root +
-                                   '/cs'), fbs_src_directory, src_directory, 'csharp')
+                                   '/cs'), fbs_src_directory, include_directory, 'csharp')
         # C++
         compileAllFBS(os.path.join(file_directory, destination_root +
-                                   '/cpp'), fbs_src_directory, src_directory, 'cpp')
+                                   '/cpp'), fbs_src_directory, include_directory, 'cpp')
 
 
 def main():
