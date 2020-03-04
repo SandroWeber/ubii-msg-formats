@@ -1,0 +1,16 @@
+include "topicData/dataStructures/vector8.fbs";
+include "topicData/dataStructures/vector3.fbs";
+include "topicData/dataStructures/quaternion.fbs";
+include "topicData/dataStructures/handGestureType.fbs";
+
+namespace ubii.dataStructures;
+
+table MyoEvent {
+    emg:ubii.dataStructures.Vector8;
+    orientation:ubii.dataStructures.Quaternion;
+    gyroscope:ubii.dataStructures.Vector3;
+    accelerometer:ubii.dataStructures.Vector3;
+    gesture:ubii.dataStructures.HandGestureType;
+}
+
+root_type MyoEvent;

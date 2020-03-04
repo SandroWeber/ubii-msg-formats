@@ -1,0 +1,32 @@
+include "interactions/interaction.fbs";
+include "sessions/ioMapping.fbs";
+
+namespace ubii.sessions;
+
+enum ProcessMode : byte {
+    CYCLE_INTERACTIONS = 0,
+    INDIVIDUAL_PROCESS_FREQUENCIES = 1
+}
+
+enum SessionStatus : byte {
+    CREATED = 0,
+    RUNNING = 1,
+    PAUSED = 2,
+    STOPPED = 3
+}
+
+table Session {
+    id:string;
+    name:string;
+    authors:[string];
+    tags:[string];
+    description:string;
+
+    process_mode:ubii.sessions.ProcessMode;
+    status:ubii.sessions.SessionStatus;
+
+    interactions:[ubii.interactions.Interaction];
+    io_mappings:[ubii.sessions.IOMapping];
+}
+
+root_type Session;

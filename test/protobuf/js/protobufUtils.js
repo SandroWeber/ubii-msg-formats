@@ -1,9 +1,6 @@
 import test from 'ava';
 
-import fs from 'fs';
-import path from 'path';
-
-const { ProtobufUtils, MSG_TYPES } = require('../../src/js/index');
+const { ProtobufUtils, MSG_TYPES } = require('../../../src/js/index'); // ../../../../src/js/index
 
 /* run tests */
 

@@ -1,0 +1,14 @@
+include "topicData/dataStructures/pose2d.fbs";
+include "topicData/dataStructures/vector2.fbs";
+
+namespace ubii.dataStructures;
+
+table Object2D {
+    id:string;
+    name:string;
+    pose:ubii.dataStructures.Pose2D;
+    size:ubii.dataStructures.Vector2;
+    user_data_json:string;
+}
+
+root_type Object2D;

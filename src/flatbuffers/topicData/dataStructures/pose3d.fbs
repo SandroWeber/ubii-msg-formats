@@ -1,0 +1,16 @@
+include "topicData/dataStructures/vector3.fbs";
+include "topicData/dataStructures/quaternion.fbs";
+
+namespace ubii.dataStructures;
+
+table Orientation3D {
+    quaternion:ubii.dataStructures.Quaternion;
+    euler:ubii.dataStructures.Vector3;
+}
+
+table Pose3D {
+    position:ubii.dataStructures.Vector3;
+    orientation:Orientation3D;
+}
+
+root_type Pose3D;

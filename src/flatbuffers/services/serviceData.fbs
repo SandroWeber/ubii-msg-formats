@@ -1,0 +1,34 @@
+include "clients/client.fbs";
+include "devices/device.fbs";
+include "devices/topicMux.fbs";
+include "devices/topicDemux.fbs";
+include "general/success.fbs";
+include "general/error.fbs";
+include "interactions/interaction.fbs";
+include "servers/server.fbs";
+include "services/requests/topicSubscription.fbs";
+include "sessions/session.fbs";
+
+namespace ubii.services;
+
+table ServiceData {
+    client:ubii.clients.Client;
+    client_list:[ubii.clients.Client];
+    
+    device:ubii.devices.Device;
+    device_list:[ubii.devices.Device];
+    topic_mux:ubii.devices.TopicMux;
+    topic_mux_list:[ubii.devices.TopicMux];
+    topic_demux:ubii.devices.TopicDemux;
+    topic_demux_list:[ubii.devices.TopicDemux];
+    
+    session:ubii.sessions.Session;
+    session_list:[ubii.sessions.Session];
+    
+    interaction:ubii.interactions.Interaction;
+    interaction_list:[ubii.interactions.Interaction];
+    
+    topic_subscription:ubii.services.requests.TopicSubscription;
+}
+
+root_type ServiceData;

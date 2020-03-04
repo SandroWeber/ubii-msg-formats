@@ -1,0 +1,11 @@
+include "topicData/dataStructures/buttonEventType.fbs";
+include "topicData/dataStructures/vector2.fbs";
+
+namespace ubii.dataStructures;
+
+table TouchEvent {
+    type:ubii.dataStructures.ButtonEventType;
+    position:ubii.dataStructures.Vector2;
+}
+
+root_type TouchEvent;

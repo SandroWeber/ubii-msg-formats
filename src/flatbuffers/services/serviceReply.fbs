@@ -1,0 +1,9 @@
+include "services/serviceData.fbs";
+
+namespace ubii.services;
+
+table ServiceReply {
+    reply:ubii.services.ServiceData;
+}
+
+root_type ServiceReply;

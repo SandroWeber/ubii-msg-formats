@@ -1,0 +1,16 @@
+include "topicData/topicDataRecord.fbs";
+include "general/error.fbs";
+
+namespace ubii.topicData;
+
+union TopicDataContent {
+    topic_data_record:ubii.topicData.TopicDataRecord,
+    topic_data_record_list:ubii.topicData.TopicDataRecordList,
+    error:ubii.general.Error
+}
+
+table TopicData {
+    content:ubii.topicData.TopicDataContent;
+}
+
+root_type TopicData;

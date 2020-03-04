@@ -1,0 +1,15 @@
+include "topicData/dataStructures/pose3d.fbs";
+include "topicData/dataStructures/vector3.fbs";
+
+namespace ubii.dataStructures;
+
+table Object3D {
+    id:string;
+    name:string;
+    pose:ubii.dataStructures.Pose3D;
+    size:ubii.dataStructures.Vector3;
+    user_data_json:string;
+}
+
+root_type Object3D;
+

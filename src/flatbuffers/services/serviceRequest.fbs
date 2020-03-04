@@ -1,0 +1,10 @@
+include "services/serviceData.fbs";
+
+namespace ubii.services;
+
+table ServiceRequest {
+    topic:string;
+    request:ubii.services.ServiceData;
+}
+
+root_type ServiceRequest;

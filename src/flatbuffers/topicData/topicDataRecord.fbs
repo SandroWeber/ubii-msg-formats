@@ -1,0 +1,73 @@
+include "topicData/dataStructures/timestamp.fbs";
+
+include "topicData/dataStructures/vector2.fbs";
+include "topicData/dataStructures/vector3.fbs";
+include "topicData/dataStructures/vector4.fbs";
+include "topicData/dataStructures/quaternion.fbs";
+include "topicData/dataStructures/matrix3x2.fbs";
+include "topicData/dataStructures/matrix4x4.fbs";
+include "topicData/dataStructures/color.fbs";
+include "topicData/dataStructures/touchEvent.fbs";
+include "topicData/dataStructures/keyEvent.fbs";
+include "topicData/dataStructures/mouseEvent.fbs";
+include "topicData/dataStructures/myoEvent.fbs";
+include "topicData/dataStructures/pose2d.fbs";
+include "topicData/dataStructures/pose3d.fbs";
+include "topicData/dataStructures/object2d.fbs";
+include "topicData/dataStructures/object3d.fbs";
+include "topicData/dataStructures/image.fbs";
+
+include "sessions/session.fbs";
+include "interactions/interaction.fbs";
+
+namespace ubii.dataStructures;
+
+table DataStructure {
+    bool:bool;
+    bool_list:[bool];
+    string:string;
+    string_list:[string];
+    byte:byte;
+    int32:int32;
+    int32_list:[int32];
+    float:float;
+    float_list:[float];
+    double:double;
+    double_list:[double];
+    
+    vector2:ubii.dataStructures.Vector2;
+    vector3:ubii.dataStructures.Vector3;
+    vector4:ubii.dataStructures.Vector4;
+    quaternion:ubii.dataStructures.Quaternion;
+    matrix3x2:ubii.dataStructures.Matrix3x2;
+    matrix4x4:ubii.dataStructures.Matrix4x4;
+    color:ubii.dataStructures.Color;
+    touch_event:ubii.dataStructures.TouchEvent;
+    key_event:ubii.dataStructures.KeyEvent;
+    mouse_event:ubii.dataStructures.MouseEvent;
+    myo_event:ubii.dataStructures.MyoEvent;
+    pose2D:ubii.dataStructures.Pose2D;
+    pose3D:ubii.dataStructures.Pose3D;
+    object2D:ubii.dataStructures.Object2D;
+    object3D:ubii.dataStructures.Object3D;
+    object2D_list:[ubii.dataStructures.Object2D];
+    object3D_list:[ubii.dataStructures.Object3D];
+    image2D:ubii.dataStructures.Image2D;
+    image2D_list:[ubii.dataStructures.Image2D];
+    session:ubii.sessions.Session;
+    interaction:ubii.interactions.Interaction;
+}
+
+namespace ubii.topicData;
+
+table TopicDataRecord {
+    topic:string;
+    timestamp:ubii.dataStructures.Timestamp;
+    data:ubii.dataStructures.DataStructure;
+}
+
+table TopicDataRecordList {
+    elements:[ubii.topicData.TopicDataRecord];
+}
+
+root_type TopicDataRecord;

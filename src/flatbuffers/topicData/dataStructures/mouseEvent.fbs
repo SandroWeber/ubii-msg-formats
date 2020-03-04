@@ -1,0 +1,10 @@
+include "topicData/dataStructures/buttonEventType.fbs";
+
+namespace ubii.dataStructures;
+
+table MouseEvent {
+    type:ubii.dataStructures.ButtonEventType;
+    button:int8;
+}
+
+root_type MouseEvent;

@@ -1,0 +1,15 @@
+include "devices/topicMux.fbs";
+
+namespace ubii.sessions;
+
+union TopicSource {
+    topic:string,
+    topic_mux:ubii.devices.TopicMux
+}
+
+table InteractionInputMapping {
+    name:string;
+    topic_source:ubii.sessions.TopicSource;
+}
+
+root_type InteractionInputMapping;

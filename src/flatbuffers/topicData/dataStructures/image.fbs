@@ -1,0 +1,16 @@
+namespace ubii.dataStructures;
+
+enum ImageDataFormat : byte {
+    GRAY8 = 0,
+    RGB8 = 1,
+    RGBA8 = 2
+}
+
+table Image2D {
+    width:int32;
+    height:int32;
+    data_format:ImageDataFormat;
+    data:[byte];
+}
+
+root_type Image2D;

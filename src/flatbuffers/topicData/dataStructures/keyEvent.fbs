@@ -1,0 +1,10 @@
+include "topicData/dataStructures/buttonEventType.fbs";
+
+namespace ubii.dataStructures;
+
+table KeyEvent {
+    type:ubii.dataStructures.ButtonEventType;
+    key:string;
+}
+
+root_type KeyEvent;

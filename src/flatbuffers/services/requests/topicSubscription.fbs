@@ -1,0 +1,13 @@
+namespace ubii.services.requests;
+
+table TopicSubscription {
+    client_id:string;
+
+    subscribe_topics:[string];
+    unsubscribe_topics:[string];
+
+    subscribe_topic_regexp:string;
+    unsubscribe_topic_regexp:string;
+}
+
+root_type TopicSubscription;

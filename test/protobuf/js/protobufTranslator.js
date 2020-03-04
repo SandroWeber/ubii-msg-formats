@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const { ProtobufTranslator, MSG_TYPES, DEFAULT_TOPICS } = require('../../src/js/index');
+const { ProtobufTranslator, MSG_TYPES, DEFAULT_TOPICS } = require('../../../src/js/index');
 
 /* run tests */
 

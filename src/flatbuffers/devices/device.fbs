@@ -1,0 +1,20 @@
+include "devices/component.fbs";
+
+namespace ubii.devices;
+
+enum DeviceType : byte {
+    PARTICIPANT = 0,
+    WATCHER = 1
+}
+
+table Device {
+    id:string;
+    name:string;
+    tags:[string];
+    description:string;
+    client_id:string;
+    device_type:ubii.devices.DeviceType;
+    components:[ubii.devices.Component];
+}
+
+root_type Device;

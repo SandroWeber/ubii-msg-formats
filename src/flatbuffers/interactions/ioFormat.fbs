@@ -1,0 +1,8 @@
+namespace ubii.interactions;
+
+table IOFormat {
+    internal_name:string;
+    message_format:string;
+}
+
+root_type IOFormat;

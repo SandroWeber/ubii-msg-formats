@@ -1,0 +1,15 @@
+include "devices/topicDemux.fbs";
+
+namespace ubii.sessions;
+
+union TopicDestination {
+    topic:string,
+    topic_demux:ubii.devices.TopicDemux
+}
+
+table InteractionOutputMapping {
+    name:string;
+    topic_destination:ubii.sessions.TopicDestination;
+}
+
+root_type InteractionOutputMapping;

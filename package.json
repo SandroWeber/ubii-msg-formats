@@ -6,13 +6,13 @@
   "repository": "https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-formats",
   "contributors": [
     {
-      "name": "Daniel Dyrda",
-      "email": "dyrda@in.tum.de"
-    },
-    {
       "name": "Sandro Weber",
       "email": "webers@in.tum.de",
       "url": "https://wiki.tum.de/pages/viewpage.action?pageId=51840433"
+    },
+    {
+      "name": "Daniel Dyrda",
+      "email": "dyrda@in.tum.de"
     }
   ],
   "scripts": {

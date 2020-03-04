@@ -1,0 +1,9 @@
+namespace ubii.general;
+
+table Error {
+    title:string;
+    message:string;
+    stack:string;
+}
+
+root_type Error;

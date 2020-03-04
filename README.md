@@ -147,6 +147,14 @@ This repository provides `messageTranslator` classes. These classes provide all 
 
 - The main aspect is on a validated translating between the three proto message states: buffer <-> message <-> payload
 
+## Flatbuffers
+
+https://google.github.io/flatbuffers/index.html
+
+### Compilation
+
+Release version used to compile schema files: v1.11.0
+
 ## Testing
 
 This module uses the [AVA](https://github.com/avajs/ava) test runner.
