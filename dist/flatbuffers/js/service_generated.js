@@ -243,5 +243,5 @@ ubii.services.Service.createService = function(builder, idOffset, nameOffset, ta
   return ubii.services.Service.endService(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

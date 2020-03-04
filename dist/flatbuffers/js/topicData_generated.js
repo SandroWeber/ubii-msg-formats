@@ -167,5 +167,5 @@ ubii.topicData.TopicData.createTopicData = function(builder, contentType, conten
   return ubii.topicData.TopicData.endTopicData(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

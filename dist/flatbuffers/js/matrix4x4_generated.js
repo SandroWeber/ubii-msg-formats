@@ -191,5 +191,5 @@ ubii.dataStructures.Matrix4x4.createMatrix4x4 = function(builder, m00, m01, m02,
   return builder.offset();
 };
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

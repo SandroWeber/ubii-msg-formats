@@ -160,5 +160,5 @@ ubii.services.ServiceRequest.createServiceRequest = function(builder, topicOffse
   return ubii.services.ServiceRequest.endServiceRequest(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

@@ -251,5 +251,5 @@ ubii.servers.Server.createServer = function(builder, idOffset, nameOffset, ipEth
   return ubii.servers.Server.endServer(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

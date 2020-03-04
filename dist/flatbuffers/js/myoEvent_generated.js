@@ -174,5 +174,5 @@ ubii.dataStructures.MyoEvent.createMyoEvent = function(builder, emgOffset, orien
   return ubii.dataStructures.MyoEvent.endMyoEvent(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

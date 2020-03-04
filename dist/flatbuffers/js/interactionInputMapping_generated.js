@@ -160,5 +160,5 @@ ubii.sessions.InteractionInputMapping.createInteractionInputMapping = function(b
   return ubii.sessions.InteractionInputMapping.endInteractionInputMapping(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

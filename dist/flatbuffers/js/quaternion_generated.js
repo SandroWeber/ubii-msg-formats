@@ -83,5 +83,5 @@ ubii.dataStructures.Quaternion.createQuaternion = function(builder, x, y, z, w) 
   return builder.offset();
 };
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

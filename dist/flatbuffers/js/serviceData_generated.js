@@ -549,5 +549,5 @@ ubii.services.ServiceData.createServiceData = function(builder, clientOffset, cl
   return ubii.services.ServiceData.endServiceData(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

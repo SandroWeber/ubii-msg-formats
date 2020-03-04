@@ -313,5 +313,5 @@ ubii.dataStructures.Pose2D.createPose2D = function(builder, positionOffset, orie
   return ubii.dataStructures.Pose2D.endPose2D(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

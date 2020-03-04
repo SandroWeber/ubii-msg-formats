@@ -101,5 +101,5 @@ ubii.dataStructures.Matrix3x2.createMatrix3x2 = function(builder, m00, m01, m10,
   return builder.offset();
 };
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

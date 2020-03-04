@@ -208,5 +208,5 @@ ubii.dataStructures.Image2D.createImage2D = function(builder, width, height, dat
   return ubii.dataStructures.Image2D.endImage2D(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

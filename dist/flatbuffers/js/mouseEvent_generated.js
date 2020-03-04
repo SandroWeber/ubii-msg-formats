@@ -116,5 +116,5 @@ ubii.dataStructures.MouseEvent.createMouseEvent = function(builder, type, button
   return ubii.dataStructures.MouseEvent.endMouseEvent(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

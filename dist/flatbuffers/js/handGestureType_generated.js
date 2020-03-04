@@ -36,5 +36,5 @@ ubii.dataStructures.HandGestureTypeName = {
   5: 'DOUBLE_TAP'
 };
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

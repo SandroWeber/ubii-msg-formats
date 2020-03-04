@@ -203,5 +203,5 @@ ubii.sessions.IOMapping.createIOMapping = function(builder, interactionIdOffset,
   return ubii.sessions.IOMapping.endIOMapping(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

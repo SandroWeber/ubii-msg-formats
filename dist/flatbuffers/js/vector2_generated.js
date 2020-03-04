@@ -65,5 +65,5 @@ ubii.dataStructures.Vector2.createVector2 = function(builder, x, y) {
   return builder.offset();
 };
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

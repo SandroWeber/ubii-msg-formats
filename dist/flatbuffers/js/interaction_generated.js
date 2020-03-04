@@ -427,5 +427,5 @@ ubii.interactions.Interaction.createInteraction = function(builder, idOffset, na
   return ubii.interactions.Interaction.endInteraction(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

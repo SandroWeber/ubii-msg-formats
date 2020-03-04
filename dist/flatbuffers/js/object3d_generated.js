@@ -175,5 +175,5 @@ ubii.dataStructures.Object3D.createObject3D = function(builder, idOffset, nameOf
   return ubii.dataStructures.Object3D.endObject3D(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

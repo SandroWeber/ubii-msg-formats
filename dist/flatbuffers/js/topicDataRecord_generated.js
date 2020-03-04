@@ -1201,5 +1201,5 @@ ubii.topicData.TopicDataRecordList.createTopicDataRecordList = function(builder,
   return ubii.topicData.TopicDataRecordList.endTopicDataRecordList(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

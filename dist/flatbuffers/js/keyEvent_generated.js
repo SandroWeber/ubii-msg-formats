@@ -117,5 +117,5 @@ ubii.dataStructures.KeyEvent.createKeyEvent = function(builder, type, keyOffset)
   return ubii.dataStructures.KeyEvent.endKeyEvent(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

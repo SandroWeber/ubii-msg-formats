@@ -118,5 +118,5 @@ ubii.interactions.IOFormat.createIOFormat = function(builder, internalNameOffset
   return ubii.interactions.IOFormat.endIOFormat(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

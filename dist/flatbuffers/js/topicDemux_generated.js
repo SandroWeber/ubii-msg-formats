@@ -156,5 +156,5 @@ ubii.devices.TopicDemux.createTopicDemux = function(builder, idOffset, nameOffse
   return ubii.devices.TopicDemux.endTopicDemux(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

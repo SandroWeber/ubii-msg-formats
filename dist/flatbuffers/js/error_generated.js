@@ -137,5 +137,5 @@ ubii.general.Error.createError = function(builder, titleOffset, messageOffset, s
   return ubii.general.Error.endError(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

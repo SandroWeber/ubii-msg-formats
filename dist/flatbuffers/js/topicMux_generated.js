@@ -175,5 +175,5 @@ ubii.devices.TopicMux.createTopicMux = function(builder, idOffset, nameOffset, d
   return ubii.devices.TopicMux.endTopicMux(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

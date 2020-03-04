@@ -141,5 +141,5 @@ ubii.services.ServiceReply.createServiceReply = function(builder, replyOffset) {
   return ubii.services.ServiceReply.endServiceReply(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

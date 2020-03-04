@@ -118,5 +118,5 @@ ubii.general.Success.createSuccess = function(builder, titleOffset, messageOffse
   return ubii.general.Success.endSuccess(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

@@ -117,5 +117,5 @@ ubii.dataStructures.TouchEvent.createTouchEvent = function(builder, type, positi
   return ubii.dataStructures.TouchEvent.endTouchEvent(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

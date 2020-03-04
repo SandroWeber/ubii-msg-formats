@@ -417,5 +417,5 @@ ubii.sessions.Session.createSession = function(builder, idOffset, nameOffset, au
   return ubii.sessions.Session.endSession(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;

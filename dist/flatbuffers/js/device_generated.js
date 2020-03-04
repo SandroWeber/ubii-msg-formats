@@ -288,5 +288,5 @@ ubii.devices.Device.createDevice = function(builder, idOffset, nameOffset, tagsO
   return ubii.devices.Device.endDevice(builder);
 }
 
-// Exports for ECMAScript6 Modules
-export {ubii};
+// Exports for Node.js and RequireJS
+this.ubii = ubii;
