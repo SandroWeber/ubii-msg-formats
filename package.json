@@ -24,7 +24,8 @@
     ""
   ],
   "devDependencies": {
-    "ava": "^1.0.0-beta.3"
+    "ava": "^1.0.0-beta.3",
+    "flatbuffers": "1.11.0"
   },
   "dependencies": {
     "protobufjs": "6.8.8",
