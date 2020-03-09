@@ -72,6 +72,8 @@ let createFlatbufferTopicData = (topicString, timestamp) => {
     TopicDataRecord.addTimestamp(builder, Timestamp.createTimestamp(builder, timestamp.seconds, timestamp.nanos));
     TopicDataRecord.addData(builder, dataStructure);
     let topicDataRecord = TopicDataRecord.endTopicDataRecord(builder);
+    console.info(topicDataRecord);
+    console.info('\n\n');
 
     TopicData.startTopicData(builder);
     TopicData.addContentType(builder, TopicDataContent.topic_data_record);
@@ -83,8 +85,18 @@ let createFlatbufferTopicData = (topicString, timestamp) => {
     return topicDataBuffer;
 };
 
-let verifyTopicData = (t) => {
+let verifyTopicDataRecord = (test, record) => {
+    let vector3 = record.data().vector3(new Vector3());
+    test.is(vector3.x().toFixed(1), testVector3.x.toFixed(1));
+    test.is(vector3.y().toFixed(1), testVector3.y.toFixed(1));
+    test.is(vector3.z().toFixed(1), testVector3.z.toFixed(1));
 
+    test.is(record.data().bool(), testBool);
+
+    test.is(record.data().stringListLength(), testStringList.length);
+    test.is(record.data().stringList(0), testStringList[0]);
+    test.is(record.data().stringList(1), testStringList[1]);
+    test.is(record.data().stringList(2), testStringList[2]);
 }
 
 /* prepare tests */
@@ -100,23 +112,11 @@ test('create a TopicData flatbuffer, then read it back in', t => {
 
     // read buffer
     let topicData = TopicData.getRootAsTopicData(bufferTopicData);
-
     let topicDataRecord = topicData.content(new TopicDataRecord());
-
-    let vector3 = topicDataRecord.data().vector3(new Vector3());
-    t.is(vector3.x().toFixed(1), testVector3.x.toFixed(1));
-    t.is(vector3.y().toFixed(1), testVector3.y.toFixed(1));
-    t.is(vector3.z().toFixed(1), testVector3.z.toFixed(1));
-
-    t.is(topicDataRecord.data().bool(), testBool);
-
-    t.is(topicDataRecord.data().stringListLength(), testStringList.length);
-    t.is(topicDataRecord.data().stringList(0), testStringList[0]);
-    t.is(topicDataRecord.data().stringList(1), testStringList[1]);
-    t.is(topicDataRecord.data().stringList(2), testStringList[2]);
+    verifyTopicDataRecord(t, topicDataRecord);
 });
 
-test('simulate a storage to save parts of a message and, repack it into a new message', t => {
+test('simulate a storage to save parts of a message, repack it into a new message', t => {
     let topicString = '/my/test/topic';
     let timestamp = { seconds: 1, nanos: 2 };
 
@@ -127,6 +127,36 @@ test('simulate a storage to save parts of a message and, repack it into a new me
     let topicData = TopicData.getRootAsTopicData(bufferTopicData);
     let topicDataRecord = topicData.content(new TopicDataRecord());
 
+    // store in a map
     let storage = new Map();
     storage.set(topicString, topicDataRecord);
+
+    let storageRecord = storage.get(topicString);
+    verifyTopicDataRecord(t, storageRecord);
+
+    // repack record into new TopicData message
+    let builder = new flatbuffers.Builder(0);
+
+    TopicDataRecord.startTopicDataRecord(builder);
+    TopicDataRecord.addTopic(builder, storageRecord.topic());
+    TopicDataRecord.addTimestamp(builder, storageRecord.timestamp());
+    TopicDataRecord.addData(builder, storageRecord.data());
+    let repackTopicDataRecord = TopicDataRecord.endTopicDataRecord(builder);
+    console.info(repackTopicDataRecord);
+    console.info('\n\n');
+
+    TopicData.startTopicData(builder);
+    TopicData.addContentType(builder, TopicDataContent.topic_data_record);
+    TopicData.addContent(builder, storageRecord);
+    let buildTopicData = TopicData.endTopicData(builder);
+
+    builder.finish(buildTopicData);
+    let repackBufferTopicData = builder.dataBuffer();
+
+    // verify that repacked TopicData is still valid
+    let repackedTopicData = TopicData.getRootAsTopicData(repackBufferTopicData);
+    let repackedRecord = repackedTopicData.content(new TopicDataRecord());
+    console.info(repackedRecord);
+    console.info('\n\n');
+    verifyTopicDataRecord(t, repackedRecord);
 });
