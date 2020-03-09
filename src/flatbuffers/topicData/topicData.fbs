@@ -4,8 +4,7 @@ include "general/error.fbs";
 namespace ubii.topicData;
 
 union TopicDataContent {
-    topic_data_record:ubii.topicData.TopicDataRecord,
-    topic_data_record_list:ubii.topicData.TopicDataRecordList,
+    topic_data_records:ubii.topicData.TopicDataRecordList,
     error:ubii.general.Error
 }
 

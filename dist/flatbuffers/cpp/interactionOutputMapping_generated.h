@@ -12,6 +12,7 @@ namespace ubii {
 namespace sessions {
 
 struct InteractionOutputMapping;
+struct InteractionOutputMappingT;
 
 enum TopicDestination {
   TopicDestination_NONE = 0,
@@ -58,10 +59,69 @@ template<> struct TopicDestinationTraits<ubii::devices::TopicDemux> {
   static const TopicDestination enum_value = TopicDestination_topic_demux;
 };
 
+struct TopicDestinationUnion {
+  TopicDestination type;
+  void *value;
+
+  TopicDestinationUnion() : type(TopicDestination_NONE), value(nullptr) {}
+  TopicDestinationUnion(TopicDestinationUnion&& u) FLATBUFFERS_NOEXCEPT :
+    type(TopicDestination_NONE), value(nullptr)
+    { std::swap(type, u.type); std::swap(value, u.value); }
+  TopicDestinationUnion(const TopicDestinationUnion &) FLATBUFFERS_NOEXCEPT;
+  TopicDestinationUnion &operator=(const TopicDestinationUnion &u) FLATBUFFERS_NOEXCEPT
+    { TopicDestinationUnion t(u); std::swap(type, t.type); std::swap(value, t.value); return *this; }
+  TopicDestinationUnion &operator=(TopicDestinationUnion &&u) FLATBUFFERS_NOEXCEPT
+    { std::swap(type, u.type); std::swap(value, u.value); return *this; }
+  ~TopicDestinationUnion() { Reset(); }
+
+  void Reset();
+
+#ifndef FLATBUFFERS_CPP98_STL
+  template <typename T>
+  void Set(T&& val) {
+    using RT = typename std::remove_reference<T>::type;
+    Reset();
+    type = TopicDestinationTraits<typename RT::TableType>::enum_value;
+    if (type != TopicDestination_NONE) {
+      value = new RT(std::forward<T>(val));
+    }
+  }
+#endif  // FLATBUFFERS_CPP98_STL
+
+  static void *UnPack(const void *obj, TopicDestination type, const flatbuffers::resolver_function_t *resolver);
+  flatbuffers::Offset<void> Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher = nullptr) const;
+
+  std::string *Astopic() {
+    return type == TopicDestination_topic ?
+      reinterpret_cast<std::string *>(value) : nullptr;
+  }
+  const std::string *Astopic() const {
+    return type == TopicDestination_topic ?
+      reinterpret_cast<const std::string *>(value) : nullptr;
+  }
+  ubii::devices::TopicDemuxT *Astopic_demux() {
+    return type == TopicDestination_topic_demux ?
+      reinterpret_cast<ubii::devices::TopicDemuxT *>(value) : nullptr;
+  }
+  const ubii::devices::TopicDemuxT *Astopic_demux() const {
+    return type == TopicDestination_topic_demux ?
+      reinterpret_cast<const ubii::devices::TopicDemuxT *>(value) : nullptr;
+  }
+};
+
 bool VerifyTopicDestination(flatbuffers::Verifier &verifier, const void *obj, TopicDestination type);
 bool VerifyTopicDestinationVector(flatbuffers::Verifier &verifier, const flatbuffers::Vector<flatbuffers::Offset<void>> *values, const flatbuffers::Vector<uint8_t> *types);
 
+struct InteractionOutputMappingT : public flatbuffers::NativeTable {
+  typedef InteractionOutputMapping TableType;
+  std::string name;
+  TopicDestinationUnion topic_destination;
+  InteractionOutputMappingT() {
+  }
+};
+
 struct InteractionOutputMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef InteractionOutputMappingT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_NAME = 4,
     VT_TOPIC_DESTINATION_TYPE = 6,
@@ -92,6 +152,9 @@ struct InteractionOutputMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::T
            VerifyTopicDestination(verifier, topic_destination(), topic_destination_type()) &&
            verifier.EndTable();
   }
+  InteractionOutputMappingT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(InteractionOutputMappingT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<InteractionOutputMapping> Pack(flatbuffers::FlatBufferBuilder &_fbb, const InteractionOutputMappingT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 template<> inline const flatbuffers::String *InteractionOutputMapping::topic_destination_as<flatbuffers::String>() const {
@@ -151,6 +214,40 @@ inline flatbuffers::Offset<InteractionOutputMapping> CreateInteractionOutputMapp
       topic_destination);
 }
 
+flatbuffers::Offset<InteractionOutputMapping> CreateInteractionOutputMapping(flatbuffers::FlatBufferBuilder &_fbb, const InteractionOutputMappingT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline InteractionOutputMappingT *InteractionOutputMapping::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new InteractionOutputMappingT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void InteractionOutputMapping::UnPackTo(InteractionOutputMappingT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = name(); if (_e) _o->name = _e->str(); };
+  { auto _e = topic_destination_type(); _o->topic_destination.type = _e; };
+  { auto _e = topic_destination(); if (_e) _o->topic_destination.value = TopicDestinationUnion::UnPack(_e, topic_destination_type(), _resolver); };
+}
+
+inline flatbuffers::Offset<InteractionOutputMapping> InteractionOutputMapping::Pack(flatbuffers::FlatBufferBuilder &_fbb, const InteractionOutputMappingT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateInteractionOutputMapping(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<InteractionOutputMapping> CreateInteractionOutputMapping(flatbuffers::FlatBufferBuilder &_fbb, const InteractionOutputMappingT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const InteractionOutputMappingT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _name = _o->name.empty() ? 0 : _fbb.CreateString(_o->name);
+  auto _topic_destination_type = _o->topic_destination.type;
+  auto _topic_destination = _o->topic_destination.Pack(_fbb);
+  return ubii::sessions::CreateInteractionOutputMapping(
+      _fbb,
+      _name,
+      _topic_destination_type,
+      _topic_destination);
+}
+
 inline bool VerifyTopicDestination(flatbuffers::Verifier &verifier, const void *obj, TopicDestination type) {
   switch (type) {
     case TopicDestination_NONE: {
@@ -178,6 +275,67 @@ inline bool VerifyTopicDestinationVector(flatbuffers::Verifier &verifier, const 
     }
   }
   return true;
+}
+
+inline void *TopicDestinationUnion::UnPack(const void *obj, TopicDestination type, const flatbuffers::resolver_function_t *resolver) {
+  switch (type) {
+    case TopicDestination_topic: {
+      auto ptr = reinterpret_cast<const flatbuffers::String *>(obj);
+      return new std::string(ptr->c_str(), ptr->size());
+    }
+    case TopicDestination_topic_demux: {
+      auto ptr = reinterpret_cast<const ubii::devices::TopicDemux *>(obj);
+      return ptr->UnPack(resolver);
+    }
+    default: return nullptr;
+  }
+}
+
+inline flatbuffers::Offset<void> TopicDestinationUnion::Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher) const {
+  switch (type) {
+    case TopicDestination_topic: {
+      auto ptr = reinterpret_cast<const std::string *>(value);
+      return _fbb.CreateString(*ptr).Union();
+    }
+    case TopicDestination_topic_demux: {
+      auto ptr = reinterpret_cast<const ubii::devices::TopicDemuxT *>(value);
+      return CreateTopicDemux(_fbb, ptr, _rehasher).Union();
+    }
+    default: return 0;
+  }
+}
+
+inline TopicDestinationUnion::TopicDestinationUnion(const TopicDestinationUnion &u) FLATBUFFERS_NOEXCEPT : type(u.type), value(nullptr) {
+  switch (type) {
+    case TopicDestination_topic: {
+      value = new std::string(*reinterpret_cast<std::string *>(u.value));
+      break;
+    }
+    case TopicDestination_topic_demux: {
+      value = new ubii::devices::TopicDemuxT(*reinterpret_cast<ubii::devices::TopicDemuxT *>(u.value));
+      break;
+    }
+    default:
+      break;
+  }
+}
+
+inline void TopicDestinationUnion::Reset() {
+  switch (type) {
+    case TopicDestination_topic: {
+      auto ptr = reinterpret_cast<std::string *>(value);
+      delete ptr;
+      break;
+    }
+    case TopicDestination_topic_demux: {
+      auto ptr = reinterpret_cast<ubii::devices::TopicDemuxT *>(value);
+      delete ptr;
+      break;
+    }
+    default: break;
+  }
+  value = nullptr;
+  type = TopicDestination_NONE;
 }
 
 inline const ubii::sessions::InteractionOutputMapping *GetInteractionOutputMapping(const void *buf) {
@@ -208,6 +366,12 @@ inline void FinishSizePrefixedInteractionOutputMappingBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::sessions::InteractionOutputMapping> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<InteractionOutputMappingT> UnPackInteractionOutputMapping(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<InteractionOutputMappingT>(GetInteractionOutputMapping(buf)->UnPack(res));
 }
 
 }  // namespace sessions

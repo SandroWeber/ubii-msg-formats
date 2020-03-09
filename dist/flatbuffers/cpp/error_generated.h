@@ -10,8 +10,19 @@ namespace ubii {
 namespace general {
 
 struct Error;
+struct ErrorT;
+
+struct ErrorT : public flatbuffers::NativeTable {
+  typedef Error TableType;
+  std::string title;
+  std::string message;
+  std::string stack;
+  ErrorT() {
+  }
+};
 
 struct Error FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef ErrorT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TITLE = 4,
     VT_MESSAGE = 6,
@@ -36,6 +47,9 @@ struct Error FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(stack()) &&
            verifier.EndTable();
   }
+  ErrorT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(ErrorT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Error> Pack(flatbuffers::FlatBufferBuilder &_fbb, const ErrorT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct ErrorBuilder {
@@ -89,6 +103,40 @@ inline flatbuffers::Offset<Error> CreateErrorDirect(
       stack__);
 }
 
+flatbuffers::Offset<Error> CreateError(flatbuffers::FlatBufferBuilder &_fbb, const ErrorT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline ErrorT *Error::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new ErrorT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Error::UnPackTo(ErrorT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = title(); if (_e) _o->title = _e->str(); };
+  { auto _e = message(); if (_e) _o->message = _e->str(); };
+  { auto _e = stack(); if (_e) _o->stack = _e->str(); };
+}
+
+inline flatbuffers::Offset<Error> Error::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ErrorT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateError(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Error> CreateError(flatbuffers::FlatBufferBuilder &_fbb, const ErrorT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const ErrorT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _title = _o->title.empty() ? 0 : _fbb.CreateString(_o->title);
+  auto _message = _o->message.empty() ? 0 : _fbb.CreateString(_o->message);
+  auto _stack = _o->stack.empty() ? 0 : _fbb.CreateString(_o->stack);
+  return ubii::general::CreateError(
+      _fbb,
+      _title,
+      _message,
+      _stack);
+}
+
 inline const ubii::general::Error *GetError(const void *buf) {
   return flatbuffers::GetRoot<ubii::general::Error>(buf);
 }
@@ -117,6 +165,12 @@ inline void FinishSizePrefixedErrorBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::general::Error> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<ErrorT> UnPackError(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ErrorT>(GetError(buf)->UnPack(res));
 }
 
 }  // namespace general

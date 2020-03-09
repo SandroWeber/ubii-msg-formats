@@ -12,6 +12,7 @@ namespace ubii {
 namespace interactions {
 
 struct Interaction;
+struct InteractionT;
 
 enum InteractionStatus {
   InteractionStatus_CREATED = 0,
@@ -49,7 +50,27 @@ inline const char *EnumNameInteractionStatus(InteractionStatus e) {
   return EnumNamesInteractionStatus()[index];
 }
 
+struct InteractionT : public flatbuffers::NativeTable {
+  typedef Interaction TableType;
+  std::string id;
+  std::string name;
+  std::vector<std::string> authors;
+  std::vector<std::string> tags;
+  std::string description;
+  InteractionStatus status;
+  std::vector<std::unique_ptr<IOFormatT>> input_formats;
+  std::vector<std::unique_ptr<IOFormatT>> output_formats;
+  std::string on_created;
+  std::string processing_callback;
+  float process_frequency;
+  InteractionT()
+      : status(InteractionStatus_CREATED),
+        process_frequency(0.0f) {
+  }
+};
+
 struct Interaction FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef InteractionT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -124,6 +145,9 @@ struct Interaction FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<float>(verifier, VT_PROCESS_FREQUENCY) &&
            verifier.EndTable();
   }
+  InteractionT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(InteractionT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Interaction> Pack(flatbuffers::FlatBufferBuilder &_fbb, const InteractionT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct InteractionBuilder {
@@ -239,6 +263,64 @@ inline flatbuffers::Offset<Interaction> CreateInteractionDirect(
       process_frequency);
 }
 
+flatbuffers::Offset<Interaction> CreateInteraction(flatbuffers::FlatBufferBuilder &_fbb, const InteractionT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline InteractionT *Interaction::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new InteractionT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Interaction::UnPackTo(InteractionT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = id(); if (_e) _o->id = _e->str(); };
+  { auto _e = name(); if (_e) _o->name = _e->str(); };
+  { auto _e = authors(); if (_e) { _o->authors.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->authors[_i] = _e->Get(_i)->str(); } } };
+  { auto _e = tags(); if (_e) { _o->tags.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->tags[_i] = _e->Get(_i)->str(); } } };
+  { auto _e = description(); if (_e) _o->description = _e->str(); };
+  { auto _e = status(); _o->status = _e; };
+  { auto _e = input_formats(); if (_e) { _o->input_formats.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->input_formats[_i] = std::unique_ptr<IOFormatT>(_e->Get(_i)->UnPack(_resolver)); } } };
+  { auto _e = output_formats(); if (_e) { _o->output_formats.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->output_formats[_i] = std::unique_ptr<IOFormatT>(_e->Get(_i)->UnPack(_resolver)); } } };
+  { auto _e = on_created(); if (_e) _o->on_created = _e->str(); };
+  { auto _e = processing_callback(); if (_e) _o->processing_callback = _e->str(); };
+  { auto _e = process_frequency(); _o->process_frequency = _e; };
+}
+
+inline flatbuffers::Offset<Interaction> Interaction::Pack(flatbuffers::FlatBufferBuilder &_fbb, const InteractionT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateInteraction(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Interaction> CreateInteraction(flatbuffers::FlatBufferBuilder &_fbb, const InteractionT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const InteractionT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _id = _o->id.empty() ? 0 : _fbb.CreateString(_o->id);
+  auto _name = _o->name.empty() ? 0 : _fbb.CreateString(_o->name);
+  auto _authors = _o->authors.size() ? _fbb.CreateVectorOfStrings(_o->authors) : 0;
+  auto _tags = _o->tags.size() ? _fbb.CreateVectorOfStrings(_o->tags) : 0;
+  auto _description = _o->description.empty() ? 0 : _fbb.CreateString(_o->description);
+  auto _status = _o->status;
+  auto _input_formats = _o->input_formats.size() ? _fbb.CreateVector<flatbuffers::Offset<IOFormat>> (_o->input_formats.size(), [](size_t i, _VectorArgs *__va) { return CreateIOFormat(*__va->__fbb, __va->__o->input_formats[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _output_formats = _o->output_formats.size() ? _fbb.CreateVector<flatbuffers::Offset<IOFormat>> (_o->output_formats.size(), [](size_t i, _VectorArgs *__va) { return CreateIOFormat(*__va->__fbb, __va->__o->output_formats[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _on_created = _o->on_created.empty() ? 0 : _fbb.CreateString(_o->on_created);
+  auto _processing_callback = _o->processing_callback.empty() ? 0 : _fbb.CreateString(_o->processing_callback);
+  auto _process_frequency = _o->process_frequency;
+  return ubii::interactions::CreateInteraction(
+      _fbb,
+      _id,
+      _name,
+      _authors,
+      _tags,
+      _description,
+      _status,
+      _input_formats,
+      _output_formats,
+      _on_created,
+      _processing_callback,
+      _process_frequency);
+}
+
 inline const ubii::interactions::Interaction *GetInteraction(const void *buf) {
   return flatbuffers::GetRoot<ubii::interactions::Interaction>(buf);
 }
@@ -267,6 +349,12 @@ inline void FinishSizePrefixedInteractionBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::interactions::Interaction> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<InteractionT> UnPackInteraction(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<InteractionT>(GetInteraction(buf)->UnPack(res));
 }
 
 }  // namespace interactions

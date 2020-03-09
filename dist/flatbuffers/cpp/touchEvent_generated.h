@@ -13,8 +13,19 @@ namespace ubii {
 namespace dataStructures {
 
 struct TouchEvent;
+struct TouchEventT;
+
+struct TouchEventT : public flatbuffers::NativeTable {
+  typedef TouchEvent TableType;
+  ButtonEventType type;
+  std::unique_ptr<Vector2> position;
+  TouchEventT()
+      : type(ButtonEventType_UP) {
+  }
+};
 
 struct TouchEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef TouchEventT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TYPE = 4,
     VT_POSITION = 6
@@ -31,6 +42,9 @@ struct TouchEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<Vector2>(verifier, VT_POSITION) &&
            verifier.EndTable();
   }
+  TouchEventT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(TouchEventT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<TouchEvent> Pack(flatbuffers::FlatBufferBuilder &_fbb, const TouchEventT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct TouchEventBuilder {
@@ -64,6 +78,37 @@ inline flatbuffers::Offset<TouchEvent> CreateTouchEvent(
   return builder_.Finish();
 }
 
+flatbuffers::Offset<TouchEvent> CreateTouchEvent(flatbuffers::FlatBufferBuilder &_fbb, const TouchEventT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline TouchEventT *TouchEvent::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new TouchEventT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void TouchEvent::UnPackTo(TouchEventT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = type(); _o->type = _e; };
+  { auto _e = position(); if (_e) _o->position = std::unique_ptr<Vector2>(new Vector2(*_e)); };
+}
+
+inline flatbuffers::Offset<TouchEvent> TouchEvent::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TouchEventT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateTouchEvent(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<TouchEvent> CreateTouchEvent(flatbuffers::FlatBufferBuilder &_fbb, const TouchEventT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TouchEventT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _type = _o->type;
+  auto _position = _o->position ? _o->position.get() : 0;
+  return ubii::dataStructures::CreateTouchEvent(
+      _fbb,
+      _type,
+      _position);
+}
+
 inline const ubii::dataStructures::TouchEvent *GetTouchEvent(const void *buf) {
   return flatbuffers::GetRoot<ubii::dataStructures::TouchEvent>(buf);
 }
@@ -92,6 +137,12 @@ inline void FinishSizePrefixedTouchEventBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::dataStructures::TouchEvent> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<TouchEventT> UnPackTouchEvent(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<TouchEventT>(GetTouchEvent(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

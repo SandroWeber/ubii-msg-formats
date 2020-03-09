@@ -10,6 +10,7 @@ namespace ubii {
 namespace dataStructures {
 
 struct Image2D;
+struct Image2DT;
 
 enum ImageDataFormat {
   ImageDataFormat_GRAY8 = 0,
@@ -44,7 +45,21 @@ inline const char *EnumNameImageDataFormat(ImageDataFormat e) {
   return EnumNamesImageDataFormat()[index];
 }
 
+struct Image2DT : public flatbuffers::NativeTable {
+  typedef Image2D TableType;
+  int32_t width;
+  int32_t height;
+  ImageDataFormat data_format;
+  std::vector<int8_t> data;
+  Image2DT()
+      : width(0),
+        height(0),
+        data_format(ImageDataFormat_GRAY8) {
+  }
+};
+
 struct Image2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef Image2DT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_WIDTH = 4,
     VT_HEIGHT = 6,
@@ -72,6 +87,9 @@ struct Image2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyVector(data()) &&
            verifier.EndTable();
   }
+  Image2DT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(Image2DT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Image2D> Pack(flatbuffers::FlatBufferBuilder &_fbb, const Image2DT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct Image2DBuilder {
@@ -130,6 +148,43 @@ inline flatbuffers::Offset<Image2D> CreateImage2DDirect(
       data__);
 }
 
+flatbuffers::Offset<Image2D> CreateImage2D(flatbuffers::FlatBufferBuilder &_fbb, const Image2DT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline Image2DT *Image2D::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new Image2DT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Image2D::UnPackTo(Image2DT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = width(); _o->width = _e; };
+  { auto _e = height(); _o->height = _e; };
+  { auto _e = data_format(); _o->data_format = _e; };
+  { auto _e = data(); if (_e) { _o->data.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->data[_i] = _e->Get(_i); } } };
+}
+
+inline flatbuffers::Offset<Image2D> Image2D::Pack(flatbuffers::FlatBufferBuilder &_fbb, const Image2DT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateImage2D(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Image2D> CreateImage2D(flatbuffers::FlatBufferBuilder &_fbb, const Image2DT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const Image2DT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _width = _o->width;
+  auto _height = _o->height;
+  auto _data_format = _o->data_format;
+  auto _data = _o->data.size() ? _fbb.CreateVector(_o->data) : 0;
+  return ubii::dataStructures::CreateImage2D(
+      _fbb,
+      _width,
+      _height,
+      _data_format,
+      _data);
+}
+
 inline const ubii::dataStructures::Image2D *GetImage2D(const void *buf) {
   return flatbuffers::GetRoot<ubii::dataStructures::Image2D>(buf);
 }
@@ -158,6 +213,12 @@ inline void FinishSizePrefixedImage2DBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::dataStructures::Image2D> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<Image2DT> UnPackImage2D(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<Image2DT>(GetImage2D(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

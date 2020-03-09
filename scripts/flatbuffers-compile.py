@@ -89,7 +89,7 @@ def compileFBS(sourceFile, outputPath, includePath, targetLanguage, require=True
         sys.exit(-1)
 
     flatc_command = [flatc, "--" + targetLanguage,
-                     "-I", includePath, "-o", outputPath]
+                     "-I", includePath, "-o", outputPath, "--gen-object-api"]
     # if targetLanguage == "js":
     #    flatc_command.append("--es6-js-export")
     flatc_command.append(sourceFile)

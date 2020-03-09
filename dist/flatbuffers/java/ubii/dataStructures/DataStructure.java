@@ -139,5 +139,7 @@ public final class DataStructure extends Table {
     int o = builder.endObject();
     return o;
   }
+  public static void finishDataStructureBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
+  public static void finishSizePrefixedDataStructureBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
 }
 

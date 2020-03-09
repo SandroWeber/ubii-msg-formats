@@ -11,8 +11,21 @@ namespace services {
 namespace requests {
 
 struct TopicSubscription;
+struct TopicSubscriptionT;
+
+struct TopicSubscriptionT : public flatbuffers::NativeTable {
+  typedef TopicSubscription TableType;
+  std::string client_id;
+  std::vector<std::string> subscribe_topics;
+  std::vector<std::string> unsubscribe_topics;
+  std::string subscribe_topic_regexp;
+  std::string unsubscribe_topic_regexp;
+  TopicSubscriptionT() {
+  }
+};
 
 struct TopicSubscription FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef TopicSubscriptionT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_CLIENT_ID = 4,
     VT_SUBSCRIBE_TOPICS = 6,
@@ -51,6 +64,9 @@ struct TopicSubscription FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(unsubscribe_topic_regexp()) &&
            verifier.EndTable();
   }
+  TopicSubscriptionT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(TopicSubscriptionT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<TopicSubscription> Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicSubscriptionT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct TopicSubscriptionBuilder {
@@ -120,6 +136,46 @@ inline flatbuffers::Offset<TopicSubscription> CreateTopicSubscriptionDirect(
       unsubscribe_topic_regexp__);
 }
 
+flatbuffers::Offset<TopicSubscription> CreateTopicSubscription(flatbuffers::FlatBufferBuilder &_fbb, const TopicSubscriptionT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline TopicSubscriptionT *TopicSubscription::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new TopicSubscriptionT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void TopicSubscription::UnPackTo(TopicSubscriptionT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = client_id(); if (_e) _o->client_id = _e->str(); };
+  { auto _e = subscribe_topics(); if (_e) { _o->subscribe_topics.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->subscribe_topics[_i] = _e->Get(_i)->str(); } } };
+  { auto _e = unsubscribe_topics(); if (_e) { _o->unsubscribe_topics.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->unsubscribe_topics[_i] = _e->Get(_i)->str(); } } };
+  { auto _e = subscribe_topic_regexp(); if (_e) _o->subscribe_topic_regexp = _e->str(); };
+  { auto _e = unsubscribe_topic_regexp(); if (_e) _o->unsubscribe_topic_regexp = _e->str(); };
+}
+
+inline flatbuffers::Offset<TopicSubscription> TopicSubscription::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicSubscriptionT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateTopicSubscription(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<TopicSubscription> CreateTopicSubscription(flatbuffers::FlatBufferBuilder &_fbb, const TopicSubscriptionT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TopicSubscriptionT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _client_id = _o->client_id.empty() ? 0 : _fbb.CreateString(_o->client_id);
+  auto _subscribe_topics = _o->subscribe_topics.size() ? _fbb.CreateVectorOfStrings(_o->subscribe_topics) : 0;
+  auto _unsubscribe_topics = _o->unsubscribe_topics.size() ? _fbb.CreateVectorOfStrings(_o->unsubscribe_topics) : 0;
+  auto _subscribe_topic_regexp = _o->subscribe_topic_regexp.empty() ? 0 : _fbb.CreateString(_o->subscribe_topic_regexp);
+  auto _unsubscribe_topic_regexp = _o->unsubscribe_topic_regexp.empty() ? 0 : _fbb.CreateString(_o->unsubscribe_topic_regexp);
+  return ubii::services::requests::CreateTopicSubscription(
+      _fbb,
+      _client_id,
+      _subscribe_topics,
+      _unsubscribe_topics,
+      _subscribe_topic_regexp,
+      _unsubscribe_topic_regexp);
+}
+
 inline const ubii::services::requests::TopicSubscription *GetTopicSubscription(const void *buf) {
   return flatbuffers::GetRoot<ubii::services::requests::TopicSubscription>(buf);
 }
@@ -148,6 +204,12 @@ inline void FinishSizePrefixedTopicSubscriptionBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::services::requests::TopicSubscription> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<TopicSubscriptionT> UnPackTopicSubscription(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<TopicSubscriptionT>(GetTopicSubscription(buf)->UnPack(res));
 }
 
 }  // namespace requests

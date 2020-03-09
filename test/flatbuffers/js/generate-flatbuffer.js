@@ -1,12 +1,13 @@
 import test from 'ava';
 import { flatbuffers } from 'flatbuffers';
 
-const { MSG_TYPES } = require('../../../src/js/index');
+const { FlatbufferUtils } = require('../../../src/js/index');
 
 const TopicData = require('../../../dist/flatbuffers/js/topicData_generated').ubii.topicData.TopicData;
 const TopicDataContent = require('../../../dist/flatbuffers/js/topicData_generated').ubii.topicData.TopicDataContent;
 const TopicDataRecord = require('../../../dist/flatbuffers/js/topicDataRecord_generated').ubii.topicData.TopicDataRecord;
-const DataStructure = require('../../../dist/flatbuffers/js/topicDataRecord_generated').ubii.dataStructures.DataStructure;
+const TopicDataRecordList = require('../../../dist/flatbuffers/js/topicDataRecord_generated').ubii.topicData.TopicDataRecordList;
+const DataStructure = require('../../../dist/flatbuffers/js/dataStructure_generated').ubii.dataStructures.DataStructure;
 const Timestamp = require('../../../dist/flatbuffers/js/timestamp_generated').ubii.dataStructures.Timestamp;
 const Vector3 = require('../../../dist/flatbuffers/js/vector3_generated').ubii.dataStructures.Vector3;
 
@@ -72,12 +73,15 @@ let createFlatbufferTopicData = (topicString, timestamp) => {
     TopicDataRecord.addTimestamp(builder, Timestamp.createTimestamp(builder, timestamp.seconds, timestamp.nanos));
     TopicDataRecord.addData(builder, dataStructure);
     let topicDataRecord = TopicDataRecord.endTopicDataRecord(builder);
-    console.info(topicDataRecord);
-    console.info('\n\n');
+    //console.info(topicDataRecord);
+    //console.info('\n\n');
+
+    let recordsListElements = TopicDataRecordList.createElementsVector(builder, [topicDataRecord]);
+    let recordsList = TopicDataRecordList.createTopicDataRecordList(builder, recordsListElements);
 
     TopicData.startTopicData(builder);
-    TopicData.addContentType(builder, TopicDataContent.topic_data_record);
-    TopicData.addContent(builder, topicDataRecord);
+    TopicData.addContentType(builder, TopicDataContent.topic_data_records);
+    TopicData.addContent(builder, recordsList);
     let topicData = TopicData.endTopicData(builder);
 
     builder.finish(topicData);
@@ -86,17 +90,19 @@ let createFlatbufferTopicData = (topicString, timestamp) => {
 };
 
 let verifyTopicDataRecord = (test, record) => {
-    let vector3 = record.data().vector3(new Vector3());
+    let dataStructure = new DataStructure();
+    let data = record.data(dataStructure);
+    let vector3 = data.vector3(new Vector3());
     test.is(vector3.x().toFixed(1), testVector3.x.toFixed(1));
     test.is(vector3.y().toFixed(1), testVector3.y.toFixed(1));
     test.is(vector3.z().toFixed(1), testVector3.z.toFixed(1));
 
-    test.is(record.data().bool(), testBool);
+    test.is(data.bool(), testBool);
 
-    test.is(record.data().stringListLength(), testStringList.length);
-    test.is(record.data().stringList(0), testStringList[0]);
-    test.is(record.data().stringList(1), testStringList[1]);
-    test.is(record.data().stringList(2), testStringList[2]);
+    test.is(data.stringListLength(), testStringList.length);
+    test.is(data.stringList(0), testStringList[0]);
+    test.is(data.stringList(1), testStringList[1]);
+    test.is(data.stringList(2), testStringList[2]);
 }
 
 /* prepare tests */
@@ -112,8 +118,12 @@ test('create a TopicData flatbuffer, then read it back in', t => {
 
     // read buffer
     let topicData = TopicData.getRootAsTopicData(bufferTopicData);
-    let topicDataRecord = topicData.content(new TopicDataRecord());
-    verifyTopicDataRecord(t, topicDataRecord);
+    let topicDataRecordList = topicData.content(new TopicDataRecordList());
+
+    t.is(topicData.contentType(), TopicDataContent.topic_data_records);
+    t.is(topicDataRecordList.elementsLength(), 1);
+
+    verifyTopicDataRecord(t, topicDataRecordList.elements(0));
 });
 
 test('simulate a storage to save parts of a message, repack it into a new message', t => {
@@ -125,11 +135,11 @@ test('simulate a storage to save parts of a message, repack it into a new messag
 
     // read buffer
     let topicData = TopicData.getRootAsTopicData(bufferTopicData);
-    let topicDataRecord = topicData.content(new TopicDataRecord());
+    let topicDataRecordList = topicData.content(new TopicDataRecordList());
 
     // store in a map
     let storage = new Map();
-    storage.set(topicString, topicDataRecord);
+    storage.set(topicString, topicDataRecordList.elements(0));
 
     let storageRecord = storage.get(topicString);
     verifyTopicDataRecord(t, storageRecord);
@@ -137,7 +147,9 @@ test('simulate a storage to save parts of a message, repack it into a new messag
     // repack record into new TopicData message
     let builder = new flatbuffers.Builder(0);
 
-    TopicDataRecord.startTopicDataRecord(builder);
+    FlatbufferUtils.copyTopicDataRecords(builder, [storageRecord]);
+
+    /*TopicDataRecord.startTopicDataRecord(builder);
     TopicDataRecord.addTopic(builder, storageRecord.topic());
     TopicDataRecord.addTimestamp(builder, storageRecord.timestamp());
     TopicDataRecord.addData(builder, storageRecord.data());
@@ -158,5 +170,5 @@ test('simulate a storage to save parts of a message, repack it into a new messag
     let repackedRecord = repackedTopicData.content(new TopicDataRecord());
     console.info(repackedRecord);
     console.info('\n\n');
-    verifyTopicDataRecord(t, repackedRecord);
+    verifyTopicDataRecord(t, repackedRecord);*/
 });

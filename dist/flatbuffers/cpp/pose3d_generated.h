@@ -13,10 +13,21 @@ namespace ubii {
 namespace dataStructures {
 
 struct Orientation3D;
+struct Orientation3DT;
 
 struct Pose3D;
+struct Pose3DT;
+
+struct Orientation3DT : public flatbuffers::NativeTable {
+  typedef Orientation3D TableType;
+  std::unique_ptr<Quaternion> quaternion;
+  std::unique_ptr<Vector3> euler;
+  Orientation3DT() {
+  }
+};
 
 struct Orientation3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef Orientation3DT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_QUATERNION = 4,
     VT_EULER = 6
@@ -33,6 +44,9 @@ struct Orientation3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<Vector3>(verifier, VT_EULER) &&
            verifier.EndTable();
   }
+  Orientation3DT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(Orientation3DT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Orientation3D> Pack(flatbuffers::FlatBufferBuilder &_fbb, const Orientation3DT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct Orientation3DBuilder {
@@ -66,7 +80,18 @@ inline flatbuffers::Offset<Orientation3D> CreateOrientation3D(
   return builder_.Finish();
 }
 
+flatbuffers::Offset<Orientation3D> CreateOrientation3D(flatbuffers::FlatBufferBuilder &_fbb, const Orientation3DT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+struct Pose3DT : public flatbuffers::NativeTable {
+  typedef Pose3D TableType;
+  std::unique_ptr<Vector3> position;
+  std::unique_ptr<Orientation3DT> orientation;
+  Pose3DT() {
+  }
+};
+
 struct Pose3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef Pose3DT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_POSITION = 4,
     VT_ORIENTATION = 6
@@ -84,6 +109,9 @@ struct Pose3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyTable(orientation()) &&
            verifier.EndTable();
   }
+  Pose3DT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(Pose3DT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Pose3D> Pack(flatbuffers::FlatBufferBuilder &_fbb, const Pose3DT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct Pose3DBuilder {
@@ -117,6 +145,66 @@ inline flatbuffers::Offset<Pose3D> CreatePose3D(
   return builder_.Finish();
 }
 
+flatbuffers::Offset<Pose3D> CreatePose3D(flatbuffers::FlatBufferBuilder &_fbb, const Pose3DT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline Orientation3DT *Orientation3D::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new Orientation3DT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Orientation3D::UnPackTo(Orientation3DT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = quaternion(); if (_e) _o->quaternion = std::unique_ptr<Quaternion>(new Quaternion(*_e)); };
+  { auto _e = euler(); if (_e) _o->euler = std::unique_ptr<Vector3>(new Vector3(*_e)); };
+}
+
+inline flatbuffers::Offset<Orientation3D> Orientation3D::Pack(flatbuffers::FlatBufferBuilder &_fbb, const Orientation3DT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateOrientation3D(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Orientation3D> CreateOrientation3D(flatbuffers::FlatBufferBuilder &_fbb, const Orientation3DT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const Orientation3DT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _quaternion = _o->quaternion ? _o->quaternion.get() : 0;
+  auto _euler = _o->euler ? _o->euler.get() : 0;
+  return ubii::dataStructures::CreateOrientation3D(
+      _fbb,
+      _quaternion,
+      _euler);
+}
+
+inline Pose3DT *Pose3D::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new Pose3DT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Pose3D::UnPackTo(Pose3DT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = position(); if (_e) _o->position = std::unique_ptr<Vector3>(new Vector3(*_e)); };
+  { auto _e = orientation(); if (_e) _o->orientation = std::unique_ptr<Orientation3DT>(_e->UnPack(_resolver)); };
+}
+
+inline flatbuffers::Offset<Pose3D> Pose3D::Pack(flatbuffers::FlatBufferBuilder &_fbb, const Pose3DT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreatePose3D(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Pose3D> CreatePose3D(flatbuffers::FlatBufferBuilder &_fbb, const Pose3DT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const Pose3DT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _position = _o->position ? _o->position.get() : 0;
+  auto _orientation = _o->orientation ? CreateOrientation3D(_fbb, _o->orientation.get(), _rehasher) : 0;
+  return ubii::dataStructures::CreatePose3D(
+      _fbb,
+      _position,
+      _orientation);
+}
+
 inline const ubii::dataStructures::Pose3D *GetPose3D(const void *buf) {
   return flatbuffers::GetRoot<ubii::dataStructures::Pose3D>(buf);
 }
@@ -145,6 +233,12 @@ inline void FinishSizePrefixedPose3DBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::dataStructures::Pose3D> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<Pose3DT> UnPackPose3D(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<Pose3DT>(GetPose3D(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

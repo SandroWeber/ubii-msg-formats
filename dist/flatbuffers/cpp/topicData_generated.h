@@ -17,6 +17,7 @@
 #include "session_generated.h"
 #include "buttonEventType_generated.h"
 #include "color_generated.h"
+#include "dataStructure_generated.h"
 #include "handGestureType_generated.h"
 #include "image_generated.h"
 #include "keyEvent_generated.h"
@@ -41,21 +42,20 @@ namespace ubii {
 namespace topicData {
 
 struct TopicData;
+struct TopicDataT;
 
 enum TopicDataContent {
   TopicDataContent_NONE = 0,
-  TopicDataContent_topic_data_record = 1,
-  TopicDataContent_topic_data_record_list = 2,
-  TopicDataContent_error = 3,
+  TopicDataContent_topic_data_records = 1,
+  TopicDataContent_error = 2,
   TopicDataContent_MIN = TopicDataContent_NONE,
   TopicDataContent_MAX = TopicDataContent_error
 };
 
-inline const TopicDataContent (&EnumValuesTopicDataContent())[4] {
+inline const TopicDataContent (&EnumValuesTopicDataContent())[3] {
   static const TopicDataContent values[] = {
     TopicDataContent_NONE,
-    TopicDataContent_topic_data_record,
-    TopicDataContent_topic_data_record_list,
+    TopicDataContent_topic_data_records,
     TopicDataContent_error
   };
   return values;
@@ -64,8 +64,7 @@ inline const TopicDataContent (&EnumValuesTopicDataContent())[4] {
 inline const char * const *EnumNamesTopicDataContent() {
   static const char * const names[] = {
     "NONE",
-    "topic_data_record",
-    "topic_data_record_list",
+    "topic_data_records",
     "error",
     nullptr
   };
@@ -82,22 +81,76 @@ template<typename T> struct TopicDataContentTraits {
   static const TopicDataContent enum_value = TopicDataContent_NONE;
 };
 
-template<> struct TopicDataContentTraits<TopicDataRecord> {
-  static const TopicDataContent enum_value = TopicDataContent_topic_data_record;
-};
-
 template<> struct TopicDataContentTraits<TopicDataRecordList> {
-  static const TopicDataContent enum_value = TopicDataContent_topic_data_record_list;
+  static const TopicDataContent enum_value = TopicDataContent_topic_data_records;
 };
 
 template<> struct TopicDataContentTraits<ubii::general::Error> {
   static const TopicDataContent enum_value = TopicDataContent_error;
 };
 
+struct TopicDataContentUnion {
+  TopicDataContent type;
+  void *value;
+
+  TopicDataContentUnion() : type(TopicDataContent_NONE), value(nullptr) {}
+  TopicDataContentUnion(TopicDataContentUnion&& u) FLATBUFFERS_NOEXCEPT :
+    type(TopicDataContent_NONE), value(nullptr)
+    { std::swap(type, u.type); std::swap(value, u.value); }
+  TopicDataContentUnion(const TopicDataContentUnion &) FLATBUFFERS_NOEXCEPT;
+  TopicDataContentUnion &operator=(const TopicDataContentUnion &u) FLATBUFFERS_NOEXCEPT
+    { TopicDataContentUnion t(u); std::swap(type, t.type); std::swap(value, t.value); return *this; }
+  TopicDataContentUnion &operator=(TopicDataContentUnion &&u) FLATBUFFERS_NOEXCEPT
+    { std::swap(type, u.type); std::swap(value, u.value); return *this; }
+  ~TopicDataContentUnion() { Reset(); }
+
+  void Reset();
+
+#ifndef FLATBUFFERS_CPP98_STL
+  template <typename T>
+  void Set(T&& val) {
+    using RT = typename std::remove_reference<T>::type;
+    Reset();
+    type = TopicDataContentTraits<typename RT::TableType>::enum_value;
+    if (type != TopicDataContent_NONE) {
+      value = new RT(std::forward<T>(val));
+    }
+  }
+#endif  // FLATBUFFERS_CPP98_STL
+
+  static void *UnPack(const void *obj, TopicDataContent type, const flatbuffers::resolver_function_t *resolver);
+  flatbuffers::Offset<void> Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher = nullptr) const;
+
+  TopicDataRecordListT *Astopic_data_records() {
+    return type == TopicDataContent_topic_data_records ?
+      reinterpret_cast<TopicDataRecordListT *>(value) : nullptr;
+  }
+  const TopicDataRecordListT *Astopic_data_records() const {
+    return type == TopicDataContent_topic_data_records ?
+      reinterpret_cast<const TopicDataRecordListT *>(value) : nullptr;
+  }
+  ubii::general::ErrorT *Aserror() {
+    return type == TopicDataContent_error ?
+      reinterpret_cast<ubii::general::ErrorT *>(value) : nullptr;
+  }
+  const ubii::general::ErrorT *Aserror() const {
+    return type == TopicDataContent_error ?
+      reinterpret_cast<const ubii::general::ErrorT *>(value) : nullptr;
+  }
+};
+
 bool VerifyTopicDataContent(flatbuffers::Verifier &verifier, const void *obj, TopicDataContent type);
 bool VerifyTopicDataContentVector(flatbuffers::Verifier &verifier, const flatbuffers::Vector<flatbuffers::Offset<void>> *values, const flatbuffers::Vector<uint8_t> *types);
 
+struct TopicDataT : public flatbuffers::NativeTable {
+  typedef TopicData TableType;
+  TopicDataContentUnion content;
+  TopicDataT() {
+  }
+};
+
 struct TopicData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef TopicDataT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_CONTENT_TYPE = 4,
     VT_CONTENT = 6
@@ -109,11 +162,8 @@ struct TopicData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
     return GetPointer<const void *>(VT_CONTENT);
   }
   template<typename T> const T *content_as() const;
-  const TopicDataRecord *content_as_topic_data_record() const {
-    return content_type() == TopicDataContent_topic_data_record ? static_cast<const TopicDataRecord *>(content()) : nullptr;
-  }
-  const TopicDataRecordList *content_as_topic_data_record_list() const {
-    return content_type() == TopicDataContent_topic_data_record_list ? static_cast<const TopicDataRecordList *>(content()) : nullptr;
+  const TopicDataRecordList *content_as_topic_data_records() const {
+    return content_type() == TopicDataContent_topic_data_records ? static_cast<const TopicDataRecordList *>(content()) : nullptr;
   }
   const ubii::general::Error *content_as_error() const {
     return content_type() == TopicDataContent_error ? static_cast<const ubii::general::Error *>(content()) : nullptr;
@@ -125,14 +175,13 @@ struct TopicData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyTopicDataContent(verifier, content(), content_type()) &&
            verifier.EndTable();
   }
+  TopicDataT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(TopicDataT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<TopicData> Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicDataT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
-template<> inline const TopicDataRecord *TopicData::content_as<TopicDataRecord>() const {
-  return content_as_topic_data_record();
-}
-
 template<> inline const TopicDataRecordList *TopicData::content_as<TopicDataRecordList>() const {
-  return content_as_topic_data_record_list();
+  return content_as_topic_data_records();
 }
 
 template<> inline const ubii::general::Error *TopicData::content_as<ubii::general::Error>() const {
@@ -170,16 +219,43 @@ inline flatbuffers::Offset<TopicData> CreateTopicData(
   return builder_.Finish();
 }
 
+flatbuffers::Offset<TopicData> CreateTopicData(flatbuffers::FlatBufferBuilder &_fbb, const TopicDataT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline TopicDataT *TopicData::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new TopicDataT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void TopicData::UnPackTo(TopicDataT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = content_type(); _o->content.type = _e; };
+  { auto _e = content(); if (_e) _o->content.value = TopicDataContentUnion::UnPack(_e, content_type(), _resolver); };
+}
+
+inline flatbuffers::Offset<TopicData> TopicData::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicDataT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateTopicData(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<TopicData> CreateTopicData(flatbuffers::FlatBufferBuilder &_fbb, const TopicDataT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TopicDataT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _content_type = _o->content.type;
+  auto _content = _o->content.Pack(_fbb);
+  return ubii::topicData::CreateTopicData(
+      _fbb,
+      _content_type,
+      _content);
+}
+
 inline bool VerifyTopicDataContent(flatbuffers::Verifier &verifier, const void *obj, TopicDataContent type) {
   switch (type) {
     case TopicDataContent_NONE: {
       return true;
     }
-    case TopicDataContent_topic_data_record: {
-      auto ptr = reinterpret_cast<const TopicDataRecord *>(obj);
-      return verifier.VerifyTable(ptr);
-    }
-    case TopicDataContent_topic_data_record_list: {
+    case TopicDataContent_topic_data_records: {
       auto ptr = reinterpret_cast<const TopicDataRecordList *>(obj);
       return verifier.VerifyTable(ptr);
     }
@@ -201,6 +277,67 @@ inline bool VerifyTopicDataContentVector(flatbuffers::Verifier &verifier, const 
     }
   }
   return true;
+}
+
+inline void *TopicDataContentUnion::UnPack(const void *obj, TopicDataContent type, const flatbuffers::resolver_function_t *resolver) {
+  switch (type) {
+    case TopicDataContent_topic_data_records: {
+      auto ptr = reinterpret_cast<const TopicDataRecordList *>(obj);
+      return ptr->UnPack(resolver);
+    }
+    case TopicDataContent_error: {
+      auto ptr = reinterpret_cast<const ubii::general::Error *>(obj);
+      return ptr->UnPack(resolver);
+    }
+    default: return nullptr;
+  }
+}
+
+inline flatbuffers::Offset<void> TopicDataContentUnion::Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher) const {
+  switch (type) {
+    case TopicDataContent_topic_data_records: {
+      auto ptr = reinterpret_cast<const TopicDataRecordListT *>(value);
+      return CreateTopicDataRecordList(_fbb, ptr, _rehasher).Union();
+    }
+    case TopicDataContent_error: {
+      auto ptr = reinterpret_cast<const ubii::general::ErrorT *>(value);
+      return CreateError(_fbb, ptr, _rehasher).Union();
+    }
+    default: return 0;
+  }
+}
+
+inline TopicDataContentUnion::TopicDataContentUnion(const TopicDataContentUnion &u) FLATBUFFERS_NOEXCEPT : type(u.type), value(nullptr) {
+  switch (type) {
+    case TopicDataContent_topic_data_records: {
+      FLATBUFFERS_ASSERT(false);  // TopicDataRecordListT not copyable.
+      break;
+    }
+    case TopicDataContent_error: {
+      value = new ubii::general::ErrorT(*reinterpret_cast<ubii::general::ErrorT *>(u.value));
+      break;
+    }
+    default:
+      break;
+  }
+}
+
+inline void TopicDataContentUnion::Reset() {
+  switch (type) {
+    case TopicDataContent_topic_data_records: {
+      auto ptr = reinterpret_cast<TopicDataRecordListT *>(value);
+      delete ptr;
+      break;
+    }
+    case TopicDataContent_error: {
+      auto ptr = reinterpret_cast<ubii::general::ErrorT *>(value);
+      delete ptr;
+      break;
+    }
+    default: break;
+  }
+  value = nullptr;
+  type = TopicDataContent_NONE;
 }
 
 inline const ubii::topicData::TopicData *GetTopicData(const void *buf) {
@@ -231,6 +368,12 @@ inline void FinishSizePrefixedTopicDataBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::topicData::TopicData> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<TopicDataT> UnPackTopicData(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<TopicDataT>(GetTopicData(buf)->UnPack(res));
 }
 
 }  // namespace topicData

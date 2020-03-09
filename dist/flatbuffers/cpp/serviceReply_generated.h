@@ -27,8 +27,17 @@ namespace ubii {
 namespace services {
 
 struct ServiceReply;
+struct ServiceReplyT;
+
+struct ServiceReplyT : public flatbuffers::NativeTable {
+  typedef ServiceReply TableType;
+  std::unique_ptr<ServiceDataT> reply;
+  ServiceReplyT() {
+  }
+};
 
 struct ServiceReply FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef ServiceReplyT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_REPLY = 4
   };
@@ -41,6 +50,9 @@ struct ServiceReply FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyTable(reply()) &&
            verifier.EndTable();
   }
+  ServiceReplyT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(ServiceReplyT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<ServiceReply> Pack(flatbuffers::FlatBufferBuilder &_fbb, const ServiceReplyT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct ServiceReplyBuilder {
@@ -67,6 +79,34 @@ inline flatbuffers::Offset<ServiceReply> CreateServiceReply(
   ServiceReplyBuilder builder_(_fbb);
   builder_.add_reply(reply);
   return builder_.Finish();
+}
+
+flatbuffers::Offset<ServiceReply> CreateServiceReply(flatbuffers::FlatBufferBuilder &_fbb, const ServiceReplyT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline ServiceReplyT *ServiceReply::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new ServiceReplyT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void ServiceReply::UnPackTo(ServiceReplyT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = reply(); if (_e) _o->reply = std::unique_ptr<ServiceDataT>(_e->UnPack(_resolver)); };
+}
+
+inline flatbuffers::Offset<ServiceReply> ServiceReply::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ServiceReplyT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateServiceReply(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<ServiceReply> CreateServiceReply(flatbuffers::FlatBufferBuilder &_fbb, const ServiceReplyT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const ServiceReplyT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _reply = _o->reply ? CreateServiceData(_fbb, _o->reply.get(), _rehasher) : 0;
+  return ubii::services::CreateServiceReply(
+      _fbb,
+      _reply);
 }
 
 inline const ubii::services::ServiceReply *GetServiceReply(const void *buf) {
@@ -97,6 +137,12 @@ inline void FinishSizePrefixedServiceReplyBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::services::ServiceReply> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<ServiceReplyT> UnPackServiceReply(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ServiceReplyT>(GetServiceReply(buf)->UnPack(res));
 }
 
 }  // namespace services

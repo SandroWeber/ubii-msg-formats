@@ -149,6 +149,8 @@ public struct DataStructure : IFlatbufferObject
     int o = builder.EndObject();
     return new Offset<DataStructure>(o);
   }
+  public static void FinishDataStructureBuffer(FlatBufferBuilder builder, Offset<DataStructure> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedDataStructureBuffer(FlatBufferBuilder builder, Offset<DataStructure> offset) { builder.FinishSizePrefixed(offset.Value); }
 };
 
 

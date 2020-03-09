@@ -47,9 +47,8 @@ ubii.topicData = ubii.topicData || {};
  */
 ubii.topicData.TopicDataContent = {
   NONE: 0,
-  topic_data_record: 1,
-  topic_data_record_list: 2,
-  error: 3
+  topic_data_records: 1,
+  error: 2
 };
 
 /**
@@ -57,9 +56,8 @@ ubii.topicData.TopicDataContent = {
  */
 ubii.topicData.TopicDataContentName = {
   0: 'NONE',
-  1: 'topic_data_record',
-  2: 'topic_data_record_list',
-  3: 'error'
+  1: 'topic_data_records',
+  2: 'error'
 };
 
 /**

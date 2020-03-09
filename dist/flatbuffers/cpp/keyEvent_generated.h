@@ -12,8 +12,19 @@ namespace ubii {
 namespace dataStructures {
 
 struct KeyEvent;
+struct KeyEventT;
+
+struct KeyEventT : public flatbuffers::NativeTable {
+  typedef KeyEvent TableType;
+  ButtonEventType type;
+  std::string key;
+  KeyEventT()
+      : type(ButtonEventType_UP) {
+  }
+};
 
 struct KeyEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef KeyEventT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TYPE = 4,
     VT_KEY = 6
@@ -31,6 +42,9 @@ struct KeyEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(key()) &&
            verifier.EndTable();
   }
+  KeyEventT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(KeyEventT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<KeyEvent> Pack(flatbuffers::FlatBufferBuilder &_fbb, const KeyEventT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct KeyEventBuilder {
@@ -75,6 +89,37 @@ inline flatbuffers::Offset<KeyEvent> CreateKeyEventDirect(
       key__);
 }
 
+flatbuffers::Offset<KeyEvent> CreateKeyEvent(flatbuffers::FlatBufferBuilder &_fbb, const KeyEventT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline KeyEventT *KeyEvent::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new KeyEventT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void KeyEvent::UnPackTo(KeyEventT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = type(); _o->type = _e; };
+  { auto _e = key(); if (_e) _o->key = _e->str(); };
+}
+
+inline flatbuffers::Offset<KeyEvent> KeyEvent::Pack(flatbuffers::FlatBufferBuilder &_fbb, const KeyEventT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateKeyEvent(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<KeyEvent> CreateKeyEvent(flatbuffers::FlatBufferBuilder &_fbb, const KeyEventT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const KeyEventT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _type = _o->type;
+  auto _key = _o->key.empty() ? 0 : _fbb.CreateString(_o->key);
+  return ubii::dataStructures::CreateKeyEvent(
+      _fbb,
+      _type,
+      _key);
+}
+
 inline const ubii::dataStructures::KeyEvent *GetKeyEvent(const void *buf) {
   return flatbuffers::GetRoot<ubii::dataStructures::KeyEvent>(buf);
 }
@@ -103,6 +148,12 @@ inline void FinishSizePrefixedKeyEventBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::dataStructures::KeyEvent> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<KeyEventT> UnPackKeyEvent(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<KeyEventT>(GetKeyEvent(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

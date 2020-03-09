@@ -15,8 +15,19 @@ namespace ubii {
 namespace sessions {
 
 struct IOMapping;
+struct IOMappingT;
+
+struct IOMappingT : public flatbuffers::NativeTable {
+  typedef IOMapping TableType;
+  std::string interaction_id;
+  std::vector<std::unique_ptr<InteractionInputMappingT>> input_mappings;
+  std::vector<std::unique_ptr<InteractionOutputMappingT>> output_mappings;
+  IOMappingT() {
+  }
+};
 
 struct IOMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef IOMappingT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_INTERACTION_ID = 4,
     VT_INPUT_MAPPINGS = 6,
@@ -43,6 +54,9 @@ struct IOMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyVectorOfTables(output_mappings()) &&
            verifier.EndTable();
   }
+  IOMappingT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(IOMappingT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<IOMapping> Pack(flatbuffers::FlatBufferBuilder &_fbb, const IOMappingT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct IOMappingBuilder {
@@ -96,6 +110,40 @@ inline flatbuffers::Offset<IOMapping> CreateIOMappingDirect(
       output_mappings__);
 }
 
+flatbuffers::Offset<IOMapping> CreateIOMapping(flatbuffers::FlatBufferBuilder &_fbb, const IOMappingT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline IOMappingT *IOMapping::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new IOMappingT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void IOMapping::UnPackTo(IOMappingT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = interaction_id(); if (_e) _o->interaction_id = _e->str(); };
+  { auto _e = input_mappings(); if (_e) { _o->input_mappings.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->input_mappings[_i] = std::unique_ptr<InteractionInputMappingT>(_e->Get(_i)->UnPack(_resolver)); } } };
+  { auto _e = output_mappings(); if (_e) { _o->output_mappings.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->output_mappings[_i] = std::unique_ptr<InteractionOutputMappingT>(_e->Get(_i)->UnPack(_resolver)); } } };
+}
+
+inline flatbuffers::Offset<IOMapping> IOMapping::Pack(flatbuffers::FlatBufferBuilder &_fbb, const IOMappingT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateIOMapping(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<IOMapping> CreateIOMapping(flatbuffers::FlatBufferBuilder &_fbb, const IOMappingT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const IOMappingT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _interaction_id = _o->interaction_id.empty() ? 0 : _fbb.CreateString(_o->interaction_id);
+  auto _input_mappings = _o->input_mappings.size() ? _fbb.CreateVector<flatbuffers::Offset<InteractionInputMapping>> (_o->input_mappings.size(), [](size_t i, _VectorArgs *__va) { return CreateInteractionInputMapping(*__va->__fbb, __va->__o->input_mappings[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _output_mappings = _o->output_mappings.size() ? _fbb.CreateVector<flatbuffers::Offset<InteractionOutputMapping>> (_o->output_mappings.size(), [](size_t i, _VectorArgs *__va) { return CreateInteractionOutputMapping(*__va->__fbb, __va->__o->output_mappings[i].get(), __va->__rehasher); }, &_va ) : 0;
+  return ubii::sessions::CreateIOMapping(
+      _fbb,
+      _interaction_id,
+      _input_mappings,
+      _output_mappings);
+}
+
 inline const ubii::sessions::IOMapping *GetIOMapping(const void *buf) {
   return flatbuffers::GetRoot<ubii::sessions::IOMapping>(buf);
 }
@@ -124,6 +172,12 @@ inline void FinishSizePrefixedIOMappingBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::sessions::IOMapping> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<IOMappingT> UnPackIOMapping(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<IOMappingT>(GetIOMapping(buf)->UnPack(res));
 }
 
 }  // namespace sessions

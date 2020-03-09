@@ -10,8 +10,25 @@ namespace ubii {
 namespace servers {
 
 struct Server;
+struct ServerT;
+
+struct ServerT : public flatbuffers::NativeTable {
+  typedef Server TableType;
+  std::string id;
+  std::string name;
+  std::string ip_ethernet;
+  std::string ip_wlan;
+  std::string port_service_zmq;
+  std::string port_service_rest;
+  std::string port_topic_data_zmq;
+  std::string port_topic_data_ws;
+  std::string constants_json;
+  ServerT() {
+  }
+};
 
 struct Server FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef ServerT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -72,6 +89,9 @@ struct Server FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(constants_json()) &&
            verifier.EndTable();
   }
+  ServerT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(ServerT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Server> Pack(flatbuffers::FlatBufferBuilder &_fbb, const ServerT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct ServerBuilder {
@@ -173,6 +193,58 @@ inline flatbuffers::Offset<Server> CreateServerDirect(
       constants_json__);
 }
 
+flatbuffers::Offset<Server> CreateServer(flatbuffers::FlatBufferBuilder &_fbb, const ServerT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline ServerT *Server::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new ServerT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Server::UnPackTo(ServerT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = id(); if (_e) _o->id = _e->str(); };
+  { auto _e = name(); if (_e) _o->name = _e->str(); };
+  { auto _e = ip_ethernet(); if (_e) _o->ip_ethernet = _e->str(); };
+  { auto _e = ip_wlan(); if (_e) _o->ip_wlan = _e->str(); };
+  { auto _e = port_service_zmq(); if (_e) _o->port_service_zmq = _e->str(); };
+  { auto _e = port_service_rest(); if (_e) _o->port_service_rest = _e->str(); };
+  { auto _e = port_topic_data_zmq(); if (_e) _o->port_topic_data_zmq = _e->str(); };
+  { auto _e = port_topic_data_ws(); if (_e) _o->port_topic_data_ws = _e->str(); };
+  { auto _e = constants_json(); if (_e) _o->constants_json = _e->str(); };
+}
+
+inline flatbuffers::Offset<Server> Server::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ServerT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateServer(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Server> CreateServer(flatbuffers::FlatBufferBuilder &_fbb, const ServerT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const ServerT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _id = _o->id.empty() ? 0 : _fbb.CreateString(_o->id);
+  auto _name = _o->name.empty() ? 0 : _fbb.CreateString(_o->name);
+  auto _ip_ethernet = _o->ip_ethernet.empty() ? 0 : _fbb.CreateString(_o->ip_ethernet);
+  auto _ip_wlan = _o->ip_wlan.empty() ? 0 : _fbb.CreateString(_o->ip_wlan);
+  auto _port_service_zmq = _o->port_service_zmq.empty() ? 0 : _fbb.CreateString(_o->port_service_zmq);
+  auto _port_service_rest = _o->port_service_rest.empty() ? 0 : _fbb.CreateString(_o->port_service_rest);
+  auto _port_topic_data_zmq = _o->port_topic_data_zmq.empty() ? 0 : _fbb.CreateString(_o->port_topic_data_zmq);
+  auto _port_topic_data_ws = _o->port_topic_data_ws.empty() ? 0 : _fbb.CreateString(_o->port_topic_data_ws);
+  auto _constants_json = _o->constants_json.empty() ? 0 : _fbb.CreateString(_o->constants_json);
+  return ubii::servers::CreateServer(
+      _fbb,
+      _id,
+      _name,
+      _ip_ethernet,
+      _ip_wlan,
+      _port_service_zmq,
+      _port_service_rest,
+      _port_topic_data_zmq,
+      _port_topic_data_ws,
+      _constants_json);
+}
+
 inline const ubii::servers::Server *GetServer(const void *buf) {
   return flatbuffers::GetRoot<ubii::servers::Server>(buf);
 }
@@ -201,6 +273,12 @@ inline void FinishSizePrefixedServerBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::servers::Server> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<ServerT> UnPackServer(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ServerT>(GetServer(buf)->UnPack(res));
 }
 
 }  // namespace servers

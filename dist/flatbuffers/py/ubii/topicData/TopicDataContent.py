@@ -4,7 +4,6 @@
 
 class TopicDataContent(object):
     NONE = 0
-    topic_data_record = 1
-    topic_data_record_list = 2
-    error = 3
+    topic_data_records = 1
+    error = 2
 

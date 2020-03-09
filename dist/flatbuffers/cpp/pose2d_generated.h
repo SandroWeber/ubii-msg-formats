@@ -12,12 +12,25 @@ namespace ubii {
 namespace dataStructures {
 
 struct AngleOrientation;
+struct AngleOrientationT;
 
 struct Orientation2D;
+struct Orientation2DT;
 
 struct Pose2D;
+struct Pose2DT;
+
+struct AngleOrientationT : public flatbuffers::NativeTable {
+  typedef AngleOrientation TableType;
+  std::unique_ptr<Vector2> zeroDirection;
+  float angle;
+  AngleOrientationT()
+      : angle(0.0f) {
+  }
+};
 
 struct AngleOrientation FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef AngleOrientationT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ZERODIRECTION = 4,
     VT_ANGLE = 6
@@ -34,6 +47,9 @@ struct AngleOrientation FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<float>(verifier, VT_ANGLE) &&
            verifier.EndTable();
   }
+  AngleOrientationT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(AngleOrientationT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<AngleOrientation> Pack(flatbuffers::FlatBufferBuilder &_fbb, const AngleOrientationT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct AngleOrientationBuilder {
@@ -67,7 +83,18 @@ inline flatbuffers::Offset<AngleOrientation> CreateAngleOrientation(
   return builder_.Finish();
 }
 
+flatbuffers::Offset<AngleOrientation> CreateAngleOrientation(flatbuffers::FlatBufferBuilder &_fbb, const AngleOrientationT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+struct Orientation2DT : public flatbuffers::NativeTable {
+  typedef Orientation2D TableType;
+  std::unique_ptr<AngleOrientationT> angle;
+  std::unique_ptr<Vector2> direction;
+  Orientation2DT() {
+  }
+};
+
 struct Orientation2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef Orientation2DT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ANGLE = 4,
     VT_DIRECTION = 6
@@ -85,6 +112,9 @@ struct Orientation2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<Vector2>(verifier, VT_DIRECTION) &&
            verifier.EndTable();
   }
+  Orientation2DT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(Orientation2DT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Orientation2D> Pack(flatbuffers::FlatBufferBuilder &_fbb, const Orientation2DT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct Orientation2DBuilder {
@@ -118,7 +148,18 @@ inline flatbuffers::Offset<Orientation2D> CreateOrientation2D(
   return builder_.Finish();
 }
 
+flatbuffers::Offset<Orientation2D> CreateOrientation2D(flatbuffers::FlatBufferBuilder &_fbb, const Orientation2DT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+struct Pose2DT : public flatbuffers::NativeTable {
+  typedef Pose2D TableType;
+  std::unique_ptr<Vector2> position;
+  std::unique_ptr<Orientation2DT> orientation;
+  Pose2DT() {
+  }
+};
+
 struct Pose2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef Pose2DT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_POSITION = 4,
     VT_ORIENTATION = 6
@@ -136,6 +177,9 @@ struct Pose2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyTable(orientation()) &&
            verifier.EndTable();
   }
+  Pose2DT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(Pose2DT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Pose2D> Pack(flatbuffers::FlatBufferBuilder &_fbb, const Pose2DT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct Pose2DBuilder {
@@ -169,6 +213,95 @@ inline flatbuffers::Offset<Pose2D> CreatePose2D(
   return builder_.Finish();
 }
 
+flatbuffers::Offset<Pose2D> CreatePose2D(flatbuffers::FlatBufferBuilder &_fbb, const Pose2DT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline AngleOrientationT *AngleOrientation::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new AngleOrientationT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void AngleOrientation::UnPackTo(AngleOrientationT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = zeroDirection(); if (_e) _o->zeroDirection = std::unique_ptr<Vector2>(new Vector2(*_e)); };
+  { auto _e = angle(); _o->angle = _e; };
+}
+
+inline flatbuffers::Offset<AngleOrientation> AngleOrientation::Pack(flatbuffers::FlatBufferBuilder &_fbb, const AngleOrientationT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateAngleOrientation(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<AngleOrientation> CreateAngleOrientation(flatbuffers::FlatBufferBuilder &_fbb, const AngleOrientationT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const AngleOrientationT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _zeroDirection = _o->zeroDirection ? _o->zeroDirection.get() : 0;
+  auto _angle = _o->angle;
+  return ubii::dataStructures::CreateAngleOrientation(
+      _fbb,
+      _zeroDirection,
+      _angle);
+}
+
+inline Orientation2DT *Orientation2D::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new Orientation2DT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Orientation2D::UnPackTo(Orientation2DT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = angle(); if (_e) _o->angle = std::unique_ptr<AngleOrientationT>(_e->UnPack(_resolver)); };
+  { auto _e = direction(); if (_e) _o->direction = std::unique_ptr<Vector2>(new Vector2(*_e)); };
+}
+
+inline flatbuffers::Offset<Orientation2D> Orientation2D::Pack(flatbuffers::FlatBufferBuilder &_fbb, const Orientation2DT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateOrientation2D(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Orientation2D> CreateOrientation2D(flatbuffers::FlatBufferBuilder &_fbb, const Orientation2DT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const Orientation2DT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _angle = _o->angle ? CreateAngleOrientation(_fbb, _o->angle.get(), _rehasher) : 0;
+  auto _direction = _o->direction ? _o->direction.get() : 0;
+  return ubii::dataStructures::CreateOrientation2D(
+      _fbb,
+      _angle,
+      _direction);
+}
+
+inline Pose2DT *Pose2D::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new Pose2DT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Pose2D::UnPackTo(Pose2DT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = position(); if (_e) _o->position = std::unique_ptr<Vector2>(new Vector2(*_e)); };
+  { auto _e = orientation(); if (_e) _o->orientation = std::unique_ptr<Orientation2DT>(_e->UnPack(_resolver)); };
+}
+
+inline flatbuffers::Offset<Pose2D> Pose2D::Pack(flatbuffers::FlatBufferBuilder &_fbb, const Pose2DT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreatePose2D(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Pose2D> CreatePose2D(flatbuffers::FlatBufferBuilder &_fbb, const Pose2DT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const Pose2DT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _position = _o->position ? _o->position.get() : 0;
+  auto _orientation = _o->orientation ? CreateOrientation2D(_fbb, _o->orientation.get(), _rehasher) : 0;
+  return ubii::dataStructures::CreatePose2D(
+      _fbb,
+      _position,
+      _orientation);
+}
+
 inline const ubii::dataStructures::Pose2D *GetPose2D(const void *buf) {
   return flatbuffers::GetRoot<ubii::dataStructures::Pose2D>(buf);
 }
@@ -197,6 +330,12 @@ inline void FinishSizePrefixedPose2DBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::dataStructures::Pose2D> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<Pose2DT> UnPackPose2D(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<Pose2DT>(GetPose2D(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

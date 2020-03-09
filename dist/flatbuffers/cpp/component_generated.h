@@ -10,6 +10,7 @@ namespace ubii {
 namespace devices {
 
 struct Component;
+struct ComponentT;
 
 enum IOType {
   IOType_INPUT = 0,
@@ -41,7 +42,23 @@ inline const char *EnumNameIOType(IOType e) {
   return EnumNamesIOType()[index];
 }
 
+struct ComponentT : public flatbuffers::NativeTable {
+  typedef Component TableType;
+  std::string id;
+  std::string name;
+  std::vector<std::string> tags;
+  std::string description;
+  std::string device_id;
+  std::string topic;
+  std::string message_format;
+  IOType io_type;
+  ComponentT()
+      : io_type(IOType_INPUT) {
+  }
+};
+
 struct Component FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef ComponentT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -96,6 +113,9 @@ struct Component FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<int8_t>(verifier, VT_IO_TYPE) &&
            verifier.EndTable();
   }
+  ComponentT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(ComponentT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Component> Pack(flatbuffers::FlatBufferBuilder &_fbb, const ComponentT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct ComponentBuilder {
@@ -188,6 +208,55 @@ inline flatbuffers::Offset<Component> CreateComponentDirect(
       io_type);
 }
 
+flatbuffers::Offset<Component> CreateComponent(flatbuffers::FlatBufferBuilder &_fbb, const ComponentT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline ComponentT *Component::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new ComponentT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Component::UnPackTo(ComponentT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = id(); if (_e) _o->id = _e->str(); };
+  { auto _e = name(); if (_e) _o->name = _e->str(); };
+  { auto _e = tags(); if (_e) { _o->tags.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->tags[_i] = _e->Get(_i)->str(); } } };
+  { auto _e = description(); if (_e) _o->description = _e->str(); };
+  { auto _e = device_id(); if (_e) _o->device_id = _e->str(); };
+  { auto _e = topic(); if (_e) _o->topic = _e->str(); };
+  { auto _e = message_format(); if (_e) _o->message_format = _e->str(); };
+  { auto _e = io_type(); _o->io_type = _e; };
+}
+
+inline flatbuffers::Offset<Component> Component::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ComponentT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateComponent(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Component> CreateComponent(flatbuffers::FlatBufferBuilder &_fbb, const ComponentT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const ComponentT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _id = _o->id.empty() ? 0 : _fbb.CreateString(_o->id);
+  auto _name = _o->name.empty() ? 0 : _fbb.CreateString(_o->name);
+  auto _tags = _o->tags.size() ? _fbb.CreateVectorOfStrings(_o->tags) : 0;
+  auto _description = _o->description.empty() ? 0 : _fbb.CreateString(_o->description);
+  auto _device_id = _o->device_id.empty() ? 0 : _fbb.CreateString(_o->device_id);
+  auto _topic = _o->topic.empty() ? 0 : _fbb.CreateString(_o->topic);
+  auto _message_format = _o->message_format.empty() ? 0 : _fbb.CreateString(_o->message_format);
+  auto _io_type = _o->io_type;
+  return ubii::devices::CreateComponent(
+      _fbb,
+      _id,
+      _name,
+      _tags,
+      _description,
+      _device_id,
+      _topic,
+      _message_format,
+      _io_type);
+}
+
 inline const ubii::devices::Component *GetComponent(const void *buf) {
   return flatbuffers::GetRoot<ubii::devices::Component>(buf);
 }
@@ -216,6 +285,12 @@ inline void FinishSizePrefixedComponentBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::devices::Component> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<ComponentT> UnPackComponent(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ComponentT>(GetComponent(buf)->UnPack(res));
 }
 
 }  // namespace devices

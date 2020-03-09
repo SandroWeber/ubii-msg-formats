@@ -10,8 +10,18 @@ namespace ubii {
 namespace general {
 
 struct Success;
+struct SuccessT;
+
+struct SuccessT : public flatbuffers::NativeTable {
+  typedef Success TableType;
+  std::string title;
+  std::string message;
+  SuccessT() {
+  }
+};
 
 struct Success FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef SuccessT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TITLE = 4,
     VT_MESSAGE = 6
@@ -30,6 +40,9 @@ struct Success FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(message()) &&
            verifier.EndTable();
   }
+  SuccessT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(SuccessT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<Success> Pack(flatbuffers::FlatBufferBuilder &_fbb, const SuccessT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct SuccessBuilder {
@@ -75,6 +88,37 @@ inline flatbuffers::Offset<Success> CreateSuccessDirect(
       message__);
 }
 
+flatbuffers::Offset<Success> CreateSuccess(flatbuffers::FlatBufferBuilder &_fbb, const SuccessT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline SuccessT *Success::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new SuccessT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void Success::UnPackTo(SuccessT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = title(); if (_e) _o->title = _e->str(); };
+  { auto _e = message(); if (_e) _o->message = _e->str(); };
+}
+
+inline flatbuffers::Offset<Success> Success::Pack(flatbuffers::FlatBufferBuilder &_fbb, const SuccessT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateSuccess(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<Success> CreateSuccess(flatbuffers::FlatBufferBuilder &_fbb, const SuccessT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const SuccessT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _title = _o->title.empty() ? 0 : _fbb.CreateString(_o->title);
+  auto _message = _o->message.empty() ? 0 : _fbb.CreateString(_o->message);
+  return ubii::general::CreateSuccess(
+      _fbb,
+      _title,
+      _message);
+}
+
 inline const ubii::general::Success *GetSuccess(const void *buf) {
   return flatbuffers::GetRoot<ubii::general::Success>(buf);
 }
@@ -103,6 +147,12 @@ inline void FinishSizePrefixedSuccessBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::general::Success> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<SuccessT> UnPackSuccess(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<SuccessT>(GetSuccess(buf)->UnPack(res));
 }
 
 }  // namespace general

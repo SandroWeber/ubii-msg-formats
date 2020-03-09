@@ -10,8 +10,21 @@ namespace ubii {
 namespace devices {
 
 struct TopicMux;
+struct TopicMuxT;
+
+struct TopicMuxT : public flatbuffers::NativeTable {
+  typedef TopicMux TableType;
+  std::string id;
+  std::string name;
+  std::string data_type;
+  std::string topic_selector;
+  std::string identity_match_pattern;
+  TopicMuxT() {
+  }
+};
 
 struct TopicMux FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef TopicMuxT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -48,6 +61,9 @@ struct TopicMux FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(identity_match_pattern()) &&
            verifier.EndTable();
   }
+  TopicMuxT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(TopicMuxT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<TopicMux> Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicMuxT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct TopicMuxBuilder {
@@ -117,6 +133,46 @@ inline flatbuffers::Offset<TopicMux> CreateTopicMuxDirect(
       identity_match_pattern__);
 }
 
+flatbuffers::Offset<TopicMux> CreateTopicMux(flatbuffers::FlatBufferBuilder &_fbb, const TopicMuxT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline TopicMuxT *TopicMux::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new TopicMuxT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void TopicMux::UnPackTo(TopicMuxT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = id(); if (_e) _o->id = _e->str(); };
+  { auto _e = name(); if (_e) _o->name = _e->str(); };
+  { auto _e = data_type(); if (_e) _o->data_type = _e->str(); };
+  { auto _e = topic_selector(); if (_e) _o->topic_selector = _e->str(); };
+  { auto _e = identity_match_pattern(); if (_e) _o->identity_match_pattern = _e->str(); };
+}
+
+inline flatbuffers::Offset<TopicMux> TopicMux::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicMuxT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateTopicMux(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<TopicMux> CreateTopicMux(flatbuffers::FlatBufferBuilder &_fbb, const TopicMuxT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TopicMuxT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _id = _o->id.empty() ? 0 : _fbb.CreateString(_o->id);
+  auto _name = _o->name.empty() ? 0 : _fbb.CreateString(_o->name);
+  auto _data_type = _o->data_type.empty() ? 0 : _fbb.CreateString(_o->data_type);
+  auto _topic_selector = _o->topic_selector.empty() ? 0 : _fbb.CreateString(_o->topic_selector);
+  auto _identity_match_pattern = _o->identity_match_pattern.empty() ? 0 : _fbb.CreateString(_o->identity_match_pattern);
+  return ubii::devices::CreateTopicMux(
+      _fbb,
+      _id,
+      _name,
+      _data_type,
+      _topic_selector,
+      _identity_match_pattern);
+}
+
 inline const ubii::devices::TopicMux *GetTopicMux(const void *buf) {
   return flatbuffers::GetRoot<ubii::devices::TopicMux>(buf);
 }
@@ -145,6 +201,12 @@ inline void FinishSizePrefixedTopicMuxBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::devices::TopicMux> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<TopicMuxT> UnPackTopicMux(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<TopicMuxT>(GetTopicMux(buf)->UnPack(res));
 }
 
 }  // namespace devices

@@ -10,8 +10,18 @@ namespace ubii {
 namespace interactions {
 
 struct IOFormat;
+struct IOFormatT;
+
+struct IOFormatT : public flatbuffers::NativeTable {
+  typedef IOFormat TableType;
+  std::string internal_name;
+  std::string message_format;
+  IOFormatT() {
+  }
+};
 
 struct IOFormat FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef IOFormatT NativeTableType;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_INTERNAL_NAME = 4,
     VT_MESSAGE_FORMAT = 6
@@ -30,6 +40,9 @@ struct IOFormat FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(message_format()) &&
            verifier.EndTable();
   }
+  IOFormatT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(IOFormatT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<IOFormat> Pack(flatbuffers::FlatBufferBuilder &_fbb, const IOFormatT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct IOFormatBuilder {
@@ -75,6 +88,37 @@ inline flatbuffers::Offset<IOFormat> CreateIOFormatDirect(
       message_format__);
 }
 
+flatbuffers::Offset<IOFormat> CreateIOFormat(flatbuffers::FlatBufferBuilder &_fbb, const IOFormatT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline IOFormatT *IOFormat::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = new IOFormatT();
+  UnPackTo(_o, _resolver);
+  return _o;
+}
+
+inline void IOFormat::UnPackTo(IOFormatT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = internal_name(); if (_e) _o->internal_name = _e->str(); };
+  { auto _e = message_format(); if (_e) _o->message_format = _e->str(); };
+}
+
+inline flatbuffers::Offset<IOFormat> IOFormat::Pack(flatbuffers::FlatBufferBuilder &_fbb, const IOFormatT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateIOFormat(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<IOFormat> CreateIOFormat(flatbuffers::FlatBufferBuilder &_fbb, const IOFormatT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const IOFormatT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _internal_name = _o->internal_name.empty() ? 0 : _fbb.CreateString(_o->internal_name);
+  auto _message_format = _o->message_format.empty() ? 0 : _fbb.CreateString(_o->message_format);
+  return ubii::interactions::CreateIOFormat(
+      _fbb,
+      _internal_name,
+      _message_format);
+}
+
 inline const ubii::interactions::IOFormat *GetIOFormat(const void *buf) {
   return flatbuffers::GetRoot<ubii::interactions::IOFormat>(buf);
 }
@@ -103,6 +147,12 @@ inline void FinishSizePrefixedIOFormatBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<ubii::interactions::IOFormat> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<IOFormatT> UnPackIOFormat(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<IOFormatT>(GetIOFormat(buf)->UnPack(res));
 }
 
 }  // namespace interactions
