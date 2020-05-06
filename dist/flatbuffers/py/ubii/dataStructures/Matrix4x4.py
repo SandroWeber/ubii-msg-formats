@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Matrix4x4(object):
     __slots__ = ['_tab']
@@ -63,3 +65,62 @@ def CreateMatrix4x4(builder, m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m
     builder.PrependFloat32(m01)
     builder.PrependFloat32(m00)
     return builder.Offset()
+
+
+class Matrix4x4T(object):
+
+    # Matrix4x4T
+    def __init__(self):
+        self.m00 = 0.0  # type: float
+        self.m01 = 0.0  # type: float
+        self.m02 = 0.0  # type: float
+        self.m03 = 0.0  # type: float
+        self.m10 = 0.0  # type: float
+        self.m11 = 0.0  # type: float
+        self.m12 = 0.0  # type: float
+        self.m13 = 0.0  # type: float
+        self.m20 = 0.0  # type: float
+        self.m21 = 0.0  # type: float
+        self.m22 = 0.0  # type: float
+        self.m23 = 0.0  # type: float
+        self.m30 = 0.0  # type: float
+        self.m31 = 0.0  # type: float
+        self.m32 = 0.0  # type: float
+        self.m33 = 0.0  # type: float
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        matrix4x4 = Matrix4x4()
+        matrix4x4.Init(buf, pos)
+        return cls.InitFromObj(matrix4x4)
+
+    @classmethod
+    def InitFromObj(cls, matrix4x4):
+        x = Matrix4x4T()
+        x._UnPack(matrix4x4)
+        return x
+
+    # Matrix4x4T
+    def _UnPack(self, matrix4x4):
+        if matrix4x4 is None:
+            return
+        self.m00 = matrix4x4.M00()
+        self.m01 = matrix4x4.M01()
+        self.m02 = matrix4x4.M02()
+        self.m03 = matrix4x4.M03()
+        self.m10 = matrix4x4.M10()
+        self.m11 = matrix4x4.M11()
+        self.m12 = matrix4x4.M12()
+        self.m13 = matrix4x4.M13()
+        self.m20 = matrix4x4.M20()
+        self.m21 = matrix4x4.M21()
+        self.m22 = matrix4x4.M22()
+        self.m23 = matrix4x4.M23()
+        self.m30 = matrix4x4.M30()
+        self.m31 = matrix4x4.M31()
+        self.m32 = matrix4x4.M32()
+        self.m33 = matrix4x4.M33()
+
+    # Matrix4x4T
+    def Pack(self, builder):
+        return CreateMatrix4x4(builder, self.m00, self.m01, self.m02, self.m03, self.m10, self.m11, self.m12, self.m13, self.m20, self.m21, self.m22, self.m23, self.m30, self.m31, self.m32, self.m33)

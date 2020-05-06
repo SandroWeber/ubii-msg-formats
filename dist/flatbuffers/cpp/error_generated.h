@@ -10,6 +10,7 @@ namespace ubii {
 namespace general {
 
 struct Error;
+struct ErrorBuilder;
 struct ErrorT;
 
 struct ErrorT : public flatbuffers::NativeTable {
@@ -23,6 +24,7 @@ struct ErrorT : public flatbuffers::NativeTable {
 
 struct Error FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef ErrorT NativeTableType;
+  typedef ErrorBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TITLE = 4,
     VT_MESSAGE = 6,
@@ -53,6 +55,7 @@ struct Error FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct ErrorBuilder {
+  typedef Error Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_title(flatbuffers::Offset<flatbuffers::String> title) {
@@ -106,17 +109,17 @@ inline flatbuffers::Offset<Error> CreateErrorDirect(
 flatbuffers::Offset<Error> CreateError(flatbuffers::FlatBufferBuilder &_fbb, const ErrorT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline ErrorT *Error::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new ErrorT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::general::ErrorT> _o = std::unique_ptr<ubii::general::ErrorT>(new ErrorT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void Error::UnPackTo(ErrorT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = title(); if (_e) _o->title = _e->str(); };
-  { auto _e = message(); if (_e) _o->message = _e->str(); };
-  { auto _e = stack(); if (_e) _o->stack = _e->str(); };
+  { auto _e = title(); if (_e) _o->title = _e->str(); }
+  { auto _e = message(); if (_e) _o->message = _e->str(); }
+  { auto _e = stack(); if (_e) _o->stack = _e->str(); }
 }
 
 inline flatbuffers::Offset<Error> Error::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ErrorT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -167,10 +170,16 @@ inline void FinishSizePrefixedErrorBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<ErrorT> UnPackError(
+inline std::unique_ptr<ubii::general::ErrorT> UnPackError(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<ErrorT>(GetError(buf)->UnPack(res));
+  return std::unique_ptr<ubii::general::ErrorT>(GetError(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::general::ErrorT> UnPackSizePrefixedError(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::general::ErrorT>(GetSizePrefixedError(buf)->UnPack(res));
 }
 
 }  // namespace general

@@ -6,52 +6,54 @@ namespace ubii.devices
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct TopicDemux : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static TopicDemux GetRootAsTopicDemux(ByteBuffer _bb) { return GetRootAsTopicDemux(_bb, new TopicDemux()); }
   public static TopicDemux GetRootAsTopicDemux(ByteBuffer _bb, TopicDemux obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public TopicDemux __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Id { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetIdArray() { return __p.__vector_as_array<byte>(4); }
   public string Name { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(6); }
   public string DataType { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDataTypeBytes() { return __p.__vector_as_span(8); }
+  public Span<byte> GetDataTypeBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
   public ArraySegment<byte>? GetDataTypeBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
   public byte[] GetDataTypeArray() { return __p.__vector_as_array<byte>(8); }
   public string OutputTopicFormat { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetOutputTopicFormatBytes() { return __p.__vector_as_span(10); }
+  public Span<byte> GetOutputTopicFormatBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
   public ArraySegment<byte>? GetOutputTopicFormatBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetOutputTopicFormatArray() { return __p.__vector_as_array<byte>(10); }
 
-  public static Offset<TopicDemux> CreateTopicDemux(FlatBufferBuilder builder,
+  public static Offset<ubii.devices.TopicDemux> CreateTopicDemux(FlatBufferBuilder builder,
       StringOffset idOffset = default(StringOffset),
       StringOffset nameOffset = default(StringOffset),
       StringOffset data_typeOffset = default(StringOffset),
       StringOffset output_topic_formatOffset = default(StringOffset)) {
-    builder.StartObject(4);
+    builder.StartTable(4);
     TopicDemux.AddOutputTopicFormat(builder, output_topic_formatOffset);
     TopicDemux.AddDataType(builder, data_typeOffset);
     TopicDemux.AddName(builder, nameOffset);
@@ -59,18 +61,65 @@ public struct TopicDemux : IFlatbufferObject
     return TopicDemux.EndTopicDemux(builder);
   }
 
-  public static void StartTopicDemux(FlatBufferBuilder builder) { builder.StartObject(4); }
+  public static void StartTopicDemux(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddId(FlatBufferBuilder builder, StringOffset idOffset) { builder.AddOffset(0, idOffset.Value, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddDataType(FlatBufferBuilder builder, StringOffset dataTypeOffset) { builder.AddOffset(2, dataTypeOffset.Value, 0); }
   public static void AddOutputTopicFormat(FlatBufferBuilder builder, StringOffset outputTopicFormatOffset) { builder.AddOffset(3, outputTopicFormatOffset.Value, 0); }
-  public static Offset<TopicDemux> EndTopicDemux(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<TopicDemux>(o);
+  public static Offset<ubii.devices.TopicDemux> EndTopicDemux(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.devices.TopicDemux>(o);
   }
-  public static void FinishTopicDemuxBuffer(FlatBufferBuilder builder, Offset<TopicDemux> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedTopicDemuxBuffer(FlatBufferBuilder builder, Offset<TopicDemux> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishTopicDemuxBuffer(FlatBufferBuilder builder, Offset<ubii.devices.TopicDemux> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedTopicDemuxBuffer(FlatBufferBuilder builder, Offset<ubii.devices.TopicDemux> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public TopicDemuxT UnPack() {
+    var _o = new TopicDemuxT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(TopicDemuxT _o) {
+    _o.Id = this.Id;
+    _o.Name = this.Name;
+    _o.DataType = this.DataType;
+    _o.OutputTopicFormat = this.OutputTopicFormat;
+  }
+  public static Offset<ubii.devices.TopicDemux> Pack(FlatBufferBuilder builder, TopicDemuxT _o) {
+    if (_o == null) return default(Offset<ubii.devices.TopicDemux>);
+    var _id = _o.Id == null ? default(StringOffset) : builder.CreateString(_o.Id);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _data_type = _o.DataType == null ? default(StringOffset) : builder.CreateString(_o.DataType);
+    var _output_topic_format = _o.OutputTopicFormat == null ? default(StringOffset) : builder.CreateString(_o.OutputTopicFormat);
+    return CreateTopicDemux(
+      builder,
+      _id,
+      _name,
+      _data_type,
+      _output_topic_format);
+  }
 };
+
+public class TopicDemuxT
+{
+  public string Id { get; set; }
+  public string Name { get; set; }
+  public string DataType { get; set; }
+  public string OutputTopicFormat { get; set; }
+
+  public TopicDemuxT() {
+    this.Id = null;
+    this.Name = null;
+    this.DataType = null;
+    this.OutputTopicFormat = null;
+  }
+  public static TopicDemuxT DeserializeFromBinary(byte[] fbBuffer) {
+    return TopicDemux.GetRootAsTopicDemux(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(TopicDemux.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

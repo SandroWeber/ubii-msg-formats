@@ -6,49 +6,101 @@ namespace ubii.sessions
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct InteractionOutputMapping : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static InteractionOutputMapping GetRootAsInteractionOutputMapping(ByteBuffer _bb) { return GetRootAsInteractionOutputMapping(_bb, new InteractionOutputMapping()); }
   public static InteractionOutputMapping GetRootAsInteractionOutputMapping(ByteBuffer _bb, InteractionOutputMapping obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public InteractionOutputMapping __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Name { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(4); }
-  public TopicDestination TopicDestinationType { get { int o = __p.__offset(6); return o != 0 ? (TopicDestination)__p.bb.Get(o + __p.bb_pos) : TopicDestination.NONE; } }
-  public TTable? TopicDestination<TTable>() where TTable : struct, IFlatbufferObject { int o = __p.__offset(8); return o != 0 ? (TTable?)__p.__union<TTable>(o) : null; }
+  public ubii.sessions.TopicDestination TopicDestinationType { get { int o = __p.__offset(6); return o != 0 ? (ubii.sessions.TopicDestination)__p.bb.Get(o + __p.bb_pos) : ubii.sessions.TopicDestination.NONE; } }
+  public TTable? TopicDestination<TTable>() where TTable : struct, IFlatbufferObject { int o = __p.__offset(8); return o != 0 ? (TTable?)__p.__union<TTable>(o + __p.bb_pos) : null; }
+  public string TopicDestinationAsString() { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; }
 
-  public static Offset<InteractionOutputMapping> CreateInteractionOutputMapping(FlatBufferBuilder builder,
+  public static Offset<ubii.sessions.InteractionOutputMapping> CreateInteractionOutputMapping(FlatBufferBuilder builder,
       StringOffset nameOffset = default(StringOffset),
-      TopicDestination topic_destination_type = TopicDestination.NONE,
+      ubii.sessions.TopicDestination topic_destination_type = ubii.sessions.TopicDestination.NONE,
       int topic_destinationOffset = 0) {
-    builder.StartObject(3);
+    builder.StartTable(3);
     InteractionOutputMapping.AddTopicDestination(builder, topic_destinationOffset);
     InteractionOutputMapping.AddName(builder, nameOffset);
     InteractionOutputMapping.AddTopicDestinationType(builder, topic_destination_type);
     return InteractionOutputMapping.EndInteractionOutputMapping(builder);
   }
 
-  public static void StartInteractionOutputMapping(FlatBufferBuilder builder) { builder.StartObject(3); }
+  public static void StartInteractionOutputMapping(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(0, nameOffset.Value, 0); }
-  public static void AddTopicDestinationType(FlatBufferBuilder builder, TopicDestination topicDestinationType) { builder.AddByte(1, (byte)topicDestinationType, 0); }
+  public static void AddTopicDestinationType(FlatBufferBuilder builder, ubii.sessions.TopicDestination topicDestinationType) { builder.AddByte(1, (byte)topicDestinationType, 0); }
   public static void AddTopicDestination(FlatBufferBuilder builder, int topicDestinationOffset) { builder.AddOffset(2, topicDestinationOffset, 0); }
-  public static Offset<InteractionOutputMapping> EndInteractionOutputMapping(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<InteractionOutputMapping>(o);
+  public static Offset<ubii.sessions.InteractionOutputMapping> EndInteractionOutputMapping(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.sessions.InteractionOutputMapping>(o);
   }
-  public static void FinishInteractionOutputMappingBuffer(FlatBufferBuilder builder, Offset<InteractionOutputMapping> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedInteractionOutputMappingBuffer(FlatBufferBuilder builder, Offset<InteractionOutputMapping> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishInteractionOutputMappingBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionOutputMapping> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedInteractionOutputMappingBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionOutputMapping> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public InteractionOutputMappingT UnPack() {
+    var _o = new InteractionOutputMappingT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(InteractionOutputMappingT _o) {
+    _o.Name = this.Name;
+    _o.TopicDestination = new ubii.sessions.TopicDestinationUnion();
+    _o.TopicDestination.Type = this.TopicDestinationType;
+    switch (this.TopicDestinationType) {
+      default: break;
+      case ubii.sessions.TopicDestination.topic:
+        _o.TopicDestination.Value = this.TopicDestinationAsString();
+        break;
+      case ubii.sessions.TopicDestination.topic_demux:
+        _o.TopicDestination.Value = this.TopicDestination<ubii.devices.TopicDemux>().HasValue ? this.TopicDestination<ubii.devices.TopicDemux>().Value.UnPack() : null;
+        break;
+    }
+  }
+  public static Offset<ubii.sessions.InteractionOutputMapping> Pack(FlatBufferBuilder builder, InteractionOutputMappingT _o) {
+    if (_o == null) return default(Offset<ubii.sessions.InteractionOutputMapping>);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _topic_destination_type = _o.TopicDestination == null ? ubii.sessions.TopicDestination.NONE : _o.TopicDestination.Type;
+    var _topic_destination = _o.TopicDestination == null ? 0 : ubii.sessions.TopicDestinationUnion.Pack(builder, _o.TopicDestination);
+    return CreateInteractionOutputMapping(
+      builder,
+      _name,
+      _topic_destination_type,
+      _topic_destination);
+  }
 };
+
+public class InteractionOutputMappingT
+{
+  public string Name { get; set; }
+  public ubii.sessions.TopicDestinationUnion TopicDestination { get; set; }
+
+  public InteractionOutputMappingT() {
+    this.Name = null;
+    this.TopicDestination = null;
+  }
+  public static InteractionOutputMappingT DeserializeFromBinary(byte[] fbBuffer) {
+    return InteractionOutputMapping.GetRootAsInteractionOutputMapping(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(InteractionOutputMapping.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

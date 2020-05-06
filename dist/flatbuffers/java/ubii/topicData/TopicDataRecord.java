@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class TopicDataRecord extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static TopicDataRecord getRootAsTopicDataRecord(ByteBuffer _bb) { return getRootAsTopicDataRecord(_bb, new TopicDataRecord()); }
   public static TopicDataRecord getRootAsTopicDataRecord(ByteBuffer _bb, TopicDataRecord obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public TopicDataRecord __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String topic() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -22,15 +23,22 @@ public final class TopicDataRecord extends Table {
   public ubii.dataStructures.DataStructure data() { return data(new ubii.dataStructures.DataStructure()); }
   public ubii.dataStructures.DataStructure data(ubii.dataStructures.DataStructure obj) { int o = __offset(8); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
-  public static void startTopicDataRecord(FlatBufferBuilder builder) { builder.startObject(3); }
+  public static void startTopicDataRecord(FlatBufferBuilder builder) { builder.startTable(3); }
   public static void addTopic(FlatBufferBuilder builder, int topicOffset) { builder.addOffset(0, topicOffset, 0); }
   public static void addTimestamp(FlatBufferBuilder builder, int timestampOffset) { builder.addStruct(1, timestampOffset, 0); }
   public static void addData(FlatBufferBuilder builder, int dataOffset) { builder.addOffset(2, dataOffset, 0); }
   public static int endTopicDataRecord(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishTopicDataRecordBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedTopicDataRecordBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public TopicDataRecord get(int j) { return get(new TopicDataRecord(), j); }
+    public TopicDataRecord get(TopicDataRecord obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

@@ -18,6 +18,7 @@ namespace ubii {
 namespace sessions {
 
 struct Session;
+struct SessionBuilder;
 struct SessionT;
 
 enum ProcessMode {
@@ -36,7 +37,7 @@ inline const ProcessMode (&EnumValuesProcessMode())[2] {
 }
 
 inline const char * const *EnumNamesProcessMode() {
-  static const char * const names[] = {
+  static const char * const names[3] = {
     "CYCLE_INTERACTIONS",
     "INDIVIDUAL_PROCESS_FREQUENCIES",
     nullptr
@@ -45,7 +46,7 @@ inline const char * const *EnumNamesProcessMode() {
 }
 
 inline const char *EnumNameProcessMode(ProcessMode e) {
-  if (e < ProcessMode_CYCLE_INTERACTIONS || e > ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES) return "";
+  if (flatbuffers::IsOutRange(e, ProcessMode_CYCLE_INTERACTIONS, ProcessMode_INDIVIDUAL_PROCESS_FREQUENCIES)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesProcessMode()[index];
 }
@@ -70,7 +71,7 @@ inline const SessionStatus (&EnumValuesSessionStatus())[4] {
 }
 
 inline const char * const *EnumNamesSessionStatus() {
-  static const char * const names[] = {
+  static const char * const names[5] = {
     "CREATED",
     "RUNNING",
     "PAUSED",
@@ -81,7 +82,7 @@ inline const char * const *EnumNamesSessionStatus() {
 }
 
 inline const char *EnumNameSessionStatus(SessionStatus e) {
-  if (e < SessionStatus_CREATED || e > SessionStatus_STOPPED) return "";
+  if (flatbuffers::IsOutRange(e, SessionStatus_CREATED, SessionStatus_STOPPED)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesSessionStatus()[index];
 }
@@ -93,18 +94,19 @@ struct SessionT : public flatbuffers::NativeTable {
   std::vector<std::string> authors;
   std::vector<std::string> tags;
   std::string description;
-  ProcessMode process_mode;
-  SessionStatus status;
+  ubii::sessions::ProcessMode process_mode;
+  ubii::sessions::SessionStatus status;
   std::vector<std::unique_ptr<ubii::interactions::InteractionT>> interactions;
-  std::vector<std::unique_ptr<IOMappingT>> io_mappings;
+  std::vector<std::unique_ptr<ubii::sessions::IOMappingT>> io_mappings;
   SessionT()
-      : process_mode(ProcessMode_CYCLE_INTERACTIONS),
-        status(SessionStatus_CREATED) {
+      : process_mode(ubii::sessions::ProcessMode_CYCLE_INTERACTIONS),
+        status(ubii::sessions::SessionStatus_CREATED) {
   }
 };
 
 struct Session FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef SessionT NativeTableType;
+  typedef SessionBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -131,17 +133,17 @@ struct Session FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   const flatbuffers::String *description() const {
     return GetPointer<const flatbuffers::String *>(VT_DESCRIPTION);
   }
-  ProcessMode process_mode() const {
-    return static_cast<ProcessMode>(GetField<int8_t>(VT_PROCESS_MODE, 0));
+  ubii::sessions::ProcessMode process_mode() const {
+    return static_cast<ubii::sessions::ProcessMode>(GetField<int8_t>(VT_PROCESS_MODE, 0));
   }
-  SessionStatus status() const {
-    return static_cast<SessionStatus>(GetField<int8_t>(VT_STATUS, 0));
+  ubii::sessions::SessionStatus status() const {
+    return static_cast<ubii::sessions::SessionStatus>(GetField<int8_t>(VT_STATUS, 0));
   }
   const flatbuffers::Vector<flatbuffers::Offset<ubii::interactions::Interaction>> *interactions() const {
     return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<ubii::interactions::Interaction>> *>(VT_INTERACTIONS);
   }
-  const flatbuffers::Vector<flatbuffers::Offset<IOMapping>> *io_mappings() const {
-    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<IOMapping>> *>(VT_IO_MAPPINGS);
+  const flatbuffers::Vector<flatbuffers::Offset<ubii::sessions::IOMapping>> *io_mappings() const {
+    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<ubii::sessions::IOMapping>> *>(VT_IO_MAPPINGS);
   }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
@@ -173,6 +175,7 @@ struct Session FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct SessionBuilder {
+  typedef Session Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_id(flatbuffers::Offset<flatbuffers::String> id) {
@@ -190,16 +193,16 @@ struct SessionBuilder {
   void add_description(flatbuffers::Offset<flatbuffers::String> description) {
     fbb_.AddOffset(Session::VT_DESCRIPTION, description);
   }
-  void add_process_mode(ProcessMode process_mode) {
+  void add_process_mode(ubii::sessions::ProcessMode process_mode) {
     fbb_.AddElement<int8_t>(Session::VT_PROCESS_MODE, static_cast<int8_t>(process_mode), 0);
   }
-  void add_status(SessionStatus status) {
+  void add_status(ubii::sessions::SessionStatus status) {
     fbb_.AddElement<int8_t>(Session::VT_STATUS, static_cast<int8_t>(status), 0);
   }
   void add_interactions(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::interactions::Interaction>>> interactions) {
     fbb_.AddOffset(Session::VT_INTERACTIONS, interactions);
   }
-  void add_io_mappings(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<IOMapping>>> io_mappings) {
+  void add_io_mappings(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::sessions::IOMapping>>> io_mappings) {
     fbb_.AddOffset(Session::VT_IO_MAPPINGS, io_mappings);
   }
   explicit SessionBuilder(flatbuffers::FlatBufferBuilder &_fbb)
@@ -221,10 +224,10 @@ inline flatbuffers::Offset<Session> CreateSession(
     flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<flatbuffers::String>>> authors = 0,
     flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<flatbuffers::String>>> tags = 0,
     flatbuffers::Offset<flatbuffers::String> description = 0,
-    ProcessMode process_mode = ProcessMode_CYCLE_INTERACTIONS,
-    SessionStatus status = SessionStatus_CREATED,
+    ubii::sessions::ProcessMode process_mode = ubii::sessions::ProcessMode_CYCLE_INTERACTIONS,
+    ubii::sessions::SessionStatus status = ubii::sessions::SessionStatus_CREATED,
     flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::interactions::Interaction>>> interactions = 0,
-    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<IOMapping>>> io_mappings = 0) {
+    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::sessions::IOMapping>>> io_mappings = 0) {
   SessionBuilder builder_(_fbb);
   builder_.add_io_mappings(io_mappings);
   builder_.add_interactions(interactions);
@@ -245,17 +248,17 @@ inline flatbuffers::Offset<Session> CreateSessionDirect(
     const std::vector<flatbuffers::Offset<flatbuffers::String>> *authors = nullptr,
     const std::vector<flatbuffers::Offset<flatbuffers::String>> *tags = nullptr,
     const char *description = nullptr,
-    ProcessMode process_mode = ProcessMode_CYCLE_INTERACTIONS,
-    SessionStatus status = SessionStatus_CREATED,
+    ubii::sessions::ProcessMode process_mode = ubii::sessions::ProcessMode_CYCLE_INTERACTIONS,
+    ubii::sessions::SessionStatus status = ubii::sessions::SessionStatus_CREATED,
     const std::vector<flatbuffers::Offset<ubii::interactions::Interaction>> *interactions = nullptr,
-    const std::vector<flatbuffers::Offset<IOMapping>> *io_mappings = nullptr) {
+    const std::vector<flatbuffers::Offset<ubii::sessions::IOMapping>> *io_mappings = nullptr) {
   auto id__ = id ? _fbb.CreateString(id) : 0;
   auto name__ = name ? _fbb.CreateString(name) : 0;
   auto authors__ = authors ? _fbb.CreateVector<flatbuffers::Offset<flatbuffers::String>>(*authors) : 0;
   auto tags__ = tags ? _fbb.CreateVector<flatbuffers::Offset<flatbuffers::String>>(*tags) : 0;
   auto description__ = description ? _fbb.CreateString(description) : 0;
   auto interactions__ = interactions ? _fbb.CreateVector<flatbuffers::Offset<ubii::interactions::Interaction>>(*interactions) : 0;
-  auto io_mappings__ = io_mappings ? _fbb.CreateVector<flatbuffers::Offset<IOMapping>>(*io_mappings) : 0;
+  auto io_mappings__ = io_mappings ? _fbb.CreateVector<flatbuffers::Offset<ubii::sessions::IOMapping>>(*io_mappings) : 0;
   return ubii::sessions::CreateSession(
       _fbb,
       id__,
@@ -272,23 +275,23 @@ inline flatbuffers::Offset<Session> CreateSessionDirect(
 flatbuffers::Offset<Session> CreateSession(flatbuffers::FlatBufferBuilder &_fbb, const SessionT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline SessionT *Session::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new SessionT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::sessions::SessionT> _o = std::unique_ptr<ubii::sessions::SessionT>(new SessionT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void Session::UnPackTo(SessionT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = id(); if (_e) _o->id = _e->str(); };
-  { auto _e = name(); if (_e) _o->name = _e->str(); };
-  { auto _e = authors(); if (_e) { _o->authors.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->authors[_i] = _e->Get(_i)->str(); } } };
-  { auto _e = tags(); if (_e) { _o->tags.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->tags[_i] = _e->Get(_i)->str(); } } };
-  { auto _e = description(); if (_e) _o->description = _e->str(); };
-  { auto _e = process_mode(); _o->process_mode = _e; };
-  { auto _e = status(); _o->status = _e; };
-  { auto _e = interactions(); if (_e) { _o->interactions.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->interactions[_i] = std::unique_ptr<ubii::interactions::InteractionT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = io_mappings(); if (_e) { _o->io_mappings.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->io_mappings[_i] = std::unique_ptr<IOMappingT>(_e->Get(_i)->UnPack(_resolver)); } } };
+  { auto _e = id(); if (_e) _o->id = _e->str(); }
+  { auto _e = name(); if (_e) _o->name = _e->str(); }
+  { auto _e = authors(); if (_e) { _o->authors.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->authors[_i] = _e->Get(_i)->str(); } } }
+  { auto _e = tags(); if (_e) { _o->tags.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->tags[_i] = _e->Get(_i)->str(); } } }
+  { auto _e = description(); if (_e) _o->description = _e->str(); }
+  { auto _e = process_mode(); _o->process_mode = _e; }
+  { auto _e = status(); _o->status = _e; }
+  { auto _e = interactions(); if (_e) { _o->interactions.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->interactions[_i] = std::unique_ptr<ubii::interactions::InteractionT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = io_mappings(); if (_e) { _o->io_mappings.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->io_mappings[_i] = std::unique_ptr<ubii::sessions::IOMappingT>(_e->Get(_i)->UnPack(_resolver)); } } }
 }
 
 inline flatbuffers::Offset<Session> Session::Pack(flatbuffers::FlatBufferBuilder &_fbb, const SessionT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -307,7 +310,7 @@ inline flatbuffers::Offset<Session> CreateSession(flatbuffers::FlatBufferBuilder
   auto _process_mode = _o->process_mode;
   auto _status = _o->status;
   auto _interactions = _o->interactions.size() ? _fbb.CreateVector<flatbuffers::Offset<ubii::interactions::Interaction>> (_o->interactions.size(), [](size_t i, _VectorArgs *__va) { return CreateInteraction(*__va->__fbb, __va->__o->interactions[i].get(), __va->__rehasher); }, &_va ) : 0;
-  auto _io_mappings = _o->io_mappings.size() ? _fbb.CreateVector<flatbuffers::Offset<IOMapping>> (_o->io_mappings.size(), [](size_t i, _VectorArgs *__va) { return CreateIOMapping(*__va->__fbb, __va->__o->io_mappings[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _io_mappings = _o->io_mappings.size() ? _fbb.CreateVector<flatbuffers::Offset<ubii::sessions::IOMapping>> (_o->io_mappings.size(), [](size_t i, _VectorArgs *__va) { return CreateIOMapping(*__va->__fbb, __va->__o->io_mappings[i].get(), __va->__rehasher); }, &_va ) : 0;
   return ubii::sessions::CreateSession(
       _fbb,
       _id,
@@ -351,10 +354,16 @@ inline void FinishSizePrefixedSessionBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<SessionT> UnPackSession(
+inline std::unique_ptr<ubii::sessions::SessionT> UnPackSession(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<SessionT>(GetSession(buf)->UnPack(res));
+  return std::unique_ptr<ubii::sessions::SessionT>(GetSession(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::sessions::SessionT> UnPackSizePrefixedSession(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::sessions::SessionT>(GetSizePrefixedSession(buf)->UnPack(res));
 }
 
 }  // namespace sessions

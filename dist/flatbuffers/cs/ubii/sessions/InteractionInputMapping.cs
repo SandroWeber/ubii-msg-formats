@@ -6,49 +6,101 @@ namespace ubii.sessions
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct InteractionInputMapping : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static InteractionInputMapping GetRootAsInteractionInputMapping(ByteBuffer _bb) { return GetRootAsInteractionInputMapping(_bb, new InteractionInputMapping()); }
   public static InteractionInputMapping GetRootAsInteractionInputMapping(ByteBuffer _bb, InteractionInputMapping obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public InteractionInputMapping __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Name { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(4); }
-  public TopicSource TopicSourceType { get { int o = __p.__offset(6); return o != 0 ? (TopicSource)__p.bb.Get(o + __p.bb_pos) : TopicSource.NONE; } }
-  public TTable? TopicSource<TTable>() where TTable : struct, IFlatbufferObject { int o = __p.__offset(8); return o != 0 ? (TTable?)__p.__union<TTable>(o) : null; }
+  public ubii.sessions.TopicSource TopicSourceType { get { int o = __p.__offset(6); return o != 0 ? (ubii.sessions.TopicSource)__p.bb.Get(o + __p.bb_pos) : ubii.sessions.TopicSource.NONE; } }
+  public TTable? TopicSource<TTable>() where TTable : struct, IFlatbufferObject { int o = __p.__offset(8); return o != 0 ? (TTable?)__p.__union<TTable>(o + __p.bb_pos) : null; }
+  public string TopicSourceAsString() { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; }
 
-  public static Offset<InteractionInputMapping> CreateInteractionInputMapping(FlatBufferBuilder builder,
+  public static Offset<ubii.sessions.InteractionInputMapping> CreateInteractionInputMapping(FlatBufferBuilder builder,
       StringOffset nameOffset = default(StringOffset),
-      TopicSource topic_source_type = TopicSource.NONE,
+      ubii.sessions.TopicSource topic_source_type = ubii.sessions.TopicSource.NONE,
       int topic_sourceOffset = 0) {
-    builder.StartObject(3);
+    builder.StartTable(3);
     InteractionInputMapping.AddTopicSource(builder, topic_sourceOffset);
     InteractionInputMapping.AddName(builder, nameOffset);
     InteractionInputMapping.AddTopicSourceType(builder, topic_source_type);
     return InteractionInputMapping.EndInteractionInputMapping(builder);
   }
 
-  public static void StartInteractionInputMapping(FlatBufferBuilder builder) { builder.StartObject(3); }
+  public static void StartInteractionInputMapping(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(0, nameOffset.Value, 0); }
-  public static void AddTopicSourceType(FlatBufferBuilder builder, TopicSource topicSourceType) { builder.AddByte(1, (byte)topicSourceType, 0); }
+  public static void AddTopicSourceType(FlatBufferBuilder builder, ubii.sessions.TopicSource topicSourceType) { builder.AddByte(1, (byte)topicSourceType, 0); }
   public static void AddTopicSource(FlatBufferBuilder builder, int topicSourceOffset) { builder.AddOffset(2, topicSourceOffset, 0); }
-  public static Offset<InteractionInputMapping> EndInteractionInputMapping(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<InteractionInputMapping>(o);
+  public static Offset<ubii.sessions.InteractionInputMapping> EndInteractionInputMapping(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.sessions.InteractionInputMapping>(o);
   }
-  public static void FinishInteractionInputMappingBuffer(FlatBufferBuilder builder, Offset<InteractionInputMapping> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedInteractionInputMappingBuffer(FlatBufferBuilder builder, Offset<InteractionInputMapping> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishInteractionInputMappingBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionInputMapping> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedInteractionInputMappingBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionInputMapping> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public InteractionInputMappingT UnPack() {
+    var _o = new InteractionInputMappingT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(InteractionInputMappingT _o) {
+    _o.Name = this.Name;
+    _o.TopicSource = new ubii.sessions.TopicSourceUnion();
+    _o.TopicSource.Type = this.TopicSourceType;
+    switch (this.TopicSourceType) {
+      default: break;
+      case ubii.sessions.TopicSource.topic:
+        _o.TopicSource.Value = this.TopicSourceAsString();
+        break;
+      case ubii.sessions.TopicSource.topic_mux:
+        _o.TopicSource.Value = this.TopicSource<ubii.devices.TopicMux>().HasValue ? this.TopicSource<ubii.devices.TopicMux>().Value.UnPack() : null;
+        break;
+    }
+  }
+  public static Offset<ubii.sessions.InteractionInputMapping> Pack(FlatBufferBuilder builder, InteractionInputMappingT _o) {
+    if (_o == null) return default(Offset<ubii.sessions.InteractionInputMapping>);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _topic_source_type = _o.TopicSource == null ? ubii.sessions.TopicSource.NONE : _o.TopicSource.Type;
+    var _topic_source = _o.TopicSource == null ? 0 : ubii.sessions.TopicSourceUnion.Pack(builder, _o.TopicSource);
+    return CreateInteractionInputMapping(
+      builder,
+      _name,
+      _topic_source_type,
+      _topic_source);
+  }
 };
+
+public class InteractionInputMappingT
+{
+  public string Name { get; set; }
+  public ubii.sessions.TopicSourceUnion TopicSource { get; set; }
+
+  public InteractionInputMappingT() {
+    this.Name = null;
+    this.TopicSource = null;
+  }
+  public static InteractionInputMappingT DeserializeFromBinary(byte[] fbBuffer) {
+    return InteractionInputMapping.GetRootAsInteractionInputMapping(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(InteractionInputMapping.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

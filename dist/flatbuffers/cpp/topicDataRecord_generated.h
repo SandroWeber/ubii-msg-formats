@@ -40,9 +40,11 @@ namespace ubii {
 namespace topicData {
 
 struct TopicDataRecord;
+struct TopicDataRecordBuilder;
 struct TopicDataRecordT;
 
 struct TopicDataRecordList;
+struct TopicDataRecordListBuilder;
 struct TopicDataRecordListT;
 
 struct TopicDataRecordT : public flatbuffers::NativeTable {
@@ -56,6 +58,7 @@ struct TopicDataRecordT : public flatbuffers::NativeTable {
 
 struct TopicDataRecord FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef TopicDataRecordT NativeTableType;
+  typedef TopicDataRecordBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TOPIC = 4,
     VT_TIMESTAMP = 6,
@@ -85,6 +88,7 @@ struct TopicDataRecord FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct TopicDataRecordBuilder {
+  typedef TopicDataRecord Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_topic(flatbuffers::Offset<flatbuffers::String> topic) {
@@ -137,18 +141,19 @@ flatbuffers::Offset<TopicDataRecord> CreateTopicDataRecord(flatbuffers::FlatBuff
 
 struct TopicDataRecordListT : public flatbuffers::NativeTable {
   typedef TopicDataRecordList TableType;
-  std::vector<std::unique_ptr<TopicDataRecordT>> elements;
+  std::vector<std::unique_ptr<ubii::topicData::TopicDataRecordT>> elements;
   TopicDataRecordListT() {
   }
 };
 
 struct TopicDataRecordList FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef TopicDataRecordListT NativeTableType;
+  typedef TopicDataRecordListBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ELEMENTS = 4
   };
-  const flatbuffers::Vector<flatbuffers::Offset<TopicDataRecord>> *elements() const {
-    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<TopicDataRecord>> *>(VT_ELEMENTS);
+  const flatbuffers::Vector<flatbuffers::Offset<ubii::topicData::TopicDataRecord>> *elements() const {
+    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<ubii::topicData::TopicDataRecord>> *>(VT_ELEMENTS);
   }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
@@ -163,9 +168,10 @@ struct TopicDataRecordList FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table 
 };
 
 struct TopicDataRecordListBuilder {
+  typedef TopicDataRecordList Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
-  void add_elements(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<TopicDataRecord>>> elements) {
+  void add_elements(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::topicData::TopicDataRecord>>> elements) {
     fbb_.AddOffset(TopicDataRecordList::VT_ELEMENTS, elements);
   }
   explicit TopicDataRecordListBuilder(flatbuffers::FlatBufferBuilder &_fbb)
@@ -182,7 +188,7 @@ struct TopicDataRecordListBuilder {
 
 inline flatbuffers::Offset<TopicDataRecordList> CreateTopicDataRecordList(
     flatbuffers::FlatBufferBuilder &_fbb,
-    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<TopicDataRecord>>> elements = 0) {
+    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::topicData::TopicDataRecord>>> elements = 0) {
   TopicDataRecordListBuilder builder_(_fbb);
   builder_.add_elements(elements);
   return builder_.Finish();
@@ -190,8 +196,8 @@ inline flatbuffers::Offset<TopicDataRecordList> CreateTopicDataRecordList(
 
 inline flatbuffers::Offset<TopicDataRecordList> CreateTopicDataRecordListDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
-    const std::vector<flatbuffers::Offset<TopicDataRecord>> *elements = nullptr) {
-  auto elements__ = elements ? _fbb.CreateVector<flatbuffers::Offset<TopicDataRecord>>(*elements) : 0;
+    const std::vector<flatbuffers::Offset<ubii::topicData::TopicDataRecord>> *elements = nullptr) {
+  auto elements__ = elements ? _fbb.CreateVector<flatbuffers::Offset<ubii::topicData::TopicDataRecord>>(*elements) : 0;
   return ubii::topicData::CreateTopicDataRecordList(
       _fbb,
       elements__);
@@ -200,17 +206,17 @@ inline flatbuffers::Offset<TopicDataRecordList> CreateTopicDataRecordListDirect(
 flatbuffers::Offset<TopicDataRecordList> CreateTopicDataRecordList(flatbuffers::FlatBufferBuilder &_fbb, const TopicDataRecordListT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline TopicDataRecordT *TopicDataRecord::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new TopicDataRecordT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::topicData::TopicDataRecordT> _o = std::unique_ptr<ubii::topicData::TopicDataRecordT>(new TopicDataRecordT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void TopicDataRecord::UnPackTo(TopicDataRecordT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = topic(); if (_e) _o->topic = _e->str(); };
-  { auto _e = timestamp(); if (_e) _o->timestamp = std::unique_ptr<ubii::dataStructures::Timestamp>(new ubii::dataStructures::Timestamp(*_e)); };
-  { auto _e = data(); if (_e) _o->data = std::unique_ptr<ubii::dataStructures::DataStructureT>(_e->UnPack(_resolver)); };
+  { auto _e = topic(); if (_e) _o->topic = _e->str(); }
+  { auto _e = timestamp(); if (_e) _o->timestamp = std::unique_ptr<ubii::dataStructures::Timestamp>(new ubii::dataStructures::Timestamp(*_e)); }
+  { auto _e = data(); if (_e) _o->data = std::unique_ptr<ubii::dataStructures::DataStructureT>(_e->UnPack(_resolver)); }
 }
 
 inline flatbuffers::Offset<TopicDataRecord> TopicDataRecord::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicDataRecordT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -232,15 +238,15 @@ inline flatbuffers::Offset<TopicDataRecord> CreateTopicDataRecord(flatbuffers::F
 }
 
 inline TopicDataRecordListT *TopicDataRecordList::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new TopicDataRecordListT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::topicData::TopicDataRecordListT> _o = std::unique_ptr<ubii::topicData::TopicDataRecordListT>(new TopicDataRecordListT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void TopicDataRecordList::UnPackTo(TopicDataRecordListT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = elements(); if (_e) { _o->elements.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->elements[_i] = std::unique_ptr<TopicDataRecordT>(_e->Get(_i)->UnPack(_resolver)); } } };
+  { auto _e = elements(); if (_e) { _o->elements.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->elements[_i] = std::unique_ptr<ubii::topicData::TopicDataRecordT>(_e->Get(_i)->UnPack(_resolver)); } } }
 }
 
 inline flatbuffers::Offset<TopicDataRecordList> TopicDataRecordList::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicDataRecordListT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -251,7 +257,7 @@ inline flatbuffers::Offset<TopicDataRecordList> CreateTopicDataRecordList(flatbu
   (void)_rehasher;
   (void)_o;
   struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TopicDataRecordListT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _elements = _o->elements.size() ? _fbb.CreateVector<flatbuffers::Offset<TopicDataRecord>> (_o->elements.size(), [](size_t i, _VectorArgs *__va) { return CreateTopicDataRecord(*__va->__fbb, __va->__o->elements[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _elements = _o->elements.size() ? _fbb.CreateVector<flatbuffers::Offset<ubii::topicData::TopicDataRecord>> (_o->elements.size(), [](size_t i, _VectorArgs *__va) { return CreateTopicDataRecord(*__va->__fbb, __va->__o->elements[i].get(), __va->__rehasher); }, &_va ) : 0;
   return ubii::topicData::CreateTopicDataRecordList(
       _fbb,
       _elements);
@@ -287,10 +293,16 @@ inline void FinishSizePrefixedTopicDataRecordBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<TopicDataRecordT> UnPackTopicDataRecord(
+inline std::unique_ptr<ubii::topicData::TopicDataRecordT> UnPackTopicDataRecord(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<TopicDataRecordT>(GetTopicDataRecord(buf)->UnPack(res));
+  return std::unique_ptr<ubii::topicData::TopicDataRecordT>(GetTopicDataRecord(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::topicData::TopicDataRecordT> UnPackSizePrefixedTopicDataRecord(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::topicData::TopicDataRecordT>(GetSizePrefixedTopicDataRecord(buf)->UnPack(res));
 }
 
 }  // namespace topicData

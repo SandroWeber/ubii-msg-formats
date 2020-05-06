@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class MouseEvent(object):
     __slots__ = ['_tab']
@@ -36,3 +38,38 @@ def MouseEventStart(builder): builder.StartObject(2)
 def MouseEventAddType(builder, type): builder.PrependInt8Slot(0, type, 0)
 def MouseEventAddButton(builder, button): builder.PrependInt8Slot(1, button, 0)
 def MouseEventEnd(builder): return builder.EndObject()
+
+
+class MouseEventT(object):
+
+    # MouseEventT
+    def __init__(self):
+        self.type = 0  # type: int
+        self.button = 0  # type: int
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        mouseEvent = MouseEvent()
+        mouseEvent.Init(buf, pos)
+        return cls.InitFromObj(mouseEvent)
+
+    @classmethod
+    def InitFromObj(cls, mouseEvent):
+        x = MouseEventT()
+        x._UnPack(mouseEvent)
+        return x
+
+    # MouseEventT
+    def _UnPack(self, mouseEvent):
+        if mouseEvent is None:
+            return
+        self.type = mouseEvent.Type()
+        self.button = mouseEvent.Button()
+
+    # MouseEventT
+    def Pack(self, builder):
+        MouseEventStart(builder)
+        MouseEventAddType(builder, self.type)
+        MouseEventAddButton(builder, self.button)
+        mouseEvent = MouseEventEnd(builder)
+        return mouseEvent

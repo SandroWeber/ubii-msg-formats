@@ -3,6 +3,8 @@
 # namespace: general
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Success(object):
     __slots__ = ['_tab']
@@ -36,3 +38,44 @@ def SuccessStart(builder): builder.StartObject(2)
 def SuccessAddTitle(builder, title): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(title), 0)
 def SuccessAddMessage(builder, message): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(message), 0)
 def SuccessEnd(builder): return builder.EndObject()
+
+
+class SuccessT(object):
+
+    # SuccessT
+    def __init__(self):
+        self.title = None  # type: str
+        self.message = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        success = Success()
+        success.Init(buf, pos)
+        return cls.InitFromObj(success)
+
+    @classmethod
+    def InitFromObj(cls, success):
+        x = SuccessT()
+        x._UnPack(success)
+        return x
+
+    # SuccessT
+    def _UnPack(self, success):
+        if success is None:
+            return
+        self.title = success.Title()
+        self.message = success.Message()
+
+    # SuccessT
+    def Pack(self, builder):
+        if self.title is not None:
+            title = builder.CreateString(self.title)
+        if self.message is not None:
+            message = builder.CreateString(self.message)
+        SuccessStart(builder)
+        if self.title is not None:
+            SuccessAddTitle(builder, title)
+        if self.message is not None:
+            SuccessAddMessage(builder, message)
+        success = SuccessEnd(builder)
+        return success

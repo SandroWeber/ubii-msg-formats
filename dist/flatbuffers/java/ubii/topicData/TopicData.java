@@ -9,31 +9,39 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class TopicData extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static TopicData getRootAsTopicData(ByteBuffer _bb) { return getRootAsTopicData(_bb, new TopicData()); }
   public static TopicData getRootAsTopicData(ByteBuffer _bb, TopicData obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public TopicData __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public byte contentType() { int o = __offset(4); return o != 0 ? bb.get(o + bb_pos) : 0; }
-  public Table content(Table obj) { int o = __offset(6); return o != 0 ? __union(obj, o) : null; }
+  public Table content(Table obj) { int o = __offset(6); return o != 0 ? __union(obj, o + bb_pos) : null; }
 
   public static int createTopicData(FlatBufferBuilder builder,
       byte content_type,
       int contentOffset) {
-    builder.startObject(2);
+    builder.startTable(2);
     TopicData.addContent(builder, contentOffset);
     TopicData.addContentType(builder, content_type);
     return TopicData.endTopicData(builder);
   }
 
-  public static void startTopicData(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startTopicData(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addContentType(FlatBufferBuilder builder, byte contentType) { builder.addByte(0, contentType, 0); }
   public static void addContent(FlatBufferBuilder builder, int contentOffset) { builder.addOffset(1, contentOffset, 0); }
   public static int endTopicData(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishTopicDataBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedTopicDataBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public TopicData get(int j) { return get(new TopicData(), j); }
+    public TopicData get(TopicData obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

@@ -72,6 +72,16 @@ ubii.topicData.TopicDataRecord.getRootAsTopicDataRecord = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.topicData.TopicDataRecord=} obj
+ * @returns {ubii.topicData.TopicDataRecord}
+ */
+ubii.topicData.TopicDataRecord.getSizePrefixedRootAsTopicDataRecord = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.topicData.TopicDataRecord).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -148,6 +158,14 @@ ubii.topicData.TopicDataRecord.finishTopicDataRecordBuffer = function(builder, o
 
 /**
  * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.topicData.TopicDataRecord.finishSizePrefixedTopicDataRecordBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
  * @param {flatbuffers.Offset} topicOffset
  * @param {flatbuffers.Offset} timestampOffset
  * @param {flatbuffers.Offset} dataOffset
@@ -193,6 +211,16 @@ ubii.topicData.TopicDataRecordList.prototype.__init = function(i, bb) {
  * @returns {ubii.topicData.TopicDataRecordList}
  */
 ubii.topicData.TopicDataRecordList.getRootAsTopicDataRecordList = function(bb, obj) {
+  return (obj || new ubii.topicData.TopicDataRecordList).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.topicData.TopicDataRecordList=} obj
+ * @returns {ubii.topicData.TopicDataRecordList}
+ */
+ubii.topicData.TopicDataRecordList.getSizePrefixedRootAsTopicDataRecordList = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.topicData.TopicDataRecordList).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 

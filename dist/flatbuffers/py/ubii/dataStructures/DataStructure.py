@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class DataStructure(object):
     __slots__ = ['_tab']
@@ -48,6 +50,11 @@ class DataStructure(object):
         return 0
 
     # DataStructure
+    def BoolListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
+        return o == 0
+
+    # DataStructure
     def String(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
@@ -68,6 +75,11 @@ class DataStructure(object):
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
+
+    # DataStructure
+    def StringListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        return o == 0
 
     # DataStructure
     def Byte(self):
@@ -106,6 +118,11 @@ class DataStructure(object):
         return 0
 
     # DataStructure
+    def Int32ListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        return o == 0
+
+    # DataStructure
     def Float(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
@@ -133,6 +150,11 @@ class DataStructure(object):
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
+
+    # DataStructure
+    def FloatListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        return o == 0
 
     # DataStructure
     def Double(self):
@@ -164,11 +186,16 @@ class DataStructure(object):
         return 0
 
     # DataStructure
+    def DoubleListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
+        return o == 0
+
+    # DataStructure
     def Vector2(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
         if o != 0:
             x = o + self._tab.Pos
-            from .Vector2 import Vector2
+            from ubii.dataStructures.Vector2 import Vector2
             obj = Vector2()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -179,7 +206,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             x = o + self._tab.Pos
-            from .Vector3 import Vector3
+            from ubii.dataStructures.Vector3 import Vector3
             obj = Vector3()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -190,7 +217,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(30))
         if o != 0:
             x = o + self._tab.Pos
-            from .Vector4 import Vector4
+            from ubii.dataStructures.Vector4 import Vector4
             obj = Vector4()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -201,7 +228,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(32))
         if o != 0:
             x = o + self._tab.Pos
-            from .Quaternion import Quaternion
+            from ubii.dataStructures.Quaternion import Quaternion
             obj = Quaternion()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -212,7 +239,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(34))
         if o != 0:
             x = o + self._tab.Pos
-            from .Matrix3x2 import Matrix3x2
+            from ubii.dataStructures.Matrix3x2 import Matrix3x2
             obj = Matrix3x2()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -223,7 +250,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(36))
         if o != 0:
             x = o + self._tab.Pos
-            from .Matrix4x4 import Matrix4x4
+            from ubii.dataStructures.Matrix4x4 import Matrix4x4
             obj = Matrix4x4()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -234,7 +261,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(38))
         if o != 0:
             x = o + self._tab.Pos
-            from .Color import Color
+            from ubii.dataStructures.Color import Color
             obj = Color()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -245,7 +272,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(40))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .TouchEvent import TouchEvent
+            from ubii.dataStructures.TouchEvent import TouchEvent
             obj = TouchEvent()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -256,7 +283,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(42))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .KeyEvent import KeyEvent
+            from ubii.dataStructures.KeyEvent import KeyEvent
             obj = KeyEvent()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -267,7 +294,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(44))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .MouseEvent import MouseEvent
+            from ubii.dataStructures.MouseEvent import MouseEvent
             obj = MouseEvent()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -278,7 +305,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(46))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .MyoEvent import MyoEvent
+            from ubii.dataStructures.MyoEvent import MyoEvent
             obj = MyoEvent()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -289,7 +316,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(48))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Pose2D import Pose2D
+            from ubii.dataStructures.Pose2D import Pose2D
             obj = Pose2D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -300,7 +327,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(50))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Pose3D import Pose3D
+            from ubii.dataStructures.Pose3D import Pose3D
             obj = Pose3D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -311,7 +338,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(52))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Object2D import Object2D
+            from ubii.dataStructures.Object2D import Object2D
             obj = Object2D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -322,7 +349,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(54))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Object3D import Object3D
+            from ubii.dataStructures.Object3D import Object3D
             obj = Object3D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -335,7 +362,7 @@ class DataStructure(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Object2D import Object2D
+            from ubii.dataStructures.Object2D import Object2D
             obj = Object2D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -349,13 +376,18 @@ class DataStructure(object):
         return 0
 
     # DataStructure
+    def Object2DListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(56))
+        return o == 0
+
+    # DataStructure
     def Object3DList(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
         if o != 0:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Object3D import Object3D
+            from ubii.dataStructures.Object3D import Object3D
             obj = Object3D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -369,11 +401,16 @@ class DataStructure(object):
         return 0
 
     # DataStructure
+    def Object3DListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(58))
+        return o == 0
+
+    # DataStructure
     def Image2D(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(60))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Image2D import Image2D
+            from ubii.dataStructures.Image2D import Image2D
             obj = Image2D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -386,7 +423,7 @@ class DataStructure(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Image2D import Image2D
+            from ubii.dataStructures.Image2D import Image2D
             obj = Image2D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -400,11 +437,16 @@ class DataStructure(object):
         return 0
 
     # DataStructure
+    def Image2DListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(62))
+        return o == 0
+
+    # DataStructure
     def Session(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(64))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Session import Session
+            from ubii.sessions.Session import Session
             obj = Session()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -415,7 +457,7 @@ class DataStructure(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(66))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Interaction import Interaction
+            from ubii.interactions.Interaction import Interaction
             obj = Interaction()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -463,3 +505,338 @@ def DataStructureStartImage2DListVector(builder, numElems): return builder.Start
 def DataStructureAddSession(builder, session): builder.PrependUOffsetTRelativeSlot(30, flatbuffers.number_types.UOffsetTFlags.py_type(session), 0)
 def DataStructureAddInteraction(builder, interaction): builder.PrependUOffsetTRelativeSlot(31, flatbuffers.number_types.UOffsetTFlags.py_type(interaction), 0)
 def DataStructureEnd(builder): return builder.EndObject()
+
+import ubii.dataStructures.Color
+import ubii.dataStructures.Image2D
+import ubii.dataStructures.KeyEvent
+import ubii.dataStructures.Matrix3x2
+import ubii.dataStructures.Matrix4x4
+import ubii.dataStructures.MouseEvent
+import ubii.dataStructures.MyoEvent
+import ubii.dataStructures.Object2D
+import ubii.dataStructures.Object3D
+import ubii.dataStructures.Pose2D
+import ubii.dataStructures.Pose3D
+import ubii.dataStructures.Quaternion
+import ubii.dataStructures.TouchEvent
+import ubii.dataStructures.Vector2
+import ubii.dataStructures.Vector3
+import ubii.dataStructures.Vector4
+import ubii.interactions.Interaction
+import ubii.sessions.Session
+try:
+    from typing import List, Optional
+except:
+    pass
+
+class DataStructureT(object):
+
+    # DataStructureT
+    def __init__(self):
+        self.bool = False  # type: bool
+        self.boolList = None  # type: List[bool]
+        self.string = None  # type: str
+        self.stringList = None  # type: List[str]
+        self.byte = 0  # type: int
+        self.int32 = 0  # type: int
+        self.int32List = None  # type: List[int]
+        self.float = 0.0  # type: float
+        self.floatList = None  # type: List[float]
+        self.double = 0.0  # type: float
+        self.doubleList = None  # type: List[float]
+        self.vector2 = None  # type: Optional[ubii.dataStructures.Vector2.Vector2T]
+        self.vector3 = None  # type: Optional[ubii.dataStructures.Vector3.Vector3T]
+        self.vector4 = None  # type: Optional[ubii.dataStructures.Vector4.Vector4T]
+        self.quaternion = None  # type: Optional[ubii.dataStructures.Quaternion.QuaternionT]
+        self.matrix3x2 = None  # type: Optional[ubii.dataStructures.Matrix3x2.Matrix3x2T]
+        self.matrix4x4 = None  # type: Optional[ubii.dataStructures.Matrix4x4.Matrix4x4T]
+        self.color = None  # type: Optional[ubii.dataStructures.Color.ColorT]
+        self.touchEvent = None  # type: Optional[ubii.dataStructures.TouchEvent.TouchEventT]
+        self.keyEvent = None  # type: Optional[ubii.dataStructures.KeyEvent.KeyEventT]
+        self.mouseEvent = None  # type: Optional[ubii.dataStructures.MouseEvent.MouseEventT]
+        self.myoEvent = None  # type: Optional[ubii.dataStructures.MyoEvent.MyoEventT]
+        self.pose2D = None  # type: Optional[ubii.dataStructures.Pose2D.Pose2DT]
+        self.pose3D = None  # type: Optional[ubii.dataStructures.Pose3D.Pose3DT]
+        self.object2D = None  # type: Optional[ubii.dataStructures.Object2D.Object2DT]
+        self.object3D = None  # type: Optional[ubii.dataStructures.Object3D.Object3DT]
+        self.object2DList = None  # type: List[ubii.dataStructures.Object2D.Object2DT]
+        self.object3DList = None  # type: List[ubii.dataStructures.Object3D.Object3DT]
+        self.image2D = None  # type: Optional[ubii.dataStructures.Image2D.Image2DT]
+        self.image2DList = None  # type: List[ubii.dataStructures.Image2D.Image2DT]
+        self.session = None  # type: Optional[ubii.sessions.Session.SessionT]
+        self.interaction = None  # type: Optional[ubii.interactions.Interaction.InteractionT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        dataStructure = DataStructure()
+        dataStructure.Init(buf, pos)
+        return cls.InitFromObj(dataStructure)
+
+    @classmethod
+    def InitFromObj(cls, dataStructure):
+        x = DataStructureT()
+        x._UnPack(dataStructure)
+        return x
+
+    # DataStructureT
+    def _UnPack(self, dataStructure):
+        if dataStructure is None:
+            return
+        self.bool = dataStructure.Bool()
+        if not dataStructure.BoolListIsNone():
+            if np is None:
+                self.boolList = []
+                for i in range(dataStructure.BoolListLength()):
+                    self.boolList.append(dataStructure.BoolList(i))
+            else:
+                self.boolList = dataStructure.BoolListAsNumpy()
+        self.string = dataStructure.String()
+        if not dataStructure.StringListIsNone():
+            self.stringList = []
+            for i in range(dataStructure.StringListLength()):
+                self.stringList.append(dataStructure.StringList(i))
+        self.byte = dataStructure.Byte()
+        self.int32 = dataStructure.Int32()
+        if not dataStructure.Int32ListIsNone():
+            if np is None:
+                self.int32List = []
+                for i in range(dataStructure.Int32ListLength()):
+                    self.int32List.append(dataStructure.Int32List(i))
+            else:
+                self.int32List = dataStructure.Int32ListAsNumpy()
+        self.float = dataStructure.Float()
+        if not dataStructure.FloatListIsNone():
+            if np is None:
+                self.floatList = []
+                for i in range(dataStructure.FloatListLength()):
+                    self.floatList.append(dataStructure.FloatList(i))
+            else:
+                self.floatList = dataStructure.FloatListAsNumpy()
+        self.double = dataStructure.Double()
+        if not dataStructure.DoubleListIsNone():
+            if np is None:
+                self.doubleList = []
+                for i in range(dataStructure.DoubleListLength()):
+                    self.doubleList.append(dataStructure.DoubleList(i))
+            else:
+                self.doubleList = dataStructure.DoubleListAsNumpy()
+        if dataStructure.Vector2() is not None:
+            self.vector2 = ubii.dataStructures.Vector2.Vector2T.InitFromObj(dataStructure.Vector2())
+        if dataStructure.Vector3() is not None:
+            self.vector3 = ubii.dataStructures.Vector3.Vector3T.InitFromObj(dataStructure.Vector3())
+        if dataStructure.Vector4() is not None:
+            self.vector4 = ubii.dataStructures.Vector4.Vector4T.InitFromObj(dataStructure.Vector4())
+        if dataStructure.Quaternion() is not None:
+            self.quaternion = ubii.dataStructures.Quaternion.QuaternionT.InitFromObj(dataStructure.Quaternion())
+        if dataStructure.Matrix3x2() is not None:
+            self.matrix3x2 = ubii.dataStructures.Matrix3x2.Matrix3x2T.InitFromObj(dataStructure.Matrix3x2())
+        if dataStructure.Matrix4x4() is not None:
+            self.matrix4x4 = ubii.dataStructures.Matrix4x4.Matrix4x4T.InitFromObj(dataStructure.Matrix4x4())
+        if dataStructure.Color() is not None:
+            self.color = ubii.dataStructures.Color.ColorT.InitFromObj(dataStructure.Color())
+        if dataStructure.TouchEvent() is not None:
+            self.touchEvent = ubii.dataStructures.TouchEvent.TouchEventT.InitFromObj(dataStructure.TouchEvent())
+        if dataStructure.KeyEvent() is not None:
+            self.keyEvent = ubii.dataStructures.KeyEvent.KeyEventT.InitFromObj(dataStructure.KeyEvent())
+        if dataStructure.MouseEvent() is not None:
+            self.mouseEvent = ubii.dataStructures.MouseEvent.MouseEventT.InitFromObj(dataStructure.MouseEvent())
+        if dataStructure.MyoEvent() is not None:
+            self.myoEvent = ubii.dataStructures.MyoEvent.MyoEventT.InitFromObj(dataStructure.MyoEvent())
+        if dataStructure.Pose2D() is not None:
+            self.pose2D = ubii.dataStructures.Pose2D.Pose2DT.InitFromObj(dataStructure.Pose2D())
+        if dataStructure.Pose3D() is not None:
+            self.pose3D = ubii.dataStructures.Pose3D.Pose3DT.InitFromObj(dataStructure.Pose3D())
+        if dataStructure.Object2D() is not None:
+            self.object2D = ubii.dataStructures.Object2D.Object2DT.InitFromObj(dataStructure.Object2D())
+        if dataStructure.Object3D() is not None:
+            self.object3D = ubii.dataStructures.Object3D.Object3DT.InitFromObj(dataStructure.Object3D())
+        if not dataStructure.Object2DListIsNone():
+            self.object2DList = []
+            for i in range(dataStructure.Object2DListLength()):
+                if dataStructure.Object2DList(i) is None:
+                    self.object2DList.append(None)
+                else:
+                    object2D_ = ubii.dataStructures.Object2D.Object2DT.InitFromObj(dataStructure.Object2DList(i))
+                    self.object2DList.append(object2D_)
+        if not dataStructure.Object3DListIsNone():
+            self.object3DList = []
+            for i in range(dataStructure.Object3DListLength()):
+                if dataStructure.Object3DList(i) is None:
+                    self.object3DList.append(None)
+                else:
+                    object3D_ = ubii.dataStructures.Object3D.Object3DT.InitFromObj(dataStructure.Object3DList(i))
+                    self.object3DList.append(object3D_)
+        if dataStructure.Image2D() is not None:
+            self.image2D = ubii.dataStructures.Image2D.Image2DT.InitFromObj(dataStructure.Image2D())
+        if not dataStructure.Image2DListIsNone():
+            self.image2DList = []
+            for i in range(dataStructure.Image2DListLength()):
+                if dataStructure.Image2DList(i) is None:
+                    self.image2DList.append(None)
+                else:
+                    image2D_ = ubii.dataStructures.Image2D.Image2DT.InitFromObj(dataStructure.Image2DList(i))
+                    self.image2DList.append(image2D_)
+        if dataStructure.Session() is not None:
+            self.session = ubii.sessions.Session.SessionT.InitFromObj(dataStructure.Session())
+        if dataStructure.Interaction() is not None:
+            self.interaction = ubii.interactions.Interaction.InteractionT.InitFromObj(dataStructure.Interaction())
+
+    # DataStructureT
+    def Pack(self, builder):
+        if self.boolList is not None:
+            if np is not None and type(self.boolList) is np.ndarray:
+                boolList = builder.CreateNumpyVector(self.boolList)
+            else:
+                DataStructureStartBoolListVector(builder, len(self.boolList))
+                for i in reversed(range(len(self.boolList))):
+                    builder.PrependBool(self.boolList[i])
+                boolList = builder.EndVector(len(self.boolList))
+        if self.string is not None:
+            string = builder.CreateString(self.string)
+        if self.stringList is not None:
+            stringListlist = []
+            for i in range(len(self.stringList)):
+                stringListlist.append(builder.CreateString(self.stringList[i]))
+            DataStructureStartStringListVector(builder, len(self.stringList))
+            for i in reversed(range(len(self.stringList))):
+                builder.PrependUOffsetTRelative(stringListlist[i])
+            stringList = builder.EndVector(len(self.stringList))
+        if self.int32List is not None:
+            if np is not None and type(self.int32List) is np.ndarray:
+                int32List = builder.CreateNumpyVector(self.int32List)
+            else:
+                DataStructureStartInt32ListVector(builder, len(self.int32List))
+                for i in reversed(range(len(self.int32List))):
+                    builder.PrependInt32(self.int32List[i])
+                int32List = builder.EndVector(len(self.int32List))
+        if self.floatList is not None:
+            if np is not None and type(self.floatList) is np.ndarray:
+                floatList = builder.CreateNumpyVector(self.floatList)
+            else:
+                DataStructureStartFloatListVector(builder, len(self.floatList))
+                for i in reversed(range(len(self.floatList))):
+                    builder.PrependFloat32(self.floatList[i])
+                floatList = builder.EndVector(len(self.floatList))
+        if self.doubleList is not None:
+            if np is not None and type(self.doubleList) is np.ndarray:
+                doubleList = builder.CreateNumpyVector(self.doubleList)
+            else:
+                DataStructureStartDoubleListVector(builder, len(self.doubleList))
+                for i in reversed(range(len(self.doubleList))):
+                    builder.PrependFloat64(self.doubleList[i])
+                doubleList = builder.EndVector(len(self.doubleList))
+        if self.touchEvent is not None:
+            touchEvent = self.touchEvent.Pack(builder)
+        if self.keyEvent is not None:
+            keyEvent = self.keyEvent.Pack(builder)
+        if self.mouseEvent is not None:
+            mouseEvent = self.mouseEvent.Pack(builder)
+        if self.myoEvent is not None:
+            myoEvent = self.myoEvent.Pack(builder)
+        if self.pose2D is not None:
+            pose2D = self.pose2D.Pack(builder)
+        if self.pose3D is not None:
+            pose3D = self.pose3D.Pack(builder)
+        if self.object2D is not None:
+            object2D = self.object2D.Pack(builder)
+        if self.object3D is not None:
+            object3D = self.object3D.Pack(builder)
+        if self.object2DList is not None:
+            object2DListlist = []
+            for i in range(len(self.object2DList)):
+                object2DListlist.append(self.object2DList[i].Pack(builder))
+            DataStructureStartObject2DListVector(builder, len(self.object2DList))
+            for i in reversed(range(len(self.object2DList))):
+                builder.PrependUOffsetTRelative(object2DListlist[i])
+            object2DList = builder.EndVector(len(self.object2DList))
+        if self.object3DList is not None:
+            object3DListlist = []
+            for i in range(len(self.object3DList)):
+                object3DListlist.append(self.object3DList[i].Pack(builder))
+            DataStructureStartObject3DListVector(builder, len(self.object3DList))
+            for i in reversed(range(len(self.object3DList))):
+                builder.PrependUOffsetTRelative(object3DListlist[i])
+            object3DList = builder.EndVector(len(self.object3DList))
+        if self.image2D is not None:
+            image2D = self.image2D.Pack(builder)
+        if self.image2DList is not None:
+            image2DListlist = []
+            for i in range(len(self.image2DList)):
+                image2DListlist.append(self.image2DList[i].Pack(builder))
+            DataStructureStartImage2DListVector(builder, len(self.image2DList))
+            for i in reversed(range(len(self.image2DList))):
+                builder.PrependUOffsetTRelative(image2DListlist[i])
+            image2DList = builder.EndVector(len(self.image2DList))
+        if self.session is not None:
+            session = self.session.Pack(builder)
+        if self.interaction is not None:
+            interaction = self.interaction.Pack(builder)
+        DataStructureStart(builder)
+        DataStructureAddBool(builder, self.bool)
+        if self.boolList is not None:
+            DataStructureAddBoolList(builder, boolList)
+        if self.string is not None:
+            DataStructureAddString(builder, string)
+        if self.stringList is not None:
+            DataStructureAddStringList(builder, stringList)
+        DataStructureAddByte(builder, self.byte)
+        DataStructureAddInt32(builder, self.int32)
+        if self.int32List is not None:
+            DataStructureAddInt32List(builder, int32List)
+        DataStructureAddFloat(builder, self.float)
+        if self.floatList is not None:
+            DataStructureAddFloatList(builder, floatList)
+        DataStructureAddDouble(builder, self.double)
+        if self.doubleList is not None:
+            DataStructureAddDoubleList(builder, doubleList)
+        if self.vector2 is not None:
+            vector2 = self.vector2.Pack(builder)
+            DataStructureAddVector2(builder, vector2)
+        if self.vector3 is not None:
+            vector3 = self.vector3.Pack(builder)
+            DataStructureAddVector3(builder, vector3)
+        if self.vector4 is not None:
+            vector4 = self.vector4.Pack(builder)
+            DataStructureAddVector4(builder, vector4)
+        if self.quaternion is not None:
+            quaternion = self.quaternion.Pack(builder)
+            DataStructureAddQuaternion(builder, quaternion)
+        if self.matrix3x2 is not None:
+            matrix3x2 = self.matrix3x2.Pack(builder)
+            DataStructureAddMatrix3x2(builder, matrix3x2)
+        if self.matrix4x4 is not None:
+            matrix4x4 = self.matrix4x4.Pack(builder)
+            DataStructureAddMatrix4x4(builder, matrix4x4)
+        if self.color is not None:
+            color = self.color.Pack(builder)
+            DataStructureAddColor(builder, color)
+        if self.touchEvent is not None:
+            DataStructureAddTouchEvent(builder, touchEvent)
+        if self.keyEvent is not None:
+            DataStructureAddKeyEvent(builder, keyEvent)
+        if self.mouseEvent is not None:
+            DataStructureAddMouseEvent(builder, mouseEvent)
+        if self.myoEvent is not None:
+            DataStructureAddMyoEvent(builder, myoEvent)
+        if self.pose2D is not None:
+            DataStructureAddPose2D(builder, pose2D)
+        if self.pose3D is not None:
+            DataStructureAddPose3D(builder, pose3D)
+        if self.object2D is not None:
+            DataStructureAddObject2D(builder, object2D)
+        if self.object3D is not None:
+            DataStructureAddObject3D(builder, object3D)
+        if self.object2DList is not None:
+            DataStructureAddObject2DList(builder, object2DList)
+        if self.object3DList is not None:
+            DataStructureAddObject3DList(builder, object3DList)
+        if self.image2D is not None:
+            DataStructureAddImage2D(builder, image2D)
+        if self.image2DList is not None:
+            DataStructureAddImage2DList(builder, image2DList)
+        if self.session is not None:
+            DataStructureAddSession(builder, session)
+        if self.interaction is not None:
+            DataStructureAddInteraction(builder, interaction)
+        dataStructure = DataStructureEnd(builder)
+        return dataStructure

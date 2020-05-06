@@ -7,10 +7,32 @@ namespace ubii.sessions
 
 public enum TopicSource : byte
 {
- NONE = 0,
- topic = 1,
- topic_mux = 2,
+  NONE = 0,
+  topic = 1,
+  topic_mux = 2,
 };
+
+public class TopicSourceUnion {
+  public TopicSource Type { get; set; }
+  public object Value { get; set; }
+
+  public TopicSourceUnion() {
+    this.Type = TopicSource.NONE;
+    this.Value = null;
+  }
+
+  public T As<T>() where T : class { return this.Value as T; }
+  public string Astopic() { return this.As<string>(); }
+  public ubii.devices.TopicMuxT Astopic_mux() { return this.As<ubii.devices.TopicMuxT>(); }
+
+  public static int Pack(FlatBuffers.FlatBufferBuilder builder, TopicSourceUnion _o) {
+    switch (_o.Type) {
+      default: return 0;
+      case TopicSource.topic: return builder.CreateString(_o.Astopic()).Value;
+      case TopicSource.topic_mux: return ubii.devices.TopicMux.Pack(builder, _o.Astopic_mux()).Value;
+    }
+  }
+}
 
 
 }

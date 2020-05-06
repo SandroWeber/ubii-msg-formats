@@ -3,6 +3,8 @@
 # namespace: general
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Error(object):
     __slots__ = ['_tab']
@@ -44,3 +46,50 @@ def ErrorAddTitle(builder, title): builder.PrependUOffsetTRelativeSlot(0, flatbu
 def ErrorAddMessage(builder, message): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(message), 0)
 def ErrorAddStack(builder, stack): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(stack), 0)
 def ErrorEnd(builder): return builder.EndObject()
+
+
+class ErrorT(object):
+
+    # ErrorT
+    def __init__(self):
+        self.title = None  # type: str
+        self.message = None  # type: str
+        self.stack = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        error = Error()
+        error.Init(buf, pos)
+        return cls.InitFromObj(error)
+
+    @classmethod
+    def InitFromObj(cls, error):
+        x = ErrorT()
+        x._UnPack(error)
+        return x
+
+    # ErrorT
+    def _UnPack(self, error):
+        if error is None:
+            return
+        self.title = error.Title()
+        self.message = error.Message()
+        self.stack = error.Stack()
+
+    # ErrorT
+    def Pack(self, builder):
+        if self.title is not None:
+            title = builder.CreateString(self.title)
+        if self.message is not None:
+            message = builder.CreateString(self.message)
+        if self.stack is not None:
+            stack = builder.CreateString(self.stack)
+        ErrorStart(builder)
+        if self.title is not None:
+            ErrorAddTitle(builder, title)
+        if self.message is not None:
+            ErrorAddMessage(builder, message)
+        if self.stack is not None:
+            ErrorAddStack(builder, stack)
+        error = ErrorEnd(builder)
+        return error

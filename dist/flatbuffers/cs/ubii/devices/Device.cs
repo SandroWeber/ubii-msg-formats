@@ -6,27 +6,29 @@ namespace ubii.devices
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Device : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Device GetRootAsDevice(ByteBuffer _bb) { return GetRootAsDevice(_bb, new Device()); }
   public static Device GetRootAsDevice(ByteBuffer _bb, Device obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Device __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Id { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetIdArray() { return __p.__vector_as_array<byte>(4); }
   public string Name { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
@@ -35,31 +37,31 @@ public struct Device : IFlatbufferObject
   public int TagsLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string Description { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span(10); }
+  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
   public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetDescriptionArray() { return __p.__vector_as_array<byte>(10); }
   public string ClientId { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetClientIdBytes() { return __p.__vector_as_span(12); }
+  public Span<byte> GetClientIdBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
   public ArraySegment<byte>? GetClientIdBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetClientIdArray() { return __p.__vector_as_array<byte>(12); }
-  public DeviceType DeviceType { get { int o = __p.__offset(14); return o != 0 ? (DeviceType)__p.bb.GetSbyte(o + __p.bb_pos) : DeviceType.PARTICIPANT; } }
-  public Component? Components(int j) { int o = __p.__offset(16); return o != 0 ? (Component?)(new Component()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public ubii.devices.DeviceType DeviceType { get { int o = __p.__offset(14); return o != 0 ? (ubii.devices.DeviceType)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.devices.DeviceType.PARTICIPANT; } }
+  public ubii.devices.Component? Components(int j) { int o = __p.__offset(16); return o != 0 ? (ubii.devices.Component?)(new ubii.devices.Component()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int ComponentsLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
 
-  public static Offset<Device> CreateDevice(FlatBufferBuilder builder,
+  public static Offset<ubii.devices.Device> CreateDevice(FlatBufferBuilder builder,
       StringOffset idOffset = default(StringOffset),
       StringOffset nameOffset = default(StringOffset),
       VectorOffset tagsOffset = default(VectorOffset),
       StringOffset descriptionOffset = default(StringOffset),
       StringOffset client_idOffset = default(StringOffset),
-      DeviceType device_type = DeviceType.PARTICIPANT,
+      ubii.devices.DeviceType device_type = ubii.devices.DeviceType.PARTICIPANT,
       VectorOffset componentsOffset = default(VectorOffset)) {
-    builder.StartObject(7);
+    builder.StartTable(7);
     Device.AddComponents(builder, componentsOffset);
     Device.AddClientId(builder, client_idOffset);
     Device.AddDescription(builder, descriptionOffset);
@@ -70,7 +72,7 @@ public struct Device : IFlatbufferObject
     return Device.EndDevice(builder);
   }
 
-  public static void StartDevice(FlatBufferBuilder builder) { builder.StartObject(7); }
+  public static void StartDevice(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddId(FlatBufferBuilder builder, StringOffset idOffset) { builder.AddOffset(0, idOffset.Value, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddTags(FlatBufferBuilder builder, VectorOffset tagsOffset) { builder.AddOffset(2, tagsOffset.Value, 0); }
@@ -79,18 +81,91 @@ public struct Device : IFlatbufferObject
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddDescription(FlatBufferBuilder builder, StringOffset descriptionOffset) { builder.AddOffset(3, descriptionOffset.Value, 0); }
   public static void AddClientId(FlatBufferBuilder builder, StringOffset clientIdOffset) { builder.AddOffset(4, clientIdOffset.Value, 0); }
-  public static void AddDeviceType(FlatBufferBuilder builder, DeviceType deviceType) { builder.AddSbyte(5, (sbyte)deviceType, 0); }
+  public static void AddDeviceType(FlatBufferBuilder builder, ubii.devices.DeviceType deviceType) { builder.AddSbyte(5, (sbyte)deviceType, 0); }
   public static void AddComponents(FlatBufferBuilder builder, VectorOffset componentsOffset) { builder.AddOffset(6, componentsOffset.Value, 0); }
-  public static VectorOffset CreateComponentsVector(FlatBufferBuilder builder, Offset<Component>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateComponentsVectorBlock(FlatBufferBuilder builder, Offset<Component>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateComponentsVector(FlatBufferBuilder builder, Offset<ubii.devices.Component>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateComponentsVectorBlock(FlatBufferBuilder builder, Offset<ubii.devices.Component>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartComponentsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static Offset<Device> EndDevice(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Device>(o);
+  public static Offset<ubii.devices.Device> EndDevice(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.devices.Device>(o);
   }
-  public static void FinishDeviceBuffer(FlatBufferBuilder builder, Offset<Device> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedDeviceBuffer(FlatBufferBuilder builder, Offset<Device> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishDeviceBuffer(FlatBufferBuilder builder, Offset<ubii.devices.Device> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedDeviceBuffer(FlatBufferBuilder builder, Offset<ubii.devices.Device> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public DeviceT UnPack() {
+    var _o = new DeviceT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(DeviceT _o) {
+    _o.Id = this.Id;
+    _o.Name = this.Name;
+    _o.Tags = new List<string>();
+    for (var _j = 0; _j < this.TagsLength; ++_j) {_o.Tags.Add(this.Tags(_j));}
+    _o.Description = this.Description;
+    _o.ClientId = this.ClientId;
+    _o.DeviceType = this.DeviceType;
+    _o.Components = new List<ubii.devices.ComponentT>();
+    for (var _j = 0; _j < this.ComponentsLength; ++_j) {_o.Components.Add(this.Components(_j).HasValue ? this.Components(_j).Value.UnPack() : null);}
+  }
+  public static Offset<ubii.devices.Device> Pack(FlatBufferBuilder builder, DeviceT _o) {
+    if (_o == null) return default(Offset<ubii.devices.Device>);
+    var _id = _o.Id == null ? default(StringOffset) : builder.CreateString(_o.Id);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _tags = default(VectorOffset);
+    if (_o.Tags != null) {
+      var __tags = new StringOffset[_o.Tags.Count];
+      for (var _j = 0; _j < __tags.Length; ++_j) { __tags[_j] = builder.CreateString(_o.Tags[_j]); }
+      _tags = CreateTagsVector(builder, __tags);
+    }
+    var _description = _o.Description == null ? default(StringOffset) : builder.CreateString(_o.Description);
+    var _client_id = _o.ClientId == null ? default(StringOffset) : builder.CreateString(_o.ClientId);
+    var _components = default(VectorOffset);
+    if (_o.Components != null) {
+      var __components = new Offset<ubii.devices.Component>[_o.Components.Count];
+      for (var _j = 0; _j < __components.Length; ++_j) { __components[_j] = ubii.devices.Component.Pack(builder, _o.Components[_j]); }
+      _components = CreateComponentsVector(builder, __components);
+    }
+    return CreateDevice(
+      builder,
+      _id,
+      _name,
+      _tags,
+      _description,
+      _client_id,
+      _o.DeviceType,
+      _components);
+  }
 };
+
+public class DeviceT
+{
+  public string Id { get; set; }
+  public string Name { get; set; }
+  public List<string> Tags { get; set; }
+  public string Description { get; set; }
+  public string ClientId { get; set; }
+  public ubii.devices.DeviceType DeviceType { get; set; }
+  public List<ubii.devices.ComponentT> Components { get; set; }
+
+  public DeviceT() {
+    this.Id = null;
+    this.Name = null;
+    this.Tags = null;
+    this.Description = null;
+    this.ClientId = null;
+    this.DeviceType = ubii.devices.DeviceType.PARTICIPANT;
+    this.Components = null;
+  }
+  public static DeviceT DeserializeFromBinary(byte[] fbBuffer) {
+    return Device.GetRootAsDevice(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Device.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

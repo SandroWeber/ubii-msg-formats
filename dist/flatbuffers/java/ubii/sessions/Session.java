@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Session extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Session getRootAsSession(ByteBuffer _bb) { return getRootAsSession(_bb, new Session()); }
   public static Session getRootAsSession(ByteBuffer _bb, Session obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Session __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String id() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -22,8 +23,12 @@ public final class Session extends Table {
   public ByteBuffer nameInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 6, 1); }
   public String authors(int j) { int o = __offset(8); return o != 0 ? __string(__vector(o) + j * 4) : null; }
   public int authorsLength() { int o = __offset(8); return o != 0 ? __vector_len(o) : 0; }
+  public StringVector authorsVector() { return authorsVector(new StringVector()); }
+  public StringVector authorsVector(StringVector obj) { int o = __offset(8); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public String tags(int j) { int o = __offset(10); return o != 0 ? __string(__vector(o) + j * 4) : null; }
   public int tagsLength() { int o = __offset(10); return o != 0 ? __vector_len(o) : 0; }
+  public StringVector tagsVector() { return tagsVector(new StringVector()); }
+  public StringVector tagsVector(StringVector obj) { int o = __offset(10); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public String description() { int o = __offset(12); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer descriptionAsByteBuffer() { return __vector_as_bytebuffer(12, 1); }
   public ByteBuffer descriptionInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 12, 1); }
@@ -32,9 +37,13 @@ public final class Session extends Table {
   public ubii.interactions.Interaction interactions(int j) { return interactions(new ubii.interactions.Interaction(), j); }
   public ubii.interactions.Interaction interactions(ubii.interactions.Interaction obj, int j) { int o = __offset(18); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int interactionsLength() { int o = __offset(18); return o != 0 ? __vector_len(o) : 0; }
-  public IOMapping ioMappings(int j) { return ioMappings(new IOMapping(), j); }
-  public IOMapping ioMappings(IOMapping obj, int j) { int o = __offset(20); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
+  public ubii.interactions.Interaction.Vector interactionsVector() { return interactionsVector(new ubii.interactions.Interaction.Vector()); }
+  public ubii.interactions.Interaction.Vector interactionsVector(ubii.interactions.Interaction.Vector obj) { int o = __offset(18); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
+  public ubii.sessions.IOMapping ioMappings(int j) { return ioMappings(new ubii.sessions.IOMapping(), j); }
+  public ubii.sessions.IOMapping ioMappings(ubii.sessions.IOMapping obj, int j) { int o = __offset(20); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int ioMappingsLength() { int o = __offset(20); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.sessions.IOMapping.Vector ioMappingsVector() { return ioMappingsVector(new ubii.sessions.IOMapping.Vector()); }
+  public ubii.sessions.IOMapping.Vector ioMappingsVector(ubii.sessions.IOMapping.Vector obj) { int o = __offset(20); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
 
   public static int createSession(FlatBufferBuilder builder,
       int idOffset,
@@ -46,7 +55,7 @@ public final class Session extends Table {
       byte status,
       int interactionsOffset,
       int io_mappingsOffset) {
-    builder.startObject(9);
+    builder.startTable(9);
     Session.addIoMappings(builder, io_mappingsOffset);
     Session.addInteractions(builder, interactionsOffset);
     Session.addDescription(builder, descriptionOffset);
@@ -59,7 +68,7 @@ public final class Session extends Table {
     return Session.endSession(builder);
   }
 
-  public static void startSession(FlatBufferBuilder builder) { builder.startObject(9); }
+  public static void startSession(FlatBufferBuilder builder) { builder.startTable(9); }
   public static void addId(FlatBufferBuilder builder, int idOffset) { builder.addOffset(0, idOffset, 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(1, nameOffset, 0); }
   public static void addAuthors(FlatBufferBuilder builder, int authorsOffset) { builder.addOffset(2, authorsOffset, 0); }
@@ -78,10 +87,17 @@ public final class Session extends Table {
   public static int createIoMappingsVector(FlatBufferBuilder builder, int[] data) { builder.startVector(4, data.length, 4); for (int i = data.length - 1; i >= 0; i--) builder.addOffset(data[i]); return builder.endVector(); }
   public static void startIoMappingsVector(FlatBufferBuilder builder, int numElems) { builder.startVector(4, numElems, 4); }
   public static int endSession(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishSessionBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedSessionBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Session get(int j) { return get(new Session(), j); }
+    public Session get(Session obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

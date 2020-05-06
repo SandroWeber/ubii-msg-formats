@@ -9,22 +9,30 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Orientation3D extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Orientation3D getRootAsOrientation3D(ByteBuffer _bb) { return getRootAsOrientation3D(_bb, new Orientation3D()); }
   public static Orientation3D getRootAsOrientation3D(ByteBuffer _bb, Orientation3D obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Orientation3D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public Quaternion quaternion() { return quaternion(new Quaternion()); }
-  public Quaternion quaternion(Quaternion obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Vector3 euler() { return euler(new Vector3()); }
-  public Vector3 euler(Vector3 obj) { int o = __offset(6); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Quaternion quaternion() { return quaternion(new ubii.dataStructures.Quaternion()); }
+  public ubii.dataStructures.Quaternion quaternion(ubii.dataStructures.Quaternion obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Vector3 euler() { return euler(new ubii.dataStructures.Vector3()); }
+  public ubii.dataStructures.Vector3 euler(ubii.dataStructures.Vector3 obj) { int o = __offset(6); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
 
-  public static void startOrientation3D(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startOrientation3D(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addQuaternion(FlatBufferBuilder builder, int quaternionOffset) { builder.addStruct(0, quaternionOffset, 0); }
   public static void addEuler(FlatBufferBuilder builder, int eulerOffset) { builder.addStruct(1, eulerOffset, 0); }
   public static int endOrientation3D(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
+  }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Orientation3D get(int j) { return get(new Orientation3D(), j); }
+    public Orientation3D get(Orientation3D obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
   }
 }
 

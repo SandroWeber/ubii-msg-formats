@@ -6,20 +6,22 @@ namespace ubii.topicData
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct TopicDataRecord : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static TopicDataRecord GetRootAsTopicDataRecord(ByteBuffer _bb) { return GetRootAsTopicDataRecord(_bb, new TopicDataRecord()); }
   public static TopicDataRecord GetRootAsTopicDataRecord(ByteBuffer _bb, TopicDataRecord obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public TopicDataRecord __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Topic { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTopicBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetTopicBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetTopicBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
@@ -27,17 +29,58 @@ public struct TopicDataRecord : IFlatbufferObject
   public ubii.dataStructures.Timestamp? Timestamp { get { int o = __p.__offset(6); return o != 0 ? (ubii.dataStructures.Timestamp?)(new ubii.dataStructures.Timestamp()).__assign(o + __p.bb_pos, __p.bb) : null; } }
   public ubii.dataStructures.DataStructure? Data { get { int o = __p.__offset(8); return o != 0 ? (ubii.dataStructures.DataStructure?)(new ubii.dataStructures.DataStructure()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
-  public static void StartTopicDataRecord(FlatBufferBuilder builder) { builder.StartObject(3); }
+  public static void StartTopicDataRecord(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddTopic(FlatBufferBuilder builder, StringOffset topicOffset) { builder.AddOffset(0, topicOffset.Value, 0); }
   public static void AddTimestamp(FlatBufferBuilder builder, Offset<ubii.dataStructures.Timestamp> timestampOffset) { builder.AddStruct(1, timestampOffset.Value, 0); }
   public static void AddData(FlatBufferBuilder builder, Offset<ubii.dataStructures.DataStructure> dataOffset) { builder.AddOffset(2, dataOffset.Value, 0); }
-  public static Offset<TopicDataRecord> EndTopicDataRecord(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<TopicDataRecord>(o);
+  public static Offset<ubii.topicData.TopicDataRecord> EndTopicDataRecord(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.topicData.TopicDataRecord>(o);
   }
-  public static void FinishTopicDataRecordBuffer(FlatBufferBuilder builder, Offset<TopicDataRecord> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedTopicDataRecordBuffer(FlatBufferBuilder builder, Offset<TopicDataRecord> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishTopicDataRecordBuffer(FlatBufferBuilder builder, Offset<ubii.topicData.TopicDataRecord> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedTopicDataRecordBuffer(FlatBufferBuilder builder, Offset<ubii.topicData.TopicDataRecord> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public TopicDataRecordT UnPack() {
+    var _o = new TopicDataRecordT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(TopicDataRecordT _o) {
+    _o.Topic = this.Topic;
+    _o.Timestamp = this.Timestamp.HasValue ? this.Timestamp.Value.UnPack() : null;
+    _o.Data = this.Data.HasValue ? this.Data.Value.UnPack() : null;
+  }
+  public static Offset<ubii.topicData.TopicDataRecord> Pack(FlatBufferBuilder builder, TopicDataRecordT _o) {
+    if (_o == null) return default(Offset<ubii.topicData.TopicDataRecord>);
+    var _topic = _o.Topic == null ? default(StringOffset) : builder.CreateString(_o.Topic);
+    var _data = _o.Data == null ? default(Offset<ubii.dataStructures.DataStructure>) : ubii.dataStructures.DataStructure.Pack(builder, _o.Data);
+    StartTopicDataRecord(builder);
+    AddTopic(builder, _topic);
+    AddTimestamp(builder, ubii.dataStructures.Timestamp.Pack(builder, _o.Timestamp));
+    AddData(builder, _data);
+    return EndTopicDataRecord(builder);
+  }
 };
+
+public class TopicDataRecordT
+{
+  public string Topic { get; set; }
+  public ubii.dataStructures.TimestampT Timestamp { get; set; }
+  public ubii.dataStructures.DataStructureT Data { get; set; }
+
+  public TopicDataRecordT() {
+    this.Topic = null;
+    this.Timestamp = new ubii.dataStructures.TimestampT();
+    this.Data = null;
+  }
+  public static TopicDataRecordT DeserializeFromBinary(byte[] fbBuffer) {
+    return TopicDataRecord.GetRootAsTopicDataRecord(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(TopicDataRecord.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

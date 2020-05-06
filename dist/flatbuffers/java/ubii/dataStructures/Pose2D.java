@@ -9,24 +9,32 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Pose2D extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Pose2D getRootAsPose2D(ByteBuffer _bb) { return getRootAsPose2D(_bb, new Pose2D()); }
   public static Pose2D getRootAsPose2D(ByteBuffer _bb, Pose2D obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Pose2D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public Vector2 position() { return position(new Vector2()); }
-  public Vector2 position(Vector2 obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Orientation2D orientation() { return orientation(new Orientation2D()); }
-  public Orientation2D orientation(Orientation2D obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Vector2 position() { return position(new ubii.dataStructures.Vector2()); }
+  public ubii.dataStructures.Vector2 position(ubii.dataStructures.Vector2 obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Orientation2D orientation() { return orientation(new ubii.dataStructures.Orientation2D()); }
+  public ubii.dataStructures.Orientation2D orientation(ubii.dataStructures.Orientation2D obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
-  public static void startPose2D(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startPose2D(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addPosition(FlatBufferBuilder builder, int positionOffset) { builder.addStruct(0, positionOffset, 0); }
   public static void addOrientation(FlatBufferBuilder builder, int orientationOffset) { builder.addOffset(1, orientationOffset, 0); }
   public static int endPose2D(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishPose2DBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedPose2DBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Pose2D get(int j) { return get(new Pose2D(), j); }
+    public Pose2D get(Pose2D obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

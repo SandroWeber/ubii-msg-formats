@@ -48,6 +48,16 @@ ubii.interactions.IOFormat.getRootAsIOFormat = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.interactions.IOFormat=} obj
+ * @returns {ubii.interactions.IOFormat}
+ */
+ubii.interactions.IOFormat.getSizePrefixedRootAsIOFormat = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.interactions.IOFormat).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -103,6 +113,14 @@ ubii.interactions.IOFormat.endIOFormat = function(builder) {
  */
 ubii.interactions.IOFormat.finishIOFormatBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.interactions.IOFormat.finishSizePrefixedIOFormatBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

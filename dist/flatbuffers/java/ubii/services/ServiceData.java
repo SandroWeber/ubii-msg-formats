@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class ServiceData extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static ServiceData getRootAsServiceData(ByteBuffer _bb) { return getRootAsServiceData(_bb, new ServiceData()); }
   public static ServiceData getRootAsServiceData(ByteBuffer _bb, ServiceData obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public ServiceData __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public ubii.clients.Client client() { return client(new ubii.clients.Client()); }
@@ -19,31 +20,43 @@ public final class ServiceData extends Table {
   public ubii.clients.Client clientList(int j) { return clientList(new ubii.clients.Client(), j); }
   public ubii.clients.Client clientList(ubii.clients.Client obj, int j) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int clientListLength() { int o = __offset(6); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.clients.Client.Vector clientListVector() { return clientListVector(new ubii.clients.Client.Vector()); }
+  public ubii.clients.Client.Vector clientListVector(ubii.clients.Client.Vector obj) { int o = __offset(6); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public ubii.devices.Device device() { return device(new ubii.devices.Device()); }
   public ubii.devices.Device device(ubii.devices.Device obj) { int o = __offset(8); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
   public ubii.devices.Device deviceList(int j) { return deviceList(new ubii.devices.Device(), j); }
   public ubii.devices.Device deviceList(ubii.devices.Device obj, int j) { int o = __offset(10); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int deviceListLength() { int o = __offset(10); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.devices.Device.Vector deviceListVector() { return deviceListVector(new ubii.devices.Device.Vector()); }
+  public ubii.devices.Device.Vector deviceListVector(ubii.devices.Device.Vector obj) { int o = __offset(10); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public ubii.devices.TopicMux topicMux() { return topicMux(new ubii.devices.TopicMux()); }
   public ubii.devices.TopicMux topicMux(ubii.devices.TopicMux obj) { int o = __offset(12); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
   public ubii.devices.TopicMux topicMuxList(int j) { return topicMuxList(new ubii.devices.TopicMux(), j); }
   public ubii.devices.TopicMux topicMuxList(ubii.devices.TopicMux obj, int j) { int o = __offset(14); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int topicMuxListLength() { int o = __offset(14); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.devices.TopicMux.Vector topicMuxListVector() { return topicMuxListVector(new ubii.devices.TopicMux.Vector()); }
+  public ubii.devices.TopicMux.Vector topicMuxListVector(ubii.devices.TopicMux.Vector obj) { int o = __offset(14); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public ubii.devices.TopicDemux topicDemux() { return topicDemux(new ubii.devices.TopicDemux()); }
   public ubii.devices.TopicDemux topicDemux(ubii.devices.TopicDemux obj) { int o = __offset(16); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
   public ubii.devices.TopicDemux topicDemuxList(int j) { return topicDemuxList(new ubii.devices.TopicDemux(), j); }
   public ubii.devices.TopicDemux topicDemuxList(ubii.devices.TopicDemux obj, int j) { int o = __offset(18); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int topicDemuxListLength() { int o = __offset(18); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.devices.TopicDemux.Vector topicDemuxListVector() { return topicDemuxListVector(new ubii.devices.TopicDemux.Vector()); }
+  public ubii.devices.TopicDemux.Vector topicDemuxListVector(ubii.devices.TopicDemux.Vector obj) { int o = __offset(18); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public ubii.sessions.Session session() { return session(new ubii.sessions.Session()); }
   public ubii.sessions.Session session(ubii.sessions.Session obj) { int o = __offset(20); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
   public ubii.sessions.Session sessionList(int j) { return sessionList(new ubii.sessions.Session(), j); }
   public ubii.sessions.Session sessionList(ubii.sessions.Session obj, int j) { int o = __offset(22); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int sessionListLength() { int o = __offset(22); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.sessions.Session.Vector sessionListVector() { return sessionListVector(new ubii.sessions.Session.Vector()); }
+  public ubii.sessions.Session.Vector sessionListVector(ubii.sessions.Session.Vector obj) { int o = __offset(22); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public ubii.interactions.Interaction interaction() { return interaction(new ubii.interactions.Interaction()); }
   public ubii.interactions.Interaction interaction(ubii.interactions.Interaction obj) { int o = __offset(24); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
   public ubii.interactions.Interaction interactionList(int j) { return interactionList(new ubii.interactions.Interaction(), j); }
   public ubii.interactions.Interaction interactionList(ubii.interactions.Interaction obj, int j) { int o = __offset(26); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int interactionListLength() { int o = __offset(26); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.interactions.Interaction.Vector interactionListVector() { return interactionListVector(new ubii.interactions.Interaction.Vector()); }
+  public ubii.interactions.Interaction.Vector interactionListVector(ubii.interactions.Interaction.Vector obj) { int o = __offset(26); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public ubii.services.requests.TopicSubscription topicSubscription() { return topicSubscription(new ubii.services.requests.TopicSubscription()); }
   public ubii.services.requests.TopicSubscription topicSubscription(ubii.services.requests.TopicSubscription obj) { int o = __offset(28); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
@@ -61,7 +74,7 @@ public final class ServiceData extends Table {
       int interactionOffset,
       int interaction_listOffset,
       int topic_subscriptionOffset) {
-    builder.startObject(13);
+    builder.startTable(13);
     ServiceData.addTopicSubscription(builder, topic_subscriptionOffset);
     ServiceData.addInteractionList(builder, interaction_listOffset);
     ServiceData.addInteraction(builder, interactionOffset);
@@ -78,7 +91,7 @@ public final class ServiceData extends Table {
     return ServiceData.endServiceData(builder);
   }
 
-  public static void startServiceData(FlatBufferBuilder builder) { builder.startObject(13); }
+  public static void startServiceData(FlatBufferBuilder builder) { builder.startTable(13); }
   public static void addClient(FlatBufferBuilder builder, int clientOffset) { builder.addOffset(0, clientOffset, 0); }
   public static void addClientList(FlatBufferBuilder builder, int clientListOffset) { builder.addOffset(1, clientListOffset, 0); }
   public static int createClientListVector(FlatBufferBuilder builder, int[] data) { builder.startVector(4, data.length, 4); for (int i = data.length - 1; i >= 0; i--) builder.addOffset(data[i]); return builder.endVector(); }
@@ -105,10 +118,17 @@ public final class ServiceData extends Table {
   public static void startInteractionListVector(FlatBufferBuilder builder, int numElems) { builder.startVector(4, numElems, 4); }
   public static void addTopicSubscription(FlatBufferBuilder builder, int topicSubscriptionOffset) { builder.addOffset(12, topicSubscriptionOffset, 0); }
   public static int endServiceData(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishServiceDataBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedServiceDataBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public ServiceData get(int j) { return get(new ServiceData(), j); }
+    public ServiceData get(ServiceData obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

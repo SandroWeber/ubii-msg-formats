@@ -6,27 +6,29 @@ namespace ubii.devices
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Component : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Component GetRootAsComponent(ByteBuffer _bb) { return GetRootAsComponent(_bb, new Component()); }
   public static Component GetRootAsComponent(ByteBuffer _bb, Component obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Component __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Id { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetIdArray() { return __p.__vector_as_array<byte>(4); }
   public string Name { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
@@ -35,35 +37,35 @@ public struct Component : IFlatbufferObject
   public int TagsLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string Description { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span(10); }
+  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
   public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetDescriptionArray() { return __p.__vector_as_array<byte>(10); }
   public string DeviceId { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDeviceIdBytes() { return __p.__vector_as_span(12); }
+  public Span<byte> GetDeviceIdBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
   public ArraySegment<byte>? GetDeviceIdBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetDeviceIdArray() { return __p.__vector_as_array<byte>(12); }
   public string Topic { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTopicBytes() { return __p.__vector_as_span(14); }
+  public Span<byte> GetTopicBytes() { return __p.__vector_as_span<byte>(14, 1); }
 #else
   public ArraySegment<byte>? GetTopicBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetTopicArray() { return __p.__vector_as_array<byte>(14); }
   public string MessageFormat { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMessageFormatBytes() { return __p.__vector_as_span(16); }
+  public Span<byte> GetMessageFormatBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
   public ArraySegment<byte>? GetMessageFormatBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
   public byte[] GetMessageFormatArray() { return __p.__vector_as_array<byte>(16); }
-  public IOType IoType { get { int o = __p.__offset(18); return o != 0 ? (IOType)__p.bb.GetSbyte(o + __p.bb_pos) : IOType.INPUT; } }
+  public ubii.devices.IOType IoType { get { int o = __p.__offset(18); return o != 0 ? (ubii.devices.IOType)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.devices.IOType.INPUT; } }
 
-  public static Offset<Component> CreateComponent(FlatBufferBuilder builder,
+  public static Offset<ubii.devices.Component> CreateComponent(FlatBufferBuilder builder,
       StringOffset idOffset = default(StringOffset),
       StringOffset nameOffset = default(StringOffset),
       VectorOffset tagsOffset = default(VectorOffset),
@@ -71,8 +73,8 @@ public struct Component : IFlatbufferObject
       StringOffset device_idOffset = default(StringOffset),
       StringOffset topicOffset = default(StringOffset),
       StringOffset message_formatOffset = default(StringOffset),
-      IOType io_type = IOType.INPUT) {
-    builder.StartObject(8);
+      ubii.devices.IOType io_type = ubii.devices.IOType.INPUT) {
+    builder.StartTable(8);
     Component.AddMessageFormat(builder, message_formatOffset);
     Component.AddTopic(builder, topicOffset);
     Component.AddDeviceId(builder, device_idOffset);
@@ -84,7 +86,7 @@ public struct Component : IFlatbufferObject
     return Component.EndComponent(builder);
   }
 
-  public static void StartComponent(FlatBufferBuilder builder) { builder.StartObject(8); }
+  public static void StartComponent(FlatBufferBuilder builder) { builder.StartTable(8); }
   public static void AddId(FlatBufferBuilder builder, StringOffset idOffset) { builder.AddOffset(0, idOffset.Value, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddTags(FlatBufferBuilder builder, VectorOffset tagsOffset) { builder.AddOffset(2, tagsOffset.Value, 0); }
@@ -95,14 +97,86 @@ public struct Component : IFlatbufferObject
   public static void AddDeviceId(FlatBufferBuilder builder, StringOffset deviceIdOffset) { builder.AddOffset(4, deviceIdOffset.Value, 0); }
   public static void AddTopic(FlatBufferBuilder builder, StringOffset topicOffset) { builder.AddOffset(5, topicOffset.Value, 0); }
   public static void AddMessageFormat(FlatBufferBuilder builder, StringOffset messageFormatOffset) { builder.AddOffset(6, messageFormatOffset.Value, 0); }
-  public static void AddIoType(FlatBufferBuilder builder, IOType ioType) { builder.AddSbyte(7, (sbyte)ioType, 0); }
-  public static Offset<Component> EndComponent(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Component>(o);
+  public static void AddIoType(FlatBufferBuilder builder, ubii.devices.IOType ioType) { builder.AddSbyte(7, (sbyte)ioType, 0); }
+  public static Offset<ubii.devices.Component> EndComponent(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.devices.Component>(o);
   }
-  public static void FinishComponentBuffer(FlatBufferBuilder builder, Offset<Component> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedComponentBuffer(FlatBufferBuilder builder, Offset<Component> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishComponentBuffer(FlatBufferBuilder builder, Offset<ubii.devices.Component> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedComponentBuffer(FlatBufferBuilder builder, Offset<ubii.devices.Component> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ComponentT UnPack() {
+    var _o = new ComponentT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ComponentT _o) {
+    _o.Id = this.Id;
+    _o.Name = this.Name;
+    _o.Tags = new List<string>();
+    for (var _j = 0; _j < this.TagsLength; ++_j) {_o.Tags.Add(this.Tags(_j));}
+    _o.Description = this.Description;
+    _o.DeviceId = this.DeviceId;
+    _o.Topic = this.Topic;
+    _o.MessageFormat = this.MessageFormat;
+    _o.IoType = this.IoType;
+  }
+  public static Offset<ubii.devices.Component> Pack(FlatBufferBuilder builder, ComponentT _o) {
+    if (_o == null) return default(Offset<ubii.devices.Component>);
+    var _id = _o.Id == null ? default(StringOffset) : builder.CreateString(_o.Id);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _tags = default(VectorOffset);
+    if (_o.Tags != null) {
+      var __tags = new StringOffset[_o.Tags.Count];
+      for (var _j = 0; _j < __tags.Length; ++_j) { __tags[_j] = builder.CreateString(_o.Tags[_j]); }
+      _tags = CreateTagsVector(builder, __tags);
+    }
+    var _description = _o.Description == null ? default(StringOffset) : builder.CreateString(_o.Description);
+    var _device_id = _o.DeviceId == null ? default(StringOffset) : builder.CreateString(_o.DeviceId);
+    var _topic = _o.Topic == null ? default(StringOffset) : builder.CreateString(_o.Topic);
+    var _message_format = _o.MessageFormat == null ? default(StringOffset) : builder.CreateString(_o.MessageFormat);
+    return CreateComponent(
+      builder,
+      _id,
+      _name,
+      _tags,
+      _description,
+      _device_id,
+      _topic,
+      _message_format,
+      _o.IoType);
+  }
 };
+
+public class ComponentT
+{
+  public string Id { get; set; }
+  public string Name { get; set; }
+  public List<string> Tags { get; set; }
+  public string Description { get; set; }
+  public string DeviceId { get; set; }
+  public string Topic { get; set; }
+  public string MessageFormat { get; set; }
+  public ubii.devices.IOType IoType { get; set; }
+
+  public ComponentT() {
+    this.Id = null;
+    this.Name = null;
+    this.Tags = null;
+    this.Description = null;
+    this.DeviceId = null;
+    this.Topic = null;
+    this.MessageFormat = null;
+    this.IoType = ubii.devices.IOType.INPUT;
+  }
+  public static ComponentT DeserializeFromBinary(byte[] fbBuffer) {
+    return Component.GetRootAsComponent(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Component.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

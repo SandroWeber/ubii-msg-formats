@@ -3,6 +3,8 @@
 # namespace: interactions
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class IOFormat(object):
     __slots__ = ['_tab']
@@ -36,3 +38,44 @@ def IOFormatStart(builder): builder.StartObject(2)
 def IOFormatAddInternalName(builder, internalName): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(internalName), 0)
 def IOFormatAddMessageFormat(builder, messageFormat): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(messageFormat), 0)
 def IOFormatEnd(builder): return builder.EndObject()
+
+
+class IOFormatT(object):
+
+    # IOFormatT
+    def __init__(self):
+        self.internalName = None  # type: str
+        self.messageFormat = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        iOFormat = IOFormat()
+        iOFormat.Init(buf, pos)
+        return cls.InitFromObj(iOFormat)
+
+    @classmethod
+    def InitFromObj(cls, iOFormat):
+        x = IOFormatT()
+        x._UnPack(iOFormat)
+        return x
+
+    # IOFormatT
+    def _UnPack(self, iOFormat):
+        if iOFormat is None:
+            return
+        self.internalName = iOFormat.InternalName()
+        self.messageFormat = iOFormat.MessageFormat()
+
+    # IOFormatT
+    def Pack(self, builder):
+        if self.internalName is not None:
+            internalName = builder.CreateString(self.internalName)
+        if self.messageFormat is not None:
+            messageFormat = builder.CreateString(self.messageFormat)
+        IOFormatStart(builder)
+        if self.internalName is not None:
+            IOFormatAddInternalName(builder, internalName)
+        if self.messageFormat is not None:
+            IOFormatAddMessageFormat(builder, messageFormat)
+        iOFormat = IOFormatEnd(builder)
+        return iOFormat

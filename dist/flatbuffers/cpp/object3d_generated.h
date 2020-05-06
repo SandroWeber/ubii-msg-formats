@@ -14,14 +14,15 @@ namespace ubii {
 namespace dataStructures {
 
 struct Object3D;
+struct Object3DBuilder;
 struct Object3DT;
 
 struct Object3DT : public flatbuffers::NativeTable {
   typedef Object3D TableType;
   std::string id;
   std::string name;
-  std::unique_ptr<Pose3DT> pose;
-  std::unique_ptr<Vector3> size;
+  std::unique_ptr<ubii::dataStructures::Pose3DT> pose;
+  std::unique_ptr<ubii::dataStructures::Vector3> size;
   std::string user_data_json;
   Object3DT() {
   }
@@ -29,6 +30,7 @@ struct Object3DT : public flatbuffers::NativeTable {
 
 struct Object3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef Object3DT NativeTableType;
+  typedef Object3DBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -42,11 +44,11 @@ struct Object3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   const flatbuffers::String *name() const {
     return GetPointer<const flatbuffers::String *>(VT_NAME);
   }
-  const Pose3D *pose() const {
-    return GetPointer<const Pose3D *>(VT_POSE);
+  const ubii::dataStructures::Pose3D *pose() const {
+    return GetPointer<const ubii::dataStructures::Pose3D *>(VT_POSE);
   }
-  const Vector3 *size() const {
-    return GetStruct<const Vector3 *>(VT_SIZE);
+  const ubii::dataStructures::Vector3 *size() const {
+    return GetStruct<const ubii::dataStructures::Vector3 *>(VT_SIZE);
   }
   const flatbuffers::String *user_data_json() const {
     return GetPointer<const flatbuffers::String *>(VT_USER_DATA_JSON);
@@ -59,7 +61,7 @@ struct Object3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(name()) &&
            VerifyOffset(verifier, VT_POSE) &&
            verifier.VerifyTable(pose()) &&
-           VerifyField<Vector3>(verifier, VT_SIZE) &&
+           VerifyField<ubii::dataStructures::Vector3>(verifier, VT_SIZE) &&
            VerifyOffset(verifier, VT_USER_DATA_JSON) &&
            verifier.VerifyString(user_data_json()) &&
            verifier.EndTable();
@@ -70,6 +72,7 @@ struct Object3D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct Object3DBuilder {
+  typedef Object3D Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_id(flatbuffers::Offset<flatbuffers::String> id) {
@@ -78,10 +81,10 @@ struct Object3DBuilder {
   void add_name(flatbuffers::Offset<flatbuffers::String> name) {
     fbb_.AddOffset(Object3D::VT_NAME, name);
   }
-  void add_pose(flatbuffers::Offset<Pose3D> pose) {
+  void add_pose(flatbuffers::Offset<ubii::dataStructures::Pose3D> pose) {
     fbb_.AddOffset(Object3D::VT_POSE, pose);
   }
-  void add_size(const Vector3 *size) {
+  void add_size(const ubii::dataStructures::Vector3 *size) {
     fbb_.AddStruct(Object3D::VT_SIZE, size);
   }
   void add_user_data_json(flatbuffers::Offset<flatbuffers::String> user_data_json) {
@@ -103,8 +106,8 @@ inline flatbuffers::Offset<Object3D> CreateObject3D(
     flatbuffers::FlatBufferBuilder &_fbb,
     flatbuffers::Offset<flatbuffers::String> id = 0,
     flatbuffers::Offset<flatbuffers::String> name = 0,
-    flatbuffers::Offset<Pose3D> pose = 0,
-    const Vector3 *size = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose3D> pose = 0,
+    const ubii::dataStructures::Vector3 *size = 0,
     flatbuffers::Offset<flatbuffers::String> user_data_json = 0) {
   Object3DBuilder builder_(_fbb);
   builder_.add_user_data_json(user_data_json);
@@ -119,8 +122,8 @@ inline flatbuffers::Offset<Object3D> CreateObject3DDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
     const char *id = nullptr,
     const char *name = nullptr,
-    flatbuffers::Offset<Pose3D> pose = 0,
-    const Vector3 *size = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose3D> pose = 0,
+    const ubii::dataStructures::Vector3 *size = 0,
     const char *user_data_json = nullptr) {
   auto id__ = id ? _fbb.CreateString(id) : 0;
   auto name__ = name ? _fbb.CreateString(name) : 0;
@@ -137,19 +140,19 @@ inline flatbuffers::Offset<Object3D> CreateObject3DDirect(
 flatbuffers::Offset<Object3D> CreateObject3D(flatbuffers::FlatBufferBuilder &_fbb, const Object3DT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline Object3DT *Object3D::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new Object3DT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::dataStructures::Object3DT> _o = std::unique_ptr<ubii::dataStructures::Object3DT>(new Object3DT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void Object3D::UnPackTo(Object3DT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = id(); if (_e) _o->id = _e->str(); };
-  { auto _e = name(); if (_e) _o->name = _e->str(); };
-  { auto _e = pose(); if (_e) _o->pose = std::unique_ptr<Pose3DT>(_e->UnPack(_resolver)); };
-  { auto _e = size(); if (_e) _o->size = std::unique_ptr<Vector3>(new Vector3(*_e)); };
-  { auto _e = user_data_json(); if (_e) _o->user_data_json = _e->str(); };
+  { auto _e = id(); if (_e) _o->id = _e->str(); }
+  { auto _e = name(); if (_e) _o->name = _e->str(); }
+  { auto _e = pose(); if (_e) _o->pose = std::unique_ptr<ubii::dataStructures::Pose3DT>(_e->UnPack(_resolver)); }
+  { auto _e = size(); if (_e) _o->size = std::unique_ptr<ubii::dataStructures::Vector3>(new ubii::dataStructures::Vector3(*_e)); }
+  { auto _e = user_data_json(); if (_e) _o->user_data_json = _e->str(); }
 }
 
 inline flatbuffers::Offset<Object3D> Object3D::Pack(flatbuffers::FlatBufferBuilder &_fbb, const Object3DT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -204,10 +207,16 @@ inline void FinishSizePrefixedObject3DBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<Object3DT> UnPackObject3D(
+inline std::unique_ptr<ubii::dataStructures::Object3DT> UnPackObject3D(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<Object3DT>(GetObject3D(buf)->UnPack(res));
+  return std::unique_ptr<ubii::dataStructures::Object3DT>(GetObject3D(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::dataStructures::Object3DT> UnPackSizePrefixedObject3D(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::dataStructures::Object3DT>(GetSizePrefixedObject3D(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

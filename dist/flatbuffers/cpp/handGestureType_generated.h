@@ -33,7 +33,7 @@ inline const HandGestureType (&EnumValuesHandGestureType())[6] {
 }
 
 inline const char * const *EnumNamesHandGestureType() {
-  static const char * const names[] = {
+  static const char * const names[7] = {
     "REST",
     "FINGERS_SPREAD",
     "WAVE_IN",
@@ -46,7 +46,7 @@ inline const char * const *EnumNamesHandGestureType() {
 }
 
 inline const char *EnumNameHandGestureType(HandGestureType e) {
-  if (e < HandGestureType_REST || e > HandGestureType_DOUBLE_TAP) return "";
+  if (flatbuffers::IsOutRange(e, HandGestureType_REST, HandGestureType_DOUBLE_TAP)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesHandGestureType()[index];
 }

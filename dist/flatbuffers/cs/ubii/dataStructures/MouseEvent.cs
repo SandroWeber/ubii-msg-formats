@@ -6,39 +6,76 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct MouseEvent : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static MouseEvent GetRootAsMouseEvent(ByteBuffer _bb) { return GetRootAsMouseEvent(_bb, new MouseEvent()); }
   public static MouseEvent GetRootAsMouseEvent(ByteBuffer _bb, MouseEvent obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public MouseEvent __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public ButtonEventType Type { get { int o = __p.__offset(4); return o != 0 ? (ButtonEventType)__p.bb.GetSbyte(o + __p.bb_pos) : ButtonEventType.UP; } }
+  public ubii.dataStructures.ButtonEventType Type { get { int o = __p.__offset(4); return o != 0 ? (ubii.dataStructures.ButtonEventType)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.dataStructures.ButtonEventType.UP; } }
   public sbyte Button { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetSbyte(o + __p.bb_pos) : (sbyte)0; } }
 
-  public static Offset<MouseEvent> CreateMouseEvent(FlatBufferBuilder builder,
-      ButtonEventType type = ButtonEventType.UP,
+  public static Offset<ubii.dataStructures.MouseEvent> CreateMouseEvent(FlatBufferBuilder builder,
+      ubii.dataStructures.ButtonEventType type = ubii.dataStructures.ButtonEventType.UP,
       sbyte button = 0) {
-    builder.StartObject(2);
+    builder.StartTable(2);
     MouseEvent.AddButton(builder, button);
     MouseEvent.AddType(builder, type);
     return MouseEvent.EndMouseEvent(builder);
   }
 
-  public static void StartMouseEvent(FlatBufferBuilder builder) { builder.StartObject(2); }
-  public static void AddType(FlatBufferBuilder builder, ButtonEventType type) { builder.AddSbyte(0, (sbyte)type, 0); }
+  public static void StartMouseEvent(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void AddType(FlatBufferBuilder builder, ubii.dataStructures.ButtonEventType type) { builder.AddSbyte(0, (sbyte)type, 0); }
   public static void AddButton(FlatBufferBuilder builder, sbyte button) { builder.AddSbyte(1, button, 0); }
-  public static Offset<MouseEvent> EndMouseEvent(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<MouseEvent>(o);
+  public static Offset<ubii.dataStructures.MouseEvent> EndMouseEvent(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.MouseEvent>(o);
   }
-  public static void FinishMouseEventBuffer(FlatBufferBuilder builder, Offset<MouseEvent> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedMouseEventBuffer(FlatBufferBuilder builder, Offset<MouseEvent> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishMouseEventBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.MouseEvent> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedMouseEventBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.MouseEvent> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public MouseEventT UnPack() {
+    var _o = new MouseEventT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(MouseEventT _o) {
+    _o.Type = this.Type;
+    _o.Button = this.Button;
+  }
+  public static Offset<ubii.dataStructures.MouseEvent> Pack(FlatBufferBuilder builder, MouseEventT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.MouseEvent>);
+    return CreateMouseEvent(
+      builder,
+      _o.Type,
+      _o.Button);
+  }
 };
+
+public class MouseEventT
+{
+  public ubii.dataStructures.ButtonEventType Type { get; set; }
+  public sbyte Button { get; set; }
+
+  public MouseEventT() {
+    this.Type = ubii.dataStructures.ButtonEventType.UP;
+    this.Button = 0;
+  }
+  public static MouseEventT DeserializeFromBinary(byte[] fbBuffer) {
+    return MouseEvent.GetRootAsMouseEvent(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(MouseEvent.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

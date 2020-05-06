@@ -48,6 +48,16 @@ ubii.general.Error.getRootAsError = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.general.Error=} obj
+ * @returns {ubii.general.Error}
+ */
+ubii.general.Error.getSizePrefixedRootAsError = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.general.Error).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -120,6 +130,14 @@ ubii.general.Error.endError = function(builder) {
  */
 ubii.general.Error.finishErrorBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.general.Error.finishSizePrefixedErrorBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

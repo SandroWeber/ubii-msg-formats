@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Vector3(object):
     __slots__ = ['_tab']
@@ -24,3 +26,36 @@ def CreateVector3(builder, x, y, z):
     builder.PrependFloat32(y)
     builder.PrependFloat32(x)
     return builder.Offset()
+
+
+class Vector3T(object):
+
+    # Vector3T
+    def __init__(self):
+        self.x = 0.0  # type: float
+        self.y = 0.0  # type: float
+        self.z = 0.0  # type: float
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        vector3 = Vector3()
+        vector3.Init(buf, pos)
+        return cls.InitFromObj(vector3)
+
+    @classmethod
+    def InitFromObj(cls, vector3):
+        x = Vector3T()
+        x._UnPack(vector3)
+        return x
+
+    # Vector3T
+    def _UnPack(self, vector3):
+        if vector3 is None:
+            return
+        self.x = vector3.X()
+        self.y = vector3.Y()
+        self.z = vector3.Z()
+
+    # Vector3T
+    def Pack(self, builder):
+        return CreateVector3(builder, self.x, self.y, self.z)

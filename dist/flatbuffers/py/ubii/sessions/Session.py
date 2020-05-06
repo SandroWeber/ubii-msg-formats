@@ -3,6 +3,8 @@
 # namespace: sessions
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Session(object):
     __slots__ = ['_tab']
@@ -48,6 +50,11 @@ class Session(object):
         return 0
 
     # Session
+    def AuthorsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        return o == 0
+
+    # Session
     def Tags(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
@@ -61,6 +68,11 @@ class Session(object):
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
+
+    # Session
+    def TagsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        return o == 0
 
     # Session
     def Description(self):
@@ -90,7 +102,7 @@ class Session(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Interaction import Interaction
+            from ubii.interactions.Interaction import Interaction
             obj = Interaction()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -104,13 +116,18 @@ class Session(object):
         return 0
 
     # Session
+    def InteractionsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        return o == 0
+
+    # Session
     def IoMappings(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .IOMapping import IOMapping
+            from ubii.sessions.IOMapping import IOMapping
             obj = IOMapping()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -122,6 +139,11 @@ class Session(object):
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
+
+    # Session
+    def IoMappingsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
+        return o == 0
 
 def SessionStart(builder): builder.StartObject(9)
 def SessionAddId(builder, id): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(id), 0)
@@ -138,3 +160,130 @@ def SessionStartInteractionsVector(builder, numElems): return builder.StartVecto
 def SessionAddIoMappings(builder, ioMappings): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(ioMappings), 0)
 def SessionStartIoMappingsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def SessionEnd(builder): return builder.EndObject()
+
+import ubii.interactions.Interaction
+import ubii.sessions.IOMapping
+try:
+    from typing import List
+except:
+    pass
+
+class SessionT(object):
+
+    # SessionT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.authors = None  # type: List[str]
+        self.tags = None  # type: List[str]
+        self.description = None  # type: str
+        self.processMode = 0  # type: int
+        self.status = 0  # type: int
+        self.interactions = None  # type: List[ubii.interactions.Interaction.InteractionT]
+        self.ioMappings = None  # type: List[ubii.sessions.IOMapping.IOMappingT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        session = Session()
+        session.Init(buf, pos)
+        return cls.InitFromObj(session)
+
+    @classmethod
+    def InitFromObj(cls, session):
+        x = SessionT()
+        x._UnPack(session)
+        return x
+
+    # SessionT
+    def _UnPack(self, session):
+        if session is None:
+            return
+        self.id = session.Id()
+        self.name = session.Name()
+        if not session.AuthorsIsNone():
+            self.authors = []
+            for i in range(session.AuthorsLength()):
+                self.authors.append(session.Authors(i))
+        if not session.TagsIsNone():
+            self.tags = []
+            for i in range(session.TagsLength()):
+                self.tags.append(session.Tags(i))
+        self.description = session.Description()
+        self.processMode = session.ProcessMode()
+        self.status = session.Status()
+        if not session.InteractionsIsNone():
+            self.interactions = []
+            for i in range(session.InteractionsLength()):
+                if session.Interactions(i) is None:
+                    self.interactions.append(None)
+                else:
+                    interaction_ = ubii.interactions.Interaction.InteractionT.InitFromObj(session.Interactions(i))
+                    self.interactions.append(interaction_)
+        if not session.IoMappingsIsNone():
+            self.ioMappings = []
+            for i in range(session.IoMappingsLength()):
+                if session.IoMappings(i) is None:
+                    self.ioMappings.append(None)
+                else:
+                    iOMapping_ = ubii.sessions.IOMapping.IOMappingT.InitFromObj(session.IoMappings(i))
+                    self.ioMappings.append(iOMapping_)
+
+    # SessionT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.authors is not None:
+            authorslist = []
+            for i in range(len(self.authors)):
+                authorslist.append(builder.CreateString(self.authors[i]))
+            SessionStartAuthorsVector(builder, len(self.authors))
+            for i in reversed(range(len(self.authors))):
+                builder.PrependUOffsetTRelative(authorslist[i])
+            authors = builder.EndVector(len(self.authors))
+        if self.tags is not None:
+            tagslist = []
+            for i in range(len(self.tags)):
+                tagslist.append(builder.CreateString(self.tags[i]))
+            SessionStartTagsVector(builder, len(self.tags))
+            for i in reversed(range(len(self.tags))):
+                builder.PrependUOffsetTRelative(tagslist[i])
+            tags = builder.EndVector(len(self.tags))
+        if self.description is not None:
+            description = builder.CreateString(self.description)
+        if self.interactions is not None:
+            interactionslist = []
+            for i in range(len(self.interactions)):
+                interactionslist.append(self.interactions[i].Pack(builder))
+            SessionStartInteractionsVector(builder, len(self.interactions))
+            for i in reversed(range(len(self.interactions))):
+                builder.PrependUOffsetTRelative(interactionslist[i])
+            interactions = builder.EndVector(len(self.interactions))
+        if self.ioMappings is not None:
+            ioMappingslist = []
+            for i in range(len(self.ioMappings)):
+                ioMappingslist.append(self.ioMappings[i].Pack(builder))
+            SessionStartIoMappingsVector(builder, len(self.ioMappings))
+            for i in reversed(range(len(self.ioMappings))):
+                builder.PrependUOffsetTRelative(ioMappingslist[i])
+            ioMappings = builder.EndVector(len(self.ioMappings))
+        SessionStart(builder)
+        if self.id is not None:
+            SessionAddId(builder, id)
+        if self.name is not None:
+            SessionAddName(builder, name)
+        if self.authors is not None:
+            SessionAddAuthors(builder, authors)
+        if self.tags is not None:
+            SessionAddTags(builder, tags)
+        if self.description is not None:
+            SessionAddDescription(builder, description)
+        SessionAddProcessMode(builder, self.processMode)
+        SessionAddStatus(builder, self.status)
+        if self.interactions is not None:
+            SessionAddInteractions(builder, interactions)
+        if self.ioMappings is not None:
+            SessionAddIoMappings(builder, ioMappings)
+        session = SessionEnd(builder)
+        return session

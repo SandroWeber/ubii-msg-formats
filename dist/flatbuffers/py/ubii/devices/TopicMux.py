@@ -3,6 +3,8 @@
 # namespace: devices
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class TopicMux(object):
     __slots__ = ['_tab']
@@ -60,3 +62,62 @@ def TopicMuxAddDataType(builder, dataType): builder.PrependUOffsetTRelativeSlot(
 def TopicMuxAddTopicSelector(builder, topicSelector): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(topicSelector), 0)
 def TopicMuxAddIdentityMatchPattern(builder, identityMatchPattern): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(identityMatchPattern), 0)
 def TopicMuxEnd(builder): return builder.EndObject()
+
+
+class TopicMuxT(object):
+
+    # TopicMuxT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.dataType = None  # type: str
+        self.topicSelector = None  # type: str
+        self.identityMatchPattern = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        topicMux = TopicMux()
+        topicMux.Init(buf, pos)
+        return cls.InitFromObj(topicMux)
+
+    @classmethod
+    def InitFromObj(cls, topicMux):
+        x = TopicMuxT()
+        x._UnPack(topicMux)
+        return x
+
+    # TopicMuxT
+    def _UnPack(self, topicMux):
+        if topicMux is None:
+            return
+        self.id = topicMux.Id()
+        self.name = topicMux.Name()
+        self.dataType = topicMux.DataType()
+        self.topicSelector = topicMux.TopicSelector()
+        self.identityMatchPattern = topicMux.IdentityMatchPattern()
+
+    # TopicMuxT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.dataType is not None:
+            dataType = builder.CreateString(self.dataType)
+        if self.topicSelector is not None:
+            topicSelector = builder.CreateString(self.topicSelector)
+        if self.identityMatchPattern is not None:
+            identityMatchPattern = builder.CreateString(self.identityMatchPattern)
+        TopicMuxStart(builder)
+        if self.id is not None:
+            TopicMuxAddId(builder, id)
+        if self.name is not None:
+            TopicMuxAddName(builder, name)
+        if self.dataType is not None:
+            TopicMuxAddDataType(builder, dataType)
+        if self.topicSelector is not None:
+            TopicMuxAddTopicSelector(builder, topicSelector)
+        if self.identityMatchPattern is not None:
+            TopicMuxAddIdentityMatchPattern(builder, identityMatchPattern)
+        topicMux = TopicMuxEnd(builder)
+        return topicMux

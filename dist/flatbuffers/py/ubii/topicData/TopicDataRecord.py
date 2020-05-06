@@ -3,6 +3,8 @@
 # namespace: topicData
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class TopicDataRecord(object):
     __slots__ = ['_tab']
@@ -30,7 +32,7 @@ class TopicDataRecord(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             x = o + self._tab.Pos
-            from .Timestamp import Timestamp
+            from ubii.dataStructures.Timestamp import Timestamp
             obj = Timestamp()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -41,7 +43,7 @@ class TopicDataRecord(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .DataStructure import DataStructure
+            from ubii.dataStructures.DataStructure import DataStructure
             obj = DataStructure()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -52,3 +54,57 @@ def TopicDataRecordAddTopic(builder, topic): builder.PrependUOffsetTRelativeSlot
 def TopicDataRecordAddTimestamp(builder, timestamp): builder.PrependStructSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(timestamp), 0)
 def TopicDataRecordAddData(builder, data): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(data), 0)
 def TopicDataRecordEnd(builder): return builder.EndObject()
+
+import ubii.dataStructures.DataStructure
+import ubii.dataStructures.Timestamp
+try:
+    from typing import Optional
+except:
+    pass
+
+class TopicDataRecordT(object):
+
+    # TopicDataRecordT
+    def __init__(self):
+        self.topic = None  # type: str
+        self.timestamp = None  # type: Optional[ubii.dataStructures.Timestamp.TimestampT]
+        self.data = None  # type: Optional[ubii.dataStructures.DataStructure.DataStructureT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        topicDataRecord = TopicDataRecord()
+        topicDataRecord.Init(buf, pos)
+        return cls.InitFromObj(topicDataRecord)
+
+    @classmethod
+    def InitFromObj(cls, topicDataRecord):
+        x = TopicDataRecordT()
+        x._UnPack(topicDataRecord)
+        return x
+
+    # TopicDataRecordT
+    def _UnPack(self, topicDataRecord):
+        if topicDataRecord is None:
+            return
+        self.topic = topicDataRecord.Topic()
+        if topicDataRecord.Timestamp() is not None:
+            self.timestamp = ubii.dataStructures.Timestamp.TimestampT.InitFromObj(topicDataRecord.Timestamp())
+        if topicDataRecord.Data() is not None:
+            self.data = ubii.dataStructures.DataStructure.DataStructureT.InitFromObj(topicDataRecord.Data())
+
+    # TopicDataRecordT
+    def Pack(self, builder):
+        if self.topic is not None:
+            topic = builder.CreateString(self.topic)
+        if self.data is not None:
+            data = self.data.Pack(builder)
+        TopicDataRecordStart(builder)
+        if self.topic is not None:
+            TopicDataRecordAddTopic(builder, topic)
+        if self.timestamp is not None:
+            timestamp = self.timestamp.Pack(builder)
+            TopicDataRecordAddTimestamp(builder, timestamp)
+        if self.data is not None:
+            TopicDataRecordAddData(builder, data)
+        topicDataRecord = TopicDataRecordEnd(builder)
+        return topicDataRecord

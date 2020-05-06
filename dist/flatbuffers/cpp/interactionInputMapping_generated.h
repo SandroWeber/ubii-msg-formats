@@ -12,6 +12,7 @@ namespace ubii {
 namespace sessions {
 
 struct InteractionInputMapping;
+struct InteractionInputMappingBuilder;
 struct InteractionInputMappingT;
 
 enum TopicSource {
@@ -32,7 +33,7 @@ inline const TopicSource (&EnumValuesTopicSource())[3] {
 }
 
 inline const char * const *EnumNamesTopicSource() {
-  static const char * const names[] = {
+  static const char * const names[4] = {
     "NONE",
     "topic",
     "topic_mux",
@@ -42,7 +43,7 @@ inline const char * const *EnumNamesTopicSource() {
 }
 
 inline const char *EnumNameTopicSource(TopicSource e) {
-  if (e < TopicSource_NONE || e > TopicSource_topic_mux) return "";
+  if (flatbuffers::IsOutRange(e, TopicSource_NONE, TopicSource_topic_mux)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesTopicSource()[index];
 }
@@ -67,8 +68,8 @@ struct TopicSourceUnion {
   TopicSourceUnion(TopicSourceUnion&& u) FLATBUFFERS_NOEXCEPT :
     type(TopicSource_NONE), value(nullptr)
     { std::swap(type, u.type); std::swap(value, u.value); }
-  TopicSourceUnion(const TopicSourceUnion &) FLATBUFFERS_NOEXCEPT;
-  TopicSourceUnion &operator=(const TopicSourceUnion &u) FLATBUFFERS_NOEXCEPT
+  TopicSourceUnion(const TopicSourceUnion &);
+  TopicSourceUnion &operator=(const TopicSourceUnion &u)
     { TopicSourceUnion t(u); std::swap(type, t.type); std::swap(value, t.value); return *this; }
   TopicSourceUnion &operator=(TopicSourceUnion &&u) FLATBUFFERS_NOEXCEPT
     { std::swap(type, u.type); std::swap(value, u.value); return *this; }
@@ -115,13 +116,14 @@ bool VerifyTopicSourceVector(flatbuffers::Verifier &verifier, const flatbuffers:
 struct InteractionInputMappingT : public flatbuffers::NativeTable {
   typedef InteractionInputMapping TableType;
   std::string name;
-  TopicSourceUnion topic_source;
+  ubii::sessions::TopicSourceUnion topic_source;
   InteractionInputMappingT() {
   }
 };
 
 struct InteractionInputMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef InteractionInputMappingT NativeTableType;
+  typedef InteractionInputMappingBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_NAME = 4,
     VT_TOPIC_SOURCE_TYPE = 6,
@@ -130,18 +132,18 @@ struct InteractionInputMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::Ta
   const flatbuffers::String *name() const {
     return GetPointer<const flatbuffers::String *>(VT_NAME);
   }
-  TopicSource topic_source_type() const {
-    return static_cast<TopicSource>(GetField<uint8_t>(VT_TOPIC_SOURCE_TYPE, 0));
+  ubii::sessions::TopicSource topic_source_type() const {
+    return static_cast<ubii::sessions::TopicSource>(GetField<uint8_t>(VT_TOPIC_SOURCE_TYPE, 0));
   }
   const void *topic_source() const {
     return GetPointer<const void *>(VT_TOPIC_SOURCE);
   }
   template<typename T> const T *topic_source_as() const;
   const flatbuffers::String *topic_source_as_topic() const {
-    return topic_source_type() == TopicSource_topic ? static_cast<const flatbuffers::String *>(topic_source()) : nullptr;
+    return topic_source_type() == ubii::sessions::TopicSource_topic ? static_cast<const flatbuffers::String *>(topic_source()) : nullptr;
   }
   const ubii::devices::TopicMux *topic_source_as_topic_mux() const {
-    return topic_source_type() == TopicSource_topic_mux ? static_cast<const ubii::devices::TopicMux *>(topic_source()) : nullptr;
+    return topic_source_type() == ubii::sessions::TopicSource_topic_mux ? static_cast<const ubii::devices::TopicMux *>(topic_source()) : nullptr;
   }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
@@ -166,12 +168,13 @@ template<> inline const ubii::devices::TopicMux *InteractionInputMapping::topic_
 }
 
 struct InteractionInputMappingBuilder {
+  typedef InteractionInputMapping Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_name(flatbuffers::Offset<flatbuffers::String> name) {
     fbb_.AddOffset(InteractionInputMapping::VT_NAME, name);
   }
-  void add_topic_source_type(TopicSource topic_source_type) {
+  void add_topic_source_type(ubii::sessions::TopicSource topic_source_type) {
     fbb_.AddElement<uint8_t>(InteractionInputMapping::VT_TOPIC_SOURCE_TYPE, static_cast<uint8_t>(topic_source_type), 0);
   }
   void add_topic_source(flatbuffers::Offset<void> topic_source) {
@@ -192,7 +195,7 @@ struct InteractionInputMappingBuilder {
 inline flatbuffers::Offset<InteractionInputMapping> CreateInteractionInputMapping(
     flatbuffers::FlatBufferBuilder &_fbb,
     flatbuffers::Offset<flatbuffers::String> name = 0,
-    TopicSource topic_source_type = TopicSource_NONE,
+    ubii::sessions::TopicSource topic_source_type = ubii::sessions::TopicSource_NONE,
     flatbuffers::Offset<void> topic_source = 0) {
   InteractionInputMappingBuilder builder_(_fbb);
   builder_.add_topic_source(topic_source);
@@ -204,7 +207,7 @@ inline flatbuffers::Offset<InteractionInputMapping> CreateInteractionInputMappin
 inline flatbuffers::Offset<InteractionInputMapping> CreateInteractionInputMappingDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
     const char *name = nullptr,
-    TopicSource topic_source_type = TopicSource_NONE,
+    ubii::sessions::TopicSource topic_source_type = ubii::sessions::TopicSource_NONE,
     flatbuffers::Offset<void> topic_source = 0) {
   auto name__ = name ? _fbb.CreateString(name) : 0;
   return ubii::sessions::CreateInteractionInputMapping(
@@ -217,17 +220,17 @@ inline flatbuffers::Offset<InteractionInputMapping> CreateInteractionInputMappin
 flatbuffers::Offset<InteractionInputMapping> CreateInteractionInputMapping(flatbuffers::FlatBufferBuilder &_fbb, const InteractionInputMappingT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline InteractionInputMappingT *InteractionInputMapping::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new InteractionInputMappingT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::sessions::InteractionInputMappingT> _o = std::unique_ptr<ubii::sessions::InteractionInputMappingT>(new InteractionInputMappingT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void InteractionInputMapping::UnPackTo(InteractionInputMappingT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = name(); if (_e) _o->name = _e->str(); };
-  { auto _e = topic_source_type(); _o->topic_source.type = _e; };
-  { auto _e = topic_source(); if (_e) _o->topic_source.value = TopicSourceUnion::UnPack(_e, topic_source_type(), _resolver); };
+  { auto _e = name(); if (_e) _o->name = _e->str(); }
+  { auto _e = topic_source_type(); _o->topic_source.type = _e; }
+  { auto _e = topic_source(); if (_e) _o->topic_source.value = ubii::sessions::TopicSourceUnion::UnPack(_e, topic_source_type(), _resolver); }
 }
 
 inline flatbuffers::Offset<InteractionInputMapping> InteractionInputMapping::Pack(flatbuffers::FlatBufferBuilder &_fbb, const InteractionInputMappingT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -261,7 +264,7 @@ inline bool VerifyTopicSource(flatbuffers::Verifier &verifier, const void *obj, 
       auto ptr = reinterpret_cast<const ubii::devices::TopicMux *>(obj);
       return verifier.VerifyTable(ptr);
     }
-    default: return false;
+    default: return true;
   }
 }
 
@@ -305,7 +308,7 @@ inline flatbuffers::Offset<void> TopicSourceUnion::Pack(flatbuffers::FlatBufferB
   }
 }
 
-inline TopicSourceUnion::TopicSourceUnion(const TopicSourceUnion &u) FLATBUFFERS_NOEXCEPT : type(u.type), value(nullptr) {
+inline TopicSourceUnion::TopicSourceUnion(const TopicSourceUnion &u) : type(u.type), value(nullptr) {
   switch (type) {
     case TopicSource_topic: {
       value = new std::string(*reinterpret_cast<std::string *>(u.value));
@@ -368,10 +371,16 @@ inline void FinishSizePrefixedInteractionInputMappingBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<InteractionInputMappingT> UnPackInteractionInputMapping(
+inline std::unique_ptr<ubii::sessions::InteractionInputMappingT> UnPackInteractionInputMapping(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<InteractionInputMappingT>(GetInteractionInputMapping(buf)->UnPack(res));
+  return std::unique_ptr<ubii::sessions::InteractionInputMappingT>(GetInteractionInputMapping(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::sessions::InteractionInputMappingT> UnPackSizePrefixedInteractionInputMapping(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::sessions::InteractionInputMappingT>(GetSizePrefixedInteractionInputMapping(buf)->UnPack(res));
 }
 
 }  // namespace sessions

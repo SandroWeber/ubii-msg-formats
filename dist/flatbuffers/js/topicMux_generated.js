@@ -48,6 +48,16 @@ ubii.devices.TopicMux.getRootAsTopicMux = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.devices.TopicMux=} obj
+ * @returns {ubii.devices.TopicMux}
+ */
+ubii.devices.TopicMux.getSizePrefixedRootAsTopicMux = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.devices.TopicMux).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -154,6 +164,14 @@ ubii.devices.TopicMux.endTopicMux = function(builder) {
  */
 ubii.devices.TopicMux.finishTopicMuxBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.devices.TopicMux.finishSizePrefixedTopicMuxBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

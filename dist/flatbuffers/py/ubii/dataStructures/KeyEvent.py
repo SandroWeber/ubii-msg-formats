@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class KeyEvent(object):
     __slots__ = ['_tab']
@@ -36,3 +38,41 @@ def KeyEventStart(builder): builder.StartObject(2)
 def KeyEventAddType(builder, type): builder.PrependInt8Slot(0, type, 0)
 def KeyEventAddKey(builder, key): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(key), 0)
 def KeyEventEnd(builder): return builder.EndObject()
+
+
+class KeyEventT(object):
+
+    # KeyEventT
+    def __init__(self):
+        self.type = 0  # type: int
+        self.key = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        keyEvent = KeyEvent()
+        keyEvent.Init(buf, pos)
+        return cls.InitFromObj(keyEvent)
+
+    @classmethod
+    def InitFromObj(cls, keyEvent):
+        x = KeyEventT()
+        x._UnPack(keyEvent)
+        return x
+
+    # KeyEventT
+    def _UnPack(self, keyEvent):
+        if keyEvent is None:
+            return
+        self.type = keyEvent.Type()
+        self.key = keyEvent.Key()
+
+    # KeyEventT
+    def Pack(self, builder):
+        if self.key is not None:
+            key = builder.CreateString(self.key)
+        KeyEventStart(builder)
+        KeyEventAddType(builder, self.type)
+        if self.key is not None:
+            KeyEventAddKey(builder, key)
+        keyEvent = KeyEventEnd(builder)
+        return keyEvent

@@ -3,6 +3,8 @@
 # namespace: clients
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Client(object):
     __slots__ = ['_tab']
@@ -48,6 +50,11 @@ class Client(object):
         return 0
 
     # Client
+    def TagsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        return o == 0
+
+    # Client
     def Description(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
@@ -69,6 +76,11 @@ class Client(object):
             return self._tab.VectorLen(o)
         return 0
 
+    # Client
+    def DevicesIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
+        return o == 0
+
 def ClientStart(builder): builder.StartObject(5)
 def ClientAddId(builder, id): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(id), 0)
 def ClientAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
@@ -78,3 +90,84 @@ def ClientAddDescription(builder, description): builder.PrependUOffsetTRelativeS
 def ClientAddDevices(builder, devices): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(devices), 0)
 def ClientStartDevicesVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def ClientEnd(builder): return builder.EndObject()
+
+try:
+    from typing import List
+except:
+    pass
+
+class ClientT(object):
+
+    # ClientT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.tags = None  # type: List[str]
+        self.description = None  # type: str
+        self.devices = None  # type: List[str]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        client = Client()
+        client.Init(buf, pos)
+        return cls.InitFromObj(client)
+
+    @classmethod
+    def InitFromObj(cls, client):
+        x = ClientT()
+        x._UnPack(client)
+        return x
+
+    # ClientT
+    def _UnPack(self, client):
+        if client is None:
+            return
+        self.id = client.Id()
+        self.name = client.Name()
+        if not client.TagsIsNone():
+            self.tags = []
+            for i in range(client.TagsLength()):
+                self.tags.append(client.Tags(i))
+        self.description = client.Description()
+        if not client.DevicesIsNone():
+            self.devices = []
+            for i in range(client.DevicesLength()):
+                self.devices.append(client.Devices(i))
+
+    # ClientT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.tags is not None:
+            tagslist = []
+            for i in range(len(self.tags)):
+                tagslist.append(builder.CreateString(self.tags[i]))
+            ClientStartTagsVector(builder, len(self.tags))
+            for i in reversed(range(len(self.tags))):
+                builder.PrependUOffsetTRelative(tagslist[i])
+            tags = builder.EndVector(len(self.tags))
+        if self.description is not None:
+            description = builder.CreateString(self.description)
+        if self.devices is not None:
+            deviceslist = []
+            for i in range(len(self.devices)):
+                deviceslist.append(builder.CreateString(self.devices[i]))
+            ClientStartDevicesVector(builder, len(self.devices))
+            for i in reversed(range(len(self.devices))):
+                builder.PrependUOffsetTRelative(deviceslist[i])
+            devices = builder.EndVector(len(self.devices))
+        ClientStart(builder)
+        if self.id is not None:
+            ClientAddId(builder, id)
+        if self.name is not None:
+            ClientAddName(builder, name)
+        if self.tags is not None:
+            ClientAddTags(builder, tags)
+        if self.description is not None:
+            ClientAddDescription(builder, description)
+        if self.devices is not None:
+            ClientAddDevices(builder, devices)
+        client = ClientEnd(builder)
+        return client

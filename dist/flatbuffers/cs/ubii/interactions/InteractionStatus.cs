@@ -7,10 +7,10 @@ namespace ubii.interactions
 
 public enum InteractionStatus : sbyte
 {
- CREATED = 0,
- INITIALIZED = 1,
- PROCESSING = 2,
- HALTED = 3,
+  CREATED = 0,
+  INITIALIZED = 1,
+  PROCESSING = 2,
+  HALTED = 3,
 };
 
 

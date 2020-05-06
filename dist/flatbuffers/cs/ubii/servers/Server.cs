@@ -6,82 +6,84 @@ namespace ubii.servers
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Server : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Server GetRootAsServer(ByteBuffer _bb) { return GetRootAsServer(_bb, new Server()); }
   public static Server GetRootAsServer(ByteBuffer _bb, Server obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Server __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Id { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetIdArray() { return __p.__vector_as_array<byte>(4); }
   public string Name { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(6); }
   public string IpEthernet { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIpEthernetBytes() { return __p.__vector_as_span(8); }
+  public Span<byte> GetIpEthernetBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
   public ArraySegment<byte>? GetIpEthernetBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
   public byte[] GetIpEthernetArray() { return __p.__vector_as_array<byte>(8); }
   public string IpWlan { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIpWlanBytes() { return __p.__vector_as_span(10); }
+  public Span<byte> GetIpWlanBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
   public ArraySegment<byte>? GetIpWlanBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetIpWlanArray() { return __p.__vector_as_array<byte>(10); }
   public string PortServiceZmq { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPortServiceZmqBytes() { return __p.__vector_as_span(12); }
+  public Span<byte> GetPortServiceZmqBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
   public ArraySegment<byte>? GetPortServiceZmqBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetPortServiceZmqArray() { return __p.__vector_as_array<byte>(12); }
   public string PortServiceRest { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPortServiceRestBytes() { return __p.__vector_as_span(14); }
+  public Span<byte> GetPortServiceRestBytes() { return __p.__vector_as_span<byte>(14, 1); }
 #else
   public ArraySegment<byte>? GetPortServiceRestBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetPortServiceRestArray() { return __p.__vector_as_array<byte>(14); }
   public string PortTopicDataZmq { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPortTopicDataZmqBytes() { return __p.__vector_as_span(16); }
+  public Span<byte> GetPortTopicDataZmqBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
   public ArraySegment<byte>? GetPortTopicDataZmqBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
   public byte[] GetPortTopicDataZmqArray() { return __p.__vector_as_array<byte>(16); }
   public string PortTopicDataWs { get { int o = __p.__offset(18); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetPortTopicDataWsBytes() { return __p.__vector_as_span(18); }
+  public Span<byte> GetPortTopicDataWsBytes() { return __p.__vector_as_span<byte>(18, 1); }
 #else
   public ArraySegment<byte>? GetPortTopicDataWsBytes() { return __p.__vector_as_arraysegment(18); }
 #endif
   public byte[] GetPortTopicDataWsArray() { return __p.__vector_as_array<byte>(18); }
   public string ConstantsJson { get { int o = __p.__offset(20); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetConstantsJsonBytes() { return __p.__vector_as_span(20); }
+  public Span<byte> GetConstantsJsonBytes() { return __p.__vector_as_span<byte>(20, 1); }
 #else
   public ArraySegment<byte>? GetConstantsJsonBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
   public byte[] GetConstantsJsonArray() { return __p.__vector_as_array<byte>(20); }
 
-  public static Offset<Server> CreateServer(FlatBufferBuilder builder,
+  public static Offset<ubii.servers.Server> CreateServer(FlatBufferBuilder builder,
       StringOffset idOffset = default(StringOffset),
       StringOffset nameOffset = default(StringOffset),
       StringOffset ip_ethernetOffset = default(StringOffset),
@@ -91,7 +93,7 @@ public struct Server : IFlatbufferObject
       StringOffset port_topic_data_zmqOffset = default(StringOffset),
       StringOffset port_topic_data_wsOffset = default(StringOffset),
       StringOffset constants_jsonOffset = default(StringOffset)) {
-    builder.StartObject(9);
+    builder.StartTable(9);
     Server.AddConstantsJson(builder, constants_jsonOffset);
     Server.AddPortTopicDataWs(builder, port_topic_data_wsOffset);
     Server.AddPortTopicDataZmq(builder, port_topic_data_zmqOffset);
@@ -104,7 +106,7 @@ public struct Server : IFlatbufferObject
     return Server.EndServer(builder);
   }
 
-  public static void StartServer(FlatBufferBuilder builder) { builder.StartObject(9); }
+  public static void StartServer(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddId(FlatBufferBuilder builder, StringOffset idOffset) { builder.AddOffset(0, idOffset.Value, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddIpEthernet(FlatBufferBuilder builder, StringOffset ipEthernetOffset) { builder.AddOffset(2, ipEthernetOffset.Value, 0); }
@@ -114,13 +116,85 @@ public struct Server : IFlatbufferObject
   public static void AddPortTopicDataZmq(FlatBufferBuilder builder, StringOffset portTopicDataZmqOffset) { builder.AddOffset(6, portTopicDataZmqOffset.Value, 0); }
   public static void AddPortTopicDataWs(FlatBufferBuilder builder, StringOffset portTopicDataWsOffset) { builder.AddOffset(7, portTopicDataWsOffset.Value, 0); }
   public static void AddConstantsJson(FlatBufferBuilder builder, StringOffset constantsJsonOffset) { builder.AddOffset(8, constantsJsonOffset.Value, 0); }
-  public static Offset<Server> EndServer(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Server>(o);
+  public static Offset<ubii.servers.Server> EndServer(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.servers.Server>(o);
   }
-  public static void FinishServerBuffer(FlatBufferBuilder builder, Offset<Server> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedServerBuffer(FlatBufferBuilder builder, Offset<Server> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishServerBuffer(FlatBufferBuilder builder, Offset<ubii.servers.Server> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedServerBuffer(FlatBufferBuilder builder, Offset<ubii.servers.Server> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ServerT UnPack() {
+    var _o = new ServerT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ServerT _o) {
+    _o.Id = this.Id;
+    _o.Name = this.Name;
+    _o.IpEthernet = this.IpEthernet;
+    _o.IpWlan = this.IpWlan;
+    _o.PortServiceZmq = this.PortServiceZmq;
+    _o.PortServiceRest = this.PortServiceRest;
+    _o.PortTopicDataZmq = this.PortTopicDataZmq;
+    _o.PortTopicDataWs = this.PortTopicDataWs;
+    _o.ConstantsJson = this.ConstantsJson;
+  }
+  public static Offset<ubii.servers.Server> Pack(FlatBufferBuilder builder, ServerT _o) {
+    if (_o == null) return default(Offset<ubii.servers.Server>);
+    var _id = _o.Id == null ? default(StringOffset) : builder.CreateString(_o.Id);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _ip_ethernet = _o.IpEthernet == null ? default(StringOffset) : builder.CreateString(_o.IpEthernet);
+    var _ip_wlan = _o.IpWlan == null ? default(StringOffset) : builder.CreateString(_o.IpWlan);
+    var _port_service_zmq = _o.PortServiceZmq == null ? default(StringOffset) : builder.CreateString(_o.PortServiceZmq);
+    var _port_service_rest = _o.PortServiceRest == null ? default(StringOffset) : builder.CreateString(_o.PortServiceRest);
+    var _port_topic_data_zmq = _o.PortTopicDataZmq == null ? default(StringOffset) : builder.CreateString(_o.PortTopicDataZmq);
+    var _port_topic_data_ws = _o.PortTopicDataWs == null ? default(StringOffset) : builder.CreateString(_o.PortTopicDataWs);
+    var _constants_json = _o.ConstantsJson == null ? default(StringOffset) : builder.CreateString(_o.ConstantsJson);
+    return CreateServer(
+      builder,
+      _id,
+      _name,
+      _ip_ethernet,
+      _ip_wlan,
+      _port_service_zmq,
+      _port_service_rest,
+      _port_topic_data_zmq,
+      _port_topic_data_ws,
+      _constants_json);
+  }
 };
+
+public class ServerT
+{
+  public string Id { get; set; }
+  public string Name { get; set; }
+  public string IpEthernet { get; set; }
+  public string IpWlan { get; set; }
+  public string PortServiceZmq { get; set; }
+  public string PortServiceRest { get; set; }
+  public string PortTopicDataZmq { get; set; }
+  public string PortTopicDataWs { get; set; }
+  public string ConstantsJson { get; set; }
+
+  public ServerT() {
+    this.Id = null;
+    this.Name = null;
+    this.IpEthernet = null;
+    this.IpWlan = null;
+    this.PortServiceZmq = null;
+    this.PortServiceRest = null;
+    this.PortTopicDataZmq = null;
+    this.PortTopicDataWs = null;
+    this.ConstantsJson = null;
+  }
+  public static ServerT DeserializeFromBinary(byte[] fbBuffer) {
+    return Server.GetRootAsServer(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Server.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

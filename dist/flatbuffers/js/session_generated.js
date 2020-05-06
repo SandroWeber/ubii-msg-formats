@@ -36,8 +36,8 @@ ubii.sessions.ProcessMode = {
  * @enum {string}
  */
 ubii.sessions.ProcessModeName = {
-  0: 'CYCLE_INTERACTIONS',
-  1: 'INDIVIDUAL_PROCESS_FREQUENCIES'
+  '0': 'CYCLE_INTERACTIONS',
+  '1': 'INDIVIDUAL_PROCESS_FREQUENCIES'
 };
 
 /**
@@ -54,10 +54,10 @@ ubii.sessions.SessionStatus = {
  * @enum {string}
  */
 ubii.sessions.SessionStatusName = {
-  0: 'CREATED',
-  1: 'RUNNING',
-  2: 'PAUSED',
-  3: 'STOPPED'
+  '0': 'CREATED',
+  '1': 'RUNNING',
+  '2': 'PAUSED',
+  '3': 'STOPPED'
 };
 
 /**
@@ -92,6 +92,16 @@ ubii.sessions.Session.prototype.__init = function(i, bb) {
  * @returns {ubii.sessions.Session}
  */
 ubii.sessions.Session.getRootAsSession = function(bb, obj) {
+  return (obj || new ubii.sessions.Session).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.sessions.Session=} obj
+ * @returns {ubii.sessions.Session}
+ */
+ubii.sessions.Session.getSizePrefixedRootAsSession = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.sessions.Session).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -388,6 +398,14 @@ ubii.sessions.Session.endSession = function(builder) {
  */
 ubii.sessions.Session.finishSessionBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.sessions.Session.finishSizePrefixedSessionBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

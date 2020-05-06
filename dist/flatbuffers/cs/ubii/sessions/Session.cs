@@ -6,27 +6,29 @@ namespace ubii.sessions
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Session : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Session GetRootAsSession(ByteBuffer _bb) { return GetRootAsSession(_bb, new Session()); }
   public static Session GetRootAsSession(ByteBuffer _bb, Session obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Session __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Id { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetIdArray() { return __p.__vector_as_array<byte>(4); }
   public string Name { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
@@ -37,29 +39,29 @@ public struct Session : IFlatbufferObject
   public int TagsLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string Description { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span(12); }
+  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
   public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetDescriptionArray() { return __p.__vector_as_array<byte>(12); }
-  public ProcessMode ProcessMode { get { int o = __p.__offset(14); return o != 0 ? (ProcessMode)__p.bb.GetSbyte(o + __p.bb_pos) : ProcessMode.CYCLE_INTERACTIONS; } }
-  public SessionStatus Status { get { int o = __p.__offset(16); return o != 0 ? (SessionStatus)__p.bb.GetSbyte(o + __p.bb_pos) : SessionStatus.CREATED; } }
+  public ubii.sessions.ProcessMode ProcessMode { get { int o = __p.__offset(14); return o != 0 ? (ubii.sessions.ProcessMode)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.sessions.ProcessMode.CYCLE_INTERACTIONS; } }
+  public ubii.sessions.SessionStatus Status { get { int o = __p.__offset(16); return o != 0 ? (ubii.sessions.SessionStatus)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.sessions.SessionStatus.CREATED; } }
   public ubii.interactions.Interaction? Interactions(int j) { int o = __p.__offset(18); return o != 0 ? (ubii.interactions.Interaction?)(new ubii.interactions.Interaction()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int InteractionsLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public IOMapping? IoMappings(int j) { int o = __p.__offset(20); return o != 0 ? (IOMapping?)(new IOMapping()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public ubii.sessions.IOMapping? IoMappings(int j) { int o = __p.__offset(20); return o != 0 ? (ubii.sessions.IOMapping?)(new ubii.sessions.IOMapping()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int IoMappingsLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
 
-  public static Offset<Session> CreateSession(FlatBufferBuilder builder,
+  public static Offset<ubii.sessions.Session> CreateSession(FlatBufferBuilder builder,
       StringOffset idOffset = default(StringOffset),
       StringOffset nameOffset = default(StringOffset),
       VectorOffset authorsOffset = default(VectorOffset),
       VectorOffset tagsOffset = default(VectorOffset),
       StringOffset descriptionOffset = default(StringOffset),
-      ProcessMode process_mode = ProcessMode.CYCLE_INTERACTIONS,
-      SessionStatus status = SessionStatus.CREATED,
+      ubii.sessions.ProcessMode process_mode = ubii.sessions.ProcessMode.CYCLE_INTERACTIONS,
+      ubii.sessions.SessionStatus status = ubii.sessions.SessionStatus.CREATED,
       VectorOffset interactionsOffset = default(VectorOffset),
       VectorOffset io_mappingsOffset = default(VectorOffset)) {
-    builder.StartObject(9);
+    builder.StartTable(9);
     Session.AddIoMappings(builder, io_mappingsOffset);
     Session.AddInteractions(builder, interactionsOffset);
     Session.AddDescription(builder, descriptionOffset);
@@ -72,7 +74,7 @@ public struct Session : IFlatbufferObject
     return Session.EndSession(builder);
   }
 
-  public static void StartSession(FlatBufferBuilder builder) { builder.StartObject(9); }
+  public static void StartSession(FlatBufferBuilder builder) { builder.StartTable(9); }
   public static void AddId(FlatBufferBuilder builder, StringOffset idOffset) { builder.AddOffset(0, idOffset.Value, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddAuthors(FlatBufferBuilder builder, VectorOffset authorsOffset) { builder.AddOffset(2, authorsOffset.Value, 0); }
@@ -84,23 +86,117 @@ public struct Session : IFlatbufferObject
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddDescription(FlatBufferBuilder builder, StringOffset descriptionOffset) { builder.AddOffset(4, descriptionOffset.Value, 0); }
-  public static void AddProcessMode(FlatBufferBuilder builder, ProcessMode processMode) { builder.AddSbyte(5, (sbyte)processMode, 0); }
-  public static void AddStatus(FlatBufferBuilder builder, SessionStatus status) { builder.AddSbyte(6, (sbyte)status, 0); }
+  public static void AddProcessMode(FlatBufferBuilder builder, ubii.sessions.ProcessMode processMode) { builder.AddSbyte(5, (sbyte)processMode, 0); }
+  public static void AddStatus(FlatBufferBuilder builder, ubii.sessions.SessionStatus status) { builder.AddSbyte(6, (sbyte)status, 0); }
   public static void AddInteractions(FlatBufferBuilder builder, VectorOffset interactionsOffset) { builder.AddOffset(7, interactionsOffset.Value, 0); }
   public static VectorOffset CreateInteractionsVector(FlatBufferBuilder builder, Offset<ubii.interactions.Interaction>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateInteractionsVectorBlock(FlatBufferBuilder builder, Offset<ubii.interactions.Interaction>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartInteractionsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddIoMappings(FlatBufferBuilder builder, VectorOffset ioMappingsOffset) { builder.AddOffset(8, ioMappingsOffset.Value, 0); }
-  public static VectorOffset CreateIoMappingsVector(FlatBufferBuilder builder, Offset<IOMapping>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateIoMappingsVectorBlock(FlatBufferBuilder builder, Offset<IOMapping>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateIoMappingsVector(FlatBufferBuilder builder, Offset<ubii.sessions.IOMapping>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateIoMappingsVectorBlock(FlatBufferBuilder builder, Offset<ubii.sessions.IOMapping>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartIoMappingsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static Offset<Session> EndSession(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Session>(o);
+  public static Offset<ubii.sessions.Session> EndSession(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.sessions.Session>(o);
   }
-  public static void FinishSessionBuffer(FlatBufferBuilder builder, Offset<Session> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedSessionBuffer(FlatBufferBuilder builder, Offset<Session> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishSessionBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.Session> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedSessionBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.Session> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public SessionT UnPack() {
+    var _o = new SessionT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(SessionT _o) {
+    _o.Id = this.Id;
+    _o.Name = this.Name;
+    _o.Authors = new List<string>();
+    for (var _j = 0; _j < this.AuthorsLength; ++_j) {_o.Authors.Add(this.Authors(_j));}
+    _o.Tags = new List<string>();
+    for (var _j = 0; _j < this.TagsLength; ++_j) {_o.Tags.Add(this.Tags(_j));}
+    _o.Description = this.Description;
+    _o.ProcessMode = this.ProcessMode;
+    _o.Status = this.Status;
+    _o.Interactions = new List<ubii.interactions.InteractionT>();
+    for (var _j = 0; _j < this.InteractionsLength; ++_j) {_o.Interactions.Add(this.Interactions(_j).HasValue ? this.Interactions(_j).Value.UnPack() : null);}
+    _o.IoMappings = new List<ubii.sessions.IOMappingT>();
+    for (var _j = 0; _j < this.IoMappingsLength; ++_j) {_o.IoMappings.Add(this.IoMappings(_j).HasValue ? this.IoMappings(_j).Value.UnPack() : null);}
+  }
+  public static Offset<ubii.sessions.Session> Pack(FlatBufferBuilder builder, SessionT _o) {
+    if (_o == null) return default(Offset<ubii.sessions.Session>);
+    var _id = _o.Id == null ? default(StringOffset) : builder.CreateString(_o.Id);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _authors = default(VectorOffset);
+    if (_o.Authors != null) {
+      var __authors = new StringOffset[_o.Authors.Count];
+      for (var _j = 0; _j < __authors.Length; ++_j) { __authors[_j] = builder.CreateString(_o.Authors[_j]); }
+      _authors = CreateAuthorsVector(builder, __authors);
+    }
+    var _tags = default(VectorOffset);
+    if (_o.Tags != null) {
+      var __tags = new StringOffset[_o.Tags.Count];
+      for (var _j = 0; _j < __tags.Length; ++_j) { __tags[_j] = builder.CreateString(_o.Tags[_j]); }
+      _tags = CreateTagsVector(builder, __tags);
+    }
+    var _description = _o.Description == null ? default(StringOffset) : builder.CreateString(_o.Description);
+    var _interactions = default(VectorOffset);
+    if (_o.Interactions != null) {
+      var __interactions = new Offset<ubii.interactions.Interaction>[_o.Interactions.Count];
+      for (var _j = 0; _j < __interactions.Length; ++_j) { __interactions[_j] = ubii.interactions.Interaction.Pack(builder, _o.Interactions[_j]); }
+      _interactions = CreateInteractionsVector(builder, __interactions);
+    }
+    var _io_mappings = default(VectorOffset);
+    if (_o.IoMappings != null) {
+      var __io_mappings = new Offset<ubii.sessions.IOMapping>[_o.IoMappings.Count];
+      for (var _j = 0; _j < __io_mappings.Length; ++_j) { __io_mappings[_j] = ubii.sessions.IOMapping.Pack(builder, _o.IoMappings[_j]); }
+      _io_mappings = CreateIoMappingsVector(builder, __io_mappings);
+    }
+    return CreateSession(
+      builder,
+      _id,
+      _name,
+      _authors,
+      _tags,
+      _description,
+      _o.ProcessMode,
+      _o.Status,
+      _interactions,
+      _io_mappings);
+  }
 };
+
+public class SessionT
+{
+  public string Id { get; set; }
+  public string Name { get; set; }
+  public List<string> Authors { get; set; }
+  public List<string> Tags { get; set; }
+  public string Description { get; set; }
+  public ubii.sessions.ProcessMode ProcessMode { get; set; }
+  public ubii.sessions.SessionStatus Status { get; set; }
+  public List<ubii.interactions.InteractionT> Interactions { get; set; }
+  public List<ubii.sessions.IOMappingT> IoMappings { get; set; }
+
+  public SessionT() {
+    this.Id = null;
+    this.Name = null;
+    this.Authors = null;
+    this.Tags = null;
+    this.Description = null;
+    this.ProcessMode = ubii.sessions.ProcessMode.CYCLE_INTERACTIONS;
+    this.Status = ubii.sessions.SessionStatus.CREATED;
+    this.Interactions = null;
+    this.IoMappings = null;
+  }
+  public static SessionT DeserializeFromBinary(byte[] fbBuffer) {
+    return Session.GetRootAsSession(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Session.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

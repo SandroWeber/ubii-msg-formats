@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Quaternion(object):
     __slots__ = ['_tab']
@@ -27,3 +29,38 @@ def CreateQuaternion(builder, x, y, z, w):
     builder.PrependFloat32(y)
     builder.PrependFloat32(x)
     return builder.Offset()
+
+
+class QuaternionT(object):
+
+    # QuaternionT
+    def __init__(self):
+        self.x = 0.0  # type: float
+        self.y = 0.0  # type: float
+        self.z = 0.0  # type: float
+        self.w = 0.0  # type: float
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        quaternion = Quaternion()
+        quaternion.Init(buf, pos)
+        return cls.InitFromObj(quaternion)
+
+    @classmethod
+    def InitFromObj(cls, quaternion):
+        x = QuaternionT()
+        x._UnPack(quaternion)
+        return x
+
+    # QuaternionT
+    def _UnPack(self, quaternion):
+        if quaternion is None:
+            return
+        self.x = quaternion.X()
+        self.y = quaternion.Y()
+        self.z = quaternion.Z()
+        self.w = quaternion.W()
+
+    # QuaternionT
+    def Pack(self, builder):
+        return CreateQuaternion(builder, self.x, self.y, self.z, self.w)

@@ -48,6 +48,16 @@ ubii.dataStructures.MouseEvent.getRootAsMouseEvent = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.MouseEvent=} obj
+ * @returns {ubii.dataStructures.MouseEvent}
+ */
+ubii.dataStructures.MouseEvent.getSizePrefixedRootAsMouseEvent = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.MouseEvent).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @returns {ubii.dataStructures.ButtonEventType}
  */
 ubii.dataStructures.MouseEvent.prototype.type = function() {
@@ -101,6 +111,14 @@ ubii.dataStructures.MouseEvent.endMouseEvent = function(builder) {
  */
 ubii.dataStructures.MouseEvent.finishMouseEventBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.MouseEvent.finishSizePrefixedMouseEventBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

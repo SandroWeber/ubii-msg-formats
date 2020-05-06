@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Orientation3D(object):
     __slots__ = ['_tab']
@@ -23,7 +25,7 @@ class Orientation3D(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             x = o + self._tab.Pos
-            from .Quaternion import Quaternion
+            from ubii.dataStructures.Quaternion import Quaternion
             obj = Quaternion()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -34,7 +36,7 @@ class Orientation3D(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             x = o + self._tab.Pos
-            from .Vector3 import Vector3
+            from ubii.dataStructures.Vector3 import Vector3
             obj = Vector3()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -44,3 +46,50 @@ def Orientation3DStart(builder): builder.StartObject(2)
 def Orientation3DAddQuaternion(builder, quaternion): builder.PrependStructSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(quaternion), 0)
 def Orientation3DAddEuler(builder, euler): builder.PrependStructSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(euler), 0)
 def Orientation3DEnd(builder): return builder.EndObject()
+
+import ubii.dataStructures.Quaternion
+import ubii.dataStructures.Vector3
+try:
+    from typing import Optional
+except:
+    pass
+
+class Orientation3DT(object):
+
+    # Orientation3DT
+    def __init__(self):
+        self.quaternion = None  # type: Optional[ubii.dataStructures.Quaternion.QuaternionT]
+        self.euler = None  # type: Optional[ubii.dataStructures.Vector3.Vector3T]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        orientation3D = Orientation3D()
+        orientation3D.Init(buf, pos)
+        return cls.InitFromObj(orientation3D)
+
+    @classmethod
+    def InitFromObj(cls, orientation3D):
+        x = Orientation3DT()
+        x._UnPack(orientation3D)
+        return x
+
+    # Orientation3DT
+    def _UnPack(self, orientation3D):
+        if orientation3D is None:
+            return
+        if orientation3D.Quaternion() is not None:
+            self.quaternion = ubii.dataStructures.Quaternion.QuaternionT.InitFromObj(orientation3D.Quaternion())
+        if orientation3D.Euler() is not None:
+            self.euler = ubii.dataStructures.Vector3.Vector3T.InitFromObj(orientation3D.Euler())
+
+    # Orientation3DT
+    def Pack(self, builder):
+        Orientation3DStart(builder)
+        if self.quaternion is not None:
+            quaternion = self.quaternion.Pack(builder)
+            Orientation3DAddQuaternion(builder, quaternion)
+        if self.euler is not None:
+            euler = self.euler.Pack(builder)
+            Orientation3DAddEuler(builder, euler)
+        orientation3D = Orientation3DEnd(builder)
+        return orientation3D

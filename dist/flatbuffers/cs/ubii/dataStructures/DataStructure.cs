@@ -6,29 +6,31 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct DataStructure : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static DataStructure GetRootAsDataStructure(ByteBuffer _bb) { return GetRootAsDataStructure(_bb, new DataStructure()); }
   public static DataStructure GetRootAsDataStructure(ByteBuffer _bb, DataStructure obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public DataStructure __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public bool Bool { get { int o = __p.__offset(4); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool BoolList(int j) { int o = __p.__offset(6); return o != 0 ? 0!=__p.bb.Get(__p.__vector(o) + j * 1) : false; }
   public int BoolListLength { get { int o = __p.__offset(6); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetBoolListBytes() { return __p.__vector_as_span(6); }
+  public Span<bool> GetBoolListBytes() { return __p.__vector_as_span<bool>(6, 1); }
 #else
   public ArraySegment<byte>? GetBoolListBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public bool[] GetBoolListArray() { return __p.__vector_as_array<bool>(6); }
   public string String { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStringBytes() { return __p.__vector_as_span(8); }
+  public Span<byte> GetStringBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
   public ArraySegment<byte>? GetStringBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
@@ -40,7 +42,7 @@ public struct DataStructure : IFlatbufferObject
   public int Int32List(int j) { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(__p.__vector(o) + j * 4) : (int)0; }
   public int Int32ListLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetInt32ListBytes() { return __p.__vector_as_span(16); }
+  public Span<int> GetInt32ListBytes() { return __p.__vector_as_span<int>(16, 4); }
 #else
   public ArraySegment<byte>? GetInt32ListBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
@@ -49,7 +51,7 @@ public struct DataStructure : IFlatbufferObject
   public float FloatList(int j) { int o = __p.__offset(20); return o != 0 ? __p.bb.GetFloat(__p.__vector(o) + j * 4) : (float)0; }
   public int FloatListLength { get { int o = __p.__offset(20); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetFloatListBytes() { return __p.__vector_as_span(20); }
+  public Span<float> GetFloatListBytes() { return __p.__vector_as_span<float>(20, 4); }
 #else
   public ArraySegment<byte>? GetFloatListBytes() { return __p.__vector_as_arraysegment(20); }
 #endif
@@ -58,37 +60,37 @@ public struct DataStructure : IFlatbufferObject
   public double DoubleList(int j) { int o = __p.__offset(24); return o != 0 ? __p.bb.GetDouble(__p.__vector(o) + j * 8) : (double)0; }
   public int DoubleListLength { get { int o = __p.__offset(24); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDoubleListBytes() { return __p.__vector_as_span(24); }
+  public Span<double> GetDoubleListBytes() { return __p.__vector_as_span<double>(24, 8); }
 #else
   public ArraySegment<byte>? GetDoubleListBytes() { return __p.__vector_as_arraysegment(24); }
 #endif
   public double[] GetDoubleListArray() { return __p.__vector_as_array<double>(24); }
-  public Vector2? Vector2 { get { int o = __p.__offset(26); return o != 0 ? (Vector2?)(new Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Vector3? Vector3 { get { int o = __p.__offset(28); return o != 0 ? (Vector3?)(new Vector3()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Vector4? Vector4 { get { int o = __p.__offset(30); return o != 0 ? (Vector4?)(new Vector4()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Quaternion? Quaternion { get { int o = __p.__offset(32); return o != 0 ? (Quaternion?)(new Quaternion()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Matrix3x2? Matrix3x2 { get { int o = __p.__offset(34); return o != 0 ? (Matrix3x2?)(new Matrix3x2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Matrix4x4? Matrix4x4 { get { int o = __p.__offset(36); return o != 0 ? (Matrix4x4?)(new Matrix4x4()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Color? Color { get { int o = __p.__offset(38); return o != 0 ? (Color?)(new Color()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public TouchEvent? TouchEvent { get { int o = __p.__offset(40); return o != 0 ? (TouchEvent?)(new TouchEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public KeyEvent? KeyEvent { get { int o = __p.__offset(42); return o != 0 ? (KeyEvent?)(new KeyEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public MouseEvent? MouseEvent { get { int o = __p.__offset(44); return o != 0 ? (MouseEvent?)(new MouseEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public MyoEvent? MyoEvent { get { int o = __p.__offset(46); return o != 0 ? (MyoEvent?)(new MyoEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public Pose2D? Pose2D { get { int o = __p.__offset(48); return o != 0 ? (Pose2D?)(new Pose2D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public Pose3D? Pose3D { get { int o = __p.__offset(50); return o != 0 ? (Pose3D?)(new Pose3D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public Object2D? Object2D { get { int o = __p.__offset(52); return o != 0 ? (Object2D?)(new Object2D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public Object3D? Object3D { get { int o = __p.__offset(54); return o != 0 ? (Object3D?)(new Object3D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public Object2D? Object2DList(int j) { int o = __p.__offset(56); return o != 0 ? (Object2D?)(new Object2D()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public ubii.dataStructures.Vector2? Vector2 { get { int o = __p.__offset(26); return o != 0 ? (ubii.dataStructures.Vector2?)(new ubii.dataStructures.Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Vector3? Vector3 { get { int o = __p.__offset(28); return o != 0 ? (ubii.dataStructures.Vector3?)(new ubii.dataStructures.Vector3()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Vector4? Vector4 { get { int o = __p.__offset(30); return o != 0 ? (ubii.dataStructures.Vector4?)(new ubii.dataStructures.Vector4()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Quaternion? Quaternion { get { int o = __p.__offset(32); return o != 0 ? (ubii.dataStructures.Quaternion?)(new ubii.dataStructures.Quaternion()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Matrix3x2? Matrix3x2 { get { int o = __p.__offset(34); return o != 0 ? (ubii.dataStructures.Matrix3x2?)(new ubii.dataStructures.Matrix3x2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Matrix4x4? Matrix4x4 { get { int o = __p.__offset(36); return o != 0 ? (ubii.dataStructures.Matrix4x4?)(new ubii.dataStructures.Matrix4x4()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Color? Color { get { int o = __p.__offset(38); return o != 0 ? (ubii.dataStructures.Color?)(new ubii.dataStructures.Color()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.TouchEvent? TouchEvent { get { int o = __p.__offset(40); return o != 0 ? (ubii.dataStructures.TouchEvent?)(new ubii.dataStructures.TouchEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.KeyEvent? KeyEvent { get { int o = __p.__offset(42); return o != 0 ? (ubii.dataStructures.KeyEvent?)(new ubii.dataStructures.KeyEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.MouseEvent? MouseEvent { get { int o = __p.__offset(44); return o != 0 ? (ubii.dataStructures.MouseEvent?)(new ubii.dataStructures.MouseEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.MyoEvent? MyoEvent { get { int o = __p.__offset(46); return o != 0 ? (ubii.dataStructures.MyoEvent?)(new ubii.dataStructures.MyoEvent()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Pose2D? Pose2D { get { int o = __p.__offset(48); return o != 0 ? (ubii.dataStructures.Pose2D?)(new ubii.dataStructures.Pose2D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Pose3D? Pose3D { get { int o = __p.__offset(50); return o != 0 ? (ubii.dataStructures.Pose3D?)(new ubii.dataStructures.Pose3D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Object2D? Object2D { get { int o = __p.__offset(52); return o != 0 ? (ubii.dataStructures.Object2D?)(new ubii.dataStructures.Object2D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Object3D? Object3D { get { int o = __p.__offset(54); return o != 0 ? (ubii.dataStructures.Object3D?)(new ubii.dataStructures.Object3D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Object2D? Object2DList(int j) { int o = __p.__offset(56); return o != 0 ? (ubii.dataStructures.Object2D?)(new ubii.dataStructures.Object2D()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int Object2DListLength { get { int o = __p.__offset(56); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public Object3D? Object3DList(int j) { int o = __p.__offset(58); return o != 0 ? (Object3D?)(new Object3D()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public ubii.dataStructures.Object3D? Object3DList(int j) { int o = __p.__offset(58); return o != 0 ? (ubii.dataStructures.Object3D?)(new ubii.dataStructures.Object3D()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int Object3DListLength { get { int o = __p.__offset(58); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public Image2D? Image2D { get { int o = __p.__offset(60); return o != 0 ? (Image2D?)(new Image2D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public Image2D? Image2DList(int j) { int o = __p.__offset(62); return o != 0 ? (Image2D?)(new Image2D()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public ubii.dataStructures.Image2D? Image2D { get { int o = __p.__offset(60); return o != 0 ? (ubii.dataStructures.Image2D?)(new ubii.dataStructures.Image2D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Image2D? Image2DList(int j) { int o = __p.__offset(62); return o != 0 ? (ubii.dataStructures.Image2D?)(new ubii.dataStructures.Image2D()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int Image2DListLength { get { int o = __p.__offset(62); return o != 0 ? __p.__vector_len(o) : 0; } }
   public ubii.sessions.Session? Session { get { int o = __p.__offset(64); return o != 0 ? (ubii.sessions.Session?)(new ubii.sessions.Session()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
   public ubii.interactions.Interaction? Interaction { get { int o = __p.__offset(66); return o != 0 ? (ubii.interactions.Interaction?)(new ubii.interactions.Interaction()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
-  public static void StartDataStructure(FlatBufferBuilder builder) { builder.StartObject(32); }
+  public static void StartDataStructure(FlatBufferBuilder builder) { builder.StartTable(32); }
   public static void AddBool(FlatBufferBuilder builder, bool bool) { builder.AddBool(0, bool, false); }
   public static void AddBoolList(FlatBufferBuilder builder, VectorOffset boolListOffset) { builder.AddOffset(1, boolListOffset.Value, 0); }
   public static VectorOffset CreateBoolListVector(FlatBufferBuilder builder, bool[] data) { builder.StartVector(1, data.Length, 1); for (int i = data.Length - 1; i >= 0; i--) builder.AddBool(data[i]); return builder.EndVector(); }
@@ -115,43 +117,262 @@ public struct DataStructure : IFlatbufferObject
   public static VectorOffset CreateDoubleListVector(FlatBufferBuilder builder, double[] data) { builder.StartVector(8, data.Length, 8); for (int i = data.Length - 1; i >= 0; i--) builder.AddDouble(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateDoubleListVectorBlock(FlatBufferBuilder builder, double[] data) { builder.StartVector(8, data.Length, 8); builder.Add(data); return builder.EndVector(); }
   public static void StartDoubleListVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddVector2(FlatBufferBuilder builder, Offset<Vector2> vector2Offset) { builder.AddStruct(11, vector2Offset.Value, 0); }
-  public static void AddVector3(FlatBufferBuilder builder, Offset<Vector3> vector3Offset) { builder.AddStruct(12, vector3Offset.Value, 0); }
-  public static void AddVector4(FlatBufferBuilder builder, Offset<Vector4> vector4Offset) { builder.AddStruct(13, vector4Offset.Value, 0); }
-  public static void AddQuaternion(FlatBufferBuilder builder, Offset<Quaternion> quaternionOffset) { builder.AddStruct(14, quaternionOffset.Value, 0); }
-  public static void AddMatrix3x2(FlatBufferBuilder builder, Offset<Matrix3x2> matrix3x2Offset) { builder.AddStruct(15, matrix3x2Offset.Value, 0); }
-  public static void AddMatrix4x4(FlatBufferBuilder builder, Offset<Matrix4x4> matrix4x4Offset) { builder.AddStruct(16, matrix4x4Offset.Value, 0); }
-  public static void AddColor(FlatBufferBuilder builder, Offset<Color> colorOffset) { builder.AddStruct(17, colorOffset.Value, 0); }
-  public static void AddTouchEvent(FlatBufferBuilder builder, Offset<TouchEvent> touchEventOffset) { builder.AddOffset(18, touchEventOffset.Value, 0); }
-  public static void AddKeyEvent(FlatBufferBuilder builder, Offset<KeyEvent> keyEventOffset) { builder.AddOffset(19, keyEventOffset.Value, 0); }
-  public static void AddMouseEvent(FlatBufferBuilder builder, Offset<MouseEvent> mouseEventOffset) { builder.AddOffset(20, mouseEventOffset.Value, 0); }
-  public static void AddMyoEvent(FlatBufferBuilder builder, Offset<MyoEvent> myoEventOffset) { builder.AddOffset(21, myoEventOffset.Value, 0); }
-  public static void AddPose2D(FlatBufferBuilder builder, Offset<Pose2D> pose2DOffset) { builder.AddOffset(22, pose2DOffset.Value, 0); }
-  public static void AddPose3D(FlatBufferBuilder builder, Offset<Pose3D> pose3DOffset) { builder.AddOffset(23, pose3DOffset.Value, 0); }
-  public static void AddObject2D(FlatBufferBuilder builder, Offset<Object2D> object2DOffset) { builder.AddOffset(24, object2DOffset.Value, 0); }
-  public static void AddObject3D(FlatBufferBuilder builder, Offset<Object3D> object3DOffset) { builder.AddOffset(25, object3DOffset.Value, 0); }
+  public static void AddVector2(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector2> vector2Offset) { builder.AddStruct(11, vector2Offset.Value, 0); }
+  public static void AddVector3(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector3> vector3Offset) { builder.AddStruct(12, vector3Offset.Value, 0); }
+  public static void AddVector4(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector4> vector4Offset) { builder.AddStruct(13, vector4Offset.Value, 0); }
+  public static void AddQuaternion(FlatBufferBuilder builder, Offset<ubii.dataStructures.Quaternion> quaternionOffset) { builder.AddStruct(14, quaternionOffset.Value, 0); }
+  public static void AddMatrix3x2(FlatBufferBuilder builder, Offset<ubii.dataStructures.Matrix3x2> matrix3x2Offset) { builder.AddStruct(15, matrix3x2Offset.Value, 0); }
+  public static void AddMatrix4x4(FlatBufferBuilder builder, Offset<ubii.dataStructures.Matrix4x4> matrix4x4Offset) { builder.AddStruct(16, matrix4x4Offset.Value, 0); }
+  public static void AddColor(FlatBufferBuilder builder, Offset<ubii.dataStructures.Color> colorOffset) { builder.AddStruct(17, colorOffset.Value, 0); }
+  public static void AddTouchEvent(FlatBufferBuilder builder, Offset<ubii.dataStructures.TouchEvent> touchEventOffset) { builder.AddOffset(18, touchEventOffset.Value, 0); }
+  public static void AddKeyEvent(FlatBufferBuilder builder, Offset<ubii.dataStructures.KeyEvent> keyEventOffset) { builder.AddOffset(19, keyEventOffset.Value, 0); }
+  public static void AddMouseEvent(FlatBufferBuilder builder, Offset<ubii.dataStructures.MouseEvent> mouseEventOffset) { builder.AddOffset(20, mouseEventOffset.Value, 0); }
+  public static void AddMyoEvent(FlatBufferBuilder builder, Offset<ubii.dataStructures.MyoEvent> myoEventOffset) { builder.AddOffset(21, myoEventOffset.Value, 0); }
+  public static void AddPose2D(FlatBufferBuilder builder, Offset<ubii.dataStructures.Pose2D> pose2DOffset) { builder.AddOffset(22, pose2DOffset.Value, 0); }
+  public static void AddPose3D(FlatBufferBuilder builder, Offset<ubii.dataStructures.Pose3D> pose3DOffset) { builder.AddOffset(23, pose3DOffset.Value, 0); }
+  public static void AddObject2D(FlatBufferBuilder builder, Offset<ubii.dataStructures.Object2D> object2DOffset) { builder.AddOffset(24, object2DOffset.Value, 0); }
+  public static void AddObject3D(FlatBufferBuilder builder, Offset<ubii.dataStructures.Object3D> object3DOffset) { builder.AddOffset(25, object3DOffset.Value, 0); }
   public static void AddObject2DList(FlatBufferBuilder builder, VectorOffset object2DListOffset) { builder.AddOffset(26, object2DListOffset.Value, 0); }
-  public static VectorOffset CreateObject2DListVector(FlatBufferBuilder builder, Offset<Object2D>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateObject2DListVectorBlock(FlatBufferBuilder builder, Offset<Object2D>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateObject2DListVector(FlatBufferBuilder builder, Offset<ubii.dataStructures.Object2D>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateObject2DListVectorBlock(FlatBufferBuilder builder, Offset<ubii.dataStructures.Object2D>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartObject2DListVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddObject3DList(FlatBufferBuilder builder, VectorOffset object3DListOffset) { builder.AddOffset(27, object3DListOffset.Value, 0); }
-  public static VectorOffset CreateObject3DListVector(FlatBufferBuilder builder, Offset<Object3D>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateObject3DListVectorBlock(FlatBufferBuilder builder, Offset<Object3D>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateObject3DListVector(FlatBufferBuilder builder, Offset<ubii.dataStructures.Object3D>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateObject3DListVectorBlock(FlatBufferBuilder builder, Offset<ubii.dataStructures.Object3D>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartObject3DListVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddImage2D(FlatBufferBuilder builder, Offset<Image2D> image2DOffset) { builder.AddOffset(28, image2DOffset.Value, 0); }
+  public static void AddImage2D(FlatBufferBuilder builder, Offset<ubii.dataStructures.Image2D> image2DOffset) { builder.AddOffset(28, image2DOffset.Value, 0); }
   public static void AddImage2DList(FlatBufferBuilder builder, VectorOffset image2DListOffset) { builder.AddOffset(29, image2DListOffset.Value, 0); }
-  public static VectorOffset CreateImage2DListVector(FlatBufferBuilder builder, Offset<Image2D>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateImage2DListVectorBlock(FlatBufferBuilder builder, Offset<Image2D>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateImage2DListVector(FlatBufferBuilder builder, Offset<ubii.dataStructures.Image2D>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateImage2DListVectorBlock(FlatBufferBuilder builder, Offset<ubii.dataStructures.Image2D>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartImage2DListVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddSession(FlatBufferBuilder builder, Offset<ubii.sessions.Session> sessionOffset) { builder.AddOffset(30, sessionOffset.Value, 0); }
   public static void AddInteraction(FlatBufferBuilder builder, Offset<ubii.interactions.Interaction> interactionOffset) { builder.AddOffset(31, interactionOffset.Value, 0); }
-  public static Offset<DataStructure> EndDataStructure(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<DataStructure>(o);
+  public static Offset<ubii.dataStructures.DataStructure> EndDataStructure(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.DataStructure>(o);
   }
-  public static void FinishDataStructureBuffer(FlatBufferBuilder builder, Offset<DataStructure> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedDataStructureBuffer(FlatBufferBuilder builder, Offset<DataStructure> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishDataStructureBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.DataStructure> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedDataStructureBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.DataStructure> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public DataStructureT UnPack() {
+    var _o = new DataStructureT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(DataStructureT _o) {
+    _o.Bool = this.Bool;
+    _o.BoolList = new List<bool>();
+    for (var _j = 0; _j < this.BoolListLength; ++_j) {_o.BoolList.Add(this.BoolList(_j));}
+    _o.String = this.String;
+    _o.StringList = new List<string>();
+    for (var _j = 0; _j < this.StringListLength; ++_j) {_o.StringList.Add(this.StringList(_j));}
+    _o.Byte = this.Byte;
+    _o.Int32 = this.Int32;
+    _o.Int32List = new List<int>();
+    for (var _j = 0; _j < this.Int32ListLength; ++_j) {_o.Int32List.Add(this.Int32List(_j));}
+    _o.Float = this.Float;
+    _o.FloatList = new List<float>();
+    for (var _j = 0; _j < this.FloatListLength; ++_j) {_o.FloatList.Add(this.FloatList(_j));}
+    _o.Double = this.Double;
+    _o.DoubleList = new List<double>();
+    for (var _j = 0; _j < this.DoubleListLength; ++_j) {_o.DoubleList.Add(this.DoubleList(_j));}
+    _o.Vector2 = this.Vector2.HasValue ? this.Vector2.Value.UnPack() : null;
+    _o.Vector3 = this.Vector3.HasValue ? this.Vector3.Value.UnPack() : null;
+    _o.Vector4 = this.Vector4.HasValue ? this.Vector4.Value.UnPack() : null;
+    _o.Quaternion = this.Quaternion.HasValue ? this.Quaternion.Value.UnPack() : null;
+    _o.Matrix3x2 = this.Matrix3x2.HasValue ? this.Matrix3x2.Value.UnPack() : null;
+    _o.Matrix4x4 = this.Matrix4x4.HasValue ? this.Matrix4x4.Value.UnPack() : null;
+    _o.Color = this.Color.HasValue ? this.Color.Value.UnPack() : null;
+    _o.TouchEvent = this.TouchEvent.HasValue ? this.TouchEvent.Value.UnPack() : null;
+    _o.KeyEvent = this.KeyEvent.HasValue ? this.KeyEvent.Value.UnPack() : null;
+    _o.MouseEvent = this.MouseEvent.HasValue ? this.MouseEvent.Value.UnPack() : null;
+    _o.MyoEvent = this.MyoEvent.HasValue ? this.MyoEvent.Value.UnPack() : null;
+    _o.Pose2D = this.Pose2D.HasValue ? this.Pose2D.Value.UnPack() : null;
+    _o.Pose3D = this.Pose3D.HasValue ? this.Pose3D.Value.UnPack() : null;
+    _o.Object2D = this.Object2D.HasValue ? this.Object2D.Value.UnPack() : null;
+    _o.Object3D = this.Object3D.HasValue ? this.Object3D.Value.UnPack() : null;
+    _o.Object2DList = new List<ubii.dataStructures.Object2DT>();
+    for (var _j = 0; _j < this.Object2DListLength; ++_j) {_o.Object2DList.Add(this.Object2DList(_j).HasValue ? this.Object2DList(_j).Value.UnPack() : null);}
+    _o.Object3DList = new List<ubii.dataStructures.Object3DT>();
+    for (var _j = 0; _j < this.Object3DListLength; ++_j) {_o.Object3DList.Add(this.Object3DList(_j).HasValue ? this.Object3DList(_j).Value.UnPack() : null);}
+    _o.Image2D = this.Image2D.HasValue ? this.Image2D.Value.UnPack() : null;
+    _o.Image2DList = new List<ubii.dataStructures.Image2DT>();
+    for (var _j = 0; _j < this.Image2DListLength; ++_j) {_o.Image2DList.Add(this.Image2DList(_j).HasValue ? this.Image2DList(_j).Value.UnPack() : null);}
+    _o.Session = this.Session.HasValue ? this.Session.Value.UnPack() : null;
+    _o.Interaction = this.Interaction.HasValue ? this.Interaction.Value.UnPack() : null;
+  }
+  public static Offset<ubii.dataStructures.DataStructure> Pack(FlatBufferBuilder builder, DataStructureT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.DataStructure>);
+    var _bool_list = default(VectorOffset);
+    if (_o.BoolList != null) {
+      var __bool_list = _o.BoolList.ToArray();
+      _bool_list = CreateBoolListVector(builder, __bool_list);
+    }
+    var _string = _o.String == null ? default(StringOffset) : builder.CreateString(_o.String);
+    var _string_list = default(VectorOffset);
+    if (_o.StringList != null) {
+      var __string_list = new StringOffset[_o.StringList.Count];
+      for (var _j = 0; _j < __string_list.Length; ++_j) { __string_list[_j] = builder.CreateString(_o.StringList[_j]); }
+      _string_list = CreateStringListVector(builder, __string_list);
+    }
+    var _int32_list = default(VectorOffset);
+    if (_o.Int32List != null) {
+      var __int32_list = _o.Int32List.ToArray();
+      _int32_list = CreateInt32ListVector(builder, __int32_list);
+    }
+    var _float_list = default(VectorOffset);
+    if (_o.FloatList != null) {
+      var __float_list = _o.FloatList.ToArray();
+      _float_list = CreateFloatListVector(builder, __float_list);
+    }
+    var _double_list = default(VectorOffset);
+    if (_o.DoubleList != null) {
+      var __double_list = _o.DoubleList.ToArray();
+      _double_list = CreateDoubleListVector(builder, __double_list);
+    }
+    var _touch_event = _o.TouchEvent == null ? default(Offset<ubii.dataStructures.TouchEvent>) : ubii.dataStructures.TouchEvent.Pack(builder, _o.TouchEvent);
+    var _key_event = _o.KeyEvent == null ? default(Offset<ubii.dataStructures.KeyEvent>) : ubii.dataStructures.KeyEvent.Pack(builder, _o.KeyEvent);
+    var _mouse_event = _o.MouseEvent == null ? default(Offset<ubii.dataStructures.MouseEvent>) : ubii.dataStructures.MouseEvent.Pack(builder, _o.MouseEvent);
+    var _myo_event = _o.MyoEvent == null ? default(Offset<ubii.dataStructures.MyoEvent>) : ubii.dataStructures.MyoEvent.Pack(builder, _o.MyoEvent);
+    var _pose2D = _o.Pose2D == null ? default(Offset<ubii.dataStructures.Pose2D>) : ubii.dataStructures.Pose2D.Pack(builder, _o.Pose2D);
+    var _pose3D = _o.Pose3D == null ? default(Offset<ubii.dataStructures.Pose3D>) : ubii.dataStructures.Pose3D.Pack(builder, _o.Pose3D);
+    var _object2D = _o.Object2D == null ? default(Offset<ubii.dataStructures.Object2D>) : ubii.dataStructures.Object2D.Pack(builder, _o.Object2D);
+    var _object3D = _o.Object3D == null ? default(Offset<ubii.dataStructures.Object3D>) : ubii.dataStructures.Object3D.Pack(builder, _o.Object3D);
+    var _object2D_list = default(VectorOffset);
+    if (_o.Object2DList != null) {
+      var __object2D_list = new Offset<ubii.dataStructures.Object2D>[_o.Object2DList.Count];
+      for (var _j = 0; _j < __object2D_list.Length; ++_j) { __object2D_list[_j] = ubii.dataStructures.Object2D.Pack(builder, _o.Object2DList[_j]); }
+      _object2D_list = CreateObject2DListVector(builder, __object2D_list);
+    }
+    var _object3D_list = default(VectorOffset);
+    if (_o.Object3DList != null) {
+      var __object3D_list = new Offset<ubii.dataStructures.Object3D>[_o.Object3DList.Count];
+      for (var _j = 0; _j < __object3D_list.Length; ++_j) { __object3D_list[_j] = ubii.dataStructures.Object3D.Pack(builder, _o.Object3DList[_j]); }
+      _object3D_list = CreateObject3DListVector(builder, __object3D_list);
+    }
+    var _image2D = _o.Image2D == null ? default(Offset<ubii.dataStructures.Image2D>) : ubii.dataStructures.Image2D.Pack(builder, _o.Image2D);
+    var _image2D_list = default(VectorOffset);
+    if (_o.Image2DList != null) {
+      var __image2D_list = new Offset<ubii.dataStructures.Image2D>[_o.Image2DList.Count];
+      for (var _j = 0; _j < __image2D_list.Length; ++_j) { __image2D_list[_j] = ubii.dataStructures.Image2D.Pack(builder, _o.Image2DList[_j]); }
+      _image2D_list = CreateImage2DListVector(builder, __image2D_list);
+    }
+    var _session = _o.Session == null ? default(Offset<ubii.sessions.Session>) : ubii.sessions.Session.Pack(builder, _o.Session);
+    var _interaction = _o.Interaction == null ? default(Offset<ubii.interactions.Interaction>) : ubii.interactions.Interaction.Pack(builder, _o.Interaction);
+    StartDataStructure(builder);
+    AddBool(builder, _o.Bool);
+    AddBoolList(builder, _bool_list);
+    AddString(builder, _string);
+    AddStringList(builder, _string_list);
+    AddByte(builder, _o.Byte);
+    AddInt32(builder, _o.Int32);
+    AddInt32List(builder, _int32_list);
+    AddFloat(builder, _o.Float);
+    AddFloatList(builder, _float_list);
+    AddDouble(builder, _o.Double);
+    AddDoubleList(builder, _double_list);
+    AddVector2(builder, ubii.dataStructures.Vector2.Pack(builder, _o.Vector2));
+    AddVector3(builder, ubii.dataStructures.Vector3.Pack(builder, _o.Vector3));
+    AddVector4(builder, ubii.dataStructures.Vector4.Pack(builder, _o.Vector4));
+    AddQuaternion(builder, ubii.dataStructures.Quaternion.Pack(builder, _o.Quaternion));
+    AddMatrix3x2(builder, ubii.dataStructures.Matrix3x2.Pack(builder, _o.Matrix3x2));
+    AddMatrix4x4(builder, ubii.dataStructures.Matrix4x4.Pack(builder, _o.Matrix4x4));
+    AddColor(builder, ubii.dataStructures.Color.Pack(builder, _o.Color));
+    AddTouchEvent(builder, _touch_event);
+    AddKeyEvent(builder, _key_event);
+    AddMouseEvent(builder, _mouse_event);
+    AddMyoEvent(builder, _myo_event);
+    AddPose2D(builder, _pose2D);
+    AddPose3D(builder, _pose3D);
+    AddObject2D(builder, _object2D);
+    AddObject3D(builder, _object3D);
+    AddObject2DList(builder, _object2D_list);
+    AddObject3DList(builder, _object3D_list);
+    AddImage2D(builder, _image2D);
+    AddImage2DList(builder, _image2D_list);
+    AddSession(builder, _session);
+    AddInteraction(builder, _interaction);
+    return EndDataStructure(builder);
+  }
 };
+
+public class DataStructureT
+{
+  public bool Bool { get; set; }
+  public List<bool> BoolList { get; set; }
+  public string String { get; set; }
+  public List<string> StringList { get; set; }
+  public sbyte Byte { get; set; }
+  public int Int32 { get; set; }
+  public List<int> Int32List { get; set; }
+  public float Float { get; set; }
+  public List<float> FloatList { get; set; }
+  public double Double { get; set; }
+  public List<double> DoubleList { get; set; }
+  public ubii.dataStructures.Vector2T Vector2 { get; set; }
+  public ubii.dataStructures.Vector3T Vector3 { get; set; }
+  public ubii.dataStructures.Vector4T Vector4 { get; set; }
+  public ubii.dataStructures.QuaternionT Quaternion { get; set; }
+  public ubii.dataStructures.Matrix3x2T Matrix3x2 { get; set; }
+  public ubii.dataStructures.Matrix4x4T Matrix4x4 { get; set; }
+  public ubii.dataStructures.ColorT Color { get; set; }
+  public ubii.dataStructures.TouchEventT TouchEvent { get; set; }
+  public ubii.dataStructures.KeyEventT KeyEvent { get; set; }
+  public ubii.dataStructures.MouseEventT MouseEvent { get; set; }
+  public ubii.dataStructures.MyoEventT MyoEvent { get; set; }
+  public ubii.dataStructures.Pose2DT Pose2D { get; set; }
+  public ubii.dataStructures.Pose3DT Pose3D { get; set; }
+  public ubii.dataStructures.Object2DT Object2D { get; set; }
+  public ubii.dataStructures.Object3DT Object3D { get; set; }
+  public List<ubii.dataStructures.Object2DT> Object2DList { get; set; }
+  public List<ubii.dataStructures.Object3DT> Object3DList { get; set; }
+  public ubii.dataStructures.Image2DT Image2D { get; set; }
+  public List<ubii.dataStructures.Image2DT> Image2DList { get; set; }
+  public ubii.sessions.SessionT Session { get; set; }
+  public ubii.interactions.InteractionT Interaction { get; set; }
+
+  public DataStructureT() {
+    this.Bool = false;
+    this.BoolList = null;
+    this.String = null;
+    this.StringList = null;
+    this.Byte = 0;
+    this.Int32 = 0;
+    this.Int32List = null;
+    this.Float = 0.0f;
+    this.FloatList = null;
+    this.Double = 0.0;
+    this.DoubleList = null;
+    this.Vector2 = new ubii.dataStructures.Vector2T();
+    this.Vector3 = new ubii.dataStructures.Vector3T();
+    this.Vector4 = new ubii.dataStructures.Vector4T();
+    this.Quaternion = new ubii.dataStructures.QuaternionT();
+    this.Matrix3x2 = new ubii.dataStructures.Matrix3x2T();
+    this.Matrix4x4 = new ubii.dataStructures.Matrix4x4T();
+    this.Color = new ubii.dataStructures.ColorT();
+    this.TouchEvent = null;
+    this.KeyEvent = null;
+    this.MouseEvent = null;
+    this.MyoEvent = null;
+    this.Pose2D = null;
+    this.Pose3D = null;
+    this.Object2D = null;
+    this.Object3D = null;
+    this.Object2DList = null;
+    this.Object3DList = null;
+    this.Image2D = null;
+    this.Image2DList = null;
+    this.Session = null;
+    this.Interaction = null;
+  }
+  public static DataStructureT DeserializeFromBinary(byte[] fbBuffer) {
+    return DataStructure.GetRootAsDataStructure(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(DataStructure.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

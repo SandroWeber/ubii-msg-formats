@@ -48,6 +48,16 @@ ubii.general.Success.getRootAsSuccess = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.general.Success=} obj
+ * @returns {ubii.general.Success}
+ */
+ubii.general.Success.getSizePrefixedRootAsSuccess = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.general.Success).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -103,6 +113,14 @@ ubii.general.Success.endSuccess = function(builder) {
  */
 ubii.general.Success.finishSuccessBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.general.Success.finishSizePrefixedSuccessBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

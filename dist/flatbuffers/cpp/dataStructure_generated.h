@@ -38,6 +38,7 @@ namespace ubii {
 namespace dataStructures {
 
 struct DataStructure;
+struct DataStructureBuilder;
 struct DataStructureT;
 
 struct DataStructureT : public flatbuffers::NativeTable {
@@ -53,25 +54,25 @@ struct DataStructureT : public flatbuffers::NativeTable {
   std::vector<float> float_list;
   double double_;
   std::vector<double> double_list;
-  std::unique_ptr<Vector2> vector2;
-  std::unique_ptr<Vector3> vector3;
-  std::unique_ptr<Vector4> vector4;
-  std::unique_ptr<Quaternion> quaternion;
-  std::unique_ptr<Matrix3x2> matrix3x2;
-  std::unique_ptr<Matrix4x4> matrix4x4;
-  std::unique_ptr<Color> color;
-  std::unique_ptr<TouchEventT> touch_event;
-  std::unique_ptr<KeyEventT> key_event;
-  std::unique_ptr<MouseEventT> mouse_event;
-  std::unique_ptr<MyoEventT> myo_event;
-  std::unique_ptr<Pose2DT> pose2D;
-  std::unique_ptr<Pose3DT> pose3D;
-  std::unique_ptr<Object2DT> object2D;
-  std::unique_ptr<Object3DT> object3D;
-  std::vector<std::unique_ptr<Object2DT>> object2D_list;
-  std::vector<std::unique_ptr<Object3DT>> object3D_list;
-  std::unique_ptr<Image2DT> image2D;
-  std::vector<std::unique_ptr<Image2DT>> image2D_list;
+  std::unique_ptr<ubii::dataStructures::Vector2> vector2;
+  std::unique_ptr<ubii::dataStructures::Vector3> vector3;
+  std::unique_ptr<ubii::dataStructures::Vector4> vector4;
+  std::unique_ptr<ubii::dataStructures::Quaternion> quaternion;
+  std::unique_ptr<ubii::dataStructures::Matrix3x2> matrix3x2;
+  std::unique_ptr<ubii::dataStructures::Matrix4x4> matrix4x4;
+  std::unique_ptr<ubii::dataStructures::Color> color;
+  std::unique_ptr<ubii::dataStructures::TouchEventT> touch_event;
+  std::unique_ptr<ubii::dataStructures::KeyEventT> key_event;
+  std::unique_ptr<ubii::dataStructures::MouseEventT> mouse_event;
+  std::unique_ptr<ubii::dataStructures::MyoEventT> myo_event;
+  std::unique_ptr<ubii::dataStructures::Pose2DT> pose2D;
+  std::unique_ptr<ubii::dataStructures::Pose3DT> pose3D;
+  std::unique_ptr<ubii::dataStructures::Object2DT> object2D;
+  std::unique_ptr<ubii::dataStructures::Object3DT> object3D;
+  std::vector<std::unique_ptr<ubii::dataStructures::Object2DT>> object2D_list;
+  std::vector<std::unique_ptr<ubii::dataStructures::Object3DT>> object3D_list;
+  std::unique_ptr<ubii::dataStructures::Image2DT> image2D;
+  std::vector<std::unique_ptr<ubii::dataStructures::Image2DT>> image2D_list;
   std::unique_ptr<ubii::sessions::SessionT> session;
   std::unique_ptr<ubii::interactions::InteractionT> interaction;
   DataStructureT()
@@ -85,6 +86,7 @@ struct DataStructureT : public flatbuffers::NativeTable {
 
 struct DataStructure FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef DataStructureT NativeTableType;
+  typedef DataStructureBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_BOOL_ = 4,
     VT_BOOL_LIST = 6,
@@ -152,62 +154,62 @@ struct DataStructure FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   const flatbuffers::Vector<double> *double_list() const {
     return GetPointer<const flatbuffers::Vector<double> *>(VT_DOUBLE_LIST);
   }
-  const Vector2 *vector2() const {
-    return GetStruct<const Vector2 *>(VT_VECTOR2);
+  const ubii::dataStructures::Vector2 *vector2() const {
+    return GetStruct<const ubii::dataStructures::Vector2 *>(VT_VECTOR2);
   }
-  const Vector3 *vector3() const {
-    return GetStruct<const Vector3 *>(VT_VECTOR3);
+  const ubii::dataStructures::Vector3 *vector3() const {
+    return GetStruct<const ubii::dataStructures::Vector3 *>(VT_VECTOR3);
   }
-  const Vector4 *vector4() const {
-    return GetStruct<const Vector4 *>(VT_VECTOR4);
+  const ubii::dataStructures::Vector4 *vector4() const {
+    return GetStruct<const ubii::dataStructures::Vector4 *>(VT_VECTOR4);
   }
-  const Quaternion *quaternion() const {
-    return GetStruct<const Quaternion *>(VT_QUATERNION);
+  const ubii::dataStructures::Quaternion *quaternion() const {
+    return GetStruct<const ubii::dataStructures::Quaternion *>(VT_QUATERNION);
   }
-  const Matrix3x2 *matrix3x2() const {
-    return GetStruct<const Matrix3x2 *>(VT_MATRIX3X2);
+  const ubii::dataStructures::Matrix3x2 *matrix3x2() const {
+    return GetStruct<const ubii::dataStructures::Matrix3x2 *>(VT_MATRIX3X2);
   }
-  const Matrix4x4 *matrix4x4() const {
-    return GetStruct<const Matrix4x4 *>(VT_MATRIX4X4);
+  const ubii::dataStructures::Matrix4x4 *matrix4x4() const {
+    return GetStruct<const ubii::dataStructures::Matrix4x4 *>(VT_MATRIX4X4);
   }
-  const Color *color() const {
-    return GetStruct<const Color *>(VT_COLOR);
+  const ubii::dataStructures::Color *color() const {
+    return GetStruct<const ubii::dataStructures::Color *>(VT_COLOR);
   }
-  const TouchEvent *touch_event() const {
-    return GetPointer<const TouchEvent *>(VT_TOUCH_EVENT);
+  const ubii::dataStructures::TouchEvent *touch_event() const {
+    return GetPointer<const ubii::dataStructures::TouchEvent *>(VT_TOUCH_EVENT);
   }
-  const KeyEvent *key_event() const {
-    return GetPointer<const KeyEvent *>(VT_KEY_EVENT);
+  const ubii::dataStructures::KeyEvent *key_event() const {
+    return GetPointer<const ubii::dataStructures::KeyEvent *>(VT_KEY_EVENT);
   }
-  const MouseEvent *mouse_event() const {
-    return GetPointer<const MouseEvent *>(VT_MOUSE_EVENT);
+  const ubii::dataStructures::MouseEvent *mouse_event() const {
+    return GetPointer<const ubii::dataStructures::MouseEvent *>(VT_MOUSE_EVENT);
   }
-  const MyoEvent *myo_event() const {
-    return GetPointer<const MyoEvent *>(VT_MYO_EVENT);
+  const ubii::dataStructures::MyoEvent *myo_event() const {
+    return GetPointer<const ubii::dataStructures::MyoEvent *>(VT_MYO_EVENT);
   }
-  const Pose2D *pose2D() const {
-    return GetPointer<const Pose2D *>(VT_POSE2D);
+  const ubii::dataStructures::Pose2D *pose2D() const {
+    return GetPointer<const ubii::dataStructures::Pose2D *>(VT_POSE2D);
   }
-  const Pose3D *pose3D() const {
-    return GetPointer<const Pose3D *>(VT_POSE3D);
+  const ubii::dataStructures::Pose3D *pose3D() const {
+    return GetPointer<const ubii::dataStructures::Pose3D *>(VT_POSE3D);
   }
-  const Object2D *object2D() const {
-    return GetPointer<const Object2D *>(VT_OBJECT2D);
+  const ubii::dataStructures::Object2D *object2D() const {
+    return GetPointer<const ubii::dataStructures::Object2D *>(VT_OBJECT2D);
   }
-  const Object3D *object3D() const {
-    return GetPointer<const Object3D *>(VT_OBJECT3D);
+  const ubii::dataStructures::Object3D *object3D() const {
+    return GetPointer<const ubii::dataStructures::Object3D *>(VT_OBJECT3D);
   }
-  const flatbuffers::Vector<flatbuffers::Offset<Object2D>> *object2D_list() const {
-    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<Object2D>> *>(VT_OBJECT2D_LIST);
+  const flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object2D>> *object2D_list() const {
+    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object2D>> *>(VT_OBJECT2D_LIST);
   }
-  const flatbuffers::Vector<flatbuffers::Offset<Object3D>> *object3D_list() const {
-    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<Object3D>> *>(VT_OBJECT3D_LIST);
+  const flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object3D>> *object3D_list() const {
+    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object3D>> *>(VT_OBJECT3D_LIST);
   }
-  const Image2D *image2D() const {
-    return GetPointer<const Image2D *>(VT_IMAGE2D);
+  const ubii::dataStructures::Image2D *image2D() const {
+    return GetPointer<const ubii::dataStructures::Image2D *>(VT_IMAGE2D);
   }
-  const flatbuffers::Vector<flatbuffers::Offset<Image2D>> *image2D_list() const {
-    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<Image2D>> *>(VT_IMAGE2D_LIST);
+  const flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Image2D>> *image2D_list() const {
+    return GetPointer<const flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Image2D>> *>(VT_IMAGE2D_LIST);
   }
   const ubii::sessions::Session *session() const {
     return GetPointer<const ubii::sessions::Session *>(VT_SESSION);
@@ -235,13 +237,13 @@ struct DataStructure FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<double>(verifier, VT_DOUBLE_) &&
            VerifyOffset(verifier, VT_DOUBLE_LIST) &&
            verifier.VerifyVector(double_list()) &&
-           VerifyField<Vector2>(verifier, VT_VECTOR2) &&
-           VerifyField<Vector3>(verifier, VT_VECTOR3) &&
-           VerifyField<Vector4>(verifier, VT_VECTOR4) &&
-           VerifyField<Quaternion>(verifier, VT_QUATERNION) &&
-           VerifyField<Matrix3x2>(verifier, VT_MATRIX3X2) &&
-           VerifyField<Matrix4x4>(verifier, VT_MATRIX4X4) &&
-           VerifyField<Color>(verifier, VT_COLOR) &&
+           VerifyField<ubii::dataStructures::Vector2>(verifier, VT_VECTOR2) &&
+           VerifyField<ubii::dataStructures::Vector3>(verifier, VT_VECTOR3) &&
+           VerifyField<ubii::dataStructures::Vector4>(verifier, VT_VECTOR4) &&
+           VerifyField<ubii::dataStructures::Quaternion>(verifier, VT_QUATERNION) &&
+           VerifyField<ubii::dataStructures::Matrix3x2>(verifier, VT_MATRIX3X2) &&
+           VerifyField<ubii::dataStructures::Matrix4x4>(verifier, VT_MATRIX4X4) &&
+           VerifyField<ubii::dataStructures::Color>(verifier, VT_COLOR) &&
            VerifyOffset(verifier, VT_TOUCH_EVENT) &&
            verifier.VerifyTable(touch_event()) &&
            VerifyOffset(verifier, VT_KEY_EVENT) &&
@@ -281,6 +283,7 @@ struct DataStructure FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct DataStructureBuilder {
+  typedef DataStructure Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_bool_(bool bool_) {
@@ -316,61 +319,61 @@ struct DataStructureBuilder {
   void add_double_list(flatbuffers::Offset<flatbuffers::Vector<double>> double_list) {
     fbb_.AddOffset(DataStructure::VT_DOUBLE_LIST, double_list);
   }
-  void add_vector2(const Vector2 *vector2) {
+  void add_vector2(const ubii::dataStructures::Vector2 *vector2) {
     fbb_.AddStruct(DataStructure::VT_VECTOR2, vector2);
   }
-  void add_vector3(const Vector3 *vector3) {
+  void add_vector3(const ubii::dataStructures::Vector3 *vector3) {
     fbb_.AddStruct(DataStructure::VT_VECTOR3, vector3);
   }
-  void add_vector4(const Vector4 *vector4) {
+  void add_vector4(const ubii::dataStructures::Vector4 *vector4) {
     fbb_.AddStruct(DataStructure::VT_VECTOR4, vector4);
   }
-  void add_quaternion(const Quaternion *quaternion) {
+  void add_quaternion(const ubii::dataStructures::Quaternion *quaternion) {
     fbb_.AddStruct(DataStructure::VT_QUATERNION, quaternion);
   }
-  void add_matrix3x2(const Matrix3x2 *matrix3x2) {
+  void add_matrix3x2(const ubii::dataStructures::Matrix3x2 *matrix3x2) {
     fbb_.AddStruct(DataStructure::VT_MATRIX3X2, matrix3x2);
   }
-  void add_matrix4x4(const Matrix4x4 *matrix4x4) {
+  void add_matrix4x4(const ubii::dataStructures::Matrix4x4 *matrix4x4) {
     fbb_.AddStruct(DataStructure::VT_MATRIX4X4, matrix4x4);
   }
-  void add_color(const Color *color) {
+  void add_color(const ubii::dataStructures::Color *color) {
     fbb_.AddStruct(DataStructure::VT_COLOR, color);
   }
-  void add_touch_event(flatbuffers::Offset<TouchEvent> touch_event) {
+  void add_touch_event(flatbuffers::Offset<ubii::dataStructures::TouchEvent> touch_event) {
     fbb_.AddOffset(DataStructure::VT_TOUCH_EVENT, touch_event);
   }
-  void add_key_event(flatbuffers::Offset<KeyEvent> key_event) {
+  void add_key_event(flatbuffers::Offset<ubii::dataStructures::KeyEvent> key_event) {
     fbb_.AddOffset(DataStructure::VT_KEY_EVENT, key_event);
   }
-  void add_mouse_event(flatbuffers::Offset<MouseEvent> mouse_event) {
+  void add_mouse_event(flatbuffers::Offset<ubii::dataStructures::MouseEvent> mouse_event) {
     fbb_.AddOffset(DataStructure::VT_MOUSE_EVENT, mouse_event);
   }
-  void add_myo_event(flatbuffers::Offset<MyoEvent> myo_event) {
+  void add_myo_event(flatbuffers::Offset<ubii::dataStructures::MyoEvent> myo_event) {
     fbb_.AddOffset(DataStructure::VT_MYO_EVENT, myo_event);
   }
-  void add_pose2D(flatbuffers::Offset<Pose2D> pose2D) {
+  void add_pose2D(flatbuffers::Offset<ubii::dataStructures::Pose2D> pose2D) {
     fbb_.AddOffset(DataStructure::VT_POSE2D, pose2D);
   }
-  void add_pose3D(flatbuffers::Offset<Pose3D> pose3D) {
+  void add_pose3D(flatbuffers::Offset<ubii::dataStructures::Pose3D> pose3D) {
     fbb_.AddOffset(DataStructure::VT_POSE3D, pose3D);
   }
-  void add_object2D(flatbuffers::Offset<Object2D> object2D) {
+  void add_object2D(flatbuffers::Offset<ubii::dataStructures::Object2D> object2D) {
     fbb_.AddOffset(DataStructure::VT_OBJECT2D, object2D);
   }
-  void add_object3D(flatbuffers::Offset<Object3D> object3D) {
+  void add_object3D(flatbuffers::Offset<ubii::dataStructures::Object3D> object3D) {
     fbb_.AddOffset(DataStructure::VT_OBJECT3D, object3D);
   }
-  void add_object2D_list(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<Object2D>>> object2D_list) {
+  void add_object2D_list(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object2D>>> object2D_list) {
     fbb_.AddOffset(DataStructure::VT_OBJECT2D_LIST, object2D_list);
   }
-  void add_object3D_list(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<Object3D>>> object3D_list) {
+  void add_object3D_list(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object3D>>> object3D_list) {
     fbb_.AddOffset(DataStructure::VT_OBJECT3D_LIST, object3D_list);
   }
-  void add_image2D(flatbuffers::Offset<Image2D> image2D) {
+  void add_image2D(flatbuffers::Offset<ubii::dataStructures::Image2D> image2D) {
     fbb_.AddOffset(DataStructure::VT_IMAGE2D, image2D);
   }
-  void add_image2D_list(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<Image2D>>> image2D_list) {
+  void add_image2D_list(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Image2D>>> image2D_list) {
     fbb_.AddOffset(DataStructure::VT_IMAGE2D_LIST, image2D_list);
   }
   void add_session(flatbuffers::Offset<ubii::sessions::Session> session) {
@@ -404,25 +407,25 @@ inline flatbuffers::Offset<DataStructure> CreateDataStructure(
     flatbuffers::Offset<flatbuffers::Vector<float>> float_list = 0,
     double double_ = 0.0,
     flatbuffers::Offset<flatbuffers::Vector<double>> double_list = 0,
-    const Vector2 *vector2 = 0,
-    const Vector3 *vector3 = 0,
-    const Vector4 *vector4 = 0,
-    const Quaternion *quaternion = 0,
-    const Matrix3x2 *matrix3x2 = 0,
-    const Matrix4x4 *matrix4x4 = 0,
-    const Color *color = 0,
-    flatbuffers::Offset<TouchEvent> touch_event = 0,
-    flatbuffers::Offset<KeyEvent> key_event = 0,
-    flatbuffers::Offset<MouseEvent> mouse_event = 0,
-    flatbuffers::Offset<MyoEvent> myo_event = 0,
-    flatbuffers::Offset<Pose2D> pose2D = 0,
-    flatbuffers::Offset<Pose3D> pose3D = 0,
-    flatbuffers::Offset<Object2D> object2D = 0,
-    flatbuffers::Offset<Object3D> object3D = 0,
-    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<Object2D>>> object2D_list = 0,
-    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<Object3D>>> object3D_list = 0,
-    flatbuffers::Offset<Image2D> image2D = 0,
-    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<Image2D>>> image2D_list = 0,
+    const ubii::dataStructures::Vector2 *vector2 = 0,
+    const ubii::dataStructures::Vector3 *vector3 = 0,
+    const ubii::dataStructures::Vector4 *vector4 = 0,
+    const ubii::dataStructures::Quaternion *quaternion = 0,
+    const ubii::dataStructures::Matrix3x2 *matrix3x2 = 0,
+    const ubii::dataStructures::Matrix4x4 *matrix4x4 = 0,
+    const ubii::dataStructures::Color *color = 0,
+    flatbuffers::Offset<ubii::dataStructures::TouchEvent> touch_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::KeyEvent> key_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::MouseEvent> mouse_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::MyoEvent> myo_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose2D> pose2D = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose3D> pose3D = 0,
+    flatbuffers::Offset<ubii::dataStructures::Object2D> object2D = 0,
+    flatbuffers::Offset<ubii::dataStructures::Object3D> object3D = 0,
+    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object2D>>> object2D_list = 0,
+    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Object3D>>> object3D_list = 0,
+    flatbuffers::Offset<ubii::dataStructures::Image2D> image2D = 0,
+    flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<ubii::dataStructures::Image2D>>> image2D_list = 0,
     flatbuffers::Offset<ubii::sessions::Session> session = 0,
     flatbuffers::Offset<ubii::interactions::Interaction> interaction = 0) {
   DataStructureBuilder builder_(_fbb);
@@ -474,25 +477,25 @@ inline flatbuffers::Offset<DataStructure> CreateDataStructureDirect(
     const std::vector<float> *float_list = nullptr,
     double double_ = 0.0,
     const std::vector<double> *double_list = nullptr,
-    const Vector2 *vector2 = 0,
-    const Vector3 *vector3 = 0,
-    const Vector4 *vector4 = 0,
-    const Quaternion *quaternion = 0,
-    const Matrix3x2 *matrix3x2 = 0,
-    const Matrix4x4 *matrix4x4 = 0,
-    const Color *color = 0,
-    flatbuffers::Offset<TouchEvent> touch_event = 0,
-    flatbuffers::Offset<KeyEvent> key_event = 0,
-    flatbuffers::Offset<MouseEvent> mouse_event = 0,
-    flatbuffers::Offset<MyoEvent> myo_event = 0,
-    flatbuffers::Offset<Pose2D> pose2D = 0,
-    flatbuffers::Offset<Pose3D> pose3D = 0,
-    flatbuffers::Offset<Object2D> object2D = 0,
-    flatbuffers::Offset<Object3D> object3D = 0,
-    const std::vector<flatbuffers::Offset<Object2D>> *object2D_list = nullptr,
-    const std::vector<flatbuffers::Offset<Object3D>> *object3D_list = nullptr,
-    flatbuffers::Offset<Image2D> image2D = 0,
-    const std::vector<flatbuffers::Offset<Image2D>> *image2D_list = nullptr,
+    const ubii::dataStructures::Vector2 *vector2 = 0,
+    const ubii::dataStructures::Vector3 *vector3 = 0,
+    const ubii::dataStructures::Vector4 *vector4 = 0,
+    const ubii::dataStructures::Quaternion *quaternion = 0,
+    const ubii::dataStructures::Matrix3x2 *matrix3x2 = 0,
+    const ubii::dataStructures::Matrix4x4 *matrix4x4 = 0,
+    const ubii::dataStructures::Color *color = 0,
+    flatbuffers::Offset<ubii::dataStructures::TouchEvent> touch_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::KeyEvent> key_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::MouseEvent> mouse_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::MyoEvent> myo_event = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose2D> pose2D = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose3D> pose3D = 0,
+    flatbuffers::Offset<ubii::dataStructures::Object2D> object2D = 0,
+    flatbuffers::Offset<ubii::dataStructures::Object3D> object3D = 0,
+    const std::vector<flatbuffers::Offset<ubii::dataStructures::Object2D>> *object2D_list = nullptr,
+    const std::vector<flatbuffers::Offset<ubii::dataStructures::Object3D>> *object3D_list = nullptr,
+    flatbuffers::Offset<ubii::dataStructures::Image2D> image2D = 0,
+    const std::vector<flatbuffers::Offset<ubii::dataStructures::Image2D>> *image2D_list = nullptr,
     flatbuffers::Offset<ubii::sessions::Session> session = 0,
     flatbuffers::Offset<ubii::interactions::Interaction> interaction = 0) {
   auto bool_list__ = bool_list ? _fbb.CreateVector<uint8_t>(*bool_list) : 0;
@@ -501,9 +504,9 @@ inline flatbuffers::Offset<DataStructure> CreateDataStructureDirect(
   auto int32_list__ = int32_list ? _fbb.CreateVector<int32_t>(*int32_list) : 0;
   auto float_list__ = float_list ? _fbb.CreateVector<float>(*float_list) : 0;
   auto double_list__ = double_list ? _fbb.CreateVector<double>(*double_list) : 0;
-  auto object2D_list__ = object2D_list ? _fbb.CreateVector<flatbuffers::Offset<Object2D>>(*object2D_list) : 0;
-  auto object3D_list__ = object3D_list ? _fbb.CreateVector<flatbuffers::Offset<Object3D>>(*object3D_list) : 0;
-  auto image2D_list__ = image2D_list ? _fbb.CreateVector<flatbuffers::Offset<Image2D>>(*image2D_list) : 0;
+  auto object2D_list__ = object2D_list ? _fbb.CreateVector<flatbuffers::Offset<ubii::dataStructures::Object2D>>(*object2D_list) : 0;
+  auto object3D_list__ = object3D_list ? _fbb.CreateVector<flatbuffers::Offset<ubii::dataStructures::Object3D>>(*object3D_list) : 0;
+  auto image2D_list__ = image2D_list ? _fbb.CreateVector<flatbuffers::Offset<ubii::dataStructures::Image2D>>(*image2D_list) : 0;
   return ubii::dataStructures::CreateDataStructure(
       _fbb,
       bool_,
@@ -543,46 +546,46 @@ inline flatbuffers::Offset<DataStructure> CreateDataStructureDirect(
 flatbuffers::Offset<DataStructure> CreateDataStructure(flatbuffers::FlatBufferBuilder &_fbb, const DataStructureT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline DataStructureT *DataStructure::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new DataStructureT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::dataStructures::DataStructureT> _o = std::unique_ptr<ubii::dataStructures::DataStructureT>(new DataStructureT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void DataStructure::UnPackTo(DataStructureT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = bool_(); _o->bool_ = _e; };
-  { auto _e = bool_list(); if (_e) { _o->bool_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->bool_list[_i] = _e->Get(_i) != 0; } } };
-  { auto _e = string(); if (_e) _o->string = _e->str(); };
-  { auto _e = string_list(); if (_e) { _o->string_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->string_list[_i] = _e->Get(_i)->str(); } } };
-  { auto _e = byte(); _o->byte = _e; };
-  { auto _e = int32(); _o->int32 = _e; };
-  { auto _e = int32_list(); if (_e) { _o->int32_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->int32_list[_i] = _e->Get(_i); } } };
-  { auto _e = float_(); _o->float_ = _e; };
-  { auto _e = float_list(); if (_e) { _o->float_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->float_list[_i] = _e->Get(_i); } } };
-  { auto _e = double_(); _o->double_ = _e; };
-  { auto _e = double_list(); if (_e) { _o->double_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->double_list[_i] = _e->Get(_i); } } };
-  { auto _e = vector2(); if (_e) _o->vector2 = std::unique_ptr<Vector2>(new Vector2(*_e)); };
-  { auto _e = vector3(); if (_e) _o->vector3 = std::unique_ptr<Vector3>(new Vector3(*_e)); };
-  { auto _e = vector4(); if (_e) _o->vector4 = std::unique_ptr<Vector4>(new Vector4(*_e)); };
-  { auto _e = quaternion(); if (_e) _o->quaternion = std::unique_ptr<Quaternion>(new Quaternion(*_e)); };
-  { auto _e = matrix3x2(); if (_e) _o->matrix3x2 = std::unique_ptr<Matrix3x2>(new Matrix3x2(*_e)); };
-  { auto _e = matrix4x4(); if (_e) _o->matrix4x4 = std::unique_ptr<Matrix4x4>(new Matrix4x4(*_e)); };
-  { auto _e = color(); if (_e) _o->color = std::unique_ptr<Color>(new Color(*_e)); };
-  { auto _e = touch_event(); if (_e) _o->touch_event = std::unique_ptr<TouchEventT>(_e->UnPack(_resolver)); };
-  { auto _e = key_event(); if (_e) _o->key_event = std::unique_ptr<KeyEventT>(_e->UnPack(_resolver)); };
-  { auto _e = mouse_event(); if (_e) _o->mouse_event = std::unique_ptr<MouseEventT>(_e->UnPack(_resolver)); };
-  { auto _e = myo_event(); if (_e) _o->myo_event = std::unique_ptr<MyoEventT>(_e->UnPack(_resolver)); };
-  { auto _e = pose2D(); if (_e) _o->pose2D = std::unique_ptr<Pose2DT>(_e->UnPack(_resolver)); };
-  { auto _e = pose3D(); if (_e) _o->pose3D = std::unique_ptr<Pose3DT>(_e->UnPack(_resolver)); };
-  { auto _e = object2D(); if (_e) _o->object2D = std::unique_ptr<Object2DT>(_e->UnPack(_resolver)); };
-  { auto _e = object3D(); if (_e) _o->object3D = std::unique_ptr<Object3DT>(_e->UnPack(_resolver)); };
-  { auto _e = object2D_list(); if (_e) { _o->object2D_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->object2D_list[_i] = std::unique_ptr<Object2DT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = object3D_list(); if (_e) { _o->object3D_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->object3D_list[_i] = std::unique_ptr<Object3DT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = image2D(); if (_e) _o->image2D = std::unique_ptr<Image2DT>(_e->UnPack(_resolver)); };
-  { auto _e = image2D_list(); if (_e) { _o->image2D_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->image2D_list[_i] = std::unique_ptr<Image2DT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = session(); if (_e) _o->session = std::unique_ptr<ubii::sessions::SessionT>(_e->UnPack(_resolver)); };
-  { auto _e = interaction(); if (_e) _o->interaction = std::unique_ptr<ubii::interactions::InteractionT>(_e->UnPack(_resolver)); };
+  { auto _e = bool_(); _o->bool_ = _e; }
+  { auto _e = bool_list(); if (_e) { _o->bool_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->bool_list[_i] = _e->Get(_i) != 0; } } }
+  { auto _e = string(); if (_e) _o->string = _e->str(); }
+  { auto _e = string_list(); if (_e) { _o->string_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->string_list[_i] = _e->Get(_i)->str(); } } }
+  { auto _e = byte(); _o->byte = _e; }
+  { auto _e = int32(); _o->int32 = _e; }
+  { auto _e = int32_list(); if (_e) { _o->int32_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->int32_list[_i] = _e->Get(_i); } } }
+  { auto _e = float_(); _o->float_ = _e; }
+  { auto _e = float_list(); if (_e) { _o->float_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->float_list[_i] = _e->Get(_i); } } }
+  { auto _e = double_(); _o->double_ = _e; }
+  { auto _e = double_list(); if (_e) { _o->double_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->double_list[_i] = _e->Get(_i); } } }
+  { auto _e = vector2(); if (_e) _o->vector2 = std::unique_ptr<ubii::dataStructures::Vector2>(new ubii::dataStructures::Vector2(*_e)); }
+  { auto _e = vector3(); if (_e) _o->vector3 = std::unique_ptr<ubii::dataStructures::Vector3>(new ubii::dataStructures::Vector3(*_e)); }
+  { auto _e = vector4(); if (_e) _o->vector4 = std::unique_ptr<ubii::dataStructures::Vector4>(new ubii::dataStructures::Vector4(*_e)); }
+  { auto _e = quaternion(); if (_e) _o->quaternion = std::unique_ptr<ubii::dataStructures::Quaternion>(new ubii::dataStructures::Quaternion(*_e)); }
+  { auto _e = matrix3x2(); if (_e) _o->matrix3x2 = std::unique_ptr<ubii::dataStructures::Matrix3x2>(new ubii::dataStructures::Matrix3x2(*_e)); }
+  { auto _e = matrix4x4(); if (_e) _o->matrix4x4 = std::unique_ptr<ubii::dataStructures::Matrix4x4>(new ubii::dataStructures::Matrix4x4(*_e)); }
+  { auto _e = color(); if (_e) _o->color = std::unique_ptr<ubii::dataStructures::Color>(new ubii::dataStructures::Color(*_e)); }
+  { auto _e = touch_event(); if (_e) _o->touch_event = std::unique_ptr<ubii::dataStructures::TouchEventT>(_e->UnPack(_resolver)); }
+  { auto _e = key_event(); if (_e) _o->key_event = std::unique_ptr<ubii::dataStructures::KeyEventT>(_e->UnPack(_resolver)); }
+  { auto _e = mouse_event(); if (_e) _o->mouse_event = std::unique_ptr<ubii::dataStructures::MouseEventT>(_e->UnPack(_resolver)); }
+  { auto _e = myo_event(); if (_e) _o->myo_event = std::unique_ptr<ubii::dataStructures::MyoEventT>(_e->UnPack(_resolver)); }
+  { auto _e = pose2D(); if (_e) _o->pose2D = std::unique_ptr<ubii::dataStructures::Pose2DT>(_e->UnPack(_resolver)); }
+  { auto _e = pose3D(); if (_e) _o->pose3D = std::unique_ptr<ubii::dataStructures::Pose3DT>(_e->UnPack(_resolver)); }
+  { auto _e = object2D(); if (_e) _o->object2D = std::unique_ptr<ubii::dataStructures::Object2DT>(_e->UnPack(_resolver)); }
+  { auto _e = object3D(); if (_e) _o->object3D = std::unique_ptr<ubii::dataStructures::Object3DT>(_e->UnPack(_resolver)); }
+  { auto _e = object2D_list(); if (_e) { _o->object2D_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->object2D_list[_i] = std::unique_ptr<ubii::dataStructures::Object2DT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = object3D_list(); if (_e) { _o->object3D_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->object3D_list[_i] = std::unique_ptr<ubii::dataStructures::Object3DT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = image2D(); if (_e) _o->image2D = std::unique_ptr<ubii::dataStructures::Image2DT>(_e->UnPack(_resolver)); }
+  { auto _e = image2D_list(); if (_e) { _o->image2D_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->image2D_list[_i] = std::unique_ptr<ubii::dataStructures::Image2DT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = session(); if (_e) _o->session = std::unique_ptr<ubii::sessions::SessionT>(_e->UnPack(_resolver)); }
+  { auto _e = interaction(); if (_e) _o->interaction = std::unique_ptr<ubii::interactions::InteractionT>(_e->UnPack(_resolver)); }
 }
 
 inline flatbuffers::Offset<DataStructure> DataStructure::Pack(flatbuffers::FlatBufferBuilder &_fbb, const DataStructureT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -619,10 +622,10 @@ inline flatbuffers::Offset<DataStructure> CreateDataStructure(flatbuffers::FlatB
   auto _pose3D = _o->pose3D ? CreatePose3D(_fbb, _o->pose3D.get(), _rehasher) : 0;
   auto _object2D = _o->object2D ? CreateObject2D(_fbb, _o->object2D.get(), _rehasher) : 0;
   auto _object3D = _o->object3D ? CreateObject3D(_fbb, _o->object3D.get(), _rehasher) : 0;
-  auto _object2D_list = _o->object2D_list.size() ? _fbb.CreateVector<flatbuffers::Offset<Object2D>> (_o->object2D_list.size(), [](size_t i, _VectorArgs *__va) { return CreateObject2D(*__va->__fbb, __va->__o->object2D_list[i].get(), __va->__rehasher); }, &_va ) : 0;
-  auto _object3D_list = _o->object3D_list.size() ? _fbb.CreateVector<flatbuffers::Offset<Object3D>> (_o->object3D_list.size(), [](size_t i, _VectorArgs *__va) { return CreateObject3D(*__va->__fbb, __va->__o->object3D_list[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _object2D_list = _o->object2D_list.size() ? _fbb.CreateVector<flatbuffers::Offset<ubii::dataStructures::Object2D>> (_o->object2D_list.size(), [](size_t i, _VectorArgs *__va) { return CreateObject2D(*__va->__fbb, __va->__o->object2D_list[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _object3D_list = _o->object3D_list.size() ? _fbb.CreateVector<flatbuffers::Offset<ubii::dataStructures::Object3D>> (_o->object3D_list.size(), [](size_t i, _VectorArgs *__va) { return CreateObject3D(*__va->__fbb, __va->__o->object3D_list[i].get(), __va->__rehasher); }, &_va ) : 0;
   auto _image2D = _o->image2D ? CreateImage2D(_fbb, _o->image2D.get(), _rehasher) : 0;
-  auto _image2D_list = _o->image2D_list.size() ? _fbb.CreateVector<flatbuffers::Offset<Image2D>> (_o->image2D_list.size(), [](size_t i, _VectorArgs *__va) { return CreateImage2D(*__va->__fbb, __va->__o->image2D_list[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _image2D_list = _o->image2D_list.size() ? _fbb.CreateVector<flatbuffers::Offset<ubii::dataStructures::Image2D>> (_o->image2D_list.size(), [](size_t i, _VectorArgs *__va) { return CreateImage2D(*__va->__fbb, __va->__o->image2D_list[i].get(), __va->__rehasher); }, &_va ) : 0;
   auto _session = _o->session ? CreateSession(_fbb, _o->session.get(), _rehasher) : 0;
   auto _interaction = _o->interaction ? CreateInteraction(_fbb, _o->interaction.get(), _rehasher) : 0;
   return ubii::dataStructures::CreateDataStructure(
@@ -691,10 +694,16 @@ inline void FinishSizePrefixedDataStructureBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<DataStructureT> UnPackDataStructure(
+inline std::unique_ptr<ubii::dataStructures::DataStructureT> UnPackDataStructure(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<DataStructureT>(GetDataStructure(buf)->UnPack(res));
+  return std::unique_ptr<ubii::dataStructures::DataStructureT>(GetDataStructure(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::dataStructures::DataStructureT> UnPackSizePrefixedDataStructure(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::dataStructures::DataStructureT>(GetSizePrefixedDataStructure(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

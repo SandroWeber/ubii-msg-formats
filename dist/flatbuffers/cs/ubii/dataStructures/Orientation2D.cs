@@ -6,28 +6,58 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Orientation2D : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Orientation2D GetRootAsOrientation2D(ByteBuffer _bb) { return GetRootAsOrientation2D(_bb, new Orientation2D()); }
   public static Orientation2D GetRootAsOrientation2D(ByteBuffer _bb, Orientation2D obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Orientation2D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public AngleOrientation? Angle { get { int o = __p.__offset(4); return o != 0 ? (AngleOrientation?)(new AngleOrientation()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public Vector2? Direction { get { int o = __p.__offset(6); return o != 0 ? (Vector2?)(new Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.AngleOrientation? Angle { get { int o = __p.__offset(4); return o != 0 ? (ubii.dataStructures.AngleOrientation?)(new ubii.dataStructures.AngleOrientation()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Vector2? Direction { get { int o = __p.__offset(6); return o != 0 ? (ubii.dataStructures.Vector2?)(new ubii.dataStructures.Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
 
-  public static void StartOrientation2D(FlatBufferBuilder builder) { builder.StartObject(2); }
-  public static void AddAngle(FlatBufferBuilder builder, Offset<AngleOrientation> angleOffset) { builder.AddOffset(0, angleOffset.Value, 0); }
-  public static void AddDirection(FlatBufferBuilder builder, Offset<Vector2> directionOffset) { builder.AddStruct(1, directionOffset.Value, 0); }
-  public static Offset<Orientation2D> EndOrientation2D(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Orientation2D>(o);
+  public static void StartOrientation2D(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void AddAngle(FlatBufferBuilder builder, Offset<ubii.dataStructures.AngleOrientation> angleOffset) { builder.AddOffset(0, angleOffset.Value, 0); }
+  public static void AddDirection(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector2> directionOffset) { builder.AddStruct(1, directionOffset.Value, 0); }
+  public static Offset<ubii.dataStructures.Orientation2D> EndOrientation2D(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.Orientation2D>(o);
+  }
+  public Orientation2DT UnPack() {
+    var _o = new Orientation2DT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Orientation2DT _o) {
+    _o.Angle = this.Angle.HasValue ? this.Angle.Value.UnPack() : null;
+    _o.Direction = this.Direction.HasValue ? this.Direction.Value.UnPack() : null;
+  }
+  public static Offset<ubii.dataStructures.Orientation2D> Pack(FlatBufferBuilder builder, Orientation2DT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Orientation2D>);
+    var _angle = _o.Angle == null ? default(Offset<ubii.dataStructures.AngleOrientation>) : ubii.dataStructures.AngleOrientation.Pack(builder, _o.Angle);
+    StartOrientation2D(builder);
+    AddAngle(builder, _angle);
+    AddDirection(builder, ubii.dataStructures.Vector2.Pack(builder, _o.Direction));
+    return EndOrientation2D(builder);
   }
 };
+
+public class Orientation2DT
+{
+  public ubii.dataStructures.AngleOrientationT Angle { get; set; }
+  public ubii.dataStructures.Vector2T Direction { get; set; }
+
+  public Orientation2DT() {
+    this.Angle = null;
+    this.Direction = new ubii.dataStructures.Vector2T();
+  }
+}
 
 
 }

@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Error extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Error getRootAsError(ByteBuffer _bb) { return getRootAsError(_bb, new Error()); }
   public static Error getRootAsError(ByteBuffer _bb, Error obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Error __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String title() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -28,22 +29,29 @@ public final class Error extends Table {
       int titleOffset,
       int messageOffset,
       int stackOffset) {
-    builder.startObject(3);
+    builder.startTable(3);
     Error.addStack(builder, stackOffset);
     Error.addMessage(builder, messageOffset);
     Error.addTitle(builder, titleOffset);
     return Error.endError(builder);
   }
 
-  public static void startError(FlatBufferBuilder builder) { builder.startObject(3); }
+  public static void startError(FlatBufferBuilder builder) { builder.startTable(3); }
   public static void addTitle(FlatBufferBuilder builder, int titleOffset) { builder.addOffset(0, titleOffset, 0); }
   public static void addMessage(FlatBufferBuilder builder, int messageOffset) { builder.addOffset(1, messageOffset, 0); }
   public static void addStack(FlatBufferBuilder builder, int stackOffset) { builder.addOffset(2, stackOffset, 0); }
   public static int endError(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishErrorBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedErrorBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Error get(int j) { return get(new Error(), j); }
+    public Error get(Error obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

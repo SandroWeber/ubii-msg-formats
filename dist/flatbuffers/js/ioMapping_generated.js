@@ -54,6 +54,16 @@ ubii.sessions.IOMapping.getRootAsIOMapping = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.sessions.IOMapping=} obj
+ * @returns {ubii.sessions.IOMapping}
+ */
+ubii.sessions.IOMapping.getSizePrefixedRootAsIOMapping = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.sessions.IOMapping).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -186,6 +196,14 @@ ubii.sessions.IOMapping.endIOMapping = function(builder) {
  */
 ubii.sessions.IOMapping.finishIOMappingBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.sessions.IOMapping.finishSizePrefixedIOMappingBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

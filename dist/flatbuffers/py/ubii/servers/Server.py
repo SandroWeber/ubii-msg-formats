@@ -3,6 +3,8 @@
 # namespace: servers
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Server(object):
     __slots__ = ['_tab']
@@ -92,3 +94,86 @@ def ServerAddPortTopicDataZmq(builder, portTopicDataZmq): builder.PrependUOffset
 def ServerAddPortTopicDataWs(builder, portTopicDataWs): builder.PrependUOffsetTRelativeSlot(7, flatbuffers.number_types.UOffsetTFlags.py_type(portTopicDataWs), 0)
 def ServerAddConstantsJson(builder, constantsJson): builder.PrependUOffsetTRelativeSlot(8, flatbuffers.number_types.UOffsetTFlags.py_type(constantsJson), 0)
 def ServerEnd(builder): return builder.EndObject()
+
+
+class ServerT(object):
+
+    # ServerT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.ipEthernet = None  # type: str
+        self.ipWlan = None  # type: str
+        self.portServiceZmq = None  # type: str
+        self.portServiceRest = None  # type: str
+        self.portTopicDataZmq = None  # type: str
+        self.portTopicDataWs = None  # type: str
+        self.constantsJson = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        server = Server()
+        server.Init(buf, pos)
+        return cls.InitFromObj(server)
+
+    @classmethod
+    def InitFromObj(cls, server):
+        x = ServerT()
+        x._UnPack(server)
+        return x
+
+    # ServerT
+    def _UnPack(self, server):
+        if server is None:
+            return
+        self.id = server.Id()
+        self.name = server.Name()
+        self.ipEthernet = server.IpEthernet()
+        self.ipWlan = server.IpWlan()
+        self.portServiceZmq = server.PortServiceZmq()
+        self.portServiceRest = server.PortServiceRest()
+        self.portTopicDataZmq = server.PortTopicDataZmq()
+        self.portTopicDataWs = server.PortTopicDataWs()
+        self.constantsJson = server.ConstantsJson()
+
+    # ServerT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.ipEthernet is not None:
+            ipEthernet = builder.CreateString(self.ipEthernet)
+        if self.ipWlan is not None:
+            ipWlan = builder.CreateString(self.ipWlan)
+        if self.portServiceZmq is not None:
+            portServiceZmq = builder.CreateString(self.portServiceZmq)
+        if self.portServiceRest is not None:
+            portServiceRest = builder.CreateString(self.portServiceRest)
+        if self.portTopicDataZmq is not None:
+            portTopicDataZmq = builder.CreateString(self.portTopicDataZmq)
+        if self.portTopicDataWs is not None:
+            portTopicDataWs = builder.CreateString(self.portTopicDataWs)
+        if self.constantsJson is not None:
+            constantsJson = builder.CreateString(self.constantsJson)
+        ServerStart(builder)
+        if self.id is not None:
+            ServerAddId(builder, id)
+        if self.name is not None:
+            ServerAddName(builder, name)
+        if self.ipEthernet is not None:
+            ServerAddIpEthernet(builder, ipEthernet)
+        if self.ipWlan is not None:
+            ServerAddIpWlan(builder, ipWlan)
+        if self.portServiceZmq is not None:
+            ServerAddPortServiceZmq(builder, portServiceZmq)
+        if self.portServiceRest is not None:
+            ServerAddPortServiceRest(builder, portServiceRest)
+        if self.portTopicDataZmq is not None:
+            ServerAddPortTopicDataZmq(builder, portTopicDataZmq)
+        if self.portTopicDataWs is not None:
+            ServerAddPortTopicDataWs(builder, portTopicDataWs)
+        if self.constantsJson is not None:
+            ServerAddConstantsJson(builder, constantsJson)
+        server = ServerEnd(builder)
+        return server

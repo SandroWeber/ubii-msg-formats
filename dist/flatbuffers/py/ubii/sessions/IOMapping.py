@@ -3,6 +3,8 @@
 # namespace: sessions
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class IOMapping(object):
     __slots__ = ['_tab']
@@ -32,7 +34,7 @@ class IOMapping(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .InteractionInputMapping import InteractionInputMapping
+            from ubii.sessions.InteractionInputMapping import InteractionInputMapping
             obj = InteractionInputMapping()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -46,13 +48,18 @@ class IOMapping(object):
         return 0
 
     # IOMapping
+    def InputMappingsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
+        return o == 0
+
+    # IOMapping
     def OutputMappings(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .InteractionOutputMapping import InteractionOutputMapping
+            from ubii.sessions.InteractionOutputMapping import InteractionOutputMapping
             obj = InteractionOutputMapping()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -65,6 +72,11 @@ class IOMapping(object):
             return self._tab.VectorLen(o)
         return 0
 
+    # IOMapping
+    def OutputMappingsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        return o == 0
+
 def IOMappingStart(builder): builder.StartObject(3)
 def IOMappingAddInteractionId(builder, interactionId): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(interactionId), 0)
 def IOMappingAddInputMappings(builder, inputMappings): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(inputMappings), 0)
@@ -72,3 +84,82 @@ def IOMappingStartInputMappingsVector(builder, numElems): return builder.StartVe
 def IOMappingAddOutputMappings(builder, outputMappings): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(outputMappings), 0)
 def IOMappingStartOutputMappingsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def IOMappingEnd(builder): return builder.EndObject()
+
+import ubii.sessions.InteractionInputMapping
+import ubii.sessions.InteractionOutputMapping
+try:
+    from typing import List
+except:
+    pass
+
+class IOMappingT(object):
+
+    # IOMappingT
+    def __init__(self):
+        self.interactionId = None  # type: str
+        self.inputMappings = None  # type: List[ubii.sessions.InteractionInputMapping.InteractionInputMappingT]
+        self.outputMappings = None  # type: List[ubii.sessions.InteractionOutputMapping.InteractionOutputMappingT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        iOMapping = IOMapping()
+        iOMapping.Init(buf, pos)
+        return cls.InitFromObj(iOMapping)
+
+    @classmethod
+    def InitFromObj(cls, iOMapping):
+        x = IOMappingT()
+        x._UnPack(iOMapping)
+        return x
+
+    # IOMappingT
+    def _UnPack(self, iOMapping):
+        if iOMapping is None:
+            return
+        self.interactionId = iOMapping.InteractionId()
+        if not iOMapping.InputMappingsIsNone():
+            self.inputMappings = []
+            for i in range(iOMapping.InputMappingsLength()):
+                if iOMapping.InputMappings(i) is None:
+                    self.inputMappings.append(None)
+                else:
+                    interactionInputMapping_ = ubii.sessions.InteractionInputMapping.InteractionInputMappingT.InitFromObj(iOMapping.InputMappings(i))
+                    self.inputMappings.append(interactionInputMapping_)
+        if not iOMapping.OutputMappingsIsNone():
+            self.outputMappings = []
+            for i in range(iOMapping.OutputMappingsLength()):
+                if iOMapping.OutputMappings(i) is None:
+                    self.outputMappings.append(None)
+                else:
+                    interactionOutputMapping_ = ubii.sessions.InteractionOutputMapping.InteractionOutputMappingT.InitFromObj(iOMapping.OutputMappings(i))
+                    self.outputMappings.append(interactionOutputMapping_)
+
+    # IOMappingT
+    def Pack(self, builder):
+        if self.interactionId is not None:
+            interactionId = builder.CreateString(self.interactionId)
+        if self.inputMappings is not None:
+            inputMappingslist = []
+            for i in range(len(self.inputMappings)):
+                inputMappingslist.append(self.inputMappings[i].Pack(builder))
+            IOMappingStartInputMappingsVector(builder, len(self.inputMappings))
+            for i in reversed(range(len(self.inputMappings))):
+                builder.PrependUOffsetTRelative(inputMappingslist[i])
+            inputMappings = builder.EndVector(len(self.inputMappings))
+        if self.outputMappings is not None:
+            outputMappingslist = []
+            for i in range(len(self.outputMappings)):
+                outputMappingslist.append(self.outputMappings[i].Pack(builder))
+            IOMappingStartOutputMappingsVector(builder, len(self.outputMappings))
+            for i in reversed(range(len(self.outputMappings))):
+                builder.PrependUOffsetTRelative(outputMappingslist[i])
+            outputMappings = builder.EndVector(len(self.outputMappings))
+        IOMappingStart(builder)
+        if self.interactionId is not None:
+            IOMappingAddInteractionId(builder, interactionId)
+        if self.inputMappings is not None:
+            IOMappingAddInputMappings(builder, inputMappings)
+        if self.outputMappings is not None:
+            IOMappingAddOutputMappings(builder, outputMappings)
+        iOMapping = IOMappingEnd(builder)
+        return iOMapping

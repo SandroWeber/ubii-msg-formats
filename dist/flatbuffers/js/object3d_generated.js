@@ -48,6 +48,16 @@ ubii.dataStructures.Object3D.getRootAsObject3D = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.Object3D=} obj
+ * @returns {ubii.dataStructures.Object3D}
+ */
+ubii.dataStructures.Object3D.getSizePrefixedRootAsObject3D = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.Object3D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -154,6 +164,14 @@ ubii.dataStructures.Object3D.endObject3D = function(builder) {
  */
 ubii.dataStructures.Object3D.finishObject3DBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.Object3D.finishSizePrefixedObject3DBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

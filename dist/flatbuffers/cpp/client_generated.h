@@ -10,6 +10,7 @@ namespace ubii {
 namespace clients {
 
 struct Client;
+struct ClientBuilder;
 struct ClientT;
 
 struct ClientT : public flatbuffers::NativeTable {
@@ -25,6 +26,7 @@ struct ClientT : public flatbuffers::NativeTable {
 
 struct Client FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef ClientT NativeTableType;
+  typedef ClientBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -69,6 +71,7 @@ struct Client FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct ClientBuilder {
+  typedef Client Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_id(flatbuffers::Offset<flatbuffers::String> id) {
@@ -138,19 +141,19 @@ inline flatbuffers::Offset<Client> CreateClientDirect(
 flatbuffers::Offset<Client> CreateClient(flatbuffers::FlatBufferBuilder &_fbb, const ClientT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline ClientT *Client::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new ClientT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::clients::ClientT> _o = std::unique_ptr<ubii::clients::ClientT>(new ClientT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void Client::UnPackTo(ClientT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = id(); if (_e) _o->id = _e->str(); };
-  { auto _e = name(); if (_e) _o->name = _e->str(); };
-  { auto _e = tags(); if (_e) { _o->tags.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->tags[_i] = _e->Get(_i)->str(); } } };
-  { auto _e = description(); if (_e) _o->description = _e->str(); };
-  { auto _e = devices(); if (_e) { _o->devices.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->devices[_i] = _e->Get(_i)->str(); } } };
+  { auto _e = id(); if (_e) _o->id = _e->str(); }
+  { auto _e = name(); if (_e) _o->name = _e->str(); }
+  { auto _e = tags(); if (_e) { _o->tags.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->tags[_i] = _e->Get(_i)->str(); } } }
+  { auto _e = description(); if (_e) _o->description = _e->str(); }
+  { auto _e = devices(); if (_e) { _o->devices.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->devices[_i] = _e->Get(_i)->str(); } } }
 }
 
 inline flatbuffers::Offset<Client> Client::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ClientT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -205,10 +208,16 @@ inline void FinishSizePrefixedClientBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<ClientT> UnPackClient(
+inline std::unique_ptr<ubii::clients::ClientT> UnPackClient(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<ClientT>(GetClient(buf)->UnPack(res));
+  return std::unique_ptr<ubii::clients::ClientT>(GetClient(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::clients::ClientT> UnPackSizePrefixedClient(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::clients::ClientT>(GetSizePrefixedClient(buf)->UnPack(res));
 }
 
 }  // namespace clients

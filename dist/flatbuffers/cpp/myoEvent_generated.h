@@ -15,22 +15,24 @@ namespace ubii {
 namespace dataStructures {
 
 struct MyoEvent;
+struct MyoEventBuilder;
 struct MyoEventT;
 
 struct MyoEventT : public flatbuffers::NativeTable {
   typedef MyoEvent TableType;
-  std::unique_ptr<Vector8> emg;
-  std::unique_ptr<Quaternion> orientation;
-  std::unique_ptr<Vector3> gyroscope;
-  std::unique_ptr<Vector3> accelerometer;
-  HandGestureType gesture;
+  std::unique_ptr<ubii::dataStructures::Vector8> emg;
+  std::unique_ptr<ubii::dataStructures::Quaternion> orientation;
+  std::unique_ptr<ubii::dataStructures::Vector3> gyroscope;
+  std::unique_ptr<ubii::dataStructures::Vector3> accelerometer;
+  ubii::dataStructures::HandGestureType gesture;
   MyoEventT()
-      : gesture(HandGestureType_REST) {
+      : gesture(ubii::dataStructures::HandGestureType_REST) {
   }
 };
 
 struct MyoEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef MyoEventT NativeTableType;
+  typedef MyoEventBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_EMG = 4,
     VT_ORIENTATION = 6,
@@ -38,27 +40,27 @@ struct MyoEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
     VT_ACCELEROMETER = 10,
     VT_GESTURE = 12
   };
-  const Vector8 *emg() const {
-    return GetStruct<const Vector8 *>(VT_EMG);
+  const ubii::dataStructures::Vector8 *emg() const {
+    return GetStruct<const ubii::dataStructures::Vector8 *>(VT_EMG);
   }
-  const Quaternion *orientation() const {
-    return GetStruct<const Quaternion *>(VT_ORIENTATION);
+  const ubii::dataStructures::Quaternion *orientation() const {
+    return GetStruct<const ubii::dataStructures::Quaternion *>(VT_ORIENTATION);
   }
-  const Vector3 *gyroscope() const {
-    return GetStruct<const Vector3 *>(VT_GYROSCOPE);
+  const ubii::dataStructures::Vector3 *gyroscope() const {
+    return GetStruct<const ubii::dataStructures::Vector3 *>(VT_GYROSCOPE);
   }
-  const Vector3 *accelerometer() const {
-    return GetStruct<const Vector3 *>(VT_ACCELEROMETER);
+  const ubii::dataStructures::Vector3 *accelerometer() const {
+    return GetStruct<const ubii::dataStructures::Vector3 *>(VT_ACCELEROMETER);
   }
-  HandGestureType gesture() const {
-    return static_cast<HandGestureType>(GetField<int8_t>(VT_GESTURE, 0));
+  ubii::dataStructures::HandGestureType gesture() const {
+    return static_cast<ubii::dataStructures::HandGestureType>(GetField<int8_t>(VT_GESTURE, 0));
   }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
-           VerifyField<Vector8>(verifier, VT_EMG) &&
-           VerifyField<Quaternion>(verifier, VT_ORIENTATION) &&
-           VerifyField<Vector3>(verifier, VT_GYROSCOPE) &&
-           VerifyField<Vector3>(verifier, VT_ACCELEROMETER) &&
+           VerifyField<ubii::dataStructures::Vector8>(verifier, VT_EMG) &&
+           VerifyField<ubii::dataStructures::Quaternion>(verifier, VT_ORIENTATION) &&
+           VerifyField<ubii::dataStructures::Vector3>(verifier, VT_GYROSCOPE) &&
+           VerifyField<ubii::dataStructures::Vector3>(verifier, VT_ACCELEROMETER) &&
            VerifyField<int8_t>(verifier, VT_GESTURE) &&
            verifier.EndTable();
   }
@@ -68,21 +70,22 @@ struct MyoEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct MyoEventBuilder {
+  typedef MyoEvent Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
-  void add_emg(const Vector8 *emg) {
+  void add_emg(const ubii::dataStructures::Vector8 *emg) {
     fbb_.AddStruct(MyoEvent::VT_EMG, emg);
   }
-  void add_orientation(const Quaternion *orientation) {
+  void add_orientation(const ubii::dataStructures::Quaternion *orientation) {
     fbb_.AddStruct(MyoEvent::VT_ORIENTATION, orientation);
   }
-  void add_gyroscope(const Vector3 *gyroscope) {
+  void add_gyroscope(const ubii::dataStructures::Vector3 *gyroscope) {
     fbb_.AddStruct(MyoEvent::VT_GYROSCOPE, gyroscope);
   }
-  void add_accelerometer(const Vector3 *accelerometer) {
+  void add_accelerometer(const ubii::dataStructures::Vector3 *accelerometer) {
     fbb_.AddStruct(MyoEvent::VT_ACCELEROMETER, accelerometer);
   }
-  void add_gesture(HandGestureType gesture) {
+  void add_gesture(ubii::dataStructures::HandGestureType gesture) {
     fbb_.AddElement<int8_t>(MyoEvent::VT_GESTURE, static_cast<int8_t>(gesture), 0);
   }
   explicit MyoEventBuilder(flatbuffers::FlatBufferBuilder &_fbb)
@@ -99,11 +102,11 @@ struct MyoEventBuilder {
 
 inline flatbuffers::Offset<MyoEvent> CreateMyoEvent(
     flatbuffers::FlatBufferBuilder &_fbb,
-    const Vector8 *emg = 0,
-    const Quaternion *orientation = 0,
-    const Vector3 *gyroscope = 0,
-    const Vector3 *accelerometer = 0,
-    HandGestureType gesture = HandGestureType_REST) {
+    const ubii::dataStructures::Vector8 *emg = 0,
+    const ubii::dataStructures::Quaternion *orientation = 0,
+    const ubii::dataStructures::Vector3 *gyroscope = 0,
+    const ubii::dataStructures::Vector3 *accelerometer = 0,
+    ubii::dataStructures::HandGestureType gesture = ubii::dataStructures::HandGestureType_REST) {
   MyoEventBuilder builder_(_fbb);
   builder_.add_accelerometer(accelerometer);
   builder_.add_gyroscope(gyroscope);
@@ -116,19 +119,19 @@ inline flatbuffers::Offset<MyoEvent> CreateMyoEvent(
 flatbuffers::Offset<MyoEvent> CreateMyoEvent(flatbuffers::FlatBufferBuilder &_fbb, const MyoEventT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline MyoEventT *MyoEvent::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new MyoEventT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::dataStructures::MyoEventT> _o = std::unique_ptr<ubii::dataStructures::MyoEventT>(new MyoEventT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void MyoEvent::UnPackTo(MyoEventT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = emg(); if (_e) _o->emg = std::unique_ptr<Vector8>(new Vector8(*_e)); };
-  { auto _e = orientation(); if (_e) _o->orientation = std::unique_ptr<Quaternion>(new Quaternion(*_e)); };
-  { auto _e = gyroscope(); if (_e) _o->gyroscope = std::unique_ptr<Vector3>(new Vector3(*_e)); };
-  { auto _e = accelerometer(); if (_e) _o->accelerometer = std::unique_ptr<Vector3>(new Vector3(*_e)); };
-  { auto _e = gesture(); _o->gesture = _e; };
+  { auto _e = emg(); if (_e) _o->emg = std::unique_ptr<ubii::dataStructures::Vector8>(new ubii::dataStructures::Vector8(*_e)); }
+  { auto _e = orientation(); if (_e) _o->orientation = std::unique_ptr<ubii::dataStructures::Quaternion>(new ubii::dataStructures::Quaternion(*_e)); }
+  { auto _e = gyroscope(); if (_e) _o->gyroscope = std::unique_ptr<ubii::dataStructures::Vector3>(new ubii::dataStructures::Vector3(*_e)); }
+  { auto _e = accelerometer(); if (_e) _o->accelerometer = std::unique_ptr<ubii::dataStructures::Vector3>(new ubii::dataStructures::Vector3(*_e)); }
+  { auto _e = gesture(); _o->gesture = _e; }
 }
 
 inline flatbuffers::Offset<MyoEvent> MyoEvent::Pack(flatbuffers::FlatBufferBuilder &_fbb, const MyoEventT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -183,10 +186,16 @@ inline void FinishSizePrefixedMyoEventBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<MyoEventT> UnPackMyoEvent(
+inline std::unique_ptr<ubii::dataStructures::MyoEventT> UnPackMyoEvent(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<MyoEventT>(GetMyoEvent(buf)->UnPack(res));
+  return std::unique_ptr<ubii::dataStructures::MyoEventT>(GetMyoEvent(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::dataStructures::MyoEventT> UnPackSizePrefixedMyoEvent(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::dataStructures::MyoEventT>(GetSizePrefixedMyoEvent(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

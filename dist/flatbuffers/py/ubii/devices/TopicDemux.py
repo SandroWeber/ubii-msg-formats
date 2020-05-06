@@ -3,6 +3,8 @@
 # namespace: devices
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class TopicDemux(object):
     __slots__ = ['_tab']
@@ -52,3 +54,56 @@ def TopicDemuxAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, fla
 def TopicDemuxAddDataType(builder, dataType): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(dataType), 0)
 def TopicDemuxAddOutputTopicFormat(builder, outputTopicFormat): builder.PrependUOffsetTRelativeSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(outputTopicFormat), 0)
 def TopicDemuxEnd(builder): return builder.EndObject()
+
+
+class TopicDemuxT(object):
+
+    # TopicDemuxT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.dataType = None  # type: str
+        self.outputTopicFormat = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        topicDemux = TopicDemux()
+        topicDemux.Init(buf, pos)
+        return cls.InitFromObj(topicDemux)
+
+    @classmethod
+    def InitFromObj(cls, topicDemux):
+        x = TopicDemuxT()
+        x._UnPack(topicDemux)
+        return x
+
+    # TopicDemuxT
+    def _UnPack(self, topicDemux):
+        if topicDemux is None:
+            return
+        self.id = topicDemux.Id()
+        self.name = topicDemux.Name()
+        self.dataType = topicDemux.DataType()
+        self.outputTopicFormat = topicDemux.OutputTopicFormat()
+
+    # TopicDemuxT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.dataType is not None:
+            dataType = builder.CreateString(self.dataType)
+        if self.outputTopicFormat is not None:
+            outputTopicFormat = builder.CreateString(self.outputTopicFormat)
+        TopicDemuxStart(builder)
+        if self.id is not None:
+            TopicDemuxAddId(builder, id)
+        if self.name is not None:
+            TopicDemuxAddName(builder, name)
+        if self.dataType is not None:
+            TopicDemuxAddDataType(builder, dataType)
+        if self.outputTopicFormat is not None:
+            TopicDemuxAddOutputTopicFormat(builder, outputTopicFormat)
+        topicDemux = TopicDemuxEnd(builder)
+        return topicDemux

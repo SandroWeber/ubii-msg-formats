@@ -25,9 +25,9 @@ ubii.dataStructures.ImageDataFormat = {
  * @enum {string}
  */
 ubii.dataStructures.ImageDataFormatName = {
-  0: 'GRAY8',
-  1: 'RGB8',
-  2: 'RGBA8'
+  '0': 'GRAY8',
+  '1': 'RGB8',
+  '2': 'RGBA8'
 };
 
 /**
@@ -62,6 +62,16 @@ ubii.dataStructures.Image2D.prototype.__init = function(i, bb) {
  * @returns {ubii.dataStructures.Image2D}
  */
 ubii.dataStructures.Image2D.getRootAsImage2D = function(bb, obj) {
+  return (obj || new ubii.dataStructures.Image2D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.Image2D=} obj
+ * @returns {ubii.dataStructures.Image2D}
+ */
+ubii.dataStructures.Image2D.getSizePrefixedRootAsImage2D = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.dataStructures.Image2D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -189,6 +199,14 @@ ubii.dataStructures.Image2D.endImage2D = function(builder) {
  */
 ubii.dataStructures.Image2D.finishImage2DBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.Image2D.finishSizePrefixedImage2DBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

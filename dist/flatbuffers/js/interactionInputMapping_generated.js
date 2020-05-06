@@ -31,9 +31,9 @@ ubii.sessions.TopicSource = {
  * @enum {string}
  */
 ubii.sessions.TopicSourceName = {
-  0: 'NONE',
-  1: 'topic',
-  2: 'topic_mux'
+  '0': 'NONE',
+  '1': 'topic',
+  '2': 'topic_mux'
 };
 
 /**
@@ -68,6 +68,16 @@ ubii.sessions.InteractionInputMapping.prototype.__init = function(i, bb) {
  * @returns {ubii.sessions.InteractionInputMapping}
  */
 ubii.sessions.InteractionInputMapping.getRootAsInteractionInputMapping = function(bb, obj) {
+  return (obj || new ubii.sessions.InteractionInputMapping).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.sessions.InteractionInputMapping=} obj
+ * @returns {ubii.sessions.InteractionInputMapping}
+ */
+ubii.sessions.InteractionInputMapping.getSizePrefixedRootAsInteractionInputMapping = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.sessions.InteractionInputMapping).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -143,6 +153,14 @@ ubii.sessions.InteractionInputMapping.endInteractionInputMapping = function(buil
  */
 ubii.sessions.InteractionInputMapping.finishInteractionInputMappingBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.sessions.InteractionInputMapping.finishSizePrefixedInteractionInputMappingBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

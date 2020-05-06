@@ -6,13 +6,14 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Matrix3x2 : IFlatbufferObject
 {
   private Struct __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Struct(_i, _bb); }
   public Matrix3x2 __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public float M00 { get { return __p.bb.GetFloat(__p.bb_pos + 0); } }
@@ -22,7 +23,7 @@ public struct Matrix3x2 : IFlatbufferObject
   public float M20 { get { return __p.bb.GetFloat(__p.bb_pos + 16); } }
   public float M21 { get { return __p.bb.GetFloat(__p.bb_pos + 20); } }
 
-  public static Offset<Matrix3x2> CreateMatrix3x2(FlatBufferBuilder builder, float M00, float M01, float M10, float M11, float M20, float M21) {
+  public static Offset<ubii.dataStructures.Matrix3x2> CreateMatrix3x2(FlatBufferBuilder builder, float M00, float M01, float M10, float M11, float M20, float M21) {
     builder.Prep(4, 24);
     builder.PutFloat(M21);
     builder.PutFloat(M20);
@@ -30,9 +31,52 @@ public struct Matrix3x2 : IFlatbufferObject
     builder.PutFloat(M10);
     builder.PutFloat(M01);
     builder.PutFloat(M00);
-    return new Offset<Matrix3x2>(builder.Offset);
+    return new Offset<ubii.dataStructures.Matrix3x2>(builder.Offset);
+  }
+  public Matrix3x2T UnPack() {
+    var _o = new Matrix3x2T();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Matrix3x2T _o) {
+    _o.M00 = this.M00;
+    _o.M01 = this.M01;
+    _o.M10 = this.M10;
+    _o.M11 = this.M11;
+    _o.M20 = this.M20;
+    _o.M21 = this.M21;
+  }
+  public static Offset<ubii.dataStructures.Matrix3x2> Pack(FlatBufferBuilder builder, Matrix3x2T _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Matrix3x2>);
+    return CreateMatrix3x2(
+      builder,
+      _o.M00,
+      _o.M01,
+      _o.M10,
+      _o.M11,
+      _o.M20,
+      _o.M21);
   }
 };
+
+public class Matrix3x2T
+{
+  public float M00 { get; set; }
+  public float M01 { get; set; }
+  public float M10 { get; set; }
+  public float M11 { get; set; }
+  public float M20 { get; set; }
+  public float M21 { get; set; }
+
+  public Matrix3x2T() {
+    this.M00 = 0.0f;
+    this.M01 = 0.0f;
+    this.M10 = 0.0f;
+    this.M11 = 0.0f;
+    this.M20 = 0.0f;
+    this.M21 = 0.0f;
+  }
+}
 
 
 }

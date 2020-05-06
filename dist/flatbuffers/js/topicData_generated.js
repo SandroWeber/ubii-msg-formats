@@ -55,9 +55,9 @@ ubii.topicData.TopicDataContent = {
  * @enum {string}
  */
 ubii.topicData.TopicDataContentName = {
-  0: 'NONE',
-  1: 'topic_data_records',
-  2: 'error'
+  '0': 'NONE',
+  '1': 'topic_data_records',
+  '2': 'error'
 };
 
 /**
@@ -92,6 +92,16 @@ ubii.topicData.TopicData.prototype.__init = function(i, bb) {
  * @returns {ubii.topicData.TopicData}
  */
 ubii.topicData.TopicData.getRootAsTopicData = function(bb, obj) {
+  return (obj || new ubii.topicData.TopicData).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.topicData.TopicData=} obj
+ * @returns {ubii.topicData.TopicData}
+ */
+ubii.topicData.TopicData.getSizePrefixedRootAsTopicData = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.topicData.TopicData).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -150,6 +160,14 @@ ubii.topicData.TopicData.endTopicData = function(builder) {
  */
 ubii.topicData.TopicData.finishTopicDataBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.topicData.TopicData.finishSizePrefixedTopicDataBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

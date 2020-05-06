@@ -48,6 +48,16 @@ ubii.dataStructures.TouchEvent.getRootAsTouchEvent = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.TouchEvent=} obj
+ * @returns {ubii.dataStructures.TouchEvent}
+ */
+ubii.dataStructures.TouchEvent.getSizePrefixedRootAsTouchEvent = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.TouchEvent).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @returns {ubii.dataStructures.ButtonEventType}
  */
 ubii.dataStructures.TouchEvent.prototype.type = function() {
@@ -102,6 +112,14 @@ ubii.dataStructures.TouchEvent.endTouchEvent = function(builder) {
  */
 ubii.dataStructures.TouchEvent.finishTouchEventBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.TouchEvent.finishSizePrefixedTouchEventBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Pose2D(object):
     __slots__ = ['_tab']
@@ -23,7 +25,7 @@ class Pose2D(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             x = o + self._tab.Pos
-            from .Vector2 import Vector2
+            from ubii.dataStructures.Vector2 import Vector2
             obj = Vector2()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -34,7 +36,7 @@ class Pose2D(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Orientation2D import Orientation2D
+            from ubii.dataStructures.Orientation2D import Orientation2D
             obj = Orientation2D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -44,3 +46,51 @@ def Pose2DStart(builder): builder.StartObject(2)
 def Pose2DAddPosition(builder, position): builder.PrependStructSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(position), 0)
 def Pose2DAddOrientation(builder, orientation): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(orientation), 0)
 def Pose2DEnd(builder): return builder.EndObject()
+
+import ubii.dataStructures.Orientation2D
+import ubii.dataStructures.Vector2
+try:
+    from typing import Optional
+except:
+    pass
+
+class Pose2DT(object):
+
+    # Pose2DT
+    def __init__(self):
+        self.position = None  # type: Optional[ubii.dataStructures.Vector2.Vector2T]
+        self.orientation = None  # type: Optional[ubii.dataStructures.Orientation2D.Orientation2DT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        pose2D = Pose2D()
+        pose2D.Init(buf, pos)
+        return cls.InitFromObj(pose2D)
+
+    @classmethod
+    def InitFromObj(cls, pose2D):
+        x = Pose2DT()
+        x._UnPack(pose2D)
+        return x
+
+    # Pose2DT
+    def _UnPack(self, pose2D):
+        if pose2D is None:
+            return
+        if pose2D.Position() is not None:
+            self.position = ubii.dataStructures.Vector2.Vector2T.InitFromObj(pose2D.Position())
+        if pose2D.Orientation() is not None:
+            self.orientation = ubii.dataStructures.Orientation2D.Orientation2DT.InitFromObj(pose2D.Orientation())
+
+    # Pose2DT
+    def Pack(self, builder):
+        if self.orientation is not None:
+            orientation = self.orientation.Pack(builder)
+        Pose2DStart(builder)
+        if self.position is not None:
+            position = self.position.Pack(builder)
+            Pose2DAddPosition(builder, position)
+        if self.orientation is not None:
+            Pose2DAddOrientation(builder, orientation)
+        pose2D = Pose2DEnd(builder)
+        return pose2D

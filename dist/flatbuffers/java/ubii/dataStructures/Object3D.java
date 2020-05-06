@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Object3D extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Object3D getRootAsObject3D(ByteBuffer _bb) { return getRootAsObject3D(_bb, new Object3D()); }
   public static Object3D getRootAsObject3D(ByteBuffer _bb, Object3D obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Object3D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String id() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -20,25 +21,32 @@ public final class Object3D extends Table {
   public String name() { int o = __offset(6); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer nameAsByteBuffer() { return __vector_as_bytebuffer(6, 1); }
   public ByteBuffer nameInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 6, 1); }
-  public Pose3D pose() { return pose(new Pose3D()); }
-  public Pose3D pose(Pose3D obj) { int o = __offset(8); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Vector3 size() { return size(new Vector3()); }
-  public Vector3 size(Vector3 obj) { int o = __offset(10); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Pose3D pose() { return pose(new ubii.dataStructures.Pose3D()); }
+  public ubii.dataStructures.Pose3D pose(ubii.dataStructures.Pose3D obj) { int o = __offset(8); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Vector3 size() { return size(new ubii.dataStructures.Vector3()); }
+  public ubii.dataStructures.Vector3 size(ubii.dataStructures.Vector3 obj) { int o = __offset(10); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
   public String userDataJson() { int o = __offset(12); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer userDataJsonAsByteBuffer() { return __vector_as_bytebuffer(12, 1); }
   public ByteBuffer userDataJsonInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 12, 1); }
 
-  public static void startObject3D(FlatBufferBuilder builder) { builder.startObject(5); }
+  public static void startObject3D(FlatBufferBuilder builder) { builder.startTable(5); }
   public static void addId(FlatBufferBuilder builder, int idOffset) { builder.addOffset(0, idOffset, 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(1, nameOffset, 0); }
   public static void addPose(FlatBufferBuilder builder, int poseOffset) { builder.addOffset(2, poseOffset, 0); }
   public static void addSize(FlatBufferBuilder builder, int sizeOffset) { builder.addStruct(3, sizeOffset, 0); }
   public static void addUserDataJson(FlatBufferBuilder builder, int userDataJsonOffset) { builder.addOffset(4, userDataJsonOffset, 0); }
   public static int endObject3D(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishObject3DBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedObject3DBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Object3D get(int j) { return get(new Object3D(), j); }
+    public Object3D get(Object3D obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

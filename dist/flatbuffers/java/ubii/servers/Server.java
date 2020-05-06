@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Server extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Server getRootAsServer(ByteBuffer _bb) { return getRootAsServer(_bb, new Server()); }
   public static Server getRootAsServer(ByteBuffer _bb, Server obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Server __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String id() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -52,7 +53,7 @@ public final class Server extends Table {
       int port_topic_data_zmqOffset,
       int port_topic_data_wsOffset,
       int constants_jsonOffset) {
-    builder.startObject(9);
+    builder.startTable(9);
     Server.addConstantsJson(builder, constants_jsonOffset);
     Server.addPortTopicDataWs(builder, port_topic_data_wsOffset);
     Server.addPortTopicDataZmq(builder, port_topic_data_zmqOffset);
@@ -65,7 +66,7 @@ public final class Server extends Table {
     return Server.endServer(builder);
   }
 
-  public static void startServer(FlatBufferBuilder builder) { builder.startObject(9); }
+  public static void startServer(FlatBufferBuilder builder) { builder.startTable(9); }
   public static void addId(FlatBufferBuilder builder, int idOffset) { builder.addOffset(0, idOffset, 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(1, nameOffset, 0); }
   public static void addIpEthernet(FlatBufferBuilder builder, int ipEthernetOffset) { builder.addOffset(2, ipEthernetOffset, 0); }
@@ -76,10 +77,17 @@ public final class Server extends Table {
   public static void addPortTopicDataWs(FlatBufferBuilder builder, int portTopicDataWsOffset) { builder.addOffset(7, portTopicDataWsOffset, 0); }
   public static void addConstantsJson(FlatBufferBuilder builder, int constantsJsonOffset) { builder.addOffset(8, constantsJsonOffset, 0); }
   public static int endServer(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishServerBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedServerBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Server get(int j) { return get(new Server(), j); }
+    public Server get(Server obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

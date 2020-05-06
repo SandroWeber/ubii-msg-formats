@@ -7,8 +7,8 @@ namespace ubii.devices
 
 public enum IOType : sbyte
 {
- INPUT = 0,
- OUTPUT = 1,
+  INPUT = 0,
+  OUTPUT = 1,
 };
 
 

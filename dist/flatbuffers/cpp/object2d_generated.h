@@ -13,14 +13,15 @@ namespace ubii {
 namespace dataStructures {
 
 struct Object2D;
+struct Object2DBuilder;
 struct Object2DT;
 
 struct Object2DT : public flatbuffers::NativeTable {
   typedef Object2D TableType;
   std::string id;
   std::string name;
-  std::unique_ptr<Pose2DT> pose;
-  std::unique_ptr<Vector2> size;
+  std::unique_ptr<ubii::dataStructures::Pose2DT> pose;
+  std::unique_ptr<ubii::dataStructures::Vector2> size;
   std::string user_data_json;
   Object2DT() {
   }
@@ -28,6 +29,7 @@ struct Object2DT : public flatbuffers::NativeTable {
 
 struct Object2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef Object2DT NativeTableType;
+  typedef Object2DBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -41,11 +43,11 @@ struct Object2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   const flatbuffers::String *name() const {
     return GetPointer<const flatbuffers::String *>(VT_NAME);
   }
-  const Pose2D *pose() const {
-    return GetPointer<const Pose2D *>(VT_POSE);
+  const ubii::dataStructures::Pose2D *pose() const {
+    return GetPointer<const ubii::dataStructures::Pose2D *>(VT_POSE);
   }
-  const Vector2 *size() const {
-    return GetStruct<const Vector2 *>(VT_SIZE);
+  const ubii::dataStructures::Vector2 *size() const {
+    return GetStruct<const ubii::dataStructures::Vector2 *>(VT_SIZE);
   }
   const flatbuffers::String *user_data_json() const {
     return GetPointer<const flatbuffers::String *>(VT_USER_DATA_JSON);
@@ -58,7 +60,7 @@ struct Object2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyString(name()) &&
            VerifyOffset(verifier, VT_POSE) &&
            verifier.VerifyTable(pose()) &&
-           VerifyField<Vector2>(verifier, VT_SIZE) &&
+           VerifyField<ubii::dataStructures::Vector2>(verifier, VT_SIZE) &&
            VerifyOffset(verifier, VT_USER_DATA_JSON) &&
            verifier.VerifyString(user_data_json()) &&
            verifier.EndTable();
@@ -69,6 +71,7 @@ struct Object2D FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct Object2DBuilder {
+  typedef Object2D Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_id(flatbuffers::Offset<flatbuffers::String> id) {
@@ -77,10 +80,10 @@ struct Object2DBuilder {
   void add_name(flatbuffers::Offset<flatbuffers::String> name) {
     fbb_.AddOffset(Object2D::VT_NAME, name);
   }
-  void add_pose(flatbuffers::Offset<Pose2D> pose) {
+  void add_pose(flatbuffers::Offset<ubii::dataStructures::Pose2D> pose) {
     fbb_.AddOffset(Object2D::VT_POSE, pose);
   }
-  void add_size(const Vector2 *size) {
+  void add_size(const ubii::dataStructures::Vector2 *size) {
     fbb_.AddStruct(Object2D::VT_SIZE, size);
   }
   void add_user_data_json(flatbuffers::Offset<flatbuffers::String> user_data_json) {
@@ -102,8 +105,8 @@ inline flatbuffers::Offset<Object2D> CreateObject2D(
     flatbuffers::FlatBufferBuilder &_fbb,
     flatbuffers::Offset<flatbuffers::String> id = 0,
     flatbuffers::Offset<flatbuffers::String> name = 0,
-    flatbuffers::Offset<Pose2D> pose = 0,
-    const Vector2 *size = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose2D> pose = 0,
+    const ubii::dataStructures::Vector2 *size = 0,
     flatbuffers::Offset<flatbuffers::String> user_data_json = 0) {
   Object2DBuilder builder_(_fbb);
   builder_.add_user_data_json(user_data_json);
@@ -118,8 +121,8 @@ inline flatbuffers::Offset<Object2D> CreateObject2DDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
     const char *id = nullptr,
     const char *name = nullptr,
-    flatbuffers::Offset<Pose2D> pose = 0,
-    const Vector2 *size = 0,
+    flatbuffers::Offset<ubii::dataStructures::Pose2D> pose = 0,
+    const ubii::dataStructures::Vector2 *size = 0,
     const char *user_data_json = nullptr) {
   auto id__ = id ? _fbb.CreateString(id) : 0;
   auto name__ = name ? _fbb.CreateString(name) : 0;
@@ -136,19 +139,19 @@ inline flatbuffers::Offset<Object2D> CreateObject2DDirect(
 flatbuffers::Offset<Object2D> CreateObject2D(flatbuffers::FlatBufferBuilder &_fbb, const Object2DT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline Object2DT *Object2D::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new Object2DT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::dataStructures::Object2DT> _o = std::unique_ptr<ubii::dataStructures::Object2DT>(new Object2DT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void Object2D::UnPackTo(Object2DT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = id(); if (_e) _o->id = _e->str(); };
-  { auto _e = name(); if (_e) _o->name = _e->str(); };
-  { auto _e = pose(); if (_e) _o->pose = std::unique_ptr<Pose2DT>(_e->UnPack(_resolver)); };
-  { auto _e = size(); if (_e) _o->size = std::unique_ptr<Vector2>(new Vector2(*_e)); };
-  { auto _e = user_data_json(); if (_e) _o->user_data_json = _e->str(); };
+  { auto _e = id(); if (_e) _o->id = _e->str(); }
+  { auto _e = name(); if (_e) _o->name = _e->str(); }
+  { auto _e = pose(); if (_e) _o->pose = std::unique_ptr<ubii::dataStructures::Pose2DT>(_e->UnPack(_resolver)); }
+  { auto _e = size(); if (_e) _o->size = std::unique_ptr<ubii::dataStructures::Vector2>(new ubii::dataStructures::Vector2(*_e)); }
+  { auto _e = user_data_json(); if (_e) _o->user_data_json = _e->str(); }
 }
 
 inline flatbuffers::Offset<Object2D> Object2D::Pack(flatbuffers::FlatBufferBuilder &_fbb, const Object2DT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -203,10 +206,16 @@ inline void FinishSizePrefixedObject2DBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<Object2DT> UnPackObject2D(
+inline std::unique_ptr<ubii::dataStructures::Object2DT> UnPackObject2D(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<Object2DT>(GetObject2D(buf)->UnPack(res));
+  return std::unique_ptr<ubii::dataStructures::Object2DT>(GetObject2D(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::dataStructures::Object2DT> UnPackSizePrefixedObject2D(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::dataStructures::Object2DT>(GetSizePrefixedObject2D(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

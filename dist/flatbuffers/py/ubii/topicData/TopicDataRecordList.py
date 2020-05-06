@@ -3,6 +3,8 @@
 # namespace: topicData
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class TopicDataRecordList(object):
     __slots__ = ['_tab']
@@ -25,7 +27,7 @@ class TopicDataRecordList(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .TopicDataRecord import TopicDataRecord
+            from ubii.topicData.TopicDataRecord import TopicDataRecord
             obj = TopicDataRecord()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -38,7 +40,65 @@ class TopicDataRecordList(object):
             return self._tab.VectorLen(o)
         return 0
 
+    # TopicDataRecordList
+    def ElementsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
+        return o == 0
+
 def TopicDataRecordListStart(builder): builder.StartObject(1)
 def TopicDataRecordListAddElements(builder, elements): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(elements), 0)
 def TopicDataRecordListStartElementsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def TopicDataRecordListEnd(builder): return builder.EndObject()
+
+import ubii.topicData.TopicDataRecord
+try:
+    from typing import List
+except:
+    pass
+
+class TopicDataRecordListT(object):
+
+    # TopicDataRecordListT
+    def __init__(self):
+        self.elements = None  # type: List[ubii.topicData.TopicDataRecord.TopicDataRecordT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        topicDataRecordList = TopicDataRecordList()
+        topicDataRecordList.Init(buf, pos)
+        return cls.InitFromObj(topicDataRecordList)
+
+    @classmethod
+    def InitFromObj(cls, topicDataRecordList):
+        x = TopicDataRecordListT()
+        x._UnPack(topicDataRecordList)
+        return x
+
+    # TopicDataRecordListT
+    def _UnPack(self, topicDataRecordList):
+        if topicDataRecordList is None:
+            return
+        if not topicDataRecordList.ElementsIsNone():
+            self.elements = []
+            for i in range(topicDataRecordList.ElementsLength()):
+                if topicDataRecordList.Elements(i) is None:
+                    self.elements.append(None)
+                else:
+                    topicDataRecord_ = ubii.topicData.TopicDataRecord.TopicDataRecordT.InitFromObj(topicDataRecordList.Elements(i))
+                    self.elements.append(topicDataRecord_)
+
+    # TopicDataRecordListT
+    def Pack(self, builder):
+        if self.elements is not None:
+            elementslist = []
+            for i in range(len(self.elements)):
+                elementslist.append(self.elements[i].Pack(builder))
+            TopicDataRecordListStartElementsVector(builder, len(self.elements))
+            for i in reversed(range(len(self.elements))):
+                builder.PrependUOffsetTRelative(elementslist[i])
+            elements = builder.EndVector(len(self.elements))
+        TopicDataRecordListStart(builder)
+        if self.elements is not None:
+            TopicDataRecordListAddElements(builder, elements)
+        topicDataRecordList = TopicDataRecordListEnd(builder)
+        return topicDataRecordList

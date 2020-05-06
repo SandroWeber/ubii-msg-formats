@@ -7,3 +7,15 @@ class TopicDataContent(object):
     topic_data_records = 1
     error = 2
 
+
+def TopicDataContentCreator(unionType, table):
+    from flatbuffers.table import Table
+    if not isinstance(table, Table):
+        return None
+    if unionType == TopicDataContent().topic_data_records:
+        import ubii.topicData.TopicDataRecordList
+        return ubii.topicData.TopicDataRecordList.TopicDataRecordListT.InitFromBuf(table.Bytes, table.Pos)
+    if unionType == TopicDataContent().error:
+        import ubii.general.Error
+        return ubii.general.Error.ErrorT.InitFromBuf(table.Bytes, table.Pos)
+    return None

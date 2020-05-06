@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class AngleOrientation(object):
     __slots__ = ['_tab']
@@ -23,7 +25,7 @@ class AngleOrientation(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             x = o + self._tab.Pos
-            from .Vector2 import Vector2
+            from ubii.dataStructures.Vector2 import Vector2
             obj = Vector2()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -40,3 +42,46 @@ def AngleOrientationStart(builder): builder.StartObject(2)
 def AngleOrientationAddZeroDirection(builder, zeroDirection): builder.PrependStructSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(zeroDirection), 0)
 def AngleOrientationAddAngle(builder, angle): builder.PrependFloat32Slot(1, angle, 0.0)
 def AngleOrientationEnd(builder): return builder.EndObject()
+
+import ubii.dataStructures.Vector2
+try:
+    from typing import Optional
+except:
+    pass
+
+class AngleOrientationT(object):
+
+    # AngleOrientationT
+    def __init__(self):
+        self.zeroDirection = None  # type: Optional[ubii.dataStructures.Vector2.Vector2T]
+        self.angle = 0.0  # type: float
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        angleOrientation = AngleOrientation()
+        angleOrientation.Init(buf, pos)
+        return cls.InitFromObj(angleOrientation)
+
+    @classmethod
+    def InitFromObj(cls, angleOrientation):
+        x = AngleOrientationT()
+        x._UnPack(angleOrientation)
+        return x
+
+    # AngleOrientationT
+    def _UnPack(self, angleOrientation):
+        if angleOrientation is None:
+            return
+        if angleOrientation.ZeroDirection() is not None:
+            self.zeroDirection = ubii.dataStructures.Vector2.Vector2T.InitFromObj(angleOrientation.ZeroDirection())
+        self.angle = angleOrientation.Angle()
+
+    # AngleOrientationT
+    def Pack(self, builder):
+        AngleOrientationStart(builder)
+        if self.zeroDirection is not None:
+            zeroDirection = self.zeroDirection.Pack(builder)
+            AngleOrientationAddZeroDirection(builder, zeroDirection)
+        AngleOrientationAddAngle(builder, self.angle)
+        angleOrientation = AngleOrientationEnd(builder)
+        return angleOrientation

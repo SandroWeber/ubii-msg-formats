@@ -6,26 +6,54 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Timestamp : IFlatbufferObject
 {
   private Struct __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Struct(_i, _bb); }
   public Timestamp __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public long Seconds { get { return __p.bb.GetLong(__p.bb_pos + 0); } }
   public int Nanos { get { return __p.bb.GetInt(__p.bb_pos + 8); } }
 
-  public static Offset<Timestamp> CreateTimestamp(FlatBufferBuilder builder, long Seconds, int Nanos) {
+  public static Offset<ubii.dataStructures.Timestamp> CreateTimestamp(FlatBufferBuilder builder, long Seconds, int Nanos) {
     builder.Prep(8, 16);
     builder.Pad(4);
     builder.PutInt(Nanos);
     builder.PutLong(Seconds);
-    return new Offset<Timestamp>(builder.Offset);
+    return new Offset<ubii.dataStructures.Timestamp>(builder.Offset);
+  }
+  public TimestampT UnPack() {
+    var _o = new TimestampT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(TimestampT _o) {
+    _o.Seconds = this.Seconds;
+    _o.Nanos = this.Nanos;
+  }
+  public static Offset<ubii.dataStructures.Timestamp> Pack(FlatBufferBuilder builder, TimestampT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Timestamp>);
+    return CreateTimestamp(
+      builder,
+      _o.Seconds,
+      _o.Nanos);
   }
 };
+
+public class TimestampT
+{
+  public long Seconds { get; set; }
+  public int Nanos { get; set; }
+
+  public TimestampT() {
+    this.Seconds = 0;
+    this.Nanos = 0;
+  }
+}
 
 
 }

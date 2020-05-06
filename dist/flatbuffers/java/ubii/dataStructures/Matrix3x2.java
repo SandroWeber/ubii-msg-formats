@@ -9,7 +9,7 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Matrix3x2 extends Struct {
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Matrix3x2 __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public float m00() { return bb.getFloat(bb_pos + 0); }
@@ -28,6 +28,13 @@ public final class Matrix3x2 extends Struct {
     builder.putFloat(m01);
     builder.putFloat(m00);
     return builder.offset();
+  }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Matrix3x2 get(int j) { return get(new Matrix3x2(), j); }
+    public Matrix3x2 get(Matrix3x2 obj, int j) {  return obj.__assign(__element(j), bb); }
   }
 }
 

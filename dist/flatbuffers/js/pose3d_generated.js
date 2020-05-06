@@ -48,6 +48,16 @@ ubii.dataStructures.Orientation3D.getRootAsOrientation3D = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.Orientation3D=} obj
+ * @returns {ubii.dataStructures.Orientation3D}
+ */
+ubii.dataStructures.Orientation3D.getSizePrefixedRootAsOrientation3D = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.Orientation3D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {ubii.dataStructures.Quaternion=} obj
  * @returns {ubii.dataStructures.Quaternion|null}
  */
@@ -146,6 +156,16 @@ ubii.dataStructures.Pose3D.getRootAsPose3D = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.Pose3D=} obj
+ * @returns {ubii.dataStructures.Pose3D}
+ */
+ubii.dataStructures.Pose3D.getSizePrefixedRootAsPose3D = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.Pose3D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {ubii.dataStructures.Vector3=} obj
  * @returns {ubii.dataStructures.Vector3|null}
  */
@@ -201,6 +221,14 @@ ubii.dataStructures.Pose3D.endPose3D = function(builder) {
  */
 ubii.dataStructures.Pose3D.finishPose3DBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.Pose3D.finishSizePrefixedPose3DBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

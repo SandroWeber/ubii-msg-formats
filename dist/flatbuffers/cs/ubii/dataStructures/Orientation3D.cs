@@ -6,28 +6,57 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Orientation3D : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Orientation3D GetRootAsOrientation3D(ByteBuffer _bb) { return GetRootAsOrientation3D(_bb, new Orientation3D()); }
   public static Orientation3D GetRootAsOrientation3D(ByteBuffer _bb, Orientation3D obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Orientation3D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public Quaternion? Quaternion { get { int o = __p.__offset(4); return o != 0 ? (Quaternion?)(new Quaternion()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Vector3? Euler { get { int o = __p.__offset(6); return o != 0 ? (Vector3?)(new Vector3()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Quaternion? Quaternion { get { int o = __p.__offset(4); return o != 0 ? (ubii.dataStructures.Quaternion?)(new ubii.dataStructures.Quaternion()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Vector3? Euler { get { int o = __p.__offset(6); return o != 0 ? (ubii.dataStructures.Vector3?)(new ubii.dataStructures.Vector3()).__assign(o + __p.bb_pos, __p.bb) : null; } }
 
-  public static void StartOrientation3D(FlatBufferBuilder builder) { builder.StartObject(2); }
-  public static void AddQuaternion(FlatBufferBuilder builder, Offset<Quaternion> quaternionOffset) { builder.AddStruct(0, quaternionOffset.Value, 0); }
-  public static void AddEuler(FlatBufferBuilder builder, Offset<Vector3> eulerOffset) { builder.AddStruct(1, eulerOffset.Value, 0); }
-  public static Offset<Orientation3D> EndOrientation3D(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Orientation3D>(o);
+  public static void StartOrientation3D(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void AddQuaternion(FlatBufferBuilder builder, Offset<ubii.dataStructures.Quaternion> quaternionOffset) { builder.AddStruct(0, quaternionOffset.Value, 0); }
+  public static void AddEuler(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector3> eulerOffset) { builder.AddStruct(1, eulerOffset.Value, 0); }
+  public static Offset<ubii.dataStructures.Orientation3D> EndOrientation3D(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.Orientation3D>(o);
+  }
+  public Orientation3DT UnPack() {
+    var _o = new Orientation3DT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Orientation3DT _o) {
+    _o.Quaternion = this.Quaternion.HasValue ? this.Quaternion.Value.UnPack() : null;
+    _o.Euler = this.Euler.HasValue ? this.Euler.Value.UnPack() : null;
+  }
+  public static Offset<ubii.dataStructures.Orientation3D> Pack(FlatBufferBuilder builder, Orientation3DT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Orientation3D>);
+    StartOrientation3D(builder);
+    AddQuaternion(builder, ubii.dataStructures.Quaternion.Pack(builder, _o.Quaternion));
+    AddEuler(builder, ubii.dataStructures.Vector3.Pack(builder, _o.Euler));
+    return EndOrientation3D(builder);
   }
 };
+
+public class Orientation3DT
+{
+  public ubii.dataStructures.QuaternionT Quaternion { get; set; }
+  public ubii.dataStructures.Vector3T Euler { get; set; }
+
+  public Orientation3DT() {
+    this.Quaternion = new ubii.dataStructures.QuaternionT();
+    this.Euler = new ubii.dataStructures.Vector3T();
+  }
+}
 
 
 }

@@ -7,8 +7,8 @@ namespace ubii.sessions
 
 public enum ProcessMode : sbyte
 {
- CYCLE_INTERACTIONS = 0,
- INDIVIDUAL_PROCESS_FREQUENCIES = 1,
+  CYCLE_INTERACTIONS = 0,
+  INDIVIDUAL_PROCESS_FREQUENCIES = 1,
 };
 
 

@@ -3,6 +3,8 @@
 # namespace: services
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class ServiceRequest(object):
     __slots__ = ['_tab']
@@ -30,7 +32,7 @@ class ServiceRequest(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .ServiceData import ServiceData
+            from ubii.services.ServiceData import ServiceData
             obj = ServiceData()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -40,3 +42,50 @@ def ServiceRequestStart(builder): builder.StartObject(2)
 def ServiceRequestAddTopic(builder, topic): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(topic), 0)
 def ServiceRequestAddRequest(builder, request): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(request), 0)
 def ServiceRequestEnd(builder): return builder.EndObject()
+
+import ubii.services.ServiceData
+try:
+    from typing import Optional
+except:
+    pass
+
+class ServiceRequestT(object):
+
+    # ServiceRequestT
+    def __init__(self):
+        self.topic = None  # type: str
+        self.request = None  # type: Optional[ubii.services.ServiceData.ServiceDataT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        serviceRequest = ServiceRequest()
+        serviceRequest.Init(buf, pos)
+        return cls.InitFromObj(serviceRequest)
+
+    @classmethod
+    def InitFromObj(cls, serviceRequest):
+        x = ServiceRequestT()
+        x._UnPack(serviceRequest)
+        return x
+
+    # ServiceRequestT
+    def _UnPack(self, serviceRequest):
+        if serviceRequest is None:
+            return
+        self.topic = serviceRequest.Topic()
+        if serviceRequest.Request() is not None:
+            self.request = ubii.services.ServiceData.ServiceDataT.InitFromObj(serviceRequest.Request())
+
+    # ServiceRequestT
+    def Pack(self, builder):
+        if self.topic is not None:
+            topic = builder.CreateString(self.topic)
+        if self.request is not None:
+            request = self.request.Pack(builder)
+        ServiceRequestStart(builder)
+        if self.topic is not None:
+            ServiceRequestAddTopic(builder, topic)
+        if self.request is not None:
+            ServiceRequestAddRequest(builder, request)
+        serviceRequest = ServiceRequestEnd(builder)
+        return serviceRequest

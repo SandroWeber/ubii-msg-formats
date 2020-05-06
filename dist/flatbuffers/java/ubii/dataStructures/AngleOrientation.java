@@ -9,21 +9,29 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class AngleOrientation extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static AngleOrientation getRootAsAngleOrientation(ByteBuffer _bb) { return getRootAsAngleOrientation(_bb, new AngleOrientation()); }
   public static AngleOrientation getRootAsAngleOrientation(ByteBuffer _bb, AngleOrientation obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public AngleOrientation __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public Vector2 zeroDirection() { return zeroDirection(new Vector2()); }
-  public Vector2 zeroDirection(Vector2 obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Vector2 zeroDirection() { return zeroDirection(new ubii.dataStructures.Vector2()); }
+  public ubii.dataStructures.Vector2 zeroDirection(ubii.dataStructures.Vector2 obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
   public float angle() { int o = __offset(6); return o != 0 ? bb.getFloat(o + bb_pos) : 0.0f; }
 
-  public static void startAngleOrientation(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startAngleOrientation(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addZeroDirection(FlatBufferBuilder builder, int zeroDirectionOffset) { builder.addStruct(0, zeroDirectionOffset, 0); }
   public static void addAngle(FlatBufferBuilder builder, float angle) { builder.addFloat(1, angle, 0.0f); }
   public static int endAngleOrientation(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
+  }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public AngleOrientation get(int j) { return get(new AngleOrientation(), j); }
+    public AngleOrientation get(AngleOrientation obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
   }
 }
 

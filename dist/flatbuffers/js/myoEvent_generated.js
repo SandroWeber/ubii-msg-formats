@@ -48,6 +48,16 @@ ubii.dataStructures.MyoEvent.getRootAsMyoEvent = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.MyoEvent=} obj
+ * @returns {ubii.dataStructures.MyoEvent}
+ */
+ubii.dataStructures.MyoEvent.getSizePrefixedRootAsMyoEvent = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.MyoEvent).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {ubii.dataStructures.Vector8=} obj
  * @returns {ubii.dataStructures.Vector8|null}
  */
@@ -153,6 +163,14 @@ ubii.dataStructures.MyoEvent.endMyoEvent = function(builder) {
  */
 ubii.dataStructures.MyoEvent.finishMyoEventBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.MyoEvent.finishSizePrefixedMyoEventBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

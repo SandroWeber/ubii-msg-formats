@@ -66,6 +66,16 @@ ubii.dataStructures.DataStructure.getRootAsDataStructure = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.DataStructure=} obj
+ * @returns {ubii.dataStructures.DataStructure}
+ */
+ubii.dataStructures.DataStructure.getSizePrefixedRootAsDataStructure = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.DataStructure).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @returns {boolean}
  */
 ubii.dataStructures.DataStructure.prototype.bool = function() {
@@ -894,6 +904,14 @@ ubii.dataStructures.DataStructure.endDataStructure = function(builder) {
  */
 ubii.dataStructures.DataStructure.finishDataStructureBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.DataStructure.finishSizePrefixedDataStructureBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

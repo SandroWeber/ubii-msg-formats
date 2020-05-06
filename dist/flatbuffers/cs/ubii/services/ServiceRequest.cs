@@ -6,45 +6,84 @@ namespace ubii.services
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct ServiceRequest : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static ServiceRequest GetRootAsServiceRequest(ByteBuffer _bb) { return GetRootAsServiceRequest(_bb, new ServiceRequest()); }
   public static ServiceRequest GetRootAsServiceRequest(ByteBuffer _bb, ServiceRequest obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public ServiceRequest __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Topic { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTopicBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetTopicBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetTopicBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetTopicArray() { return __p.__vector_as_array<byte>(4); }
-  public ServiceData? Request { get { int o = __p.__offset(6); return o != 0 ? (ServiceData?)(new ServiceData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.services.ServiceData? Request { get { int o = __p.__offset(6); return o != 0 ? (ubii.services.ServiceData?)(new ubii.services.ServiceData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
-  public static Offset<ServiceRequest> CreateServiceRequest(FlatBufferBuilder builder,
+  public static Offset<ubii.services.ServiceRequest> CreateServiceRequest(FlatBufferBuilder builder,
       StringOffset topicOffset = default(StringOffset),
-      Offset<ServiceData> requestOffset = default(Offset<ServiceData>)) {
-    builder.StartObject(2);
+      Offset<ubii.services.ServiceData> requestOffset = default(Offset<ubii.services.ServiceData>)) {
+    builder.StartTable(2);
     ServiceRequest.AddRequest(builder, requestOffset);
     ServiceRequest.AddTopic(builder, topicOffset);
     return ServiceRequest.EndServiceRequest(builder);
   }
 
-  public static void StartServiceRequest(FlatBufferBuilder builder) { builder.StartObject(2); }
+  public static void StartServiceRequest(FlatBufferBuilder builder) { builder.StartTable(2); }
   public static void AddTopic(FlatBufferBuilder builder, StringOffset topicOffset) { builder.AddOffset(0, topicOffset.Value, 0); }
-  public static void AddRequest(FlatBufferBuilder builder, Offset<ServiceData> requestOffset) { builder.AddOffset(1, requestOffset.Value, 0); }
-  public static Offset<ServiceRequest> EndServiceRequest(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<ServiceRequest>(o);
+  public static void AddRequest(FlatBufferBuilder builder, Offset<ubii.services.ServiceData> requestOffset) { builder.AddOffset(1, requestOffset.Value, 0); }
+  public static Offset<ubii.services.ServiceRequest> EndServiceRequest(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.services.ServiceRequest>(o);
   }
-  public static void FinishServiceRequestBuffer(FlatBufferBuilder builder, Offset<ServiceRequest> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedServiceRequestBuffer(FlatBufferBuilder builder, Offset<ServiceRequest> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishServiceRequestBuffer(FlatBufferBuilder builder, Offset<ubii.services.ServiceRequest> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedServiceRequestBuffer(FlatBufferBuilder builder, Offset<ubii.services.ServiceRequest> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ServiceRequestT UnPack() {
+    var _o = new ServiceRequestT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ServiceRequestT _o) {
+    _o.Topic = this.Topic;
+    _o.Request = this.Request.HasValue ? this.Request.Value.UnPack() : null;
+  }
+  public static Offset<ubii.services.ServiceRequest> Pack(FlatBufferBuilder builder, ServiceRequestT _o) {
+    if (_o == null) return default(Offset<ubii.services.ServiceRequest>);
+    var _topic = _o.Topic == null ? default(StringOffset) : builder.CreateString(_o.Topic);
+    var _request = _o.Request == null ? default(Offset<ubii.services.ServiceData>) : ubii.services.ServiceData.Pack(builder, _o.Request);
+    return CreateServiceRequest(
+      builder,
+      _topic,
+      _request);
+  }
 };
+
+public class ServiceRequestT
+{
+  public string Topic { get; set; }
+  public ubii.services.ServiceDataT Request { get; set; }
+
+  public ServiceRequestT() {
+    this.Topic = null;
+    this.Request = null;
+  }
+  public static ServiceRequestT DeserializeFromBinary(byte[] fbBuffer) {
+    return ServiceRequest.GetRootAsServiceRequest(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(ServiceRequest.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

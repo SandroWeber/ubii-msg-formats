@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Success extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Success getRootAsSuccess(ByteBuffer _bb) { return getRootAsSuccess(_bb, new Success()); }
   public static Success getRootAsSuccess(ByteBuffer _bb, Success obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Success __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String title() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -24,20 +25,27 @@ public final class Success extends Table {
   public static int createSuccess(FlatBufferBuilder builder,
       int titleOffset,
       int messageOffset) {
-    builder.startObject(2);
+    builder.startTable(2);
     Success.addMessage(builder, messageOffset);
     Success.addTitle(builder, titleOffset);
     return Success.endSuccess(builder);
   }
 
-  public static void startSuccess(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startSuccess(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addTitle(FlatBufferBuilder builder, int titleOffset) { builder.addOffset(0, titleOffset, 0); }
   public static void addMessage(FlatBufferBuilder builder, int messageOffset) { builder.addOffset(1, messageOffset, 0); }
   public static int endSuccess(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishSuccessBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedSuccessBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Success get(int j) { return get(new Success(), j); }
+    public Success get(Success obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

@@ -25,7 +25,7 @@ inline const ButtonEventType (&EnumValuesButtonEventType())[2] {
 }
 
 inline const char * const *EnumNamesButtonEventType() {
-  static const char * const names[] = {
+  static const char * const names[3] = {
     "UP",
     "DOWN",
     nullptr
@@ -34,7 +34,7 @@ inline const char * const *EnumNamesButtonEventType() {
 }
 
 inline const char *EnumNameButtonEventType(ButtonEventType e) {
-  if (e < ButtonEventType_UP || e > ButtonEventType_DOWN) return "";
+  if (flatbuffers::IsOutRange(e, ButtonEventType_UP, ButtonEventType_DOWN)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesButtonEventType()[index];
 }

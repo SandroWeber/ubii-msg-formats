@@ -9,34 +9,42 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class ServiceRequest extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static ServiceRequest getRootAsServiceRequest(ByteBuffer _bb) { return getRootAsServiceRequest(_bb, new ServiceRequest()); }
   public static ServiceRequest getRootAsServiceRequest(ByteBuffer _bb, ServiceRequest obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public ServiceRequest __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String topic() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer topicAsByteBuffer() { return __vector_as_bytebuffer(4, 1); }
   public ByteBuffer topicInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 4, 1); }
-  public ServiceData request() { return request(new ServiceData()); }
-  public ServiceData request(ServiceData obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.services.ServiceData request() { return request(new ubii.services.ServiceData()); }
+  public ubii.services.ServiceData request(ubii.services.ServiceData obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
   public static int createServiceRequest(FlatBufferBuilder builder,
       int topicOffset,
       int requestOffset) {
-    builder.startObject(2);
+    builder.startTable(2);
     ServiceRequest.addRequest(builder, requestOffset);
     ServiceRequest.addTopic(builder, topicOffset);
     return ServiceRequest.endServiceRequest(builder);
   }
 
-  public static void startServiceRequest(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startServiceRequest(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addTopic(FlatBufferBuilder builder, int topicOffset) { builder.addOffset(0, topicOffset, 0); }
   public static void addRequest(FlatBufferBuilder builder, int requestOffset) { builder.addOffset(1, requestOffset, 0); }
   public static int endServiceRequest(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishServiceRequestBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedServiceRequestBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public ServiceRequest get(int j) { return get(new ServiceRequest(), j); }
+    public ServiceRequest get(ServiceRequest obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

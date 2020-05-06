@@ -26,10 +26,10 @@ ubii.interactions.InteractionStatus = {
  * @enum {string}
  */
 ubii.interactions.InteractionStatusName = {
-  0: 'CREATED',
-  1: 'INITIALIZED',
-  2: 'PROCESSING',
-  3: 'HALTED'
+  '0': 'CREATED',
+  '1': 'INITIALIZED',
+  '2': 'PROCESSING',
+  '3': 'HALTED'
 };
 
 /**
@@ -64,6 +64,16 @@ ubii.interactions.Interaction.prototype.__init = function(i, bb) {
  * @returns {ubii.interactions.Interaction}
  */
 ubii.interactions.Interaction.getRootAsInteraction = function(bb, obj) {
+  return (obj || new ubii.interactions.Interaction).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.interactions.Interaction=} obj
+ * @returns {ubii.interactions.Interaction}
+ */
+ubii.interactions.Interaction.getSizePrefixedRootAsInteraction = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.interactions.Interaction).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -394,6 +404,14 @@ ubii.interactions.Interaction.endInteraction = function(builder) {
  */
 ubii.interactions.Interaction.finishInteractionBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.interactions.Interaction.finishSizePrefixedInteractionBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

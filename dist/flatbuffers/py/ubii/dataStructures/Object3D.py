@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Object3D(object):
     __slots__ = ['_tab']
@@ -37,7 +39,7 @@ class Object3D(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Pose3D import Pose3D
+            from ubii.dataStructures.Pose3D import Pose3D
             obj = Pose3D()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -48,7 +50,7 @@ class Object3D(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
             x = o + self._tab.Pos
-            from .Vector3 import Vector3
+            from ubii.dataStructures.Vector3 import Vector3
             obj = Vector3()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -68,3 +70,69 @@ def Object3DAddPose(builder, pose): builder.PrependUOffsetTRelativeSlot(2, flatb
 def Object3DAddSize(builder, size): builder.PrependStructSlot(3, flatbuffers.number_types.UOffsetTFlags.py_type(size), 0)
 def Object3DAddUserDataJson(builder, userDataJson): builder.PrependUOffsetTRelativeSlot(4, flatbuffers.number_types.UOffsetTFlags.py_type(userDataJson), 0)
 def Object3DEnd(builder): return builder.EndObject()
+
+import ubii.dataStructures.Pose3D
+import ubii.dataStructures.Vector3
+try:
+    from typing import Optional
+except:
+    pass
+
+class Object3DT(object):
+
+    # Object3DT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.pose = None  # type: Optional[ubii.dataStructures.Pose3D.Pose3DT]
+        self.size = None  # type: Optional[ubii.dataStructures.Vector3.Vector3T]
+        self.userDataJson = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        object3D = Object3D()
+        object3D.Init(buf, pos)
+        return cls.InitFromObj(object3D)
+
+    @classmethod
+    def InitFromObj(cls, object3D):
+        x = Object3DT()
+        x._UnPack(object3D)
+        return x
+
+    # Object3DT
+    def _UnPack(self, object3D):
+        if object3D is None:
+            return
+        self.id = object3D.Id()
+        self.name = object3D.Name()
+        if object3D.Pose() is not None:
+            self.pose = ubii.dataStructures.Pose3D.Pose3DT.InitFromObj(object3D.Pose())
+        if object3D.Size() is not None:
+            self.size = ubii.dataStructures.Vector3.Vector3T.InitFromObj(object3D.Size())
+        self.userDataJson = object3D.UserDataJson()
+
+    # Object3DT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.pose is not None:
+            pose = self.pose.Pack(builder)
+        if self.userDataJson is not None:
+            userDataJson = builder.CreateString(self.userDataJson)
+        Object3DStart(builder)
+        if self.id is not None:
+            Object3DAddId(builder, id)
+        if self.name is not None:
+            Object3DAddName(builder, name)
+        if self.pose is not None:
+            Object3DAddPose(builder, pose)
+        if self.size is not None:
+            size = self.size.Pack(builder)
+            Object3DAddSize(builder, size)
+        if self.userDataJson is not None:
+            Object3DAddUserDataJson(builder, userDataJson)
+        object3D = Object3DEnd(builder)
+        return object3D

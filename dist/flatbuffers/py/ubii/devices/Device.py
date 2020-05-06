@@ -3,6 +3,8 @@
 # namespace: devices
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Device(object):
     __slots__ = ['_tab']
@@ -48,6 +50,11 @@ class Device(object):
         return 0
 
     # Device
+    def TagsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        return o == 0
+
+    # Device
     def Description(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
@@ -75,7 +82,7 @@ class Device(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Component import Component
+            from ubii.devices.Component import Component
             obj = Component()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -88,6 +95,11 @@ class Device(object):
             return self._tab.VectorLen(o)
         return 0
 
+    # Device
+    def ComponentsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        return o == 0
+
 def DeviceStart(builder): builder.StartObject(7)
 def DeviceAddId(builder, id): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(id), 0)
 def DeviceAddName(builder, name): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(name), 0)
@@ -99,3 +111,98 @@ def DeviceAddDeviceType(builder, deviceType): builder.PrependInt8Slot(5, deviceT
 def DeviceAddComponents(builder, components): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(components), 0)
 def DeviceStartComponentsVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def DeviceEnd(builder): return builder.EndObject()
+
+import ubii.devices.Component
+try:
+    from typing import List
+except:
+    pass
+
+class DeviceT(object):
+
+    # DeviceT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.tags = None  # type: List[str]
+        self.description = None  # type: str
+        self.clientId = None  # type: str
+        self.deviceType = 0  # type: int
+        self.components = None  # type: List[ubii.devices.Component.ComponentT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        device = Device()
+        device.Init(buf, pos)
+        return cls.InitFromObj(device)
+
+    @classmethod
+    def InitFromObj(cls, device):
+        x = DeviceT()
+        x._UnPack(device)
+        return x
+
+    # DeviceT
+    def _UnPack(self, device):
+        if device is None:
+            return
+        self.id = device.Id()
+        self.name = device.Name()
+        if not device.TagsIsNone():
+            self.tags = []
+            for i in range(device.TagsLength()):
+                self.tags.append(device.Tags(i))
+        self.description = device.Description()
+        self.clientId = device.ClientId()
+        self.deviceType = device.DeviceType()
+        if not device.ComponentsIsNone():
+            self.components = []
+            for i in range(device.ComponentsLength()):
+                if device.Components(i) is None:
+                    self.components.append(None)
+                else:
+                    component_ = ubii.devices.Component.ComponentT.InitFromObj(device.Components(i))
+                    self.components.append(component_)
+
+    # DeviceT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.tags is not None:
+            tagslist = []
+            for i in range(len(self.tags)):
+                tagslist.append(builder.CreateString(self.tags[i]))
+            DeviceStartTagsVector(builder, len(self.tags))
+            for i in reversed(range(len(self.tags))):
+                builder.PrependUOffsetTRelative(tagslist[i])
+            tags = builder.EndVector(len(self.tags))
+        if self.description is not None:
+            description = builder.CreateString(self.description)
+        if self.clientId is not None:
+            clientId = builder.CreateString(self.clientId)
+        if self.components is not None:
+            componentslist = []
+            for i in range(len(self.components)):
+                componentslist.append(self.components[i].Pack(builder))
+            DeviceStartComponentsVector(builder, len(self.components))
+            for i in reversed(range(len(self.components))):
+                builder.PrependUOffsetTRelative(componentslist[i])
+            components = builder.EndVector(len(self.components))
+        DeviceStart(builder)
+        if self.id is not None:
+            DeviceAddId(builder, id)
+        if self.name is not None:
+            DeviceAddName(builder, name)
+        if self.tags is not None:
+            DeviceAddTags(builder, tags)
+        if self.description is not None:
+            DeviceAddDescription(builder, description)
+        if self.clientId is not None:
+            DeviceAddClientId(builder, clientId)
+        DeviceAddDeviceType(builder, self.deviceType)
+        if self.components is not None:
+            DeviceAddComponents(builder, components)
+        device = DeviceEnd(builder)
+        return device

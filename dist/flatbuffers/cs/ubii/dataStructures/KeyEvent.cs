@@ -6,45 +6,83 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct KeyEvent : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static KeyEvent GetRootAsKeyEvent(ByteBuffer _bb) { return GetRootAsKeyEvent(_bb, new KeyEvent()); }
   public static KeyEvent GetRootAsKeyEvent(ByteBuffer _bb, KeyEvent obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public KeyEvent __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public ButtonEventType Type { get { int o = __p.__offset(4); return o != 0 ? (ButtonEventType)__p.bb.GetSbyte(o + __p.bb_pos) : ButtonEventType.UP; } }
+  public ubii.dataStructures.ButtonEventType Type { get { int o = __p.__offset(4); return o != 0 ? (ubii.dataStructures.ButtonEventType)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.dataStructures.ButtonEventType.UP; } }
   public string Key { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetKeyBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetKeyBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetKeyBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetKeyArray() { return __p.__vector_as_array<byte>(6); }
 
-  public static Offset<KeyEvent> CreateKeyEvent(FlatBufferBuilder builder,
-      ButtonEventType type = ButtonEventType.UP,
+  public static Offset<ubii.dataStructures.KeyEvent> CreateKeyEvent(FlatBufferBuilder builder,
+      ubii.dataStructures.ButtonEventType type = ubii.dataStructures.ButtonEventType.UP,
       StringOffset keyOffset = default(StringOffset)) {
-    builder.StartObject(2);
+    builder.StartTable(2);
     KeyEvent.AddKey(builder, keyOffset);
     KeyEvent.AddType(builder, type);
     return KeyEvent.EndKeyEvent(builder);
   }
 
-  public static void StartKeyEvent(FlatBufferBuilder builder) { builder.StartObject(2); }
-  public static void AddType(FlatBufferBuilder builder, ButtonEventType type) { builder.AddSbyte(0, (sbyte)type, 0); }
+  public static void StartKeyEvent(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void AddType(FlatBufferBuilder builder, ubii.dataStructures.ButtonEventType type) { builder.AddSbyte(0, (sbyte)type, 0); }
   public static void AddKey(FlatBufferBuilder builder, StringOffset keyOffset) { builder.AddOffset(1, keyOffset.Value, 0); }
-  public static Offset<KeyEvent> EndKeyEvent(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<KeyEvent>(o);
+  public static Offset<ubii.dataStructures.KeyEvent> EndKeyEvent(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.KeyEvent>(o);
   }
-  public static void FinishKeyEventBuffer(FlatBufferBuilder builder, Offset<KeyEvent> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedKeyEventBuffer(FlatBufferBuilder builder, Offset<KeyEvent> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishKeyEventBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.KeyEvent> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedKeyEventBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.KeyEvent> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public KeyEventT UnPack() {
+    var _o = new KeyEventT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(KeyEventT _o) {
+    _o.Type = this.Type;
+    _o.Key = this.Key;
+  }
+  public static Offset<ubii.dataStructures.KeyEvent> Pack(FlatBufferBuilder builder, KeyEventT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.KeyEvent>);
+    var _key = _o.Key == null ? default(StringOffset) : builder.CreateString(_o.Key);
+    return CreateKeyEvent(
+      builder,
+      _o.Type,
+      _key);
+  }
 };
+
+public class KeyEventT
+{
+  public ubii.dataStructures.ButtonEventType Type { get; set; }
+  public string Key { get; set; }
+
+  public KeyEventT() {
+    this.Type = ubii.dataStructures.ButtonEventType.UP;
+    this.Key = null;
+  }
+  public static KeyEventT DeserializeFromBinary(byte[] fbBuffer) {
+    return KeyEvent.GetRootAsKeyEvent(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(KeyEvent.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

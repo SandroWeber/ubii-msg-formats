@@ -7,8 +7,8 @@ namespace ubii.dataStructures
 
 public enum ButtonEventType : sbyte
 {
- UP = 0,
- DOWN = 1,
+  UP = 0,
+  DOWN = 1,
 };
 
 

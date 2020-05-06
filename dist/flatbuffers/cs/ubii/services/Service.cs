@@ -6,27 +6,29 @@ namespace ubii.services
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Service : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Service GetRootAsService(ByteBuffer _bb) { return GetRootAsService(_bb, new Service()); }
   public static Service GetRootAsService(ByteBuffer _bb, Service obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Service __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Id { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetIdArray() { return __p.__vector_as_array<byte>(4); }
   public string Name { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
@@ -35,34 +37,34 @@ public struct Service : IFlatbufferObject
   public int TagsLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string Description { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span(10); }
+  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
   public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetDescriptionArray() { return __p.__vector_as_array<byte>(10); }
   public string Topic { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTopicBytes() { return __p.__vector_as_span(12); }
+  public Span<byte> GetTopicBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
   public ArraySegment<byte>? GetTopicBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetTopicArray() { return __p.__vector_as_array<byte>(12); }
   public string RequestMessageFormat { get { int o = __p.__offset(14); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetRequestMessageFormatBytes() { return __p.__vector_as_span(14); }
+  public Span<byte> GetRequestMessageFormatBytes() { return __p.__vector_as_span<byte>(14, 1); }
 #else
   public ArraySegment<byte>? GetRequestMessageFormatBytes() { return __p.__vector_as_arraysegment(14); }
 #endif
   public byte[] GetRequestMessageFormatArray() { return __p.__vector_as_array<byte>(14); }
   public string ResponseMessageFormat { get { int o = __p.__offset(16); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetResponseMessageFormatBytes() { return __p.__vector_as_span(16); }
+  public Span<byte> GetResponseMessageFormatBytes() { return __p.__vector_as_span<byte>(16, 1); }
 #else
   public ArraySegment<byte>? GetResponseMessageFormatBytes() { return __p.__vector_as_arraysegment(16); }
 #endif
   public byte[] GetResponseMessageFormatArray() { return __p.__vector_as_array<byte>(16); }
 
-  public static Offset<Service> CreateService(FlatBufferBuilder builder,
+  public static Offset<ubii.services.Service> CreateService(FlatBufferBuilder builder,
       StringOffset idOffset = default(StringOffset),
       StringOffset nameOffset = default(StringOffset),
       VectorOffset tagsOffset = default(VectorOffset),
@@ -70,7 +72,7 @@ public struct Service : IFlatbufferObject
       StringOffset topicOffset = default(StringOffset),
       StringOffset request_message_formatOffset = default(StringOffset),
       StringOffset response_message_formatOffset = default(StringOffset)) {
-    builder.StartObject(7);
+    builder.StartTable(7);
     Service.AddResponseMessageFormat(builder, response_message_formatOffset);
     Service.AddRequestMessageFormat(builder, request_message_formatOffset);
     Service.AddTopic(builder, topicOffset);
@@ -81,7 +83,7 @@ public struct Service : IFlatbufferObject
     return Service.EndService(builder);
   }
 
-  public static void StartService(FlatBufferBuilder builder) { builder.StartObject(7); }
+  public static void StartService(FlatBufferBuilder builder) { builder.StartTable(7); }
   public static void AddId(FlatBufferBuilder builder, StringOffset idOffset) { builder.AddOffset(0, idOffset.Value, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddTags(FlatBufferBuilder builder, VectorOffset tagsOffset) { builder.AddOffset(2, tagsOffset.Value, 0); }
@@ -92,13 +94,81 @@ public struct Service : IFlatbufferObject
   public static void AddTopic(FlatBufferBuilder builder, StringOffset topicOffset) { builder.AddOffset(4, topicOffset.Value, 0); }
   public static void AddRequestMessageFormat(FlatBufferBuilder builder, StringOffset requestMessageFormatOffset) { builder.AddOffset(5, requestMessageFormatOffset.Value, 0); }
   public static void AddResponseMessageFormat(FlatBufferBuilder builder, StringOffset responseMessageFormatOffset) { builder.AddOffset(6, responseMessageFormatOffset.Value, 0); }
-  public static Offset<Service> EndService(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Service>(o);
+  public static Offset<ubii.services.Service> EndService(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.services.Service>(o);
   }
-  public static void FinishServiceBuffer(FlatBufferBuilder builder, Offset<Service> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedServiceBuffer(FlatBufferBuilder builder, Offset<Service> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishServiceBuffer(FlatBufferBuilder builder, Offset<ubii.services.Service> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedServiceBuffer(FlatBufferBuilder builder, Offset<ubii.services.Service> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ServiceT UnPack() {
+    var _o = new ServiceT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ServiceT _o) {
+    _o.Id = this.Id;
+    _o.Name = this.Name;
+    _o.Tags = new List<string>();
+    for (var _j = 0; _j < this.TagsLength; ++_j) {_o.Tags.Add(this.Tags(_j));}
+    _o.Description = this.Description;
+    _o.Topic = this.Topic;
+    _o.RequestMessageFormat = this.RequestMessageFormat;
+    _o.ResponseMessageFormat = this.ResponseMessageFormat;
+  }
+  public static Offset<ubii.services.Service> Pack(FlatBufferBuilder builder, ServiceT _o) {
+    if (_o == null) return default(Offset<ubii.services.Service>);
+    var _id = _o.Id == null ? default(StringOffset) : builder.CreateString(_o.Id);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _tags = default(VectorOffset);
+    if (_o.Tags != null) {
+      var __tags = new StringOffset[_o.Tags.Count];
+      for (var _j = 0; _j < __tags.Length; ++_j) { __tags[_j] = builder.CreateString(_o.Tags[_j]); }
+      _tags = CreateTagsVector(builder, __tags);
+    }
+    var _description = _o.Description == null ? default(StringOffset) : builder.CreateString(_o.Description);
+    var _topic = _o.Topic == null ? default(StringOffset) : builder.CreateString(_o.Topic);
+    var _request_message_format = _o.RequestMessageFormat == null ? default(StringOffset) : builder.CreateString(_o.RequestMessageFormat);
+    var _response_message_format = _o.ResponseMessageFormat == null ? default(StringOffset) : builder.CreateString(_o.ResponseMessageFormat);
+    return CreateService(
+      builder,
+      _id,
+      _name,
+      _tags,
+      _description,
+      _topic,
+      _request_message_format,
+      _response_message_format);
+  }
 };
+
+public class ServiceT
+{
+  public string Id { get; set; }
+  public string Name { get; set; }
+  public List<string> Tags { get; set; }
+  public string Description { get; set; }
+  public string Topic { get; set; }
+  public string RequestMessageFormat { get; set; }
+  public string ResponseMessageFormat { get; set; }
+
+  public ServiceT() {
+    this.Id = null;
+    this.Name = null;
+    this.Tags = null;
+    this.Description = null;
+    this.Topic = null;
+    this.RequestMessageFormat = null;
+    this.ResponseMessageFormat = null;
+  }
+  public static ServiceT DeserializeFromBinary(byte[] fbBuffer) {
+    return Service.GetRootAsService(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Service.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

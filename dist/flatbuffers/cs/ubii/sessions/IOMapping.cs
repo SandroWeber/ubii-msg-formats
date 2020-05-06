@@ -6,57 +6,113 @@ namespace ubii.sessions
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct IOMapping : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static IOMapping GetRootAsIOMapping(ByteBuffer _bb) { return GetRootAsIOMapping(_bb, new IOMapping()); }
   public static IOMapping GetRootAsIOMapping(ByteBuffer _bb, IOMapping obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public IOMapping __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string InteractionId { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetInteractionIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetInteractionIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetInteractionIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetInteractionIdArray() { return __p.__vector_as_array<byte>(4); }
-  public InteractionInputMapping? InputMappings(int j) { int o = __p.__offset(6); return o != 0 ? (InteractionInputMapping?)(new InteractionInputMapping()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public ubii.sessions.InteractionInputMapping? InputMappings(int j) { int o = __p.__offset(6); return o != 0 ? (ubii.sessions.InteractionInputMapping?)(new ubii.sessions.InteractionInputMapping()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int InputMappingsLength { get { int o = __p.__offset(6); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public InteractionOutputMapping? OutputMappings(int j) { int o = __p.__offset(8); return o != 0 ? (InteractionOutputMapping?)(new InteractionOutputMapping()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public ubii.sessions.InteractionOutputMapping? OutputMappings(int j) { int o = __p.__offset(8); return o != 0 ? (ubii.sessions.InteractionOutputMapping?)(new ubii.sessions.InteractionOutputMapping()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
   public int OutputMappingsLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
 
-  public static Offset<IOMapping> CreateIOMapping(FlatBufferBuilder builder,
+  public static Offset<ubii.sessions.IOMapping> CreateIOMapping(FlatBufferBuilder builder,
       StringOffset interaction_idOffset = default(StringOffset),
       VectorOffset input_mappingsOffset = default(VectorOffset),
       VectorOffset output_mappingsOffset = default(VectorOffset)) {
-    builder.StartObject(3);
+    builder.StartTable(3);
     IOMapping.AddOutputMappings(builder, output_mappingsOffset);
     IOMapping.AddInputMappings(builder, input_mappingsOffset);
     IOMapping.AddInteractionId(builder, interaction_idOffset);
     return IOMapping.EndIOMapping(builder);
   }
 
-  public static void StartIOMapping(FlatBufferBuilder builder) { builder.StartObject(3); }
+  public static void StartIOMapping(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddInteractionId(FlatBufferBuilder builder, StringOffset interactionIdOffset) { builder.AddOffset(0, interactionIdOffset.Value, 0); }
   public static void AddInputMappings(FlatBufferBuilder builder, VectorOffset inputMappingsOffset) { builder.AddOffset(1, inputMappingsOffset.Value, 0); }
-  public static VectorOffset CreateInputMappingsVector(FlatBufferBuilder builder, Offset<InteractionInputMapping>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateInputMappingsVectorBlock(FlatBufferBuilder builder, Offset<InteractionInputMapping>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateInputMappingsVector(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionInputMapping>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateInputMappingsVectorBlock(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionInputMapping>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartInputMappingsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddOutputMappings(FlatBufferBuilder builder, VectorOffset outputMappingsOffset) { builder.AddOffset(2, outputMappingsOffset.Value, 0); }
-  public static VectorOffset CreateOutputMappingsVector(FlatBufferBuilder builder, Offset<InteractionOutputMapping>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateOutputMappingsVectorBlock(FlatBufferBuilder builder, Offset<InteractionOutputMapping>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateOutputMappingsVector(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionOutputMapping>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateOutputMappingsVectorBlock(FlatBufferBuilder builder, Offset<ubii.sessions.InteractionOutputMapping>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartOutputMappingsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static Offset<IOMapping> EndIOMapping(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<IOMapping>(o);
+  public static Offset<ubii.sessions.IOMapping> EndIOMapping(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.sessions.IOMapping>(o);
   }
-  public static void FinishIOMappingBuffer(FlatBufferBuilder builder, Offset<IOMapping> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedIOMappingBuffer(FlatBufferBuilder builder, Offset<IOMapping> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishIOMappingBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.IOMapping> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedIOMappingBuffer(FlatBufferBuilder builder, Offset<ubii.sessions.IOMapping> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public IOMappingT UnPack() {
+    var _o = new IOMappingT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(IOMappingT _o) {
+    _o.InteractionId = this.InteractionId;
+    _o.InputMappings = new List<ubii.sessions.InteractionInputMappingT>();
+    for (var _j = 0; _j < this.InputMappingsLength; ++_j) {_o.InputMappings.Add(this.InputMappings(_j).HasValue ? this.InputMappings(_j).Value.UnPack() : null);}
+    _o.OutputMappings = new List<ubii.sessions.InteractionOutputMappingT>();
+    for (var _j = 0; _j < this.OutputMappingsLength; ++_j) {_o.OutputMappings.Add(this.OutputMappings(_j).HasValue ? this.OutputMappings(_j).Value.UnPack() : null);}
+  }
+  public static Offset<ubii.sessions.IOMapping> Pack(FlatBufferBuilder builder, IOMappingT _o) {
+    if (_o == null) return default(Offset<ubii.sessions.IOMapping>);
+    var _interaction_id = _o.InteractionId == null ? default(StringOffset) : builder.CreateString(_o.InteractionId);
+    var _input_mappings = default(VectorOffset);
+    if (_o.InputMappings != null) {
+      var __input_mappings = new Offset<ubii.sessions.InteractionInputMapping>[_o.InputMappings.Count];
+      for (var _j = 0; _j < __input_mappings.Length; ++_j) { __input_mappings[_j] = ubii.sessions.InteractionInputMapping.Pack(builder, _o.InputMappings[_j]); }
+      _input_mappings = CreateInputMappingsVector(builder, __input_mappings);
+    }
+    var _output_mappings = default(VectorOffset);
+    if (_o.OutputMappings != null) {
+      var __output_mappings = new Offset<ubii.sessions.InteractionOutputMapping>[_o.OutputMappings.Count];
+      for (var _j = 0; _j < __output_mappings.Length; ++_j) { __output_mappings[_j] = ubii.sessions.InteractionOutputMapping.Pack(builder, _o.OutputMappings[_j]); }
+      _output_mappings = CreateOutputMappingsVector(builder, __output_mappings);
+    }
+    return CreateIOMapping(
+      builder,
+      _interaction_id,
+      _input_mappings,
+      _output_mappings);
+  }
 };
+
+public class IOMappingT
+{
+  public string InteractionId { get; set; }
+  public List<ubii.sessions.InteractionInputMappingT> InputMappings { get; set; }
+  public List<ubii.sessions.InteractionOutputMappingT> OutputMappings { get; set; }
+
+  public IOMappingT() {
+    this.InteractionId = null;
+    this.InputMappings = null;
+    this.OutputMappings = null;
+  }
+  public static IOMappingT DeserializeFromBinary(byte[] fbBuffer) {
+    return IOMapping.GetRootAsIOMapping(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(IOMapping.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

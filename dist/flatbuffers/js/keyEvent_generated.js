@@ -48,6 +48,16 @@ ubii.dataStructures.KeyEvent.getRootAsKeyEvent = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.KeyEvent=} obj
+ * @returns {ubii.dataStructures.KeyEvent}
+ */
+ubii.dataStructures.KeyEvent.getSizePrefixedRootAsKeyEvent = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.KeyEvent).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @returns {ubii.dataStructures.ButtonEventType}
  */
 ubii.dataStructures.KeyEvent.prototype.type = function() {
@@ -102,6 +112,14 @@ ubii.dataStructures.KeyEvent.endKeyEvent = function(builder) {
  */
 ubii.dataStructures.KeyEvent.finishKeyEventBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.KeyEvent.finishSizePrefixedKeyEventBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

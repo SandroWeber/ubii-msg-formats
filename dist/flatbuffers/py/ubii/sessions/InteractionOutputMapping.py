@@ -3,6 +3,8 @@
 # namespace: sessions
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class InteractionOutputMapping(object):
     __slots__ = ['_tab']
@@ -47,3 +49,53 @@ def InteractionOutputMappingAddName(builder, name): builder.PrependUOffsetTRelat
 def InteractionOutputMappingAddTopicDestinationType(builder, topicDestinationType): builder.PrependUint8Slot(1, topicDestinationType, 0)
 def InteractionOutputMappingAddTopicDestination(builder, topicDestination): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(topicDestination), 0)
 def InteractionOutputMappingEnd(builder): return builder.EndObject()
+
+import ubii.devices.TopicDemux
+import ubii.sessions.TopicDestination
+try:
+    from typing import Union
+except:
+    pass
+
+class InteractionOutputMappingT(object):
+
+    # InteractionOutputMappingT
+    def __init__(self):
+        self.name = None  # type: str
+        self.topicDestinationType = 0  # type: int
+        self.topicDestination = None  # type: Union[None, str, ubii.devices.TopicDemux.TopicDemuxT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        interactionOutputMapping = InteractionOutputMapping()
+        interactionOutputMapping.Init(buf, pos)
+        return cls.InitFromObj(interactionOutputMapping)
+
+    @classmethod
+    def InitFromObj(cls, interactionOutputMapping):
+        x = InteractionOutputMappingT()
+        x._UnPack(interactionOutputMapping)
+        return x
+
+    # InteractionOutputMappingT
+    def _UnPack(self, interactionOutputMapping):
+        if interactionOutputMapping is None:
+            return
+        self.name = interactionOutputMapping.Name()
+        self.topicDestinationType = interactionOutputMapping.TopicDestinationType()
+        self.topicDestination = ubii.sessions.TopicDestination.TopicDestinationCreator(self.topicDestinationType, interactionOutputMapping.TopicDestination())
+
+    # InteractionOutputMappingT
+    def Pack(self, builder):
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.topicDestination is not None:
+            topicDestination = self.topicDestination.Pack(builder)
+        InteractionOutputMappingStart(builder)
+        if self.name is not None:
+            InteractionOutputMappingAddName(builder, name)
+        InteractionOutputMappingAddTopicDestinationType(builder, self.topicDestinationType)
+        if self.topicDestination is not None:
+            InteractionOutputMappingAddTopicDestination(builder, topicDestination)
+        interactionOutputMapping = InteractionOutputMappingEnd(builder)
+        return interactionOutputMapping

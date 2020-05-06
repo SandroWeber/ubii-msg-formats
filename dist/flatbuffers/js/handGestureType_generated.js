@@ -28,12 +28,12 @@ ubii.dataStructures.HandGestureType = {
  * @enum {string}
  */
 ubii.dataStructures.HandGestureTypeName = {
-  0: 'REST',
-  1: 'FINGERS_SPREAD',
-  2: 'WAVE_IN',
-  3: 'WAVE_OUT',
-  4: 'FIST',
-  5: 'DOUBLE_TAP'
+  '0': 'REST',
+  '1': 'FINGERS_SPREAD',
+  '2': 'WAVE_IN',
+  '3': 'WAVE_OUT',
+  '4': 'FIST',
+  '5': 'DOUBLE_TAP'
 };
 
 // Exports for Node.js and RequireJS

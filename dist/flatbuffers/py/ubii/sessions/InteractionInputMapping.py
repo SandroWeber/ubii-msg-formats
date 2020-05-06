@@ -3,6 +3,8 @@
 # namespace: sessions
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class InteractionInputMapping(object):
     __slots__ = ['_tab']
@@ -47,3 +49,53 @@ def InteractionInputMappingAddName(builder, name): builder.PrependUOffsetTRelati
 def InteractionInputMappingAddTopicSourceType(builder, topicSourceType): builder.PrependUint8Slot(1, topicSourceType, 0)
 def InteractionInputMappingAddTopicSource(builder, topicSource): builder.PrependUOffsetTRelativeSlot(2, flatbuffers.number_types.UOffsetTFlags.py_type(topicSource), 0)
 def InteractionInputMappingEnd(builder): return builder.EndObject()
+
+import ubii.devices.TopicMux
+import ubii.sessions.TopicSource
+try:
+    from typing import Union
+except:
+    pass
+
+class InteractionInputMappingT(object):
+
+    # InteractionInputMappingT
+    def __init__(self):
+        self.name = None  # type: str
+        self.topicSourceType = 0  # type: int
+        self.topicSource = None  # type: Union[None, str, ubii.devices.TopicMux.TopicMuxT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        interactionInputMapping = InteractionInputMapping()
+        interactionInputMapping.Init(buf, pos)
+        return cls.InitFromObj(interactionInputMapping)
+
+    @classmethod
+    def InitFromObj(cls, interactionInputMapping):
+        x = InteractionInputMappingT()
+        x._UnPack(interactionInputMapping)
+        return x
+
+    # InteractionInputMappingT
+    def _UnPack(self, interactionInputMapping):
+        if interactionInputMapping is None:
+            return
+        self.name = interactionInputMapping.Name()
+        self.topicSourceType = interactionInputMapping.TopicSourceType()
+        self.topicSource = ubii.sessions.TopicSource.TopicSourceCreator(self.topicSourceType, interactionInputMapping.TopicSource())
+
+    # InteractionInputMappingT
+    def Pack(self, builder):
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.topicSource is not None:
+            topicSource = self.topicSource.Pack(builder)
+        InteractionInputMappingStart(builder)
+        if self.name is not None:
+            InteractionInputMappingAddName(builder, name)
+        InteractionInputMappingAddTopicSourceType(builder, self.topicSourceType)
+        if self.topicSource is not None:
+            InteractionInputMappingAddTopicSource(builder, topicSource)
+        interactionInputMapping = InteractionInputMappingEnd(builder)
+        return interactionInputMapping

@@ -3,6 +3,8 @@
 # namespace: devices
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Component(object):
     __slots__ = ['_tab']
@@ -46,6 +48,11 @@ class Component(object):
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
+
+    # Component
+    def TagsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        return o == 0
 
     # Component
     def Description(self):
@@ -93,3 +100,90 @@ def ComponentAddTopic(builder, topic): builder.PrependUOffsetTRelativeSlot(5, fl
 def ComponentAddMessageFormat(builder, messageFormat): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(messageFormat), 0)
 def ComponentAddIoType(builder, ioType): builder.PrependInt8Slot(7, ioType, 0)
 def ComponentEnd(builder): return builder.EndObject()
+
+try:
+    from typing import List
+except:
+    pass
+
+class ComponentT(object):
+
+    # ComponentT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.tags = None  # type: List[str]
+        self.description = None  # type: str
+        self.deviceId = None  # type: str
+        self.topic = None  # type: str
+        self.messageFormat = None  # type: str
+        self.ioType = 0  # type: int
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        component = Component()
+        component.Init(buf, pos)
+        return cls.InitFromObj(component)
+
+    @classmethod
+    def InitFromObj(cls, component):
+        x = ComponentT()
+        x._UnPack(component)
+        return x
+
+    # ComponentT
+    def _UnPack(self, component):
+        if component is None:
+            return
+        self.id = component.Id()
+        self.name = component.Name()
+        if not component.TagsIsNone():
+            self.tags = []
+            for i in range(component.TagsLength()):
+                self.tags.append(component.Tags(i))
+        self.description = component.Description()
+        self.deviceId = component.DeviceId()
+        self.topic = component.Topic()
+        self.messageFormat = component.MessageFormat()
+        self.ioType = component.IoType()
+
+    # ComponentT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.tags is not None:
+            tagslist = []
+            for i in range(len(self.tags)):
+                tagslist.append(builder.CreateString(self.tags[i]))
+            ComponentStartTagsVector(builder, len(self.tags))
+            for i in reversed(range(len(self.tags))):
+                builder.PrependUOffsetTRelative(tagslist[i])
+            tags = builder.EndVector(len(self.tags))
+        if self.description is not None:
+            description = builder.CreateString(self.description)
+        if self.deviceId is not None:
+            deviceId = builder.CreateString(self.deviceId)
+        if self.topic is not None:
+            topic = builder.CreateString(self.topic)
+        if self.messageFormat is not None:
+            messageFormat = builder.CreateString(self.messageFormat)
+        ComponentStart(builder)
+        if self.id is not None:
+            ComponentAddId(builder, id)
+        if self.name is not None:
+            ComponentAddName(builder, name)
+        if self.tags is not None:
+            ComponentAddTags(builder, tags)
+        if self.description is not None:
+            ComponentAddDescription(builder, description)
+        if self.deviceId is not None:
+            ComponentAddDeviceId(builder, deviceId)
+        if self.topic is not None:
+            ComponentAddTopic(builder, topic)
+        if self.messageFormat is not None:
+            ComponentAddMessageFormat(builder, messageFormat)
+        ComponentAddIoType(builder, self.ioType)
+        component = ComponentEnd(builder)
+        return component

@@ -3,6 +3,8 @@
 # namespace: interactions
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Interaction(object):
     __slots__ = ['_tab']
@@ -48,6 +50,11 @@ class Interaction(object):
         return 0
 
     # Interaction
+    def AuthorsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        return o == 0
+
+    # Interaction
     def Tags(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
@@ -61,6 +68,11 @@ class Interaction(object):
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
+
+    # Interaction
+    def TagsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        return o == 0
 
     # Interaction
     def Description(self):
@@ -83,7 +95,7 @@ class Interaction(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .IOFormat import IOFormat
+            from ubii.interactions.IOFormat import IOFormat
             obj = IOFormat()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -97,13 +109,18 @@ class Interaction(object):
         return 0
 
     # Interaction
+    def InputFormatsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
+        return o == 0
+
+    # Interaction
     def OutputFormats(self, j):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
         if o != 0:
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .IOFormat import IOFormat
+            from ubii.interactions.IOFormat import IOFormat
             obj = IOFormat()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -115,6 +132,11 @@ class Interaction(object):
         if o != 0:
             return self._tab.VectorLen(o)
         return 0
+
+    # Interaction
+    def OutputFormatsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        return o == 0
 
     # Interaction
     def OnCreated(self):
@@ -154,3 +176,141 @@ def InteractionAddOnCreated(builder, onCreated): builder.PrependUOffsetTRelative
 def InteractionAddProcessingCallback(builder, processingCallback): builder.PrependUOffsetTRelativeSlot(9, flatbuffers.number_types.UOffsetTFlags.py_type(processingCallback), 0)
 def InteractionAddProcessFrequency(builder, processFrequency): builder.PrependFloat32Slot(10, processFrequency, 0.0)
 def InteractionEnd(builder): return builder.EndObject()
+
+import ubii.interactions.IOFormat
+try:
+    from typing import List
+except:
+    pass
+
+class InteractionT(object):
+
+    # InteractionT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.authors = None  # type: List[str]
+        self.tags = None  # type: List[str]
+        self.description = None  # type: str
+        self.status = 0  # type: int
+        self.inputFormats = None  # type: List[ubii.interactions.IOFormat.IOFormatT]
+        self.outputFormats = None  # type: List[ubii.interactions.IOFormat.IOFormatT]
+        self.onCreated = None  # type: str
+        self.processingCallback = None  # type: str
+        self.processFrequency = 0.0  # type: float
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        interaction = Interaction()
+        interaction.Init(buf, pos)
+        return cls.InitFromObj(interaction)
+
+    @classmethod
+    def InitFromObj(cls, interaction):
+        x = InteractionT()
+        x._UnPack(interaction)
+        return x
+
+    # InteractionT
+    def _UnPack(self, interaction):
+        if interaction is None:
+            return
+        self.id = interaction.Id()
+        self.name = interaction.Name()
+        if not interaction.AuthorsIsNone():
+            self.authors = []
+            for i in range(interaction.AuthorsLength()):
+                self.authors.append(interaction.Authors(i))
+        if not interaction.TagsIsNone():
+            self.tags = []
+            for i in range(interaction.TagsLength()):
+                self.tags.append(interaction.Tags(i))
+        self.description = interaction.Description()
+        self.status = interaction.Status()
+        if not interaction.InputFormatsIsNone():
+            self.inputFormats = []
+            for i in range(interaction.InputFormatsLength()):
+                if interaction.InputFormats(i) is None:
+                    self.inputFormats.append(None)
+                else:
+                    iOFormat_ = ubii.interactions.IOFormat.IOFormatT.InitFromObj(interaction.InputFormats(i))
+                    self.inputFormats.append(iOFormat_)
+        if not interaction.OutputFormatsIsNone():
+            self.outputFormats = []
+            for i in range(interaction.OutputFormatsLength()):
+                if interaction.OutputFormats(i) is None:
+                    self.outputFormats.append(None)
+                else:
+                    iOFormat_ = ubii.interactions.IOFormat.IOFormatT.InitFromObj(interaction.OutputFormats(i))
+                    self.outputFormats.append(iOFormat_)
+        self.onCreated = interaction.OnCreated()
+        self.processingCallback = interaction.ProcessingCallback()
+        self.processFrequency = interaction.ProcessFrequency()
+
+    # InteractionT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.authors is not None:
+            authorslist = []
+            for i in range(len(self.authors)):
+                authorslist.append(builder.CreateString(self.authors[i]))
+            InteractionStartAuthorsVector(builder, len(self.authors))
+            for i in reversed(range(len(self.authors))):
+                builder.PrependUOffsetTRelative(authorslist[i])
+            authors = builder.EndVector(len(self.authors))
+        if self.tags is not None:
+            tagslist = []
+            for i in range(len(self.tags)):
+                tagslist.append(builder.CreateString(self.tags[i]))
+            InteractionStartTagsVector(builder, len(self.tags))
+            for i in reversed(range(len(self.tags))):
+                builder.PrependUOffsetTRelative(tagslist[i])
+            tags = builder.EndVector(len(self.tags))
+        if self.description is not None:
+            description = builder.CreateString(self.description)
+        if self.inputFormats is not None:
+            inputFormatslist = []
+            for i in range(len(self.inputFormats)):
+                inputFormatslist.append(self.inputFormats[i].Pack(builder))
+            InteractionStartInputFormatsVector(builder, len(self.inputFormats))
+            for i in reversed(range(len(self.inputFormats))):
+                builder.PrependUOffsetTRelative(inputFormatslist[i])
+            inputFormats = builder.EndVector(len(self.inputFormats))
+        if self.outputFormats is not None:
+            outputFormatslist = []
+            for i in range(len(self.outputFormats)):
+                outputFormatslist.append(self.outputFormats[i].Pack(builder))
+            InteractionStartOutputFormatsVector(builder, len(self.outputFormats))
+            for i in reversed(range(len(self.outputFormats))):
+                builder.PrependUOffsetTRelative(outputFormatslist[i])
+            outputFormats = builder.EndVector(len(self.outputFormats))
+        if self.onCreated is not None:
+            onCreated = builder.CreateString(self.onCreated)
+        if self.processingCallback is not None:
+            processingCallback = builder.CreateString(self.processingCallback)
+        InteractionStart(builder)
+        if self.id is not None:
+            InteractionAddId(builder, id)
+        if self.name is not None:
+            InteractionAddName(builder, name)
+        if self.authors is not None:
+            InteractionAddAuthors(builder, authors)
+        if self.tags is not None:
+            InteractionAddTags(builder, tags)
+        if self.description is not None:
+            InteractionAddDescription(builder, description)
+        InteractionAddStatus(builder, self.status)
+        if self.inputFormats is not None:
+            InteractionAddInputFormats(builder, inputFormats)
+        if self.outputFormats is not None:
+            InteractionAddOutputFormats(builder, outputFormats)
+        if self.onCreated is not None:
+            InteractionAddOnCreated(builder, onCreated)
+        if self.processingCallback is not None:
+            InteractionAddProcessingCallback(builder, processingCallback)
+        InteractionAddProcessFrequency(builder, self.processFrequency)
+        interaction = InteractionEnd(builder)
+        return interaction

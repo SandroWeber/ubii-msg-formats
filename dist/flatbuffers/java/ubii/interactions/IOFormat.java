@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class IOFormat extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static IOFormat getRootAsIOFormat(ByteBuffer _bb) { return getRootAsIOFormat(_bb, new IOFormat()); }
   public static IOFormat getRootAsIOFormat(ByteBuffer _bb, IOFormat obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public IOFormat __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String internalName() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -24,20 +25,27 @@ public final class IOFormat extends Table {
   public static int createIOFormat(FlatBufferBuilder builder,
       int internal_nameOffset,
       int message_formatOffset) {
-    builder.startObject(2);
+    builder.startTable(2);
     IOFormat.addMessageFormat(builder, message_formatOffset);
     IOFormat.addInternalName(builder, internal_nameOffset);
     return IOFormat.endIOFormat(builder);
   }
 
-  public static void startIOFormat(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startIOFormat(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addInternalName(FlatBufferBuilder builder, int internalNameOffset) { builder.addOffset(0, internalNameOffset, 0); }
   public static void addMessageFormat(FlatBufferBuilder builder, int messageFormatOffset) { builder.addOffset(1, messageFormatOffset, 0); }
   public static int endIOFormat(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishIOFormatBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedIOFormatBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public IOFormat get(int j) { return get(new IOFormat(), j); }
+    public IOFormat get(IOFormat obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

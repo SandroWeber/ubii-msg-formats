@@ -6,13 +6,14 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Vector4 : IFlatbufferObject
 {
   private Struct __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Struct(_i, _bb); }
   public Vector4 __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public float X { get { return __p.bb.GetFloat(__p.bb_pos + 0); } }
@@ -20,15 +21,50 @@ public struct Vector4 : IFlatbufferObject
   public float Z { get { return __p.bb.GetFloat(__p.bb_pos + 8); } }
   public float W { get { return __p.bb.GetFloat(__p.bb_pos + 12); } }
 
-  public static Offset<Vector4> CreateVector4(FlatBufferBuilder builder, float X, float Y, float Z, float W) {
+  public static Offset<ubii.dataStructures.Vector4> CreateVector4(FlatBufferBuilder builder, float X, float Y, float Z, float W) {
     builder.Prep(4, 16);
     builder.PutFloat(W);
     builder.PutFloat(Z);
     builder.PutFloat(Y);
     builder.PutFloat(X);
-    return new Offset<Vector4>(builder.Offset);
+    return new Offset<ubii.dataStructures.Vector4>(builder.Offset);
+  }
+  public Vector4T UnPack() {
+    var _o = new Vector4T();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Vector4T _o) {
+    _o.X = this.X;
+    _o.Y = this.Y;
+    _o.Z = this.Z;
+    _o.W = this.W;
+  }
+  public static Offset<ubii.dataStructures.Vector4> Pack(FlatBufferBuilder builder, Vector4T _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Vector4>);
+    return CreateVector4(
+      builder,
+      _o.X,
+      _o.Y,
+      _o.Z,
+      _o.W);
   }
 };
+
+public class Vector4T
+{
+  public float X { get; set; }
+  public float Y { get; set; }
+  public float Z { get; set; }
+  public float W { get; set; }
+
+  public Vector4T() {
+    this.X = 0.0f;
+    this.Y = 0.0f;
+    this.Z = 0.0f;
+    this.W = 0.0f;
+  }
+}
 
 
 }

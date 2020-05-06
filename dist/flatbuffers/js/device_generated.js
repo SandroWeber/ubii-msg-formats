@@ -24,8 +24,8 @@ ubii.devices.DeviceType = {
  * @enum {string}
  */
 ubii.devices.DeviceTypeName = {
-  0: 'PARTICIPANT',
-  1: 'WATCHER'
+  '0': 'PARTICIPANT',
+  '1': 'WATCHER'
 };
 
 /**
@@ -60,6 +60,16 @@ ubii.devices.Device.prototype.__init = function(i, bb) {
  * @returns {ubii.devices.Device}
  */
 ubii.devices.Device.getRootAsDevice = function(bb, obj) {
+  return (obj || new ubii.devices.Device).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.devices.Device=} obj
+ * @returns {ubii.devices.Device}
+ */
+ubii.devices.Device.getSizePrefixedRootAsDevice = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.devices.Device).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -263,6 +273,14 @@ ubii.devices.Device.endDevice = function(builder) {
  */
 ubii.devices.Device.finishDeviceBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.devices.Device.finishSizePrefixedDeviceBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

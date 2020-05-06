@@ -3,6 +3,8 @@
 # namespace: services
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class ServiceData(object):
     __slots__ = ['_tab']
@@ -23,7 +25,7 @@ class ServiceData(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Client import Client
+            from ubii.clients.Client import Client
             obj = Client()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -36,7 +38,7 @@ class ServiceData(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Client import Client
+            from ubii.clients.Client import Client
             obj = Client()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -50,11 +52,16 @@ class ServiceData(object):
         return 0
 
     # ServiceData
+    def ClientListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(6))
+        return o == 0
+
+    # ServiceData
     def Device(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Device import Device
+            from ubii.devices.Device import Device
             obj = Device()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -67,7 +74,7 @@ class ServiceData(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Device import Device
+            from ubii.devices.Device import Device
             obj = Device()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -81,11 +88,16 @@ class ServiceData(object):
         return 0
 
     # ServiceData
+    def DeviceListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
+        return o == 0
+
+    # ServiceData
     def TopicMux(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(12))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .TopicMux import TopicMux
+            from ubii.devices.TopicMux import TopicMux
             obj = TopicMux()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -98,7 +110,7 @@ class ServiceData(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .TopicMux import TopicMux
+            from ubii.devices.TopicMux import TopicMux
             obj = TopicMux()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -112,11 +124,16 @@ class ServiceData(object):
         return 0
 
     # ServiceData
+    def TopicMuxListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(14))
+        return o == 0
+
+    # ServiceData
     def TopicDemux(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(16))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .TopicDemux import TopicDemux
+            from ubii.devices.TopicDemux import TopicDemux
             obj = TopicDemux()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -129,7 +146,7 @@ class ServiceData(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .TopicDemux import TopicDemux
+            from ubii.devices.TopicDemux import TopicDemux
             obj = TopicDemux()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -143,11 +160,16 @@ class ServiceData(object):
         return 0
 
     # ServiceData
+    def TopicDemuxListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(18))
+        return o == 0
+
+    # ServiceData
     def Session(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(20))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Session import Session
+            from ubii.sessions.Session import Session
             obj = Session()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -160,7 +182,7 @@ class ServiceData(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Session import Session
+            from ubii.sessions.Session import Session
             obj = Session()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -174,11 +196,16 @@ class ServiceData(object):
         return 0
 
     # ServiceData
+    def SessionListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(22))
+        return o == 0
+
+    # ServiceData
     def Interaction(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(24))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .Interaction import Interaction
+            from ubii.interactions.Interaction import Interaction
             obj = Interaction()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -191,7 +218,7 @@ class ServiceData(object):
             x = self._tab.Vector(o)
             x += flatbuffers.number_types.UOffsetTFlags.py_type(j) * 4
             x = self._tab.Indirect(x)
-            from .Interaction import Interaction
+            from ubii.interactions.Interaction import Interaction
             obj = Interaction()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -205,11 +232,16 @@ class ServiceData(object):
         return 0
 
     # ServiceData
+    def InteractionListIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(26))
+        return o == 0
+
+    # ServiceData
     def TopicSubscription(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(28))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .TopicSubscription import TopicSubscription
+            from ubii.services.requests.TopicSubscription import TopicSubscription
             obj = TopicSubscription()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -236,3 +268,206 @@ def ServiceDataAddInteractionList(builder, interactionList): builder.PrependUOff
 def ServiceDataStartInteractionListVector(builder, numElems): return builder.StartVector(4, numElems, 4)
 def ServiceDataAddTopicSubscription(builder, topicSubscription): builder.PrependUOffsetTRelativeSlot(12, flatbuffers.number_types.UOffsetTFlags.py_type(topicSubscription), 0)
 def ServiceDataEnd(builder): return builder.EndObject()
+
+import ubii.clients.Client
+import ubii.devices.Device
+import ubii.devices.TopicDemux
+import ubii.devices.TopicMux
+import ubii.interactions.Interaction
+import ubii.services.requests.TopicSubscription
+import ubii.sessions.Session
+try:
+    from typing import List, Optional
+except:
+    pass
+
+class ServiceDataT(object):
+
+    # ServiceDataT
+    def __init__(self):
+        self.client = None  # type: Optional[ubii.clients.Client.ClientT]
+        self.clientList = None  # type: List[ubii.clients.Client.ClientT]
+        self.device = None  # type: Optional[ubii.devices.Device.DeviceT]
+        self.deviceList = None  # type: List[ubii.devices.Device.DeviceT]
+        self.topicMux = None  # type: Optional[ubii.devices.TopicMux.TopicMuxT]
+        self.topicMuxList = None  # type: List[ubii.devices.TopicMux.TopicMuxT]
+        self.topicDemux = None  # type: Optional[ubii.devices.TopicDemux.TopicDemuxT]
+        self.topicDemuxList = None  # type: List[ubii.devices.TopicDemux.TopicDemuxT]
+        self.session = None  # type: Optional[ubii.sessions.Session.SessionT]
+        self.sessionList = None  # type: List[ubii.sessions.Session.SessionT]
+        self.interaction = None  # type: Optional[ubii.interactions.Interaction.InteractionT]
+        self.interactionList = None  # type: List[ubii.interactions.Interaction.InteractionT]
+        self.topicSubscription = None  # type: Optional[ubii.services.requests.TopicSubscription.TopicSubscriptionT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        serviceData = ServiceData()
+        serviceData.Init(buf, pos)
+        return cls.InitFromObj(serviceData)
+
+    @classmethod
+    def InitFromObj(cls, serviceData):
+        x = ServiceDataT()
+        x._UnPack(serviceData)
+        return x
+
+    # ServiceDataT
+    def _UnPack(self, serviceData):
+        if serviceData is None:
+            return
+        if serviceData.Client() is not None:
+            self.client = ubii.clients.Client.ClientT.InitFromObj(serviceData.Client())
+        if not serviceData.ClientListIsNone():
+            self.clientList = []
+            for i in range(serviceData.ClientListLength()):
+                if serviceData.ClientList(i) is None:
+                    self.clientList.append(None)
+                else:
+                    client_ = ubii.clients.Client.ClientT.InitFromObj(serviceData.ClientList(i))
+                    self.clientList.append(client_)
+        if serviceData.Device() is not None:
+            self.device = ubii.devices.Device.DeviceT.InitFromObj(serviceData.Device())
+        if not serviceData.DeviceListIsNone():
+            self.deviceList = []
+            for i in range(serviceData.DeviceListLength()):
+                if serviceData.DeviceList(i) is None:
+                    self.deviceList.append(None)
+                else:
+                    device_ = ubii.devices.Device.DeviceT.InitFromObj(serviceData.DeviceList(i))
+                    self.deviceList.append(device_)
+        if serviceData.TopicMux() is not None:
+            self.topicMux = ubii.devices.TopicMux.TopicMuxT.InitFromObj(serviceData.TopicMux())
+        if not serviceData.TopicMuxListIsNone():
+            self.topicMuxList = []
+            for i in range(serviceData.TopicMuxListLength()):
+                if serviceData.TopicMuxList(i) is None:
+                    self.topicMuxList.append(None)
+                else:
+                    topicMux_ = ubii.devices.TopicMux.TopicMuxT.InitFromObj(serviceData.TopicMuxList(i))
+                    self.topicMuxList.append(topicMux_)
+        if serviceData.TopicDemux() is not None:
+            self.topicDemux = ubii.devices.TopicDemux.TopicDemuxT.InitFromObj(serviceData.TopicDemux())
+        if not serviceData.TopicDemuxListIsNone():
+            self.topicDemuxList = []
+            for i in range(serviceData.TopicDemuxListLength()):
+                if serviceData.TopicDemuxList(i) is None:
+                    self.topicDemuxList.append(None)
+                else:
+                    topicDemux_ = ubii.devices.TopicDemux.TopicDemuxT.InitFromObj(serviceData.TopicDemuxList(i))
+                    self.topicDemuxList.append(topicDemux_)
+        if serviceData.Session() is not None:
+            self.session = ubii.sessions.Session.SessionT.InitFromObj(serviceData.Session())
+        if not serviceData.SessionListIsNone():
+            self.sessionList = []
+            for i in range(serviceData.SessionListLength()):
+                if serviceData.SessionList(i) is None:
+                    self.sessionList.append(None)
+                else:
+                    session_ = ubii.sessions.Session.SessionT.InitFromObj(serviceData.SessionList(i))
+                    self.sessionList.append(session_)
+        if serviceData.Interaction() is not None:
+            self.interaction = ubii.interactions.Interaction.InteractionT.InitFromObj(serviceData.Interaction())
+        if not serviceData.InteractionListIsNone():
+            self.interactionList = []
+            for i in range(serviceData.InteractionListLength()):
+                if serviceData.InteractionList(i) is None:
+                    self.interactionList.append(None)
+                else:
+                    interaction_ = ubii.interactions.Interaction.InteractionT.InitFromObj(serviceData.InteractionList(i))
+                    self.interactionList.append(interaction_)
+        if serviceData.TopicSubscription() is not None:
+            self.topicSubscription = ubii.services.requests.TopicSubscription.TopicSubscriptionT.InitFromObj(serviceData.TopicSubscription())
+
+    # ServiceDataT
+    def Pack(self, builder):
+        if self.client is not None:
+            client = self.client.Pack(builder)
+        if self.clientList is not None:
+            clientListlist = []
+            for i in range(len(self.clientList)):
+                clientListlist.append(self.clientList[i].Pack(builder))
+            ServiceDataStartClientListVector(builder, len(self.clientList))
+            for i in reversed(range(len(self.clientList))):
+                builder.PrependUOffsetTRelative(clientListlist[i])
+            clientList = builder.EndVector(len(self.clientList))
+        if self.device is not None:
+            device = self.device.Pack(builder)
+        if self.deviceList is not None:
+            deviceListlist = []
+            for i in range(len(self.deviceList)):
+                deviceListlist.append(self.deviceList[i].Pack(builder))
+            ServiceDataStartDeviceListVector(builder, len(self.deviceList))
+            for i in reversed(range(len(self.deviceList))):
+                builder.PrependUOffsetTRelative(deviceListlist[i])
+            deviceList = builder.EndVector(len(self.deviceList))
+        if self.topicMux is not None:
+            topicMux = self.topicMux.Pack(builder)
+        if self.topicMuxList is not None:
+            topicMuxListlist = []
+            for i in range(len(self.topicMuxList)):
+                topicMuxListlist.append(self.topicMuxList[i].Pack(builder))
+            ServiceDataStartTopicMuxListVector(builder, len(self.topicMuxList))
+            for i in reversed(range(len(self.topicMuxList))):
+                builder.PrependUOffsetTRelative(topicMuxListlist[i])
+            topicMuxList = builder.EndVector(len(self.topicMuxList))
+        if self.topicDemux is not None:
+            topicDemux = self.topicDemux.Pack(builder)
+        if self.topicDemuxList is not None:
+            topicDemuxListlist = []
+            for i in range(len(self.topicDemuxList)):
+                topicDemuxListlist.append(self.topicDemuxList[i].Pack(builder))
+            ServiceDataStartTopicDemuxListVector(builder, len(self.topicDemuxList))
+            for i in reversed(range(len(self.topicDemuxList))):
+                builder.PrependUOffsetTRelative(topicDemuxListlist[i])
+            topicDemuxList = builder.EndVector(len(self.topicDemuxList))
+        if self.session is not None:
+            session = self.session.Pack(builder)
+        if self.sessionList is not None:
+            sessionListlist = []
+            for i in range(len(self.sessionList)):
+                sessionListlist.append(self.sessionList[i].Pack(builder))
+            ServiceDataStartSessionListVector(builder, len(self.sessionList))
+            for i in reversed(range(len(self.sessionList))):
+                builder.PrependUOffsetTRelative(sessionListlist[i])
+            sessionList = builder.EndVector(len(self.sessionList))
+        if self.interaction is not None:
+            interaction = self.interaction.Pack(builder)
+        if self.interactionList is not None:
+            interactionListlist = []
+            for i in range(len(self.interactionList)):
+                interactionListlist.append(self.interactionList[i].Pack(builder))
+            ServiceDataStartInteractionListVector(builder, len(self.interactionList))
+            for i in reversed(range(len(self.interactionList))):
+                builder.PrependUOffsetTRelative(interactionListlist[i])
+            interactionList = builder.EndVector(len(self.interactionList))
+        if self.topicSubscription is not None:
+            topicSubscription = self.topicSubscription.Pack(builder)
+        ServiceDataStart(builder)
+        if self.client is not None:
+            ServiceDataAddClient(builder, client)
+        if self.clientList is not None:
+            ServiceDataAddClientList(builder, clientList)
+        if self.device is not None:
+            ServiceDataAddDevice(builder, device)
+        if self.deviceList is not None:
+            ServiceDataAddDeviceList(builder, deviceList)
+        if self.topicMux is not None:
+            ServiceDataAddTopicMux(builder, topicMux)
+        if self.topicMuxList is not None:
+            ServiceDataAddTopicMuxList(builder, topicMuxList)
+        if self.topicDemux is not None:
+            ServiceDataAddTopicDemux(builder, topicDemux)
+        if self.topicDemuxList is not None:
+            ServiceDataAddTopicDemuxList(builder, topicDemuxList)
+        if self.session is not None:
+            ServiceDataAddSession(builder, session)
+        if self.sessionList is not None:
+            ServiceDataAddSessionList(builder, sessionList)
+        if self.interaction is not None:
+            ServiceDataAddInteraction(builder, interaction)
+        if self.interactionList is not None:
+            ServiceDataAddInteractionList(builder, interactionList)
+        if self.topicSubscription is not None:
+            ServiceDataAddTopicSubscription(builder, topicSubscription)
+        serviceData = ServiceDataEnd(builder)
+        return serviceData

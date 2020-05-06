@@ -7,8 +7,8 @@ namespace ubii.devices
 
 public enum DeviceType : sbyte
 {
- PARTICIPANT = 0,
- WATCHER = 1,
+  PARTICIPANT = 0,
+  WATCHER = 1,
 };
 
 

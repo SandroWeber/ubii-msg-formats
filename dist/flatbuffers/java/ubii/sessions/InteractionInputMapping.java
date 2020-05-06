@@ -9,37 +9,45 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class InteractionInputMapping extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static InteractionInputMapping getRootAsInteractionInputMapping(ByteBuffer _bb) { return getRootAsInteractionInputMapping(_bb, new InteractionInputMapping()); }
   public static InteractionInputMapping getRootAsInteractionInputMapping(ByteBuffer _bb, InteractionInputMapping obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public InteractionInputMapping __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String name() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer nameAsByteBuffer() { return __vector_as_bytebuffer(4, 1); }
   public ByteBuffer nameInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 4, 1); }
   public byte topicSourceType() { int o = __offset(6); return o != 0 ? bb.get(o + bb_pos) : 0; }
-  public Table topicSource(Table obj) { int o = __offset(8); return o != 0 ? __union(obj, o) : null; }
+  public Table topicSource(Table obj) { int o = __offset(8); return o != 0 ? __union(obj, o + bb_pos) : null; }
 
   public static int createInteractionInputMapping(FlatBufferBuilder builder,
       int nameOffset,
       byte topic_source_type,
       int topic_sourceOffset) {
-    builder.startObject(3);
+    builder.startTable(3);
     InteractionInputMapping.addTopicSource(builder, topic_sourceOffset);
     InteractionInputMapping.addName(builder, nameOffset);
     InteractionInputMapping.addTopicSourceType(builder, topic_source_type);
     return InteractionInputMapping.endInteractionInputMapping(builder);
   }
 
-  public static void startInteractionInputMapping(FlatBufferBuilder builder) { builder.startObject(3); }
+  public static void startInteractionInputMapping(FlatBufferBuilder builder) { builder.startTable(3); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(0, nameOffset, 0); }
   public static void addTopicSourceType(FlatBufferBuilder builder, byte topicSourceType) { builder.addByte(1, topicSourceType, 0); }
   public static void addTopicSource(FlatBufferBuilder builder, int topicSourceOffset) { builder.addOffset(2, topicSourceOffset, 0); }
   public static int endInteractionInputMapping(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishInteractionInputMappingBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedInteractionInputMappingBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public InteractionInputMapping get(int j) { return get(new InteractionInputMapping(), j); }
+    public InteractionInputMapping get(InteractionInputMapping obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

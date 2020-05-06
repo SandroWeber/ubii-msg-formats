@@ -2,8 +2,16 @@
 
 # namespace: sessions
 
-class TopicSource(object):
-    NONE = 0
-    topic = 1
-    topic_mux = 2
 
+def TopicSourceCreator(unionType, table):
+    from flatbuffers.table import Table
+    if not isinstance(table, Table):
+        return None
+    if unionType == TopicSource().topic:
+        tab = Table(table.Bytes, table.Pos)
+        union = tab.String(table.Pos)
+        return union
+    if unionType == TopicSource().topic_mux:
+        import ubii.devices.TopicMux
+        return ubii.devices.TopicMux.TopicMuxT.InitFromBuf(table.Bytes, table.Pos)
+    return None

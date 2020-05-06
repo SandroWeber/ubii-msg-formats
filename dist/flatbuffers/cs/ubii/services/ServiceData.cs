@@ -6,15 +6,17 @@ namespace ubii.services
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct ServiceData : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static ServiceData GetRootAsServiceData(ByteBuffer _bb) { return GetRootAsServiceData(_bb, new ServiceData()); }
   public static ServiceData GetRootAsServiceData(ByteBuffer _bb, ServiceData obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public ServiceData __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public ubii.clients.Client? Client { get { int o = __p.__offset(4); return o != 0 ? (ubii.clients.Client?)(new ubii.clients.Client()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
@@ -37,7 +39,7 @@ public struct ServiceData : IFlatbufferObject
   public int InteractionListLength { get { int o = __p.__offset(26); return o != 0 ? __p.__vector_len(o) : 0; } }
   public ubii.services.requests.TopicSubscription? TopicSubscription { get { int o = __p.__offset(28); return o != 0 ? (ubii.services.requests.TopicSubscription?)(new ubii.services.requests.TopicSubscription()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
-  public static Offset<ServiceData> CreateServiceData(FlatBufferBuilder builder,
+  public static Offset<ubii.services.ServiceData> CreateServiceData(FlatBufferBuilder builder,
       Offset<ubii.clients.Client> clientOffset = default(Offset<ubii.clients.Client>),
       VectorOffset client_listOffset = default(VectorOffset),
       Offset<ubii.devices.Device> deviceOffset = default(Offset<ubii.devices.Device>),
@@ -51,7 +53,7 @@ public struct ServiceData : IFlatbufferObject
       Offset<ubii.interactions.Interaction> interactionOffset = default(Offset<ubii.interactions.Interaction>),
       VectorOffset interaction_listOffset = default(VectorOffset),
       Offset<ubii.services.requests.TopicSubscription> topic_subscriptionOffset = default(Offset<ubii.services.requests.TopicSubscription>)) {
-    builder.StartObject(13);
+    builder.StartTable(13);
     ServiceData.AddTopicSubscription(builder, topic_subscriptionOffset);
     ServiceData.AddInteractionList(builder, interaction_listOffset);
     ServiceData.AddInteraction(builder, interactionOffset);
@@ -68,7 +70,7 @@ public struct ServiceData : IFlatbufferObject
     return ServiceData.EndServiceData(builder);
   }
 
-  public static void StartServiceData(FlatBufferBuilder builder) { builder.StartObject(13); }
+  public static void StartServiceData(FlatBufferBuilder builder) { builder.StartTable(13); }
   public static void AddClient(FlatBufferBuilder builder, Offset<ubii.clients.Client> clientOffset) { builder.AddOffset(0, clientOffset.Value, 0); }
   public static void AddClientList(FlatBufferBuilder builder, VectorOffset clientListOffset) { builder.AddOffset(1, clientListOffset.Value, 0); }
   public static VectorOffset CreateClientListVector(FlatBufferBuilder builder, Offset<ubii.clients.Client>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
@@ -100,13 +102,141 @@ public struct ServiceData : IFlatbufferObject
   public static VectorOffset CreateInteractionListVectorBlock(FlatBufferBuilder builder, Offset<ubii.interactions.Interaction>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartInteractionListVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddTopicSubscription(FlatBufferBuilder builder, Offset<ubii.services.requests.TopicSubscription> topicSubscriptionOffset) { builder.AddOffset(12, topicSubscriptionOffset.Value, 0); }
-  public static Offset<ServiceData> EndServiceData(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<ServiceData>(o);
+  public static Offset<ubii.services.ServiceData> EndServiceData(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.services.ServiceData>(o);
   }
-  public static void FinishServiceDataBuffer(FlatBufferBuilder builder, Offset<ServiceData> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedServiceDataBuffer(FlatBufferBuilder builder, Offset<ServiceData> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishServiceDataBuffer(FlatBufferBuilder builder, Offset<ubii.services.ServiceData> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedServiceDataBuffer(FlatBufferBuilder builder, Offset<ubii.services.ServiceData> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ServiceDataT UnPack() {
+    var _o = new ServiceDataT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ServiceDataT _o) {
+    _o.Client = this.Client.HasValue ? this.Client.Value.UnPack() : null;
+    _o.ClientList = new List<ubii.clients.ClientT>();
+    for (var _j = 0; _j < this.ClientListLength; ++_j) {_o.ClientList.Add(this.ClientList(_j).HasValue ? this.ClientList(_j).Value.UnPack() : null);}
+    _o.Device = this.Device.HasValue ? this.Device.Value.UnPack() : null;
+    _o.DeviceList = new List<ubii.devices.DeviceT>();
+    for (var _j = 0; _j < this.DeviceListLength; ++_j) {_o.DeviceList.Add(this.DeviceList(_j).HasValue ? this.DeviceList(_j).Value.UnPack() : null);}
+    _o.TopicMux = this.TopicMux.HasValue ? this.TopicMux.Value.UnPack() : null;
+    _o.TopicMuxList = new List<ubii.devices.TopicMuxT>();
+    for (var _j = 0; _j < this.TopicMuxListLength; ++_j) {_o.TopicMuxList.Add(this.TopicMuxList(_j).HasValue ? this.TopicMuxList(_j).Value.UnPack() : null);}
+    _o.TopicDemux = this.TopicDemux.HasValue ? this.TopicDemux.Value.UnPack() : null;
+    _o.TopicDemuxList = new List<ubii.devices.TopicDemuxT>();
+    for (var _j = 0; _j < this.TopicDemuxListLength; ++_j) {_o.TopicDemuxList.Add(this.TopicDemuxList(_j).HasValue ? this.TopicDemuxList(_j).Value.UnPack() : null);}
+    _o.Session = this.Session.HasValue ? this.Session.Value.UnPack() : null;
+    _o.SessionList = new List<ubii.sessions.SessionT>();
+    for (var _j = 0; _j < this.SessionListLength; ++_j) {_o.SessionList.Add(this.SessionList(_j).HasValue ? this.SessionList(_j).Value.UnPack() : null);}
+    _o.Interaction = this.Interaction.HasValue ? this.Interaction.Value.UnPack() : null;
+    _o.InteractionList = new List<ubii.interactions.InteractionT>();
+    for (var _j = 0; _j < this.InteractionListLength; ++_j) {_o.InteractionList.Add(this.InteractionList(_j).HasValue ? this.InteractionList(_j).Value.UnPack() : null);}
+    _o.TopicSubscription = this.TopicSubscription.HasValue ? this.TopicSubscription.Value.UnPack() : null;
+  }
+  public static Offset<ubii.services.ServiceData> Pack(FlatBufferBuilder builder, ServiceDataT _o) {
+    if (_o == null) return default(Offset<ubii.services.ServiceData>);
+    var _client = _o.Client == null ? default(Offset<ubii.clients.Client>) : ubii.clients.Client.Pack(builder, _o.Client);
+    var _client_list = default(VectorOffset);
+    if (_o.ClientList != null) {
+      var __client_list = new Offset<ubii.clients.Client>[_o.ClientList.Count];
+      for (var _j = 0; _j < __client_list.Length; ++_j) { __client_list[_j] = ubii.clients.Client.Pack(builder, _o.ClientList[_j]); }
+      _client_list = CreateClientListVector(builder, __client_list);
+    }
+    var _device = _o.Device == null ? default(Offset<ubii.devices.Device>) : ubii.devices.Device.Pack(builder, _o.Device);
+    var _device_list = default(VectorOffset);
+    if (_o.DeviceList != null) {
+      var __device_list = new Offset<ubii.devices.Device>[_o.DeviceList.Count];
+      for (var _j = 0; _j < __device_list.Length; ++_j) { __device_list[_j] = ubii.devices.Device.Pack(builder, _o.DeviceList[_j]); }
+      _device_list = CreateDeviceListVector(builder, __device_list);
+    }
+    var _topic_mux = _o.TopicMux == null ? default(Offset<ubii.devices.TopicMux>) : ubii.devices.TopicMux.Pack(builder, _o.TopicMux);
+    var _topic_mux_list = default(VectorOffset);
+    if (_o.TopicMuxList != null) {
+      var __topic_mux_list = new Offset<ubii.devices.TopicMux>[_o.TopicMuxList.Count];
+      for (var _j = 0; _j < __topic_mux_list.Length; ++_j) { __topic_mux_list[_j] = ubii.devices.TopicMux.Pack(builder, _o.TopicMuxList[_j]); }
+      _topic_mux_list = CreateTopicMuxListVector(builder, __topic_mux_list);
+    }
+    var _topic_demux = _o.TopicDemux == null ? default(Offset<ubii.devices.TopicDemux>) : ubii.devices.TopicDemux.Pack(builder, _o.TopicDemux);
+    var _topic_demux_list = default(VectorOffset);
+    if (_o.TopicDemuxList != null) {
+      var __topic_demux_list = new Offset<ubii.devices.TopicDemux>[_o.TopicDemuxList.Count];
+      for (var _j = 0; _j < __topic_demux_list.Length; ++_j) { __topic_demux_list[_j] = ubii.devices.TopicDemux.Pack(builder, _o.TopicDemuxList[_j]); }
+      _topic_demux_list = CreateTopicDemuxListVector(builder, __topic_demux_list);
+    }
+    var _session = _o.Session == null ? default(Offset<ubii.sessions.Session>) : ubii.sessions.Session.Pack(builder, _o.Session);
+    var _session_list = default(VectorOffset);
+    if (_o.SessionList != null) {
+      var __session_list = new Offset<ubii.sessions.Session>[_o.SessionList.Count];
+      for (var _j = 0; _j < __session_list.Length; ++_j) { __session_list[_j] = ubii.sessions.Session.Pack(builder, _o.SessionList[_j]); }
+      _session_list = CreateSessionListVector(builder, __session_list);
+    }
+    var _interaction = _o.Interaction == null ? default(Offset<ubii.interactions.Interaction>) : ubii.interactions.Interaction.Pack(builder, _o.Interaction);
+    var _interaction_list = default(VectorOffset);
+    if (_o.InteractionList != null) {
+      var __interaction_list = new Offset<ubii.interactions.Interaction>[_o.InteractionList.Count];
+      for (var _j = 0; _j < __interaction_list.Length; ++_j) { __interaction_list[_j] = ubii.interactions.Interaction.Pack(builder, _o.InteractionList[_j]); }
+      _interaction_list = CreateInteractionListVector(builder, __interaction_list);
+    }
+    var _topic_subscription = _o.TopicSubscription == null ? default(Offset<ubii.services.requests.TopicSubscription>) : ubii.services.requests.TopicSubscription.Pack(builder, _o.TopicSubscription);
+    return CreateServiceData(
+      builder,
+      _client,
+      _client_list,
+      _device,
+      _device_list,
+      _topic_mux,
+      _topic_mux_list,
+      _topic_demux,
+      _topic_demux_list,
+      _session,
+      _session_list,
+      _interaction,
+      _interaction_list,
+      _topic_subscription);
+  }
 };
+
+public class ServiceDataT
+{
+  public ubii.clients.ClientT Client { get; set; }
+  public List<ubii.clients.ClientT> ClientList { get; set; }
+  public ubii.devices.DeviceT Device { get; set; }
+  public List<ubii.devices.DeviceT> DeviceList { get; set; }
+  public ubii.devices.TopicMuxT TopicMux { get; set; }
+  public List<ubii.devices.TopicMuxT> TopicMuxList { get; set; }
+  public ubii.devices.TopicDemuxT TopicDemux { get; set; }
+  public List<ubii.devices.TopicDemuxT> TopicDemuxList { get; set; }
+  public ubii.sessions.SessionT Session { get; set; }
+  public List<ubii.sessions.SessionT> SessionList { get; set; }
+  public ubii.interactions.InteractionT Interaction { get; set; }
+  public List<ubii.interactions.InteractionT> InteractionList { get; set; }
+  public ubii.services.requests.TopicSubscriptionT TopicSubscription { get; set; }
+
+  public ServiceDataT() {
+    this.Client = null;
+    this.ClientList = null;
+    this.Device = null;
+    this.DeviceList = null;
+    this.TopicMux = null;
+    this.TopicMuxList = null;
+    this.TopicDemux = null;
+    this.TopicDemuxList = null;
+    this.Session = null;
+    this.SessionList = null;
+    this.Interaction = null;
+    this.InteractionList = null;
+    this.TopicSubscription = null;
+  }
+  public static ServiceDataT DeserializeFromBinary(byte[] fbBuffer) {
+    return ServiceData.GetRootAsServiceData(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(ServiceData.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

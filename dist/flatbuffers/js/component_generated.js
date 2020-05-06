@@ -24,8 +24,8 @@ ubii.devices.IOType = {
  * @enum {string}
  */
 ubii.devices.IOTypeName = {
-  0: 'INPUT',
-  1: 'OUTPUT'
+  '0': 'INPUT',
+  '1': 'OUTPUT'
 };
 
 /**
@@ -60,6 +60,16 @@ ubii.devices.Component.prototype.__init = function(i, bb) {
  * @returns {ubii.devices.Component}
  */
 ubii.devices.Component.getRootAsComponent = function(bb, obj) {
+  return (obj || new ubii.devices.Component).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.devices.Component=} obj
+ * @returns {ubii.devices.Component}
+ */
+ubii.devices.Component.getSizePrefixedRootAsComponent = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.devices.Component).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -250,6 +260,14 @@ ubii.devices.Component.endComponent = function(builder) {
  */
 ubii.devices.Component.finishComponentBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.devices.Component.finishSizePrefixedComponentBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

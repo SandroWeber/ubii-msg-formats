@@ -26,6 +26,7 @@ namespace ubii {
 namespace services {
 
 struct ServiceData;
+struct ServiceDataBuilder;
 struct ServiceDataT;
 
 struct ServiceDataT : public flatbuffers::NativeTable {
@@ -49,6 +50,7 @@ struct ServiceDataT : public flatbuffers::NativeTable {
 
 struct ServiceData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef ServiceDataT NativeTableType;
+  typedef ServiceDataBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_CLIENT = 4,
     VT_CLIENT_LIST = 6,
@@ -145,6 +147,7 @@ struct ServiceData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct ServiceDataBuilder {
+  typedef ServiceData Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_client(flatbuffers::Offset<ubii::clients::Client> client) {
@@ -271,27 +274,27 @@ inline flatbuffers::Offset<ServiceData> CreateServiceDataDirect(
 flatbuffers::Offset<ServiceData> CreateServiceData(flatbuffers::FlatBufferBuilder &_fbb, const ServiceDataT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline ServiceDataT *ServiceData::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new ServiceDataT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::services::ServiceDataT> _o = std::unique_ptr<ubii::services::ServiceDataT>(new ServiceDataT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void ServiceData::UnPackTo(ServiceDataT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = client(); if (_e) _o->client = std::unique_ptr<ubii::clients::ClientT>(_e->UnPack(_resolver)); };
-  { auto _e = client_list(); if (_e) { _o->client_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->client_list[_i] = std::unique_ptr<ubii::clients::ClientT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = device(); if (_e) _o->device = std::unique_ptr<ubii::devices::DeviceT>(_e->UnPack(_resolver)); };
-  { auto _e = device_list(); if (_e) { _o->device_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->device_list[_i] = std::unique_ptr<ubii::devices::DeviceT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = topic_mux(); if (_e) _o->topic_mux = std::unique_ptr<ubii::devices::TopicMuxT>(_e->UnPack(_resolver)); };
-  { auto _e = topic_mux_list(); if (_e) { _o->topic_mux_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->topic_mux_list[_i] = std::unique_ptr<ubii::devices::TopicMuxT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = topic_demux(); if (_e) _o->topic_demux = std::unique_ptr<ubii::devices::TopicDemuxT>(_e->UnPack(_resolver)); };
-  { auto _e = topic_demux_list(); if (_e) { _o->topic_demux_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->topic_demux_list[_i] = std::unique_ptr<ubii::devices::TopicDemuxT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = session(); if (_e) _o->session = std::unique_ptr<ubii::sessions::SessionT>(_e->UnPack(_resolver)); };
-  { auto _e = session_list(); if (_e) { _o->session_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->session_list[_i] = std::unique_ptr<ubii::sessions::SessionT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = interaction(); if (_e) _o->interaction = std::unique_ptr<ubii::interactions::InteractionT>(_e->UnPack(_resolver)); };
-  { auto _e = interaction_list(); if (_e) { _o->interaction_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->interaction_list[_i] = std::unique_ptr<ubii::interactions::InteractionT>(_e->Get(_i)->UnPack(_resolver)); } } };
-  { auto _e = topic_subscription(); if (_e) _o->topic_subscription = std::unique_ptr<ubii::services::requests::TopicSubscriptionT>(_e->UnPack(_resolver)); };
+  { auto _e = client(); if (_e) _o->client = std::unique_ptr<ubii::clients::ClientT>(_e->UnPack(_resolver)); }
+  { auto _e = client_list(); if (_e) { _o->client_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->client_list[_i] = std::unique_ptr<ubii::clients::ClientT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = device(); if (_e) _o->device = std::unique_ptr<ubii::devices::DeviceT>(_e->UnPack(_resolver)); }
+  { auto _e = device_list(); if (_e) { _o->device_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->device_list[_i] = std::unique_ptr<ubii::devices::DeviceT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = topic_mux(); if (_e) _o->topic_mux = std::unique_ptr<ubii::devices::TopicMuxT>(_e->UnPack(_resolver)); }
+  { auto _e = topic_mux_list(); if (_e) { _o->topic_mux_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->topic_mux_list[_i] = std::unique_ptr<ubii::devices::TopicMuxT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = topic_demux(); if (_e) _o->topic_demux = std::unique_ptr<ubii::devices::TopicDemuxT>(_e->UnPack(_resolver)); }
+  { auto _e = topic_demux_list(); if (_e) { _o->topic_demux_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->topic_demux_list[_i] = std::unique_ptr<ubii::devices::TopicDemuxT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = session(); if (_e) _o->session = std::unique_ptr<ubii::sessions::SessionT>(_e->UnPack(_resolver)); }
+  { auto _e = session_list(); if (_e) { _o->session_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->session_list[_i] = std::unique_ptr<ubii::sessions::SessionT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = interaction(); if (_e) _o->interaction = std::unique_ptr<ubii::interactions::InteractionT>(_e->UnPack(_resolver)); }
+  { auto _e = interaction_list(); if (_e) { _o->interaction_list.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->interaction_list[_i] = std::unique_ptr<ubii::interactions::InteractionT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = topic_subscription(); if (_e) _o->topic_subscription = std::unique_ptr<ubii::services::requests::TopicSubscriptionT>(_e->UnPack(_resolver)); }
 }
 
 inline flatbuffers::Offset<ServiceData> ServiceData::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ServiceDataT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -362,10 +365,16 @@ inline void FinishSizePrefixedServiceDataBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<ServiceDataT> UnPackServiceData(
+inline std::unique_ptr<ubii::services::ServiceDataT> UnPackServiceData(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<ServiceDataT>(GetServiceData(buf)->UnPack(res));
+  return std::unique_ptr<ubii::services::ServiceDataT>(GetServiceData(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::services::ServiceDataT> UnPackSizePrefixedServiceData(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::services::ServiceDataT>(GetSizePrefixedServiceData(buf)->UnPack(res));
 }
 
 }  // namespace services

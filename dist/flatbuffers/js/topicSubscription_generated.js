@@ -54,6 +54,16 @@ ubii.services.requests.TopicSubscription.getRootAsTopicSubscription = function(b
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.services.requests.TopicSubscription=} obj
+ * @returns {ubii.services.requests.TopicSubscription}
+ */
+ubii.services.requests.TopicSubscription.getSizePrefixedRootAsTopicSubscription = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.services.requests.TopicSubscription).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -220,6 +230,14 @@ ubii.services.requests.TopicSubscription.endTopicSubscription = function(builder
  */
 ubii.services.requests.TopicSubscription.finishTopicSubscriptionBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.services.requests.TopicSubscription.finishSizePrefixedTopicSubscriptionBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

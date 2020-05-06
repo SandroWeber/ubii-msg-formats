@@ -9,24 +9,32 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Pose3D extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Pose3D getRootAsPose3D(ByteBuffer _bb) { return getRootAsPose3D(_bb, new Pose3D()); }
   public static Pose3D getRootAsPose3D(ByteBuffer _bb, Pose3D obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Pose3D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public Vector3 position() { return position(new Vector3()); }
-  public Vector3 position(Vector3 obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Orientation3D orientation() { return orientation(new Orientation3D()); }
-  public Orientation3D orientation(Orientation3D obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Vector3 position() { return position(new ubii.dataStructures.Vector3()); }
+  public ubii.dataStructures.Vector3 position(ubii.dataStructures.Vector3 obj) { int o = __offset(4); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Orientation3D orientation() { return orientation(new ubii.dataStructures.Orientation3D()); }
+  public ubii.dataStructures.Orientation3D orientation(ubii.dataStructures.Orientation3D obj) { int o = __offset(6); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
-  public static void startPose3D(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startPose3D(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addPosition(FlatBufferBuilder builder, int positionOffset) { builder.addStruct(0, positionOffset, 0); }
   public static void addOrientation(FlatBufferBuilder builder, int orientationOffset) { builder.addOffset(1, orientationOffset, 0); }
   public static int endPose3D(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishPose3DBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedPose3DBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Pose3D get(int j) { return get(new Pose3D(), j); }
+    public Pose3D get(Pose3D obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

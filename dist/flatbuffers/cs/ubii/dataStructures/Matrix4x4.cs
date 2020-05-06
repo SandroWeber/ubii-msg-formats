@@ -6,13 +6,14 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Matrix4x4 : IFlatbufferObject
 {
   private Struct __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Struct(_i, _bb); }
   public Matrix4x4 __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public float M00 { get { return __p.bb.GetFloat(__p.bb_pos + 0); } }
@@ -32,7 +33,7 @@ public struct Matrix4x4 : IFlatbufferObject
   public float M32 { get { return __p.bb.GetFloat(__p.bb_pos + 56); } }
   public float M33 { get { return __p.bb.GetFloat(__p.bb_pos + 60); } }
 
-  public static Offset<Matrix4x4> CreateMatrix4x4(FlatBufferBuilder builder, float M00, float M01, float M02, float M03, float M10, float M11, float M12, float M13, float M20, float M21, float M22, float M23, float M30, float M31, float M32, float M33) {
+  public static Offset<ubii.dataStructures.Matrix4x4> CreateMatrix4x4(FlatBufferBuilder builder, float M00, float M01, float M02, float M03, float M10, float M11, float M12, float M13, float M20, float M21, float M22, float M23, float M30, float M31, float M32, float M33) {
     builder.Prep(4, 64);
     builder.PutFloat(M33);
     builder.PutFloat(M32);
@@ -50,9 +51,92 @@ public struct Matrix4x4 : IFlatbufferObject
     builder.PutFloat(M02);
     builder.PutFloat(M01);
     builder.PutFloat(M00);
-    return new Offset<Matrix4x4>(builder.Offset);
+    return new Offset<ubii.dataStructures.Matrix4x4>(builder.Offset);
+  }
+  public Matrix4x4T UnPack() {
+    var _o = new Matrix4x4T();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Matrix4x4T _o) {
+    _o.M00 = this.M00;
+    _o.M01 = this.M01;
+    _o.M02 = this.M02;
+    _o.M03 = this.M03;
+    _o.M10 = this.M10;
+    _o.M11 = this.M11;
+    _o.M12 = this.M12;
+    _o.M13 = this.M13;
+    _o.M20 = this.M20;
+    _o.M21 = this.M21;
+    _o.M22 = this.M22;
+    _o.M23 = this.M23;
+    _o.M30 = this.M30;
+    _o.M31 = this.M31;
+    _o.M32 = this.M32;
+    _o.M33 = this.M33;
+  }
+  public static Offset<ubii.dataStructures.Matrix4x4> Pack(FlatBufferBuilder builder, Matrix4x4T _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Matrix4x4>);
+    return CreateMatrix4x4(
+      builder,
+      _o.M00,
+      _o.M01,
+      _o.M02,
+      _o.M03,
+      _o.M10,
+      _o.M11,
+      _o.M12,
+      _o.M13,
+      _o.M20,
+      _o.M21,
+      _o.M22,
+      _o.M23,
+      _o.M30,
+      _o.M31,
+      _o.M32,
+      _o.M33);
   }
 };
+
+public class Matrix4x4T
+{
+  public float M00 { get; set; }
+  public float M01 { get; set; }
+  public float M02 { get; set; }
+  public float M03 { get; set; }
+  public float M10 { get; set; }
+  public float M11 { get; set; }
+  public float M12 { get; set; }
+  public float M13 { get; set; }
+  public float M20 { get; set; }
+  public float M21 { get; set; }
+  public float M22 { get; set; }
+  public float M23 { get; set; }
+  public float M30 { get; set; }
+  public float M31 { get; set; }
+  public float M32 { get; set; }
+  public float M33 { get; set; }
+
+  public Matrix4x4T() {
+    this.M00 = 0.0f;
+    this.M01 = 0.0f;
+    this.M02 = 0.0f;
+    this.M03 = 0.0f;
+    this.M10 = 0.0f;
+    this.M11 = 0.0f;
+    this.M12 = 0.0f;
+    this.M13 = 0.0f;
+    this.M20 = 0.0f;
+    this.M21 = 0.0f;
+    this.M22 = 0.0f;
+    this.M23 = 0.0f;
+    this.M30 = 0.0f;
+    this.M31 = 0.0f;
+    this.M32 = 0.0f;
+    this.M33 = 0.0f;
+  }
+}
 
 
 }

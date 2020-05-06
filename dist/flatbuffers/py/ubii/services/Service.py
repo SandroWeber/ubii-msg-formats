@@ -3,6 +3,8 @@
 # namespace: services
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Service(object):
     __slots__ = ['_tab']
@@ -48,6 +50,11 @@ class Service(object):
         return 0
 
     # Service
+    def TagsIsNone(self):
+        o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(8))
+        return o == 0
+
+    # Service
     def Description(self):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(10))
         if o != 0:
@@ -85,3 +92,87 @@ def ServiceAddTopic(builder, topic): builder.PrependUOffsetTRelativeSlot(4, flat
 def ServiceAddRequestMessageFormat(builder, requestMessageFormat): builder.PrependUOffsetTRelativeSlot(5, flatbuffers.number_types.UOffsetTFlags.py_type(requestMessageFormat), 0)
 def ServiceAddResponseMessageFormat(builder, responseMessageFormat): builder.PrependUOffsetTRelativeSlot(6, flatbuffers.number_types.UOffsetTFlags.py_type(responseMessageFormat), 0)
 def ServiceEnd(builder): return builder.EndObject()
+
+try:
+    from typing import List
+except:
+    pass
+
+class ServiceT(object):
+
+    # ServiceT
+    def __init__(self):
+        self.id = None  # type: str
+        self.name = None  # type: str
+        self.tags = None  # type: List[str]
+        self.description = None  # type: str
+        self.topic = None  # type: str
+        self.requestMessageFormat = None  # type: str
+        self.responseMessageFormat = None  # type: str
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        service = Service()
+        service.Init(buf, pos)
+        return cls.InitFromObj(service)
+
+    @classmethod
+    def InitFromObj(cls, service):
+        x = ServiceT()
+        x._UnPack(service)
+        return x
+
+    # ServiceT
+    def _UnPack(self, service):
+        if service is None:
+            return
+        self.id = service.Id()
+        self.name = service.Name()
+        if not service.TagsIsNone():
+            self.tags = []
+            for i in range(service.TagsLength()):
+                self.tags.append(service.Tags(i))
+        self.description = service.Description()
+        self.topic = service.Topic()
+        self.requestMessageFormat = service.RequestMessageFormat()
+        self.responseMessageFormat = service.ResponseMessageFormat()
+
+    # ServiceT
+    def Pack(self, builder):
+        if self.id is not None:
+            id = builder.CreateString(self.id)
+        if self.name is not None:
+            name = builder.CreateString(self.name)
+        if self.tags is not None:
+            tagslist = []
+            for i in range(len(self.tags)):
+                tagslist.append(builder.CreateString(self.tags[i]))
+            ServiceStartTagsVector(builder, len(self.tags))
+            for i in reversed(range(len(self.tags))):
+                builder.PrependUOffsetTRelative(tagslist[i])
+            tags = builder.EndVector(len(self.tags))
+        if self.description is not None:
+            description = builder.CreateString(self.description)
+        if self.topic is not None:
+            topic = builder.CreateString(self.topic)
+        if self.requestMessageFormat is not None:
+            requestMessageFormat = builder.CreateString(self.requestMessageFormat)
+        if self.responseMessageFormat is not None:
+            responseMessageFormat = builder.CreateString(self.responseMessageFormat)
+        ServiceStart(builder)
+        if self.id is not None:
+            ServiceAddId(builder, id)
+        if self.name is not None:
+            ServiceAddName(builder, name)
+        if self.tags is not None:
+            ServiceAddTags(builder, tags)
+        if self.description is not None:
+            ServiceAddDescription(builder, description)
+        if self.topic is not None:
+            ServiceAddTopic(builder, topic)
+        if self.requestMessageFormat is not None:
+            ServiceAddRequestMessageFormat(builder, requestMessageFormat)
+        if self.responseMessageFormat is not None:
+            ServiceAddResponseMessageFormat(builder, responseMessageFormat)
+        service = ServiceEnd(builder)
+        return service

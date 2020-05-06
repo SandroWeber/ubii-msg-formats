@@ -9,14 +9,17 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class DataStructure extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static DataStructure getRootAsDataStructure(ByteBuffer _bb) { return getRootAsDataStructure(_bb, new DataStructure()); }
   public static DataStructure getRootAsDataStructure(ByteBuffer _bb, DataStructure obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public DataStructure __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public boolean bool() { int o = __offset(4); return o != 0 ? 0!=bb.get(o + bb_pos) : false; }
   public boolean boolList(int j) { int o = __offset(6); return o != 0 ? 0!=bb.get(__vector(o) + j * 1) : false; }
   public int boolListLength() { int o = __offset(6); return o != 0 ? __vector_len(o) : 0; }
+  public BooleanVector boolListVector() { return boolListVector(new BooleanVector()); }
+  public BooleanVector boolListVector(BooleanVector obj) { int o = __offset(6); return o != 0 ? obj.__assign(__vector(o), bb) : null; }
   public ByteBuffer boolListAsByteBuffer() { return __vector_as_bytebuffer(6, 1); }
   public ByteBuffer boolListInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 6, 1); }
   public String string() { int o = __offset(8); return o != 0 ? __string(o + bb_pos) : null; }
@@ -24,69 +27,83 @@ public final class DataStructure extends Table {
   public ByteBuffer stringInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 8, 1); }
   public String stringList(int j) { int o = __offset(10); return o != 0 ? __string(__vector(o) + j * 4) : null; }
   public int stringListLength() { int o = __offset(10); return o != 0 ? __vector_len(o) : 0; }
+  public StringVector stringListVector() { return stringListVector(new StringVector()); }
+  public StringVector stringListVector(StringVector obj) { int o = __offset(10); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public byte byte() { int o = __offset(12); return o != 0 ? bb.get(o + bb_pos) : 0; }
   public int int32() { int o = __offset(14); return o != 0 ? bb.getInt(o + bb_pos) : 0; }
   public int int32List(int j) { int o = __offset(16); return o != 0 ? bb.getInt(__vector(o) + j * 4) : 0; }
   public int int32ListLength() { int o = __offset(16); return o != 0 ? __vector_len(o) : 0; }
+  public IntVector int32ListVector() { return int32ListVector(new IntVector()); }
+  public IntVector int32ListVector(IntVector obj) { int o = __offset(16); return o != 0 ? obj.__assign(__vector(o), bb) : null; }
   public ByteBuffer int32ListAsByteBuffer() { return __vector_as_bytebuffer(16, 4); }
   public ByteBuffer int32ListInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 16, 4); }
   public float float() { int o = __offset(18); return o != 0 ? bb.getFloat(o + bb_pos) : 0.0f; }
   public float floatList(int j) { int o = __offset(20); return o != 0 ? bb.getFloat(__vector(o) + j * 4) : 0; }
   public int floatListLength() { int o = __offset(20); return o != 0 ? __vector_len(o) : 0; }
+  public FloatVector floatListVector() { return floatListVector(new FloatVector()); }
+  public FloatVector floatListVector(FloatVector obj) { int o = __offset(20); return o != 0 ? obj.__assign(__vector(o), bb) : null; }
   public ByteBuffer floatListAsByteBuffer() { return __vector_as_bytebuffer(20, 4); }
   public ByteBuffer floatListInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 20, 4); }
   public double double() { int o = __offset(22); return o != 0 ? bb.getDouble(o + bb_pos) : 0.0; }
   public double doubleList(int j) { int o = __offset(24); return o != 0 ? bb.getDouble(__vector(o) + j * 8) : 0; }
   public int doubleListLength() { int o = __offset(24); return o != 0 ? __vector_len(o) : 0; }
+  public DoubleVector doubleListVector() { return doubleListVector(new DoubleVector()); }
+  public DoubleVector doubleListVector(DoubleVector obj) { int o = __offset(24); return o != 0 ? obj.__assign(__vector(o), bb) : null; }
   public ByteBuffer doubleListAsByteBuffer() { return __vector_as_bytebuffer(24, 8); }
   public ByteBuffer doubleListInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 24, 8); }
-  public Vector2 vector2() { return vector2(new Vector2()); }
-  public Vector2 vector2(Vector2 obj) { int o = __offset(26); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Vector3 vector3() { return vector3(new Vector3()); }
-  public Vector3 vector3(Vector3 obj) { int o = __offset(28); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Vector4 vector4() { return vector4(new Vector4()); }
-  public Vector4 vector4(Vector4 obj) { int o = __offset(30); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Quaternion quaternion() { return quaternion(new Quaternion()); }
-  public Quaternion quaternion(Quaternion obj) { int o = __offset(32); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Matrix3x2 matrix3x2() { return matrix3x2(new Matrix3x2()); }
-  public Matrix3x2 matrix3x2(Matrix3x2 obj) { int o = __offset(34); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Matrix4x4 matrix4x4() { return matrix4x4(new Matrix4x4()); }
-  public Matrix4x4 matrix4x4(Matrix4x4 obj) { int o = __offset(36); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public Color color() { return color(new Color()); }
-  public Color color(Color obj) { int o = __offset(38); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
-  public TouchEvent touchEvent() { return touchEvent(new TouchEvent()); }
-  public TouchEvent touchEvent(TouchEvent obj) { int o = __offset(40); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public KeyEvent keyEvent() { return keyEvent(new KeyEvent()); }
-  public KeyEvent keyEvent(KeyEvent obj) { int o = __offset(42); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public MouseEvent mouseEvent() { return mouseEvent(new MouseEvent()); }
-  public MouseEvent mouseEvent(MouseEvent obj) { int o = __offset(44); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public MyoEvent myoEvent() { return myoEvent(new MyoEvent()); }
-  public MyoEvent myoEvent(MyoEvent obj) { int o = __offset(46); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Pose2D pose2D() { return pose2D(new Pose2D()); }
-  public Pose2D pose2D(Pose2D obj) { int o = __offset(48); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Pose3D pose3D() { return pose3D(new Pose3D()); }
-  public Pose3D pose3D(Pose3D obj) { int o = __offset(50); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Object2D object2D() { return object2D(new Object2D()); }
-  public Object2D object2D(Object2D obj) { int o = __offset(52); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Object3D object3D() { return object3D(new Object3D()); }
-  public Object3D object3D(Object3D obj) { int o = __offset(54); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Object2D object2DList(int j) { return object2DList(new Object2D(), j); }
-  public Object2D object2DList(Object2D obj, int j) { int o = __offset(56); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
+  public ubii.dataStructures.Vector2 vector2() { return vector2(new ubii.dataStructures.Vector2()); }
+  public ubii.dataStructures.Vector2 vector2(ubii.dataStructures.Vector2 obj) { int o = __offset(26); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Vector3 vector3() { return vector3(new ubii.dataStructures.Vector3()); }
+  public ubii.dataStructures.Vector3 vector3(ubii.dataStructures.Vector3 obj) { int o = __offset(28); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Vector4 vector4() { return vector4(new ubii.dataStructures.Vector4()); }
+  public ubii.dataStructures.Vector4 vector4(ubii.dataStructures.Vector4 obj) { int o = __offset(30); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Quaternion quaternion() { return quaternion(new ubii.dataStructures.Quaternion()); }
+  public ubii.dataStructures.Quaternion quaternion(ubii.dataStructures.Quaternion obj) { int o = __offset(32); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Matrix3x2 matrix3x2() { return matrix3x2(new ubii.dataStructures.Matrix3x2()); }
+  public ubii.dataStructures.Matrix3x2 matrix3x2(ubii.dataStructures.Matrix3x2 obj) { int o = __offset(34); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Matrix4x4 matrix4x4() { return matrix4x4(new ubii.dataStructures.Matrix4x4()); }
+  public ubii.dataStructures.Matrix4x4 matrix4x4(ubii.dataStructures.Matrix4x4 obj) { int o = __offset(36); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.Color color() { return color(new ubii.dataStructures.Color()); }
+  public ubii.dataStructures.Color color(ubii.dataStructures.Color obj) { int o = __offset(38); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.TouchEvent touchEvent() { return touchEvent(new ubii.dataStructures.TouchEvent()); }
+  public ubii.dataStructures.TouchEvent touchEvent(ubii.dataStructures.TouchEvent obj) { int o = __offset(40); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.KeyEvent keyEvent() { return keyEvent(new ubii.dataStructures.KeyEvent()); }
+  public ubii.dataStructures.KeyEvent keyEvent(ubii.dataStructures.KeyEvent obj) { int o = __offset(42); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.MouseEvent mouseEvent() { return mouseEvent(new ubii.dataStructures.MouseEvent()); }
+  public ubii.dataStructures.MouseEvent mouseEvent(ubii.dataStructures.MouseEvent obj) { int o = __offset(44); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.MyoEvent myoEvent() { return myoEvent(new ubii.dataStructures.MyoEvent()); }
+  public ubii.dataStructures.MyoEvent myoEvent(ubii.dataStructures.MyoEvent obj) { int o = __offset(46); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Pose2D pose2D() { return pose2D(new ubii.dataStructures.Pose2D()); }
+  public ubii.dataStructures.Pose2D pose2D(ubii.dataStructures.Pose2D obj) { int o = __offset(48); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Pose3D pose3D() { return pose3D(new ubii.dataStructures.Pose3D()); }
+  public ubii.dataStructures.Pose3D pose3D(ubii.dataStructures.Pose3D obj) { int o = __offset(50); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Object2D object2D() { return object2D(new ubii.dataStructures.Object2D()); }
+  public ubii.dataStructures.Object2D object2D(ubii.dataStructures.Object2D obj) { int o = __offset(52); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Object3D object3D() { return object3D(new ubii.dataStructures.Object3D()); }
+  public ubii.dataStructures.Object3D object3D(ubii.dataStructures.Object3D obj) { int o = __offset(54); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Object2D object2DList(int j) { return object2DList(new ubii.dataStructures.Object2D(), j); }
+  public ubii.dataStructures.Object2D object2DList(ubii.dataStructures.Object2D obj, int j) { int o = __offset(56); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int object2DListLength() { int o = __offset(56); return o != 0 ? __vector_len(o) : 0; }
-  public Object3D object3DList(int j) { return object3DList(new Object3D(), j); }
-  public Object3D object3DList(Object3D obj, int j) { int o = __offset(58); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
+  public ubii.dataStructures.Object2D.Vector object2DListVector() { return object2DListVector(new ubii.dataStructures.Object2D.Vector()); }
+  public ubii.dataStructures.Object2D.Vector object2DListVector(ubii.dataStructures.Object2D.Vector obj) { int o = __offset(56); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
+  public ubii.dataStructures.Object3D object3DList(int j) { return object3DList(new ubii.dataStructures.Object3D(), j); }
+  public ubii.dataStructures.Object3D object3DList(ubii.dataStructures.Object3D obj, int j) { int o = __offset(58); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int object3DListLength() { int o = __offset(58); return o != 0 ? __vector_len(o) : 0; }
-  public Image2D image2D() { return image2D(new Image2D()); }
-  public Image2D image2D(Image2D obj) { int o = __offset(60); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Image2D image2DList(int j) { return image2DList(new Image2D(), j); }
-  public Image2D image2DList(Image2D obj, int j) { int o = __offset(62); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
+  public ubii.dataStructures.Object3D.Vector object3DListVector() { return object3DListVector(new ubii.dataStructures.Object3D.Vector()); }
+  public ubii.dataStructures.Object3D.Vector object3DListVector(ubii.dataStructures.Object3D.Vector obj) { int o = __offset(58); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
+  public ubii.dataStructures.Image2D image2D() { return image2D(new ubii.dataStructures.Image2D()); }
+  public ubii.dataStructures.Image2D image2D(ubii.dataStructures.Image2D obj) { int o = __offset(60); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Image2D image2DList(int j) { return image2DList(new ubii.dataStructures.Image2D(), j); }
+  public ubii.dataStructures.Image2D image2DList(ubii.dataStructures.Image2D obj, int j) { int o = __offset(62); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int image2DListLength() { int o = __offset(62); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.dataStructures.Image2D.Vector image2DListVector() { return image2DListVector(new ubii.dataStructures.Image2D.Vector()); }
+  public ubii.dataStructures.Image2D.Vector image2DListVector(ubii.dataStructures.Image2D.Vector obj) { int o = __offset(62); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public ubii.sessions.Session session() { return session(new ubii.sessions.Session()); }
   public ubii.sessions.Session session(ubii.sessions.Session obj) { int o = __offset(64); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
   public ubii.interactions.Interaction interaction() { return interaction(new ubii.interactions.Interaction()); }
   public ubii.interactions.Interaction interaction(ubii.interactions.Interaction obj) { int o = __offset(66); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
 
-  public static void startDataStructure(FlatBufferBuilder builder) { builder.startObject(32); }
+  public static void startDataStructure(FlatBufferBuilder builder) { builder.startTable(32); }
   public static void addBool(FlatBufferBuilder builder, boolean bool) { builder.addBoolean(0, bool, false); }
   public static void addBoolList(FlatBufferBuilder builder, int boolListOffset) { builder.addOffset(1, boolListOffset, 0); }
   public static int createBoolListVector(FlatBufferBuilder builder, boolean[] data) { builder.startVector(1, data.length, 1); for (int i = data.length - 1; i >= 0; i--) builder.addBoolean(data[i]); return builder.endVector(); }
@@ -136,10 +153,17 @@ public final class DataStructure extends Table {
   public static void addSession(FlatBufferBuilder builder, int sessionOffset) { builder.addOffset(30, sessionOffset, 0); }
   public static void addInteraction(FlatBufferBuilder builder, int interactionOffset) { builder.addOffset(31, interactionOffset, 0); }
   public static int endDataStructure(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishDataStructureBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedDataStructureBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public DataStructure get(int j) { return get(new DataStructure(), j); }
+    public DataStructure get(DataStructure obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

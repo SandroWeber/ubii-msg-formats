@@ -6,35 +6,69 @@ namespace ubii.services
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct ServiceReply : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static ServiceReply GetRootAsServiceReply(ByteBuffer _bb) { return GetRootAsServiceReply(_bb, new ServiceReply()); }
   public static ServiceReply GetRootAsServiceReply(ByteBuffer _bb, ServiceReply obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public ServiceReply __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public ServiceData? Reply { get { int o = __p.__offset(4); return o != 0 ? (ServiceData?)(new ServiceData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.services.ServiceData? Reply { get { int o = __p.__offset(4); return o != 0 ? (ubii.services.ServiceData?)(new ubii.services.ServiceData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
-  public static Offset<ServiceReply> CreateServiceReply(FlatBufferBuilder builder,
-      Offset<ServiceData> replyOffset = default(Offset<ServiceData>)) {
-    builder.StartObject(1);
+  public static Offset<ubii.services.ServiceReply> CreateServiceReply(FlatBufferBuilder builder,
+      Offset<ubii.services.ServiceData> replyOffset = default(Offset<ubii.services.ServiceData>)) {
+    builder.StartTable(1);
     ServiceReply.AddReply(builder, replyOffset);
     return ServiceReply.EndServiceReply(builder);
   }
 
-  public static void StartServiceReply(FlatBufferBuilder builder) { builder.StartObject(1); }
-  public static void AddReply(FlatBufferBuilder builder, Offset<ServiceData> replyOffset) { builder.AddOffset(0, replyOffset.Value, 0); }
-  public static Offset<ServiceReply> EndServiceReply(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<ServiceReply>(o);
+  public static void StartServiceReply(FlatBufferBuilder builder) { builder.StartTable(1); }
+  public static void AddReply(FlatBufferBuilder builder, Offset<ubii.services.ServiceData> replyOffset) { builder.AddOffset(0, replyOffset.Value, 0); }
+  public static Offset<ubii.services.ServiceReply> EndServiceReply(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.services.ServiceReply>(o);
   }
-  public static void FinishServiceReplyBuffer(FlatBufferBuilder builder, Offset<ServiceReply> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedServiceReplyBuffer(FlatBufferBuilder builder, Offset<ServiceReply> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishServiceReplyBuffer(FlatBufferBuilder builder, Offset<ubii.services.ServiceReply> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedServiceReplyBuffer(FlatBufferBuilder builder, Offset<ubii.services.ServiceReply> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ServiceReplyT UnPack() {
+    var _o = new ServiceReplyT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ServiceReplyT _o) {
+    _o.Reply = this.Reply.HasValue ? this.Reply.Value.UnPack() : null;
+  }
+  public static Offset<ubii.services.ServiceReply> Pack(FlatBufferBuilder builder, ServiceReplyT _o) {
+    if (_o == null) return default(Offset<ubii.services.ServiceReply>);
+    var _reply = _o.Reply == null ? default(Offset<ubii.services.ServiceData>) : ubii.services.ServiceData.Pack(builder, _o.Reply);
+    return CreateServiceReply(
+      builder,
+      _reply);
+  }
 };
+
+public class ServiceReplyT
+{
+  public ubii.services.ServiceDataT Reply { get; set; }
+
+  public ServiceReplyT() {
+    this.Reply = null;
+  }
+  public static ServiceReplyT DeserializeFromBinary(byte[] fbBuffer) {
+    return ServiceReply.GetRootAsServiceReply(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(ServiceReply.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

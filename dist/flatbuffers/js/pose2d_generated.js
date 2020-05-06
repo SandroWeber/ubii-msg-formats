@@ -48,6 +48,16 @@ ubii.dataStructures.AngleOrientation.getRootAsAngleOrientation = function(bb, ob
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.AngleOrientation=} obj
+ * @returns {ubii.dataStructures.AngleOrientation}
+ */
+ubii.dataStructures.AngleOrientation.getSizePrefixedRootAsAngleOrientation = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.AngleOrientation).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {ubii.dataStructures.Vector2=} obj
  * @returns {ubii.dataStructures.Vector2|null}
  */
@@ -141,6 +151,16 @@ ubii.dataStructures.Orientation2D.prototype.__init = function(i, bb) {
  * @returns {ubii.dataStructures.Orientation2D}
  */
 ubii.dataStructures.Orientation2D.getRootAsOrientation2D = function(bb, obj) {
+  return (obj || new ubii.dataStructures.Orientation2D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.Orientation2D=} obj
+ * @returns {ubii.dataStructures.Orientation2D}
+ */
+ubii.dataStructures.Orientation2D.getSizePrefixedRootAsOrientation2D = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.dataStructures.Orientation2D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -243,6 +263,16 @@ ubii.dataStructures.Pose2D.getRootAsPose2D = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.Pose2D=} obj
+ * @returns {ubii.dataStructures.Pose2D}
+ */
+ubii.dataStructures.Pose2D.getSizePrefixedRootAsPose2D = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.Pose2D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {ubii.dataStructures.Vector2=} obj
  * @returns {ubii.dataStructures.Vector2|null}
  */
@@ -298,6 +328,14 @@ ubii.dataStructures.Pose2D.endPose2D = function(builder) {
  */
 ubii.dataStructures.Pose2D.finishPose2DBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.Pose2D.finishSizePrefixedPose2DBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

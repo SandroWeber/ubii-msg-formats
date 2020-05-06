@@ -11,6 +11,7 @@ namespace services {
 namespace requests {
 
 struct TopicSubscription;
+struct TopicSubscriptionBuilder;
 struct TopicSubscriptionT;
 
 struct TopicSubscriptionT : public flatbuffers::NativeTable {
@@ -26,6 +27,7 @@ struct TopicSubscriptionT : public flatbuffers::NativeTable {
 
 struct TopicSubscription FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef TopicSubscriptionT NativeTableType;
+  typedef TopicSubscriptionBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_CLIENT_ID = 4,
     VT_SUBSCRIBE_TOPICS = 6,
@@ -70,6 +72,7 @@ struct TopicSubscription FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct TopicSubscriptionBuilder {
+  typedef TopicSubscription Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_client_id(flatbuffers::Offset<flatbuffers::String> client_id) {
@@ -139,19 +142,19 @@ inline flatbuffers::Offset<TopicSubscription> CreateTopicSubscriptionDirect(
 flatbuffers::Offset<TopicSubscription> CreateTopicSubscription(flatbuffers::FlatBufferBuilder &_fbb, const TopicSubscriptionT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline TopicSubscriptionT *TopicSubscription::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new TopicSubscriptionT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::services::requests::TopicSubscriptionT> _o = std::unique_ptr<ubii::services::requests::TopicSubscriptionT>(new TopicSubscriptionT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void TopicSubscription::UnPackTo(TopicSubscriptionT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = client_id(); if (_e) _o->client_id = _e->str(); };
-  { auto _e = subscribe_topics(); if (_e) { _o->subscribe_topics.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->subscribe_topics[_i] = _e->Get(_i)->str(); } } };
-  { auto _e = unsubscribe_topics(); if (_e) { _o->unsubscribe_topics.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->unsubscribe_topics[_i] = _e->Get(_i)->str(); } } };
-  { auto _e = subscribe_topic_regexp(); if (_e) _o->subscribe_topic_regexp = _e->str(); };
-  { auto _e = unsubscribe_topic_regexp(); if (_e) _o->unsubscribe_topic_regexp = _e->str(); };
+  { auto _e = client_id(); if (_e) _o->client_id = _e->str(); }
+  { auto _e = subscribe_topics(); if (_e) { _o->subscribe_topics.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->subscribe_topics[_i] = _e->Get(_i)->str(); } } }
+  { auto _e = unsubscribe_topics(); if (_e) { _o->unsubscribe_topics.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->unsubscribe_topics[_i] = _e->Get(_i)->str(); } } }
+  { auto _e = subscribe_topic_regexp(); if (_e) _o->subscribe_topic_regexp = _e->str(); }
+  { auto _e = unsubscribe_topic_regexp(); if (_e) _o->unsubscribe_topic_regexp = _e->str(); }
 }
 
 inline flatbuffers::Offset<TopicSubscription> TopicSubscription::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicSubscriptionT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -206,10 +209,16 @@ inline void FinishSizePrefixedTopicSubscriptionBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<TopicSubscriptionT> UnPackTopicSubscription(
+inline std::unique_ptr<ubii::services::requests::TopicSubscriptionT> UnPackTopicSubscription(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<TopicSubscriptionT>(GetTopicSubscription(buf)->UnPack(res));
+  return std::unique_ptr<ubii::services::requests::TopicSubscriptionT>(GetTopicSubscription(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::services::requests::TopicSubscriptionT> UnPackSizePrefixedTopicSubscription(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::services::requests::TopicSubscriptionT>(GetSizePrefixedTopicSubscription(buf)->UnPack(res));
 }
 
 }  // namespace requests

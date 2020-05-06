@@ -24,8 +24,8 @@ ubii.dataStructures.ButtonEventType = {
  * @enum {string}
  */
 ubii.dataStructures.ButtonEventTypeName = {
-  0: 'UP',
-  1: 'DOWN'
+  '0': 'UP',
+  '1': 'DOWN'
 };
 
 // Exports for Node.js and RequireJS

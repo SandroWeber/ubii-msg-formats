@@ -27,18 +27,20 @@ namespace ubii {
 namespace services {
 
 struct ServiceRequest;
+struct ServiceRequestBuilder;
 struct ServiceRequestT;
 
 struct ServiceRequestT : public flatbuffers::NativeTable {
   typedef ServiceRequest TableType;
   std::string topic;
-  std::unique_ptr<ServiceDataT> request;
+  std::unique_ptr<ubii::services::ServiceDataT> request;
   ServiceRequestT() {
   }
 };
 
 struct ServiceRequest FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef ServiceRequestT NativeTableType;
+  typedef ServiceRequestBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TOPIC = 4,
     VT_REQUEST = 6
@@ -46,8 +48,8 @@ struct ServiceRequest FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   const flatbuffers::String *topic() const {
     return GetPointer<const flatbuffers::String *>(VT_TOPIC);
   }
-  const ServiceData *request() const {
-    return GetPointer<const ServiceData *>(VT_REQUEST);
+  const ubii::services::ServiceData *request() const {
+    return GetPointer<const ubii::services::ServiceData *>(VT_REQUEST);
   }
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
@@ -63,12 +65,13 @@ struct ServiceRequest FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct ServiceRequestBuilder {
+  typedef ServiceRequest Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_topic(flatbuffers::Offset<flatbuffers::String> topic) {
     fbb_.AddOffset(ServiceRequest::VT_TOPIC, topic);
   }
-  void add_request(flatbuffers::Offset<ServiceData> request) {
+  void add_request(flatbuffers::Offset<ubii::services::ServiceData> request) {
     fbb_.AddOffset(ServiceRequest::VT_REQUEST, request);
   }
   explicit ServiceRequestBuilder(flatbuffers::FlatBufferBuilder &_fbb)
@@ -86,7 +89,7 @@ struct ServiceRequestBuilder {
 inline flatbuffers::Offset<ServiceRequest> CreateServiceRequest(
     flatbuffers::FlatBufferBuilder &_fbb,
     flatbuffers::Offset<flatbuffers::String> topic = 0,
-    flatbuffers::Offset<ServiceData> request = 0) {
+    flatbuffers::Offset<ubii::services::ServiceData> request = 0) {
   ServiceRequestBuilder builder_(_fbb);
   builder_.add_request(request);
   builder_.add_topic(topic);
@@ -96,7 +99,7 @@ inline flatbuffers::Offset<ServiceRequest> CreateServiceRequest(
 inline flatbuffers::Offset<ServiceRequest> CreateServiceRequestDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
     const char *topic = nullptr,
-    flatbuffers::Offset<ServiceData> request = 0) {
+    flatbuffers::Offset<ubii::services::ServiceData> request = 0) {
   auto topic__ = topic ? _fbb.CreateString(topic) : 0;
   return ubii::services::CreateServiceRequest(
       _fbb,
@@ -107,16 +110,16 @@ inline flatbuffers::Offset<ServiceRequest> CreateServiceRequestDirect(
 flatbuffers::Offset<ServiceRequest> CreateServiceRequest(flatbuffers::FlatBufferBuilder &_fbb, const ServiceRequestT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline ServiceRequestT *ServiceRequest::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new ServiceRequestT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::services::ServiceRequestT> _o = std::unique_ptr<ubii::services::ServiceRequestT>(new ServiceRequestT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void ServiceRequest::UnPackTo(ServiceRequestT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = topic(); if (_e) _o->topic = _e->str(); };
-  { auto _e = request(); if (_e) _o->request = std::unique_ptr<ServiceDataT>(_e->UnPack(_resolver)); };
+  { auto _e = topic(); if (_e) _o->topic = _e->str(); }
+  { auto _e = request(); if (_e) _o->request = std::unique_ptr<ubii::services::ServiceDataT>(_e->UnPack(_resolver)); }
 }
 
 inline flatbuffers::Offset<ServiceRequest> ServiceRequest::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ServiceRequestT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -165,10 +168,16 @@ inline void FinishSizePrefixedServiceRequestBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<ServiceRequestT> UnPackServiceRequest(
+inline std::unique_ptr<ubii::services::ServiceRequestT> UnPackServiceRequest(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<ServiceRequestT>(GetServiceRequest(buf)->UnPack(res));
+  return std::unique_ptr<ubii::services::ServiceRequestT>(GetServiceRequest(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::services::ServiceRequestT> UnPackSizePrefixedServiceRequest(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::services::ServiceRequestT>(GetSizePrefixedServiceRequest(buf)->UnPack(res));
 }
 
 }  // namespace services

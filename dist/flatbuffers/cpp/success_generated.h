@@ -10,6 +10,7 @@ namespace ubii {
 namespace general {
 
 struct Success;
+struct SuccessBuilder;
 struct SuccessT;
 
 struct SuccessT : public flatbuffers::NativeTable {
@@ -22,6 +23,7 @@ struct SuccessT : public flatbuffers::NativeTable {
 
 struct Success FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef SuccessT NativeTableType;
+  typedef SuccessBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TITLE = 4,
     VT_MESSAGE = 6
@@ -46,6 +48,7 @@ struct Success FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct SuccessBuilder {
+  typedef Success Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_title(flatbuffers::Offset<flatbuffers::String> title) {
@@ -91,16 +94,16 @@ inline flatbuffers::Offset<Success> CreateSuccessDirect(
 flatbuffers::Offset<Success> CreateSuccess(flatbuffers::FlatBufferBuilder &_fbb, const SuccessT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline SuccessT *Success::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new SuccessT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::general::SuccessT> _o = std::unique_ptr<ubii::general::SuccessT>(new SuccessT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void Success::UnPackTo(SuccessT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = title(); if (_e) _o->title = _e->str(); };
-  { auto _e = message(); if (_e) _o->message = _e->str(); };
+  { auto _e = title(); if (_e) _o->title = _e->str(); }
+  { auto _e = message(); if (_e) _o->message = _e->str(); }
 }
 
 inline flatbuffers::Offset<Success> Success::Pack(flatbuffers::FlatBufferBuilder &_fbb, const SuccessT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -149,10 +152,16 @@ inline void FinishSizePrefixedSuccessBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<SuccessT> UnPackSuccess(
+inline std::unique_ptr<ubii::general::SuccessT> UnPackSuccess(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<SuccessT>(GetSuccess(buf)->UnPack(res));
+  return std::unique_ptr<ubii::general::SuccessT>(GetSuccess(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::general::SuccessT> UnPackSizePrefixedSuccess(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::general::SuccessT>(GetSizePrefixedSuccess(buf)->UnPack(res));
 }
 
 }  // namespace general

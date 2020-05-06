@@ -6,27 +6,29 @@ namespace ubii.clients
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Client : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Client GetRootAsClient(ByteBuffer _bb) { return GetRootAsClient(_bb, new Client()); }
   public static Client GetRootAsClient(ByteBuffer _bb, Client obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Client __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Id { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetIdArray() { return __p.__vector_as_array<byte>(4); }
   public string Name { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetNameBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetNameBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetNameBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
@@ -35,7 +37,7 @@ public struct Client : IFlatbufferObject
   public int TagsLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string Description { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span(10); }
+  public Span<byte> GetDescriptionBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
   public ArraySegment<byte>? GetDescriptionBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
@@ -43,13 +45,13 @@ public struct Client : IFlatbufferObject
   public string Devices(int j) { int o = __p.__offset(12); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
   public int DevicesLength { get { int o = __p.__offset(12); return o != 0 ? __p.__vector_len(o) : 0; } }
 
-  public static Offset<Client> CreateClient(FlatBufferBuilder builder,
+  public static Offset<ubii.clients.Client> CreateClient(FlatBufferBuilder builder,
       StringOffset idOffset = default(StringOffset),
       StringOffset nameOffset = default(StringOffset),
       VectorOffset tagsOffset = default(VectorOffset),
       StringOffset descriptionOffset = default(StringOffset),
       VectorOffset devicesOffset = default(VectorOffset)) {
-    builder.StartObject(5);
+    builder.StartTable(5);
     Client.AddDevices(builder, devicesOffset);
     Client.AddDescription(builder, descriptionOffset);
     Client.AddTags(builder, tagsOffset);
@@ -58,7 +60,7 @@ public struct Client : IFlatbufferObject
     return Client.EndClient(builder);
   }
 
-  public static void StartClient(FlatBufferBuilder builder) { builder.StartObject(5); }
+  public static void StartClient(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddId(FlatBufferBuilder builder, StringOffset idOffset) { builder.AddOffset(0, idOffset.Value, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddTags(FlatBufferBuilder builder, VectorOffset tagsOffset) { builder.AddOffset(2, tagsOffset.Value, 0); }
@@ -70,13 +72,77 @@ public struct Client : IFlatbufferObject
   public static VectorOffset CreateDevicesVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateDevicesVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static void StartDevicesVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static Offset<Client> EndClient(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Client>(o);
+  public static Offset<ubii.clients.Client> EndClient(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.clients.Client>(o);
   }
-  public static void FinishClientBuffer(FlatBufferBuilder builder, Offset<Client> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedClientBuffer(FlatBufferBuilder builder, Offset<Client> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishClientBuffer(FlatBufferBuilder builder, Offset<ubii.clients.Client> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedClientBuffer(FlatBufferBuilder builder, Offset<ubii.clients.Client> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ClientT UnPack() {
+    var _o = new ClientT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ClientT _o) {
+    _o.Id = this.Id;
+    _o.Name = this.Name;
+    _o.Tags = new List<string>();
+    for (var _j = 0; _j < this.TagsLength; ++_j) {_o.Tags.Add(this.Tags(_j));}
+    _o.Description = this.Description;
+    _o.Devices = new List<string>();
+    for (var _j = 0; _j < this.DevicesLength; ++_j) {_o.Devices.Add(this.Devices(_j));}
+  }
+  public static Offset<ubii.clients.Client> Pack(FlatBufferBuilder builder, ClientT _o) {
+    if (_o == null) return default(Offset<ubii.clients.Client>);
+    var _id = _o.Id == null ? default(StringOffset) : builder.CreateString(_o.Id);
+    var _name = _o.Name == null ? default(StringOffset) : builder.CreateString(_o.Name);
+    var _tags = default(VectorOffset);
+    if (_o.Tags != null) {
+      var __tags = new StringOffset[_o.Tags.Count];
+      for (var _j = 0; _j < __tags.Length; ++_j) { __tags[_j] = builder.CreateString(_o.Tags[_j]); }
+      _tags = CreateTagsVector(builder, __tags);
+    }
+    var _description = _o.Description == null ? default(StringOffset) : builder.CreateString(_o.Description);
+    var _devices = default(VectorOffset);
+    if (_o.Devices != null) {
+      var __devices = new StringOffset[_o.Devices.Count];
+      for (var _j = 0; _j < __devices.Length; ++_j) { __devices[_j] = builder.CreateString(_o.Devices[_j]); }
+      _devices = CreateDevicesVector(builder, __devices);
+    }
+    return CreateClient(
+      builder,
+      _id,
+      _name,
+      _tags,
+      _description,
+      _devices);
+  }
 };
+
+public class ClientT
+{
+  public string Id { get; set; }
+  public string Name { get; set; }
+  public List<string> Tags { get; set; }
+  public string Description { get; set; }
+  public List<string> Devices { get; set; }
+
+  public ClientT() {
+    this.Id = null;
+    this.Name = null;
+    this.Tags = null;
+    this.Description = null;
+    this.Devices = null;
+  }
+  public static ClientT DeserializeFromBinary(byte[] fbBuffer) {
+    return Client.GetRootAsClient(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Client.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

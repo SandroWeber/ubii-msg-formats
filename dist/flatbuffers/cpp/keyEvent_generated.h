@@ -12,25 +12,27 @@ namespace ubii {
 namespace dataStructures {
 
 struct KeyEvent;
+struct KeyEventBuilder;
 struct KeyEventT;
 
 struct KeyEventT : public flatbuffers::NativeTable {
   typedef KeyEvent TableType;
-  ButtonEventType type;
+  ubii::dataStructures::ButtonEventType type;
   std::string key;
   KeyEventT()
-      : type(ButtonEventType_UP) {
+      : type(ubii::dataStructures::ButtonEventType_UP) {
   }
 };
 
 struct KeyEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef KeyEventT NativeTableType;
+  typedef KeyEventBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TYPE = 4,
     VT_KEY = 6
   };
-  ButtonEventType type() const {
-    return static_cast<ButtonEventType>(GetField<int8_t>(VT_TYPE, 0));
+  ubii::dataStructures::ButtonEventType type() const {
+    return static_cast<ubii::dataStructures::ButtonEventType>(GetField<int8_t>(VT_TYPE, 0));
   }
   const flatbuffers::String *key() const {
     return GetPointer<const flatbuffers::String *>(VT_KEY);
@@ -48,9 +50,10 @@ struct KeyEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct KeyEventBuilder {
+  typedef KeyEvent Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
-  void add_type(ButtonEventType type) {
+  void add_type(ubii::dataStructures::ButtonEventType type) {
     fbb_.AddElement<int8_t>(KeyEvent::VT_TYPE, static_cast<int8_t>(type), 0);
   }
   void add_key(flatbuffers::Offset<flatbuffers::String> key) {
@@ -70,7 +73,7 @@ struct KeyEventBuilder {
 
 inline flatbuffers::Offset<KeyEvent> CreateKeyEvent(
     flatbuffers::FlatBufferBuilder &_fbb,
-    ButtonEventType type = ButtonEventType_UP,
+    ubii::dataStructures::ButtonEventType type = ubii::dataStructures::ButtonEventType_UP,
     flatbuffers::Offset<flatbuffers::String> key = 0) {
   KeyEventBuilder builder_(_fbb);
   builder_.add_key(key);
@@ -80,7 +83,7 @@ inline flatbuffers::Offset<KeyEvent> CreateKeyEvent(
 
 inline flatbuffers::Offset<KeyEvent> CreateKeyEventDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
-    ButtonEventType type = ButtonEventType_UP,
+    ubii::dataStructures::ButtonEventType type = ubii::dataStructures::ButtonEventType_UP,
     const char *key = nullptr) {
   auto key__ = key ? _fbb.CreateString(key) : 0;
   return ubii::dataStructures::CreateKeyEvent(
@@ -92,16 +95,16 @@ inline flatbuffers::Offset<KeyEvent> CreateKeyEventDirect(
 flatbuffers::Offset<KeyEvent> CreateKeyEvent(flatbuffers::FlatBufferBuilder &_fbb, const KeyEventT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline KeyEventT *KeyEvent::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new KeyEventT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::dataStructures::KeyEventT> _o = std::unique_ptr<ubii::dataStructures::KeyEventT>(new KeyEventT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void KeyEvent::UnPackTo(KeyEventT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = type(); _o->type = _e; };
-  { auto _e = key(); if (_e) _o->key = _e->str(); };
+  { auto _e = type(); _o->type = _e; }
+  { auto _e = key(); if (_e) _o->key = _e->str(); }
 }
 
 inline flatbuffers::Offset<KeyEvent> KeyEvent::Pack(flatbuffers::FlatBufferBuilder &_fbb, const KeyEventT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -150,10 +153,16 @@ inline void FinishSizePrefixedKeyEventBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<KeyEventT> UnPackKeyEvent(
+inline std::unique_ptr<ubii::dataStructures::KeyEventT> UnPackKeyEvent(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<KeyEventT>(GetKeyEvent(buf)->UnPack(res));
+  return std::unique_ptr<ubii::dataStructures::KeyEventT>(GetKeyEvent(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::dataStructures::KeyEventT> UnPackSizePrefixedKeyEvent(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::dataStructures::KeyEventT>(GetSizePrefixedKeyEvent(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

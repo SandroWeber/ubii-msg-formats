@@ -6,28 +6,57 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct AngleOrientation : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static AngleOrientation GetRootAsAngleOrientation(ByteBuffer _bb) { return GetRootAsAngleOrientation(_bb, new AngleOrientation()); }
   public static AngleOrientation GetRootAsAngleOrientation(ByteBuffer _bb, AngleOrientation obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public AngleOrientation __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public Vector2? ZeroDirection { get { int o = __p.__offset(4); return o != 0 ? (Vector2?)(new Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Vector2? ZeroDirection { get { int o = __p.__offset(4); return o != 0 ? (ubii.dataStructures.Vector2?)(new ubii.dataStructures.Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
   public float Angle { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
 
-  public static void StartAngleOrientation(FlatBufferBuilder builder) { builder.StartObject(2); }
-  public static void AddZeroDirection(FlatBufferBuilder builder, Offset<Vector2> zeroDirectionOffset) { builder.AddStruct(0, zeroDirectionOffset.Value, 0); }
+  public static void StartAngleOrientation(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void AddZeroDirection(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector2> zeroDirectionOffset) { builder.AddStruct(0, zeroDirectionOffset.Value, 0); }
   public static void AddAngle(FlatBufferBuilder builder, float angle) { builder.AddFloat(1, angle, 0.0f); }
-  public static Offset<AngleOrientation> EndAngleOrientation(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<AngleOrientation>(o);
+  public static Offset<ubii.dataStructures.AngleOrientation> EndAngleOrientation(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.AngleOrientation>(o);
+  }
+  public AngleOrientationT UnPack() {
+    var _o = new AngleOrientationT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(AngleOrientationT _o) {
+    _o.ZeroDirection = this.ZeroDirection.HasValue ? this.ZeroDirection.Value.UnPack() : null;
+    _o.Angle = this.Angle;
+  }
+  public static Offset<ubii.dataStructures.AngleOrientation> Pack(FlatBufferBuilder builder, AngleOrientationT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.AngleOrientation>);
+    StartAngleOrientation(builder);
+    AddZeroDirection(builder, ubii.dataStructures.Vector2.Pack(builder, _o.ZeroDirection));
+    AddAngle(builder, _o.Angle);
+    return EndAngleOrientation(builder);
   }
 };
+
+public class AngleOrientationT
+{
+  public ubii.dataStructures.Vector2T ZeroDirection { get; set; }
+  public float Angle { get; set; }
+
+  public AngleOrientationT() {
+    this.ZeroDirection = new ubii.dataStructures.Vector2T();
+    this.Angle = 0.0f;
+  }
+}
 
 
 }

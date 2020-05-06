@@ -10,6 +10,7 @@ namespace ubii {
 namespace devices {
 
 struct TopicDemux;
+struct TopicDemuxBuilder;
 struct TopicDemuxT;
 
 struct TopicDemuxT : public flatbuffers::NativeTable {
@@ -24,6 +25,7 @@ struct TopicDemuxT : public flatbuffers::NativeTable {
 
 struct TopicDemux FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef TopicDemuxT NativeTableType;
+  typedef TopicDemuxBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ID = 4,
     VT_NAME = 6,
@@ -60,6 +62,7 @@ struct TopicDemux FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct TopicDemuxBuilder {
+  typedef TopicDemux Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_id(flatbuffers::Offset<flatbuffers::String> id) {
@@ -121,18 +124,18 @@ inline flatbuffers::Offset<TopicDemux> CreateTopicDemuxDirect(
 flatbuffers::Offset<TopicDemux> CreateTopicDemux(flatbuffers::FlatBufferBuilder &_fbb, const TopicDemuxT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline TopicDemuxT *TopicDemux::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new TopicDemuxT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::devices::TopicDemuxT> _o = std::unique_ptr<ubii::devices::TopicDemuxT>(new TopicDemuxT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void TopicDemux::UnPackTo(TopicDemuxT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = id(); if (_e) _o->id = _e->str(); };
-  { auto _e = name(); if (_e) _o->name = _e->str(); };
-  { auto _e = data_type(); if (_e) _o->data_type = _e->str(); };
-  { auto _e = output_topic_format(); if (_e) _o->output_topic_format = _e->str(); };
+  { auto _e = id(); if (_e) _o->id = _e->str(); }
+  { auto _e = name(); if (_e) _o->name = _e->str(); }
+  { auto _e = data_type(); if (_e) _o->data_type = _e->str(); }
+  { auto _e = output_topic_format(); if (_e) _o->output_topic_format = _e->str(); }
 }
 
 inline flatbuffers::Offset<TopicDemux> TopicDemux::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TopicDemuxT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -185,10 +188,16 @@ inline void FinishSizePrefixedTopicDemuxBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<TopicDemuxT> UnPackTopicDemux(
+inline std::unique_ptr<ubii::devices::TopicDemuxT> UnPackTopicDemux(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<TopicDemuxT>(GetTopicDemux(buf)->UnPack(res));
+  return std::unique_ptr<ubii::devices::TopicDemuxT>(GetTopicDemux(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::devices::TopicDemuxT> UnPackSizePrefixedTopicDemux(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::devices::TopicDemuxT>(GetSizePrefixedTopicDemux(buf)->UnPack(res));
 }
 
 }  // namespace devices

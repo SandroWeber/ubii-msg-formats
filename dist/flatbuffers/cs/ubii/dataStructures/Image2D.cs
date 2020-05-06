@@ -6,35 +6,37 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Image2D : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Image2D GetRootAsImage2D(ByteBuffer _bb) { return GetRootAsImage2D(_bb, new Image2D()); }
   public static Image2D GetRootAsImage2D(ByteBuffer _bb, Image2D obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Image2D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public int Width { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int Height { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public ImageDataFormat DataFormat { get { int o = __p.__offset(8); return o != 0 ? (ImageDataFormat)__p.bb.GetSbyte(o + __p.bb_pos) : ImageDataFormat.GRAY8; } }
+  public ubii.dataStructures.ImageDataFormat DataFormat { get { int o = __p.__offset(8); return o != 0 ? (ubii.dataStructures.ImageDataFormat)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.dataStructures.ImageDataFormat.GRAY8; } }
   public sbyte Data(int j) { int o = __p.__offset(10); return o != 0 ? __p.bb.GetSbyte(__p.__vector(o) + j * 1) : (sbyte)0; }
   public int DataLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetDataBytes() { return __p.__vector_as_span(10); }
+  public Span<sbyte> GetDataBytes() { return __p.__vector_as_span<sbyte>(10, 1); }
 #else
   public ArraySegment<byte>? GetDataBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public sbyte[] GetDataArray() { return __p.__vector_as_array<sbyte>(10); }
 
-  public static Offset<Image2D> CreateImage2D(FlatBufferBuilder builder,
+  public static Offset<ubii.dataStructures.Image2D> CreateImage2D(FlatBufferBuilder builder,
       int width = 0,
       int height = 0,
-      ImageDataFormat data_format = ImageDataFormat.GRAY8,
+      ubii.dataStructures.ImageDataFormat data_format = ubii.dataStructures.ImageDataFormat.GRAY8,
       VectorOffset dataOffset = default(VectorOffset)) {
-    builder.StartObject(4);
+    builder.StartTable(4);
     Image2D.AddData(builder, dataOffset);
     Image2D.AddHeight(builder, height);
     Image2D.AddWidth(builder, width);
@@ -42,21 +44,70 @@ public struct Image2D : IFlatbufferObject
     return Image2D.EndImage2D(builder);
   }
 
-  public static void StartImage2D(FlatBufferBuilder builder) { builder.StartObject(4); }
+  public static void StartImage2D(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddWidth(FlatBufferBuilder builder, int width) { builder.AddInt(0, width, 0); }
   public static void AddHeight(FlatBufferBuilder builder, int height) { builder.AddInt(1, height, 0); }
-  public static void AddDataFormat(FlatBufferBuilder builder, ImageDataFormat dataFormat) { builder.AddSbyte(2, (sbyte)dataFormat, 0); }
+  public static void AddDataFormat(FlatBufferBuilder builder, ubii.dataStructures.ImageDataFormat dataFormat) { builder.AddSbyte(2, (sbyte)dataFormat, 0); }
   public static void AddData(FlatBufferBuilder builder, VectorOffset dataOffset) { builder.AddOffset(3, dataOffset.Value, 0); }
   public static VectorOffset CreateDataVector(FlatBufferBuilder builder, sbyte[] data) { builder.StartVector(1, data.Length, 1); for (int i = data.Length - 1; i >= 0; i--) builder.AddSbyte(data[i]); return builder.EndVector(); }
   public static VectorOffset CreateDataVectorBlock(FlatBufferBuilder builder, sbyte[] data) { builder.StartVector(1, data.Length, 1); builder.Add(data); return builder.EndVector(); }
   public static void StartDataVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(1, numElems, 1); }
-  public static Offset<Image2D> EndImage2D(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Image2D>(o);
+  public static Offset<ubii.dataStructures.Image2D> EndImage2D(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.Image2D>(o);
   }
-  public static void FinishImage2DBuffer(FlatBufferBuilder builder, Offset<Image2D> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedImage2DBuffer(FlatBufferBuilder builder, Offset<Image2D> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishImage2DBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.Image2D> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedImage2DBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.Image2D> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public Image2DT UnPack() {
+    var _o = new Image2DT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Image2DT _o) {
+    _o.Width = this.Width;
+    _o.Height = this.Height;
+    _o.DataFormat = this.DataFormat;
+    _o.Data = new List<sbyte>();
+    for (var _j = 0; _j < this.DataLength; ++_j) {_o.Data.Add(this.Data(_j));}
+  }
+  public static Offset<ubii.dataStructures.Image2D> Pack(FlatBufferBuilder builder, Image2DT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Image2D>);
+    var _data = default(VectorOffset);
+    if (_o.Data != null) {
+      var __data = _o.Data.ToArray();
+      _data = CreateDataVector(builder, __data);
+    }
+    return CreateImage2D(
+      builder,
+      _o.Width,
+      _o.Height,
+      _o.DataFormat,
+      _data);
+  }
 };
+
+public class Image2DT
+{
+  public int Width { get; set; }
+  public int Height { get; set; }
+  public ubii.dataStructures.ImageDataFormat DataFormat { get; set; }
+  public List<sbyte> Data { get; set; }
+
+  public Image2DT() {
+    this.Width = 0;
+    this.Height = 0;
+    this.DataFormat = ubii.dataStructures.ImageDataFormat.GRAY8;
+    this.Data = null;
+  }
+  public static Image2DT DeserializeFromBinary(byte[] fbBuffer) {
+    return Image2D.GetRootAsImage2D(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Image2D.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

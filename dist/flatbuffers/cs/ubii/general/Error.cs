@@ -6,61 +6,105 @@ namespace ubii.general
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Error : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Error GetRootAsError(ByteBuffer _bb) { return GetRootAsError(_bb, new Error()); }
   public static Error GetRootAsError(ByteBuffer _bb, Error obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Error __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string Title { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTitleBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetTitleBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetTitleBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
   public byte[] GetTitleArray() { return __p.__vector_as_array<byte>(4); }
   public string Message { get { int o = __p.__offset(6); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetMessageBytes() { return __p.__vector_as_span(6); }
+  public Span<byte> GetMessageBytes() { return __p.__vector_as_span<byte>(6, 1); }
 #else
   public ArraySegment<byte>? GetMessageBytes() { return __p.__vector_as_arraysegment(6); }
 #endif
   public byte[] GetMessageArray() { return __p.__vector_as_array<byte>(6); }
   public string Stack { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetStackBytes() { return __p.__vector_as_span(8); }
+  public Span<byte> GetStackBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
   public ArraySegment<byte>? GetStackBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
   public byte[] GetStackArray() { return __p.__vector_as_array<byte>(8); }
 
-  public static Offset<Error> CreateError(FlatBufferBuilder builder,
+  public static Offset<ubii.general.Error> CreateError(FlatBufferBuilder builder,
       StringOffset titleOffset = default(StringOffset),
       StringOffset messageOffset = default(StringOffset),
       StringOffset stackOffset = default(StringOffset)) {
-    builder.StartObject(3);
+    builder.StartTable(3);
     Error.AddStack(builder, stackOffset);
     Error.AddMessage(builder, messageOffset);
     Error.AddTitle(builder, titleOffset);
     return Error.EndError(builder);
   }
 
-  public static void StartError(FlatBufferBuilder builder) { builder.StartObject(3); }
+  public static void StartError(FlatBufferBuilder builder) { builder.StartTable(3); }
   public static void AddTitle(FlatBufferBuilder builder, StringOffset titleOffset) { builder.AddOffset(0, titleOffset.Value, 0); }
   public static void AddMessage(FlatBufferBuilder builder, StringOffset messageOffset) { builder.AddOffset(1, messageOffset.Value, 0); }
   public static void AddStack(FlatBufferBuilder builder, StringOffset stackOffset) { builder.AddOffset(2, stackOffset.Value, 0); }
-  public static Offset<Error> EndError(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Error>(o);
+  public static Offset<ubii.general.Error> EndError(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.general.Error>(o);
   }
-  public static void FinishErrorBuffer(FlatBufferBuilder builder, Offset<Error> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedErrorBuffer(FlatBufferBuilder builder, Offset<Error> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishErrorBuffer(FlatBufferBuilder builder, Offset<ubii.general.Error> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedErrorBuffer(FlatBufferBuilder builder, Offset<ubii.general.Error> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public ErrorT UnPack() {
+    var _o = new ErrorT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(ErrorT _o) {
+    _o.Title = this.Title;
+    _o.Message = this.Message;
+    _o.Stack = this.Stack;
+  }
+  public static Offset<ubii.general.Error> Pack(FlatBufferBuilder builder, ErrorT _o) {
+    if (_o == null) return default(Offset<ubii.general.Error>);
+    var _title = _o.Title == null ? default(StringOffset) : builder.CreateString(_o.Title);
+    var _message = _o.Message == null ? default(StringOffset) : builder.CreateString(_o.Message);
+    var _stack = _o.Stack == null ? default(StringOffset) : builder.CreateString(_o.Stack);
+    return CreateError(
+      builder,
+      _title,
+      _message,
+      _stack);
+  }
 };
+
+public class ErrorT
+{
+  public string Title { get; set; }
+  public string Message { get; set; }
+  public string Stack { get; set; }
+
+  public ErrorT() {
+    this.Title = null;
+    this.Message = null;
+    this.Stack = null;
+  }
+  public static ErrorT DeserializeFromBinary(byte[] fbBuffer) {
+    return Error.GetRootAsError(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Error.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

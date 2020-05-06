@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Timestamp(object):
     __slots__ = ['_tab']
@@ -22,3 +24,34 @@ def CreateTimestamp(builder, seconds, nanos):
     builder.PrependInt32(nanos)
     builder.PrependInt64(seconds)
     return builder.Offset()
+
+
+class TimestampT(object):
+
+    # TimestampT
+    def __init__(self):
+        self.seconds = 0  # type: int
+        self.nanos = 0  # type: int
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        timestamp = Timestamp()
+        timestamp.Init(buf, pos)
+        return cls.InitFromObj(timestamp)
+
+    @classmethod
+    def InitFromObj(cls, timestamp):
+        x = TimestampT()
+        x._UnPack(timestamp)
+        return x
+
+    # TimestampT
+    def _UnPack(self, timestamp):
+        if timestamp is None:
+            return
+        self.seconds = timestamp.Seconds()
+        self.nanos = timestamp.Nanos()
+
+    # TimestampT
+    def Pack(self, builder):
+        return CreateTimestamp(builder, self.seconds, self.nanos)

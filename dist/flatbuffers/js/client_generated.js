@@ -48,6 +48,16 @@ ubii.clients.Client.getRootAsClient = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.clients.Client=} obj
+ * @returns {ubii.clients.Client}
+ */
+ubii.clients.Client.getSizePrefixedRootAsClient = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.clients.Client).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -214,6 +224,14 @@ ubii.clients.Client.endClient = function(builder) {
  */
 ubii.clients.Client.finishClientBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.clients.Client.finishSizePrefixedClientBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

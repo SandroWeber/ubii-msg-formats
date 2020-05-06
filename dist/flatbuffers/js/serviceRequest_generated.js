@@ -90,6 +90,16 @@ ubii.services.ServiceRequest.getRootAsServiceRequest = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.services.ServiceRequest=} obj
+ * @returns {ubii.services.ServiceRequest}
+ */
+ubii.services.ServiceRequest.getSizePrefixedRootAsServiceRequest = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.services.ServiceRequest).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -145,6 +155,14 @@ ubii.services.ServiceRequest.endServiceRequest = function(builder) {
  */
 ubii.services.ServiceRequest.finishServiceRequestBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.services.ServiceRequest.finishSizePrefixedServiceRequestBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

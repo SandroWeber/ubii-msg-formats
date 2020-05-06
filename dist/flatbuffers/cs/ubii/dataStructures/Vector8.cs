@@ -6,13 +6,14 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Vector8 : IFlatbufferObject
 {
   private Struct __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Struct(_i, _bb); }
   public Vector8 __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public float V0 { get { return __p.bb.GetFloat(__p.bb_pos + 0); } }
@@ -24,7 +25,7 @@ public struct Vector8 : IFlatbufferObject
   public float V6 { get { return __p.bb.GetFloat(__p.bb_pos + 24); } }
   public float V7 { get { return __p.bb.GetFloat(__p.bb_pos + 28); } }
 
-  public static Offset<Vector8> CreateVector8(FlatBufferBuilder builder, float V0, float V1, float V2, float V3, float V4, float V5, float V6, float V7) {
+  public static Offset<ubii.dataStructures.Vector8> CreateVector8(FlatBufferBuilder builder, float V0, float V1, float V2, float V3, float V4, float V5, float V6, float V7) {
     builder.Prep(4, 32);
     builder.PutFloat(V7);
     builder.PutFloat(V6);
@@ -34,9 +35,60 @@ public struct Vector8 : IFlatbufferObject
     builder.PutFloat(V2);
     builder.PutFloat(V1);
     builder.PutFloat(V0);
-    return new Offset<Vector8>(builder.Offset);
+    return new Offset<ubii.dataStructures.Vector8>(builder.Offset);
+  }
+  public Vector8T UnPack() {
+    var _o = new Vector8T();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Vector8T _o) {
+    _o.V0 = this.V0;
+    _o.V1 = this.V1;
+    _o.V2 = this.V2;
+    _o.V3 = this.V3;
+    _o.V4 = this.V4;
+    _o.V5 = this.V5;
+    _o.V6 = this.V6;
+    _o.V7 = this.V7;
+  }
+  public static Offset<ubii.dataStructures.Vector8> Pack(FlatBufferBuilder builder, Vector8T _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Vector8>);
+    return CreateVector8(
+      builder,
+      _o.V0,
+      _o.V1,
+      _o.V2,
+      _o.V3,
+      _o.V4,
+      _o.V5,
+      _o.V6,
+      _o.V7);
   }
 };
+
+public class Vector8T
+{
+  public float V0 { get; set; }
+  public float V1 { get; set; }
+  public float V2 { get; set; }
+  public float V3 { get; set; }
+  public float V4 { get; set; }
+  public float V5 { get; set; }
+  public float V6 { get; set; }
+  public float V7 { get; set; }
+
+  public Vector8T() {
+    this.V0 = 0.0f;
+    this.V1 = 0.0f;
+    this.V2 = 0.0f;
+    this.V3 = 0.0f;
+    this.V4 = 0.0f;
+    this.V5 = 0.0f;
+    this.V6 = 0.0f;
+    this.V7 = 0.0f;
+  }
+}
 
 
 }

@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Component extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Component getRootAsComponent(ByteBuffer _bb) { return getRootAsComponent(_bb, new Component()); }
   public static Component getRootAsComponent(ByteBuffer _bb, Component obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Component __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String id() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -22,6 +23,8 @@ public final class Component extends Table {
   public ByteBuffer nameInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 6, 1); }
   public String tags(int j) { int o = __offset(8); return o != 0 ? __string(__vector(o) + j * 4) : null; }
   public int tagsLength() { int o = __offset(8); return o != 0 ? __vector_len(o) : 0; }
+  public StringVector tagsVector() { return tagsVector(new StringVector()); }
+  public StringVector tagsVector(StringVector obj) { int o = __offset(8); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public String description() { int o = __offset(10); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer descriptionAsByteBuffer() { return __vector_as_bytebuffer(10, 1); }
   public ByteBuffer descriptionInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 10, 1); }
@@ -45,7 +48,7 @@ public final class Component extends Table {
       int topicOffset,
       int message_formatOffset,
       byte io_type) {
-    builder.startObject(8);
+    builder.startTable(8);
     Component.addMessageFormat(builder, message_formatOffset);
     Component.addTopic(builder, topicOffset);
     Component.addDeviceId(builder, device_idOffset);
@@ -57,7 +60,7 @@ public final class Component extends Table {
     return Component.endComponent(builder);
   }
 
-  public static void startComponent(FlatBufferBuilder builder) { builder.startObject(8); }
+  public static void startComponent(FlatBufferBuilder builder) { builder.startTable(8); }
   public static void addId(FlatBufferBuilder builder, int idOffset) { builder.addOffset(0, idOffset, 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(1, nameOffset, 0); }
   public static void addTags(FlatBufferBuilder builder, int tagsOffset) { builder.addOffset(2, tagsOffset, 0); }
@@ -69,10 +72,17 @@ public final class Component extends Table {
   public static void addMessageFormat(FlatBufferBuilder builder, int messageFormatOffset) { builder.addOffset(6, messageFormatOffset, 0); }
   public static void addIoType(FlatBufferBuilder builder, byte ioType) { builder.addByte(7, ioType, 0); }
   public static int endComponent(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishComponentBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedComponentBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Component get(int j) { return get(new Component(), j); }
+    public Component get(Component obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

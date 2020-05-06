@@ -3,6 +3,8 @@
 # namespace: topicData
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class TopicData(object):
     __slots__ = ['_tab']
@@ -39,3 +41,48 @@ def TopicDataStart(builder): builder.StartObject(2)
 def TopicDataAddContentType(builder, contentType): builder.PrependUint8Slot(0, contentType, 0)
 def TopicDataAddContent(builder, content): builder.PrependUOffsetTRelativeSlot(1, flatbuffers.number_types.UOffsetTFlags.py_type(content), 0)
 def TopicDataEnd(builder): return builder.EndObject()
+
+import ubii.general.Error
+import ubii.topicData.TopicDataContent
+import ubii.topicData.TopicDataRecordList
+try:
+    from typing import Union
+except:
+    pass
+
+class TopicDataT(object):
+
+    # TopicDataT
+    def __init__(self):
+        self.contentType = 0  # type: int
+        self.content = None  # type: Union[None, ubii.topicData.TopicDataRecordList.TopicDataRecordListT, ubii.general.Error.ErrorT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        topicData = TopicData()
+        topicData.Init(buf, pos)
+        return cls.InitFromObj(topicData)
+
+    @classmethod
+    def InitFromObj(cls, topicData):
+        x = TopicDataT()
+        x._UnPack(topicData)
+        return x
+
+    # TopicDataT
+    def _UnPack(self, topicData):
+        if topicData is None:
+            return
+        self.contentType = topicData.ContentType()
+        self.content = ubii.topicData.TopicDataContent.TopicDataContentCreator(self.contentType, topicData.Content())
+
+    # TopicDataT
+    def Pack(self, builder):
+        if self.content is not None:
+            content = self.content.Pack(builder)
+        TopicDataStart(builder)
+        TopicDataAddContentType(builder, self.contentType)
+        if self.content is not None:
+            TopicDataAddContent(builder, content)
+        topicData = TopicDataEnd(builder)
+        return topicData

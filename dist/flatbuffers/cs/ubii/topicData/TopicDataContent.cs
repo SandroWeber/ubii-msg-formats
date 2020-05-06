@@ -7,10 +7,32 @@ namespace ubii.topicData
 
 public enum TopicDataContent : byte
 {
- NONE = 0,
- topic_data_records = 1,
- error = 2,
+  NONE = 0,
+  topic_data_records = 1,
+  error = 2,
 };
+
+public class TopicDataContentUnion {
+  public TopicDataContent Type { get; set; }
+  public object Value { get; set; }
+
+  public TopicDataContentUnion() {
+    this.Type = TopicDataContent.NONE;
+    this.Value = null;
+  }
+
+  public T As<T>() where T : class { return this.Value as T; }
+  public ubii.topicData.TopicDataRecordListT Astopic_data_records() { return this.As<ubii.topicData.TopicDataRecordListT>(); }
+  public ubii.general.ErrorT Aserror() { return this.As<ubii.general.ErrorT>(); }
+
+  public static int Pack(FlatBuffers.FlatBufferBuilder builder, TopicDataContentUnion _o) {
+    switch (_o.Type) {
+      default: return 0;
+      case TopicDataContent.topic_data_records: return ubii.topicData.TopicDataRecordList.Pack(builder, _o.Astopic_data_records()).Value;
+      case TopicDataContent.error: return ubii.general.Error.Pack(builder, _o.Aserror()).Value;
+    }
+  }
+}
 
 
 }

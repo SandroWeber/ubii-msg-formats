@@ -9,7 +9,7 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Vector2 extends Struct {
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Vector2 __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public float x() { return bb.getFloat(bb_pos + 0); }
@@ -20,6 +20,13 @@ public final class Vector2 extends Struct {
     builder.putFloat(y);
     builder.putFloat(x);
     return builder.offset();
+  }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Vector2 get(int j) { return get(new Vector2(), j); }
+    public Vector2 get(Vector2 obj, int j) {  return obj.__assign(__element(j), bb); }
   }
 }
 

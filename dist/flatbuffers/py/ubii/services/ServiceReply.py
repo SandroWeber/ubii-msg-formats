@@ -3,6 +3,8 @@
 # namespace: services
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class ServiceReply(object):
     __slots__ = ['_tab']
@@ -23,7 +25,7 @@ class ServiceReply(object):
         o = flatbuffers.number_types.UOffsetTFlags.py_type(self._tab.Offset(4))
         if o != 0:
             x = self._tab.Indirect(o + self._tab.Pos)
-            from .ServiceData import ServiceData
+            from ubii.services.ServiceData import ServiceData
             obj = ServiceData()
             obj.Init(self._tab.Bytes, x)
             return obj
@@ -32,3 +34,44 @@ class ServiceReply(object):
 def ServiceReplyStart(builder): builder.StartObject(1)
 def ServiceReplyAddReply(builder, reply): builder.PrependUOffsetTRelativeSlot(0, flatbuffers.number_types.UOffsetTFlags.py_type(reply), 0)
 def ServiceReplyEnd(builder): return builder.EndObject()
+
+import ubii.services.ServiceData
+try:
+    from typing import Optional
+except:
+    pass
+
+class ServiceReplyT(object):
+
+    # ServiceReplyT
+    def __init__(self):
+        self.reply = None  # type: Optional[ubii.services.ServiceData.ServiceDataT]
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        serviceReply = ServiceReply()
+        serviceReply.Init(buf, pos)
+        return cls.InitFromObj(serviceReply)
+
+    @classmethod
+    def InitFromObj(cls, serviceReply):
+        x = ServiceReplyT()
+        x._UnPack(serviceReply)
+        return x
+
+    # ServiceReplyT
+    def _UnPack(self, serviceReply):
+        if serviceReply is None:
+            return
+        if serviceReply.Reply() is not None:
+            self.reply = ubii.services.ServiceData.ServiceDataT.InitFromObj(serviceReply.Reply())
+
+    # ServiceReplyT
+    def Pack(self, builder):
+        if self.reply is not None:
+            reply = self.reply.Pack(builder)
+        ServiceReplyStart(builder)
+        if self.reply is not None:
+            ServiceReplyAddReply(builder, reply)
+        serviceReply = ServiceReplyEnd(builder)
+        return serviceReply

@@ -6,30 +6,67 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct TouchEvent : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static TouchEvent GetRootAsTouchEvent(ByteBuffer _bb) { return GetRootAsTouchEvent(_bb, new TouchEvent()); }
   public static TouchEvent GetRootAsTouchEvent(ByteBuffer _bb, TouchEvent obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public TouchEvent __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public ButtonEventType Type { get { int o = __p.__offset(4); return o != 0 ? (ButtonEventType)__p.bb.GetSbyte(o + __p.bb_pos) : ButtonEventType.UP; } }
-  public Vector2? Position { get { int o = __p.__offset(6); return o != 0 ? (Vector2?)(new Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.ButtonEventType Type { get { int o = __p.__offset(4); return o != 0 ? (ubii.dataStructures.ButtonEventType)__p.bb.GetSbyte(o + __p.bb_pos) : ubii.dataStructures.ButtonEventType.UP; } }
+  public ubii.dataStructures.Vector2? Position { get { int o = __p.__offset(6); return o != 0 ? (ubii.dataStructures.Vector2?)(new ubii.dataStructures.Vector2()).__assign(o + __p.bb_pos, __p.bb) : null; } }
 
-  public static void StartTouchEvent(FlatBufferBuilder builder) { builder.StartObject(2); }
-  public static void AddType(FlatBufferBuilder builder, ButtonEventType type) { builder.AddSbyte(0, (sbyte)type, 0); }
-  public static void AddPosition(FlatBufferBuilder builder, Offset<Vector2> positionOffset) { builder.AddStruct(1, positionOffset.Value, 0); }
-  public static Offset<TouchEvent> EndTouchEvent(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<TouchEvent>(o);
+  public static void StartTouchEvent(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void AddType(FlatBufferBuilder builder, ubii.dataStructures.ButtonEventType type) { builder.AddSbyte(0, (sbyte)type, 0); }
+  public static void AddPosition(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector2> positionOffset) { builder.AddStruct(1, positionOffset.Value, 0); }
+  public static Offset<ubii.dataStructures.TouchEvent> EndTouchEvent(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.TouchEvent>(o);
   }
-  public static void FinishTouchEventBuffer(FlatBufferBuilder builder, Offset<TouchEvent> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedTouchEventBuffer(FlatBufferBuilder builder, Offset<TouchEvent> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishTouchEventBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.TouchEvent> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedTouchEventBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.TouchEvent> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public TouchEventT UnPack() {
+    var _o = new TouchEventT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(TouchEventT _o) {
+    _o.Type = this.Type;
+    _o.Position = this.Position.HasValue ? this.Position.Value.UnPack() : null;
+  }
+  public static Offset<ubii.dataStructures.TouchEvent> Pack(FlatBufferBuilder builder, TouchEventT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.TouchEvent>);
+    StartTouchEvent(builder);
+    AddType(builder, _o.Type);
+    AddPosition(builder, ubii.dataStructures.Vector2.Pack(builder, _o.Position));
+    return EndTouchEvent(builder);
+  }
 };
+
+public class TouchEventT
+{
+  public ubii.dataStructures.ButtonEventType Type { get; set; }
+  public ubii.dataStructures.Vector2T Position { get; set; }
+
+  public TouchEventT() {
+    this.Type = ubii.dataStructures.ButtonEventType.UP;
+    this.Position = new ubii.dataStructures.Vector2T();
+  }
+  public static TouchEventT DeserializeFromBinary(byte[] fbBuffer) {
+    return TouchEvent.GetRootAsTouchEvent(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(TouchEvent.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

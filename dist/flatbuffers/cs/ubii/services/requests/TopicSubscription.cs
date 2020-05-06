@@ -6,20 +6,22 @@ namespace ubii.services.requests
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct TopicSubscription : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static TopicSubscription GetRootAsTopicSubscription(ByteBuffer _bb) { return GetRootAsTopicSubscription(_bb, new TopicSubscription()); }
   public static TopicSubscription GetRootAsTopicSubscription(ByteBuffer _bb, TopicSubscription obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public TopicSubscription __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public string ClientId { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetClientIdBytes() { return __p.__vector_as_span(4); }
+  public Span<byte> GetClientIdBytes() { return __p.__vector_as_span<byte>(4, 1); }
 #else
   public ArraySegment<byte>? GetClientIdBytes() { return __p.__vector_as_arraysegment(4); }
 #endif
@@ -30,26 +32,26 @@ public struct TopicSubscription : IFlatbufferObject
   public int UnsubscribeTopicsLength { get { int o = __p.__offset(8); return o != 0 ? __p.__vector_len(o) : 0; } }
   public string SubscribeTopicRegexp { get { int o = __p.__offset(10); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetSubscribeTopicRegexpBytes() { return __p.__vector_as_span(10); }
+  public Span<byte> GetSubscribeTopicRegexpBytes() { return __p.__vector_as_span<byte>(10, 1); }
 #else
   public ArraySegment<byte>? GetSubscribeTopicRegexpBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public byte[] GetSubscribeTopicRegexpArray() { return __p.__vector_as_array<byte>(10); }
   public string UnsubscribeTopicRegexp { get { int o = __p.__offset(12); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetUnsubscribeTopicRegexpBytes() { return __p.__vector_as_span(12); }
+  public Span<byte> GetUnsubscribeTopicRegexpBytes() { return __p.__vector_as_span<byte>(12, 1); }
 #else
   public ArraySegment<byte>? GetUnsubscribeTopicRegexpBytes() { return __p.__vector_as_arraysegment(12); }
 #endif
   public byte[] GetUnsubscribeTopicRegexpArray() { return __p.__vector_as_array<byte>(12); }
 
-  public static Offset<TopicSubscription> CreateTopicSubscription(FlatBufferBuilder builder,
+  public static Offset<ubii.services.requests.TopicSubscription> CreateTopicSubscription(FlatBufferBuilder builder,
       StringOffset client_idOffset = default(StringOffset),
       VectorOffset subscribe_topicsOffset = default(VectorOffset),
       VectorOffset unsubscribe_topicsOffset = default(VectorOffset),
       StringOffset subscribe_topic_regexpOffset = default(StringOffset),
       StringOffset unsubscribe_topic_regexpOffset = default(StringOffset)) {
-    builder.StartObject(5);
+    builder.StartTable(5);
     TopicSubscription.AddUnsubscribeTopicRegexp(builder, unsubscribe_topic_regexpOffset);
     TopicSubscription.AddSubscribeTopicRegexp(builder, subscribe_topic_regexpOffset);
     TopicSubscription.AddUnsubscribeTopics(builder, unsubscribe_topicsOffset);
@@ -58,7 +60,7 @@ public struct TopicSubscription : IFlatbufferObject
     return TopicSubscription.EndTopicSubscription(builder);
   }
 
-  public static void StartTopicSubscription(FlatBufferBuilder builder) { builder.StartObject(5); }
+  public static void StartTopicSubscription(FlatBufferBuilder builder) { builder.StartTable(5); }
   public static void AddClientId(FlatBufferBuilder builder, StringOffset clientIdOffset) { builder.AddOffset(0, clientIdOffset.Value, 0); }
   public static void AddSubscribeTopics(FlatBufferBuilder builder, VectorOffset subscribeTopicsOffset) { builder.AddOffset(1, subscribeTopicsOffset.Value, 0); }
   public static VectorOffset CreateSubscribeTopicsVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
@@ -70,13 +72,77 @@ public struct TopicSubscription : IFlatbufferObject
   public static void StartUnsubscribeTopicsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
   public static void AddSubscribeTopicRegexp(FlatBufferBuilder builder, StringOffset subscribeTopicRegexpOffset) { builder.AddOffset(3, subscribeTopicRegexpOffset.Value, 0); }
   public static void AddUnsubscribeTopicRegexp(FlatBufferBuilder builder, StringOffset unsubscribeTopicRegexpOffset) { builder.AddOffset(4, unsubscribeTopicRegexpOffset.Value, 0); }
-  public static Offset<TopicSubscription> EndTopicSubscription(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<TopicSubscription>(o);
+  public static Offset<ubii.services.requests.TopicSubscription> EndTopicSubscription(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.services.requests.TopicSubscription>(o);
   }
-  public static void FinishTopicSubscriptionBuffer(FlatBufferBuilder builder, Offset<TopicSubscription> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedTopicSubscriptionBuffer(FlatBufferBuilder builder, Offset<TopicSubscription> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishTopicSubscriptionBuffer(FlatBufferBuilder builder, Offset<ubii.services.requests.TopicSubscription> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedTopicSubscriptionBuffer(FlatBufferBuilder builder, Offset<ubii.services.requests.TopicSubscription> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public TopicSubscriptionT UnPack() {
+    var _o = new TopicSubscriptionT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(TopicSubscriptionT _o) {
+    _o.ClientId = this.ClientId;
+    _o.SubscribeTopics = new List<string>();
+    for (var _j = 0; _j < this.SubscribeTopicsLength; ++_j) {_o.SubscribeTopics.Add(this.SubscribeTopics(_j));}
+    _o.UnsubscribeTopics = new List<string>();
+    for (var _j = 0; _j < this.UnsubscribeTopicsLength; ++_j) {_o.UnsubscribeTopics.Add(this.UnsubscribeTopics(_j));}
+    _o.SubscribeTopicRegexp = this.SubscribeTopicRegexp;
+    _o.UnsubscribeTopicRegexp = this.UnsubscribeTopicRegexp;
+  }
+  public static Offset<ubii.services.requests.TopicSubscription> Pack(FlatBufferBuilder builder, TopicSubscriptionT _o) {
+    if (_o == null) return default(Offset<ubii.services.requests.TopicSubscription>);
+    var _client_id = _o.ClientId == null ? default(StringOffset) : builder.CreateString(_o.ClientId);
+    var _subscribe_topics = default(VectorOffset);
+    if (_o.SubscribeTopics != null) {
+      var __subscribe_topics = new StringOffset[_o.SubscribeTopics.Count];
+      for (var _j = 0; _j < __subscribe_topics.Length; ++_j) { __subscribe_topics[_j] = builder.CreateString(_o.SubscribeTopics[_j]); }
+      _subscribe_topics = CreateSubscribeTopicsVector(builder, __subscribe_topics);
+    }
+    var _unsubscribe_topics = default(VectorOffset);
+    if (_o.UnsubscribeTopics != null) {
+      var __unsubscribe_topics = new StringOffset[_o.UnsubscribeTopics.Count];
+      for (var _j = 0; _j < __unsubscribe_topics.Length; ++_j) { __unsubscribe_topics[_j] = builder.CreateString(_o.UnsubscribeTopics[_j]); }
+      _unsubscribe_topics = CreateUnsubscribeTopicsVector(builder, __unsubscribe_topics);
+    }
+    var _subscribe_topic_regexp = _o.SubscribeTopicRegexp == null ? default(StringOffset) : builder.CreateString(_o.SubscribeTopicRegexp);
+    var _unsubscribe_topic_regexp = _o.UnsubscribeTopicRegexp == null ? default(StringOffset) : builder.CreateString(_o.UnsubscribeTopicRegexp);
+    return CreateTopicSubscription(
+      builder,
+      _client_id,
+      _subscribe_topics,
+      _unsubscribe_topics,
+      _subscribe_topic_regexp,
+      _unsubscribe_topic_regexp);
+  }
 };
+
+public class TopicSubscriptionT
+{
+  public string ClientId { get; set; }
+  public List<string> SubscribeTopics { get; set; }
+  public List<string> UnsubscribeTopics { get; set; }
+  public string SubscribeTopicRegexp { get; set; }
+  public string UnsubscribeTopicRegexp { get; set; }
+
+  public TopicSubscriptionT() {
+    this.ClientId = null;
+    this.SubscribeTopics = null;
+    this.UnsubscribeTopics = null;
+    this.SubscribeTopicRegexp = null;
+    this.UnsubscribeTopicRegexp = null;
+  }
+  public static TopicSubscriptionT DeserializeFromBinary(byte[] fbBuffer) {
+    return TopicSubscription.GetRootAsTopicSubscription(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(TopicSubscription.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

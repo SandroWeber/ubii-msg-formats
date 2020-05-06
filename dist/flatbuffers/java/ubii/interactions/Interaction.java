@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Interaction extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Interaction getRootAsInteraction(ByteBuffer _bb) { return getRootAsInteraction(_bb, new Interaction()); }
   public static Interaction getRootAsInteraction(ByteBuffer _bb, Interaction obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Interaction __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String id() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -22,18 +23,26 @@ public final class Interaction extends Table {
   public ByteBuffer nameInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 6, 1); }
   public String authors(int j) { int o = __offset(8); return o != 0 ? __string(__vector(o) + j * 4) : null; }
   public int authorsLength() { int o = __offset(8); return o != 0 ? __vector_len(o) : 0; }
+  public StringVector authorsVector() { return authorsVector(new StringVector()); }
+  public StringVector authorsVector(StringVector obj) { int o = __offset(8); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public String tags(int j) { int o = __offset(10); return o != 0 ? __string(__vector(o) + j * 4) : null; }
   public int tagsLength() { int o = __offset(10); return o != 0 ? __vector_len(o) : 0; }
+  public StringVector tagsVector() { return tagsVector(new StringVector()); }
+  public StringVector tagsVector(StringVector obj) { int o = __offset(10); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public String description() { int o = __offset(12); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer descriptionAsByteBuffer() { return __vector_as_bytebuffer(12, 1); }
   public ByteBuffer descriptionInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 12, 1); }
   public byte status() { int o = __offset(14); return o != 0 ? bb.get(o + bb_pos) : 0; }
-  public IOFormat inputFormats(int j) { return inputFormats(new IOFormat(), j); }
-  public IOFormat inputFormats(IOFormat obj, int j) { int o = __offset(16); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
+  public ubii.interactions.IOFormat inputFormats(int j) { return inputFormats(new ubii.interactions.IOFormat(), j); }
+  public ubii.interactions.IOFormat inputFormats(ubii.interactions.IOFormat obj, int j) { int o = __offset(16); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int inputFormatsLength() { int o = __offset(16); return o != 0 ? __vector_len(o) : 0; }
-  public IOFormat outputFormats(int j) { return outputFormats(new IOFormat(), j); }
-  public IOFormat outputFormats(IOFormat obj, int j) { int o = __offset(18); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
+  public ubii.interactions.IOFormat.Vector inputFormatsVector() { return inputFormatsVector(new ubii.interactions.IOFormat.Vector()); }
+  public ubii.interactions.IOFormat.Vector inputFormatsVector(ubii.interactions.IOFormat.Vector obj) { int o = __offset(16); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
+  public ubii.interactions.IOFormat outputFormats(int j) { return outputFormats(new ubii.interactions.IOFormat(), j); }
+  public ubii.interactions.IOFormat outputFormats(ubii.interactions.IOFormat obj, int j) { int o = __offset(18); return o != 0 ? obj.__assign(__indirect(__vector(o) + j * 4), bb) : null; }
   public int outputFormatsLength() { int o = __offset(18); return o != 0 ? __vector_len(o) : 0; }
+  public ubii.interactions.IOFormat.Vector outputFormatsVector() { return outputFormatsVector(new ubii.interactions.IOFormat.Vector()); }
+  public ubii.interactions.IOFormat.Vector outputFormatsVector(ubii.interactions.IOFormat.Vector obj) { int o = __offset(18); return o != 0 ? obj.__assign(__vector(o), 4, bb) : null; }
   public String onCreated() { int o = __offset(20); return o != 0 ? __string(o + bb_pos) : null; }
   public ByteBuffer onCreatedAsByteBuffer() { return __vector_as_bytebuffer(20, 1); }
   public ByteBuffer onCreatedInByteBuffer(ByteBuffer _bb) { return __vector_in_bytebuffer(_bb, 20, 1); }
@@ -54,7 +63,7 @@ public final class Interaction extends Table {
       int on_createdOffset,
       int processing_callbackOffset,
       float process_frequency) {
-    builder.startObject(11);
+    builder.startTable(11);
     Interaction.addProcessFrequency(builder, process_frequency);
     Interaction.addProcessingCallback(builder, processing_callbackOffset);
     Interaction.addOnCreated(builder, on_createdOffset);
@@ -69,7 +78,7 @@ public final class Interaction extends Table {
     return Interaction.endInteraction(builder);
   }
 
-  public static void startInteraction(FlatBufferBuilder builder) { builder.startObject(11); }
+  public static void startInteraction(FlatBufferBuilder builder) { builder.startTable(11); }
   public static void addId(FlatBufferBuilder builder, int idOffset) { builder.addOffset(0, idOffset, 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(1, nameOffset, 0); }
   public static void addAuthors(FlatBufferBuilder builder, int authorsOffset) { builder.addOffset(2, authorsOffset, 0); }
@@ -90,10 +99,17 @@ public final class Interaction extends Table {
   public static void addProcessingCallback(FlatBufferBuilder builder, int processingCallbackOffset) { builder.addOffset(9, processingCallbackOffset, 0); }
   public static void addProcessFrequency(FlatBufferBuilder builder, float processFrequency) { builder.addFloat(10, processFrequency, 0.0f); }
   public static int endInteraction(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishInteractionBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedInteractionBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Interaction get(int j) { return get(new Interaction(), j); }
+    public Interaction get(Interaction obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

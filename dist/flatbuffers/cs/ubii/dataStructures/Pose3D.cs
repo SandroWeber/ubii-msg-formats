@@ -6,30 +6,68 @@ namespace ubii.dataStructures
 {
 
 using global::System;
+using global::System.Collections.Generic;
 using global::FlatBuffers;
 
 public struct Pose3D : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_1_12_0(); }
   public static Pose3D GetRootAsPose3D(ByteBuffer _bb) { return GetRootAsPose3D(_bb, new Pose3D()); }
   public static Pose3D GetRootAsPose3D(ByteBuffer _bb, Pose3D obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { __p.bb_pos = _i; __p.bb = _bb; }
+  public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public Pose3D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public Vector3? Position { get { int o = __p.__offset(4); return o != 0 ? (Vector3?)(new Vector3()).__assign(o + __p.bb_pos, __p.bb) : null; } }
-  public Orientation3D? Orientation { get { int o = __p.__offset(6); return o != 0 ? (Orientation3D?)(new Orientation3D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public ubii.dataStructures.Vector3? Position { get { int o = __p.__offset(4); return o != 0 ? (ubii.dataStructures.Vector3?)(new ubii.dataStructures.Vector3()).__assign(o + __p.bb_pos, __p.bb) : null; } }
+  public ubii.dataStructures.Orientation3D? Orientation { get { int o = __p.__offset(6); return o != 0 ? (ubii.dataStructures.Orientation3D?)(new ubii.dataStructures.Orientation3D()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
-  public static void StartPose3D(FlatBufferBuilder builder) { builder.StartObject(2); }
-  public static void AddPosition(FlatBufferBuilder builder, Offset<Vector3> positionOffset) { builder.AddStruct(0, positionOffset.Value, 0); }
-  public static void AddOrientation(FlatBufferBuilder builder, Offset<Orientation3D> orientationOffset) { builder.AddOffset(1, orientationOffset.Value, 0); }
-  public static Offset<Pose3D> EndPose3D(FlatBufferBuilder builder) {
-    int o = builder.EndObject();
-    return new Offset<Pose3D>(o);
+  public static void StartPose3D(FlatBufferBuilder builder) { builder.StartTable(2); }
+  public static void AddPosition(FlatBufferBuilder builder, Offset<ubii.dataStructures.Vector3> positionOffset) { builder.AddStruct(0, positionOffset.Value, 0); }
+  public static void AddOrientation(FlatBufferBuilder builder, Offset<ubii.dataStructures.Orientation3D> orientationOffset) { builder.AddOffset(1, orientationOffset.Value, 0); }
+  public static Offset<ubii.dataStructures.Pose3D> EndPose3D(FlatBufferBuilder builder) {
+    int o = builder.EndTable();
+    return new Offset<ubii.dataStructures.Pose3D>(o);
   }
-  public static void FinishPose3DBuffer(FlatBufferBuilder builder, Offset<Pose3D> offset) { builder.Finish(offset.Value); }
-  public static void FinishSizePrefixedPose3DBuffer(FlatBufferBuilder builder, Offset<Pose3D> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public static void FinishPose3DBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.Pose3D> offset) { builder.Finish(offset.Value); }
+  public static void FinishSizePrefixedPose3DBuffer(FlatBufferBuilder builder, Offset<ubii.dataStructures.Pose3D> offset) { builder.FinishSizePrefixed(offset.Value); }
+  public Pose3DT UnPack() {
+    var _o = new Pose3DT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(Pose3DT _o) {
+    _o.Position = this.Position.HasValue ? this.Position.Value.UnPack() : null;
+    _o.Orientation = this.Orientation.HasValue ? this.Orientation.Value.UnPack() : null;
+  }
+  public static Offset<ubii.dataStructures.Pose3D> Pack(FlatBufferBuilder builder, Pose3DT _o) {
+    if (_o == null) return default(Offset<ubii.dataStructures.Pose3D>);
+    var _orientation = _o.Orientation == null ? default(Offset<ubii.dataStructures.Orientation3D>) : ubii.dataStructures.Orientation3D.Pack(builder, _o.Orientation);
+    StartPose3D(builder);
+    AddPosition(builder, ubii.dataStructures.Vector3.Pack(builder, _o.Position));
+    AddOrientation(builder, _orientation);
+    return EndPose3D(builder);
+  }
 };
+
+public class Pose3DT
+{
+  public ubii.dataStructures.Vector3T Position { get; set; }
+  public ubii.dataStructures.Orientation3DT Orientation { get; set; }
+
+  public Pose3DT() {
+    this.Position = new ubii.dataStructures.Vector3T();
+    this.Orientation = null;
+  }
+  public static Pose3DT DeserializeFromBinary(byte[] fbBuffer) {
+    return Pose3D.GetRootAsPose3D(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    fbb.Finish(Pose3D.Pack(fbb, this).Value);
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
 
 
 }

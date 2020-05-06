@@ -12,26 +12,28 @@ namespace ubii {
 namespace dataStructures {
 
 struct MouseEvent;
+struct MouseEventBuilder;
 struct MouseEventT;
 
 struct MouseEventT : public flatbuffers::NativeTable {
   typedef MouseEvent TableType;
-  ButtonEventType type;
+  ubii::dataStructures::ButtonEventType type;
   int8_t button;
   MouseEventT()
-      : type(ButtonEventType_UP),
+      : type(ubii::dataStructures::ButtonEventType_UP),
         button(0) {
   }
 };
 
 struct MouseEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef MouseEventT NativeTableType;
+  typedef MouseEventBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_TYPE = 4,
     VT_BUTTON = 6
   };
-  ButtonEventType type() const {
-    return static_cast<ButtonEventType>(GetField<int8_t>(VT_TYPE, 0));
+  ubii::dataStructures::ButtonEventType type() const {
+    return static_cast<ubii::dataStructures::ButtonEventType>(GetField<int8_t>(VT_TYPE, 0));
   }
   int8_t button() const {
     return GetField<int8_t>(VT_BUTTON, 0);
@@ -48,9 +50,10 @@ struct MouseEvent FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct MouseEventBuilder {
+  typedef MouseEvent Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
-  void add_type(ButtonEventType type) {
+  void add_type(ubii::dataStructures::ButtonEventType type) {
     fbb_.AddElement<int8_t>(MouseEvent::VT_TYPE, static_cast<int8_t>(type), 0);
   }
   void add_button(int8_t button) {
@@ -70,7 +73,7 @@ struct MouseEventBuilder {
 
 inline flatbuffers::Offset<MouseEvent> CreateMouseEvent(
     flatbuffers::FlatBufferBuilder &_fbb,
-    ButtonEventType type = ButtonEventType_UP,
+    ubii::dataStructures::ButtonEventType type = ubii::dataStructures::ButtonEventType_UP,
     int8_t button = 0) {
   MouseEventBuilder builder_(_fbb);
   builder_.add_button(button);
@@ -81,16 +84,16 @@ inline flatbuffers::Offset<MouseEvent> CreateMouseEvent(
 flatbuffers::Offset<MouseEvent> CreateMouseEvent(flatbuffers::FlatBufferBuilder &_fbb, const MouseEventT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline MouseEventT *MouseEvent::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new MouseEventT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::dataStructures::MouseEventT> _o = std::unique_ptr<ubii::dataStructures::MouseEventT>(new MouseEventT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void MouseEvent::UnPackTo(MouseEventT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = type(); _o->type = _e; };
-  { auto _e = button(); _o->button = _e; };
+  { auto _e = type(); _o->type = _e; }
+  { auto _e = button(); _o->button = _e; }
 }
 
 inline flatbuffers::Offset<MouseEvent> MouseEvent::Pack(flatbuffers::FlatBufferBuilder &_fbb, const MouseEventT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -139,10 +142,16 @@ inline void FinishSizePrefixedMouseEventBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<MouseEventT> UnPackMouseEvent(
+inline std::unique_ptr<ubii::dataStructures::MouseEventT> UnPackMouseEvent(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<MouseEventT>(GetMouseEvent(buf)->UnPack(res));
+  return std::unique_ptr<ubii::dataStructures::MouseEventT>(GetMouseEvent(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::dataStructures::MouseEventT> UnPackSizePrefixedMouseEvent(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::dataStructures::MouseEventT>(GetSizePrefixedMouseEvent(buf)->UnPack(res));
 }
 
 }  // namespace dataStructures

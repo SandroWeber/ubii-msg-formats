@@ -10,6 +10,7 @@ namespace ubii {
 namespace interactions {
 
 struct IOFormat;
+struct IOFormatBuilder;
 struct IOFormatT;
 
 struct IOFormatT : public flatbuffers::NativeTable {
@@ -22,6 +23,7 @@ struct IOFormatT : public flatbuffers::NativeTable {
 
 struct IOFormat FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef IOFormatT NativeTableType;
+  typedef IOFormatBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_INTERNAL_NAME = 4,
     VT_MESSAGE_FORMAT = 6
@@ -46,6 +48,7 @@ struct IOFormat FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
 };
 
 struct IOFormatBuilder {
+  typedef IOFormat Table;
   flatbuffers::FlatBufferBuilder &fbb_;
   flatbuffers::uoffset_t start_;
   void add_internal_name(flatbuffers::Offset<flatbuffers::String> internal_name) {
@@ -91,16 +94,16 @@ inline flatbuffers::Offset<IOFormat> CreateIOFormatDirect(
 flatbuffers::Offset<IOFormat> CreateIOFormat(flatbuffers::FlatBufferBuilder &_fbb, const IOFormatT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 
 inline IOFormatT *IOFormat::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = new IOFormatT();
-  UnPackTo(_o, _resolver);
-  return _o;
+  std::unique_ptr<ubii::interactions::IOFormatT> _o = std::unique_ptr<ubii::interactions::IOFormatT>(new IOFormatT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
 }
 
 inline void IOFormat::UnPackTo(IOFormatT *_o, const flatbuffers::resolver_function_t *_resolver) const {
   (void)_o;
   (void)_resolver;
-  { auto _e = internal_name(); if (_e) _o->internal_name = _e->str(); };
-  { auto _e = message_format(); if (_e) _o->message_format = _e->str(); };
+  { auto _e = internal_name(); if (_e) _o->internal_name = _e->str(); }
+  { auto _e = message_format(); if (_e) _o->message_format = _e->str(); }
 }
 
 inline flatbuffers::Offset<IOFormat> IOFormat::Pack(flatbuffers::FlatBufferBuilder &_fbb, const IOFormatT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
@@ -149,10 +152,16 @@ inline void FinishSizePrefixedIOFormatBuffer(
   fbb.FinishSizePrefixed(root);
 }
 
-inline std::unique_ptr<IOFormatT> UnPackIOFormat(
+inline std::unique_ptr<ubii::interactions::IOFormatT> UnPackIOFormat(
     const void *buf,
     const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<IOFormatT>(GetIOFormat(buf)->UnPack(res));
+  return std::unique_ptr<ubii::interactions::IOFormatT>(GetIOFormat(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<ubii::interactions::IOFormatT> UnPackSizePrefixedIOFormat(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<ubii::interactions::IOFormatT>(GetSizePrefixedIOFormat(buf)->UnPack(res));
 }
 
 }  // namespace interactions

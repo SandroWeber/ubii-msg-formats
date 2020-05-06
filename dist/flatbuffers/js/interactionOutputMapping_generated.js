@@ -31,9 +31,9 @@ ubii.sessions.TopicDestination = {
  * @enum {string}
  */
 ubii.sessions.TopicDestinationName = {
-  0: 'NONE',
-  1: 'topic',
-  2: 'topic_demux'
+  '0': 'NONE',
+  '1': 'topic',
+  '2': 'topic_demux'
 };
 
 /**
@@ -68,6 +68,16 @@ ubii.sessions.InteractionOutputMapping.prototype.__init = function(i, bb) {
  * @returns {ubii.sessions.InteractionOutputMapping}
  */
 ubii.sessions.InteractionOutputMapping.getRootAsInteractionOutputMapping = function(bb, obj) {
+  return (obj || new ubii.sessions.InteractionOutputMapping).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.sessions.InteractionOutputMapping=} obj
+ * @returns {ubii.sessions.InteractionOutputMapping}
+ */
+ubii.sessions.InteractionOutputMapping.getSizePrefixedRootAsInteractionOutputMapping = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
   return (obj || new ubii.sessions.InteractionOutputMapping).__init(bb.readInt32(bb.position()) + bb.position(), bb);
 };
 
@@ -143,6 +153,14 @@ ubii.sessions.InteractionOutputMapping.endInteractionOutputMapping = function(bu
  */
 ubii.sessions.InteractionOutputMapping.finishInteractionOutputMappingBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.sessions.InteractionOutputMapping.finishSizePrefixedInteractionOutputMappingBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

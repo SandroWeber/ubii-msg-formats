@@ -48,6 +48,16 @@ ubii.dataStructures.Object2D.getRootAsObject2D = function(bb, obj) {
 };
 
 /**
+ * @param {flatbuffers.ByteBuffer} bb
+ * @param {ubii.dataStructures.Object2D=} obj
+ * @returns {ubii.dataStructures.Object2D}
+ */
+ubii.dataStructures.Object2D.getSizePrefixedRootAsObject2D = function(bb, obj) {
+  bb.setPosition(bb.position() + flatbuffers.SIZE_PREFIX_LENGTH);
+  return (obj || new ubii.dataStructures.Object2D).__init(bb.readInt32(bb.position()) + bb.position(), bb);
+};
+
+/**
  * @param {flatbuffers.Encoding=} optionalEncoding
  * @returns {string|Uint8Array|null}
  */
@@ -154,6 +164,14 @@ ubii.dataStructures.Object2D.endObject2D = function(builder) {
  */
 ubii.dataStructures.Object2D.finishObject2DBuffer = function(builder, offset) {
   builder.finish(offset);
+};
+
+/**
+ * @param {flatbuffers.Builder} builder
+ * @param {flatbuffers.Offset} offset
+ */
+ubii.dataStructures.Object2D.finishSizePrefixedObject2DBuffer = function(builder, offset) {
+  builder.finish(offset, undefined, true);
 };
 
 /**

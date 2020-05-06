@@ -9,22 +9,30 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class Orientation2D extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static Orientation2D getRootAsOrientation2D(ByteBuffer _bb) { return getRootAsOrientation2D(_bb, new Orientation2D()); }
   public static Orientation2D getRootAsOrientation2D(ByteBuffer _bb, Orientation2D obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public Orientation2D __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public AngleOrientation angle() { return angle(new AngleOrientation()); }
-  public AngleOrientation angle(AngleOrientation obj) { int o = __offset(4); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
-  public Vector2 direction() { return direction(new Vector2()); }
-  public Vector2 direction(Vector2 obj) { int o = __offset(6); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
+  public ubii.dataStructures.AngleOrientation angle() { return angle(new ubii.dataStructures.AngleOrientation()); }
+  public ubii.dataStructures.AngleOrientation angle(ubii.dataStructures.AngleOrientation obj) { int o = __offset(4); return o != 0 ? obj.__assign(__indirect(o + bb_pos), bb) : null; }
+  public ubii.dataStructures.Vector2 direction() { return direction(new ubii.dataStructures.Vector2()); }
+  public ubii.dataStructures.Vector2 direction(ubii.dataStructures.Vector2 obj) { int o = __offset(6); return o != 0 ? obj.__assign(o + bb_pos, bb) : null; }
 
-  public static void startOrientation2D(FlatBufferBuilder builder) { builder.startObject(2); }
+  public static void startOrientation2D(FlatBufferBuilder builder) { builder.startTable(2); }
   public static void addAngle(FlatBufferBuilder builder, int angleOffset) { builder.addOffset(0, angleOffset, 0); }
   public static void addDirection(FlatBufferBuilder builder, int directionOffset) { builder.addStruct(1, directionOffset, 0); }
   public static int endOrientation2D(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
+  }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public Orientation2D get(int j) { return get(new Orientation2D(), j); }
+    public Orientation2D get(Orientation2D obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
   }
 }
 

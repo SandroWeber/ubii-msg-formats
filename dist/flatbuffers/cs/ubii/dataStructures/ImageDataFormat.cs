@@ -7,9 +7,9 @@ namespace ubii.dataStructures
 
 public enum ImageDataFormat : sbyte
 {
- GRAY8 = 0,
- RGB8 = 1,
- RGBA8 = 2,
+  GRAY8 = 0,
+  RGB8 = 1,
+  RGBA8 = 2,
 };
 
 

@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class TopicDemux extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static TopicDemux getRootAsTopicDemux(ByteBuffer _bb) { return getRootAsTopicDemux(_bb, new TopicDemux()); }
   public static TopicDemux getRootAsTopicDemux(ByteBuffer _bb, TopicDemux obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public TopicDemux __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String id() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -32,7 +33,7 @@ public final class TopicDemux extends Table {
       int nameOffset,
       int data_typeOffset,
       int output_topic_formatOffset) {
-    builder.startObject(4);
+    builder.startTable(4);
     TopicDemux.addOutputTopicFormat(builder, output_topic_formatOffset);
     TopicDemux.addDataType(builder, data_typeOffset);
     TopicDemux.addName(builder, nameOffset);
@@ -40,16 +41,23 @@ public final class TopicDemux extends Table {
     return TopicDemux.endTopicDemux(builder);
   }
 
-  public static void startTopicDemux(FlatBufferBuilder builder) { builder.startObject(4); }
+  public static void startTopicDemux(FlatBufferBuilder builder) { builder.startTable(4); }
   public static void addId(FlatBufferBuilder builder, int idOffset) { builder.addOffset(0, idOffset, 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(1, nameOffset, 0); }
   public static void addDataType(FlatBufferBuilder builder, int dataTypeOffset) { builder.addOffset(2, dataTypeOffset, 0); }
   public static void addOutputTopicFormat(FlatBufferBuilder builder, int outputTopicFormatOffset) { builder.addOffset(3, outputTopicFormatOffset, 0); }
   public static int endTopicDemux(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishTopicDemuxBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedTopicDemuxBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public TopicDemux get(int j) { return get(new TopicDemux(), j); }
+    public TopicDemux get(TopicDemux obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

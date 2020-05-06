@@ -9,9 +9,10 @@ import com.google.flatbuffers.*;
 
 @SuppressWarnings("unused")
 public final class TopicMux extends Table {
+  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
   public static TopicMux getRootAsTopicMux(ByteBuffer _bb) { return getRootAsTopicMux(_bb, new TopicMux()); }
   public static TopicMux getRootAsTopicMux(ByteBuffer _bb, TopicMux obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
-  public void __init(int _i, ByteBuffer _bb) { bb_pos = _i; bb = _bb; vtable_start = bb_pos - bb.getInt(bb_pos); vtable_size = bb.getShort(vtable_start); }
+  public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
   public TopicMux __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
   public String id() { int o = __offset(4); return o != 0 ? __string(o + bb_pos) : null; }
@@ -36,7 +37,7 @@ public final class TopicMux extends Table {
       int data_typeOffset,
       int topic_selectorOffset,
       int identity_match_patternOffset) {
-    builder.startObject(5);
+    builder.startTable(5);
     TopicMux.addIdentityMatchPattern(builder, identity_match_patternOffset);
     TopicMux.addTopicSelector(builder, topic_selectorOffset);
     TopicMux.addDataType(builder, data_typeOffset);
@@ -45,17 +46,24 @@ public final class TopicMux extends Table {
     return TopicMux.endTopicMux(builder);
   }
 
-  public static void startTopicMux(FlatBufferBuilder builder) { builder.startObject(5); }
+  public static void startTopicMux(FlatBufferBuilder builder) { builder.startTable(5); }
   public static void addId(FlatBufferBuilder builder, int idOffset) { builder.addOffset(0, idOffset, 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(1, nameOffset, 0); }
   public static void addDataType(FlatBufferBuilder builder, int dataTypeOffset) { builder.addOffset(2, dataTypeOffset, 0); }
   public static void addTopicSelector(FlatBufferBuilder builder, int topicSelectorOffset) { builder.addOffset(3, topicSelectorOffset, 0); }
   public static void addIdentityMatchPattern(FlatBufferBuilder builder, int identityMatchPatternOffset) { builder.addOffset(4, identityMatchPatternOffset, 0); }
   public static int endTopicMux(FlatBufferBuilder builder) {
-    int o = builder.endObject();
+    int o = builder.endTable();
     return o;
   }
   public static void finishTopicMuxBuffer(FlatBufferBuilder builder, int offset) { builder.finish(offset); }
   public static void finishSizePrefixedTopicMuxBuffer(FlatBufferBuilder builder, int offset) { builder.finishSizePrefixed(offset); }
+
+  public static final class Vector extends BaseVector {
+    public Vector __assign(int _vector, int _element_size, ByteBuffer _bb) { __reset(_vector, _element_size, _bb); return this; }
+
+    public TopicMux get(int j) { return get(new TopicMux(), j); }
+    public TopicMux get(TopicMux obj, int j) {  return obj.__assign(__indirect(__element(j), bb), bb); }
+  }
 }
 

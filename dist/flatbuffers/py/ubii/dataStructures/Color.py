@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Color(object):
     __slots__ = ['_tab']
@@ -27,3 +29,38 @@ def CreateColor(builder, r, g, b, a):
     builder.PrependFloat32(g)
     builder.PrependFloat32(r)
     return builder.Offset()
+
+
+class ColorT(object):
+
+    # ColorT
+    def __init__(self):
+        self.r = 0.0  # type: float
+        self.g = 0.0  # type: float
+        self.b = 0.0  # type: float
+        self.a = 0.0  # type: float
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        color = Color()
+        color.Init(buf, pos)
+        return cls.InitFromObj(color)
+
+    @classmethod
+    def InitFromObj(cls, color):
+        x = ColorT()
+        x._UnPack(color)
+        return x
+
+    # ColorT
+    def _UnPack(self, color):
+        if color is None:
+            return
+        self.r = color.R()
+        self.g = color.G()
+        self.b = color.B()
+        self.a = color.A()
+
+    # ColorT
+    def Pack(self, builder):
+        return CreateColor(builder, self.r, self.g, self.b, self.a)

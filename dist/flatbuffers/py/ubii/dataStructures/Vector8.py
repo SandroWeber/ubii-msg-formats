@@ -3,6 +3,8 @@
 # namespace: dataStructures
 
 import flatbuffers
+from flatbuffers.compat import import_numpy
+np = import_numpy()
 
 class Vector8(object):
     __slots__ = ['_tab']
@@ -39,3 +41,46 @@ def CreateVector8(builder, v0, v1, v2, v3, v4, v5, v6, v7):
     builder.PrependFloat32(v1)
     builder.PrependFloat32(v0)
     return builder.Offset()
+
+
+class Vector8T(object):
+
+    # Vector8T
+    def __init__(self):
+        self.v0 = 0.0  # type: float
+        self.v1 = 0.0  # type: float
+        self.v2 = 0.0  # type: float
+        self.v3 = 0.0  # type: float
+        self.v4 = 0.0  # type: float
+        self.v5 = 0.0  # type: float
+        self.v6 = 0.0  # type: float
+        self.v7 = 0.0  # type: float
+
+    @classmethod
+    def InitFromBuf(cls, buf, pos):
+        vector8 = Vector8()
+        vector8.Init(buf, pos)
+        return cls.InitFromObj(vector8)
+
+    @classmethod
+    def InitFromObj(cls, vector8):
+        x = Vector8T()
+        x._UnPack(vector8)
+        return x
+
+    # Vector8T
+    def _UnPack(self, vector8):
+        if vector8 is None:
+            return
+        self.v0 = vector8.V0()
+        self.v1 = vector8.V1()
+        self.v2 = vector8.V2()
+        self.v3 = vector8.V3()
+        self.v4 = vector8.V4()
+        self.v5 = vector8.V5()
+        self.v6 = vector8.V6()
+        self.v7 = vector8.V7()
+
+    # Vector8T
+    def Pack(self, builder):
+        return CreateVector8(builder, self.v0, self.v1, self.v2, self.v3, self.v4, self.v5, self.v6, self.v7)
