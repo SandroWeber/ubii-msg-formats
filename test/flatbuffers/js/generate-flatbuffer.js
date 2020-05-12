@@ -84,10 +84,7 @@ let testData = {
 };
 
 /**
- * Creates a TopicData object with the following data inside:
- * bool: true
- * stringList: ['one', 'two', 'three']
- * vector3: (1.1, 2.2, 3.3)
+ * Creates a TopicData object with testData object fields
  *
  * @param {*} topicString
  * @param {*} timestamp
