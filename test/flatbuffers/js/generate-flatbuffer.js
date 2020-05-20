@@ -1,6 +1,4 @@
-import test from 'ava';
-import { flatbuffers } from 'flatbuffers';
-
+const {flatbuffers} = require('flatbuffers');
 const { FlatbufferUtils } = require('../../../src/js/index');
 
 const TopicData = require('../../../dist/flatbuffers/js/topicData_generated').ubii.topicData
@@ -47,68 +45,72 @@ let createFlatbufferTopicDataVector3 = (topicString, timestamp, vector3) => {
 };
 */
 
-let testData = {
-  bool: true,
-  //bool_list: [true, false, true],
-  //string: string,
-  string_list: ['one', 'two', 'three'],
-  //byte: byte,
-  //int32: int32,
-  //int32_list: [int32],
-  //float: float,
-  //float_list: [float],
-  //double: double,
-  //double_list: [double],
-
-  //   vector2: ubii.dataStructures.Vector2,
-  vector3: { x: 1.1, y: 2.2, z: 3.3 },
-  //   vector4: ubii.dataStructures.Vector4,
-  //   quaternion: ubii.dataStructures.Quaternion,
-  //   matrix3x2: ubii.dataStructures.Matrix3x2,
-  //   matrix4x4: ubii.dataStructures.Matrix4x4,
-  //   color: ubii.dataStructures.Color,
-  //   touch_event: ubii.dataStructures.TouchEvent,
-  //   key_event: ubii.dataStructures.KeyEvent,
-  //   mouse_event: ubii.dataStructures.MouseEvent,
-  //   myo_event: ubii.dataStructures.MyoEvent,
-  //   pose2D: ubii.dataStructures.Pose2D,
-  //   pose3D: ubii.dataStructures.Pose3D,
-  //   object2D: ubii.dataStructures.Object2D,
-  //   object3D: ubii.dataStructures.Object3D,
-  //   object2D_list: [ubii.dataStructures.Object2D],
-  //   object3D_list: [ubii.dataStructures.Object3D],
-  //   image2D: ubii.dataStructures.Image2D,
-  //   image2D_list: [ubii.dataStructures.Image2D],
-  //   session: ubii.sessions.Session,
-  //   interaction: ubii.interactions.Interaction,
-};
-
 /**
  * Creates a TopicData object with testData object fields
  *
  * @param {*} topicString
  * @param {*} timestamp
+ * @param {*} testData
  */
-let createFlatbufferTopicData = (topicString, timestamp) => {
+let createFlatbufferTopicData = (topicString, timestamp, testData) => {
   let builder = new flatbuffers.Builder(0);
-
+  let tmpList = new Array();
   let topic = builder.createString(topicString);
 
-  let stringList = DataStructure.createStringListVector(builder, [
-    builder.createString(testData.string_list[0]),
-    builder.createString(testData.string_list[1]),
-    builder.createString(testData.string_list[2]),
-  ]);
+  // create objects from testData
+  testData.forEach((td)=>{
+    let keys = Object.keys(td);
+    keys.forEach((k)=>{
+      switch (k) {
+        case "bool":
+          tmpList.push({'bool':td.bool});
+          break;
+        case "vector3":
+          tmpList.push(td.vector3);
+          break;
+        case "stringList":
+          let strings = new Array();
+          for(let i=0;i<td.stringList.elements.length;++i){
+            strings.push(builder.createString(td.stringList.elements[i]))
+          }
+          let stringList = DataStructure.createStringListVector(builder, [
+            strings
+          ]);
+          tmpList.push({'stringList':stringList});
+          break;
+        default:
+          console.log("Following datastructure has to be added: %s", k)
+          break;
+      }
+    });
+  });
 
+  // add object to datastructure
   DataStructure.startDataStructure(builder);
-  DataStructure.addVector3(
-    builder,
-    Vector3.createVector3(builder, testData.vector3.x, testData.vector3.y, testData.vector3.z)
-  );
-  DataStructure.addBool(builder, testData.bool);
-  DataStructure.addStringList(builder, stringList);
-  let dataStructure = DataStructure.endDataStructure(builder);
+  testData.forEach((td)=>{
+    let keys = Object.keys(td);
+    keys.forEach((k)=>{
+      switch (k) {
+        case "bool":
+          DataStructure.addBool(builder, td.bool);
+          break;
+        case "vector3":
+          DataStructure.addVector3(
+              builder,
+              Vector3.createVector3(builder, td.vector3.x, td.vector3.y, td.vector3.z)
+          );
+          break;
+        case "stringList":
+          DataStructure.addStringList(builder, td.stringList);
+          break;
+        default:
+          console.log("Following datastructure has to be added: %s", k)
+          break;
+      }
+    });
+  });
 
+  let dataStructure = DataStructure.endDataStructure(builder);
   TopicDataRecord.startTopicDataRecord(builder);
   TopicDataRecord.addTopic(builder, topic);
   TopicDataRecord.addTimestamp(
@@ -131,42 +133,29 @@ let createFlatbufferTopicData = (topicString, timestamp) => {
   return topicDataBuffer;
 };
 
-let verifyTopicDataRecord = (test, record) => {
+let verifyTopicDataRecord = (test, record, testData) => {
   let data = record.data(new DataStructure());
-  let vector3 = data.vector3(new Vector3());
-  test.is(vector3.x().toFixed(1), testData.vector3.x.toFixed(1));
-  test.is(vector3.y().toFixed(1), testData.vector3.y.toFixed(1));
-  test.is(vector3.z().toFixed(1), testData.vector3.z.toFixed(1));
-
-  test.is(data.bool(), testData.bool);
-
-  test.is(data.stringListLength(), testData.string_list.length);
-  test.is(data.stringList(0), testData.string_list[0]);
-  test.is(data.stringList(1), testData.string_list[1]);
-  test.is(data.stringList(2), testData.string_list[2]);
+  test.notThrows(()=>{
+    for(let index=0;index<testData.length;++index) {
+      switch (Object.keys(testData[index])[0]) {
+        case 'bool':
+          test.is(data.bool(), testData[index].bool);
+          break;
+        case 'stringList':
+          for(let i=0;i<data.stringList.length;++i){
+            test.is(data.stringList(i),testData[index].stringList.elements[i]);
+          }
+          break;
+        case 'vector3':
+          test.is(data.vector3.x().toFixed(1),testData[index].vector3.x.toFixed(1));
+          test.is(data.vector3.y().toFixed(1),testData[index].vector3.y.toFixed(1));
+          test.is(data.vector3.z().toFixed(1),testData[index].vector3.z.toFixed(1));
+      }
+    }
+  });
 };
-
-/* prepare tests */
-
 /* run tests */
-
-test('create a TopicData flatbuffer, then read it back in', (t) => {
-  let topicString = '/my/test/topic';
-  let timestamp = { seconds: 1, nanos: 2 };
-
-  // create buffer
-  let bufferTopicData = createFlatbufferTopicData(topicString, timestamp);
-
-  // read buffer
-  let topicData = TopicData.getRootAsTopicData(bufferTopicData);
-  let topicDataRecordList = topicData.content(new TopicDataRecordList());
-
-  t.is(topicData.contentType(), TopicDataContent.topic_data_records);
-  t.is(topicDataRecordList.elementsLength(), 1);
-
-  verifyTopicDataRecord(t, topicDataRecordList.elements(0));
-});
-
+/*
 test('simulate a storage to save parts of a message, repack it into a new message', (t) => {
   let topicString = '/my/test/topic';
   let timestamp = { seconds: 1, nanos: 2 };
@@ -194,9 +183,9 @@ test('simulate a storage to save parts of a message, repack it into a new messag
   let copiedTopicDataRecordList = FlatbufferUtils.copyTopicDataRecords(builder, [storageRecord]);
 
   let copiedTopicDataOffset = TopicData.createTopicData(
-    builder,
-    TopicDataContent.topic_data_records,
-    copiedTopicDataRecordList
+      builder,
+      TopicDataContent.topic_data_records,
+      copiedTopicDataRecordList
   );
   builder.finish(copiedTopicDataOffset);
 
@@ -207,4 +196,9 @@ test('simulate a storage to save parts of a message, repack it into a new messag
   let repackedTopicDataRecordList = repackedTopicData.content(new TopicDataRecordList());
   t.is(repackedTopicDataRecordList.elementsLength(), 1);
   verifyTopicDataRecord(t, repackedTopicDataRecordList.elements(0, new TopicDataRecord()));
-});
+});*/
+
+module.exports = {
+  createFlatbufferTopicData: createFlatbufferTopicData,
+  verifyTopicDataRecord: verifyTopicDataRecord,
+}
