@@ -63,19 +63,22 @@ let createFlatbufferTopicData = (topicString, timestamp, testData) => {
     keys.forEach((k)=>{
       switch (k) {
         case "bool":
+          let ByteBuffer
           tmpList.push({'bool':td.bool});
           break;
         case "vector3":
-          tmpList.push(td.vector3);
+          tmpList.push({'vector3': td.vector3});
           break;
         case "stringList":
           let strings = new Array();
           for(let i=0;i<td.stringList.elements.length;++i){
             strings.push(builder.createString(td.stringList.elements[i]))
           }
-          let stringList = DataStructure.createStringListVector(builder, [
-            strings
-          ]);
+          let stringList = DataStructure.createStringListVector(builder,
+            [builder.createString(td.stringList.elements[0]),
+            builder.createString(td.stringList.elements[1]),
+            builder.createString(td.stringList.elements[2])]
+          );
           tmpList.push({'stringList':stringList});
           break;
         default:
@@ -87,7 +90,7 @@ let createFlatbufferTopicData = (topicString, timestamp, testData) => {
 
   // add object to datastructure
   DataStructure.startDataStructure(builder);
-  testData.forEach((td)=>{
+  tmpList.forEach((td)=>{
     let keys = Object.keys(td);
     keys.forEach((k)=>{
       switch (k) {
@@ -133,26 +136,24 @@ let createFlatbufferTopicData = (topicString, timestamp, testData) => {
   return topicDataBuffer;
 };
 
-let verifyTopicDataRecord = (test, record, testData) => {
+let verifyTopicDataRecord = (test, record, testData, index) => {
   let data = record.data(new DataStructure());
-  test.notThrows(()=>{
-    for(let index=0;index<testData.length;++index) {
-      switch (Object.keys(testData[index])[0]) {
-        case 'bool':
-          test.is(data.bool(), testData[index].bool);
-          break;
-        case 'stringList':
-          for(let i=0;i<data.stringList.length;++i){
-            test.is(data.stringList(i),testData[index].stringList.elements[i]);
-          }
-          break;
-        case 'vector3':
-          test.is(data.vector3.x().toFixed(1),testData[index].vector3.x.toFixed(1));
-          test.is(data.vector3.y().toFixed(1),testData[index].vector3.y.toFixed(1));
-          test.is(data.vector3.z().toFixed(1),testData[index].vector3.z.toFixed(1));
+
+  switch (Object.keys(testData[index])[0]) {
+    case 'bool':
+      test.is(data.bool(), testData[index].bool);
+      break;
+    case 'stringList':
+      for(let i=0;i<testData[index].stringList.elements.length;++i){
+        test.is(data.stringList(i),testData[index].stringList.elements[i]);
       }
-    }
-  });
+      break;
+    case 'vector3':
+      let v3 = data.vector3(new Vector3());
+      test.is(v3.x().toFixed(1),testData[index].vector3.x.toFixed(1));
+      test.is(v3.y().toFixed(1),testData[index].vector3.y.toFixed(1));
+      test.is(v3.z().toFixed(1),testData[index].vector3.z.toFixed(1));
+  }
 };
 /* run tests */
 /*

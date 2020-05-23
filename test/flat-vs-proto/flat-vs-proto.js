@@ -74,7 +74,10 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
   t.is(topicData.contentType(), TopicDataContent.topic_data_records);
   t.is(topicDataRecordList.elementsLength(), 1);
 
-  GenerateFlat.verifyTopicDataRecord(t, topicDataRecordList.elements(0),testData);
+
+  for(let i=0;i<testData.length;++i){
+    GenerateFlat.verifyTopicDataRecord(t, topicDataRecordList.elements(0), testData, i);
+  }
 });
 
 
