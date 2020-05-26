@@ -10,26 +10,52 @@ const TopicDataRecord = require('../../dist/flatbuffers/js/topicDataRecord_gener
 const TopicDataRecordList = require('../../dist/flatbuffers/js/topicDataRecord_generated').ubii
     .topicData.TopicDataRecordList;
 
+let run = true;
+let newDatas = [{newData:[{topicData: {tag:'A',data: {bool:true}}},
+    {topicData: {tag: 'B',data: {stringList: {elements:['one', 'two', 'three']}}}},
+    {topicData: {tag: 'C', data: {float: 0.987}}},
+    {topicData: {tag: 'D',data: {doubleList: [0.123,1,234,2,345]}}},
+    {topicData: {tag: 'E',data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}}}]
+}];
 let testData = [
-
-  {bool: true},
+  {
+    topicData: {
+      tag: 'A',
+      data: {bool:true}
+    }
+  },
 //bool_list: [true, false, true],
 //string: string,
-
-    {stringList: {elements:['one', 'two', 'three']}},
+  {
+    topicData: {
+      tag: 'B',
+      data: {stringList: {elements:['one', 'two', 'three']}}
+    }
+  },
 //byte: byte,
 //int32: int32,
 //int32_list: [int32],
-//float: float,
+  {
+    topicData: {
+      tag: 'C',
+      data: {float: 0.987}
+    }
+  },
 //float_list: [float],
 //double: double,
-//double_list: [double],
-
+  {
+    topicData: {
+      tag: 'D',
+      data: {doubleList: [0.123,1,234,2,345]}
+    }
+  },
 //   vector2: ubii.dataStructures.Vector2,
-
-    {vector3: {
-    x: 1.1, y: 2.2, z: 3.3
-  }},
+  {
+    topicData: {
+      tag: 'E',
+      data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}
+    }
+  },
 //   vector4: ubii.dataStructures.Vector4,
 //   quaternion: ubii.dataStructures.Quaternion,
 //   matrix3x2: ubii.dataStructures.Matrix3x2,
@@ -50,22 +76,114 @@ let testData = [
 //   session: ubii.sessions.Session,
 //   interaction: ubii.interactions.Interaction,
 ];
+let processingModules = [
+  {
+    tags:[{tag: 'A'},{tag: 'C'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'A'},{tag: 'B'},{tag: 'E'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'D'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'B'},{tag: 'D'},{tag: 'E'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'A'},{tag: 'B'},{tag: 'C'},{tag: 'D'},{tag: 'E'}],
+    buffer: null
+  }
+];
 
-test('create a TopicData protobuffer, then read it back in', (t)=>{
+let getNewData = (goes) => {
+  while(goes>0){
+    // how many new topicData
+    let listNew = [];
+    let l = Math.floor(Math.random() * 5 + 1);
+    while(l>0){
+      let td = Math.floor(Math.random() * 5 + 1);
+      let tag = '';
+      let data = undefined;
+      switch (td) {
+        case 1:
+          tag = 'A';
+          testData.forEach((testd)=>{
+            if(testd.topicData.tag == 'A'){
+              data = testd.topicData.data;
+            }
+          });
+          break;
+        case 2:
+          tag = 'B';
+          testData.forEach((testd)=>{
+            if(testd.topicData.tag == 'B'){
+              data = testd.topicData.data;
+            }
+          });
+          break;
+        case 3:
+          tag = 'C';
+          testData.forEach((testd)=>{
+            if(testd.topicData.tag == 'C'){
+              data = testd.topicData.data;
+            }
+          });
+          break;
+        case 4:
+          tag = 'D';
+          testData.forEach((testd)=>{
+            if(testd.topicData.tag == 'D'){
+              data = testd.topicData.data;
+            }
+          });
+          break;
+        case 5:
+          tag = 'E';
+          testData.forEach((testd)=>{
+            if(testd.topicData.tag == 'E'){
+              data = testd.topicData.data;
+            }
+          });
+          break;
+      }
+      if(listNew.length==0){
+        listNew.push({topicData:{tag:tag,data:data}});
+        l--;
+      }else{
+        let exists = false;
+        listNew.forEach((ln)=>{
+          if(ln.topicData.tag == tag){
+            exists = true;
+          }
+        });
+        if(!exists){
+          listNew.push({topicData:{tag:tag,data:data}});
+          l--;
+        }
+      }
+    }
+    newDatas.push({newData:listNew});
+    goes--;
+  }
+};
+
+/*test('create a TopicData protobuffer, then read it back in', (t)=>{
   let timestampProto = {seconds: 1, nanos:2};
-  let topicString = 'my/test/topic';
   // create protobuf
-  let protobufTopicData = GenerateProto.createProtobufTopicData(t, topicString, timestampProto, testData);
+  let protobufTopicData = GenerateProto.createProtobufTopicData(t, timestampProto, testData);
   // read protobuf
   GenerateProto.verifyTopicDataRecord(t, protobufTopicData, testData);
 });
 
 test('create a TopicData flatbuffer, then read it back in', (t) => {
-  let topicString = '/my/test/topic';
   let timestamp = { seconds: 1, nanos: 2 };
 
   // create buffer
-  let bufferTopicData = GenerateFlat.createFlatbufferTopicData(topicString, timestamp, testData);
+  let bufferTopicData = GenerateFlat.createFlatbufferTopicData(timestamp, testData);
 
   // read buffer
   let topicData = TopicData.getRootAsTopicData(bufferTopicData);
@@ -77,6 +195,56 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
 
   for(let i=0;i<testData.length;++i){
     GenerateFlat.verifyTopicDataRecord(t, topicDataRecordList.elements(0), testData, i);
+  }
+});*/
+
+test('create, read and recreate buffer', (t)=>{
+  getNewData(10);
+  let testProto = true;
+  let timestamp = {seconds: 1, nanos:2};
+  // runs aslong new data comes in
+  while(newDatas.length != 0){
+    let newData = newDatas.shift();
+    // check which processing module requires which topicData
+    processingModules.forEach((pm)=>{
+      let neededTopicData = [];
+      if(!testProto){
+
+      }
+      newData.forEach((nd)=>{
+        pm.tags.forEach((td) => {
+          if(nd.tag == td.tag){
+            neededTopicData.push(nd.topicData);
+          }
+        });
+      });
+      pm.tags.forEach((td) => {
+        testData.forEach((testd)=>{
+          if(testd.topicData.tag == td.tag){
+            neededTopicData.push(testd.topicData);
+          }
+        });
+      });
+      if(!pm.buffer){
+        // create new buffer
+        if(testProto){
+          pm.buffer = GenerateProto.createProtobufTopicData(t, neededTopicData);
+        }else{
+          pm.buffer = GenerateFlat.createFlatbufferTopicData(neededTopicData);
+        }
+      }else{
+        // update buffer
+        if(testProto){
+          pm.buffer = GenerateProto.updateTopicDataBuffer(pm.buffer, neededTopicData);
+        }else{
+
+          pm.buffer = GenerateFlat.createFlatbufferTopicData(neededTopicData);
+        }
+      }
+
+    });
+    // processing
+
   }
 });
 

@@ -52,32 +52,31 @@ let createFlatbufferTopicDataVector3 = (topicString, timestamp, vector3) => {
  * @param {*} timestamp
  * @param {*} testData
  */
-let createFlatbufferTopicData = (topicString, timestamp, testData) => {
+let createFlatbufferTopicData = (testData) => {
   let builder = new flatbuffers.Builder(0);
   let tmpList = new Array();
-  let topic = builder.createString(topicString);
+  let topic = builder.createString();
 
   // create objects from testData
   testData.forEach((td)=>{
-    let keys = Object.keys(td);
+    let keys = Object.keys(td.data);
     keys.forEach((k)=>{
       switch (k) {
         case "bool":
-          let ByteBuffer
-          tmpList.push({'bool':td.bool});
+          tmpList.push({tag: builder.createString(td.tag), data:{'bool':td.data.bool}});
           break;
         case "vector3":
-          tmpList.push({'vector3': td.vector3});
+          tmpList.push({tag: builder.createString(td.tag), data:{'vector3': td.data.vector3}});
           break;
         case "stringList":
           let strings = new Array();
-          for(let i=0;i<td.stringList.elements.length;++i){
-            strings.push(builder.createString(td.stringList.elements[i]))
+          for(let i=0;i<td.data.stringList.elements.length;++i){
+            strings.push(builder.createString(td.data.stringList.elements[i]))
           }
           let stringList = DataStructure.createStringListVector(builder,
-            [builder.createString(td.stringList.elements[0]),
-            builder.createString(td.stringList.elements[1]),
-            builder.createString(td.stringList.elements[2])]
+            [builder.createString(td.data.stringList.elements[0]),
+            builder.createString(td.data.stringList.elements[1]),
+            builder.createString(td.data.stringList.elements[2])]
           );
           tmpList.push({'stringList':stringList});
           break;
@@ -91,20 +90,20 @@ let createFlatbufferTopicData = (topicString, timestamp, testData) => {
   // add object to datastructure
   DataStructure.startDataStructure(builder);
   tmpList.forEach((td)=>{
-    let keys = Object.keys(td);
+    let keys = Object.keys(td.data);
     keys.forEach((k)=>{
       switch (k) {
         case "bool":
-          DataStructure.addBool(builder, td.bool);
+          DataStructure.addBool(builder, td.data.bool);
           break;
         case "vector3":
           DataStructure.addVector3(
               builder,
-              Vector3.createVector3(builder, td.vector3.x, td.vector3.y, td.vector3.z)
+              Vector3.createVector3(builder, td.data.vector3.x, td.data.vector3.y, td.data.vector3.z)
           );
           break;
         case "stringList":
-          DataStructure.addStringList(builder, td.stringList);
+          DataStructure.addStringList(builder, td.data.stringList);
           break;
         default:
           console.log("Following datastructure has to be added: %s", k)
@@ -116,10 +115,10 @@ let createFlatbufferTopicData = (topicString, timestamp, testData) => {
   let dataStructure = DataStructure.endDataStructure(builder);
   TopicDataRecord.startTopicDataRecord(builder);
   TopicDataRecord.addTopic(builder, topic);
-  TopicDataRecord.addTimestamp(
+  /*TopicDataRecord.addTimestamp(
     builder,
     Timestamp.createTimestamp(builder, timestamp.seconds, timestamp.nanos)
-  );
+  );*/
   TopicDataRecord.addData(builder, dataStructure);
   let topicDataRecord = TopicDataRecord.endTopicDataRecord(builder);
 
@@ -139,20 +138,20 @@ let createFlatbufferTopicData = (topicString, timestamp, testData) => {
 let verifyTopicDataRecord = (test, record, testData, index) => {
   let data = record.data(new DataStructure());
 
-  switch (Object.keys(testData[index])[0]) {
+  switch (Object.keys(testData[index].data)[0]) {
     case 'bool':
-      test.is(data.bool(), testData[index].bool);
+      test.is(data.bool(), testData[index].data.bool);
       break;
     case 'stringList':
-      for(let i=0;i<testData[index].stringList.elements.length;++i){
-        test.is(data.stringList(i),testData[index].stringList.elements[i]);
+      for(let i=0;i<testData[index].data.stringList.elements.length;++i){
+        test.is(data.stringList(i),testData[index].data.stringList.elements[i]);
       }
       break;
     case 'vector3':
       let v3 = data.vector3(new Vector3());
-      test.is(v3.x().toFixed(1),testData[index].vector3.x.toFixed(1));
-      test.is(v3.y().toFixed(1),testData[index].vector3.y.toFixed(1));
-      test.is(v3.z().toFixed(1),testData[index].vector3.z.toFixed(1));
+      test.is(v3.x().toFixed(1),testData[index].data.vector3.x.toFixed(1));
+      test.is(v3.y().toFixed(1),testData[index].data.vector3.y.toFixed(1));
+      test.is(v3.z().toFixed(1),testData[index].data.vector3.z.toFixed(1));
   }
 };
 /* run tests */
