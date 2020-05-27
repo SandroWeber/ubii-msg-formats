@@ -53,20 +53,7 @@ let updateTopicDataBuffer = (buffer, data) => {
                 let keys = Object.keys(el);
                 keys.forEach((k)=>{
                     if(k != "timestamp" && k != "topic"){
-                        switch (k) {
-                            case "bool":
-                                el.bool = d.data.bool;
-                                break;
-                            case "vector3":
-                                el.vector3 = d.data.vector3;
-                                break;
-                            case "stringList":
-                                el.stringList = d.data.stringList;
-                                break;
-                            case "float":
-                                el.float = d.data.float;
-                                break;
-                        }
+                        el[k] = d.data[k];
                     }
                 });
             }

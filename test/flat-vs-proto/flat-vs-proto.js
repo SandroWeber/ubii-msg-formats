@@ -98,6 +98,28 @@ let processingModules = [
     buffer: null
   }
 ];
+let processingModulesDefault = [
+  {
+    tags:[{tag: 'A'},{tag: 'C'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'A'},{tag: 'B'},{tag: 'E'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'D'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'B'},{tag: 'D'},{tag: 'E'}],
+    buffer: null
+  },
+  {
+    tags:[{tag: 'A'},{tag: 'B'},{tag: 'C'},{tag: 'D'},{tag: 'E'}],
+    buffer: null
+  }
+];
 
 let getNewData = (goes) => {
   while(goes>0){
@@ -171,6 +193,44 @@ let getNewData = (goes) => {
   }
 };
 
+let runThroughData = (t, testProto,datas) =>{
+  while(datas.length != 0){
+    let newData = datas.shift();
+    processingModules.forEach((pm)=>{
+      // check which processing module requires which new topicData
+      let neededTopicData = [];
+      newData.newData.forEach((nd)=>{
+        pm.tags.forEach((td) => {
+          if(nd.topicData.tag == td.tag){
+            neededTopicData.push(nd.topicData);
+          }
+        });
+      });
+
+      if(!pm.buffer){
+        // create new buffer
+        if(testProto){
+          pm.buffer = GenerateProto.createProtobufTopicData(t, neededTopicData);
+        }else{
+          pm.buffer = GenerateFlat.createFlatbufferTopicData(neededTopicData);
+        }
+      }else{
+        if(neededTopicData.length>0){
+          // update buffer
+          if(testProto){
+            pm.buffer = GenerateProto.updateTopicDataBuffer(pm.buffer, neededTopicData);
+          }else{
+            pm.buffer = GenerateFlat.updateTopicDataBuffer(pm.buffer, neededTopicData);
+          }
+        }
+      }
+
+    });
+    // processing
+
+  }
+}
+
 /*test('create a TopicData protobuffer, then read it back in', (t)=>{
   let timestampProto = {seconds: 1, nanos:2};
   // create protobuf
@@ -199,53 +259,19 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
 });*/
 
 test('create, read and recreate buffer', (t)=>{
-  getNewData(10);
-  let testProto = true;
-  let timestamp = {seconds: 1, nanos:2};
-  // runs aslong new data comes in
-  while(newDatas.length != 0){
-    let newData = newDatas.shift();
-    // check which processing module requires which topicData
-    processingModules.forEach((pm)=>{
-      let neededTopicData = [];
-      if(!testProto){
-
-      }
-      newData.forEach((nd)=>{
-        pm.tags.forEach((td) => {
-          if(nd.tag == td.tag){
-            neededTopicData.push(nd.topicData);
-          }
-        });
-      });
-      pm.tags.forEach((td) => {
-        testData.forEach((testd)=>{
-          if(testd.topicData.tag == td.tag){
-            neededTopicData.push(testd.topicData);
-          }
-        });
-      });
-      if(!pm.buffer){
-        // create new buffer
-        if(testProto){
-          pm.buffer = GenerateProto.createProtobufTopicData(t, neededTopicData);
-        }else{
-          pm.buffer = GenerateFlat.createFlatbufferTopicData(neededTopicData);
-        }
-      }else{
-        // update buffer
-        if(testProto){
-          pm.buffer = GenerateProto.updateTopicDataBuffer(pm.buffer, neededTopicData);
-        }else{
-
-          pm.buffer = GenerateFlat.createFlatbufferTopicData(neededTopicData);
-        }
-      }
-
-    });
-    // processing
-
-  }
+  getNewData(100000);
+  let dataForFirstRun = newDatas.slice(0);
+  // test protobuffer
+  let timestampProto = Date.now();
+  runThroughData(t, true,dataForFirstRun);
+  let neededTimeProto = Date.now() - timestampProto;
+  console.log("Protobuffers needed: " +neededTimeProto+ " Milliseconds");
+  // test flatbuffer
+  processingModules = processingModulesDefault;
+  let timestampFlat = Date.now();
+  runThroughData(t, false, newDatas);
+  let neededTimeFlat = Date.now() - timestampFlat;
+  console.log("Flatbuffers needed: " +neededTimeFlat+ " Milliseconds");
 });
 
 

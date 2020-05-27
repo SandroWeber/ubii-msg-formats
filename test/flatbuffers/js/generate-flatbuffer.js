@@ -16,6 +16,8 @@ const Timestamp = require('../../../dist/flatbuffers/js/timestamp_generated').ub
 const Vector3 = require('../../../dist/flatbuffers/js/vector3_generated').ubii.dataStructures
   .Vector3;
 
+let types = ["bool","vector3","stringList","float","doubleList"];
+
 /* helpers */
 
 /*
@@ -55,7 +57,6 @@ let createFlatbufferTopicDataVector3 = (topicString, timestamp, vector3) => {
 let createFlatbufferTopicData = (testData) => {
   let builder = new flatbuffers.Builder(0);
   let tmpList = new Array();
-  let topic = builder.createString();
 
   // create objects from testData
   testData.forEach((td)=>{
@@ -78,7 +79,14 @@ let createFlatbufferTopicData = (testData) => {
             builder.createString(td.data.stringList.elements[1]),
             builder.createString(td.data.stringList.elements[2])]
           );
-          tmpList.push({'stringList':stringList});
+          tmpList.push({tag:builder.createString(td.tag), data:{'stringList':stringList}});
+          break;
+        case "float":
+          tmpList.push({tag: builder.createString(td.tag), data:{'float': td.data.float}});
+          break;
+        case "doubleList":
+          tmpList.push({tag: builder.createString(td.tag), data:{'doubleList': DataStructure.createDoubleListVector(
+              builder, td.data.doubleList)}});
           break;
         default:
           console.log("Following datastructure has to be added: %s", k)
@@ -87,9 +95,10 @@ let createFlatbufferTopicData = (testData) => {
     });
   });
 
-  // add object to datastructure
-  DataStructure.startDataStructure(builder);
+  // create topicDataRecords from objects
+  let tdrList = [];
   tmpList.forEach((td)=>{
+    DataStructure.startDataStructure(builder);
     let keys = Object.keys(td.data);
     keys.forEach((k)=>{
       switch (k) {
@@ -105,24 +114,36 @@ let createFlatbufferTopicData = (testData) => {
         case "stringList":
           DataStructure.addStringList(builder, td.data.stringList);
           break;
+        case "float":
+          DataStructure.addFloat(builder, td.data.float);
+          break;
+        case "doubleList":
+          DataStructure.addDoubleList(builder, td.data.doubleList);
+          break;
         default:
           console.log("Following datastructure has to be added: %s", k)
           break;
       }
     });
+    let dataStructure = DataStructure.endDataStructure(builder);
+    TopicDataRecord.startTopicDataRecord(builder);
+    TopicDataRecord.addTopic(builder, td.tag);
+    TopicDataRecord.addData(builder, dataStructure);
+    tdrList.push(TopicDataRecord.endTopicDataRecord(builder));
   });
 
-  let dataStructure = DataStructure.endDataStructure(builder);
+  /*let dataStructure = DataStructure.endDataStructure(builder);
   TopicDataRecord.startTopicDataRecord(builder);
   TopicDataRecord.addTopic(builder, topic);
-  /*TopicDataRecord.addTimestamp(
+  TopicDataRecord.addTimestamp(
     builder,
     Timestamp.createTimestamp(builder, timestamp.seconds, timestamp.nanos)
-  );*/
+  );
   TopicDataRecord.addData(builder, dataStructure);
-  let topicDataRecord = TopicDataRecord.endTopicDataRecord(builder);
+  let topicDataRecord = TopicDataRecord.endTopicDataRecord(builder);*/
 
-  let recordsListElements = TopicDataRecordList.createElementsVector(builder, [topicDataRecord]);
+  //let recordsListElements = TopicDataRecordList.createElementsVector(builder, [topicDataRecord]);
+  let recordsListElements = TopicDataRecordList.createElementsVector(builder, tdrList);
   let recordsList = TopicDataRecordList.createTopicDataRecordList(builder, recordsListElements);
 
   TopicData.startTopicData(builder);
@@ -153,6 +174,60 @@ let verifyTopicDataRecord = (test, record, testData, index) => {
       test.is(v3.y().toFixed(1),testData[index].data.vector3.y.toFixed(1));
       test.is(v3.z().toFixed(1),testData[index].data.vector3.z.toFixed(1));
   }
+};
+
+let updateTopicDataBuffer = (buffer, newData) => {
+  let data = [];
+  // read buffer
+  let topicData = TopicData.getRootAsTopicData(buffer);
+  let topicDataRecordList = topicData.content(new TopicDataRecordList());
+  for(let i = 0; i<topicDataRecordList.elementsLength();++i){
+    let tdr = topicDataRecordList.elements(i);
+    let tdrdata = tdr.data(new DataStructure());
+    newData.forEach((nd)=>{
+      if(nd.tag == tdr.topic()){
+        data.push({tag:nd.tag,data:nd.data});
+      }
+    });
+    if(i==data.length){
+      let d = undefined;
+      for(let j=0,found=false;j<types.length&&!found;++j){
+        switch (types[j]) {
+          case 'stringList':
+            if(tdrdata.stringList() != undefined){
+              d = {stringList: tdrdata.stringList()};
+              found = true;
+            }
+            break;
+          case 'vector3':
+            if(tdrdata.vector3(new Vector3()) != undefined){
+              d = {vector3: tdrdata.vector3(new Vector3())};
+              found = true;
+            }
+            break;
+          case 'float':
+            if(tdrdata.float() != undefined){
+              d = {float: tdrdata.float()};
+              found = true;
+            }
+            break;
+          case 'doubleList':
+            if(tdrdata.doubleList() != undefined){
+              d = {doubleList: tdrdata.doubleList()};
+              found = true;
+            }
+            break;
+          case 'bool':
+            d = {bool: tdrdata.bool()};
+            found = true;
+            break;
+        }
+      }
+      data.push({tag:tdr.topic(),data:d});
+    }
+  }
+
+  return createFlatbufferTopicData(data);
 };
 /* run tests */
 /*
@@ -201,4 +276,5 @@ test('simulate a storage to save parts of a message, repack it into a new messag
 module.exports = {
   createFlatbufferTopicData: createFlatbufferTopicData,
   verifyTopicDataRecord: verifyTopicDataRecord,
+  updateTopicDataBuffer: updateTopicDataBuffer
 }
