@@ -16,7 +16,7 @@ const Timestamp = require('../../../dist/flatbuffers/js/timestamp_generated').ub
 const Vector3 = require('../../../dist/flatbuffers/js/vector3_generated').ubii.dataStructures
   .Vector3;
 
-let types = ["bool","vector3","stringList","float","doubleList"];
+let types = ["vector3","stringList","doubleList","float","bool"];
 
 /* helpers */
 
@@ -64,10 +64,10 @@ let createFlatbufferTopicData = (testData) => {
     keys.forEach((k)=>{
       switch (k) {
         case "bool":
-          tmpList.push({tag: builder.createString(td.tag), data:{'bool':td.data.bool}});
+          tmpList.push({topic: builder.createString(td.topic), data:{'bool':td.data.bool}});
           break;
         case "vector3":
-          tmpList.push({tag: builder.createString(td.tag), data:{'vector3': td.data.vector3}});
+          tmpList.push({topic: builder.createString(td.topic), data:{'vector3': td.data.vector3}});
           break;
         case "stringList":
           let strings = new Array();
@@ -79,13 +79,13 @@ let createFlatbufferTopicData = (testData) => {
             builder.createString(td.data.stringList.elements[1]),
             builder.createString(td.data.stringList.elements[2])]
           );
-          tmpList.push({tag:builder.createString(td.tag), data:{'stringList':stringList}});
+          tmpList.push({topic:builder.createString(td.topic), data:{'stringList':stringList}});
           break;
         case "float":
-          tmpList.push({tag: builder.createString(td.tag), data:{'float': td.data.float}});
+          tmpList.push({topic: builder.createString(td.topic), data:{'float': td.data.float}});
           break;
         case "doubleList":
-          tmpList.push({tag: builder.createString(td.tag), data:{'doubleList': DataStructure.createDoubleListVector(
+          tmpList.push({topic: builder.createString(td.topic), data:{'doubleList': DataStructure.createDoubleListVector(
               builder, td.data.doubleList)}});
           break;
         default:
@@ -127,7 +127,7 @@ let createFlatbufferTopicData = (testData) => {
     });
     let dataStructure = DataStructure.endDataStructure(builder);
     TopicDataRecord.startTopicDataRecord(builder);
-    TopicDataRecord.addTopic(builder, td.tag);
+    TopicDataRecord.addTopic(builder, td.topic);
     TopicDataRecord.addData(builder, dataStructure);
     tdrList.push(TopicDataRecord.endTopicDataRecord(builder));
   });
@@ -176,26 +176,30 @@ let verifyTopicDataRecord = (test, record, testData, index) => {
   }
 };
 
-let updateTopicDataBuffer = (buffer, newData) => {
+let createTestDataFromTopicDataRecordList = (topicDataRecordList, newData = null) => {
   let data = [];
-  // read buffer
-  let topicData = TopicData.getRootAsTopicData(buffer);
-  let topicDataRecordList = topicData.content(new TopicDataRecordList());
   for(let i = 0; i<topicDataRecordList.elementsLength();++i){
     let tdr = topicDataRecordList.elements(i);
     let tdrdata = tdr.data(new DataStructure());
-    newData.forEach((nd)=>{
-      if(nd.tag == tdr.topic()){
-        data.push({tag:nd.tag,data:nd.data});
-      }
-    });
+    // if new data available => update topicDataRecordList
+    if(newData){
+      newData.forEach((nd)=>{
+        if(nd.topic == tdr.topic()){
+          data.push({topic:nd.topic,data:nd.data});
+        }
+      });
+    }
     if(i==data.length){
       let d = undefined;
       for(let j=0,found=false;j<types.length&&!found;++j){
         switch (types[j]) {
           case 'stringList':
             if(tdrdata.stringList() != undefined){
-              d = {stringList: tdrdata.stringList()};
+              let stringList ={elements:[]};
+              for(let n=0;n<tdrdata.stringListLength();++n){
+                stringList.elements.push(tdrdata.stringList(n));
+              }
+              d = {stringList: stringList};
               found = true;
             }
             break;
@@ -206,7 +210,7 @@ let updateTopicDataBuffer = (buffer, newData) => {
             }
             break;
           case 'float':
-            if(tdrdata.float() != undefined){
+            if(tdrdata.float() != 0){
               d = {float: tdrdata.float()};
               found = true;
             }
@@ -223,12 +227,51 @@ let updateTopicDataBuffer = (buffer, newData) => {
             break;
         }
       }
-      data.push({tag:tdr.topic(),data:d});
+      data.push({topic:tdr.topic(),data:d});
     }
   }
+  return data;
+};
 
+let updateTopicDataBuffer = (buffer, newData) => {
+  // read buffer
+  let topicData = TopicData.getRootAsTopicData(buffer);
+  let topicDataRecordList = topicData.content(new TopicDataRecordList());
+  // update topicDataRecordList
+  let data = [];
+  data = createTestDataFromTopicDataRecordList(topicDataRecordList, newData);
+  // create buffer from topicData
   return createFlatbufferTopicData(data);
 };
+
+let processTopicDataBuffer = (buffer) => {
+  // "decode" buffer as topicData
+  let topicData = TopicData.getRootAsTopicData(buffer);
+  let topicDataRecordList = topicData.content(new TopicDataRecordList());
+  // processing
+
+  // create buffer from topicData
+  let data = [];
+  data = createTestDataFromTopicDataRecordList(topicDataRecordList);
+  // create buffer from topicData
+  return createFlatbufferTopicData(data);
+};
+
+let getDataFromBuffer = (buffer, pmNumber) => {
+  // read buffer
+  let topicData = TopicData.getRootAsTopicData(buffer);
+  let topicDataRecordList = topicData.content(new TopicDataRecordList());
+  // update topicDataRecordList
+  let data = [];
+  data = createTestDataFromTopicDataRecordList(topicDataRecordList);
+  let dataToReturn = [];
+  data.forEach((d)=>{
+    d.topic = ""+d.topic+""+pmNumber;
+    dataToReturn.push({topicData:d});
+  });
+  return dataToReturn;
+};
+
 /* run tests */
 /*
 test('simulate a storage to save parts of a message, repack it into a new message', (t) => {
@@ -276,5 +319,7 @@ test('simulate a storage to save parts of a message, repack it into a new messag
 module.exports = {
   createFlatbufferTopicData: createFlatbufferTopicData,
   verifyTopicDataRecord: verifyTopicDataRecord,
-  updateTopicDataBuffer: updateTopicDataBuffer
+  updateTopicDataBuffer: updateTopicDataBuffer,
+  processTopicDataBuffer: processTopicDataBuffer,
+  getDataFromBuffer: getDataFromBuffer
 }

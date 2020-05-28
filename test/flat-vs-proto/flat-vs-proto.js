@@ -11,16 +11,16 @@ const TopicDataRecordList = require('../../dist/flatbuffers/js/topicDataRecord_g
     .topicData.TopicDataRecordList;
 
 let run = true;
-let newDatas = [{newData:[{topicData: {tag:'A',data: {bool:true}}},
-    {topicData: {tag: 'B',data: {stringList: {elements:['one', 'two', 'three']}}}},
-    {topicData: {tag: 'C', data: {float: 0.987}}},
-    {topicData: {tag: 'D',data: {doubleList: [0.123,1,234,2,345]}}},
-    {topicData: {tag: 'E',data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}}}]
+let newDatas = [{newData:[{topicData: {topic:'A',data: {bool:true}}},
+    {topicData: {topic: 'B',data: {stringList: {elements:['one', 'two', 'three']}}}},
+    {topicData: {topic: 'C', data: {float: 0.987}}},
+    {topicData: {topic: 'D',data: {doubleList: [0.123,1,234,2,345]}}},
+    {topicData: {topic: 'E',data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}}}]
 }];
 let testData = [
   {
     topicData: {
-      tag: 'A',
+      topic: 'A',
       data: {bool:true}
     }
   },
@@ -28,7 +28,7 @@ let testData = [
 //string: string,
   {
     topicData: {
-      tag: 'B',
+      topic: 'B',
       data: {stringList: {elements:['one', 'two', 'three']}}
     }
   },
@@ -37,7 +37,7 @@ let testData = [
 //int32_list: [int32],
   {
     topicData: {
-      tag: 'C',
+      topic: 'C',
       data: {float: 0.987}
     }
   },
@@ -45,14 +45,14 @@ let testData = [
 //double: double,
   {
     topicData: {
-      tag: 'D',
+      topic: 'D',
       data: {doubleList: [0.123,1,234,2,345]}
     }
   },
 //   vector2: ubii.dataStructures.Vector2,
   {
     topicData: {
-      tag: 'E',
+      topic: 'E',
       data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}
     }
   },
@@ -76,47 +76,108 @@ let testData = [
 //   session: ubii.sessions.Session,
 //   interaction: ubii.interactions.Interaction,
 ];
+
+let testDataDefault = [
+  {
+    topicData: {
+      topic: 'A',
+      data: {bool:true}
+    }
+  },
+//bool_list: [true, false, true],
+//string: string,
+  {
+    topicData: {
+      topic: 'B',
+      data: {stringList: {elements:['one', 'two', 'three']}}
+    }
+  },
+//byte: byte,
+//int32: int32,
+//int32_list: [int32],
+  {
+    topicData: {
+      topic: 'C',
+      data: {float: 0.987}
+    }
+  },
+//float_list: [float],
+//double: double,
+  {
+    topicData: {
+      topic: 'D',
+      data: {doubleList: [0.123,1,234,2,345]}
+    }
+  },
+//   vector2: ubii.dataStructures.Vector2,
+  {
+    topicData: {
+      topic: 'E',
+      data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}
+    }
+  },
+//   vector4: ubii.dataStructures.Vector4,
+//   quaternion: ubii.dataStructures.Quaternion,
+//   matrix3x2: ubii.dataStructures.Matrix3x2,
+//   matrix4x4: ubii.dataStructures.Matrix4x4,
+//   color: ubii.dataStructures.Color,
+//   touch_event: ubii.dataStructures.TouchEvent,
+//   key_event: ubii.dataStructures.KeyEvent,
+//   mouse_event: ubii.dataStructures.MouseEvent,
+//   myo_event: ubii.dataStructures.MyoEvent,
+//   pose2D: ubii.dataStructures.Pose2D,
+//   pose3D: ubii.dataStructures.Pose3D,
+//   object2D: ubii.dataStructures.Object2D,
+//   object3D: ubii.dataStructures.Object3D,
+//   object2D_list: [ubii.dataStructures.Object2D],
+//   object3D_list: [ubii.dataStructures.Object3D],
+//   image2D: ubii.dataStructures.Image2D,
+//   image2D_list: [ubii.dataStructures.Image2D],
+//   session: ubii.sessions.Session,
+//   interaction: ubii.interactions.Interaction,
+];
+
 let processingModules = [
   {
-    tags:[{tag: 'A'},{tag: 'C'}],
+    topics:[{topic: 'A'},{topic: 'C'}],
     buffer: null
   },
   {
-    tags:[{tag: 'A'},{tag: 'B'},{tag: 'E'}],
+    topics:[{topic: 'A'},{topic: 'B'},{topic: 'E'}],
     buffer: null
   },
   {
-    tags:[{tag: 'D'}],
+    topics:[{topic: 'D'}],
     buffer: null
   },
   {
-    tags:[{tag: 'B'},{tag: 'D'},{tag: 'E'}],
+    topics:[{topic: 'B'},{topic: 'D'},{topic: 'E'}],
     buffer: null
   },
   {
-    tags:[{tag: 'A'},{tag: 'B'},{tag: 'C'},{tag: 'D'},{tag: 'E'}],
+    topics:[{topic: 'A'},{topic: 'B'},{topic: 'C'},{topic: 'D'},{topic: 'E'}],
     buffer: null
   }
 ];
 let processingModulesDefault = [
   {
-    tags:[{tag: 'A'},{tag: 'C'}],
+    topics:[{topic: 'A'},{topic: 'C'}],
     buffer: null
   },
   {
-    tags:[{tag: 'A'},{tag: 'B'},{tag: 'E'}],
+    topics:[{topic: 'A'},{topic: 'B'},{topic: 'E'}],
     buffer: null
   },
   {
-    tags:[{tag: 'D'}],
+    topics:[{topic: 'D'}],
     buffer: null
   },
   {
-    tags:[{tag: 'B'},{tag: 'D'},{tag: 'E'}],
+    topics:[{topic: 'B'},{topic: 'D'},{topic: 'E'}],
     buffer: null
   },
   {
-    tags:[{tag: 'A'},{tag: 'B'},{tag: 'C'},{tag: 'D'},{tag: 'E'}],
+    topics:[{topic: 'A'},{topic: 'B'},{topic: 'C'},{topic: 'D'},{topic: 'E'}],
     buffer: null
   }
 ];
@@ -128,62 +189,62 @@ let getNewData = (goes) => {
     let l = Math.floor(Math.random() * 5 + 1);
     while(l>0){
       let td = Math.floor(Math.random() * 5 + 1);
-      let tag = '';
+      let topic = '';
       let data = undefined;
       switch (td) {
         case 1:
-          tag = 'A';
+          topic = 'A';
           testData.forEach((testd)=>{
-            if(testd.topicData.tag == 'A'){
+            if(testd.topicData.topic == 'A'){
               data = testd.topicData.data;
             }
           });
           break;
         case 2:
-          tag = 'B';
+          topic = 'B';
           testData.forEach((testd)=>{
-            if(testd.topicData.tag == 'B'){
+            if(testd.topicData.topic == 'B'){
               data = testd.topicData.data;
             }
           });
           break;
         case 3:
-          tag = 'C';
+          topic = 'C';
           testData.forEach((testd)=>{
-            if(testd.topicData.tag == 'C'){
+            if(testd.topicData.topic == 'C'){
               data = testd.topicData.data;
             }
           });
           break;
         case 4:
-          tag = 'D';
+          topic = 'D';
           testData.forEach((testd)=>{
-            if(testd.topicData.tag == 'D'){
+            if(testd.topicData.topic == 'D'){
               data = testd.topicData.data;
             }
           });
           break;
         case 5:
-          tag = 'E';
+          topic = 'E';
           testData.forEach((testd)=>{
-            if(testd.topicData.tag == 'E'){
+            if(testd.topicData.topic == 'E'){
               data = testd.topicData.data;
             }
           });
           break;
       }
       if(listNew.length==0){
-        listNew.push({topicData:{tag:tag,data:data}});
+        listNew.push({topicData:{topic:topic,data:data}});
         l--;
       }else{
         let exists = false;
         listNew.forEach((ln)=>{
-          if(ln.topicData.tag == tag){
+          if(ln.topicData.topic == topic){
             exists = true;
           }
         });
         if(!exists){
-          listNew.push({topicData:{tag:tag,data:data}});
+          listNew.push({topicData:{topic:topic,data:data}});
           l--;
         }
       }
@@ -193,6 +254,21 @@ let getNewData = (goes) => {
   }
 };
 
+let writeDataToTestData = (data) => {
+  data.forEach((d)=>{
+    let topicExists = false;
+    testData.forEach((td)=>{
+      if(td.topic == d.topicData.topic){
+        topicExists = true;
+        td.data = d.topicData.data;
+      }
+    });
+    if(!topicExists){
+      testData.push(d);
+    }
+  });
+}
+
 let runThroughData = (t, testProto,datas) =>{
   while(datas.length != 0){
     let newData = datas.shift();
@@ -200,8 +276,8 @@ let runThroughData = (t, testProto,datas) =>{
       // check which processing module requires which new topicData
       let neededTopicData = [];
       newData.newData.forEach((nd)=>{
-        pm.tags.forEach((td) => {
-          if(nd.topicData.tag == td.tag){
+        pm.topics.forEach((td) => {
+          if(nd.topicData.topic == td.topic){
             neededTopicData.push(nd.topicData);
           }
         });
@@ -226,8 +302,25 @@ let runThroughData = (t, testProto,datas) =>{
       }
 
     });
-    // processing
-
+    // processing of topic data
+    let i = 0;
+    processingModules.forEach((pm)=>{
+      // read buffer and "process data"
+      if(testProto){
+        pm.buffer = GenerateProto.processTopicDataBuffer(pm.buffer);
+      }else{
+        pm.buffer = GenerateFlat.processTopicDataBuffer(pm.buffer);
+      }
+      // write to topic data
+      let dataToWrite = [];
+      if(testProto){
+        dataToWrite = GenerateProto.getDataFromBuffer(pm.buffer, i);
+      }else{
+        dataToWrite = GenerateFlat.getDataFromBuffer(pm.buffer, i);
+      }
+      //writeDataToTestData(dataToWrite);
+      i++;
+    });
   }
 }
 
@@ -259,7 +352,7 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
 });*/
 
 test('create, read and recreate buffer', (t)=>{
-  getNewData(100000);
+  getNewData(10000);
   let dataForFirstRun = newDatas.slice(0);
   // test protobuffer
   let timestampProto = Date.now();
@@ -268,6 +361,7 @@ test('create, read and recreate buffer', (t)=>{
   console.log("Protobuffers needed: " +neededTimeProto+ " Milliseconds");
   // test flatbuffer
   processingModules = processingModulesDefault;
+  testData = testDataDefault;
   let timestampFlat = Date.now();
   runThroughData(t, false, newDatas);
   let neededTimeFlat = Date.now() - timestampFlat;

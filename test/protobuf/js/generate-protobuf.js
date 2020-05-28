@@ -12,7 +12,7 @@ let createProtobufTopicData = (test, testData) => {
     let tdrArray = new Array();
     testData.forEach(function(data){
         let tdr = proto.ubii.topicData.TopicDataRecord.create(data.data);
-        tdr.topic = data.tag;
+        tdr.topic = data.topic;
         //tdr.timestamp = timestamp;
         tdrArray.push(tdr);
     });
@@ -49,7 +49,7 @@ let updateTopicDataBuffer = (buffer, data) => {
     let tdrl = decodedMessage.topicDataRecordList;
     data.forEach((d)=>{
         tdrl.elements.forEach((el)=>{
-            if(el.topic == d.tag){
+            if(el.topic == d.topic){
                 let keys = Object.keys(el);
                 keys.forEach((k)=>{
                     if(k != "timestamp" && k != "topic"){
@@ -65,8 +65,58 @@ let updateTopicDataBuffer = (buffer, data) => {
     return buffer;
 };
 
+let processTopicDataBuffer = (buffer) => {
+    // decode buffer as topicData
+    let translator = new ProtobufTranslator(MSG_TYPES.TOPIC_DATA);
+    let decodedMessage = translator.createMessageFromBuffer(buffer);
+    let tdrl = decodedMessage.topicDataRecordList;
+    // processing
+
+    // encode as buffer again
+    let message = translator.createMessageFromPayload({topicDataRecordList:tdrl});
+    buffer = translator.createBufferFromMessage(message);
+    return buffer;
+}
+
+let getDataFromBuffer = (buffer, pmNumber) => {
+    // decode buffer as topicData
+    let translator = new ProtobufTranslator(MSG_TYPES.TOPIC_DATA);
+    let decodedMessage = translator.createMessageFromBuffer(buffer);
+    let tdrl = decodedMessage.topicDataRecordList;
+    let data = [];
+    tdrl.elements.forEach((tdr) => {
+        let d = undefined;
+        let keys = Object.keys(tdr);
+        keys.forEach((k)=>{
+            if(k != "timestamp" && k != "topic"){
+                switch (k) {
+                    case 'stringList':
+                        d = {stringList: tdr[k]};
+                        break;
+                    case 'vector3':
+                        d = {vector3: tdr[k]};
+                        break;
+                    case 'float':
+                        d = {float: tdr[k]};
+                        break;
+                    case 'doubleList':
+                        d = {doubleList: tdr[k]};
+                        break;
+                    case 'bool':
+                        d = {bool: tdr[k]};
+                        break;
+                }
+            }
+        });
+        data.push({topicData:{topic:""+tdr.topic+""+pmNumber,data:d}});
+    });
+    return data;
+};
+
 module.exports = {
     createProtobufTopicData: createProtobufTopicData,
     verifyTopicDataRecord: verifyTopicDataRecord,
-    updateTopicDataBuffer: updateTopicDataBuffer
+    updateTopicDataBuffer: updateTopicDataBuffer,
+    processTopicDataBuffer: processTopicDataBuffer,
+    getDataFromBuffer: getDataFromBuffer
 }
