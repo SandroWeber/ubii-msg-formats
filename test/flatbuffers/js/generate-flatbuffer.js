@@ -191,42 +191,26 @@ let createTestDataFromTopicDataRecordList = (topicDataRecordList, newData = null
     }
     if(i==data.length){
       let d = undefined;
-      for(let j=0,found=false;j<types.length&&!found;++j){
-        switch (types[j]) {
-          case 'stringList':
-            if(tdrdata.stringList() != undefined){
-              let stringList ={elements:[]};
-              for(let n=0;n<tdrdata.stringListLength();++n){
-                stringList.elements.push(tdrdata.stringList(n));
-              }
-              d = {stringList: stringList};
-              found = true;
-            }
-            break;
-          case 'vector3':
-            if(tdrdata.vector3(new Vector3()) != undefined){
-              d = {vector3: tdrdata.vector3(new Vector3())};
-              found = true;
-            }
-            break;
-          case 'float':
-            if(tdrdata.float() != 0){
-              d = {float: tdrdata.float()};
-              found = true;
-            }
-            break;
-          case 'doubleList':
-            if(tdrdata.doubleList() != undefined){
-              d = {doubleList: tdrdata.doubleList()};
-              found = true;
-            }
-            break;
-          case 'bool':
-            d = {bool: tdrdata.bool()};
-            found = true;
-            break;
+      if(tdrdata.stringList() != undefined && d == undefined){
+        let stringList ={elements:[]};
+        for(let n=0;n<tdrdata.stringListLength();++n){
+          stringList.elements.push(tdrdata.stringList(n));
         }
+        d = {stringList: stringList};
       }
+      if(tdrdata.vector3(new Vector3()) != undefined && d == undefined){
+        d = {vector3: tdrdata.vector3(new Vector3())};
+      }
+      if(tdrdata.float() != 0 && d == undefined){
+        d = {float: tdrdata.float()};
+      }
+      if(tdrdata.doubleList() != undefined && d == undefined){
+        d = {doubleList: tdrdata.doubleList()};
+      }
+      if(d != undefined){
+        d = {bool: tdrdata.bool()};
+      }
+
       data.push({topic:tdr.topic(),data:d});
     }
   }

@@ -254,11 +254,36 @@ let getNewData = (goes) => {
   }
 };
 
+let cloneProcessingModules = () => {
+  let arr = [];
+  processingModulesDefault.forEach((pm)=>{
+    let topics = [];
+    pm.topics.forEach((t)=>{
+      topics.push({topic:t.topic});
+    });
+    arr.push({topics:topics,buffer:null});
+  });
+  processingModules = arr;
+};
+
+let cloneTestData = () => {
+  let arr = [];
+  testDataDefault.forEach((td)=>{
+    let data = {};
+    let keys = Object.keys(td.topicData.data);
+    keys.forEach((k)=>{
+      data[k] = td.topicData.data[k];
+    });
+    arr.push({topicData:{topic:td.topicData.topic,data}});
+  });
+  testData = arr;
+};
+
 let writeDataToTestData = (data) => {
   data.forEach((d)=>{
     let topicExists = false;
     testData.forEach((td)=>{
-      if(td.topic == d.topicData.topic){
+      if(td.topicData.topic == d.topicData.topic){
         topicExists = true;
         td.data = d.topicData.data;
       }
@@ -300,10 +325,9 @@ let runThroughData = (t, testProto,datas) =>{
           }
         }
       }
-
     });
     // processing of topic data
-    let i = 0;
+    /*let i = 0;
     processingModules.forEach((pm)=>{
       // read buffer and "process data"
       if(testProto){
@@ -318,9 +342,9 @@ let runThroughData = (t, testProto,datas) =>{
       }else{
         dataToWrite = GenerateFlat.getDataFromBuffer(pm.buffer, i);
       }
-      //writeDataToTestData(dataToWrite);
+      writeDataToTestData(dataToWrite);
       i++;
-    });
+    });*/
   }
 }
 
@@ -351,21 +375,33 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
   }
 });*/
 
-test('create, read and recreate buffer', (t)=>{
-  getNewData(10000);
-  let dataForFirstRun = newDatas.slice(0);
-  // test protobuffer
-  let timestampProto = Date.now();
-  runThroughData(t, true,dataForFirstRun);
-  let neededTimeProto = Date.now() - timestampProto;
-  console.log("Protobuffers needed: " +neededTimeProto+ " Milliseconds");
-  // test flatbuffer
-  processingModules = processingModulesDefault;
-  testData = testDataDefault;
-  let timestampFlat = Date.now();
-  runThroughData(t, false, newDatas);
-  let neededTimeFlat = Date.now() - timestampFlat;
-  console.log("Flatbuffers needed: " +neededTimeFlat+ " Milliseconds");
+test('create, read and process, recreate buffer and save topic data', (t)=>{
+  let iterations = 1000;
+  let averageProto = 0;
+  let averageFlat = 0;
+  for(let m=0;m<iterations;m++){
+    getNewData(1000);
+    let dataForFirstRun = newDatas.slice(0);
+    // test protobuffer
+    let timestampProto = Date.now();
+    runThroughData(t, true,dataForFirstRun);
+    let neededTimeProto = Date.now() - timestampProto;
+    averageProto += neededTimeProto;
+    //console.log("Protobuffers needed: " +neededTimeProto+ " Milliseconds");
+    // test flatbuffer
+    cloneProcessingModules();
+    cloneTestData();
+    let timestampFlat = Date.now();
+    runThroughData(t, false, newDatas);
+    let neededTimeFlat = Date.now() - timestampFlat;
+    averageFlat += neededTimeFlat;
+    //console.log("Flatbuffers needed: " +neededTimeFlat+ " Milliseconds");
+    cloneProcessingModules();
+    cloneTestData();
+  }
+  averageProto /= iterations;
+  averageFlat /= iterations;
+  console.log("On an average of "+iterations+" Test-iterations\n" +
+      "Protobuffers needed: " +averageProto+ " Milliseconds\n" +
+      "Flatbuffers needed: " +averageFlat+ " Milliseconds");
 });
-
-
