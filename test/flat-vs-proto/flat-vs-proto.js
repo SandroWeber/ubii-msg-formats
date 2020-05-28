@@ -327,7 +327,7 @@ let runThroughData = (t, testProto,datas) =>{
       }
     });
     // processing of topic data
-    /*let i = 0;
+    let i = 0;
     processingModules.forEach((pm)=>{
       // read buffer and "process data"
       if(testProto){
@@ -344,7 +344,7 @@ let runThroughData = (t, testProto,datas) =>{
       }
       writeDataToTestData(dataToWrite);
       i++;
-    });*/
+    });
   }
 }
 

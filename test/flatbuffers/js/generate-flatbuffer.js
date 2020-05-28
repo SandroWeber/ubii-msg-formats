@@ -56,18 +56,24 @@ let createFlatbufferTopicDataVector3 = (topicString, timestamp, vector3) => {
  */
 let createFlatbufferTopicData = (testData) => {
   let builder = new flatbuffers.Builder(0);
-  let tmpList = new Array();
+  let tdrList = [];
 
   // create objects from testData
   testData.forEach((td)=>{
+    let topic = builder.createString(td.topic);
     let keys = Object.keys(td.data);
     keys.forEach((k)=>{
       switch (k) {
         case "bool":
-          tmpList.push({topic: builder.createString(td.topic), data:{'bool':td.data.bool}});
+          DataStructure.startDataStructure(builder);
+          DataStructure.addBool(builder, td.data.bool);
           break;
         case "vector3":
-          tmpList.push({topic: builder.createString(td.topic), data:{'vector3': td.data.vector3}});
+          DataStructure.startDataStructure(builder);
+          DataStructure.addVector3(
+              builder,
+              Vector3.createVector3(builder, td.data.vector3.x, td.data.vector3.y, td.data.vector3.z)
+          );
           break;
         case "stringList":
           let strings = new Array();
@@ -79,57 +85,28 @@ let createFlatbufferTopicData = (testData) => {
             builder.createString(td.data.stringList.elements[1]),
             builder.createString(td.data.stringList.elements[2])]
           );
-          tmpList.push({topic:builder.createString(td.topic), data:{'stringList':stringList}});
+          DataStructure.startDataStructure(builder);
+          DataStructure.addStringList(builder, stringList);
           break;
         case "float":
-          tmpList.push({topic: builder.createString(td.topic), data:{'float': td.data.float}});
-          break;
-        case "doubleList":
-          tmpList.push({topic: builder.createString(td.topic), data:{'doubleList': DataStructure.createDoubleListVector(
-              builder, td.data.doubleList)}});
-          break;
-        default:
-          console.log("Following datastructure has to be added: %s", k)
-          break;
-      }
-    });
-  });
-
-  // create topicDataRecords from objects
-  let tdrList = [];
-  tmpList.forEach((td)=>{
-    DataStructure.startDataStructure(builder);
-    let keys = Object.keys(td.data);
-    keys.forEach((k)=>{
-      switch (k) {
-        case "bool":
-          DataStructure.addBool(builder, td.data.bool);
-          break;
-        case "vector3":
-          DataStructure.addVector3(
-              builder,
-              Vector3.createVector3(builder, td.data.vector3.x, td.data.vector3.y, td.data.vector3.z)
-          );
-          break;
-        case "stringList":
-          DataStructure.addStringList(builder, td.data.stringList);
-          break;
-        case "float":
+          DataStructure.startDataStructure(builder);
           DataStructure.addFloat(builder, td.data.float);
           break;
         case "doubleList":
-          DataStructure.addDoubleList(builder, td.data.doubleList);
+          let doubleList = DataStructure.createDoubleListVector(builder, td.data.doubleList);
+          DataStructure.startDataStructure(builder);
+          DataStructure.addDoubleList(builder, doubleList);
           break;
         default:
           console.log("Following datastructure has to be added: %s", k)
           break;
       }
+      let dataStructure = DataStructure.endDataStructure(builder);
+      TopicDataRecord.startTopicDataRecord(builder);
+      TopicDataRecord.addTopic(builder, topic);
+      TopicDataRecord.addData(builder, dataStructure);
+      tdrList.push(TopicDataRecord.endTopicDataRecord(builder));
     });
-    let dataStructure = DataStructure.endDataStructure(builder);
-    TopicDataRecord.startTopicDataRecord(builder);
-    TopicDataRecord.addTopic(builder, td.topic);
-    TopicDataRecord.addData(builder, dataStructure);
-    tdrList.push(TopicDataRecord.endTopicDataRecord(builder));
   });
 
   /*let dataStructure = DataStructure.endDataStructure(builder);
@@ -249,6 +226,7 @@ let getDataFromBuffer = (buffer, pmNumber) => {
   let data = [];
   data = createTestDataFromTopicDataRecordList(topicDataRecordList);
   let dataToReturn = [];
+  // TODO rewrite to not going through everything just to add topicData
   data.forEach((d)=>{
     d.topic = ""+d.topic+""+pmNumber;
     dataToReturn.push({topicData:d});

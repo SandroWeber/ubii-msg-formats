@@ -47,8 +47,8 @@ let updateTopicDataBuffer = (buffer, data) => {
     let translator = new ProtobufTranslator(MSG_TYPES.TOPIC_DATA);
     let decodedMessage = translator.createMessageFromBuffer(buffer);
     let tdrl = decodedMessage.topicDataRecordList;
-    data.forEach((d)=>{
-        tdrl.elements.forEach((el)=>{
+    tdrl.elements.forEach((el)=>{
+        data.forEach((d)=>{
             if(el.topic == d.topic){
                 let keys = Object.keys(el);
                 keys.forEach((k)=>{
@@ -84,6 +84,7 @@ let getDataFromBuffer = (buffer, pmNumber) => {
     let decodedMessage = translator.createMessageFromBuffer(buffer);
     let tdrl = decodedMessage.topicDataRecordList;
     let data = [];
+    // TODO try to rewrite to not going through everything just to get the type
     tdrl.elements.forEach((tdr) => {
         let d = undefined;
         let keys = Object.keys(tdr);
@@ -110,6 +111,8 @@ let getDataFromBuffer = (buffer, pmNumber) => {
         });
         data.push({topicData:{topic:""+tdr.topic+""+pmNumber,data:d}});
     });
+    // this is just to mimic the same load like flat
+    //data.forEach((d)=>{});
     return data;
 };
 
