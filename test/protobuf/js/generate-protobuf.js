@@ -84,7 +84,6 @@ let getDataFromBuffer = (buffer, pmNumber) => {
     let decodedMessage = translator.createMessageFromBuffer(buffer);
     let tdrl = decodedMessage.topicDataRecordList;
     let data = [];
-    // TODO try to rewrite to not going through everything just to get the type
     tdrl.elements.forEach((tdr) => {
         let d = undefined;
         let keys = Object.keys(tdr);

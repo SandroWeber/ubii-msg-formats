@@ -376,7 +376,7 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
 });*/
 
 test('create, read and process, recreate buffer and save topic data', (t)=>{
-  let iterations = 1000;
+  let iterations = 500;
   let averageProto = 0;
   let averageFlat = 0;
   for(let m=0;m<iterations;m++){
@@ -403,5 +403,6 @@ test('create, read and process, recreate buffer and save topic data', (t)=>{
   averageFlat /= iterations;
   console.log("On an average of "+iterations+" Test-iterations\n" +
       "Protobuffers needed: " +averageProto+ " Milliseconds\n" +
-      "Flatbuffers needed: " +averageFlat+ " Milliseconds");
+      "Flatbuffers needed: " +averageFlat+ " Milliseconds\n" +
+      "Flatbuffers were " + (100*(1-averageFlat/averageProto)).toFixed(4) + "% faster");
 });

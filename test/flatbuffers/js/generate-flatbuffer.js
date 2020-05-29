@@ -153,7 +153,7 @@ let verifyTopicDataRecord = (test, record, testData, index) => {
   }
 };
 
-let createTestDataFromTopicDataRecordList = (topicDataRecordList, newData = null) => {
+let createTestDataFromTopicDataRecordList = (topicDataRecordList, newData = null, withTopicDataTag, pmNumber) => {
   let data = [];
   for(let i = 0; i<topicDataRecordList.elementsLength();++i){
     let tdr = topicDataRecordList.elements(i);
@@ -187,8 +187,14 @@ let createTestDataFromTopicDataRecordList = (topicDataRecordList, newData = null
       if(d != undefined){
         d = {bool: tdrdata.bool()};
       }
-
-      data.push({topic:tdr.topic(),data:d});
+      if(withTopicDataTag){
+        if(pmNumber){
+          data.push({topicData:{topic:""+tdr.topic()+""+pmNumber,data:d}});;
+        }
+        data.push({topicData:{topic:tdr.topic(),data:d}});
+      }else{
+        data.push({topic:tdr.topic(),data:d});
+      }
     }
   }
   return data;
@@ -200,7 +206,7 @@ let updateTopicDataBuffer = (buffer, newData) => {
   let topicDataRecordList = topicData.content(new TopicDataRecordList());
   // update topicDataRecordList
   let data = [];
-  data = createTestDataFromTopicDataRecordList(topicDataRecordList, newData);
+  data = createTestDataFromTopicDataRecordList(topicDataRecordList, newData,false);
   // create buffer from topicData
   return createFlatbufferTopicData(data);
 };
@@ -213,7 +219,7 @@ let processTopicDataBuffer = (buffer) => {
 
   // create buffer from topicData
   let data = [];
-  data = createTestDataFromTopicDataRecordList(topicDataRecordList);
+  data = createTestDataFromTopicDataRecordList(topicDataRecordList,null,false);
   // create buffer from topicData
   return createFlatbufferTopicData(data);
 };
@@ -224,14 +230,8 @@ let getDataFromBuffer = (buffer, pmNumber) => {
   let topicDataRecordList = topicData.content(new TopicDataRecordList());
   // update topicDataRecordList
   let data = [];
-  data = createTestDataFromTopicDataRecordList(topicDataRecordList);
-  let dataToReturn = [];
-  // TODO rewrite to not going through everything just to add topicData
-  data.forEach((d)=>{
-    d.topic = ""+d.topic+""+pmNumber;
-    dataToReturn.push({topicData:d});
-  });
-  return dataToReturn;
+  data = createTestDataFromTopicDataRecordList(topicDataRecordList,null,true, pmNumber);
+  return data;
 };
 
 /* run tests */
