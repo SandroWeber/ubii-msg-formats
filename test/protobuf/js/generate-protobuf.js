@@ -105,6 +105,10 @@ let getDataFromBuffer = (buffer, pmNumber) => {
                     case 'bool':
                         d = {bool: tdr[k]};
                         break;
+                    case 'image2D':
+                        d = {image2D: tdr[k]};
+                        let e = d.image2D.data;
+                        break;
                 }
             }
         });

@@ -15,8 +15,10 @@ const Timestamp = require('../../../dist/flatbuffers/js/timestamp_generated').ub
   .Timestamp;
 const Vector3 = require('../../../dist/flatbuffers/js/vector3_generated').ubii.dataStructures
   .Vector3;
+const Image2D = require('../../../dist/flatbuffers/js/image_generated').ubii.dataStructures
+    .Image2D;
 
-let types = ["vector3","stringList","doubleList","float","bool"];
+let types = ["vector3","stringList","doubleList","image2D","float","bool"];
 
 /* helpers */
 
@@ -96,6 +98,11 @@ let createFlatbufferTopicData = (testData) => {
           let doubleList = DataStructure.createDoubleListVector(builder, td.data.doubleList);
           DataStructure.startDataStructure(builder);
           DataStructure.addDoubleList(builder, doubleList);
+          break;
+        case "image2D":
+          let image2D = Image2D.createImage2D(builder, td.data.image2D.height, td.data.image2D.width, "RGB8", td.data.image2D.data);
+          DataStructure.startDataStructure(builder);
+          DataStructure.addImage2D(builder, image2D);
           break;
         default:
           console.log("Following datastructure has to be added: %s", k)
@@ -178,13 +185,18 @@ let createTestDataFromTopicDataRecordList = (topicDataRecordList, newData = null
       if(tdrdata.vector3(new Vector3()) != undefined && d == undefined){
         d = {vector3: tdrdata.vector3(new Vector3())};
       }
+      if(tdrdata.image2D(new Image2D()) != undefined && d == undefined){
+        d = {image2D: tdrdata.image2D(new Image2D())};
+        var f = d.image2D.data();
+        var e = d.image2D.width();
+      }
       if(tdrdata.float() != 0 && d == undefined){
         d = {float: tdrdata.float()};
       }
-      if(tdrdata.doubleList() != undefined && d == undefined){
+      if(tdrdata.doubleList() != 0 && d == undefined){
         d = {doubleList: tdrdata.doubleList()};
       }
-      if(d != undefined){
+      if(d == undefined){
         d = {bool: tdrdata.bool()};
       }
       if(withTopicDataTag){

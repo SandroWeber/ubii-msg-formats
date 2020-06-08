@@ -1,5 +1,7 @@
 import test from 'ava';
+require('C:\\Users\\leona\\AppData\\Roaming\\npm\\node_modules\\console-png').attachTo(console);
 const GenerateProto = require('../protobuf/js/generate-protobuf.js');
+const proto = require ("../../dist/js/protobuf");
 const GenerateFlat = require('../flatbuffers/js/generate-flatbuffer.js');
 const TopicData = require('../../dist/flatbuffers/js/topicData_generated').ubii.topicData
     .TopicData;
@@ -9,13 +11,16 @@ const TopicDataRecord = require('../../dist/flatbuffers/js/topicDataRecord_gener
     .topicData.TopicDataRecord;
 const TopicDataRecordList = require('../../dist/flatbuffers/js/topicDataRecord_generated').ubii
     .topicData.TopicDataRecordList;
+const fs = require('fs');
 
-let run = true;
+let inputImage = {data: base64_encode('test/flat-vs-proto/lotad.png'),height:250,width:250};
+
 let newDatas = [{newData:[{topicData: {topic:'A',data: {bool:true}}},
     {topicData: {topic: 'B',data: {stringList: {elements:['one', 'two', 'three']}}}},
     {topicData: {topic: 'C', data: {float: 0.987}}},
     {topicData: {topic: 'D',data: {doubleList: [0.123,1,234,2,345]}}},
-    {topicData: {topic: 'E',data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}}}]
+    {topicData: {topic: 'E',data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}}},
+    {topicData: {topic: 'F', data: {image2D: inputImage}}}]
 }];
 let testData = [
   {
@@ -71,7 +76,12 @@ let testData = [
 //   object3D: ubii.dataStructures.Object3D,
 //   object2D_list: [ubii.dataStructures.Object2D],
 //   object3D_list: [ubii.dataStructures.Object3D],
-//   image2D: ubii.dataStructures.Image2D,
+  {
+    topicData: {
+      topic: 'F',
+      data: {image2D: inputImage}
+    }
+  },
 //   image2D_list: [ubii.dataStructures.Image2D],
 //   session: ubii.sessions.Session,
 //   interaction: ubii.interactions.Interaction,
@@ -131,7 +141,12 @@ let testDataDefault = [
 //   object3D: ubii.dataStructures.Object3D,
 //   object2D_list: [ubii.dataStructures.Object2D],
 //   object3D_list: [ubii.dataStructures.Object3D],
-//   image2D: ubii.dataStructures.Image2D,
+  {
+    topicData: {
+      topic: 'F',
+      data: {image2D: inputImage}
+    }
+  },
 //   image2D_list: [ubii.dataStructures.Image2D],
 //   session: ubii.sessions.Session,
 //   interaction: ubii.interactions.Interaction,
@@ -139,7 +154,7 @@ let testDataDefault = [
 
 let processingModules = [
   {
-    topics:[{topic: 'A'},{topic: 'C'}],
+    topics:[{topic: 'A'},{topic: 'C'},{topic: 'F'}],
     buffer: null
   },
   {
@@ -161,7 +176,7 @@ let processingModules = [
 ];
 let processingModulesDefault = [
   {
-    topics:[{topic: 'A'},{topic: 'C'}],
+    topics:[{topic: 'A'},{topic: 'C'},{topic: 'F'}],
     buffer: null
   },
   {
@@ -182,13 +197,20 @@ let processingModulesDefault = [
   }
 ];
 
+function base64_encode(file) {
+  // read binary data
+  var bitmap = fs.readFileSync(file);
+  // convert binary data to base64 encoded string
+  return new Buffer(bitmap).toString('base64');
+}
+
 let getNewData = (goes) => {
   while(goes>0){
     // how many new topicData
     let listNew = [];
-    let l = Math.floor(Math.random() * 5 + 1);
+    let l = Math.floor(Math.random() * 6 + 1);
     while(l>0){
-      let td = Math.floor(Math.random() * 5 + 1);
+      let td = Math.floor(Math.random() * 6 + 1);
       let topic = '';
       let data = undefined;
       switch (td) {
@@ -228,6 +250,14 @@ let getNewData = (goes) => {
           topic = 'E';
           testData.forEach((testd)=>{
             if(testd.topicData.topic == 'E'){
+              data = testd.topicData.data;
+            }
+          });
+          break;
+        case 6:
+          topic = 'F';
+          testData.forEach((testd)=>{
+            if(testd.topicData.topic == 'F'){
               data = testd.topicData.data;
             }
           });
@@ -342,6 +372,7 @@ let runThroughData = (t, testProto,datas) =>{
       }else{
         dataToWrite = GenerateFlat.getDataFromBuffer(pm.buffer, i);
       }
+      // TODO mocktopic
       writeDataToTestData(dataToWrite);
       i++;
     });
@@ -376,7 +407,7 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
 });*/
 
 test('create, read and process, recreate buffer and save topic data', (t)=>{
-  let iterations = 500;
+  let iterations = 10;
   let averageProto = 0;
   let averageFlat = 0;
   for(let m=0;m<iterations;m++){
