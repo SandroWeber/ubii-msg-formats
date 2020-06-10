@@ -107,7 +107,6 @@ let getDataFromBuffer = (buffer, pmNumber) => {
                         break;
                     case 'image2D':
                         d = {image2D: tdr[k]};
-                        let e = d.image2D.data;
                         break;
                 }
             }

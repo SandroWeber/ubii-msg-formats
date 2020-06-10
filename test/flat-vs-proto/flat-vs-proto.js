@@ -13,7 +13,7 @@ const TopicDataRecordList = require('../../dist/flatbuffers/js/topicDataRecord_g
     .topicData.TopicDataRecordList;
 const fs = require('fs');
 
-let inputImage = {data: base64_encode('test/flat-vs-proto/lotad.png'),height:250,width:250};
+let inputImage = {data: fs.readFileSync('test/flat-vs-proto/lotad.png'),height:250,width:250};
 
 let newDatas = [{newData:[{topicData: {topic:'A',data: {bool:true}}},
     {topicData: {topic: 'B',data: {stringList: {elements:['one', 'two', 'three']}}}},

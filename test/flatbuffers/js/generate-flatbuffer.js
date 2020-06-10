@@ -57,7 +57,43 @@ let createFlatbufferTopicDataVector3 = (topicString, timestamp, vector3) => {
  * @param {*} testData
  */
 let createFlatbufferTopicData = (testData) => {
-  let builder = new flatbuffers.Builder(0);
+  // get average buffer size
+  let bSize = 0;
+  /*testData.forEach((td)=>{
+    let keys = Object.keys(td.data);
+    keys.forEach((k)=>{
+      switch (k) {
+        case "bool":
+          bSize++;
+          break;
+        case "vector3":
+          bSize += 3*4;
+          break;
+        case "stringList":
+          td.data.stringList.elements.forEach((s)=>{
+            bSize += s.length;
+          });
+          break;
+        case "float":
+          bSize += 4;
+          break;
+        case "doubleList":
+          td.data.doubleList.forEach((_)=>{
+            bSize += 8;
+          });
+          break;
+        case "image2D":
+          bSize += td.data.image2D.data.length;
+          break;
+        default:
+          console.log("Following datastructure has to be added: %s", k);
+          break;
+      }
+    });
+  });
+  bSize *= 0.8;
+  bSize = Math.floor(bSize);*/
+  let builder = new flatbuffers.Builder(bSize);
   let tdrList = [];
 
   // create objects from testData
@@ -100,12 +136,13 @@ let createFlatbufferTopicData = (testData) => {
           DataStructure.addDoubleList(builder, doubleList);
           break;
         case "image2D":
-          let image2D = Image2D.createImage2D(builder, td.data.image2D.height, td.data.image2D.width, "RGB8", td.data.image2D.data);
+          let image2D = Image2D.createImage2D(builder, td.data.image2D.height, td.data.image2D.width, builder.createString("RGB8"),
+              Image2D.createDataVector(builder, td.data.image2D.data));
           DataStructure.startDataStructure(builder);
           DataStructure.addImage2D(builder, image2D);
           break;
         default:
-          console.log("Following datastructure has to be added: %s", k)
+          console.log("Following datastructure has to be added: %s", k);
           break;
       }
       let dataStructure = DataStructure.endDataStructure(builder);
@@ -185,10 +222,9 @@ let createTestDataFromTopicDataRecordList = (topicDataRecordList, newData = null
       if(tdrdata.vector3(new Vector3()) != undefined && d == undefined){
         d = {vector3: tdrdata.vector3(new Vector3())};
       }
-      if(tdrdata.image2D(new Image2D()) != undefined && d == undefined){
-        d = {image2D: tdrdata.image2D(new Image2D())};
-        var f = d.image2D.data();
-        var e = d.image2D.width();
+      let i2d = tdrdata.image2D(new Image2D());
+      if(i2d != null && i2d.width() != 0 && d == undefined){
+        d = {image2D: i2d};
       }
       if(tdrdata.float() != 0 && d == undefined){
         d = {float: tdrdata.float()};
