@@ -1,198 +1,202 @@
 import test from 'ava';
 require('C:\\Users\\leona\\AppData\\Roaming\\npm\\node_modules\\console-png').attachTo(console);
 const GenerateProto = require('../protobuf/js/generate-protobuf.js');
-const proto = require ("../../dist/js/protobuf");
+const proto = require('../../dist/js/protobuf');
 const GenerateFlat = require('../flatbuffers/js/generate-flatbuffer.js');
-const TopicData = require('../../dist/flatbuffers/js/topicData_generated').ubii.topicData
-    .TopicData;
+const TopicData = require('../../dist/flatbuffers/js/topicData_generated').ubii.topicData.TopicData;
 const TopicDataContent = require('../../dist/flatbuffers/js/topicData_generated').ubii.topicData
-    .TopicDataContent;
+  .TopicDataContent;
 const TopicDataRecord = require('../../dist/flatbuffers/js/topicDataRecord_generated').ubii
-    .topicData.TopicDataRecord;
+  .topicData.TopicDataRecord;
 const TopicDataRecordList = require('../../dist/flatbuffers/js/topicDataRecord_generated').ubii
-    .topicData.TopicDataRecordList;
+  .topicData.TopicDataRecordList;
 const fs = require('fs');
 
-let inputImage = {data: fs.readFileSync('test/flat-vs-proto/lotad.png'),height:250,width:250};
+let inputImage = { data: fs.readFileSync('test/flat-vs-proto/lotad.png'), height: 250, width: 250 };
 
-let newDatas = [{newData:[{topicData: {topic:'A',data: {bool:true}}},
-    {topicData: {topic: 'B',data: {stringList: {elements:['one', 'two', 'three']}}}},
-    {topicData: {topic: 'C', data: {float: 0.987}}},
-    {topicData: {topic: 'D',data: {doubleList: [0.123,1,234,2,345]}}},
-    {topicData: {topic: 'E',data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}}},
-    {topicData: {topic: 'F', data: {image2D: inputImage}}}]
-}];
+let newDatas = [
+  {
+    newData: [
+      { topicData: { topic: 'A', data: { bool: true } } },
+      { topicData: { topic: 'B', data: { stringList: { elements: ['one', 'two', 'three'] } } } },
+      { topicData: { topic: 'C', data: { float: 0.987 } } },
+      { topicData: { topic: 'D', data: { doubleList: [0.123, 1, 234, 2, 345] } } },
+      { topicData: { topic: 'E', data: { vector3: { x: 1.1, y: 2.2, z: 3.3 } } } },
+      { topicData: { topic: 'F', data: { image2D: inputImage } } }
+    ]
+  }
+];
 let testData = [
   {
     topicData: {
       topic: 'A',
-      data: {bool:true}
+      data: { bool: true }
     }
   },
-//bool_list: [true, false, true],
-//string: string,
+  //bool_list: [true, false, true],
+  //string: string,
   {
     topicData: {
       topic: 'B',
-      data: {stringList: {elements:['one', 'two', 'three']}}
+      data: { stringList: { elements: ['one', 'two', 'three'] } }
     }
   },
-//byte: byte,
-//int32: int32,
-//int32_list: [int32],
+  //byte: byte,
+  //int32: int32,
+  //int32_list: [int32],
   {
     topicData: {
       topic: 'C',
-      data: {float: 0.987}
+      data: { float: 0.987 }
     }
   },
-//float_list: [float],
-//double: double,
+  //float_list: [float],
+  //double: double,
   {
     topicData: {
       topic: 'D',
-      data: {doubleList: [0.123,1,234,2,345]}
+      data: { doubleList: [0.123, 1, 234, 2, 345] }
     }
   },
-//   vector2: ubii.dataStructures.Vector2,
+  //   vector2: ubii.dataStructures.Vector2,
   {
     topicData: {
       topic: 'E',
-      data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}
+      data: { vector3: { x: 1.1, y: 2.2, z: 3.3 } }
     }
   },
-//   vector4: ubii.dataStructures.Vector4,
-//   quaternion: ubii.dataStructures.Quaternion,
-//   matrix3x2: ubii.dataStructures.Matrix3x2,
-//   matrix4x4: ubii.dataStructures.Matrix4x4,
-//   color: ubii.dataStructures.Color,
-//   touch_event: ubii.dataStructures.TouchEvent,
-//   key_event: ubii.dataStructures.KeyEvent,
-//   mouse_event: ubii.dataStructures.MouseEvent,
-//   myo_event: ubii.dataStructures.MyoEvent,
-//   pose2D: ubii.dataStructures.Pose2D,
-//   pose3D: ubii.dataStructures.Pose3D,
-//   object2D: ubii.dataStructures.Object2D,
-//   object3D: ubii.dataStructures.Object3D,
-//   object2D_list: [ubii.dataStructures.Object2D],
-//   object3D_list: [ubii.dataStructures.Object3D],
+  //   vector4: ubii.dataStructures.Vector4,
+  //   quaternion: ubii.dataStructures.Quaternion,
+  //   matrix3x2: ubii.dataStructures.Matrix3x2,
+  //   matrix4x4: ubii.dataStructures.Matrix4x4,
+  //   color: ubii.dataStructures.Color,
+  //   touch_event: ubii.dataStructures.TouchEvent,
+  //   key_event: ubii.dataStructures.KeyEvent,
+  //   mouse_event: ubii.dataStructures.MouseEvent,
+  //   myo_event: ubii.dataStructures.MyoEvent,
+  //   pose2D: ubii.dataStructures.Pose2D,
+  //   pose3D: ubii.dataStructures.Pose3D,
+  //   object2D: ubii.dataStructures.Object2D,
+  //   object3D: ubii.dataStructures.Object3D,
+  //   object2D_list: [ubii.dataStructures.Object2D],
+  //   object3D_list: [ubii.dataStructures.Object3D],
   {
     topicData: {
       topic: 'F',
-      data: {image2D: inputImage}
+      data: { image2D: inputImage }
     }
-  },
-//   image2D_list: [ubii.dataStructures.Image2D],
-//   session: ubii.sessions.Session,
-//   interaction: ubii.interactions.Interaction,
+  }
+  //   image2D_list: [ubii.dataStructures.Image2D],
+  //   session: ubii.sessions.Session,
+  //   interaction: ubii.interactions.Interaction,
 ];
 
 let testDataDefault = [
   {
     topicData: {
       topic: 'A',
-      data: {bool:true}
+      data: { bool: true }
     }
   },
-//bool_list: [true, false, true],
-//string: string,
+  //bool_list: [true, false, true],
+  //string: string,
   {
     topicData: {
       topic: 'B',
-      data: {stringList: {elements:['one', 'two', 'three']}}
+      data: { stringList: { elements: ['one', 'two', 'three'] } }
     }
   },
-//byte: byte,
-//int32: int32,
-//int32_list: [int32],
+  //byte: byte,
+  //int32: int32,
+  //int32_list: [int32],
   {
     topicData: {
       topic: 'C',
-      data: {float: 0.987}
+      data: { float: 0.987 }
     }
   },
-//float_list: [float],
-//double: double,
+  //float_list: [float],
+  //double: double,
   {
     topicData: {
       topic: 'D',
-      data: {doubleList: [0.123,1,234,2,345]}
+      data: { doubleList: [0.123, 1, 234, 2, 345] }
     }
   },
-//   vector2: ubii.dataStructures.Vector2,
+  //   vector2: ubii.dataStructures.Vector2,
   {
     topicData: {
       topic: 'E',
-      data: {vector3: {x: 1.1, y: 2.2, z: 3.3}}
+      data: { vector3: { x: 1.1, y: 2.2, z: 3.3 } }
     }
   },
-//   vector4: ubii.dataStructures.Vector4,
-//   quaternion: ubii.dataStructures.Quaternion,
-//   matrix3x2: ubii.dataStructures.Matrix3x2,
-//   matrix4x4: ubii.dataStructures.Matrix4x4,
-//   color: ubii.dataStructures.Color,
-//   touch_event: ubii.dataStructures.TouchEvent,
-//   key_event: ubii.dataStructures.KeyEvent,
-//   mouse_event: ubii.dataStructures.MouseEvent,
-//   myo_event: ubii.dataStructures.MyoEvent,
-//   pose2D: ubii.dataStructures.Pose2D,
-//   pose3D: ubii.dataStructures.Pose3D,
-//   object2D: ubii.dataStructures.Object2D,
-//   object3D: ubii.dataStructures.Object3D,
-//   object2D_list: [ubii.dataStructures.Object2D],
-//   object3D_list: [ubii.dataStructures.Object3D],
+  //   vector4: ubii.dataStructures.Vector4,
+  //   quaternion: ubii.dataStructures.Quaternion,
+  //   matrix3x2: ubii.dataStructures.Matrix3x2,
+  //   matrix4x4: ubii.dataStructures.Matrix4x4,
+  //   color: ubii.dataStructures.Color,
+  //   touch_event: ubii.dataStructures.TouchEvent,
+  //   key_event: ubii.dataStructures.KeyEvent,
+  //   mouse_event: ubii.dataStructures.MouseEvent,
+  //   myo_event: ubii.dataStructures.MyoEvent,
+  //   pose2D: ubii.dataStructures.Pose2D,
+  //   pose3D: ubii.dataStructures.Pose3D,
+  //   object2D: ubii.dataStructures.Object2D,
+  //   object3D: ubii.dataStructures.Object3D,
+  //   object2D_list: [ubii.dataStructures.Object2D],
+  //   object3D_list: [ubii.dataStructures.Object3D],
   {
     topicData: {
       topic: 'F',
-      data: {image2D: inputImage}
+      data: { image2D: inputImage }
     }
-  },
-//   image2D_list: [ubii.dataStructures.Image2D],
-//   session: ubii.sessions.Session,
-//   interaction: ubii.interactions.Interaction,
+  }
+  //   image2D_list: [ubii.dataStructures.Image2D],
+  //   session: ubii.sessions.Session,
+  //   interaction: ubii.interactions.Interaction,
 ];
 
 let processingModules = [
   {
-    topics:[{topic: 'A'},{topic: 'C'},{topic: 'F'}],
+    topics: [{ topic: 'A' }, { topic: 'C' }, { topic: 'F' }],
     buffer: null
   },
   {
-    topics:[{topic: 'A'},{topic: 'B'},{topic: 'E'}],
+    topics: [{ topic: 'A' }, { topic: 'B' }, { topic: 'E' }],
     buffer: null
   },
   {
-    topics:[{topic: 'D'}],
+    topics: [{ topic: 'D' }],
     buffer: null
   },
   {
-    topics:[{topic: 'B'},{topic: 'D'},{topic: 'E'}],
+    topics: [{ topic: 'B' }, { topic: 'D' }, { topic: 'E' }],
     buffer: null
   },
   {
-    topics:[{topic: 'A'},{topic: 'B'},{topic: 'C'},{topic: 'D'},{topic: 'E'}],
+    topics: [{ topic: 'A' }, { topic: 'B' }, { topic: 'C' }, { topic: 'D' }, { topic: 'E' }],
     buffer: null
   }
 ];
 let processingModulesDefault = [
   {
-    topics:[{topic: 'A'},{topic: 'C'},{topic: 'F'}],
+    topics: [{ topic: 'A' }, { topic: 'C' }, { topic: 'F' }],
     buffer: null
   },
   {
-    topics:[{topic: 'A'},{topic: 'B'},{topic: 'E'}],
+    topics: [{ topic: 'A' }, { topic: 'B' }, { topic: 'E' }],
     buffer: null
   },
   {
-    topics:[{topic: 'D'}],
+    topics: [{ topic: 'D' }],
     buffer: null
   },
   {
-    topics:[{topic: 'B'},{topic: 'D'},{topic: 'E'}],
+    topics: [{ topic: 'B' }, { topic: 'D' }, { topic: 'E' }],
     buffer: null
   },
   {
-    topics:[{topic: 'A'},{topic: 'B'},{topic: 'C'},{topic: 'D'},{topic: 'E'}],
+    topics: [{ topic: 'A' }, { topic: 'B' }, { topic: 'C' }, { topic: 'D' }, { topic: 'E' }],
     buffer: null
   }
 ];
@@ -205,152 +209,152 @@ function base64_encode(file) {
 }
 
 let getNewData = (goes) => {
-  while(goes>0){
+  while (goes > 0) {
     // how many new topicData
     let listNew = [];
     let l = Math.floor(Math.random() * 6 + 1);
-    while(l>0){
+    while (l > 0) {
       let td = Math.floor(Math.random() * 6 + 1);
       let topic = '';
       let data = undefined;
       switch (td) {
         case 1:
           topic = 'A';
-          testData.forEach((testd)=>{
-            if(testd.topicData.topic == 'A'){
+          testData.forEach((testd) => {
+            if (testd.topicData.topic == 'A') {
               data = testd.topicData.data;
             }
           });
           break;
         case 2:
           topic = 'B';
-          testData.forEach((testd)=>{
-            if(testd.topicData.topic == 'B'){
+          testData.forEach((testd) => {
+            if (testd.topicData.topic == 'B') {
               data = testd.topicData.data;
             }
           });
           break;
         case 3:
           topic = 'C';
-          testData.forEach((testd)=>{
-            if(testd.topicData.topic == 'C'){
+          testData.forEach((testd) => {
+            if (testd.topicData.topic == 'C') {
               data = testd.topicData.data;
             }
           });
           break;
         case 4:
           topic = 'D';
-          testData.forEach((testd)=>{
-            if(testd.topicData.topic == 'D'){
+          testData.forEach((testd) => {
+            if (testd.topicData.topic == 'D') {
               data = testd.topicData.data;
             }
           });
           break;
         case 5:
           topic = 'E';
-          testData.forEach((testd)=>{
-            if(testd.topicData.topic == 'E'){
+          testData.forEach((testd) => {
+            if (testd.topicData.topic == 'E') {
               data = testd.topicData.data;
             }
           });
           break;
         case 6:
           topic = 'F';
-          testData.forEach((testd)=>{
-            if(testd.topicData.topic == 'F'){
+          testData.forEach((testd) => {
+            if (testd.topicData.topic == 'F') {
               data = testd.topicData.data;
             }
           });
           break;
       }
-      if(listNew.length==0){
-        listNew.push({topicData:{topic:topic,data:data}});
+      if (listNew.length == 0) {
+        listNew.push({ topicData: { topic: topic, data: data } });
         l--;
-      }else{
+      } else {
         let exists = false;
-        listNew.forEach((ln)=>{
-          if(ln.topicData.topic == topic){
+        listNew.forEach((ln) => {
+          if (ln.topicData.topic == topic) {
             exists = true;
           }
         });
-        if(!exists){
-          listNew.push({topicData:{topic:topic,data:data}});
+        if (!exists) {
+          listNew.push({ topicData: { topic: topic, data: data } });
           l--;
         }
       }
     }
-    newDatas.push({newData:listNew});
+    newDatas.push({ newData: listNew });
     goes--;
   }
 };
 
 let cloneProcessingModules = () => {
   let arr = [];
-  processingModulesDefault.forEach((pm)=>{
+  processingModulesDefault.forEach((pm) => {
     let topics = [];
-    pm.topics.forEach((t)=>{
-      topics.push({topic:t.topic});
+    pm.topics.forEach((t) => {
+      topics.push({ topic: t.topic });
     });
-    arr.push({topics:topics,buffer:null});
+    arr.push({ topics: topics, buffer: null });
   });
   processingModules = arr;
 };
 
 let cloneTestData = () => {
   let arr = [];
-  testDataDefault.forEach((td)=>{
+  testDataDefault.forEach((td) => {
     let data = {};
     let keys = Object.keys(td.topicData.data);
-    keys.forEach((k)=>{
+    keys.forEach((k) => {
       data[k] = td.topicData.data[k];
     });
-    arr.push({topicData:{topic:td.topicData.topic,data}});
+    arr.push({ topicData: { topic: td.topicData.topic, data } });
   });
   testData = arr;
 };
 
 let writeDataToTestData = (data) => {
-  data.forEach((d)=>{
+  data.forEach((d) => {
     let topicExists = false;
-    testData.forEach((td)=>{
-      if(td.topicData.topic == d.topicData.topic){
+    testData.forEach((td) => {
+      if (td.topicData.topic == d.topicData.topic) {
         topicExists = true;
         td.data = d.topicData.data;
       }
     });
-    if(!topicExists){
+    if (!topicExists) {
       testData.push(d);
     }
   });
-}
+};
 
-let runThroughData = (t, testProto,datas) =>{
-  while(datas.length != 0){
+let runThroughData = (t, testProto, datas) => {
+  while (datas.length != 0) {
     let newData = datas.shift();
-    processingModules.forEach((pm)=>{
+    processingModules.forEach((pm) => {
       // check which processing module requires which new topicData
       let neededTopicData = [];
-      newData.newData.forEach((nd)=>{
+      newData.newData.forEach((nd) => {
         pm.topics.forEach((td) => {
-          if(nd.topicData.topic == td.topic){
+          if (nd.topicData.topic == td.topic) {
             neededTopicData.push(nd.topicData);
           }
         });
       });
 
-      if(!pm.buffer){
+      if (!pm.buffer) {
         // create new buffer
-        if(testProto){
+        if (testProto) {
           pm.buffer = GenerateProto.createProtobufTopicData(t, neededTopicData);
-        }else{
+        } else {
           pm.buffer = GenerateFlat.createFlatbufferTopicData(neededTopicData);
         }
-      }else{
-        if(neededTopicData.length>0){
+      } else {
+        if (neededTopicData.length > 0) {
           // update buffer
-          if(testProto){
+          if (testProto) {
             pm.buffer = GenerateProto.updateTopicDataBuffer(pm.buffer, neededTopicData);
-          }else{
+          } else {
             pm.buffer = GenerateFlat.updateTopicDataBuffer(pm.buffer, neededTopicData);
           }
         }
@@ -358,18 +362,18 @@ let runThroughData = (t, testProto,datas) =>{
     });
     // processing of topic data
     let i = 0;
-    processingModules.forEach((pm)=>{
+    processingModules.forEach((pm) => {
       // read buffer and "process data"
-      if(testProto){
+      if (testProto) {
         pm.buffer = GenerateProto.processTopicDataBuffer(pm.buffer);
-      }else{
+      } else {
         pm.buffer = GenerateFlat.processTopicDataBuffer(pm.buffer);
       }
       // write to topic data
       let dataToWrite = [];
-      if(testProto){
+      if (testProto) {
         dataToWrite = GenerateProto.getDataFromBuffer(pm.buffer, i);
-      }else{
+      } else {
         dataToWrite = GenerateFlat.getDataFromBuffer(pm.buffer, i);
       }
       // TODO mocktopic
@@ -377,7 +381,7 @@ let runThroughData = (t, testProto,datas) =>{
       i++;
     });
   }
-}
+};
 
 /*test('create a TopicData protobuffer, then read it back in', (t)=>{
   let timestampProto = {seconds: 1, nanos:2};
@@ -406,16 +410,16 @@ test('create a TopicData flatbuffer, then read it back in', (t) => {
   }
 });*/
 
-test('create, read and process, recreate buffer and save topic data', (t)=>{
+test('create, read and process, recreate buffer and save topic data', (t) => {
   let iterations = 10;
   let averageProto = 0;
   let averageFlat = 0;
-  for(let m=0;m<iterations;m++){
+  for (let m = 0; m < iterations; m++) {
     getNewData(1000);
     let dataForFirstRun = newDatas.slice(0);
     // test protobuffer
     let timestampProto = Date.now();
-    runThroughData(t, true,dataForFirstRun);
+    runThroughData(t, true, dataForFirstRun);
     let neededTimeProto = Date.now() - timestampProto;
     averageProto += neededTimeProto;
     //console.log("Protobuffers needed: " +neededTimeProto+ " Milliseconds");
@@ -432,8 +436,18 @@ test('create, read and process, recreate buffer and save topic data', (t)=>{
   }
   averageProto /= iterations;
   averageFlat /= iterations;
-  console.log("On an average of "+iterations+" Test-iterations\n" +
-      "Protobuffers needed: " +averageProto+ " Milliseconds\n" +
-      "Flatbuffers needed: " +averageFlat+ " Milliseconds\n" +
-      "Flatbuffers were " + (100*(1-averageFlat/averageProto)).toFixed(4) + "% faster");
+  console.log(
+    'On an average of ' +
+      iterations +
+      ' Test-iterations\n' +
+      'Protobuffers needed: ' +
+      averageProto +
+      ' Milliseconds\n' +
+      'Flatbuffers needed: ' +
+      averageFlat +
+      ' Milliseconds\n' +
+      'Flatbuffers were ' +
+      (100 * (1 - averageFlat / averageProto)).toFixed(4) +
+      '% faster'
+  );
 });
