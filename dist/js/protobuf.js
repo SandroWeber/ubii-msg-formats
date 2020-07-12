@@ -574,6 +574,7 @@ $root.ubii = (function() {
              * @property {string|null} [deviceId] Component deviceId
              * @property {Array.<string>|null} [tags] Component tags
              * @property {string|null} [description] Component description
+             * @property {string|null} [id] Component id
              */
 
             /**
@@ -641,6 +642,14 @@ $root.ubii = (function() {
             Component.prototype.description = "";
 
             /**
+             * Component id.
+             * @member {string} id
+             * @memberof ubii.devices.Component
+             * @instance
+             */
+            Component.prototype.id = "";
+
+            /**
              * Creates a new Component instance using the specified properties.
              * @function create
              * @memberof ubii.devices.Component
@@ -677,6 +686,8 @@ $root.ubii = (function() {
                         writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
                 if (message.description != null && message.hasOwnProperty("description"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.id);
                 return writer;
             };
 
@@ -730,6 +741,9 @@ $root.ubii = (function() {
                         break;
                     case 6:
                         message.description = reader.string();
+                        break;
+                    case 7:
+                        message.id = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -793,6 +807,9 @@ $root.ubii = (function() {
                 if (message.description != null && message.hasOwnProperty("description"))
                     if (!$util.isString(message.description))
                         return "description: string expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
                 return null;
             };
 
@@ -813,11 +830,11 @@ $root.ubii = (function() {
                 if (object.messageFormat != null)
                     message.messageFormat = String(object.messageFormat);
                 switch (object.ioType) {
-                case "INPUT":
+                case "PUBLISHER":
                 case 0:
                     message.ioType = 0;
                     break;
-                case "OUTPUT":
+                case "SUBSCRIBER":
                 case 1:
                     message.ioType = 1;
                     break;
@@ -833,6 +850,8 @@ $root.ubii = (function() {
                 }
                 if (object.description != null)
                     message.description = String(object.description);
+                if (object.id != null)
+                    message.id = String(object.id);
                 return message;
             };
 
@@ -854,9 +873,10 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.topic = "";
                     object.messageFormat = "";
-                    object.ioType = options.enums === String ? "INPUT" : 0;
+                    object.ioType = options.enums === String ? "PUBLISHER" : 0;
                     object.deviceId = "";
                     object.description = "";
+                    object.id = "";
                 }
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     object.topic = message.topic;
@@ -873,6 +893,8 @@ $root.ubii = (function() {
                 }
                 if (message.description != null && message.hasOwnProperty("description"))
                     object.description = message.description;
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
                 return object;
             };
 
@@ -891,13 +913,13 @@ $root.ubii = (function() {
              * IOType enum.
              * @name ubii.devices.Component.IOType
              * @enum {string}
-             * @property {number} INPUT=0 INPUT value
-             * @property {number} OUTPUT=1 OUTPUT value
+             * @property {number} PUBLISHER=0 PUBLISHER value
+             * @property {number} SUBSCRIBER=1 SUBSCRIBER value
              */
             Component.IOType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "INPUT"] = 0;
-                values[valuesById[1] = "OUTPUT"] = 1;
+                values[valuesById[0] = "PUBLISHER"] = 0;
+                values[valuesById[1] = "SUBSCRIBER"] = 1;
                 return values;
             })();
 

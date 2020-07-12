@@ -79,7 +79,8 @@ proto.ubii.devices.Component.toObject = function(includeInstance, msg) {
     ioType: jspb.Message.getFieldWithDefault(msg, 3, 0),
     deviceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     tagsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    description: jspb.Message.getFieldWithDefault(msg, 6, "")
+    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -139,6 +140,10 @@ proto.ubii.devices.Component.deserializeBinaryFromReader = function(msg, reader)
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -211,6 +216,13 @@ proto.ubii.devices.Component.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
 };
 
 
@@ -218,8 +230,8 @@ proto.ubii.devices.Component.serializeBinaryToWriter = function(message, writer)
  * @enum {number}
  */
 proto.ubii.devices.Component.IOType = {
-  INPUT: 0,
-  OUTPUT: 1
+  PUBLISHER: 0,
+  SUBSCRIBER: 1
 };
 
 /**
@@ -346,6 +358,24 @@ proto.ubii.devices.Component.prototype.getDescription = function() {
  */
 proto.ubii.devices.Component.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string id = 7;
+ * @return {string}
+ */
+proto.ubii.devices.Component.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.devices.Component} returns this
+ */
+proto.ubii.devices.Component.prototype.setId = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

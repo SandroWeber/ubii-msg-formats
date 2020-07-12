@@ -69,14 +69,14 @@ namespace ubii {
 namespace devices {
 
 enum Component_IOType : int {
-  Component_IOType_INPUT = 0,
-  Component_IOType_OUTPUT = 1,
+  Component_IOType_PUBLISHER = 0,
+  Component_IOType_SUBSCRIBER = 1,
   Component_IOType_Component_IOType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   Component_IOType_Component_IOType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Component_IOType_IsValid(int value);
-constexpr Component_IOType Component_IOType_IOType_MIN = Component_IOType_INPUT;
-constexpr Component_IOType Component_IOType_IOType_MAX = Component_IOType_OUTPUT;
+constexpr Component_IOType Component_IOType_IOType_MIN = Component_IOType_PUBLISHER;
+constexpr Component_IOType Component_IOType_IOType_MAX = Component_IOType_SUBSCRIBER;
 constexpr int Component_IOType_IOType_ARRAYSIZE = Component_IOType_IOType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Component_IOType_descriptor();
@@ -199,10 +199,10 @@ class Component :
   // nested types ----------------------------------------------------
 
   typedef Component_IOType IOType;
-  static constexpr IOType INPUT =
-    Component_IOType_INPUT;
-  static constexpr IOType OUTPUT =
-    Component_IOType_OUTPUT;
+  static constexpr IOType PUBLISHER =
+    Component_IOType_PUBLISHER;
+  static constexpr IOType SUBSCRIBER =
+    Component_IOType_SUBSCRIBER;
   static inline bool IOType_IsValid(int value) {
     return Component_IOType_IsValid(value);
   }
@@ -236,6 +236,7 @@ class Component :
     kMessageFormatFieldNumber = 2,
     kDeviceIdFieldNumber = 4,
     kDescriptionFieldNumber = 6,
+    kIdFieldNumber = 7,
     kIoTypeFieldNumber = 3,
   };
   // repeated string tags = 5;
@@ -326,6 +327,22 @@ class Component :
   std::string* _internal_mutable_description();
   public:
 
+  // string id = 7;
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
   // .ubii.devices.Component.IOType io_type = 3;
   void clear_io_type();
   ::ubii::devices::Component_IOType io_type() const;
@@ -345,6 +362,7 @@ class Component :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_format_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   int io_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fdevices_2fcomponent_2eproto;
@@ -692,6 +710,66 @@ inline void Component::set_allocated_description(std::string* description) {
   }
   description_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description);
   // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.description)
+}
+
+// string id = 7;
+inline void Component::clear_id() {
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Component::id() const {
+  // @@protoc_insertion_point(field_get:ubii.devices.Component.id)
+  return _internal_id();
+}
+inline void Component::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.id)
+}
+inline std::string* Component::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:ubii.devices.Component.id)
+  return _internal_mutable_id();
+}
+inline const std::string& Component::_internal_id() const {
+  return id_.GetNoArena();
+}
+inline void Component::_internal_set_id(const std::string& value) {
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Component::set_id(std::string&& value) {
+  
+  id_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.devices.Component.id)
+}
+inline void Component::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.devices.Component.id)
+}
+inline void Component::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.devices.Component.id)
+}
+inline std::string* Component::_internal_mutable_id() {
+  
+  return id_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Component::release_id() {
+  // @@protoc_insertion_point(field_release:ubii.devices.Component.id)
+  
+  return id_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Component::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.id)
 }
 
 #ifdef __GNUC__

@@ -67,6 +67,7 @@ let constants = { DEFAULT_TOPICS:
      SUCCESS: 'ubii.general.Success',
      CLIENT: 'ubii.clients.Client',
      DEVICE: 'ubii.devices.Device',
+     COMPONENT: 'ubii.devices.Component',
      TOPIC_MUX: 'ubii.devices.TopicMux',
      TOPIC_MUX_LIST: 'ubii.devices.TopicMuxList',
      TOPIC_DEMUX: 'ubii.devices.TopicDemux',

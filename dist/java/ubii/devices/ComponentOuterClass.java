@@ -101,6 +101,18 @@ public final class ComponentOuterClass {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>string id = 7;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 7;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
   }
   /**
    * Protobuf type {@code ubii.devices.Component}
@@ -121,6 +133,7 @@ public final class ComponentOuterClass {
       deviceId_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
+      id_ = "";
     }
 
     @java.lang.Override
@@ -193,6 +206,12 @@ public final class ComponentOuterClass {
               description_ = s;
               break;
             }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -234,24 +253,24 @@ public final class ComponentOuterClass {
     public enum IOType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>INPUT = 0;</code>
+       * <code>PUBLISHER = 0;</code>
        */
-      INPUT(0),
+      PUBLISHER(0),
       /**
-       * <code>OUTPUT = 1;</code>
+       * <code>SUBSCRIBER = 1;</code>
        */
-      OUTPUT(1),
+      SUBSCRIBER(1),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>INPUT = 0;</code>
+       * <code>PUBLISHER = 0;</code>
        */
-      public static final int INPUT_VALUE = 0;
+      public static final int PUBLISHER_VALUE = 0;
       /**
-       * <code>OUTPUT = 1;</code>
+       * <code>SUBSCRIBER = 1;</code>
        */
-      public static final int OUTPUT_VALUE = 1;
+      public static final int SUBSCRIBER_VALUE = 1;
 
 
       public final int getNumber() {
@@ -278,8 +297,8 @@ public final class ComponentOuterClass {
        */
       public static IOType forNumber(int value) {
         switch (value) {
-          case 0: return INPUT;
-          case 1: return OUTPUT;
+          case 0: return PUBLISHER;
+          case 1: return SUBSCRIBER;
           default: return null;
         }
       }
@@ -530,6 +549,42 @@ public final class ComponentOuterClass {
       }
     }
 
+    public static final int ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 7;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 7;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -550,7 +605,7 @@ public final class ComponentOuterClass {
       if (!getMessageFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, messageFormat_);
       }
-      if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.INPUT.getNumber()) {
+      if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.PUBLISHER.getNumber()) {
         output.writeEnum(3, ioType_);
       }
       if (!getDeviceIdBytes().isEmpty()) {
@@ -561,6 +616,9 @@ public final class ComponentOuterClass {
       }
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -577,7 +635,7 @@ public final class ComponentOuterClass {
       if (!getMessageFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, messageFormat_);
       }
-      if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.INPUT.getNumber()) {
+      if (ioType_ != ubii.devices.ComponentOuterClass.Component.IOType.PUBLISHER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, ioType_);
       }
@@ -594,6 +652,9 @@ public final class ComponentOuterClass {
       }
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -621,6 +682,8 @@ public final class ComponentOuterClass {
           .equals(other.getTagsList())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -646,6 +709,8 @@ public final class ComponentOuterClass {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -791,6 +856,8 @@ public final class ComponentOuterClass {
         bitField0_ = (bitField0_ & ~0x00000001);
         description_ = "";
 
+        id_ = "";
+
         return this;
       }
 
@@ -828,6 +895,7 @@ public final class ComponentOuterClass {
         }
         result.tags_ = tags_;
         result.description_ = description_;
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -903,6 +971,10 @@ public final class ComponentOuterClass {
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1400,6 +1472,82 @@ public final class ComponentOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 7;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 7;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 7;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 7;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1468,12 +1616,12 @@ public final class ComponentOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035proto/devices/component.proto\022\014ubii.de" +
-      "vices\"\272\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
+      "vices\"\316\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
       "ssage_format\030\002 \001(\t\022/\n\007io_type\030\003 \001(\0162\036.ub" +
       "ii.devices.Component.IOType\022\021\n\tdevice_id" +
       "\030\004 \001(\t\022\014\n\004tags\030\005 \003(\t\022\023\n\013description\030\006 \001(" +
-      "\t\"\037\n\006IOType\022\t\n\005INPUT\020\000\022\n\n\006OUTPUT\020\001b\006prot" +
-      "o3"
+      "\t\022\n\n\002id\030\007 \001(\t\"\'\n\006IOType\022\r\n\tPUBLISHER\020\000\022\016" +
+      "\n\nSUBSCRIBER\020\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1484,7 +1632,7 @@ public final class ComponentOuterClass {
     internal_static_ubii_devices_Component_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_devices_Component_descriptor,
-        new java.lang.String[] { "Topic", "MessageFormat", "IoType", "DeviceId", "Tags", "Description", });
+        new java.lang.String[] { "Topic", "MessageFormat", "IoType", "DeviceId", "Tags", "Description", "Id", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
