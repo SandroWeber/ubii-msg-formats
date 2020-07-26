@@ -1,0 +1,45 @@
+syntax = "proto3";
+package ubii.interactions;
+
+import "proto/interactions/interaction.proto";
+import "proto/interactions/ioFormat.proto";
+import "proto/topicData/topicDataRecord/topicDataRecord.proto";
+
+enum ProcessingMode {
+    LOCKSTEP = 0;
+    ATFREQUENCY = 1;
+    ATNEWTOPICDATA = 2;
+}
+
+message ProcessingModule {
+    string id = 1;
+    string name = 2;
+    repeated string authors = 3;
+    repeated string tags = 4;
+    string description = 5;
+    string on_processing = 6;
+    string on_created = 7;
+    ubii.interactions.InteractionStatus status = 8;
+    ProcessingMode mode = 9;
+    oneof data {
+        Lockstep lockstep = 11;
+        AsyncFrequency async_frequency = 12;
+        Async async = 13;
+    }
+}
+
+message Lockstep {
+    repeated ubii.topicData.TopicDataRecordList input_topic_data_record_list= 1;
+    repeated ubii.topicData.TopicDataRecordList output_topic_data_record_list = 2;
+}
+
+message AsyncFrequency {
+    float frequency = 1;
+    repeated ubii.interactions.IOFormat input_formats = 2;
+    repeated ubii.interactions.IOFormat output_formats = 3;
+}
+
+message Async {
+    repeated ubii.interactions.IOFormat input_formats = 1;
+    repeated ubii.interactions.IOFormat output_formats = 2;
+}
