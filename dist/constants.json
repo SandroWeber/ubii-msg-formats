@@ -78,17 +78,45 @@
   "MSG_TYPES": {
     "ERROR": "ubii.general.Error",
     "SUCCESS": "ubii.general.Success",
+
+    "SERVER": "ubii.servers.Server",
     "CLIENT": "ubii.clients.Client",
+
     "DEVICE": "ubii.devices.Device",
     "COMPONENT": "ubii.devices.Component",
+
     "TOPIC_MUX": "ubii.devices.TopicMux",
     "TOPIC_MUX_LIST": "ubii.devices.TopicMuxList",
     "TOPIC_DEMUX": "ubii.devices.TopicDemux",
     "TOPIC_DEMUX_LIST": "ubii.devices.TopicDemuxList",
-    "INTERACTION": "ubii.interactions.Interaction",
+
     "SERVICE_REQUEST": "ubii.services.ServiceRequest",
     "SERVICE_REPLY": "ubii.services.ServiceReply",
+
     "SESSION": "ubii.sessions.Session",
-    "TOPIC_DATA": "ubii.topicData.TopicData"
+    "SESSION_IO_MAPPING": "ubii.sessions.IOMapping",
+
+    "INTERACTION": "ubii.interactions.Interaction",
+    "INTERACTION_IO_FORMAT": "ubii.interactions.IOFormat",
+
+    "TOPIC_DATA": "ubii.topicData.TopicData",
+    "TOPIC_DATA_RECORD": "ubii.topicData.TopicDataRecord",
+    "TOPIC_DATA_TIMESTAMP": "ubii.topicData.Timestamp",
+
+    "DATASTRUCTURE_COLOR": "ubii.dataStructure.Color",
+    "DATASTRUCTURE_IMAGE": "ubii.dataStructure.Image2D",
+    "DATASTRUCTURE_IMAGE_LIST": "ubii.dataStructure.Image2DList",
+    "DATASTRUCTURE_KEY_EVENT": "ubii.dataStructure.KeyEvent",
+    "DATASTRUCTURE_MATRIX_3X2": "ubii.dataStructure.Matrix3x2",
+    "DATASTRUCTURE_MATRIX_4X4": "ubii.dataStructure.Matrix4x4",
+    "DATASTRUCTURE_OBJECT2D": "ubii.dataStructure.Object2D",
+    "DATASTRUCTURE_OBJECT2D_LIST": "ubii.dataStructure.Object2DList",
+    "DATASTRUCTURE_OBJECT3D": "ubii.dataStructure.Object3D",
+    "DATASTRUCTURE_OBJECT3D_LIST": "ubii.dataStructure.Object3DList",
+    "DATASTRUCTURE_QUATERNION": "ubii.dataStructure.Quaternion",
+    "DATASTRUCTURE_TOUCH_EVENT": "ubii.dataStructure.TouchEvent",
+    "DATASTRUCTURE_VECTOR2": "ubii.dataStructure.Vector2",
+    "DATASTRUCTURE_VECTOR3": "ubii.dataStructure.Vector3",
+    "DATASTRUCTURE_VECTOR4": "ubii.dataStructure.Vector4"
   }
 }
