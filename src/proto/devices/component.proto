@@ -14,3 +14,7 @@ message Component {
     string description = 6;
     string id = 7;
 }
+
+message ComponentList {
+    repeated ubii.devices.Component elements = 1;
+}

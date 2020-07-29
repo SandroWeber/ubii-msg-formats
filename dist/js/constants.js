@@ -1,5 +1,5 @@
-let constants = { DEFAULT_TOPICS: 
-   { SERVICES: 
+let constants = { DEFAULT_TOPICS:
+   { SERVICES:
       { SERVER_CONFIG: '/services/server_configuration',
         CLIENT_REGISTRATION: '/services/client/registration',
         CLIENT_DEREGISTRATION: '/services/client/deregistration',
@@ -49,7 +49,7 @@ let constants = { DEFAULT_TOPICS:
         TOPIC_MUX_RUNTIME_STOP: '/services/device/topic_mux/runtime/stop',
         TOPIC_LIST: '/services/topic_list',
         TOPIC_SUBSCRIPTION: '/services/topic_subscription' },
-     INFO_TOPICS: 
+     INFO_TOPICS:
       { REGEX_ALL_INFOS: '/info/*',
         REGEX_INTERACTION_INFOS: '/info/interaction/*',
         NEW_INTERACTION: '/info/interaction/new',
@@ -62,40 +62,56 @@ let constants = { DEFAULT_TOPICS:
         CHANGE_SESSION: '/info/session/change',
         START_SESSION: '/info/session/start',
         STOP_SESSION: '/info/session/stop' } },
-  MSG_TYPES: 
+  MSG_TYPES:
    { ERROR: 'ubii.general.Error',
      SUCCESS: 'ubii.general.Success',
      SERVER: 'ubii.servers.Server',
      CLIENT: 'ubii.clients.Client',
+     CLIENT_LIST: 'ubii.clients.ClientList',
      DEVICE: 'ubii.devices.Device',
+     DEVICE_LIST: 'ubii.devices.DeviceList',
      COMPONENT: 'ubii.devices.Component',
+     COMPONENT_LIST: 'ubii.devices.ComponentList',
      TOPIC_MUX: 'ubii.devices.TopicMux',
      TOPIC_MUX_LIST: 'ubii.devices.TopicMuxList',
      TOPIC_DEMUX: 'ubii.devices.TopicDemux',
      TOPIC_DEMUX_LIST: 'ubii.devices.TopicDemuxList',
      SERVICE_REQUEST: 'ubii.services.ServiceRequest',
      SERVICE_REPLY: 'ubii.services.ServiceReply',
+     SERVICE_REUEST_TOPIC_SUBSCRIPTION: 'ubii.services.request.TopicSubscription',
      SESSION: 'ubii.sessions.Session',
+     SESSION_LIST: 'ubii.sessions.SessionList',
      SESSION_IO_MAPPING: 'ubii.sessions.IOMapping',
      INTERACTION: 'ubii.interactions.Interaction',
+     INTERACTION_LIST: 'ubii.interactions.InteractionList',
      INTERACTION_IO_FORMAT: 'ubii.interactions.IOFormat',
      TOPIC_DATA: 'ubii.topicData.TopicData',
      TOPIC_DATA_RECORD: 'ubii.topicData.TopicDataRecord',
+     TOPIC_DATA_RECORD_LIST: 'ubii.topicData.TopicDataRecordList',
      TOPIC_DATA_TIMESTAMP: 'ubii.topicData.Timestamp',
+     DATASTRUCTURE_BOOL_LIST: 'ubii.dataStructure.BoolList',
+     DATASTRUCTURE_INT32_LIST: 'ubii.dataStructure.Int32List',
+     DATASTRUCTURE_STRING_LIST: 'ubii.dataStructure.StringList',
+     DATASTRUCTURE_FLOAT_LIST: 'ubii.dataStructure.FloatList',
+     DATASTRUCTURE_DOUBLE_LIST: 'ubii.dataStructure.DoubleList',
      DATASTRUCTURE_COLOR: 'ubii.dataStructure.Color',
      DATASTRUCTURE_IMAGE: 'ubii.dataStructure.Image2D',
      DATASTRUCTURE_IMAGE_LIST: 'ubii.dataStructure.Image2DList',
      DATASTRUCTURE_KEY_EVENT: 'ubii.dataStructure.KeyEvent',
      DATASTRUCTURE_MATRIX_3X2: 'ubii.dataStructure.Matrix3x2',
      DATASTRUCTURE_MATRIX_4X4: 'ubii.dataStructure.Matrix4x4',
+     DATASTRUCTURE_MOUSE_EVENT: 'ubii.dataStructure.MouseEvent',
      DATASTRUCTURE_OBJECT2D: 'ubii.dataStructure.Object2D',
      DATASTRUCTURE_OBJECT2D_LIST: 'ubii.dataStructure.Object2DList',
      DATASTRUCTURE_OBJECT3D: 'ubii.dataStructure.Object3D',
      DATASTRUCTURE_OBJECT3D_LIST: 'ubii.dataStructure.Object3DList',
+     DATASTRUCTURE_POSE2D: 'ubii.dataStructure.Pose2D',
+     DATASTRUCTURE_POSE3D: 'ubii.dataStructure.Pose3D',
      DATASTRUCTURE_QUATERNION: 'ubii.dataStructure.Quaternion',
      DATASTRUCTURE_TOUCH_EVENT: 'ubii.dataStructure.TouchEvent',
      DATASTRUCTURE_VECTOR2: 'ubii.dataStructure.Vector2',
      DATASTRUCTURE_VECTOR3: 'ubii.dataStructure.Vector3',
-     DATASTRUCTURE_VECTOR4: 'ubii.dataStructure.Vector4' } }
+     DATASTRUCTURE_VECTOR4: 'ubii.dataStructure.Vector4',
+     DATASTRUCTURE_VECTOR8: 'ubii.dataStructure.Vector8' } }
 
 module.exports = constants;
