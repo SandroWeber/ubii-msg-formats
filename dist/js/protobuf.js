@@ -926,6 +926,214 @@ $root.ubii = (function() {
             return Component;
         })();
 
+        devices.ComponentList = (function() {
+
+            /**
+             * Properties of a ComponentList.
+             * @memberof ubii.devices
+             * @interface IComponentList
+             * @property {Array.<ubii.devices.IComponent>|null} [elements] ComponentList elements
+             */
+
+            /**
+             * Constructs a new ComponentList.
+             * @memberof ubii.devices
+             * @classdesc Represents a ComponentList.
+             * @implements IComponentList
+             * @constructor
+             * @param {ubii.devices.IComponentList=} [properties] Properties to set
+             */
+            function ComponentList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ComponentList elements.
+             * @member {Array.<ubii.devices.IComponent>} elements
+             * @memberof ubii.devices.ComponentList
+             * @instance
+             */
+            ComponentList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new ComponentList instance using the specified properties.
+             * @function create
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.IComponentList=} [properties] Properties to set
+             * @returns {ubii.devices.ComponentList} ComponentList instance
+             */
+            ComponentList.create = function create(properties) {
+                return new ComponentList(properties);
+            };
+
+            /**
+             * Encodes the specified ComponentList message. Does not implicitly {@link ubii.devices.ComponentList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.IComponentList} message ComponentList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ComponentList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.devices.Component.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ComponentList message, length delimited. Does not implicitly {@link ubii.devices.ComponentList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.IComponentList} message ComponentList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ComponentList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ComponentList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.devices.ComponentList} ComponentList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ComponentList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.devices.ComponentList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.devices.Component.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ComponentList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.devices.ComponentList} ComponentList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ComponentList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ComponentList message.
+             * @function verify
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ComponentList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.devices.Component.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a ComponentList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.devices.ComponentList} ComponentList
+             */
+            ComponentList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.devices.ComponentList)
+                    return object;
+                var message = new $root.ubii.devices.ComponentList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.devices.ComponentList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.devices.ComponentList.elements: object expected");
+                        message.elements[i] = $root.ubii.devices.Component.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ComponentList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.ComponentList} message ComponentList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ComponentList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.devices.Component.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this ComponentList to JSON.
+             * @function toJSON
+             * @memberof ubii.devices.ComponentList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ComponentList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ComponentList;
+        })();
+
         devices.Device = (function() {
 
             /**
