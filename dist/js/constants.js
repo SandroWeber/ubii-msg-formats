@@ -77,6 +77,8 @@ let constants = { DEFAULT_TOPICS:
      TOPIC_MUX_LIST: 'ubii.devices.TopicMuxList',
      TOPIC_DEMUX: 'ubii.devices.TopicDemux',
      TOPIC_DEMUX_LIST: 'ubii.devices.TopicDemuxList',
+     SERVICE: 'ubii.services.Service',
+     SERVICE_LIST: 'ubii.services.ServiceList',
      SERVICE_REQUEST: 'ubii.services.ServiceRequest',
      SERVICE_REPLY: 'ubii.services.ServiceReply',
      SERVICE_REUEST_TOPIC_SUBSCRIPTION: 'ubii.services.request.TopicSubscription',
