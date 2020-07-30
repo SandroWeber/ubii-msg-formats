@@ -79,6 +79,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2finteractions_2finterac
   PROTOBUF_FIELD_OFFSET(::ubii::interactions::Interaction, tags_),
   PROTOBUF_FIELD_OFFSET(::ubii::interactions::Interaction, description_),
   PROTOBUF_FIELD_OFFSET(::ubii::interactions::Interaction, status_),
+  PROTOBUF_FIELD_OFFSET(::ubii::interactions::Interaction, editable_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::interactions::InteractionList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -88,7 +89,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2finteractions_2finterac
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::interactions::Interaction)},
-  { 16, -1, sizeof(::ubii::interactions::InteractionList)},
+  { 17, -1, sizeof(::ubii::interactions::InteractionList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -99,7 +100,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_proto_2finteractions_2finteraction_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n$proto/interactions/interaction.proto\022\021"
   "ubii.interactions\032!proto/interactions/io"
-  "Format.proto\"\306\002\n\013Interaction\022\n\n\002id\030\001 \001(\t"
+  "Format.proto\"\330\002\n\013Interaction\022\n\n\002id\030\001 \001(\t"
   "\022\014\n\004name\030\002 \001(\t\022\033\n\023processing_callback\030\003 "
   "\001(\t\0222\n\rinput_formats\030\004 \003(\0132\033.ubii.intera"
   "ctions.IOFormat\0223\n\016output_formats\030\005 \003(\0132"
@@ -107,11 +108,11 @@ const char descriptor_table_protodef_proto_2finteractions_2finteraction_2eproto[
   "ed\030\006 \001(\t\022\031\n\021process_frequency\030\007 \001(\002\022\017\n\007a"
   "uthors\030\010 \003(\t\022\014\n\004tags\030\t \003(\t\022\023\n\013descriptio"
   "n\030\n \001(\t\0224\n\006status\030\013 \001(\0162$.ubii.interacti"
-  "ons.InteractionStatus\"C\n\017InteractionList"
-  "\0220\n\010elements\030\001 \003(\0132\036.ubii.interactions.I"
-  "nteraction*M\n\021InteractionStatus\022\013\n\007CREAT"
-  "ED\020\000\022\017\n\013INITIALIZED\020\001\022\016\n\nPROCESSING\020\002\022\n\n"
-  "\006HALTED\020\003b\006proto3"
+  "ons.InteractionStatus\022\020\n\010editable\030\014 \001(\010\""
+  "C\n\017InteractionList\0220\n\010elements\030\001 \003(\0132\036.u"
+  "bii.interactions.Interaction*M\n\021Interact"
+  "ionStatus\022\013\n\007CREATED\020\000\022\017\n\013INITIALIZED\020\001\022"
+  "\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2finteractions_2finteraction_2eproto_deps[1] = {
   &::descriptor_table_proto_2finteractions_2fioFormat_2eproto,
@@ -123,7 +124,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2finteractions_2finteraction_2eproto_once;
 static bool descriptor_table_proto_2finteractions_2finteraction_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2finteractions_2finteraction_2eproto = {
-  &descriptor_table_proto_2finteractions_2finteraction_2eproto_initialized, descriptor_table_protodef_proto_2finteractions_2finteraction_2eproto, "proto/interactions/interaction.proto", 577,
+  &descriptor_table_proto_2finteractions_2finteraction_2eproto_initialized, descriptor_table_protodef_proto_2finteractions_2finteraction_2eproto, "proto/interactions/interaction.proto", 595,
   &descriptor_table_proto_2finteractions_2finteraction_2eproto_once, descriptor_table_proto_2finteractions_2finteraction_2eproto_sccs, descriptor_table_proto_2finteractions_2finteraction_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_proto_2finteractions_2finteraction_2eproto::offsets,
   file_level_metadata_proto_2finteractions_2finteraction_2eproto, 2, file_level_enum_descriptors_proto_2finteractions_2finteraction_2eproto, file_level_service_descriptors_proto_2finteractions_2finteraction_2eproto,
@@ -198,8 +199,8 @@ Interaction::Interaction(const Interaction& from)
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   ::memcpy(&process_frequency_, &from.process_frequency_,
-    static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&process_frequency_)) + sizeof(status_));
+    static_cast<size_t>(reinterpret_cast<char*>(&editable_) -
+    reinterpret_cast<char*>(&process_frequency_)) + sizeof(editable_));
   // @@protoc_insertion_point(copy_constructor:ubii.interactions.Interaction)
 }
 
@@ -211,8 +212,8 @@ void Interaction::SharedCtor() {
   on_created_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&process_frequency_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&status_) -
-      reinterpret_cast<char*>(&process_frequency_)) + sizeof(status_));
+      reinterpret_cast<char*>(&editable_) -
+      reinterpret_cast<char*>(&process_frequency_)) + sizeof(editable_));
 }
 
 Interaction::~Interaction() {
@@ -253,8 +254,8 @@ void Interaction::Clear() {
   on_created_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&process_frequency_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&status_) -
-      reinterpret_cast<char*>(&process_frequency_)) + sizeof(status_));
+      reinterpret_cast<char*>(&editable_) -
+      reinterpret_cast<char*>(&process_frequency_)) + sizeof(editable_));
   _internal_metadata_.Clear();
 }
 
@@ -375,6 +376,13 @@ const char* Interaction::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::ubii::interactions::InteractionStatus>(val));
+        } else goto handle_unusual;
+        continue;
+      // bool editable = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+          editable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -502,6 +510,12 @@ failure:
       11, this->_internal_status(), target);
   }
 
+  // bool editable = 12;
+  if (this->editable() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(12, this->_internal_editable(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -594,6 +608,11 @@ size_t Interaction::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
   }
 
+  // bool editable = 12;
+  if (this->editable() != 0) {
+    total_size += 1 + 1;
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -655,6 +674,9 @@ void Interaction::MergeFrom(const Interaction& from) {
   if (from.status() != 0) {
     _internal_set_status(from._internal_status());
   }
+  if (from.editable() != 0) {
+    _internal_set_editable(from._internal_editable());
+  }
 }
 
 void Interaction::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -694,6 +716,7 @@ void Interaction::InternalSwap(Interaction* other) {
     GetArenaNoVirtual());
   swap(process_frequency_, other->process_frequency_);
   swap(status_, other->status_);
+  swap(editable_, other->editable_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Interaction::GetMetadata() const {

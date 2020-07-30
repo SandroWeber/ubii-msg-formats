@@ -22,6 +22,7 @@ message Interaction {
     repeated string tags = 9;
     string description = 10;
     InteractionStatus status = 11;
+    bool editable = 12;
 }
 
 message InteractionList {

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.interactions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\xc6\x02\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12\x32\n\rinput_formats\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x33\n\x0eoutput_formats\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x12\n\non_created\x18\x06 \x01(\t\x12\x19\n\x11process_frequency\x18\x07 \x01(\x02\x12\x0f\n\x07\x61uthors\x18\x08 \x03(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\n \x01(\t\x12\x34\n\x06status\x18\x0b \x01(\x0e\x32$.ubii.interactions.InteractionStatus\"C\n\x0fInteractionList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.interactions.Interaction*M\n\x11InteractionStatus\x12\x0b\n\x07\x43REATED\x10\x00\x12\x0f\n\x0bINITIALIZED\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\n\n\x06HALTED\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n$proto/interactions/interaction.proto\x12\x11ubii.interactions\x1a!proto/interactions/ioFormat.proto\"\xd8\x02\n\x0bInteraction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13processing_callback\x18\x03 \x01(\t\x12\x32\n\rinput_formats\x18\x04 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x33\n\x0eoutput_formats\x18\x05 \x03(\x0b\x32\x1b.ubii.interactions.IOFormat\x12\x12\n\non_created\x18\x06 \x01(\t\x12\x19\n\x11process_frequency\x18\x07 \x01(\x02\x12\x0f\n\x07\x61uthors\x18\x08 \x03(\t\x12\x0c\n\x04tags\x18\t \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\n \x01(\t\x12\x34\n\x06status\x18\x0b \x01(\x0e\x32$.ubii.interactions.InteractionStatus\x12\x10\n\x08\x65\x64itable\x18\x0c \x01(\x08\"C\n\x0fInteractionList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.interactions.Interaction*M\n\x11InteractionStatus\x12\x0b\n\x07\x43REATED\x10\x00\x12\x0f\n\x0bINITIALIZED\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\n\n\x06HALTED\x10\x03\x62\x06proto3'
   ,
   dependencies=[proto_dot_interactions_dot_ioFormat__pb2.DESCRIPTOR,])
 
@@ -49,8 +49,8 @@ _INTERACTIONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=492,
-  serialized_end=569,
+  serialized_start=510,
+  serialized_end=587,
 )
 _sym_db.RegisterEnumDescriptor(_INTERACTIONSTATUS)
 
@@ -146,6 +146,13 @@ _INTERACTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='editable', full_name='ubii.interactions.Interaction.editable', index=11,
+      number=12, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -159,7 +166,7 @@ _INTERACTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=95,
-  serialized_end=421,
+  serialized_end=439,
 )
 
 
@@ -189,8 +196,8 @@ _INTERACTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=423,
-  serialized_end=490,
+  serialized_start=441,
+  serialized_end=508,
 )
 
 _INTERACTION.fields_by_name['input_formats'].message_type = proto_dot_interactions_dot_ioFormat__pb2._IOFORMAT

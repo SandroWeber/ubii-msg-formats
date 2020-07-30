@@ -47,6 +47,7 @@ let constants = { DEFAULT_TOPICS:
         TOPIC_MUX_RUNTIME_GET_LIST: '/services/device/topic_mux/runtime/get_list',
         TOPIC_MUX_RUNTIME_START: '/services/device/topic_mux/runtime/start',
         TOPIC_MUX_RUNTIME_STOP: '/services/device/topic_mux/runtime/stop',
+        SERVICE_LIST: '/services/service_list',
         TOPIC_LIST: '/services/topic_list',
         TOPIC_SUBSCRIPTION: '/services/topic_subscription' },
      INFO_TOPICS: 

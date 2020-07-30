@@ -27,6 +27,7 @@ message Session {
     repeated string authors = 7;
     ProcessMode process_mode = 8;
     SessionStatus status = 9;
+    bool editable = 10;
 }
 
 message SessionList {

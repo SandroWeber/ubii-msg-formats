@@ -243,6 +243,7 @@ class Session :
     kDescriptionFieldNumber = 6,
     kProcessModeFieldNumber = 8,
     kStatusFieldNumber = 9,
+    kEditableFieldNumber = 10,
   };
   // repeated .ubii.interactions.Interaction interactions = 3;
   int interactions_size() const;
@@ -394,6 +395,15 @@ class Session :
   void _internal_set_status(::ubii::sessions::SessionStatus value);
   public:
 
+  // bool editable = 10;
+  void clear_editable();
+  bool editable() const;
+  void set_editable(bool value);
+  private:
+  bool _internal_editable() const;
+  void _internal_set_editable(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.sessions.Session)
  private:
   class _Internal;
@@ -408,6 +418,7 @@ class Session :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   int process_mode_;
   int status_;
+  bool editable_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fsessions_2fsession_2eproto;
 };
@@ -997,6 +1008,26 @@ inline void Session::_internal_set_status(::ubii::sessions::SessionStatus value)
 inline void Session::set_status(::ubii::sessions::SessionStatus value) {
   _internal_set_status(value);
   // @@protoc_insertion_point(field_set:ubii.sessions.Session.status)
+}
+
+// bool editable = 10;
+inline void Session::clear_editable() {
+  editable_ = false;
+}
+inline bool Session::_internal_editable() const {
+  return editable_;
+}
+inline bool Session::editable() const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.Session.editable)
+  return _internal_editable();
+}
+inline void Session::_internal_set_editable(bool value) {
+  
+  editable_ = value;
+}
+inline void Session::set_editable(bool value) {
+  _internal_set_editable(value);
+  // @@protoc_insertion_point(field_set:ubii.sessions.Session.editable)
 }
 
 // -------------------------------------------------------------------

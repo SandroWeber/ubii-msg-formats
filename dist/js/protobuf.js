@@ -3175,6 +3175,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [tags] Interaction tags
              * @property {string|null} [description] Interaction description
              * @property {ubii.interactions.InteractionStatus|null} [status] Interaction status
+             * @property {boolean|null} [editable] Interaction editable
              */
 
             /**
@@ -3285,6 +3286,14 @@ $root.ubii = (function() {
             Interaction.prototype.status = 0;
 
             /**
+             * Interaction editable.
+             * @member {boolean} editable
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.editable = false;
+
+            /**
              * Creates a new Interaction instance using the specified properties.
              * @function create
              * @memberof ubii.interactions.Interaction
@@ -3334,6 +3343,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.description);
                 if (message.status != null && message.hasOwnProperty("status"))
                     writer.uint32(/* id 11, wireType 0 =*/88).int32(message.status);
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    writer.uint32(/* id 12, wireType 0 =*/96).bool(message.editable);
                 return writer;
             };
 
@@ -3408,6 +3419,9 @@ $root.ubii = (function() {
                         break;
                     case 11:
                         message.status = reader.int32();
+                        break;
+                    case 12:
+                        message.editable = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3504,6 +3518,9 @@ $root.ubii = (function() {
                     case 3:
                         break;
                     }
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    if (typeof message.editable !== "boolean")
+                        return "editable: boolean expected";
                 return null;
             };
 
@@ -3583,6 +3600,8 @@ $root.ubii = (function() {
                     message.status = 3;
                     break;
                 }
+                if (object.editable != null)
+                    message.editable = Boolean(object.editable);
                 return message;
             };
 
@@ -3613,6 +3632,7 @@ $root.ubii = (function() {
                     object.processFrequency = 0;
                     object.description = "";
                     object.status = options.enums === String ? "CREATED" : 0;
+                    object.editable = false;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -3648,6 +3668,8 @@ $root.ubii = (function() {
                     object.description = message.description;
                 if (message.status != null && message.hasOwnProperty("status"))
                     object.status = options.enums === String ? $root.ubii.interactions.InteractionStatus[message.status] : message.status;
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    object.editable = message.editable;
                 return object;
             };
 
@@ -8207,6 +8229,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [authors] Session authors
              * @property {ubii.sessions.ProcessMode|null} [processMode] Session processMode
              * @property {ubii.sessions.SessionStatus|null} [status] Session status
+             * @property {boolean|null} [editable] Session editable
              */
 
             /**
@@ -8301,6 +8324,14 @@ $root.ubii = (function() {
             Session.prototype.status = 0;
 
             /**
+             * Session editable.
+             * @member {boolean} editable
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.editable = false;
+
+            /**
              * Creates a new Session instance using the specified properties.
              * @function create
              * @memberof ubii.sessions.Session
@@ -8346,6 +8377,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 8, wireType 0 =*/64).int32(message.processMode);
                 if (message.status != null && message.hasOwnProperty("status"))
                     writer.uint32(/* id 9, wireType 0 =*/72).int32(message.status);
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    writer.uint32(/* id 10, wireType 0 =*/80).bool(message.editable);
                 return writer;
             };
 
@@ -8414,6 +8447,9 @@ $root.ubii = (function() {
                         break;
                     case 9:
                         message.status = reader.int32();
+                        break;
+                    case 10:
+                        message.editable = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8509,6 +8545,9 @@ $root.ubii = (function() {
                     case 3:
                         break;
                     }
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    if (typeof message.editable !== "boolean")
+                        return "editable: boolean expected";
                 return null;
             };
 
@@ -8592,6 +8631,8 @@ $root.ubii = (function() {
                     message.status = 3;
                     break;
                 }
+                if (object.editable != null)
+                    message.editable = Boolean(object.editable);
                 return message;
             };
 
@@ -8620,6 +8661,7 @@ $root.ubii = (function() {
                     object.description = "";
                     object.processMode = options.enums === String ? "CYCLE_INTERACTIONS" : 0;
                     object.status = options.enums === String ? "CREATED" : 0;
+                    object.editable = false;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -8651,6 +8693,8 @@ $root.ubii = (function() {
                     object.processMode = options.enums === String ? $root.ubii.sessions.ProcessMode[message.processMode] : message.processMode;
                 if (message.status != null && message.hasOwnProperty("status"))
                     object.status = options.enums === String ? $root.ubii.sessions.SessionStatus[message.status] : message.status;
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    object.editable = message.editable;
                 return object;
             };
 

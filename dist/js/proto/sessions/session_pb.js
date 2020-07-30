@@ -111,7 +111,8 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     authorsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
     processMode: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 9, 0)
+    status: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    editable: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -185,6 +186,10 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
     case 9:
       var value = /** @type {!proto.ubii.sessions.SessionStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 10:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEditable(value);
       break;
     default:
       reader.skipField();
@@ -277,6 +282,13 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0.0) {
     writer.writeEnum(
       9,
+      f
+    );
+  }
+  f = message.getEditable();
+  if (f) {
+    writer.writeBool(
+      10,
       f
     );
   }
@@ -520,6 +532,24 @@ proto.ubii.sessions.Session.prototype.getStatus = function() {
  */
 proto.ubii.sessions.Session.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 9, value);
+};
+
+
+/**
+ * optional bool editable = 10;
+ * @return {boolean}
+ */
+proto.ubii.sessions.Session.prototype.getEditable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ubii.sessions.Session} returns this
+ */
+proto.ubii.sessions.Session.prototype.setEditable = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 

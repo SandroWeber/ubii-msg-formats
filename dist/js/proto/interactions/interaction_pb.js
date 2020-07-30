@@ -110,7 +110,8 @@ proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
     authorsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     tagsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
     description: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    status: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    editable: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -192,6 +193,10 @@ proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, 
     case 11:
       var value = /** @type {!proto.ubii.interactions.InteractionStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEditable(value);
       break;
     default:
       reader.skipField();
@@ -298,6 +303,13 @@ proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, 
   if (f !== 0.0) {
     writer.writeEnum(
       11,
+      f
+    );
+  }
+  f = message.getEditable();
+  if (f) {
+    writer.writeBool(
+      12,
       f
     );
   }
@@ -577,6 +589,24 @@ proto.ubii.interactions.Interaction.prototype.getStatus = function() {
  */
 proto.ubii.interactions.Interaction.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional bool editable = 12;
+ * @return {boolean}
+ */
+proto.ubii.interactions.Interaction.prototype.getEditable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.ubii.interactions.Interaction} returns this
+ */
+proto.ubii.interactions.Interaction.prototype.setEditable = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 

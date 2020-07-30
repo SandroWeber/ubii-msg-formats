@@ -399,6 +399,12 @@ public final class SessionOuterClass {
      * @return The status.
      */
     ubii.sessions.SessionOuterClass.SessionStatus getStatus();
+
+    /**
+     * <code>bool editable = 10;</code>
+     * @return The editable.
+     */
+    boolean getEditable();
   }
   /**
    * Protobuf type {@code ubii.sessions.Session}
@@ -519,6 +525,11 @@ public final class SessionOuterClass {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+            case 80: {
+
+              editable_ = input.readBool();
               break;
             }
             default: {
@@ -851,6 +862,16 @@ public final class SessionOuterClass {
       return result == null ? ubii.sessions.SessionOuterClass.SessionStatus.UNRECOGNIZED : result;
     }
 
+    public static final int EDITABLE_FIELD_NUMBER = 10;
+    private boolean editable_;
+    /**
+     * <code>bool editable = 10;</code>
+     * @return The editable.
+     */
+    public boolean getEditable() {
+      return editable_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -891,6 +912,9 @@ public final class SessionOuterClass {
       }
       if (status_ != ubii.sessions.SessionOuterClass.SessionStatus.CREATED.getNumber()) {
         output.writeEnum(9, status_);
+      }
+      if (editable_ != false) {
+        output.writeBool(10, editable_);
       }
       unknownFields.writeTo(output);
     }
@@ -942,6 +966,10 @@ public final class SessionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, status_);
       }
+      if (editable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, editable_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -973,6 +1001,8 @@ public final class SessionOuterClass {
           .equals(other.getAuthorsList())) return false;
       if (processMode_ != other.processMode_) return false;
       if (status_ != other.status_) return false;
+      if (getEditable()
+          != other.getEditable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1010,6 +1040,9 @@ public final class SessionOuterClass {
       hash = (53 * hash) + processMode_;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+      hash = (37 * hash) + EDITABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEditable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1171,6 +1204,8 @@ public final class SessionOuterClass {
 
         status_ = 0;
 
+        editable_ = false;
+
         return this;
       }
 
@@ -1231,6 +1266,7 @@ public final class SessionOuterClass {
         result.authors_ = authors_;
         result.processMode_ = processMode_;
         result.status_ = status_;
+        result.editable_ = editable_;
         onBuilt();
         return result;
       }
@@ -1368,6 +1404,9 @@ public final class SessionOuterClass {
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
+        }
+        if (other.getEditable() != false) {
+          setEditable(other.getEditable());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2430,6 +2469,36 @@ public final class SessionOuterClass {
         onChanged();
         return this;
       }
+
+      private boolean editable_ ;
+      /**
+       * <code>bool editable = 10;</code>
+       * @return The editable.
+       */
+      public boolean getEditable() {
+        return editable_;
+      }
+      /**
+       * <code>bool editable = 10;</code>
+       * @param value The editable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEditable(boolean value) {
+        
+        editable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool editable = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEditable() {
+        
+        editable_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3292,7 +3361,7 @@ public final class SessionOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034proto/sessions/session.proto\022\rubii.ses" +
       "sions\032$proto/interactions/interaction.pr" +
-      "oto\032\036proto/sessions/ioMapping.proto\"\234\002\n\007" +
+      "oto\032\036proto/sessions/ioMapping.proto\"\256\002\n\007" +
       "Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014int" +
       "eractions\030\003 \003(\0132\036.ubii.interactions.Inte" +
       "raction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.sess" +
@@ -3300,12 +3369,12 @@ public final class SessionOuterClass {
       "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\0220\n\014process_mo" +
       "de\030\010 \001(\0162\032.ubii.sessions.ProcessMode\022,\n\006" +
       "status\030\t \001(\0162\034.ubii.sessions.SessionStat" +
-      "us\"7\n\013SessionList\022(\n\010elements\030\001 \003(\0132\026.ub" +
-      "ii.sessions.Session*I\n\013ProcessMode\022\026\n\022CY" +
-      "CLE_INTERACTIONS\020\000\022\"\n\036INDIVIDUAL_PROCESS" +
-      "_FREQUENCIES\020\001*B\n\rSessionStatus\022\013\n\007CREAT" +
-      "ED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPPED" +
-      "\020\003b\006proto3"
+      "us\022\020\n\010editable\030\n \001(\010\"7\n\013SessionList\022(\n\010e" +
+      "lements\030\001 \003(\0132\026.ubii.sessions.Session*I\n" +
+      "\013ProcessMode\022\026\n\022CYCLE_INTERACTIONS\020\000\022\"\n\036" +
+      "INDIVIDUAL_PROCESS_FREQUENCIES\020\001*B\n\rSess" +
+      "ionStatus\022\013\n\007CREATED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006P" +
+      "AUSED\020\002\022\013\n\007STOPPED\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3318,7 +3387,7 @@ public final class SessionOuterClass {
     internal_static_ubii_sessions_Session_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_Session_descriptor,
-        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode", "Status", });
+        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode", "Status", "Editable", });
     internal_static_ubii_sessions_SessionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_sessions_SessionList_fieldAccessorTable = new
