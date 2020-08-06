@@ -1,7 +1,6 @@
 syntax = "proto3";
 package ubii.interactions;
 
-import "proto/interactions/interaction.proto";
 import "proto/interactions/ioFormat.proto";
 import "proto/topicData/topicDataRecord/topicDataRecord.proto";
 
@@ -9,6 +8,14 @@ enum ProcessingMode {
     LOCKSTEP = 0;
     ATFREQUENCY = 1;
     ATNEWTOPICDATA = 2;
+}
+
+enum ProcessingModuleStatus {
+    INITIALIZED = 0;
+    CREATED = 1;
+    PROCESSING = 2;
+    HALTED = 3;
+    END = 4;
 }
 
 message ProcessingModule {
@@ -19,7 +26,7 @@ message ProcessingModule {
     string description = 5;
     string on_processing = 6;
     string on_created = 7;
-    ubii.interactions.InteractionStatus status = 8;
+    ProcessingModuleStatus status = 8;
     ProcessingMode mode = 9;
     oneof data {
         Lockstep lockstep = 11;

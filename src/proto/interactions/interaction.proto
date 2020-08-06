@@ -3,12 +3,12 @@ package ubii.interactions;
 
 import "proto/interactions/ioFormat.proto";
 
-enum InteractionStatus {
+/*enum InteractionStatus {
     CREATED = 0;
     INITIALIZED = 1;
     PROCESSING = 2;
     HALTED = 3;
-}
+}*/
 
 message Interaction {
     string id = 1;
@@ -21,7 +21,7 @@ message Interaction {
     repeated string authors = 8;
     repeated string tags = 9;
     string description = 10;
-    InteractionStatus status = 11;
+    //InteractionStatus status = 11;
 }
 
 message InteractionList {
