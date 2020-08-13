@@ -45,10 +45,10 @@ message ProcessingModule {
     repeated ModuleIO inputs = 10;
     repeated ModuleIO outputs = 11;
     
-    string on_processing = 6;
-    string on_created = 7;
-    string on_halted = 7;
-    string on_destroyed = 7;
+    string on_processing = 12;
+    string on_created = 13;
+    string on_halted = 14;
+    string on_destroyed = 15;
 }
 
 message ProcessingModuleList {
