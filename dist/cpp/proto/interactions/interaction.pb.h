@@ -219,6 +219,7 @@ class Interaction :
     kDescriptionFieldNumber = 10,
     kProcessFrequencyFieldNumber = 7,
     kStatusFieldNumber = 11,
+    kEditableFieldNumber = 12,
   };
   // repeated .ubii.interactions.IOFormat input_formats = 4;
   int input_formats_size() const;
@@ -402,6 +403,15 @@ class Interaction :
   void _internal_set_status(::ubii::interactions::InteractionStatus value);
   public:
 
+  // bool editable = 12;
+  void clear_editable();
+  bool editable() const;
+  void set_editable(bool value);
+  private:
+  bool _internal_editable() const;
+  void _internal_set_editable(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.interactions.Interaction)
  private:
   class _Internal;
@@ -418,6 +428,7 @@ class Interaction :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   float process_frequency_;
   int status_;
+  bool editable_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2finteractions_2finteraction_2eproto;
 };
@@ -1127,6 +1138,26 @@ inline void Interaction::_internal_set_status(::ubii::interactions::InteractionS
 inline void Interaction::set_status(::ubii::interactions::InteractionStatus value) {
   _internal_set_status(value);
   // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.status)
+}
+
+// bool editable = 12;
+inline void Interaction::clear_editable() {
+  editable_ = false;
+}
+inline bool Interaction::_internal_editable() const {
+  return editable_;
+}
+inline bool Interaction::editable() const {
+  // @@protoc_insertion_point(field_get:ubii.interactions.Interaction.editable)
+  return _internal_editable();
+}
+inline void Interaction::_internal_set_editable(bool value) {
+  
+  editable_ = value;
+}
+inline void Interaction::set_editable(bool value) {
+  _internal_set_editable(value);
+  // @@protoc_insertion_point(field_set:ubii.interactions.Interaction.editable)
 }
 
 // -------------------------------------------------------------------

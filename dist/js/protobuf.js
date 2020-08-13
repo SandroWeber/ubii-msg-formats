@@ -574,6 +574,7 @@ $root.ubii = (function() {
              * @property {string|null} [deviceId] Component deviceId
              * @property {Array.<string>|null} [tags] Component tags
              * @property {string|null} [description] Component description
+             * @property {string|null} [id] Component id
              */
 
             /**
@@ -641,6 +642,14 @@ $root.ubii = (function() {
             Component.prototype.description = "";
 
             /**
+             * Component id.
+             * @member {string} id
+             * @memberof ubii.devices.Component
+             * @instance
+             */
+            Component.prototype.id = "";
+
+            /**
              * Creates a new Component instance using the specified properties.
              * @function create
              * @memberof ubii.devices.Component
@@ -677,6 +686,8 @@ $root.ubii = (function() {
                         writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
                 if (message.description != null && message.hasOwnProperty("description"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.id);
                 return writer;
             };
 
@@ -730,6 +741,9 @@ $root.ubii = (function() {
                         break;
                     case 6:
                         message.description = reader.string();
+                        break;
+                    case 7:
+                        message.id = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -793,6 +807,9 @@ $root.ubii = (function() {
                 if (message.description != null && message.hasOwnProperty("description"))
                     if (!$util.isString(message.description))
                         return "description: string expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
                 return null;
             };
 
@@ -813,11 +830,11 @@ $root.ubii = (function() {
                 if (object.messageFormat != null)
                     message.messageFormat = String(object.messageFormat);
                 switch (object.ioType) {
-                case "INPUT":
+                case "PUBLISHER":
                 case 0:
                     message.ioType = 0;
                     break;
-                case "OUTPUT":
+                case "SUBSCRIBER":
                 case 1:
                     message.ioType = 1;
                     break;
@@ -833,6 +850,8 @@ $root.ubii = (function() {
                 }
                 if (object.description != null)
                     message.description = String(object.description);
+                if (object.id != null)
+                    message.id = String(object.id);
                 return message;
             };
 
@@ -854,9 +873,10 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.topic = "";
                     object.messageFormat = "";
-                    object.ioType = options.enums === String ? "INPUT" : 0;
+                    object.ioType = options.enums === String ? "PUBLISHER" : 0;
                     object.deviceId = "";
                     object.description = "";
+                    object.id = "";
                 }
                 if (message.topic != null && message.hasOwnProperty("topic"))
                     object.topic = message.topic;
@@ -873,6 +893,8 @@ $root.ubii = (function() {
                 }
                 if (message.description != null && message.hasOwnProperty("description"))
                     object.description = message.description;
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
                 return object;
             };
 
@@ -891,17 +913,225 @@ $root.ubii = (function() {
              * IOType enum.
              * @name ubii.devices.Component.IOType
              * @enum {string}
-             * @property {number} INPUT=0 INPUT value
-             * @property {number} OUTPUT=1 OUTPUT value
+             * @property {number} PUBLISHER=0 PUBLISHER value
+             * @property {number} SUBSCRIBER=1 SUBSCRIBER value
              */
             Component.IOType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "INPUT"] = 0;
-                values[valuesById[1] = "OUTPUT"] = 1;
+                values[valuesById[0] = "PUBLISHER"] = 0;
+                values[valuesById[1] = "SUBSCRIBER"] = 1;
                 return values;
             })();
 
             return Component;
+        })();
+
+        devices.ComponentList = (function() {
+
+            /**
+             * Properties of a ComponentList.
+             * @memberof ubii.devices
+             * @interface IComponentList
+             * @property {Array.<ubii.devices.IComponent>|null} [elements] ComponentList elements
+             */
+
+            /**
+             * Constructs a new ComponentList.
+             * @memberof ubii.devices
+             * @classdesc Represents a ComponentList.
+             * @implements IComponentList
+             * @constructor
+             * @param {ubii.devices.IComponentList=} [properties] Properties to set
+             */
+            function ComponentList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ComponentList elements.
+             * @member {Array.<ubii.devices.IComponent>} elements
+             * @memberof ubii.devices.ComponentList
+             * @instance
+             */
+            ComponentList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new ComponentList instance using the specified properties.
+             * @function create
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.IComponentList=} [properties] Properties to set
+             * @returns {ubii.devices.ComponentList} ComponentList instance
+             */
+            ComponentList.create = function create(properties) {
+                return new ComponentList(properties);
+            };
+
+            /**
+             * Encodes the specified ComponentList message. Does not implicitly {@link ubii.devices.ComponentList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.IComponentList} message ComponentList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ComponentList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.devices.Component.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ComponentList message, length delimited. Does not implicitly {@link ubii.devices.ComponentList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.IComponentList} message ComponentList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ComponentList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ComponentList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.devices.ComponentList} ComponentList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ComponentList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.devices.ComponentList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.devices.Component.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ComponentList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.devices.ComponentList} ComponentList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ComponentList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ComponentList message.
+             * @function verify
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ComponentList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.devices.Component.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a ComponentList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.devices.ComponentList} ComponentList
+             */
+            ComponentList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.devices.ComponentList)
+                    return object;
+                var message = new $root.ubii.devices.ComponentList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.devices.ComponentList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.devices.ComponentList.elements: object expected");
+                        message.elements[i] = $root.ubii.devices.Component.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ComponentList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.devices.ComponentList
+             * @static
+             * @param {ubii.devices.ComponentList} message ComponentList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ComponentList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.devices.Component.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this ComponentList to JSON.
+             * @function toJSON
+             * @memberof ubii.devices.ComponentList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ComponentList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ComponentList;
         })();
 
         devices.Device = (function() {
@@ -2945,6 +3175,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [tags] Interaction tags
              * @property {string|null} [description] Interaction description
              * @property {ubii.interactions.InteractionStatus|null} [status] Interaction status
+             * @property {boolean|null} [editable] Interaction editable
              */
 
             /**
@@ -3055,6 +3286,14 @@ $root.ubii = (function() {
             Interaction.prototype.status = 0;
 
             /**
+             * Interaction editable.
+             * @member {boolean} editable
+             * @memberof ubii.interactions.Interaction
+             * @instance
+             */
+            Interaction.prototype.editable = false;
+
+            /**
              * Creates a new Interaction instance using the specified properties.
              * @function create
              * @memberof ubii.interactions.Interaction
@@ -3104,6 +3343,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.description);
                 if (message.status != null && message.hasOwnProperty("status"))
                     writer.uint32(/* id 11, wireType 0 =*/88).int32(message.status);
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    writer.uint32(/* id 12, wireType 0 =*/96).bool(message.editable);
                 return writer;
             };
 
@@ -3178,6 +3419,9 @@ $root.ubii = (function() {
                         break;
                     case 11:
                         message.status = reader.int32();
+                        break;
+                    case 12:
+                        message.editable = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3274,6 +3518,9 @@ $root.ubii = (function() {
                     case 3:
                         break;
                     }
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    if (typeof message.editable !== "boolean")
+                        return "editable: boolean expected";
                 return null;
             };
 
@@ -3353,6 +3600,8 @@ $root.ubii = (function() {
                     message.status = 3;
                     break;
                 }
+                if (object.editable != null)
+                    message.editable = Boolean(object.editable);
                 return message;
             };
 
@@ -3383,6 +3632,7 @@ $root.ubii = (function() {
                     object.processFrequency = 0;
                     object.description = "";
                     object.status = options.enums === String ? "CREATED" : 0;
+                    object.editable = false;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -3418,6 +3668,8 @@ $root.ubii = (function() {
                     object.description = message.description;
                 if (message.status != null && message.hasOwnProperty("status"))
                     object.status = options.enums === String ? $root.ubii.interactions.InteractionStatus[message.status] : message.status;
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    object.editable = message.editable;
                 return object;
             };
 
@@ -7977,6 +8229,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [authors] Session authors
              * @property {ubii.sessions.ProcessMode|null} [processMode] Session processMode
              * @property {ubii.sessions.SessionStatus|null} [status] Session status
+             * @property {boolean|null} [editable] Session editable
              */
 
             /**
@@ -8071,6 +8324,14 @@ $root.ubii = (function() {
             Session.prototype.status = 0;
 
             /**
+             * Session editable.
+             * @member {boolean} editable
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.editable = false;
+
+            /**
              * Creates a new Session instance using the specified properties.
              * @function create
              * @memberof ubii.sessions.Session
@@ -8116,6 +8377,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 8, wireType 0 =*/64).int32(message.processMode);
                 if (message.status != null && message.hasOwnProperty("status"))
                     writer.uint32(/* id 9, wireType 0 =*/72).int32(message.status);
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    writer.uint32(/* id 10, wireType 0 =*/80).bool(message.editable);
                 return writer;
             };
 
@@ -8184,6 +8447,9 @@ $root.ubii = (function() {
                         break;
                     case 9:
                         message.status = reader.int32();
+                        break;
+                    case 10:
+                        message.editable = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8279,6 +8545,9 @@ $root.ubii = (function() {
                     case 3:
                         break;
                     }
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    if (typeof message.editable !== "boolean")
+                        return "editable: boolean expected";
                 return null;
             };
 
@@ -8362,6 +8631,8 @@ $root.ubii = (function() {
                     message.status = 3;
                     break;
                 }
+                if (object.editable != null)
+                    message.editable = Boolean(object.editable);
                 return message;
             };
 
@@ -8390,6 +8661,7 @@ $root.ubii = (function() {
                     object.description = "";
                     object.processMode = options.enums === String ? "CYCLE_INTERACTIONS" : 0;
                     object.status = options.enums === String ? "CREATED" : 0;
+                    object.editable = false;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -8421,6 +8693,8 @@ $root.ubii = (function() {
                     object.processMode = options.enums === String ? $root.ubii.sessions.ProcessMode[message.processMode] : message.processMode;
                 if (message.status != null && message.hasOwnProperty("status"))
                     object.status = options.enums === String ? $root.ubii.sessions.SessionStatus[message.status] : message.status;
+                if (message.editable != null && message.hasOwnProperty("editable"))
+                    object.editable = message.editable;
                 return object;
             };
 

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.sessions',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\x9c\x02\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0cinteractions\x18\x03 \x03(\x0b\x32\x1e.ubii.interactions.Interaction\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMapping\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x07 \x03(\t\x12\x30\n\x0cprocess_mode\x18\x08 \x01(\x0e\x32\x1a.ubii.sessions.ProcessMode\x12,\n\x06status\x18\t \x01(\x0e\x32\x1c.ubii.sessions.SessionStatus\"7\n\x0bSessionList\x12(\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x16.ubii.sessions.Session*I\n\x0bProcessMode\x12\x16\n\x12\x43YCLE_INTERACTIONS\x10\x00\x12\"\n\x1eINDIVIDUAL_PROCESS_FREQUENCIES\x10\x01*B\n\rSessionStatus\x12\x0b\n\x07\x43REATED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\n\n\x06PAUSED\x10\x02\x12\x0b\n\x07STOPPED\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n\x1cproto/sessions/session.proto\x12\rubii.sessions\x1a$proto/interactions/interaction.proto\x1a\x1eproto/sessions/ioMapping.proto\"\xae\x02\n\x07Session\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x34\n\x0cinteractions\x18\x03 \x03(\x0b\x32\x1e.ubii.interactions.Interaction\x12-\n\x0bio_mappings\x18\x04 \x03(\x0b\x32\x18.ubii.sessions.IOMapping\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x07 \x03(\t\x12\x30\n\x0cprocess_mode\x18\x08 \x01(\x0e\x32\x1a.ubii.sessions.ProcessMode\x12,\n\x06status\x18\t \x01(\x0e\x32\x1c.ubii.sessions.SessionStatus\x12\x10\n\x08\x65\x64itable\x18\n \x01(\x08\"7\n\x0bSessionList\x12(\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x16.ubii.sessions.Session*I\n\x0bProcessMode\x12\x16\n\x12\x43YCLE_INTERACTIONS\x10\x00\x12\"\n\x1eINDIVIDUAL_PROCESS_FREQUENCIES\x10\x01*B\n\rSessionStatus\x12\x0b\n\x07\x43REATED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\n\n\x06PAUSED\x10\x02\x12\x0b\n\x07STOPPED\x10\x03\x62\x06proto3'
   ,
   dependencies=[proto_dot_interactions_dot_interaction__pb2.DESCRIPTOR,proto_dot_sessions_dot_ioMapping__pb2.DESCRIPTOR,])
 
@@ -42,8 +42,8 @@ _PROCESSMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=461,
-  serialized_end=534,
+  serialized_start=479,
+  serialized_end=552,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSMODE)
 
@@ -73,8 +73,8 @@ _SESSIONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=536,
-  serialized_end=602,
+  serialized_start=554,
+  serialized_end=620,
 )
 _sym_db.RegisterEnumDescriptor(_SESSIONSTATUS)
 
@@ -158,6 +158,13 @@ _SESSION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='editable', full_name='ubii.sessions.Session.editable', index=9,
+      number=10, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -171,7 +178,7 @@ _SESSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=118,
-  serialized_end=402,
+  serialized_end=420,
 )
 
 
@@ -201,8 +208,8 @@ _SESSIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=404,
-  serialized_end=459,
+  serialized_start=422,
+  serialized_end=477,
 )
 
 _SESSION.fields_by_name['interactions'].message_type = proto_dot_interactions_dot_interaction__pb2._INTERACTION

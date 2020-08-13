@@ -314,6 +314,12 @@ public final class InteractionOuterClass {
      * @return The status.
      */
     ubii.interactions.InteractionOuterClass.InteractionStatus getStatus();
+
+    /**
+     * <code>bool editable = 12;</code>
+     * @return The editable.
+     */
+    boolean getEditable();
   }
   /**
    * Protobuf type {@code ubii.interactions.Interaction}
@@ -446,6 +452,11 @@ public final class InteractionOuterClass {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+            case 96: {
+
+              editable_ = input.readBool();
               break;
             }
             default: {
@@ -841,6 +852,16 @@ public final class InteractionOuterClass {
       return result == null ? ubii.interactions.InteractionOuterClass.InteractionStatus.UNRECOGNIZED : result;
     }
 
+    public static final int EDITABLE_FIELD_NUMBER = 12;
+    private boolean editable_;
+    /**
+     * <code>bool editable = 12;</code>
+     * @return The editable.
+     */
+    public boolean getEditable() {
+      return editable_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -887,6 +908,9 @@ public final class InteractionOuterClass {
       }
       if (status_ != ubii.interactions.InteractionOuterClass.InteractionStatus.CREATED.getNumber()) {
         output.writeEnum(11, status_);
+      }
+      if (editable_ != false) {
+        output.writeBool(12, editable_);
       }
       unknownFields.writeTo(output);
     }
@@ -944,6 +968,10 @@ public final class InteractionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, status_);
       }
+      if (editable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, editable_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -981,6 +1009,8 @@ public final class InteractionOuterClass {
       if (!getDescription()
           .equals(other.getDescription())) return false;
       if (status_ != other.status_) return false;
+      if (getEditable()
+          != other.getEditable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1023,6 +1053,9 @@ public final class InteractionOuterClass {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+      hash = (37 * hash) + EDITABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEditable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1188,6 +1221,8 @@ public final class InteractionOuterClass {
 
         status_ = 0;
 
+        editable_ = false;
+
         return this;
       }
 
@@ -1250,6 +1285,7 @@ public final class InteractionOuterClass {
         result.tags_ = tags_;
         result.description_ = description_;
         result.status_ = status_;
+        result.editable_ = editable_;
         onBuilt();
         return result;
       }
@@ -1395,6 +1431,9 @@ public final class InteractionOuterClass {
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
+        }
+        if (other.getEditable() != false) {
+          setEditable(other.getEditable());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2587,6 +2626,36 @@ public final class InteractionOuterClass {
         onChanged();
         return this;
       }
+
+      private boolean editable_ ;
+      /**
+       * <code>bool editable = 12;</code>
+       * @return The editable.
+       */
+      public boolean getEditable() {
+        return editable_;
+      }
+      /**
+       * <code>bool editable = 12;</code>
+       * @param value The editable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEditable(boolean value) {
+        
+        editable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool editable = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEditable() {
+        
+        editable_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3449,7 +3518,7 @@ public final class InteractionOuterClass {
     java.lang.String[] descriptorData = {
       "\n$proto/interactions/interaction.proto\022\021" +
       "ubii.interactions\032!proto/interactions/io" +
-      "Format.proto\"\306\002\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
+      "Format.proto\"\330\002\n\013Interaction\022\n\n\002id\030\001 \001(\t" +
       "\022\014\n\004name\030\002 \001(\t\022\033\n\023processing_callback\030\003 " +
       "\001(\t\0222\n\rinput_formats\030\004 \003(\0132\033.ubii.intera" +
       "ctions.IOFormat\0223\n\016output_formats\030\005 \003(\0132" +
@@ -3457,11 +3526,11 @@ public final class InteractionOuterClass {
       "ed\030\006 \001(\t\022\031\n\021process_frequency\030\007 \001(\002\022\017\n\007a" +
       "uthors\030\010 \003(\t\022\014\n\004tags\030\t \003(\t\022\023\n\013descriptio" +
       "n\030\n \001(\t\0224\n\006status\030\013 \001(\0162$.ubii.interacti" +
-      "ons.InteractionStatus\"C\n\017InteractionList" +
-      "\0220\n\010elements\030\001 \003(\0132\036.ubii.interactions.I" +
-      "nteraction*M\n\021InteractionStatus\022\013\n\007CREAT" +
-      "ED\020\000\022\017\n\013INITIALIZED\020\001\022\016\n\nPROCESSING\020\002\022\n\n" +
-      "\006HALTED\020\003b\006proto3"
+      "ons.InteractionStatus\022\020\n\010editable\030\014 \001(\010\"" +
+      "C\n\017InteractionList\0220\n\010elements\030\001 \003(\0132\036.u" +
+      "bii.interactions.Interaction*M\n\021Interact" +
+      "ionStatus\022\013\n\007CREATED\020\000\022\017\n\013INITIALIZED\020\001\022" +
+      "\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3473,7 +3542,7 @@ public final class InteractionOuterClass {
     internal_static_ubii_interactions_Interaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_interactions_Interaction_descriptor,
-        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags", "Description", "Status", });
+        new java.lang.String[] { "Id", "Name", "ProcessingCallback", "InputFormats", "OutputFormats", "OnCreated", "ProcessFrequency", "Authors", "Tags", "Description", "Status", "Editable", });
     internal_static_ubii_interactions_InteractionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_interactions_InteractionList_fieldAccessorTable = new

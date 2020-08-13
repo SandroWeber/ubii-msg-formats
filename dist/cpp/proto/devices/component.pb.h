@@ -48,7 +48,7 @@ struct TableStruct_proto_2fdevices_2fcomponent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -60,23 +60,27 @@ namespace devices {
 class Component;
 class ComponentDefaultTypeInternal;
 extern ComponentDefaultTypeInternal _Component_default_instance_;
+class ComponentList;
+class ComponentListDefaultTypeInternal;
+extern ComponentListDefaultTypeInternal _ComponentList_default_instance_;
 }  // namespace devices
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> ::ubii::devices::Component* Arena::CreateMaybeMessage<::ubii::devices::Component>(Arena*);
+template<> ::ubii::devices::ComponentList* Arena::CreateMaybeMessage<::ubii::devices::ComponentList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace ubii {
 namespace devices {
 
 enum Component_IOType : int {
-  Component_IOType_INPUT = 0,
-  Component_IOType_OUTPUT = 1,
+  Component_IOType_PUBLISHER = 0,
+  Component_IOType_SUBSCRIBER = 1,
   Component_IOType_Component_IOType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   Component_IOType_Component_IOType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Component_IOType_IsValid(int value);
-constexpr Component_IOType Component_IOType_IOType_MIN = Component_IOType_INPUT;
-constexpr Component_IOType Component_IOType_IOType_MAX = Component_IOType_OUTPUT;
+constexpr Component_IOType Component_IOType_IOType_MIN = Component_IOType_PUBLISHER;
+constexpr Component_IOType Component_IOType_IOType_MAX = Component_IOType_SUBSCRIBER;
 constexpr int Component_IOType_IOType_ARRAYSIZE = Component_IOType_IOType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Component_IOType_descriptor();
@@ -199,10 +203,10 @@ class Component :
   // nested types ----------------------------------------------------
 
   typedef Component_IOType IOType;
-  static constexpr IOType INPUT =
-    Component_IOType_INPUT;
-  static constexpr IOType OUTPUT =
-    Component_IOType_OUTPUT;
+  static constexpr IOType PUBLISHER =
+    Component_IOType_PUBLISHER;
+  static constexpr IOType SUBSCRIBER =
+    Component_IOType_SUBSCRIBER;
   static inline bool IOType_IsValid(int value) {
     return Component_IOType_IsValid(value);
   }
@@ -236,6 +240,7 @@ class Component :
     kMessageFormatFieldNumber = 2,
     kDeviceIdFieldNumber = 4,
     kDescriptionFieldNumber = 6,
+    kIdFieldNumber = 7,
     kIoTypeFieldNumber = 3,
   };
   // repeated string tags = 5;
@@ -326,6 +331,22 @@ class Component :
   std::string* _internal_mutable_description();
   public:
 
+  // string id = 7;
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
   // .ubii.devices.Component.IOType io_type = 3;
   void clear_io_type();
   ::ubii::devices::Component_IOType io_type() const;
@@ -345,7 +366,145 @@ class Component :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_format_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   int io_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fdevices_2fcomponent_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ComponentList :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ubii.devices.ComponentList) */ {
+ public:
+  ComponentList();
+  virtual ~ComponentList();
+
+  ComponentList(const ComponentList& from);
+  ComponentList(ComponentList&& from) noexcept
+    : ComponentList() {
+    *this = ::std::move(from);
+  }
+
+  inline ComponentList& operator=(const ComponentList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ComponentList& operator=(ComponentList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ComponentList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ComponentList* internal_default_instance() {
+    return reinterpret_cast<const ComponentList*>(
+               &_ComponentList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(ComponentList& a, ComponentList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ComponentList* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ComponentList* New() const final {
+    return CreateMaybeMessage<ComponentList>(nullptr);
+  }
+
+  ComponentList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ComponentList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ComponentList& from);
+  void MergeFrom(const ComponentList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ComponentList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "ubii.devices.ComponentList";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proto_2fdevices_2fcomponent_2eproto);
+    return ::descriptor_table_proto_2fdevices_2fcomponent_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kElementsFieldNumber = 1,
+  };
+  // repeated .ubii.devices.Component elements = 1;
+  int elements_size() const;
+  private:
+  int _internal_elements_size() const;
+  public:
+  void clear_elements();
+  ::ubii::devices::Component* mutable_elements(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::devices::Component >*
+      mutable_elements();
+  private:
+  const ::ubii::devices::Component& _internal_elements(int index) const;
+  ::ubii::devices::Component* _internal_add_elements();
+  public:
+  const ::ubii::devices::Component& elements(int index) const;
+  ::ubii::devices::Component* add_elements();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::devices::Component >&
+      elements() const;
+
+  // @@protoc_insertion_point(class_scope:ubii.devices.ComponentList)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::devices::Component > elements_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fdevices_2fcomponent_2eproto;
 };
@@ -694,9 +853,114 @@ inline void Component::set_allocated_description(std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.description)
 }
 
+// string id = 7;
+inline void Component::clear_id() {
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Component::id() const {
+  // @@protoc_insertion_point(field_get:ubii.devices.Component.id)
+  return _internal_id();
+}
+inline void Component::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.id)
+}
+inline std::string* Component::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:ubii.devices.Component.id)
+  return _internal_mutable_id();
+}
+inline const std::string& Component::_internal_id() const {
+  return id_.GetNoArena();
+}
+inline void Component::_internal_set_id(const std::string& value) {
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Component::set_id(std::string&& value) {
+  
+  id_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.devices.Component.id)
+}
+inline void Component::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.devices.Component.id)
+}
+inline void Component::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.devices.Component.id)
+}
+inline std::string* Component::_internal_mutable_id() {
+  
+  return id_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Component::release_id() {
+  // @@protoc_insertion_point(field_release:ubii.devices.Component.id)
+  
+  return id_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Component::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.id)
+}
+
+// -------------------------------------------------------------------
+
+// ComponentList
+
+// repeated .ubii.devices.Component elements = 1;
+inline int ComponentList::_internal_elements_size() const {
+  return elements_.size();
+}
+inline int ComponentList::elements_size() const {
+  return _internal_elements_size();
+}
+inline void ComponentList::clear_elements() {
+  elements_.Clear();
+}
+inline ::ubii::devices::Component* ComponentList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.devices.ComponentList.elements)
+  return elements_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::devices::Component >*
+ComponentList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.devices.ComponentList.elements)
+  return &elements_;
+}
+inline const ::ubii::devices::Component& ComponentList::_internal_elements(int index) const {
+  return elements_.Get(index);
+}
+inline const ::ubii::devices::Component& ComponentList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.devices.ComponentList.elements)
+  return _internal_elements(index);
+}
+inline ::ubii::devices::Component* ComponentList::_internal_add_elements() {
+  return elements_.Add();
+}
+inline ::ubii::devices::Component* ComponentList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.devices.ComponentList.elements)
+  return _internal_add_elements();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::devices::Component >&
+ComponentList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.devices.ComponentList.elements)
+  return elements_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
