@@ -1,0 +1,56 @@
+syntax = "proto3";
+package ubii.processing;
+
+enum ProcessingModuleStatus {
+    INITIALIZED = 0;
+    CREATED = 1;
+    PROCESSING = 2;
+    HALTED = 3;
+    DESTROYED = 4;
+}
+
+message ProcessingMode {
+    message Frequency {
+        string hertz = 0;
+    }
+    message Lockstep {
+        string process_request_endpoint = 0;
+    }
+    message TriggerOnInput {
+        int32 min_delay_ms = 0;
+        bool all_inputs_need_update = 1;
+    }
+
+    oneof mode {
+        Frequency frequency = 0;
+        Lockstep lockstep = 1;
+        TriggerOnInput trigger_on_input = 2;
+    }
+}
+
+message ModuleIO {
+    string internal_name = 1;
+    string message_format = 2;
+}
+
+message ProcessingModule {
+    string id = 1;
+    string name = 2;
+    repeated string authors = 3;
+    repeated string tags = 4;
+    string description = 5;
+
+    ProcessingModuleStatus status = 8;
+    ProcessingMode processing_mode = 9;
+    repeated ModuleIO inputs = 10;
+    repeated ModuleIO outputs = 11;
+    
+    string on_processing = 6;
+    string on_created = 7;
+    string on_halted = 7;
+    string on_destroyed = 7;
+}
+
+message ProcessingModuleList {
+    repeated ubii.processing.ProcessingModule elements = 0;
+}

@@ -26,6 +26,6 @@ message ServiceRequest {
         ubii.devices.TopicDemuxList topic_demux_list = 12;
         ubii.clients.ClientList client_list = 13;
         ubii.devices.DeviceList device_list = 14;
-        ubii.interactions.ProcessingModule processing_module = 15;
+        ubii.processing.ProcessingModule processing_module = 15;
     }
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+package ubii.processing;
+
+import "proto/topicData/topicDataRecord/topicDataRecord.proto";
+
+message LockstepProcessingRequest {
+    ubii.topicData.TopicDataRecordList elements = 0;
+}
