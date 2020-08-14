@@ -90,7 +90,7 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
 
 def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto', includePath='./../src' , protoc_arg='python'):
     re = getAllProtos(pathToProtos)
-    print(re)
+    #print(re)
     os.makedirs(pathToOutput, exist_ok=True)
 
     if protoc_arg == 'js':
@@ -99,7 +99,7 @@ def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto',
         protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protoc_arg+"_out="+pathToOutputLibrary ]
         for i in re:
             protoc_command.append(i)
-        print(protoc_command)
+        #print(protoc_command)
         if subprocess.call(protoc_command) != 0:
             sys.exit(-1)
 
@@ -109,6 +109,7 @@ def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto',
     for i in re:
         generate_proto(i, pathToOutput, pathToProtos, includePath, protoc_arg, False)
 
+    print("compiled for " + protoc_arg)
     return pathToOutput
 
 
