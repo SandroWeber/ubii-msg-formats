@@ -11,20 +11,20 @@ enum ProcessingModuleStatus {
 
 message ProcessingMode {
     message Frequency {
-        string hertz = 0;
+        string hertz = 1;
     }
     message Lockstep {
-        string process_request_endpoint = 0;
+        string process_request_endpoint = 1;
     }
     message TriggerOnInput {
-        int32 min_delay_ms = 0;
-        bool all_inputs_need_update = 1;
+        int32 min_delay_ms = 1;
+        bool all_inputs_need_update = 2;
     }
 
     oneof mode {
-        Frequency frequency = 0;
-        Lockstep lockstep = 1;
-        TriggerOnInput trigger_on_input = 2;
+        Frequency frequency = 1;
+        Lockstep lockstep = 2;
+        TriggerOnInput trigger_on_input = 3;
     }
 }
 
@@ -40,17 +40,17 @@ message ProcessingModule {
     repeated string tags = 4;
     string description = 5;
 
-    ProcessingModuleStatus status = 8;
-    ProcessingMode processing_mode = 9;
-    repeated ModuleIO inputs = 10;
-    repeated ModuleIO outputs = 11;
+    ProcessingModuleStatus status = 6;
+    ProcessingMode processing_mode = 7;
+    repeated ModuleIO inputs = 8;
+    repeated ModuleIO outputs = 9;
     
-    string on_processing = 12;
-    string on_created = 13;
-    string on_halted = 14;
-    string on_destroyed = 15;
+    string on_processing = 10;
+    string on_created = 11;
+    string on_halted = 12;
+    string on_destroyed = 13;
 }
 
 message ProcessingModuleList {
-    repeated ubii.processing.ProcessingModule elements = 0;
+    repeated ubii.processing.ProcessingModule elements = 1;
 }

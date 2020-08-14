@@ -11,7 +11,7 @@ import "proto/devices/topicDemux.proto";
 import "proto/servers/server.proto";
 import "proto/sessions/session.proto";
 import "proto/interactions/interaction.proto";
-import "proto/processingClient/processingModule.proto";
+import "proto/processing/processingModule.proto";
 import "proto/services/service.proto";
 
 message ServiceReply {
@@ -34,6 +34,7 @@ message ServiceReply {
         ubii.devices.DeviceList device_list = 16;
         ubii.services.Service service = 17;
         ubii.services.ServiceList service_list = 18;
-        ubii.interactions.ProcessingModule processing_module = 19;
+        ubii.processing.ProcessingModule processing_module = 19;
+        ubii.processing.ProcessingModuleList processing_module_list = 20;
     }
 }

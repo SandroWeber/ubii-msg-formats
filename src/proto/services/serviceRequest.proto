@@ -7,7 +7,7 @@ import "proto/devices/topicMux.proto";
 import "proto/devices/topicDemux.proto";
 import "proto/sessions/session.proto";
 import "proto/interactions/interaction.proto";
-import "proto/processingClient/processingModule.proto";
+import "proto/processing/processingModule.proto";
 import "proto/services/request/topicSubscription.proto";
 
 message ServiceRequest {
@@ -27,5 +27,6 @@ message ServiceRequest {
         ubii.clients.ClientList client_list = 13;
         ubii.devices.DeviceList device_list = 14;
         ubii.processing.ProcessingModule processing_module = 15;
+        ubii.processing.ProcessingModuleList processing_module_list = 16;
     }
 }

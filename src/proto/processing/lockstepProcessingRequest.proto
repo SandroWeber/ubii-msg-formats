@@ -4,5 +4,5 @@ package ubii.processing;
 import "proto/topicData/topicDataRecord/topicDataRecord.proto";
 
 message LockstepProcessingRequest {
-    ubii.topicData.TopicDataRecordList elements = 0;
+    ubii.topicData.TopicDataRecordList records = 1;
 }
