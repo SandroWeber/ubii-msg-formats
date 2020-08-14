@@ -92,33 +92,61 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace ubii {
 namespace processing {
 
-enum ProcessingModuleStatus : int {
-  INITIALIZED = 0,
-  CREATED = 1,
-  PROCESSING = 2,
-  HALTED = 3,
-  DESTROYED = 4,
-  ProcessingModuleStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  ProcessingModuleStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+enum ProcessingModule_Status : int {
+  ProcessingModule_Status_INITIALIZED = 0,
+  ProcessingModule_Status_CREATED = 1,
+  ProcessingModule_Status_PROCESSING = 2,
+  ProcessingModule_Status_HALTED = 3,
+  ProcessingModule_Status_DESTROYED = 4,
+  ProcessingModule_Status_ProcessingModule_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  ProcessingModule_Status_ProcessingModule_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool ProcessingModuleStatus_IsValid(int value);
-constexpr ProcessingModuleStatus ProcessingModuleStatus_MIN = INITIALIZED;
-constexpr ProcessingModuleStatus ProcessingModuleStatus_MAX = DESTROYED;
-constexpr int ProcessingModuleStatus_ARRAYSIZE = ProcessingModuleStatus_MAX + 1;
+bool ProcessingModule_Status_IsValid(int value);
+constexpr ProcessingModule_Status ProcessingModule_Status_Status_MIN = ProcessingModule_Status_INITIALIZED;
+constexpr ProcessingModule_Status ProcessingModule_Status_Status_MAX = ProcessingModule_Status_DESTROYED;
+constexpr int ProcessingModule_Status_Status_ARRAYSIZE = ProcessingModule_Status_Status_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessingModuleStatus_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessingModule_Status_descriptor();
 template<typename T>
-inline const std::string& ProcessingModuleStatus_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, ProcessingModuleStatus>::value ||
+inline const std::string& ProcessingModule_Status_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ProcessingModule_Status>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function ProcessingModuleStatus_Name.");
+    "Incorrect type passed to function ProcessingModule_Status_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    ProcessingModuleStatus_descriptor(), enum_t_value);
+    ProcessingModule_Status_descriptor(), enum_t_value);
 }
-inline bool ProcessingModuleStatus_Parse(
-    const std::string& name, ProcessingModuleStatus* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ProcessingModuleStatus>(
-    ProcessingModuleStatus_descriptor(), name, value);
+inline bool ProcessingModule_Status_Parse(
+    const std::string& name, ProcessingModule_Status* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ProcessingModule_Status>(
+    ProcessingModule_Status_descriptor(), name, value);
+}
+enum ProcessingModule_Language : int {
+  ProcessingModule_Language_CPP = 0,
+  ProcessingModule_Language_PY = 1,
+  ProcessingModule_Language_JS = 2,
+  ProcessingModule_Language_CS = 3,
+  ProcessingModule_Language_JAVA = 4,
+  ProcessingModule_Language_ProcessingModule_Language_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  ProcessingModule_Language_ProcessingModule_Language_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool ProcessingModule_Language_IsValid(int value);
+constexpr ProcessingModule_Language ProcessingModule_Language_Language_MIN = ProcessingModule_Language_CPP;
+constexpr ProcessingModule_Language ProcessingModule_Language_Language_MAX = ProcessingModule_Language_JAVA;
+constexpr int ProcessingModule_Language_Language_ARRAYSIZE = ProcessingModule_Language_Language_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessingModule_Language_descriptor();
+template<typename T>
+inline const std::string& ProcessingModule_Language_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ProcessingModule_Language>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function ProcessingModule_Language_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    ProcessingModule_Language_descriptor(), enum_t_value);
+}
+inline bool ProcessingModule_Language_Parse(
+    const std::string& name, ProcessingModule_Language* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ProcessingModule_Language>(
+    ProcessingModule_Language_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -972,22 +1000,96 @@ class ProcessingModule :
 
   // nested types ----------------------------------------------------
 
+  typedef ProcessingModule_Status Status;
+  static constexpr Status INITIALIZED =
+    ProcessingModule_Status_INITIALIZED;
+  static constexpr Status CREATED =
+    ProcessingModule_Status_CREATED;
+  static constexpr Status PROCESSING =
+    ProcessingModule_Status_PROCESSING;
+  static constexpr Status HALTED =
+    ProcessingModule_Status_HALTED;
+  static constexpr Status DESTROYED =
+    ProcessingModule_Status_DESTROYED;
+  static inline bool Status_IsValid(int value) {
+    return ProcessingModule_Status_IsValid(value);
+  }
+  static constexpr Status Status_MIN =
+    ProcessingModule_Status_Status_MIN;
+  static constexpr Status Status_MAX =
+    ProcessingModule_Status_Status_MAX;
+  static constexpr int Status_ARRAYSIZE =
+    ProcessingModule_Status_Status_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  Status_descriptor() {
+    return ProcessingModule_Status_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& Status_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, Status>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function Status_Name.");
+    return ProcessingModule_Status_Name(enum_t_value);
+  }
+  static inline bool Status_Parse(const std::string& name,
+      Status* value) {
+    return ProcessingModule_Status_Parse(name, value);
+  }
+
+  typedef ProcessingModule_Language Language;
+  static constexpr Language CPP =
+    ProcessingModule_Language_CPP;
+  static constexpr Language PY =
+    ProcessingModule_Language_PY;
+  static constexpr Language JS =
+    ProcessingModule_Language_JS;
+  static constexpr Language CS =
+    ProcessingModule_Language_CS;
+  static constexpr Language JAVA =
+    ProcessingModule_Language_JAVA;
+  static inline bool Language_IsValid(int value) {
+    return ProcessingModule_Language_IsValid(value);
+  }
+  static constexpr Language Language_MIN =
+    ProcessingModule_Language_Language_MIN;
+  static constexpr Language Language_MAX =
+    ProcessingModule_Language_Language_MAX;
+  static constexpr int Language_ARRAYSIZE =
+    ProcessingModule_Language_Language_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  Language_descriptor() {
+    return ProcessingModule_Language_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& Language_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, Language>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function Language_Name.");
+    return ProcessingModule_Language_Name(enum_t_value);
+  }
+  static inline bool Language_Parse(const std::string& name,
+      Language* value) {
+    return ProcessingModule_Language_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kAuthorsFieldNumber = 3,
     kTagsFieldNumber = 4,
-    kInputsFieldNumber = 8,
-    kOutputsFieldNumber = 9,
+    kInputsFieldNumber = 9,
+    kOutputsFieldNumber = 10,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kDescriptionFieldNumber = 5,
-    kOnProcessingFieldNumber = 10,
-    kOnCreatedFieldNumber = 11,
-    kOnHaltedFieldNumber = 12,
-    kOnDestroyedFieldNumber = 13,
-    kProcessingModeFieldNumber = 7,
-    kStatusFieldNumber = 6,
+    kClientIdFieldNumber = 6,
+    kOnProcessingFieldNumber = 12,
+    kOnCreatedFieldNumber = 13,
+    kOnHaltedFieldNumber = 14,
+    kOnDestroyedFieldNumber = 15,
+    kProcessingModeFieldNumber = 8,
+    kStatusFieldNumber = 7,
+    kLanguageFieldNumber = 11,
   };
   // repeated string authors = 3;
   int authors_size() const;
@@ -1037,7 +1139,7 @@ class ProcessingModule :
   std::string* _internal_add_tags();
   public:
 
-  // repeated .ubii.processing.ModuleIO inputs = 8;
+  // repeated .ubii.processing.ModuleIO inputs = 9;
   int inputs_size() const;
   private:
   int _internal_inputs_size() const;
@@ -1055,7 +1157,7 @@ class ProcessingModule :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ModuleIO >&
       inputs() const;
 
-  // repeated .ubii.processing.ModuleIO outputs = 9;
+  // repeated .ubii.processing.ModuleIO outputs = 10;
   int outputs_size() const;
   private:
   int _internal_outputs_size() const;
@@ -1121,7 +1223,23 @@ class ProcessingModule :
   std::string* _internal_mutable_description();
   public:
 
-  // string on_processing = 10;
+  // string client_id = 6;
+  void clear_client_id();
+  const std::string& client_id() const;
+  void set_client_id(const std::string& value);
+  void set_client_id(std::string&& value);
+  void set_client_id(const char* value);
+  void set_client_id(const char* value, size_t size);
+  std::string* mutable_client_id();
+  std::string* release_client_id();
+  void set_allocated_client_id(std::string* client_id);
+  private:
+  const std::string& _internal_client_id() const;
+  void _internal_set_client_id(const std::string& value);
+  std::string* _internal_mutable_client_id();
+  public:
+
+  // string on_processing = 12;
   void clear_on_processing();
   const std::string& on_processing() const;
   void set_on_processing(const std::string& value);
@@ -1137,7 +1255,7 @@ class ProcessingModule :
   std::string* _internal_mutable_on_processing();
   public:
 
-  // string on_created = 11;
+  // string on_created = 13;
   void clear_on_created();
   const std::string& on_created() const;
   void set_on_created(const std::string& value);
@@ -1153,7 +1271,7 @@ class ProcessingModule :
   std::string* _internal_mutable_on_created();
   public:
 
-  // string on_halted = 12;
+  // string on_halted = 14;
   void clear_on_halted();
   const std::string& on_halted() const;
   void set_on_halted(const std::string& value);
@@ -1169,7 +1287,7 @@ class ProcessingModule :
   std::string* _internal_mutable_on_halted();
   public:
 
-  // string on_destroyed = 13;
+  // string on_destroyed = 15;
   void clear_on_destroyed();
   const std::string& on_destroyed() const;
   void set_on_destroyed(const std::string& value);
@@ -1185,7 +1303,7 @@ class ProcessingModule :
   std::string* _internal_mutable_on_destroyed();
   public:
 
-  // .ubii.processing.ProcessingMode processing_mode = 7;
+  // .ubii.processing.ProcessingMode processing_mode = 8;
   bool has_processing_mode() const;
   private:
   bool _internal_has_processing_mode() const;
@@ -1200,13 +1318,22 @@ class ProcessingModule :
   ::ubii::processing::ProcessingMode* _internal_mutable_processing_mode();
   public:
 
-  // .ubii.processing.ProcessingModuleStatus status = 6;
+  // .ubii.processing.ProcessingModule.Status status = 7;
   void clear_status();
-  ::ubii::processing::ProcessingModuleStatus status() const;
-  void set_status(::ubii::processing::ProcessingModuleStatus value);
+  ::ubii::processing::ProcessingModule_Status status() const;
+  void set_status(::ubii::processing::ProcessingModule_Status value);
   private:
-  ::ubii::processing::ProcessingModuleStatus _internal_status() const;
-  void _internal_set_status(::ubii::processing::ProcessingModuleStatus value);
+  ::ubii::processing::ProcessingModule_Status _internal_status() const;
+  void _internal_set_status(::ubii::processing::ProcessingModule_Status value);
+  public:
+
+  // .ubii.processing.ProcessingModule.Language language = 11;
+  void clear_language();
+  ::ubii::processing::ProcessingModule_Language language() const;
+  void set_language(::ubii::processing::ProcessingModule_Language value);
+  private:
+  ::ubii::processing::ProcessingModule_Language _internal_language() const;
+  void _internal_set_language(::ubii::processing::ProcessingModule_Language value);
   public:
 
   // @@protoc_insertion_point(class_scope:ubii.processing.ProcessingModule)
@@ -1221,12 +1348,14 @@ class ProcessingModule :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_processing_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_created_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_halted_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_destroyed_;
   ::ubii::processing::ProcessingMode* processing_mode_;
   int status_;
+  int language_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fprocessing_2fprocessingModule_2eproto;
 };
@@ -2125,27 +2254,87 @@ inline void ProcessingModule::set_allocated_description(std::string* description
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.description)
 }
 
-// .ubii.processing.ProcessingModuleStatus status = 6;
+// string client_id = 6;
+inline void ProcessingModule::clear_client_id() {
+  client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ProcessingModule::client_id() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.client_id)
+  return _internal_client_id();
+}
+inline void ProcessingModule::set_client_id(const std::string& value) {
+  _internal_set_client_id(value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.client_id)
+}
+inline std::string* ProcessingModule::mutable_client_id() {
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.client_id)
+  return _internal_mutable_client_id();
+}
+inline const std::string& ProcessingModule::_internal_client_id() const {
+  return client_id_.GetNoArena();
+}
+inline void ProcessingModule::_internal_set_client_id(const std::string& value) {
+  
+  client_id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ProcessingModule::set_client_id(std::string&& value) {
+  
+  client_id_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.client_id)
+}
+inline void ProcessingModule::set_client_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  client_id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.client_id)
+}
+inline void ProcessingModule::set_client_id(const char* value, size_t size) {
+  
+  client_id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.client_id)
+}
+inline std::string* ProcessingModule::_internal_mutable_client_id() {
+  
+  return client_id_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ProcessingModule::release_client_id() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.client_id)
+  
+  return client_id_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ProcessingModule::set_allocated_client_id(std::string* client_id) {
+  if (client_id != nullptr) {
+    
+  } else {
+    
+  }
+  client_id_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), client_id);
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.client_id)
+}
+
+// .ubii.processing.ProcessingModule.Status status = 7;
 inline void ProcessingModule::clear_status() {
   status_ = 0;
 }
-inline ::ubii::processing::ProcessingModuleStatus ProcessingModule::_internal_status() const {
-  return static_cast< ::ubii::processing::ProcessingModuleStatus >(status_);
+inline ::ubii::processing::ProcessingModule_Status ProcessingModule::_internal_status() const {
+  return static_cast< ::ubii::processing::ProcessingModule_Status >(status_);
 }
-inline ::ubii::processing::ProcessingModuleStatus ProcessingModule::status() const {
+inline ::ubii::processing::ProcessingModule_Status ProcessingModule::status() const {
   // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.status)
   return _internal_status();
 }
-inline void ProcessingModule::_internal_set_status(::ubii::processing::ProcessingModuleStatus value) {
+inline void ProcessingModule::_internal_set_status(::ubii::processing::ProcessingModule_Status value) {
   
   status_ = value;
 }
-inline void ProcessingModule::set_status(::ubii::processing::ProcessingModuleStatus value) {
+inline void ProcessingModule::set_status(::ubii::processing::ProcessingModule_Status value) {
   _internal_set_status(value);
   // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.status)
 }
 
-// .ubii.processing.ProcessingMode processing_mode = 7;
+// .ubii.processing.ProcessingMode processing_mode = 8;
 inline bool ProcessingModule::_internal_has_processing_mode() const {
   return this != internal_default_instance() && processing_mode_ != nullptr;
 }
@@ -2205,7 +2394,7 @@ inline void ProcessingModule::set_allocated_processing_mode(::ubii::processing::
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.processing_mode)
 }
 
-// repeated .ubii.processing.ModuleIO inputs = 8;
+// repeated .ubii.processing.ModuleIO inputs = 9;
 inline int ProcessingModule::_internal_inputs_size() const {
   return inputs_.size();
 }
@@ -2244,7 +2433,7 @@ ProcessingModule::inputs() const {
   return inputs_;
 }
 
-// repeated .ubii.processing.ModuleIO outputs = 9;
+// repeated .ubii.processing.ModuleIO outputs = 10;
 inline int ProcessingModule::_internal_outputs_size() const {
   return outputs_.size();
 }
@@ -2283,7 +2472,27 @@ ProcessingModule::outputs() const {
   return outputs_;
 }
 
-// string on_processing = 10;
+// .ubii.processing.ProcessingModule.Language language = 11;
+inline void ProcessingModule::clear_language() {
+  language_ = 0;
+}
+inline ::ubii::processing::ProcessingModule_Language ProcessingModule::_internal_language() const {
+  return static_cast< ::ubii::processing::ProcessingModule_Language >(language_);
+}
+inline ::ubii::processing::ProcessingModule_Language ProcessingModule::language() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.language)
+  return _internal_language();
+}
+inline void ProcessingModule::_internal_set_language(::ubii::processing::ProcessingModule_Language value) {
+  
+  language_ = value;
+}
+inline void ProcessingModule::set_language(::ubii::processing::ProcessingModule_Language value) {
+  _internal_set_language(value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.language)
+}
+
+// string on_processing = 12;
 inline void ProcessingModule::clear_on_processing() {
   on_processing_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2343,7 +2552,7 @@ inline void ProcessingModule::set_allocated_on_processing(std::string* on_proces
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_processing)
 }
 
-// string on_created = 11;
+// string on_created = 13;
 inline void ProcessingModule::clear_on_created() {
   on_created_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2403,7 +2612,7 @@ inline void ProcessingModule::set_allocated_on_created(std::string* on_created) 
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_created)
 }
 
-// string on_halted = 12;
+// string on_halted = 14;
 inline void ProcessingModule::clear_on_halted() {
   on_halted_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2463,7 +2672,7 @@ inline void ProcessingModule::set_allocated_on_halted(std::string* on_halted) {
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_halted)
 }
 
-// string on_destroyed = 13;
+// string on_destroyed = 15;
 inline void ProcessingModule::clear_on_destroyed() {
   on_destroyed_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2589,10 +2798,15 @@ ProcessingModuleList::elements() const {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::ubii::processing::ProcessingModuleStatus> : ::std::true_type {};
+template <> struct is_proto_enum< ::ubii::processing::ProcessingModule_Status> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ubii::processing::ProcessingModuleStatus>() {
-  return ::ubii::processing::ProcessingModuleStatus_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::processing::ProcessingModule_Status>() {
+  return ::ubii::processing::ProcessingModule_Status_descriptor();
+}
+template <> struct is_proto_enum< ::ubii::processing::ProcessingModule_Language> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::processing::ProcessingModule_Language>() {
+  return ::ubii::processing::ProcessingModule_Language_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

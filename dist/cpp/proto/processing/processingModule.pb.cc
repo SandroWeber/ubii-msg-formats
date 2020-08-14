@@ -160,7 +160,7 @@ static void InitDefaultsscc_info_ProcessingModuleList_proto_2fprocessing_2fproce
       &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[7];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto[1];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fprocessing_2fprocessingModule_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2fprocessingModule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -209,10 +209,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2fprocessin
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, authors_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, tags_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, description_),
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, client_id_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, status_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, processing_mode_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, inputs_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, outputs_),
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, language_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_processing_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_created_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_halted_),
@@ -231,7 +233,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 19, -1, sizeof(::ubii::processing::ProcessingMode)},
   { 28, -1, sizeof(::ubii::processing::ModuleIO)},
   { 35, -1, sizeof(::ubii::processing::ProcessingModule)},
-  { 53, -1, sizeof(::ubii::processing::ProcessingModuleList)},
+  { 55, -1, sizeof(::ubii::processing::ProcessingModuleList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -257,21 +259,24 @@ const char descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2epro
   "ggerOnInput\022\024\n\014min_delay_ms\030\001 \001(\005\022\036\n\026all"
   "_inputs_need_update\030\002 \001(\010B\006\n\004mode\"9\n\010Mod"
   "uleIO\022\025\n\rinternal_name\030\001 \001(\t\022\026\n\016message_"
-  "format\030\002 \001(\t\"\376\002\n\020ProcessingModule\022\n\n\002id\030"
+  "format\030\002 \001(\t\"\332\004\n\020ProcessingModule\022\n\n\002id\030"
   "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003(\t\022\014\n\004"
-  "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\0227\n\006statu"
-  "s\030\006 \001(\0162\'.ubii.processing.ProcessingModu"
-  "leStatus\0228\n\017processing_mode\030\007 \001(\0132\037.ubii"
-  ".processing.ProcessingMode\022)\n\006inputs\030\010 \003"
-  "(\0132\031.ubii.processing.ModuleIO\022*\n\007outputs"
-  "\030\t \003(\0132\031.ubii.processing.ModuleIO\022\025\n\ron_"
-  "processing\030\n \001(\t\022\022\n\non_created\030\013 \001(\t\022\021\n\t"
-  "on_halted\030\014 \001(\t\022\024\n\014on_destroyed\030\r \001(\t\"K\n"
-  "\024ProcessingModuleList\0223\n\010elements\030\001 \003(\0132"
-  "!.ubii.processing.ProcessingModule*a\n\026Pr"
-  "ocessingModuleStatus\022\017\n\013INITIALIZED\020\000\022\013\n"
-  "\007CREATED\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r"
-  "\n\tDESTROYED\020\004b\006proto3"
+  "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\021\n\tclien"
+  "t_id\030\006 \001(\t\0228\n\006status\030\007 \001(\0162(.ubii.proces"
+  "sing.ProcessingModule.Status\0228\n\017processi"
+  "ng_mode\030\010 \001(\0132\037.ubii.processing.Processi"
+  "ngMode\022)\n\006inputs\030\t \003(\0132\031.ubii.processing"
+  ".ModuleIO\022*\n\007outputs\030\n \003(\0132\031.ubii.proces"
+  "sing.ModuleIO\022<\n\010language\030\013 \001(\0162*.ubii.p"
+  "rocessing.ProcessingModule.Language\022\025\n\ro"
+  "n_processing\030\014 \001(\t\022\022\n\non_created\030\r \001(\t\022\021"
+  "\n\ton_halted\030\016 \001(\t\022\024\n\014on_destroyed\030\017 \001(\t\""
+  "Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CREATED\020\001\022"
+  "\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED"
+  "\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022"
+  "\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingModuleLis"
+  "t\0223\n\010elements\030\001 \003(\0132!.ubii.processing.Pr"
+  "ocessingModuleb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_deps[1] = {
 };
@@ -287,7 +292,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once;
 static bool descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto = {
-  &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2eproto, "proto/processing/processingModule.proto", 1061,
+  &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2eproto, "proto/processing/processingModule.proto", 1182,
   &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once, descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_sccs, descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_deps, 7, 0,
   schemas, file_default_instances, TableStruct_proto_2fprocessing_2fprocessingModule_2eproto::offsets,
   file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto, 7, file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto, file_level_service_descriptors_proto_2fprocessing_2fprocessingModule_2eproto,
@@ -297,11 +302,11 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_
 static bool dynamic_init_dummy_proto_2fprocessing_2fprocessingModule_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto), true);
 namespace ubii {
 namespace processing {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessingModuleStatus_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessingModule_Status_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto);
   return file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto[0];
 }
-bool ProcessingModuleStatus_IsValid(int value) {
+bool ProcessingModule_Status_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -314,6 +319,43 @@ bool ProcessingModuleStatus_IsValid(int value) {
   }
 }
 
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr ProcessingModule_Status ProcessingModule::INITIALIZED;
+constexpr ProcessingModule_Status ProcessingModule::CREATED;
+constexpr ProcessingModule_Status ProcessingModule::PROCESSING;
+constexpr ProcessingModule_Status ProcessingModule::HALTED;
+constexpr ProcessingModule_Status ProcessingModule::DESTROYED;
+constexpr ProcessingModule_Status ProcessingModule::Status_MIN;
+constexpr ProcessingModule_Status ProcessingModule::Status_MAX;
+constexpr int ProcessingModule::Status_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessingModule_Language_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto);
+  return file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto[1];
+}
+bool ProcessingModule_Language_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr ProcessingModule_Language ProcessingModule::CPP;
+constexpr ProcessingModule_Language ProcessingModule::PY;
+constexpr ProcessingModule_Language ProcessingModule::JS;
+constexpr ProcessingModule_Language ProcessingModule::CS;
+constexpr ProcessingModule_Language ProcessingModule::JAVA;
+constexpr ProcessingModule_Language ProcessingModule::Language_MIN;
+constexpr ProcessingModule_Language ProcessingModule::Language_MAX;
+constexpr int ProcessingModule::Language_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
@@ -1551,6 +1593,10 @@ ProcessingModule::ProcessingModule(const ProcessingModule& from)
   if (!from._internal_description().empty()) {
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
+  client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_client_id().empty()) {
+    client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
+  }
   on_processing_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_on_processing().empty()) {
     on_processing_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_);
@@ -1572,7 +1618,9 @@ ProcessingModule::ProcessingModule(const ProcessingModule& from)
   } else {
     processing_mode_ = nullptr;
   }
-  status_ = from.status_;
+  ::memcpy(&status_, &from.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&language_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(language_));
   // @@protoc_insertion_point(copy_constructor:ubii.processing.ProcessingModule)
 }
 
@@ -1581,13 +1629,14 @@ void ProcessingModule::SharedCtor() {
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_processing_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_created_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_halted_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_destroyed_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&processing_mode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&status_) -
-      reinterpret_cast<char*>(&processing_mode_)) + sizeof(status_));
+      reinterpret_cast<char*>(&language_) -
+      reinterpret_cast<char*>(&processing_mode_)) + sizeof(language_));
 }
 
 ProcessingModule::~ProcessingModule() {
@@ -1599,6 +1648,7 @@ void ProcessingModule::SharedDtor() {
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_processing_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_created_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_halted_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1628,6 +1678,7 @@ void ProcessingModule::Clear() {
   id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_processing_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_created_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   on_halted_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1636,7 +1687,9 @@ void ProcessingModule::Clear() {
     delete processing_mode_;
   }
   processing_mode_ = nullptr;
-  status_ = 0;
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&language_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(language_));
   _internal_metadata_.Clear();
 }
 
@@ -1702,75 +1755,92 @@ const char* ProcessingModule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .ubii.processing.ProcessingModuleStatus status = 6;
+      // string client_id = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_client_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.client_id"));
           CHK_(ptr);
-          _internal_set_status(static_cast<::ubii::processing::ProcessingModuleStatus>(val));
         } else goto handle_unusual;
         continue;
-      // .ubii.processing.ProcessingMode processing_mode = 7;
+      // .ubii.processing.ProcessingModule.Status status = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::ubii::processing::ProcessingModule_Status>(val));
+        } else goto handle_unusual;
+        continue;
+      // .ubii.processing.ProcessingMode processing_mode = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_processing_mode(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .ubii.processing.ModuleIO inputs = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+      // repeated .ubii.processing.ModuleIO inputs = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_inputs(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .ubii.processing.ModuleIO outputs = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+      // repeated .ubii.processing.ModuleIO outputs = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_outputs(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
         } else goto handle_unusual;
         continue;
-      // string on_processing = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+      // .ubii.processing.ProcessingModule.Language language = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_language(static_cast<::ubii::processing::ProcessingModule_Language>(val));
+        } else goto handle_unusual;
+        continue;
+      // string on_processing = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
           auto str = _internal_mutable_on_processing();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_processing"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string on_created = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+      // string on_created = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
           auto str = _internal_mutable_on_created();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_created"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string on_halted = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+      // string on_halted = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
           auto str = _internal_mutable_on_halted();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_halted"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string on_destroyed = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+      // string on_destroyed = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
           auto str = _internal_mutable_on_destroyed();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_destroyed"));
@@ -1853,75 +1923,92 @@ failure:
         5, this->_internal_description(), target);
   }
 
-  // .ubii.processing.ProcessingModuleStatus status = 6;
+  // string client_id = 6;
+  if (this->client_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_client_id().data(), static_cast<int>(this->_internal_client_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ubii.processing.ProcessingModule.client_id");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_client_id(), target);
+  }
+
+  // .ubii.processing.ProcessingModule.Status status = 7;
   if (this->status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      6, this->_internal_status(), target);
+      7, this->_internal_status(), target);
   }
 
-  // .ubii.processing.ProcessingMode processing_mode = 7;
+  // .ubii.processing.ProcessingMode processing_mode = 8;
   if (this->has_processing_mode()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        7, _Internal::processing_mode(this), target, stream);
+        8, _Internal::processing_mode(this), target, stream);
   }
 
-  // repeated .ubii.processing.ModuleIO inputs = 8;
+  // repeated .ubii.processing.ModuleIO inputs = 9;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_inputs_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(8, this->_internal_inputs(i), target, stream);
+      InternalWriteMessage(9, this->_internal_inputs(i), target, stream);
   }
 
-  // repeated .ubii.processing.ModuleIO outputs = 9;
+  // repeated .ubii.processing.ModuleIO outputs = 10;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_outputs_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(9, this->_internal_outputs(i), target, stream);
+      InternalWriteMessage(10, this->_internal_outputs(i), target, stream);
   }
 
-  // string on_processing = 10;
+  // .ubii.processing.ProcessingModule.Language language = 11;
+  if (this->language() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      11, this->_internal_language(), target);
+  }
+
+  // string on_processing = 12;
   if (this->on_processing().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_on_processing().data(), static_cast<int>(this->_internal_on_processing().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.processing.ProcessingModule.on_processing");
     target = stream->WriteStringMaybeAliased(
-        10, this->_internal_on_processing(), target);
+        12, this->_internal_on_processing(), target);
   }
 
-  // string on_created = 11;
+  // string on_created = 13;
   if (this->on_created().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_on_created().data(), static_cast<int>(this->_internal_on_created().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.processing.ProcessingModule.on_created");
     target = stream->WriteStringMaybeAliased(
-        11, this->_internal_on_created(), target);
+        13, this->_internal_on_created(), target);
   }
 
-  // string on_halted = 12;
+  // string on_halted = 14;
   if (this->on_halted().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_on_halted().data(), static_cast<int>(this->_internal_on_halted().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.processing.ProcessingModule.on_halted");
     target = stream->WriteStringMaybeAliased(
-        12, this->_internal_on_halted(), target);
+        14, this->_internal_on_halted(), target);
   }
 
-  // string on_destroyed = 13;
+  // string on_destroyed = 15;
   if (this->on_destroyed().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_on_destroyed().data(), static_cast<int>(this->_internal_on_destroyed().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.processing.ProcessingModule.on_destroyed");
     target = stream->WriteStringMaybeAliased(
-        13, this->_internal_on_destroyed(), target);
+        15, this->_internal_on_destroyed(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1956,14 +2043,14 @@ size_t ProcessingModule::ByteSizeLong() const {
       tags_.Get(i));
   }
 
-  // repeated .ubii.processing.ModuleIO inputs = 8;
+  // repeated .ubii.processing.ModuleIO inputs = 9;
   total_size += 1UL * this->_internal_inputs_size();
   for (const auto& msg : this->inputs_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .ubii.processing.ModuleIO outputs = 9;
+  // repeated .ubii.processing.ModuleIO outputs = 10;
   total_size += 1UL * this->_internal_outputs_size();
   for (const auto& msg : this->outputs_) {
     total_size +=
@@ -1991,45 +2078,58 @@ size_t ProcessingModule::ByteSizeLong() const {
         this->_internal_description());
   }
 
-  // string on_processing = 10;
+  // string client_id = 6;
+  if (this->client_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_client_id());
+  }
+
+  // string on_processing = 12;
   if (this->on_processing().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_on_processing());
   }
 
-  // string on_created = 11;
+  // string on_created = 13;
   if (this->on_created().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_on_created());
   }
 
-  // string on_halted = 12;
+  // string on_halted = 14;
   if (this->on_halted().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_on_halted());
   }
 
-  // string on_destroyed = 13;
+  // string on_destroyed = 15;
   if (this->on_destroyed().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_on_destroyed());
   }
 
-  // .ubii.processing.ProcessingMode processing_mode = 7;
+  // .ubii.processing.ProcessingMode processing_mode = 8;
   if (this->has_processing_mode()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *processing_mode_);
   }
 
-  // .ubii.processing.ProcessingModuleStatus status = 6;
+  // .ubii.processing.ProcessingModule.Status status = 7;
   if (this->status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
+  }
+
+  // .ubii.processing.ProcessingModule.Language language = 11;
+  if (this->language() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_language());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2079,6 +2179,10 @@ void ProcessingModule::MergeFrom(const ProcessingModule& from) {
 
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
+  if (from.client_id().size() > 0) {
+
+    client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
+  }
   if (from.on_processing().size() > 0) {
 
     on_processing_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_);
@@ -2100,6 +2204,9 @@ void ProcessingModule::MergeFrom(const ProcessingModule& from) {
   }
   if (from.status() != 0) {
     _internal_set_status(from._internal_status());
+  }
+  if (from.language() != 0) {
+    _internal_set_language(from._internal_language());
   }
 }
 
@@ -2134,6 +2241,8 @@ void ProcessingModule::InternalSwap(ProcessingModule* other) {
     GetArenaNoVirtual());
   description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   on_processing_.Swap(&other->on_processing_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   on_created_.Swap(&other->on_created_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -2144,6 +2253,7 @@ void ProcessingModule::InternalSwap(ProcessingModule* other) {
     GetArenaNoVirtual());
   swap(processing_mode_, other->processing_mode_);
   swap(status_, other->status_);
+  swap(language_, other->language_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProcessingModule::GetMetadata() const {

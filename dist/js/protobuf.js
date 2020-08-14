@@ -1,4 +1,4 @@
-/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
+/*eslint-disable block-scoped-var, no-redeclare, no-control-regex, no-prototype-builtins*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
@@ -4501,26 +4501,6 @@ $root.ubii = (function() {
             return LockstepProcessingReply;
         })();
 
-        /**
-         * ProcessingModuleStatus enum.
-         * @name ubii.processing.ProcessingModuleStatus
-         * @enum {string}
-         * @property {number} INITIALIZED=0 INITIALIZED value
-         * @property {number} CREATED=1 CREATED value
-         * @property {number} PROCESSING=2 PROCESSING value
-         * @property {number} HALTED=3 HALTED value
-         * @property {number} DESTROYED=4 DESTROYED value
-         */
-        processing.ProcessingModuleStatus = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "INITIALIZED"] = 0;
-            values[valuesById[1] = "CREATED"] = 1;
-            values[valuesById[2] = "PROCESSING"] = 2;
-            values[valuesById[3] = "HALTED"] = 3;
-            values[valuesById[4] = "DESTROYED"] = 4;
-            return values;
-        })();
-
         processing.ProcessingMode = (function() {
 
             /**
@@ -5605,10 +5585,12 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [authors] ProcessingModule authors
              * @property {Array.<string>|null} [tags] ProcessingModule tags
              * @property {string|null} [description] ProcessingModule description
-             * @property {ubii.processing.ProcessingModuleStatus|null} [status] ProcessingModule status
+             * @property {string|null} [clientId] ProcessingModule clientId
+             * @property {ubii.processing.ProcessingModule.Status|null} [status] ProcessingModule status
              * @property {ubii.processing.IProcessingMode|null} [processingMode] ProcessingModule processingMode
              * @property {Array.<ubii.processing.IModuleIO>|null} [inputs] ProcessingModule inputs
              * @property {Array.<ubii.processing.IModuleIO>|null} [outputs] ProcessingModule outputs
+             * @property {ubii.processing.ProcessingModule.Language|null} [language] ProcessingModule language
              * @property {string|null} [onProcessing] ProcessingModule onProcessing
              * @property {string|null} [onCreated] ProcessingModule onCreated
              * @property {string|null} [onHalted] ProcessingModule onHalted
@@ -5675,8 +5657,16 @@ $root.ubii = (function() {
             ProcessingModule.prototype.description = "";
 
             /**
+             * ProcessingModule clientId.
+             * @member {string} clientId
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.clientId = "";
+
+            /**
              * ProcessingModule status.
-             * @member {ubii.processing.ProcessingModuleStatus} status
+             * @member {ubii.processing.ProcessingModule.Status} status
              * @memberof ubii.processing.ProcessingModule
              * @instance
              */
@@ -5705,6 +5695,14 @@ $root.ubii = (function() {
              * @instance
              */
             ProcessingModule.prototype.outputs = $util.emptyArray;
+
+            /**
+             * ProcessingModule language.
+             * @member {ubii.processing.ProcessingModule.Language} language
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.language = 0;
 
             /**
              * ProcessingModule onProcessing.
@@ -5774,24 +5772,28 @@ $root.ubii = (function() {
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
                 if (message.description != null && message.hasOwnProperty("description"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.clientId);
                 if (message.status != null && message.hasOwnProperty("status"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.status);
+                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.status);
                 if (message.processingMode != null && message.hasOwnProperty("processingMode"))
-                    $root.ubii.processing.ProcessingMode.encode(message.processingMode, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    $root.ubii.processing.ProcessingMode.encode(message.processingMode, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.inputs != null && message.inputs.length)
                     for (var i = 0; i < message.inputs.length; ++i)
-                        $root.ubii.processing.ModuleIO.encode(message.inputs[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                        $root.ubii.processing.ModuleIO.encode(message.inputs[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.outputs != null && message.outputs.length)
                     for (var i = 0; i < message.outputs.length; ++i)
-                        $root.ubii.processing.ModuleIO.encode(message.outputs[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                        $root.ubii.processing.ModuleIO.encode(message.outputs[i], writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                if (message.language != null && message.hasOwnProperty("language"))
+                    writer.uint32(/* id 11, wireType 0 =*/88).int32(message.language);
                 if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
-                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.onProcessing);
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.onProcessing);
                 if (message.onCreated != null && message.hasOwnProperty("onCreated"))
-                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.onCreated);
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.onCreated);
                 if (message.onHalted != null && message.hasOwnProperty("onHalted"))
-                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.onHalted);
+                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.onHalted);
                 if (message.onDestroyed != null && message.hasOwnProperty("onDestroyed"))
-                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.onDestroyed);
+                    writer.uint32(/* id 15, wireType 2 =*/122).string(message.onDestroyed);
                 return writer;
             };
 
@@ -5846,31 +5848,37 @@ $root.ubii = (function() {
                         message.description = reader.string();
                         break;
                     case 6:
-                        message.status = reader.int32();
+                        message.clientId = reader.string();
                         break;
                     case 7:
-                        message.processingMode = $root.ubii.processing.ProcessingMode.decode(reader, reader.uint32());
+                        message.status = reader.int32();
                         break;
                     case 8:
+                        message.processingMode = $root.ubii.processing.ProcessingMode.decode(reader, reader.uint32());
+                        break;
+                    case 9:
                         if (!(message.inputs && message.inputs.length))
                             message.inputs = [];
                         message.inputs.push($root.ubii.processing.ModuleIO.decode(reader, reader.uint32()));
                         break;
-                    case 9:
+                    case 10:
                         if (!(message.outputs && message.outputs.length))
                             message.outputs = [];
                         message.outputs.push($root.ubii.processing.ModuleIO.decode(reader, reader.uint32()));
                         break;
-                    case 10:
-                        message.onProcessing = reader.string();
-                        break;
                     case 11:
-                        message.onCreated = reader.string();
+                        message.language = reader.int32();
                         break;
                     case 12:
-                        message.onHalted = reader.string();
+                        message.onProcessing = reader.string();
                         break;
                     case 13:
+                        message.onCreated = reader.string();
+                        break;
+                    case 14:
+                        message.onHalted = reader.string();
+                        break;
+                    case 15:
                         message.onDestroyed = reader.string();
                         break;
                     default:
@@ -5931,6 +5939,9 @@ $root.ubii = (function() {
                 if (message.description != null && message.hasOwnProperty("description"))
                     if (!$util.isString(message.description))
                         return "description: string expected";
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    if (!$util.isString(message.clientId))
+                        return "clientId: string expected";
                 if (message.status != null && message.hasOwnProperty("status"))
                     switch (message.status) {
                     default:
@@ -5965,6 +5976,17 @@ $root.ubii = (function() {
                             return "outputs." + error;
                     }
                 }
+                if (message.language != null && message.hasOwnProperty("language"))
+                    switch (message.language) {
+                    default:
+                        return "language: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        break;
+                    }
                 if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
                     if (!$util.isString(message.onProcessing))
                         return "onProcessing: string expected";
@@ -6012,6 +6034,8 @@ $root.ubii = (function() {
                 }
                 if (object.description != null)
                     message.description = String(object.description);
+                if (object.clientId != null)
+                    message.clientId = String(object.clientId);
                 switch (object.status) {
                 case "INITIALIZED":
                 case 0:
@@ -6059,6 +6083,28 @@ $root.ubii = (function() {
                         message.outputs[i] = $root.ubii.processing.ModuleIO.fromObject(object.outputs[i]);
                     }
                 }
+                switch (object.language) {
+                case "CPP":
+                case 0:
+                    message.language = 0;
+                    break;
+                case "PY":
+                case 1:
+                    message.language = 1;
+                    break;
+                case "JS":
+                case 2:
+                    message.language = 2;
+                    break;
+                case "CS":
+                case 3:
+                    message.language = 3;
+                    break;
+                case "JAVA":
+                case 4:
+                    message.language = 4;
+                    break;
+                }
                 if (object.onProcessing != null)
                     message.onProcessing = String(object.onProcessing);
                 if (object.onCreated != null)
@@ -6093,8 +6139,10 @@ $root.ubii = (function() {
                     object.id = "";
                     object.name = "";
                     object.description = "";
+                    object.clientId = "";
                     object.status = options.enums === String ? "INITIALIZED" : 0;
                     object.processingMode = null;
+                    object.language = options.enums === String ? "CPP" : 0;
                     object.onProcessing = "";
                     object.onCreated = "";
                     object.onHalted = "";
@@ -6116,8 +6164,10 @@ $root.ubii = (function() {
                 }
                 if (message.description != null && message.hasOwnProperty("description"))
                     object.description = message.description;
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    object.clientId = message.clientId;
                 if (message.status != null && message.hasOwnProperty("status"))
-                    object.status = options.enums === String ? $root.ubii.processing.ProcessingModuleStatus[message.status] : message.status;
+                    object.status = options.enums === String ? $root.ubii.processing.ProcessingModule.Status[message.status] : message.status;
                 if (message.processingMode != null && message.hasOwnProperty("processingMode"))
                     object.processingMode = $root.ubii.processing.ProcessingMode.toObject(message.processingMode, options);
                 if (message.inputs && message.inputs.length) {
@@ -6130,6 +6180,8 @@ $root.ubii = (function() {
                     for (var j = 0; j < message.outputs.length; ++j)
                         object.outputs[j] = $root.ubii.processing.ModuleIO.toObject(message.outputs[j], options);
                 }
+                if (message.language != null && message.hasOwnProperty("language"))
+                    object.language = options.enums === String ? $root.ubii.processing.ProcessingModule.Language[message.language] : message.language;
                 if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
                     object.onProcessing = message.onProcessing;
                 if (message.onCreated != null && message.hasOwnProperty("onCreated"))
@@ -6151,6 +6203,46 @@ $root.ubii = (function() {
             ProcessingModule.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
+
+            /**
+             * Status enum.
+             * @name ubii.processing.ProcessingModule.Status
+             * @enum {string}
+             * @property {number} INITIALIZED=0 INITIALIZED value
+             * @property {number} CREATED=1 CREATED value
+             * @property {number} PROCESSING=2 PROCESSING value
+             * @property {number} HALTED=3 HALTED value
+             * @property {number} DESTROYED=4 DESTROYED value
+             */
+            ProcessingModule.Status = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "INITIALIZED"] = 0;
+                values[valuesById[1] = "CREATED"] = 1;
+                values[valuesById[2] = "PROCESSING"] = 2;
+                values[valuesById[3] = "HALTED"] = 3;
+                values[valuesById[4] = "DESTROYED"] = 4;
+                return values;
+            })();
+
+            /**
+             * Language enum.
+             * @name ubii.processing.ProcessingModule.Language
+             * @enum {string}
+             * @property {number} CPP=0 CPP value
+             * @property {number} PY=1 PY value
+             * @property {number} JS=2 JS value
+             * @property {number} CS=3 CS value
+             * @property {number} JAVA=4 JAVA value
+             */
+            ProcessingModule.Language = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "CPP"] = 0;
+                values[valuesById[1] = "PY"] = 1;
+                values[valuesById[2] = "JS"] = 2;
+                values[valuesById[3] = "CS"] = 3;
+                values[valuesById[4] = "JAVA"] = 4;
+                return values;
+            })();
 
             return ProcessingModule;
         })();
@@ -13907,13 +13999,7 @@ $root.ubii = (function() {
                     object.width = 0;
                     object.height = 0;
                     object.dataFormat = options.enums === String ? "GRAY8" : 0;
-                    if (options.bytes === String)
-                        object.data = "";
-                    else {
-                        object.data = [];
-                        if (options.bytes !== Array)
-                            object.data = $util.newBuffer(object.data);
-                    }
+                    object.data = options.bytes === String ? "" : [];
                 }
                 if (message.width != null && message.hasOwnProperty("width"))
                     object.width = message.width;

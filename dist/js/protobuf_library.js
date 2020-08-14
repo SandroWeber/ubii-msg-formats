@@ -65,8 +65,9 @@ goog.provide('proto.ubii.processing.ProcessingMode.Lockstep');
 goog.provide('proto.ubii.processing.ProcessingMode.ModeCase');
 goog.provide('proto.ubii.processing.ProcessingMode.TriggerOnInput');
 goog.provide('proto.ubii.processing.ProcessingModule');
+goog.provide('proto.ubii.processing.ProcessingModule.Language');
+goog.provide('proto.ubii.processing.ProcessingModule.Status');
 goog.provide('proto.ubii.processing.ProcessingModuleList');
-goog.provide('proto.ubii.processing.ProcessingModuleStatus');
 goog.provide('proto.ubii.servers.Server');
 goog.provide('proto.ubii.services.Service');
 goog.provide('proto.ubii.services.ServiceList');
@@ -15718,7 +15719,7 @@ proto.ubii.processing.ModuleIO.prototype.setMessageFormat = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.processing.ProcessingModule.repeatedFields_ = [3,4,8,9];
+proto.ubii.processing.ProcessingModule.repeatedFields_ = [3,4,9,10];
 
 
 
@@ -15756,16 +15757,18 @@ proto.ubii.processing.ProcessingModule.toObject = function(includeInstance, msg)
     authorsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     tagsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    clientId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 7, 0),
     processingMode: (f = msg.getProcessingMode()) && proto.ubii.processing.ProcessingMode.toObject(includeInstance, f),
     inputsList: jspb.Message.toObjectList(msg.getInputsList(),
     proto.ubii.processing.ModuleIO.toObject, includeInstance),
     outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
     proto.ubii.processing.ModuleIO.toObject, includeInstance),
-    onProcessing: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    onCreated: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    onHalted: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    onDestroyed: jspb.Message.getFieldWithDefault(msg, 13, "")
+    language: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    onProcessing: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    onCreated: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    onHalted: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    onDestroyed: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -15823,37 +15826,45 @@ proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader = function(ms
       msg.setDescription(value);
       break;
     case 6:
-      var value = /** @type {!proto.ubii.processing.ProcessingModuleStatus} */ (reader.readEnum());
-      msg.setStatus(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClientId(value);
       break;
     case 7:
+      var value = /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 8:
       var value = new proto.ubii.processing.ProcessingMode;
       reader.readMessage(value,proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader);
       msg.setProcessingMode(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.ubii.processing.ModuleIO;
       reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
       msg.addInputs(value);
       break;
-    case 9:
+    case 10:
       var value = new proto.ubii.processing.ModuleIO;
       reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
       msg.addOutputs(value);
       break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOnProcessing(value);
-      break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOnCreated(value);
+      var value = /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (reader.readEnum());
+      msg.setLanguage(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOnHalted(value);
+      msg.setOnProcessing(value);
       break;
     case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnCreated(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnHalted(value);
+      break;
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setOnDestroyed(value);
       break;
@@ -15921,17 +15932,24 @@ proto.ubii.processing.ProcessingModule.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getClientId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
-      6,
+      7,
       f
     );
   }
   f = message.getProcessingMode();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       proto.ubii.processing.ProcessingMode.serializeBinaryToWriter
     );
@@ -15939,7 +15957,7 @@ proto.ubii.processing.ProcessingModule.serializeBinaryToWriter = function(messag
   f = message.getInputsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       proto.ubii.processing.ModuleIO.serializeBinaryToWriter
     );
@@ -15947,41 +15965,70 @@ proto.ubii.processing.ProcessingModule.serializeBinaryToWriter = function(messag
   f = message.getOutputsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.ubii.processing.ModuleIO.serializeBinaryToWriter
     );
   }
-  f = message.getOnProcessing();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
-  f = message.getOnCreated();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getLanguage();
+  if (f !== 0.0) {
+    writer.writeEnum(
       11,
       f
     );
   }
-  f = message.getOnHalted();
+  f = message.getOnProcessing();
   if (f.length > 0) {
     writer.writeString(
       12,
       f
     );
   }
-  f = message.getOnDestroyed();
+  f = message.getOnCreated();
   if (f.length > 0) {
     writer.writeString(
       13,
       f
     );
   }
+  f = message.getOnHalted();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = message.getOnDestroyed();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.ubii.processing.ProcessingModule.Status = {
+  INITIALIZED: 0,
+  CREATED: 1,
+  PROCESSING: 2,
+  HALTED: 3,
+  DESTROYED: 4
+};
+
+/**
+ * @enum {number}
+ */
+proto.ubii.processing.ProcessingModule.Language = {
+  CPP: 0,
+  PY: 1,
+  JS: 2,
+  CS: 3,
+  JAVA: 4
+};
 
 /**
  * optional string id = 1;
@@ -16112,30 +16159,48 @@ proto.ubii.processing.ProcessingModule.prototype.setDescription = function(value
 
 
 /**
- * optional ProcessingModuleStatus status = 6;
- * @return {!proto.ubii.processing.ProcessingModuleStatus}
+ * optional string client_id = 6;
+ * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getStatus = function() {
-  return /** @type {!proto.ubii.processing.ProcessingModuleStatus} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+proto.ubii.processing.ProcessingModule.prototype.getClientId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {!proto.ubii.processing.ProcessingModuleStatus} value
+ * @param {string} value
+ * @return {!proto.ubii.processing.ProcessingModule} returns this
+ */
+proto.ubii.processing.ProcessingModule.prototype.setClientId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional Status status = 7;
+ * @return {!proto.ubii.processing.ProcessingModule.Status}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getStatus = function() {
+  return /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.ubii.processing.ProcessingModule.Status} value
  * @return {!proto.ubii.processing.ProcessingModule} returns this
  */
 proto.ubii.processing.ProcessingModule.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 6, value);
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
 /**
- * optional ProcessingMode processing_mode = 7;
+ * optional ProcessingMode processing_mode = 8;
  * @return {?proto.ubii.processing.ProcessingMode}
  */
 proto.ubii.processing.ProcessingModule.prototype.getProcessingMode = function() {
   return /** @type{?proto.ubii.processing.ProcessingMode} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode, 7));
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode, 8));
 };
 
 
@@ -16144,7 +16209,7 @@ proto.ubii.processing.ProcessingModule.prototype.getProcessingMode = function() 
  * @return {!proto.ubii.processing.ProcessingModule} returns this
 */
 proto.ubii.processing.ProcessingModule.prototype.setProcessingMode = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -16162,17 +16227,17 @@ proto.ubii.processing.ProcessingModule.prototype.clearProcessingMode = function(
  * @return {boolean}
  */
 proto.ubii.processing.ProcessingModule.prototype.hasProcessingMode = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * repeated ModuleIO inputs = 8;
+ * repeated ModuleIO inputs = 9;
  * @return {!Array<!proto.ubii.processing.ModuleIO>}
  */
 proto.ubii.processing.ProcessingModule.prototype.getInputsList = function() {
   return /** @type{!Array<!proto.ubii.processing.ModuleIO>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 9));
 };
 
 
@@ -16181,7 +16246,7 @@ proto.ubii.processing.ProcessingModule.prototype.getInputsList = function() {
  * @return {!proto.ubii.processing.ProcessingModule} returns this
 */
 proto.ubii.processing.ProcessingModule.prototype.setInputsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -16191,7 +16256,7 @@ proto.ubii.processing.ProcessingModule.prototype.setInputsList = function(value)
  * @return {!proto.ubii.processing.ModuleIO}
  */
 proto.ubii.processing.ProcessingModule.prototype.addInputs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.ubii.processing.ModuleIO, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ubii.processing.ModuleIO, opt_index);
 };
 
 
@@ -16205,12 +16270,12 @@ proto.ubii.processing.ProcessingModule.prototype.clearInputsList = function() {
 
 
 /**
- * repeated ModuleIO outputs = 9;
+ * repeated ModuleIO outputs = 10;
  * @return {!Array<!proto.ubii.processing.ModuleIO>}
  */
 proto.ubii.processing.ProcessingModule.prototype.getOutputsList = function() {
   return /** @type{!Array<!proto.ubii.processing.ModuleIO>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 10));
 };
 
 
@@ -16219,7 +16284,7 @@ proto.ubii.processing.ProcessingModule.prototype.getOutputsList = function() {
  * @return {!proto.ubii.processing.ProcessingModule} returns this
 */
 proto.ubii.processing.ProcessingModule.prototype.setOutputsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -16229,7 +16294,7 @@ proto.ubii.processing.ProcessingModule.prototype.setOutputsList = function(value
  * @return {!proto.ubii.processing.ModuleIO}
  */
 proto.ubii.processing.ProcessingModule.prototype.addOutputs = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.ubii.processing.ModuleIO, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.ubii.processing.ModuleIO, opt_index);
 };
 
 
@@ -16243,46 +16308,28 @@ proto.ubii.processing.ProcessingModule.prototype.clearOutputsList = function() {
 
 
 /**
- * optional string on_processing = 10;
+ * optional Language language = 11;
+ * @return {!proto.ubii.processing.ProcessingModule.Language}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getLanguage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.ubii.processing.ProcessingModule.Language} value
+ * @return {!proto.ubii.processing.ProcessingModule} returns this
+ */
+proto.ubii.processing.ProcessingModule.prototype.setLanguage = function(value) {
+  return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional string on_processing = 12;
  * @return {string}
  */
 proto.ubii.processing.ProcessingModule.prototype.getOnProcessing = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.processing.ProcessingModule} returns this
- */
-proto.ubii.processing.ProcessingModule.prototype.setOnProcessing = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
-};
-
-
-/**
- * optional string on_created = 11;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOnCreated = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.processing.ProcessingModule} returns this
- */
-proto.ubii.processing.ProcessingModule.prototype.setOnCreated = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
-};
-
-
-/**
- * optional string on_halted = 12;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOnHalted = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -16291,16 +16338,16 @@ proto.ubii.processing.ProcessingModule.prototype.getOnHalted = function() {
  * @param {string} value
  * @return {!proto.ubii.processing.ProcessingModule} returns this
  */
-proto.ubii.processing.ProcessingModule.prototype.setOnHalted = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnProcessing = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional string on_destroyed = 13;
+ * optional string on_created = 13;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnDestroyed = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnCreated = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -16309,8 +16356,44 @@ proto.ubii.processing.ProcessingModule.prototype.getOnDestroyed = function() {
  * @param {string} value
  * @return {!proto.ubii.processing.ProcessingModule} returns this
  */
-proto.ubii.processing.ProcessingModule.prototype.setOnDestroyed = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnCreated = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string on_halted = 14;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOnHalted = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.processing.ProcessingModule} returns this
+ */
+proto.ubii.processing.ProcessingModule.prototype.setOnHalted = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string on_destroyed = 15;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOnDestroyed = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.processing.ProcessingModule} returns this
+ */
+proto.ubii.processing.ProcessingModule.prototype.setOnDestroyed = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
@@ -16473,17 +16556,6 @@ proto.ubii.processing.ProcessingModuleList.prototype.clearElementsList = functio
   return this.setElementsList([]);
 };
 
-
-/**
- * @enum {number}
- */
-proto.ubii.processing.ProcessingModuleStatus = {
-  INITIALIZED: 0,
-  CREATED: 1,
-  PROCESSING: 2,
-  HALTED: 3,
-  DESTROYED: 4
-};
 
 /**
  * Generated by JsPbCodeGenerator.

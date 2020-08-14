@@ -34,45 +34,37 @@ namespace Ubii.Processing {
             "c3RlcBIgChhwcm9jZXNzX3JlcXVlc3RfZW5kcG9pbnQYASABKAkaRgoOVHJp",
             "Z2dlck9uSW5wdXQSFAoMbWluX2RlbGF5X21zGAEgASgFEh4KFmFsbF9pbnB1",
             "dHNfbmVlZF91cGRhdGUYAiABKAhCBgoEbW9kZSI5CghNb2R1bGVJTxIVCg1p",
-            "bnRlcm5hbF9uYW1lGAEgASgJEhYKDm1lc3NhZ2VfZm9ybWF0GAIgASgJIv4C",
+            "bnRlcm5hbF9uYW1lGAEgASgJEhYKDm1lc3NhZ2VfZm9ybWF0GAIgASgJItoE",
             "ChBQcm9jZXNzaW5nTW9kdWxlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
             "DwoHYXV0aG9ycxgDIAMoCRIMCgR0YWdzGAQgAygJEhMKC2Rlc2NyaXB0aW9u",
-            "GAUgASgJEjcKBnN0YXR1cxgGIAEoDjInLnViaWkucHJvY2Vzc2luZy5Qcm9j",
-            "ZXNzaW5nTW9kdWxlU3RhdHVzEjgKD3Byb2Nlc3NpbmdfbW9kZRgHIAEoCzIf",
-            "LnViaWkucHJvY2Vzc2luZy5Qcm9jZXNzaW5nTW9kZRIpCgZpbnB1dHMYCCAD",
-            "KAsyGS51YmlpLnByb2Nlc3NpbmcuTW9kdWxlSU8SKgoHb3V0cHV0cxgJIAMo",
-            "CzIZLnViaWkucHJvY2Vzc2luZy5Nb2R1bGVJTxIVCg1vbl9wcm9jZXNzaW5n",
-            "GAogASgJEhIKCm9uX2NyZWF0ZWQYCyABKAkSEQoJb25faGFsdGVkGAwgASgJ",
-            "EhQKDG9uX2Rlc3Ryb3llZBgNIAEoCSJLChRQcm9jZXNzaW5nTW9kdWxlTGlz",
-            "dBIzCghlbGVtZW50cxgBIAMoCzIhLnViaWkucHJvY2Vzc2luZy5Qcm9jZXNz",
-            "aW5nTW9kdWxlKmEKFlByb2Nlc3NpbmdNb2R1bGVTdGF0dXMSDwoLSU5JVElB",
-            "TElaRUQQABILCgdDUkVBVEVEEAESDgoKUFJPQ0VTU0lORxACEgoKBkhBTFRF",
-            "RBADEg0KCURFU1RST1lFRBAEYgZwcm90bzM="));
+            "GAUgASgJEhEKCWNsaWVudF9pZBgGIAEoCRI4CgZzdGF0dXMYByABKA4yKC51",
+            "YmlpLnByb2Nlc3NpbmcuUHJvY2Vzc2luZ01vZHVsZS5TdGF0dXMSOAoPcHJv",
+            "Y2Vzc2luZ19tb2RlGAggASgLMh8udWJpaS5wcm9jZXNzaW5nLlByb2Nlc3Np",
+            "bmdNb2RlEikKBmlucHV0cxgJIAMoCzIZLnViaWkucHJvY2Vzc2luZy5Nb2R1",
+            "bGVJTxIqCgdvdXRwdXRzGAogAygLMhkudWJpaS5wcm9jZXNzaW5nLk1vZHVs",
+            "ZUlPEjwKCGxhbmd1YWdlGAsgASgOMioudWJpaS5wcm9jZXNzaW5nLlByb2Nl",
+            "c3NpbmdNb2R1bGUuTGFuZ3VhZ2USFQoNb25fcHJvY2Vzc2luZxgMIAEoCRIS",
+            "Cgpvbl9jcmVhdGVkGA0gASgJEhEKCW9uX2hhbHRlZBgOIAEoCRIUCgxvbl9k",
+            "ZXN0cm95ZWQYDyABKAkiUQoGU3RhdHVzEg8KC0lOSVRJQUxJWkVEEAASCwoH",
+            "Q1JFQVRFRBABEg4KClBST0NFU1NJTkcQAhIKCgZIQUxURUQQAxINCglERVNU",
+            "Uk9ZRUQQBCI1CghMYW5ndWFnZRIHCgNDUFAQABIGCgJQWRABEgYKAkpTEAIS",
+            "BgoCQ1MQAxIICgRKQVZBEAQiSwoUUHJvY2Vzc2luZ01vZHVsZUxpc3QSMwoI",
+            "ZWxlbWVudHMYASADKAsyIS51YmlpLnByb2Nlc3NpbmcuUHJvY2Vzc2luZ01v",
+            "ZHVsZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ubii.Processing.ProcessingModuleStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode), global::Ubii.Processing.ProcessingMode.Parser, new[]{ "Frequency", "Lockstep", "TriggerOnInput" }, new[]{ "Mode" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode.Types.Frequency), global::Ubii.Processing.ProcessingMode.Types.Frequency.Parser, new[]{ "Hertz" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode.Types.Lockstep), global::Ubii.Processing.ProcessingMode.Types.Lockstep.Parser, new[]{ "ProcessRequestEndpoint" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode.Types.TriggerOnInput), global::Ubii.Processing.ProcessingMode.Types.TriggerOnInput.Parser, new[]{ "MinDelayMs", "AllInputsNeedUpdate" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ModuleIO), global::Ubii.Processing.ModuleIO.Parser, new[]{ "InternalName", "MessageFormat" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModule), global::Ubii.Processing.ProcessingModule.Parser, new[]{ "Id", "Name", "Authors", "Tags", "Description", "Status", "ProcessingMode", "Inputs", "Outputs", "OnProcessing", "OnCreated", "OnHalted", "OnDestroyed" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModule), global::Ubii.Processing.ProcessingModule.Parser, new[]{ "Id", "Name", "Authors", "Tags", "Description", "ClientId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessing", "OnCreated", "OnHalted", "OnDestroyed" }, null, new[]{ typeof(global::Ubii.Processing.ProcessingModule.Types.Status), typeof(global::Ubii.Processing.ProcessingModule.Types.Language) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModuleList), global::Ubii.Processing.ProcessingModuleList.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
-  #region Enums
-  public enum ProcessingModuleStatus {
-    [pbr::OriginalName("INITIALIZED")] Initialized = 0,
-    [pbr::OriginalName("CREATED")] Created = 1,
-    [pbr::OriginalName("PROCESSING")] Processing = 2,
-    [pbr::OriginalName("HALTED")] Halted = 3,
-    [pbr::OriginalName("DESTROYED")] Destroyed = 4,
-  }
-
-  #endregion
-
   #region Messages
   public sealed partial class ProcessingMode : pb::IMessage<ProcessingMode> {
     private static readonly pb::MessageParser<ProcessingMode> _parser = new pb::MessageParser<ProcessingMode>(() => new ProcessingMode());
@@ -926,10 +918,12 @@ namespace Ubii.Processing {
       authors_ = other.authors_.Clone();
       tags_ = other.tags_.Clone();
       description_ = other.description_;
+      clientId_ = other.clientId_;
       status_ = other.status_;
       processingMode_ = other.processingMode_ != null ? other.processingMode_.Clone() : null;
       inputs_ = other.inputs_.Clone();
       outputs_ = other.outputs_.Clone();
+      language_ = other.language_;
       onProcessing_ = other.onProcessing_;
       onCreated_ = other.onCreated_;
       onHalted_ = other.onHalted_;
@@ -995,11 +989,22 @@ namespace Ubii.Processing {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 6;
-    private global::Ubii.Processing.ProcessingModuleStatus status_ = global::Ubii.Processing.ProcessingModuleStatus.Initialized;
+    /// <summary>Field number for the "client_id" field.</summary>
+    public const int ClientIdFieldNumber = 6;
+    private string clientId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Processing.ProcessingModuleStatus Status {
+    public string ClientId {
+      get { return clientId_; }
+      set {
+        clientId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 7;
+    private global::Ubii.Processing.ProcessingModule.Types.Status status_ = global::Ubii.Processing.ProcessingModule.Types.Status.Initialized;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Processing.ProcessingModule.Types.Status Status {
       get { return status_; }
       set {
         status_ = value;
@@ -1007,7 +1012,7 @@ namespace Ubii.Processing {
     }
 
     /// <summary>Field number for the "processing_mode" field.</summary>
-    public const int ProcessingModeFieldNumber = 7;
+    public const int ProcessingModeFieldNumber = 8;
     private global::Ubii.Processing.ProcessingMode processingMode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.Processing.ProcessingMode ProcessingMode {
@@ -1018,9 +1023,9 @@ namespace Ubii.Processing {
     }
 
     /// <summary>Field number for the "inputs" field.</summary>
-    public const int InputsFieldNumber = 8;
+    public const int InputsFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Ubii.Processing.ModuleIO> _repeated_inputs_codec
-        = pb::FieldCodec.ForMessage(66, global::Ubii.Processing.ModuleIO.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Ubii.Processing.ModuleIO.Parser);
     private readonly pbc::RepeatedField<global::Ubii.Processing.ModuleIO> inputs_ = new pbc::RepeatedField<global::Ubii.Processing.ModuleIO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Ubii.Processing.ModuleIO> Inputs {
@@ -1028,17 +1033,28 @@ namespace Ubii.Processing {
     }
 
     /// <summary>Field number for the "outputs" field.</summary>
-    public const int OutputsFieldNumber = 9;
+    public const int OutputsFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Ubii.Processing.ModuleIO> _repeated_outputs_codec
-        = pb::FieldCodec.ForMessage(74, global::Ubii.Processing.ModuleIO.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Ubii.Processing.ModuleIO.Parser);
     private readonly pbc::RepeatedField<global::Ubii.Processing.ModuleIO> outputs_ = new pbc::RepeatedField<global::Ubii.Processing.ModuleIO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Ubii.Processing.ModuleIO> Outputs {
       get { return outputs_; }
     }
 
+    /// <summary>Field number for the "language" field.</summary>
+    public const int LanguageFieldNumber = 11;
+    private global::Ubii.Processing.ProcessingModule.Types.Language language_ = global::Ubii.Processing.ProcessingModule.Types.Language.Cpp;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Processing.ProcessingModule.Types.Language Language {
+      get { return language_; }
+      set {
+        language_ = value;
+      }
+    }
+
     /// <summary>Field number for the "on_processing" field.</summary>
-    public const int OnProcessingFieldNumber = 10;
+    public const int OnProcessingFieldNumber = 12;
     private string onProcessing_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OnProcessing {
@@ -1049,7 +1065,7 @@ namespace Ubii.Processing {
     }
 
     /// <summary>Field number for the "on_created" field.</summary>
-    public const int OnCreatedFieldNumber = 11;
+    public const int OnCreatedFieldNumber = 13;
     private string onCreated_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OnCreated {
@@ -1060,7 +1076,7 @@ namespace Ubii.Processing {
     }
 
     /// <summary>Field number for the "on_halted" field.</summary>
-    public const int OnHaltedFieldNumber = 12;
+    public const int OnHaltedFieldNumber = 14;
     private string onHalted_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OnHalted {
@@ -1071,7 +1087,7 @@ namespace Ubii.Processing {
     }
 
     /// <summary>Field number for the "on_destroyed" field.</summary>
-    public const int OnDestroyedFieldNumber = 13;
+    public const int OnDestroyedFieldNumber = 15;
     private string onDestroyed_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OnDestroyed {
@@ -1099,10 +1115,12 @@ namespace Ubii.Processing {
       if(!authors_.Equals(other.authors_)) return false;
       if(!tags_.Equals(other.tags_)) return false;
       if (Description != other.Description) return false;
+      if (ClientId != other.ClientId) return false;
       if (Status != other.Status) return false;
       if (!object.Equals(ProcessingMode, other.ProcessingMode)) return false;
       if(!inputs_.Equals(other.inputs_)) return false;
       if(!outputs_.Equals(other.outputs_)) return false;
+      if (Language != other.Language) return false;
       if (OnProcessing != other.OnProcessing) return false;
       if (OnCreated != other.OnCreated) return false;
       if (OnHalted != other.OnHalted) return false;
@@ -1118,10 +1136,12 @@ namespace Ubii.Processing {
       hash ^= authors_.GetHashCode();
       hash ^= tags_.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Status != global::Ubii.Processing.ProcessingModuleStatus.Initialized) hash ^= Status.GetHashCode();
+      if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
+      if (Status != global::Ubii.Processing.ProcessingModule.Types.Status.Initialized) hash ^= Status.GetHashCode();
       if (processingMode_ != null) hash ^= ProcessingMode.GetHashCode();
       hash ^= inputs_.GetHashCode();
       hash ^= outputs_.GetHashCode();
+      if (Language != global::Ubii.Processing.ProcessingModule.Types.Language.Cpp) hash ^= Language.GetHashCode();
       if (OnProcessing.Length != 0) hash ^= OnProcessing.GetHashCode();
       if (OnCreated.Length != 0) hash ^= OnCreated.GetHashCode();
       if (OnHalted.Length != 0) hash ^= OnHalted.GetHashCode();
@@ -1153,30 +1173,38 @@ namespace Ubii.Processing {
         output.WriteRawTag(42);
         output.WriteString(Description);
       }
-      if (Status != global::Ubii.Processing.ProcessingModuleStatus.Initialized) {
-        output.WriteRawTag(48);
+      if (ClientId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ClientId);
+      }
+      if (Status != global::Ubii.Processing.ProcessingModule.Types.Status.Initialized) {
+        output.WriteRawTag(56);
         output.WriteEnum((int) Status);
       }
       if (processingMode_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteMessage(ProcessingMode);
       }
       inputs_.WriteTo(output, _repeated_inputs_codec);
       outputs_.WriteTo(output, _repeated_outputs_codec);
+      if (Language != global::Ubii.Processing.ProcessingModule.Types.Language.Cpp) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Language);
+      }
       if (OnProcessing.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(98);
         output.WriteString(OnProcessing);
       }
       if (OnCreated.Length != 0) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(106);
         output.WriteString(OnCreated);
       }
       if (OnHalted.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(114);
         output.WriteString(OnHalted);
       }
       if (OnDestroyed.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(122);
         output.WriteString(OnDestroyed);
       }
       if (_unknownFields != null) {
@@ -1198,7 +1226,10 @@ namespace Ubii.Processing {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Status != global::Ubii.Processing.ProcessingModuleStatus.Initialized) {
+      if (ClientId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientId);
+      }
+      if (Status != global::Ubii.Processing.ProcessingModule.Types.Status.Initialized) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (processingMode_ != null) {
@@ -1206,6 +1237,9 @@ namespace Ubii.Processing {
       }
       size += inputs_.CalculateSize(_repeated_inputs_codec);
       size += outputs_.CalculateSize(_repeated_outputs_codec);
+      if (Language != global::Ubii.Processing.ProcessingModule.Types.Language.Cpp) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Language);
+      }
       if (OnProcessing.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OnProcessing);
       }
@@ -1240,7 +1274,10 @@ namespace Ubii.Processing {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.Status != global::Ubii.Processing.ProcessingModuleStatus.Initialized) {
+      if (other.ClientId.Length != 0) {
+        ClientId = other.ClientId;
+      }
+      if (other.Status != global::Ubii.Processing.ProcessingModule.Types.Status.Initialized) {
         Status = other.Status;
       }
       if (other.processingMode_ != null) {
@@ -1251,6 +1288,9 @@ namespace Ubii.Processing {
       }
       inputs_.Add(other.inputs_);
       outputs_.Add(other.outputs_);
+      if (other.Language != global::Ubii.Processing.ProcessingModule.Types.Language.Cpp) {
+        Language = other.Language;
+      }
       if (other.OnProcessing.Length != 0) {
         OnProcessing = other.OnProcessing;
       }
@@ -1294,44 +1334,75 @@ namespace Ubii.Processing {
             Description = input.ReadString();
             break;
           }
-          case 48: {
-            Status = (global::Ubii.Processing.ProcessingModuleStatus) input.ReadEnum();
+          case 50: {
+            ClientId = input.ReadString();
             break;
           }
-          case 58: {
+          case 56: {
+            Status = (global::Ubii.Processing.ProcessingModule.Types.Status) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (processingMode_ == null) {
               ProcessingMode = new global::Ubii.Processing.ProcessingMode();
             }
             input.ReadMessage(ProcessingMode);
             break;
           }
-          case 66: {
+          case 74: {
             inputs_.AddEntriesFrom(input, _repeated_inputs_codec);
             break;
           }
-          case 74: {
+          case 82: {
             outputs_.AddEntriesFrom(input, _repeated_outputs_codec);
             break;
           }
-          case 82: {
-            OnProcessing = input.ReadString();
-            break;
-          }
-          case 90: {
-            OnCreated = input.ReadString();
+          case 88: {
+            Language = (global::Ubii.Processing.ProcessingModule.Types.Language) input.ReadEnum();
             break;
           }
           case 98: {
-            OnHalted = input.ReadString();
+            OnProcessing = input.ReadString();
             break;
           }
           case 106: {
+            OnCreated = input.ReadString();
+            break;
+          }
+          case 114: {
+            OnHalted = input.ReadString();
+            break;
+          }
+          case 122: {
             OnDestroyed = input.ReadString();
             break;
           }
         }
       }
     }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ProcessingModule message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum Status {
+        [pbr::OriginalName("INITIALIZED")] Initialized = 0,
+        [pbr::OriginalName("CREATED")] Created = 1,
+        [pbr::OriginalName("PROCESSING")] Processing = 2,
+        [pbr::OriginalName("HALTED")] Halted = 3,
+        [pbr::OriginalName("DESTROYED")] Destroyed = 4,
+      }
+
+      public enum Language {
+        [pbr::OriginalName("CPP")] Cpp = 0,
+        [pbr::OriginalName("PY")] Py = 1,
+        [pbr::OriginalName("JS")] Js = 2,
+        [pbr::OriginalName("CS")] Cs = 3,
+        [pbr::OriginalName("JAVA")] Java = 4,
+      }
+
+    }
+    #endregion
 
   }
 
