@@ -26,6 +26,10 @@ var proto_interactions_interaction_pb = require('../../proto/interactions/intera
 goog.object.extend(proto, proto_interactions_interaction_pb);
 var proto_services_request_topicSubscription_pb = require('../../proto/services/request/topicSubscription_pb.js');
 goog.object.extend(proto, proto_services_request_topicSubscription_pb);
+var proto_processing_processingModule_pb = require('../../proto/processing/processingModule_pb.js');
+goog.object.extend(proto, proto_processing_processingModule_pb);
+var proto_processing_lockstepProcessing_pb = require('../../proto/processing/lockstepProcessing_pb.js');
+goog.object.extend(proto, proto_processing_lockstepProcessing_pb);
 goog.exportSymbol('proto.ubii.services.ServiceRequest', null, global);
 goog.exportSymbol('proto.ubii.services.ServiceRequest.TypeCase', null, global);
 /**
@@ -58,7 +62,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]];
 
 /**
  * @enum {number}
@@ -77,7 +81,10 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   TOPIC_DEMUX: 11,
   TOPIC_DEMUX_LIST: 12,
   CLIENT_LIST: 13,
-  DEVICE_LIST: 14
+  DEVICE_LIST: 14,
+  PROCESSING_MODULE: 15,
+  PROCESSING_MODULE_LIST: 16,
+  LOCKSTEP_PROCESSING_REQUEST: 17
 };
 
 /**
@@ -131,7 +138,10 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     topicDemux: (f = msg.getTopicDemux()) && proto_devices_topicDemux_pb.TopicDemux.toObject(includeInstance, f),
     topicDemuxList: (f = msg.getTopicDemuxList()) && proto_devices_topicDemux_pb.TopicDemuxList.toObject(includeInstance, f),
     clientList: (f = msg.getClientList()) && proto_clients_client_pb.ClientList.toObject(includeInstance, f),
-    deviceList: (f = msg.getDeviceList()) && proto_devices_device_pb.DeviceList.toObject(includeInstance, f)
+    deviceList: (f = msg.getDeviceList()) && proto_devices_device_pb.DeviceList.toObject(includeInstance, f),
+    processingModule: (f = msg.getProcessingModule()) && proto_processing_processingModule_pb.ProcessingModule.toObject(includeInstance, f),
+    processingModuleList: (f = msg.getProcessingModuleList()) && proto_processing_processingModule_pb.ProcessingModuleList.toObject(includeInstance, f),
+    lockstepProcessingRequest: (f = msg.getLockstepProcessingRequest()) && proto_processing_lockstepProcessing_pb.LockstepProcessingRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -236,6 +246,21 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       var value = new proto_devices_device_pb.DeviceList;
       reader.readMessage(value,proto_devices_device_pb.DeviceList.deserializeBinaryFromReader);
       msg.setDeviceList(value);
+      break;
+    case 15:
+      var value = new proto_processing_processingModule_pb.ProcessingModule;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModule.deserializeBinaryFromReader);
+      msg.setProcessingModule(value);
+      break;
+    case 16:
+      var value = new proto_processing_processingModule_pb.ProcessingModuleList;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModuleList.deserializeBinaryFromReader);
+      msg.setProcessingModuleList(value);
+      break;
+    case 17:
+      var value = new proto_processing_lockstepProcessing_pb.LockstepProcessingRequest;
+      reader.readMessage(value,proto_processing_lockstepProcessing_pb.LockstepProcessingRequest.deserializeBinaryFromReader);
+      msg.setLockstepProcessingRequest(value);
       break;
     default:
       reader.skipField();
@@ -375,6 +400,30 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       14,
       f,
       proto_devices_device_pb.DeviceList.serializeBinaryToWriter
+    );
+  }
+  f = message.getProcessingModule();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      proto_processing_processingModule_pb.ProcessingModule.serializeBinaryToWriter
+    );
+  }
+  f = message.getProcessingModuleList();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      proto_processing_processingModule_pb.ProcessingModuleList.serializeBinaryToWriter
+    );
+  }
+  f = message.getLockstepProcessingRequest();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      proto_processing_lockstepProcessing_pb.LockstepProcessingRequest.serializeBinaryToWriter
     );
   }
 };
@@ -876,6 +925,117 @@ proto.ubii.services.ServiceRequest.prototype.clearDeviceList = function() {
  */
 proto.ubii.services.ServiceRequest.prototype.hasDeviceList = function() {
   return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional ubii.processing.ProcessingModule processing_module = 15;
+ * @return {?proto.ubii.processing.ProcessingModule}
+ */
+proto.ubii.services.ServiceRequest.prototype.getProcessingModule = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModule} */ (
+    jspb.Message.getWrapperField(this, proto_processing_processingModule_pb.ProcessingModule, 15));
+};
+
+
+/**
+ * @param {?proto.ubii.processing.ProcessingModule|undefined} value
+ * @return {!proto.ubii.services.ServiceRequest} returns this
+*/
+proto.ubii.services.ServiceRequest.prototype.setProcessingModule = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 15, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.services.ServiceRequest} returns this
+ */
+proto.ubii.services.ServiceRequest.prototype.clearProcessingModule = function() {
+  return this.setProcessingModule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasProcessingModule = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional ubii.processing.ProcessingModuleList processing_module_list = 16;
+ * @return {?proto.ubii.processing.ProcessingModuleList}
+ */
+proto.ubii.services.ServiceRequest.prototype.getProcessingModuleList = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
+    jspb.Message.getWrapperField(this, proto_processing_processingModule_pb.ProcessingModuleList, 16));
+};
+
+
+/**
+ * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
+ * @return {!proto.ubii.services.ServiceRequest} returns this
+*/
+proto.ubii.services.ServiceRequest.prototype.setProcessingModuleList = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 16, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.services.ServiceRequest} returns this
+ */
+proto.ubii.services.ServiceRequest.prototype.clearProcessingModuleList = function() {
+  return this.setProcessingModuleList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasProcessingModuleList = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;
+ * @return {?proto.ubii.processing.LockstepProcessingRequest}
+ */
+proto.ubii.services.ServiceRequest.prototype.getLockstepProcessingRequest = function() {
+  return /** @type{?proto.ubii.processing.LockstepProcessingRequest} */ (
+    jspb.Message.getWrapperField(this, proto_processing_lockstepProcessing_pb.LockstepProcessingRequest, 17));
+};
+
+
+/**
+ * @param {?proto.ubii.processing.LockstepProcessingRequest|undefined} value
+ * @return {!proto.ubii.services.ServiceRequest} returns this
+*/
+proto.ubii.services.ServiceRequest.prototype.setLockstepProcessingRequest = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 17, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.services.ServiceRequest} returns this
+ */
+proto.ubii.services.ServiceRequest.prototype.clearLockstepProcessingRequest = function() {
+  return this.setLockstepProcessingRequest(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasLockstepProcessingRequest = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

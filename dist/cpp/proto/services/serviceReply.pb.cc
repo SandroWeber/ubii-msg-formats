@@ -27,6 +27,9 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fgeneral_2ferror_2eproto ::PROTOBUF_NAMES
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fgeneral_2fsuccess_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Success_proto_2fgeneral_2fsuccess_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2finteractions_2finteraction_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Interaction_proto_2finteractions_2finteraction_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2finteractions_2finteraction_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_InteractionList_proto_2finteractions_2finteraction_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2flockstepProcessing_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fservers_2fserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Server_proto_2fservers_2fserver_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fservices_2fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Service_proto_2fservices_2fservice_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fservices_2fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ServiceList_proto_2fservices_2fservice_2eproto;
@@ -55,6 +58,9 @@ class ServiceReplyDefaultTypeInternal {
   const ::ubii::devices::DeviceList* device_list_;
   const ::ubii::services::Service* service_;
   const ::ubii::services::ServiceList* service_list_;
+  const ::ubii::processing::ProcessingModule* processing_module_;
+  const ::ubii::processing::ProcessingModuleList* processing_module_list_;
+  const ::ubii::processing::LockstepProcessingReply* lockstep_processing_reply_;
 } _ServiceReply_default_instance_;
 }  // namespace services
 }  // namespace ubii
@@ -69,8 +75,8 @@ static void InitDefaultsscc_info_ServiceReply_proto_2fservices_2fserviceReply_2e
   ::ubii::services::ServiceReply::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<18> scc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 18, 0, InitDefaultsscc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<21> scc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 21, 0, InitDefaultsscc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto}, {
       &scc_info_Success_proto_2fgeneral_2fsuccess_2eproto.base,
       &scc_info_Error_proto_2fgeneral_2ferror_2eproto.base,
       &scc_info_Client_proto_2fclients_2fclient_2eproto.base,
@@ -88,7 +94,10 @@ static void InitDefaultsscc_info_ServiceReply_proto_2fservices_2fserviceReply_2e
       &scc_info_ClientList_proto_2fclients_2fclient_2eproto.base,
       &scc_info_DeviceList_proto_2fdevices_2fdevice_2eproto.base,
       &scc_info_Service_proto_2fservices_2fservice_2eproto.base,
-      &scc_info_ServiceList_proto_2fservices_2fservice_2eproto.base,}};
+      &scc_info_ServiceList_proto_2fservices_2fservice_2eproto.base,
+      &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,
+      &scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto.base,
+      &scc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fservices_2fserviceReply_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fservices_2fserviceReply_2eproto = nullptr;
@@ -118,6 +127,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fservices_2fserviceRepl
   offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, device_list_),
   offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, service_),
   offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, service_list_),
+  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, processing_module_),
+  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, processing_module_list_),
+  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, lockstep_processing_reply_),
   PROTOBUF_FIELD_OFFSET(::ubii::services::ServiceReply, type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -139,31 +151,39 @@ const char descriptor_table_protodef_proto_2fservices_2fserviceReply_2eproto[] P
   "oto\032\032proto/servers/server.proto\032\034proto/s"
   "essions/session.proto\032$proto/interaction"
   "s/interaction.proto\032\034proto/services/serv"
-  "ice.proto\"\372\006\n\014ServiceReply\022(\n\007success\030\001 "
-  "\001(\0132\025.ubii.general.SuccessH\000\022$\n\005error\030\002 "
-  "\001(\0132\023.ubii.general.ErrorH\000\022&\n\006client\030\003 \001"
-  "(\0132\024.ubii.clients.ClientH\000\022&\n\006device\030\004 \001"
-  "(\0132\024.ubii.devices.DeviceH\000\022&\n\006server\030\005 \001"
-  "(\0132\024.ubii.servers.ServerH\000\022)\n\007session\030\006 "
-  "\001(\0132\026.ubii.sessions.SessionH\000\0222\n\014session"
-  "_list\030\007 \001(\0132\032.ubii.sessions.SessionListH"
-  "\000\0225\n\013interaction\030\010 \001(\0132\036.ubii.interactio"
-  "ns.InteractionH\000\022>\n\020interaction_list\030\t \001"
-  "(\0132\".ubii.interactions.InteractionListH\000"
-  "\0225\n\013string_list\030\n \001(\0132\036.ubii.dataStructu"
-  "re.StringListH\000\022+\n\ttopic_mux\030\013 \001(\0132\026.ubi"
-  "i.devices.TopicMuxH\000\0224\n\016topic_mux_list\030\014"
-  " \001(\0132\032.ubii.devices.TopicMuxListH\000\022/\n\013to"
-  "pic_demux\030\r \001(\0132\030.ubii.devices.TopicDemu"
-  "xH\000\0228\n\020topic_demux_list\030\016 \001(\0132\034.ubii.dev"
-  "ices.TopicDemuxListH\000\022/\n\013client_list\030\017 \001"
-  "(\0132\030.ubii.clients.ClientListH\000\022/\n\013device"
-  "_list\030\020 \001(\0132\030.ubii.devices.DeviceListH\000\022"
-  ")\n\007service\030\021 \001(\0132\026.ubii.services.Service"
-  "H\000\0222\n\014service_list\030\022 \001(\0132\032.ubii.services"
-  ".ServiceListH\000B\006\n\004typeb\006proto3"
+  "ice.proto\032\'proto/processing/processingMo"
+  "dule.proto\032)proto/processing/lockstepPro"
+  "cessing.proto\"\322\010\n\014ServiceReply\022(\n\007succes"
+  "s\030\001 \001(\0132\025.ubii.general.SuccessH\000\022$\n\005erro"
+  "r\030\002 \001(\0132\023.ubii.general.ErrorH\000\022&\n\006client"
+  "\030\003 \001(\0132\024.ubii.clients.ClientH\000\022&\n\006device"
+  "\030\004 \001(\0132\024.ubii.devices.DeviceH\000\022&\n\006server"
+  "\030\005 \001(\0132\024.ubii.servers.ServerH\000\022)\n\007sessio"
+  "n\030\006 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014ses"
+  "sion_list\030\007 \001(\0132\032.ubii.sessions.SessionL"
+  "istH\000\0225\n\013interaction\030\010 \001(\0132\036.ubii.intera"
+  "ctions.InteractionH\000\022>\n\020interaction_list"
+  "\030\t \001(\0132\".ubii.interactions.InteractionLi"
+  "stH\000\0225\n\013string_list\030\n \001(\0132\036.ubii.dataStr"
+  "ucture.StringListH\000\022+\n\ttopic_mux\030\013 \001(\0132\026"
+  ".ubii.devices.TopicMuxH\000\0224\n\016topic_mux_li"
+  "st\030\014 \001(\0132\032.ubii.devices.TopicMuxListH\000\022/"
+  "\n\013topic_demux\030\r \001(\0132\030.ubii.devices.Topic"
+  "DemuxH\000\0228\n\020topic_demux_list\030\016 \001(\0132\034.ubii"
+  ".devices.TopicDemuxListH\000\022/\n\013client_list"
+  "\030\017 \001(\0132\030.ubii.clients.ClientListH\000\022/\n\013de"
+  "vice_list\030\020 \001(\0132\030.ubii.devices.DeviceLis"
+  "tH\000\022)\n\007service\030\021 \001(\0132\026.ubii.services.Ser"
+  "viceH\000\0222\n\014service_list\030\022 \001(\0132\032.ubii.serv"
+  "ices.ServiceListH\000\022>\n\021processing_module\030"
+  "\023 \001(\0132!.ubii.processing.ProcessingModule"
+  "H\000\022G\n\026processing_module_list\030\024 \001(\0132%.ubi"
+  "i.processing.ProcessingModuleListH\000\022M\n\031l"
+  "ockstep_processing_reply\030\025 \001(\0132(.ubii.pr"
+  "ocessing.LockstepProcessingReplyH\000B\006\n\004ty"
+  "peb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fservices_2fserviceReply_2eproto_deps[11] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fservices_2fserviceReply_2eproto_deps[13] = {
   &::descriptor_table_proto_2fclients_2fclient_2eproto,
   &::descriptor_table_proto_2fdevices_2fdevice_2eproto,
   &::descriptor_table_proto_2fdevices_2ftopicDemux_2eproto,
@@ -171,6 +191,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_proto_2fgeneral_2ferror_2eproto,
   &::descriptor_table_proto_2fgeneral_2fsuccess_2eproto,
   &::descriptor_table_proto_2finteractions_2finteraction_2eproto,
+  &::descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto,
+  &::descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto,
   &::descriptor_table_proto_2fservers_2fserver_2eproto,
   &::descriptor_table_proto_2fservices_2fservice_2eproto,
   &::descriptor_table_proto_2fsessions_2fsession_2eproto,
@@ -182,8 +204,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fservices_2fserviceReply_2eproto_once;
 static bool descriptor_table_proto_2fservices_2fserviceReply_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fservices_2fserviceReply_2eproto = {
-  &descriptor_table_proto_2fservices_2fserviceReply_2eproto_initialized, descriptor_table_protodef_proto_2fservices_2fserviceReply_2eproto, "proto/services/serviceReply.proto", 1310,
-  &descriptor_table_proto_2fservices_2fserviceReply_2eproto_once, descriptor_table_proto_2fservices_2fserviceReply_2eproto_sccs, descriptor_table_proto_2fservices_2fserviceReply_2eproto_deps, 1, 11,
+  &descriptor_table_proto_2fservices_2fserviceReply_2eproto_initialized, descriptor_table_protodef_proto_2fservices_2fserviceReply_2eproto, "proto/services/serviceReply.proto", 1610,
+  &descriptor_table_proto_2fservices_2fserviceReply_2eproto_once, descriptor_table_proto_2fservices_2fserviceReply_2eproto_sccs, descriptor_table_proto_2fservices_2fserviceReply_2eproto_deps, 1, 13,
   schemas, file_default_instances, TableStruct_proto_2fservices_2fserviceReply_2eproto::offsets,
   file_level_metadata_proto_2fservices_2fserviceReply_2eproto, 1, file_level_enum_descriptors_proto_2fservices_2fserviceReply_2eproto, file_level_service_descriptors_proto_2fservices_2fserviceReply_2eproto,
 };
@@ -232,6 +254,12 @@ void ServiceReply::InitAsDefaultInstance() {
       ::ubii::services::Service::internal_default_instance());
   ::ubii::services::_ServiceReply_default_instance_.service_list_ = const_cast< ::ubii::services::ServiceList*>(
       ::ubii::services::ServiceList::internal_default_instance());
+  ::ubii::services::_ServiceReply_default_instance_.processing_module_ = const_cast< ::ubii::processing::ProcessingModule*>(
+      ::ubii::processing::ProcessingModule::internal_default_instance());
+  ::ubii::services::_ServiceReply_default_instance_.processing_module_list_ = const_cast< ::ubii::processing::ProcessingModuleList*>(
+      ::ubii::processing::ProcessingModuleList::internal_default_instance());
+  ::ubii::services::_ServiceReply_default_instance_.lockstep_processing_reply_ = const_cast< ::ubii::processing::LockstepProcessingReply*>(
+      ::ubii::processing::LockstepProcessingReply::internal_default_instance());
 }
 class ServiceReply::_Internal {
  public:
@@ -253,6 +281,9 @@ class ServiceReply::_Internal {
   static const ::ubii::devices::DeviceList& device_list(const ServiceReply* msg);
   static const ::ubii::services::Service& service(const ServiceReply* msg);
   static const ::ubii::services::ServiceList& service_list(const ServiceReply* msg);
+  static const ::ubii::processing::ProcessingModule& processing_module(const ServiceReply* msg);
+  static const ::ubii::processing::ProcessingModuleList& processing_module_list(const ServiceReply* msg);
+  static const ::ubii::processing::LockstepProcessingReply& lockstep_processing_reply(const ServiceReply* msg);
 };
 
 const ::ubii::general::Success&
@@ -326,6 +357,18 @@ ServiceReply::_Internal::service(const ServiceReply* msg) {
 const ::ubii::services::ServiceList&
 ServiceReply::_Internal::service_list(const ServiceReply* msg) {
   return *msg->type_.service_list_;
+}
+const ::ubii::processing::ProcessingModule&
+ServiceReply::_Internal::processing_module(const ServiceReply* msg) {
+  return *msg->type_.processing_module_;
+}
+const ::ubii::processing::ProcessingModuleList&
+ServiceReply::_Internal::processing_module_list(const ServiceReply* msg) {
+  return *msg->type_.processing_module_list_;
+}
+const ::ubii::processing::LockstepProcessingReply&
+ServiceReply::_Internal::lockstep_processing_reply(const ServiceReply* msg) {
+  return *msg->type_.lockstep_processing_reply_;
 }
 void ServiceReply::set_allocated_success(::ubii::general::Success* success) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
@@ -687,6 +730,66 @@ void ServiceReply::clear_service_list() {
     clear_has_type();
   }
 }
+void ServiceReply::set_allocated_processing_module(::ubii::processing::ProcessingModule* processing_module) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (processing_module) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      processing_module = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, processing_module, submessage_arena);
+    }
+    set_has_processing_module();
+    type_.processing_module_ = processing_module;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceReply.processing_module)
+}
+void ServiceReply::clear_processing_module() {
+  if (_internal_has_processing_module()) {
+    delete type_.processing_module_;
+    clear_has_type();
+  }
+}
+void ServiceReply::set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (processing_module_list) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      processing_module_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, processing_module_list, submessage_arena);
+    }
+    set_has_processing_module_list();
+    type_.processing_module_list_ = processing_module_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceReply.processing_module_list)
+}
+void ServiceReply::clear_processing_module_list() {
+  if (_internal_has_processing_module_list()) {
+    delete type_.processing_module_list_;
+    clear_has_type();
+  }
+}
+void ServiceReply::set_allocated_lockstep_processing_reply(::ubii::processing::LockstepProcessingReply* lockstep_processing_reply) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (lockstep_processing_reply) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      lockstep_processing_reply = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, lockstep_processing_reply, submessage_arena);
+    }
+    set_has_lockstep_processing_reply();
+    type_.lockstep_processing_reply_ = lockstep_processing_reply;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceReply.lockstep_processing_reply)
+}
+void ServiceReply::clear_lockstep_processing_reply() {
+  if (_internal_has_lockstep_processing_reply()) {
+    delete type_.lockstep_processing_reply_;
+    clear_has_type();
+  }
+}
 ServiceReply::ServiceReply()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -768,6 +871,18 @@ ServiceReply::ServiceReply(const ServiceReply& from)
     }
     case kServiceList: {
       _internal_mutable_service_list()->::ubii::services::ServiceList::MergeFrom(from._internal_service_list());
+      break;
+    }
+    case kProcessingModule: {
+      _internal_mutable_processing_module()->::ubii::processing::ProcessingModule::MergeFrom(from._internal_processing_module());
+      break;
+    }
+    case kProcessingModuleList: {
+      _internal_mutable_processing_module_list()->::ubii::processing::ProcessingModuleList::MergeFrom(from._internal_processing_module_list());
+      break;
+    }
+    case kLockstepProcessingReply: {
+      _internal_mutable_lockstep_processing_reply()->::ubii::processing::LockstepProcessingReply::MergeFrom(from._internal_lockstep_processing_reply());
       break;
     }
     case TYPE_NOT_SET: {
@@ -875,6 +990,18 @@ void ServiceReply::clear_type() {
     }
     case kServiceList: {
       delete type_.service_list_;
+      break;
+    }
+    case kProcessingModule: {
+      delete type_.processing_module_;
+      break;
+    }
+    case kProcessingModuleList: {
+      delete type_.processing_module_list_;
+      break;
+    }
+    case kLockstepProcessingReply: {
+      delete type_.lockstep_processing_reply_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -1025,6 +1152,27 @@ const char* ServiceReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
           ptr = ctx->ParseMessage(_internal_mutable_service_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .ubii.processing.ProcessingModule processing_module = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
+          ptr = ctx->ParseMessage(_internal_mutable_processing_module(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .ubii.processing.ProcessingModuleList processing_module_list = 20;
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
+          ptr = ctx->ParseMessage(_internal_mutable_processing_module_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
+          ptr = ctx->ParseMessage(_internal_mutable_lockstep_processing_reply(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1198,6 +1346,30 @@ failure:
         18, _Internal::service_list(this), target, stream);
   }
 
+  // .ubii.processing.ProcessingModule processing_module = 19;
+  if (_internal_has_processing_module()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        19, _Internal::processing_module(this), target, stream);
+  }
+
+  // .ubii.processing.ProcessingModuleList processing_module_list = 20;
+  if (_internal_has_processing_module_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        20, _Internal::processing_module_list(this), target, stream);
+  }
+
+  // .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+  if (_internal_has_lockstep_processing_reply()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        21, _Internal::lockstep_processing_reply(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1341,6 +1513,27 @@ size_t ServiceReply::ByteSizeLong() const {
           *type_.service_list_);
       break;
     }
+    // .ubii.processing.ProcessingModule processing_module = 19;
+    case kProcessingModule: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *type_.processing_module_);
+      break;
+    }
+    // .ubii.processing.ProcessingModuleList processing_module_list = 20;
+    case kProcessingModuleList: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *type_.processing_module_list_);
+      break;
+    }
+    // .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+    case kLockstepProcessingReply: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *type_.lockstep_processing_reply_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -1447,6 +1640,18 @@ void ServiceReply::MergeFrom(const ServiceReply& from) {
     }
     case kServiceList: {
       _internal_mutable_service_list()->::ubii::services::ServiceList::MergeFrom(from._internal_service_list());
+      break;
+    }
+    case kProcessingModule: {
+      _internal_mutable_processing_module()->::ubii::processing::ProcessingModule::MergeFrom(from._internal_processing_module());
+      break;
+    }
+    case kProcessingModuleList: {
+      _internal_mutable_processing_module_list()->::ubii::processing::ProcessingModuleList::MergeFrom(from._internal_processing_module_list());
+      break;
+    }
+    case kLockstepProcessingReply: {
+      _internal_mutable_lockstep_processing_reply()->::ubii::processing::LockstepProcessingReply::MergeFrom(from._internal_lockstep_processing_reply());
       break;
     }
     case TYPE_NOT_SET: {

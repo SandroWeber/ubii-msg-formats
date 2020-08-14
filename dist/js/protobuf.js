@@ -4108,6 +4108,2264 @@ $root.ubii = (function() {
         return interactions;
     })();
 
+    ubii.processing = (function() {
+
+        /**
+         * Namespace processing.
+         * @memberof ubii
+         * @namespace
+         */
+        var processing = {};
+
+        processing.LockstepProcessingRequest = (function() {
+
+            /**
+             * Properties of a LockstepProcessingRequest.
+             * @memberof ubii.processing
+             * @interface ILockstepProcessingRequest
+             * @property {ubii.topicData.ITopicDataRecordList|null} [records] LockstepProcessingRequest records
+             */
+
+            /**
+             * Constructs a new LockstepProcessingRequest.
+             * @memberof ubii.processing
+             * @classdesc Represents a LockstepProcessingRequest.
+             * @implements ILockstepProcessingRequest
+             * @constructor
+             * @param {ubii.processing.ILockstepProcessingRequest=} [properties] Properties to set
+             */
+            function LockstepProcessingRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LockstepProcessingRequest records.
+             * @member {ubii.topicData.ITopicDataRecordList|null|undefined} records
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @instance
+             */
+            LockstepProcessingRequest.prototype.records = null;
+
+            /**
+             * Creates a new LockstepProcessingRequest instance using the specified properties.
+             * @function create
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {ubii.processing.ILockstepProcessingRequest=} [properties] Properties to set
+             * @returns {ubii.processing.LockstepProcessingRequest} LockstepProcessingRequest instance
+             */
+            LockstepProcessingRequest.create = function create(properties) {
+                return new LockstepProcessingRequest(properties);
+            };
+
+            /**
+             * Encodes the specified LockstepProcessingRequest message. Does not implicitly {@link ubii.processing.LockstepProcessingRequest.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {ubii.processing.ILockstepProcessingRequest} message LockstepProcessingRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LockstepProcessingRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.records != null && message.hasOwnProperty("records"))
+                    $root.ubii.topicData.TopicDataRecordList.encode(message.records, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified LockstepProcessingRequest message, length delimited. Does not implicitly {@link ubii.processing.LockstepProcessingRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {ubii.processing.ILockstepProcessingRequest} message LockstepProcessingRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LockstepProcessingRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a LockstepProcessingRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.processing.LockstepProcessingRequest} LockstepProcessingRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LockstepProcessingRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.LockstepProcessingRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.records = $root.ubii.topicData.TopicDataRecordList.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a LockstepProcessingRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.processing.LockstepProcessingRequest} LockstepProcessingRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LockstepProcessingRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a LockstepProcessingRequest message.
+             * @function verify
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LockstepProcessingRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.records != null && message.hasOwnProperty("records")) {
+                    var error = $root.ubii.topicData.TopicDataRecordList.verify(message.records);
+                    if (error)
+                        return "records." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a LockstepProcessingRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.processing.LockstepProcessingRequest} LockstepProcessingRequest
+             */
+            LockstepProcessingRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.processing.LockstepProcessingRequest)
+                    return object;
+                var message = new $root.ubii.processing.LockstepProcessingRequest();
+                if (object.records != null) {
+                    if (typeof object.records !== "object")
+                        throw TypeError(".ubii.processing.LockstepProcessingRequest.records: object expected");
+                    message.records = $root.ubii.topicData.TopicDataRecordList.fromObject(object.records);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a LockstepProcessingRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @static
+             * @param {ubii.processing.LockstepProcessingRequest} message LockstepProcessingRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            LockstepProcessingRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.records = null;
+                if (message.records != null && message.hasOwnProperty("records"))
+                    object.records = $root.ubii.topicData.TopicDataRecordList.toObject(message.records, options);
+                return object;
+            };
+
+            /**
+             * Converts this LockstepProcessingRequest to JSON.
+             * @function toJSON
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            LockstepProcessingRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return LockstepProcessingRequest;
+        })();
+
+        processing.LockstepProcessingReply = (function() {
+
+            /**
+             * Properties of a LockstepProcessingReply.
+             * @memberof ubii.processing
+             * @interface ILockstepProcessingReply
+             * @property {ubii.topicData.ITopicDataRecordList|null} [records] LockstepProcessingReply records
+             */
+
+            /**
+             * Constructs a new LockstepProcessingReply.
+             * @memberof ubii.processing
+             * @classdesc Represents a LockstepProcessingReply.
+             * @implements ILockstepProcessingReply
+             * @constructor
+             * @param {ubii.processing.ILockstepProcessingReply=} [properties] Properties to set
+             */
+            function LockstepProcessingReply(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LockstepProcessingReply records.
+             * @member {ubii.topicData.ITopicDataRecordList|null|undefined} records
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @instance
+             */
+            LockstepProcessingReply.prototype.records = null;
+
+            /**
+             * Creates a new LockstepProcessingReply instance using the specified properties.
+             * @function create
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {ubii.processing.ILockstepProcessingReply=} [properties] Properties to set
+             * @returns {ubii.processing.LockstepProcessingReply} LockstepProcessingReply instance
+             */
+            LockstepProcessingReply.create = function create(properties) {
+                return new LockstepProcessingReply(properties);
+            };
+
+            /**
+             * Encodes the specified LockstepProcessingReply message. Does not implicitly {@link ubii.processing.LockstepProcessingReply.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {ubii.processing.ILockstepProcessingReply} message LockstepProcessingReply message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LockstepProcessingReply.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.records != null && message.hasOwnProperty("records"))
+                    $root.ubii.topicData.TopicDataRecordList.encode(message.records, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified LockstepProcessingReply message, length delimited. Does not implicitly {@link ubii.processing.LockstepProcessingReply.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {ubii.processing.ILockstepProcessingReply} message LockstepProcessingReply message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LockstepProcessingReply.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a LockstepProcessingReply message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.processing.LockstepProcessingReply} LockstepProcessingReply
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LockstepProcessingReply.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.LockstepProcessingReply();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.records = $root.ubii.topicData.TopicDataRecordList.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a LockstepProcessingReply message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.processing.LockstepProcessingReply} LockstepProcessingReply
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LockstepProcessingReply.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a LockstepProcessingReply message.
+             * @function verify
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LockstepProcessingReply.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.records != null && message.hasOwnProperty("records")) {
+                    var error = $root.ubii.topicData.TopicDataRecordList.verify(message.records);
+                    if (error)
+                        return "records." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a LockstepProcessingReply message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.processing.LockstepProcessingReply} LockstepProcessingReply
+             */
+            LockstepProcessingReply.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.processing.LockstepProcessingReply)
+                    return object;
+                var message = new $root.ubii.processing.LockstepProcessingReply();
+                if (object.records != null) {
+                    if (typeof object.records !== "object")
+                        throw TypeError(".ubii.processing.LockstepProcessingReply.records: object expected");
+                    message.records = $root.ubii.topicData.TopicDataRecordList.fromObject(object.records);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a LockstepProcessingReply message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @static
+             * @param {ubii.processing.LockstepProcessingReply} message LockstepProcessingReply
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            LockstepProcessingReply.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.records = null;
+                if (message.records != null && message.hasOwnProperty("records"))
+                    object.records = $root.ubii.topicData.TopicDataRecordList.toObject(message.records, options);
+                return object;
+            };
+
+            /**
+             * Converts this LockstepProcessingReply to JSON.
+             * @function toJSON
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            LockstepProcessingReply.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return LockstepProcessingReply;
+        })();
+
+        /**
+         * ProcessingModuleStatus enum.
+         * @name ubii.processing.ProcessingModuleStatus
+         * @enum {string}
+         * @property {number} INITIALIZED=0 INITIALIZED value
+         * @property {number} CREATED=1 CREATED value
+         * @property {number} PROCESSING=2 PROCESSING value
+         * @property {number} HALTED=3 HALTED value
+         * @property {number} DESTROYED=4 DESTROYED value
+         */
+        processing.ProcessingModuleStatus = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "INITIALIZED"] = 0;
+            values[valuesById[1] = "CREATED"] = 1;
+            values[valuesById[2] = "PROCESSING"] = 2;
+            values[valuesById[3] = "HALTED"] = 3;
+            values[valuesById[4] = "DESTROYED"] = 4;
+            return values;
+        })();
+
+        processing.ProcessingMode = (function() {
+
+            /**
+             * Properties of a ProcessingMode.
+             * @memberof ubii.processing
+             * @interface IProcessingMode
+             * @property {ubii.processing.ProcessingMode.IFrequency|null} [frequency] ProcessingMode frequency
+             * @property {ubii.processing.ProcessingMode.ILockstep|null} [lockstep] ProcessingMode lockstep
+             * @property {ubii.processing.ProcessingMode.ITriggerOnInput|null} [triggerOnInput] ProcessingMode triggerOnInput
+             */
+
+            /**
+             * Constructs a new ProcessingMode.
+             * @memberof ubii.processing
+             * @classdesc Represents a ProcessingMode.
+             * @implements IProcessingMode
+             * @constructor
+             * @param {ubii.processing.IProcessingMode=} [properties] Properties to set
+             */
+            function ProcessingMode(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProcessingMode frequency.
+             * @member {ubii.processing.ProcessingMode.IFrequency|null|undefined} frequency
+             * @memberof ubii.processing.ProcessingMode
+             * @instance
+             */
+            ProcessingMode.prototype.frequency = null;
+
+            /**
+             * ProcessingMode lockstep.
+             * @member {ubii.processing.ProcessingMode.ILockstep|null|undefined} lockstep
+             * @memberof ubii.processing.ProcessingMode
+             * @instance
+             */
+            ProcessingMode.prototype.lockstep = null;
+
+            /**
+             * ProcessingMode triggerOnInput.
+             * @member {ubii.processing.ProcessingMode.ITriggerOnInput|null|undefined} triggerOnInput
+             * @memberof ubii.processing.ProcessingMode
+             * @instance
+             */
+            ProcessingMode.prototype.triggerOnInput = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * ProcessingMode mode.
+             * @member {"frequency"|"lockstep"|"triggerOnInput"|undefined} mode
+             * @memberof ubii.processing.ProcessingMode
+             * @instance
+             */
+            Object.defineProperty(ProcessingMode.prototype, "mode", {
+                get: $util.oneOfGetter($oneOfFields = ["frequency", "lockstep", "triggerOnInput"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new ProcessingMode instance using the specified properties.
+             * @function create
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {ubii.processing.IProcessingMode=} [properties] Properties to set
+             * @returns {ubii.processing.ProcessingMode} ProcessingMode instance
+             */
+            ProcessingMode.create = function create(properties) {
+                return new ProcessingMode(properties);
+            };
+
+            /**
+             * Encodes the specified ProcessingMode message. Does not implicitly {@link ubii.processing.ProcessingMode.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {ubii.processing.IProcessingMode} message ProcessingMode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProcessingMode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.frequency != null && message.hasOwnProperty("frequency"))
+                    $root.ubii.processing.ProcessingMode.Frequency.encode(message.frequency, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.lockstep != null && message.hasOwnProperty("lockstep"))
+                    $root.ubii.processing.ProcessingMode.Lockstep.encode(message.lockstep, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.triggerOnInput != null && message.hasOwnProperty("triggerOnInput"))
+                    $root.ubii.processing.ProcessingMode.TriggerOnInput.encode(message.triggerOnInput, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ProcessingMode message, length delimited. Does not implicitly {@link ubii.processing.ProcessingMode.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {ubii.processing.IProcessingMode} message ProcessingMode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProcessingMode.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ProcessingMode message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.processing.ProcessingMode} ProcessingMode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProcessingMode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ProcessingMode();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.frequency = $root.ubii.processing.ProcessingMode.Frequency.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.lockstep = $root.ubii.processing.ProcessingMode.Lockstep.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.triggerOnInput = $root.ubii.processing.ProcessingMode.TriggerOnInput.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ProcessingMode message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.processing.ProcessingMode} ProcessingMode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProcessingMode.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ProcessingMode message.
+             * @function verify
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProcessingMode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.frequency != null && message.hasOwnProperty("frequency")) {
+                    properties.mode = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingMode.Frequency.verify(message.frequency);
+                        if (error)
+                            return "frequency." + error;
+                    }
+                }
+                if (message.lockstep != null && message.hasOwnProperty("lockstep")) {
+                    if (properties.mode === 1)
+                        return "mode: multiple values";
+                    properties.mode = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingMode.Lockstep.verify(message.lockstep);
+                        if (error)
+                            return "lockstep." + error;
+                    }
+                }
+                if (message.triggerOnInput != null && message.hasOwnProperty("triggerOnInput")) {
+                    if (properties.mode === 1)
+                        return "mode: multiple values";
+                    properties.mode = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingMode.TriggerOnInput.verify(message.triggerOnInput);
+                        if (error)
+                            return "triggerOnInput." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a ProcessingMode message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.processing.ProcessingMode} ProcessingMode
+             */
+            ProcessingMode.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.processing.ProcessingMode)
+                    return object;
+                var message = new $root.ubii.processing.ProcessingMode();
+                if (object.frequency != null) {
+                    if (typeof object.frequency !== "object")
+                        throw TypeError(".ubii.processing.ProcessingMode.frequency: object expected");
+                    message.frequency = $root.ubii.processing.ProcessingMode.Frequency.fromObject(object.frequency);
+                }
+                if (object.lockstep != null) {
+                    if (typeof object.lockstep !== "object")
+                        throw TypeError(".ubii.processing.ProcessingMode.lockstep: object expected");
+                    message.lockstep = $root.ubii.processing.ProcessingMode.Lockstep.fromObject(object.lockstep);
+                }
+                if (object.triggerOnInput != null) {
+                    if (typeof object.triggerOnInput !== "object")
+                        throw TypeError(".ubii.processing.ProcessingMode.triggerOnInput: object expected");
+                    message.triggerOnInput = $root.ubii.processing.ProcessingMode.TriggerOnInput.fromObject(object.triggerOnInput);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ProcessingMode message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.processing.ProcessingMode
+             * @static
+             * @param {ubii.processing.ProcessingMode} message ProcessingMode
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ProcessingMode.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.frequency != null && message.hasOwnProperty("frequency")) {
+                    object.frequency = $root.ubii.processing.ProcessingMode.Frequency.toObject(message.frequency, options);
+                    if (options.oneofs)
+                        object.mode = "frequency";
+                }
+                if (message.lockstep != null && message.hasOwnProperty("lockstep")) {
+                    object.lockstep = $root.ubii.processing.ProcessingMode.Lockstep.toObject(message.lockstep, options);
+                    if (options.oneofs)
+                        object.mode = "lockstep";
+                }
+                if (message.triggerOnInput != null && message.hasOwnProperty("triggerOnInput")) {
+                    object.triggerOnInput = $root.ubii.processing.ProcessingMode.TriggerOnInput.toObject(message.triggerOnInput, options);
+                    if (options.oneofs)
+                        object.mode = "triggerOnInput";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this ProcessingMode to JSON.
+             * @function toJSON
+             * @memberof ubii.processing.ProcessingMode
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ProcessingMode.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            ProcessingMode.Frequency = (function() {
+
+                /**
+                 * Properties of a Frequency.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @interface IFrequency
+                 * @property {number|null} [hertz] Frequency hertz
+                 */
+
+                /**
+                 * Constructs a new Frequency.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @classdesc Represents a Frequency.
+                 * @implements IFrequency
+                 * @constructor
+                 * @param {ubii.processing.ProcessingMode.IFrequency=} [properties] Properties to set
+                 */
+                function Frequency(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Frequency hertz.
+                 * @member {number} hertz
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @instance
+                 */
+                Frequency.prototype.hertz = 0;
+
+                /**
+                 * Creates a new Frequency instance using the specified properties.
+                 * @function create
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.IFrequency=} [properties] Properties to set
+                 * @returns {ubii.processing.ProcessingMode.Frequency} Frequency instance
+                 */
+                Frequency.create = function create(properties) {
+                    return new Frequency(properties);
+                };
+
+                /**
+                 * Encodes the specified Frequency message. Does not implicitly {@link ubii.processing.ProcessingMode.Frequency.verify|verify} messages.
+                 * @function encode
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.IFrequency} message Frequency message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Frequency.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.hertz != null && message.hasOwnProperty("hertz"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.hertz);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified Frequency message, length delimited. Does not implicitly {@link ubii.processing.ProcessingMode.Frequency.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.IFrequency} message Frequency message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Frequency.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a Frequency message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {ubii.processing.ProcessingMode.Frequency} Frequency
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Frequency.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ProcessingMode.Frequency();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.hertz = reader.int32();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a Frequency message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {ubii.processing.ProcessingMode.Frequency} Frequency
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Frequency.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a Frequency message.
+                 * @function verify
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Frequency.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.hertz != null && message.hasOwnProperty("hertz"))
+                        if (!$util.isInteger(message.hertz))
+                            return "hertz: integer expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a Frequency message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {ubii.processing.ProcessingMode.Frequency} Frequency
+                 */
+                Frequency.fromObject = function fromObject(object) {
+                    if (object instanceof $root.ubii.processing.ProcessingMode.Frequency)
+                        return object;
+                    var message = new $root.ubii.processing.ProcessingMode.Frequency();
+                    if (object.hertz != null)
+                        message.hertz = object.hertz | 0;
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a Frequency message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.Frequency} message Frequency
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Frequency.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.hertz = 0;
+                    if (message.hertz != null && message.hasOwnProperty("hertz"))
+                        object.hertz = message.hertz;
+                    return object;
+                };
+
+                /**
+                 * Converts this Frequency to JSON.
+                 * @function toJSON
+                 * @memberof ubii.processing.ProcessingMode.Frequency
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Frequency.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return Frequency;
+            })();
+
+            ProcessingMode.Lockstep = (function() {
+
+                /**
+                 * Properties of a Lockstep.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @interface ILockstep
+                 * @property {string|null} [processRequestEndpoint] Lockstep processRequestEndpoint
+                 */
+
+                /**
+                 * Constructs a new Lockstep.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @classdesc Represents a Lockstep.
+                 * @implements ILockstep
+                 * @constructor
+                 * @param {ubii.processing.ProcessingMode.ILockstep=} [properties] Properties to set
+                 */
+                function Lockstep(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Lockstep processRequestEndpoint.
+                 * @member {string} processRequestEndpoint
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @instance
+                 */
+                Lockstep.prototype.processRequestEndpoint = "";
+
+                /**
+                 * Creates a new Lockstep instance using the specified properties.
+                 * @function create
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.ILockstep=} [properties] Properties to set
+                 * @returns {ubii.processing.ProcessingMode.Lockstep} Lockstep instance
+                 */
+                Lockstep.create = function create(properties) {
+                    return new Lockstep(properties);
+                };
+
+                /**
+                 * Encodes the specified Lockstep message. Does not implicitly {@link ubii.processing.ProcessingMode.Lockstep.verify|verify} messages.
+                 * @function encode
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.ILockstep} message Lockstep message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Lockstep.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.processRequestEndpoint != null && message.hasOwnProperty("processRequestEndpoint"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.processRequestEndpoint);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified Lockstep message, length delimited. Does not implicitly {@link ubii.processing.ProcessingMode.Lockstep.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.ILockstep} message Lockstep message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Lockstep.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a Lockstep message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {ubii.processing.ProcessingMode.Lockstep} Lockstep
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Lockstep.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ProcessingMode.Lockstep();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.processRequestEndpoint = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a Lockstep message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {ubii.processing.ProcessingMode.Lockstep} Lockstep
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Lockstep.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a Lockstep message.
+                 * @function verify
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Lockstep.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.processRequestEndpoint != null && message.hasOwnProperty("processRequestEndpoint"))
+                        if (!$util.isString(message.processRequestEndpoint))
+                            return "processRequestEndpoint: string expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a Lockstep message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {ubii.processing.ProcessingMode.Lockstep} Lockstep
+                 */
+                Lockstep.fromObject = function fromObject(object) {
+                    if (object instanceof $root.ubii.processing.ProcessingMode.Lockstep)
+                        return object;
+                    var message = new $root.ubii.processing.ProcessingMode.Lockstep();
+                    if (object.processRequestEndpoint != null)
+                        message.processRequestEndpoint = String(object.processRequestEndpoint);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a Lockstep message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.Lockstep} message Lockstep
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Lockstep.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults)
+                        object.processRequestEndpoint = "";
+                    if (message.processRequestEndpoint != null && message.hasOwnProperty("processRequestEndpoint"))
+                        object.processRequestEndpoint = message.processRequestEndpoint;
+                    return object;
+                };
+
+                /**
+                 * Converts this Lockstep to JSON.
+                 * @function toJSON
+                 * @memberof ubii.processing.ProcessingMode.Lockstep
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Lockstep.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return Lockstep;
+            })();
+
+            ProcessingMode.TriggerOnInput = (function() {
+
+                /**
+                 * Properties of a TriggerOnInput.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @interface ITriggerOnInput
+                 * @property {number|null} [minDelayMs] TriggerOnInput minDelayMs
+                 * @property {boolean|null} [allInputsNeedUpdate] TriggerOnInput allInputsNeedUpdate
+                 */
+
+                /**
+                 * Constructs a new TriggerOnInput.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @classdesc Represents a TriggerOnInput.
+                 * @implements ITriggerOnInput
+                 * @constructor
+                 * @param {ubii.processing.ProcessingMode.ITriggerOnInput=} [properties] Properties to set
+                 */
+                function TriggerOnInput(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * TriggerOnInput minDelayMs.
+                 * @member {number} minDelayMs
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @instance
+                 */
+                TriggerOnInput.prototype.minDelayMs = 0;
+
+                /**
+                 * TriggerOnInput allInputsNeedUpdate.
+                 * @member {boolean} allInputsNeedUpdate
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @instance
+                 */
+                TriggerOnInput.prototype.allInputsNeedUpdate = false;
+
+                /**
+                 * Creates a new TriggerOnInput instance using the specified properties.
+                 * @function create
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.ITriggerOnInput=} [properties] Properties to set
+                 * @returns {ubii.processing.ProcessingMode.TriggerOnInput} TriggerOnInput instance
+                 */
+                TriggerOnInput.create = function create(properties) {
+                    return new TriggerOnInput(properties);
+                };
+
+                /**
+                 * Encodes the specified TriggerOnInput message. Does not implicitly {@link ubii.processing.ProcessingMode.TriggerOnInput.verify|verify} messages.
+                 * @function encode
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.ITriggerOnInput} message TriggerOnInput message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TriggerOnInput.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.minDelayMs != null && message.hasOwnProperty("minDelayMs"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.minDelayMs);
+                    if (message.allInputsNeedUpdate != null && message.hasOwnProperty("allInputsNeedUpdate"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).bool(message.allInputsNeedUpdate);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified TriggerOnInput message, length delimited. Does not implicitly {@link ubii.processing.ProcessingMode.TriggerOnInput.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.ITriggerOnInput} message TriggerOnInput message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TriggerOnInput.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a TriggerOnInput message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {ubii.processing.ProcessingMode.TriggerOnInput} TriggerOnInput
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TriggerOnInput.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ProcessingMode.TriggerOnInput();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.minDelayMs = reader.int32();
+                            break;
+                        case 2:
+                            message.allInputsNeedUpdate = reader.bool();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a TriggerOnInput message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {ubii.processing.ProcessingMode.TriggerOnInput} TriggerOnInput
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TriggerOnInput.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a TriggerOnInput message.
+                 * @function verify
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TriggerOnInput.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.minDelayMs != null && message.hasOwnProperty("minDelayMs"))
+                        if (!$util.isInteger(message.minDelayMs))
+                            return "minDelayMs: integer expected";
+                    if (message.allInputsNeedUpdate != null && message.hasOwnProperty("allInputsNeedUpdate"))
+                        if (typeof message.allInputsNeedUpdate !== "boolean")
+                            return "allInputsNeedUpdate: boolean expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a TriggerOnInput message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {ubii.processing.ProcessingMode.TriggerOnInput} TriggerOnInput
+                 */
+                TriggerOnInput.fromObject = function fromObject(object) {
+                    if (object instanceof $root.ubii.processing.ProcessingMode.TriggerOnInput)
+                        return object;
+                    var message = new $root.ubii.processing.ProcessingMode.TriggerOnInput();
+                    if (object.minDelayMs != null)
+                        message.minDelayMs = object.minDelayMs | 0;
+                    if (object.allInputsNeedUpdate != null)
+                        message.allInputsNeedUpdate = Boolean(object.allInputsNeedUpdate);
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a TriggerOnInput message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.TriggerOnInput} message TriggerOnInput
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                TriggerOnInput.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.minDelayMs = 0;
+                        object.allInputsNeedUpdate = false;
+                    }
+                    if (message.minDelayMs != null && message.hasOwnProperty("minDelayMs"))
+                        object.minDelayMs = message.minDelayMs;
+                    if (message.allInputsNeedUpdate != null && message.hasOwnProperty("allInputsNeedUpdate"))
+                        object.allInputsNeedUpdate = message.allInputsNeedUpdate;
+                    return object;
+                };
+
+                /**
+                 * Converts this TriggerOnInput to JSON.
+                 * @function toJSON
+                 * @memberof ubii.processing.ProcessingMode.TriggerOnInput
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                TriggerOnInput.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return TriggerOnInput;
+            })();
+
+            return ProcessingMode;
+        })();
+
+        processing.ModuleIO = (function() {
+
+            /**
+             * Properties of a ModuleIO.
+             * @memberof ubii.processing
+             * @interface IModuleIO
+             * @property {string|null} [internalName] ModuleIO internalName
+             * @property {string|null} [messageFormat] ModuleIO messageFormat
+             */
+
+            /**
+             * Constructs a new ModuleIO.
+             * @memberof ubii.processing
+             * @classdesc Represents a ModuleIO.
+             * @implements IModuleIO
+             * @constructor
+             * @param {ubii.processing.IModuleIO=} [properties] Properties to set
+             */
+            function ModuleIO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ModuleIO internalName.
+             * @member {string} internalName
+             * @memberof ubii.processing.ModuleIO
+             * @instance
+             */
+            ModuleIO.prototype.internalName = "";
+
+            /**
+             * ModuleIO messageFormat.
+             * @member {string} messageFormat
+             * @memberof ubii.processing.ModuleIO
+             * @instance
+             */
+            ModuleIO.prototype.messageFormat = "";
+
+            /**
+             * Creates a new ModuleIO instance using the specified properties.
+             * @function create
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {ubii.processing.IModuleIO=} [properties] Properties to set
+             * @returns {ubii.processing.ModuleIO} ModuleIO instance
+             */
+            ModuleIO.create = function create(properties) {
+                return new ModuleIO(properties);
+            };
+
+            /**
+             * Encodes the specified ModuleIO message. Does not implicitly {@link ubii.processing.ModuleIO.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {ubii.processing.IModuleIO} message ModuleIO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ModuleIO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.internalName != null && message.hasOwnProperty("internalName"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.internalName);
+                if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.messageFormat);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ModuleIO message, length delimited. Does not implicitly {@link ubii.processing.ModuleIO.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {ubii.processing.IModuleIO} message ModuleIO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ModuleIO.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ModuleIO message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.processing.ModuleIO} ModuleIO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ModuleIO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ModuleIO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.internalName = reader.string();
+                        break;
+                    case 2:
+                        message.messageFormat = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ModuleIO message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.processing.ModuleIO} ModuleIO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ModuleIO.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ModuleIO message.
+             * @function verify
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ModuleIO.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.internalName != null && message.hasOwnProperty("internalName"))
+                    if (!$util.isString(message.internalName))
+                        return "internalName: string expected";
+                if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
+                    if (!$util.isString(message.messageFormat))
+                        return "messageFormat: string expected";
+                return null;
+            };
+
+            /**
+             * Creates a ModuleIO message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.processing.ModuleIO} ModuleIO
+             */
+            ModuleIO.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.processing.ModuleIO)
+                    return object;
+                var message = new $root.ubii.processing.ModuleIO();
+                if (object.internalName != null)
+                    message.internalName = String(object.internalName);
+                if (object.messageFormat != null)
+                    message.messageFormat = String(object.messageFormat);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ModuleIO message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.processing.ModuleIO
+             * @static
+             * @param {ubii.processing.ModuleIO} message ModuleIO
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ModuleIO.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.internalName = "";
+                    object.messageFormat = "";
+                }
+                if (message.internalName != null && message.hasOwnProperty("internalName"))
+                    object.internalName = message.internalName;
+                if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
+                    object.messageFormat = message.messageFormat;
+                return object;
+            };
+
+            /**
+             * Converts this ModuleIO to JSON.
+             * @function toJSON
+             * @memberof ubii.processing.ModuleIO
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ModuleIO.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ModuleIO;
+        })();
+
+        processing.ProcessingModule = (function() {
+
+            /**
+             * Properties of a ProcessingModule.
+             * @memberof ubii.processing
+             * @interface IProcessingModule
+             * @property {string|null} [id] ProcessingModule id
+             * @property {string|null} [name] ProcessingModule name
+             * @property {Array.<string>|null} [authors] ProcessingModule authors
+             * @property {Array.<string>|null} [tags] ProcessingModule tags
+             * @property {string|null} [description] ProcessingModule description
+             * @property {ubii.processing.ProcessingModuleStatus|null} [status] ProcessingModule status
+             * @property {ubii.processing.IProcessingMode|null} [processingMode] ProcessingModule processingMode
+             * @property {Array.<ubii.processing.IModuleIO>|null} [inputs] ProcessingModule inputs
+             * @property {Array.<ubii.processing.IModuleIO>|null} [outputs] ProcessingModule outputs
+             * @property {string|null} [onProcessing] ProcessingModule onProcessing
+             * @property {string|null} [onCreated] ProcessingModule onCreated
+             * @property {string|null} [onHalted] ProcessingModule onHalted
+             * @property {string|null} [onDestroyed] ProcessingModule onDestroyed
+             */
+
+            /**
+             * Constructs a new ProcessingModule.
+             * @memberof ubii.processing
+             * @classdesc Represents a ProcessingModule.
+             * @implements IProcessingModule
+             * @constructor
+             * @param {ubii.processing.IProcessingModule=} [properties] Properties to set
+             */
+            function ProcessingModule(properties) {
+                this.authors = [];
+                this.tags = [];
+                this.inputs = [];
+                this.outputs = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProcessingModule id.
+             * @member {string} id
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.id = "";
+
+            /**
+             * ProcessingModule name.
+             * @member {string} name
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.name = "";
+
+            /**
+             * ProcessingModule authors.
+             * @member {Array.<string>} authors
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.authors = $util.emptyArray;
+
+            /**
+             * ProcessingModule tags.
+             * @member {Array.<string>} tags
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.tags = $util.emptyArray;
+
+            /**
+             * ProcessingModule description.
+             * @member {string} description
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.description = "";
+
+            /**
+             * ProcessingModule status.
+             * @member {ubii.processing.ProcessingModuleStatus} status
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.status = 0;
+
+            /**
+             * ProcessingModule processingMode.
+             * @member {ubii.processing.IProcessingMode|null|undefined} processingMode
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.processingMode = null;
+
+            /**
+             * ProcessingModule inputs.
+             * @member {Array.<ubii.processing.IModuleIO>} inputs
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.inputs = $util.emptyArray;
+
+            /**
+             * ProcessingModule outputs.
+             * @member {Array.<ubii.processing.IModuleIO>} outputs
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.outputs = $util.emptyArray;
+
+            /**
+             * ProcessingModule onProcessing.
+             * @member {string} onProcessing
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.onProcessing = "";
+
+            /**
+             * ProcessingModule onCreated.
+             * @member {string} onCreated
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.onCreated = "";
+
+            /**
+             * ProcessingModule onHalted.
+             * @member {string} onHalted
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.onHalted = "";
+
+            /**
+             * ProcessingModule onDestroyed.
+             * @member {string} onDestroyed
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.onDestroyed = "";
+
+            /**
+             * Creates a new ProcessingModule instance using the specified properties.
+             * @function create
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {ubii.processing.IProcessingModule=} [properties] Properties to set
+             * @returns {ubii.processing.ProcessingModule} ProcessingModule instance
+             */
+            ProcessingModule.create = function create(properties) {
+                return new ProcessingModule(properties);
+            };
+
+            /**
+             * Encodes the specified ProcessingModule message. Does not implicitly {@link ubii.processing.ProcessingModule.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {ubii.processing.IProcessingModule} message ProcessingModule message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProcessingModule.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.authors != null && message.authors.length)
+                    for (var i = 0; i < message.authors.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.authors[i]);
+                if (message.tags != null && message.tags.length)
+                    for (var i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                if (message.description != null && message.hasOwnProperty("description"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
+                if (message.status != null && message.hasOwnProperty("status"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.status);
+                if (message.processingMode != null && message.hasOwnProperty("processingMode"))
+                    $root.ubii.processing.ProcessingMode.encode(message.processingMode, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.inputs != null && message.inputs.length)
+                    for (var i = 0; i < message.inputs.length; ++i)
+                        $root.ubii.processing.ModuleIO.encode(message.inputs[i], writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.outputs != null && message.outputs.length)
+                    for (var i = 0; i < message.outputs.length; ++i)
+                        $root.ubii.processing.ModuleIO.encode(message.outputs[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
+                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.onProcessing);
+                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.onCreated);
+                if (message.onHalted != null && message.hasOwnProperty("onHalted"))
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.onHalted);
+                if (message.onDestroyed != null && message.hasOwnProperty("onDestroyed"))
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.onDestroyed);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ProcessingModule message, length delimited. Does not implicitly {@link ubii.processing.ProcessingModule.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {ubii.processing.IProcessingModule} message ProcessingModule message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProcessingModule.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ProcessingModule message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.processing.ProcessingModule} ProcessingModule
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProcessingModule.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ProcessingModule();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        if (!(message.authors && message.authors.length))
+                            message.authors = [];
+                        message.authors.push(reader.string());
+                        break;
+                    case 4:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    case 5:
+                        message.description = reader.string();
+                        break;
+                    case 6:
+                        message.status = reader.int32();
+                        break;
+                    case 7:
+                        message.processingMode = $root.ubii.processing.ProcessingMode.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        if (!(message.inputs && message.inputs.length))
+                            message.inputs = [];
+                        message.inputs.push($root.ubii.processing.ModuleIO.decode(reader, reader.uint32()));
+                        break;
+                    case 9:
+                        if (!(message.outputs && message.outputs.length))
+                            message.outputs = [];
+                        message.outputs.push($root.ubii.processing.ModuleIO.decode(reader, reader.uint32()));
+                        break;
+                    case 10:
+                        message.onProcessing = reader.string();
+                        break;
+                    case 11:
+                        message.onCreated = reader.string();
+                        break;
+                    case 12:
+                        message.onHalted = reader.string();
+                        break;
+                    case 13:
+                        message.onDestroyed = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ProcessingModule message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.processing.ProcessingModule} ProcessingModule
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProcessingModule.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ProcessingModule message.
+             * @function verify
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProcessingModule.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.authors != null && message.hasOwnProperty("authors")) {
+                    if (!Array.isArray(message.authors))
+                        return "authors: array expected";
+                    for (var i = 0; i < message.authors.length; ++i)
+                        if (!$util.isString(message.authors[i]))
+                            return "authors: string[] expected";
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (var i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    if (!$util.isString(message.description))
+                        return "description: string expected";
+                if (message.status != null && message.hasOwnProperty("status"))
+                    switch (message.status) {
+                    default:
+                        return "status: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        break;
+                    }
+                if (message.processingMode != null && message.hasOwnProperty("processingMode")) {
+                    var error = $root.ubii.processing.ProcessingMode.verify(message.processingMode);
+                    if (error)
+                        return "processingMode." + error;
+                }
+                if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                    if (!Array.isArray(message.inputs))
+                        return "inputs: array expected";
+                    for (var i = 0; i < message.inputs.length; ++i) {
+                        var error = $root.ubii.processing.ModuleIO.verify(message.inputs[i]);
+                        if (error)
+                            return "inputs." + error;
+                    }
+                }
+                if (message.outputs != null && message.hasOwnProperty("outputs")) {
+                    if (!Array.isArray(message.outputs))
+                        return "outputs: array expected";
+                    for (var i = 0; i < message.outputs.length; ++i) {
+                        var error = $root.ubii.processing.ModuleIO.verify(message.outputs[i]);
+                        if (error)
+                            return "outputs." + error;
+                    }
+                }
+                if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
+                    if (!$util.isString(message.onProcessing))
+                        return "onProcessing: string expected";
+                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
+                    if (!$util.isString(message.onCreated))
+                        return "onCreated: string expected";
+                if (message.onHalted != null && message.hasOwnProperty("onHalted"))
+                    if (!$util.isString(message.onHalted))
+                        return "onHalted: string expected";
+                if (message.onDestroyed != null && message.hasOwnProperty("onDestroyed"))
+                    if (!$util.isString(message.onDestroyed))
+                        return "onDestroyed: string expected";
+                return null;
+            };
+
+            /**
+             * Creates a ProcessingModule message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.processing.ProcessingModule} ProcessingModule
+             */
+            ProcessingModule.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.processing.ProcessingModule)
+                    return object;
+                var message = new $root.ubii.processing.ProcessingModule();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.authors) {
+                    if (!Array.isArray(object.authors))
+                        throw TypeError(".ubii.processing.ProcessingModule.authors: array expected");
+                    message.authors = [];
+                    for (var i = 0; i < object.authors.length; ++i)
+                        message.authors[i] = String(object.authors[i]);
+                }
+                if (object.tags) {
+                    if (!Array.isArray(object.tags))
+                        throw TypeError(".ubii.processing.ProcessingModule.tags: array expected");
+                    message.tags = [];
+                    for (var i = 0; i < object.tags.length; ++i)
+                        message.tags[i] = String(object.tags[i]);
+                }
+                if (object.description != null)
+                    message.description = String(object.description);
+                switch (object.status) {
+                case "INITIALIZED":
+                case 0:
+                    message.status = 0;
+                    break;
+                case "CREATED":
+                case 1:
+                    message.status = 1;
+                    break;
+                case "PROCESSING":
+                case 2:
+                    message.status = 2;
+                    break;
+                case "HALTED":
+                case 3:
+                    message.status = 3;
+                    break;
+                case "DESTROYED":
+                case 4:
+                    message.status = 4;
+                    break;
+                }
+                if (object.processingMode != null) {
+                    if (typeof object.processingMode !== "object")
+                        throw TypeError(".ubii.processing.ProcessingModule.processingMode: object expected");
+                    message.processingMode = $root.ubii.processing.ProcessingMode.fromObject(object.processingMode);
+                }
+                if (object.inputs) {
+                    if (!Array.isArray(object.inputs))
+                        throw TypeError(".ubii.processing.ProcessingModule.inputs: array expected");
+                    message.inputs = [];
+                    for (var i = 0; i < object.inputs.length; ++i) {
+                        if (typeof object.inputs[i] !== "object")
+                            throw TypeError(".ubii.processing.ProcessingModule.inputs: object expected");
+                        message.inputs[i] = $root.ubii.processing.ModuleIO.fromObject(object.inputs[i]);
+                    }
+                }
+                if (object.outputs) {
+                    if (!Array.isArray(object.outputs))
+                        throw TypeError(".ubii.processing.ProcessingModule.outputs: array expected");
+                    message.outputs = [];
+                    for (var i = 0; i < object.outputs.length; ++i) {
+                        if (typeof object.outputs[i] !== "object")
+                            throw TypeError(".ubii.processing.ProcessingModule.outputs: object expected");
+                        message.outputs[i] = $root.ubii.processing.ModuleIO.fromObject(object.outputs[i]);
+                    }
+                }
+                if (object.onProcessing != null)
+                    message.onProcessing = String(object.onProcessing);
+                if (object.onCreated != null)
+                    message.onCreated = String(object.onCreated);
+                if (object.onHalted != null)
+                    message.onHalted = String(object.onHalted);
+                if (object.onDestroyed != null)
+                    message.onDestroyed = String(object.onDestroyed);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ProcessingModule message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.processing.ProcessingModule
+             * @static
+             * @param {ubii.processing.ProcessingModule} message ProcessingModule
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ProcessingModule.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults) {
+                    object.authors = [];
+                    object.tags = [];
+                    object.inputs = [];
+                    object.outputs = [];
+                }
+                if (options.defaults) {
+                    object.id = "";
+                    object.name = "";
+                    object.description = "";
+                    object.status = options.enums === String ? "INITIALIZED" : 0;
+                    object.processingMode = null;
+                    object.onProcessing = "";
+                    object.onCreated = "";
+                    object.onHalted = "";
+                    object.onDestroyed = "";
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                if (message.authors && message.authors.length) {
+                    object.authors = [];
+                    for (var j = 0; j < message.authors.length; ++j)
+                        object.authors[j] = message.authors[j];
+                }
+                if (message.tags && message.tags.length) {
+                    object.tags = [];
+                    for (var j = 0; j < message.tags.length; ++j)
+                        object.tags[j] = message.tags[j];
+                }
+                if (message.description != null && message.hasOwnProperty("description"))
+                    object.description = message.description;
+                if (message.status != null && message.hasOwnProperty("status"))
+                    object.status = options.enums === String ? $root.ubii.processing.ProcessingModuleStatus[message.status] : message.status;
+                if (message.processingMode != null && message.hasOwnProperty("processingMode"))
+                    object.processingMode = $root.ubii.processing.ProcessingMode.toObject(message.processingMode, options);
+                if (message.inputs && message.inputs.length) {
+                    object.inputs = [];
+                    for (var j = 0; j < message.inputs.length; ++j)
+                        object.inputs[j] = $root.ubii.processing.ModuleIO.toObject(message.inputs[j], options);
+                }
+                if (message.outputs && message.outputs.length) {
+                    object.outputs = [];
+                    for (var j = 0; j < message.outputs.length; ++j)
+                        object.outputs[j] = $root.ubii.processing.ModuleIO.toObject(message.outputs[j], options);
+                }
+                if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
+                    object.onProcessing = message.onProcessing;
+                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
+                    object.onCreated = message.onCreated;
+                if (message.onHalted != null && message.hasOwnProperty("onHalted"))
+                    object.onHalted = message.onHalted;
+                if (message.onDestroyed != null && message.hasOwnProperty("onDestroyed"))
+                    object.onDestroyed = message.onDestroyed;
+                return object;
+            };
+
+            /**
+             * Converts this ProcessingModule to JSON.
+             * @function toJSON
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ProcessingModule.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ProcessingModule;
+        })();
+
+        processing.ProcessingModuleList = (function() {
+
+            /**
+             * Properties of a ProcessingModuleList.
+             * @memberof ubii.processing
+             * @interface IProcessingModuleList
+             * @property {Array.<ubii.processing.IProcessingModule>|null} [elements] ProcessingModuleList elements
+             */
+
+            /**
+             * Constructs a new ProcessingModuleList.
+             * @memberof ubii.processing
+             * @classdesc Represents a ProcessingModuleList.
+             * @implements IProcessingModuleList
+             * @constructor
+             * @param {ubii.processing.IProcessingModuleList=} [properties] Properties to set
+             */
+            function ProcessingModuleList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProcessingModuleList elements.
+             * @member {Array.<ubii.processing.IProcessingModule>} elements
+             * @memberof ubii.processing.ProcessingModuleList
+             * @instance
+             */
+            ProcessingModuleList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new ProcessingModuleList instance using the specified properties.
+             * @function create
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {ubii.processing.IProcessingModuleList=} [properties] Properties to set
+             * @returns {ubii.processing.ProcessingModuleList} ProcessingModuleList instance
+             */
+            ProcessingModuleList.create = function create(properties) {
+                return new ProcessingModuleList(properties);
+            };
+
+            /**
+             * Encodes the specified ProcessingModuleList message. Does not implicitly {@link ubii.processing.ProcessingModuleList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {ubii.processing.IProcessingModuleList} message ProcessingModuleList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProcessingModuleList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.processing.ProcessingModule.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ProcessingModuleList message, length delimited. Does not implicitly {@link ubii.processing.ProcessingModuleList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {ubii.processing.IProcessingModuleList} message ProcessingModuleList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProcessingModuleList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ProcessingModuleList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.processing.ProcessingModuleList} ProcessingModuleList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProcessingModuleList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ProcessingModuleList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.processing.ProcessingModule.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ProcessingModuleList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.processing.ProcessingModuleList} ProcessingModuleList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProcessingModuleList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ProcessingModuleList message.
+             * @function verify
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProcessingModuleList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.processing.ProcessingModule.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a ProcessingModuleList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.processing.ProcessingModuleList} ProcessingModuleList
+             */
+            ProcessingModuleList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.processing.ProcessingModuleList)
+                    return object;
+                var message = new $root.ubii.processing.ProcessingModuleList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.processing.ProcessingModuleList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.processing.ProcessingModuleList.elements: object expected");
+                        message.elements[i] = $root.ubii.processing.ProcessingModule.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ProcessingModuleList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.processing.ProcessingModuleList
+             * @static
+             * @param {ubii.processing.ProcessingModuleList} message ProcessingModuleList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ProcessingModuleList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.processing.ProcessingModule.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this ProcessingModuleList to JSON.
+             * @function toJSON
+             * @memberof ubii.processing.ProcessingModuleList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ProcessingModuleList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ProcessingModuleList;
+        })();
+
+        return processing;
+    })();
+
     ubii.servers = (function() {
 
         /**
@@ -5340,6 +7598,9 @@ $root.ubii = (function() {
              * @property {ubii.devices.IDeviceList|null} [deviceList] ServiceReply deviceList
              * @property {ubii.services.IService|null} [service] ServiceReply service
              * @property {ubii.services.IServiceList|null} [serviceList] ServiceReply serviceList
+             * @property {ubii.processing.IProcessingModule|null} [processingModule] ServiceReply processingModule
+             * @property {ubii.processing.IProcessingModuleList|null} [processingModuleList] ServiceReply processingModuleList
+             * @property {ubii.processing.ILockstepProcessingReply|null} [lockstepProcessingReply] ServiceReply lockstepProcessingReply
              */
 
             /**
@@ -5501,17 +7762,41 @@ $root.ubii = (function() {
              */
             ServiceReply.prototype.serviceList = null;
 
+            /**
+             * ServiceReply processingModule.
+             * @member {ubii.processing.IProcessingModule|null|undefined} processingModule
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.processingModule = null;
+
+            /**
+             * ServiceReply processingModuleList.
+             * @member {ubii.processing.IProcessingModuleList|null|undefined} processingModuleList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.processingModuleList = null;
+
+            /**
+             * ServiceReply lockstepProcessingReply.
+             * @member {ubii.processing.ILockstepProcessingReply|null|undefined} lockstepProcessingReply
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.lockstepProcessingReply = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"interactionList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"interaction"|"interactionList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"processingModule"|"processingModuleList"|"lockstepProcessingReply"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "interactionList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "interaction", "interactionList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList", "processingModule", "processingModuleList", "lockstepProcessingReply"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5575,6 +7860,12 @@ $root.ubii = (function() {
                     $root.ubii.services.Service.encode(message.service, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 if (message.serviceList != null && message.hasOwnProperty("serviceList"))
                     $root.ubii.services.ServiceList.encode(message.serviceList, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
+                if (message.processingModule != null && message.hasOwnProperty("processingModule"))
+                    $root.ubii.processing.ProcessingModule.encode(message.processingModule, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList"))
+                    $root.ubii.processing.ProcessingModuleList.encode(message.processingModuleList, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
+                if (message.lockstepProcessingReply != null && message.hasOwnProperty("lockstepProcessingReply"))
+                    $root.ubii.processing.LockstepProcessingReply.encode(message.lockstepProcessingReply, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                 return writer;
             };
 
@@ -5662,6 +7953,15 @@ $root.ubii = (function() {
                         break;
                     case 18:
                         message.serviceList = $root.ubii.services.ServiceList.decode(reader, reader.uint32());
+                        break;
+                    case 19:
+                        message.processingModule = $root.ubii.processing.ProcessingModule.decode(reader, reader.uint32());
+                        break;
+                    case 20:
+                        message.processingModuleList = $root.ubii.processing.ProcessingModuleList.decode(reader, reader.uint32());
+                        break;
+                    case 21:
+                        message.lockstepProcessingReply = $root.ubii.processing.LockstepProcessingReply.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5877,6 +8177,36 @@ $root.ubii = (function() {
                             return "serviceList." + error;
                     }
                 }
+                if (message.processingModule != null && message.hasOwnProperty("processingModule")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingModule.verify(message.processingModule);
+                        if (error)
+                            return "processingModule." + error;
+                    }
+                }
+                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingModuleList.verify(message.processingModuleList);
+                        if (error)
+                            return "processingModuleList." + error;
+                    }
+                }
+                if (message.lockstepProcessingReply != null && message.hasOwnProperty("lockstepProcessingReply")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.processing.LockstepProcessingReply.verify(message.lockstepProcessingReply);
+                        if (error)
+                            return "lockstepProcessingReply." + error;
+                    }
+                }
                 return null;
             };
 
@@ -5981,6 +8311,21 @@ $root.ubii = (function() {
                     if (typeof object.serviceList !== "object")
                         throw TypeError(".ubii.services.ServiceReply.serviceList: object expected");
                     message.serviceList = $root.ubii.services.ServiceList.fromObject(object.serviceList);
+                }
+                if (object.processingModule != null) {
+                    if (typeof object.processingModule !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.processingModule: object expected");
+                    message.processingModule = $root.ubii.processing.ProcessingModule.fromObject(object.processingModule);
+                }
+                if (object.processingModuleList != null) {
+                    if (typeof object.processingModuleList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.processingModuleList: object expected");
+                    message.processingModuleList = $root.ubii.processing.ProcessingModuleList.fromObject(object.processingModuleList);
+                }
+                if (object.lockstepProcessingReply != null) {
+                    if (typeof object.lockstepProcessingReply !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.lockstepProcessingReply: object expected");
+                    message.lockstepProcessingReply = $root.ubii.processing.LockstepProcessingReply.fromObject(object.lockstepProcessingReply);
                 }
                 return message;
             };
@@ -6088,6 +8433,21 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "serviceList";
                 }
+                if (message.processingModule != null && message.hasOwnProperty("processingModule")) {
+                    object.processingModule = $root.ubii.processing.ProcessingModule.toObject(message.processingModule, options);
+                    if (options.oneofs)
+                        object.type = "processingModule";
+                }
+                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList")) {
+                    object.processingModuleList = $root.ubii.processing.ProcessingModuleList.toObject(message.processingModuleList, options);
+                    if (options.oneofs)
+                        object.type = "processingModuleList";
+                }
+                if (message.lockstepProcessingReply != null && message.hasOwnProperty("lockstepProcessingReply")) {
+                    object.lockstepProcessingReply = $root.ubii.processing.LockstepProcessingReply.toObject(message.lockstepProcessingReply, options);
+                    if (options.oneofs)
+                        object.type = "lockstepProcessingReply";
+                }
                 return object;
             };
 
@@ -6125,6 +8485,9 @@ $root.ubii = (function() {
              * @property {ubii.devices.ITopicDemuxList|null} [topicDemuxList] ServiceRequest topicDemuxList
              * @property {ubii.clients.IClientList|null} [clientList] ServiceRequest clientList
              * @property {ubii.devices.IDeviceList|null} [deviceList] ServiceRequest deviceList
+             * @property {ubii.processing.IProcessingModule|null} [processingModule] ServiceRequest processingModule
+             * @property {ubii.processing.IProcessingModuleList|null} [processingModuleList] ServiceRequest processingModuleList
+             * @property {ubii.processing.ILockstepProcessingRequest|null} [lockstepProcessingRequest] ServiceRequest lockstepProcessingRequest
              */
 
             /**
@@ -6254,17 +8617,41 @@ $root.ubii = (function() {
              */
             ServiceRequest.prototype.deviceList = null;
 
+            /**
+             * ServiceRequest processingModule.
+             * @member {ubii.processing.IProcessingModule|null|undefined} processingModule
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.processingModule = null;
+
+            /**
+             * ServiceRequest processingModuleList.
+             * @member {ubii.processing.IProcessingModuleList|null|undefined} processingModuleList
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.processingModuleList = null;
+
+            /**
+             * ServiceRequest lockstepProcessingRequest.
+             * @member {ubii.processing.ILockstepProcessingRequest|null|undefined} lockstepProcessingRequest
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.lockstepProcessingRequest = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|"interactionList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"interaction"|"interactionList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"processingModule"|"processingModuleList"|"lockstepProcessingRequest"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction", "interactionList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "interaction", "interactionList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "processingModule", "processingModuleList", "lockstepProcessingRequest"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -6320,6 +8707,12 @@ $root.ubii = (function() {
                     $root.ubii.clients.ClientList.encode(message.clientList, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
                 if (message.deviceList != null && message.hasOwnProperty("deviceList"))
                     $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+                if (message.processingModule != null && message.hasOwnProperty("processingModule"))
+                    $root.ubii.processing.ProcessingModule.encode(message.processingModule, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
+                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList"))
+                    $root.ubii.processing.ProcessingModuleList.encode(message.processingModuleList, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.lockstepProcessingRequest != null && message.hasOwnProperty("lockstepProcessingRequest"))
+                    $root.ubii.processing.LockstepProcessingRequest.encode(message.lockstepProcessingRequest, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -6395,6 +8788,15 @@ $root.ubii = (function() {
                         break;
                     case 14:
                         message.deviceList = $root.ubii.devices.DeviceList.decode(reader, reader.uint32());
+                        break;
+                    case 15:
+                        message.processingModule = $root.ubii.processing.ProcessingModule.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.processingModuleList = $root.ubii.processing.ProcessingModuleList.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6563,6 +8965,36 @@ $root.ubii = (function() {
                             return "deviceList." + error;
                     }
                 }
+                if (message.processingModule != null && message.hasOwnProperty("processingModule")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingModule.verify(message.processingModule);
+                        if (error)
+                            return "processingModule." + error;
+                    }
+                }
+                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingModuleList.verify(message.processingModuleList);
+                        if (error)
+                            return "processingModuleList." + error;
+                    }
+                }
+                if (message.lockstepProcessingRequest != null && message.hasOwnProperty("lockstepProcessingRequest")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.processing.LockstepProcessingRequest.verify(message.lockstepProcessingRequest);
+                        if (error)
+                            return "lockstepProcessingRequest." + error;
+                    }
+                }
                 return null;
             };
 
@@ -6644,6 +9076,21 @@ $root.ubii = (function() {
                     if (typeof object.deviceList !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.deviceList: object expected");
                     message.deviceList = $root.ubii.devices.DeviceList.fromObject(object.deviceList);
+                }
+                if (object.processingModule != null) {
+                    if (typeof object.processingModule !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.processingModule: object expected");
+                    message.processingModule = $root.ubii.processing.ProcessingModule.fromObject(object.processingModule);
+                }
+                if (object.processingModuleList != null) {
+                    if (typeof object.processingModuleList !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.processingModuleList: object expected");
+                    message.processingModuleList = $root.ubii.processing.ProcessingModuleList.fromObject(object.processingModuleList);
+                }
+                if (object.lockstepProcessingRequest != null) {
+                    if (typeof object.lockstepProcessingRequest !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.lockstepProcessingRequest: object expected");
+                    message.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.fromObject(object.lockstepProcessingRequest);
                 }
                 return message;
             };
@@ -6729,6 +9176,21 @@ $root.ubii = (function() {
                     object.deviceList = $root.ubii.devices.DeviceList.toObject(message.deviceList, options);
                     if (options.oneofs)
                         object.type = "deviceList";
+                }
+                if (message.processingModule != null && message.hasOwnProperty("processingModule")) {
+                    object.processingModule = $root.ubii.processing.ProcessingModule.toObject(message.processingModule, options);
+                    if (options.oneofs)
+                        object.type = "processingModule";
+                }
+                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList")) {
+                    object.processingModuleList = $root.ubii.processing.ProcessingModuleList.toObject(message.processingModuleList, options);
+                    if (options.oneofs)
+                        object.type = "processingModuleList";
+                }
+                if (message.lockstepProcessingRequest != null && message.hasOwnProperty("lockstepProcessingRequest")) {
+                    object.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.toObject(message.lockstepProcessingRequest, options);
+                    if (options.oneofs)
+                        object.type = "lockstepProcessingRequest";
                 }
                 return object;
             };

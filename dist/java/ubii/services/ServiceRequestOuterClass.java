@@ -225,6 +225,51 @@ public final class ServiceRequestOuterClass {
      */
     ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder();
 
+    /**
+     * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+     * @return Whether the processingModule field is set.
+     */
+    boolean hasProcessingModule();
+    /**
+     * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+     * @return The processingModule.
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule();
+    /**
+     * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder();
+
+    /**
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+     * @return Whether the processingModuleList field is set.
+     */
+    boolean hasProcessingModuleList();
+    /**
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+     * @return The processingModuleList.
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList();
+    /**
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder();
+
+    /**
+     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+     * @return Whether the lockstepProcessingRequest field is set.
+     */
+    boolean hasLockstepProcessingRequest();
+    /**
+     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+     * @return The lockstepProcessingRequest.
+     */
+    ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest();
+    /**
+     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+     */
+    ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder getLockstepProcessingRequestOrBuilder();
+
     public ubii.services.ServiceRequestOuterClass.ServiceRequest.TypeCase getTypeCase();
   }
   /**
@@ -461,6 +506,48 @@ public final class ServiceRequestOuterClass {
               typeCase_ = 14;
               break;
             }
+            case 122: {
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder subBuilder = null;
+              if (typeCase_ == 15) {
+                subBuilder = ((ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 15;
+              break;
+            }
+            case 130: {
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder subBuilder = null;
+              if (typeCase_ == 16) {
+                subBuilder = ((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 16;
+              break;
+            }
+            case 138: {
+              ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder subBuilder = null;
+              if (typeCase_ == 17) {
+                subBuilder = ((ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.processing.LockstepProcessing.LockstepProcessingRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 17;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -511,6 +598,9 @@ public final class ServiceRequestOuterClass {
       TOPIC_DEMUX_LIST(12),
       CLIENT_LIST(13),
       DEVICE_LIST(14),
+      PROCESSING_MODULE(15),
+      PROCESSING_MODULE_LIST(16),
+      LOCKSTEP_PROCESSING_REQUEST(17),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -541,6 +631,9 @@ public final class ServiceRequestOuterClass {
           case 12: return TOPIC_DEMUX_LIST;
           case 13: return CLIENT_LIST;
           case 14: return DEVICE_LIST;
+          case 15: return PROCESSING_MODULE;
+          case 16: return PROCESSING_MODULE_LIST;
+          case 17: return LOCKSTEP_PROCESSING_REQUEST;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -956,6 +1049,90 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
     }
 
+    public static final int PROCESSING_MODULE_FIELD_NUMBER = 15;
+    /**
+     * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+     * @return Whether the processingModule field is set.
+     */
+    public boolean hasProcessingModule() {
+      return typeCase_ == 15;
+    }
+    /**
+     * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+     * @return The processingModule.
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
+      if (typeCase_ == 15) {
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_;
+      }
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder() {
+      if (typeCase_ == 15) {
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_;
+      }
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance();
+    }
+
+    public static final int PROCESSING_MODULE_LIST_FIELD_NUMBER = 16;
+    /**
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+     * @return Whether the processingModuleList field is set.
+     */
+    public boolean hasProcessingModuleList() {
+      return typeCase_ == 16;
+    }
+    /**
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+     * @return The processingModuleList.
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
+      if (typeCase_ == 16) {
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
+      }
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
+      if (typeCase_ == 16) {
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
+      }
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
+    }
+
+    public static final int LOCKSTEP_PROCESSING_REQUEST_FIELD_NUMBER = 17;
+    /**
+     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+     * @return Whether the lockstepProcessingRequest field is set.
+     */
+    public boolean hasLockstepProcessingRequest() {
+      return typeCase_ == 17;
+    }
+    /**
+     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+     * @return The lockstepProcessingRequest.
+     */
+    public ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest() {
+      if (typeCase_ == 17) {
+         return (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_;
+      }
+      return ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+     */
+    public ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder getLockstepProcessingRequestOrBuilder() {
+      if (typeCase_ == 17) {
+         return (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_;
+      }
+      return ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1011,6 +1188,15 @@ public final class ServiceRequestOuterClass {
       }
       if (typeCase_ == 14) {
         output.writeMessage(14, (ubii.devices.DeviceOuterClass.DeviceList) type_);
+      }
+      if (typeCase_ == 15) {
+        output.writeMessage(15, (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_);
+      }
+      if (typeCase_ == 16) {
+        output.writeMessage(16, (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_);
+      }
+      if (typeCase_ == 17) {
+        output.writeMessage(17, (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -1075,6 +1261,18 @@ public final class ServiceRequestOuterClass {
       if (typeCase_ == 14) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (ubii.devices.DeviceOuterClass.DeviceList) type_);
+      }
+      if (typeCase_ == 15) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_);
+      }
+      if (typeCase_ == 16) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_);
+      }
+      if (typeCase_ == 17) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1147,6 +1345,18 @@ public final class ServiceRequestOuterClass {
           if (!getDeviceList()
               .equals(other.getDeviceList())) return false;
           break;
+        case 15:
+          if (!getProcessingModule()
+              .equals(other.getProcessingModule())) return false;
+          break;
+        case 16:
+          if (!getProcessingModuleList()
+              .equals(other.getProcessingModuleList())) return false;
+          break;
+        case 17:
+          if (!getLockstepProcessingRequest()
+              .equals(other.getLockstepProcessingRequest())) return false;
+          break;
         case 0:
         default:
       }
@@ -1215,6 +1425,18 @@ public final class ServiceRequestOuterClass {
         case 14:
           hash = (37 * hash) + DEVICE_LIST_FIELD_NUMBER;
           hash = (53 * hash) + getDeviceList().hashCode();
+          break;
+        case 15:
+          hash = (37 * hash) + PROCESSING_MODULE_FIELD_NUMBER;
+          hash = (53 * hash) + getProcessingModule().hashCode();
+          break;
+        case 16:
+          hash = (37 * hash) + PROCESSING_MODULE_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getProcessingModuleList().hashCode();
+          break;
+        case 17:
+          hash = (37 * hash) + LOCKSTEP_PROCESSING_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getLockstepProcessingRequest().hashCode();
           break;
         case 0:
         default:
@@ -1474,6 +1696,27 @@ public final class ServiceRequestOuterClass {
             result.type_ = deviceListBuilder_.build();
           }
         }
+        if (typeCase_ == 15) {
+          if (processingModuleBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = processingModuleBuilder_.build();
+          }
+        }
+        if (typeCase_ == 16) {
+          if (processingModuleListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = processingModuleListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 17) {
+          if (lockstepProcessingRequestBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = lockstepProcessingRequestBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -1578,6 +1821,18 @@ public final class ServiceRequestOuterClass {
           }
           case DEVICE_LIST: {
             mergeDeviceList(other.getDeviceList());
+            break;
+          }
+          case PROCESSING_MODULE: {
+            mergeProcessingModule(other.getProcessingModule());
+            break;
+          }
+          case PROCESSING_MODULE_LIST: {
+            mergeProcessingModuleList(other.getProcessingModuleList());
+            break;
+          }
+          case LOCKSTEP_PROCESSING_REQUEST: {
+            mergeLockstepProcessingRequest(other.getLockstepProcessingRequest());
             break;
           }
           case TYPE_NOT_SET: {
@@ -3497,6 +3752,420 @@ public final class ServiceRequestOuterClass {
         onChanged();;
         return deviceListBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> processingModuleBuilder_;
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       * @return Whether the processingModule field is set.
+       */
+      public boolean hasProcessingModule() {
+        return typeCase_ == 15;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       * @return The processingModule.
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
+        if (processingModuleBuilder_ == null) {
+          if (typeCase_ == 15) {
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_;
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance();
+        } else {
+          if (typeCase_ == 15) {
+            return processingModuleBuilder_.getMessage();
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       */
+      public Builder setProcessingModule(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModuleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          processingModuleBuilder_.setMessage(value);
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       */
+      public Builder setProcessingModule(
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModuleBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          processingModuleBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       */
+      public Builder mergeProcessingModule(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModuleBuilder_ == null) {
+          if (typeCase_ == 15 &&
+              type_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance()) {
+            type_ = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.newBuilder((ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 15) {
+            processingModuleBuilder_.mergeFrom(value);
+          }
+          processingModuleBuilder_.setMessage(value);
+        }
+        typeCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       */
+      public Builder clearProcessingModule() {
+        if (processingModuleBuilder_ == null) {
+          if (typeCase_ == 15) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 15) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          processingModuleBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder getProcessingModuleBuilder() {
+        return getProcessingModuleFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder() {
+        if ((typeCase_ == 15) && (processingModuleBuilder_ != null)) {
+          return processingModuleBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 15) {
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_;
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModule processing_module = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+          getProcessingModuleFieldBuilder() {
+        if (processingModuleBuilder_ == null) {
+          if (!(typeCase_ == 15)) {
+            type_ = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance();
+          }
+          processingModuleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
+                  (ubii.processing.ProcessingModuleOuterClass.ProcessingModule) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 15;
+        onChanged();;
+        return processingModuleBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder> processingModuleListBuilder_;
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       * @return Whether the processingModuleList field is set.
+       */
+      public boolean hasProcessingModuleList() {
+        return typeCase_ == 16;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       * @return The processingModuleList.
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
+        if (processingModuleListBuilder_ == null) {
+          if (typeCase_ == 16) {
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 16) {
+            return processingModuleListBuilder_.getMessage();
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       */
+      public Builder setProcessingModuleList(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList value) {
+        if (processingModuleListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          processingModuleListBuilder_.setMessage(value);
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       */
+      public Builder setProcessingModuleList(
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder builderForValue) {
+        if (processingModuleListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          processingModuleListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       */
+      public Builder mergeProcessingModuleList(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList value) {
+        if (processingModuleListBuilder_ == null) {
+          if (typeCase_ == 16 &&
+              type_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance()) {
+            type_ = ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.newBuilder((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 16) {
+            processingModuleListBuilder_.mergeFrom(value);
+          }
+          processingModuleListBuilder_.setMessage(value);
+        }
+        typeCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       */
+      public Builder clearProcessingModuleList() {
+        if (processingModuleListBuilder_ == null) {
+          if (typeCase_ == 16) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 16) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          processingModuleListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder getProcessingModuleListBuilder() {
+        return getProcessingModuleListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
+        if ((typeCase_ == 16) && (processingModuleListBuilder_ != null)) {
+          return processingModuleListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 16) {
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder> 
+          getProcessingModuleListFieldBuilder() {
+        if (processingModuleListBuilder_ == null) {
+          if (!(typeCase_ == 16)) {
+            type_ = ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
+          }
+          processingModuleListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder>(
+                  (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 16;
+        onChanged();;
+        return processingModuleListBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.LockstepProcessing.LockstepProcessingRequest, ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder, ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder> lockstepProcessingRequestBuilder_;
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       * @return Whether the lockstepProcessingRequest field is set.
+       */
+      public boolean hasLockstepProcessingRequest() {
+        return typeCase_ == 17;
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       * @return The lockstepProcessingRequest.
+       */
+      public ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest() {
+        if (lockstepProcessingRequestBuilder_ == null) {
+          if (typeCase_ == 17) {
+            return (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_;
+          }
+          return ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance();
+        } else {
+          if (typeCase_ == 17) {
+            return lockstepProcessingRequestBuilder_.getMessage();
+          }
+          return ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       */
+      public Builder setLockstepProcessingRequest(ubii.processing.LockstepProcessing.LockstepProcessingRequest value) {
+        if (lockstepProcessingRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          lockstepProcessingRequestBuilder_.setMessage(value);
+        }
+        typeCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       */
+      public Builder setLockstepProcessingRequest(
+          ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder builderForValue) {
+        if (lockstepProcessingRequestBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          lockstepProcessingRequestBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       */
+      public Builder mergeLockstepProcessingRequest(ubii.processing.LockstepProcessing.LockstepProcessingRequest value) {
+        if (lockstepProcessingRequestBuilder_ == null) {
+          if (typeCase_ == 17 &&
+              type_ != ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance()) {
+            type_ = ubii.processing.LockstepProcessing.LockstepProcessingRequest.newBuilder((ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 17) {
+            lockstepProcessingRequestBuilder_.mergeFrom(value);
+          }
+          lockstepProcessingRequestBuilder_.setMessage(value);
+        }
+        typeCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       */
+      public Builder clearLockstepProcessingRequest() {
+        if (lockstepProcessingRequestBuilder_ == null) {
+          if (typeCase_ == 17) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 17) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          lockstepProcessingRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       */
+      public ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder getLockstepProcessingRequestBuilder() {
+        return getLockstepProcessingRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       */
+      public ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder getLockstepProcessingRequestOrBuilder() {
+        if ((typeCase_ == 17) && (lockstepProcessingRequestBuilder_ != null)) {
+          return lockstepProcessingRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 17) {
+            return (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_;
+          }
+          return ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.LockstepProcessing.LockstepProcessingRequest, ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder, ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder> 
+          getLockstepProcessingRequestFieldBuilder() {
+        if (lockstepProcessingRequestBuilder_ == null) {
+          if (!(typeCase_ == 17)) {
+            type_ = ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance();
+          }
+          lockstepProcessingRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.processing.LockstepProcessing.LockstepProcessingRequest, ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder, ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder>(
+                  (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 17;
+        onChanged();;
+        return lockstepProcessingRequestBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3571,25 +4240,32 @@ public final class ServiceRequestOuterClass {
       "emux.proto\032\034proto/sessions/session.proto" +
       "\032$proto/interactions/interaction.proto\032." +
       "proto/services/request/topicSubscription" +
-      ".proto\"\305\005\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t" +
-      "\022&\n\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000" +
-      "\022&\n\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000" +
-      "\022F\n\022topic_subscription\030\004 \001(\0132(.ubii.serv" +
-      "ices.request.TopicSubscriptionH\000\022)\n\007sess" +
-      "ion\030\005 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014s" +
-      "ession_list\030\006 \001(\0132\032.ubii.sessions.Sessio" +
-      "nListH\000\0225\n\013interaction\030\007 \001(\0132\036.ubii.inte" +
-      "ractions.InteractionH\000\022>\n\020interaction_li" +
-      "st\030\010 \001(\0132\".ubii.interactions.Interaction" +
-      "ListH\000\022+\n\ttopic_mux\030\t \001(\0132\026.ubii.devices" +
-      ".TopicMuxH\000\0224\n\016topic_mux_list\030\n \001(\0132\032.ub" +
-      "ii.devices.TopicMuxListH\000\022/\n\013topic_demux" +
-      "\030\013 \001(\0132\030.ubii.devices.TopicDemuxH\000\0228\n\020to" +
-      "pic_demux_list\030\014 \001(\0132\034.ubii.devices.Topi" +
-      "cDemuxListH\000\022/\n\013client_list\030\r \001(\0132\030.ubii" +
-      ".clients.ClientListH\000\022/\n\013device_list\030\016 \001" +
-      "(\0132\030.ubii.devices.DeviceListH\000B\006\n\004typeb\006" +
-      "proto3"
+      ".proto\032\'proto/processing/processingModul" +
+      "e.proto\032)proto/processing/lockstepProces" +
+      "sing.proto\"\241\007\n\016ServiceRequest\022\r\n\005topic\030\001" +
+      " \001(\t\022&\n\006client\030\002 \001(\0132\024.ubii.clients.Clie" +
+      "ntH\000\022&\n\006device\030\003 \001(\0132\024.ubii.devices.Devi" +
+      "ceH\000\022F\n\022topic_subscription\030\004 \001(\0132(.ubii." +
+      "services.request.TopicSubscriptionH\000\022)\n\007" +
+      "session\030\005 \001(\0132\026.ubii.sessions.SessionH\000\022" +
+      "2\n\014session_list\030\006 \001(\0132\032.ubii.sessions.Se" +
+      "ssionListH\000\0225\n\013interaction\030\007 \001(\0132\036.ubii." +
+      "interactions.InteractionH\000\022>\n\020interactio" +
+      "n_list\030\010 \001(\0132\".ubii.interactions.Interac" +
+      "tionListH\000\022+\n\ttopic_mux\030\t \001(\0132\026.ubii.dev" +
+      "ices.TopicMuxH\000\0224\n\016topic_mux_list\030\n \001(\0132" +
+      "\032.ubii.devices.TopicMuxListH\000\022/\n\013topic_d" +
+      "emux\030\013 \001(\0132\030.ubii.devices.TopicDemuxH\000\0228" +
+      "\n\020topic_demux_list\030\014 \001(\0132\034.ubii.devices." +
+      "TopicDemuxListH\000\022/\n\013client_list\030\r \001(\0132\030." +
+      "ubii.clients.ClientListH\000\022/\n\013device_list" +
+      "\030\016 \001(\0132\030.ubii.devices.DeviceListH\000\022>\n\021pr" +
+      "ocessing_module\030\017 \001(\0132!.ubii.processing." +
+      "ProcessingModuleH\000\022G\n\026processing_module_" +
+      "list\030\020 \001(\0132%.ubii.processing.ProcessingM" +
+      "oduleListH\000\022Q\n\033lockstep_processing_reque" +
+      "st\030\021 \001(\0132*.ubii.processing.LockstepProce" +
+      "ssingRequestH\000B\006\n\004typeb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3601,13 +4277,15 @@ public final class ServiceRequestOuterClass {
           ubii.sessions.SessionOuterClass.getDescriptor(),
           ubii.interactions.InteractionOuterClass.getDescriptor(),
           ubii.services.request.TopicSubscriptionOuterClass.getDescriptor(),
+          ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
+          ubii.processing.LockstepProcessing.getDescriptor(),
         });
     internal_static_ubii_services_ServiceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_services_ServiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_ServiceRequest_descriptor,
-        new java.lang.String[] { "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "Interaction", "InteractionList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "Type", });
+        new java.lang.String[] { "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "Interaction", "InteractionList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "ProcessingModule", "ProcessingModuleList", "LockstepProcessingRequest", "Type", });
     ubii.clients.ClientOuterClass.getDescriptor();
     ubii.devices.DeviceOuterClass.getDescriptor();
     ubii.devices.TopicMuxOuterClass.getDescriptor();
@@ -3615,6 +4293,8 @@ public final class ServiceRequestOuterClass {
     ubii.sessions.SessionOuterClass.getDescriptor();
     ubii.interactions.InteractionOuterClass.getDescriptor();
     ubii.services.request.TopicSubscriptionOuterClass.getDescriptor();
+    ubii.processing.ProcessingModuleOuterClass.getDescriptor();
+    ubii.processing.LockstepProcessing.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

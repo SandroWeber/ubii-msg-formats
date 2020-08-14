@@ -34,6 +34,10 @@ var proto_interactions_interaction_pb = require('../../proto/interactions/intera
 goog.object.extend(proto, proto_interactions_interaction_pb);
 var proto_services_service_pb = require('../../proto/services/service_pb.js');
 goog.object.extend(proto, proto_services_service_pb);
+var proto_processing_processingModule_pb = require('../../proto/processing/processingModule_pb.js');
+goog.object.extend(proto, proto_processing_processingModule_pb);
+var proto_processing_lockstepProcessing_pb = require('../../proto/processing/lockstepProcessing_pb.js');
+goog.object.extend(proto, proto_processing_lockstepProcessing_pb);
 goog.exportSymbol('proto.ubii.services.ServiceReply', null, global);
 goog.exportSymbol('proto.ubii.services.ServiceReply.TypeCase', null, global);
 /**
@@ -66,7 +70,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]];
 
 /**
  * @enum {number}
@@ -90,7 +94,10 @@ proto.ubii.services.ServiceReply.TypeCase = {
   CLIENT_LIST: 15,
   DEVICE_LIST: 16,
   SERVICE: 17,
-  SERVICE_LIST: 18
+  SERVICE_LIST: 18,
+  PROCESSING_MODULE: 19,
+  PROCESSING_MODULE_LIST: 20,
+  LOCKSTEP_PROCESSING_REPLY: 21
 };
 
 /**
@@ -148,7 +155,10 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     clientList: (f = msg.getClientList()) && proto_clients_client_pb.ClientList.toObject(includeInstance, f),
     deviceList: (f = msg.getDeviceList()) && proto_devices_device_pb.DeviceList.toObject(includeInstance, f),
     service: (f = msg.getService()) && proto_services_service_pb.Service.toObject(includeInstance, f),
-    serviceList: (f = msg.getServiceList()) && proto_services_service_pb.ServiceList.toObject(includeInstance, f)
+    serviceList: (f = msg.getServiceList()) && proto_services_service_pb.ServiceList.toObject(includeInstance, f),
+    processingModule: (f = msg.getProcessingModule()) && proto_processing_processingModule_pb.ProcessingModule.toObject(includeInstance, f),
+    processingModuleList: (f = msg.getProcessingModuleList()) && proto_processing_processingModule_pb.ProcessingModuleList.toObject(includeInstance, f),
+    lockstepProcessingReply: (f = msg.getLockstepProcessingReply()) && proto_processing_lockstepProcessing_pb.LockstepProcessingReply.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -274,6 +284,21 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto_services_service_pb.ServiceList;
       reader.readMessage(value,proto_services_service_pb.ServiceList.deserializeBinaryFromReader);
       msg.setServiceList(value);
+      break;
+    case 19:
+      var value = new proto_processing_processingModule_pb.ProcessingModule;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModule.deserializeBinaryFromReader);
+      msg.setProcessingModule(value);
+      break;
+    case 20:
+      var value = new proto_processing_processingModule_pb.ProcessingModuleList;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModuleList.deserializeBinaryFromReader);
+      msg.setProcessingModuleList(value);
+      break;
+    case 21:
+      var value = new proto_processing_lockstepProcessing_pb.LockstepProcessingReply;
+      reader.readMessage(value,proto_processing_lockstepProcessing_pb.LockstepProcessingReply.deserializeBinaryFromReader);
+      msg.setLockstepProcessingReply(value);
       break;
     default:
       reader.skipField();
@@ -446,6 +471,30 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       18,
       f,
       proto_services_service_pb.ServiceList.serializeBinaryToWriter
+    );
+  }
+  f = message.getProcessingModule();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      proto_processing_processingModule_pb.ProcessingModule.serializeBinaryToWriter
+    );
+  }
+  f = message.getProcessingModuleList();
+  if (f != null) {
+    writer.writeMessage(
+      20,
+      f,
+      proto_processing_processingModule_pb.ProcessingModuleList.serializeBinaryToWriter
+    );
+  }
+  f = message.getLockstepProcessingReply();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      proto_processing_lockstepProcessing_pb.LockstepProcessingReply.serializeBinaryToWriter
     );
   }
 };
@@ -1114,6 +1163,117 @@ proto.ubii.services.ServiceReply.prototype.clearServiceList = function() {
  */
 proto.ubii.services.ServiceReply.prototype.hasServiceList = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional ubii.processing.ProcessingModule processing_module = 19;
+ * @return {?proto.ubii.processing.ProcessingModule}
+ */
+proto.ubii.services.ServiceReply.prototype.getProcessingModule = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModule} */ (
+    jspb.Message.getWrapperField(this, proto_processing_processingModule_pb.ProcessingModule, 19));
+};
+
+
+/**
+ * @param {?proto.ubii.processing.ProcessingModule|undefined} value
+ * @return {!proto.ubii.services.ServiceReply} returns this
+*/
+proto.ubii.services.ServiceReply.prototype.setProcessingModule = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 19, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.services.ServiceReply} returns this
+ */
+proto.ubii.services.ServiceReply.prototype.clearProcessingModule = function() {
+  return this.setProcessingModule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasProcessingModule = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional ubii.processing.ProcessingModuleList processing_module_list = 20;
+ * @return {?proto.ubii.processing.ProcessingModuleList}
+ */
+proto.ubii.services.ServiceReply.prototype.getProcessingModuleList = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
+    jspb.Message.getWrapperField(this, proto_processing_processingModule_pb.ProcessingModuleList, 20));
+};
+
+
+/**
+ * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
+ * @return {!proto.ubii.services.ServiceReply} returns this
+*/
+proto.ubii.services.ServiceReply.prototype.setProcessingModuleList = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 20, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.services.ServiceReply} returns this
+ */
+proto.ubii.services.ServiceReply.prototype.clearProcessingModuleList = function() {
+  return this.setProcessingModuleList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasProcessingModuleList = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+ * @return {?proto.ubii.processing.LockstepProcessingReply}
+ */
+proto.ubii.services.ServiceReply.prototype.getLockstepProcessingReply = function() {
+  return /** @type{?proto.ubii.processing.LockstepProcessingReply} */ (
+    jspb.Message.getWrapperField(this, proto_processing_lockstepProcessing_pb.LockstepProcessingReply, 21));
+};
+
+
+/**
+ * @param {?proto.ubii.processing.LockstepProcessingReply|undefined} value
+ * @return {!proto.ubii.services.ServiceReply} returns this
+*/
+proto.ubii.services.ServiceReply.prototype.setLockstepProcessingReply = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 21, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.services.ServiceReply} returns this
+ */
+proto.ubii.services.ServiceReply.prototype.clearLockstepProcessingReply = function() {
+  return this.setLockstepProcessingReply(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasLockstepProcessingReply = function() {
+  return jspb.Message.getField(this, 21) != null;
 };
 
 

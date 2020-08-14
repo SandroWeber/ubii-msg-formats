@@ -1,5 +1,5 @@
-let constants = { DEFAULT_TOPICS: 
-   { SERVICES: 
+let constants = { DEFAULT_TOPICS:
+   { SERVICES:
       { SERVER_CONFIG: '/services/server_configuration',
         CLIENT_REGISTRATION: '/services/client/registration',
         CLIENT_DEREGISTRATION: '/services/client/deregistration',
@@ -50,7 +50,7 @@ let constants = { DEFAULT_TOPICS:
         SERVICE_LIST: '/services/service_list',
         TOPIC_LIST: '/services/topic_list',
         TOPIC_SUBSCRIPTION: '/services/topic_subscription' },
-     INFO_TOPICS: 
+     INFO_TOPICS:
       { REGEX_ALL_INFOS: '/info/*',
         REGEX_INTERACTION_INFOS: '/info/interaction/*',
         NEW_INTERACTION: '/info/interaction/new',
@@ -63,7 +63,7 @@ let constants = { DEFAULT_TOPICS:
         CHANGE_SESSION: '/info/session/change',
         START_SESSION: '/info/session/start',
         STOP_SESSION: '/info/session/stop' } },
-  MSG_TYPES: 
+  MSG_TYPES:
    { ERROR: 'ubii.general.Error',
      SUCCESS: 'ubii.general.Success',
      SERVER: 'ubii.servers.Server',

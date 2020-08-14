@@ -43,6 +43,8 @@
 #include "proto/sessions/session.pb.h"
 #include "proto/interactions/interaction.pb.h"
 #include "proto/services/service.pb.h"
+#include "proto/processing/processingModule.pb.h"
+#include "proto/processing/lockstepProcessing.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_proto_2fservices_2fserviceReply_2eproto
@@ -135,6 +137,9 @@ class ServiceReply :
     kDeviceList = 16,
     kService = 17,
     kServiceList = 18,
+    kProcessingModule = 19,
+    kProcessingModuleList = 20,
+    kLockstepProcessingReply = 21,
     TYPE_NOT_SET = 0,
   };
 
@@ -226,6 +231,9 @@ class ServiceReply :
     kDeviceListFieldNumber = 16,
     kServiceFieldNumber = 17,
     kServiceListFieldNumber = 18,
+    kProcessingModuleFieldNumber = 19,
+    kProcessingModuleListFieldNumber = 20,
+    kLockstepProcessingReplyFieldNumber = 21,
   };
   // .ubii.general.Success success = 1;
   bool has_success() const;
@@ -497,6 +505,51 @@ class ServiceReply :
   ::ubii::services::ServiceList* _internal_mutable_service_list();
   public:
 
+  // .ubii.processing.ProcessingModule processing_module = 19;
+  bool has_processing_module() const;
+  private:
+  bool _internal_has_processing_module() const;
+  public:
+  void clear_processing_module();
+  const ::ubii::processing::ProcessingModule& processing_module() const;
+  ::ubii::processing::ProcessingModule* release_processing_module();
+  ::ubii::processing::ProcessingModule* mutable_processing_module();
+  void set_allocated_processing_module(::ubii::processing::ProcessingModule* processing_module);
+  private:
+  const ::ubii::processing::ProcessingModule& _internal_processing_module() const;
+  ::ubii::processing::ProcessingModule* _internal_mutable_processing_module();
+  public:
+
+  // .ubii.processing.ProcessingModuleList processing_module_list = 20;
+  bool has_processing_module_list() const;
+  private:
+  bool _internal_has_processing_module_list() const;
+  public:
+  void clear_processing_module_list();
+  const ::ubii::processing::ProcessingModuleList& processing_module_list() const;
+  ::ubii::processing::ProcessingModuleList* release_processing_module_list();
+  ::ubii::processing::ProcessingModuleList* mutable_processing_module_list();
+  void set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list);
+  private:
+  const ::ubii::processing::ProcessingModuleList& _internal_processing_module_list() const;
+  ::ubii::processing::ProcessingModuleList* _internal_mutable_processing_module_list();
+  public:
+
+  // .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+  bool has_lockstep_processing_reply() const;
+  private:
+  bool _internal_has_lockstep_processing_reply() const;
+  public:
+  void clear_lockstep_processing_reply();
+  const ::ubii::processing::LockstepProcessingReply& lockstep_processing_reply() const;
+  ::ubii::processing::LockstepProcessingReply* release_lockstep_processing_reply();
+  ::ubii::processing::LockstepProcessingReply* mutable_lockstep_processing_reply();
+  void set_allocated_lockstep_processing_reply(::ubii::processing::LockstepProcessingReply* lockstep_processing_reply);
+  private:
+  const ::ubii::processing::LockstepProcessingReply& _internal_lockstep_processing_reply() const;
+  ::ubii::processing::LockstepProcessingReply* _internal_mutable_lockstep_processing_reply();
+  public:
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.services.ServiceReply)
@@ -520,6 +573,9 @@ class ServiceReply :
   void set_has_device_list();
   void set_has_service();
   void set_has_service_list();
+  void set_has_processing_module();
+  void set_has_processing_module_list();
+  void set_has_lockstep_processing_reply();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -545,6 +601,9 @@ class ServiceReply :
     ::ubii::devices::DeviceList* device_list_;
     ::ubii::services::Service* service_;
     ::ubii::services::ServiceList* service_list_;
+    ::ubii::processing::ProcessingModule* processing_module_;
+    ::ubii::processing::ProcessingModuleList* processing_module_list_;
+    ::ubii::processing::LockstepProcessingReply* lockstep_processing_reply_;
   } type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1352,6 +1411,138 @@ inline ::ubii::services::ServiceList* ServiceReply::_internal_mutable_service_li
 inline ::ubii::services::ServiceList* ServiceReply::mutable_service_list() {
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.service_list)
   return _internal_mutable_service_list();
+}
+
+// .ubii.processing.ProcessingModule processing_module = 19;
+inline bool ServiceReply::_internal_has_processing_module() const {
+  return type_case() == kProcessingModule;
+}
+inline bool ServiceReply::has_processing_module() const {
+  return _internal_has_processing_module();
+}
+inline void ServiceReply::set_has_processing_module() {
+  _oneof_case_[0] = kProcessingModule;
+}
+inline ::ubii::processing::ProcessingModule* ServiceReply::release_processing_module() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.processing_module)
+  if (_internal_has_processing_module()) {
+    clear_has_type();
+      ::ubii::processing::ProcessingModule* temp = type_.processing_module_;
+    type_.processing_module_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::processing::ProcessingModule& ServiceReply::_internal_processing_module() const {
+  return _internal_has_processing_module()
+      ? *type_.processing_module_
+      : *reinterpret_cast< ::ubii::processing::ProcessingModule*>(&::ubii::processing::_ProcessingModule_default_instance_);
+}
+inline const ::ubii::processing::ProcessingModule& ServiceReply::processing_module() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.processing_module)
+  return _internal_processing_module();
+}
+inline ::ubii::processing::ProcessingModule* ServiceReply::_internal_mutable_processing_module() {
+  if (!_internal_has_processing_module()) {
+    clear_type();
+    set_has_processing_module();
+    type_.processing_module_ = CreateMaybeMessage< ::ubii::processing::ProcessingModule >(
+        GetArenaNoVirtual());
+  }
+  return type_.processing_module_;
+}
+inline ::ubii::processing::ProcessingModule* ServiceReply::mutable_processing_module() {
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.processing_module)
+  return _internal_mutable_processing_module();
+}
+
+// .ubii.processing.ProcessingModuleList processing_module_list = 20;
+inline bool ServiceReply::_internal_has_processing_module_list() const {
+  return type_case() == kProcessingModuleList;
+}
+inline bool ServiceReply::has_processing_module_list() const {
+  return _internal_has_processing_module_list();
+}
+inline void ServiceReply::set_has_processing_module_list() {
+  _oneof_case_[0] = kProcessingModuleList;
+}
+inline ::ubii::processing::ProcessingModuleList* ServiceReply::release_processing_module_list() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.processing_module_list)
+  if (_internal_has_processing_module_list()) {
+    clear_has_type();
+      ::ubii::processing::ProcessingModuleList* temp = type_.processing_module_list_;
+    type_.processing_module_list_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::processing::ProcessingModuleList& ServiceReply::_internal_processing_module_list() const {
+  return _internal_has_processing_module_list()
+      ? *type_.processing_module_list_
+      : *reinterpret_cast< ::ubii::processing::ProcessingModuleList*>(&::ubii::processing::_ProcessingModuleList_default_instance_);
+}
+inline const ::ubii::processing::ProcessingModuleList& ServiceReply::processing_module_list() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.processing_module_list)
+  return _internal_processing_module_list();
+}
+inline ::ubii::processing::ProcessingModuleList* ServiceReply::_internal_mutable_processing_module_list() {
+  if (!_internal_has_processing_module_list()) {
+    clear_type();
+    set_has_processing_module_list();
+    type_.processing_module_list_ = CreateMaybeMessage< ::ubii::processing::ProcessingModuleList >(
+        GetArenaNoVirtual());
+  }
+  return type_.processing_module_list_;
+}
+inline ::ubii::processing::ProcessingModuleList* ServiceReply::mutable_processing_module_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.processing_module_list)
+  return _internal_mutable_processing_module_list();
+}
+
+// .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+inline bool ServiceReply::_internal_has_lockstep_processing_reply() const {
+  return type_case() == kLockstepProcessingReply;
+}
+inline bool ServiceReply::has_lockstep_processing_reply() const {
+  return _internal_has_lockstep_processing_reply();
+}
+inline void ServiceReply::set_has_lockstep_processing_reply() {
+  _oneof_case_[0] = kLockstepProcessingReply;
+}
+inline ::ubii::processing::LockstepProcessingReply* ServiceReply::release_lockstep_processing_reply() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.lockstep_processing_reply)
+  if (_internal_has_lockstep_processing_reply()) {
+    clear_has_type();
+      ::ubii::processing::LockstepProcessingReply* temp = type_.lockstep_processing_reply_;
+    type_.lockstep_processing_reply_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::processing::LockstepProcessingReply& ServiceReply::_internal_lockstep_processing_reply() const {
+  return _internal_has_lockstep_processing_reply()
+      ? *type_.lockstep_processing_reply_
+      : *reinterpret_cast< ::ubii::processing::LockstepProcessingReply*>(&::ubii::processing::_LockstepProcessingReply_default_instance_);
+}
+inline const ::ubii::processing::LockstepProcessingReply& ServiceReply::lockstep_processing_reply() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.lockstep_processing_reply)
+  return _internal_lockstep_processing_reply();
+}
+inline ::ubii::processing::LockstepProcessingReply* ServiceReply::_internal_mutable_lockstep_processing_reply() {
+  if (!_internal_has_lockstep_processing_reply()) {
+    clear_type();
+    set_has_lockstep_processing_reply();
+    type_.lockstep_processing_reply_ = CreateMaybeMessage< ::ubii::processing::LockstepProcessingReply >(
+        GetArenaNoVirtual());
+  }
+  return type_.lockstep_processing_reply_;
+}
+inline ::ubii::processing::LockstepProcessingReply* ServiceReply::mutable_lockstep_processing_reply() {
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.lockstep_processing_reply)
+  return _internal_mutable_lockstep_processing_reply();
 }
 
 inline bool ServiceReply::has_type() const {
