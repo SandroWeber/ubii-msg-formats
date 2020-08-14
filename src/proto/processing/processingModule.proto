@@ -1,14 +1,6 @@
 syntax = "proto3";
 package ubii.processing;
 
-enum ProcessingModuleStatus {
-    INITIALIZED = 0;
-    CREATED = 1;
-    PROCESSING = 2;
-    HALTED = 3;
-    DESTROYED = 4;
-}
-
 message ProcessingMode {
     message Frequency {
         int32 hertz = 1;
@@ -34,21 +26,40 @@ message ModuleIO {
 }
 
 message ProcessingModule {
+
+    enum Status {
+        INITIALIZED = 0;
+        CREATED = 1;
+        PROCESSING = 2;
+        HALTED = 3;
+        DESTROYED = 4;
+    }
+
+    enum Language {
+        CPP = 0;
+        PY = 1;
+        JS = 2;
+        CS = 3;
+        JAVA = 4;
+    }
+
     string id = 1;
     string name = 2;
     repeated string authors = 3;
     repeated string tags = 4;
     string description = 5;
+    string client_id = 6;
 
-    ProcessingModuleStatus status = 6;
-    ProcessingMode processing_mode = 7;
-    repeated ModuleIO inputs = 8;
-    repeated ModuleIO outputs = 9;
+    Status status = 7;
+    ProcessingMode processing_mode = 8;
+    repeated ModuleIO inputs = 9;
+    repeated ModuleIO outputs = 10;
+    Language language = 11;
     
-    string on_processing = 10;
-    string on_created = 11;
-    string on_halted = 12;
-    string on_destroyed = 13;
+    string on_processing = 12;
+    string on_created = 13;
+    string on_halted = 14;
+    string on_destroyed = 15;
 }
 
 message ProcessingModuleList {
