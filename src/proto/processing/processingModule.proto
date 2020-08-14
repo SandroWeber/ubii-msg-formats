@@ -11,7 +11,7 @@ enum ProcessingModuleStatus {
 
 message ProcessingMode {
     message Frequency {
-        string hertz = 1;
+        int32 hertz = 1;
     }
     message Lockstep {
         string process_request_endpoint = 1;
