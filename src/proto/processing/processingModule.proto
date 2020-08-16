@@ -56,10 +56,10 @@ message ProcessingModule {
     repeated ModuleIO outputs = 10;
     Language language = 11;
     
-    string on_processing = 12;
-    string on_created = 13;
-    string on_halted = 14;
-    string on_destroyed = 15;
+    string on_processing_stringified = 12;
+    string on_created_stringified = 13;
+    string on_halted_stringified = 14;
+    string on_destroyed_stringified = 15;
 }
 
 message ProcessingModuleList {

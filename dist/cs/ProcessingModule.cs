@@ -34,7 +34,7 @@ namespace Ubii.Processing {
             "c3RlcBIgChhwcm9jZXNzX3JlcXVlc3RfZW5kcG9pbnQYASABKAkaRgoOVHJp",
             "Z2dlck9uSW5wdXQSFAoMbWluX2RlbGF5X21zGAEgASgFEh4KFmFsbF9pbnB1",
             "dHNfbmVlZF91cGRhdGUYAiABKAhCBgoEbW9kZSI5CghNb2R1bGVJTxIVCg1p",
-            "bnRlcm5hbF9uYW1lGAEgASgJEhYKDm1lc3NhZ2VfZm9ybWF0GAIgASgJItoE",
+            "bnRlcm5hbF9uYW1lGAEgASgJEhYKDm1lc3NhZ2VfZm9ybWF0GAIgASgJIooF",
             "ChBQcm9jZXNzaW5nTW9kdWxlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
             "DwoHYXV0aG9ycxgDIAMoCRIMCgR0YWdzGAQgAygJEhMKC2Rlc2NyaXB0aW9u",
             "GAUgASgJEhEKCWNsaWVudF9pZBgGIAEoCRI4CgZzdGF0dXMYByABKA4yKC51",
@@ -43,14 +43,15 @@ namespace Ubii.Processing {
             "bmdNb2RlEikKBmlucHV0cxgJIAMoCzIZLnViaWkucHJvY2Vzc2luZy5Nb2R1",
             "bGVJTxIqCgdvdXRwdXRzGAogAygLMhkudWJpaS5wcm9jZXNzaW5nLk1vZHVs",
             "ZUlPEjwKCGxhbmd1YWdlGAsgASgOMioudWJpaS5wcm9jZXNzaW5nLlByb2Nl",
-            "c3NpbmdNb2R1bGUuTGFuZ3VhZ2USFQoNb25fcHJvY2Vzc2luZxgMIAEoCRIS",
-            "Cgpvbl9jcmVhdGVkGA0gASgJEhEKCW9uX2hhbHRlZBgOIAEoCRIUCgxvbl9k",
-            "ZXN0cm95ZWQYDyABKAkiUQoGU3RhdHVzEg8KC0lOSVRJQUxJWkVEEAASCwoH",
-            "Q1JFQVRFRBABEg4KClBST0NFU1NJTkcQAhIKCgZIQUxURUQQAxINCglERVNU",
-            "Uk9ZRUQQBCI1CghMYW5ndWFnZRIHCgNDUFAQABIGCgJQWRABEgYKAkpTEAIS",
-            "BgoCQ1MQAxIICgRKQVZBEAQiSwoUUHJvY2Vzc2luZ01vZHVsZUxpc3QSMwoI",
-            "ZWxlbWVudHMYASADKAsyIS51YmlpLnByb2Nlc3NpbmcuUHJvY2Vzc2luZ01v",
-            "ZHVsZWIGcHJvdG8z"));
+            "c3NpbmdNb2R1bGUuTGFuZ3VhZ2USIQoZb25fcHJvY2Vzc2luZ19zdHJpbmdp",
+            "ZmllZBgMIAEoCRIeChZvbl9jcmVhdGVkX3N0cmluZ2lmaWVkGA0gASgJEh0K",
+            "FW9uX2hhbHRlZF9zdHJpbmdpZmllZBgOIAEoCRIgChhvbl9kZXN0cm95ZWRf",
+            "c3RyaW5naWZpZWQYDyABKAkiUQoGU3RhdHVzEg8KC0lOSVRJQUxJWkVEEAAS",
+            "CwoHQ1JFQVRFRBABEg4KClBST0NFU1NJTkcQAhIKCgZIQUxURUQQAxINCglE",
+            "RVNUUk9ZRUQQBCI1CghMYW5ndWFnZRIHCgNDUFAQABIGCgJQWRABEgYKAkpT",
+            "EAISBgoCQ1MQAxIICgRKQVZBEAQiSwoUUHJvY2Vzc2luZ01vZHVsZUxpc3QS",
+            "MwoIZWxlbWVudHMYASADKAsyIS51YmlpLnByb2Nlc3NpbmcuUHJvY2Vzc2lu",
+            "Z01vZHVsZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -58,7 +59,7 @@ namespace Ubii.Processing {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode.Types.Lockstep), global::Ubii.Processing.ProcessingMode.Types.Lockstep.Parser, new[]{ "ProcessRequestEndpoint" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode.Types.TriggerOnInput), global::Ubii.Processing.ProcessingMode.Types.TriggerOnInput.Parser, new[]{ "MinDelayMs", "AllInputsNeedUpdate" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ModuleIO), global::Ubii.Processing.ModuleIO.Parser, new[]{ "InternalName", "MessageFormat" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModule), global::Ubii.Processing.ProcessingModule.Parser, new[]{ "Id", "Name", "Authors", "Tags", "Description", "ClientId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessing", "OnCreated", "OnHalted", "OnDestroyed" }, null, new[]{ typeof(global::Ubii.Processing.ProcessingModule.Types.Status), typeof(global::Ubii.Processing.ProcessingModule.Types.Language) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModule), global::Ubii.Processing.ProcessingModule.Parser, new[]{ "Id", "Name", "Authors", "Tags", "Description", "ClientId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified" }, null, new[]{ typeof(global::Ubii.Processing.ProcessingModule.Types.Status), typeof(global::Ubii.Processing.ProcessingModule.Types.Language) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModuleList), global::Ubii.Processing.ProcessingModuleList.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
@@ -924,10 +925,10 @@ namespace Ubii.Processing {
       inputs_ = other.inputs_.Clone();
       outputs_ = other.outputs_.Clone();
       language_ = other.language_;
-      onProcessing_ = other.onProcessing_;
-      onCreated_ = other.onCreated_;
-      onHalted_ = other.onHalted_;
-      onDestroyed_ = other.onDestroyed_;
+      onProcessingStringified_ = other.onProcessingStringified_;
+      onCreatedStringified_ = other.onCreatedStringified_;
+      onHaltedStringified_ = other.onHaltedStringified_;
+      onDestroyedStringified_ = other.onDestroyedStringified_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1053,47 +1054,47 @@ namespace Ubii.Processing {
       }
     }
 
-    /// <summary>Field number for the "on_processing" field.</summary>
-    public const int OnProcessingFieldNumber = 12;
-    private string onProcessing_ = "";
+    /// <summary>Field number for the "on_processing_stringified" field.</summary>
+    public const int OnProcessingStringifiedFieldNumber = 12;
+    private string onProcessingStringified_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string OnProcessing {
-      get { return onProcessing_; }
+    public string OnProcessingStringified {
+      get { return onProcessingStringified_; }
       set {
-        onProcessing_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        onProcessingStringified_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "on_created" field.</summary>
-    public const int OnCreatedFieldNumber = 13;
-    private string onCreated_ = "";
+    /// <summary>Field number for the "on_created_stringified" field.</summary>
+    public const int OnCreatedStringifiedFieldNumber = 13;
+    private string onCreatedStringified_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string OnCreated {
-      get { return onCreated_; }
+    public string OnCreatedStringified {
+      get { return onCreatedStringified_; }
       set {
-        onCreated_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        onCreatedStringified_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "on_halted" field.</summary>
-    public const int OnHaltedFieldNumber = 14;
-    private string onHalted_ = "";
+    /// <summary>Field number for the "on_halted_stringified" field.</summary>
+    public const int OnHaltedStringifiedFieldNumber = 14;
+    private string onHaltedStringified_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string OnHalted {
-      get { return onHalted_; }
+    public string OnHaltedStringified {
+      get { return onHaltedStringified_; }
       set {
-        onHalted_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        onHaltedStringified_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "on_destroyed" field.</summary>
-    public const int OnDestroyedFieldNumber = 15;
-    private string onDestroyed_ = "";
+    /// <summary>Field number for the "on_destroyed_stringified" field.</summary>
+    public const int OnDestroyedStringifiedFieldNumber = 15;
+    private string onDestroyedStringified_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string OnDestroyed {
-      get { return onDestroyed_; }
+    public string OnDestroyedStringified {
+      get { return onDestroyedStringified_; }
       set {
-        onDestroyed_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        onDestroyedStringified_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1121,10 +1122,10 @@ namespace Ubii.Processing {
       if(!inputs_.Equals(other.inputs_)) return false;
       if(!outputs_.Equals(other.outputs_)) return false;
       if (Language != other.Language) return false;
-      if (OnProcessing != other.OnProcessing) return false;
-      if (OnCreated != other.OnCreated) return false;
-      if (OnHalted != other.OnHalted) return false;
-      if (OnDestroyed != other.OnDestroyed) return false;
+      if (OnProcessingStringified != other.OnProcessingStringified) return false;
+      if (OnCreatedStringified != other.OnCreatedStringified) return false;
+      if (OnHaltedStringified != other.OnHaltedStringified) return false;
+      if (OnDestroyedStringified != other.OnDestroyedStringified) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1142,10 +1143,10 @@ namespace Ubii.Processing {
       hash ^= inputs_.GetHashCode();
       hash ^= outputs_.GetHashCode();
       if (Language != global::Ubii.Processing.ProcessingModule.Types.Language.Cpp) hash ^= Language.GetHashCode();
-      if (OnProcessing.Length != 0) hash ^= OnProcessing.GetHashCode();
-      if (OnCreated.Length != 0) hash ^= OnCreated.GetHashCode();
-      if (OnHalted.Length != 0) hash ^= OnHalted.GetHashCode();
-      if (OnDestroyed.Length != 0) hash ^= OnDestroyed.GetHashCode();
+      if (OnProcessingStringified.Length != 0) hash ^= OnProcessingStringified.GetHashCode();
+      if (OnCreatedStringified.Length != 0) hash ^= OnCreatedStringified.GetHashCode();
+      if (OnHaltedStringified.Length != 0) hash ^= OnHaltedStringified.GetHashCode();
+      if (OnDestroyedStringified.Length != 0) hash ^= OnDestroyedStringified.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1191,21 +1192,21 @@ namespace Ubii.Processing {
         output.WriteRawTag(88);
         output.WriteEnum((int) Language);
       }
-      if (OnProcessing.Length != 0) {
+      if (OnProcessingStringified.Length != 0) {
         output.WriteRawTag(98);
-        output.WriteString(OnProcessing);
+        output.WriteString(OnProcessingStringified);
       }
-      if (OnCreated.Length != 0) {
+      if (OnCreatedStringified.Length != 0) {
         output.WriteRawTag(106);
-        output.WriteString(OnCreated);
+        output.WriteString(OnCreatedStringified);
       }
-      if (OnHalted.Length != 0) {
+      if (OnHaltedStringified.Length != 0) {
         output.WriteRawTag(114);
-        output.WriteString(OnHalted);
+        output.WriteString(OnHaltedStringified);
       }
-      if (OnDestroyed.Length != 0) {
+      if (OnDestroyedStringified.Length != 0) {
         output.WriteRawTag(122);
-        output.WriteString(OnDestroyed);
+        output.WriteString(OnDestroyedStringified);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1240,17 +1241,17 @@ namespace Ubii.Processing {
       if (Language != global::Ubii.Processing.ProcessingModule.Types.Language.Cpp) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Language);
       }
-      if (OnProcessing.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnProcessing);
+      if (OnProcessingStringified.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnProcessingStringified);
       }
-      if (OnCreated.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnCreated);
+      if (OnCreatedStringified.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnCreatedStringified);
       }
-      if (OnHalted.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnHalted);
+      if (OnHaltedStringified.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnHaltedStringified);
       }
-      if (OnDestroyed.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnDestroyed);
+      if (OnDestroyedStringified.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnDestroyedStringified);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1291,17 +1292,17 @@ namespace Ubii.Processing {
       if (other.Language != global::Ubii.Processing.ProcessingModule.Types.Language.Cpp) {
         Language = other.Language;
       }
-      if (other.OnProcessing.Length != 0) {
-        OnProcessing = other.OnProcessing;
+      if (other.OnProcessingStringified.Length != 0) {
+        OnProcessingStringified = other.OnProcessingStringified;
       }
-      if (other.OnCreated.Length != 0) {
-        OnCreated = other.OnCreated;
+      if (other.OnCreatedStringified.Length != 0) {
+        OnCreatedStringified = other.OnCreatedStringified;
       }
-      if (other.OnHalted.Length != 0) {
-        OnHalted = other.OnHalted;
+      if (other.OnHaltedStringified.Length != 0) {
+        OnHaltedStringified = other.OnHaltedStringified;
       }
-      if (other.OnDestroyed.Length != 0) {
-        OnDestroyed = other.OnDestroyed;
+      if (other.OnDestroyedStringified.Length != 0) {
+        OnDestroyedStringified = other.OnDestroyedStringified;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1362,19 +1363,19 @@ namespace Ubii.Processing {
             break;
           }
           case 98: {
-            OnProcessing = input.ReadString();
+            OnProcessingStringified = input.ReadString();
             break;
           }
           case 106: {
-            OnCreated = input.ReadString();
+            OnCreatedStringified = input.ReadString();
             break;
           }
           case 114: {
-            OnHalted = input.ReadString();
+            OnHaltedStringified = input.ReadString();
             break;
           }
           case 122: {
-            OnDestroyed = input.ReadString();
+            OnDestroyedStringified = input.ReadString();
             break;
           }
         }

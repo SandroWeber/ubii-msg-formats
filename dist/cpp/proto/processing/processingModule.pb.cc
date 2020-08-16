@@ -215,10 +215,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2fprocessin
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, inputs_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, outputs_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, language_),
-  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_processing_),
-  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_created_),
-  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_halted_),
-  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_destroyed_),
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_processing_stringified_),
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_created_stringified_),
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_halted_stringified_),
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModule, on_destroyed_stringified_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingModuleList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -259,7 +259,7 @@ const char descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2epro
   "ggerOnInput\022\024\n\014min_delay_ms\030\001 \001(\005\022\036\n\026all"
   "_inputs_need_update\030\002 \001(\010B\006\n\004mode\"9\n\010Mod"
   "uleIO\022\025\n\rinternal_name\030\001 \001(\t\022\026\n\016message_"
-  "format\030\002 \001(\t\"\332\004\n\020ProcessingModule\022\n\n\002id\030"
+  "format\030\002 \001(\t\"\212\005\n\020ProcessingModule\022\n\n\002id\030"
   "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003(\t\022\014\n\004"
   "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\021\n\tclien"
   "t_id\030\006 \001(\t\0228\n\006status\030\007 \001(\0162(.ubii.proces"
@@ -268,15 +268,16 @@ const char descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2epro
   "ngMode\022)\n\006inputs\030\t \003(\0132\031.ubii.processing"
   ".ModuleIO\022*\n\007outputs\030\n \003(\0132\031.ubii.proces"
   "sing.ModuleIO\022<\n\010language\030\013 \001(\0162*.ubii.p"
-  "rocessing.ProcessingModule.Language\022\025\n\ro"
-  "n_processing\030\014 \001(\t\022\022\n\non_created\030\r \001(\t\022\021"
-  "\n\ton_halted\030\016 \001(\t\022\024\n\014on_destroyed\030\017 \001(\t\""
-  "Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CREATED\020\001\022"
-  "\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED"
-  "\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022"
-  "\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingModuleLis"
-  "t\0223\n\010elements\030\001 \003(\0132!.ubii.processing.Pr"
-  "ocessingModuleb\006proto3"
+  "rocessing.ProcessingModule.Language\022!\n\031o"
+  "n_processing_stringified\030\014 \001(\t\022\036\n\026on_cre"
+  "ated_stringified\030\r \001(\t\022\035\n\025on_halted_stri"
+  "ngified\030\016 \001(\t\022 \n\030on_destroyed_stringifie"
+  "d\030\017 \001(\t\"Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CR"
+  "EATED\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tD"
+  "ESTROYED\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022"
+  "\006\n\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingM"
+  "oduleList\0223\n\010elements\030\001 \003(\0132!.ubii.proce"
+  "ssing.ProcessingModuleb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_deps[1] = {
 };
@@ -292,7 +293,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once;
 static bool descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto = {
-  &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2eproto, "proto/processing/processingModule.proto", 1182,
+  &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2eproto, "proto/processing/processingModule.proto", 1230,
   &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once, descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_sccs, descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_deps, 7, 0,
   schemas, file_default_instances, TableStruct_proto_2fprocessing_2fprocessingModule_2eproto::offsets,
   file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto, 7, file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto, file_level_service_descriptors_proto_2fprocessing_2fprocessingModule_2eproto,
@@ -1597,21 +1598,21 @@ ProcessingModule::ProcessingModule(const ProcessingModule& from)
   if (!from._internal_client_id().empty()) {
     client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
   }
-  on_processing_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_on_processing().empty()) {
-    on_processing_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_);
+  on_processing_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_on_processing_stringified().empty()) {
+    on_processing_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_stringified_);
   }
-  on_created_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_on_created().empty()) {
-    on_created_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_created_);
+  on_created_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_on_created_stringified().empty()) {
+    on_created_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_created_stringified_);
   }
-  on_halted_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_on_halted().empty()) {
-    on_halted_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_halted_);
+  on_halted_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_on_halted_stringified().empty()) {
+    on_halted_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_halted_stringified_);
   }
-  on_destroyed_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_on_destroyed().empty()) {
-    on_destroyed_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_destroyed_);
+  on_destroyed_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_on_destroyed_stringified().empty()) {
+    on_destroyed_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_destroyed_stringified_);
   }
   if (from._internal_has_processing_mode()) {
     processing_mode_ = new ::ubii::processing::ProcessingMode(*from.processing_mode_);
@@ -1630,10 +1631,10 @@ void ProcessingModule::SharedCtor() {
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_processing_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_created_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_halted_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_destroyed_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_processing_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_created_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_halted_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_destroyed_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&processing_mode_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&language_) -
       reinterpret_cast<char*>(&processing_mode_)) + sizeof(language_));
@@ -1649,10 +1650,10 @@ void ProcessingModule::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_processing_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_created_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_halted_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_destroyed_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_processing_stringified_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_created_stringified_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_halted_stringified_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_destroyed_stringified_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete processing_mode_;
 }
 
@@ -1679,10 +1680,10 @@ void ProcessingModule::Clear() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_processing_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_created_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_halted_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_destroyed_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_processing_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_created_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_halted_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  on_destroyed_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && processing_mode_ != nullptr) {
     delete processing_mode_;
   }
@@ -1811,39 +1812,39 @@ const char* ProcessingModule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           _internal_set_language(static_cast<::ubii::processing::ProcessingModule_Language>(val));
         } else goto handle_unusual;
         continue;
-      // string on_processing = 12;
+      // string on_processing_stringified = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
-          auto str = _internal_mutable_on_processing();
+          auto str = _internal_mutable_on_processing_stringified();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_processing"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_processing_stringified"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string on_created = 13;
+      // string on_created_stringified = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
-          auto str = _internal_mutable_on_created();
+          auto str = _internal_mutable_on_created_stringified();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_created"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_created_stringified"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string on_halted = 14;
+      // string on_halted_stringified = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
-          auto str = _internal_mutable_on_halted();
+          auto str = _internal_mutable_on_halted_stringified();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_halted"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_halted_stringified"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string on_destroyed = 15;
+      // string on_destroyed_stringified = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
-          auto str = _internal_mutable_on_destroyed();
+          auto str = _internal_mutable_on_destroyed_stringified();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_destroyed"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.ProcessingModule.on_destroyed_stringified"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1971,44 +1972,44 @@ failure:
       11, this->_internal_language(), target);
   }
 
-  // string on_processing = 12;
-  if (this->on_processing().size() > 0) {
+  // string on_processing_stringified = 12;
+  if (this->on_processing_stringified().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_on_processing().data(), static_cast<int>(this->_internal_on_processing().length()),
+      this->_internal_on_processing_stringified().data(), static_cast<int>(this->_internal_on_processing_stringified().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ubii.processing.ProcessingModule.on_processing");
+      "ubii.processing.ProcessingModule.on_processing_stringified");
     target = stream->WriteStringMaybeAliased(
-        12, this->_internal_on_processing(), target);
+        12, this->_internal_on_processing_stringified(), target);
   }
 
-  // string on_created = 13;
-  if (this->on_created().size() > 0) {
+  // string on_created_stringified = 13;
+  if (this->on_created_stringified().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_on_created().data(), static_cast<int>(this->_internal_on_created().length()),
+      this->_internal_on_created_stringified().data(), static_cast<int>(this->_internal_on_created_stringified().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ubii.processing.ProcessingModule.on_created");
+      "ubii.processing.ProcessingModule.on_created_stringified");
     target = stream->WriteStringMaybeAliased(
-        13, this->_internal_on_created(), target);
+        13, this->_internal_on_created_stringified(), target);
   }
 
-  // string on_halted = 14;
-  if (this->on_halted().size() > 0) {
+  // string on_halted_stringified = 14;
+  if (this->on_halted_stringified().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_on_halted().data(), static_cast<int>(this->_internal_on_halted().length()),
+      this->_internal_on_halted_stringified().data(), static_cast<int>(this->_internal_on_halted_stringified().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ubii.processing.ProcessingModule.on_halted");
+      "ubii.processing.ProcessingModule.on_halted_stringified");
     target = stream->WriteStringMaybeAliased(
-        14, this->_internal_on_halted(), target);
+        14, this->_internal_on_halted_stringified(), target);
   }
 
-  // string on_destroyed = 15;
-  if (this->on_destroyed().size() > 0) {
+  // string on_destroyed_stringified = 15;
+  if (this->on_destroyed_stringified().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_on_destroyed().data(), static_cast<int>(this->_internal_on_destroyed().length()),
+      this->_internal_on_destroyed_stringified().data(), static_cast<int>(this->_internal_on_destroyed_stringified().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ubii.processing.ProcessingModule.on_destroyed");
+      "ubii.processing.ProcessingModule.on_destroyed_stringified");
     target = stream->WriteStringMaybeAliased(
-        15, this->_internal_on_destroyed(), target);
+        15, this->_internal_on_destroyed_stringified(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2085,32 +2086,32 @@ size_t ProcessingModule::ByteSizeLong() const {
         this->_internal_client_id());
   }
 
-  // string on_processing = 12;
-  if (this->on_processing().size() > 0) {
+  // string on_processing_stringified = 12;
+  if (this->on_processing_stringified().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_on_processing());
+        this->_internal_on_processing_stringified());
   }
 
-  // string on_created = 13;
-  if (this->on_created().size() > 0) {
+  // string on_created_stringified = 13;
+  if (this->on_created_stringified().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_on_created());
+        this->_internal_on_created_stringified());
   }
 
-  // string on_halted = 14;
-  if (this->on_halted().size() > 0) {
+  // string on_halted_stringified = 14;
+  if (this->on_halted_stringified().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_on_halted());
+        this->_internal_on_halted_stringified());
   }
 
-  // string on_destroyed = 15;
-  if (this->on_destroyed().size() > 0) {
+  // string on_destroyed_stringified = 15;
+  if (this->on_destroyed_stringified().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_on_destroyed());
+        this->_internal_on_destroyed_stringified());
   }
 
   // .ubii.processing.ProcessingMode processing_mode = 8;
@@ -2183,21 +2184,21 @@ void ProcessingModule::MergeFrom(const ProcessingModule& from) {
 
     client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
   }
-  if (from.on_processing().size() > 0) {
+  if (from.on_processing_stringified().size() > 0) {
 
-    on_processing_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_);
+    on_processing_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_stringified_);
   }
-  if (from.on_created().size() > 0) {
+  if (from.on_created_stringified().size() > 0) {
 
-    on_created_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_created_);
+    on_created_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_created_stringified_);
   }
-  if (from.on_halted().size() > 0) {
+  if (from.on_halted_stringified().size() > 0) {
 
-    on_halted_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_halted_);
+    on_halted_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_halted_stringified_);
   }
-  if (from.on_destroyed().size() > 0) {
+  if (from.on_destroyed_stringified().size() > 0) {
 
-    on_destroyed_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_destroyed_);
+    on_destroyed_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_destroyed_stringified_);
   }
   if (from.has_processing_mode()) {
     _internal_mutable_processing_mode()->::ubii::processing::ProcessingMode::MergeFrom(from._internal_processing_mode());
@@ -2243,13 +2244,13 @@ void ProcessingModule::InternalSwap(ProcessingModule* other) {
     GetArenaNoVirtual());
   client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  on_processing_.Swap(&other->on_processing_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_processing_stringified_.Swap(&other->on_processing_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  on_created_.Swap(&other->on_created_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_created_stringified_.Swap(&other->on_created_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  on_halted_.Swap(&other->on_halted_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_halted_stringified_.Swap(&other->on_halted_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  on_destroyed_.Swap(&other->on_destroyed_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_destroyed_stringified_.Swap(&other->on_destroyed_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(processing_mode_, other->processing_mode_);
   swap(status_, other->status_);

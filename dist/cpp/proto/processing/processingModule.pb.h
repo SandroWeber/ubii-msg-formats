@@ -1083,10 +1083,10 @@ class ProcessingModule :
     kNameFieldNumber = 2,
     kDescriptionFieldNumber = 5,
     kClientIdFieldNumber = 6,
-    kOnProcessingFieldNumber = 12,
-    kOnCreatedFieldNumber = 13,
-    kOnHaltedFieldNumber = 14,
-    kOnDestroyedFieldNumber = 15,
+    kOnProcessingStringifiedFieldNumber = 12,
+    kOnCreatedStringifiedFieldNumber = 13,
+    kOnHaltedStringifiedFieldNumber = 14,
+    kOnDestroyedStringifiedFieldNumber = 15,
     kProcessingModeFieldNumber = 8,
     kStatusFieldNumber = 7,
     kLanguageFieldNumber = 11,
@@ -1239,68 +1239,68 @@ class ProcessingModule :
   std::string* _internal_mutable_client_id();
   public:
 
-  // string on_processing = 12;
-  void clear_on_processing();
-  const std::string& on_processing() const;
-  void set_on_processing(const std::string& value);
-  void set_on_processing(std::string&& value);
-  void set_on_processing(const char* value);
-  void set_on_processing(const char* value, size_t size);
-  std::string* mutable_on_processing();
-  std::string* release_on_processing();
-  void set_allocated_on_processing(std::string* on_processing);
+  // string on_processing_stringified = 12;
+  void clear_on_processing_stringified();
+  const std::string& on_processing_stringified() const;
+  void set_on_processing_stringified(const std::string& value);
+  void set_on_processing_stringified(std::string&& value);
+  void set_on_processing_stringified(const char* value);
+  void set_on_processing_stringified(const char* value, size_t size);
+  std::string* mutable_on_processing_stringified();
+  std::string* release_on_processing_stringified();
+  void set_allocated_on_processing_stringified(std::string* on_processing_stringified);
   private:
-  const std::string& _internal_on_processing() const;
-  void _internal_set_on_processing(const std::string& value);
-  std::string* _internal_mutable_on_processing();
+  const std::string& _internal_on_processing_stringified() const;
+  void _internal_set_on_processing_stringified(const std::string& value);
+  std::string* _internal_mutable_on_processing_stringified();
   public:
 
-  // string on_created = 13;
-  void clear_on_created();
-  const std::string& on_created() const;
-  void set_on_created(const std::string& value);
-  void set_on_created(std::string&& value);
-  void set_on_created(const char* value);
-  void set_on_created(const char* value, size_t size);
-  std::string* mutable_on_created();
-  std::string* release_on_created();
-  void set_allocated_on_created(std::string* on_created);
+  // string on_created_stringified = 13;
+  void clear_on_created_stringified();
+  const std::string& on_created_stringified() const;
+  void set_on_created_stringified(const std::string& value);
+  void set_on_created_stringified(std::string&& value);
+  void set_on_created_stringified(const char* value);
+  void set_on_created_stringified(const char* value, size_t size);
+  std::string* mutable_on_created_stringified();
+  std::string* release_on_created_stringified();
+  void set_allocated_on_created_stringified(std::string* on_created_stringified);
   private:
-  const std::string& _internal_on_created() const;
-  void _internal_set_on_created(const std::string& value);
-  std::string* _internal_mutable_on_created();
+  const std::string& _internal_on_created_stringified() const;
+  void _internal_set_on_created_stringified(const std::string& value);
+  std::string* _internal_mutable_on_created_stringified();
   public:
 
-  // string on_halted = 14;
-  void clear_on_halted();
-  const std::string& on_halted() const;
-  void set_on_halted(const std::string& value);
-  void set_on_halted(std::string&& value);
-  void set_on_halted(const char* value);
-  void set_on_halted(const char* value, size_t size);
-  std::string* mutable_on_halted();
-  std::string* release_on_halted();
-  void set_allocated_on_halted(std::string* on_halted);
+  // string on_halted_stringified = 14;
+  void clear_on_halted_stringified();
+  const std::string& on_halted_stringified() const;
+  void set_on_halted_stringified(const std::string& value);
+  void set_on_halted_stringified(std::string&& value);
+  void set_on_halted_stringified(const char* value);
+  void set_on_halted_stringified(const char* value, size_t size);
+  std::string* mutable_on_halted_stringified();
+  std::string* release_on_halted_stringified();
+  void set_allocated_on_halted_stringified(std::string* on_halted_stringified);
   private:
-  const std::string& _internal_on_halted() const;
-  void _internal_set_on_halted(const std::string& value);
-  std::string* _internal_mutable_on_halted();
+  const std::string& _internal_on_halted_stringified() const;
+  void _internal_set_on_halted_stringified(const std::string& value);
+  std::string* _internal_mutable_on_halted_stringified();
   public:
 
-  // string on_destroyed = 15;
-  void clear_on_destroyed();
-  const std::string& on_destroyed() const;
-  void set_on_destroyed(const std::string& value);
-  void set_on_destroyed(std::string&& value);
-  void set_on_destroyed(const char* value);
-  void set_on_destroyed(const char* value, size_t size);
-  std::string* mutable_on_destroyed();
-  std::string* release_on_destroyed();
-  void set_allocated_on_destroyed(std::string* on_destroyed);
+  // string on_destroyed_stringified = 15;
+  void clear_on_destroyed_stringified();
+  const std::string& on_destroyed_stringified() const;
+  void set_on_destroyed_stringified(const std::string& value);
+  void set_on_destroyed_stringified(std::string&& value);
+  void set_on_destroyed_stringified(const char* value);
+  void set_on_destroyed_stringified(const char* value, size_t size);
+  std::string* mutable_on_destroyed_stringified();
+  std::string* release_on_destroyed_stringified();
+  void set_allocated_on_destroyed_stringified(std::string* on_destroyed_stringified);
   private:
-  const std::string& _internal_on_destroyed() const;
-  void _internal_set_on_destroyed(const std::string& value);
-  std::string* _internal_mutable_on_destroyed();
+  const std::string& _internal_on_destroyed_stringified() const;
+  void _internal_set_on_destroyed_stringified(const std::string& value);
+  std::string* _internal_mutable_on_destroyed_stringified();
   public:
 
   // .ubii.processing.ProcessingMode processing_mode = 8;
@@ -1349,10 +1349,10 @@ class ProcessingModule :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_processing_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_created_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_halted_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_destroyed_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_processing_stringified_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_created_stringified_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_halted_stringified_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr on_destroyed_stringified_;
   ::ubii::processing::ProcessingMode* processing_mode_;
   int status_;
   int language_;
@@ -2492,244 +2492,244 @@ inline void ProcessingModule::set_language(::ubii::processing::ProcessingModule_
   // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.language)
 }
 
-// string on_processing = 12;
-inline void ProcessingModule::clear_on_processing() {
-  on_processing_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+// string on_processing_stringified = 12;
+inline void ProcessingModule::clear_on_processing_stringified() {
+  on_processing_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& ProcessingModule::on_processing() const {
-  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_processing)
-  return _internal_on_processing();
+inline const std::string& ProcessingModule::on_processing_stringified() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_processing_stringified)
+  return _internal_on_processing_stringified();
 }
-inline void ProcessingModule::set_on_processing(const std::string& value) {
-  _internal_set_on_processing(value);
-  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_processing)
+inline void ProcessingModule::set_on_processing_stringified(const std::string& value) {
+  _internal_set_on_processing_stringified(value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_processing_stringified)
 }
-inline std::string* ProcessingModule::mutable_on_processing() {
-  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_processing)
-  return _internal_mutable_on_processing();
+inline std::string* ProcessingModule::mutable_on_processing_stringified() {
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_processing_stringified)
+  return _internal_mutable_on_processing_stringified();
 }
-inline const std::string& ProcessingModule::_internal_on_processing() const {
-  return on_processing_.GetNoArena();
+inline const std::string& ProcessingModule::_internal_on_processing_stringified() const {
+  return on_processing_stringified_.GetNoArena();
 }
-inline void ProcessingModule::_internal_set_on_processing(const std::string& value) {
+inline void ProcessingModule::_internal_set_on_processing_stringified(const std::string& value) {
   
-  on_processing_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  on_processing_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void ProcessingModule::set_on_processing(std::string&& value) {
+inline void ProcessingModule::set_on_processing_stringified(std::string&& value) {
   
-  on_processing_.SetNoArena(
+  on_processing_stringified_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_processing)
+  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_processing_stringified)
 }
-inline void ProcessingModule::set_on_processing(const char* value) {
+inline void ProcessingModule::set_on_processing_stringified(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  on_processing_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_processing)
+  on_processing_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_processing_stringified)
 }
-inline void ProcessingModule::set_on_processing(const char* value, size_t size) {
+inline void ProcessingModule::set_on_processing_stringified(const char* value, size_t size) {
   
-  on_processing_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_processing_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_processing)
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_processing_stringified)
 }
-inline std::string* ProcessingModule::_internal_mutable_on_processing() {
+inline std::string* ProcessingModule::_internal_mutable_on_processing_stringified() {
   
-  return on_processing_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_processing_stringified_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* ProcessingModule::release_on_processing() {
-  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_processing)
+inline std::string* ProcessingModule::release_on_processing_stringified() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_processing_stringified)
   
-  return on_processing_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_processing_stringified_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProcessingModule::set_allocated_on_processing(std::string* on_processing) {
-  if (on_processing != nullptr) {
+inline void ProcessingModule::set_allocated_on_processing_stringified(std::string* on_processing_stringified) {
+  if (on_processing_stringified != nullptr) {
     
   } else {
     
   }
-  on_processing_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_processing);
-  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_processing)
+  on_processing_stringified_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_processing_stringified);
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_processing_stringified)
 }
 
-// string on_created = 13;
-inline void ProcessingModule::clear_on_created() {
-  on_created_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+// string on_created_stringified = 13;
+inline void ProcessingModule::clear_on_created_stringified() {
+  on_created_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& ProcessingModule::on_created() const {
-  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_created)
-  return _internal_on_created();
+inline const std::string& ProcessingModule::on_created_stringified() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_created_stringified)
+  return _internal_on_created_stringified();
 }
-inline void ProcessingModule::set_on_created(const std::string& value) {
-  _internal_set_on_created(value);
-  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_created)
+inline void ProcessingModule::set_on_created_stringified(const std::string& value) {
+  _internal_set_on_created_stringified(value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_created_stringified)
 }
-inline std::string* ProcessingModule::mutable_on_created() {
-  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_created)
-  return _internal_mutable_on_created();
+inline std::string* ProcessingModule::mutable_on_created_stringified() {
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_created_stringified)
+  return _internal_mutable_on_created_stringified();
 }
-inline const std::string& ProcessingModule::_internal_on_created() const {
-  return on_created_.GetNoArena();
+inline const std::string& ProcessingModule::_internal_on_created_stringified() const {
+  return on_created_stringified_.GetNoArena();
 }
-inline void ProcessingModule::_internal_set_on_created(const std::string& value) {
+inline void ProcessingModule::_internal_set_on_created_stringified(const std::string& value) {
   
-  on_created_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  on_created_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void ProcessingModule::set_on_created(std::string&& value) {
+inline void ProcessingModule::set_on_created_stringified(std::string&& value) {
   
-  on_created_.SetNoArena(
+  on_created_stringified_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_created)
+  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_created_stringified)
 }
-inline void ProcessingModule::set_on_created(const char* value) {
+inline void ProcessingModule::set_on_created_stringified(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  on_created_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_created)
+  on_created_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_created_stringified)
 }
-inline void ProcessingModule::set_on_created(const char* value, size_t size) {
+inline void ProcessingModule::set_on_created_stringified(const char* value, size_t size) {
   
-  on_created_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_created_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_created)
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_created_stringified)
 }
-inline std::string* ProcessingModule::_internal_mutable_on_created() {
+inline std::string* ProcessingModule::_internal_mutable_on_created_stringified() {
   
-  return on_created_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_created_stringified_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* ProcessingModule::release_on_created() {
-  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_created)
+inline std::string* ProcessingModule::release_on_created_stringified() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_created_stringified)
   
-  return on_created_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_created_stringified_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProcessingModule::set_allocated_on_created(std::string* on_created) {
-  if (on_created != nullptr) {
+inline void ProcessingModule::set_allocated_on_created_stringified(std::string* on_created_stringified) {
+  if (on_created_stringified != nullptr) {
     
   } else {
     
   }
-  on_created_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_created);
-  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_created)
+  on_created_stringified_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_created_stringified);
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_created_stringified)
 }
 
-// string on_halted = 14;
-inline void ProcessingModule::clear_on_halted() {
-  on_halted_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+// string on_halted_stringified = 14;
+inline void ProcessingModule::clear_on_halted_stringified() {
+  on_halted_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& ProcessingModule::on_halted() const {
-  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_halted)
-  return _internal_on_halted();
+inline const std::string& ProcessingModule::on_halted_stringified() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_halted_stringified)
+  return _internal_on_halted_stringified();
 }
-inline void ProcessingModule::set_on_halted(const std::string& value) {
-  _internal_set_on_halted(value);
-  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_halted)
+inline void ProcessingModule::set_on_halted_stringified(const std::string& value) {
+  _internal_set_on_halted_stringified(value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_halted_stringified)
 }
-inline std::string* ProcessingModule::mutable_on_halted() {
-  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_halted)
-  return _internal_mutable_on_halted();
+inline std::string* ProcessingModule::mutable_on_halted_stringified() {
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_halted_stringified)
+  return _internal_mutable_on_halted_stringified();
 }
-inline const std::string& ProcessingModule::_internal_on_halted() const {
-  return on_halted_.GetNoArena();
+inline const std::string& ProcessingModule::_internal_on_halted_stringified() const {
+  return on_halted_stringified_.GetNoArena();
 }
-inline void ProcessingModule::_internal_set_on_halted(const std::string& value) {
+inline void ProcessingModule::_internal_set_on_halted_stringified(const std::string& value) {
   
-  on_halted_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  on_halted_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void ProcessingModule::set_on_halted(std::string&& value) {
+inline void ProcessingModule::set_on_halted_stringified(std::string&& value) {
   
-  on_halted_.SetNoArena(
+  on_halted_stringified_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_halted)
+  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_halted_stringified)
 }
-inline void ProcessingModule::set_on_halted(const char* value) {
+inline void ProcessingModule::set_on_halted_stringified(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  on_halted_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_halted)
+  on_halted_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_halted_stringified)
 }
-inline void ProcessingModule::set_on_halted(const char* value, size_t size) {
+inline void ProcessingModule::set_on_halted_stringified(const char* value, size_t size) {
   
-  on_halted_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_halted_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_halted)
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_halted_stringified)
 }
-inline std::string* ProcessingModule::_internal_mutable_on_halted() {
+inline std::string* ProcessingModule::_internal_mutable_on_halted_stringified() {
   
-  return on_halted_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_halted_stringified_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* ProcessingModule::release_on_halted() {
-  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_halted)
+inline std::string* ProcessingModule::release_on_halted_stringified() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_halted_stringified)
   
-  return on_halted_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_halted_stringified_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProcessingModule::set_allocated_on_halted(std::string* on_halted) {
-  if (on_halted != nullptr) {
+inline void ProcessingModule::set_allocated_on_halted_stringified(std::string* on_halted_stringified) {
+  if (on_halted_stringified != nullptr) {
     
   } else {
     
   }
-  on_halted_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_halted);
-  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_halted)
+  on_halted_stringified_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_halted_stringified);
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_halted_stringified)
 }
 
-// string on_destroyed = 15;
-inline void ProcessingModule::clear_on_destroyed() {
-  on_destroyed_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+// string on_destroyed_stringified = 15;
+inline void ProcessingModule::clear_on_destroyed_stringified() {
+  on_destroyed_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& ProcessingModule::on_destroyed() const {
-  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_destroyed)
-  return _internal_on_destroyed();
+inline const std::string& ProcessingModule::on_destroyed_stringified() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.on_destroyed_stringified)
+  return _internal_on_destroyed_stringified();
 }
-inline void ProcessingModule::set_on_destroyed(const std::string& value) {
-  _internal_set_on_destroyed(value);
-  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_destroyed)
+inline void ProcessingModule::set_on_destroyed_stringified(const std::string& value) {
+  _internal_set_on_destroyed_stringified(value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.on_destroyed_stringified)
 }
-inline std::string* ProcessingModule::mutable_on_destroyed() {
-  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_destroyed)
-  return _internal_mutable_on_destroyed();
+inline std::string* ProcessingModule::mutable_on_destroyed_stringified() {
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.on_destroyed_stringified)
+  return _internal_mutable_on_destroyed_stringified();
 }
-inline const std::string& ProcessingModule::_internal_on_destroyed() const {
-  return on_destroyed_.GetNoArena();
+inline const std::string& ProcessingModule::_internal_on_destroyed_stringified() const {
+  return on_destroyed_stringified_.GetNoArena();
 }
-inline void ProcessingModule::_internal_set_on_destroyed(const std::string& value) {
+inline void ProcessingModule::_internal_set_on_destroyed_stringified(const std::string& value) {
   
-  on_destroyed_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  on_destroyed_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void ProcessingModule::set_on_destroyed(std::string&& value) {
+inline void ProcessingModule::set_on_destroyed_stringified(std::string&& value) {
   
-  on_destroyed_.SetNoArena(
+  on_destroyed_stringified_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_destroyed)
+  // @@protoc_insertion_point(field_set_rvalue:ubii.processing.ProcessingModule.on_destroyed_stringified)
 }
-inline void ProcessingModule::set_on_destroyed(const char* value) {
+inline void ProcessingModule::set_on_destroyed_stringified(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  on_destroyed_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_destroyed)
+  on_destroyed_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.on_destroyed_stringified)
 }
-inline void ProcessingModule::set_on_destroyed(const char* value, size_t size) {
+inline void ProcessingModule::set_on_destroyed_stringified(const char* value, size_t size) {
   
-  on_destroyed_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  on_destroyed_stringified_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_destroyed)
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.on_destroyed_stringified)
 }
-inline std::string* ProcessingModule::_internal_mutable_on_destroyed() {
+inline std::string* ProcessingModule::_internal_mutable_on_destroyed_stringified() {
   
-  return on_destroyed_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_destroyed_stringified_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* ProcessingModule::release_on_destroyed() {
-  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_destroyed)
+inline std::string* ProcessingModule::release_on_destroyed_stringified() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.on_destroyed_stringified)
   
-  return on_destroyed_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return on_destroyed_stringified_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProcessingModule::set_allocated_on_destroyed(std::string* on_destroyed) {
-  if (on_destroyed != nullptr) {
+inline void ProcessingModule::set_allocated_on_destroyed_stringified(std::string* on_destroyed_stringified) {
+  if (on_destroyed_stringified != nullptr) {
     
   } else {
     
   }
-  on_destroyed_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_destroyed);
-  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_destroyed)
+  on_destroyed_stringified_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), on_destroyed_stringified);
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_destroyed_stringified)
 }
 
 // -------------------------------------------------------------------

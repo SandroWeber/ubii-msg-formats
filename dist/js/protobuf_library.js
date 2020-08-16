@@ -15765,10 +15765,10 @@ proto.ubii.processing.ProcessingModule.toObject = function(includeInstance, msg)
     outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
     proto.ubii.processing.ModuleIO.toObject, includeInstance),
     language: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    onProcessing: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    onCreated: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    onHalted: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    onDestroyed: jspb.Message.getFieldWithDefault(msg, 15, "")
+    onProcessingStringified: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    onCreatedStringified: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    onHaltedStringified: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    onDestroyedStringified: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -15854,19 +15854,19 @@ proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader = function(ms
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOnProcessing(value);
+      msg.setOnProcessingStringified(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOnCreated(value);
+      msg.setOnCreatedStringified(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOnHalted(value);
+      msg.setOnHaltedStringified(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOnDestroyed(value);
+      msg.setOnDestroyedStringified(value);
       break;
     default:
       reader.skipField();
@@ -15977,28 +15977,28 @@ proto.ubii.processing.ProcessingModule.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getOnProcessing();
+  f = message.getOnProcessingStringified();
   if (f.length > 0) {
     writer.writeString(
       12,
       f
     );
   }
-  f = message.getOnCreated();
+  f = message.getOnCreatedStringified();
   if (f.length > 0) {
     writer.writeString(
       13,
       f
     );
   }
-  f = message.getOnHalted();
+  f = message.getOnHaltedStringified();
   if (f.length > 0) {
     writer.writeString(
       14,
       f
     );
   }
-  f = message.getOnDestroyed();
+  f = message.getOnDestroyedStringified();
   if (f.length > 0) {
     writer.writeString(
       15,
@@ -16326,10 +16326,10 @@ proto.ubii.processing.ProcessingModule.prototype.setLanguage = function(value) {
 
 
 /**
- * optional string on_processing = 12;
+ * optional string on_processing_stringified = 12;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnProcessing = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnProcessingStringified = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -16338,16 +16338,16 @@ proto.ubii.processing.ProcessingModule.prototype.getOnProcessing = function() {
  * @param {string} value
  * @return {!proto.ubii.processing.ProcessingModule} returns this
  */
-proto.ubii.processing.ProcessingModule.prototype.setOnProcessing = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnProcessingStringified = function(value) {
   return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional string on_created = 13;
+ * optional string on_created_stringified = 13;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnCreated = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnCreatedStringified = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -16356,16 +16356,16 @@ proto.ubii.processing.ProcessingModule.prototype.getOnCreated = function() {
  * @param {string} value
  * @return {!proto.ubii.processing.ProcessingModule} returns this
  */
-proto.ubii.processing.ProcessingModule.prototype.setOnCreated = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnCreatedStringified = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional string on_halted = 14;
+ * optional string on_halted_stringified = 14;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnHalted = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnHaltedStringified = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
@@ -16374,16 +16374,16 @@ proto.ubii.processing.ProcessingModule.prototype.getOnHalted = function() {
  * @param {string} value
  * @return {!proto.ubii.processing.ProcessingModule} returns this
  */
-proto.ubii.processing.ProcessingModule.prototype.setOnHalted = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnHaltedStringified = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
 /**
- * optional string on_destroyed = 15;
+ * optional string on_destroyed_stringified = 15;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnDestroyed = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnDestroyedStringified = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -16392,7 +16392,7 @@ proto.ubii.processing.ProcessingModule.prototype.getOnDestroyed = function() {
  * @param {string} value
  * @return {!proto.ubii.processing.ProcessingModule} returns this
  */
-proto.ubii.processing.ProcessingModule.prototype.setOnDestroyed = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnDestroyedStringified = function(value) {
   return jspb.Message.setProto3StringField(this, 15, value);
 };
 

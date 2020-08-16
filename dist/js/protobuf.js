@@ -5591,10 +5591,10 @@ $root.ubii = (function() {
              * @property {Array.<ubii.processing.IModuleIO>|null} [inputs] ProcessingModule inputs
              * @property {Array.<ubii.processing.IModuleIO>|null} [outputs] ProcessingModule outputs
              * @property {ubii.processing.ProcessingModule.Language|null} [language] ProcessingModule language
-             * @property {string|null} [onProcessing] ProcessingModule onProcessing
-             * @property {string|null} [onCreated] ProcessingModule onCreated
-             * @property {string|null} [onHalted] ProcessingModule onHalted
-             * @property {string|null} [onDestroyed] ProcessingModule onDestroyed
+             * @property {string|null} [onProcessingStringified] ProcessingModule onProcessingStringified
+             * @property {string|null} [onCreatedStringified] ProcessingModule onCreatedStringified
+             * @property {string|null} [onHaltedStringified] ProcessingModule onHaltedStringified
+             * @property {string|null} [onDestroyedStringified] ProcessingModule onDestroyedStringified
              */
 
             /**
@@ -5705,36 +5705,36 @@ $root.ubii = (function() {
             ProcessingModule.prototype.language = 0;
 
             /**
-             * ProcessingModule onProcessing.
-             * @member {string} onProcessing
+             * ProcessingModule onProcessingStringified.
+             * @member {string} onProcessingStringified
              * @memberof ubii.processing.ProcessingModule
              * @instance
              */
-            ProcessingModule.prototype.onProcessing = "";
+            ProcessingModule.prototype.onProcessingStringified = "";
 
             /**
-             * ProcessingModule onCreated.
-             * @member {string} onCreated
+             * ProcessingModule onCreatedStringified.
+             * @member {string} onCreatedStringified
              * @memberof ubii.processing.ProcessingModule
              * @instance
              */
-            ProcessingModule.prototype.onCreated = "";
+            ProcessingModule.prototype.onCreatedStringified = "";
 
             /**
-             * ProcessingModule onHalted.
-             * @member {string} onHalted
+             * ProcessingModule onHaltedStringified.
+             * @member {string} onHaltedStringified
              * @memberof ubii.processing.ProcessingModule
              * @instance
              */
-            ProcessingModule.prototype.onHalted = "";
+            ProcessingModule.prototype.onHaltedStringified = "";
 
             /**
-             * ProcessingModule onDestroyed.
-             * @member {string} onDestroyed
+             * ProcessingModule onDestroyedStringified.
+             * @member {string} onDestroyedStringified
              * @memberof ubii.processing.ProcessingModule
              * @instance
              */
-            ProcessingModule.prototype.onDestroyed = "";
+            ProcessingModule.prototype.onDestroyedStringified = "";
 
             /**
              * Creates a new ProcessingModule instance using the specified properties.
@@ -5786,14 +5786,14 @@ $root.ubii = (function() {
                         $root.ubii.processing.ModuleIO.encode(message.outputs[i], writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.language != null && message.hasOwnProperty("language"))
                     writer.uint32(/* id 11, wireType 0 =*/88).int32(message.language);
-                if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
-                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.onProcessing);
-                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
-                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.onCreated);
-                if (message.onHalted != null && message.hasOwnProperty("onHalted"))
-                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.onHalted);
-                if (message.onDestroyed != null && message.hasOwnProperty("onDestroyed"))
-                    writer.uint32(/* id 15, wireType 2 =*/122).string(message.onDestroyed);
+                if (message.onProcessingStringified != null && message.hasOwnProperty("onProcessingStringified"))
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.onProcessingStringified);
+                if (message.onCreatedStringified != null && message.hasOwnProperty("onCreatedStringified"))
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.onCreatedStringified);
+                if (message.onHaltedStringified != null && message.hasOwnProperty("onHaltedStringified"))
+                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.onHaltedStringified);
+                if (message.onDestroyedStringified != null && message.hasOwnProperty("onDestroyedStringified"))
+                    writer.uint32(/* id 15, wireType 2 =*/122).string(message.onDestroyedStringified);
                 return writer;
             };
 
@@ -5870,16 +5870,16 @@ $root.ubii = (function() {
                         message.language = reader.int32();
                         break;
                     case 12:
-                        message.onProcessing = reader.string();
+                        message.onProcessingStringified = reader.string();
                         break;
                     case 13:
-                        message.onCreated = reader.string();
+                        message.onCreatedStringified = reader.string();
                         break;
                     case 14:
-                        message.onHalted = reader.string();
+                        message.onHaltedStringified = reader.string();
                         break;
                     case 15:
-                        message.onDestroyed = reader.string();
+                        message.onDestroyedStringified = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5987,18 +5987,18 @@ $root.ubii = (function() {
                     case 4:
                         break;
                     }
-                if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
-                    if (!$util.isString(message.onProcessing))
-                        return "onProcessing: string expected";
-                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
-                    if (!$util.isString(message.onCreated))
-                        return "onCreated: string expected";
-                if (message.onHalted != null && message.hasOwnProperty("onHalted"))
-                    if (!$util.isString(message.onHalted))
-                        return "onHalted: string expected";
-                if (message.onDestroyed != null && message.hasOwnProperty("onDestroyed"))
-                    if (!$util.isString(message.onDestroyed))
-                        return "onDestroyed: string expected";
+                if (message.onProcessingStringified != null && message.hasOwnProperty("onProcessingStringified"))
+                    if (!$util.isString(message.onProcessingStringified))
+                        return "onProcessingStringified: string expected";
+                if (message.onCreatedStringified != null && message.hasOwnProperty("onCreatedStringified"))
+                    if (!$util.isString(message.onCreatedStringified))
+                        return "onCreatedStringified: string expected";
+                if (message.onHaltedStringified != null && message.hasOwnProperty("onHaltedStringified"))
+                    if (!$util.isString(message.onHaltedStringified))
+                        return "onHaltedStringified: string expected";
+                if (message.onDestroyedStringified != null && message.hasOwnProperty("onDestroyedStringified"))
+                    if (!$util.isString(message.onDestroyedStringified))
+                        return "onDestroyedStringified: string expected";
                 return null;
             };
 
@@ -6105,14 +6105,14 @@ $root.ubii = (function() {
                     message.language = 4;
                     break;
                 }
-                if (object.onProcessing != null)
-                    message.onProcessing = String(object.onProcessing);
-                if (object.onCreated != null)
-                    message.onCreated = String(object.onCreated);
-                if (object.onHalted != null)
-                    message.onHalted = String(object.onHalted);
-                if (object.onDestroyed != null)
-                    message.onDestroyed = String(object.onDestroyed);
+                if (object.onProcessingStringified != null)
+                    message.onProcessingStringified = String(object.onProcessingStringified);
+                if (object.onCreatedStringified != null)
+                    message.onCreatedStringified = String(object.onCreatedStringified);
+                if (object.onHaltedStringified != null)
+                    message.onHaltedStringified = String(object.onHaltedStringified);
+                if (object.onDestroyedStringified != null)
+                    message.onDestroyedStringified = String(object.onDestroyedStringified);
                 return message;
             };
 
@@ -6143,10 +6143,10 @@ $root.ubii = (function() {
                     object.status = options.enums === String ? "INITIALIZED" : 0;
                     object.processingMode = null;
                     object.language = options.enums === String ? "CPP" : 0;
-                    object.onProcessing = "";
-                    object.onCreated = "";
-                    object.onHalted = "";
-                    object.onDestroyed = "";
+                    object.onProcessingStringified = "";
+                    object.onCreatedStringified = "";
+                    object.onHaltedStringified = "";
+                    object.onDestroyedStringified = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -6182,14 +6182,14 @@ $root.ubii = (function() {
                 }
                 if (message.language != null && message.hasOwnProperty("language"))
                     object.language = options.enums === String ? $root.ubii.processing.ProcessingModule.Language[message.language] : message.language;
-                if (message.onProcessing != null && message.hasOwnProperty("onProcessing"))
-                    object.onProcessing = message.onProcessing;
-                if (message.onCreated != null && message.hasOwnProperty("onCreated"))
-                    object.onCreated = message.onCreated;
-                if (message.onHalted != null && message.hasOwnProperty("onHalted"))
-                    object.onHalted = message.onHalted;
-                if (message.onDestroyed != null && message.hasOwnProperty("onDestroyed"))
-                    object.onDestroyed = message.onDestroyed;
+                if (message.onProcessingStringified != null && message.hasOwnProperty("onProcessingStringified"))
+                    object.onProcessingStringified = message.onProcessingStringified;
+                if (message.onCreatedStringified != null && message.hasOwnProperty("onCreatedStringified"))
+                    object.onCreatedStringified = message.onCreatedStringified;
+                if (message.onHaltedStringified != null && message.hasOwnProperty("onHaltedStringified"))
+                    object.onHaltedStringified = message.onHaltedStringified;
+                if (message.onDestroyedStringified != null && message.hasOwnProperty("onDestroyedStringified"))
+                    object.onDestroyedStringified = message.onDestroyedStringified;
                 return object;
             };
 

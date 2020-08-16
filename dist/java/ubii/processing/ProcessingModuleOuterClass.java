@@ -3681,52 +3681,52 @@ public final class ProcessingModuleOuterClass {
     ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language getLanguage();
 
     /**
-     * <code>string on_processing = 12;</code>
-     * @return The onProcessing.
+     * <code>string on_processing_stringified = 12;</code>
+     * @return The onProcessingStringified.
      */
-    java.lang.String getOnProcessing();
+    java.lang.String getOnProcessingStringified();
     /**
-     * <code>string on_processing = 12;</code>
-     * @return The bytes for onProcessing.
+     * <code>string on_processing_stringified = 12;</code>
+     * @return The bytes for onProcessingStringified.
      */
     com.google.protobuf.ByteString
-        getOnProcessingBytes();
+        getOnProcessingStringifiedBytes();
 
     /**
-     * <code>string on_created = 13;</code>
-     * @return The onCreated.
+     * <code>string on_created_stringified = 13;</code>
+     * @return The onCreatedStringified.
      */
-    java.lang.String getOnCreated();
+    java.lang.String getOnCreatedStringified();
     /**
-     * <code>string on_created = 13;</code>
-     * @return The bytes for onCreated.
+     * <code>string on_created_stringified = 13;</code>
+     * @return The bytes for onCreatedStringified.
      */
     com.google.protobuf.ByteString
-        getOnCreatedBytes();
+        getOnCreatedStringifiedBytes();
 
     /**
-     * <code>string on_halted = 14;</code>
-     * @return The onHalted.
+     * <code>string on_halted_stringified = 14;</code>
+     * @return The onHaltedStringified.
      */
-    java.lang.String getOnHalted();
+    java.lang.String getOnHaltedStringified();
     /**
-     * <code>string on_halted = 14;</code>
-     * @return The bytes for onHalted.
+     * <code>string on_halted_stringified = 14;</code>
+     * @return The bytes for onHaltedStringified.
      */
     com.google.protobuf.ByteString
-        getOnHaltedBytes();
+        getOnHaltedStringifiedBytes();
 
     /**
-     * <code>string on_destroyed = 15;</code>
-     * @return The onDestroyed.
+     * <code>string on_destroyed_stringified = 15;</code>
+     * @return The onDestroyedStringified.
      */
-    java.lang.String getOnDestroyed();
+    java.lang.String getOnDestroyedStringified();
     /**
-     * <code>string on_destroyed = 15;</code>
-     * @return The bytes for onDestroyed.
+     * <code>string on_destroyed_stringified = 15;</code>
+     * @return The bytes for onDestroyedStringified.
      */
     com.google.protobuf.ByteString
-        getOnDestroyedBytes();
+        getOnDestroyedStringifiedBytes();
   }
   /**
    * Protobuf type {@code ubii.processing.ProcessingModule}
@@ -3751,10 +3751,10 @@ public final class ProcessingModuleOuterClass {
       inputs_ = java.util.Collections.emptyList();
       outputs_ = java.util.Collections.emptyList();
       language_ = 0;
-      onProcessing_ = "";
-      onCreated_ = "";
-      onHalted_ = "";
-      onDestroyed_ = "";
+      onProcessingStringified_ = "";
+      onCreatedStringified_ = "";
+      onHaltedStringified_ = "";
+      onDestroyedStringified_ = "";
     }
 
     @java.lang.Override
@@ -3876,25 +3876,25 @@ public final class ProcessingModuleOuterClass {
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              onProcessing_ = s;
+              onProcessingStringified_ = s;
               break;
             }
             case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              onCreated_ = s;
+              onCreatedStringified_ = s;
               break;
             }
             case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              onHalted_ = s;
+              onHaltedStringified_ = s;
               break;
             }
             case 122: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              onDestroyed_ = s;
+              onDestroyedStringified_ = s;
               break;
             }
             default: {
@@ -4548,144 +4548,144 @@ public final class ProcessingModuleOuterClass {
       return result == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.UNRECOGNIZED : result;
     }
 
-    public static final int ON_PROCESSING_FIELD_NUMBER = 12;
-    private volatile java.lang.Object onProcessing_;
+    public static final int ON_PROCESSING_STRINGIFIED_FIELD_NUMBER = 12;
+    private volatile java.lang.Object onProcessingStringified_;
     /**
-     * <code>string on_processing = 12;</code>
-     * @return The onProcessing.
+     * <code>string on_processing_stringified = 12;</code>
+     * @return The onProcessingStringified.
      */
-    public java.lang.String getOnProcessing() {
-      java.lang.Object ref = onProcessing_;
+    public java.lang.String getOnProcessingStringified() {
+      java.lang.Object ref = onProcessingStringified_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        onProcessing_ = s;
+        onProcessingStringified_ = s;
         return s;
       }
     }
     /**
-     * <code>string on_processing = 12;</code>
-     * @return The bytes for onProcessing.
+     * <code>string on_processing_stringified = 12;</code>
+     * @return The bytes for onProcessingStringified.
      */
     public com.google.protobuf.ByteString
-        getOnProcessingBytes() {
-      java.lang.Object ref = onProcessing_;
+        getOnProcessingStringifiedBytes() {
+      java.lang.Object ref = onProcessingStringified_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        onProcessing_ = b;
+        onProcessingStringified_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int ON_CREATED_FIELD_NUMBER = 13;
-    private volatile java.lang.Object onCreated_;
+    public static final int ON_CREATED_STRINGIFIED_FIELD_NUMBER = 13;
+    private volatile java.lang.Object onCreatedStringified_;
     /**
-     * <code>string on_created = 13;</code>
-     * @return The onCreated.
+     * <code>string on_created_stringified = 13;</code>
+     * @return The onCreatedStringified.
      */
-    public java.lang.String getOnCreated() {
-      java.lang.Object ref = onCreated_;
+    public java.lang.String getOnCreatedStringified() {
+      java.lang.Object ref = onCreatedStringified_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        onCreated_ = s;
+        onCreatedStringified_ = s;
         return s;
       }
     }
     /**
-     * <code>string on_created = 13;</code>
-     * @return The bytes for onCreated.
+     * <code>string on_created_stringified = 13;</code>
+     * @return The bytes for onCreatedStringified.
      */
     public com.google.protobuf.ByteString
-        getOnCreatedBytes() {
-      java.lang.Object ref = onCreated_;
+        getOnCreatedStringifiedBytes() {
+      java.lang.Object ref = onCreatedStringified_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        onCreated_ = b;
+        onCreatedStringified_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int ON_HALTED_FIELD_NUMBER = 14;
-    private volatile java.lang.Object onHalted_;
+    public static final int ON_HALTED_STRINGIFIED_FIELD_NUMBER = 14;
+    private volatile java.lang.Object onHaltedStringified_;
     /**
-     * <code>string on_halted = 14;</code>
-     * @return The onHalted.
+     * <code>string on_halted_stringified = 14;</code>
+     * @return The onHaltedStringified.
      */
-    public java.lang.String getOnHalted() {
-      java.lang.Object ref = onHalted_;
+    public java.lang.String getOnHaltedStringified() {
+      java.lang.Object ref = onHaltedStringified_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        onHalted_ = s;
+        onHaltedStringified_ = s;
         return s;
       }
     }
     /**
-     * <code>string on_halted = 14;</code>
-     * @return The bytes for onHalted.
+     * <code>string on_halted_stringified = 14;</code>
+     * @return The bytes for onHaltedStringified.
      */
     public com.google.protobuf.ByteString
-        getOnHaltedBytes() {
-      java.lang.Object ref = onHalted_;
+        getOnHaltedStringifiedBytes() {
+      java.lang.Object ref = onHaltedStringified_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        onHalted_ = b;
+        onHaltedStringified_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int ON_DESTROYED_FIELD_NUMBER = 15;
-    private volatile java.lang.Object onDestroyed_;
+    public static final int ON_DESTROYED_STRINGIFIED_FIELD_NUMBER = 15;
+    private volatile java.lang.Object onDestroyedStringified_;
     /**
-     * <code>string on_destroyed = 15;</code>
-     * @return The onDestroyed.
+     * <code>string on_destroyed_stringified = 15;</code>
+     * @return The onDestroyedStringified.
      */
-    public java.lang.String getOnDestroyed() {
-      java.lang.Object ref = onDestroyed_;
+    public java.lang.String getOnDestroyedStringified() {
+      java.lang.Object ref = onDestroyedStringified_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        onDestroyed_ = s;
+        onDestroyedStringified_ = s;
         return s;
       }
     }
     /**
-     * <code>string on_destroyed = 15;</code>
-     * @return The bytes for onDestroyed.
+     * <code>string on_destroyed_stringified = 15;</code>
+     * @return The bytes for onDestroyedStringified.
      */
     public com.google.protobuf.ByteString
-        getOnDestroyedBytes() {
-      java.lang.Object ref = onDestroyed_;
+        getOnDestroyedStringifiedBytes() {
+      java.lang.Object ref = onDestroyedStringified_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        onDestroyed_ = b;
+        onDestroyedStringified_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4739,17 +4739,17 @@ public final class ProcessingModuleOuterClass {
       if (language_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.CPP.getNumber()) {
         output.writeEnum(11, language_);
       }
-      if (!getOnProcessingBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, onProcessing_);
+      if (!getOnProcessingStringifiedBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, onProcessingStringified_);
       }
-      if (!getOnCreatedBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, onCreated_);
+      if (!getOnCreatedStringifiedBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, onCreatedStringified_);
       }
-      if (!getOnHaltedBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, onHalted_);
+      if (!getOnHaltedStringifiedBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, onHaltedStringified_);
       }
-      if (!getOnDestroyedBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, onDestroyed_);
+      if (!getOnDestroyedStringifiedBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, onDestroyedStringified_);
       }
       unknownFields.writeTo(output);
     }
@@ -4808,17 +4808,17 @@ public final class ProcessingModuleOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, language_);
       }
-      if (!getOnProcessingBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, onProcessing_);
+      if (!getOnProcessingStringifiedBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, onProcessingStringified_);
       }
-      if (!getOnCreatedBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, onCreated_);
+      if (!getOnCreatedStringifiedBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, onCreatedStringified_);
       }
-      if (!getOnHaltedBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, onHalted_);
+      if (!getOnHaltedStringifiedBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, onHaltedStringified_);
       }
-      if (!getOnDestroyedBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, onDestroyed_);
+      if (!getOnDestroyedStringifiedBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, onDestroyedStringified_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4858,14 +4858,14 @@ public final class ProcessingModuleOuterClass {
       if (!getOutputsList()
           .equals(other.getOutputsList())) return false;
       if (language_ != other.language_) return false;
-      if (!getOnProcessing()
-          .equals(other.getOnProcessing())) return false;
-      if (!getOnCreated()
-          .equals(other.getOnCreated())) return false;
-      if (!getOnHalted()
-          .equals(other.getOnHalted())) return false;
-      if (!getOnDestroyed()
-          .equals(other.getOnDestroyed())) return false;
+      if (!getOnProcessingStringified()
+          .equals(other.getOnProcessingStringified())) return false;
+      if (!getOnCreatedStringified()
+          .equals(other.getOnCreatedStringified())) return false;
+      if (!getOnHaltedStringified()
+          .equals(other.getOnHaltedStringified())) return false;
+      if (!getOnDestroyedStringified()
+          .equals(other.getOnDestroyedStringified())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4909,14 +4909,14 @@ public final class ProcessingModuleOuterClass {
       }
       hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
       hash = (53 * hash) + language_;
-      hash = (37 * hash) + ON_PROCESSING_FIELD_NUMBER;
-      hash = (53 * hash) + getOnProcessing().hashCode();
-      hash = (37 * hash) + ON_CREATED_FIELD_NUMBER;
-      hash = (53 * hash) + getOnCreated().hashCode();
-      hash = (37 * hash) + ON_HALTED_FIELD_NUMBER;
-      hash = (53 * hash) + getOnHalted().hashCode();
-      hash = (37 * hash) + ON_DESTROYED_FIELD_NUMBER;
-      hash = (53 * hash) + getOnDestroyed().hashCode();
+      hash = (37 * hash) + ON_PROCESSING_STRINGIFIED_FIELD_NUMBER;
+      hash = (53 * hash) + getOnProcessingStringified().hashCode();
+      hash = (37 * hash) + ON_CREATED_STRINGIFIED_FIELD_NUMBER;
+      hash = (53 * hash) + getOnCreatedStringified().hashCode();
+      hash = (37 * hash) + ON_HALTED_STRINGIFIED_FIELD_NUMBER;
+      hash = (53 * hash) + getOnHaltedStringified().hashCode();
+      hash = (37 * hash) + ON_DESTROYED_STRINGIFIED_FIELD_NUMBER;
+      hash = (53 * hash) + getOnDestroyedStringified().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5086,13 +5086,13 @@ public final class ProcessingModuleOuterClass {
         }
         language_ = 0;
 
-        onProcessing_ = "";
+        onProcessingStringified_ = "";
 
-        onCreated_ = "";
+        onCreatedStringified_ = "";
 
-        onHalted_ = "";
+        onHaltedStringified_ = "";
 
-        onDestroyed_ = "";
+        onDestroyedStringified_ = "";
 
         return this;
       }
@@ -5160,10 +5160,10 @@ public final class ProcessingModuleOuterClass {
           result.outputs_ = outputsBuilder_.build();
         }
         result.language_ = language_;
-        result.onProcessing_ = onProcessing_;
-        result.onCreated_ = onCreated_;
-        result.onHalted_ = onHalted_;
-        result.onDestroyed_ = onDestroyed_;
+        result.onProcessingStringified_ = onProcessingStringified_;
+        result.onCreatedStringified_ = onCreatedStringified_;
+        result.onHaltedStringified_ = onHaltedStringified_;
+        result.onDestroyedStringified_ = onDestroyedStringified_;
         onBuilt();
         return result;
       }
@@ -5309,20 +5309,20 @@ public final class ProcessingModuleOuterClass {
         if (other.language_ != 0) {
           setLanguageValue(other.getLanguageValue());
         }
-        if (!other.getOnProcessing().isEmpty()) {
-          onProcessing_ = other.onProcessing_;
+        if (!other.getOnProcessingStringified().isEmpty()) {
+          onProcessingStringified_ = other.onProcessingStringified_;
           onChanged();
         }
-        if (!other.getOnCreated().isEmpty()) {
-          onCreated_ = other.onCreated_;
+        if (!other.getOnCreatedStringified().isEmpty()) {
+          onCreatedStringified_ = other.onCreatedStringified_;
           onChanged();
         }
-        if (!other.getOnHalted().isEmpty()) {
-          onHalted_ = other.onHalted_;
+        if (!other.getOnHaltedStringified().isEmpty()) {
+          onHaltedStringified_ = other.onHaltedStringified_;
           onChanged();
         }
-        if (!other.getOnDestroyed().isEmpty()) {
-          onDestroyed_ = other.onDestroyed_;
+        if (!other.getOnDestroyedStringified().isEmpty()) {
+          onDestroyedStringified_ = other.onDestroyedStringified_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6582,306 +6582,306 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
 
-      private java.lang.Object onProcessing_ = "";
+      private java.lang.Object onProcessingStringified_ = "";
       /**
-       * <code>string on_processing = 12;</code>
-       * @return The onProcessing.
+       * <code>string on_processing_stringified = 12;</code>
+       * @return The onProcessingStringified.
        */
-      public java.lang.String getOnProcessing() {
-        java.lang.Object ref = onProcessing_;
+      public java.lang.String getOnProcessingStringified() {
+        java.lang.Object ref = onProcessingStringified_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          onProcessing_ = s;
+          onProcessingStringified_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string on_processing = 12;</code>
-       * @return The bytes for onProcessing.
+       * <code>string on_processing_stringified = 12;</code>
+       * @return The bytes for onProcessingStringified.
        */
       public com.google.protobuf.ByteString
-          getOnProcessingBytes() {
-        java.lang.Object ref = onProcessing_;
+          getOnProcessingStringifiedBytes() {
+        java.lang.Object ref = onProcessingStringified_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          onProcessing_ = b;
+          onProcessingStringified_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string on_processing = 12;</code>
-       * @param value The onProcessing to set.
+       * <code>string on_processing_stringified = 12;</code>
+       * @param value The onProcessingStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnProcessing(
+      public Builder setOnProcessingStringified(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        onProcessing_ = value;
+        onProcessingStringified_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string on_processing = 12;</code>
+       * <code>string on_processing_stringified = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOnProcessing() {
+      public Builder clearOnProcessingStringified() {
         
-        onProcessing_ = getDefaultInstance().getOnProcessing();
+        onProcessingStringified_ = getDefaultInstance().getOnProcessingStringified();
         onChanged();
         return this;
       }
       /**
-       * <code>string on_processing = 12;</code>
-       * @param value The bytes for onProcessing to set.
+       * <code>string on_processing_stringified = 12;</code>
+       * @param value The bytes for onProcessingStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnProcessingBytes(
+      public Builder setOnProcessingStringifiedBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        onProcessing_ = value;
+        onProcessingStringified_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object onCreated_ = "";
+      private java.lang.Object onCreatedStringified_ = "";
       /**
-       * <code>string on_created = 13;</code>
-       * @return The onCreated.
+       * <code>string on_created_stringified = 13;</code>
+       * @return The onCreatedStringified.
        */
-      public java.lang.String getOnCreated() {
-        java.lang.Object ref = onCreated_;
+      public java.lang.String getOnCreatedStringified() {
+        java.lang.Object ref = onCreatedStringified_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          onCreated_ = s;
+          onCreatedStringified_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string on_created = 13;</code>
-       * @return The bytes for onCreated.
+       * <code>string on_created_stringified = 13;</code>
+       * @return The bytes for onCreatedStringified.
        */
       public com.google.protobuf.ByteString
-          getOnCreatedBytes() {
-        java.lang.Object ref = onCreated_;
+          getOnCreatedStringifiedBytes() {
+        java.lang.Object ref = onCreatedStringified_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          onCreated_ = b;
+          onCreatedStringified_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string on_created = 13;</code>
-       * @param value The onCreated to set.
+       * <code>string on_created_stringified = 13;</code>
+       * @param value The onCreatedStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnCreated(
+      public Builder setOnCreatedStringified(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        onCreated_ = value;
+        onCreatedStringified_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string on_created = 13;</code>
+       * <code>string on_created_stringified = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOnCreated() {
+      public Builder clearOnCreatedStringified() {
         
-        onCreated_ = getDefaultInstance().getOnCreated();
+        onCreatedStringified_ = getDefaultInstance().getOnCreatedStringified();
         onChanged();
         return this;
       }
       /**
-       * <code>string on_created = 13;</code>
-       * @param value The bytes for onCreated to set.
+       * <code>string on_created_stringified = 13;</code>
+       * @param value The bytes for onCreatedStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnCreatedBytes(
+      public Builder setOnCreatedStringifiedBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        onCreated_ = value;
+        onCreatedStringified_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object onHalted_ = "";
+      private java.lang.Object onHaltedStringified_ = "";
       /**
-       * <code>string on_halted = 14;</code>
-       * @return The onHalted.
+       * <code>string on_halted_stringified = 14;</code>
+       * @return The onHaltedStringified.
        */
-      public java.lang.String getOnHalted() {
-        java.lang.Object ref = onHalted_;
+      public java.lang.String getOnHaltedStringified() {
+        java.lang.Object ref = onHaltedStringified_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          onHalted_ = s;
+          onHaltedStringified_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string on_halted = 14;</code>
-       * @return The bytes for onHalted.
+       * <code>string on_halted_stringified = 14;</code>
+       * @return The bytes for onHaltedStringified.
        */
       public com.google.protobuf.ByteString
-          getOnHaltedBytes() {
-        java.lang.Object ref = onHalted_;
+          getOnHaltedStringifiedBytes() {
+        java.lang.Object ref = onHaltedStringified_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          onHalted_ = b;
+          onHaltedStringified_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string on_halted = 14;</code>
-       * @param value The onHalted to set.
+       * <code>string on_halted_stringified = 14;</code>
+       * @param value The onHaltedStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnHalted(
+      public Builder setOnHaltedStringified(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        onHalted_ = value;
+        onHaltedStringified_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string on_halted = 14;</code>
+       * <code>string on_halted_stringified = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOnHalted() {
+      public Builder clearOnHaltedStringified() {
         
-        onHalted_ = getDefaultInstance().getOnHalted();
+        onHaltedStringified_ = getDefaultInstance().getOnHaltedStringified();
         onChanged();
         return this;
       }
       /**
-       * <code>string on_halted = 14;</code>
-       * @param value The bytes for onHalted to set.
+       * <code>string on_halted_stringified = 14;</code>
+       * @param value The bytes for onHaltedStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnHaltedBytes(
+      public Builder setOnHaltedStringifiedBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        onHalted_ = value;
+        onHaltedStringified_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object onDestroyed_ = "";
+      private java.lang.Object onDestroyedStringified_ = "";
       /**
-       * <code>string on_destroyed = 15;</code>
-       * @return The onDestroyed.
+       * <code>string on_destroyed_stringified = 15;</code>
+       * @return The onDestroyedStringified.
        */
-      public java.lang.String getOnDestroyed() {
-        java.lang.Object ref = onDestroyed_;
+      public java.lang.String getOnDestroyedStringified() {
+        java.lang.Object ref = onDestroyedStringified_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          onDestroyed_ = s;
+          onDestroyedStringified_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string on_destroyed = 15;</code>
-       * @return The bytes for onDestroyed.
+       * <code>string on_destroyed_stringified = 15;</code>
+       * @return The bytes for onDestroyedStringified.
        */
       public com.google.protobuf.ByteString
-          getOnDestroyedBytes() {
-        java.lang.Object ref = onDestroyed_;
+          getOnDestroyedStringifiedBytes() {
+        java.lang.Object ref = onDestroyedStringified_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          onDestroyed_ = b;
+          onDestroyedStringified_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string on_destroyed = 15;</code>
-       * @param value The onDestroyed to set.
+       * <code>string on_destroyed_stringified = 15;</code>
+       * @param value The onDestroyedStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnDestroyed(
+      public Builder setOnDestroyedStringified(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        onDestroyed_ = value;
+        onDestroyedStringified_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string on_destroyed = 15;</code>
+       * <code>string on_destroyed_stringified = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOnDestroyed() {
+      public Builder clearOnDestroyedStringified() {
         
-        onDestroyed_ = getDefaultInstance().getOnDestroyed();
+        onDestroyedStringified_ = getDefaultInstance().getOnDestroyedStringified();
         onChanged();
         return this;
       }
       /**
-       * <code>string on_destroyed = 15;</code>
-       * @param value The bytes for onDestroyed to set.
+       * <code>string on_destroyed_stringified = 15;</code>
+       * @param value The bytes for onDestroyedStringified to set.
        * @return This builder for chaining.
        */
-      public Builder setOnDestroyedBytes(
+      public Builder setOnDestroyedStringifiedBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        onDestroyed_ = value;
+        onDestroyedStringified_ = value;
         onChanged();
         return this;
       }
@@ -7782,7 +7782,7 @@ public final class ProcessingModuleOuterClass {
       "ggerOnInput\022\024\n\014min_delay_ms\030\001 \001(\005\022\036\n\026all" +
       "_inputs_need_update\030\002 \001(\010B\006\n\004mode\"9\n\010Mod" +
       "uleIO\022\025\n\rinternal_name\030\001 \001(\t\022\026\n\016message_" +
-      "format\030\002 \001(\t\"\332\004\n\020ProcessingModule\022\n\n\002id\030" +
+      "format\030\002 \001(\t\"\212\005\n\020ProcessingModule\022\n\n\002id\030" +
       "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003(\t\022\014\n\004" +
       "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\021\n\tclien" +
       "t_id\030\006 \001(\t\0228\n\006status\030\007 \001(\0162(.ubii.proces" +
@@ -7791,15 +7791,16 @@ public final class ProcessingModuleOuterClass {
       "ngMode\022)\n\006inputs\030\t \003(\0132\031.ubii.processing" +
       ".ModuleIO\022*\n\007outputs\030\n \003(\0132\031.ubii.proces" +
       "sing.ModuleIO\022<\n\010language\030\013 \001(\0162*.ubii.p" +
-      "rocessing.ProcessingModule.Language\022\025\n\ro" +
-      "n_processing\030\014 \001(\t\022\022\n\non_created\030\r \001(\t\022\021" +
-      "\n\ton_halted\030\016 \001(\t\022\024\n\014on_destroyed\030\017 \001(\t\"" +
-      "Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CREATED\020\001\022" +
-      "\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED" +
-      "\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022" +
-      "\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingModuleLis" +
-      "t\0223\n\010elements\030\001 \003(\0132!.ubii.processing.Pr" +
-      "ocessingModuleb\006proto3"
+      "rocessing.ProcessingModule.Language\022!\n\031o" +
+      "n_processing_stringified\030\014 \001(\t\022\036\n\026on_cre" +
+      "ated_stringified\030\r \001(\t\022\035\n\025on_halted_stri" +
+      "ngified\030\016 \001(\t\022 \n\030on_destroyed_stringifie" +
+      "d\030\017 \001(\t\"Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CR" +
+      "EATED\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tD" +
+      "ESTROYED\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022" +
+      "\006\n\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingM" +
+      "oduleList\0223\n\010elements\030\001 \003(\0132!.ubii.proce" +
+      "ssing.ProcessingModuleb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7840,7 +7841,7 @@ public final class ProcessingModuleOuterClass {
     internal_static_ubii_processing_ProcessingModule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_processing_ProcessingModule_descriptor,
-        new java.lang.String[] { "Id", "Name", "Authors", "Tags", "Description", "ClientId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessing", "OnCreated", "OnHalted", "OnDestroyed", });
+        new java.lang.String[] { "Id", "Name", "Authors", "Tags", "Description", "ClientId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified", });
     internal_static_ubii_processing_ProcessingModuleList_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ubii_processing_ProcessingModuleList_fieldAccessorTable = new
