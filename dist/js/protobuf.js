@@ -1,4 +1,4 @@
-/*eslint-disable block-scoped-var, no-redeclare, no-control-regex, no-prototype-builtins*/
+/*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 "use strict";
 
 var $protobuf = require("protobufjs/minimal");
@@ -6861,8 +6861,8 @@ $root.ubii = (function() {
                  * @property {string|null} [clientId] TopicSubscription clientId
                  * @property {Array.<string>|null} [subscribeTopics] TopicSubscription subscribeTopics
                  * @property {Array.<string>|null} [unsubscribeTopics] TopicSubscription unsubscribeTopics
-                 * @property {string|null} [subscribeTopicRegexp] TopicSubscription subscribeTopicRegexp
-                 * @property {string|null} [unsubscribeTopicRegexp] TopicSubscription unsubscribeTopicRegexp
+                 * @property {Array.<string>|null} [subscribeTopicRegexp] TopicSubscription subscribeTopicRegexp
+                 * @property {Array.<string>|null} [unsubscribeTopicRegexp] TopicSubscription unsubscribeTopicRegexp
                  */
 
                 /**
@@ -6876,6 +6876,8 @@ $root.ubii = (function() {
                 function TopicSubscription(properties) {
                     this.subscribeTopics = [];
                     this.unsubscribeTopics = [];
+                    this.subscribeTopicRegexp = [];
+                    this.unsubscribeTopicRegexp = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -6908,19 +6910,19 @@ $root.ubii = (function() {
 
                 /**
                  * TopicSubscription subscribeTopicRegexp.
-                 * @member {string} subscribeTopicRegexp
+                 * @member {Array.<string>} subscribeTopicRegexp
                  * @memberof ubii.services.request.TopicSubscription
                  * @instance
                  */
-                TopicSubscription.prototype.subscribeTopicRegexp = "";
+                TopicSubscription.prototype.subscribeTopicRegexp = $util.emptyArray;
 
                 /**
                  * TopicSubscription unsubscribeTopicRegexp.
-                 * @member {string} unsubscribeTopicRegexp
+                 * @member {Array.<string>} unsubscribeTopicRegexp
                  * @memberof ubii.services.request.TopicSubscription
                  * @instance
                  */
-                TopicSubscription.prototype.unsubscribeTopicRegexp = "";
+                TopicSubscription.prototype.unsubscribeTopicRegexp = $util.emptyArray;
 
                 /**
                  * Creates a new TopicSubscription instance using the specified properties.
@@ -6954,10 +6956,12 @@ $root.ubii = (function() {
                     if (message.unsubscribeTopics != null && message.unsubscribeTopics.length)
                         for (var i = 0; i < message.unsubscribeTopics.length; ++i)
                             writer.uint32(/* id 3, wireType 2 =*/26).string(message.unsubscribeTopics[i]);
-                    if (message.subscribeTopicRegexp != null && message.hasOwnProperty("subscribeTopicRegexp"))
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.subscribeTopicRegexp);
-                    if (message.unsubscribeTopicRegexp != null && message.hasOwnProperty("unsubscribeTopicRegexp"))
-                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.unsubscribeTopicRegexp);
+                    if (message.subscribeTopicRegexp != null && message.subscribeTopicRegexp.length)
+                        for (var i = 0; i < message.subscribeTopicRegexp.length; ++i)
+                            writer.uint32(/* id 4, wireType 2 =*/34).string(message.subscribeTopicRegexp[i]);
+                    if (message.unsubscribeTopicRegexp != null && message.unsubscribeTopicRegexp.length)
+                        for (var i = 0; i < message.unsubscribeTopicRegexp.length; ++i)
+                            writer.uint32(/* id 5, wireType 2 =*/42).string(message.unsubscribeTopicRegexp[i]);
                     return writer;
                 };
 
@@ -7006,10 +7010,14 @@ $root.ubii = (function() {
                             message.unsubscribeTopics.push(reader.string());
                             break;
                         case 4:
-                            message.subscribeTopicRegexp = reader.string();
+                            if (!(message.subscribeTopicRegexp && message.subscribeTopicRegexp.length))
+                                message.subscribeTopicRegexp = [];
+                            message.subscribeTopicRegexp.push(reader.string());
                             break;
                         case 5:
-                            message.unsubscribeTopicRegexp = reader.string();
+                            if (!(message.unsubscribeTopicRegexp && message.unsubscribeTopicRegexp.length))
+                                message.unsubscribeTopicRegexp = [];
+                            message.unsubscribeTopicRegexp.push(reader.string());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -7063,12 +7071,20 @@ $root.ubii = (function() {
                             if (!$util.isString(message.unsubscribeTopics[i]))
                                 return "unsubscribeTopics: string[] expected";
                     }
-                    if (message.subscribeTopicRegexp != null && message.hasOwnProperty("subscribeTopicRegexp"))
-                        if (!$util.isString(message.subscribeTopicRegexp))
-                            return "subscribeTopicRegexp: string expected";
-                    if (message.unsubscribeTopicRegexp != null && message.hasOwnProperty("unsubscribeTopicRegexp"))
-                        if (!$util.isString(message.unsubscribeTopicRegexp))
-                            return "unsubscribeTopicRegexp: string expected";
+                    if (message.subscribeTopicRegexp != null && message.hasOwnProperty("subscribeTopicRegexp")) {
+                        if (!Array.isArray(message.subscribeTopicRegexp))
+                            return "subscribeTopicRegexp: array expected";
+                        for (var i = 0; i < message.subscribeTopicRegexp.length; ++i)
+                            if (!$util.isString(message.subscribeTopicRegexp[i]))
+                                return "subscribeTopicRegexp: string[] expected";
+                    }
+                    if (message.unsubscribeTopicRegexp != null && message.hasOwnProperty("unsubscribeTopicRegexp")) {
+                        if (!Array.isArray(message.unsubscribeTopicRegexp))
+                            return "unsubscribeTopicRegexp: array expected";
+                        for (var i = 0; i < message.unsubscribeTopicRegexp.length; ++i)
+                            if (!$util.isString(message.unsubscribeTopicRegexp[i]))
+                                return "unsubscribeTopicRegexp: string[] expected";
+                    }
                     return null;
                 };
 
@@ -7100,10 +7116,20 @@ $root.ubii = (function() {
                         for (var i = 0; i < object.unsubscribeTopics.length; ++i)
                             message.unsubscribeTopics[i] = String(object.unsubscribeTopics[i]);
                     }
-                    if (object.subscribeTopicRegexp != null)
-                        message.subscribeTopicRegexp = String(object.subscribeTopicRegexp);
-                    if (object.unsubscribeTopicRegexp != null)
-                        message.unsubscribeTopicRegexp = String(object.unsubscribeTopicRegexp);
+                    if (object.subscribeTopicRegexp) {
+                        if (!Array.isArray(object.subscribeTopicRegexp))
+                            throw TypeError(".ubii.services.request.TopicSubscription.subscribeTopicRegexp: array expected");
+                        message.subscribeTopicRegexp = [];
+                        for (var i = 0; i < object.subscribeTopicRegexp.length; ++i)
+                            message.subscribeTopicRegexp[i] = String(object.subscribeTopicRegexp[i]);
+                    }
+                    if (object.unsubscribeTopicRegexp) {
+                        if (!Array.isArray(object.unsubscribeTopicRegexp))
+                            throw TypeError(".ubii.services.request.TopicSubscription.unsubscribeTopicRegexp: array expected");
+                        message.unsubscribeTopicRegexp = [];
+                        for (var i = 0; i < object.unsubscribeTopicRegexp.length; ++i)
+                            message.unsubscribeTopicRegexp[i] = String(object.unsubscribeTopicRegexp[i]);
+                    }
                     return message;
                 };
 
@@ -7123,12 +7149,11 @@ $root.ubii = (function() {
                     if (options.arrays || options.defaults) {
                         object.subscribeTopics = [];
                         object.unsubscribeTopics = [];
+                        object.subscribeTopicRegexp = [];
+                        object.unsubscribeTopicRegexp = [];
                     }
-                    if (options.defaults) {
+                    if (options.defaults)
                         object.clientId = "";
-                        object.subscribeTopicRegexp = "";
-                        object.unsubscribeTopicRegexp = "";
-                    }
                     if (message.clientId != null && message.hasOwnProperty("clientId"))
                         object.clientId = message.clientId;
                     if (message.subscribeTopics && message.subscribeTopics.length) {
@@ -7141,10 +7166,16 @@ $root.ubii = (function() {
                         for (var j = 0; j < message.unsubscribeTopics.length; ++j)
                             object.unsubscribeTopics[j] = message.unsubscribeTopics[j];
                     }
-                    if (message.subscribeTopicRegexp != null && message.hasOwnProperty("subscribeTopicRegexp"))
-                        object.subscribeTopicRegexp = message.subscribeTopicRegexp;
-                    if (message.unsubscribeTopicRegexp != null && message.hasOwnProperty("unsubscribeTopicRegexp"))
-                        object.unsubscribeTopicRegexp = message.unsubscribeTopicRegexp;
+                    if (message.subscribeTopicRegexp && message.subscribeTopicRegexp.length) {
+                        object.subscribeTopicRegexp = [];
+                        for (var j = 0; j < message.subscribeTopicRegexp.length; ++j)
+                            object.subscribeTopicRegexp[j] = message.subscribeTopicRegexp[j];
+                    }
+                    if (message.unsubscribeTopicRegexp && message.unsubscribeTopicRegexp.length) {
+                        object.unsubscribeTopicRegexp = [];
+                        for (var j = 0; j < message.unsubscribeTopicRegexp.length; ++j)
+                            object.unsubscribeTopicRegexp[j] = message.unsubscribeTopicRegexp[j];
+                    }
                     return object;
                 };
 
@@ -13999,7 +14030,13 @@ $root.ubii = (function() {
                     object.width = 0;
                     object.height = 0;
                     object.dataFormat = options.enums === String ? "GRAY8" : 0;
-                    object.data = options.bytes === String ? "" : [];
+                    if (options.bytes === String)
+                        object.data = "";
+                    else {
+                        object.data = [];
+                        if (options.bytes !== Array)
+                            object.data = $util.newBuffer(object.data);
+                    }
                 }
                 if (message.width != null && message.hasOwnProperty("width"))
                     object.width = message.width;

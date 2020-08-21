@@ -28,8 +28,8 @@ namespace Ubii.Services.Request {
             "b3RvEhV1YmlpLnNlcnZpY2VzLnJlcXVlc3QingEKEVRvcGljU3Vic2NyaXB0",
             "aW9uEhEKCWNsaWVudF9pZBgBIAEoCRIYChBzdWJzY3JpYmVfdG9waWNzGAIg",
             "AygJEhoKEnVuc3Vic2NyaWJlX3RvcGljcxgDIAMoCRIeChZzdWJzY3JpYmVf",
-            "dG9waWNfcmVnZXhwGAQgASgJEiAKGHVuc3Vic2NyaWJlX3RvcGljX3JlZ2V4",
-            "cBgFIAEoCWIGcHJvdG8z"));
+            "dG9waWNfcmVnZXhwGAQgAygJEiAKGHVuc3Vic2NyaWJlX3RvcGljX3JlZ2V4",
+            "cBgFIAMoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -68,8 +68,8 @@ namespace Ubii.Services.Request {
       clientId_ = other.clientId_;
       subscribeTopics_ = other.subscribeTopics_.Clone();
       unsubscribeTopics_ = other.unsubscribeTopics_.Clone();
-      subscribeTopicRegexp_ = other.subscribeTopicRegexp_;
-      unsubscribeTopicRegexp_ = other.unsubscribeTopicRegexp_;
+      subscribeTopicRegexp_ = other.subscribeTopicRegexp_.Clone();
+      unsubscribeTopicRegexp_ = other.unsubscribeTopicRegexp_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -111,24 +111,22 @@ namespace Ubii.Services.Request {
 
     /// <summary>Field number for the "subscribe_topic_regexp" field.</summary>
     public const int SubscribeTopicRegexpFieldNumber = 4;
-    private string subscribeTopicRegexp_ = "";
+    private static readonly pb::FieldCodec<string> _repeated_subscribeTopicRegexp_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> subscribeTopicRegexp_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string SubscribeTopicRegexp {
+    public pbc::RepeatedField<string> SubscribeTopicRegexp {
       get { return subscribeTopicRegexp_; }
-      set {
-        subscribeTopicRegexp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     /// <summary>Field number for the "unsubscribe_topic_regexp" field.</summary>
     public const int UnsubscribeTopicRegexpFieldNumber = 5;
-    private string unsubscribeTopicRegexp_ = "";
+    private static readonly pb::FieldCodec<string> _repeated_unsubscribeTopicRegexp_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> unsubscribeTopicRegexp_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string UnsubscribeTopicRegexp {
+    public pbc::RepeatedField<string> UnsubscribeTopicRegexp {
       get { return unsubscribeTopicRegexp_; }
-      set {
-        unsubscribeTopicRegexp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,8 +145,8 @@ namespace Ubii.Services.Request {
       if (ClientId != other.ClientId) return false;
       if(!subscribeTopics_.Equals(other.subscribeTopics_)) return false;
       if(!unsubscribeTopics_.Equals(other.unsubscribeTopics_)) return false;
-      if (SubscribeTopicRegexp != other.SubscribeTopicRegexp) return false;
-      if (UnsubscribeTopicRegexp != other.UnsubscribeTopicRegexp) return false;
+      if(!subscribeTopicRegexp_.Equals(other.subscribeTopicRegexp_)) return false;
+      if(!unsubscribeTopicRegexp_.Equals(other.unsubscribeTopicRegexp_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -158,8 +156,8 @@ namespace Ubii.Services.Request {
       if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
       hash ^= subscribeTopics_.GetHashCode();
       hash ^= unsubscribeTopics_.GetHashCode();
-      if (SubscribeTopicRegexp.Length != 0) hash ^= SubscribeTopicRegexp.GetHashCode();
-      if (UnsubscribeTopicRegexp.Length != 0) hash ^= UnsubscribeTopicRegexp.GetHashCode();
+      hash ^= subscribeTopicRegexp_.GetHashCode();
+      hash ^= unsubscribeTopicRegexp_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -179,14 +177,8 @@ namespace Ubii.Services.Request {
       }
       subscribeTopics_.WriteTo(output, _repeated_subscribeTopics_codec);
       unsubscribeTopics_.WriteTo(output, _repeated_unsubscribeTopics_codec);
-      if (SubscribeTopicRegexp.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(SubscribeTopicRegexp);
-      }
-      if (UnsubscribeTopicRegexp.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(UnsubscribeTopicRegexp);
-      }
+      subscribeTopicRegexp_.WriteTo(output, _repeated_subscribeTopicRegexp_codec);
+      unsubscribeTopicRegexp_.WriteTo(output, _repeated_unsubscribeTopicRegexp_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -200,12 +192,8 @@ namespace Ubii.Services.Request {
       }
       size += subscribeTopics_.CalculateSize(_repeated_subscribeTopics_codec);
       size += unsubscribeTopics_.CalculateSize(_repeated_unsubscribeTopics_codec);
-      if (SubscribeTopicRegexp.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(SubscribeTopicRegexp);
-      }
-      if (UnsubscribeTopicRegexp.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UnsubscribeTopicRegexp);
-      }
+      size += subscribeTopicRegexp_.CalculateSize(_repeated_subscribeTopicRegexp_codec);
+      size += unsubscribeTopicRegexp_.CalculateSize(_repeated_unsubscribeTopicRegexp_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -222,12 +210,8 @@ namespace Ubii.Services.Request {
       }
       subscribeTopics_.Add(other.subscribeTopics_);
       unsubscribeTopics_.Add(other.unsubscribeTopics_);
-      if (other.SubscribeTopicRegexp.Length != 0) {
-        SubscribeTopicRegexp = other.SubscribeTopicRegexp;
-      }
-      if (other.UnsubscribeTopicRegexp.Length != 0) {
-        UnsubscribeTopicRegexp = other.UnsubscribeTopicRegexp;
-      }
+      subscribeTopicRegexp_.Add(other.subscribeTopicRegexp_);
+      unsubscribeTopicRegexp_.Add(other.unsubscribeTopicRegexp_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -252,11 +236,11 @@ namespace Ubii.Services.Request {
             break;
           }
           case 34: {
-            SubscribeTopicRegexp = input.ReadString();
+            subscribeTopicRegexp_.AddEntriesFrom(input, _repeated_subscribeTopicRegexp_codec);
             break;
           }
           case 42: {
-            UnsubscribeTopicRegexp = input.ReadString();
+            unsubscribeTopicRegexp_.AddEntriesFrom(input, _repeated_unsubscribeTopicRegexp_codec);
             break;
           }
         }

@@ -40,7 +40,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.services.request.TopicSubscription.repeatedFields_ = [2,3];
+proto.ubii.services.request.TopicSubscription.repeatedFields_ = [2,3,4,5];
 
 
 
@@ -76,8 +76,8 @@ proto.ubii.services.request.TopicSubscription.toObject = function(includeInstanc
     clientId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     subscribeTopicsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     unsubscribeTopicsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    subscribeTopicRegexp: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    unsubscribeTopicRegexp: jspb.Message.getFieldWithDefault(msg, 5, "")
+    subscribeTopicRegexpList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    unsubscribeTopicRegexpList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -128,11 +128,11 @@ proto.ubii.services.request.TopicSubscription.deserializeBinaryFromReader = func
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSubscribeTopicRegexp(value);
+      msg.addSubscribeTopicRegexp(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUnsubscribeTopicRegexp(value);
+      msg.addUnsubscribeTopicRegexp(value);
       break;
     default:
       reader.skipField();
@@ -184,16 +184,16 @@ proto.ubii.services.request.TopicSubscription.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getSubscribeTopicRegexp();
+  f = message.getSubscribeTopicRegexpList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       4,
       f
     );
   }
-  f = message.getUnsubscribeTopicRegexp();
+  f = message.getUnsubscribeTopicRegexpList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       5,
       f
     );
@@ -294,38 +294,76 @@ proto.ubii.services.request.TopicSubscription.prototype.clearUnsubscribeTopicsLi
 
 
 /**
- * optional string subscribe_topic_regexp = 4;
- * @return {string}
+ * repeated string subscribe_topic_regexp = 4;
+ * @return {!Array<string>}
  */
-proto.ubii.services.request.TopicSubscription.prototype.getSubscribeTopicRegexp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.ubii.services.request.TopicSubscription.prototype.getSubscribeTopicRegexpList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ubii.services.request.TopicSubscription} returns this
+ */
+proto.ubii.services.request.TopicSubscription.prototype.setSubscribeTopicRegexpList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.ubii.services.request.TopicSubscription} returns this
  */
-proto.ubii.services.request.TopicSubscription.prototype.setSubscribeTopicRegexp = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.ubii.services.request.TopicSubscription.prototype.addSubscribeTopicRegexp = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
 /**
- * optional string unsubscribe_topic_regexp = 5;
- * @return {string}
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ubii.services.request.TopicSubscription} returns this
  */
-proto.ubii.services.request.TopicSubscription.prototype.getUnsubscribeTopicRegexp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.ubii.services.request.TopicSubscription.prototype.clearSubscribeTopicRegexpList = function() {
+  return this.setSubscribeTopicRegexpList([]);
+};
+
+
+/**
+ * repeated string unsubscribe_topic_regexp = 5;
+ * @return {!Array<string>}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.getUnsubscribeTopicRegexpList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ubii.services.request.TopicSubscription} returns this
+ */
+proto.ubii.services.request.TopicSubscription.prototype.setUnsubscribeTopicRegexpList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.ubii.services.request.TopicSubscription} returns this
  */
-proto.ubii.services.request.TopicSubscription.prototype.setUnsubscribeTopicRegexp = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.ubii.services.request.TopicSubscription.prototype.addUnsubscribeTopicRegexp = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ubii.services.request.TopicSubscription} returns this
+ */
+proto.ubii.services.request.TopicSubscription.prototype.clearUnsubscribeTopicRegexpList = function() {
+  return this.setUnsubscribeTopicRegexpList([]);
 };
 
 

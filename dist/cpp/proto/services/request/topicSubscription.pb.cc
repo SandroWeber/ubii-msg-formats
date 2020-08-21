@@ -67,8 +67,8 @@ const char descriptor_table_protodef_proto_2fservices_2frequest_2ftopicSubscript
   "on.proto\022\025ubii.services.request\"\236\001\n\021Topi"
   "cSubscription\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subs"
   "cribe_topics\030\002 \003(\t\022\032\n\022unsubscribe_topics"
-  "\030\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \001(\t\022 "
-  "\n\030unsubscribe_topic_regexp\030\005 \001(\tb\006proto3"
+  "\030\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \003(\t\022 "
+  "\n\030unsubscribe_topic_regexp\030\005 \003(\tb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_deps[1] = {
 };
@@ -107,19 +107,13 @@ TopicSubscription::TopicSubscription(const TopicSubscription& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
       subscribe_topics_(from.subscribe_topics_),
-      unsubscribe_topics_(from.unsubscribe_topics_) {
+      unsubscribe_topics_(from.unsubscribe_topics_),
+      subscribe_topic_regexp_(from.subscribe_topic_regexp_),
+      unsubscribe_topic_regexp_(from.unsubscribe_topic_regexp_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_client_id().empty()) {
     client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
-  }
-  subscribe_topic_regexp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_subscribe_topic_regexp().empty()) {
-    subscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.subscribe_topic_regexp_);
-  }
-  unsubscribe_topic_regexp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_unsubscribe_topic_regexp().empty()) {
-    unsubscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unsubscribe_topic_regexp_);
   }
   // @@protoc_insertion_point(copy_constructor:ubii.services.request.TopicSubscription)
 }
@@ -127,8 +121,6 @@ TopicSubscription::TopicSubscription(const TopicSubscription& from)
 void TopicSubscription::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto.base);
   client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subscribe_topic_regexp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  unsubscribe_topic_regexp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 TopicSubscription::~TopicSubscription() {
@@ -138,8 +130,6 @@ TopicSubscription::~TopicSubscription() {
 
 void TopicSubscription::SharedDtor() {
   client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subscribe_topic_regexp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  unsubscribe_topic_regexp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TopicSubscription::SetCachedSize(int size) const {
@@ -159,9 +149,9 @@ void TopicSubscription::Clear() {
 
   subscribe_topics_.Clear();
   unsubscribe_topics_.Clear();
+  subscribe_topic_regexp_.Clear();
+  unsubscribe_topic_regexp_.Clear();
   client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  subscribe_topic_regexp_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  unsubscribe_topic_regexp_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -209,22 +199,32 @@ const char* TopicSubscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else goto handle_unusual;
         continue;
-      // string subscribe_topic_regexp = 4;
+      // repeated string subscribe_topic_regexp = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_subscribe_topic_regexp();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.services.request.TopicSubscription.subscribe_topic_regexp"));
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_subscribe_topic_regexp();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.services.request.TopicSubscription.subscribe_topic_regexp"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
-      // string unsubscribe_topic_regexp = 5;
+      // repeated string unsubscribe_topic_regexp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_unsubscribe_topic_regexp();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.services.request.TopicSubscription.unsubscribe_topic_regexp"));
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_unsubscribe_topic_regexp();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.services.request.TopicSubscription.unsubscribe_topic_regexp"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -283,24 +283,24 @@ failure:
     target = stream->WriteString(3, s, target);
   }
 
-  // string subscribe_topic_regexp = 4;
-  if (this->subscribe_topic_regexp().size() > 0) {
+  // repeated string subscribe_topic_regexp = 4;
+  for (int i = 0, n = this->_internal_subscribe_topic_regexp_size(); i < n; i++) {
+    const auto& s = this->_internal_subscribe_topic_regexp(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_subscribe_topic_regexp().data(), static_cast<int>(this->_internal_subscribe_topic_regexp().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.services.request.TopicSubscription.subscribe_topic_regexp");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_subscribe_topic_regexp(), target);
+    target = stream->WriteString(4, s, target);
   }
 
-  // string unsubscribe_topic_regexp = 5;
-  if (this->unsubscribe_topic_regexp().size() > 0) {
+  // repeated string unsubscribe_topic_regexp = 5;
+  for (int i = 0, n = this->_internal_unsubscribe_topic_regexp_size(); i < n; i++) {
+    const auto& s = this->_internal_unsubscribe_topic_regexp(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_unsubscribe_topic_regexp().data(), static_cast<int>(this->_internal_unsubscribe_topic_regexp().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.services.request.TopicSubscription.unsubscribe_topic_regexp");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_unsubscribe_topic_regexp(), target);
+    target = stream->WriteString(5, s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -335,25 +335,27 @@ size_t TopicSubscription::ByteSizeLong() const {
       unsubscribe_topics_.Get(i));
   }
 
+  // repeated string subscribe_topic_regexp = 4;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(subscribe_topic_regexp_.size());
+  for (int i = 0, n = subscribe_topic_regexp_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      subscribe_topic_regexp_.Get(i));
+  }
+
+  // repeated string unsubscribe_topic_regexp = 5;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(unsubscribe_topic_regexp_.size());
+  for (int i = 0, n = unsubscribe_topic_regexp_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      unsubscribe_topic_regexp_.Get(i));
+  }
+
   // string client_id = 1;
   if (this->client_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_client_id());
-  }
-
-  // string subscribe_topic_regexp = 4;
-  if (this->subscribe_topic_regexp().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_subscribe_topic_regexp());
-  }
-
-  // string unsubscribe_topic_regexp = 5;
-  if (this->unsubscribe_topic_regexp().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_unsubscribe_topic_regexp());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -389,17 +391,11 @@ void TopicSubscription::MergeFrom(const TopicSubscription& from) {
 
   subscribe_topics_.MergeFrom(from.subscribe_topics_);
   unsubscribe_topics_.MergeFrom(from.unsubscribe_topics_);
+  subscribe_topic_regexp_.MergeFrom(from.subscribe_topic_regexp_);
+  unsubscribe_topic_regexp_.MergeFrom(from.unsubscribe_topic_regexp_);
   if (from.client_id().size() > 0) {
 
     client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
-  }
-  if (from.subscribe_topic_regexp().size() > 0) {
-
-    subscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.subscribe_topic_regexp_);
-  }
-  if (from.unsubscribe_topic_regexp().size() > 0) {
-
-    unsubscribe_topic_regexp_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unsubscribe_topic_regexp_);
   }
 }
 
@@ -426,11 +422,9 @@ void TopicSubscription::InternalSwap(TopicSubscription* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   subscribe_topics_.InternalSwap(&other->subscribe_topics_);
   unsubscribe_topics_.InternalSwap(&other->unsubscribe_topics_);
+  subscribe_topic_regexp_.InternalSwap(&other->subscribe_topic_regexp_);
+  unsubscribe_topic_regexp_.InternalSwap(&other->unsubscribe_topic_regexp_);
   client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  subscribe_topic_regexp_.Swap(&other->subscribe_topic_regexp_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  unsubscribe_topic_regexp_.Swap(&other->unsubscribe_topic_regexp_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 
