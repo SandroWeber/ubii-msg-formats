@@ -35,6 +35,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/interactions/interaction.pb.h"
 #include "proto/sessions/ioMapping.pb.h"
+#include "proto/processing/processingModule.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto
@@ -238,6 +239,7 @@ class Session :
     kIoMappingsFieldNumber = 4,
     kTagsFieldNumber = 5,
     kAuthorsFieldNumber = 7,
+    kProcessingModulesFieldNumber = 11,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kDescriptionFieldNumber = 6,
@@ -329,6 +331,24 @@ class Session :
   std::string* _internal_add_authors();
   public:
 
+  // repeated .ubii.processing.ProcessingModule processing_modules = 11;
+  int processing_modules_size() const;
+  private:
+  int _internal_processing_modules_size() const;
+  public:
+  void clear_processing_modules();
+  ::ubii::processing::ProcessingModule* mutable_processing_modules(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
+      mutable_processing_modules();
+  private:
+  const ::ubii::processing::ProcessingModule& _internal_processing_modules(int index) const;
+  ::ubii::processing::ProcessingModule* _internal_add_processing_modules();
+  public:
+  const ::ubii::processing::ProcessingModule& processing_modules(int index) const;
+  ::ubii::processing::ProcessingModule* add_processing_modules();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
+      processing_modules() const;
+
   // string id = 1;
   void clear_id();
   const std::string& id() const;
@@ -413,6 +433,7 @@ class Session :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::sessions::IOMapping > io_mappings_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> tags_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> authors_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule > processing_modules_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -1028,6 +1049,42 @@ inline void Session::_internal_set_editable(bool value) {
 inline void Session::set_editable(bool value) {
   _internal_set_editable(value);
   // @@protoc_insertion_point(field_set:ubii.sessions.Session.editable)
+}
+
+// repeated .ubii.processing.ProcessingModule processing_modules = 11;
+inline int Session::_internal_processing_modules_size() const {
+  return processing_modules_.size();
+}
+inline int Session::processing_modules_size() const {
+  return _internal_processing_modules_size();
+}
+inline ::ubii::processing::ProcessingModule* Session::mutable_processing_modules(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.sessions.Session.processing_modules)
+  return processing_modules_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
+Session::mutable_processing_modules() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.sessions.Session.processing_modules)
+  return &processing_modules_;
+}
+inline const ::ubii::processing::ProcessingModule& Session::_internal_processing_modules(int index) const {
+  return processing_modules_.Get(index);
+}
+inline const ::ubii::processing::ProcessingModule& Session::processing_modules(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.Session.processing_modules)
+  return _internal_processing_modules(index);
+}
+inline ::ubii::processing::ProcessingModule* Session::_internal_add_processing_modules() {
+  return processing_modules_.Add();
+}
+inline ::ubii::processing::ProcessingModule* Session::add_processing_modules() {
+  // @@protoc_insertion_point(field_add:ubii.sessions.Session.processing_modules)
+  return _internal_add_processing_modules();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
+Session::processing_modules() const {
+  // @@protoc_insertion_point(field_list:ubii.sessions.Session.processing_modules)
+  return processing_modules_;
 }
 
 // -------------------------------------------------------------------

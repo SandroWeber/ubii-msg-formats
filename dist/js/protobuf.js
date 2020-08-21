@@ -10815,6 +10815,7 @@ $root.ubii = (function() {
              * @property {ubii.sessions.ProcessMode|null} [processMode] Session processMode
              * @property {ubii.sessions.SessionStatus|null} [status] Session status
              * @property {boolean|null} [editable] Session editable
+             * @property {Array.<ubii.processing.IProcessingModule>|null} [processingModules] Session processingModules
              */
 
             /**
@@ -10830,6 +10831,7 @@ $root.ubii = (function() {
                 this.ioMappings = [];
                 this.tags = [];
                 this.authors = [];
+                this.processingModules = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -10917,6 +10919,14 @@ $root.ubii = (function() {
             Session.prototype.editable = false;
 
             /**
+             * Session processingModules.
+             * @member {Array.<ubii.processing.IProcessingModule>} processingModules
+             * @memberof ubii.sessions.Session
+             * @instance
+             */
+            Session.prototype.processingModules = $util.emptyArray;
+
+            /**
              * Creates a new Session instance using the specified properties.
              * @function create
              * @memberof ubii.sessions.Session
@@ -10964,6 +10974,9 @@ $root.ubii = (function() {
                     writer.uint32(/* id 9, wireType 0 =*/72).int32(message.status);
                 if (message.editable != null && message.hasOwnProperty("editable"))
                     writer.uint32(/* id 10, wireType 0 =*/80).bool(message.editable);
+                if (message.processingModules != null && message.processingModules.length)
+                    for (var i = 0; i < message.processingModules.length; ++i)
+                        $root.ubii.processing.ProcessingModule.encode(message.processingModules[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 return writer;
             };
 
@@ -11035,6 +11048,11 @@ $root.ubii = (function() {
                         break;
                     case 10:
                         message.editable = reader.bool();
+                        break;
+                    case 11:
+                        if (!(message.processingModules && message.processingModules.length))
+                            message.processingModules = [];
+                        message.processingModules.push($root.ubii.processing.ProcessingModule.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11133,6 +11151,15 @@ $root.ubii = (function() {
                 if (message.editable != null && message.hasOwnProperty("editable"))
                     if (typeof message.editable !== "boolean")
                         return "editable: boolean expected";
+                if (message.processingModules != null && message.hasOwnProperty("processingModules")) {
+                    if (!Array.isArray(message.processingModules))
+                        return "processingModules: array expected";
+                    for (var i = 0; i < message.processingModules.length; ++i) {
+                        var error = $root.ubii.processing.ProcessingModule.verify(message.processingModules[i]);
+                        if (error)
+                            return "processingModules." + error;
+                    }
+                }
                 return null;
             };
 
@@ -11218,6 +11245,16 @@ $root.ubii = (function() {
                 }
                 if (object.editable != null)
                     message.editable = Boolean(object.editable);
+                if (object.processingModules) {
+                    if (!Array.isArray(object.processingModules))
+                        throw TypeError(".ubii.sessions.Session.processingModules: array expected");
+                    message.processingModules = [];
+                    for (var i = 0; i < object.processingModules.length; ++i) {
+                        if (typeof object.processingModules[i] !== "object")
+                            throw TypeError(".ubii.sessions.Session.processingModules: object expected");
+                        message.processingModules[i] = $root.ubii.processing.ProcessingModule.fromObject(object.processingModules[i]);
+                    }
+                }
                 return message;
             };
 
@@ -11239,6 +11276,7 @@ $root.ubii = (function() {
                     object.ioMappings = [];
                     object.tags = [];
                     object.authors = [];
+                    object.processingModules = [];
                 }
                 if (options.defaults) {
                     object.id = "";
@@ -11280,6 +11318,11 @@ $root.ubii = (function() {
                     object.status = options.enums === String ? $root.ubii.sessions.SessionStatus[message.status] : message.status;
                 if (message.editable != null && message.hasOwnProperty("editable"))
                     object.editable = message.editable;
+                if (message.processingModules && message.processingModules.length) {
+                    object.processingModules = [];
+                    for (var j = 0; j < message.processingModules.length; ++j)
+                        object.processingModules[j] = $root.ubii.processing.ProcessingModule.toObject(message.processingModules[j], options);
+                }
                 return object;
             };
 

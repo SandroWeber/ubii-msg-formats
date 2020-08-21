@@ -16,6 +16,8 @@ var proto_interactions_interaction_pb = require('../../proto/interactions/intera
 goog.object.extend(proto, proto_interactions_interaction_pb);
 var proto_sessions_ioMapping_pb = require('../../proto/sessions/ioMapping_pb.js');
 goog.object.extend(proto, proto_sessions_ioMapping_pb);
+var proto_processing_processingModule_pb = require('../../proto/processing/processingModule_pb.js');
+goog.object.extend(proto, proto_processing_processingModule_pb);
 goog.exportSymbol('proto.ubii.sessions.ProcessMode', null, global);
 goog.exportSymbol('proto.ubii.sessions.Session', null, global);
 goog.exportSymbol('proto.ubii.sessions.SessionList', null, global);
@@ -68,7 +70,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.sessions.Session.repeatedFields_ = [3,4,5,7];
+proto.ubii.sessions.Session.repeatedFields_ = [3,4,5,7,11];
 
 
 
@@ -112,7 +114,9 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
     authorsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
     processMode: jspb.Message.getFieldWithDefault(msg, 8, 0),
     status: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    editable: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+    editable: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
+    proto_processing_processingModule_pb.ProcessingModule.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -190,6 +194,11 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEditable(value);
+      break;
+    case 11:
+      var value = new proto_processing_processingModule_pb.ProcessingModule;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModule.deserializeBinaryFromReader);
+      msg.addProcessingModules(value);
       break;
     default:
       reader.skipField();
@@ -290,6 +299,14 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
     writer.writeBool(
       10,
       f
+    );
+  }
+  f = message.getProcessingModulesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto_processing_processingModule_pb.ProcessingModule.serializeBinaryToWriter
     );
   }
 };
@@ -550,6 +567,44 @@ proto.ubii.sessions.Session.prototype.getEditable = function() {
  */
 proto.ubii.sessions.Session.prototype.setEditable = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * repeated ubii.processing.ProcessingModule processing_modules = 11;
+ * @return {!Array<!proto.ubii.processing.ProcessingModule>}
+ */
+proto.ubii.sessions.Session.prototype.getProcessingModulesList = function() {
+  return /** @type{!Array<!proto.ubii.processing.ProcessingModule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_processing_processingModule_pb.ProcessingModule, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.ubii.processing.ProcessingModule>} value
+ * @return {!proto.ubii.sessions.Session} returns this
+*/
+proto.ubii.sessions.Session.prototype.setProcessingModulesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.ubii.processing.ProcessingModule=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.processing.ProcessingModule}
+ */
+proto.ubii.sessions.Session.prototype.addProcessingModules = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.ubii.processing.ProcessingModule, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ubii.sessions.Session} returns this
+ */
+proto.ubii.sessions.Session.prototype.clearProcessingModulesList = function() {
+  return this.setProcessingModulesList([]);
 };
 
 

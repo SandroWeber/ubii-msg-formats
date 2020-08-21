@@ -3,6 +3,7 @@ package ubii.sessions;
 
 import "proto/interactions/interaction.proto";
 import "proto/sessions/ioMapping.proto";
+import "proto/processing/processingModule.proto";
 
 enum ProcessMode {
     CYCLE_INTERACTIONS = 0;
@@ -28,6 +29,7 @@ message Session {
     ProcessMode process_mode = 8;
     SessionStatus status = 9;
     bool editable = 10;
+    repeated ubii.processing.ProcessingModule processing_modules = 11;
 }
 
 message SessionList {

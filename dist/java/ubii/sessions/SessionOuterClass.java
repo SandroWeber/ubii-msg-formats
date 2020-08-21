@@ -405,6 +405,30 @@ public final class SessionOuterClass {
      * @return The editable.
      */
     boolean getEditable();
+
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> 
+        getProcessingModulesList();
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index);
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    int getProcessingModulesCount();
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+        getProcessingModulesOrBuilderList();
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code ubii.sessions.Session}
@@ -428,6 +452,7 @@ public final class SessionOuterClass {
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       processMode_ = 0;
       status_ = 0;
+      processingModules_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -532,6 +557,15 @@ public final class SessionOuterClass {
               editable_ = input.readBool();
               break;
             }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              processingModules_.add(
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -558,6 +592,9 @@ public final class SessionOuterClass {
         }
         if (((mutable_bitField0_ & 0x00000008) != 0)) {
           authors_ = authors_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -872,6 +909,41 @@ public final class SessionOuterClass {
       return editable_;
     }
 
+    public static final int PROCESSING_MODULES_FIELD_NUMBER = 11;
+    private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_;
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
+      return processingModules_;
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+        getProcessingModulesOrBuilderList() {
+      return processingModules_;
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    public int getProcessingModulesCount() {
+      return processingModules_.size();
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
+      return processingModules_.get(index);
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
+        int index) {
+      return processingModules_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -915,6 +987,9 @@ public final class SessionOuterClass {
       }
       if (editable_ != false) {
         output.writeBool(10, editable_);
+      }
+      for (int i = 0; i < processingModules_.size(); i++) {
+        output.writeMessage(11, processingModules_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -970,6 +1045,10 @@ public final class SessionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, editable_);
       }
+      for (int i = 0; i < processingModules_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, processingModules_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1003,6 +1082,8 @@ public final class SessionOuterClass {
       if (status_ != other.status_) return false;
       if (getEditable()
           != other.getEditable()) return false;
+      if (!getProcessingModulesList()
+          .equals(other.getProcessingModulesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1043,6 +1124,10 @@ public final class SessionOuterClass {
       hash = (37 * hash) + EDITABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEditable());
+      if (getProcessingModulesCount() > 0) {
+        hash = (37 * hash) + PROCESSING_MODULES_FIELD_NUMBER;
+        hash = (53 * hash) + getProcessingModulesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1173,6 +1258,7 @@ public final class SessionOuterClass {
                 .alwaysUseFieldBuilders) {
           getInteractionsFieldBuilder();
           getIoMappingsFieldBuilder();
+          getProcessingModulesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1206,6 +1292,12 @@ public final class SessionOuterClass {
 
         editable_ = false;
 
+        if (processingModulesBuilder_ == null) {
+          processingModules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          processingModulesBuilder_.clear();
+        }
         return this;
       }
 
@@ -1267,6 +1359,15 @@ public final class SessionOuterClass {
         result.processMode_ = processMode_;
         result.status_ = status_;
         result.editable_ = editable_;
+        if (processingModulesBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.processingModules_ = processingModules_;
+        } else {
+          result.processingModules_ = processingModulesBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1407,6 +1508,32 @@ public final class SessionOuterClass {
         }
         if (other.getEditable() != false) {
           setEditable(other.getEditable());
+        }
+        if (processingModulesBuilder_ == null) {
+          if (!other.processingModules_.isEmpty()) {
+            if (processingModules_.isEmpty()) {
+              processingModules_ = other.processingModules_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureProcessingModulesIsMutable();
+              processingModules_.addAll(other.processingModules_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.processingModules_.isEmpty()) {
+            if (processingModulesBuilder_.isEmpty()) {
+              processingModulesBuilder_.dispose();
+              processingModulesBuilder_ = null;
+              processingModules_ = other.processingModules_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              processingModulesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProcessingModulesFieldBuilder() : null;
+            } else {
+              processingModulesBuilder_.addAllMessages(other.processingModules_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2499,6 +2626,246 @@ public final class SessionOuterClass {
         onChanged();
         return this;
       }
+
+      private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_ =
+        java.util.Collections.emptyList();
+      private void ensureProcessingModulesIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>(processingModules_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> processingModulesBuilder_;
+
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
+        if (processingModulesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(processingModules_);
+        } else {
+          return processingModulesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public int getProcessingModulesCount() {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.size();
+        } else {
+          return processingModulesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.get(index);
+        } else {
+          return processingModulesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder setProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProcessingModulesIsMutable();
+          processingModules_.set(index, value);
+          onChanged();
+        } else {
+          processingModulesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder setProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          processingModulesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder addProcessingModules(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(value);
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder addProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(index, value);
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder addProcessingModules(
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(builderForValue.build());
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder addProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder addAllProcessingModules(
+          java.lang.Iterable<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModule> values) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, processingModules_);
+          onChanged();
+        } else {
+          processingModulesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder clearProcessingModules() {
+        if (processingModulesBuilder_ == null) {
+          processingModules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          processingModulesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public Builder removeProcessingModules(int index) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.remove(index);
+          onChanged();
+        } else {
+          processingModulesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder getProcessingModulesBuilder(
+          int index) {
+        return getProcessingModulesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
+          int index) {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.get(index);  } else {
+          return processingModulesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+           getProcessingModulesOrBuilderList() {
+        if (processingModulesBuilder_ != null) {
+          return processingModulesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(processingModules_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder() {
+        return getProcessingModulesFieldBuilder().addBuilder(
+            ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder(
+          int index) {
+        return getProcessingModulesFieldBuilder().addBuilder(
+            index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
+       */
+      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder> 
+           getProcessingModulesBuilderList() {
+        return getProcessingModulesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+          getProcessingModulesFieldBuilder() {
+        if (processingModulesBuilder_ == null) {
+          processingModulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
+                  processingModules_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          processingModules_ = null;
+        }
+        return processingModulesBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3361,33 +3728,37 @@ public final class SessionOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034proto/sessions/session.proto\022\rubii.ses" +
       "sions\032$proto/interactions/interaction.pr" +
-      "oto\032\036proto/sessions/ioMapping.proto\"\256\002\n\007" +
-      "Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014int" +
-      "eractions\030\003 \003(\0132\036.ubii.interactions.Inte" +
-      "raction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.sess" +
-      "ions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descript" +
-      "ion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\0220\n\014process_mo" +
-      "de\030\010 \001(\0162\032.ubii.sessions.ProcessMode\022,\n\006" +
-      "status\030\t \001(\0162\034.ubii.sessions.SessionStat" +
-      "us\022\020\n\010editable\030\n \001(\010\"7\n\013SessionList\022(\n\010e" +
-      "lements\030\001 \003(\0132\026.ubii.sessions.Session*I\n" +
-      "\013ProcessMode\022\026\n\022CYCLE_INTERACTIONS\020\000\022\"\n\036" +
-      "INDIVIDUAL_PROCESS_FREQUENCIES\020\001*B\n\rSess" +
-      "ionStatus\022\013\n\007CREATED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006P" +
-      "AUSED\020\002\022\013\n\007STOPPED\020\003b\006proto3"
+      "oto\032\036proto/sessions/ioMapping.proto\032\'pro" +
+      "to/processing/processingModule.proto\"\355\002\n" +
+      "\007Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014in" +
+      "teractions\030\003 \003(\0132\036.ubii.interactions.Int" +
+      "eraction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.ses" +
+      "sions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descrip" +
+      "tion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\0220\n\014process_m" +
+      "ode\030\010 \001(\0162\032.ubii.sessions.ProcessMode\022,\n" +
+      "\006status\030\t \001(\0162\034.ubii.sessions.SessionSta" +
+      "tus\022\020\n\010editable\030\n \001(\010\022=\n\022processing_modu" +
+      "les\030\013 \003(\0132!.ubii.processing.ProcessingMo" +
+      "dule\"7\n\013SessionList\022(\n\010elements\030\001 \003(\0132\026." +
+      "ubii.sessions.Session*I\n\013ProcessMode\022\026\n\022" +
+      "CYCLE_INTERACTIONS\020\000\022\"\n\036INDIVIDUAL_PROCE" +
+      "SS_FREQUENCIES\020\001*B\n\rSessionStatus\022\013\n\007CRE" +
+      "ATED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPP" +
+      "ED\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.interactions.InteractionOuterClass.getDescriptor(),
           ubii.sessions.IoMapping.getDescriptor(),
+          ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
         });
     internal_static_ubii_sessions_Session_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_sessions_Session_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_Session_descriptor,
-        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode", "Status", "Editable", });
+        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode", "Status", "Editable", "ProcessingModules", });
     internal_static_ubii_sessions_SessionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_sessions_SessionList_fieldAccessorTable = new
@@ -3396,6 +3767,7 @@ public final class SessionOuterClass {
         new java.lang.String[] { "Elements", });
     ubii.interactions.InteractionOuterClass.getDescriptor();
     ubii.sessions.IoMapping.getDescriptor();
+    ubii.processing.ProcessingModuleOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
