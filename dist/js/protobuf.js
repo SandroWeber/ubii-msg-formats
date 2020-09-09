@@ -4124,6 +4124,7 @@ $root.ubii = (function() {
              * @memberof ubii.processing
              * @interface ILockstepProcessingRequest
              * @property {ubii.topicData.ITopicDataRecordList|null} [records] LockstepProcessingRequest records
+             * @property {number|null} [deltaTimeMs] LockstepProcessingRequest deltaTimeMs
              */
 
             /**
@@ -4148,6 +4149,14 @@ $root.ubii = (function() {
              * @instance
              */
             LockstepProcessingRequest.prototype.records = null;
+
+            /**
+             * LockstepProcessingRequest deltaTimeMs.
+             * @member {number} deltaTimeMs
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @instance
+             */
+            LockstepProcessingRequest.prototype.deltaTimeMs = 0;
 
             /**
              * Creates a new LockstepProcessingRequest instance using the specified properties.
@@ -4175,6 +4184,8 @@ $root.ubii = (function() {
                     writer = $Writer.create();
                 if (message.records != null && message.hasOwnProperty("records"))
                     $root.ubii.topicData.TopicDataRecordList.encode(message.records, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
+                    writer.uint32(/* id 2, wireType 5 =*/21).float(message.deltaTimeMs);
                 return writer;
             };
 
@@ -4211,6 +4222,9 @@ $root.ubii = (function() {
                     switch (tag >>> 3) {
                     case 1:
                         message.records = $root.ubii.topicData.TopicDataRecordList.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.deltaTimeMs = reader.float();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4252,6 +4266,9 @@ $root.ubii = (function() {
                     if (error)
                         return "records." + error;
                 }
+                if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
+                    if (typeof message.deltaTimeMs !== "number")
+                        return "deltaTimeMs: number expected";
                 return null;
             };
 
@@ -4272,6 +4289,8 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.processing.LockstepProcessingRequest.records: object expected");
                     message.records = $root.ubii.topicData.TopicDataRecordList.fromObject(object.records);
                 }
+                if (object.deltaTimeMs != null)
+                    message.deltaTimeMs = Number(object.deltaTimeMs);
                 return message;
             };
 
@@ -4288,10 +4307,14 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults)
+                if (options.defaults) {
                     object.records = null;
+                    object.deltaTimeMs = 0;
+                }
                 if (message.records != null && message.hasOwnProperty("records"))
                     object.records = $root.ubii.topicData.TopicDataRecordList.toObject(message.records, options);
+                if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
+                    object.deltaTimeMs = options.json && !isFinite(message.deltaTimeMs) ? String(message.deltaTimeMs) : message.deltaTimeMs;
                 return object;
             };
 

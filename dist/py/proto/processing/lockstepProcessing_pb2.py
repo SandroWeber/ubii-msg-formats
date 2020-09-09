@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.processing',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n)proto/processing/lockstepProcessing.proto\x12\x0fubii.processing\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\"Q\n\x19LockstepProcessingRequest\x12\x34\n\x07records\x18\x01 \x01(\x0b\x32#.ubii.topicData.TopicDataRecordList\"O\n\x17LockstepProcessingReply\x12\x34\n\x07records\x18\x01 \x01(\x0b\x32#.ubii.topicData.TopicDataRecordListb\x06proto3'
+  serialized_pb=b'\n)proto/processing/lockstepProcessing.proto\x12\x0fubii.processing\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\"h\n\x19LockstepProcessingRequest\x12\x34\n\x07records\x18\x01 \x01(\x0b\x32#.ubii.topicData.TopicDataRecordList\x12\x15\n\rdelta_time_ms\x18\x02 \x01(\x02\"O\n\x17LockstepProcessingReply\x12\x34\n\x07records\x18\x01 \x01(\x0b\x32#.ubii.topicData.TopicDataRecordListb\x06proto3'
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2.DESCRIPTOR,])
 
@@ -40,6 +40,13 @@ _LOCKSTEPPROCESSINGREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='delta_time_ms', full_name='ubii.processing.LockstepProcessingRequest.delta_time_ms', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -53,7 +60,7 @@ _LOCKSTEPPROCESSINGREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=117,
-  serialized_end=198,
+  serialized_end=221,
 )
 
 
@@ -83,8 +90,8 @@ _LOCKSTEPPROCESSINGREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=200,
-  serialized_end=279,
+  serialized_start=223,
+  serialized_end=302,
 )
 
 _LOCKSTEPPROCESSINGREQUEST.fields_by_name['records'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORDLIST

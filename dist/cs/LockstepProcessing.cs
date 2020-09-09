@@ -26,15 +26,15 @@ namespace Ubii.Processing {
           string.Concat(
             "Cilwcm90by9wcm9jZXNzaW5nL2xvY2tzdGVwUHJvY2Vzc2luZy5wcm90bxIP",
             "dWJpaS5wcm9jZXNzaW5nGjVwcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVj",
-            "b3JkL3RvcGljRGF0YVJlY29yZC5wcm90byJRChlMb2Nrc3RlcFByb2Nlc3Np",
+            "b3JkL3RvcGljRGF0YVJlY29yZC5wcm90byJoChlMb2Nrc3RlcFByb2Nlc3Np",
             "bmdSZXF1ZXN0EjQKB3JlY29yZHMYASABKAsyIy51YmlpLnRvcGljRGF0YS5U",
-            "b3BpY0RhdGFSZWNvcmRMaXN0Ik8KF0xvY2tzdGVwUHJvY2Vzc2luZ1JlcGx5",
-            "EjQKB3JlY29yZHMYASABKAsyIy51YmlpLnRvcGljRGF0YS5Ub3BpY0RhdGFS",
-            "ZWNvcmRMaXN0YgZwcm90bzM="));
+            "b3BpY0RhdGFSZWNvcmRMaXN0EhUKDWRlbHRhX3RpbWVfbXMYAiABKAIiTwoX",
+            "TG9ja3N0ZXBQcm9jZXNzaW5nUmVwbHkSNAoHcmVjb3JkcxgBIAEoCzIjLnVi",
+            "aWkudG9waWNEYXRhLlRvcGljRGF0YVJlY29yZExpc3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.TopicData.TopicDataRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.LockstepProcessingRequest), global::Ubii.Processing.LockstepProcessingRequest.Parser, new[]{ "Records" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.LockstepProcessingRequest), global::Ubii.Processing.LockstepProcessingRequest.Parser, new[]{ "Records", "DeltaTimeMs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.LockstepProcessingReply), global::Ubii.Processing.LockstepProcessingReply.Parser, new[]{ "Records" }, null, null, null, null)
           }));
     }
@@ -68,6 +68,7 @@ namespace Ubii.Processing {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LockstepProcessingRequest(LockstepProcessingRequest other) : this() {
       records_ = other.records_ != null ? other.records_.Clone() : null;
+      deltaTimeMs_ = other.deltaTimeMs_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +88,17 @@ namespace Ubii.Processing {
       }
     }
 
+    /// <summary>Field number for the "delta_time_ms" field.</summary>
+    public const int DeltaTimeMsFieldNumber = 2;
+    private float deltaTimeMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float DeltaTimeMs {
+      get { return deltaTimeMs_; }
+      set {
+        deltaTimeMs_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as LockstepProcessingRequest);
@@ -101,6 +113,7 @@ namespace Ubii.Processing {
         return true;
       }
       if (!object.Equals(Records, other.Records)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(DeltaTimeMs, other.DeltaTimeMs)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -108,6 +121,7 @@ namespace Ubii.Processing {
     public override int GetHashCode() {
       int hash = 1;
       if (records_ != null) hash ^= Records.GetHashCode();
+      if (DeltaTimeMs != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(DeltaTimeMs);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -125,6 +139,10 @@ namespace Ubii.Processing {
         output.WriteRawTag(10);
         output.WriteMessage(Records);
       }
+      if (DeltaTimeMs != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(DeltaTimeMs);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -135,6 +153,9 @@ namespace Ubii.Processing {
       int size = 0;
       if (records_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Records);
+      }
+      if (DeltaTimeMs != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -153,6 +174,9 @@ namespace Ubii.Processing {
         }
         Records.MergeFrom(other.Records);
       }
+      if (other.DeltaTimeMs != 0F) {
+        DeltaTimeMs = other.DeltaTimeMs;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -169,6 +193,10 @@ namespace Ubii.Processing {
               Records = new global::Ubii.TopicData.TopicDataRecordList();
             }
             input.ReadMessage(Records);
+            break;
+          }
+          case 21: {
+            DeltaTimeMs = input.ReadFloat();
             break;
           }
         }

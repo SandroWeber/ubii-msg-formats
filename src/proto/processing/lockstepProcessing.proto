@@ -5,6 +5,7 @@ import "proto/topicData/topicDataRecord/topicDataRecord.proto";
 
 message LockstepProcessingRequest {
     ubii.topicData.TopicDataRecordList records = 1;
+    float delta_time_ms = 2;
 }
 
 message LockstepProcessingReply {

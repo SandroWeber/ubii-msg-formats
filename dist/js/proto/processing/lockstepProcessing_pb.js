@@ -90,7 +90,8 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.toObject = function(op
  */
 proto.ubii.processing.LockstepProcessingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    records: (f = msg.getRecords()) && proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList.toObject(includeInstance, f)
+    records: (f = msg.getRecords()) && proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList.toObject(includeInstance, f),
+    deltaTimeMs: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
   };
 
   if (includeInstance) {
@@ -132,6 +133,10 @@ proto.ubii.processing.LockstepProcessingRequest.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList.deserializeBinaryFromReader);
       msg.setRecords(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setDeltaTimeMs(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -167,6 +172,13 @@ proto.ubii.processing.LockstepProcessingRequest.serializeBinaryToWriter = functi
       1,
       f,
       proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeltaTimeMs();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      2,
+      f
     );
   }
 };
@@ -206,6 +218,24 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.clearRecords = functio
  */
 proto.ubii.processing.LockstepProcessingRequest.prototype.hasRecords = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional float delta_time_ms = 2;
+ * @return {number}
+ */
+proto.ubii.processing.LockstepProcessingRequest.prototype.getDeltaTimeMs = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ubii.processing.LockstepProcessingRequest} returns this
+ */
+proto.ubii.processing.LockstepProcessingRequest.prototype.setDeltaTimeMs = function(value) {
+  return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 

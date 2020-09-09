@@ -32,6 +32,12 @@ public final class LockstepProcessing {
      * <code>.ubii.topicData.TopicDataRecordList records = 1;</code>
      */
     ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordListOrBuilder getRecordsOrBuilder();
+
+    /**
+     * <code>float delta_time_ms = 2;</code>
+     * @return The deltaTimeMs.
+     */
+    float getDeltaTimeMs();
   }
   /**
    * Protobuf type {@code ubii.processing.LockstepProcessingRequest}
@@ -91,6 +97,11 @@ public final class LockstepProcessing {
 
               break;
             }
+            case 21: {
+
+              deltaTimeMs_ = input.readFloat();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -146,6 +157,16 @@ public final class LockstepProcessing {
       return getRecords();
     }
 
+    public static final int DELTA_TIME_MS_FIELD_NUMBER = 2;
+    private float deltaTimeMs_;
+    /**
+     * <code>float delta_time_ms = 2;</code>
+     * @return The deltaTimeMs.
+     */
+    public float getDeltaTimeMs() {
+      return deltaTimeMs_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -163,6 +184,9 @@ public final class LockstepProcessing {
       if (records_ != null) {
         output.writeMessage(1, getRecords());
       }
+      if (deltaTimeMs_ != 0F) {
+        output.writeFloat(2, deltaTimeMs_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -175,6 +199,10 @@ public final class LockstepProcessing {
       if (records_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRecords());
+      }
+      if (deltaTimeMs_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, deltaTimeMs_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,6 +224,9 @@ public final class LockstepProcessing {
         if (!getRecords()
             .equals(other.getRecords())) return false;
       }
+      if (java.lang.Float.floatToIntBits(getDeltaTimeMs())
+          != java.lang.Float.floatToIntBits(
+              other.getDeltaTimeMs())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,6 +242,9 @@ public final class LockstepProcessing {
         hash = (37 * hash) + RECORDS_FIELD_NUMBER;
         hash = (53 * hash) + getRecords().hashCode();
       }
+      hash = (37 * hash) + DELTA_TIME_MS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getDeltaTimeMs());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -350,6 +384,8 @@ public final class LockstepProcessing {
           records_ = null;
           recordsBuilder_ = null;
         }
+        deltaTimeMs_ = 0F;
+
         return this;
       }
 
@@ -381,6 +417,7 @@ public final class LockstepProcessing {
         } else {
           result.records_ = recordsBuilder_.build();
         }
+        result.deltaTimeMs_ = deltaTimeMs_;
         onBuilt();
         return result;
       }
@@ -431,6 +468,9 @@ public final class LockstepProcessing {
         if (other == ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance()) return this;
         if (other.hasRecords()) {
           mergeRecords(other.getRecords());
+        }
+        if (other.getDeltaTimeMs() != 0F) {
+          setDeltaTimeMs(other.getDeltaTimeMs());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -578,6 +618,36 @@ public final class LockstepProcessing {
           records_ = null;
         }
         return recordsBuilder_;
+      }
+
+      private float deltaTimeMs_ ;
+      /**
+       * <code>float delta_time_ms = 2;</code>
+       * @return The deltaTimeMs.
+       */
+      public float getDeltaTimeMs() {
+        return deltaTimeMs_;
+      }
+      /**
+       * <code>float delta_time_ms = 2;</code>
+       * @param value The deltaTimeMs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeltaTimeMs(float value) {
+        
+        deltaTimeMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float delta_time_ms = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeltaTimeMs() {
+        
+        deltaTimeMs_ = 0F;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1271,12 +1341,12 @@ public final class LockstepProcessing {
     java.lang.String[] descriptorData = {
       "\n)proto/processing/lockstepProcessing.pr" +
       "oto\022\017ubii.processing\0325proto/topicData/to" +
-      "picDataRecord/topicDataRecord.proto\"Q\n\031L" +
+      "picDataRecord/topicDataRecord.proto\"h\n\031L" +
       "ockstepProcessingRequest\0224\n\007records\030\001 \001(" +
-      "\0132#.ubii.topicData.TopicDataRecordList\"O" +
-      "\n\027LockstepProcessingReply\0224\n\007records\030\001 \001" +
-      "(\0132#.ubii.topicData.TopicDataRecordListb" +
-      "\006proto3"
+      "\0132#.ubii.topicData.TopicDataRecordList\022\025" +
+      "\n\rdelta_time_ms\030\002 \001(\002\"O\n\027LockstepProcess" +
+      "ingReply\0224\n\007records\030\001 \001(\0132#.ubii.topicDa" +
+      "ta.TopicDataRecordListb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1288,7 +1358,7 @@ public final class LockstepProcessing {
     internal_static_ubii_processing_LockstepProcessingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_processing_LockstepProcessingRequest_descriptor,
-        new java.lang.String[] { "Records", });
+        new java.lang.String[] { "Records", "DeltaTimeMs", });
     internal_static_ubii_processing_LockstepProcessingReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_processing_LockstepProcessingReply_fieldAccessorTable = new

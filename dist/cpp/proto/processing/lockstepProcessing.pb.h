@@ -181,6 +181,7 @@ class LockstepProcessingRequest :
 
   enum : int {
     kRecordsFieldNumber = 1,
+    kDeltaTimeMsFieldNumber = 2,
   };
   // .ubii.topicData.TopicDataRecordList records = 1;
   bool has_records() const;
@@ -197,12 +198,22 @@ class LockstepProcessingRequest :
   ::ubii::topicData::TopicDataRecordList* _internal_mutable_records();
   public:
 
+  // float delta_time_ms = 2;
+  void clear_delta_time_ms();
+  float delta_time_ms() const;
+  void set_delta_time_ms(float value);
+  private:
+  float _internal_delta_time_ms() const;
+  void _internal_set_delta_time_ms(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.processing.LockstepProcessingRequest)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::ubii::topicData::TopicDataRecordList* records_;
+  float delta_time_ms_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto;
 };
@@ -403,6 +414,26 @@ inline void LockstepProcessingRequest::set_allocated_records(::ubii::topicData::
   }
   records_ = records;
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.LockstepProcessingRequest.records)
+}
+
+// float delta_time_ms = 2;
+inline void LockstepProcessingRequest::clear_delta_time_ms() {
+  delta_time_ms_ = 0;
+}
+inline float LockstepProcessingRequest::_internal_delta_time_ms() const {
+  return delta_time_ms_;
+}
+inline float LockstepProcessingRequest::delta_time_ms() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingRequest.delta_time_ms)
+  return _internal_delta_time_ms();
+}
+inline void LockstepProcessingRequest::_internal_set_delta_time_ms(float value) {
+  
+  delta_time_ms_ = value;
+}
+inline void LockstepProcessingRequest::set_delta_time_ms(float value) {
+  _internal_set_delta_time_ms(value);
+  // @@protoc_insertion_point(field_set:ubii.processing.LockstepProcessingRequest.delta_time_ms)
 }
 
 // -------------------------------------------------------------------

@@ -68,6 +68,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2flockstepP
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingRequest, records_),
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingRequest, delta_time_ms_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -77,7 +78,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2flockstepP
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::processing::LockstepProcessingRequest)},
-  { 6, -1, sizeof(::ubii::processing::LockstepProcessingReply)},
+  { 7, -1, sizeof(::ubii::processing::LockstepProcessingReply)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -88,12 +89,12 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)proto/processing/lockstepProcessing.pr"
   "oto\022\017ubii.processing\0325proto/topicData/to"
-  "picDataRecord/topicDataRecord.proto\"Q\n\031L"
+  "picDataRecord/topicDataRecord.proto\"h\n\031L"
   "ockstepProcessingRequest\0224\n\007records\030\001 \001("
-  "\0132#.ubii.topicData.TopicDataRecordList\"O"
-  "\n\027LockstepProcessingReply\0224\n\007records\030\001 \001"
-  "(\0132#.ubii.topicData.TopicDataRecordListb"
-  "\006proto3"
+  "\0132#.ubii.topicData.TopicDataRecordList\022\025"
+  "\n\rdelta_time_ms\030\002 \001(\002\"O\n\027LockstepProcess"
+  "ingReply\0224\n\007records\030\001 \001(\0132#.ubii.topicDa"
+  "ta.TopicDataRecordListb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_deps[1] = {
   &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto,
@@ -105,7 +106,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once;
 static bool descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto = {
-  &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 287,
+  &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 310,
   &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_sccs, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto::offsets,
   file_level_metadata_proto_2fprocessing_2flockstepProcessing_2eproto, 2, file_level_enum_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto, file_level_service_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto,
@@ -151,12 +152,15 @@ LockstepProcessingRequest::LockstepProcessingRequest(const LockstepProcessingReq
   } else {
     records_ = nullptr;
   }
+  delta_time_ms_ = from.delta_time_ms_;
   // @@protoc_insertion_point(copy_constructor:ubii.processing.LockstepProcessingRequest)
 }
 
 void LockstepProcessingRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto.base);
-  records_ = nullptr;
+  ::memset(&records_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&delta_time_ms_) -
+      reinterpret_cast<char*>(&records_)) + sizeof(delta_time_ms_));
 }
 
 LockstepProcessingRequest::~LockstepProcessingRequest() {
@@ -187,6 +191,7 @@ void LockstepProcessingRequest::Clear() {
     delete records_;
   }
   records_ = nullptr;
+  delta_time_ms_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -202,6 +207,13 @@ const char* LockstepProcessingRequest::_InternalParse(const char* ptr, ::PROTOBU
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_records(), ptr);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float delta_time_ms = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          delta_time_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       default: {
@@ -238,6 +250,12 @@ failure:
         1, _Internal::records(this), target, stream);
   }
 
+  // float delta_time_ms = 2;
+  if (!(this->delta_time_ms() <= 0 && this->delta_time_ms() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_delta_time_ms(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -259,6 +277,11 @@ size_t LockstepProcessingRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *records_);
+  }
+
+  // float delta_time_ms = 2;
+  if (!(this->delta_time_ms() <= 0 && this->delta_time_ms() >= 0)) {
+    total_size += 1 + 4;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -295,6 +318,9 @@ void LockstepProcessingRequest::MergeFrom(const LockstepProcessingRequest& from)
   if (from.has_records()) {
     _internal_mutable_records()->::ubii::topicData::TopicDataRecordList::MergeFrom(from._internal_records());
   }
+  if (!(from.delta_time_ms() <= 0 && from.delta_time_ms() >= 0)) {
+    _internal_set_delta_time_ms(from._internal_delta_time_ms());
+  }
 }
 
 void LockstepProcessingRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -319,6 +345,7 @@ void LockstepProcessingRequest::InternalSwap(LockstepProcessingRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(records_, other->records_);
+  swap(delta_time_ms_, other->delta_time_ms_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LockstepProcessingRequest::GetMetadata() const {
