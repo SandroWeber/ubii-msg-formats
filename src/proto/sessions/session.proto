@@ -4,11 +4,6 @@ package ubii.sessions;
 import "proto/sessions/ioMappings.proto";
 import "proto/processing/processingModule.proto";
 
-enum ProcessMode {
-    CYCLE_INTERACTIONS = 0;
-    INDIVIDUAL_PROCESS_FREQUENCIES = 1;
-}
-
 enum SessionStatus {
     CREATED = 0;
     RUNNING = 1;
