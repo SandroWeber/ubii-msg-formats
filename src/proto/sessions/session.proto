@@ -1,8 +1,7 @@
 syntax = "proto3";
 package ubii.sessions;
 
-import "proto/interactions/interaction.proto";
-import "proto/sessions/ioMapping.proto";
+import "proto/sessions/ioMappings.proto";
 import "proto/processing/processingModule.proto";
 
 enum ProcessMode {
@@ -18,18 +17,15 @@ enum SessionStatus {
 }
 
 message Session {
-
     string id = 1;
     string name = 2;
-    repeated ubii.interactions.Interaction interactions = 3;
-    repeated ubii.sessions.IOMapping io_mappings = 4;
+    repeated ubii.processing.ProcessingModule processing_modules = 3;
+    repeated ubii.sessions.IOMappings io_mappings = 4;
     repeated string tags = 5;
     string description = 6;
     repeated string authors = 7;
-    ProcessMode process_mode = 8;
-    SessionStatus status = 9;
-    bool editable = 10;
-    repeated ubii.processing.ProcessingModule processing_modules = 11;
+    SessionStatus status = 8;
+    bool editable = 9;
 }
 
 message SessionList {
