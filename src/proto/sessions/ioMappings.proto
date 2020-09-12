@@ -29,13 +29,13 @@ message TopicOutputMappingList {
     repeated ubii.sessions.TopicOutputMapping elements = 1;
 }
 
-message IOMappings {
+message IOMapping {
     string processing_module_id = 1;
     repeated ubii.sessions.TopicInputMapping input_mappings = 2;
     repeated ubii.sessions.TopicOutputMapping output_mappings = 3;
     string processing_module_name = 4;
 }
 
-message IOMappingsList {
-    repeated ubii.sessions.IOMappings elements = 1;
+message IOMappingList {
+    repeated ubii.sessions.IOMapping elements = 1;
 }

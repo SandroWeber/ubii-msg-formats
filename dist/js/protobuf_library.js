@@ -52,10 +52,6 @@ goog.provide('proto.ubii.devices.TopicMux');
 goog.provide('proto.ubii.devices.TopicMuxList');
 goog.provide('proto.ubii.general.Error');
 goog.provide('proto.ubii.general.Success');
-goog.provide('proto.ubii.interactions.IOFormat');
-goog.provide('proto.ubii.interactions.Interaction');
-goog.provide('proto.ubii.interactions.InteractionList');
-goog.provide('proto.ubii.interactions.InteractionStatus');
 goog.provide('proto.ubii.processing.LockstepProcessingReply');
 goog.provide('proto.ubii.processing.LockstepProcessingRequest');
 goog.provide('proto.ubii.processing.ModuleIO');
@@ -78,16 +74,15 @@ goog.provide('proto.ubii.services.ServiceRequest.TypeCase');
 goog.provide('proto.ubii.services.request.TopicSubscription');
 goog.provide('proto.ubii.sessions.IOMapping');
 goog.provide('proto.ubii.sessions.IOMappingList');
-goog.provide('proto.ubii.sessions.InteractionInputMapping');
-goog.provide('proto.ubii.sessions.InteractionInputMapping.TopicSourceCase');
-goog.provide('proto.ubii.sessions.InteractionInputMappingList');
-goog.provide('proto.ubii.sessions.InteractionOutputMapping');
-goog.provide('proto.ubii.sessions.InteractionOutputMapping.TopicDestinationCase');
-goog.provide('proto.ubii.sessions.InteractionOutputMappingList');
-goog.provide('proto.ubii.sessions.ProcessMode');
 goog.provide('proto.ubii.sessions.Session');
 goog.provide('proto.ubii.sessions.SessionList');
 goog.provide('proto.ubii.sessions.SessionStatus');
+goog.provide('proto.ubii.sessions.TopicInputMapping');
+goog.provide('proto.ubii.sessions.TopicInputMapping.TopicSourceCase');
+goog.provide('proto.ubii.sessions.TopicInputMappingList');
+goog.provide('proto.ubii.sessions.TopicOutputMapping');
+goog.provide('proto.ubii.sessions.TopicOutputMapping.TopicDestinationCase');
+goog.provide('proto.ubii.sessions.TopicOutputMappingList');
 goog.provide('proto.ubii.topicData.Timestamp');
 goog.provide('proto.ubii.topicData.TopicData');
 goog.provide('proto.ubii.topicData.TopicData.TypeCase');
@@ -3468,197 +3463,16 @@ proto.ubii.devices.TopicDemuxList.prototype.clearElementsList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ubii.interactions.IOFormat = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.ubii.sessions.TopicInputMapping = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.sessions.TopicInputMapping.oneofGroups_);
 };
-goog.inherits(proto.ubii.interactions.IOFormat, jspb.Message);
+goog.inherits(proto.ubii.sessions.TopicInputMapping, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ubii.interactions.IOFormat.displayName = 'proto.ubii.interactions.IOFormat';
-}
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.interactions.IOFormat.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.interactions.IOFormat.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.interactions.IOFormat} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.interactions.IOFormat.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    internalName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    messageFormat: jspb.Message.getFieldWithDefault(msg, 2, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.interactions.IOFormat}
- */
-proto.ubii.interactions.IOFormat.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.interactions.IOFormat;
-  return proto.ubii.interactions.IOFormat.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.interactions.IOFormat} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.interactions.IOFormat}
- */
-proto.ubii.interactions.IOFormat.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setInternalName(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessageFormat(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.interactions.IOFormat.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.interactions.IOFormat.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.interactions.IOFormat} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.interactions.IOFormat.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getInternalName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getMessageFormat();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string internal_name = 1;
- * @return {string}
- */
-proto.ubii.interactions.IOFormat.prototype.getInternalName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.interactions.IOFormat} returns this
- */
-proto.ubii.interactions.IOFormat.prototype.setInternalName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string message_format = 2;
- * @return {string}
- */
-proto.ubii.interactions.IOFormat.prototype.getMessageFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.interactions.IOFormat} returns this
- */
-proto.ubii.interactions.IOFormat.prototype.setMessageFormat = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.interactions.Interaction = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.interactions.Interaction.repeatedFields_, null);
-};
-goog.inherits(proto.ubii.interactions.Interaction, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.ubii.interactions.Interaction.displayName = 'proto.ubii.interactions.Interaction';
+  proto.ubii.sessions.TopicInputMapping.displayName = 'proto.ubii.sessions.TopicInputMapping';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3670,758 +3484,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ubii.interactions.InteractionList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.interactions.InteractionList.repeatedFields_, null);
+proto.ubii.sessions.TopicInputMappingList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.sessions.TopicInputMappingList.repeatedFields_, null);
 };
-goog.inherits(proto.ubii.interactions.InteractionList, jspb.Message);
+goog.inherits(proto.ubii.sessions.TopicInputMappingList, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ubii.interactions.InteractionList.displayName = 'proto.ubii.interactions.InteractionList';
-}
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.ubii.interactions.Interaction.repeatedFields_ = [4,5,8,9];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.interactions.Interaction.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.interactions.Interaction.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.interactions.Interaction} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.interactions.Interaction.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    processingCallback: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    inputFormatsList: jspb.Message.toObjectList(msg.getInputFormatsList(),
-    proto.ubii.interactions.IOFormat.toObject, includeInstance),
-    outputFormatsList: jspb.Message.toObjectList(msg.getOutputFormatsList(),
-    proto.ubii.interactions.IOFormat.toObject, includeInstance),
-    onCreated: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    processFrequency: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-    authorsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    tagsList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
-    description: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    editable: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.interactions.Interaction}
- */
-proto.ubii.interactions.Interaction.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.interactions.Interaction;
-  return proto.ubii.interactions.Interaction.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.interactions.Interaction} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.interactions.Interaction}
- */
-proto.ubii.interactions.Interaction.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProcessingCallback(value);
-      break;
-    case 4:
-      var value = new proto.ubii.interactions.IOFormat;
-      reader.readMessage(value,proto.ubii.interactions.IOFormat.deserializeBinaryFromReader);
-      msg.addInputFormats(value);
-      break;
-    case 5:
-      var value = new proto.ubii.interactions.IOFormat;
-      reader.readMessage(value,proto.ubii.interactions.IOFormat.deserializeBinaryFromReader);
-      msg.addOutputFormats(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOnCreated(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setProcessFrequency(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addAuthors(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addTags(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 11:
-      var value = /** @type {!proto.ubii.interactions.InteractionStatus} */ (reader.readEnum());
-      msg.setStatus(value);
-      break;
-    case 12:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEditable(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.interactions.Interaction.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.interactions.Interaction.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.interactions.Interaction} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.interactions.Interaction.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getProcessingCallback();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getInputFormatsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      4,
-      f,
-      proto.ubii.interactions.IOFormat.serializeBinaryToWriter
-    );
-  }
-  f = message.getOutputFormatsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      5,
-      f,
-      proto.ubii.interactions.IOFormat.serializeBinaryToWriter
-    );
-  }
-  f = message.getOnCreated();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getProcessFrequency();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      7,
-      f
-    );
-  }
-  f = message.getAuthorsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      8,
-      f
-    );
-  }
-  f = message.getTagsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      9,
-      f
-    );
-  }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
-  f = message.getStatus();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      11,
-      f
-    );
-  }
-  f = message.getEditable();
-  if (f) {
-    writer.writeBool(
-      12,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.ubii.interactions.Interaction.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.ubii.interactions.Interaction.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string processing_callback = 3;
- * @return {string}
- */
-proto.ubii.interactions.Interaction.prototype.getProcessingCallback = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setProcessingCallback = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * repeated IOFormat input_formats = 4;
- * @return {!Array<!proto.ubii.interactions.IOFormat>}
- */
-proto.ubii.interactions.Interaction.prototype.getInputFormatsList = function() {
-  return /** @type{!Array<!proto.ubii.interactions.IOFormat>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.IOFormat, 4));
-};
-
-
-/**
- * @param {!Array<!proto.ubii.interactions.IOFormat>} value
- * @return {!proto.ubii.interactions.Interaction} returns this
-*/
-proto.ubii.interactions.Interaction.prototype.setInputFormatsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.ubii.interactions.IOFormat=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.interactions.IOFormat}
- */
-proto.ubii.interactions.Interaction.prototype.addInputFormats = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.ubii.interactions.IOFormat, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.clearInputFormatsList = function() {
-  return this.setInputFormatsList([]);
-};
-
-
-/**
- * repeated IOFormat output_formats = 5;
- * @return {!Array<!proto.ubii.interactions.IOFormat>}
- */
-proto.ubii.interactions.Interaction.prototype.getOutputFormatsList = function() {
-  return /** @type{!Array<!proto.ubii.interactions.IOFormat>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.IOFormat, 5));
-};
-
-
-/**
- * @param {!Array<!proto.ubii.interactions.IOFormat>} value
- * @return {!proto.ubii.interactions.Interaction} returns this
-*/
-proto.ubii.interactions.Interaction.prototype.setOutputFormatsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-/**
- * @param {!proto.ubii.interactions.IOFormat=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.interactions.IOFormat}
- */
-proto.ubii.interactions.Interaction.prototype.addOutputFormats = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.ubii.interactions.IOFormat, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.clearOutputFormatsList = function() {
-  return this.setOutputFormatsList([]);
-};
-
-
-/**
- * optional string on_created = 6;
- * @return {string}
- */
-proto.ubii.interactions.Interaction.prototype.getOnCreated = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setOnCreated = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional float process_frequency = 7;
- * @return {number}
- */
-proto.ubii.interactions.Interaction.prototype.getProcessFrequency = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setProcessFrequency = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
-};
-
-
-/**
- * repeated string authors = 8;
- * @return {!Array<string>}
- */
-proto.ubii.interactions.Interaction.prototype.getAuthorsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setAuthorsList = function(value) {
-  return jspb.Message.setField(this, 8, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.addAuthors = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.clearAuthorsList = function() {
-  return this.setAuthorsList([]);
-};
-
-
-/**
- * repeated string tags = 9;
- * @return {!Array<string>}
- */
-proto.ubii.interactions.Interaction.prototype.getTagsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setTagsList = function(value) {
-  return jspb.Message.setField(this, 9, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.addTags = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.clearTagsList = function() {
-  return this.setTagsList([]);
-};
-
-
-/**
- * optional string description = 10;
- * @return {string}
- */
-proto.ubii.interactions.Interaction.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
-};
-
-
-/**
- * optional InteractionStatus status = 11;
- * @return {!proto.ubii.interactions.InteractionStatus}
- */
-proto.ubii.interactions.Interaction.prototype.getStatus = function() {
-  return /** @type {!proto.ubii.interactions.InteractionStatus} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
-};
-
-
-/**
- * @param {!proto.ubii.interactions.InteractionStatus} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 11, value);
-};
-
-
-/**
- * optional bool editable = 12;
- * @return {boolean}
- */
-proto.ubii.interactions.Interaction.prototype.getEditable = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.ubii.interactions.Interaction} returns this
- */
-proto.ubii.interactions.Interaction.prototype.setEditable = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 12, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.ubii.interactions.InteractionList.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.interactions.InteractionList.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.interactions.InteractionList.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.interactions.InteractionList} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.interactions.InteractionList.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
-    proto.ubii.interactions.Interaction.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.interactions.InteractionList}
- */
-proto.ubii.interactions.InteractionList.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.interactions.InteractionList;
-  return proto.ubii.interactions.InteractionList.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.interactions.InteractionList} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.interactions.InteractionList}
- */
-proto.ubii.interactions.InteractionList.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
-      msg.addElements(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.interactions.InteractionList.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.interactions.InteractionList.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.interactions.InteractionList} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.interactions.InteractionList.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getElementsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated Interaction elements = 1;
- * @return {!Array<!proto.ubii.interactions.Interaction>}
- */
-proto.ubii.interactions.InteractionList.prototype.getElementsList = function() {
-  return /** @type{!Array<!proto.ubii.interactions.Interaction>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.Interaction, 1));
-};
-
-
-/**
- * @param {!Array<!proto.ubii.interactions.Interaction>} value
- * @return {!proto.ubii.interactions.InteractionList} returns this
-*/
-proto.ubii.interactions.InteractionList.prototype.setElementsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.ubii.interactions.Interaction=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.interactions.Interaction}
- */
-proto.ubii.interactions.InteractionList.prototype.addElements = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.interactions.Interaction, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.interactions.InteractionList} returns this
- */
-proto.ubii.interactions.InteractionList.prototype.clearElementsList = function() {
-  return this.setElementsList([]);
-};
-
-
-/**
- * @enum {number}
- */
-proto.ubii.interactions.InteractionStatus = {
-  CREATED: 0,
-  INITIALIZED: 1,
-  PROCESSING: 2,
-  HALTED: 3
-};
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.sessions.InteractionInputMapping = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.sessions.InteractionInputMapping.oneofGroups_);
-};
-goog.inherits(proto.ubii.sessions.InteractionInputMapping, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.ubii.sessions.InteractionInputMapping.displayName = 'proto.ubii.sessions.InteractionInputMapping';
+  proto.ubii.sessions.TopicInputMappingList.displayName = 'proto.ubii.sessions.TopicInputMappingList';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -4433,452 +3505,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ubii.sessions.InteractionInputMappingList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.sessions.InteractionInputMappingList.repeatedFields_, null);
+proto.ubii.sessions.TopicOutputMapping = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.sessions.TopicOutputMapping.oneofGroups_);
 };
-goog.inherits(proto.ubii.sessions.InteractionInputMappingList, jspb.Message);
+goog.inherits(proto.ubii.sessions.TopicOutputMapping, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ubii.sessions.InteractionInputMappingList.displayName = 'proto.ubii.sessions.InteractionInputMappingList';
-}
-
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.ubii.sessions.InteractionInputMapping.oneofGroups_ = [[2,3]];
-
-/**
- * @enum {number}
- */
-proto.ubii.sessions.InteractionInputMapping.TopicSourceCase = {
-  TOPIC_SOURCE_NOT_SET: 0,
-  TOPIC: 2,
-  TOPIC_MUX: 3
-};
-
-/**
- * @return {proto.ubii.sessions.InteractionInputMapping.TopicSourceCase}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.getTopicSourceCase = function() {
-  return /** @type {proto.ubii.sessions.InteractionInputMapping.TopicSourceCase} */(jspb.Message.computeOneofCase(this, proto.ubii.sessions.InteractionInputMapping.oneofGroups_[0]));
-};
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.sessions.InteractionInputMapping.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.sessions.InteractionInputMapping} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionInputMapping.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    topic: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    topicMux: (f = msg.getTopicMux()) && proto.ubii.devices.TopicMux.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.sessions.InteractionInputMapping}
- */
-proto.ubii.sessions.InteractionInputMapping.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.sessions.InteractionInputMapping;
-  return proto.ubii.sessions.InteractionInputMapping.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.sessions.InteractionInputMapping} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.sessions.InteractionInputMapping}
- */
-proto.ubii.sessions.InteractionInputMapping.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTopic(value);
-      break;
-    case 3:
-      var value = new proto.ubii.devices.TopicMux;
-      reader.readMessage(value,proto.ubii.devices.TopicMux.deserializeBinaryFromReader);
-      msg.setTopicMux(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.sessions.InteractionInputMapping.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.sessions.InteractionInputMapping} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionInputMapping.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getTopicMux();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.ubii.devices.TopicMux.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.sessions.InteractionInputMapping} returns this
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string topic = 2;
- * @return {string}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.getTopic = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.sessions.InteractionInputMapping} returns this
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.setTopic = function(value) {
-  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.InteractionInputMapping.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.sessions.InteractionInputMapping} returns this
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.clearTopic = function() {
-  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.InteractionInputMapping.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.hasTopic = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional ubii.devices.TopicMux topic_mux = 3;
- * @return {?proto.ubii.devices.TopicMux}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.getTopicMux = function() {
-  return /** @type{?proto.ubii.devices.TopicMux} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.devices.TopicMux, 3));
-};
-
-
-/**
- * @param {?proto.ubii.devices.TopicMux|undefined} value
- * @return {!proto.ubii.sessions.InteractionInputMapping} returns this
-*/
-proto.ubii.sessions.InteractionInputMapping.prototype.setTopicMux = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 3, proto.ubii.sessions.InteractionInputMapping.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.sessions.InteractionInputMapping} returns this
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.clearTopicMux = function() {
-  return this.setTopicMux(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.sessions.InteractionInputMapping.prototype.hasTopicMux = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.ubii.sessions.InteractionInputMappingList.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.sessions.InteractionInputMappingList.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.sessions.InteractionInputMappingList.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.sessions.InteractionInputMappingList} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionInputMappingList.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
-    proto.ubii.sessions.InteractionInputMapping.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.sessions.InteractionInputMappingList}
- */
-proto.ubii.sessions.InteractionInputMappingList.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.sessions.InteractionInputMappingList;
-  return proto.ubii.sessions.InteractionInputMappingList.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.sessions.InteractionInputMappingList} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.sessions.InteractionInputMappingList}
- */
-proto.ubii.sessions.InteractionInputMappingList.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.ubii.sessions.InteractionInputMapping;
-      reader.readMessage(value,proto.ubii.sessions.InteractionInputMapping.deserializeBinaryFromReader);
-      msg.addElements(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.sessions.InteractionInputMappingList.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.sessions.InteractionInputMappingList.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.sessions.InteractionInputMappingList} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionInputMappingList.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getElementsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.ubii.sessions.InteractionInputMapping.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated InteractionInputMapping elements = 1;
- * @return {!Array<!proto.ubii.sessions.InteractionInputMapping>}
- */
-proto.ubii.sessions.InteractionInputMappingList.prototype.getElementsList = function() {
-  return /** @type{!Array<!proto.ubii.sessions.InteractionInputMapping>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.InteractionInputMapping, 1));
-};
-
-
-/**
- * @param {!Array<!proto.ubii.sessions.InteractionInputMapping>} value
- * @return {!proto.ubii.sessions.InteractionInputMappingList} returns this
-*/
-proto.ubii.sessions.InteractionInputMappingList.prototype.setElementsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.ubii.sessions.InteractionInputMapping=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.sessions.InteractionInputMapping}
- */
-proto.ubii.sessions.InteractionInputMappingList.prototype.addElements = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.sessions.InteractionInputMapping, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.sessions.InteractionInputMappingList} returns this
- */
-proto.ubii.sessions.InteractionInputMappingList.prototype.clearElementsList = function() {
-  return this.setElementsList([]);
-};
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.sessions.InteractionOutputMapping = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.sessions.InteractionOutputMapping.oneofGroups_);
-};
-goog.inherits(proto.ubii.sessions.InteractionOutputMapping, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.ubii.sessions.InteractionOutputMapping.displayName = 'proto.ubii.sessions.InteractionOutputMapping';
+  proto.ubii.sessions.TopicOutputMapping.displayName = 'proto.ubii.sessions.TopicOutputMapping';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -4890,432 +3526,17 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ubii.sessions.InteractionOutputMappingList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.sessions.InteractionOutputMappingList.repeatedFields_, null);
+proto.ubii.sessions.TopicOutputMappingList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.sessions.TopicOutputMappingList.repeatedFields_, null);
 };
-goog.inherits(proto.ubii.sessions.InteractionOutputMappingList, jspb.Message);
+goog.inherits(proto.ubii.sessions.TopicOutputMappingList, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ubii.sessions.InteractionOutputMappingList.displayName = 'proto.ubii.sessions.InteractionOutputMappingList';
+  proto.ubii.sessions.TopicOutputMappingList.displayName = 'proto.ubii.sessions.TopicOutputMappingList';
 }
-
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.ubii.sessions.InteractionOutputMapping.oneofGroups_ = [[2,3]];
-
-/**
- * @enum {number}
- */
-proto.ubii.sessions.InteractionOutputMapping.TopicDestinationCase = {
-  TOPIC_DESTINATION_NOT_SET: 0,
-  TOPIC: 2,
-  TOPIC_DEMUX: 3
-};
-
-/**
- * @return {proto.ubii.sessions.InteractionOutputMapping.TopicDestinationCase}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.getTopicDestinationCase = function() {
-  return /** @type {proto.ubii.sessions.InteractionOutputMapping.TopicDestinationCase} */(jspb.Message.computeOneofCase(this, proto.ubii.sessions.InteractionOutputMapping.oneofGroups_[0]));
-};
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.sessions.InteractionOutputMapping.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.sessions.InteractionOutputMapping} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionOutputMapping.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    topic: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    topicDemux: (f = msg.getTopicDemux()) && proto.ubii.devices.TopicDemux.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.sessions.InteractionOutputMapping}
- */
-proto.ubii.sessions.InteractionOutputMapping.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.sessions.InteractionOutputMapping;
-  return proto.ubii.sessions.InteractionOutputMapping.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.sessions.InteractionOutputMapping} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.sessions.InteractionOutputMapping}
- */
-proto.ubii.sessions.InteractionOutputMapping.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTopic(value);
-      break;
-    case 3:
-      var value = new proto.ubii.devices.TopicDemux;
-      reader.readMessage(value,proto.ubii.devices.TopicDemux.deserializeBinaryFromReader);
-      msg.setTopicDemux(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.sessions.InteractionOutputMapping.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.sessions.InteractionOutputMapping} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionOutputMapping.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getTopicDemux();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.ubii.devices.TopicDemux.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.sessions.InteractionOutputMapping} returns this
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string topic = 2;
- * @return {string}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.getTopic = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.ubii.sessions.InteractionOutputMapping} returns this
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.setTopic = function(value) {
-  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.InteractionOutputMapping.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.sessions.InteractionOutputMapping} returns this
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.clearTopic = function() {
-  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.InteractionOutputMapping.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.hasTopic = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional ubii.devices.TopicDemux topic_demux = 3;
- * @return {?proto.ubii.devices.TopicDemux}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.getTopicDemux = function() {
-  return /** @type{?proto.ubii.devices.TopicDemux} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.devices.TopicDemux, 3));
-};
-
-
-/**
- * @param {?proto.ubii.devices.TopicDemux|undefined} value
- * @return {!proto.ubii.sessions.InteractionOutputMapping} returns this
-*/
-proto.ubii.sessions.InteractionOutputMapping.prototype.setTopicDemux = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 3, proto.ubii.sessions.InteractionOutputMapping.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.sessions.InteractionOutputMapping} returns this
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.clearTopicDemux = function() {
-  return this.setTopicDemux(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.sessions.InteractionOutputMapping.prototype.hasTopicDemux = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.ubii.sessions.InteractionOutputMappingList.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.sessions.InteractionOutputMappingList.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.sessions.InteractionOutputMappingList.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.sessions.InteractionOutputMappingList} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionOutputMappingList.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
-    proto.ubii.sessions.InteractionOutputMapping.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.sessions.InteractionOutputMappingList}
- */
-proto.ubii.sessions.InteractionOutputMappingList.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.sessions.InteractionOutputMappingList;
-  return proto.ubii.sessions.InteractionOutputMappingList.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.sessions.InteractionOutputMappingList} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.sessions.InteractionOutputMappingList}
- */
-proto.ubii.sessions.InteractionOutputMappingList.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.ubii.sessions.InteractionOutputMapping;
-      reader.readMessage(value,proto.ubii.sessions.InteractionOutputMapping.deserializeBinaryFromReader);
-      msg.addElements(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.sessions.InteractionOutputMappingList.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.sessions.InteractionOutputMappingList.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.sessions.InteractionOutputMappingList} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.sessions.InteractionOutputMappingList.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getElementsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.ubii.sessions.InteractionOutputMapping.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated InteractionOutputMapping elements = 1;
- * @return {!Array<!proto.ubii.sessions.InteractionOutputMapping>}
- */
-proto.ubii.sessions.InteractionOutputMappingList.prototype.getElementsList = function() {
-  return /** @type{!Array<!proto.ubii.sessions.InteractionOutputMapping>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.InteractionOutputMapping, 1));
-};
-
-
-/**
- * @param {!Array<!proto.ubii.sessions.InteractionOutputMapping>} value
- * @return {!proto.ubii.sessions.InteractionOutputMappingList} returns this
-*/
-proto.ubii.sessions.InteractionOutputMappingList.prototype.setElementsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.ubii.sessions.InteractionOutputMapping=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.sessions.InteractionOutputMapping}
- */
-proto.ubii.sessions.InteractionOutputMappingList.prototype.addElements = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.sessions.InteractionOutputMapping, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.sessions.InteractionOutputMappingList} returns this
- */
-proto.ubii.sessions.InteractionOutputMappingList.prototype.clearElementsList = function() {
-  return this.setElementsList([]);
-};
-
-
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -5360,6 +3581,836 @@ if (goog.DEBUG && !COMPILED) {
 }
 
 /**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.ubii.sessions.TopicInputMapping.oneofGroups_ = [[2,3]];
+
+/**
+ * @enum {number}
+ */
+proto.ubii.sessions.TopicInputMapping.TopicSourceCase = {
+  TOPIC_SOURCE_NOT_SET: 0,
+  TOPIC: 2,
+  TOPIC_MUX: 3
+};
+
+/**
+ * @return {proto.ubii.sessions.TopicInputMapping.TopicSourceCase}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.getTopicSourceCase = function() {
+  return /** @type {proto.ubii.sessions.TopicInputMapping.TopicSourceCase} */(jspb.Message.computeOneofCase(this, proto.ubii.sessions.TopicInputMapping.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.sessions.TopicInputMapping.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.sessions.TopicInputMapping} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicInputMapping.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    inputName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    topic: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    topicMux: (f = msg.getTopicMux()) && proto.ubii.devices.TopicMux.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.sessions.TopicInputMapping}
+ */
+proto.ubii.sessions.TopicInputMapping.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.sessions.TopicInputMapping;
+  return proto.ubii.sessions.TopicInputMapping.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.sessions.TopicInputMapping} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.sessions.TopicInputMapping}
+ */
+proto.ubii.sessions.TopicInputMapping.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInputName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTopic(value);
+      break;
+    case 3:
+      var value = new proto.ubii.devices.TopicMux;
+      reader.readMessage(value,proto.ubii.devices.TopicMux.deserializeBinaryFromReader);
+      msg.setTopicMux(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.sessions.TopicInputMapping.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.sessions.TopicInputMapping} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicInputMapping.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getInputName();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getTopicMux();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.devices.TopicMux.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string input_name = 1;
+ * @return {string}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.getInputName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.sessions.TopicInputMapping} returns this
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.setInputName = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string topic = 2;
+ * @return {string}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.getTopic = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.sessions.TopicInputMapping} returns this
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.setTopic = function(value) {
+  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.TopicInputMapping.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ubii.sessions.TopicInputMapping} returns this
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.clearTopic = function() {
+  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.TopicInputMapping.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.hasTopic = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ubii.devices.TopicMux topic_mux = 3;
+ * @return {?proto.ubii.devices.TopicMux}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.getTopicMux = function() {
+  return /** @type{?proto.ubii.devices.TopicMux} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.TopicMux, 3));
+};
+
+
+/**
+ * @param {?proto.ubii.devices.TopicMux|undefined} value
+ * @return {!proto.ubii.sessions.TopicInputMapping} returns this
+*/
+proto.ubii.sessions.TopicInputMapping.prototype.setTopicMux = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 3, proto.ubii.sessions.TopicInputMapping.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.sessions.TopicInputMapping} returns this
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.clearTopicMux = function() {
+  return this.setTopicMux(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.sessions.TopicInputMapping.prototype.hasTopicMux = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.sessions.TopicInputMappingList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.sessions.TopicInputMappingList.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.sessions.TopicInputMappingList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.sessions.TopicInputMappingList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicInputMappingList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.ubii.sessions.TopicInputMapping.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.sessions.TopicInputMappingList}
+ */
+proto.ubii.sessions.TopicInputMappingList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.sessions.TopicInputMappingList;
+  return proto.ubii.sessions.TopicInputMappingList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.sessions.TopicInputMappingList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.sessions.TopicInputMappingList}
+ */
+proto.ubii.sessions.TopicInputMappingList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.sessions.TopicInputMapping;
+      reader.readMessage(value,proto.ubii.sessions.TopicInputMapping.deserializeBinaryFromReader);
+      msg.addElements(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.sessions.TopicInputMappingList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.sessions.TopicInputMappingList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.sessions.TopicInputMappingList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicInputMappingList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.ubii.sessions.TopicInputMapping.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated TopicInputMapping elements = 1;
+ * @return {!Array<!proto.ubii.sessions.TopicInputMapping>}
+ */
+proto.ubii.sessions.TopicInputMappingList.prototype.getElementsList = function() {
+  return /** @type{!Array<!proto.ubii.sessions.TopicInputMapping>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.TopicInputMapping, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.ubii.sessions.TopicInputMapping>} value
+ * @return {!proto.ubii.sessions.TopicInputMappingList} returns this
+*/
+proto.ubii.sessions.TopicInputMappingList.prototype.setElementsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.ubii.sessions.TopicInputMapping=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.sessions.TopicInputMapping}
+ */
+proto.ubii.sessions.TopicInputMappingList.prototype.addElements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.sessions.TopicInputMapping, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ubii.sessions.TopicInputMappingList} returns this
+ */
+proto.ubii.sessions.TopicInputMappingList.prototype.clearElementsList = function() {
+  return this.setElementsList([]);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.ubii.sessions.TopicOutputMapping.oneofGroups_ = [[2,3]];
+
+/**
+ * @enum {number}
+ */
+proto.ubii.sessions.TopicOutputMapping.TopicDestinationCase = {
+  TOPIC_DESTINATION_NOT_SET: 0,
+  TOPIC: 2,
+  TOPIC_DEMUX: 3
+};
+
+/**
+ * @return {proto.ubii.sessions.TopicOutputMapping.TopicDestinationCase}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.getTopicDestinationCase = function() {
+  return /** @type {proto.ubii.sessions.TopicOutputMapping.TopicDestinationCase} */(jspb.Message.computeOneofCase(this, proto.ubii.sessions.TopicOutputMapping.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.sessions.TopicOutputMapping.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.sessions.TopicOutputMapping} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicOutputMapping.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    outputName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    topic: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    topicDemux: (f = msg.getTopicDemux()) && proto.ubii.devices.TopicDemux.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.sessions.TopicOutputMapping}
+ */
+proto.ubii.sessions.TopicOutputMapping.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.sessions.TopicOutputMapping;
+  return proto.ubii.sessions.TopicOutputMapping.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.sessions.TopicOutputMapping} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.sessions.TopicOutputMapping}
+ */
+proto.ubii.sessions.TopicOutputMapping.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOutputName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTopic(value);
+      break;
+    case 3:
+      var value = new proto.ubii.devices.TopicDemux;
+      reader.readMessage(value,proto.ubii.devices.TopicDemux.deserializeBinaryFromReader);
+      msg.setTopicDemux(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.sessions.TopicOutputMapping.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.sessions.TopicOutputMapping} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicOutputMapping.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getOutputName();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getTopicDemux();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.devices.TopicDemux.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string output_name = 1;
+ * @return {string}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.getOutputName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.sessions.TopicOutputMapping} returns this
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.setOutputName = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string topic = 2;
+ * @return {string}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.getTopic = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.sessions.TopicOutputMapping} returns this
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.setTopic = function(value) {
+  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.TopicOutputMapping.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ubii.sessions.TopicOutputMapping} returns this
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.clearTopic = function() {
+  return jspb.Message.setOneofField(this, 2, proto.ubii.sessions.TopicOutputMapping.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.hasTopic = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ubii.devices.TopicDemux topic_demux = 3;
+ * @return {?proto.ubii.devices.TopicDemux}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.getTopicDemux = function() {
+  return /** @type{?proto.ubii.devices.TopicDemux} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.TopicDemux, 3));
+};
+
+
+/**
+ * @param {?proto.ubii.devices.TopicDemux|undefined} value
+ * @return {!proto.ubii.sessions.TopicOutputMapping} returns this
+*/
+proto.ubii.sessions.TopicOutputMapping.prototype.setTopicDemux = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 3, proto.ubii.sessions.TopicOutputMapping.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.sessions.TopicOutputMapping} returns this
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.clearTopicDemux = function() {
+  return this.setTopicDemux(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.sessions.TopicOutputMapping.prototype.hasTopicDemux = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.sessions.TopicOutputMappingList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.sessions.TopicOutputMappingList.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.sessions.TopicOutputMappingList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.sessions.TopicOutputMappingList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicOutputMappingList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.ubii.sessions.TopicOutputMapping.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.sessions.TopicOutputMappingList}
+ */
+proto.ubii.sessions.TopicOutputMappingList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.sessions.TopicOutputMappingList;
+  return proto.ubii.sessions.TopicOutputMappingList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.sessions.TopicOutputMappingList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.sessions.TopicOutputMappingList}
+ */
+proto.ubii.sessions.TopicOutputMappingList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.sessions.TopicOutputMapping;
+      reader.readMessage(value,proto.ubii.sessions.TopicOutputMapping.deserializeBinaryFromReader);
+      msg.addElements(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.sessions.TopicOutputMappingList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.sessions.TopicOutputMappingList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.sessions.TopicOutputMappingList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.sessions.TopicOutputMappingList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.ubii.sessions.TopicOutputMapping.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated TopicOutputMapping elements = 1;
+ * @return {!Array<!proto.ubii.sessions.TopicOutputMapping>}
+ */
+proto.ubii.sessions.TopicOutputMappingList.prototype.getElementsList = function() {
+  return /** @type{!Array<!proto.ubii.sessions.TopicOutputMapping>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.TopicOutputMapping, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.ubii.sessions.TopicOutputMapping>} value
+ * @return {!proto.ubii.sessions.TopicOutputMappingList} returns this
+*/
+proto.ubii.sessions.TopicOutputMappingList.prototype.setElementsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.ubii.sessions.TopicOutputMapping=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.sessions.TopicOutputMapping}
+ */
+proto.ubii.sessions.TopicOutputMappingList.prototype.addElements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.sessions.TopicOutputMapping, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ubii.sessions.TopicOutputMappingList} returns this
+ */
+proto.ubii.sessions.TopicOutputMappingList.prototype.clearElementsList = function() {
+  return this.setElementsList([]);
+};
+
+
+
+/**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
@@ -5397,11 +4448,12 @@ proto.ubii.sessions.IOMapping.prototype.toObject = function(opt_includeInstance)
  */
 proto.ubii.sessions.IOMapping.toObject = function(includeInstance, msg) {
   var f, obj = {
-    interactionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    processingModuleId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     inputMappingsList: jspb.Message.toObjectList(msg.getInputMappingsList(),
-    proto.ubii.sessions.InteractionInputMapping.toObject, includeInstance),
+    proto.ubii.sessions.TopicInputMapping.toObject, includeInstance),
     outputMappingsList: jspb.Message.toObjectList(msg.getOutputMappingsList(),
-    proto.ubii.sessions.InteractionOutputMapping.toObject, includeInstance)
+    proto.ubii.sessions.TopicOutputMapping.toObject, includeInstance),
+    processingModuleName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5440,17 +4492,21 @@ proto.ubii.sessions.IOMapping.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInteractionId(value);
+      msg.setProcessingModuleId(value);
       break;
     case 2:
-      var value = new proto.ubii.sessions.InteractionInputMapping;
-      reader.readMessage(value,proto.ubii.sessions.InteractionInputMapping.deserializeBinaryFromReader);
+      var value = new proto.ubii.sessions.TopicInputMapping;
+      reader.readMessage(value,proto.ubii.sessions.TopicInputMapping.deserializeBinaryFromReader);
       msg.addInputMappings(value);
       break;
     case 3:
-      var value = new proto.ubii.sessions.InteractionOutputMapping;
-      reader.readMessage(value,proto.ubii.sessions.InteractionOutputMapping.deserializeBinaryFromReader);
+      var value = new proto.ubii.sessions.TopicOutputMapping;
+      reader.readMessage(value,proto.ubii.sessions.TopicOutputMapping.deserializeBinaryFromReader);
       msg.addOutputMappings(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProcessingModuleName(value);
       break;
     default:
       reader.skipField();
@@ -5481,7 +4537,7 @@ proto.ubii.sessions.IOMapping.prototype.serializeBinary = function() {
  */
 proto.ubii.sessions.IOMapping.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getInteractionId();
+  f = message.getProcessingModuleId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -5493,7 +4549,7 @@ proto.ubii.sessions.IOMapping.serializeBinaryToWriter = function(message, writer
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.ubii.sessions.InteractionInputMapping.serializeBinaryToWriter
+      proto.ubii.sessions.TopicInputMapping.serializeBinaryToWriter
     );
   }
   f = message.getOutputMappingsList();
@@ -5501,17 +4557,24 @@ proto.ubii.sessions.IOMapping.serializeBinaryToWriter = function(message, writer
     writer.writeRepeatedMessage(
       3,
       f,
-      proto.ubii.sessions.InteractionOutputMapping.serializeBinaryToWriter
+      proto.ubii.sessions.TopicOutputMapping.serializeBinaryToWriter
+    );
+  }
+  f = message.getProcessingModuleName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
 
 
 /**
- * optional string interaction_id = 1;
+ * optional string processing_module_id = 1;
  * @return {string}
  */
-proto.ubii.sessions.IOMapping.prototype.getInteractionId = function() {
+proto.ubii.sessions.IOMapping.prototype.getProcessingModuleId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5520,23 +4583,23 @@ proto.ubii.sessions.IOMapping.prototype.getInteractionId = function() {
  * @param {string} value
  * @return {!proto.ubii.sessions.IOMapping} returns this
  */
-proto.ubii.sessions.IOMapping.prototype.setInteractionId = function(value) {
+proto.ubii.sessions.IOMapping.prototype.setProcessingModuleId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * repeated InteractionInputMapping input_mappings = 2;
- * @return {!Array<!proto.ubii.sessions.InteractionInputMapping>}
+ * repeated TopicInputMapping input_mappings = 2;
+ * @return {!Array<!proto.ubii.sessions.TopicInputMapping>}
  */
 proto.ubii.sessions.IOMapping.prototype.getInputMappingsList = function() {
-  return /** @type{!Array<!proto.ubii.sessions.InteractionInputMapping>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.InteractionInputMapping, 2));
+  return /** @type{!Array<!proto.ubii.sessions.TopicInputMapping>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.TopicInputMapping, 2));
 };
 
 
 /**
- * @param {!Array<!proto.ubii.sessions.InteractionInputMapping>} value
+ * @param {!Array<!proto.ubii.sessions.TopicInputMapping>} value
  * @return {!proto.ubii.sessions.IOMapping} returns this
 */
 proto.ubii.sessions.IOMapping.prototype.setInputMappingsList = function(value) {
@@ -5545,12 +4608,12 @@ proto.ubii.sessions.IOMapping.prototype.setInputMappingsList = function(value) {
 
 
 /**
- * @param {!proto.ubii.sessions.InteractionInputMapping=} opt_value
+ * @param {!proto.ubii.sessions.TopicInputMapping=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ubii.sessions.InteractionInputMapping}
+ * @return {!proto.ubii.sessions.TopicInputMapping}
  */
 proto.ubii.sessions.IOMapping.prototype.addInputMappings = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ubii.sessions.InteractionInputMapping, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ubii.sessions.TopicInputMapping, opt_index);
 };
 
 
@@ -5564,17 +4627,17 @@ proto.ubii.sessions.IOMapping.prototype.clearInputMappingsList = function() {
 
 
 /**
- * repeated InteractionOutputMapping output_mappings = 3;
- * @return {!Array<!proto.ubii.sessions.InteractionOutputMapping>}
+ * repeated TopicOutputMapping output_mappings = 3;
+ * @return {!Array<!proto.ubii.sessions.TopicOutputMapping>}
  */
 proto.ubii.sessions.IOMapping.prototype.getOutputMappingsList = function() {
-  return /** @type{!Array<!proto.ubii.sessions.InteractionOutputMapping>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.InteractionOutputMapping, 3));
+  return /** @type{!Array<!proto.ubii.sessions.TopicOutputMapping>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.sessions.TopicOutputMapping, 3));
 };
 
 
 /**
- * @param {!Array<!proto.ubii.sessions.InteractionOutputMapping>} value
+ * @param {!Array<!proto.ubii.sessions.TopicOutputMapping>} value
  * @return {!proto.ubii.sessions.IOMapping} returns this
 */
 proto.ubii.sessions.IOMapping.prototype.setOutputMappingsList = function(value) {
@@ -5583,12 +4646,12 @@ proto.ubii.sessions.IOMapping.prototype.setOutputMappingsList = function(value) 
 
 
 /**
- * @param {!proto.ubii.sessions.InteractionOutputMapping=} opt_value
+ * @param {!proto.ubii.sessions.TopicOutputMapping=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ubii.sessions.InteractionOutputMapping}
+ * @return {!proto.ubii.sessions.TopicOutputMapping}
  */
 proto.ubii.sessions.IOMapping.prototype.addOutputMappings = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.sessions.InteractionOutputMapping, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.sessions.TopicOutputMapping, opt_index);
 };
 
 
@@ -5598,6 +4661,24 @@ proto.ubii.sessions.IOMapping.prototype.addOutputMappings = function(opt_value, 
  */
 proto.ubii.sessions.IOMapping.prototype.clearOutputMappingsList = function() {
   return this.setOutputMappingsList([]);
+};
+
+
+/**
+ * optional string processing_module_name = 4;
+ * @return {string}
+ */
+proto.ubii.sessions.IOMapping.prototype.getProcessingModuleName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.sessions.IOMapping} returns this
+ */
+proto.ubii.sessions.IOMapping.prototype.setProcessingModuleName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -7660,7 +6741,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.sessions.Session.repeatedFields_ = [3,4,5,7,11];
+proto.ubii.sessions.Session.repeatedFields_ = [3,4,5,7];
 
 
 
@@ -7695,18 +6776,15 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    interactionsList: jspb.Message.toObjectList(msg.getInteractionsList(),
-    proto.ubii.interactions.Interaction.toObject, includeInstance),
+    processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
+    proto.ubii.processing.ProcessingModule.toObject, includeInstance),
     ioMappingsList: jspb.Message.toObjectList(msg.getIoMappingsList(),
     proto.ubii.sessions.IOMapping.toObject, includeInstance),
     tagsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     authorsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    processMode: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    editable: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
-    proto.ubii.processing.ProcessingModule.toObject, includeInstance)
+    status: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    editable: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -7752,9 +6830,9 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
       msg.setName(value);
       break;
     case 3:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
-      msg.addInteractions(value);
+      var value = new proto.ubii.processing.ProcessingModule;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
+      msg.addProcessingModules(value);
       break;
     case 4:
       var value = new proto.ubii.sessions.IOMapping;
@@ -7774,21 +6852,12 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
       msg.addAuthors(value);
       break;
     case 8:
-      var value = /** @type {!proto.ubii.sessions.ProcessMode} */ (reader.readEnum());
-      msg.setProcessMode(value);
-      break;
-    case 9:
       var value = /** @type {!proto.ubii.sessions.SessionStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
-    case 10:
+    case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEditable(value);
-      break;
-    case 11:
-      var value = new proto.ubii.processing.ProcessingModule;
-      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
-      msg.addProcessingModules(value);
       break;
     default:
       reader.skipField();
@@ -7833,12 +6902,12 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getInteractionsList();
+  f = message.getProcessingModulesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
       f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
+      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
     );
   }
   f = message.getIoMappingsList();
@@ -7870,33 +6939,18 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getProcessMode();
+  f = message.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
       8,
       f
     );
   }
-  f = message.getStatus();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      9,
-      f
-    );
-  }
   f = message.getEditable();
   if (f) {
     writer.writeBool(
-      10,
+      9,
       f
-    );
-  }
-  f = message.getProcessingModulesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      11,
-      f,
-      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
     );
   }
 };
@@ -7939,31 +6993,31 @@ proto.ubii.sessions.Session.prototype.setName = function(value) {
 
 
 /**
- * repeated ubii.interactions.Interaction interactions = 3;
- * @return {!Array<!proto.ubii.interactions.Interaction>}
+ * repeated ubii.processing.ProcessingModule processing_modules = 3;
+ * @return {!Array<!proto.ubii.processing.ProcessingModule>}
  */
-proto.ubii.sessions.Session.prototype.getInteractionsList = function() {
-  return /** @type{!Array<!proto.ubii.interactions.Interaction>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.interactions.Interaction, 3));
+proto.ubii.sessions.Session.prototype.getProcessingModulesList = function() {
+  return /** @type{!Array<!proto.ubii.processing.ProcessingModule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ProcessingModule, 3));
 };
 
 
 /**
- * @param {!Array<!proto.ubii.interactions.Interaction>} value
+ * @param {!Array<!proto.ubii.processing.ProcessingModule>} value
  * @return {!proto.ubii.sessions.Session} returns this
 */
-proto.ubii.sessions.Session.prototype.setInteractionsList = function(value) {
+proto.ubii.sessions.Session.prototype.setProcessingModulesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.ubii.interactions.Interaction=} opt_value
+ * @param {!proto.ubii.processing.ProcessingModule=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ubii.interactions.Interaction}
+ * @return {!proto.ubii.processing.ProcessingModule}
  */
-proto.ubii.sessions.Session.prototype.addInteractions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.interactions.Interaction, opt_index);
+proto.ubii.sessions.Session.prototype.addProcessingModules = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.processing.ProcessingModule, opt_index);
 };
 
 
@@ -7971,8 +7025,8 @@ proto.ubii.sessions.Session.prototype.addInteractions = function(opt_value, opt_
  * Clears the list making it empty but non-null.
  * @return {!proto.ubii.sessions.Session} returns this
  */
-proto.ubii.sessions.Session.prototype.clearInteractionsList = function() {
-  return this.setInteractionsList([]);
+proto.ubii.sessions.Session.prototype.clearProcessingModulesList = function() {
+  return this.setProcessingModulesList([]);
 };
 
 
@@ -8107,29 +7161,11 @@ proto.ubii.sessions.Session.prototype.clearAuthorsList = function() {
 
 
 /**
- * optional ProcessMode process_mode = 8;
- * @return {!proto.ubii.sessions.ProcessMode}
- */
-proto.ubii.sessions.Session.prototype.getProcessMode = function() {
-  return /** @type {!proto.ubii.sessions.ProcessMode} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {!proto.ubii.sessions.ProcessMode} value
- * @return {!proto.ubii.sessions.Session} returns this
- */
-proto.ubii.sessions.Session.prototype.setProcessMode = function(value) {
-  return jspb.Message.setProto3EnumField(this, 8, value);
-};
-
-
-/**
- * optional SessionStatus status = 9;
+ * optional SessionStatus status = 8;
  * @return {!proto.ubii.sessions.SessionStatus}
  */
 proto.ubii.sessions.Session.prototype.getStatus = function() {
-  return /** @type {!proto.ubii.sessions.SessionStatus} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.ubii.sessions.SessionStatus} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
@@ -8138,16 +7174,16 @@ proto.ubii.sessions.Session.prototype.getStatus = function() {
  * @return {!proto.ubii.sessions.Session} returns this
  */
 proto.ubii.sessions.Session.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
 /**
- * optional bool editable = 10;
+ * optional bool editable = 9;
  * @return {boolean}
  */
 proto.ubii.sessions.Session.prototype.getEditable = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
@@ -8156,45 +7192,7 @@ proto.ubii.sessions.Session.prototype.getEditable = function() {
  * @return {!proto.ubii.sessions.Session} returns this
  */
 proto.ubii.sessions.Session.prototype.setEditable = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
-};
-
-
-/**
- * repeated ubii.processing.ProcessingModule processing_modules = 11;
- * @return {!Array<!proto.ubii.processing.ProcessingModule>}
- */
-proto.ubii.sessions.Session.prototype.getProcessingModulesList = function() {
-  return /** @type{!Array<!proto.ubii.processing.ProcessingModule>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ProcessingModule, 11));
-};
-
-
-/**
- * @param {!Array<!proto.ubii.processing.ProcessingModule>} value
- * @return {!proto.ubii.sessions.Session} returns this
-*/
-proto.ubii.sessions.Session.prototype.setProcessingModulesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 11, value);
-};
-
-
-/**
- * @param {!proto.ubii.processing.ProcessingModule=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.processing.ProcessingModule}
- */
-proto.ubii.sessions.Session.prototype.addProcessingModules = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.ubii.processing.ProcessingModule, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.sessions.Session} returns this
- */
-proto.ubii.sessions.Session.prototype.clearProcessingModulesList = function() {
-  return this.setProcessingModulesList([]);
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -8357,14 +7355,6 @@ proto.ubii.sessions.SessionList.prototype.clearElementsList = function() {
   return this.setElementsList([]);
 };
 
-
-/**
- * @enum {number}
- */
-proto.ubii.sessions.ProcessMode = {
-  CYCLE_INTERACTIONS: 0,
-  INDIVIDUAL_PROCESS_FREQUENCIES: 1
-};
 
 /**
  * @enum {number}
@@ -15181,7 +14171,7 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   IMAGE2D: 30,
   IMAGE2D_LIST: 31,
   SESSION: 32,
-  INTERACTION: 33
+  PROCESSING_MODULE_LIST: 33
 };
 
 /**
@@ -15254,7 +14244,7 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     image2d: (f = msg.getImage2d()) && proto.ubii.dataStructure.Image2D.toObject(includeInstance, f),
     image2dList: (f = msg.getImage2dList()) && proto.ubii.dataStructure.Image2DList.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto.ubii.sessions.Session.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f)
+    processingModuleList: (f = msg.getProcessingModuleList()) && proto.ubii.processing.ProcessingModuleList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15446,9 +14436,9 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       msg.setSession(value);
       break;
     case 33:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
-      msg.setInteraction(value);
+      var value = new proto.ubii.processing.ProcessingModuleList;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader);
+      msg.setProcessingModuleList(value);
       break;
     default:
       reader.skipField();
@@ -15729,12 +14719,12 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto.ubii.sessions.Session.serializeBinaryToWriter
     );
   }
-  f = message.getInteraction();
+  f = message.getProcessingModuleList();
   if (f != null) {
     writer.writeMessage(
       33,
       f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
+      proto.ubii.processing.ProcessingModuleList.serializeBinaryToWriter
     );
   }
 };
@@ -16901,20 +15891,20 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 33;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.processing.ProcessingModuleList processing_module_list = 33;
+ * @return {?proto.ubii.processing.ProcessingModuleList}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getInteraction = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.interactions.Interaction, 33));
+proto.ubii.topicData.TopicDataRecord.prototype.getProcessingModuleList = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModuleList, 33));
 };
 
 
 /**
- * @param {?proto.ubii.interactions.Interaction|undefined} value
+ * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
  * @return {!proto.ubii.topicData.TopicDataRecord} returns this
 */
-proto.ubii.topicData.TopicDataRecord.prototype.setInteraction = function(value) {
+proto.ubii.topicData.TopicDataRecord.prototype.setProcessingModuleList = function(value) {
   return jspb.Message.setOneofWrapperField(this, 33, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
@@ -16923,8 +15913,8 @@ proto.ubii.topicData.TopicDataRecord.prototype.setInteraction = function(value) 
  * Clears the message field making it undefined.
  * @return {!proto.ubii.topicData.TopicDataRecord} returns this
  */
-proto.ubii.topicData.TopicDataRecord.prototype.clearInteraction = function() {
-  return this.setInteraction(undefined);
+proto.ubii.topicData.TopicDataRecord.prototype.clearProcessingModuleList = function() {
+  return this.setProcessingModuleList(undefined);
 };
 
 
@@ -16932,7 +15922,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearInteraction = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasInteraction = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasProcessingModuleList = function() {
   return jspb.Message.getField(this, 33) != null;
 };
 
@@ -17501,7 +16491,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14,15]];
 
 /**
  * @enum {number}
@@ -17513,17 +16503,15 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   TOPIC_SUBSCRIPTION: 4,
   SESSION: 5,
   SESSION_LIST: 6,
-  INTERACTION: 7,
-  INTERACTION_LIST: 8,
+  PROCESSING_MODULE: 7,
+  PROCESSING_MODULE_LIST: 8,
   TOPIC_MUX: 9,
   TOPIC_MUX_LIST: 10,
   TOPIC_DEMUX: 11,
   TOPIC_DEMUX_LIST: 12,
   CLIENT_LIST: 13,
   DEVICE_LIST: 14,
-  PROCESSING_MODULE: 15,
-  PROCESSING_MODULE_LIST: 16,
-  LOCKSTEP_PROCESSING_REQUEST: 17
+  LOCKSTEP_PROCESSING_REQUEST: 15
 };
 
 /**
@@ -17570,16 +16558,14 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     topicSubscription: (f = msg.getTopicSubscription()) && proto.ubii.services.request.TopicSubscription.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto.ubii.sessions.Session.toObject(includeInstance, f),
     sessionList: (f = msg.getSessionList()) && proto.ubii.sessions.SessionList.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f),
-    interactionList: (f = msg.getInteractionList()) && proto.ubii.interactions.InteractionList.toObject(includeInstance, f),
+    processingModule: (f = msg.getProcessingModule()) && proto.ubii.processing.ProcessingModule.toObject(includeInstance, f),
+    processingModuleList: (f = msg.getProcessingModuleList()) && proto.ubii.processing.ProcessingModuleList.toObject(includeInstance, f),
     topicMux: (f = msg.getTopicMux()) && proto.ubii.devices.TopicMux.toObject(includeInstance, f),
     topicMuxList: (f = msg.getTopicMuxList()) && proto.ubii.devices.TopicMuxList.toObject(includeInstance, f),
     topicDemux: (f = msg.getTopicDemux()) && proto.ubii.devices.TopicDemux.toObject(includeInstance, f),
     topicDemuxList: (f = msg.getTopicDemuxList()) && proto.ubii.devices.TopicDemuxList.toObject(includeInstance, f),
     clientList: (f = msg.getClientList()) && proto.ubii.clients.ClientList.toObject(includeInstance, f),
     deviceList: (f = msg.getDeviceList()) && proto.ubii.devices.DeviceList.toObject(includeInstance, f),
-    processingModule: (f = msg.getProcessingModule()) && proto.ubii.processing.ProcessingModule.toObject(includeInstance, f),
-    processingModuleList: (f = msg.getProcessingModuleList()) && proto.ubii.processing.ProcessingModuleList.toObject(includeInstance, f),
     lockstepProcessingRequest: (f = msg.getLockstepProcessingRequest()) && proto.ubii.processing.LockstepProcessingRequest.toObject(includeInstance, f)
   };
 
@@ -17647,14 +16633,14 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       msg.setSessionList(value);
       break;
     case 7:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
-      msg.setInteraction(value);
+      var value = new proto.ubii.processing.ProcessingModule;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
+      msg.setProcessingModule(value);
       break;
     case 8:
-      var value = new proto.ubii.interactions.InteractionList;
-      reader.readMessage(value,proto.ubii.interactions.InteractionList.deserializeBinaryFromReader);
-      msg.setInteractionList(value);
+      var value = new proto.ubii.processing.ProcessingModuleList;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader);
+      msg.setProcessingModuleList(value);
       break;
     case 9:
       var value = new proto.ubii.devices.TopicMux;
@@ -17687,16 +16673,6 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       msg.setDeviceList(value);
       break;
     case 15:
-      var value = new proto.ubii.processing.ProcessingModule;
-      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
-      msg.setProcessingModule(value);
-      break;
-    case 16:
-      var value = new proto.ubii.processing.ProcessingModuleList;
-      reader.readMessage(value,proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader);
-      msg.setProcessingModuleList(value);
-      break;
-    case 17:
       var value = new proto.ubii.processing.LockstepProcessingRequest;
       reader.readMessage(value,proto.ubii.processing.LockstepProcessingRequest.deserializeBinaryFromReader);
       msg.setLockstepProcessingRequest(value);
@@ -17777,20 +16753,20 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       proto.ubii.sessions.SessionList.serializeBinaryToWriter
     );
   }
-  f = message.getInteraction();
+  f = message.getProcessingModule();
   if (f != null) {
     writer.writeMessage(
       7,
       f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
+      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
     );
   }
-  f = message.getInteractionList();
+  f = message.getProcessingModuleList();
   if (f != null) {
     writer.writeMessage(
       8,
       f,
-      proto.ubii.interactions.InteractionList.serializeBinaryToWriter
+      proto.ubii.processing.ProcessingModuleList.serializeBinaryToWriter
     );
   }
   f = message.getTopicMux();
@@ -17841,26 +16817,10 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       proto.ubii.devices.DeviceList.serializeBinaryToWriter
     );
   }
-  f = message.getProcessingModule();
-  if (f != null) {
-    writer.writeMessage(
-      15,
-      f,
-      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
-    );
-  }
-  f = message.getProcessingModuleList();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      proto.ubii.processing.ProcessingModuleList.serializeBinaryToWriter
-    );
-  }
   f = message.getLockstepProcessingRequest();
   if (f != null) {
     writer.writeMessage(
-      17,
+      15,
       f,
       proto.ubii.processing.LockstepProcessingRequest.serializeBinaryToWriter
     );
@@ -18072,20 +17032,20 @@ proto.ubii.services.ServiceRequest.prototype.hasSessionList = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 7;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.processing.ProcessingModule processing_module = 7;
+ * @return {?proto.ubii.processing.ProcessingModule}
  */
-proto.ubii.services.ServiceRequest.prototype.getInteraction = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.interactions.Interaction, 7));
+proto.ubii.services.ServiceRequest.prototype.getProcessingModule = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModule} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModule, 7));
 };
 
 
 /**
- * @param {?proto.ubii.interactions.Interaction|undefined} value
+ * @param {?proto.ubii.processing.ProcessingModule|undefined} value
  * @return {!proto.ubii.services.ServiceRequest} returns this
 */
-proto.ubii.services.ServiceRequest.prototype.setInteraction = function(value) {
+proto.ubii.services.ServiceRequest.prototype.setProcessingModule = function(value) {
   return jspb.Message.setOneofWrapperField(this, 7, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };
 
@@ -18094,8 +17054,8 @@ proto.ubii.services.ServiceRequest.prototype.setInteraction = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ubii.services.ServiceRequest} returns this
  */
-proto.ubii.services.ServiceRequest.prototype.clearInteraction = function() {
-  return this.setInteraction(undefined);
+proto.ubii.services.ServiceRequest.prototype.clearProcessingModule = function() {
+  return this.setProcessingModule(undefined);
 };
 
 
@@ -18103,26 +17063,26 @@ proto.ubii.services.ServiceRequest.prototype.clearInteraction = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ubii.services.ServiceRequest.prototype.hasInteraction = function() {
+proto.ubii.services.ServiceRequest.prototype.hasProcessingModule = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional ubii.interactions.InteractionList interaction_list = 8;
- * @return {?proto.ubii.interactions.InteractionList}
+ * optional ubii.processing.ProcessingModuleList processing_module_list = 8;
+ * @return {?proto.ubii.processing.ProcessingModuleList}
  */
-proto.ubii.services.ServiceRequest.prototype.getInteractionList = function() {
-  return /** @type{?proto.ubii.interactions.InteractionList} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.interactions.InteractionList, 8));
+proto.ubii.services.ServiceRequest.prototype.getProcessingModuleList = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModuleList, 8));
 };
 
 
 /**
- * @param {?proto.ubii.interactions.InteractionList|undefined} value
+ * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
  * @return {!proto.ubii.services.ServiceRequest} returns this
 */
-proto.ubii.services.ServiceRequest.prototype.setInteractionList = function(value) {
+proto.ubii.services.ServiceRequest.prototype.setProcessingModuleList = function(value) {
   return jspb.Message.setOneofWrapperField(this, 8, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };
 
@@ -18131,8 +17091,8 @@ proto.ubii.services.ServiceRequest.prototype.setInteractionList = function(value
  * Clears the message field making it undefined.
  * @return {!proto.ubii.services.ServiceRequest} returns this
  */
-proto.ubii.services.ServiceRequest.prototype.clearInteractionList = function() {
-  return this.setInteractionList(undefined);
+proto.ubii.services.ServiceRequest.prototype.clearProcessingModuleList = function() {
+  return this.setProcessingModuleList(undefined);
 };
 
 
@@ -18140,7 +17100,7 @@ proto.ubii.services.ServiceRequest.prototype.clearInteractionList = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ubii.services.ServiceRequest.prototype.hasInteractionList = function() {
+proto.ubii.services.ServiceRequest.prototype.hasProcessingModuleList = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -18368,86 +17328,12 @@ proto.ubii.services.ServiceRequest.prototype.hasDeviceList = function() {
 
 
 /**
- * optional ubii.processing.ProcessingModule processing_module = 15;
- * @return {?proto.ubii.processing.ProcessingModule}
- */
-proto.ubii.services.ServiceRequest.prototype.getProcessingModule = function() {
-  return /** @type{?proto.ubii.processing.ProcessingModule} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModule, 15));
-};
-
-
-/**
- * @param {?proto.ubii.processing.ProcessingModule|undefined} value
- * @return {!proto.ubii.services.ServiceRequest} returns this
-*/
-proto.ubii.services.ServiceRequest.prototype.setProcessingModule = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 15, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.services.ServiceRequest} returns this
- */
-proto.ubii.services.ServiceRequest.prototype.clearProcessingModule = function() {
-  return this.setProcessingModule(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.services.ServiceRequest.prototype.hasProcessingModule = function() {
-  return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional ubii.processing.ProcessingModuleList processing_module_list = 16;
- * @return {?proto.ubii.processing.ProcessingModuleList}
- */
-proto.ubii.services.ServiceRequest.prototype.getProcessingModuleList = function() {
-  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModuleList, 16));
-};
-
-
-/**
- * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
- * @return {!proto.ubii.services.ServiceRequest} returns this
-*/
-proto.ubii.services.ServiceRequest.prototype.setProcessingModuleList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 16, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.services.ServiceRequest} returns this
- */
-proto.ubii.services.ServiceRequest.prototype.clearProcessingModuleList = function() {
-  return this.setProcessingModuleList(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.services.ServiceRequest.prototype.hasProcessingModuleList = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional ubii.processing.LockstepProcessingRequest lockstep_processing_request = 17;
+ * optional ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
  * @return {?proto.ubii.processing.LockstepProcessingRequest}
  */
 proto.ubii.services.ServiceRequest.prototype.getLockstepProcessingRequest = function() {
   return /** @type{?proto.ubii.processing.LockstepProcessingRequest} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.LockstepProcessingRequest, 17));
+    jspb.Message.getWrapperField(this, proto.ubii.processing.LockstepProcessingRequest, 15));
 };
 
 
@@ -18456,7 +17342,7 @@ proto.ubii.services.ServiceRequest.prototype.getLockstepProcessingRequest = func
  * @return {!proto.ubii.services.ServiceRequest} returns this
 */
 proto.ubii.services.ServiceRequest.prototype.setLockstepProcessingRequest = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 17, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 15, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
 };
 
 
@@ -18474,7 +17360,7 @@ proto.ubii.services.ServiceRequest.prototype.clearLockstepProcessingRequest = fu
  * @return {boolean}
  */
 proto.ubii.services.ServiceRequest.prototype.hasLockstepProcessingRequest = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
@@ -18900,7 +17786,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]];
 
 /**
  * @enum {number}
@@ -18914,8 +17800,8 @@ proto.ubii.services.ServiceReply.TypeCase = {
   SERVER: 5,
   SESSION: 6,
   SESSION_LIST: 7,
-  INTERACTION: 8,
-  INTERACTION_LIST: 9,
+  PROCESSING_MODULE: 8,
+  PROCESSING_MODULE_LIST: 9,
   STRING_LIST: 10,
   TOPIC_MUX: 11,
   TOPIC_MUX_LIST: 12,
@@ -18925,9 +17811,7 @@ proto.ubii.services.ServiceReply.TypeCase = {
   DEVICE_LIST: 16,
   SERVICE: 17,
   SERVICE_LIST: 18,
-  PROCESSING_MODULE: 19,
-  PROCESSING_MODULE_LIST: 20,
-  LOCKSTEP_PROCESSING_REPLY: 21
+  LOCKSTEP_PROCESSING_REPLY: 19
 };
 
 /**
@@ -18975,8 +17859,8 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     server: (f = msg.getServer()) && proto.ubii.servers.Server.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto.ubii.sessions.Session.toObject(includeInstance, f),
     sessionList: (f = msg.getSessionList()) && proto.ubii.sessions.SessionList.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto.ubii.interactions.Interaction.toObject(includeInstance, f),
-    interactionList: (f = msg.getInteractionList()) && proto.ubii.interactions.InteractionList.toObject(includeInstance, f),
+    processingModule: (f = msg.getProcessingModule()) && proto.ubii.processing.ProcessingModule.toObject(includeInstance, f),
+    processingModuleList: (f = msg.getProcessingModuleList()) && proto.ubii.processing.ProcessingModuleList.toObject(includeInstance, f),
     stringList: (f = msg.getStringList()) && proto.ubii.dataStructure.StringList.toObject(includeInstance, f),
     topicMux: (f = msg.getTopicMux()) && proto.ubii.devices.TopicMux.toObject(includeInstance, f),
     topicMuxList: (f = msg.getTopicMuxList()) && proto.ubii.devices.TopicMuxList.toObject(includeInstance, f),
@@ -18986,8 +17870,6 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     deviceList: (f = msg.getDeviceList()) && proto.ubii.devices.DeviceList.toObject(includeInstance, f),
     service: (f = msg.getService()) && proto.ubii.services.Service.toObject(includeInstance, f),
     serviceList: (f = msg.getServiceList()) && proto.ubii.services.ServiceList.toObject(includeInstance, f),
-    processingModule: (f = msg.getProcessingModule()) && proto.ubii.processing.ProcessingModule.toObject(includeInstance, f),
-    processingModuleList: (f = msg.getProcessingModuleList()) && proto.ubii.processing.ProcessingModuleList.toObject(includeInstance, f),
     lockstepProcessingReply: (f = msg.getLockstepProcessingReply()) && proto.ubii.processing.LockstepProcessingReply.toObject(includeInstance, f)
   };
 
@@ -19061,14 +17943,14 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       msg.setSessionList(value);
       break;
     case 8:
-      var value = new proto.ubii.interactions.Interaction;
-      reader.readMessage(value,proto.ubii.interactions.Interaction.deserializeBinaryFromReader);
-      msg.setInteraction(value);
+      var value = new proto.ubii.processing.ProcessingModule;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
+      msg.setProcessingModule(value);
       break;
     case 9:
-      var value = new proto.ubii.interactions.InteractionList;
-      reader.readMessage(value,proto.ubii.interactions.InteractionList.deserializeBinaryFromReader);
-      msg.setInteractionList(value);
+      var value = new proto.ubii.processing.ProcessingModuleList;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader);
+      msg.setProcessingModuleList(value);
       break;
     case 10:
       var value = new proto.ubii.dataStructure.StringList;
@@ -19116,16 +17998,6 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       msg.setServiceList(value);
       break;
     case 19:
-      var value = new proto.ubii.processing.ProcessingModule;
-      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
-      msg.setProcessingModule(value);
-      break;
-    case 20:
-      var value = new proto.ubii.processing.ProcessingModuleList;
-      reader.readMessage(value,proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader);
-      msg.setProcessingModuleList(value);
-      break;
-    case 21:
       var value = new proto.ubii.processing.LockstepProcessingReply;
       reader.readMessage(value,proto.ubii.processing.LockstepProcessingReply.deserializeBinaryFromReader);
       msg.setLockstepProcessingReply(value);
@@ -19215,20 +18087,20 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto.ubii.sessions.SessionList.serializeBinaryToWriter
     );
   }
-  f = message.getInteraction();
+  f = message.getProcessingModule();
   if (f != null) {
     writer.writeMessage(
       8,
       f,
-      proto.ubii.interactions.Interaction.serializeBinaryToWriter
+      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
     );
   }
-  f = message.getInteractionList();
+  f = message.getProcessingModuleList();
   if (f != null) {
     writer.writeMessage(
       9,
       f,
-      proto.ubii.interactions.InteractionList.serializeBinaryToWriter
+      proto.ubii.processing.ProcessingModuleList.serializeBinaryToWriter
     );
   }
   f = message.getStringList();
@@ -19303,26 +18175,10 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       proto.ubii.services.ServiceList.serializeBinaryToWriter
     );
   }
-  f = message.getProcessingModule();
-  if (f != null) {
-    writer.writeMessage(
-      19,
-      f,
-      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
-    );
-  }
-  f = message.getProcessingModuleList();
-  if (f != null) {
-    writer.writeMessage(
-      20,
-      f,
-      proto.ubii.processing.ProcessingModuleList.serializeBinaryToWriter
-    );
-  }
   f = message.getLockstepProcessingReply();
   if (f != null) {
     writer.writeMessage(
-      21,
+      19,
       f,
       proto.ubii.processing.LockstepProcessingReply.serializeBinaryToWriter
     );
@@ -19590,20 +18446,20 @@ proto.ubii.services.ServiceReply.prototype.hasSessionList = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 8;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.processing.ProcessingModule processing_module = 8;
+ * @return {?proto.ubii.processing.ProcessingModule}
  */
-proto.ubii.services.ServiceReply.prototype.getInteraction = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.interactions.Interaction, 8));
+proto.ubii.services.ServiceReply.prototype.getProcessingModule = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModule} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModule, 8));
 };
 
 
 /**
- * @param {?proto.ubii.interactions.Interaction|undefined} value
+ * @param {?proto.ubii.processing.ProcessingModule|undefined} value
  * @return {!proto.ubii.services.ServiceReply} returns this
 */
-proto.ubii.services.ServiceReply.prototype.setInteraction = function(value) {
+proto.ubii.services.ServiceReply.prototype.setProcessingModule = function(value) {
   return jspb.Message.setOneofWrapperField(this, 8, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
@@ -19612,8 +18468,8 @@ proto.ubii.services.ServiceReply.prototype.setInteraction = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.ubii.services.ServiceReply} returns this
  */
-proto.ubii.services.ServiceReply.prototype.clearInteraction = function() {
-  return this.setInteraction(undefined);
+proto.ubii.services.ServiceReply.prototype.clearProcessingModule = function() {
+  return this.setProcessingModule(undefined);
 };
 
 
@@ -19621,26 +18477,26 @@ proto.ubii.services.ServiceReply.prototype.clearInteraction = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ubii.services.ServiceReply.prototype.hasInteraction = function() {
+proto.ubii.services.ServiceReply.prototype.hasProcessingModule = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional ubii.interactions.InteractionList interaction_list = 9;
- * @return {?proto.ubii.interactions.InteractionList}
+ * optional ubii.processing.ProcessingModuleList processing_module_list = 9;
+ * @return {?proto.ubii.processing.ProcessingModuleList}
  */
-proto.ubii.services.ServiceReply.prototype.getInteractionList = function() {
-  return /** @type{?proto.ubii.interactions.InteractionList} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.interactions.InteractionList, 9));
+proto.ubii.services.ServiceReply.prototype.getProcessingModuleList = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModuleList, 9));
 };
 
 
 /**
- * @param {?proto.ubii.interactions.InteractionList|undefined} value
+ * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
  * @return {!proto.ubii.services.ServiceReply} returns this
 */
-proto.ubii.services.ServiceReply.prototype.setInteractionList = function(value) {
+proto.ubii.services.ServiceReply.prototype.setProcessingModuleList = function(value) {
   return jspb.Message.setOneofWrapperField(this, 9, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
@@ -19649,8 +18505,8 @@ proto.ubii.services.ServiceReply.prototype.setInteractionList = function(value) 
  * Clears the message field making it undefined.
  * @return {!proto.ubii.services.ServiceReply} returns this
  */
-proto.ubii.services.ServiceReply.prototype.clearInteractionList = function() {
-  return this.setInteractionList(undefined);
+proto.ubii.services.ServiceReply.prototype.clearProcessingModuleList = function() {
+  return this.setProcessingModuleList(undefined);
 };
 
 
@@ -19658,7 +18514,7 @@ proto.ubii.services.ServiceReply.prototype.clearInteractionList = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ubii.services.ServiceReply.prototype.hasInteractionList = function() {
+proto.ubii.services.ServiceReply.prototype.hasProcessingModuleList = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -19997,86 +18853,12 @@ proto.ubii.services.ServiceReply.prototype.hasServiceList = function() {
 
 
 /**
- * optional ubii.processing.ProcessingModule processing_module = 19;
- * @return {?proto.ubii.processing.ProcessingModule}
- */
-proto.ubii.services.ServiceReply.prototype.getProcessingModule = function() {
-  return /** @type{?proto.ubii.processing.ProcessingModule} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModule, 19));
-};
-
-
-/**
- * @param {?proto.ubii.processing.ProcessingModule|undefined} value
- * @return {!proto.ubii.services.ServiceReply} returns this
-*/
-proto.ubii.services.ServiceReply.prototype.setProcessingModule = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 19, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.services.ServiceReply} returns this
- */
-proto.ubii.services.ServiceReply.prototype.clearProcessingModule = function() {
-  return this.setProcessingModule(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.services.ServiceReply.prototype.hasProcessingModule = function() {
-  return jspb.Message.getField(this, 19) != null;
-};
-
-
-/**
- * optional ubii.processing.ProcessingModuleList processing_module_list = 20;
- * @return {?proto.ubii.processing.ProcessingModuleList}
- */
-proto.ubii.services.ServiceReply.prototype.getProcessingModuleList = function() {
-  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingModuleList, 20));
-};
-
-
-/**
- * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
- * @return {!proto.ubii.services.ServiceReply} returns this
-*/
-proto.ubii.services.ServiceReply.prototype.setProcessingModuleList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 20, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.services.ServiceReply} returns this
- */
-proto.ubii.services.ServiceReply.prototype.clearProcessingModuleList = function() {
-  return this.setProcessingModuleList(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.services.ServiceReply.prototype.hasProcessingModuleList = function() {
-  return jspb.Message.getField(this, 20) != null;
-};
-
-
-/**
- * optional ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+ * optional ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;
  * @return {?proto.ubii.processing.LockstepProcessingReply}
  */
 proto.ubii.services.ServiceReply.prototype.getLockstepProcessingReply = function() {
   return /** @type{?proto.ubii.processing.LockstepProcessingReply} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.LockstepProcessingReply, 21));
+    jspb.Message.getWrapperField(this, proto.ubii.processing.LockstepProcessingReply, 19));
 };
 
 
@@ -20085,7 +18867,7 @@ proto.ubii.services.ServiceReply.prototype.getLockstepProcessingReply = function
  * @return {!proto.ubii.services.ServiceReply} returns this
 */
 proto.ubii.services.ServiceReply.prototype.setLockstepProcessingReply = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 21, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+  return jspb.Message.setOneofWrapperField(this, 19, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
 };
 
 
@@ -20103,7 +18885,7 @@ proto.ubii.services.ServiceReply.prototype.clearLockstepProcessingReply = functi
  * @return {boolean}
  */
 proto.ubii.services.ServiceReply.prototype.hasLockstepProcessingReply = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

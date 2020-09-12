@@ -457,19 +457,19 @@ public final class TopicDataRecordOuterClass {
     ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder();
 
     /**
-     * <code>.ubii.interactions.Interaction interaction = 33;</code>
-     * @return Whether the interaction field is set.
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
+     * @return Whether the processingModuleList field is set.
      */
-    boolean hasInteraction();
+    boolean hasProcessingModuleList();
     /**
-     * <code>.ubii.interactions.Interaction interaction = 33;</code>
-     * @return The interaction.
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
+     * @return The processingModuleList.
      */
-    ubii.interactions.InteractionOuterClass.Interaction getInteraction();
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList();
     /**
-     * <code>.ubii.interactions.Interaction interaction = 33;</code>
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
      */
-    ubii.interactions.InteractionOuterClass.InteractionOrBuilder getInteractionOrBuilder();
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder();
 
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.TypeCase getTypeCase();
   }
@@ -915,14 +915,14 @@ public final class TopicDataRecordOuterClass {
               break;
             }
             case 266: {
-              ubii.interactions.InteractionOuterClass.Interaction.Builder subBuilder = null;
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder subBuilder = null;
               if (typeCase_ == 33) {
-                subBuilder = ((ubii.interactions.InteractionOuterClass.Interaction) type_).toBuilder();
+                subBuilder = ((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_).toBuilder();
               }
               type_ =
-                  input.readMessage(ubii.interactions.InteractionOuterClass.Interaction.parser(), extensionRegistry);
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((ubii.interactions.InteractionOuterClass.Interaction) type_);
+                subBuilder.mergeFrom((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_);
                 type_ = subBuilder.buildPartial();
               }
               typeCase_ = 33;
@@ -995,7 +995,7 @@ public final class TopicDataRecordOuterClass {
       IMAGE2D(30),
       IMAGE2D_LIST(31),
       SESSION(32),
-      INTERACTION(33),
+      PROCESSING_MODULE_LIST(33),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -1043,7 +1043,7 @@ public final class TopicDataRecordOuterClass {
           case 30: return IMAGE2D;
           case 31: return IMAGE2D_LIST;
           case 32: return SESSION;
-          case 33: return INTERACTION;
+          case 33: return PROCESSING_MODULE_LIST;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -1911,32 +1911,32 @@ public final class TopicDataRecordOuterClass {
       return ubii.sessions.SessionOuterClass.Session.getDefaultInstance();
     }
 
-    public static final int INTERACTION_FIELD_NUMBER = 33;
+    public static final int PROCESSING_MODULE_LIST_FIELD_NUMBER = 33;
     /**
-     * <code>.ubii.interactions.Interaction interaction = 33;</code>
-     * @return Whether the interaction field is set.
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
+     * @return Whether the processingModuleList field is set.
      */
-    public boolean hasInteraction() {
+    public boolean hasProcessingModuleList() {
       return typeCase_ == 33;
     }
     /**
-     * <code>.ubii.interactions.Interaction interaction = 33;</code>
-     * @return The interaction.
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
+     * @return The processingModuleList.
      */
-    public ubii.interactions.InteractionOuterClass.Interaction getInteraction() {
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
       if (typeCase_ == 33) {
-         return (ubii.interactions.InteractionOuterClass.Interaction) type_;
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
       }
-      return ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance();
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.interactions.Interaction interaction = 33;</code>
+     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
      */
-    public ubii.interactions.InteractionOuterClass.InteractionOrBuilder getInteractionOrBuilder() {
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
       if (typeCase_ == 33) {
-         return (ubii.interactions.InteractionOuterClass.Interaction) type_;
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
       }
-      return ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance();
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2054,7 +2054,7 @@ public final class TopicDataRecordOuterClass {
         output.writeMessage(32, (ubii.sessions.SessionOuterClass.Session) type_);
       }
       if (typeCase_ == 33) {
-        output.writeMessage(33, (ubii.interactions.InteractionOuterClass.Interaction) type_);
+        output.writeMessage(33, (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -2197,7 +2197,7 @@ public final class TopicDataRecordOuterClass {
       }
       if (typeCase_ == 33) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(33, (ubii.interactions.InteractionOuterClass.Interaction) type_);
+          .computeMessageSize(33, (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2346,8 +2346,8 @@ public final class TopicDataRecordOuterClass {
               .equals(other.getSession())) return false;
           break;
         case 33:
-          if (!getInteraction()
-              .equals(other.getInteraction())) return false;
+          if (!getProcessingModuleList()
+              .equals(other.getProcessingModuleList())) return false;
           break;
         case 0:
         default:
@@ -2494,8 +2494,8 @@ public final class TopicDataRecordOuterClass {
           hash = (53 * hash) + getSession().hashCode();
           break;
         case 33:
-          hash = (37 * hash) + INTERACTION_FIELD_NUMBER;
-          hash = (53 * hash) + getInteraction().hashCode();
+          hash = (37 * hash) + PROCESSING_MODULE_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getProcessingModuleList().hashCode();
           break;
         case 0:
         default:
@@ -2866,10 +2866,10 @@ public final class TopicDataRecordOuterClass {
           }
         }
         if (typeCase_ == 33) {
-          if (interactionBuilder_ == null) {
+          if (processingModuleListBuilder_ == null) {
             result.type_ = type_;
           } else {
-            result.type_ = interactionBuilder_.build();
+            result.type_ = processingModuleListBuilder_.build();
           }
         }
         result.typeCase_ = typeCase_;
@@ -3051,8 +3051,8 @@ public final class TopicDataRecordOuterClass {
             mergeSession(other.getSession());
             break;
           }
-          case INTERACTION: {
-            mergeInteraction(other.getInteraction());
+          case PROCESSING_MODULE_LIST: {
+            mergeProcessingModuleList(other.getProcessingModuleList());
             break;
           }
           case TYPE_NOT_SET: {
@@ -6972,69 +6972,69 @@ public final class TopicDataRecordOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.interactions.InteractionOuterClass.Interaction, ubii.interactions.InteractionOuterClass.Interaction.Builder, ubii.interactions.InteractionOuterClass.InteractionOrBuilder> interactionBuilder_;
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder> processingModuleListBuilder_;
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
-       * @return Whether the interaction field is set.
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
+       * @return Whether the processingModuleList field is set.
        */
-      public boolean hasInteraction() {
+      public boolean hasProcessingModuleList() {
         return typeCase_ == 33;
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
-       * @return The interaction.
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
+       * @return The processingModuleList.
        */
-      public ubii.interactions.InteractionOuterClass.Interaction getInteraction() {
-        if (interactionBuilder_ == null) {
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
+        if (processingModuleListBuilder_ == null) {
           if (typeCase_ == 33) {
-            return (ubii.interactions.InteractionOuterClass.Interaction) type_;
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
           }
-          return ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance();
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
         } else {
           if (typeCase_ == 33) {
-            return interactionBuilder_.getMessage();
+            return processingModuleListBuilder_.getMessage();
           }
-          return ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance();
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
         }
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
        */
-      public Builder setInteraction(ubii.interactions.InteractionOuterClass.Interaction value) {
-        if (interactionBuilder_ == null) {
+      public Builder setProcessingModuleList(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList value) {
+        if (processingModuleListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           type_ = value;
           onChanged();
         } else {
-          interactionBuilder_.setMessage(value);
+          processingModuleListBuilder_.setMessage(value);
         }
         typeCase_ = 33;
         return this;
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
        */
-      public Builder setInteraction(
-          ubii.interactions.InteractionOuterClass.Interaction.Builder builderForValue) {
-        if (interactionBuilder_ == null) {
+      public Builder setProcessingModuleList(
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder builderForValue) {
+        if (processingModuleListBuilder_ == null) {
           type_ = builderForValue.build();
           onChanged();
         } else {
-          interactionBuilder_.setMessage(builderForValue.build());
+          processingModuleListBuilder_.setMessage(builderForValue.build());
         }
         typeCase_ = 33;
         return this;
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
        */
-      public Builder mergeInteraction(ubii.interactions.InteractionOuterClass.Interaction value) {
-        if (interactionBuilder_ == null) {
+      public Builder mergeProcessingModuleList(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList value) {
+        if (processingModuleListBuilder_ == null) {
           if (typeCase_ == 33 &&
-              type_ != ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance()) {
-            type_ = ubii.interactions.InteractionOuterClass.Interaction.newBuilder((ubii.interactions.InteractionOuterClass.Interaction) type_)
+              type_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance()) {
+            type_ = ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.newBuilder((ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_)
                 .mergeFrom(value).buildPartial();
           } else {
             type_ = value;
@@ -7042,18 +7042,18 @@ public final class TopicDataRecordOuterClass {
           onChanged();
         } else {
           if (typeCase_ == 33) {
-            interactionBuilder_.mergeFrom(value);
+            processingModuleListBuilder_.mergeFrom(value);
           }
-          interactionBuilder_.setMessage(value);
+          processingModuleListBuilder_.setMessage(value);
         }
         typeCase_ = 33;
         return this;
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
        */
-      public Builder clearInteraction() {
-        if (interactionBuilder_ == null) {
+      public Builder clearProcessingModuleList() {
+        if (processingModuleListBuilder_ == null) {
           if (typeCase_ == 33) {
             typeCase_ = 0;
             type_ = null;
@@ -7064,49 +7064,49 @@ public final class TopicDataRecordOuterClass {
             typeCase_ = 0;
             type_ = null;
           }
-          interactionBuilder_.clear();
+          processingModuleListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
        */
-      public ubii.interactions.InteractionOuterClass.Interaction.Builder getInteractionBuilder() {
-        return getInteractionFieldBuilder().getBuilder();
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder getProcessingModuleListBuilder() {
+        return getProcessingModuleListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
        */
-      public ubii.interactions.InteractionOuterClass.InteractionOrBuilder getInteractionOrBuilder() {
-        if ((typeCase_ == 33) && (interactionBuilder_ != null)) {
-          return interactionBuilder_.getMessageOrBuilder();
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
+        if ((typeCase_ == 33) && (processingModuleListBuilder_ != null)) {
+          return processingModuleListBuilder_.getMessageOrBuilder();
         } else {
           if (typeCase_ == 33) {
-            return (ubii.interactions.InteractionOuterClass.Interaction) type_;
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_;
           }
-          return ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance();
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
         }
       }
       /**
-       * <code>.ubii.interactions.Interaction interaction = 33;</code>
+       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 33;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          ubii.interactions.InteractionOuterClass.Interaction, ubii.interactions.InteractionOuterClass.Interaction.Builder, ubii.interactions.InteractionOuterClass.InteractionOrBuilder> 
-          getInteractionFieldBuilder() {
-        if (interactionBuilder_ == null) {
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder> 
+          getProcessingModuleListFieldBuilder() {
+        if (processingModuleListBuilder_ == null) {
           if (!(typeCase_ == 33)) {
-            type_ = ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance();
+            type_ = ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
           }
-          interactionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ubii.interactions.InteractionOuterClass.Interaction, ubii.interactions.InteractionOuterClass.Interaction.Builder, ubii.interactions.InteractionOuterClass.InteractionOrBuilder>(
-                  (ubii.interactions.InteractionOuterClass.Interaction) type_,
+          processingModuleListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder>(
+                  (ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList) type_,
                   getParentForChildren(),
                   isClean());
           type_ = null;
         }
         typeCase_ = 33;
         onChanged();;
-        return interactionBuilder_;
+        return processingModuleListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7997,48 +7997,49 @@ public final class TopicDataRecordOuterClass {
       "proto\032<proto/topicData/topicDataRecord/d" +
       "ataStructure/object3d.proto\0329proto/topic" +
       "Data/topicDataRecord/dataStructure/image" +
-      ".proto\032\034proto/sessions/session.proto\032$pr" +
-      "oto/interactions/interaction.proto\"\346\013\n\017T" +
-      "opicDataRecord\022\r\n\005topic\030\001 \001(\t\022,\n\ttimesta" +
-      "mp\030\002 \001(\0132\031.ubii.topicData.Timestamp\022\020\n\006d" +
-      "ouble\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030" +
-      "\005 \001(\tH\000\022.\n\007vector2\030\006 \001(\0132\033.ubii.dataStru" +
-      "cture.Vector2H\000\022.\n\007vector3\030\007 \001(\0132\033.ubii." +
-      "dataStructure.Vector3H\000\022.\n\007vector4\030\010 \001(\013" +
-      "2\033.ubii.dataStructure.Vector4H\000\0224\n\nquate" +
-      "rnion\030\t \001(\0132\036.ubii.dataStructure.Quatern" +
-      "ionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.ubii.dataStru" +
-      "cture.Matrix3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132\035.u" +
-      "bii.dataStructure.Matrix4x4H\000\022*\n\005color\030\014" +
-      " \001(\0132\031.ubii.dataStructure.ColorH\000\0225\n\013tou" +
-      "ch_event\030\r \001(\0132\036.ubii.dataStructure.Touc" +
-      "hEventH\000\0221\n\tkey_event\030\016 \001(\0132\034.ubii.dataS" +
-      "tructure.KeyEventH\000\0225\n\013mouse_event\030\017 \001(\013" +
-      "2\036.ubii.dataStructure.MouseEventH\000\0221\n\tmy" +
-      "o_event\030\020 \001(\0132\034.ubii.dataStructure.MyoEv" +
-      "entH\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii.dataStructu" +
-      "re.Pose2DH\000\022,\n\006pose3D\030\022 \001(\0132\032.ubii.dataS" +
-      "tructure.Pose3DH\000\0220\n\010object2D\030\023 \001(\0132\034.ub" +
-      "ii.dataStructure.Object2DH\000\0220\n\010object3D\030" +
-      "\024 \001(\0132\034.ubii.dataStructure.Object3DH\000\0229\n" +
-      "\robject2D_list\030\025 \001(\0132 .ubii.dataStructur" +
-      "e.Object2DListH\000\0229\n\robject3D_list\030\026 \001(\0132" +
-      " .ubii.dataStructure.Object3DListH\000\022\017\n\005i" +
-      "nt32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H\000\0223\n\nint32_l" +
-      "ist\030\031 \001(\0132\035.ubii.dataStructure.Int32List" +
-      "H\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubii.dataStruct" +
-      "ure.FloatListH\000\0225\n\013double_list\030\033 \001(\0132\036.u" +
-      "bii.dataStructure.DoubleListH\000\0225\n\013string" +
-      "_list\030\034 \001(\0132\036.ubii.dataStructure.StringL" +
-      "istH\000\0221\n\tbool_list\030\035 \001(\0132\034.ubii.dataStru" +
-      "cture.BoolListH\000\022.\n\007image2D\030\036 \001(\0132\033.ubii" +
-      ".dataStructure.Image2DH\000\0227\n\014image2D_list" +
-      "\030\037 \001(\0132\037.ubii.dataStructure.Image2DListH" +
-      "\000\022)\n\007session\030  \001(\0132\026.ubii.sessions.Sessi" +
-      "onH\000\0225\n\013interaction\030! \001(\0132\036.ubii.interac" +
-      "tions.InteractionH\000B\006\n\004type\"H\n\023TopicData" +
-      "RecordList\0221\n\010elements\030\001 \003(\0132\037.ubii.topi" +
-      "cData.TopicDataRecordb\006proto3"
+      ".proto\032\034proto/sessions/session.proto\032\'pr" +
+      "oto/processing/processingModule.proto\"\370\013" +
+      "\n\017TopicDataRecord\022\r\n\005topic\030\001 \001(\t\022,\n\ttime" +
+      "stamp\030\002 \001(\0132\031.ubii.topicData.Timestamp\022\020" +
+      "\n\006double\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006stri" +
+      "ng\030\005 \001(\tH\000\022.\n\007vector2\030\006 \001(\0132\033.ubii.dataS" +
+      "tructure.Vector2H\000\022.\n\007vector3\030\007 \001(\0132\033.ub" +
+      "ii.dataStructure.Vector3H\000\022.\n\007vector4\030\010 " +
+      "\001(\0132\033.ubii.dataStructure.Vector4H\000\0224\n\nqu" +
+      "aternion\030\t \001(\0132\036.ubii.dataStructure.Quat" +
+      "ernionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.ubii.dataS" +
+      "tructure.Matrix3x2H\000\0222\n\tmatrix4x4\030\013 \001(\0132" +
+      "\035.ubii.dataStructure.Matrix4x4H\000\022*\n\005colo" +
+      "r\030\014 \001(\0132\031.ubii.dataStructure.ColorH\000\0225\n\013" +
+      "touch_event\030\r \001(\0132\036.ubii.dataStructure.T" +
+      "ouchEventH\000\0221\n\tkey_event\030\016 \001(\0132\034.ubii.da" +
+      "taStructure.KeyEventH\000\0225\n\013mouse_event\030\017 " +
+      "\001(\0132\036.ubii.dataStructure.MouseEventH\000\0221\n" +
+      "\tmyo_event\030\020 \001(\0132\034.ubii.dataStructure.My" +
+      "oEventH\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii.dataStru" +
+      "cture.Pose2DH\000\022,\n\006pose3D\030\022 \001(\0132\032.ubii.da" +
+      "taStructure.Pose3DH\000\0220\n\010object2D\030\023 \001(\0132\034" +
+      ".ubii.dataStructure.Object2DH\000\0220\n\010object" +
+      "3D\030\024 \001(\0132\034.ubii.dataStructure.Object3DH\000" +
+      "\0229\n\robject2D_list\030\025 \001(\0132 .ubii.dataStruc" +
+      "ture.Object2DListH\000\0229\n\robject3D_list\030\026 \001" +
+      "(\0132 .ubii.dataStructure.Object3DListH\000\022\017" +
+      "\n\005int32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H\000\0223\n\nint3" +
+      "2_list\030\031 \001(\0132\035.ubii.dataStructure.Int32L" +
+      "istH\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubii.dataStr" +
+      "ucture.FloatListH\000\0225\n\013double_list\030\033 \001(\0132" +
+      "\036.ubii.dataStructure.DoubleListH\000\0225\n\013str" +
+      "ing_list\030\034 \001(\0132\036.ubii.dataStructure.Stri" +
+      "ngListH\000\0221\n\tbool_list\030\035 \001(\0132\034.ubii.dataS" +
+      "tructure.BoolListH\000\022.\n\007image2D\030\036 \001(\0132\033.u" +
+      "bii.dataStructure.Image2DH\000\0227\n\014image2D_l" +
+      "ist\030\037 \001(\0132\037.ubii.dataStructure.Image2DLi" +
+      "stH\000\022)\n\007session\030  \001(\0132\026.ubii.sessions.Se" +
+      "ssionH\000\022G\n\026processing_module_list\030! \001(\0132" +
+      "%.ubii.processing.ProcessingModuleListH\000" +
+      "B\006\n\004type\"H\n\023TopicDataRecordList\0221\n\010eleme" +
+      "nts\030\001 \003(\0132\037.ubii.topicData.TopicDataReco" +
+      "rdb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8062,14 +8063,14 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Object3DOuterClass.getDescriptor(),
           ubii.dataStructure.Image.getDescriptor(),
           ubii.sessions.SessionOuterClass.getDescriptor(),
-          ubii.interactions.InteractionOuterClass.getDescriptor(),
+          ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
         });
     internal_static_ubii_topicData_TopicDataRecord_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicDataRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_topicData_TopicDataRecord_descriptor,
-        new java.lang.String[] { "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose2D", "Pose3D", "Object2D", "Object3D", "Object2DList", "Object3DList", "Int32", "Float", "Int32List", "FloatList", "DoubleList", "StringList", "BoolList", "Image2D", "Image2DList", "Session", "Interaction", "Type", });
+        new java.lang.String[] { "Topic", "Timestamp", "Double", "Bool", "String", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "KeyEvent", "MouseEvent", "MyoEvent", "Pose2D", "Pose3D", "Object2D", "Object3D", "Object2DList", "Object3DList", "Int32", "Float", "Int32List", "FloatList", "DoubleList", "StringList", "BoolList", "Image2D", "Image2DList", "Session", "ProcessingModuleList", "Type", });
     internal_static_ubii_topicData_TopicDataRecordList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_topicData_TopicDataRecordList_fieldAccessorTable = new
@@ -8095,7 +8096,7 @@ public final class TopicDataRecordOuterClass {
     ubii.dataStructure.Object3DOuterClass.getDescriptor();
     ubii.dataStructure.Image.getDescriptor();
     ubii.sessions.SessionOuterClass.getDescriptor();
-    ubii.interactions.InteractionOuterClass.getDescriptor();
+    ubii.processing.ProcessingModuleOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

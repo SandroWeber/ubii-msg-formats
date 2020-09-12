@@ -12,13 +12,10 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var proto_interactions_interaction_pb = require('../../proto/interactions/interaction_pb.js');
-goog.object.extend(proto, proto_interactions_interaction_pb);
-var proto_sessions_ioMapping_pb = require('../../proto/sessions/ioMapping_pb.js');
-goog.object.extend(proto, proto_sessions_ioMapping_pb);
+var proto_sessions_ioMappings_pb = require('../../proto/sessions/ioMappings_pb.js');
+goog.object.extend(proto, proto_sessions_ioMappings_pb);
 var proto_processing_processingModule_pb = require('../../proto/processing/processingModule_pb.js');
 goog.object.extend(proto, proto_processing_processingModule_pb);
-goog.exportSymbol('proto.ubii.sessions.ProcessMode', null, global);
 goog.exportSymbol('proto.ubii.sessions.Session', null, global);
 goog.exportSymbol('proto.ubii.sessions.SessionList', null, global);
 goog.exportSymbol('proto.ubii.sessions.SessionStatus', null, global);
@@ -70,7 +67,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.sessions.Session.repeatedFields_ = [3,4,5,7,11];
+proto.ubii.sessions.Session.repeatedFields_ = [3,4,5,7];
 
 
 
@@ -105,18 +102,15 @@ proto.ubii.sessions.Session.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    interactionsList: jspb.Message.toObjectList(msg.getInteractionsList(),
-    proto_interactions_interaction_pb.Interaction.toObject, includeInstance),
+    processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
+    proto_processing_processingModule_pb.ProcessingModule.toObject, includeInstance),
     ioMappingsList: jspb.Message.toObjectList(msg.getIoMappingsList(),
-    proto_sessions_ioMapping_pb.IOMapping.toObject, includeInstance),
+    proto_sessions_ioMappings_pb.IOMapping.toObject, includeInstance),
     tagsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     authorsList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    processMode: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    editable: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
-    proto_processing_processingModule_pb.ProcessingModule.toObject, includeInstance)
+    status: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    editable: jspb.Message.getBooleanFieldWithDefault(msg, 9, false)
   };
 
   if (includeInstance) {
@@ -162,13 +156,13 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
       msg.setName(value);
       break;
     case 3:
-      var value = new proto_interactions_interaction_pb.Interaction;
-      reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
-      msg.addInteractions(value);
+      var value = new proto_processing_processingModule_pb.ProcessingModule;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModule.deserializeBinaryFromReader);
+      msg.addProcessingModules(value);
       break;
     case 4:
-      var value = new proto_sessions_ioMapping_pb.IOMapping;
-      reader.readMessage(value,proto_sessions_ioMapping_pb.IOMapping.deserializeBinaryFromReader);
+      var value = new proto_sessions_ioMappings_pb.IOMapping;
+      reader.readMessage(value,proto_sessions_ioMappings_pb.IOMapping.deserializeBinaryFromReader);
       msg.addIoMappings(value);
       break;
     case 5:
@@ -184,21 +178,12 @@ proto.ubii.sessions.Session.deserializeBinaryFromReader = function(msg, reader) 
       msg.addAuthors(value);
       break;
     case 8:
-      var value = /** @type {!proto.ubii.sessions.ProcessMode} */ (reader.readEnum());
-      msg.setProcessMode(value);
-      break;
-    case 9:
       var value = /** @type {!proto.ubii.sessions.SessionStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
-    case 10:
+    case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEditable(value);
-      break;
-    case 11:
-      var value = new proto_processing_processingModule_pb.ProcessingModule;
-      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModule.deserializeBinaryFromReader);
-      msg.addProcessingModules(value);
       break;
     default:
       reader.skipField();
@@ -243,12 +228,12 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getInteractionsList();
+  f = message.getProcessingModulesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
       f,
-      proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
+      proto_processing_processingModule_pb.ProcessingModule.serializeBinaryToWriter
     );
   }
   f = message.getIoMappingsList();
@@ -256,7 +241,7 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
     writer.writeRepeatedMessage(
       4,
       f,
-      proto_sessions_ioMapping_pb.IOMapping.serializeBinaryToWriter
+      proto_sessions_ioMappings_pb.IOMapping.serializeBinaryToWriter
     );
   }
   f = message.getTagsList();
@@ -280,33 +265,18 @@ proto.ubii.sessions.Session.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getProcessMode();
+  f = message.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
       8,
       f
     );
   }
-  f = message.getStatus();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      9,
-      f
-    );
-  }
   f = message.getEditable();
   if (f) {
     writer.writeBool(
-      10,
+      9,
       f
-    );
-  }
-  f = message.getProcessingModulesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      11,
-      f,
-      proto_processing_processingModule_pb.ProcessingModule.serializeBinaryToWriter
     );
   }
 };
@@ -349,31 +319,31 @@ proto.ubii.sessions.Session.prototype.setName = function(value) {
 
 
 /**
- * repeated ubii.interactions.Interaction interactions = 3;
- * @return {!Array<!proto.ubii.interactions.Interaction>}
+ * repeated ubii.processing.ProcessingModule processing_modules = 3;
+ * @return {!Array<!proto.ubii.processing.ProcessingModule>}
  */
-proto.ubii.sessions.Session.prototype.getInteractionsList = function() {
-  return /** @type{!Array<!proto.ubii.interactions.Interaction>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto_interactions_interaction_pb.Interaction, 3));
+proto.ubii.sessions.Session.prototype.getProcessingModulesList = function() {
+  return /** @type{!Array<!proto.ubii.processing.ProcessingModule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_processing_processingModule_pb.ProcessingModule, 3));
 };
 
 
 /**
- * @param {!Array<!proto.ubii.interactions.Interaction>} value
+ * @param {!Array<!proto.ubii.processing.ProcessingModule>} value
  * @return {!proto.ubii.sessions.Session} returns this
 */
-proto.ubii.sessions.Session.prototype.setInteractionsList = function(value) {
+proto.ubii.sessions.Session.prototype.setProcessingModulesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.ubii.interactions.Interaction=} opt_value
+ * @param {!proto.ubii.processing.ProcessingModule=} opt_value
  * @param {number=} opt_index
- * @return {!proto.ubii.interactions.Interaction}
+ * @return {!proto.ubii.processing.ProcessingModule}
  */
-proto.ubii.sessions.Session.prototype.addInteractions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.interactions.Interaction, opt_index);
+proto.ubii.sessions.Session.prototype.addProcessingModules = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.ubii.processing.ProcessingModule, opt_index);
 };
 
 
@@ -381,8 +351,8 @@ proto.ubii.sessions.Session.prototype.addInteractions = function(opt_value, opt_
  * Clears the list making it empty but non-null.
  * @return {!proto.ubii.sessions.Session} returns this
  */
-proto.ubii.sessions.Session.prototype.clearInteractionsList = function() {
-  return this.setInteractionsList([]);
+proto.ubii.sessions.Session.prototype.clearProcessingModulesList = function() {
+  return this.setProcessingModulesList([]);
 };
 
 
@@ -392,7 +362,7 @@ proto.ubii.sessions.Session.prototype.clearInteractionsList = function() {
  */
 proto.ubii.sessions.Session.prototype.getIoMappingsList = function() {
   return /** @type{!Array<!proto.ubii.sessions.IOMapping>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto_sessions_ioMapping_pb.IOMapping, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto_sessions_ioMappings_pb.IOMapping, 4));
 };
 
 
@@ -517,29 +487,11 @@ proto.ubii.sessions.Session.prototype.clearAuthorsList = function() {
 
 
 /**
- * optional ProcessMode process_mode = 8;
- * @return {!proto.ubii.sessions.ProcessMode}
- */
-proto.ubii.sessions.Session.prototype.getProcessMode = function() {
-  return /** @type {!proto.ubii.sessions.ProcessMode} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {!proto.ubii.sessions.ProcessMode} value
- * @return {!proto.ubii.sessions.Session} returns this
- */
-proto.ubii.sessions.Session.prototype.setProcessMode = function(value) {
-  return jspb.Message.setProto3EnumField(this, 8, value);
-};
-
-
-/**
- * optional SessionStatus status = 9;
+ * optional SessionStatus status = 8;
  * @return {!proto.ubii.sessions.SessionStatus}
  */
 proto.ubii.sessions.Session.prototype.getStatus = function() {
-  return /** @type {!proto.ubii.sessions.SessionStatus} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.ubii.sessions.SessionStatus} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
@@ -548,16 +500,16 @@ proto.ubii.sessions.Session.prototype.getStatus = function() {
  * @return {!proto.ubii.sessions.Session} returns this
  */
 proto.ubii.sessions.Session.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
 /**
- * optional bool editable = 10;
+ * optional bool editable = 9;
  * @return {boolean}
  */
 proto.ubii.sessions.Session.prototype.getEditable = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
@@ -566,45 +518,7 @@ proto.ubii.sessions.Session.prototype.getEditable = function() {
  * @return {!proto.ubii.sessions.Session} returns this
  */
 proto.ubii.sessions.Session.prototype.setEditable = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
-};
-
-
-/**
- * repeated ubii.processing.ProcessingModule processing_modules = 11;
- * @return {!Array<!proto.ubii.processing.ProcessingModule>}
- */
-proto.ubii.sessions.Session.prototype.getProcessingModulesList = function() {
-  return /** @type{!Array<!proto.ubii.processing.ProcessingModule>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto_processing_processingModule_pb.ProcessingModule, 11));
-};
-
-
-/**
- * @param {!Array<!proto.ubii.processing.ProcessingModule>} value
- * @return {!proto.ubii.sessions.Session} returns this
-*/
-proto.ubii.sessions.Session.prototype.setProcessingModulesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 11, value);
-};
-
-
-/**
- * @param {!proto.ubii.processing.ProcessingModule=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.processing.ProcessingModule}
- */
-proto.ubii.sessions.Session.prototype.addProcessingModules = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.ubii.processing.ProcessingModule, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.sessions.Session} returns this
- */
-proto.ubii.sessions.Session.prototype.clearProcessingModulesList = function() {
-  return this.setProcessingModulesList([]);
+  return jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
@@ -767,14 +681,6 @@ proto.ubii.sessions.SessionList.prototype.clearElementsList = function() {
   return this.setElementsList([]);
 };
 
-
-/**
- * @enum {number}
- */
-proto.ubii.sessions.ProcessMode = {
-  CYCLE_INTERACTIONS: 0,
-  INDIVIDUAL_PROCESS_FREQUENCIES: 1
-};
 
 /**
  * @enum {number}

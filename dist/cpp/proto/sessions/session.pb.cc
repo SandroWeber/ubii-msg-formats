@@ -14,10 +14,9 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2finteractions_2finteraction_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Interaction_proto_2finteractions_2finteraction_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fioMapping_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_IOMapping_proto_2fsessions_2fioMapping_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_Session_proto_2fsessions_2fsession_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fioMappings_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_IOMapping_proto_2fsessions_2fioMappings_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Session_proto_2fsessions_2fsession_2eproto;
 namespace ubii {
 namespace sessions {
 class SessionDefaultTypeInternal {
@@ -41,11 +40,10 @@ static void InitDefaultsscc_info_Session_proto_2fsessions_2fsession_2eproto() {
   ::ubii::sessions::Session::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_Session_proto_2fsessions_2fsession_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_Session_proto_2fsessions_2fsession_2eproto}, {
-      &scc_info_Interaction_proto_2finteractions_2finteraction_2eproto.base,
-      &scc_info_IOMapping_proto_2fsessions_2fioMapping_2eproto.base,
-      &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Session_proto_2fsessions_2fsession_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Session_proto_2fsessions_2fsession_2eproto}, {
+      &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,
+      &scc_info_IOMapping_proto_2fsessions_2fioMappings_2eproto.base,}};
 
 static void InitDefaultsscc_info_SessionList_proto_2fsessions_2fsession_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -63,7 +61,7 @@ static void InitDefaultsscc_info_SessionList_proto_2fsessions_2fsession_2eproto(
       &scc_info_Session_proto_2fsessions_2fsession_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fsessions_2fsession_2eproto[2];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fsessions_2fsession_2eproto[2];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fsessions_2fsession_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fsessions_2fsession_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fsessions_2fsession_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -74,15 +72,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fsessions_2fsession_2ep
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, id_),
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, name_),
-  PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, interactions_),
+  PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, processing_modules_),
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, io_mappings_),
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, tags_),
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, description_),
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, authors_),
-  PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, process_mode_),
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, status_),
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, editable_),
-  PROTOBUF_FIELD_OFFSET(::ubii::sessions::Session, processing_modules_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::sessions::SessionList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -92,7 +88,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fsessions_2fsession_2ep
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::sessions::Session)},
-  { 16, -1, sizeof(::ubii::sessions::SessionList)},
+  { 14, -1, sizeof(::ubii::sessions::SessionList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -102,29 +98,22 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_proto_2fsessions_2fsession_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034proto/sessions/session.proto\022\rubii.ses"
-  "sions\032$proto/interactions/interaction.pr"
-  "oto\032\036proto/sessions/ioMapping.proto\032\'pro"
-  "to/processing/processingModule.proto\"\355\002\n"
-  "\007Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014in"
-  "teractions\030\003 \003(\0132\036.ubii.interactions.Int"
-  "eraction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.ses"
-  "sions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descrip"
-  "tion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\0220\n\014process_m"
-  "ode\030\010 \001(\0162\032.ubii.sessions.ProcessMode\022,\n"
-  "\006status\030\t \001(\0162\034.ubii.sessions.SessionSta"
-  "tus\022\020\n\010editable\030\n \001(\010\022=\n\022processing_modu"
-  "les\030\013 \003(\0132!.ubii.processing.ProcessingMo"
-  "dule\"7\n\013SessionList\022(\n\010elements\030\001 \003(\0132\026."
-  "ubii.sessions.Session*I\n\013ProcessMode\022\026\n\022"
-  "CYCLE_INTERACTIONS\020\000\022\"\n\036INDIVIDUAL_PROCE"
-  "SS_FREQUENCIES\020\001*B\n\rSessionStatus\022\013\n\007CRE"
-  "ATED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPP"
-  "ED\020\003b\006proto3"
+  "sions\032\037proto/sessions/ioMappings.proto\032\'"
+  "proto/processing/processingModule.proto\""
+  "\205\002\n\007Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022=\n"
+  "\022processing_modules\030\003 \003(\0132!.ubii.process"
+  "ing.ProcessingModule\022-\n\013io_mappings\030\004 \003("
+  "\0132\030.ubii.sessions.IOMapping\022\014\n\004tags\030\005 \003("
+  "\t\022\023\n\013description\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\022"
+  ",\n\006status\030\010 \001(\0162\034.ubii.sessions.SessionS"
+  "tatus\022\020\n\010editable\030\t \001(\010\"7\n\013SessionList\022("
+  "\n\010elements\030\001 \003(\0132\026.ubii.sessions.Session"
+  "*B\n\rSessionStatus\022\013\n\007CREATED\020\000\022\013\n\007RUNNIN"
+  "G\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPPED\020\003b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fsessions_2fsession_2eproto_deps[3] = {
-  &::descriptor_table_proto_2finteractions_2finteraction_2eproto,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fsessions_2fsession_2eproto_deps[2] = {
   &::descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto,
-  &::descriptor_table_proto_2fsessions_2fioMapping_2eproto,
+  &::descriptor_table_proto_2fsessions_2fioMappings_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fsessions_2fsession_2eproto_sccs[2] = {
   &scc_info_Session_proto_2fsessions_2fsession_2eproto.base,
@@ -133,8 +122,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fsessions_2fsession_2eproto_once;
 static bool descriptor_table_proto_2fsessions_2fsession_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fsessions_2fsession_2eproto = {
-  &descriptor_table_proto_2fsessions_2fsession_2eproto_initialized, descriptor_table_protodef_proto_2fsessions_2fsession_2eproto, "proto/sessions/session.proto", 732,
-  &descriptor_table_proto_2fsessions_2fsession_2eproto_once, descriptor_table_proto_2fsessions_2fsession_2eproto_sccs, descriptor_table_proto_2fsessions_2fsession_2eproto_deps, 2, 3,
+  &descriptor_table_proto_2fsessions_2fsession_2eproto_initialized, descriptor_table_protodef_proto_2fsessions_2fsession_2eproto, "proto/sessions/session.proto", 516,
+  &descriptor_table_proto_2fsessions_2fsession_2eproto_once, descriptor_table_proto_2fsessions_2fsession_2eproto_sccs, descriptor_table_proto_2fsessions_2fsession_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_proto_2fsessions_2fsession_2eproto::offsets,
   file_level_metadata_proto_2fsessions_2fsession_2eproto, 2, file_level_enum_descriptors_proto_2fsessions_2fsession_2eproto, file_level_service_descriptors_proto_2fsessions_2fsession_2eproto,
 };
@@ -143,23 +132,9 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_
 static bool dynamic_init_dummy_proto_2fsessions_2fsession_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fsessions_2fsession_2eproto), true);
 namespace ubii {
 namespace sessions {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessMode_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proto_2fsessions_2fsession_2eproto);
-  return file_level_enum_descriptors_proto_2fsessions_2fsession_2eproto[0];
-}
-bool ProcessMode_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-      return true;
-    default:
-      return false;
-  }
-}
-
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SessionStatus_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proto_2fsessions_2fsession_2eproto);
-  return file_level_enum_descriptors_proto_2fsessions_2fsession_2eproto[1];
+  return file_level_enum_descriptors_proto_2fsessions_2fsession_2eproto[0];
 }
 bool SessionStatus_IsValid(int value) {
   switch (value) {
@@ -182,14 +157,11 @@ class Session::_Internal {
  public:
 };
 
-void Session::clear_interactions() {
-  interactions_.Clear();
+void Session::clear_processing_modules() {
+  processing_modules_.Clear();
 }
 void Session::clear_io_mappings() {
   io_mappings_.Clear();
-}
-void Session::clear_processing_modules() {
-  processing_modules_.Clear();
 }
 Session::Session()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -199,11 +171,10 @@ Session::Session()
 Session::Session(const Session& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
-      interactions_(from.interactions_),
+      processing_modules_(from.processing_modules_),
       io_mappings_(from.io_mappings_),
       tags_(from.tags_),
-      authors_(from.authors_),
-      processing_modules_(from.processing_modules_) {
+      authors_(from.authors_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
@@ -217,9 +188,9 @@ Session::Session(const Session& from)
   if (!from._internal_description().empty()) {
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
-  ::memcpy(&process_mode_, &from.process_mode_,
+  ::memcpy(&status_, &from.status_,
     static_cast<size_t>(reinterpret_cast<char*>(&editable_) -
-    reinterpret_cast<char*>(&process_mode_)) + sizeof(editable_));
+    reinterpret_cast<char*>(&status_)) + sizeof(editable_));
   // @@protoc_insertion_point(copy_constructor:ubii.sessions.Session)
 }
 
@@ -228,9 +199,9 @@ void Session::SharedCtor() {
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&process_mode_, 0, static_cast<size_t>(
+  ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&editable_) -
-      reinterpret_cast<char*>(&process_mode_)) + sizeof(editable_));
+      reinterpret_cast<char*>(&status_)) + sizeof(editable_));
 }
 
 Session::~Session() {
@@ -259,17 +230,16 @@ void Session::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  interactions_.Clear();
+  processing_modules_.Clear();
   io_mappings_.Clear();
   tags_.Clear();
   authors_.Clear();
-  processing_modules_.Clear();
   id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&process_mode_, 0, static_cast<size_t>(
+  ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&editable_) -
-      reinterpret_cast<char*>(&process_mode_)) + sizeof(editable_));
+      reinterpret_cast<char*>(&status_)) + sizeof(editable_));
   _internal_metadata_.Clear();
 }
 
@@ -298,13 +268,13 @@ const char* Session::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .ubii.interactions.Interaction interactions = 3;
+      // repeated .ubii.processing.ProcessingModule processing_modules = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_interactions(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_processing_modules(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
@@ -359,39 +329,19 @@ const char* Session::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
-      // .ubii.sessions.ProcessMode process_mode = 8;
+      // .ubii.sessions.SessionStatus status = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-          _internal_set_process_mode(static_cast<::ubii::sessions::ProcessMode>(val));
-        } else goto handle_unusual;
-        continue;
-      // .ubii.sessions.SessionStatus status = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::ubii::sessions::SessionStatus>(val));
         } else goto handle_unusual;
         continue;
-      // bool editable = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+      // bool editable = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           editable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .ubii.processing.ProcessingModule processing_modules = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_processing_modules(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -440,12 +390,12 @@ failure:
         2, this->_internal_name(), target);
   }
 
-  // repeated .ubii.interactions.Interaction interactions = 3;
+  // repeated .ubii.processing.ProcessingModule processing_modules = 3;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_interactions_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_processing_modules_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_interactions(i), target, stream);
+      InternalWriteMessage(3, this->_internal_processing_modules(i), target, stream);
   }
 
   // repeated .ubii.sessions.IOMapping io_mappings = 4;
@@ -486,32 +436,17 @@ failure:
     target = stream->WriteString(7, s, target);
   }
 
-  // .ubii.sessions.ProcessMode process_mode = 8;
-  if (this->process_mode() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_process_mode(), target);
-  }
-
-  // .ubii.sessions.SessionStatus status = 9;
+  // .ubii.sessions.SessionStatus status = 8;
   if (this->status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      9, this->_internal_status(), target);
+      8, this->_internal_status(), target);
   }
 
-  // bool editable = 10;
+  // bool editable = 9;
   if (this->editable() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(10, this->_internal_editable(), target);
-  }
-
-  // repeated .ubii.processing.ProcessingModule processing_modules = 11;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_processing_modules_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(11, this->_internal_processing_modules(i), target, stream);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(9, this->_internal_editable(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -530,9 +465,9 @@ size_t Session::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .ubii.interactions.Interaction interactions = 3;
-  total_size += 1UL * this->_internal_interactions_size();
-  for (const auto& msg : this->interactions_) {
+  // repeated .ubii.processing.ProcessingModule processing_modules = 3;
+  total_size += 1UL * this->_internal_processing_modules_size();
+  for (const auto& msg : this->processing_modules_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -560,13 +495,6 @@ size_t Session::ByteSizeLong() const {
       authors_.Get(i));
   }
 
-  // repeated .ubii.processing.ProcessingModule processing_modules = 11;
-  total_size += 1UL * this->_internal_processing_modules_size();
-  for (const auto& msg : this->processing_modules_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
   // string id = 1;
   if (this->id().size() > 0) {
     total_size += 1 +
@@ -588,19 +516,13 @@ size_t Session::ByteSizeLong() const {
         this->_internal_description());
   }
 
-  // .ubii.sessions.ProcessMode process_mode = 8;
-  if (this->process_mode() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_process_mode());
-  }
-
-  // .ubii.sessions.SessionStatus status = 9;
+  // .ubii.sessions.SessionStatus status = 8;
   if (this->status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
   }
 
-  // bool editable = 10;
+  // bool editable = 9;
   if (this->editable() != 0) {
     total_size += 1 + 1;
   }
@@ -636,11 +558,10 @@ void Session::MergeFrom(const Session& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  interactions_.MergeFrom(from.interactions_);
+  processing_modules_.MergeFrom(from.processing_modules_);
   io_mappings_.MergeFrom(from.io_mappings_);
   tags_.MergeFrom(from.tags_);
   authors_.MergeFrom(from.authors_);
-  processing_modules_.MergeFrom(from.processing_modules_);
   if (from.id().size() > 0) {
 
     id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
@@ -652,9 +573,6 @@ void Session::MergeFrom(const Session& from) {
   if (from.description().size() > 0) {
 
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
-  }
-  if (from.process_mode() != 0) {
-    _internal_set_process_mode(from._internal_process_mode());
   }
   if (from.status() != 0) {
     _internal_set_status(from._internal_status());
@@ -685,18 +603,16 @@ bool Session::IsInitialized() const {
 void Session::InternalSwap(Session* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  interactions_.InternalSwap(&other->interactions_);
+  processing_modules_.InternalSwap(&other->processing_modules_);
   io_mappings_.InternalSwap(&other->io_mappings_);
   tags_.InternalSwap(&other->tags_);
   authors_.InternalSwap(&other->authors_);
-  processing_modules_.InternalSwap(&other->processing_modules_);
   id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(process_mode_, other->process_mode_);
   swap(status_, other->status_);
   swap(editable_, other->editable_);
 }

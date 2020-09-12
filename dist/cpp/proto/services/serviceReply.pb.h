@@ -41,7 +41,6 @@
 #include "proto/devices/topicDemux.pb.h"
 #include "proto/servers/server.pb.h"
 #include "proto/sessions/session.pb.h"
-#include "proto/interactions/interaction.pb.h"
 #include "proto/services/service.pb.h"
 #include "proto/processing/processingModule.pb.h"
 #include "proto/processing/lockstepProcessing.pb.h"
@@ -126,8 +125,8 @@ class ServiceReply :
     kServer = 5,
     kSession = 6,
     kSessionList = 7,
-    kInteraction = 8,
-    kInteractionList = 9,
+    kProcessingModule = 8,
+    kProcessingModuleList = 9,
     kStringList = 10,
     kTopicMux = 11,
     kTopicMuxList = 12,
@@ -137,9 +136,7 @@ class ServiceReply :
     kDeviceList = 16,
     kService = 17,
     kServiceList = 18,
-    kProcessingModule = 19,
-    kProcessingModuleList = 20,
-    kLockstepProcessingReply = 21,
+    kLockstepProcessingReply = 19,
     TYPE_NOT_SET = 0,
   };
 
@@ -220,8 +217,8 @@ class ServiceReply :
     kServerFieldNumber = 5,
     kSessionFieldNumber = 6,
     kSessionListFieldNumber = 7,
-    kInteractionFieldNumber = 8,
-    kInteractionListFieldNumber = 9,
+    kProcessingModuleFieldNumber = 8,
+    kProcessingModuleListFieldNumber = 9,
     kStringListFieldNumber = 10,
     kTopicMuxFieldNumber = 11,
     kTopicMuxListFieldNumber = 12,
@@ -231,9 +228,7 @@ class ServiceReply :
     kDeviceListFieldNumber = 16,
     kServiceFieldNumber = 17,
     kServiceListFieldNumber = 18,
-    kProcessingModuleFieldNumber = 19,
-    kProcessingModuleListFieldNumber = 20,
-    kLockstepProcessingReplyFieldNumber = 21,
+    kLockstepProcessingReplyFieldNumber = 19,
   };
   // .ubii.general.Success success = 1;
   bool has_success() const;
@@ -340,34 +335,34 @@ class ServiceReply :
   ::ubii::sessions::SessionList* _internal_mutable_session_list();
   public:
 
-  // .ubii.interactions.Interaction interaction = 8;
-  bool has_interaction() const;
+  // .ubii.processing.ProcessingModule processing_module = 8;
+  bool has_processing_module() const;
   private:
-  bool _internal_has_interaction() const;
+  bool _internal_has_processing_module() const;
   public:
-  void clear_interaction();
-  const ::ubii::interactions::Interaction& interaction() const;
-  ::ubii::interactions::Interaction* release_interaction();
-  ::ubii::interactions::Interaction* mutable_interaction();
-  void set_allocated_interaction(::ubii::interactions::Interaction* interaction);
+  void clear_processing_module();
+  const ::ubii::processing::ProcessingModule& processing_module() const;
+  ::ubii::processing::ProcessingModule* release_processing_module();
+  ::ubii::processing::ProcessingModule* mutable_processing_module();
+  void set_allocated_processing_module(::ubii::processing::ProcessingModule* processing_module);
   private:
-  const ::ubii::interactions::Interaction& _internal_interaction() const;
-  ::ubii::interactions::Interaction* _internal_mutable_interaction();
+  const ::ubii::processing::ProcessingModule& _internal_processing_module() const;
+  ::ubii::processing::ProcessingModule* _internal_mutable_processing_module();
   public:
 
-  // .ubii.interactions.InteractionList interaction_list = 9;
-  bool has_interaction_list() const;
+  // .ubii.processing.ProcessingModuleList processing_module_list = 9;
+  bool has_processing_module_list() const;
   private:
-  bool _internal_has_interaction_list() const;
+  bool _internal_has_processing_module_list() const;
   public:
-  void clear_interaction_list();
-  const ::ubii::interactions::InteractionList& interaction_list() const;
-  ::ubii::interactions::InteractionList* release_interaction_list();
-  ::ubii::interactions::InteractionList* mutable_interaction_list();
-  void set_allocated_interaction_list(::ubii::interactions::InteractionList* interaction_list);
+  void clear_processing_module_list();
+  const ::ubii::processing::ProcessingModuleList& processing_module_list() const;
+  ::ubii::processing::ProcessingModuleList* release_processing_module_list();
+  ::ubii::processing::ProcessingModuleList* mutable_processing_module_list();
+  void set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list);
   private:
-  const ::ubii::interactions::InteractionList& _internal_interaction_list() const;
-  ::ubii::interactions::InteractionList* _internal_mutable_interaction_list();
+  const ::ubii::processing::ProcessingModuleList& _internal_processing_module_list() const;
+  ::ubii::processing::ProcessingModuleList* _internal_mutable_processing_module_list();
   public:
 
   // .ubii.dataStructure.StringList string_list = 10;
@@ -505,37 +500,7 @@ class ServiceReply :
   ::ubii::services::ServiceList* _internal_mutable_service_list();
   public:
 
-  // .ubii.processing.ProcessingModule processing_module = 19;
-  bool has_processing_module() const;
-  private:
-  bool _internal_has_processing_module() const;
-  public:
-  void clear_processing_module();
-  const ::ubii::processing::ProcessingModule& processing_module() const;
-  ::ubii::processing::ProcessingModule* release_processing_module();
-  ::ubii::processing::ProcessingModule* mutable_processing_module();
-  void set_allocated_processing_module(::ubii::processing::ProcessingModule* processing_module);
-  private:
-  const ::ubii::processing::ProcessingModule& _internal_processing_module() const;
-  ::ubii::processing::ProcessingModule* _internal_mutable_processing_module();
-  public:
-
-  // .ubii.processing.ProcessingModuleList processing_module_list = 20;
-  bool has_processing_module_list() const;
-  private:
-  bool _internal_has_processing_module_list() const;
-  public:
-  void clear_processing_module_list();
-  const ::ubii::processing::ProcessingModuleList& processing_module_list() const;
-  ::ubii::processing::ProcessingModuleList* release_processing_module_list();
-  ::ubii::processing::ProcessingModuleList* mutable_processing_module_list();
-  void set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list);
-  private:
-  const ::ubii::processing::ProcessingModuleList& _internal_processing_module_list() const;
-  ::ubii::processing::ProcessingModuleList* _internal_mutable_processing_module_list();
-  public:
-
-  // .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+  // .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;
   bool has_lockstep_processing_reply() const;
   private:
   bool _internal_has_lockstep_processing_reply() const;
@@ -562,8 +527,8 @@ class ServiceReply :
   void set_has_server();
   void set_has_session();
   void set_has_session_list();
-  void set_has_interaction();
-  void set_has_interaction_list();
+  void set_has_processing_module();
+  void set_has_processing_module_list();
   void set_has_string_list();
   void set_has_topic_mux();
   void set_has_topic_mux_list();
@@ -573,8 +538,6 @@ class ServiceReply :
   void set_has_device_list();
   void set_has_service();
   void set_has_service_list();
-  void set_has_processing_module();
-  void set_has_processing_module_list();
   void set_has_lockstep_processing_reply();
 
   inline bool has_type() const;
@@ -590,8 +553,8 @@ class ServiceReply :
     ::ubii::servers::Server* server_;
     ::ubii::sessions::Session* session_;
     ::ubii::sessions::SessionList* session_list_;
-    ::ubii::interactions::Interaction* interaction_;
-    ::ubii::interactions::InteractionList* interaction_list_;
+    ::ubii::processing::ProcessingModule* processing_module_;
+    ::ubii::processing::ProcessingModuleList* processing_module_list_;
     ::ubii::dataStructure::StringList* string_list_;
     ::ubii::devices::TopicMux* topic_mux_;
     ::ubii::devices::TopicMuxList* topic_mux_list_;
@@ -601,8 +564,6 @@ class ServiceReply :
     ::ubii::devices::DeviceList* device_list_;
     ::ubii::services::Service* service_;
     ::ubii::services::ServiceList* service_list_;
-    ::ubii::processing::ProcessingModule* processing_module_;
-    ::ubii::processing::ProcessingModuleList* processing_module_list_;
     ::ubii::processing::LockstepProcessingReply* lockstep_processing_reply_;
   } type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -929,92 +890,92 @@ inline ::ubii::sessions::SessionList* ServiceReply::mutable_session_list() {
   return _internal_mutable_session_list();
 }
 
-// .ubii.interactions.Interaction interaction = 8;
-inline bool ServiceReply::_internal_has_interaction() const {
-  return type_case() == kInteraction;
+// .ubii.processing.ProcessingModule processing_module = 8;
+inline bool ServiceReply::_internal_has_processing_module() const {
+  return type_case() == kProcessingModule;
 }
-inline bool ServiceReply::has_interaction() const {
-  return _internal_has_interaction();
+inline bool ServiceReply::has_processing_module() const {
+  return _internal_has_processing_module();
 }
-inline void ServiceReply::set_has_interaction() {
-  _oneof_case_[0] = kInteraction;
+inline void ServiceReply::set_has_processing_module() {
+  _oneof_case_[0] = kProcessingModule;
 }
-inline ::ubii::interactions::Interaction* ServiceReply::release_interaction() {
-  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.interaction)
-  if (_internal_has_interaction()) {
+inline ::ubii::processing::ProcessingModule* ServiceReply::release_processing_module() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.processing_module)
+  if (_internal_has_processing_module()) {
     clear_has_type();
-      ::ubii::interactions::Interaction* temp = type_.interaction_;
-    type_.interaction_ = nullptr;
+      ::ubii::processing::ProcessingModule* temp = type_.processing_module_;
+    type_.processing_module_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::ubii::interactions::Interaction& ServiceReply::_internal_interaction() const {
-  return _internal_has_interaction()
-      ? *type_.interaction_
-      : *reinterpret_cast< ::ubii::interactions::Interaction*>(&::ubii::interactions::_Interaction_default_instance_);
+inline const ::ubii::processing::ProcessingModule& ServiceReply::_internal_processing_module() const {
+  return _internal_has_processing_module()
+      ? *type_.processing_module_
+      : *reinterpret_cast< ::ubii::processing::ProcessingModule*>(&::ubii::processing::_ProcessingModule_default_instance_);
 }
-inline const ::ubii::interactions::Interaction& ServiceReply::interaction() const {
-  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.interaction)
-  return _internal_interaction();
+inline const ::ubii::processing::ProcessingModule& ServiceReply::processing_module() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.processing_module)
+  return _internal_processing_module();
 }
-inline ::ubii::interactions::Interaction* ServiceReply::_internal_mutable_interaction() {
-  if (!_internal_has_interaction()) {
+inline ::ubii::processing::ProcessingModule* ServiceReply::_internal_mutable_processing_module() {
+  if (!_internal_has_processing_module()) {
     clear_type();
-    set_has_interaction();
-    type_.interaction_ = CreateMaybeMessage< ::ubii::interactions::Interaction >(
+    set_has_processing_module();
+    type_.processing_module_ = CreateMaybeMessage< ::ubii::processing::ProcessingModule >(
         GetArenaNoVirtual());
   }
-  return type_.interaction_;
+  return type_.processing_module_;
 }
-inline ::ubii::interactions::Interaction* ServiceReply::mutable_interaction() {
-  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.interaction)
-  return _internal_mutable_interaction();
+inline ::ubii::processing::ProcessingModule* ServiceReply::mutable_processing_module() {
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.processing_module)
+  return _internal_mutable_processing_module();
 }
 
-// .ubii.interactions.InteractionList interaction_list = 9;
-inline bool ServiceReply::_internal_has_interaction_list() const {
-  return type_case() == kInteractionList;
+// .ubii.processing.ProcessingModuleList processing_module_list = 9;
+inline bool ServiceReply::_internal_has_processing_module_list() const {
+  return type_case() == kProcessingModuleList;
 }
-inline bool ServiceReply::has_interaction_list() const {
-  return _internal_has_interaction_list();
+inline bool ServiceReply::has_processing_module_list() const {
+  return _internal_has_processing_module_list();
 }
-inline void ServiceReply::set_has_interaction_list() {
-  _oneof_case_[0] = kInteractionList;
+inline void ServiceReply::set_has_processing_module_list() {
+  _oneof_case_[0] = kProcessingModuleList;
 }
-inline ::ubii::interactions::InteractionList* ServiceReply::release_interaction_list() {
-  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.interaction_list)
-  if (_internal_has_interaction_list()) {
+inline ::ubii::processing::ProcessingModuleList* ServiceReply::release_processing_module_list() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.processing_module_list)
+  if (_internal_has_processing_module_list()) {
     clear_has_type();
-      ::ubii::interactions::InteractionList* temp = type_.interaction_list_;
-    type_.interaction_list_ = nullptr;
+      ::ubii::processing::ProcessingModuleList* temp = type_.processing_module_list_;
+    type_.processing_module_list_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::ubii::interactions::InteractionList& ServiceReply::_internal_interaction_list() const {
-  return _internal_has_interaction_list()
-      ? *type_.interaction_list_
-      : *reinterpret_cast< ::ubii::interactions::InteractionList*>(&::ubii::interactions::_InteractionList_default_instance_);
+inline const ::ubii::processing::ProcessingModuleList& ServiceReply::_internal_processing_module_list() const {
+  return _internal_has_processing_module_list()
+      ? *type_.processing_module_list_
+      : *reinterpret_cast< ::ubii::processing::ProcessingModuleList*>(&::ubii::processing::_ProcessingModuleList_default_instance_);
 }
-inline const ::ubii::interactions::InteractionList& ServiceReply::interaction_list() const {
-  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.interaction_list)
-  return _internal_interaction_list();
+inline const ::ubii::processing::ProcessingModuleList& ServiceReply::processing_module_list() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.processing_module_list)
+  return _internal_processing_module_list();
 }
-inline ::ubii::interactions::InteractionList* ServiceReply::_internal_mutable_interaction_list() {
-  if (!_internal_has_interaction_list()) {
+inline ::ubii::processing::ProcessingModuleList* ServiceReply::_internal_mutable_processing_module_list() {
+  if (!_internal_has_processing_module_list()) {
     clear_type();
-    set_has_interaction_list();
-    type_.interaction_list_ = CreateMaybeMessage< ::ubii::interactions::InteractionList >(
+    set_has_processing_module_list();
+    type_.processing_module_list_ = CreateMaybeMessage< ::ubii::processing::ProcessingModuleList >(
         GetArenaNoVirtual());
   }
-  return type_.interaction_list_;
+  return type_.processing_module_list_;
 }
-inline ::ubii::interactions::InteractionList* ServiceReply::mutable_interaction_list() {
-  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.interaction_list)
-  return _internal_mutable_interaction_list();
+inline ::ubii::processing::ProcessingModuleList* ServiceReply::mutable_processing_module_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.processing_module_list)
+  return _internal_mutable_processing_module_list();
 }
 
 // .ubii.dataStructure.StringList string_list = 10;
@@ -1413,95 +1374,7 @@ inline ::ubii::services::ServiceList* ServiceReply::mutable_service_list() {
   return _internal_mutable_service_list();
 }
 
-// .ubii.processing.ProcessingModule processing_module = 19;
-inline bool ServiceReply::_internal_has_processing_module() const {
-  return type_case() == kProcessingModule;
-}
-inline bool ServiceReply::has_processing_module() const {
-  return _internal_has_processing_module();
-}
-inline void ServiceReply::set_has_processing_module() {
-  _oneof_case_[0] = kProcessingModule;
-}
-inline ::ubii::processing::ProcessingModule* ServiceReply::release_processing_module() {
-  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.processing_module)
-  if (_internal_has_processing_module()) {
-    clear_has_type();
-      ::ubii::processing::ProcessingModule* temp = type_.processing_module_;
-    type_.processing_module_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::ubii::processing::ProcessingModule& ServiceReply::_internal_processing_module() const {
-  return _internal_has_processing_module()
-      ? *type_.processing_module_
-      : *reinterpret_cast< ::ubii::processing::ProcessingModule*>(&::ubii::processing::_ProcessingModule_default_instance_);
-}
-inline const ::ubii::processing::ProcessingModule& ServiceReply::processing_module() const {
-  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.processing_module)
-  return _internal_processing_module();
-}
-inline ::ubii::processing::ProcessingModule* ServiceReply::_internal_mutable_processing_module() {
-  if (!_internal_has_processing_module()) {
-    clear_type();
-    set_has_processing_module();
-    type_.processing_module_ = CreateMaybeMessage< ::ubii::processing::ProcessingModule >(
-        GetArenaNoVirtual());
-  }
-  return type_.processing_module_;
-}
-inline ::ubii::processing::ProcessingModule* ServiceReply::mutable_processing_module() {
-  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.processing_module)
-  return _internal_mutable_processing_module();
-}
-
-// .ubii.processing.ProcessingModuleList processing_module_list = 20;
-inline bool ServiceReply::_internal_has_processing_module_list() const {
-  return type_case() == kProcessingModuleList;
-}
-inline bool ServiceReply::has_processing_module_list() const {
-  return _internal_has_processing_module_list();
-}
-inline void ServiceReply::set_has_processing_module_list() {
-  _oneof_case_[0] = kProcessingModuleList;
-}
-inline ::ubii::processing::ProcessingModuleList* ServiceReply::release_processing_module_list() {
-  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.processing_module_list)
-  if (_internal_has_processing_module_list()) {
-    clear_has_type();
-      ::ubii::processing::ProcessingModuleList* temp = type_.processing_module_list_;
-    type_.processing_module_list_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::ubii::processing::ProcessingModuleList& ServiceReply::_internal_processing_module_list() const {
-  return _internal_has_processing_module_list()
-      ? *type_.processing_module_list_
-      : *reinterpret_cast< ::ubii::processing::ProcessingModuleList*>(&::ubii::processing::_ProcessingModuleList_default_instance_);
-}
-inline const ::ubii::processing::ProcessingModuleList& ServiceReply::processing_module_list() const {
-  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.processing_module_list)
-  return _internal_processing_module_list();
-}
-inline ::ubii::processing::ProcessingModuleList* ServiceReply::_internal_mutable_processing_module_list() {
-  if (!_internal_has_processing_module_list()) {
-    clear_type();
-    set_has_processing_module_list();
-    type_.processing_module_list_ = CreateMaybeMessage< ::ubii::processing::ProcessingModuleList >(
-        GetArenaNoVirtual());
-  }
-  return type_.processing_module_list_;
-}
-inline ::ubii::processing::ProcessingModuleList* ServiceReply::mutable_processing_module_list() {
-  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.processing_module_list)
-  return _internal_mutable_processing_module_list();
-}
-
-// .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+// .ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;
 inline bool ServiceReply::_internal_has_lockstep_processing_reply() const {
   return type_case() == kLockstepProcessingReply;
 }

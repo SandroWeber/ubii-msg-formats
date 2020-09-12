@@ -33,8 +33,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "proto/interactions/interaction.pb.h"
-#include "proto/sessions/ioMapping.pb.h"
+#include "proto/sessions/ioMappings.pb.h"
 #include "proto/processing/processingModule.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -75,31 +74,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace ubii {
 namespace sessions {
 
-enum ProcessMode : int {
-  CYCLE_INTERACTIONS = 0,
-  INDIVIDUAL_PROCESS_FREQUENCIES = 1,
-  ProcessMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  ProcessMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool ProcessMode_IsValid(int value);
-constexpr ProcessMode ProcessMode_MIN = CYCLE_INTERACTIONS;
-constexpr ProcessMode ProcessMode_MAX = INDIVIDUAL_PROCESS_FREQUENCIES;
-constexpr int ProcessMode_ARRAYSIZE = ProcessMode_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessMode_descriptor();
-template<typename T>
-inline const std::string& ProcessMode_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, ProcessMode>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function ProcessMode_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    ProcessMode_descriptor(), enum_t_value);
-}
-inline bool ProcessMode_Parse(
-    const std::string& name, ProcessMode* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ProcessMode>(
-    ProcessMode_descriptor(), name, value);
-}
 enum SessionStatus : int {
   CREATED = 0,
   RUNNING = 1,
@@ -235,35 +209,33 @@ class Session :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInteractionsFieldNumber = 3,
+    kProcessingModulesFieldNumber = 3,
     kIoMappingsFieldNumber = 4,
     kTagsFieldNumber = 5,
     kAuthorsFieldNumber = 7,
-    kProcessingModulesFieldNumber = 11,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kDescriptionFieldNumber = 6,
-    kProcessModeFieldNumber = 8,
-    kStatusFieldNumber = 9,
-    kEditableFieldNumber = 10,
+    kStatusFieldNumber = 8,
+    kEditableFieldNumber = 9,
   };
-  // repeated .ubii.interactions.Interaction interactions = 3;
-  int interactions_size() const;
+  // repeated .ubii.processing.ProcessingModule processing_modules = 3;
+  int processing_modules_size() const;
   private:
-  int _internal_interactions_size() const;
+  int _internal_processing_modules_size() const;
   public:
-  void clear_interactions();
-  ::ubii::interactions::Interaction* mutable_interactions(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::interactions::Interaction >*
-      mutable_interactions();
+  void clear_processing_modules();
+  ::ubii::processing::ProcessingModule* mutable_processing_modules(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
+      mutable_processing_modules();
   private:
-  const ::ubii::interactions::Interaction& _internal_interactions(int index) const;
-  ::ubii::interactions::Interaction* _internal_add_interactions();
+  const ::ubii::processing::ProcessingModule& _internal_processing_modules(int index) const;
+  ::ubii::processing::ProcessingModule* _internal_add_processing_modules();
   public:
-  const ::ubii::interactions::Interaction& interactions(int index) const;
-  ::ubii::interactions::Interaction* add_interactions();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::interactions::Interaction >&
-      interactions() const;
+  const ::ubii::processing::ProcessingModule& processing_modules(int index) const;
+  ::ubii::processing::ProcessingModule* add_processing_modules();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
+      processing_modules() const;
 
   // repeated .ubii.sessions.IOMapping io_mappings = 4;
   int io_mappings_size() const;
@@ -331,24 +303,6 @@ class Session :
   std::string* _internal_add_authors();
   public:
 
-  // repeated .ubii.processing.ProcessingModule processing_modules = 11;
-  int processing_modules_size() const;
-  private:
-  int _internal_processing_modules_size() const;
-  public:
-  void clear_processing_modules();
-  ::ubii::processing::ProcessingModule* mutable_processing_modules(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
-      mutable_processing_modules();
-  private:
-  const ::ubii::processing::ProcessingModule& _internal_processing_modules(int index) const;
-  ::ubii::processing::ProcessingModule* _internal_add_processing_modules();
-  public:
-  const ::ubii::processing::ProcessingModule& processing_modules(int index) const;
-  ::ubii::processing::ProcessingModule* add_processing_modules();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
-      processing_modules() const;
-
   // string id = 1;
   void clear_id();
   const std::string& id() const;
@@ -397,16 +351,7 @@ class Session :
   std::string* _internal_mutable_description();
   public:
 
-  // .ubii.sessions.ProcessMode process_mode = 8;
-  void clear_process_mode();
-  ::ubii::sessions::ProcessMode process_mode() const;
-  void set_process_mode(::ubii::sessions::ProcessMode value);
-  private:
-  ::ubii::sessions::ProcessMode _internal_process_mode() const;
-  void _internal_set_process_mode(::ubii::sessions::ProcessMode value);
-  public:
-
-  // .ubii.sessions.SessionStatus status = 9;
+  // .ubii.sessions.SessionStatus status = 8;
   void clear_status();
   ::ubii::sessions::SessionStatus status() const;
   void set_status(::ubii::sessions::SessionStatus value);
@@ -415,7 +360,7 @@ class Session :
   void _internal_set_status(::ubii::sessions::SessionStatus value);
   public:
 
-  // bool editable = 10;
+  // bool editable = 9;
   void clear_editable();
   bool editable() const;
   void set_editable(bool value);
@@ -429,15 +374,13 @@ class Session :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::interactions::Interaction > interactions_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule > processing_modules_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::sessions::IOMapping > io_mappings_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> tags_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> authors_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule > processing_modules_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
-  int process_mode_;
   int status_;
   bool editable_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -711,40 +654,40 @@ inline void Session::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:ubii.sessions.Session.name)
 }
 
-// repeated .ubii.interactions.Interaction interactions = 3;
-inline int Session::_internal_interactions_size() const {
-  return interactions_.size();
+// repeated .ubii.processing.ProcessingModule processing_modules = 3;
+inline int Session::_internal_processing_modules_size() const {
+  return processing_modules_.size();
 }
-inline int Session::interactions_size() const {
-  return _internal_interactions_size();
+inline int Session::processing_modules_size() const {
+  return _internal_processing_modules_size();
 }
-inline ::ubii::interactions::Interaction* Session::mutable_interactions(int index) {
-  // @@protoc_insertion_point(field_mutable:ubii.sessions.Session.interactions)
-  return interactions_.Mutable(index);
+inline ::ubii::processing::ProcessingModule* Session::mutable_processing_modules(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.sessions.Session.processing_modules)
+  return processing_modules_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::interactions::Interaction >*
-Session::mutable_interactions() {
-  // @@protoc_insertion_point(field_mutable_list:ubii.sessions.Session.interactions)
-  return &interactions_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
+Session::mutable_processing_modules() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.sessions.Session.processing_modules)
+  return &processing_modules_;
 }
-inline const ::ubii::interactions::Interaction& Session::_internal_interactions(int index) const {
-  return interactions_.Get(index);
+inline const ::ubii::processing::ProcessingModule& Session::_internal_processing_modules(int index) const {
+  return processing_modules_.Get(index);
 }
-inline const ::ubii::interactions::Interaction& Session::interactions(int index) const {
-  // @@protoc_insertion_point(field_get:ubii.sessions.Session.interactions)
-  return _internal_interactions(index);
+inline const ::ubii::processing::ProcessingModule& Session::processing_modules(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.sessions.Session.processing_modules)
+  return _internal_processing_modules(index);
 }
-inline ::ubii::interactions::Interaction* Session::_internal_add_interactions() {
-  return interactions_.Add();
+inline ::ubii::processing::ProcessingModule* Session::_internal_add_processing_modules() {
+  return processing_modules_.Add();
 }
-inline ::ubii::interactions::Interaction* Session::add_interactions() {
-  // @@protoc_insertion_point(field_add:ubii.sessions.Session.interactions)
-  return _internal_add_interactions();
+inline ::ubii::processing::ProcessingModule* Session::add_processing_modules() {
+  // @@protoc_insertion_point(field_add:ubii.sessions.Session.processing_modules)
+  return _internal_add_processing_modules();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::interactions::Interaction >&
-Session::interactions() const {
-  // @@protoc_insertion_point(field_list:ubii.sessions.Session.interactions)
-  return interactions_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
+Session::processing_modules() const {
+  // @@protoc_insertion_point(field_list:ubii.sessions.Session.processing_modules)
+  return processing_modules_;
 }
 
 // repeated .ubii.sessions.IOMapping io_mappings = 4;
@@ -991,27 +934,7 @@ Session::mutable_authors() {
   return &authors_;
 }
 
-// .ubii.sessions.ProcessMode process_mode = 8;
-inline void Session::clear_process_mode() {
-  process_mode_ = 0;
-}
-inline ::ubii::sessions::ProcessMode Session::_internal_process_mode() const {
-  return static_cast< ::ubii::sessions::ProcessMode >(process_mode_);
-}
-inline ::ubii::sessions::ProcessMode Session::process_mode() const {
-  // @@protoc_insertion_point(field_get:ubii.sessions.Session.process_mode)
-  return _internal_process_mode();
-}
-inline void Session::_internal_set_process_mode(::ubii::sessions::ProcessMode value) {
-  
-  process_mode_ = value;
-}
-inline void Session::set_process_mode(::ubii::sessions::ProcessMode value) {
-  _internal_set_process_mode(value);
-  // @@protoc_insertion_point(field_set:ubii.sessions.Session.process_mode)
-}
-
-// .ubii.sessions.SessionStatus status = 9;
+// .ubii.sessions.SessionStatus status = 8;
 inline void Session::clear_status() {
   status_ = 0;
 }
@@ -1031,7 +954,7 @@ inline void Session::set_status(::ubii::sessions::SessionStatus value) {
   // @@protoc_insertion_point(field_set:ubii.sessions.Session.status)
 }
 
-// bool editable = 10;
+// bool editable = 9;
 inline void Session::clear_editable() {
   editable_ = false;
 }
@@ -1049,42 +972,6 @@ inline void Session::_internal_set_editable(bool value) {
 inline void Session::set_editable(bool value) {
   _internal_set_editable(value);
   // @@protoc_insertion_point(field_set:ubii.sessions.Session.editable)
-}
-
-// repeated .ubii.processing.ProcessingModule processing_modules = 11;
-inline int Session::_internal_processing_modules_size() const {
-  return processing_modules_.size();
-}
-inline int Session::processing_modules_size() const {
-  return _internal_processing_modules_size();
-}
-inline ::ubii::processing::ProcessingModule* Session::mutable_processing_modules(int index) {
-  // @@protoc_insertion_point(field_mutable:ubii.sessions.Session.processing_modules)
-  return processing_modules_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
-Session::mutable_processing_modules() {
-  // @@protoc_insertion_point(field_mutable_list:ubii.sessions.Session.processing_modules)
-  return &processing_modules_;
-}
-inline const ::ubii::processing::ProcessingModule& Session::_internal_processing_modules(int index) const {
-  return processing_modules_.Get(index);
-}
-inline const ::ubii::processing::ProcessingModule& Session::processing_modules(int index) const {
-  // @@protoc_insertion_point(field_get:ubii.sessions.Session.processing_modules)
-  return _internal_processing_modules(index);
-}
-inline ::ubii::processing::ProcessingModule* Session::_internal_add_processing_modules() {
-  return processing_modules_.Add();
-}
-inline ::ubii::processing::ProcessingModule* Session::add_processing_modules() {
-  // @@protoc_insertion_point(field_add:ubii.sessions.Session.processing_modules)
-  return _internal_add_processing_modules();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
-Session::processing_modules() const {
-  // @@protoc_insertion_point(field_list:ubii.sessions.Session.processing_modules)
-  return processing_modules_;
 }
 
 // -------------------------------------------------------------------
@@ -1143,11 +1030,6 @@ SessionList::elements() const {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::ubii::sessions::ProcessMode> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ubii::sessions::ProcessMode>() {
-  return ::ubii::sessions::ProcessMode_descriptor();
-}
 template <> struct is_proto_enum< ::ubii::sessions::SessionStatus> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::ubii::sessions::SessionStatus>() {

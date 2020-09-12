@@ -15,110 +15,6 @@ public final class SessionOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code ubii.sessions.ProcessMode}
-   */
-  public enum ProcessMode
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>CYCLE_INTERACTIONS = 0;</code>
-     */
-    CYCLE_INTERACTIONS(0),
-    /**
-     * <code>INDIVIDUAL_PROCESS_FREQUENCIES = 1;</code>
-     */
-    INDIVIDUAL_PROCESS_FREQUENCIES(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>CYCLE_INTERACTIONS = 0;</code>
-     */
-    public static final int CYCLE_INTERACTIONS_VALUE = 0;
-    /**
-     * <code>INDIVIDUAL_PROCESS_FREQUENCIES = 1;</code>
-     */
-    public static final int INDIVIDUAL_PROCESS_FREQUENCIES_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ProcessMode valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static ProcessMode forNumber(int value) {
-      switch (value) {
-        case 0: return CYCLE_INTERACTIONS;
-        case 1: return INDIVIDUAL_PROCESS_FREQUENCIES;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ProcessMode>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ProcessMode> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ProcessMode>() {
-            public ProcessMode findValueByNumber(int number) {
-              return ProcessMode.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return ubii.sessions.SessionOuterClass.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final ProcessMode[] VALUES = values();
-
-    public static ProcessMode valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ProcessMode(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:ubii.sessions.ProcessMode)
-  }
-
-  /**
    * Protobuf enum {@code ubii.sessions.SessionStatus}
    */
   public enum SessionStatus
@@ -214,7 +110,7 @@ public final class SessionOuterClass {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return ubii.sessions.SessionOuterClass.getDescriptor().getEnumTypes().get(1);
+      return ubii.sessions.SessionOuterClass.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final SessionStatus[] VALUES = values();
@@ -269,38 +165,38 @@ public final class SessionOuterClass {
         getNameBytes();
 
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    java.util.List<ubii.interactions.InteractionOuterClass.Interaction> 
-        getInteractionsList();
+    java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> 
+        getProcessingModulesList();
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    ubii.interactions.InteractionOuterClass.Interaction getInteractions(int index);
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index);
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    int getInteractionsCount();
+    int getProcessingModulesCount();
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    java.util.List<? extends ubii.interactions.InteractionOuterClass.InteractionOrBuilder> 
-        getInteractionsOrBuilderList();
+    java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+        getProcessingModulesOrBuilderList();
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    ubii.interactions.InteractionOuterClass.InteractionOrBuilder getInteractionsOrBuilder(
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
         int index);
 
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    java.util.List<ubii.sessions.IoMapping.IOMapping> 
+    java.util.List<ubii.sessions.IoMappings.IOMapping> 
         getIoMappingsList();
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    ubii.sessions.IoMapping.IOMapping getIoMappings(int index);
+    ubii.sessions.IoMappings.IOMapping getIoMappings(int index);
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
@@ -308,12 +204,12 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    java.util.List<? extends ubii.sessions.IoMapping.IOMappingOrBuilder> 
+    java.util.List<? extends ubii.sessions.IoMappings.IOMappingOrBuilder> 
         getIoMappingsOrBuilderList();
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    ubii.sessions.IoMapping.IOMappingOrBuilder getIoMappingsOrBuilder(
+    ubii.sessions.IoMappings.IOMappingOrBuilder getIoMappingsOrBuilder(
         int index);
 
     /**
@@ -379,56 +275,21 @@ public final class SessionOuterClass {
         getAuthorsBytes(int index);
 
     /**
-     * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-     * @return The enum numeric value on the wire for processMode.
-     */
-    int getProcessModeValue();
-    /**
-     * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-     * @return The processMode.
-     */
-    ubii.sessions.SessionOuterClass.ProcessMode getProcessMode();
-
-    /**
-     * <code>.ubii.sessions.SessionStatus status = 9;</code>
+     * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
     /**
-     * <code>.ubii.sessions.SessionStatus status = 9;</code>
+     * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The status.
      */
     ubii.sessions.SessionOuterClass.SessionStatus getStatus();
 
     /**
-     * <code>bool editable = 10;</code>
+     * <code>bool editable = 9;</code>
      * @return The editable.
      */
     boolean getEditable();
-
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> 
-        getProcessingModulesList();
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index);
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    int getProcessingModulesCount();
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
-        getProcessingModulesOrBuilderList();
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code ubii.sessions.Session}
@@ -445,14 +306,12 @@ public final class SessionOuterClass {
     private Session() {
       id_ = "";
       name_ = "";
-      interactions_ = java.util.Collections.emptyList();
+      processingModules_ = java.util.Collections.emptyList();
       ioMappings_ = java.util.Collections.emptyList();
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      processMode_ = 0;
       status_ = 0;
-      processingModules_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -500,20 +359,20 @@ public final class SessionOuterClass {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                interactions_ = new java.util.ArrayList<ubii.interactions.InteractionOuterClass.Interaction>();
+                processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              interactions_.add(
-                  input.readMessage(ubii.interactions.InteractionOuterClass.Interaction.parser(), extensionRegistry));
+              processingModules_.add(
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry));
               break;
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMapping.IOMapping>();
+                ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>();
                 mutable_bitField0_ |= 0x00000002;
               }
               ioMappings_.add(
-                  input.readMessage(ubii.sessions.IoMapping.IOMapping.parser(), extensionRegistry));
+                  input.readMessage(ubii.sessions.IoMappings.IOMapping.parser(), extensionRegistry));
               break;
             }
             case 42: {
@@ -543,27 +402,12 @@ public final class SessionOuterClass {
             case 64: {
               int rawValue = input.readEnum();
 
-              processMode_ = rawValue;
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
               status_ = rawValue;
               break;
             }
-            case 80: {
+            case 72: {
 
               editable_ = input.readBool();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              processingModules_.add(
-                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -582,7 +426,7 @@ public final class SessionOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          interactions_ = java.util.Collections.unmodifiableList(interactions_);
+          processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           ioMappings_ = java.util.Collections.unmodifiableList(ioMappings_);
@@ -592,9 +436,6 @@ public final class SessionOuterClass {
         }
         if (((mutable_bitField0_ & 0x00000008) != 0)) {
           authors_ = authors_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -685,53 +526,53 @@ public final class SessionOuterClass {
       }
     }
 
-    public static final int INTERACTIONS_FIELD_NUMBER = 3;
-    private java.util.List<ubii.interactions.InteractionOuterClass.Interaction> interactions_;
+    public static final int PROCESSING_MODULES_FIELD_NUMBER = 3;
+    private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_;
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    public java.util.List<ubii.interactions.InteractionOuterClass.Interaction> getInteractionsList() {
-      return interactions_;
+    public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
+      return processingModules_;
     }
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    public java.util.List<? extends ubii.interactions.InteractionOuterClass.InteractionOrBuilder> 
-        getInteractionsOrBuilderList() {
-      return interactions_;
+    public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+        getProcessingModulesOrBuilderList() {
+      return processingModules_;
     }
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    public int getInteractionsCount() {
-      return interactions_.size();
+    public int getProcessingModulesCount() {
+      return processingModules_.size();
     }
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    public ubii.interactions.InteractionOuterClass.Interaction getInteractions(int index) {
-      return interactions_.get(index);
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
+      return processingModules_.get(index);
     }
     /**
-     * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
-    public ubii.interactions.InteractionOuterClass.InteractionOrBuilder getInteractionsOrBuilder(
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
         int index) {
-      return interactions_.get(index);
+      return processingModules_.get(index);
     }
 
     public static final int IO_MAPPINGS_FIELD_NUMBER = 4;
-    private java.util.List<ubii.sessions.IoMapping.IOMapping> ioMappings_;
+    private java.util.List<ubii.sessions.IoMappings.IOMapping> ioMappings_;
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    public java.util.List<ubii.sessions.IoMapping.IOMapping> getIoMappingsList() {
+    public java.util.List<ubii.sessions.IoMappings.IOMapping> getIoMappingsList() {
       return ioMappings_;
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    public java.util.List<? extends ubii.sessions.IoMapping.IOMappingOrBuilder> 
+    public java.util.List<? extends ubii.sessions.IoMappings.IOMappingOrBuilder> 
         getIoMappingsOrBuilderList() {
       return ioMappings_;
     }
@@ -744,13 +585,13 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    public ubii.sessions.IoMapping.IOMapping getIoMappings(int index) {
+    public ubii.sessions.IoMappings.IOMapping getIoMappings(int index) {
       return ioMappings_.get(index);
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
-    public ubii.sessions.IoMapping.IOMappingOrBuilder getIoMappingsOrBuilder(
+    public ubii.sessions.IoMappings.IOMappingOrBuilder getIoMappingsOrBuilder(
         int index) {
       return ioMappings_.get(index);
     }
@@ -861,36 +702,17 @@ public final class SessionOuterClass {
       return authors_.getByteString(index);
     }
 
-    public static final int PROCESS_MODE_FIELD_NUMBER = 8;
-    private int processMode_;
-    /**
-     * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-     * @return The enum numeric value on the wire for processMode.
-     */
-    public int getProcessModeValue() {
-      return processMode_;
-    }
-    /**
-     * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-     * @return The processMode.
-     */
-    public ubii.sessions.SessionOuterClass.ProcessMode getProcessMode() {
-      @SuppressWarnings("deprecation")
-      ubii.sessions.SessionOuterClass.ProcessMode result = ubii.sessions.SessionOuterClass.ProcessMode.valueOf(processMode_);
-      return result == null ? ubii.sessions.SessionOuterClass.ProcessMode.UNRECOGNIZED : result;
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 9;
+    public static final int STATUS_FIELD_NUMBER = 8;
     private int status_;
     /**
-     * <code>.ubii.sessions.SessionStatus status = 9;</code>
+     * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
     }
     /**
-     * <code>.ubii.sessions.SessionStatus status = 9;</code>
+     * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The status.
      */
     public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
@@ -899,49 +721,14 @@ public final class SessionOuterClass {
       return result == null ? ubii.sessions.SessionOuterClass.SessionStatus.UNRECOGNIZED : result;
     }
 
-    public static final int EDITABLE_FIELD_NUMBER = 10;
+    public static final int EDITABLE_FIELD_NUMBER = 9;
     private boolean editable_;
     /**
-     * <code>bool editable = 10;</code>
+     * <code>bool editable = 9;</code>
      * @return The editable.
      */
     public boolean getEditable() {
       return editable_;
-    }
-
-    public static final int PROCESSING_MODULES_FIELD_NUMBER = 11;
-    private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_;
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
-      return processingModules_;
-    }
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
-        getProcessingModulesOrBuilderList() {
-      return processingModules_;
-    }
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    public int getProcessingModulesCount() {
-      return processingModules_.size();
-    }
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
-      return processingModules_.get(index);
-    }
-    /**
-     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-     */
-    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
-        int index) {
-      return processingModules_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -964,8 +751,8 @@ public final class SessionOuterClass {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      for (int i = 0; i < interactions_.size(); i++) {
-        output.writeMessage(3, interactions_.get(i));
+      for (int i = 0; i < processingModules_.size(); i++) {
+        output.writeMessage(3, processingModules_.get(i));
       }
       for (int i = 0; i < ioMappings_.size(); i++) {
         output.writeMessage(4, ioMappings_.get(i));
@@ -979,17 +766,11 @@ public final class SessionOuterClass {
       for (int i = 0; i < authors_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, authors_.getRaw(i));
       }
-      if (processMode_ != ubii.sessions.SessionOuterClass.ProcessMode.CYCLE_INTERACTIONS.getNumber()) {
-        output.writeEnum(8, processMode_);
-      }
       if (status_ != ubii.sessions.SessionOuterClass.SessionStatus.CREATED.getNumber()) {
-        output.writeEnum(9, status_);
+        output.writeEnum(8, status_);
       }
       if (editable_ != false) {
-        output.writeBool(10, editable_);
-      }
-      for (int i = 0; i < processingModules_.size(); i++) {
-        output.writeMessage(11, processingModules_.get(i));
+        output.writeBool(9, editable_);
       }
       unknownFields.writeTo(output);
     }
@@ -1006,9 +787,9 @@ public final class SessionOuterClass {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      for (int i = 0; i < interactions_.size(); i++) {
+      for (int i = 0; i < processingModules_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, interactions_.get(i));
+          .computeMessageSize(3, processingModules_.get(i));
       }
       for (int i = 0; i < ioMappings_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -1033,21 +814,13 @@ public final class SessionOuterClass {
         size += dataSize;
         size += 1 * getAuthorsList().size();
       }
-      if (processMode_ != ubii.sessions.SessionOuterClass.ProcessMode.CYCLE_INTERACTIONS.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, processMode_);
-      }
       if (status_ != ubii.sessions.SessionOuterClass.SessionStatus.CREATED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, status_);
+          .computeEnumSize(8, status_);
       }
       if (editable_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, editable_);
-      }
-      for (int i = 0; i < processingModules_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, processingModules_.get(i));
+          .computeBoolSize(9, editable_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1068,8 +841,8 @@ public final class SessionOuterClass {
           .equals(other.getId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getInteractionsList()
-          .equals(other.getInteractionsList())) return false;
+      if (!getProcessingModulesList()
+          .equals(other.getProcessingModulesList())) return false;
       if (!getIoMappingsList()
           .equals(other.getIoMappingsList())) return false;
       if (!getTagsList()
@@ -1078,12 +851,9 @@ public final class SessionOuterClass {
           .equals(other.getDescription())) return false;
       if (!getAuthorsList()
           .equals(other.getAuthorsList())) return false;
-      if (processMode_ != other.processMode_) return false;
       if (status_ != other.status_) return false;
       if (getEditable()
           != other.getEditable()) return false;
-      if (!getProcessingModulesList()
-          .equals(other.getProcessingModulesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1099,9 +869,9 @@ public final class SessionOuterClass {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      if (getInteractionsCount() > 0) {
-        hash = (37 * hash) + INTERACTIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getInteractionsList().hashCode();
+      if (getProcessingModulesCount() > 0) {
+        hash = (37 * hash) + PROCESSING_MODULES_FIELD_NUMBER;
+        hash = (53 * hash) + getProcessingModulesList().hashCode();
       }
       if (getIoMappingsCount() > 0) {
         hash = (37 * hash) + IO_MAPPINGS_FIELD_NUMBER;
@@ -1117,17 +887,11 @@ public final class SessionOuterClass {
         hash = (37 * hash) + AUTHORS_FIELD_NUMBER;
         hash = (53 * hash) + getAuthorsList().hashCode();
       }
-      hash = (37 * hash) + PROCESS_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + processMode_;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
       hash = (37 * hash) + EDITABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEditable());
-      if (getProcessingModulesCount() > 0) {
-        hash = (37 * hash) + PROCESSING_MODULES_FIELD_NUMBER;
-        hash = (53 * hash) + getProcessingModulesList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1256,9 +1020,8 @@ public final class SessionOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getInteractionsFieldBuilder();
-          getIoMappingsFieldBuilder();
           getProcessingModulesFieldBuilder();
+          getIoMappingsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1268,11 +1031,11 @@ public final class SessionOuterClass {
 
         name_ = "";
 
-        if (interactionsBuilder_ == null) {
-          interactions_ = java.util.Collections.emptyList();
+        if (processingModulesBuilder_ == null) {
+          processingModules_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          interactionsBuilder_.clear();
+          processingModulesBuilder_.clear();
         }
         if (ioMappingsBuilder_ == null) {
           ioMappings_ = java.util.Collections.emptyList();
@@ -1286,18 +1049,10 @@ public final class SessionOuterClass {
 
         authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        processMode_ = 0;
-
         status_ = 0;
 
         editable_ = false;
 
-        if (processingModulesBuilder_ == null) {
-          processingModules_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        } else {
-          processingModulesBuilder_.clear();
-        }
         return this;
       }
 
@@ -1327,14 +1082,14 @@ public final class SessionOuterClass {
         int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.name_ = name_;
-        if (interactionsBuilder_ == null) {
+        if (processingModulesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            interactions_ = java.util.Collections.unmodifiableList(interactions_);
+            processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.interactions_ = interactions_;
+          result.processingModules_ = processingModules_;
         } else {
-          result.interactions_ = interactionsBuilder_.build();
+          result.processingModules_ = processingModulesBuilder_.build();
         }
         if (ioMappingsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
@@ -1356,18 +1111,8 @@ public final class SessionOuterClass {
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.authors_ = authors_;
-        result.processMode_ = processMode_;
         result.status_ = status_;
         result.editable_ = editable_;
-        if (processingModulesBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
-            processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.processingModules_ = processingModules_;
-        } else {
-          result.processingModules_ = processingModulesBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -1424,29 +1169,29 @@ public final class SessionOuterClass {
           name_ = other.name_;
           onChanged();
         }
-        if (interactionsBuilder_ == null) {
-          if (!other.interactions_.isEmpty()) {
-            if (interactions_.isEmpty()) {
-              interactions_ = other.interactions_;
+        if (processingModulesBuilder_ == null) {
+          if (!other.processingModules_.isEmpty()) {
+            if (processingModules_.isEmpty()) {
+              processingModules_ = other.processingModules_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureInteractionsIsMutable();
-              interactions_.addAll(other.interactions_);
+              ensureProcessingModulesIsMutable();
+              processingModules_.addAll(other.processingModules_);
             }
             onChanged();
           }
         } else {
-          if (!other.interactions_.isEmpty()) {
-            if (interactionsBuilder_.isEmpty()) {
-              interactionsBuilder_.dispose();
-              interactionsBuilder_ = null;
-              interactions_ = other.interactions_;
+          if (!other.processingModules_.isEmpty()) {
+            if (processingModulesBuilder_.isEmpty()) {
+              processingModulesBuilder_.dispose();
+              processingModulesBuilder_ = null;
+              processingModules_ = other.processingModules_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              interactionsBuilder_ = 
+              processingModulesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getInteractionsFieldBuilder() : null;
+                   getProcessingModulesFieldBuilder() : null;
             } else {
-              interactionsBuilder_.addAllMessages(other.interactions_);
+              processingModulesBuilder_.addAllMessages(other.processingModules_);
             }
           }
         }
@@ -1500,40 +1245,11 @@ public final class SessionOuterClass {
           }
           onChanged();
         }
-        if (other.processMode_ != 0) {
-          setProcessModeValue(other.getProcessModeValue());
-        }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
         if (other.getEditable() != false) {
           setEditable(other.getEditable());
-        }
-        if (processingModulesBuilder_ == null) {
-          if (!other.processingModules_.isEmpty()) {
-            if (processingModules_.isEmpty()) {
-              processingModules_ = other.processingModules_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-            } else {
-              ensureProcessingModulesIsMutable();
-              processingModules_.addAll(other.processingModules_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.processingModules_.isEmpty()) {
-            if (processingModulesBuilder_.isEmpty()) {
-              processingModulesBuilder_.dispose();
-              processingModulesBuilder_ = null;
-              processingModules_ = other.processingModules_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-              processingModulesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getProcessingModulesFieldBuilder() : null;
-            } else {
-              processingModulesBuilder_.addAllMessages(other.processingModules_);
-            }
-          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1717,262 +1433,262 @@ public final class SessionOuterClass {
         return this;
       }
 
-      private java.util.List<ubii.interactions.InteractionOuterClass.Interaction> interactions_ =
+      private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_ =
         java.util.Collections.emptyList();
-      private void ensureInteractionsIsMutable() {
+      private void ensureProcessingModulesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          interactions_ = new java.util.ArrayList<ubii.interactions.InteractionOuterClass.Interaction>(interactions_);
+          processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>(processingModules_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ubii.interactions.InteractionOuterClass.Interaction, ubii.interactions.InteractionOuterClass.Interaction.Builder, ubii.interactions.InteractionOuterClass.InteractionOrBuilder> interactionsBuilder_;
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> processingModulesBuilder_;
 
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public java.util.List<ubii.interactions.InteractionOuterClass.Interaction> getInteractionsList() {
-        if (interactionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(interactions_);
+      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
+        if (processingModulesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(processingModules_);
         } else {
-          return interactionsBuilder_.getMessageList();
+          return processingModulesBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public int getInteractionsCount() {
-        if (interactionsBuilder_ == null) {
-          return interactions_.size();
+      public int getProcessingModulesCount() {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.size();
         } else {
-          return interactionsBuilder_.getCount();
+          return processingModulesBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public ubii.interactions.InteractionOuterClass.Interaction getInteractions(int index) {
-        if (interactionsBuilder_ == null) {
-          return interactions_.get(index);
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.get(index);
         } else {
-          return interactionsBuilder_.getMessage(index);
+          return processingModulesBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder setInteractions(
-          int index, ubii.interactions.InteractionOuterClass.Interaction value) {
-        if (interactionsBuilder_ == null) {
+      public Builder setProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInteractionsIsMutable();
-          interactions_.set(index, value);
+          ensureProcessingModulesIsMutable();
+          processingModules_.set(index, value);
           onChanged();
         } else {
-          interactionsBuilder_.setMessage(index, value);
+          processingModulesBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder setInteractions(
-          int index, ubii.interactions.InteractionOuterClass.Interaction.Builder builderForValue) {
-        if (interactionsBuilder_ == null) {
-          ensureInteractionsIsMutable();
-          interactions_.set(index, builderForValue.build());
+      public Builder setProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.set(index, builderForValue.build());
           onChanged();
         } else {
-          interactionsBuilder_.setMessage(index, builderForValue.build());
+          processingModulesBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder addInteractions(ubii.interactions.InteractionOuterClass.Interaction value) {
-        if (interactionsBuilder_ == null) {
+      public Builder addProcessingModules(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInteractionsIsMutable();
-          interactions_.add(value);
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(value);
           onChanged();
         } else {
-          interactionsBuilder_.addMessage(value);
+          processingModulesBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder addInteractions(
-          int index, ubii.interactions.InteractionOuterClass.Interaction value) {
-        if (interactionsBuilder_ == null) {
+      public Builder addProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInteractionsIsMutable();
-          interactions_.add(index, value);
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(index, value);
           onChanged();
         } else {
-          interactionsBuilder_.addMessage(index, value);
+          processingModulesBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder addInteractions(
-          ubii.interactions.InteractionOuterClass.Interaction.Builder builderForValue) {
-        if (interactionsBuilder_ == null) {
-          ensureInteractionsIsMutable();
-          interactions_.add(builderForValue.build());
+      public Builder addProcessingModules(
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(builderForValue.build());
           onChanged();
         } else {
-          interactionsBuilder_.addMessage(builderForValue.build());
+          processingModulesBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder addInteractions(
-          int index, ubii.interactions.InteractionOuterClass.Interaction.Builder builderForValue) {
-        if (interactionsBuilder_ == null) {
-          ensureInteractionsIsMutable();
-          interactions_.add(index, builderForValue.build());
+      public Builder addProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(index, builderForValue.build());
           onChanged();
         } else {
-          interactionsBuilder_.addMessage(index, builderForValue.build());
+          processingModulesBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder addAllInteractions(
-          java.lang.Iterable<? extends ubii.interactions.InteractionOuterClass.Interaction> values) {
-        if (interactionsBuilder_ == null) {
-          ensureInteractionsIsMutable();
+      public Builder addAllProcessingModules(
+          java.lang.Iterable<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModule> values) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, interactions_);
+              values, processingModules_);
           onChanged();
         } else {
-          interactionsBuilder_.addAllMessages(values);
+          processingModulesBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder clearInteractions() {
-        if (interactionsBuilder_ == null) {
-          interactions_ = java.util.Collections.emptyList();
+      public Builder clearProcessingModules() {
+        if (processingModulesBuilder_ == null) {
+          processingModules_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          interactionsBuilder_.clear();
+          processingModulesBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public Builder removeInteractions(int index) {
-        if (interactionsBuilder_ == null) {
-          ensureInteractionsIsMutable();
-          interactions_.remove(index);
+      public Builder removeProcessingModules(int index) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.remove(index);
           onChanged();
         } else {
-          interactionsBuilder_.remove(index);
+          processingModulesBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public ubii.interactions.InteractionOuterClass.Interaction.Builder getInteractionsBuilder(
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder getProcessingModulesBuilder(
           int index) {
-        return getInteractionsFieldBuilder().getBuilder(index);
+        return getProcessingModulesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public ubii.interactions.InteractionOuterClass.InteractionOrBuilder getInteractionsOrBuilder(
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
           int index) {
-        if (interactionsBuilder_ == null) {
-          return interactions_.get(index);  } else {
-          return interactionsBuilder_.getMessageOrBuilder(index);
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.get(index);  } else {
+          return processingModulesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public java.util.List<? extends ubii.interactions.InteractionOuterClass.InteractionOrBuilder> 
-           getInteractionsOrBuilderList() {
-        if (interactionsBuilder_ != null) {
-          return interactionsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+           getProcessingModulesOrBuilderList() {
+        if (processingModulesBuilder_ != null) {
+          return processingModulesBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(interactions_);
+          return java.util.Collections.unmodifiableList(processingModules_);
         }
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public ubii.interactions.InteractionOuterClass.Interaction.Builder addInteractionsBuilder() {
-        return getInteractionsFieldBuilder().addBuilder(
-            ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance());
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder() {
+        return getProcessingModulesFieldBuilder().addBuilder(
+            ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public ubii.interactions.InteractionOuterClass.Interaction.Builder addInteractionsBuilder(
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder(
           int index) {
-        return getInteractionsFieldBuilder().addBuilder(
-            index, ubii.interactions.InteractionOuterClass.Interaction.getDefaultInstance());
+        return getProcessingModulesFieldBuilder().addBuilder(
+            index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
       }
       /**
-       * <code>repeated .ubii.interactions.Interaction interactions = 3;</code>
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
        */
-      public java.util.List<ubii.interactions.InteractionOuterClass.Interaction.Builder> 
-           getInteractionsBuilderList() {
-        return getInteractionsFieldBuilder().getBuilderList();
+      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder> 
+           getProcessingModulesBuilderList() {
+        return getProcessingModulesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ubii.interactions.InteractionOuterClass.Interaction, ubii.interactions.InteractionOuterClass.Interaction.Builder, ubii.interactions.InteractionOuterClass.InteractionOrBuilder> 
-          getInteractionsFieldBuilder() {
-        if (interactionsBuilder_ == null) {
-          interactionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ubii.interactions.InteractionOuterClass.Interaction, ubii.interactions.InteractionOuterClass.Interaction.Builder, ubii.interactions.InteractionOuterClass.InteractionOrBuilder>(
-                  interactions_,
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+          getProcessingModulesFieldBuilder() {
+        if (processingModulesBuilder_ == null) {
+          processingModulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
+                  processingModules_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          interactions_ = null;
+          processingModules_ = null;
         }
-        return interactionsBuilder_;
+        return processingModulesBuilder_;
       }
 
-      private java.util.List<ubii.sessions.IoMapping.IOMapping> ioMappings_ =
+      private java.util.List<ubii.sessions.IoMappings.IOMapping> ioMappings_ =
         java.util.Collections.emptyList();
       private void ensureIoMappingsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMapping.IOMapping>(ioMappings_);
+          ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>(ioMappings_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ubii.sessions.IoMapping.IOMapping, ubii.sessions.IoMapping.IOMapping.Builder, ubii.sessions.IoMapping.IOMappingOrBuilder> ioMappingsBuilder_;
+          ubii.sessions.IoMappings.IOMapping, ubii.sessions.IoMappings.IOMapping.Builder, ubii.sessions.IoMappings.IOMappingOrBuilder> ioMappingsBuilder_;
 
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public java.util.List<ubii.sessions.IoMapping.IOMapping> getIoMappingsList() {
+      public java.util.List<ubii.sessions.IoMappings.IOMapping> getIoMappingsList() {
         if (ioMappingsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(ioMappings_);
         } else {
@@ -1992,7 +1708,7 @@ public final class SessionOuterClass {
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public ubii.sessions.IoMapping.IOMapping getIoMappings(int index) {
+      public ubii.sessions.IoMappings.IOMapping getIoMappings(int index) {
         if (ioMappingsBuilder_ == null) {
           return ioMappings_.get(index);
         } else {
@@ -2003,7 +1719,7 @@ public final class SessionOuterClass {
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
       public Builder setIoMappings(
-          int index, ubii.sessions.IoMapping.IOMapping value) {
+          int index, ubii.sessions.IoMappings.IOMapping value) {
         if (ioMappingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2020,7 +1736,7 @@ public final class SessionOuterClass {
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
       public Builder setIoMappings(
-          int index, ubii.sessions.IoMapping.IOMapping.Builder builderForValue) {
+          int index, ubii.sessions.IoMappings.IOMapping.Builder builderForValue) {
         if (ioMappingsBuilder_ == null) {
           ensureIoMappingsIsMutable();
           ioMappings_.set(index, builderForValue.build());
@@ -2033,7 +1749,7 @@ public final class SessionOuterClass {
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public Builder addIoMappings(ubii.sessions.IoMapping.IOMapping value) {
+      public Builder addIoMappings(ubii.sessions.IoMappings.IOMapping value) {
         if (ioMappingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2050,7 +1766,7 @@ public final class SessionOuterClass {
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
       public Builder addIoMappings(
-          int index, ubii.sessions.IoMapping.IOMapping value) {
+          int index, ubii.sessions.IoMappings.IOMapping value) {
         if (ioMappingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2067,7 +1783,7 @@ public final class SessionOuterClass {
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
       public Builder addIoMappings(
-          ubii.sessions.IoMapping.IOMapping.Builder builderForValue) {
+          ubii.sessions.IoMappings.IOMapping.Builder builderForValue) {
         if (ioMappingsBuilder_ == null) {
           ensureIoMappingsIsMutable();
           ioMappings_.add(builderForValue.build());
@@ -2081,7 +1797,7 @@ public final class SessionOuterClass {
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
       public Builder addIoMappings(
-          int index, ubii.sessions.IoMapping.IOMapping.Builder builderForValue) {
+          int index, ubii.sessions.IoMappings.IOMapping.Builder builderForValue) {
         if (ioMappingsBuilder_ == null) {
           ensureIoMappingsIsMutable();
           ioMappings_.add(index, builderForValue.build());
@@ -2095,7 +1811,7 @@ public final class SessionOuterClass {
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
       public Builder addAllIoMappings(
-          java.lang.Iterable<? extends ubii.sessions.IoMapping.IOMapping> values) {
+          java.lang.Iterable<? extends ubii.sessions.IoMappings.IOMapping> values) {
         if (ioMappingsBuilder_ == null) {
           ensureIoMappingsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2135,14 +1851,14 @@ public final class SessionOuterClass {
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public ubii.sessions.IoMapping.IOMapping.Builder getIoMappingsBuilder(
+      public ubii.sessions.IoMappings.IOMapping.Builder getIoMappingsBuilder(
           int index) {
         return getIoMappingsFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public ubii.sessions.IoMapping.IOMappingOrBuilder getIoMappingsOrBuilder(
+      public ubii.sessions.IoMappings.IOMappingOrBuilder getIoMappingsOrBuilder(
           int index) {
         if (ioMappingsBuilder_ == null) {
           return ioMappings_.get(index);  } else {
@@ -2152,7 +1868,7 @@ public final class SessionOuterClass {
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public java.util.List<? extends ubii.sessions.IoMapping.IOMappingOrBuilder> 
+      public java.util.List<? extends ubii.sessions.IoMappings.IOMappingOrBuilder> 
            getIoMappingsOrBuilderList() {
         if (ioMappingsBuilder_ != null) {
           return ioMappingsBuilder_.getMessageOrBuilderList();
@@ -2163,31 +1879,31 @@ public final class SessionOuterClass {
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public ubii.sessions.IoMapping.IOMapping.Builder addIoMappingsBuilder() {
+      public ubii.sessions.IoMappings.IOMapping.Builder addIoMappingsBuilder() {
         return getIoMappingsFieldBuilder().addBuilder(
-            ubii.sessions.IoMapping.IOMapping.getDefaultInstance());
+            ubii.sessions.IoMappings.IOMapping.getDefaultInstance());
       }
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public ubii.sessions.IoMapping.IOMapping.Builder addIoMappingsBuilder(
+      public ubii.sessions.IoMappings.IOMapping.Builder addIoMappingsBuilder(
           int index) {
         return getIoMappingsFieldBuilder().addBuilder(
-            index, ubii.sessions.IoMapping.IOMapping.getDefaultInstance());
+            index, ubii.sessions.IoMappings.IOMapping.getDefaultInstance());
       }
       /**
        * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
        */
-      public java.util.List<ubii.sessions.IoMapping.IOMapping.Builder> 
+      public java.util.List<ubii.sessions.IoMappings.IOMapping.Builder> 
            getIoMappingsBuilderList() {
         return getIoMappingsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ubii.sessions.IoMapping.IOMapping, ubii.sessions.IoMapping.IOMapping.Builder, ubii.sessions.IoMapping.IOMappingOrBuilder> 
+          ubii.sessions.IoMappings.IOMapping, ubii.sessions.IoMappings.IOMapping.Builder, ubii.sessions.IoMappings.IOMappingOrBuilder> 
           getIoMappingsFieldBuilder() {
         if (ioMappingsBuilder_ == null) {
           ioMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ubii.sessions.IoMapping.IOMapping, ubii.sessions.IoMapping.IOMapping.Builder, ubii.sessions.IoMapping.IOMappingOrBuilder>(
+              ubii.sessions.IoMappings.IOMapping, ubii.sessions.IoMappings.IOMapping.Builder, ubii.sessions.IoMappings.IOMappingOrBuilder>(
                   ioMappings_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -2493,68 +2209,16 @@ public final class SessionOuterClass {
         return this;
       }
 
-      private int processMode_ = 0;
-      /**
-       * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-       * @return The enum numeric value on the wire for processMode.
-       */
-      public int getProcessModeValue() {
-        return processMode_;
-      }
-      /**
-       * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-       * @param value The enum numeric value on the wire for processMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProcessModeValue(int value) {
-        processMode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-       * @return The processMode.
-       */
-      public ubii.sessions.SessionOuterClass.ProcessMode getProcessMode() {
-        @SuppressWarnings("deprecation")
-        ubii.sessions.SessionOuterClass.ProcessMode result = ubii.sessions.SessionOuterClass.ProcessMode.valueOf(processMode_);
-        return result == null ? ubii.sessions.SessionOuterClass.ProcessMode.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-       * @param value The processMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProcessMode(ubii.sessions.SessionOuterClass.ProcessMode value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        processMode_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ubii.sessions.ProcessMode process_mode = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProcessMode() {
-        
-        processMode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int status_ = 0;
       /**
-       * <code>.ubii.sessions.SessionStatus status = 9;</code>
+       * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @return The enum numeric value on the wire for status.
        */
       public int getStatusValue() {
         return status_;
       }
       /**
-       * <code>.ubii.sessions.SessionStatus status = 9;</code>
+       * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
        */
@@ -2564,7 +2228,7 @@ public final class SessionOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.SessionStatus status = 9;</code>
+       * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @return The status.
        */
       public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
@@ -2573,7 +2237,7 @@ public final class SessionOuterClass {
         return result == null ? ubii.sessions.SessionOuterClass.SessionStatus.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ubii.sessions.SessionStatus status = 9;</code>
+       * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -2587,7 +2251,7 @@ public final class SessionOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.SessionStatus status = 9;</code>
+       * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -2599,14 +2263,14 @@ public final class SessionOuterClass {
 
       private boolean editable_ ;
       /**
-       * <code>bool editable = 10;</code>
+       * <code>bool editable = 9;</code>
        * @return The editable.
        */
       public boolean getEditable() {
         return editable_;
       }
       /**
-       * <code>bool editable = 10;</code>
+       * <code>bool editable = 9;</code>
        * @param value The editable to set.
        * @return This builder for chaining.
        */
@@ -2617,7 +2281,7 @@ public final class SessionOuterClass {
         return this;
       }
       /**
-       * <code>bool editable = 10;</code>
+       * <code>bool editable = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEditable() {
@@ -2625,246 +2289,6 @@ public final class SessionOuterClass {
         editable_ = false;
         onChanged();
         return this;
-      }
-
-      private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_ =
-        java.util.Collections.emptyList();
-      private void ensureProcessingModulesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
-          processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>(processingModules_);
-          bitField0_ |= 0x00000010;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> processingModulesBuilder_;
-
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
-        if (processingModulesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(processingModules_);
-        } else {
-          return processingModulesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public int getProcessingModulesCount() {
-        if (processingModulesBuilder_ == null) {
-          return processingModules_.size();
-        } else {
-          return processingModulesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
-        if (processingModulesBuilder_ == null) {
-          return processingModules_.get(index);
-        } else {
-          return processingModulesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder setProcessingModules(
-          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
-        if (processingModulesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProcessingModulesIsMutable();
-          processingModules_.set(index, value);
-          onChanged();
-        } else {
-          processingModulesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder setProcessingModules(
-          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
-        if (processingModulesBuilder_ == null) {
-          ensureProcessingModulesIsMutable();
-          processingModules_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          processingModulesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder addProcessingModules(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
-        if (processingModulesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProcessingModulesIsMutable();
-          processingModules_.add(value);
-          onChanged();
-        } else {
-          processingModulesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder addProcessingModules(
-          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
-        if (processingModulesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureProcessingModulesIsMutable();
-          processingModules_.add(index, value);
-          onChanged();
-        } else {
-          processingModulesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder addProcessingModules(
-          ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
-        if (processingModulesBuilder_ == null) {
-          ensureProcessingModulesIsMutable();
-          processingModules_.add(builderForValue.build());
-          onChanged();
-        } else {
-          processingModulesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder addProcessingModules(
-          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
-        if (processingModulesBuilder_ == null) {
-          ensureProcessingModulesIsMutable();
-          processingModules_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          processingModulesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder addAllProcessingModules(
-          java.lang.Iterable<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModule> values) {
-        if (processingModulesBuilder_ == null) {
-          ensureProcessingModulesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, processingModules_);
-          onChanged();
-        } else {
-          processingModulesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder clearProcessingModules() {
-        if (processingModulesBuilder_ == null) {
-          processingModules_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          onChanged();
-        } else {
-          processingModulesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public Builder removeProcessingModules(int index) {
-        if (processingModulesBuilder_ == null) {
-          ensureProcessingModulesIsMutable();
-          processingModules_.remove(index);
-          onChanged();
-        } else {
-          processingModulesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder getProcessingModulesBuilder(
-          int index) {
-        return getProcessingModulesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
-          int index) {
-        if (processingModulesBuilder_ == null) {
-          return processingModules_.get(index);  } else {
-          return processingModulesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
-           getProcessingModulesOrBuilderList() {
-        if (processingModulesBuilder_ != null) {
-          return processingModulesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(processingModules_);
-        }
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder() {
-        return getProcessingModulesFieldBuilder().addBuilder(
-            ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder(
-          int index) {
-        return getProcessingModulesFieldBuilder().addBuilder(
-            index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 11;</code>
-       */
-      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder> 
-           getProcessingModulesBuilderList() {
-        return getProcessingModulesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
-          getProcessingModulesFieldBuilder() {
-        if (processingModulesBuilder_ == null) {
-          processingModulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
-                  processingModules_,
-                  ((bitField0_ & 0x00000010) != 0),
-                  getParentForChildren(),
-                  isClean());
-          processingModules_ = null;
-        }
-        return processingModulesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3727,30 +3151,23 @@ public final class SessionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034proto/sessions/session.proto\022\rubii.ses" +
-      "sions\032$proto/interactions/interaction.pr" +
-      "oto\032\036proto/sessions/ioMapping.proto\032\'pro" +
-      "to/processing/processingModule.proto\"\355\002\n" +
-      "\007Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0224\n\014in" +
-      "teractions\030\003 \003(\0132\036.ubii.interactions.Int" +
-      "eraction\022-\n\013io_mappings\030\004 \003(\0132\030.ubii.ses" +
-      "sions.IOMapping\022\014\n\004tags\030\005 \003(\t\022\023\n\013descrip" +
-      "tion\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\0220\n\014process_m" +
-      "ode\030\010 \001(\0162\032.ubii.sessions.ProcessMode\022,\n" +
-      "\006status\030\t \001(\0162\034.ubii.sessions.SessionSta" +
-      "tus\022\020\n\010editable\030\n \001(\010\022=\n\022processing_modu" +
-      "les\030\013 \003(\0132!.ubii.processing.ProcessingMo" +
-      "dule\"7\n\013SessionList\022(\n\010elements\030\001 \003(\0132\026." +
-      "ubii.sessions.Session*I\n\013ProcessMode\022\026\n\022" +
-      "CYCLE_INTERACTIONS\020\000\022\"\n\036INDIVIDUAL_PROCE" +
-      "SS_FREQUENCIES\020\001*B\n\rSessionStatus\022\013\n\007CRE" +
-      "ATED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPP" +
-      "ED\020\003b\006proto3"
+      "sions\032\037proto/sessions/ioMappings.proto\032\'" +
+      "proto/processing/processingModule.proto\"" +
+      "\205\002\n\007Session\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022=\n" +
+      "\022processing_modules\030\003 \003(\0132!.ubii.process" +
+      "ing.ProcessingModule\022-\n\013io_mappings\030\004 \003(" +
+      "\0132\030.ubii.sessions.IOMapping\022\014\n\004tags\030\005 \003(" +
+      "\t\022\023\n\013description\030\006 \001(\t\022\017\n\007authors\030\007 \003(\t\022" +
+      ",\n\006status\030\010 \001(\0162\034.ubii.sessions.SessionS" +
+      "tatus\022\020\n\010editable\030\t \001(\010\"7\n\013SessionList\022(" +
+      "\n\010elements\030\001 \003(\0132\026.ubii.sessions.Session" +
+      "*B\n\rSessionStatus\022\013\n\007CREATED\020\000\022\013\n\007RUNNIN" +
+      "G\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPPED\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          ubii.interactions.InteractionOuterClass.getDescriptor(),
-          ubii.sessions.IoMapping.getDescriptor(),
+          ubii.sessions.IoMappings.getDescriptor(),
           ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
         });
     internal_static_ubii_sessions_Session_descriptor =
@@ -3758,15 +3175,14 @@ public final class SessionOuterClass {
     internal_static_ubii_sessions_Session_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_Session_descriptor,
-        new java.lang.String[] { "Id", "Name", "Interactions", "IoMappings", "Tags", "Description", "Authors", "ProcessMode", "Status", "Editable", "ProcessingModules", });
+        new java.lang.String[] { "Id", "Name", "ProcessingModules", "IoMappings", "Tags", "Description", "Authors", "Status", "Editable", });
     internal_static_ubii_sessions_SessionList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_sessions_SessionList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_sessions_SessionList_descriptor,
         new java.lang.String[] { "Elements", });
-    ubii.interactions.InteractionOuterClass.getDescriptor();
-    ubii.sessions.IoMapping.getDescriptor();
+    ubii.sessions.IoMappings.getDescriptor();
     ubii.processing.ProcessingModuleOuterClass.getDescriptor();
   }
 

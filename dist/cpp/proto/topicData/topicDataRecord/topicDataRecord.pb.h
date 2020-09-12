@@ -51,7 +51,7 @@
 #include "proto/topicData/topicDataRecord/dataStructure/object3d.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/image.pb.h"
 #include "proto/sessions/session.pb.h"
-#include "proto/interactions/interaction.pb.h"
+#include "proto/processing/processingModule.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto
@@ -160,7 +160,7 @@ class TopicDataRecord :
     kImage2D = 30,
     kImage2DList = 31,
     kSession = 32,
-    kInteraction = 33,
+    kProcessingModuleList = 33,
     TYPE_NOT_SET = 0,
   };
 
@@ -266,7 +266,7 @@ class TopicDataRecord :
     kImage2DFieldNumber = 30,
     kImage2DListFieldNumber = 31,
     kSessionFieldNumber = 32,
-    kInteractionFieldNumber = 33,
+    kProcessingModuleListFieldNumber = 33,
   };
   // string topic = 1;
   void clear_topic();
@@ -741,19 +741,19 @@ class TopicDataRecord :
   ::ubii::sessions::Session* _internal_mutable_session();
   public:
 
-  // .ubii.interactions.Interaction interaction = 33;
-  bool has_interaction() const;
+  // .ubii.processing.ProcessingModuleList processing_module_list = 33;
+  bool has_processing_module_list() const;
   private:
-  bool _internal_has_interaction() const;
+  bool _internal_has_processing_module_list() const;
   public:
-  void clear_interaction();
-  const ::ubii::interactions::Interaction& interaction() const;
-  ::ubii::interactions::Interaction* release_interaction();
-  ::ubii::interactions::Interaction* mutable_interaction();
-  void set_allocated_interaction(::ubii::interactions::Interaction* interaction);
+  void clear_processing_module_list();
+  const ::ubii::processing::ProcessingModuleList& processing_module_list() const;
+  ::ubii::processing::ProcessingModuleList* release_processing_module_list();
+  ::ubii::processing::ProcessingModuleList* mutable_processing_module_list();
+  void set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list);
   private:
-  const ::ubii::interactions::Interaction& _internal_interaction() const;
-  ::ubii::interactions::Interaction* _internal_mutable_interaction();
+  const ::ubii::processing::ProcessingModuleList& _internal_processing_module_list() const;
+  ::ubii::processing::ProcessingModuleList* _internal_mutable_processing_module_list();
   public:
 
   void clear_type();
@@ -791,7 +791,7 @@ class TopicDataRecord :
   void set_has_image2d();
   void set_has_image2d_list();
   void set_has_session();
-  void set_has_interaction();
+  void set_has_processing_module_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -831,7 +831,7 @@ class TopicDataRecord :
     ::ubii::dataStructure::Image2D* image2d_;
     ::ubii::dataStructure::Image2DList* image2d_list_;
     ::ubii::sessions::Session* session_;
-    ::ubii::interactions::Interaction* interaction_;
+    ::ubii::processing::ProcessingModuleList* processing_module_list_;
   } type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2438,48 +2438,48 @@ inline ::ubii::sessions::Session* TopicDataRecord::mutable_session() {
   return _internal_mutable_session();
 }
 
-// .ubii.interactions.Interaction interaction = 33;
-inline bool TopicDataRecord::_internal_has_interaction() const {
-  return type_case() == kInteraction;
+// .ubii.processing.ProcessingModuleList processing_module_list = 33;
+inline bool TopicDataRecord::_internal_has_processing_module_list() const {
+  return type_case() == kProcessingModuleList;
 }
-inline bool TopicDataRecord::has_interaction() const {
-  return _internal_has_interaction();
+inline bool TopicDataRecord::has_processing_module_list() const {
+  return _internal_has_processing_module_list();
 }
-inline void TopicDataRecord::set_has_interaction() {
-  _oneof_case_[0] = kInteraction;
+inline void TopicDataRecord::set_has_processing_module_list() {
+  _oneof_case_[0] = kProcessingModuleList;
 }
-inline ::ubii::interactions::Interaction* TopicDataRecord::release_interaction() {
-  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.interaction)
-  if (_internal_has_interaction()) {
+inline ::ubii::processing::ProcessingModuleList* TopicDataRecord::release_processing_module_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.processing_module_list)
+  if (_internal_has_processing_module_list()) {
     clear_has_type();
-      ::ubii::interactions::Interaction* temp = type_.interaction_;
-    type_.interaction_ = nullptr;
+      ::ubii::processing::ProcessingModuleList* temp = type_.processing_module_list_;
+    type_.processing_module_list_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::ubii::interactions::Interaction& TopicDataRecord::_internal_interaction() const {
-  return _internal_has_interaction()
-      ? *type_.interaction_
-      : *reinterpret_cast< ::ubii::interactions::Interaction*>(&::ubii::interactions::_Interaction_default_instance_);
+inline const ::ubii::processing::ProcessingModuleList& TopicDataRecord::_internal_processing_module_list() const {
+  return _internal_has_processing_module_list()
+      ? *type_.processing_module_list_
+      : *reinterpret_cast< ::ubii::processing::ProcessingModuleList*>(&::ubii::processing::_ProcessingModuleList_default_instance_);
 }
-inline const ::ubii::interactions::Interaction& TopicDataRecord::interaction() const {
-  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.interaction)
-  return _internal_interaction();
+inline const ::ubii::processing::ProcessingModuleList& TopicDataRecord::processing_module_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.processing_module_list)
+  return _internal_processing_module_list();
 }
-inline ::ubii::interactions::Interaction* TopicDataRecord::_internal_mutable_interaction() {
-  if (!_internal_has_interaction()) {
+inline ::ubii::processing::ProcessingModuleList* TopicDataRecord::_internal_mutable_processing_module_list() {
+  if (!_internal_has_processing_module_list()) {
     clear_type();
-    set_has_interaction();
-    type_.interaction_ = CreateMaybeMessage< ::ubii::interactions::Interaction >(
+    set_has_processing_module_list();
+    type_.processing_module_list_ = CreateMaybeMessage< ::ubii::processing::ProcessingModuleList >(
         GetArenaNoVirtual());
   }
-  return type_.interaction_;
+  return type_.processing_module_list_;
 }
-inline ::ubii::interactions::Interaction* TopicDataRecord::mutable_interaction() {
-  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.interaction)
-  return _internal_mutable_interaction();
+inline ::ubii::processing::ProcessingModuleList* TopicDataRecord::mutable_processing_module_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.processing_module_list)
+  return _internal_mutable_processing_module_list();
 }
 
 inline bool TopicDataRecord::has_type() const {

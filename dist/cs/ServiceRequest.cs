@@ -28,36 +28,32 @@ namespace Ubii.Services {
             "ZXJ2aWNlcxoacHJvdG8vY2xpZW50cy9jbGllbnQucHJvdG8aGnByb3RvL2Rl",
             "dmljZXMvZGV2aWNlLnByb3RvGhxwcm90by9kZXZpY2VzL3RvcGljTXV4LnBy",
             "b3RvGh5wcm90by9kZXZpY2VzL3RvcGljRGVtdXgucHJvdG8aHHByb3RvL3Nl",
-            "c3Npb25zL3Nlc3Npb24ucHJvdG8aJHByb3RvL2ludGVyYWN0aW9ucy9pbnRl",
-            "cmFjdGlvbi5wcm90bxoucHJvdG8vc2VydmljZXMvcmVxdWVzdC90b3BpY1N1",
-            "YnNjcmlwdGlvbi5wcm90bxoncHJvdG8vcHJvY2Vzc2luZy9wcm9jZXNzaW5n",
-            "TW9kdWxlLnByb3RvGilwcm90by9wcm9jZXNzaW5nL2xvY2tzdGVwUHJvY2Vz",
-            "c2luZy5wcm90byKhBwoOU2VydmljZVJlcXVlc3QSDQoFdG9waWMYASABKAkS",
-            "JgoGY2xpZW50GAIgASgLMhQudWJpaS5jbGllbnRzLkNsaWVudEgAEiYKBmRl",
-            "dmljZRgDIAEoCzIULnViaWkuZGV2aWNlcy5EZXZpY2VIABJGChJ0b3BpY19z",
-            "dWJzY3JpcHRpb24YBCABKAsyKC51YmlpLnNlcnZpY2VzLnJlcXVlc3QuVG9w",
-            "aWNTdWJzY3JpcHRpb25IABIpCgdzZXNzaW9uGAUgASgLMhYudWJpaS5zZXNz",
-            "aW9ucy5TZXNzaW9uSAASMgoMc2Vzc2lvbl9saXN0GAYgASgLMhoudWJpaS5z",
-            "ZXNzaW9ucy5TZXNzaW9uTGlzdEgAEjUKC2ludGVyYWN0aW9uGAcgASgLMh4u",
-            "dWJpaS5pbnRlcmFjdGlvbnMuSW50ZXJhY3Rpb25IABI+ChBpbnRlcmFjdGlv",
-            "bl9saXN0GAggASgLMiIudWJpaS5pbnRlcmFjdGlvbnMuSW50ZXJhY3Rpb25M",
-            "aXN0SAASKwoJdG9waWNfbXV4GAkgASgLMhYudWJpaS5kZXZpY2VzLlRvcGlj",
-            "TXV4SAASNAoOdG9waWNfbXV4X2xpc3QYCiABKAsyGi51YmlpLmRldmljZXMu",
-            "VG9waWNNdXhMaXN0SAASLwoLdG9waWNfZGVtdXgYCyABKAsyGC51YmlpLmRl",
-            "dmljZXMuVG9waWNEZW11eEgAEjgKEHRvcGljX2RlbXV4X2xpc3QYDCABKAsy",
-            "HC51YmlpLmRldmljZXMuVG9waWNEZW11eExpc3RIABIvCgtjbGllbnRfbGlz",
-            "dBgNIAEoCzIYLnViaWkuY2xpZW50cy5DbGllbnRMaXN0SAASLwoLZGV2aWNl",
-            "X2xpc3QYDiABKAsyGC51YmlpLmRldmljZXMuRGV2aWNlTGlzdEgAEj4KEXBy",
-            "b2Nlc3NpbmdfbW9kdWxlGA8gASgLMiEudWJpaS5wcm9jZXNzaW5nLlByb2Nl",
-            "c3NpbmdNb2R1bGVIABJHChZwcm9jZXNzaW5nX21vZHVsZV9saXN0GBAgASgL",
-            "MiUudWJpaS5wcm9jZXNzaW5nLlByb2Nlc3NpbmdNb2R1bGVMaXN0SAASUQob",
-            "bG9ja3N0ZXBfcHJvY2Vzc2luZ19yZXF1ZXN0GBEgASgLMioudWJpaS5wcm9j",
-            "ZXNzaW5nLkxvY2tzdGVwUHJvY2Vzc2luZ1JlcXVlc3RIAEIGCgR0eXBlYgZw",
-            "cm90bzM="));
+            "c3Npb25zL3Nlc3Npb24ucHJvdG8aLnByb3RvL3NlcnZpY2VzL3JlcXVlc3Qv",
+            "dG9waWNTdWJzY3JpcHRpb24ucHJvdG8aJ3Byb3RvL3Byb2Nlc3NpbmcvcHJv",
+            "Y2Vzc2luZ01vZHVsZS5wcm90bxopcHJvdG8vcHJvY2Vzc2luZy9sb2Nrc3Rl",
+            "cFByb2Nlc3NpbmcucHJvdG8iqgYKDlNlcnZpY2VSZXF1ZXN0Eg0KBXRvcGlj",
+            "GAEgASgJEiYKBmNsaWVudBgCIAEoCzIULnViaWkuY2xpZW50cy5DbGllbnRI",
+            "ABImCgZkZXZpY2UYAyABKAsyFC51YmlpLmRldmljZXMuRGV2aWNlSAASRgoS",
+            "dG9waWNfc3Vic2NyaXB0aW9uGAQgASgLMigudWJpaS5zZXJ2aWNlcy5yZXF1",
+            "ZXN0LlRvcGljU3Vic2NyaXB0aW9uSAASKQoHc2Vzc2lvbhgFIAEoCzIWLnVi",
+            "aWkuc2Vzc2lvbnMuU2Vzc2lvbkgAEjIKDHNlc3Npb25fbGlzdBgGIAEoCzIa",
+            "LnViaWkuc2Vzc2lvbnMuU2Vzc2lvbkxpc3RIABI+ChFwcm9jZXNzaW5nX21v",
+            "ZHVsZRgHIAEoCzIhLnViaWkucHJvY2Vzc2luZy5Qcm9jZXNzaW5nTW9kdWxl",
+            "SAASRwoWcHJvY2Vzc2luZ19tb2R1bGVfbGlzdBgIIAEoCzIlLnViaWkucHJv",
+            "Y2Vzc2luZy5Qcm9jZXNzaW5nTW9kdWxlTGlzdEgAEisKCXRvcGljX211eBgJ",
+            "IAEoCzIWLnViaWkuZGV2aWNlcy5Ub3BpY011eEgAEjQKDnRvcGljX211eF9s",
+            "aXN0GAogASgLMhoudWJpaS5kZXZpY2VzLlRvcGljTXV4TGlzdEgAEi8KC3Rv",
+            "cGljX2RlbXV4GAsgASgLMhgudWJpaS5kZXZpY2VzLlRvcGljRGVtdXhIABI4",
+            "ChB0b3BpY19kZW11eF9saXN0GAwgASgLMhwudWJpaS5kZXZpY2VzLlRvcGlj",
+            "RGVtdXhMaXN0SAASLwoLY2xpZW50X2xpc3QYDSABKAsyGC51YmlpLmNsaWVu",
+            "dHMuQ2xpZW50TGlzdEgAEi8KC2RldmljZV9saXN0GA4gASgLMhgudWJpaS5k",
+            "ZXZpY2VzLkRldmljZUxpc3RIABJRChtsb2Nrc3RlcF9wcm9jZXNzaW5nX3Jl",
+            "cXVlc3QYDyABKAsyKi51YmlpLnByb2Nlc3NpbmcuTG9ja3N0ZXBQcm9jZXNz",
+            "aW5nUmVxdWVzdEgAQgYKBHR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Interactions.InteractionReflection.Descriptor, global::Ubii.Services.Request.TopicSubscriptionReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, global::Ubii.Processing.LockstepProcessingReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Services.Request.TopicSubscriptionReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, global::Ubii.Processing.LockstepProcessingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceRequest), global::Ubii.Services.ServiceRequest.Parser, new[]{ "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "Interaction", "InteractionList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "ProcessingModule", "ProcessingModuleList", "LockstepProcessingRequest" }, new[]{ "Type" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceRequest), global::Ubii.Services.ServiceRequest.Parser, new[]{ "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "ProcessingModule", "ProcessingModuleList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "LockstepProcessingRequest" }, new[]{ "Type" }, null, null, null)
           }));
     }
     #endregion
@@ -106,11 +102,11 @@ namespace Ubii.Services {
         case TypeOneofCase.SessionList:
           SessionList = other.SessionList.Clone();
           break;
-        case TypeOneofCase.Interaction:
-          Interaction = other.Interaction.Clone();
+        case TypeOneofCase.ProcessingModule:
+          ProcessingModule = other.ProcessingModule.Clone();
           break;
-        case TypeOneofCase.InteractionList:
-          InteractionList = other.InteractionList.Clone();
+        case TypeOneofCase.ProcessingModuleList:
+          ProcessingModuleList = other.ProcessingModuleList.Clone();
           break;
         case TypeOneofCase.TopicMux:
           TopicMux = other.TopicMux.Clone();
@@ -129,12 +125,6 @@ namespace Ubii.Services {
           break;
         case TypeOneofCase.DeviceList:
           DeviceList = other.DeviceList.Clone();
-          break;
-        case TypeOneofCase.ProcessingModule:
-          ProcessingModule = other.ProcessingModule.Clone();
-          break;
-        case TypeOneofCase.ProcessingModuleList:
-          ProcessingModuleList = other.ProcessingModuleList.Clone();
           break;
         case TypeOneofCase.LockstepProcessingRequest:
           LockstepProcessingRequest = other.LockstepProcessingRequest.Clone();
@@ -215,25 +205,25 @@ namespace Ubii.Services {
       }
     }
 
-    /// <summary>Field number for the "interaction" field.</summary>
-    public const int InteractionFieldNumber = 7;
+    /// <summary>Field number for the "processing_module" field.</summary>
+    public const int ProcessingModuleFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Interactions.Interaction Interaction {
-      get { return typeCase_ == TypeOneofCase.Interaction ? (global::Ubii.Interactions.Interaction) type_ : null; }
+    public global::Ubii.Processing.ProcessingModule ProcessingModule {
+      get { return typeCase_ == TypeOneofCase.ProcessingModule ? (global::Ubii.Processing.ProcessingModule) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Interaction;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.ProcessingModule;
       }
     }
 
-    /// <summary>Field number for the "interaction_list" field.</summary>
-    public const int InteractionListFieldNumber = 8;
+    /// <summary>Field number for the "processing_module_list" field.</summary>
+    public const int ProcessingModuleListFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Interactions.InteractionList InteractionList {
-      get { return typeCase_ == TypeOneofCase.InteractionList ? (global::Ubii.Interactions.InteractionList) type_ : null; }
+    public global::Ubii.Processing.ProcessingModuleList ProcessingModuleList {
+      get { return typeCase_ == TypeOneofCase.ProcessingModuleList ? (global::Ubii.Processing.ProcessingModuleList) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.InteractionList;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.ProcessingModuleList;
       }
     }
 
@@ -303,30 +293,8 @@ namespace Ubii.Services {
       }
     }
 
-    /// <summary>Field number for the "processing_module" field.</summary>
-    public const int ProcessingModuleFieldNumber = 15;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Processing.ProcessingModule ProcessingModule {
-      get { return typeCase_ == TypeOneofCase.ProcessingModule ? (global::Ubii.Processing.ProcessingModule) type_ : null; }
-      set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.ProcessingModule;
-      }
-    }
-
-    /// <summary>Field number for the "processing_module_list" field.</summary>
-    public const int ProcessingModuleListFieldNumber = 16;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.Processing.ProcessingModuleList ProcessingModuleList {
-      get { return typeCase_ == TypeOneofCase.ProcessingModuleList ? (global::Ubii.Processing.ProcessingModuleList) type_ : null; }
-      set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.ProcessingModuleList;
-      }
-    }
-
     /// <summary>Field number for the "lockstep_processing_request" field.</summary>
-    public const int LockstepProcessingRequestFieldNumber = 17;
+    public const int LockstepProcessingRequestFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.Processing.LockstepProcessingRequest LockstepProcessingRequest {
       get { return typeCase_ == TypeOneofCase.LockstepProcessingRequest ? (global::Ubii.Processing.LockstepProcessingRequest) type_ : null; }
@@ -345,17 +313,15 @@ namespace Ubii.Services {
       TopicSubscription = 4,
       Session = 5,
       SessionList = 6,
-      Interaction = 7,
-      InteractionList = 8,
+      ProcessingModule = 7,
+      ProcessingModuleList = 8,
       TopicMux = 9,
       TopicMuxList = 10,
       TopicDemux = 11,
       TopicDemuxList = 12,
       ClientList = 13,
       DeviceList = 14,
-      ProcessingModule = 15,
-      ProcessingModuleList = 16,
-      LockstepProcessingRequest = 17,
+      LockstepProcessingRequest = 15,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -388,16 +354,14 @@ namespace Ubii.Services {
       if (!object.Equals(TopicSubscription, other.TopicSubscription)) return false;
       if (!object.Equals(Session, other.Session)) return false;
       if (!object.Equals(SessionList, other.SessionList)) return false;
-      if (!object.Equals(Interaction, other.Interaction)) return false;
-      if (!object.Equals(InteractionList, other.InteractionList)) return false;
+      if (!object.Equals(ProcessingModule, other.ProcessingModule)) return false;
+      if (!object.Equals(ProcessingModuleList, other.ProcessingModuleList)) return false;
       if (!object.Equals(TopicMux, other.TopicMux)) return false;
       if (!object.Equals(TopicMuxList, other.TopicMuxList)) return false;
       if (!object.Equals(TopicDemux, other.TopicDemux)) return false;
       if (!object.Equals(TopicDemuxList, other.TopicDemuxList)) return false;
       if (!object.Equals(ClientList, other.ClientList)) return false;
       if (!object.Equals(DeviceList, other.DeviceList)) return false;
-      if (!object.Equals(ProcessingModule, other.ProcessingModule)) return false;
-      if (!object.Equals(ProcessingModuleList, other.ProcessingModuleList)) return false;
       if (!object.Equals(LockstepProcessingRequest, other.LockstepProcessingRequest)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -412,16 +376,14 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.TopicSubscription) hash ^= TopicSubscription.GetHashCode();
       if (typeCase_ == TypeOneofCase.Session) hash ^= Session.GetHashCode();
       if (typeCase_ == TypeOneofCase.SessionList) hash ^= SessionList.GetHashCode();
-      if (typeCase_ == TypeOneofCase.Interaction) hash ^= Interaction.GetHashCode();
-      if (typeCase_ == TypeOneofCase.InteractionList) hash ^= InteractionList.GetHashCode();
+      if (typeCase_ == TypeOneofCase.ProcessingModule) hash ^= ProcessingModule.GetHashCode();
+      if (typeCase_ == TypeOneofCase.ProcessingModuleList) hash ^= ProcessingModuleList.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicMux) hash ^= TopicMux.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicMuxList) hash ^= TopicMuxList.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicDemux) hash ^= TopicDemux.GetHashCode();
       if (typeCase_ == TypeOneofCase.TopicDemuxList) hash ^= TopicDemuxList.GetHashCode();
       if (typeCase_ == TypeOneofCase.ClientList) hash ^= ClientList.GetHashCode();
       if (typeCase_ == TypeOneofCase.DeviceList) hash ^= DeviceList.GetHashCode();
-      if (typeCase_ == TypeOneofCase.ProcessingModule) hash ^= ProcessingModule.GetHashCode();
-      if (typeCase_ == TypeOneofCase.ProcessingModuleList) hash ^= ProcessingModuleList.GetHashCode();
       if (typeCase_ == TypeOneofCase.LockstepProcessingRequest) hash ^= LockstepProcessingRequest.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
@@ -461,13 +423,13 @@ namespace Ubii.Services {
         output.WriteRawTag(50);
         output.WriteMessage(SessionList);
       }
-      if (typeCase_ == TypeOneofCase.Interaction) {
+      if (typeCase_ == TypeOneofCase.ProcessingModule) {
         output.WriteRawTag(58);
-        output.WriteMessage(Interaction);
+        output.WriteMessage(ProcessingModule);
       }
-      if (typeCase_ == TypeOneofCase.InteractionList) {
+      if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
         output.WriteRawTag(66);
-        output.WriteMessage(InteractionList);
+        output.WriteMessage(ProcessingModuleList);
       }
       if (typeCase_ == TypeOneofCase.TopicMux) {
         output.WriteRawTag(74);
@@ -493,16 +455,8 @@ namespace Ubii.Services {
         output.WriteRawTag(114);
         output.WriteMessage(DeviceList);
       }
-      if (typeCase_ == TypeOneofCase.ProcessingModule) {
-        output.WriteRawTag(122);
-        output.WriteMessage(ProcessingModule);
-      }
-      if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
-        output.WriteRawTag(130, 1);
-        output.WriteMessage(ProcessingModuleList);
-      }
       if (typeCase_ == TypeOneofCase.LockstepProcessingRequest) {
-        output.WriteRawTag(138, 1);
+        output.WriteRawTag(122);
         output.WriteMessage(LockstepProcessingRequest);
       }
       if (_unknownFields != null) {
@@ -531,11 +485,11 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.SessionList) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SessionList);
       }
-      if (typeCase_ == TypeOneofCase.Interaction) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Interaction);
+      if (typeCase_ == TypeOneofCase.ProcessingModule) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProcessingModule);
       }
-      if (typeCase_ == TypeOneofCase.InteractionList) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InteractionList);
+      if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProcessingModuleList);
       }
       if (typeCase_ == TypeOneofCase.TopicMux) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopicMux);
@@ -555,14 +509,8 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.DeviceList) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceList);
       }
-      if (typeCase_ == TypeOneofCase.ProcessingModule) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProcessingModule);
-      }
-      if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ProcessingModuleList);
-      }
       if (typeCase_ == TypeOneofCase.LockstepProcessingRequest) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LockstepProcessingRequest);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LockstepProcessingRequest);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -609,17 +557,17 @@ namespace Ubii.Services {
           }
           SessionList.MergeFrom(other.SessionList);
           break;
-        case TypeOneofCase.Interaction:
-          if (Interaction == null) {
-            Interaction = new global::Ubii.Interactions.Interaction();
+        case TypeOneofCase.ProcessingModule:
+          if (ProcessingModule == null) {
+            ProcessingModule = new global::Ubii.Processing.ProcessingModule();
           }
-          Interaction.MergeFrom(other.Interaction);
+          ProcessingModule.MergeFrom(other.ProcessingModule);
           break;
-        case TypeOneofCase.InteractionList:
-          if (InteractionList == null) {
-            InteractionList = new global::Ubii.Interactions.InteractionList();
+        case TypeOneofCase.ProcessingModuleList:
+          if (ProcessingModuleList == null) {
+            ProcessingModuleList = new global::Ubii.Processing.ProcessingModuleList();
           }
-          InteractionList.MergeFrom(other.InteractionList);
+          ProcessingModuleList.MergeFrom(other.ProcessingModuleList);
           break;
         case TypeOneofCase.TopicMux:
           if (TopicMux == null) {
@@ -656,18 +604,6 @@ namespace Ubii.Services {
             DeviceList = new global::Ubii.Devices.DeviceList();
           }
           DeviceList.MergeFrom(other.DeviceList);
-          break;
-        case TypeOneofCase.ProcessingModule:
-          if (ProcessingModule == null) {
-            ProcessingModule = new global::Ubii.Processing.ProcessingModule();
-          }
-          ProcessingModule.MergeFrom(other.ProcessingModule);
-          break;
-        case TypeOneofCase.ProcessingModuleList:
-          if (ProcessingModuleList == null) {
-            ProcessingModuleList = new global::Ubii.Processing.ProcessingModuleList();
-          }
-          ProcessingModuleList.MergeFrom(other.ProcessingModuleList);
           break;
         case TypeOneofCase.LockstepProcessingRequest:
           if (LockstepProcessingRequest == null) {
@@ -738,21 +674,21 @@ namespace Ubii.Services {
             break;
           }
           case 58: {
-            global::Ubii.Interactions.Interaction subBuilder = new global::Ubii.Interactions.Interaction();
-            if (typeCase_ == TypeOneofCase.Interaction) {
-              subBuilder.MergeFrom(Interaction);
+            global::Ubii.Processing.ProcessingModule subBuilder = new global::Ubii.Processing.ProcessingModule();
+            if (typeCase_ == TypeOneofCase.ProcessingModule) {
+              subBuilder.MergeFrom(ProcessingModule);
             }
             input.ReadMessage(subBuilder);
-            Interaction = subBuilder;
+            ProcessingModule = subBuilder;
             break;
           }
           case 66: {
-            global::Ubii.Interactions.InteractionList subBuilder = new global::Ubii.Interactions.InteractionList();
-            if (typeCase_ == TypeOneofCase.InteractionList) {
-              subBuilder.MergeFrom(InteractionList);
+            global::Ubii.Processing.ProcessingModuleList subBuilder = new global::Ubii.Processing.ProcessingModuleList();
+            if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
+              subBuilder.MergeFrom(ProcessingModuleList);
             }
             input.ReadMessage(subBuilder);
-            InteractionList = subBuilder;
+            ProcessingModuleList = subBuilder;
             break;
           }
           case 74: {
@@ -810,24 +746,6 @@ namespace Ubii.Services {
             break;
           }
           case 122: {
-            global::Ubii.Processing.ProcessingModule subBuilder = new global::Ubii.Processing.ProcessingModule();
-            if (typeCase_ == TypeOneofCase.ProcessingModule) {
-              subBuilder.MergeFrom(ProcessingModule);
-            }
-            input.ReadMessage(subBuilder);
-            ProcessingModule = subBuilder;
-            break;
-          }
-          case 130: {
-            global::Ubii.Processing.ProcessingModuleList subBuilder = new global::Ubii.Processing.ProcessingModuleList();
-            if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
-              subBuilder.MergeFrom(ProcessingModuleList);
-            }
-            input.ReadMessage(subBuilder);
-            ProcessingModuleList = subBuilder;
-            break;
-          }
-          case 138: {
             global::Ubii.Processing.LockstepProcessingRequest subBuilder = new global::Ubii.Processing.LockstepProcessingRequest();
             if (typeCase_ == TypeOneofCase.LockstepProcessingRequest) {
               subBuilder.MergeFrom(LockstepProcessingRequest);

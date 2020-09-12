@@ -50,8 +50,8 @@ var proto_topicData_topicDataRecord_dataStructure_image_pb = require('../../../p
 goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_image_pb);
 var proto_sessions_session_pb = require('../../../proto/sessions/session_pb.js');
 goog.object.extend(proto, proto_sessions_session_pb);
-var proto_interactions_interaction_pb = require('../../../proto/interactions/interaction_pb.js');
-goog.object.extend(proto, proto_interactions_interaction_pb);
+var proto_processing_processingModule_pb = require('../../../proto/processing/processingModule_pb.js');
+goog.object.extend(proto, proto_processing_processingModule_pb);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord.TypeCase', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecordList', null, global);
@@ -143,7 +143,7 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   IMAGE2D: 30,
   IMAGE2D_LIST: 31,
   SESSION: 32,
-  INTERACTION: 33
+  PROCESSING_MODULE_LIST: 33
 };
 
 /**
@@ -216,7 +216,7 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     image2d: (f = msg.getImage2d()) && proto_topicData_topicDataRecord_dataStructure_image_pb.Image2D.toObject(includeInstance, f),
     image2dList: (f = msg.getImage2dList()) && proto_topicData_topicDataRecord_dataStructure_image_pb.Image2DList.toObject(includeInstance, f),
     session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
-    interaction: (f = msg.getInteraction()) && proto_interactions_interaction_pb.Interaction.toObject(includeInstance, f)
+    processingModuleList: (f = msg.getProcessingModuleList()) && proto_processing_processingModule_pb.ProcessingModuleList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -408,9 +408,9 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       msg.setSession(value);
       break;
     case 33:
-      var value = new proto_interactions_interaction_pb.Interaction;
-      reader.readMessage(value,proto_interactions_interaction_pb.Interaction.deserializeBinaryFromReader);
-      msg.setInteraction(value);
+      var value = new proto_processing_processingModule_pb.ProcessingModuleList;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModuleList.deserializeBinaryFromReader);
+      msg.setProcessingModuleList(value);
       break;
     default:
       reader.skipField();
@@ -691,12 +691,12 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_sessions_session_pb.Session.serializeBinaryToWriter
     );
   }
-  f = message.getInteraction();
+  f = message.getProcessingModuleList();
   if (f != null) {
     writer.writeMessage(
       33,
       f,
-      proto_interactions_interaction_pb.Interaction.serializeBinaryToWriter
+      proto_processing_processingModule_pb.ProcessingModuleList.serializeBinaryToWriter
     );
   }
 };
@@ -1863,20 +1863,20 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasSession = function() {
 
 
 /**
- * optional ubii.interactions.Interaction interaction = 33;
- * @return {?proto.ubii.interactions.Interaction}
+ * optional ubii.processing.ProcessingModuleList processing_module_list = 33;
+ * @return {?proto.ubii.processing.ProcessingModuleList}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getInteraction = function() {
-  return /** @type{?proto.ubii.interactions.Interaction} */ (
-    jspb.Message.getWrapperField(this, proto_interactions_interaction_pb.Interaction, 33));
+proto.ubii.topicData.TopicDataRecord.prototype.getProcessingModuleList = function() {
+  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
+    jspb.Message.getWrapperField(this, proto_processing_processingModule_pb.ProcessingModuleList, 33));
 };
 
 
 /**
- * @param {?proto.ubii.interactions.Interaction|undefined} value
+ * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
  * @return {!proto.ubii.topicData.TopicDataRecord} returns this
 */
-proto.ubii.topicData.TopicDataRecord.prototype.setInteraction = function(value) {
+proto.ubii.topicData.TopicDataRecord.prototype.setProcessingModuleList = function(value) {
   return jspb.Message.setOneofWrapperField(this, 33, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
@@ -1885,8 +1885,8 @@ proto.ubii.topicData.TopicDataRecord.prototype.setInteraction = function(value) 
  * Clears the message field making it undefined.
  * @return {!proto.ubii.topicData.TopicDataRecord} returns this
  */
-proto.ubii.topicData.TopicDataRecord.prototype.clearInteraction = function() {
-  return this.setInteraction(undefined);
+proto.ubii.topicData.TopicDataRecord.prototype.clearProcessingModuleList = function() {
+  return this.setProcessingModuleList(undefined);
 };
 
 
@@ -1894,7 +1894,7 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearInteraction = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.ubii.topicData.TopicDataRecord.prototype.hasInteraction = function() {
+proto.ubii.topicData.TopicDataRecord.prototype.hasProcessingModuleList = function() {
   return jspb.Message.getField(this, 33) != null;
 };
 
