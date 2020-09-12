@@ -21,7 +21,7 @@ import "proto/topicData/topicDataRecord/dataStructure/object3d.proto";
 import "proto/topicData/topicDataRecord/dataStructure/image.proto";
 
 import "proto/sessions/session.proto";
-import "proto/interactions/interaction.proto";
+import "proto/processing/processingModule.proto";
 
 message TopicDataRecord {
     string topic = 1;
@@ -57,7 +57,7 @@ message TopicDataRecord {
         ubii.dataStructure.Image2D image2D = 30;
         ubii.dataStructure.Image2DList image2D_list = 31;
         ubii.sessions.Session session = 32;
-        ubii.interactions.Interaction interaction = 33;
+        ubii.processing.ProcessingModuleList processing_module_list = 33;
     }    
 }
 

@@ -10,7 +10,6 @@ import "proto/devices/topicMux.proto";
 import "proto/devices/topicDemux.proto";
 import "proto/servers/server.proto";
 import "proto/sessions/session.proto";
-import "proto/interactions/interaction.proto";
 import "proto/services/service.proto";
 import "proto/processing/processingModule.proto";
 import "proto/processing/lockstepProcessing.proto";
@@ -24,8 +23,8 @@ message ServiceReply {
         ubii.servers.Server server = 5;
         ubii.sessions.Session session = 6;
         ubii.sessions.SessionList session_list = 7;
-        ubii.interactions.Interaction interaction = 8;
-        ubii.interactions.InteractionList interaction_list = 9;
+        ubii.processing.ProcessingModule processing_module = 8;
+        ubii.processing.ProcessingModuleList processing_module_list = 9;
         ubii.dataStructure.StringList string_list = 10;
         ubii.devices.TopicMux topic_mux = 11;
         ubii.devices.TopicMuxList topic_mux_list = 12;
@@ -35,8 +34,6 @@ message ServiceReply {
         ubii.devices.DeviceList device_list = 16;
         ubii.services.Service service = 17;
         ubii.services.ServiceList service_list = 18;
-        ubii.processing.ProcessingModule processing_module = 19;
-        ubii.processing.ProcessingModuleList processing_module_list = 20;
-        ubii.processing.LockstepProcessingReply lockstep_processing_reply = 21;
+        ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;
     }
 }
