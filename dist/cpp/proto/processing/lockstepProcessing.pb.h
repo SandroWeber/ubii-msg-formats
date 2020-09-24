@@ -183,20 +183,23 @@ class LockstepProcessingRequest :
     kRecordsFieldNumber = 1,
     kDeltaTimeMsFieldNumber = 2,
   };
-  // .ubii.topicData.TopicDataRecordList records = 1;
-  bool has_records() const;
+  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  int records_size() const;
   private:
-  bool _internal_has_records() const;
+  int _internal_records_size() const;
   public:
   void clear_records();
-  const ::ubii::topicData::TopicDataRecordList& records() const;
-  ::ubii::topicData::TopicDataRecordList* release_records();
-  ::ubii::topicData::TopicDataRecordList* mutable_records();
-  void set_allocated_records(::ubii::topicData::TopicDataRecordList* records);
+  ::ubii::topicData::TopicDataRecord* mutable_records(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >*
+      mutable_records();
   private:
-  const ::ubii::topicData::TopicDataRecordList& _internal_records() const;
-  ::ubii::topicData::TopicDataRecordList* _internal_mutable_records();
+  const ::ubii::topicData::TopicDataRecord& _internal_records(int index) const;
+  ::ubii::topicData::TopicDataRecord* _internal_add_records();
   public:
+  const ::ubii::topicData::TopicDataRecord& records(int index) const;
+  ::ubii::topicData::TopicDataRecord* add_records();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >&
+      records() const;
 
   // float delta_time_ms = 2;
   void clear_delta_time_ms();
@@ -212,7 +215,7 @@ class LockstepProcessingRequest :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::ubii::topicData::TopicDataRecordList* records_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord > records_;
   float delta_time_ms_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto;
@@ -327,27 +330,30 @@ class LockstepProcessingReply :
   enum : int {
     kRecordsFieldNumber = 1,
   };
-  // .ubii.topicData.TopicDataRecordList records = 1;
-  bool has_records() const;
+  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  int records_size() const;
   private:
-  bool _internal_has_records() const;
+  int _internal_records_size() const;
   public:
   void clear_records();
-  const ::ubii::topicData::TopicDataRecordList& records() const;
-  ::ubii::topicData::TopicDataRecordList* release_records();
-  ::ubii::topicData::TopicDataRecordList* mutable_records();
-  void set_allocated_records(::ubii::topicData::TopicDataRecordList* records);
+  ::ubii::topicData::TopicDataRecord* mutable_records(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >*
+      mutable_records();
   private:
-  const ::ubii::topicData::TopicDataRecordList& _internal_records() const;
-  ::ubii::topicData::TopicDataRecordList* _internal_mutable_records();
+  const ::ubii::topicData::TopicDataRecord& _internal_records(int index) const;
+  ::ubii::topicData::TopicDataRecord* _internal_add_records();
   public:
+  const ::ubii::topicData::TopicDataRecord& records(int index) const;
+  ::ubii::topicData::TopicDataRecord* add_records();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >&
+      records() const;
 
   // @@protoc_insertion_point(class_scope:ubii.processing.LockstepProcessingReply)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::ubii::topicData::TopicDataRecordList* records_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord > records_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto;
 };
@@ -362,58 +368,40 @@ class LockstepProcessingReply :
 #endif  // __GNUC__
 // LockstepProcessingRequest
 
-// .ubii.topicData.TopicDataRecordList records = 1;
-inline bool LockstepProcessingRequest::_internal_has_records() const {
-  return this != internal_default_instance() && records_ != nullptr;
+// repeated .ubii.topicData.TopicDataRecord records = 1;
+inline int LockstepProcessingRequest::_internal_records_size() const {
+  return records_.size();
 }
-inline bool LockstepProcessingRequest::has_records() const {
-  return _internal_has_records();
+inline int LockstepProcessingRequest::records_size() const {
+  return _internal_records_size();
 }
-inline const ::ubii::topicData::TopicDataRecordList& LockstepProcessingRequest::_internal_records() const {
-  const ::ubii::topicData::TopicDataRecordList* p = records_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::ubii::topicData::TopicDataRecordList*>(
-      &::ubii::topicData::_TopicDataRecordList_default_instance_);
-}
-inline const ::ubii::topicData::TopicDataRecordList& LockstepProcessingRequest::records() const {
-  // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingRequest.records)
-  return _internal_records();
-}
-inline ::ubii::topicData::TopicDataRecordList* LockstepProcessingRequest::release_records() {
-  // @@protoc_insertion_point(field_release:ubii.processing.LockstepProcessingRequest.records)
-  
-  ::ubii::topicData::TopicDataRecordList* temp = records_;
-  records_ = nullptr;
-  return temp;
-}
-inline ::ubii::topicData::TopicDataRecordList* LockstepProcessingRequest::_internal_mutable_records() {
-  
-  if (records_ == nullptr) {
-    auto* p = CreateMaybeMessage<::ubii::topicData::TopicDataRecordList>(GetArenaNoVirtual());
-    records_ = p;
-  }
-  return records_;
-}
-inline ::ubii::topicData::TopicDataRecordList* LockstepProcessingRequest::mutable_records() {
+inline ::ubii::topicData::TopicDataRecord* LockstepProcessingRequest::mutable_records(int index) {
   // @@protoc_insertion_point(field_mutable:ubii.processing.LockstepProcessingRequest.records)
-  return _internal_mutable_records();
+  return records_.Mutable(index);
 }
-inline void LockstepProcessingRequest::set_allocated_records(::ubii::topicData::TopicDataRecordList* records) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(records_);
-  }
-  if (records) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      records = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, records, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  records_ = records;
-  // @@protoc_insertion_point(field_set_allocated:ubii.processing.LockstepProcessingRequest.records)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >*
+LockstepProcessingRequest::mutable_records() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.processing.LockstepProcessingRequest.records)
+  return &records_;
+}
+inline const ::ubii::topicData::TopicDataRecord& LockstepProcessingRequest::_internal_records(int index) const {
+  return records_.Get(index);
+}
+inline const ::ubii::topicData::TopicDataRecord& LockstepProcessingRequest::records(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingRequest.records)
+  return _internal_records(index);
+}
+inline ::ubii::topicData::TopicDataRecord* LockstepProcessingRequest::_internal_add_records() {
+  return records_.Add();
+}
+inline ::ubii::topicData::TopicDataRecord* LockstepProcessingRequest::add_records() {
+  // @@protoc_insertion_point(field_add:ubii.processing.LockstepProcessingRequest.records)
+  return _internal_add_records();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >&
+LockstepProcessingRequest::records() const {
+  // @@protoc_insertion_point(field_list:ubii.processing.LockstepProcessingRequest.records)
+  return records_;
 }
 
 // float delta_time_ms = 2;
@@ -440,58 +428,40 @@ inline void LockstepProcessingRequest::set_delta_time_ms(float value) {
 
 // LockstepProcessingReply
 
-// .ubii.topicData.TopicDataRecordList records = 1;
-inline bool LockstepProcessingReply::_internal_has_records() const {
-  return this != internal_default_instance() && records_ != nullptr;
+// repeated .ubii.topicData.TopicDataRecord records = 1;
+inline int LockstepProcessingReply::_internal_records_size() const {
+  return records_.size();
 }
-inline bool LockstepProcessingReply::has_records() const {
-  return _internal_has_records();
+inline int LockstepProcessingReply::records_size() const {
+  return _internal_records_size();
 }
-inline const ::ubii::topicData::TopicDataRecordList& LockstepProcessingReply::_internal_records() const {
-  const ::ubii::topicData::TopicDataRecordList* p = records_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::ubii::topicData::TopicDataRecordList*>(
-      &::ubii::topicData::_TopicDataRecordList_default_instance_);
-}
-inline const ::ubii::topicData::TopicDataRecordList& LockstepProcessingReply::records() const {
-  // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingReply.records)
-  return _internal_records();
-}
-inline ::ubii::topicData::TopicDataRecordList* LockstepProcessingReply::release_records() {
-  // @@protoc_insertion_point(field_release:ubii.processing.LockstepProcessingReply.records)
-  
-  ::ubii::topicData::TopicDataRecordList* temp = records_;
-  records_ = nullptr;
-  return temp;
-}
-inline ::ubii::topicData::TopicDataRecordList* LockstepProcessingReply::_internal_mutable_records() {
-  
-  if (records_ == nullptr) {
-    auto* p = CreateMaybeMessage<::ubii::topicData::TopicDataRecordList>(GetArenaNoVirtual());
-    records_ = p;
-  }
-  return records_;
-}
-inline ::ubii::topicData::TopicDataRecordList* LockstepProcessingReply::mutable_records() {
+inline ::ubii::topicData::TopicDataRecord* LockstepProcessingReply::mutable_records(int index) {
   // @@protoc_insertion_point(field_mutable:ubii.processing.LockstepProcessingReply.records)
-  return _internal_mutable_records();
+  return records_.Mutable(index);
 }
-inline void LockstepProcessingReply::set_allocated_records(::ubii::topicData::TopicDataRecordList* records) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(records_);
-  }
-  if (records) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      records = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, records, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  records_ = records;
-  // @@protoc_insertion_point(field_set_allocated:ubii.processing.LockstepProcessingReply.records)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >*
+LockstepProcessingReply::mutable_records() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.processing.LockstepProcessingReply.records)
+  return &records_;
+}
+inline const ::ubii::topicData::TopicDataRecord& LockstepProcessingReply::_internal_records(int index) const {
+  return records_.Get(index);
+}
+inline const ::ubii::topicData::TopicDataRecord& LockstepProcessingReply::records(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingReply.records)
+  return _internal_records(index);
+}
+inline ::ubii::topicData::TopicDataRecord* LockstepProcessingReply::_internal_add_records() {
+  return records_.Add();
+}
+inline ::ubii::topicData::TopicDataRecord* LockstepProcessingReply::add_records() {
+  // @@protoc_insertion_point(field_add:ubii.processing.LockstepProcessingReply.records)
+  return _internal_add_records();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >&
+LockstepProcessingReply::records() const {
+  // @@protoc_insertion_point(field_list:ubii.processing.LockstepProcessingReply.records)
+  return records_;
 }
 
 #ifdef __GNUC__

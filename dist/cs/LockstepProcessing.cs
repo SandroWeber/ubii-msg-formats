@@ -26,11 +26,11 @@ namespace Ubii.Processing {
           string.Concat(
             "Cilwcm90by9wcm9jZXNzaW5nL2xvY2tzdGVwUHJvY2Vzc2luZy5wcm90bxIP",
             "dWJpaS5wcm9jZXNzaW5nGjVwcm90by90b3BpY0RhdGEvdG9waWNEYXRhUmVj",
-            "b3JkL3RvcGljRGF0YVJlY29yZC5wcm90byJoChlMb2Nrc3RlcFByb2Nlc3Np",
-            "bmdSZXF1ZXN0EjQKB3JlY29yZHMYASABKAsyIy51YmlpLnRvcGljRGF0YS5U",
-            "b3BpY0RhdGFSZWNvcmRMaXN0EhUKDWRlbHRhX3RpbWVfbXMYAiABKAIiTwoX",
-            "TG9ja3N0ZXBQcm9jZXNzaW5nUmVwbHkSNAoHcmVjb3JkcxgBIAEoCzIjLnVi",
-            "aWkudG9waWNEYXRhLlRvcGljRGF0YVJlY29yZExpc3RiBnByb3RvMw=="));
+            "b3JkL3RvcGljRGF0YVJlY29yZC5wcm90byJkChlMb2Nrc3RlcFByb2Nlc3Np",
+            "bmdSZXF1ZXN0EjAKB3JlY29yZHMYASADKAsyHy51YmlpLnRvcGljRGF0YS5U",
+            "b3BpY0RhdGFSZWNvcmQSFQoNZGVsdGFfdGltZV9tcxgCIAEoAiJLChdMb2Nr",
+            "c3RlcFByb2Nlc3NpbmdSZXBseRIwCgdyZWNvcmRzGAEgAygLMh8udWJpaS50",
+            "b3BpY0RhdGEuVG9waWNEYXRhUmVjb3JkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.TopicData.TopicDataRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -67,7 +67,7 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LockstepProcessingRequest(LockstepProcessingRequest other) : this() {
-      records_ = other.records_ != null ? other.records_.Clone() : null;
+      records_ = other.records_.Clone();
       deltaTimeMs_ = other.deltaTimeMs_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -79,13 +79,12 @@ namespace Ubii.Processing {
 
     /// <summary>Field number for the "records" field.</summary>
     public const int RecordsFieldNumber = 1;
-    private global::Ubii.TopicData.TopicDataRecordList records_;
+    private static readonly pb::FieldCodec<global::Ubii.TopicData.TopicDataRecord> _repeated_records_codec
+        = pb::FieldCodec.ForMessage(10, global::Ubii.TopicData.TopicDataRecord.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> records_ = new pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.TopicData.TopicDataRecordList Records {
+    public pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> Records {
       get { return records_; }
-      set {
-        records_ = value;
-      }
     }
 
     /// <summary>Field number for the "delta_time_ms" field.</summary>
@@ -112,7 +111,7 @@ namespace Ubii.Processing {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Records, other.Records)) return false;
+      if(!records_.Equals(other.records_)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(DeltaTimeMs, other.DeltaTimeMs)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -120,7 +119,7 @@ namespace Ubii.Processing {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (records_ != null) hash ^= Records.GetHashCode();
+      hash ^= records_.GetHashCode();
       if (DeltaTimeMs != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(DeltaTimeMs);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -135,10 +134,7 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (records_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Records);
-      }
+      records_.WriteTo(output, _repeated_records_codec);
       if (DeltaTimeMs != 0F) {
         output.WriteRawTag(21);
         output.WriteFloat(DeltaTimeMs);
@@ -151,9 +147,7 @@ namespace Ubii.Processing {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (records_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Records);
-      }
+      size += records_.CalculateSize(_repeated_records_codec);
       if (DeltaTimeMs != 0F) {
         size += 1 + 4;
       }
@@ -168,12 +162,7 @@ namespace Ubii.Processing {
       if (other == null) {
         return;
       }
-      if (other.records_ != null) {
-        if (records_ == null) {
-          Records = new global::Ubii.TopicData.TopicDataRecordList();
-        }
-        Records.MergeFrom(other.Records);
-      }
+      records_.Add(other.records_);
       if (other.DeltaTimeMs != 0F) {
         DeltaTimeMs = other.DeltaTimeMs;
       }
@@ -189,10 +178,7 @@ namespace Ubii.Processing {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (records_ == null) {
-              Records = new global::Ubii.TopicData.TopicDataRecordList();
-            }
-            input.ReadMessage(Records);
+            records_.AddEntriesFrom(input, _repeated_records_codec);
             break;
           }
           case 21: {
@@ -230,7 +216,7 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LockstepProcessingReply(LockstepProcessingReply other) : this() {
-      records_ = other.records_ != null ? other.records_.Clone() : null;
+      records_ = other.records_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -241,13 +227,12 @@ namespace Ubii.Processing {
 
     /// <summary>Field number for the "records" field.</summary>
     public const int RecordsFieldNumber = 1;
-    private global::Ubii.TopicData.TopicDataRecordList records_;
+    private static readonly pb::FieldCodec<global::Ubii.TopicData.TopicDataRecord> _repeated_records_codec
+        = pb::FieldCodec.ForMessage(10, global::Ubii.TopicData.TopicDataRecord.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> records_ = new pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Ubii.TopicData.TopicDataRecordList Records {
+    public pbc::RepeatedField<global::Ubii.TopicData.TopicDataRecord> Records {
       get { return records_; }
-      set {
-        records_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -263,14 +248,14 @@ namespace Ubii.Processing {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Records, other.Records)) return false;
+      if(!records_.Equals(other.records_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (records_ != null) hash ^= Records.GetHashCode();
+      hash ^= records_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -284,10 +269,7 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (records_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Records);
-      }
+      records_.WriteTo(output, _repeated_records_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -296,9 +278,7 @@ namespace Ubii.Processing {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (records_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Records);
-      }
+      size += records_.CalculateSize(_repeated_records_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -310,12 +290,7 @@ namespace Ubii.Processing {
       if (other == null) {
         return;
       }
-      if (other.records_ != null) {
-        if (records_ == null) {
-          Records = new global::Ubii.TopicData.TopicDataRecordList();
-        }
-        Records.MergeFrom(other.Records);
-      }
+      records_.Add(other.records_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -328,10 +303,7 @@ namespace Ubii.Processing {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (records_ == null) {
-              Records = new global::Ubii.TopicData.TopicDataRecordList();
-            }
-            input.ReadMessage(Records);
+            records_.AddEntriesFrom(input, _repeated_records_codec);
             break;
           }
         }

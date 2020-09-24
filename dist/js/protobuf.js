@@ -3146,7 +3146,7 @@ $root.ubii = (function() {
              * Properties of a LockstepProcessingRequest.
              * @memberof ubii.processing
              * @interface ILockstepProcessingRequest
-             * @property {ubii.topicData.ITopicDataRecordList|null} [records] LockstepProcessingRequest records
+             * @property {Array.<ubii.topicData.ITopicDataRecord>|null} [records] LockstepProcessingRequest records
              * @property {number|null} [deltaTimeMs] LockstepProcessingRequest deltaTimeMs
              */
 
@@ -3159,6 +3159,7 @@ $root.ubii = (function() {
              * @param {ubii.processing.ILockstepProcessingRequest=} [properties] Properties to set
              */
             function LockstepProcessingRequest(properties) {
+                this.records = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3167,11 +3168,11 @@ $root.ubii = (function() {
 
             /**
              * LockstepProcessingRequest records.
-             * @member {ubii.topicData.ITopicDataRecordList|null|undefined} records
+             * @member {Array.<ubii.topicData.ITopicDataRecord>} records
              * @memberof ubii.processing.LockstepProcessingRequest
              * @instance
              */
-            LockstepProcessingRequest.prototype.records = null;
+            LockstepProcessingRequest.prototype.records = $util.emptyArray;
 
             /**
              * LockstepProcessingRequest deltaTimeMs.
@@ -3205,8 +3206,9 @@ $root.ubii = (function() {
             LockstepProcessingRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.records != null && message.hasOwnProperty("records"))
-                    $root.ubii.topicData.TopicDataRecordList.encode(message.records, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.records != null && message.records.length)
+                    for (var i = 0; i < message.records.length; ++i)
+                        $root.ubii.topicData.TopicDataRecord.encode(message.records[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
                     writer.uint32(/* id 2, wireType 5 =*/21).float(message.deltaTimeMs);
                 return writer;
@@ -3244,7 +3246,9 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.records = $root.ubii.topicData.TopicDataRecordList.decode(reader, reader.uint32());
+                        if (!(message.records && message.records.length))
+                            message.records = [];
+                        message.records.push($root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32()));
                         break;
                     case 2:
                         message.deltaTimeMs = reader.float();
@@ -3285,9 +3289,13 @@ $root.ubii = (function() {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.records != null && message.hasOwnProperty("records")) {
-                    var error = $root.ubii.topicData.TopicDataRecordList.verify(message.records);
-                    if (error)
-                        return "records." + error;
+                    if (!Array.isArray(message.records))
+                        return "records: array expected";
+                    for (var i = 0; i < message.records.length; ++i) {
+                        var error = $root.ubii.topicData.TopicDataRecord.verify(message.records[i]);
+                        if (error)
+                            return "records." + error;
+                    }
                 }
                 if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
                     if (typeof message.deltaTimeMs !== "number")
@@ -3307,10 +3315,15 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.processing.LockstepProcessingRequest)
                     return object;
                 var message = new $root.ubii.processing.LockstepProcessingRequest();
-                if (object.records != null) {
-                    if (typeof object.records !== "object")
-                        throw TypeError(".ubii.processing.LockstepProcessingRequest.records: object expected");
-                    message.records = $root.ubii.topicData.TopicDataRecordList.fromObject(object.records);
+                if (object.records) {
+                    if (!Array.isArray(object.records))
+                        throw TypeError(".ubii.processing.LockstepProcessingRequest.records: array expected");
+                    message.records = [];
+                    for (var i = 0; i < object.records.length; ++i) {
+                        if (typeof object.records[i] !== "object")
+                            throw TypeError(".ubii.processing.LockstepProcessingRequest.records: object expected");
+                        message.records[i] = $root.ubii.topicData.TopicDataRecord.fromObject(object.records[i]);
+                    }
                 }
                 if (object.deltaTimeMs != null)
                     message.deltaTimeMs = Number(object.deltaTimeMs);
@@ -3330,12 +3343,15 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
-                    object.records = null;
+                if (options.arrays || options.defaults)
+                    object.records = [];
+                if (options.defaults)
                     object.deltaTimeMs = 0;
+                if (message.records && message.records.length) {
+                    object.records = [];
+                    for (var j = 0; j < message.records.length; ++j)
+                        object.records[j] = $root.ubii.topicData.TopicDataRecord.toObject(message.records[j], options);
                 }
-                if (message.records != null && message.hasOwnProperty("records"))
-                    object.records = $root.ubii.topicData.TopicDataRecordList.toObject(message.records, options);
                 if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
                     object.deltaTimeMs = options.json && !isFinite(message.deltaTimeMs) ? String(message.deltaTimeMs) : message.deltaTimeMs;
                 return object;
@@ -3361,7 +3377,7 @@ $root.ubii = (function() {
              * Properties of a LockstepProcessingReply.
              * @memberof ubii.processing
              * @interface ILockstepProcessingReply
-             * @property {ubii.topicData.ITopicDataRecordList|null} [records] LockstepProcessingReply records
+             * @property {Array.<ubii.topicData.ITopicDataRecord>|null} [records] LockstepProcessingReply records
              */
 
             /**
@@ -3373,6 +3389,7 @@ $root.ubii = (function() {
              * @param {ubii.processing.ILockstepProcessingReply=} [properties] Properties to set
              */
             function LockstepProcessingReply(properties) {
+                this.records = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3381,11 +3398,11 @@ $root.ubii = (function() {
 
             /**
              * LockstepProcessingReply records.
-             * @member {ubii.topicData.ITopicDataRecordList|null|undefined} records
+             * @member {Array.<ubii.topicData.ITopicDataRecord>} records
              * @memberof ubii.processing.LockstepProcessingReply
              * @instance
              */
-            LockstepProcessingReply.prototype.records = null;
+            LockstepProcessingReply.prototype.records = $util.emptyArray;
 
             /**
              * Creates a new LockstepProcessingReply instance using the specified properties.
@@ -3411,8 +3428,9 @@ $root.ubii = (function() {
             LockstepProcessingReply.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.records != null && message.hasOwnProperty("records"))
-                    $root.ubii.topicData.TopicDataRecordList.encode(message.records, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.records != null && message.records.length)
+                    for (var i = 0; i < message.records.length; ++i)
+                        $root.ubii.topicData.TopicDataRecord.encode(message.records[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -3448,7 +3466,9 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.records = $root.ubii.topicData.TopicDataRecordList.decode(reader, reader.uint32());
+                        if (!(message.records && message.records.length))
+                            message.records = [];
+                        message.records.push($root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3486,9 +3506,13 @@ $root.ubii = (function() {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.records != null && message.hasOwnProperty("records")) {
-                    var error = $root.ubii.topicData.TopicDataRecordList.verify(message.records);
-                    if (error)
-                        return "records." + error;
+                    if (!Array.isArray(message.records))
+                        return "records: array expected";
+                    for (var i = 0; i < message.records.length; ++i) {
+                        var error = $root.ubii.topicData.TopicDataRecord.verify(message.records[i]);
+                        if (error)
+                            return "records." + error;
+                    }
                 }
                 return null;
             };
@@ -3505,10 +3529,15 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.processing.LockstepProcessingReply)
                     return object;
                 var message = new $root.ubii.processing.LockstepProcessingReply();
-                if (object.records != null) {
-                    if (typeof object.records !== "object")
-                        throw TypeError(".ubii.processing.LockstepProcessingReply.records: object expected");
-                    message.records = $root.ubii.topicData.TopicDataRecordList.fromObject(object.records);
+                if (object.records) {
+                    if (!Array.isArray(object.records))
+                        throw TypeError(".ubii.processing.LockstepProcessingReply.records: array expected");
+                    message.records = [];
+                    for (var i = 0; i < object.records.length; ++i) {
+                        if (typeof object.records[i] !== "object")
+                            throw TypeError(".ubii.processing.LockstepProcessingReply.records: object expected");
+                        message.records[i] = $root.ubii.topicData.TopicDataRecord.fromObject(object.records[i]);
+                    }
                 }
                 return message;
             };
@@ -3526,10 +3555,13 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults)
-                    object.records = null;
-                if (message.records != null && message.hasOwnProperty("records"))
-                    object.records = $root.ubii.topicData.TopicDataRecordList.toObject(message.records, options);
+                if (options.arrays || options.defaults)
+                    object.records = [];
+                if (message.records && message.records.length) {
+                    object.records = [];
+                    for (var j = 0; j < message.records.length; ++j)
+                        object.records[j] = $root.ubii.topicData.TopicDataRecord.toObject(message.records[j], options);
+                }
                 return object;
             };
 

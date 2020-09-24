@@ -14,7 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicDataRecordList_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<27> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto;
 namespace ubii {
 namespace processing {
 class LockstepProcessingRequestDefaultTypeInternal {
@@ -40,7 +40,7 @@ static void InitDefaultsscc_info_LockstepProcessingReply_proto_2fprocessing_2flo
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto}, {
-      &scc_info_TopicDataRecordList_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto.base,}};
+      &scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto.base,}};
 
 static void InitDefaultsscc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -55,7 +55,7 @@ static void InitDefaultsscc_info_LockstepProcessingRequest_proto_2fprocessing_2f
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto}, {
-      &scc_info_TopicDataRecordList_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto.base,}};
+      &scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fprocessing_2flockstepProcessing_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto = nullptr;
@@ -89,12 +89,12 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)proto/processing/lockstepProcessing.pr"
   "oto\022\017ubii.processing\0325proto/topicData/to"
-  "picDataRecord/topicDataRecord.proto\"h\n\031L"
-  "ockstepProcessingRequest\0224\n\007records\030\001 \001("
-  "\0132#.ubii.topicData.TopicDataRecordList\022\025"
-  "\n\rdelta_time_ms\030\002 \001(\002\"O\n\027LockstepProcess"
-  "ingReply\0224\n\007records\030\001 \001(\0132#.ubii.topicDa"
-  "ta.TopicDataRecordListb\006proto3"
+  "picDataRecord/topicDataRecord.proto\"d\n\031L"
+  "ockstepProcessingRequest\0220\n\007records\030\001 \003("
+  "\0132\037.ubii.topicData.TopicDataRecord\022\025\n\rde"
+  "lta_time_ms\030\002 \001(\002\"K\n\027LockstepProcessingR"
+  "eply\0220\n\007records\030\001 \003(\0132\037.ubii.topicData.T"
+  "opicDataRecordb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_deps[1] = {
   &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto,
@@ -106,7 +106,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once;
 static bool descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto = {
-  &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 310,
+  &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 302,
   &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_sccs, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto::offsets,
   file_level_metadata_proto_2fprocessing_2flockstepProcessing_2eproto, 2, file_level_enum_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto, file_level_service_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto,
@@ -120,23 +120,13 @@ namespace processing {
 // ===================================================================
 
 void LockstepProcessingRequest::InitAsDefaultInstance() {
-  ::ubii::processing::_LockstepProcessingRequest_default_instance_._instance.get_mutable()->records_ = const_cast< ::ubii::topicData::TopicDataRecordList*>(
-      ::ubii::topicData::TopicDataRecordList::internal_default_instance());
 }
 class LockstepProcessingRequest::_Internal {
  public:
-  static const ::ubii::topicData::TopicDataRecordList& records(const LockstepProcessingRequest* msg);
 };
 
-const ::ubii::topicData::TopicDataRecordList&
-LockstepProcessingRequest::_Internal::records(const LockstepProcessingRequest* msg) {
-  return *msg->records_;
-}
 void LockstepProcessingRequest::clear_records() {
-  if (GetArenaNoVirtual() == nullptr && records_ != nullptr) {
-    delete records_;
-  }
-  records_ = nullptr;
+  records_.Clear();
 }
 LockstepProcessingRequest::LockstepProcessingRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -145,22 +135,16 @@ LockstepProcessingRequest::LockstepProcessingRequest()
 }
 LockstepProcessingRequest::LockstepProcessingRequest(const LockstepProcessingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      records_(from.records_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from._internal_has_records()) {
-    records_ = new ::ubii::topicData::TopicDataRecordList(*from.records_);
-  } else {
-    records_ = nullptr;
-  }
   delta_time_ms_ = from.delta_time_ms_;
   // @@protoc_insertion_point(copy_constructor:ubii.processing.LockstepProcessingRequest)
 }
 
 void LockstepProcessingRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto.base);
-  ::memset(&records_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&delta_time_ms_) -
-      reinterpret_cast<char*>(&records_)) + sizeof(delta_time_ms_));
+  delta_time_ms_ = 0;
 }
 
 LockstepProcessingRequest::~LockstepProcessingRequest() {
@@ -169,7 +153,6 @@ LockstepProcessingRequest::~LockstepProcessingRequest() {
 }
 
 void LockstepProcessingRequest::SharedDtor() {
-  if (this != internal_default_instance()) delete records_;
 }
 
 void LockstepProcessingRequest::SetCachedSize(int size) const {
@@ -187,10 +170,7 @@ void LockstepProcessingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && records_ != nullptr) {
-    delete records_;
-  }
-  records_ = nullptr;
+  records_.Clear();
   delta_time_ms_ = 0;
   _internal_metadata_.Clear();
 }
@@ -202,11 +182,16 @@ const char* LockstepProcessingRequest::_InternalParse(const char* ptr, ::PROTOBU
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .ubii.topicData.TopicDataRecordList records = 1;
+      // repeated .ubii.topicData.TopicDataRecord records = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_records(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_records(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
       // float delta_time_ms = 2;
@@ -242,12 +227,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .ubii.topicData.TopicDataRecordList records = 1;
-  if (this->has_records()) {
+  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_records_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::records(this), target, stream);
+      InternalWriteMessage(1, this->_internal_records(i), target, stream);
   }
 
   // float delta_time_ms = 2;
@@ -272,11 +257,11 @@ size_t LockstepProcessingRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .ubii.topicData.TopicDataRecordList records = 1;
-  if (this->has_records()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *records_);
+  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  total_size += 1UL * this->_internal_records_size();
+  for (const auto& msg : this->records_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // float delta_time_ms = 2;
@@ -315,9 +300,7 @@ void LockstepProcessingRequest::MergeFrom(const LockstepProcessingRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_records()) {
-    _internal_mutable_records()->::ubii::topicData::TopicDataRecordList::MergeFrom(from._internal_records());
-  }
+  records_.MergeFrom(from.records_);
   if (!(from.delta_time_ms() <= 0 && from.delta_time_ms() >= 0)) {
     _internal_set_delta_time_ms(from._internal_delta_time_ms());
   }
@@ -344,7 +327,7 @@ bool LockstepProcessingRequest::IsInitialized() const {
 void LockstepProcessingRequest::InternalSwap(LockstepProcessingRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(records_, other->records_);
+  records_.InternalSwap(&other->records_);
   swap(delta_time_ms_, other->delta_time_ms_);
 }
 
@@ -356,23 +339,13 @@ void LockstepProcessingRequest::InternalSwap(LockstepProcessingRequest* other) {
 // ===================================================================
 
 void LockstepProcessingReply::InitAsDefaultInstance() {
-  ::ubii::processing::_LockstepProcessingReply_default_instance_._instance.get_mutable()->records_ = const_cast< ::ubii::topicData::TopicDataRecordList*>(
-      ::ubii::topicData::TopicDataRecordList::internal_default_instance());
 }
 class LockstepProcessingReply::_Internal {
  public:
-  static const ::ubii::topicData::TopicDataRecordList& records(const LockstepProcessingReply* msg);
 };
 
-const ::ubii::topicData::TopicDataRecordList&
-LockstepProcessingReply::_Internal::records(const LockstepProcessingReply* msg) {
-  return *msg->records_;
-}
 void LockstepProcessingReply::clear_records() {
-  if (GetArenaNoVirtual() == nullptr && records_ != nullptr) {
-    delete records_;
-  }
-  records_ = nullptr;
+  records_.Clear();
 }
 LockstepProcessingReply::LockstepProcessingReply()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -381,19 +354,14 @@ LockstepProcessingReply::LockstepProcessingReply()
 }
 LockstepProcessingReply::LockstepProcessingReply(const LockstepProcessingReply& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      records_(from.records_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from._internal_has_records()) {
-    records_ = new ::ubii::topicData::TopicDataRecordList(*from.records_);
-  } else {
-    records_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:ubii.processing.LockstepProcessingReply)
 }
 
 void LockstepProcessingReply::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto.base);
-  records_ = nullptr;
 }
 
 LockstepProcessingReply::~LockstepProcessingReply() {
@@ -402,7 +370,6 @@ LockstepProcessingReply::~LockstepProcessingReply() {
 }
 
 void LockstepProcessingReply::SharedDtor() {
-  if (this != internal_default_instance()) delete records_;
 }
 
 void LockstepProcessingReply::SetCachedSize(int size) const {
@@ -420,10 +387,7 @@ void LockstepProcessingReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && records_ != nullptr) {
-    delete records_;
-  }
-  records_ = nullptr;
+  records_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -434,11 +398,16 @@ const char* LockstepProcessingReply::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .ubii.topicData.TopicDataRecordList records = 1;
+      // repeated .ubii.topicData.TopicDataRecord records = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_records(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_records(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -467,12 +436,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .ubii.topicData.TopicDataRecordList records = 1;
-  if (this->has_records()) {
+  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_records_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::records(this), target, stream);
+      InternalWriteMessage(1, this->_internal_records(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -491,11 +460,11 @@ size_t LockstepProcessingReply::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .ubii.topicData.TopicDataRecordList records = 1;
-  if (this->has_records()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *records_);
+  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  total_size += 1UL * this->_internal_records_size();
+  for (const auto& msg : this->records_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -529,9 +498,7 @@ void LockstepProcessingReply::MergeFrom(const LockstepProcessingReply& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_records()) {
-    _internal_mutable_records()->::ubii::topicData::TopicDataRecordList::MergeFrom(from._internal_records());
-  }
+  records_.MergeFrom(from.records_);
 }
 
 void LockstepProcessingReply::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -555,7 +522,7 @@ bool LockstepProcessingReply::IsInitialized() const {
 void LockstepProcessingReply::InternalSwap(LockstepProcessingReply* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(records_, other->records_);
+  records_.InternalSwap(&other->records_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LockstepProcessingReply::GetMetadata() const {
