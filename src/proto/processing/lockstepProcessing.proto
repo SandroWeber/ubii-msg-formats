@@ -4,10 +4,12 @@ package ubii.processing;
 import "proto/topicData/topicDataRecord/topicDataRecord.proto";
 
 message LockstepProcessingRequest {
-    repeated ubii.topicData.TopicDataRecord records = 1;
-    float delta_time_ms = 2;
+    repeated string processing_module_ids = 1;
+    repeated ubii.topicData.TopicDataRecord records = 2;
+    int32 delta_time_ms = 3;
 }
 
 message LockstepProcessingReply {
-    repeated ubii.topicData.TopicDataRecord records = 1;
+    repeated string processing_module_ids = 1;
+    repeated ubii.topicData.TopicDataRecord records = 2;
 }

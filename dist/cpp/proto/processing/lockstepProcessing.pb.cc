@@ -67,6 +67,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2flockstepP
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingRequest, processing_module_ids_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingRequest, records_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingRequest, delta_time_ms_),
   ~0u,  // no _has_bits_
@@ -74,11 +75,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2flockstepP
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingReply, processing_module_ids_),
   PROTOBUF_FIELD_OFFSET(::ubii::processing::LockstepProcessingReply, records_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::processing::LockstepProcessingRequest)},
-  { 7, -1, sizeof(::ubii::processing::LockstepProcessingReply)},
+  { 8, -1, sizeof(::ubii::processing::LockstepProcessingReply)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -89,12 +91,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)proto/processing/lockstepProcessing.pr"
   "oto\022\017ubii.processing\0325proto/topicData/to"
-  "picDataRecord/topicDataRecord.proto\"d\n\031L"
-  "ockstepProcessingRequest\0220\n\007records\030\001 \003("
-  "\0132\037.ubii.topicData.TopicDataRecord\022\025\n\rde"
-  "lta_time_ms\030\002 \001(\002\"K\n\027LockstepProcessingR"
-  "eply\0220\n\007records\030\001 \003(\0132\037.ubii.topicData.T"
-  "opicDataRecordb\006proto3"
+  "picDataRecord/topicDataRecord.proto\"\203\001\n\031"
+  "LockstepProcessingRequest\022\035\n\025processing_"
+  "module_ids\030\001 \003(\t\0220\n\007records\030\002 \003(\0132\037.ubii"
+  ".topicData.TopicDataRecord\022\025\n\rdelta_time"
+  "_ms\030\003 \001(\005\"j\n\027LockstepProcessingReply\022\035\n\025"
+  "processing_module_ids\030\001 \003(\t\0220\n\007records\030\002"
+  " \003(\0132\037.ubii.topicData.TopicDataRecordb\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_deps[1] = {
   &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto,
@@ -106,7 +110,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once;
 static bool descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto = {
-  &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 302,
+  &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 365,
   &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_sccs, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto::offsets,
   file_level_metadata_proto_2fprocessing_2flockstepProcessing_2eproto, 2, file_level_enum_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto, file_level_service_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto,
@@ -136,6 +140,7 @@ LockstepProcessingRequest::LockstepProcessingRequest()
 LockstepProcessingRequest::LockstepProcessingRequest(const LockstepProcessingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
+      processing_module_ids_(from.processing_module_ids_),
       records_(from.records_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   delta_time_ms_ = from.delta_time_ms_;
@@ -170,6 +175,7 @@ void LockstepProcessingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  processing_module_ids_.Clear();
   records_.Clear();
   delta_time_ms_ = 0;
   _internal_metadata_.Clear();
@@ -182,23 +188,37 @@ const char* LockstepProcessingRequest::_InternalParse(const char* ptr, ::PROTOBU
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .ubii.topicData.TopicDataRecord records = 1;
+      // repeated string processing_module_ids = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_processing_module_ids();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.LockstepProcessingRequest.processing_module_ids"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated .ubii.topicData.TopicDataRecord records = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_records(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
-      // float delta_time_ms = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          delta_time_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+      // int32 delta_time_ms = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          delta_time_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -227,18 +247,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  // repeated string processing_module_ids = 1;
+  for (int i = 0, n = this->_internal_processing_module_ids_size(); i < n; i++) {
+    const auto& s = this->_internal_processing_module_ids(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ubii.processing.LockstepProcessingRequest.processing_module_ids");
+    target = stream->WriteString(1, s, target);
+  }
+
+  // repeated .ubii.topicData.TopicDataRecord records = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_records_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_records(i), target, stream);
+      InternalWriteMessage(2, this->_internal_records(i), target, stream);
   }
 
-  // float delta_time_ms = 2;
-  if (!(this->delta_time_ms() <= 0 && this->delta_time_ms() >= 0)) {
+  // int32 delta_time_ms = 3;
+  if (this->delta_time_ms() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_delta_time_ms(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_delta_time_ms(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -257,16 +287,26 @@ size_t LockstepProcessingRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  // repeated string processing_module_ids = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(processing_module_ids_.size());
+  for (int i = 0, n = processing_module_ids_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      processing_module_ids_.Get(i));
+  }
+
+  // repeated .ubii.topicData.TopicDataRecord records = 2;
   total_size += 1UL * this->_internal_records_size();
   for (const auto& msg : this->records_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // float delta_time_ms = 2;
-  if (!(this->delta_time_ms() <= 0 && this->delta_time_ms() >= 0)) {
-    total_size += 1 + 4;
+  // int32 delta_time_ms = 3;
+  if (this->delta_time_ms() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_delta_time_ms());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -300,8 +340,9 @@ void LockstepProcessingRequest::MergeFrom(const LockstepProcessingRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  processing_module_ids_.MergeFrom(from.processing_module_ids_);
   records_.MergeFrom(from.records_);
-  if (!(from.delta_time_ms() <= 0 && from.delta_time_ms() >= 0)) {
+  if (from.delta_time_ms() != 0) {
     _internal_set_delta_time_ms(from._internal_delta_time_ms());
   }
 }
@@ -327,6 +368,7 @@ bool LockstepProcessingRequest::IsInitialized() const {
 void LockstepProcessingRequest::InternalSwap(LockstepProcessingRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  processing_module_ids_.InternalSwap(&other->processing_module_ids_);
   records_.InternalSwap(&other->records_);
   swap(delta_time_ms_, other->delta_time_ms_);
 }
@@ -355,6 +397,7 @@ LockstepProcessingReply::LockstepProcessingReply()
 LockstepProcessingReply::LockstepProcessingReply(const LockstepProcessingReply& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
+      processing_module_ids_(from.processing_module_ids_),
       records_(from.records_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.processing.LockstepProcessingReply)
@@ -387,6 +430,7 @@ void LockstepProcessingReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  processing_module_ids_.Clear();
   records_.Clear();
   _internal_metadata_.Clear();
 }
@@ -398,16 +442,30 @@ const char* LockstepProcessingReply::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .ubii.topicData.TopicDataRecord records = 1;
+      // repeated string processing_module_ids = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_processing_module_ids();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.processing.LockstepProcessingReply.processing_module_ids"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated .ubii.topicData.TopicDataRecord records = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_records(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -436,12 +494,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  // repeated string processing_module_ids = 1;
+  for (int i = 0, n = this->_internal_processing_module_ids_size(); i < n; i++) {
+    const auto& s = this->_internal_processing_module_ids(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ubii.processing.LockstepProcessingReply.processing_module_ids");
+    target = stream->WriteString(1, s, target);
+  }
+
+  // repeated .ubii.topicData.TopicDataRecord records = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_records_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_records(i), target, stream);
+      InternalWriteMessage(2, this->_internal_records(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -460,7 +528,15 @@ size_t LockstepProcessingReply::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  // repeated string processing_module_ids = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(processing_module_ids_.size());
+  for (int i = 0, n = processing_module_ids_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      processing_module_ids_.Get(i));
+  }
+
+  // repeated .ubii.topicData.TopicDataRecord records = 2;
   total_size += 1UL * this->_internal_records_size();
   for (const auto& msg : this->records_) {
     total_size +=
@@ -498,6 +574,7 @@ void LockstepProcessingReply::MergeFrom(const LockstepProcessingReply& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  processing_module_ids_.MergeFrom(from.processing_module_ids_);
   records_.MergeFrom(from.records_);
 }
 
@@ -522,6 +599,7 @@ bool LockstepProcessingReply::IsInitialized() const {
 void LockstepProcessingReply::InternalSwap(LockstepProcessingReply* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  processing_module_ids_.InternalSwap(&other->processing_module_ids_);
   records_.InternalSwap(&other->records_);
 }
 

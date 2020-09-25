@@ -180,10 +180,35 @@ class LockstepProcessingRequest :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRecordsFieldNumber = 1,
-    kDeltaTimeMsFieldNumber = 2,
+    kProcessingModuleIdsFieldNumber = 1,
+    kRecordsFieldNumber = 2,
+    kDeltaTimeMsFieldNumber = 3,
   };
-  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  // repeated string processing_module_ids = 1;
+  int processing_module_ids_size() const;
+  private:
+  int _internal_processing_module_ids_size() const;
+  public:
+  void clear_processing_module_ids();
+  const std::string& processing_module_ids(int index) const;
+  std::string* mutable_processing_module_ids(int index);
+  void set_processing_module_ids(int index, const std::string& value);
+  void set_processing_module_ids(int index, std::string&& value);
+  void set_processing_module_ids(int index, const char* value);
+  void set_processing_module_ids(int index, const char* value, size_t size);
+  std::string* add_processing_module_ids();
+  void add_processing_module_ids(const std::string& value);
+  void add_processing_module_ids(std::string&& value);
+  void add_processing_module_ids(const char* value);
+  void add_processing_module_ids(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& processing_module_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_processing_module_ids();
+  private:
+  const std::string& _internal_processing_module_ids(int index) const;
+  std::string* _internal_add_processing_module_ids();
+  public:
+
+  // repeated .ubii.topicData.TopicDataRecord records = 2;
   int records_size() const;
   private:
   int _internal_records_size() const;
@@ -201,13 +226,13 @@ class LockstepProcessingRequest :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord >&
       records() const;
 
-  // float delta_time_ms = 2;
+  // int32 delta_time_ms = 3;
   void clear_delta_time_ms();
-  float delta_time_ms() const;
-  void set_delta_time_ms(float value);
+  ::PROTOBUF_NAMESPACE_ID::int32 delta_time_ms() const;
+  void set_delta_time_ms(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  float _internal_delta_time_ms() const;
-  void _internal_set_delta_time_ms(float value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_delta_time_ms() const;
+  void _internal_set_delta_time_ms(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:ubii.processing.LockstepProcessingRequest)
@@ -215,8 +240,9 @@ class LockstepProcessingRequest :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> processing_module_ids_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord > records_;
-  float delta_time_ms_;
+  ::PROTOBUF_NAMESPACE_ID::int32 delta_time_ms_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto;
 };
@@ -328,9 +354,34 @@ class LockstepProcessingReply :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRecordsFieldNumber = 1,
+    kProcessingModuleIdsFieldNumber = 1,
+    kRecordsFieldNumber = 2,
   };
-  // repeated .ubii.topicData.TopicDataRecord records = 1;
+  // repeated string processing_module_ids = 1;
+  int processing_module_ids_size() const;
+  private:
+  int _internal_processing_module_ids_size() const;
+  public:
+  void clear_processing_module_ids();
+  const std::string& processing_module_ids(int index) const;
+  std::string* mutable_processing_module_ids(int index);
+  void set_processing_module_ids(int index, const std::string& value);
+  void set_processing_module_ids(int index, std::string&& value);
+  void set_processing_module_ids(int index, const char* value);
+  void set_processing_module_ids(int index, const char* value, size_t size);
+  std::string* add_processing_module_ids();
+  void add_processing_module_ids(const std::string& value);
+  void add_processing_module_ids(std::string&& value);
+  void add_processing_module_ids(const char* value);
+  void add_processing_module_ids(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& processing_module_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_processing_module_ids();
+  private:
+  const std::string& _internal_processing_module_ids(int index) const;
+  std::string* _internal_add_processing_module_ids();
+  public:
+
+  // repeated .ubii.topicData.TopicDataRecord records = 2;
   int records_size() const;
   private:
   int _internal_records_size() const;
@@ -353,6 +404,7 @@ class LockstepProcessingReply :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> processing_module_ids_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::topicData::TopicDataRecord > records_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto;
@@ -368,7 +420,81 @@ class LockstepProcessingReply :
 #endif  // __GNUC__
 // LockstepProcessingRequest
 
-// repeated .ubii.topicData.TopicDataRecord records = 1;
+// repeated string processing_module_ids = 1;
+inline int LockstepProcessingRequest::_internal_processing_module_ids_size() const {
+  return processing_module_ids_.size();
+}
+inline int LockstepProcessingRequest::processing_module_ids_size() const {
+  return _internal_processing_module_ids_size();
+}
+inline void LockstepProcessingRequest::clear_processing_module_ids() {
+  processing_module_ids_.Clear();
+}
+inline std::string* LockstepProcessingRequest::add_processing_module_ids() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+  return _internal_add_processing_module_ids();
+}
+inline const std::string& LockstepProcessingRequest::_internal_processing_module_ids(int index) const {
+  return processing_module_ids_.Get(index);
+}
+inline const std::string& LockstepProcessingRequest::processing_module_ids(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+  return _internal_processing_module_ids(index);
+}
+inline std::string* LockstepProcessingRequest::mutable_processing_module_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+  return processing_module_ids_.Mutable(index);
+}
+inline void LockstepProcessingRequest::set_processing_module_ids(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+  processing_module_ids_.Mutable(index)->assign(value);
+}
+inline void LockstepProcessingRequest::set_processing_module_ids(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+  processing_module_ids_.Mutable(index)->assign(std::move(value));
+}
+inline void LockstepProcessingRequest::set_processing_module_ids(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  processing_module_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+}
+inline void LockstepProcessingRequest::set_processing_module_ids(int index, const char* value, size_t size) {
+  processing_module_ids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+}
+inline std::string* LockstepProcessingRequest::_internal_add_processing_module_ids() {
+  return processing_module_ids_.Add();
+}
+inline void LockstepProcessingRequest::add_processing_module_ids(const std::string& value) {
+  processing_module_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+}
+inline void LockstepProcessingRequest::add_processing_module_ids(std::string&& value) {
+  processing_module_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+}
+inline void LockstepProcessingRequest::add_processing_module_ids(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  processing_module_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+}
+inline void LockstepProcessingRequest::add_processing_module_ids(const char* value, size_t size) {
+  processing_module_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+LockstepProcessingRequest::processing_module_ids() const {
+  // @@protoc_insertion_point(field_list:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+  return processing_module_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+LockstepProcessingRequest::mutable_processing_module_ids() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.processing.LockstepProcessingRequest.processing_module_ids)
+  return &processing_module_ids_;
+}
+
+// repeated .ubii.topicData.TopicDataRecord records = 2;
 inline int LockstepProcessingRequest::_internal_records_size() const {
   return records_.size();
 }
@@ -404,22 +530,22 @@ LockstepProcessingRequest::records() const {
   return records_;
 }
 
-// float delta_time_ms = 2;
+// int32 delta_time_ms = 3;
 inline void LockstepProcessingRequest::clear_delta_time_ms() {
   delta_time_ms_ = 0;
 }
-inline float LockstepProcessingRequest::_internal_delta_time_ms() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 LockstepProcessingRequest::_internal_delta_time_ms() const {
   return delta_time_ms_;
 }
-inline float LockstepProcessingRequest::delta_time_ms() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 LockstepProcessingRequest::delta_time_ms() const {
   // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingRequest.delta_time_ms)
   return _internal_delta_time_ms();
 }
-inline void LockstepProcessingRequest::_internal_set_delta_time_ms(float value) {
+inline void LockstepProcessingRequest::_internal_set_delta_time_ms(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   delta_time_ms_ = value;
 }
-inline void LockstepProcessingRequest::set_delta_time_ms(float value) {
+inline void LockstepProcessingRequest::set_delta_time_ms(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_delta_time_ms(value);
   // @@protoc_insertion_point(field_set:ubii.processing.LockstepProcessingRequest.delta_time_ms)
 }
@@ -428,7 +554,81 @@ inline void LockstepProcessingRequest::set_delta_time_ms(float value) {
 
 // LockstepProcessingReply
 
-// repeated .ubii.topicData.TopicDataRecord records = 1;
+// repeated string processing_module_ids = 1;
+inline int LockstepProcessingReply::_internal_processing_module_ids_size() const {
+  return processing_module_ids_.size();
+}
+inline int LockstepProcessingReply::processing_module_ids_size() const {
+  return _internal_processing_module_ids_size();
+}
+inline void LockstepProcessingReply::clear_processing_module_ids() {
+  processing_module_ids_.Clear();
+}
+inline std::string* LockstepProcessingReply::add_processing_module_ids() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.processing.LockstepProcessingReply.processing_module_ids)
+  return _internal_add_processing_module_ids();
+}
+inline const std::string& LockstepProcessingReply::_internal_processing_module_ids(int index) const {
+  return processing_module_ids_.Get(index);
+}
+inline const std::string& LockstepProcessingReply::processing_module_ids(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.processing.LockstepProcessingReply.processing_module_ids)
+  return _internal_processing_module_ids(index);
+}
+inline std::string* LockstepProcessingReply::mutable_processing_module_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.processing.LockstepProcessingReply.processing_module_ids)
+  return processing_module_ids_.Mutable(index);
+}
+inline void LockstepProcessingReply::set_processing_module_ids(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.processing.LockstepProcessingReply.processing_module_ids)
+  processing_module_ids_.Mutable(index)->assign(value);
+}
+inline void LockstepProcessingReply::set_processing_module_ids(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.processing.LockstepProcessingReply.processing_module_ids)
+  processing_module_ids_.Mutable(index)->assign(std::move(value));
+}
+inline void LockstepProcessingReply::set_processing_module_ids(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  processing_module_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.processing.LockstepProcessingReply.processing_module_ids)
+}
+inline void LockstepProcessingReply::set_processing_module_ids(int index, const char* value, size_t size) {
+  processing_module_ids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.LockstepProcessingReply.processing_module_ids)
+}
+inline std::string* LockstepProcessingReply::_internal_add_processing_module_ids() {
+  return processing_module_ids_.Add();
+}
+inline void LockstepProcessingReply::add_processing_module_ids(const std::string& value) {
+  processing_module_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.processing.LockstepProcessingReply.processing_module_ids)
+}
+inline void LockstepProcessingReply::add_processing_module_ids(std::string&& value) {
+  processing_module_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.processing.LockstepProcessingReply.processing_module_ids)
+}
+inline void LockstepProcessingReply::add_processing_module_ids(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  processing_module_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.processing.LockstepProcessingReply.processing_module_ids)
+}
+inline void LockstepProcessingReply::add_processing_module_ids(const char* value, size_t size) {
+  processing_module_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.processing.LockstepProcessingReply.processing_module_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+LockstepProcessingReply::processing_module_ids() const {
+  // @@protoc_insertion_point(field_list:ubii.processing.LockstepProcessingReply.processing_module_ids)
+  return processing_module_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+LockstepProcessingReply::mutable_processing_module_ids() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.processing.LockstepProcessingReply.processing_module_ids)
+  return &processing_module_ids_;
+}
+
+// repeated .ubii.topicData.TopicDataRecord records = 2;
 inline int LockstepProcessingReply::_internal_records_size() const {
   return records_.size();
 }

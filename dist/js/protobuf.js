@@ -3146,6 +3146,7 @@ $root.ubii = (function() {
              * Properties of a LockstepProcessingRequest.
              * @memberof ubii.processing
              * @interface ILockstepProcessingRequest
+             * @property {Array.<string>|null} [processingModuleIds] LockstepProcessingRequest processingModuleIds
              * @property {Array.<ubii.topicData.ITopicDataRecord>|null} [records] LockstepProcessingRequest records
              * @property {number|null} [deltaTimeMs] LockstepProcessingRequest deltaTimeMs
              */
@@ -3159,12 +3160,21 @@ $root.ubii = (function() {
              * @param {ubii.processing.ILockstepProcessingRequest=} [properties] Properties to set
              */
             function LockstepProcessingRequest(properties) {
+                this.processingModuleIds = [];
                 this.records = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * LockstepProcessingRequest processingModuleIds.
+             * @member {Array.<string>} processingModuleIds
+             * @memberof ubii.processing.LockstepProcessingRequest
+             * @instance
+             */
+            LockstepProcessingRequest.prototype.processingModuleIds = $util.emptyArray;
 
             /**
              * LockstepProcessingRequest records.
@@ -3206,11 +3216,14 @@ $root.ubii = (function() {
             LockstepProcessingRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.processingModuleIds != null && message.processingModuleIds.length)
+                    for (var i = 0; i < message.processingModuleIds.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.processingModuleIds[i]);
                 if (message.records != null && message.records.length)
                     for (var i = 0; i < message.records.length; ++i)
-                        $root.ubii.topicData.TopicDataRecord.encode(message.records[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.ubii.topicData.TopicDataRecord.encode(message.records[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
-                    writer.uint32(/* id 2, wireType 5 =*/21).float(message.deltaTimeMs);
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.deltaTimeMs);
                 return writer;
             };
 
@@ -3246,12 +3259,17 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
+                        if (!(message.processingModuleIds && message.processingModuleIds.length))
+                            message.processingModuleIds = [];
+                        message.processingModuleIds.push(reader.string());
+                        break;
+                    case 2:
                         if (!(message.records && message.records.length))
                             message.records = [];
                         message.records.push($root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32()));
                         break;
-                    case 2:
-                        message.deltaTimeMs = reader.float();
+                    case 3:
+                        message.deltaTimeMs = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3288,6 +3306,13 @@ $root.ubii = (function() {
             LockstepProcessingRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.processingModuleIds != null && message.hasOwnProperty("processingModuleIds")) {
+                    if (!Array.isArray(message.processingModuleIds))
+                        return "processingModuleIds: array expected";
+                    for (var i = 0; i < message.processingModuleIds.length; ++i)
+                        if (!$util.isString(message.processingModuleIds[i]))
+                            return "processingModuleIds: string[] expected";
+                }
                 if (message.records != null && message.hasOwnProperty("records")) {
                     if (!Array.isArray(message.records))
                         return "records: array expected";
@@ -3298,8 +3323,8 @@ $root.ubii = (function() {
                     }
                 }
                 if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
-                    if (typeof message.deltaTimeMs !== "number")
-                        return "deltaTimeMs: number expected";
+                    if (!$util.isInteger(message.deltaTimeMs))
+                        return "deltaTimeMs: integer expected";
                 return null;
             };
 
@@ -3315,6 +3340,13 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.processing.LockstepProcessingRequest)
                     return object;
                 var message = new $root.ubii.processing.LockstepProcessingRequest();
+                if (object.processingModuleIds) {
+                    if (!Array.isArray(object.processingModuleIds))
+                        throw TypeError(".ubii.processing.LockstepProcessingRequest.processingModuleIds: array expected");
+                    message.processingModuleIds = [];
+                    for (var i = 0; i < object.processingModuleIds.length; ++i)
+                        message.processingModuleIds[i] = String(object.processingModuleIds[i]);
+                }
                 if (object.records) {
                     if (!Array.isArray(object.records))
                         throw TypeError(".ubii.processing.LockstepProcessingRequest.records: array expected");
@@ -3326,7 +3358,7 @@ $root.ubii = (function() {
                     }
                 }
                 if (object.deltaTimeMs != null)
-                    message.deltaTimeMs = Number(object.deltaTimeMs);
+                    message.deltaTimeMs = object.deltaTimeMs | 0;
                 return message;
             };
 
@@ -3343,17 +3375,24 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
+                    object.processingModuleIds = [];
                     object.records = [];
+                }
                 if (options.defaults)
                     object.deltaTimeMs = 0;
+                if (message.processingModuleIds && message.processingModuleIds.length) {
+                    object.processingModuleIds = [];
+                    for (var j = 0; j < message.processingModuleIds.length; ++j)
+                        object.processingModuleIds[j] = message.processingModuleIds[j];
+                }
                 if (message.records && message.records.length) {
                     object.records = [];
                     for (var j = 0; j < message.records.length; ++j)
                         object.records[j] = $root.ubii.topicData.TopicDataRecord.toObject(message.records[j], options);
                 }
                 if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
-                    object.deltaTimeMs = options.json && !isFinite(message.deltaTimeMs) ? String(message.deltaTimeMs) : message.deltaTimeMs;
+                    object.deltaTimeMs = message.deltaTimeMs;
                 return object;
             };
 
@@ -3377,6 +3416,7 @@ $root.ubii = (function() {
              * Properties of a LockstepProcessingReply.
              * @memberof ubii.processing
              * @interface ILockstepProcessingReply
+             * @property {Array.<string>|null} [processingModuleIds] LockstepProcessingReply processingModuleIds
              * @property {Array.<ubii.topicData.ITopicDataRecord>|null} [records] LockstepProcessingReply records
              */
 
@@ -3389,12 +3429,21 @@ $root.ubii = (function() {
              * @param {ubii.processing.ILockstepProcessingReply=} [properties] Properties to set
              */
             function LockstepProcessingReply(properties) {
+                this.processingModuleIds = [];
                 this.records = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * LockstepProcessingReply processingModuleIds.
+             * @member {Array.<string>} processingModuleIds
+             * @memberof ubii.processing.LockstepProcessingReply
+             * @instance
+             */
+            LockstepProcessingReply.prototype.processingModuleIds = $util.emptyArray;
 
             /**
              * LockstepProcessingReply records.
@@ -3428,9 +3477,12 @@ $root.ubii = (function() {
             LockstepProcessingReply.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.processingModuleIds != null && message.processingModuleIds.length)
+                    for (var i = 0; i < message.processingModuleIds.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.processingModuleIds[i]);
                 if (message.records != null && message.records.length)
                     for (var i = 0; i < message.records.length; ++i)
-                        $root.ubii.topicData.TopicDataRecord.encode(message.records[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.ubii.topicData.TopicDataRecord.encode(message.records[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -3466,6 +3518,11 @@ $root.ubii = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
+                        if (!(message.processingModuleIds && message.processingModuleIds.length))
+                            message.processingModuleIds = [];
+                        message.processingModuleIds.push(reader.string());
+                        break;
+                    case 2:
                         if (!(message.records && message.records.length))
                             message.records = [];
                         message.records.push($root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32()));
@@ -3505,6 +3562,13 @@ $root.ubii = (function() {
             LockstepProcessingReply.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.processingModuleIds != null && message.hasOwnProperty("processingModuleIds")) {
+                    if (!Array.isArray(message.processingModuleIds))
+                        return "processingModuleIds: array expected";
+                    for (var i = 0; i < message.processingModuleIds.length; ++i)
+                        if (!$util.isString(message.processingModuleIds[i]))
+                            return "processingModuleIds: string[] expected";
+                }
                 if (message.records != null && message.hasOwnProperty("records")) {
                     if (!Array.isArray(message.records))
                         return "records: array expected";
@@ -3529,6 +3593,13 @@ $root.ubii = (function() {
                 if (object instanceof $root.ubii.processing.LockstepProcessingReply)
                     return object;
                 var message = new $root.ubii.processing.LockstepProcessingReply();
+                if (object.processingModuleIds) {
+                    if (!Array.isArray(object.processingModuleIds))
+                        throw TypeError(".ubii.processing.LockstepProcessingReply.processingModuleIds: array expected");
+                    message.processingModuleIds = [];
+                    for (var i = 0; i < object.processingModuleIds.length; ++i)
+                        message.processingModuleIds[i] = String(object.processingModuleIds[i]);
+                }
                 if (object.records) {
                     if (!Array.isArray(object.records))
                         throw TypeError(".ubii.processing.LockstepProcessingReply.records: array expected");
@@ -3555,8 +3626,15 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
+                    object.processingModuleIds = [];
                     object.records = [];
+                }
+                if (message.processingModuleIds && message.processingModuleIds.length) {
+                    object.processingModuleIds = [];
+                    for (var j = 0; j < message.processingModuleIds.length; ++j)
+                        object.processingModuleIds[j] = message.processingModuleIds[j];
+                }
                 if (message.records && message.records.length) {
                     object.records = [];
                     for (var j = 0; j < message.records.length; ++j)

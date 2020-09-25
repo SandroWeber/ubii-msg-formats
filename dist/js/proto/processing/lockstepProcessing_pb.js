@@ -64,7 +64,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.processing.LockstepProcessingRequest.repeatedFields_ = [1];
+proto.ubii.processing.LockstepProcessingRequest.repeatedFields_ = [1,2];
 
 
 
@@ -97,9 +97,10 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.toObject = function(op
  */
 proto.ubii.processing.LockstepProcessingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    processingModuleIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     recordsList: jspb.Message.toObjectList(msg.getRecordsList(),
     proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.toObject, includeInstance),
-    deltaTimeMs: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+    deltaTimeMs: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -137,12 +138,16 @@ proto.ubii.processing.LockstepProcessingRequest.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addProcessingModuleIds(value);
+      break;
+    case 2:
       var value = new proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord;
       reader.readMessage(value,proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.deserializeBinaryFromReader);
       msg.addRecords(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readFloat());
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setDeltaTimeMs(value);
       break;
     default:
@@ -174,18 +179,25 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.serializeBinary = func
  */
 proto.ubii.processing.LockstepProcessingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getProcessingModuleIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
   f = message.getRecordsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.serializeBinaryToWriter
     );
   }
   f = message.getDeltaTimeMs();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      2,
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
       f
     );
   }
@@ -193,12 +205,49 @@ proto.ubii.processing.LockstepProcessingRequest.serializeBinaryToWriter = functi
 
 
 /**
- * repeated ubii.topicData.TopicDataRecord records = 1;
+ * repeated string processing_module_ids = 1;
+ * @return {!Array<string>}
+ */
+proto.ubii.processing.LockstepProcessingRequest.prototype.getProcessingModuleIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ubii.processing.LockstepProcessingRequest} returns this
+ */
+proto.ubii.processing.LockstepProcessingRequest.prototype.setProcessingModuleIdsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.processing.LockstepProcessingRequest} returns this
+ */
+proto.ubii.processing.LockstepProcessingRequest.prototype.addProcessingModuleIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ubii.processing.LockstepProcessingRequest} returns this
+ */
+proto.ubii.processing.LockstepProcessingRequest.prototype.clearProcessingModuleIdsList = function() {
+  return this.setProcessingModuleIdsList([]);
+};
+
+
+/**
+ * repeated ubii.topicData.TopicDataRecord records = 2;
  * @return {!Array<!proto.ubii.topicData.TopicDataRecord>}
  */
 proto.ubii.processing.LockstepProcessingRequest.prototype.getRecordsList = function() {
   return /** @type{!Array<!proto.ubii.topicData.TopicDataRecord>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord, 2));
 };
 
 
@@ -207,7 +256,7 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.getRecordsList = funct
  * @return {!proto.ubii.processing.LockstepProcessingRequest} returns this
 */
 proto.ubii.processing.LockstepProcessingRequest.prototype.setRecordsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -217,7 +266,7 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.setRecordsList = funct
  * @return {!proto.ubii.topicData.TopicDataRecord}
  */
 proto.ubii.processing.LockstepProcessingRequest.prototype.addRecords = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.topicData.TopicDataRecord, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ubii.topicData.TopicDataRecord, opt_index);
 };
 
 
@@ -231,11 +280,11 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.clearRecordsList = fun
 
 
 /**
- * optional float delta_time_ms = 2;
+ * optional int32 delta_time_ms = 3;
  * @return {number}
  */
 proto.ubii.processing.LockstepProcessingRequest.prototype.getDeltaTimeMs = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -244,7 +293,7 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.getDeltaTimeMs = funct
  * @return {!proto.ubii.processing.LockstepProcessingRequest} returns this
  */
 proto.ubii.processing.LockstepProcessingRequest.prototype.setDeltaTimeMs = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -254,7 +303,7 @@ proto.ubii.processing.LockstepProcessingRequest.prototype.setDeltaTimeMs = funct
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.processing.LockstepProcessingReply.repeatedFields_ = [1];
+proto.ubii.processing.LockstepProcessingReply.repeatedFields_ = [1,2];
 
 
 
@@ -287,6 +336,7 @@ proto.ubii.processing.LockstepProcessingReply.prototype.toObject = function(opt_
  */
 proto.ubii.processing.LockstepProcessingReply.toObject = function(includeInstance, msg) {
   var f, obj = {
+    processingModuleIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     recordsList: jspb.Message.toObjectList(msg.getRecordsList(),
     proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.toObject, includeInstance)
   };
@@ -326,6 +376,10 @@ proto.ubii.processing.LockstepProcessingReply.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addProcessingModuleIds(value);
+      break;
+    case 2:
       var value = new proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord;
       reader.readMessage(value,proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.deserializeBinaryFromReader);
       msg.addRecords(value);
@@ -359,10 +413,17 @@ proto.ubii.processing.LockstepProcessingReply.prototype.serializeBinary = functi
  */
 proto.ubii.processing.LockstepProcessingReply.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getProcessingModuleIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
   f = message.getRecordsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.serializeBinaryToWriter
     );
@@ -371,12 +432,49 @@ proto.ubii.processing.LockstepProcessingReply.serializeBinaryToWriter = function
 
 
 /**
- * repeated ubii.topicData.TopicDataRecord records = 1;
+ * repeated string processing_module_ids = 1;
+ * @return {!Array<string>}
+ */
+proto.ubii.processing.LockstepProcessingReply.prototype.getProcessingModuleIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.ubii.processing.LockstepProcessingReply} returns this
+ */
+proto.ubii.processing.LockstepProcessingReply.prototype.setProcessingModuleIdsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.processing.LockstepProcessingReply} returns this
+ */
+proto.ubii.processing.LockstepProcessingReply.prototype.addProcessingModuleIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.ubii.processing.LockstepProcessingReply} returns this
+ */
+proto.ubii.processing.LockstepProcessingReply.prototype.clearProcessingModuleIdsList = function() {
+  return this.setProcessingModuleIdsList([]);
+};
+
+
+/**
+ * repeated ubii.topicData.TopicDataRecord records = 2;
  * @return {!Array<!proto.ubii.topicData.TopicDataRecord>}
  */
 proto.ubii.processing.LockstepProcessingReply.prototype.getRecordsList = function() {
   return /** @type{!Array<!proto.ubii.topicData.TopicDataRecord>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord, 2));
 };
 
 
@@ -385,7 +483,7 @@ proto.ubii.processing.LockstepProcessingReply.prototype.getRecordsList = functio
  * @return {!proto.ubii.processing.LockstepProcessingReply} returns this
 */
 proto.ubii.processing.LockstepProcessingReply.prototype.setRecordsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -395,7 +493,7 @@ proto.ubii.processing.LockstepProcessingReply.prototype.setRecordsList = functio
  * @return {!proto.ubii.topicData.TopicDataRecord}
  */
 proto.ubii.processing.LockstepProcessingReply.prototype.addRecords = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.topicData.TopicDataRecord, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.ubii.topicData.TopicDataRecord, opt_index);
 };
 
 

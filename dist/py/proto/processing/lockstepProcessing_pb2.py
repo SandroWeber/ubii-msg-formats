@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.processing',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n)proto/processing/lockstepProcessing.proto\x12\x0fubii.processing\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\"d\n\x19LockstepProcessingRequest\x12\x30\n\x07records\x18\x01 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecord\x12\x15\n\rdelta_time_ms\x18\x02 \x01(\x02\"K\n\x17LockstepProcessingReply\x12\x30\n\x07records\x18\x01 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3'
+  serialized_pb=b'\n)proto/processing/lockstepProcessing.proto\x12\x0fubii.processing\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\"\x83\x01\n\x19LockstepProcessingRequest\x12\x1d\n\x15processing_module_ids\x18\x01 \x03(\t\x12\x30\n\x07records\x18\x02 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecord\x12\x15\n\rdelta_time_ms\x18\x03 \x01(\x05\"j\n\x17LockstepProcessingReply\x12\x1d\n\x15processing_module_ids\x18\x01 \x03(\t\x12\x30\n\x07records\x18\x02 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3'
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2.DESCRIPTOR,])
 
@@ -34,16 +34,23 @@ _LOCKSTEPPROCESSINGREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='records', full_name='ubii.processing.LockstepProcessingRequest.records', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='processing_module_ids', full_name='ubii.processing.LockstepProcessingRequest.processing_module_ids', index=0,
+      number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='delta_time_ms', full_name='ubii.processing.LockstepProcessingRequest.delta_time_ms', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
+      name='records', full_name='ubii.processing.LockstepProcessingRequest.records', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='delta_time_ms', full_name='ubii.processing.LockstepProcessingRequest.delta_time_ms', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -59,8 +66,8 @@ _LOCKSTEPPROCESSINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=117,
-  serialized_end=217,
+  serialized_start=118,
+  serialized_end=249,
 )
 
 
@@ -72,8 +79,15 @@ _LOCKSTEPPROCESSINGREPLY = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='records', full_name='ubii.processing.LockstepProcessingReply.records', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='processing_module_ids', full_name='ubii.processing.LockstepProcessingReply.processing_module_ids', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='records', full_name='ubii.processing.LockstepProcessingReply.records', index=1,
+      number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -90,8 +104,8 @@ _LOCKSTEPPROCESSINGREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=219,
-  serialized_end=294,
+  serialized_start=251,
+  serialized_end=357,
 )
 
 _LOCKSTEPPROCESSINGREQUEST.fields_by_name['records'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORD
