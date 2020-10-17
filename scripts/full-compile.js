@@ -1,12 +1,14 @@
 const childProcess = require('child_process');
 const path = require('path');
 
+let pythonExecutablePath = 'C:/Users/sandr/AppData/Local/Programs/Python/Python37/python.exe';
+
 let compileProtoPython = () => {
   return new Promise((resolve, reject) => {
     // compile .proto via python
     let pathProtoCompile = path.join(__dirname, 'proto-compile.py');
     console.info(pathProtoCompile);
-    let processPythonProtoCompile = childProcess.spawn('python3', [pathProtoCompile]);
+    let processPythonProtoCompile = childProcess.spawn(pythonExecutablePath, [pathProtoCompile]);
 
     // Takes stdout data from script which executed
     // with arguments and send this data to res object
