@@ -19,38 +19,29 @@ public final class Pose2DOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ubii.dataStructure.Vector2 position = 1;</code>
-     * @return Whether the position field is set.
+     * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
      */
     boolean hasPosition();
     /**
-     * <code>.ubii.dataStructure.Vector2 position = 1;</code>
-     * @return The position.
+     * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
      */
     ubii.dataStructure.Vector2OuterClass.Vector2 getPosition();
     /**
-     * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+     * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
      */
     ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getPositionOrBuilder();
 
     /**
-     * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
-     * @return Whether the direction field is set.
-     */
-    boolean hasDirection();
-    /**
-     * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
-     * @return The direction.
+     * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
      */
     ubii.dataStructure.Vector2OuterClass.Vector2 getDirection();
     /**
-     * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+     * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
      */
     ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getDirectionOrBuilder();
 
     /**
-     * <code>float angle = 3;</code>
-     * @return The angle.
+     * <code>optional float angle = 3;</code>
      */
     float getAngle();
 
@@ -63,7 +54,6 @@ public final class Pose2DOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Pose2D)
       Pose2DOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use Pose2D.newBuilder() to construct.
     private Pose2D(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -72,27 +62,16 @@ public final class Pose2DOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Pose2D();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Pose2D(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -101,6 +80,12 @@ public final class Pose2DOuterClass {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               ubii.dataStructure.Vector2OuterClass.Vector2.Builder subBuilder = null;
               if (position_ != null) {
@@ -133,13 +118,6 @@ public final class Pose2DOuterClass {
               orientation_ = input.readFloat();
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -148,7 +126,6 @@ public final class Pose2DOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -157,7 +134,6 @@ public final class Pose2DOuterClass {
       return ubii.dataStructure.Pose2DOuterClass.internal_static_ubii_dataStructure_Pose2D_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.dataStructure.Pose2DOuterClass.internal_static_ubii_dataStructure_Pose2D_fieldAccessorTable
@@ -168,8 +144,7 @@ public final class Pose2DOuterClass {
     private int orientationCase_ = 0;
     private java.lang.Object orientation_;
     public enum OrientationCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       DIRECTION(2),
       ANGLE(3),
       ORIENTATION_NOT_SET(0);
@@ -178,8 +153,6 @@ public final class Pose2DOuterClass {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -209,21 +182,19 @@ public final class Pose2DOuterClass {
     public static final int POSITION_FIELD_NUMBER = 1;
     private ubii.dataStructure.Vector2OuterClass.Vector2 position_;
     /**
-     * <code>.ubii.dataStructure.Vector2 position = 1;</code>
-     * @return Whether the position field is set.
+     * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
      */
     public boolean hasPosition() {
       return position_ != null;
     }
     /**
-     * <code>.ubii.dataStructure.Vector2 position = 1;</code>
-     * @return The position.
+     * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
      */
     public ubii.dataStructure.Vector2OuterClass.Vector2 getPosition() {
       return position_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : position_;
     }
     /**
-     * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+     * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
      */
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getPositionOrBuilder() {
       return getPosition();
@@ -231,15 +202,7 @@ public final class Pose2DOuterClass {
 
     public static final int DIRECTION_FIELD_NUMBER = 2;
     /**
-     * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
-     * @return Whether the direction field is set.
-     */
-    public boolean hasDirection() {
-      return orientationCase_ == 2;
-    }
-    /**
-     * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
-     * @return The direction.
+     * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
      */
     public ubii.dataStructure.Vector2OuterClass.Vector2 getDirection() {
       if (orientationCase_ == 2) {
@@ -248,7 +211,7 @@ public final class Pose2DOuterClass {
       return ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance();
     }
     /**
-     * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+     * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
      */
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getDirectionOrBuilder() {
       if (orientationCase_ == 2) {
@@ -259,8 +222,7 @@ public final class Pose2DOuterClass {
 
     public static final int ANGLE_FIELD_NUMBER = 3;
     /**
-     * <code>float angle = 3;</code>
-     * @return The angle.
+     * <code>optional float angle = 3;</code>
      */
     public float getAngle() {
       if (orientationCase_ == 3) {
@@ -270,7 +232,6 @@ public final class Pose2DOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -280,7 +241,6 @@ public final class Pose2DOuterClass {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (position_ != null) {
@@ -293,10 +253,8 @@ public final class Pose2DOuterClass {
         output.writeFloat(
             3, (float)((java.lang.Float) orientation_));
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -315,11 +273,11 @@ public final class Pose2DOuterClass {
           .computeFloatSize(
               3, (float)((java.lang.Float) orientation_));
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -330,27 +288,30 @@ public final class Pose2DOuterClass {
       }
       ubii.dataStructure.Pose2DOuterClass.Pose2D other = (ubii.dataStructure.Pose2DOuterClass.Pose2D) obj;
 
-      if (hasPosition() != other.hasPosition()) return false;
+      boolean result = true;
+      result = result && (hasPosition() == other.hasPosition());
       if (hasPosition()) {
-        if (!getPosition()
-            .equals(other.getPosition())) return false;
+        result = result && getPosition()
+            .equals(other.getPosition());
       }
-      if (!getOrientationCase().equals(other.getOrientationCase())) return false;
+      result = result && getOrientationCase().equals(
+          other.getOrientationCase());
+      if (!result) return false;
       switch (orientationCase_) {
         case 2:
-          if (!getDirection()
-              .equals(other.getDirection())) return false;
+          result = result && getDirection()
+              .equals(other.getDirection());
           break;
         case 3:
-          if (java.lang.Float.floatToIntBits(getAngle())
-              != java.lang.Float.floatToIntBits(
-                  other.getAngle())) return false;
+          result = result && (
+              java.lang.Float.floatToIntBits(getAngle())
+              == java.lang.Float.floatToIntBits(
+                  other.getAngle()));
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      return result;
     }
 
     @java.lang.Override
@@ -359,7 +320,7 @@ public final class Pose2DOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasPosition()) {
         hash = (37 * hash) + POSITION_FIELD_NUMBER;
         hash = (53 * hash) + getPosition().hashCode();
@@ -382,17 +343,6 @@ public final class Pose2DOuterClass {
       return hash;
     }
 
-    public static ubii.dataStructure.Pose2DOuterClass.Pose2D parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.dataStructure.Pose2DOuterClass.Pose2D parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static ubii.dataStructure.Pose2DOuterClass.Pose2D parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -452,7 +402,6 @@ public final class Pose2DOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -460,7 +409,6 @@ public final class Pose2DOuterClass {
     public static Builder newBuilder(ubii.dataStructure.Pose2DOuterClass.Pose2D prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -484,7 +432,6 @@ public final class Pose2DOuterClass {
         return ubii.dataStructure.Pose2DOuterClass.internal_static_ubii_dataStructure_Pose2D_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.dataStructure.Pose2DOuterClass.internal_static_ubii_dataStructure_Pose2D_fieldAccessorTable
@@ -507,7 +454,6 @@ public final class Pose2DOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (positionBuilder_ == null) {
@@ -521,18 +467,15 @@ public final class Pose2DOuterClass {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.dataStructure.Pose2DOuterClass.internal_static_ubii_dataStructure_Pose2D_descriptor;
       }
 
-      @java.lang.Override
       public ubii.dataStructure.Pose2DOuterClass.Pose2D getDefaultInstanceForType() {
         return ubii.dataStructure.Pose2DOuterClass.Pose2D.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.dataStructure.Pose2DOuterClass.Pose2D build() {
         ubii.dataStructure.Pose2DOuterClass.Pose2D result = buildPartial();
         if (!result.isInitialized()) {
@@ -541,7 +484,6 @@ public final class Pose2DOuterClass {
         return result;
       }
 
-      @java.lang.Override
       public ubii.dataStructure.Pose2DOuterClass.Pose2D buildPartial() {
         ubii.dataStructure.Pose2DOuterClass.Pose2D result = new ubii.dataStructure.Pose2DOuterClass.Pose2D(this);
         if (positionBuilder_ == null) {
@@ -564,39 +506,32 @@ public final class Pose2DOuterClass {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Pose2DOuterClass.Pose2D) {
           return mergeFrom((ubii.dataStructure.Pose2DOuterClass.Pose2D)other);
@@ -624,17 +559,14 @@ public final class Pose2DOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -668,19 +600,17 @@ public final class Pose2DOuterClass {
       }
 
 
-      private ubii.dataStructure.Vector2OuterClass.Vector2 position_;
+      private ubii.dataStructure.Vector2OuterClass.Vector2 position_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> positionBuilder_;
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
-       * @return Whether the position field is set.
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public boolean hasPosition() {
         return positionBuilder_ != null || position_ != null;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
-       * @return The position.
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2 getPosition() {
         if (positionBuilder_ == null) {
@@ -690,7 +620,7 @@ public final class Pose2DOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public Builder setPosition(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
         if (positionBuilder_ == null) {
@@ -706,7 +636,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public Builder setPosition(
           ubii.dataStructure.Vector2OuterClass.Vector2.Builder builderForValue) {
@@ -720,7 +650,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public Builder mergePosition(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
         if (positionBuilder_ == null) {
@@ -738,7 +668,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public Builder clearPosition() {
         if (positionBuilder_ == null) {
@@ -752,7 +682,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2.Builder getPositionBuilder() {
         
@@ -760,7 +690,7 @@ public final class Pose2DOuterClass {
         return getPositionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getPositionOrBuilder() {
         if (positionBuilder_ != null) {
@@ -771,7 +701,7 @@ public final class Pose2DOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 position = 1;</code>
+       * <code>optional .ubii.dataStructure.Vector2 position = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> 
@@ -790,15 +720,7 @@ public final class Pose2DOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> directionBuilder_;
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
-       * @return Whether the direction field is set.
-       */
-      public boolean hasDirection() {
-        return orientationCase_ == 2;
-      }
-      /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
-       * @return The direction.
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2 getDirection() {
         if (directionBuilder_ == null) {
@@ -814,7 +736,7 @@ public final class Pose2DOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       public Builder setDirection(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
         if (directionBuilder_ == null) {
@@ -830,7 +752,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       public Builder setDirection(
           ubii.dataStructure.Vector2OuterClass.Vector2.Builder builderForValue) {
@@ -844,7 +766,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       public Builder mergeDirection(ubii.dataStructure.Vector2OuterClass.Vector2 value) {
         if (directionBuilder_ == null) {
@@ -866,7 +788,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       public Builder clearDirection() {
         if (directionBuilder_ == null) {
@@ -885,13 +807,13 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2.Builder getDirectionBuilder() {
         return getDirectionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getDirectionOrBuilder() {
         if ((orientationCase_ == 2) && (directionBuilder_ != null)) {
@@ -904,7 +826,7 @@ public final class Pose2DOuterClass {
         }
       }
       /**
-       * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
+       * <code>optional .ubii.dataStructure.Vector2 direction = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector2OuterClass.Vector2, ubii.dataStructure.Vector2OuterClass.Vector2.Builder, ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder> 
@@ -926,8 +848,7 @@ public final class Pose2DOuterClass {
       }
 
       /**
-       * <code>float angle = 3;</code>
-       * @return The angle.
+       * <code>optional float angle = 3;</code>
        */
       public float getAngle() {
         if (orientationCase_ == 3) {
@@ -936,9 +857,7 @@ public final class Pose2DOuterClass {
         return 0F;
       }
       /**
-       * <code>float angle = 3;</code>
-       * @param value The angle to set.
-       * @return This builder for chaining.
+       * <code>optional float angle = 3;</code>
        */
       public Builder setAngle(float value) {
         orientationCase_ = 3;
@@ -947,8 +866,7 @@ public final class Pose2DOuterClass {
         return this;
       }
       /**
-       * <code>float angle = 3;</code>
-       * @return This builder for chaining.
+       * <code>optional float angle = 3;</code>
        */
       public Builder clearAngle() {
         if (orientationCase_ == 3) {
@@ -958,16 +876,14 @@ public final class Pose2DOuterClass {
         }
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -986,12 +902,11 @@ public final class Pose2DOuterClass {
 
     private static final com.google.protobuf.Parser<Pose2D>
         PARSER = new com.google.protobuf.AbstractParser<Pose2D>() {
-      @java.lang.Override
       public Pose2D parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Pose2D(input, extensionRegistry);
+          return new Pose2D(input, extensionRegistry);
       }
     };
 
@@ -1004,7 +919,6 @@ public final class Pose2DOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.dataStructure.Pose2DOuterClass.Pose2D getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1034,11 +948,19 @@ public final class Pose2DOuterClass {
       "Vector2H\000\022\017\n\005angle\030\003 \001(\002H\000B\r\n\013orientatio" +
       "nb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.dataStructure.Vector2OuterClass.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_dataStructure_Pose2D_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Pose2D_fieldAccessorTable = new

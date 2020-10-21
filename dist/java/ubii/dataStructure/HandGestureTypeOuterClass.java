@@ -81,8 +81,6 @@ public final class HandGestureTypeOuterClass {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -90,10 +88,6 @@ public final class HandGestureTypeOuterClass {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static HandGestureType forNumber(int value) {
       switch (value) {
         case 0: return REST;
@@ -169,10 +163,18 @@ public final class HandGestureTypeOuterClass {
       "\n\016FINGERS_SPREAD\020\001\022\013\n\007WAVE_IN\020\002\022\014\n\010WAVE_" +
       "OUT\020\003\022\010\n\004FIST\020\004\022\016\n\nDOUBLE_TAP\020\005b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

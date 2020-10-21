@@ -19,224 +19,138 @@ public final class ServiceRequestOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string topic = 1;</code>
-     * @return The topic.
+     * <code>optional string topic = 1;</code>
      */
     java.lang.String getTopic();
     /**
-     * <code>string topic = 1;</code>
-     * @return The bytes for topic.
+     * <code>optional string topic = 1;</code>
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
-     * <code>.ubii.clients.Client client = 2;</code>
-     * @return Whether the client field is set.
-     */
-    boolean hasClient();
-    /**
-     * <code>.ubii.clients.Client client = 2;</code>
-     * @return The client.
+     * <code>optional .ubii.clients.Client client = 2;</code>
      */
     ubii.clients.ClientOuterClass.Client getClient();
     /**
-     * <code>.ubii.clients.Client client = 2;</code>
+     * <code>optional .ubii.clients.Client client = 2;</code>
      */
     ubii.clients.ClientOuterClass.ClientOrBuilder getClientOrBuilder();
 
     /**
-     * <code>.ubii.devices.Device device = 3;</code>
-     * @return Whether the device field is set.
-     */
-    boolean hasDevice();
-    /**
-     * <code>.ubii.devices.Device device = 3;</code>
-     * @return The device.
+     * <code>optional .ubii.devices.Device device = 3;</code>
      */
     ubii.devices.DeviceOuterClass.Device getDevice();
     /**
-     * <code>.ubii.devices.Device device = 3;</code>
+     * <code>optional .ubii.devices.Device device = 3;</code>
      */
     ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder();
 
     /**
-     * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return Whether the topicSubscription field is set.
-     */
-    boolean hasTopicSubscription();
-    /**
-     * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return The topicSubscription.
+     * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
      */
     ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription getTopicSubscription();
     /**
-     * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+     * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
      */
     ubii.services.request.TopicSubscriptionOuterClass.TopicSubscriptionOrBuilder getTopicSubscriptionOrBuilder();
 
     /**
-     * <code>.ubii.sessions.Session session = 5;</code>
-     * @return Whether the session field is set.
-     */
-    boolean hasSession();
-    /**
-     * <code>.ubii.sessions.Session session = 5;</code>
-     * @return The session.
+     * <code>optional .ubii.sessions.Session session = 5;</code>
      */
     ubii.sessions.SessionOuterClass.Session getSession();
     /**
-     * <code>.ubii.sessions.Session session = 5;</code>
+     * <code>optional .ubii.sessions.Session session = 5;</code>
      */
     ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder();
 
     /**
-     * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return Whether the sessionList field is set.
-     */
-    boolean hasSessionList();
-    /**
-     * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return The sessionList.
+     * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
      */
     ubii.sessions.SessionOuterClass.SessionList getSessionList();
     /**
-     * <code>.ubii.sessions.SessionList session_list = 6;</code>
+     * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
      */
     ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder();
 
     /**
-     * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return Whether the processingModule field is set.
-     */
-    boolean hasProcessingModule();
-    /**
-     * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return The processingModule.
+     * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule();
     /**
-     * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+     * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder();
 
     /**
-     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return Whether the processingModuleList field is set.
-     */
-    boolean hasProcessingModuleList();
-    /**
-     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return The processingModuleList.
+     * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList();
     /**
-     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+     * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder();
 
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return Whether the topicMux field is set.
-     */
-    boolean hasTopicMux();
-    /**
-     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return The topicMux.
+     * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
      */
     ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux();
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
      */
     ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder();
 
     /**
-     * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return Whether the topicMuxList field is set.
-     */
-    boolean hasTopicMuxList();
-    /**
-     * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return The topicMuxList.
+     * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
      */
     ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList();
     /**
-     * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+     * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
      */
     ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder getTopicMuxListOrBuilder();
 
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return Whether the topicDemux field is set.
-     */
-    boolean hasTopicDemux();
-    /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return The topicDemux.
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux();
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder();
 
     /**
-     * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return Whether the topicDemuxList field is set.
-     */
-    boolean hasTopicDemuxList();
-    /**
-     * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return The topicDemuxList.
+     * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList();
     /**
-     * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+     * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder getTopicDemuxListOrBuilder();
 
     /**
-     * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return Whether the clientList field is set.
-     */
-    boolean hasClientList();
-    /**
-     * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return The clientList.
+     * <code>optional .ubii.clients.ClientList client_list = 13;</code>
      */
     ubii.clients.ClientOuterClass.ClientList getClientList();
     /**
-     * <code>.ubii.clients.ClientList client_list = 13;</code>
+     * <code>optional .ubii.clients.ClientList client_list = 13;</code>
      */
     ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder();
 
     /**
-     * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return Whether the deviceList field is set.
-     */
-    boolean hasDeviceList();
-    /**
-     * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return The deviceList.
+     * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
      */
     ubii.devices.DeviceOuterClass.DeviceList getDeviceList();
     /**
-     * <code>.ubii.devices.DeviceList device_list = 14;</code>
+     * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
      */
     ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder();
 
     /**
-     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return Whether the lockstepProcessingRequest field is set.
-     */
-    boolean hasLockstepProcessingRequest();
-    /**
-     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return The lockstepProcessingRequest.
+     * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
      */
     ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest();
     /**
-     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+     * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
      */
     ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder getLockstepProcessingRequestOrBuilder();
 
@@ -249,7 +163,6 @@ public final class ServiceRequestOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.services.ServiceRequest)
       ServiceRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ServiceRequest.newBuilder() to construct.
     private ServiceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -259,27 +172,16 @@ public final class ServiceRequestOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ServiceRequest();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ServiceRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -288,6 +190,12 @@ public final class ServiceRequestOuterClass {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -490,13 +398,6 @@ public final class ServiceRequestOuterClass {
               typeCase_ = 15;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -505,7 +406,6 @@ public final class ServiceRequestOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -514,7 +414,6 @@ public final class ServiceRequestOuterClass {
       return ubii.services.ServiceRequestOuterClass.internal_static_ubii_services_ServiceRequest_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.services.ServiceRequestOuterClass.internal_static_ubii_services_ServiceRequest_fieldAccessorTable
@@ -525,8 +424,7 @@ public final class ServiceRequestOuterClass {
     private int typeCase_ = 0;
     private java.lang.Object type_;
     public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       CLIENT(2),
       DEVICE(3),
       TOPIC_SUBSCRIPTION(4),
@@ -547,8 +445,6 @@ public final class ServiceRequestOuterClass {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -590,8 +486,7 @@ public final class ServiceRequestOuterClass {
     public static final int TOPIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object topic_;
     /**
-     * <code>string topic = 1;</code>
-     * @return The topic.
+     * <code>optional string topic = 1;</code>
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -606,8 +501,7 @@ public final class ServiceRequestOuterClass {
       }
     }
     /**
-     * <code>string topic = 1;</code>
-     * @return The bytes for topic.
+     * <code>optional string topic = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -625,15 +519,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int CLIENT_FIELD_NUMBER = 2;
     /**
-     * <code>.ubii.clients.Client client = 2;</code>
-     * @return Whether the client field is set.
-     */
-    public boolean hasClient() {
-      return typeCase_ == 2;
-    }
-    /**
-     * <code>.ubii.clients.Client client = 2;</code>
-     * @return The client.
+     * <code>optional .ubii.clients.Client client = 2;</code>
      */
     public ubii.clients.ClientOuterClass.Client getClient() {
       if (typeCase_ == 2) {
@@ -642,7 +528,7 @@ public final class ServiceRequestOuterClass {
       return ubii.clients.ClientOuterClass.Client.getDefaultInstance();
     }
     /**
-     * <code>.ubii.clients.Client client = 2;</code>
+     * <code>optional .ubii.clients.Client client = 2;</code>
      */
     public ubii.clients.ClientOuterClass.ClientOrBuilder getClientOrBuilder() {
       if (typeCase_ == 2) {
@@ -653,15 +539,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int DEVICE_FIELD_NUMBER = 3;
     /**
-     * <code>.ubii.devices.Device device = 3;</code>
-     * @return Whether the device field is set.
-     */
-    public boolean hasDevice() {
-      return typeCase_ == 3;
-    }
-    /**
-     * <code>.ubii.devices.Device device = 3;</code>
-     * @return The device.
+     * <code>optional .ubii.devices.Device device = 3;</code>
      */
     public ubii.devices.DeviceOuterClass.Device getDevice() {
       if (typeCase_ == 3) {
@@ -670,7 +548,7 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.DeviceOuterClass.Device.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.Device device = 3;</code>
+     * <code>optional .ubii.devices.Device device = 3;</code>
      */
     public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
       if (typeCase_ == 3) {
@@ -681,15 +559,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int TOPIC_SUBSCRIPTION_FIELD_NUMBER = 4;
     /**
-     * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return Whether the topicSubscription field is set.
-     */
-    public boolean hasTopicSubscription() {
-      return typeCase_ == 4;
-    }
-    /**
-     * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return The topicSubscription.
+     * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
      */
     public ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription getTopicSubscription() {
       if (typeCase_ == 4) {
@@ -698,7 +568,7 @@ public final class ServiceRequestOuterClass {
       return ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription.getDefaultInstance();
     }
     /**
-     * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+     * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
      */
     public ubii.services.request.TopicSubscriptionOuterClass.TopicSubscriptionOrBuilder getTopicSubscriptionOrBuilder() {
       if (typeCase_ == 4) {
@@ -709,15 +579,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int SESSION_FIELD_NUMBER = 5;
     /**
-     * <code>.ubii.sessions.Session session = 5;</code>
-     * @return Whether the session field is set.
-     */
-    public boolean hasSession() {
-      return typeCase_ == 5;
-    }
-    /**
-     * <code>.ubii.sessions.Session session = 5;</code>
-     * @return The session.
+     * <code>optional .ubii.sessions.Session session = 5;</code>
      */
     public ubii.sessions.SessionOuterClass.Session getSession() {
       if (typeCase_ == 5) {
@@ -726,7 +588,7 @@ public final class ServiceRequestOuterClass {
       return ubii.sessions.SessionOuterClass.Session.getDefaultInstance();
     }
     /**
-     * <code>.ubii.sessions.Session session = 5;</code>
+     * <code>optional .ubii.sessions.Session session = 5;</code>
      */
     public ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder() {
       if (typeCase_ == 5) {
@@ -737,15 +599,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int SESSION_LIST_FIELD_NUMBER = 6;
     /**
-     * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return Whether the sessionList field is set.
-     */
-    public boolean hasSessionList() {
-      return typeCase_ == 6;
-    }
-    /**
-     * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return The sessionList.
+     * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
      */
     public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
       if (typeCase_ == 6) {
@@ -754,7 +608,7 @@ public final class ServiceRequestOuterClass {
       return ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.sessions.SessionList session_list = 6;</code>
+     * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
      */
     public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
       if (typeCase_ == 6) {
@@ -765,15 +619,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int PROCESSING_MODULE_FIELD_NUMBER = 7;
     /**
-     * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return Whether the processingModule field is set.
-     */
-    public boolean hasProcessingModule() {
-      return typeCase_ == 7;
-    }
-    /**
-     * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return The processingModule.
+     * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
       if (typeCase_ == 7) {
@@ -782,7 +628,7 @@ public final class ServiceRequestOuterClass {
       return ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance();
     }
     /**
-     * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+     * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder() {
       if (typeCase_ == 7) {
@@ -793,15 +639,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int PROCESSING_MODULE_LIST_FIELD_NUMBER = 8;
     /**
-     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return Whether the processingModuleList field is set.
-     */
-    public boolean hasProcessingModuleList() {
-      return typeCase_ == 8;
-    }
-    /**
-     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return The processingModuleList.
+     * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
       if (typeCase_ == 8) {
@@ -810,7 +648,7 @@ public final class ServiceRequestOuterClass {
       return ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+     * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
       if (typeCase_ == 8) {
@@ -821,15 +659,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int TOPIC_MUX_FIELD_NUMBER = 9;
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return Whether the topicMux field is set.
-     */
-    public boolean hasTopicMux() {
-      return typeCase_ == 9;
-    }
-    /**
-     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return The topicMux.
+     * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
      */
     public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
       if (typeCase_ == 9) {
@@ -838,7 +668,7 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+     * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
      */
     public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
       if (typeCase_ == 9) {
@@ -849,15 +679,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int TOPIC_MUX_LIST_FIELD_NUMBER = 10;
     /**
-     * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return Whether the topicMuxList field is set.
-     */
-    public boolean hasTopicMuxList() {
-      return typeCase_ == 10;
-    }
-    /**
-     * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return The topicMuxList.
+     * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
      */
     public ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList() {
       if (typeCase_ == 10) {
@@ -866,7 +688,7 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.TopicMuxOuterClass.TopicMuxList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+     * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
      */
     public ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder getTopicMuxListOrBuilder() {
       if (typeCase_ == 10) {
@@ -877,15 +699,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int TOPIC_DEMUX_FIELD_NUMBER = 11;
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return Whether the topicDemux field is set.
-     */
-    public boolean hasTopicDemux() {
-      return typeCase_ == 11;
-    }
-    /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return The topicDemux.
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
       if (typeCase_ == 11) {
@@ -894,7 +708,7 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
       if (typeCase_ == 11) {
@@ -905,15 +719,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int TOPIC_DEMUX_LIST_FIELD_NUMBER = 12;
     /**
-     * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return Whether the topicDemuxList field is set.
-     */
-    public boolean hasTopicDemuxList() {
-      return typeCase_ == 12;
-    }
-    /**
-     * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return The topicDemuxList.
+     * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList() {
       if (typeCase_ == 12) {
@@ -922,7 +728,7 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.TopicDemuxOuterClass.TopicDemuxList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+     * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder getTopicDemuxListOrBuilder() {
       if (typeCase_ == 12) {
@@ -933,15 +739,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int CLIENT_LIST_FIELD_NUMBER = 13;
     /**
-     * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return Whether the clientList field is set.
-     */
-    public boolean hasClientList() {
-      return typeCase_ == 13;
-    }
-    /**
-     * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return The clientList.
+     * <code>optional .ubii.clients.ClientList client_list = 13;</code>
      */
     public ubii.clients.ClientOuterClass.ClientList getClientList() {
       if (typeCase_ == 13) {
@@ -950,7 +748,7 @@ public final class ServiceRequestOuterClass {
       return ubii.clients.ClientOuterClass.ClientList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.clients.ClientList client_list = 13;</code>
+     * <code>optional .ubii.clients.ClientList client_list = 13;</code>
      */
     public ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder() {
       if (typeCase_ == 13) {
@@ -961,15 +759,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int DEVICE_LIST_FIELD_NUMBER = 14;
     /**
-     * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return Whether the deviceList field is set.
-     */
-    public boolean hasDeviceList() {
-      return typeCase_ == 14;
-    }
-    /**
-     * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return The deviceList.
+     * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
      */
     public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
       if (typeCase_ == 14) {
@@ -978,7 +768,7 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.DeviceList device_list = 14;</code>
+     * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
      */
     public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
       if (typeCase_ == 14) {
@@ -989,15 +779,7 @@ public final class ServiceRequestOuterClass {
 
     public static final int LOCKSTEP_PROCESSING_REQUEST_FIELD_NUMBER = 15;
     /**
-     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return Whether the lockstepProcessingRequest field is set.
-     */
-    public boolean hasLockstepProcessingRequest() {
-      return typeCase_ == 15;
-    }
-    /**
-     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return The lockstepProcessingRequest.
+     * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
      */
     public ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest() {
       if (typeCase_ == 15) {
@@ -1006,7 +788,7 @@ public final class ServiceRequestOuterClass {
       return ubii.processing.LockstepProcessing.LockstepProcessingRequest.getDefaultInstance();
     }
     /**
-     * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+     * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
      */
     public ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder getLockstepProcessingRequestOrBuilder() {
       if (typeCase_ == 15) {
@@ -1016,7 +798,6 @@ public final class ServiceRequestOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1026,7 +807,6 @@ public final class ServiceRequestOuterClass {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTopicBytes().isEmpty()) {
@@ -1074,10 +854,8 @@ public final class ServiceRequestOuterClass {
       if (typeCase_ == 15) {
         output.writeMessage(15, (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_);
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1142,11 +920,11 @@ public final class ServiceRequestOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, (ubii.processing.LockstepProcessing.LockstepProcessingRequest) type_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1157,71 +935,73 @@ public final class ServiceRequestOuterClass {
       }
       ubii.services.ServiceRequestOuterClass.ServiceRequest other = (ubii.services.ServiceRequestOuterClass.ServiceRequest) obj;
 
-      if (!getTopic()
-          .equals(other.getTopic())) return false;
-      if (!getTypeCase().equals(other.getTypeCase())) return false;
+      boolean result = true;
+      result = result && getTopic()
+          .equals(other.getTopic());
+      result = result && getTypeCase().equals(
+          other.getTypeCase());
+      if (!result) return false;
       switch (typeCase_) {
         case 2:
-          if (!getClient()
-              .equals(other.getClient())) return false;
+          result = result && getClient()
+              .equals(other.getClient());
           break;
         case 3:
-          if (!getDevice()
-              .equals(other.getDevice())) return false;
+          result = result && getDevice()
+              .equals(other.getDevice());
           break;
         case 4:
-          if (!getTopicSubscription()
-              .equals(other.getTopicSubscription())) return false;
+          result = result && getTopicSubscription()
+              .equals(other.getTopicSubscription());
           break;
         case 5:
-          if (!getSession()
-              .equals(other.getSession())) return false;
+          result = result && getSession()
+              .equals(other.getSession());
           break;
         case 6:
-          if (!getSessionList()
-              .equals(other.getSessionList())) return false;
+          result = result && getSessionList()
+              .equals(other.getSessionList());
           break;
         case 7:
-          if (!getProcessingModule()
-              .equals(other.getProcessingModule())) return false;
+          result = result && getProcessingModule()
+              .equals(other.getProcessingModule());
           break;
         case 8:
-          if (!getProcessingModuleList()
-              .equals(other.getProcessingModuleList())) return false;
+          result = result && getProcessingModuleList()
+              .equals(other.getProcessingModuleList());
           break;
         case 9:
-          if (!getTopicMux()
-              .equals(other.getTopicMux())) return false;
+          result = result && getTopicMux()
+              .equals(other.getTopicMux());
           break;
         case 10:
-          if (!getTopicMuxList()
-              .equals(other.getTopicMuxList())) return false;
+          result = result && getTopicMuxList()
+              .equals(other.getTopicMuxList());
           break;
         case 11:
-          if (!getTopicDemux()
-              .equals(other.getTopicDemux())) return false;
+          result = result && getTopicDemux()
+              .equals(other.getTopicDemux());
           break;
         case 12:
-          if (!getTopicDemuxList()
-              .equals(other.getTopicDemuxList())) return false;
+          result = result && getTopicDemuxList()
+              .equals(other.getTopicDemuxList());
           break;
         case 13:
-          if (!getClientList()
-              .equals(other.getClientList())) return false;
+          result = result && getClientList()
+              .equals(other.getClientList());
           break;
         case 14:
-          if (!getDeviceList()
-              .equals(other.getDeviceList())) return false;
+          result = result && getDeviceList()
+              .equals(other.getDeviceList());
           break;
         case 15:
-          if (!getLockstepProcessingRequest()
-              .equals(other.getLockstepProcessingRequest())) return false;
+          result = result && getLockstepProcessingRequest()
+              .equals(other.getLockstepProcessingRequest());
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      return result;
     }
 
     @java.lang.Override
@@ -1230,7 +1010,7 @@ public final class ServiceRequestOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + TOPIC_FIELD_NUMBER;
       hash = (53 * hash) + getTopic().hashCode();
       switch (typeCase_) {
@@ -1299,17 +1079,6 @@ public final class ServiceRequestOuterClass {
     }
 
     public static ubii.services.ServiceRequestOuterClass.ServiceRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.services.ServiceRequestOuterClass.ServiceRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ubii.services.ServiceRequestOuterClass.ServiceRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -1368,7 +1137,6 @@ public final class ServiceRequestOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1376,7 +1144,6 @@ public final class ServiceRequestOuterClass {
     public static Builder newBuilder(ubii.services.ServiceRequestOuterClass.ServiceRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1400,7 +1167,6 @@ public final class ServiceRequestOuterClass {
         return ubii.services.ServiceRequestOuterClass.internal_static_ubii_services_ServiceRequest_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.services.ServiceRequestOuterClass.internal_static_ubii_services_ServiceRequest_fieldAccessorTable
@@ -1423,7 +1189,6 @@ public final class ServiceRequestOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         topic_ = "";
@@ -1433,18 +1198,15 @@ public final class ServiceRequestOuterClass {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.services.ServiceRequestOuterClass.internal_static_ubii_services_ServiceRequest_descriptor;
       }
 
-      @java.lang.Override
       public ubii.services.ServiceRequestOuterClass.ServiceRequest getDefaultInstanceForType() {
         return ubii.services.ServiceRequestOuterClass.ServiceRequest.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.services.ServiceRequestOuterClass.ServiceRequest build() {
         ubii.services.ServiceRequestOuterClass.ServiceRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1453,7 +1215,6 @@ public final class ServiceRequestOuterClass {
         return result;
       }
 
-      @java.lang.Override
       public ubii.services.ServiceRequestOuterClass.ServiceRequest buildPartial() {
         ubii.services.ServiceRequestOuterClass.ServiceRequest result = new ubii.services.ServiceRequestOuterClass.ServiceRequest(this);
         result.topic_ = topic_;
@@ -1560,39 +1321,32 @@ public final class ServiceRequestOuterClass {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.services.ServiceRequestOuterClass.ServiceRequest) {
           return mergeFrom((ubii.services.ServiceRequestOuterClass.ServiceRequest)other);
@@ -1669,17 +1423,14 @@ public final class ServiceRequestOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1715,8 +1466,7 @@ public final class ServiceRequestOuterClass {
 
       private java.lang.Object topic_ = "";
       /**
-       * <code>string topic = 1;</code>
-       * @return The topic.
+       * <code>optional string topic = 1;</code>
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -1731,8 +1481,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>string topic = 1;</code>
-       * @return The bytes for topic.
+       * <code>optional string topic = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -1748,9 +1497,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>string topic = 1;</code>
-       * @param value The topic to set.
-       * @return This builder for chaining.
+       * <code>optional string topic = 1;</code>
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -1763,8 +1510,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>string topic = 1;</code>
-       * @return This builder for chaining.
+       * <code>optional string topic = 1;</code>
        */
       public Builder clearTopic() {
         
@@ -1773,9 +1519,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>string topic = 1;</code>
-       * @param value The bytes for topic to set.
-       * @return This builder for chaining.
+       * <code>optional string topic = 1;</code>
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -1792,15 +1536,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.clients.ClientOuterClass.Client, ubii.clients.ClientOuterClass.Client.Builder, ubii.clients.ClientOuterClass.ClientOrBuilder> clientBuilder_;
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
-       * @return Whether the client field is set.
-       */
-      public boolean hasClient() {
-        return typeCase_ == 2;
-      }
-      /**
-       * <code>.ubii.clients.Client client = 2;</code>
-       * @return The client.
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       public ubii.clients.ClientOuterClass.Client getClient() {
         if (clientBuilder_ == null) {
@@ -1816,7 +1552,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       public Builder setClient(ubii.clients.ClientOuterClass.Client value) {
         if (clientBuilder_ == null) {
@@ -1832,7 +1568,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       public Builder setClient(
           ubii.clients.ClientOuterClass.Client.Builder builderForValue) {
@@ -1846,7 +1582,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       public Builder mergeClient(ubii.clients.ClientOuterClass.Client value) {
         if (clientBuilder_ == null) {
@@ -1868,7 +1604,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       public Builder clearClient() {
         if (clientBuilder_ == null) {
@@ -1887,13 +1623,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       public ubii.clients.ClientOuterClass.Client.Builder getClientBuilder() {
         return getClientFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       public ubii.clients.ClientOuterClass.ClientOrBuilder getClientOrBuilder() {
         if ((typeCase_ == 2) && (clientBuilder_ != null)) {
@@ -1906,7 +1642,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.clients.Client client = 2;</code>
+       * <code>optional .ubii.clients.Client client = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.clients.ClientOuterClass.Client, ubii.clients.ClientOuterClass.Client.Builder, ubii.clients.ClientOuterClass.ClientOrBuilder> 
@@ -1930,15 +1666,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder> deviceBuilder_;
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
-       * @return Whether the device field is set.
-       */
-      public boolean hasDevice() {
-        return typeCase_ == 3;
-      }
-      /**
-       * <code>.ubii.devices.Device device = 3;</code>
-       * @return The device.
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       public ubii.devices.DeviceOuterClass.Device getDevice() {
         if (deviceBuilder_ == null) {
@@ -1954,7 +1682,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       public Builder setDevice(ubii.devices.DeviceOuterClass.Device value) {
         if (deviceBuilder_ == null) {
@@ -1970,7 +1698,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       public Builder setDevice(
           ubii.devices.DeviceOuterClass.Device.Builder builderForValue) {
@@ -1984,7 +1712,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       public Builder mergeDevice(ubii.devices.DeviceOuterClass.Device value) {
         if (deviceBuilder_ == null) {
@@ -2006,7 +1734,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       public Builder clearDevice() {
         if (deviceBuilder_ == null) {
@@ -2025,13 +1753,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       public ubii.devices.DeviceOuterClass.Device.Builder getDeviceBuilder() {
         return getDeviceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
         if ((typeCase_ == 3) && (deviceBuilder_ != null)) {
@@ -2044,7 +1772,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.Device device = 3;</code>
+       * <code>optional .ubii.devices.Device device = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder> 
@@ -2068,15 +1796,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription, ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription.Builder, ubii.services.request.TopicSubscriptionOuterClass.TopicSubscriptionOrBuilder> topicSubscriptionBuilder_;
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-       * @return Whether the topicSubscription field is set.
-       */
-      public boolean hasTopicSubscription() {
-        return typeCase_ == 4;
-      }
-      /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-       * @return The topicSubscription.
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       public ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription getTopicSubscription() {
         if (topicSubscriptionBuilder_ == null) {
@@ -2092,7 +1812,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       public Builder setTopicSubscription(ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription value) {
         if (topicSubscriptionBuilder_ == null) {
@@ -2108,7 +1828,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       public Builder setTopicSubscription(
           ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription.Builder builderForValue) {
@@ -2122,7 +1842,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       public Builder mergeTopicSubscription(ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription value) {
         if (topicSubscriptionBuilder_ == null) {
@@ -2144,7 +1864,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       public Builder clearTopicSubscription() {
         if (topicSubscriptionBuilder_ == null) {
@@ -2163,13 +1883,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       public ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription.Builder getTopicSubscriptionBuilder() {
         return getTopicSubscriptionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       public ubii.services.request.TopicSubscriptionOuterClass.TopicSubscriptionOrBuilder getTopicSubscriptionOrBuilder() {
         if ((typeCase_ == 4) && (topicSubscriptionBuilder_ != null)) {
@@ -2182,7 +1902,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
+       * <code>optional .ubii.services.request.TopicSubscription topic_subscription = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription, ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription.Builder, ubii.services.request.TopicSubscriptionOuterClass.TopicSubscriptionOrBuilder> 
@@ -2206,15 +1926,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.sessions.SessionOuterClass.Session, ubii.sessions.SessionOuterClass.Session.Builder, ubii.sessions.SessionOuterClass.SessionOrBuilder> sessionBuilder_;
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
-       * @return Whether the session field is set.
-       */
-      public boolean hasSession() {
-        return typeCase_ == 5;
-      }
-      /**
-       * <code>.ubii.sessions.Session session = 5;</code>
-       * @return The session.
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       public ubii.sessions.SessionOuterClass.Session getSession() {
         if (sessionBuilder_ == null) {
@@ -2230,7 +1942,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       public Builder setSession(ubii.sessions.SessionOuterClass.Session value) {
         if (sessionBuilder_ == null) {
@@ -2246,7 +1958,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       public Builder setSession(
           ubii.sessions.SessionOuterClass.Session.Builder builderForValue) {
@@ -2260,7 +1972,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       public Builder mergeSession(ubii.sessions.SessionOuterClass.Session value) {
         if (sessionBuilder_ == null) {
@@ -2282,7 +1994,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       public Builder clearSession() {
         if (sessionBuilder_ == null) {
@@ -2301,13 +2013,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       public ubii.sessions.SessionOuterClass.Session.Builder getSessionBuilder() {
         return getSessionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       public ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder() {
         if ((typeCase_ == 5) && (sessionBuilder_ != null)) {
@@ -2320,7 +2032,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.sessions.Session session = 5;</code>
+       * <code>optional .ubii.sessions.Session session = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.sessions.SessionOuterClass.Session, ubii.sessions.SessionOuterClass.Session.Builder, ubii.sessions.SessionOuterClass.SessionOrBuilder> 
@@ -2344,15 +2056,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.sessions.SessionOuterClass.SessionList, ubii.sessions.SessionOuterClass.SessionList.Builder, ubii.sessions.SessionOuterClass.SessionListOrBuilder> sessionListBuilder_;
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
-       * @return Whether the sessionList field is set.
-       */
-      public boolean hasSessionList() {
-        return typeCase_ == 6;
-      }
-      /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
-       * @return The sessionList.
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
         if (sessionListBuilder_ == null) {
@@ -2368,7 +2072,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       public Builder setSessionList(ubii.sessions.SessionOuterClass.SessionList value) {
         if (sessionListBuilder_ == null) {
@@ -2384,7 +2088,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       public Builder setSessionList(
           ubii.sessions.SessionOuterClass.SessionList.Builder builderForValue) {
@@ -2398,7 +2102,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       public Builder mergeSessionList(ubii.sessions.SessionOuterClass.SessionList value) {
         if (sessionListBuilder_ == null) {
@@ -2420,7 +2124,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       public Builder clearSessionList() {
         if (sessionListBuilder_ == null) {
@@ -2439,13 +2143,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       public ubii.sessions.SessionOuterClass.SessionList.Builder getSessionListBuilder() {
         return getSessionListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
         if ((typeCase_ == 6) && (sessionListBuilder_ != null)) {
@@ -2458,7 +2162,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.sessions.SessionList session_list = 6;</code>
+       * <code>optional .ubii.sessions.SessionList session_list = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.sessions.SessionOuterClass.SessionList, ubii.sessions.SessionOuterClass.SessionList.Builder, ubii.sessions.SessionOuterClass.SessionListOrBuilder> 
@@ -2482,15 +2186,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> processingModuleBuilder_;
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-       * @return Whether the processingModule field is set.
-       */
-      public boolean hasProcessingModule() {
-        return typeCase_ == 7;
-      }
-      /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-       * @return The processingModule.
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
         if (processingModuleBuilder_ == null) {
@@ -2506,7 +2202,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       public Builder setProcessingModule(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
         if (processingModuleBuilder_ == null) {
@@ -2522,7 +2218,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       public Builder setProcessingModule(
           ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
@@ -2536,7 +2232,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       public Builder mergeProcessingModule(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
         if (processingModuleBuilder_ == null) {
@@ -2558,7 +2254,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       public Builder clearProcessingModule() {
         if (processingModuleBuilder_ == null) {
@@ -2577,13 +2273,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder getProcessingModuleBuilder() {
         return getProcessingModuleFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModuleOrBuilder() {
         if ((typeCase_ == 7) && (processingModuleBuilder_ != null)) {
@@ -2596,7 +2292,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule processing_module = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
@@ -2620,15 +2316,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder> processingModuleListBuilder_;
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-       * @return Whether the processingModuleList field is set.
-       */
-      public boolean hasProcessingModuleList() {
-        return typeCase_ == 8;
-      }
-      /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-       * @return The processingModuleList.
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
         if (processingModuleListBuilder_ == null) {
@@ -2644,7 +2332,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       public Builder setProcessingModuleList(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList value) {
         if (processingModuleListBuilder_ == null) {
@@ -2660,7 +2348,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       public Builder setProcessingModuleList(
           ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder builderForValue) {
@@ -2674,7 +2362,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       public Builder mergeProcessingModuleList(ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList value) {
         if (processingModuleListBuilder_ == null) {
@@ -2696,7 +2384,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       public Builder clearProcessingModuleList() {
         if (processingModuleListBuilder_ == null) {
@@ -2715,13 +2403,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder getProcessingModuleListBuilder() {
         return getProcessingModuleListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder getProcessingModuleListOrBuilder() {
         if ((typeCase_ == 8) && (processingModuleListBuilder_ != null)) {
@@ -2734,7 +2422,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
+       * <code>optional .ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder> 
@@ -2758,15 +2446,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> topicMuxBuilder_;
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-       * @return Whether the topicMux field is set.
-       */
-      public boolean hasTopicMux() {
-        return typeCase_ == 9;
-      }
-      /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-       * @return The topicMux.
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
         if (topicMuxBuilder_ == null) {
@@ -2782,7 +2462,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       public Builder setTopicMux(ubii.devices.TopicMuxOuterClass.TopicMux value) {
         if (topicMuxBuilder_ == null) {
@@ -2798,7 +2478,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       public Builder setTopicMux(
           ubii.devices.TopicMuxOuterClass.TopicMux.Builder builderForValue) {
@@ -2812,7 +2492,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       public Builder mergeTopicMux(ubii.devices.TopicMuxOuterClass.TopicMux value) {
         if (topicMuxBuilder_ == null) {
@@ -2834,7 +2514,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       public Builder clearTopicMux() {
         if (topicMuxBuilder_ == null) {
@@ -2853,13 +2533,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMux.Builder getTopicMuxBuilder() {
         return getTopicMuxFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
         if ((typeCase_ == 9) && (topicMuxBuilder_ != null)) {
@@ -2872,7 +2552,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> 
@@ -2896,15 +2576,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicMuxOuterClass.TopicMuxList, ubii.devices.TopicMuxOuterClass.TopicMuxList.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder> topicMuxListBuilder_;
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-       * @return Whether the topicMuxList field is set.
-       */
-      public boolean hasTopicMuxList() {
-        return typeCase_ == 10;
-      }
-      /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-       * @return The topicMuxList.
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList() {
         if (topicMuxListBuilder_ == null) {
@@ -2920,7 +2592,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       public Builder setTopicMuxList(ubii.devices.TopicMuxOuterClass.TopicMuxList value) {
         if (topicMuxListBuilder_ == null) {
@@ -2936,7 +2608,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       public Builder setTopicMuxList(
           ubii.devices.TopicMuxOuterClass.TopicMuxList.Builder builderForValue) {
@@ -2950,7 +2622,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       public Builder mergeTopicMuxList(ubii.devices.TopicMuxOuterClass.TopicMuxList value) {
         if (topicMuxListBuilder_ == null) {
@@ -2972,7 +2644,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       public Builder clearTopicMuxList() {
         if (topicMuxListBuilder_ == null) {
@@ -2991,13 +2663,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMuxList.Builder getTopicMuxListBuilder() {
         return getTopicMuxListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder getTopicMuxListOrBuilder() {
         if ((typeCase_ == 10) && (topicMuxListBuilder_ != null)) {
@@ -3010,7 +2682,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
+       * <code>optional .ubii.devices.TopicMuxList topic_mux_list = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicMuxOuterClass.TopicMuxList, ubii.devices.TopicMuxOuterClass.TopicMuxList.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder> 
@@ -3034,15 +2706,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> topicDemuxBuilder_;
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-       * @return Whether the topicDemux field is set.
-       */
-      public boolean hasTopicDemux() {
-        return typeCase_ == 11;
-      }
-      /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-       * @return The topicDemux.
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
         if (topicDemuxBuilder_ == null) {
@@ -3058,7 +2722,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       public Builder setTopicDemux(ubii.devices.TopicDemuxOuterClass.TopicDemux value) {
         if (topicDemuxBuilder_ == null) {
@@ -3074,7 +2738,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       public Builder setTopicDemux(
           ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder builderForValue) {
@@ -3088,7 +2752,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       public Builder mergeTopicDemux(ubii.devices.TopicDemuxOuterClass.TopicDemux value) {
         if (topicDemuxBuilder_ == null) {
@@ -3110,7 +2774,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       public Builder clearTopicDemux() {
         if (topicDemuxBuilder_ == null) {
@@ -3129,13 +2793,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder getTopicDemuxBuilder() {
         return getTopicDemuxFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
         if ((typeCase_ == 11) && (topicDemuxBuilder_ != null)) {
@@ -3148,7 +2812,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> 
@@ -3172,15 +2836,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicDemuxOuterClass.TopicDemuxList, ubii.devices.TopicDemuxOuterClass.TopicDemuxList.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder> topicDemuxListBuilder_;
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-       * @return Whether the topicDemuxList field is set.
-       */
-      public boolean hasTopicDemuxList() {
-        return typeCase_ == 12;
-      }
-      /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-       * @return The topicDemuxList.
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList() {
         if (topicDemuxListBuilder_ == null) {
@@ -3196,7 +2852,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       public Builder setTopicDemuxList(ubii.devices.TopicDemuxOuterClass.TopicDemuxList value) {
         if (topicDemuxListBuilder_ == null) {
@@ -3212,7 +2868,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       public Builder setTopicDemuxList(
           ubii.devices.TopicDemuxOuterClass.TopicDemuxList.Builder builderForValue) {
@@ -3226,7 +2882,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       public Builder mergeTopicDemuxList(ubii.devices.TopicDemuxOuterClass.TopicDemuxList value) {
         if (topicDemuxListBuilder_ == null) {
@@ -3248,7 +2904,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       public Builder clearTopicDemuxList() {
         if (topicDemuxListBuilder_ == null) {
@@ -3267,13 +2923,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxList.Builder getTopicDemuxListBuilder() {
         return getTopicDemuxListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder getTopicDemuxListOrBuilder() {
         if ((typeCase_ == 12) && (topicDemuxListBuilder_ != null)) {
@@ -3286,7 +2942,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
+       * <code>optional .ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicDemuxOuterClass.TopicDemuxList, ubii.devices.TopicDemuxOuterClass.TopicDemuxList.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder> 
@@ -3310,15 +2966,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.clients.ClientOuterClass.ClientList, ubii.clients.ClientOuterClass.ClientList.Builder, ubii.clients.ClientOuterClass.ClientListOrBuilder> clientListBuilder_;
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
-       * @return Whether the clientList field is set.
-       */
-      public boolean hasClientList() {
-        return typeCase_ == 13;
-      }
-      /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
-       * @return The clientList.
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       public ubii.clients.ClientOuterClass.ClientList getClientList() {
         if (clientListBuilder_ == null) {
@@ -3334,7 +2982,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       public Builder setClientList(ubii.clients.ClientOuterClass.ClientList value) {
         if (clientListBuilder_ == null) {
@@ -3350,7 +2998,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       public Builder setClientList(
           ubii.clients.ClientOuterClass.ClientList.Builder builderForValue) {
@@ -3364,7 +3012,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       public Builder mergeClientList(ubii.clients.ClientOuterClass.ClientList value) {
         if (clientListBuilder_ == null) {
@@ -3386,7 +3034,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       public Builder clearClientList() {
         if (clientListBuilder_ == null) {
@@ -3405,13 +3053,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       public ubii.clients.ClientOuterClass.ClientList.Builder getClientListBuilder() {
         return getClientListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       public ubii.clients.ClientOuterClass.ClientListOrBuilder getClientListOrBuilder() {
         if ((typeCase_ == 13) && (clientListBuilder_ != null)) {
@@ -3424,7 +3072,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.clients.ClientList client_list = 13;</code>
+       * <code>optional .ubii.clients.ClientList client_list = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.clients.ClientOuterClass.ClientList, ubii.clients.ClientOuterClass.ClientList.Builder, ubii.clients.ClientOuterClass.ClientListOrBuilder> 
@@ -3448,15 +3096,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> deviceListBuilder_;
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
-       * @return Whether the deviceList field is set.
-       */
-      public boolean hasDeviceList() {
-        return typeCase_ == 14;
-      }
-      /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
-       * @return The deviceList.
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
         if (deviceListBuilder_ == null) {
@@ -3472,7 +3112,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       public Builder setDeviceList(ubii.devices.DeviceOuterClass.DeviceList value) {
         if (deviceListBuilder_ == null) {
@@ -3488,7 +3128,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       public Builder setDeviceList(
           ubii.devices.DeviceOuterClass.DeviceList.Builder builderForValue) {
@@ -3502,7 +3142,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       public Builder mergeDeviceList(ubii.devices.DeviceOuterClass.DeviceList value) {
         if (deviceListBuilder_ == null) {
@@ -3524,7 +3164,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       public Builder clearDeviceList() {
         if (deviceListBuilder_ == null) {
@@ -3543,13 +3183,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       public ubii.devices.DeviceOuterClass.DeviceList.Builder getDeviceListBuilder() {
         return getDeviceListFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
         if ((typeCase_ == 14) && (deviceListBuilder_ != null)) {
@@ -3562,7 +3202,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.devices.DeviceList device_list = 14;</code>
+       * <code>optional .ubii.devices.DeviceList device_list = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> 
@@ -3586,15 +3226,7 @@ public final class ServiceRequestOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.LockstepProcessing.LockstepProcessingRequest, ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder, ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder> lockstepProcessingRequestBuilder_;
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-       * @return Whether the lockstepProcessingRequest field is set.
-       */
-      public boolean hasLockstepProcessingRequest() {
-        return typeCase_ == 15;
-      }
-      /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-       * @return The lockstepProcessingRequest.
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       public ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest() {
         if (lockstepProcessingRequestBuilder_ == null) {
@@ -3610,7 +3242,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       public Builder setLockstepProcessingRequest(ubii.processing.LockstepProcessing.LockstepProcessingRequest value) {
         if (lockstepProcessingRequestBuilder_ == null) {
@@ -3626,7 +3258,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       public Builder setLockstepProcessingRequest(
           ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder builderForValue) {
@@ -3640,7 +3272,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       public Builder mergeLockstepProcessingRequest(ubii.processing.LockstepProcessing.LockstepProcessingRequest value) {
         if (lockstepProcessingRequestBuilder_ == null) {
@@ -3662,7 +3294,7 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       public Builder clearLockstepProcessingRequest() {
         if (lockstepProcessingRequestBuilder_ == null) {
@@ -3681,13 +3313,13 @@ public final class ServiceRequestOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       public ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder getLockstepProcessingRequestBuilder() {
         return getLockstepProcessingRequestFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       public ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder getLockstepProcessingRequestOrBuilder() {
         if ((typeCase_ == 15) && (lockstepProcessingRequestBuilder_ != null)) {
@@ -3700,7 +3332,7 @@ public final class ServiceRequestOuterClass {
         }
       }
       /**
-       * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
+       * <code>optional .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.LockstepProcessing.LockstepProcessingRequest, ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder, ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder> 
@@ -3720,16 +3352,14 @@ public final class ServiceRequestOuterClass {
         onChanged();;
         return lockstepProcessingRequestBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -3748,12 +3378,11 @@ public final class ServiceRequestOuterClass {
 
     private static final com.google.protobuf.Parser<ServiceRequest>
         PARSER = new com.google.protobuf.AbstractParser<ServiceRequest>() {
-      @java.lang.Override
       public ServiceRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ServiceRequest(input, extensionRegistry);
+          return new ServiceRequest(input, extensionRegistry);
       }
     };
 
@@ -3766,7 +3395,6 @@ public final class ServiceRequestOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.services.ServiceRequestOuterClass.ServiceRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3796,7 +3424,7 @@ public final class ServiceRequestOuterClass {
       "on.proto\032\'proto/processing/processingMod" +
       "ule.proto\032)proto/processing/lockstepProc" +
       "essing.proto\"\252\006\n\016ServiceRequest\022\r\n\005topic" +
-      "\030\001 \001(\t\022&\n\006client\030\002 \001(\0132\024.ubii.clients.Cl" +
+      "\030\001 \001(\t\022&\n\006client\030\002 \001(\0132\024.ubii.clients.Cl",
       "ientH\000\022&\n\006device\030\003 \001(\0132\024.ubii.devices.De" +
       "viceH\000\022F\n\022topic_subscription\030\004 \001(\0132(.ubi" +
       "i.services.request.TopicSubscriptionH\000\022)" +
@@ -3806,7 +3434,7 @@ public final class ServiceRequestOuterClass {
       "2!.ubii.processing.ProcessingModuleH\000\022G\n" +
       "\026processing_module_list\030\010 \001(\0132%.ubii.pro" +
       "cessing.ProcessingModuleListH\000\022+\n\ttopic_" +
-      "mux\030\t \001(\0132\026.ubii.devices.TopicMuxH\000\0224\n\016t" +
+      "mux\030\t \001(\0132\026.ubii.devices.TopicMuxH\000\0224\n\016t",
       "opic_mux_list\030\n \001(\0132\032.ubii.devices.Topic" +
       "MuxListH\000\022/\n\013topic_demux\030\013 \001(\0132\030.ubii.de" +
       "vices.TopicDemuxH\000\0228\n\020topic_demux_list\030\014" +
@@ -3817,7 +3445,15 @@ public final class ServiceRequestOuterClass {
       "quest\030\017 \001(\0132*.ubii.processing.LockstepPr" +
       "ocessingRequestH\000B\006\n\004typeb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.clients.ClientOuterClass.getDescriptor(),
@@ -3828,7 +3464,7 @@ public final class ServiceRequestOuterClass {
           ubii.services.request.TopicSubscriptionOuterClass.getDescriptor(),
           ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
           ubii.processing.LockstepProcessing.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_services_ServiceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_services_ServiceRequest_fieldAccessorTable = new

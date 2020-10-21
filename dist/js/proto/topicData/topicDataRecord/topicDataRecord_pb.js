@@ -1,9 +1,6 @@
-// source: proto/topicData/topicDataRecord/topicDataRecord.proto
 /**
  * @fileoverview
  * @enhanceable
- * @suppress {messageConventions} JS Compiler reports an error if a variable or
- *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -13,48 +10,28 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_topicData_topicDataRecord_timestamp_pb = require('../../../proto/topicData/topicDataRecord/timestamp_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_timestamp_pb);
 var proto_topicData_topicDataRecord_dataStructure_lists_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/lists_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_lists_pb);
 var proto_topicData_topicDataRecord_dataStructure_vector2_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector2_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_vector2_pb);
 var proto_topicData_topicDataRecord_dataStructure_vector3_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector3_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_vector3_pb);
 var proto_topicData_topicDataRecord_dataStructure_vector4_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/vector4_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_vector4_pb);
 var proto_topicData_topicDataRecord_dataStructure_quaternion_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/quaternion_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_quaternion_pb);
 var proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/matrix3x2_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb);
 var proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/matrix4x4_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb);
 var proto_topicData_topicDataRecord_dataStructure_color_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/color_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_color_pb);
 var proto_topicData_topicDataRecord_dataStructure_touchEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/touchEvent_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_touchEvent_pb);
 var proto_topicData_topicDataRecord_dataStructure_keyEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/keyEvent_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_keyEvent_pb);
 var proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/mouseEvent_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb);
 var proto_topicData_topicDataRecord_dataStructure_myoEvent_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/myoEvent_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_myoEvent_pb);
 var proto_topicData_topicDataRecord_dataStructure_pose2d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/pose2d_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_pose2d_pb);
 var proto_topicData_topicDataRecord_dataStructure_pose3d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/pose3d_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_pose3d_pb);
 var proto_topicData_topicDataRecord_dataStructure_object2d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/object2d_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_object2d_pb);
 var proto_topicData_topicDataRecord_dataStructure_object3d_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/object3d_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_object3d_pb);
 var proto_topicData_topicDataRecord_dataStructure_image_pb = require('../../../proto/topicData/topicDataRecord/dataStructure/image_pb.js');
-goog.object.extend(proto, proto_topicData_topicDataRecord_dataStructure_image_pb);
 var proto_sessions_session_pb = require('../../../proto/sessions/session_pb.js');
-goog.object.extend(proto, proto_sessions_session_pb);
 var proto_processing_processingModule_pb = require('../../../proto/processing/processingModule_pb.js');
-goog.object.extend(proto, proto_processing_processingModule_pb);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
-goog.exportSymbol('proto.ubii.topicData.TopicDataRecord.TypeCase', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecordList', null, global);
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -70,34 +47,8 @@ proto.ubii.topicData.TopicDataRecord = function(opt_data) {
 };
 goog.inherits(proto.ubii.topicData.TopicDataRecord, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
   proto.ubii.topicData.TopicDataRecord.displayName = 'proto.ubii.topicData.TopicDataRecord';
 }
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.topicData.TopicDataRecordList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.topicData.TopicDataRecordList.repeatedFields_, null);
-};
-goog.inherits(proto.ubii.topicData.TopicDataRecordList, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.ubii.topicData.TopicDataRecordList.displayName = 'proto.ubii.topicData.TopicDataRecordList';
-}
-
 /**
  * Oneof group definitions for this message. Each group defines the field
  * numbers belonging to that group. When of these fields' value is set, all
@@ -157,15 +108,13 @@ proto.ubii.topicData.TopicDataRecord.prototype.getTypeCase = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto.
+ * Creates an object representation of this proto suitable for use in Soy templates.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.toObject = function(opt_includeInstance) {
@@ -175,20 +124,19 @@ proto.ubii.topicData.TopicDataRecord.prototype.toObject = function(opt_includeIn
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.ubii.topicData.TopicDataRecord} msg The msg instance to transform.
  * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
   var f, obj = {
-    topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    topic: msg.getTopic(),
     timestamp: (f = msg.getTimestamp()) && proto_topicData_topicDataRecord_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    pb_double: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    bool: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    string: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    pb_double: jspb.Message.getOptionalFloatingPointField(msg, 3),
+    bool: jspb.Message.getField(msg, 4),
+    string: jspb.Message.getField(msg, 5),
     vector2: (f = msg.getVector2()) && proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.toObject(includeInstance, f),
     vector3: (f = msg.getVector3()) && proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.toObject(includeInstance, f),
     vector4: (f = msg.getVector4()) && proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.toObject(includeInstance, f),
@@ -206,8 +154,8 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     object3d: (f = msg.getObject3d()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.toObject(includeInstance, f),
     object2dList: (f = msg.getObject2dList()) && proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList.toObject(includeInstance, f),
     object3dList: (f = msg.getObject3dList()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.toObject(includeInstance, f),
-    int32: jspb.Message.getFieldWithDefault(msg, 23, 0),
-    pb_float: jspb.Message.getFloatingPointFieldWithDefault(msg, 24, 0.0),
+    int32: jspb.Message.getField(msg, 23),
+    pb_float: jspb.Message.getOptionalFloatingPointField(msg, 24),
     int32List: (f = msg.getInt32List()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.Int32List.toObject(includeInstance, f),
     floatList: (f = msg.getFloatList()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.FloatList.toObject(includeInstance, f),
     doubleList: (f = msg.getDoubleList()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.DoubleList.toObject(includeInstance, f),
@@ -422,33 +370,42 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
 
 
 /**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.topicData.TopicDataRecord} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter(this, writer);
+  this.serializeBinaryToWriter(writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.topicData.TopicDataRecord} message
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
  * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message, writer) {
+proto.ubii.topicData.TopicDataRecord.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = message.getTopic();
+  f = this.getTopic();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getTimestamp();
+  f = this.getTimestamp();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -456,28 +413,28 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = jspb.Message.getField(this, 3);
   if (f != null) {
     writer.writeDouble(
       3,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  f = jspb.Message.getField(this, 4);
   if (f != null) {
     writer.writeBool(
       4,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = jspb.Message.getField(this, 5);
   if (f != null) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getVector2();
+  f = this.getVector2();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -485,7 +442,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.serializeBinaryToWriter
     );
   }
-  f = message.getVector3();
+  f = this.getVector3();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -493,7 +450,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.serializeBinaryToWriter
     );
   }
-  f = message.getVector4();
+  f = this.getVector4();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -501,7 +458,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.serializeBinaryToWriter
     );
   }
-  f = message.getQuaternion();
+  f = this.getQuaternion();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -509,7 +466,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.serializeBinaryToWriter
     );
   }
-  f = message.getMatrix3x2();
+  f = this.getMatrix3x2();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -517,7 +474,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2.serializeBinaryToWriter
     );
   }
-  f = message.getMatrix4x4();
+  f = this.getMatrix4x4();
   if (f != null) {
     writer.writeMessage(
       11,
@@ -525,7 +482,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4.serializeBinaryToWriter
     );
   }
-  f = message.getColor();
+  f = this.getColor();
   if (f != null) {
     writer.writeMessage(
       12,
@@ -533,7 +490,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_color_pb.Color.serializeBinaryToWriter
     );
   }
-  f = message.getTouchEvent();
+  f = this.getTouchEvent();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -541,7 +498,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.serializeBinaryToWriter
     );
   }
-  f = message.getKeyEvent();
+  f = this.getKeyEvent();
   if (f != null) {
     writer.writeMessage(
       14,
@@ -549,7 +506,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.serializeBinaryToWriter
     );
   }
-  f = message.getMouseEvent();
+  f = this.getMouseEvent();
   if (f != null) {
     writer.writeMessage(
       15,
@@ -557,7 +514,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.serializeBinaryToWriter
     );
   }
-  f = message.getMyoEvent();
+  f = this.getMyoEvent();
   if (f != null) {
     writer.writeMessage(
       16,
@@ -565,7 +522,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.serializeBinaryToWriter
     );
   }
-  f = message.getPose2d();
+  f = this.getPose2d();
   if (f != null) {
     writer.writeMessage(
       17,
@@ -573,7 +530,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D.serializeBinaryToWriter
     );
   }
-  f = message.getPose3d();
+  f = this.getPose3d();
   if (f != null) {
     writer.writeMessage(
       18,
@@ -581,7 +538,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D.serializeBinaryToWriter
     );
   }
-  f = message.getObject2d();
+  f = this.getObject2d();
   if (f != null) {
     writer.writeMessage(
       19,
@@ -589,7 +546,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D.serializeBinaryToWriter
     );
   }
-  f = message.getObject3d();
+  f = this.getObject3d();
   if (f != null) {
     writer.writeMessage(
       20,
@@ -597,7 +554,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.serializeBinaryToWriter
     );
   }
-  f = message.getObject2dList();
+  f = this.getObject2dList();
   if (f != null) {
     writer.writeMessage(
       21,
@@ -605,7 +562,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList.serializeBinaryToWriter
     );
   }
-  f = message.getObject3dList();
+  f = this.getObject3dList();
   if (f != null) {
     writer.writeMessage(
       22,
@@ -613,21 +570,21 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 23));
+  f = jspb.Message.getField(this, 23);
   if (f != null) {
     writer.writeInt32(
       23,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 24));
+  f = jspb.Message.getField(this, 24);
   if (f != null) {
     writer.writeFloat(
       24,
       f
     );
   }
-  f = message.getInt32List();
+  f = this.getInt32List();
   if (f != null) {
     writer.writeMessage(
       25,
@@ -635,7 +592,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_lists_pb.Int32List.serializeBinaryToWriter
     );
   }
-  f = message.getFloatList();
+  f = this.getFloatList();
   if (f != null) {
     writer.writeMessage(
       26,
@@ -643,7 +600,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_lists_pb.FloatList.serializeBinaryToWriter
     );
   }
-  f = message.getDoubleList();
+  f = this.getDoubleList();
   if (f != null) {
     writer.writeMessage(
       27,
@@ -651,7 +608,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_lists_pb.DoubleList.serializeBinaryToWriter
     );
   }
-  f = message.getStringList();
+  f = this.getStringList();
   if (f != null) {
     writer.writeMessage(
       28,
@@ -659,7 +616,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_lists_pb.StringList.serializeBinaryToWriter
     );
   }
-  f = message.getBoolList();
+  f = this.getBoolList();
   if (f != null) {
     writer.writeMessage(
       29,
@@ -667,7 +624,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_lists_pb.BoolList.serializeBinaryToWriter
     );
   }
-  f = message.getImage2d();
+  f = this.getImage2d();
   if (f != null) {
     writer.writeMessage(
       30,
@@ -675,7 +632,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_image_pb.Image2D.serializeBinaryToWriter
     );
   }
-  f = message.getImage2dList();
+  f = this.getImage2dList();
   if (f != null) {
     writer.writeMessage(
       31,
@@ -683,7 +640,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_image_pb.Image2DList.serializeBinaryToWriter
     );
   }
-  f = message.getSession();
+  f = this.getSession();
   if (f != null) {
     writer.writeMessage(
       32,
@@ -691,7 +648,7 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_sessions_session_pb.Session.serializeBinaryToWriter
     );
   }
-  f = message.getProcessingModuleList();
+  f = this.getProcessingModuleList();
   if (f != null) {
     writer.writeMessage(
       33,
@@ -703,54 +660,53 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
 
 
 /**
- * optional string topic = 1;
- * @return {string}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.topicData.TopicDataRecord} The clone.
  */
-proto.ubii.topicData.TopicDataRecord.prototype.getTopic = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.ubii.topicData.TopicDataRecord.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.topicData.TopicDataRecord} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ * optional string topic = 1;
+ * @return {string}
  */
+proto.ubii.topicData.TopicDataRecord.prototype.getTopic = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/** @param {string} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setTopic = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * optional Timestamp timestamp = 2;
- * @return {?proto.ubii.topicData.Timestamp}
+ * @return {proto.ubii.topicData.Timestamp}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getTimestamp = function() {
-  return /** @type{?proto.ubii.topicData.Timestamp} */ (
+  return /** @type{proto.ubii.topicData.Timestamp} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_timestamp_pb.Timestamp, 2));
 };
 
 
-/**
- * @param {?proto.ubii.topicData.Timestamp|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.topicData.Timestamp|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setTimestamp = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearTimestamp = function() {
-  return this.setTimestamp(undefined);
+  this.setTimestamp(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasTimestamp = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -762,31 +718,24 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasTimestamp = function() {
  * @return {number}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getDouble = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+  return /** @type {number} */ (!this.hasDouble() ? 0.0 : +jspb.Message.getField(this, 3));
 };
 
 
-/**
- * @param {number} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
+/** @param {number?|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setDouble = function(value) {
-  return jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearDouble = function() {
-  return jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+  jspb.Message.setOneofField(this, 3, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasDouble = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -795,34 +744,29 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasDouble = function() {
 
 /**
  * optional bool bool = 4;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getBool = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (!this.hasBool() ? false : jspb.Message.getField(this, 4));
 };
 
 
-/**
- * @param {boolean} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
+/** @param {boolean?|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setBool = function(value) {
-  return jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearBool = function() {
-  return jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+  jspb.Message.setOneofField(this, 4, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasBool = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -834,31 +778,24 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasBool = function() {
  * @return {string}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getString = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (!this.hasString() ? "" : jspb.Message.getField(this, 5));
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
+/** @param {string?|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setString = function(value) {
-  return jspb.Message.setOneofField(this, 5, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofField(this, 5, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearString = function() {
-  return jspb.Message.setOneofField(this, 5, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+  jspb.Message.setOneofField(this, 5, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasString = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -867,35 +804,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasString = function() {
 
 /**
  * optional ubii.dataStructure.Vector2 vector2 = 6;
- * @return {?proto.ubii.dataStructure.Vector2}
+ * @return {proto.ubii.dataStructure.Vector2}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getVector2 = function() {
-  return /** @type{?proto.ubii.dataStructure.Vector2} */ (
+  return /** @type{proto.ubii.dataStructure.Vector2} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2, 6));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Vector2|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Vector2|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setVector2 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 6, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 6, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearVector2 = function() {
-  return this.setVector2(undefined);
+  this.setVector2(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasVector2 = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -904,35 +834,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasVector2 = function() {
 
 /**
  * optional ubii.dataStructure.Vector3 vector3 = 7;
- * @return {?proto.ubii.dataStructure.Vector3}
+ * @return {proto.ubii.dataStructure.Vector3}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getVector3 = function() {
-  return /** @type{?proto.ubii.dataStructure.Vector3} */ (
+  return /** @type{proto.ubii.dataStructure.Vector3} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3, 7));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Vector3|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Vector3|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setVector3 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 7, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 7, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearVector3 = function() {
-  return this.setVector3(undefined);
+  this.setVector3(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasVector3 = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -941,35 +864,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasVector3 = function() {
 
 /**
  * optional ubii.dataStructure.Vector4 vector4 = 8;
- * @return {?proto.ubii.dataStructure.Vector4}
+ * @return {proto.ubii.dataStructure.Vector4}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getVector4 = function() {
-  return /** @type{?proto.ubii.dataStructure.Vector4} */ (
+  return /** @type{proto.ubii.dataStructure.Vector4} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4, 8));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Vector4|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Vector4|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setVector4 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 8, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 8, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearVector4 = function() {
-  return this.setVector4(undefined);
+  this.setVector4(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasVector4 = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -978,35 +894,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasVector4 = function() {
 
 /**
  * optional ubii.dataStructure.Quaternion quaternion = 9;
- * @return {?proto.ubii.dataStructure.Quaternion}
+ * @return {proto.ubii.dataStructure.Quaternion}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getQuaternion = function() {
-  return /** @type{?proto.ubii.dataStructure.Quaternion} */ (
+  return /** @type{proto.ubii.dataStructure.Quaternion} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion, 9));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Quaternion|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Quaternion|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setQuaternion = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 9, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 9, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearQuaternion = function() {
-  return this.setQuaternion(undefined);
+  this.setQuaternion(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasQuaternion = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -1015,35 +924,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasQuaternion = function() {
 
 /**
  * optional ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
- * @return {?proto.ubii.dataStructure.Matrix3x2}
+ * @return {proto.ubii.dataStructure.Matrix3x2}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getMatrix3x2 = function() {
-  return /** @type{?proto.ubii.dataStructure.Matrix3x2} */ (
+  return /** @type{proto.ubii.dataStructure.Matrix3x2} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2, 10));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Matrix3x2|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Matrix3x2|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setMatrix3x2 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 10, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 10, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix3x2 = function() {
-  return this.setMatrix3x2(undefined);
+  this.setMatrix3x2(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix3x2 = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -1052,35 +954,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix3x2 = function() {
 
 /**
  * optional ubii.dataStructure.Matrix4x4 matrix4x4 = 11;
- * @return {?proto.ubii.dataStructure.Matrix4x4}
+ * @return {proto.ubii.dataStructure.Matrix4x4}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getMatrix4x4 = function() {
-  return /** @type{?proto.ubii.dataStructure.Matrix4x4} */ (
+  return /** @type{proto.ubii.dataStructure.Matrix4x4} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4, 11));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Matrix4x4|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Matrix4x4|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setMatrix4x4 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 11, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 11, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearMatrix4x4 = function() {
-  return this.setMatrix4x4(undefined);
+  this.setMatrix4x4(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix4x4 = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -1089,35 +984,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasMatrix4x4 = function() {
 
 /**
  * optional ubii.dataStructure.Color color = 12;
- * @return {?proto.ubii.dataStructure.Color}
+ * @return {proto.ubii.dataStructure.Color}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getColor = function() {
-  return /** @type{?proto.ubii.dataStructure.Color} */ (
+  return /** @type{proto.ubii.dataStructure.Color} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_color_pb.Color, 12));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Color|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Color|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setColor = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 12, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 12, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearColor = function() {
-  return this.setColor(undefined);
+  this.setColor(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasColor = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1126,35 +1014,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasColor = function() {
 
 /**
  * optional ubii.dataStructure.TouchEvent touch_event = 13;
- * @return {?proto.ubii.dataStructure.TouchEvent}
+ * @return {proto.ubii.dataStructure.TouchEvent}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getTouchEvent = function() {
-  return /** @type{?proto.ubii.dataStructure.TouchEvent} */ (
+  return /** @type{proto.ubii.dataStructure.TouchEvent} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent, 13));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.TouchEvent|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.TouchEvent|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setTouchEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 13, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 13, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearTouchEvent = function() {
-  return this.setTouchEvent(undefined);
+  this.setTouchEvent(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasTouchEvent = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1163,35 +1044,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasTouchEvent = function() {
 
 /**
  * optional ubii.dataStructure.KeyEvent key_event = 14;
- * @return {?proto.ubii.dataStructure.KeyEvent}
+ * @return {proto.ubii.dataStructure.KeyEvent}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getKeyEvent = function() {
-  return /** @type{?proto.ubii.dataStructure.KeyEvent} */ (
+  return /** @type{proto.ubii.dataStructure.KeyEvent} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent, 14));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.KeyEvent|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.KeyEvent|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setKeyEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 14, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 14, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearKeyEvent = function() {
-  return this.setKeyEvent(undefined);
+  this.setKeyEvent(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasKeyEvent = function() {
   return jspb.Message.getField(this, 14) != null;
@@ -1200,35 +1074,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasKeyEvent = function() {
 
 /**
  * optional ubii.dataStructure.MouseEvent mouse_event = 15;
- * @return {?proto.ubii.dataStructure.MouseEvent}
+ * @return {proto.ubii.dataStructure.MouseEvent}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getMouseEvent = function() {
-  return /** @type{?proto.ubii.dataStructure.MouseEvent} */ (
+  return /** @type{proto.ubii.dataStructure.MouseEvent} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent, 15));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.MouseEvent|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.MouseEvent|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setMouseEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 15, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 15, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearMouseEvent = function() {
-  return this.setMouseEvent(undefined);
+  this.setMouseEvent(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMouseEvent = function() {
   return jspb.Message.getField(this, 15) != null;
@@ -1237,35 +1104,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasMouseEvent = function() {
 
 /**
  * optional ubii.dataStructure.MyoEvent myo_event = 16;
- * @return {?proto.ubii.dataStructure.MyoEvent}
+ * @return {proto.ubii.dataStructure.MyoEvent}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getMyoEvent = function() {
-  return /** @type{?proto.ubii.dataStructure.MyoEvent} */ (
+  return /** @type{proto.ubii.dataStructure.MyoEvent} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent, 16));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.MyoEvent|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.MyoEvent|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setMyoEvent = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 16, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 16, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearMyoEvent = function() {
-  return this.setMyoEvent(undefined);
+  this.setMyoEvent(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasMyoEvent = function() {
   return jspb.Message.getField(this, 16) != null;
@@ -1274,35 +1134,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasMyoEvent = function() {
 
 /**
  * optional ubii.dataStructure.Pose2D pose2D = 17;
- * @return {?proto.ubii.dataStructure.Pose2D}
+ * @return {proto.ubii.dataStructure.Pose2D}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getPose2d = function() {
-  return /** @type{?proto.ubii.dataStructure.Pose2D} */ (
+  return /** @type{proto.ubii.dataStructure.Pose2D} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose2d_pb.Pose2D, 17));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Pose2D|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Pose2D|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setPose2d = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 17, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 17, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearPose2d = function() {
-  return this.setPose2d(undefined);
+  this.setPose2d(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasPose2d = function() {
   return jspb.Message.getField(this, 17) != null;
@@ -1311,35 +1164,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasPose2d = function() {
 
 /**
  * optional ubii.dataStructure.Pose3D pose3D = 18;
- * @return {?proto.ubii.dataStructure.Pose3D}
+ * @return {proto.ubii.dataStructure.Pose3D}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getPose3d = function() {
-  return /** @type{?proto.ubii.dataStructure.Pose3D} */ (
+  return /** @type{proto.ubii.dataStructure.Pose3D} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_pose3d_pb.Pose3D, 18));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Pose3D|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Pose3D|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setPose3d = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 18, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearPose3d = function() {
-  return this.setPose3d(undefined);
+  this.setPose3d(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasPose3d = function() {
   return jspb.Message.getField(this, 18) != null;
@@ -1348,35 +1194,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasPose3d = function() {
 
 /**
  * optional ubii.dataStructure.Object2D object2D = 19;
- * @return {?proto.ubii.dataStructure.Object2D}
+ * @return {proto.ubii.dataStructure.Object2D}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getObject2d = function() {
-  return /** @type{?proto.ubii.dataStructure.Object2D} */ (
+  return /** @type{proto.ubii.dataStructure.Object2D} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2D, 19));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Object2D|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Object2D|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setObject2d = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 19, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 19, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearObject2d = function() {
-  return this.setObject2d(undefined);
+  this.setObject2d(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject2d = function() {
   return jspb.Message.getField(this, 19) != null;
@@ -1385,35 +1224,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasObject2d = function() {
 
 /**
  * optional ubii.dataStructure.Object3D object3D = 20;
- * @return {?proto.ubii.dataStructure.Object3D}
+ * @return {proto.ubii.dataStructure.Object3D}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getObject3d = function() {
-  return /** @type{?proto.ubii.dataStructure.Object3D} */ (
+  return /** @type{proto.ubii.dataStructure.Object3D} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D, 20));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Object3D|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Object3D|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setObject3d = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 20, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 20, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearObject3d = function() {
-  return this.setObject3d(undefined);
+  this.setObject3d(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject3d = function() {
   return jspb.Message.getField(this, 20) != null;
@@ -1422,35 +1254,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasObject3d = function() {
 
 /**
  * optional ubii.dataStructure.Object2DList object2D_list = 21;
- * @return {?proto.ubii.dataStructure.Object2DList}
+ * @return {proto.ubii.dataStructure.Object2DList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getObject2dList = function() {
-  return /** @type{?proto.ubii.dataStructure.Object2DList} */ (
+  return /** @type{proto.ubii.dataStructure.Object2DList} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList, 21));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Object2DList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Object2DList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setObject2dList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 21, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 21, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearObject2dList = function() {
-  return this.setObject2dList(undefined);
+  this.setObject2dList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject2dList = function() {
   return jspb.Message.getField(this, 21) != null;
@@ -1459,35 +1284,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasObject2dList = function() {
 
 /**
  * optional ubii.dataStructure.Object3DList object3D_list = 22;
- * @return {?proto.ubii.dataStructure.Object3DList}
+ * @return {proto.ubii.dataStructure.Object3DList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getObject3dList = function() {
-  return /** @type{?proto.ubii.dataStructure.Object3DList} */ (
+  return /** @type{proto.ubii.dataStructure.Object3DList} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList, 22));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Object3DList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Object3DList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setObject3dList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 22, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 22, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearObject3dList = function() {
-  return this.setObject3dList(undefined);
+  this.setObject3dList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasObject3dList = function() {
   return jspb.Message.getField(this, 22) != null;
@@ -1499,31 +1317,24 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasObject3dList = function() {
  * @return {number}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getInt32 = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
+  return /** @type {number} */ (!this.hasInt32() ? 0 : jspb.Message.getField(this, 23));
 };
 
 
-/**
- * @param {number} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
+/** @param {number?|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setInt32 = function(value) {
-  return jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearInt32 = function() {
-  return jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+  jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasInt32 = function() {
   return jspb.Message.getField(this, 23) != null;
@@ -1535,31 +1346,24 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasInt32 = function() {
  * @return {number}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getFloat = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 24, 0.0));
+  return /** @type {number} */ (!this.hasFloat() ? 0.0 : +jspb.Message.getField(this, 24));
 };
 
 
-/**
- * @param {number} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
+/** @param {number?|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setFloat = function(value) {
-  return jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearFloat = function() {
-  return jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+  jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasFloat = function() {
   return jspb.Message.getField(this, 24) != null;
@@ -1568,35 +1372,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasFloat = function() {
 
 /**
  * optional ubii.dataStructure.Int32List int32_list = 25;
- * @return {?proto.ubii.dataStructure.Int32List}
+ * @return {proto.ubii.dataStructure.Int32List}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getInt32List = function() {
-  return /** @type{?proto.ubii.dataStructure.Int32List} */ (
+  return /** @type{proto.ubii.dataStructure.Int32List} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_lists_pb.Int32List, 25));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Int32List|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Int32List|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setInt32List = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 25, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 25, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearInt32List = function() {
-  return this.setInt32List(undefined);
+  this.setInt32List(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasInt32List = function() {
   return jspb.Message.getField(this, 25) != null;
@@ -1605,35 +1402,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasInt32List = function() {
 
 /**
  * optional ubii.dataStructure.FloatList float_list = 26;
- * @return {?proto.ubii.dataStructure.FloatList}
+ * @return {proto.ubii.dataStructure.FloatList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getFloatList = function() {
-  return /** @type{?proto.ubii.dataStructure.FloatList} */ (
+  return /** @type{proto.ubii.dataStructure.FloatList} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_lists_pb.FloatList, 26));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.FloatList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.FloatList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setFloatList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 26, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 26, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearFloatList = function() {
-  return this.setFloatList(undefined);
+  this.setFloatList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasFloatList = function() {
   return jspb.Message.getField(this, 26) != null;
@@ -1642,35 +1432,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasFloatList = function() {
 
 /**
  * optional ubii.dataStructure.DoubleList double_list = 27;
- * @return {?proto.ubii.dataStructure.DoubleList}
+ * @return {proto.ubii.dataStructure.DoubleList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getDoubleList = function() {
-  return /** @type{?proto.ubii.dataStructure.DoubleList} */ (
+  return /** @type{proto.ubii.dataStructure.DoubleList} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_lists_pb.DoubleList, 27));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.DoubleList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.DoubleList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setDoubleList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 27, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 27, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearDoubleList = function() {
-  return this.setDoubleList(undefined);
+  this.setDoubleList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasDoubleList = function() {
   return jspb.Message.getField(this, 27) != null;
@@ -1679,35 +1462,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasDoubleList = function() {
 
 /**
  * optional ubii.dataStructure.StringList string_list = 28;
- * @return {?proto.ubii.dataStructure.StringList}
+ * @return {proto.ubii.dataStructure.StringList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getStringList = function() {
-  return /** @type{?proto.ubii.dataStructure.StringList} */ (
+  return /** @type{proto.ubii.dataStructure.StringList} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_lists_pb.StringList, 28));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.StringList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.StringList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setStringList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 28, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 28, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearStringList = function() {
-  return this.setStringList(undefined);
+  this.setStringList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasStringList = function() {
   return jspb.Message.getField(this, 28) != null;
@@ -1716,35 +1492,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasStringList = function() {
 
 /**
  * optional ubii.dataStructure.BoolList bool_list = 29;
- * @return {?proto.ubii.dataStructure.BoolList}
+ * @return {proto.ubii.dataStructure.BoolList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getBoolList = function() {
-  return /** @type{?proto.ubii.dataStructure.BoolList} */ (
+  return /** @type{proto.ubii.dataStructure.BoolList} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_lists_pb.BoolList, 29));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.BoolList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.BoolList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setBoolList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 29, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 29, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearBoolList = function() {
-  return this.setBoolList(undefined);
+  this.setBoolList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasBoolList = function() {
   return jspb.Message.getField(this, 29) != null;
@@ -1753,35 +1522,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasBoolList = function() {
 
 /**
  * optional ubii.dataStructure.Image2D image2D = 30;
- * @return {?proto.ubii.dataStructure.Image2D}
+ * @return {proto.ubii.dataStructure.Image2D}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getImage2d = function() {
-  return /** @type{?proto.ubii.dataStructure.Image2D} */ (
+  return /** @type{proto.ubii.dataStructure.Image2D} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_image_pb.Image2D, 30));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Image2D|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Image2D|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setImage2d = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 30, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 30, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearImage2d = function() {
-  return this.setImage2d(undefined);
+  this.setImage2d(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasImage2d = function() {
   return jspb.Message.getField(this, 30) != null;
@@ -1790,35 +1552,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasImage2d = function() {
 
 /**
  * optional ubii.dataStructure.Image2DList image2D_list = 31;
- * @return {?proto.ubii.dataStructure.Image2DList}
+ * @return {proto.ubii.dataStructure.Image2DList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getImage2dList = function() {
-  return /** @type{?proto.ubii.dataStructure.Image2DList} */ (
+  return /** @type{proto.ubii.dataStructure.Image2DList} */ (
     jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_image_pb.Image2DList, 31));
 };
 
 
-/**
- * @param {?proto.ubii.dataStructure.Image2DList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.dataStructure.Image2DList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setImage2dList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 31, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 31, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearImage2dList = function() {
-  return this.setImage2dList(undefined);
+  this.setImage2dList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasImage2dList = function() {
   return jspb.Message.getField(this, 31) != null;
@@ -1827,35 +1582,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasImage2dList = function() {
 
 /**
  * optional ubii.sessions.Session session = 32;
- * @return {?proto.ubii.sessions.Session}
+ * @return {proto.ubii.sessions.Session}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getSession = function() {
-  return /** @type{?proto.ubii.sessions.Session} */ (
+  return /** @type{proto.ubii.sessions.Session} */ (
     jspb.Message.getWrapperField(this, proto_sessions_session_pb.Session, 32));
 };
 
 
-/**
- * @param {?proto.ubii.sessions.Session|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.sessions.Session|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setSession = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 32, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 32, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearSession = function() {
-  return this.setSession(undefined);
+  this.setSession(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasSession = function() {
   return jspb.Message.getField(this, 32) != null;
@@ -1864,35 +1612,28 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasSession = function() {
 
 /**
  * optional ubii.processing.ProcessingModuleList processing_module_list = 33;
- * @return {?proto.ubii.processing.ProcessingModuleList}
+ * @return {proto.ubii.processing.ProcessingModuleList}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.getProcessingModuleList = function() {
-  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
+  return /** @type{proto.ubii.processing.ProcessingModuleList} */ (
     jspb.Message.getWrapperField(this, proto_processing_processingModule_pb.ProcessingModuleList, 33));
 };
 
 
-/**
- * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
+/** @param {proto.ubii.processing.ProcessingModuleList|undefined} value  */
 proto.ubii.topicData.TopicDataRecord.prototype.setProcessingModuleList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 33, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+  jspb.Message.setOneofWrapperField(this, 33, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
 };
 
 
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
 proto.ubii.topicData.TopicDataRecord.prototype.clearProcessingModuleList = function() {
-  return this.setProcessingModuleList(undefined);
+  this.setProcessingModuleList(undefined);
 };
 
 
 /**
  * Returns whether this field is set.
- * @return {boolean}
+ * @return{!boolean}
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasProcessingModuleList = function() {
   return jspb.Message.getField(this, 33) != null;
@@ -1900,6 +1641,23 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasProcessingModuleList = functio
 
 
 
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.topicData.TopicDataRecordList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.topicData.TopicDataRecordList.repeatedFields_, null);
+};
+goog.inherits(proto.ubii.topicData.TopicDataRecordList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.topicData.TopicDataRecordList.displayName = 'proto.ubii.topicData.TopicDataRecordList';
+}
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -1911,15 +1669,13 @@ proto.ubii.topicData.TopicDataRecordList.repeatedFields_ = [1];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto.
+ * Creates an object representation of this proto suitable for use in Soy templates.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.ubii.topicData.TopicDataRecordList.prototype.toObject = function(opt_includeInstance) {
@@ -1929,12 +1685,11 @@ proto.ubii.topicData.TopicDataRecordList.prototype.toObject = function(opt_inclu
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.ubii.topicData.TopicDataRecordList} msg The msg instance to transform.
  * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.ubii.topicData.TopicDataRecordList.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1979,7 +1734,8 @@ proto.ubii.topicData.TopicDataRecordList.deserializeBinaryFromReader = function(
     case 1:
       var value = new proto.ubii.topicData.TopicDataRecord;
       reader.readMessage(value,proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader);
-      msg.addElements(value);
+      msg.getElementsList().push(value);
+      msg.setElementsList(msg.getElementsList());
       break;
     default:
       reader.skipField();
@@ -1991,26 +1747,35 @@ proto.ubii.topicData.TopicDataRecordList.deserializeBinaryFromReader = function(
 
 
 /**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.topicData.TopicDataRecordList} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.topicData.TopicDataRecordList.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.ubii.topicData.TopicDataRecordList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ubii.topicData.TopicDataRecordList.serializeBinaryToWriter(this, writer);
+  this.serializeBinaryToWriter(writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.topicData.TopicDataRecordList} message
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
  * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ubii.topicData.TopicDataRecordList.serializeBinaryToWriter = function(message, writer) {
+proto.ubii.topicData.TopicDataRecordList.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = message.getElementsList();
+  f = this.getElementsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -2022,40 +1787,34 @@ proto.ubii.topicData.TopicDataRecordList.serializeBinaryToWriter = function(mess
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.topicData.TopicDataRecordList} The clone.
+ */
+proto.ubii.topicData.TopicDataRecordList.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.topicData.TopicDataRecordList} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * repeated TopicDataRecord elements = 1;
- * @return {!Array<!proto.ubii.topicData.TopicDataRecord>}
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.ubii.topicData.TopicDataRecord>}
  */
 proto.ubii.topicData.TopicDataRecordList.prototype.getElementsList = function() {
-  return /** @type{!Array<!proto.ubii.topicData.TopicDataRecord>} */ (
+  return /** @type{!Array.<!proto.ubii.topicData.TopicDataRecord>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.ubii.topicData.TopicDataRecord, 1));
 };
 
 
-/**
- * @param {!Array<!proto.ubii.topicData.TopicDataRecord>} value
- * @return {!proto.ubii.topicData.TopicDataRecordList} returns this
-*/
+/** @param {Array.<!proto.ubii.topicData.TopicDataRecord>} value  */
 proto.ubii.topicData.TopicDataRecordList.prototype.setElementsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
-/**
- * @param {!proto.ubii.topicData.TopicDataRecord=} opt_value
- * @param {number=} opt_index
- * @return {!proto.ubii.topicData.TopicDataRecord}
- */
-proto.ubii.topicData.TopicDataRecordList.prototype.addElements = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.topicData.TopicDataRecord, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.ubii.topicData.TopicDataRecordList} returns this
- */
 proto.ubii.topicData.TopicDataRecordList.prototype.clearElementsList = function() {
-  return this.setElementsList([]);
+  this.setElementsList([]);
 };
 
 

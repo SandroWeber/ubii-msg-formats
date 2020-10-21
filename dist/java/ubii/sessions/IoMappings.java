@@ -19,41 +19,31 @@ public final class IoMappings {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string input_name = 1;</code>
-     * @return The inputName.
+     * <code>optional string input_name = 1;</code>
      */
     java.lang.String getInputName();
     /**
-     * <code>string input_name = 1;</code>
-     * @return The bytes for inputName.
+     * <code>optional string input_name = 1;</code>
      */
     com.google.protobuf.ByteString
         getInputNameBytes();
 
     /**
-     * <code>string topic = 2;</code>
-     * @return The topic.
+     * <code>optional string topic = 2;</code>
      */
     java.lang.String getTopic();
     /**
-     * <code>string topic = 2;</code>
-     * @return The bytes for topic.
+     * <code>optional string topic = 2;</code>
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
-     * @return Whether the topicMux field is set.
-     */
-    boolean hasTopicMux();
-    /**
-     * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
-     * @return The topicMux.
+     * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
      */
     ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux();
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+     * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
      */
     ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder();
 
@@ -66,7 +56,6 @@ public final class IoMappings {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.TopicInputMapping)
       TopicInputMappingOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use TopicInputMapping.newBuilder() to construct.
     private TopicInputMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -76,27 +65,16 @@ public final class IoMappings {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TopicInputMapping();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private TopicInputMapping(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -105,6 +83,12 @@ public final class IoMappings {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -131,13 +115,6 @@ public final class IoMappings {
               topicSourceCase_ = 3;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -146,7 +123,6 @@ public final class IoMappings {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -155,7 +131,6 @@ public final class IoMappings {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMapping_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMapping_fieldAccessorTable
@@ -166,8 +141,7 @@ public final class IoMappings {
     private int topicSourceCase_ = 0;
     private java.lang.Object topicSource_;
     public enum TopicSourceCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       TOPIC(2),
       TOPIC_MUX(3),
       TOPICSOURCE_NOT_SET(0);
@@ -176,8 +150,6 @@ public final class IoMappings {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -207,8 +179,7 @@ public final class IoMappings {
     public static final int INPUT_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object inputName_;
     /**
-     * <code>string input_name = 1;</code>
-     * @return The inputName.
+     * <code>optional string input_name = 1;</code>
      */
     public java.lang.String getInputName() {
       java.lang.Object ref = inputName_;
@@ -223,8 +194,7 @@ public final class IoMappings {
       }
     }
     /**
-     * <code>string input_name = 1;</code>
-     * @return The bytes for inputName.
+     * <code>optional string input_name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getInputNameBytes() {
@@ -242,8 +212,7 @@ public final class IoMappings {
 
     public static final int TOPIC_FIELD_NUMBER = 2;
     /**
-     * <code>string topic = 2;</code>
-     * @return The topic.
+     * <code>optional string topic = 2;</code>
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = "";
@@ -263,8 +232,7 @@ public final class IoMappings {
       }
     }
     /**
-     * <code>string topic = 2;</code>
-     * @return The bytes for topic.
+     * <code>optional string topic = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -287,15 +255,7 @@ public final class IoMappings {
 
     public static final int TOPIC_MUX_FIELD_NUMBER = 3;
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
-     * @return Whether the topicMux field is set.
-     */
-    public boolean hasTopicMux() {
-      return topicSourceCase_ == 3;
-    }
-    /**
-     * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
-     * @return The topicMux.
+     * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
      */
     public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
       if (topicSourceCase_ == 3) {
@@ -304,7 +264,7 @@ public final class IoMappings {
       return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+     * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
      */
     public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
       if (topicSourceCase_ == 3) {
@@ -314,7 +274,6 @@ public final class IoMappings {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -324,7 +283,6 @@ public final class IoMappings {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getInputNameBytes().isEmpty()) {
@@ -336,10 +294,8 @@ public final class IoMappings {
       if (topicSourceCase_ == 3) {
         output.writeMessage(3, (ubii.devices.TopicMuxOuterClass.TopicMux) topicSource_);
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -355,11 +311,11 @@ public final class IoMappings {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (ubii.devices.TopicMuxOuterClass.TopicMux) topicSource_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -370,23 +326,25 @@ public final class IoMappings {
       }
       ubii.sessions.IoMappings.TopicInputMapping other = (ubii.sessions.IoMappings.TopicInputMapping) obj;
 
-      if (!getInputName()
-          .equals(other.getInputName())) return false;
-      if (!getTopicSourceCase().equals(other.getTopicSourceCase())) return false;
+      boolean result = true;
+      result = result && getInputName()
+          .equals(other.getInputName());
+      result = result && getTopicSourceCase().equals(
+          other.getTopicSourceCase());
+      if (!result) return false;
       switch (topicSourceCase_) {
         case 2:
-          if (!getTopic()
-              .equals(other.getTopic())) return false;
+          result = result && getTopic()
+              .equals(other.getTopic());
           break;
         case 3:
-          if (!getTopicMux()
-              .equals(other.getTopicMux())) return false;
+          result = result && getTopicMux()
+              .equals(other.getTopicMux());
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      return result;
     }
 
     @java.lang.Override
@@ -395,7 +353,7 @@ public final class IoMappings {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + INPUT_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getInputName().hashCode();
       switch (topicSourceCase_) {
@@ -415,17 +373,6 @@ public final class IoMappings {
       return hash;
     }
 
-    public static ubii.sessions.IoMappings.TopicInputMapping parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.sessions.IoMappings.TopicInputMapping parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static ubii.sessions.IoMappings.TopicInputMapping parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -485,7 +432,6 @@ public final class IoMappings {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -493,7 +439,6 @@ public final class IoMappings {
     public static Builder newBuilder(ubii.sessions.IoMappings.TopicInputMapping prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -517,7 +462,6 @@ public final class IoMappings {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMapping_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMapping_fieldAccessorTable
@@ -540,7 +484,6 @@ public final class IoMappings {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         inputName_ = "";
@@ -550,18 +493,15 @@ public final class IoMappings {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMapping_descriptor;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicInputMapping getDefaultInstanceForType() {
         return ubii.sessions.IoMappings.TopicInputMapping.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicInputMapping build() {
         ubii.sessions.IoMappings.TopicInputMapping result = buildPartial();
         if (!result.isInitialized()) {
@@ -570,7 +510,6 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicInputMapping buildPartial() {
         ubii.sessions.IoMappings.TopicInputMapping result = new ubii.sessions.IoMappings.TopicInputMapping(this);
         result.inputName_ = inputName_;
@@ -589,39 +528,32 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.IoMappings.TopicInputMapping) {
           return mergeFrom((ubii.sessions.IoMappings.TopicInputMapping)other);
@@ -652,17 +584,14 @@ public final class IoMappings {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -698,8 +627,7 @@ public final class IoMappings {
 
       private java.lang.Object inputName_ = "";
       /**
-       * <code>string input_name = 1;</code>
-       * @return The inputName.
+       * <code>optional string input_name = 1;</code>
        */
       public java.lang.String getInputName() {
         java.lang.Object ref = inputName_;
@@ -714,8 +642,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string input_name = 1;</code>
-       * @return The bytes for inputName.
+       * <code>optional string input_name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getInputNameBytes() {
@@ -731,9 +658,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string input_name = 1;</code>
-       * @param value The inputName to set.
-       * @return This builder for chaining.
+       * <code>optional string input_name = 1;</code>
        */
       public Builder setInputName(
           java.lang.String value) {
@@ -746,8 +671,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string input_name = 1;</code>
-       * @return This builder for chaining.
+       * <code>optional string input_name = 1;</code>
        */
       public Builder clearInputName() {
         
@@ -756,9 +680,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string input_name = 1;</code>
-       * @param value The bytes for inputName to set.
-       * @return This builder for chaining.
+       * <code>optional string input_name = 1;</code>
        */
       public Builder setInputNameBytes(
           com.google.protobuf.ByteString value) {
@@ -773,8 +695,7 @@ public final class IoMappings {
       }
 
       /**
-       * <code>string topic = 2;</code>
-       * @return The topic.
+       * <code>optional string topic = 2;</code>
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = "";
@@ -794,8 +715,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string topic = 2;</code>
-       * @return The bytes for topic.
+       * <code>optional string topic = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -816,9 +736,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string topic = 2;</code>
-       * @param value The topic to set.
-       * @return This builder for chaining.
+       * <code>optional string topic = 2;</code>
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -831,8 +749,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string topic = 2;</code>
-       * @return This builder for chaining.
+       * <code>optional string topic = 2;</code>
        */
       public Builder clearTopic() {
         if (topicSourceCase_ == 2) {
@@ -843,9 +760,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string topic = 2;</code>
-       * @param value The bytes for topic to set.
-       * @return This builder for chaining.
+       * <code>optional string topic = 2;</code>
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -862,15 +777,7 @@ public final class IoMappings {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> topicMuxBuilder_;
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
-       * @return Whether the topicMux field is set.
-       */
-      public boolean hasTopicMux() {
-        return topicSourceCase_ == 3;
-      }
-      /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
-       * @return The topicMux.
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
         if (topicMuxBuilder_ == null) {
@@ -886,7 +793,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       public Builder setTopicMux(ubii.devices.TopicMuxOuterClass.TopicMux value) {
         if (topicMuxBuilder_ == null) {
@@ -902,7 +809,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       public Builder setTopicMux(
           ubii.devices.TopicMuxOuterClass.TopicMux.Builder builderForValue) {
@@ -916,7 +823,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       public Builder mergeTopicMux(ubii.devices.TopicMuxOuterClass.TopicMux value) {
         if (topicMuxBuilder_ == null) {
@@ -938,7 +845,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       public Builder clearTopicMux() {
         if (topicMuxBuilder_ == null) {
@@ -957,13 +864,13 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMux.Builder getTopicMuxBuilder() {
         return getTopicMuxFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getTopicMuxOrBuilder() {
         if ((topicSourceCase_ == 3) && (topicMuxBuilder_ != null)) {
@@ -976,7 +883,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>.ubii.devices.TopicMux topic_mux = 3;</code>
+       * <code>optional .ubii.devices.TopicMux topic_mux = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> 
@@ -996,16 +903,14 @@ public final class IoMappings {
         onChanged();;
         return topicMuxBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1024,12 +929,11 @@ public final class IoMappings {
 
     private static final com.google.protobuf.Parser<TopicInputMapping>
         PARSER = new com.google.protobuf.AbstractParser<TopicInputMapping>() {
-      @java.lang.Override
       public TopicInputMapping parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicInputMapping(input, extensionRegistry);
+          return new TopicInputMapping(input, extensionRegistry);
       }
     };
 
@@ -1042,7 +946,6 @@ public final class IoMappings {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.sessions.IoMappings.TopicInputMapping getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1084,7 +987,6 @@ public final class IoMappings {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.TopicInputMappingList)
       TopicInputMappingListOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use TopicInputMappingList.newBuilder() to construct.
     private TopicInputMappingList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1094,28 +996,16 @@ public final class IoMappings {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TopicInputMappingList();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private TopicInputMappingList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1124,20 +1014,19 @@ public final class IoMappings {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 elements_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicInputMapping>();
                 mutable_bitField0_ |= 0x00000001;
               }
               elements_.add(
                   input.readMessage(ubii.sessions.IoMappings.TopicInputMapping.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -1148,10 +1037,9 @@ public final class IoMappings {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1160,7 +1048,6 @@ public final class IoMappings {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMappingList_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMappingList_fieldAccessorTable
@@ -1204,7 +1091,6 @@ public final class IoMappings {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1214,16 +1100,13 @@ public final class IoMappings {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1233,11 +1116,11 @@ public final class IoMappings {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1248,10 +1131,10 @@ public final class IoMappings {
       }
       ubii.sessions.IoMappings.TopicInputMappingList other = (ubii.sessions.IoMappings.TopicInputMappingList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      return result;
     }
 
     @java.lang.Override
@@ -1260,7 +1143,7 @@ public final class IoMappings {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (getElementsCount() > 0) {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
@@ -1270,17 +1153,6 @@ public final class IoMappings {
       return hash;
     }
 
-    public static ubii.sessions.IoMappings.TopicInputMappingList parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.sessions.IoMappings.TopicInputMappingList parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static ubii.sessions.IoMappings.TopicInputMappingList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1340,7 +1212,6 @@ public final class IoMappings {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1348,7 +1219,6 @@ public final class IoMappings {
     public static Builder newBuilder(ubii.sessions.IoMappings.TopicInputMappingList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1372,7 +1242,6 @@ public final class IoMappings {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMappingList_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMappingList_fieldAccessorTable
@@ -1396,7 +1265,6 @@ public final class IoMappings {
           getElementsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (elementsBuilder_ == null) {
@@ -1408,18 +1276,15 @@ public final class IoMappings {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicInputMappingList_descriptor;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicInputMappingList getDefaultInstanceForType() {
         return ubii.sessions.IoMappings.TopicInputMappingList.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicInputMappingList build() {
         ubii.sessions.IoMappings.TopicInputMappingList result = buildPartial();
         if (!result.isInitialized()) {
@@ -1428,12 +1293,11 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicInputMappingList buildPartial() {
         ubii.sessions.IoMappings.TopicInputMappingList result = new ubii.sessions.IoMappings.TopicInputMappingList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1445,39 +1309,32 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.IoMappings.TopicInputMappingList) {
           return mergeFrom((ubii.sessions.IoMappings.TopicInputMappingList)other);
@@ -1515,17 +1372,14 @@ public final class IoMappings {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1548,7 +1402,7 @@ public final class IoMappings {
       private java.util.List<ubii.sessions.IoMappings.TopicInputMapping> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicInputMapping>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1777,23 +1631,21 @@ public final class IoMappings {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMappings.TopicInputMapping, ubii.sessions.IoMappings.TopicInputMapping.Builder, ubii.sessions.IoMappings.TopicInputMappingOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
         }
         return elementsBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1812,12 +1664,11 @@ public final class IoMappings {
 
     private static final com.google.protobuf.Parser<TopicInputMappingList>
         PARSER = new com.google.protobuf.AbstractParser<TopicInputMappingList>() {
-      @java.lang.Override
       public TopicInputMappingList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicInputMappingList(input, extensionRegistry);
+          return new TopicInputMappingList(input, extensionRegistry);
       }
     };
 
@@ -1830,7 +1681,6 @@ public final class IoMappings {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.sessions.IoMappings.TopicInputMappingList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1842,41 +1692,31 @@ public final class IoMappings {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string output_name = 1;</code>
-     * @return The outputName.
+     * <code>optional string output_name = 1;</code>
      */
     java.lang.String getOutputName();
     /**
-     * <code>string output_name = 1;</code>
-     * @return The bytes for outputName.
+     * <code>optional string output_name = 1;</code>
      */
     com.google.protobuf.ByteString
         getOutputNameBytes();
 
     /**
-     * <code>string topic = 2;</code>
-     * @return The topic.
+     * <code>optional string topic = 2;</code>
      */
     java.lang.String getTopic();
     /**
-     * <code>string topic = 2;</code>
-     * @return The bytes for topic.
+     * <code>optional string topic = 2;</code>
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
-     * @return Whether the topicDemux field is set.
-     */
-    boolean hasTopicDemux();
-    /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
-     * @return The topicDemux.
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux();
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder();
 
@@ -1889,7 +1729,6 @@ public final class IoMappings {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.TopicOutputMapping)
       TopicOutputMappingOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use TopicOutputMapping.newBuilder() to construct.
     private TopicOutputMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1899,27 +1738,16 @@ public final class IoMappings {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TopicOutputMapping();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private TopicOutputMapping(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -1928,6 +1756,12 @@ public final class IoMappings {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1954,13 +1788,6 @@ public final class IoMappings {
               topicDestinationCase_ = 3;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1969,7 +1796,6 @@ public final class IoMappings {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1978,7 +1804,6 @@ public final class IoMappings {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMapping_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMapping_fieldAccessorTable
@@ -1989,8 +1814,7 @@ public final class IoMappings {
     private int topicDestinationCase_ = 0;
     private java.lang.Object topicDestination_;
     public enum TopicDestinationCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       TOPIC(2),
       TOPIC_DEMUX(3),
       TOPICDESTINATION_NOT_SET(0);
@@ -1999,8 +1823,6 @@ public final class IoMappings {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2030,8 +1852,7 @@ public final class IoMappings {
     public static final int OUTPUT_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object outputName_;
     /**
-     * <code>string output_name = 1;</code>
-     * @return The outputName.
+     * <code>optional string output_name = 1;</code>
      */
     public java.lang.String getOutputName() {
       java.lang.Object ref = outputName_;
@@ -2046,8 +1867,7 @@ public final class IoMappings {
       }
     }
     /**
-     * <code>string output_name = 1;</code>
-     * @return The bytes for outputName.
+     * <code>optional string output_name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getOutputNameBytes() {
@@ -2065,8 +1885,7 @@ public final class IoMappings {
 
     public static final int TOPIC_FIELD_NUMBER = 2;
     /**
-     * <code>string topic = 2;</code>
-     * @return The topic.
+     * <code>optional string topic = 2;</code>
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = "";
@@ -2086,8 +1905,7 @@ public final class IoMappings {
       }
     }
     /**
-     * <code>string topic = 2;</code>
-     * @return The bytes for topic.
+     * <code>optional string topic = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -2110,15 +1928,7 @@ public final class IoMappings {
 
     public static final int TOPIC_DEMUX_FIELD_NUMBER = 3;
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
-     * @return Whether the topicDemux field is set.
-     */
-    public boolean hasTopicDemux() {
-      return topicDestinationCase_ == 3;
-    }
-    /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
-     * @return The topicDemux.
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
       if (topicDestinationCase_ == 3) {
@@ -2127,7 +1937,7 @@ public final class IoMappings {
       return ubii.devices.TopicDemuxOuterClass.TopicDemux.getDefaultInstance();
     }
     /**
-     * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+     * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
       if (topicDestinationCase_ == 3) {
@@ -2137,7 +1947,6 @@ public final class IoMappings {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2147,7 +1956,6 @@ public final class IoMappings {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getOutputNameBytes().isEmpty()) {
@@ -2159,10 +1967,8 @@ public final class IoMappings {
       if (topicDestinationCase_ == 3) {
         output.writeMessage(3, (ubii.devices.TopicDemuxOuterClass.TopicDemux) topicDestination_);
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2178,11 +1984,11 @@ public final class IoMappings {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (ubii.devices.TopicDemuxOuterClass.TopicDemux) topicDestination_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2193,23 +1999,25 @@ public final class IoMappings {
       }
       ubii.sessions.IoMappings.TopicOutputMapping other = (ubii.sessions.IoMappings.TopicOutputMapping) obj;
 
-      if (!getOutputName()
-          .equals(other.getOutputName())) return false;
-      if (!getTopicDestinationCase().equals(other.getTopicDestinationCase())) return false;
+      boolean result = true;
+      result = result && getOutputName()
+          .equals(other.getOutputName());
+      result = result && getTopicDestinationCase().equals(
+          other.getTopicDestinationCase());
+      if (!result) return false;
       switch (topicDestinationCase_) {
         case 2:
-          if (!getTopic()
-              .equals(other.getTopic())) return false;
+          result = result && getTopic()
+              .equals(other.getTopic());
           break;
         case 3:
-          if (!getTopicDemux()
-              .equals(other.getTopicDemux())) return false;
+          result = result && getTopicDemux()
+              .equals(other.getTopicDemux());
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      return result;
     }
 
     @java.lang.Override
@@ -2218,7 +2026,7 @@ public final class IoMappings {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + OUTPUT_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getOutputName().hashCode();
       switch (topicDestinationCase_) {
@@ -2238,17 +2046,6 @@ public final class IoMappings {
       return hash;
     }
 
-    public static ubii.sessions.IoMappings.TopicOutputMapping parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.sessions.IoMappings.TopicOutputMapping parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static ubii.sessions.IoMappings.TopicOutputMapping parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2308,7 +2105,6 @@ public final class IoMappings {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2316,7 +2112,6 @@ public final class IoMappings {
     public static Builder newBuilder(ubii.sessions.IoMappings.TopicOutputMapping prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2340,7 +2135,6 @@ public final class IoMappings {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMapping_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMapping_fieldAccessorTable
@@ -2363,7 +2157,6 @@ public final class IoMappings {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         outputName_ = "";
@@ -2373,18 +2166,15 @@ public final class IoMappings {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMapping_descriptor;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicOutputMapping getDefaultInstanceForType() {
         return ubii.sessions.IoMappings.TopicOutputMapping.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicOutputMapping build() {
         ubii.sessions.IoMappings.TopicOutputMapping result = buildPartial();
         if (!result.isInitialized()) {
@@ -2393,7 +2183,6 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicOutputMapping buildPartial() {
         ubii.sessions.IoMappings.TopicOutputMapping result = new ubii.sessions.IoMappings.TopicOutputMapping(this);
         result.outputName_ = outputName_;
@@ -2412,39 +2201,32 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.IoMappings.TopicOutputMapping) {
           return mergeFrom((ubii.sessions.IoMappings.TopicOutputMapping)other);
@@ -2475,17 +2257,14 @@ public final class IoMappings {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2521,8 +2300,7 @@ public final class IoMappings {
 
       private java.lang.Object outputName_ = "";
       /**
-       * <code>string output_name = 1;</code>
-       * @return The outputName.
+       * <code>optional string output_name = 1;</code>
        */
       public java.lang.String getOutputName() {
         java.lang.Object ref = outputName_;
@@ -2537,8 +2315,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string output_name = 1;</code>
-       * @return The bytes for outputName.
+       * <code>optional string output_name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getOutputNameBytes() {
@@ -2554,9 +2331,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string output_name = 1;</code>
-       * @param value The outputName to set.
-       * @return This builder for chaining.
+       * <code>optional string output_name = 1;</code>
        */
       public Builder setOutputName(
           java.lang.String value) {
@@ -2569,8 +2344,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string output_name = 1;</code>
-       * @return This builder for chaining.
+       * <code>optional string output_name = 1;</code>
        */
       public Builder clearOutputName() {
         
@@ -2579,9 +2353,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string output_name = 1;</code>
-       * @param value The bytes for outputName to set.
-       * @return This builder for chaining.
+       * <code>optional string output_name = 1;</code>
        */
       public Builder setOutputNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2596,8 +2368,7 @@ public final class IoMappings {
       }
 
       /**
-       * <code>string topic = 2;</code>
-       * @return The topic.
+       * <code>optional string topic = 2;</code>
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = "";
@@ -2617,8 +2388,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string topic = 2;</code>
-       * @return The bytes for topic.
+       * <code>optional string topic = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -2639,9 +2409,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string topic = 2;</code>
-       * @param value The topic to set.
-       * @return This builder for chaining.
+       * <code>optional string topic = 2;</code>
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -2654,8 +2422,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string topic = 2;</code>
-       * @return This builder for chaining.
+       * <code>optional string topic = 2;</code>
        */
       public Builder clearTopic() {
         if (topicDestinationCase_ == 2) {
@@ -2666,9 +2433,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string topic = 2;</code>
-       * @param value The bytes for topic to set.
-       * @return This builder for chaining.
+       * <code>optional string topic = 2;</code>
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -2685,15 +2450,7 @@ public final class IoMappings {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> topicDemuxBuilder_;
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
-       * @return Whether the topicDemux field is set.
-       */
-      public boolean hasTopicDemux() {
-        return topicDestinationCase_ == 3;
-      }
-      /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
-       * @return The topicDemux.
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
         if (topicDemuxBuilder_ == null) {
@@ -2709,7 +2466,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       public Builder setTopicDemux(ubii.devices.TopicDemuxOuterClass.TopicDemux value) {
         if (topicDemuxBuilder_ == null) {
@@ -2725,7 +2482,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       public Builder setTopicDemux(
           ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder builderForValue) {
@@ -2739,7 +2496,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       public Builder mergeTopicDemux(ubii.devices.TopicDemuxOuterClass.TopicDemux value) {
         if (topicDemuxBuilder_ == null) {
@@ -2761,7 +2518,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       public Builder clearTopicDemux() {
         if (topicDemuxBuilder_ == null) {
@@ -2780,13 +2537,13 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder getTopicDemuxBuilder() {
         return getTopicDemuxFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getTopicDemuxOrBuilder() {
         if ((topicDestinationCase_ == 3) && (topicDemuxBuilder_ != null)) {
@@ -2799,7 +2556,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>.ubii.devices.TopicDemux topic_demux = 3;</code>
+       * <code>optional .ubii.devices.TopicDemux topic_demux = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> 
@@ -2819,16 +2576,14 @@ public final class IoMappings {
         onChanged();;
         return topicDemuxBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -2847,12 +2602,11 @@ public final class IoMappings {
 
     private static final com.google.protobuf.Parser<TopicOutputMapping>
         PARSER = new com.google.protobuf.AbstractParser<TopicOutputMapping>() {
-      @java.lang.Override
       public TopicOutputMapping parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicOutputMapping(input, extensionRegistry);
+          return new TopicOutputMapping(input, extensionRegistry);
       }
     };
 
@@ -2865,7 +2619,6 @@ public final class IoMappings {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.sessions.IoMappings.TopicOutputMapping getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2907,7 +2660,6 @@ public final class IoMappings {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.TopicOutputMappingList)
       TopicOutputMappingListOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use TopicOutputMappingList.newBuilder() to construct.
     private TopicOutputMappingList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2917,28 +2669,16 @@ public final class IoMappings {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TopicOutputMappingList();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private TopicOutputMappingList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2947,20 +2687,19 @@ public final class IoMappings {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 elements_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicOutputMapping>();
                 mutable_bitField0_ |= 0x00000001;
               }
               elements_.add(
                   input.readMessage(ubii.sessions.IoMappings.TopicOutputMapping.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -2971,10 +2710,9 @@ public final class IoMappings {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2983,7 +2721,6 @@ public final class IoMappings {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMappingList_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMappingList_fieldAccessorTable
@@ -3027,7 +2764,6 @@ public final class IoMappings {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3037,16 +2773,13 @@ public final class IoMappings {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3056,11 +2789,11 @@ public final class IoMappings {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3071,10 +2804,10 @@ public final class IoMappings {
       }
       ubii.sessions.IoMappings.TopicOutputMappingList other = (ubii.sessions.IoMappings.TopicOutputMappingList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      return result;
     }
 
     @java.lang.Override
@@ -3083,7 +2816,7 @@ public final class IoMappings {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (getElementsCount() > 0) {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
@@ -3093,17 +2826,6 @@ public final class IoMappings {
       return hash;
     }
 
-    public static ubii.sessions.IoMappings.TopicOutputMappingList parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.sessions.IoMappings.TopicOutputMappingList parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static ubii.sessions.IoMappings.TopicOutputMappingList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3163,7 +2885,6 @@ public final class IoMappings {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3171,7 +2892,6 @@ public final class IoMappings {
     public static Builder newBuilder(ubii.sessions.IoMappings.TopicOutputMappingList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3195,7 +2915,6 @@ public final class IoMappings {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMappingList_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMappingList_fieldAccessorTable
@@ -3219,7 +2938,6 @@ public final class IoMappings {
           getElementsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (elementsBuilder_ == null) {
@@ -3231,18 +2949,15 @@ public final class IoMappings {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_TopicOutputMappingList_descriptor;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicOutputMappingList getDefaultInstanceForType() {
         return ubii.sessions.IoMappings.TopicOutputMappingList.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicOutputMappingList build() {
         ubii.sessions.IoMappings.TopicOutputMappingList result = buildPartial();
         if (!result.isInitialized()) {
@@ -3251,12 +2966,11 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.TopicOutputMappingList buildPartial() {
         ubii.sessions.IoMappings.TopicOutputMappingList result = new ubii.sessions.IoMappings.TopicOutputMappingList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -3268,39 +2982,32 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.IoMappings.TopicOutputMappingList) {
           return mergeFrom((ubii.sessions.IoMappings.TopicOutputMappingList)other);
@@ -3338,17 +3045,14 @@ public final class IoMappings {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3371,7 +3075,7 @@ public final class IoMappings {
       private java.util.List<ubii.sessions.IoMappings.TopicOutputMapping> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicOutputMapping>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -3600,23 +3304,21 @@ public final class IoMappings {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMappings.TopicOutputMapping, ubii.sessions.IoMappings.TopicOutputMapping.Builder, ubii.sessions.IoMappings.TopicOutputMappingOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
         }
         return elementsBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -3635,12 +3337,11 @@ public final class IoMappings {
 
     private static final com.google.protobuf.Parser<TopicOutputMappingList>
         PARSER = new com.google.protobuf.AbstractParser<TopicOutputMappingList>() {
-      @java.lang.Override
       public TopicOutputMappingList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TopicOutputMappingList(input, extensionRegistry);
+          return new TopicOutputMappingList(input, extensionRegistry);
       }
     };
 
@@ -3653,7 +3354,6 @@ public final class IoMappings {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.sessions.IoMappings.TopicOutputMappingList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3665,13 +3365,11 @@ public final class IoMappings {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string processing_module_id = 1;</code>
-     * @return The processingModuleId.
+     * <code>optional string processing_module_id = 1;</code>
      */
     java.lang.String getProcessingModuleId();
     /**
-     * <code>string processing_module_id = 1;</code>
-     * @return The bytes for processingModuleId.
+     * <code>optional string processing_module_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getProcessingModuleIdBytes();
@@ -3725,13 +3423,11 @@ public final class IoMappings {
         int index);
 
     /**
-     * <code>string processing_module_name = 4;</code>
-     * @return The processingModuleName.
+     * <code>optional string processing_module_name = 4;</code>
      */
     java.lang.String getProcessingModuleName();
     /**
-     * <code>string processing_module_name = 4;</code>
-     * @return The bytes for processingModuleName.
+     * <code>optional string processing_module_name = 4;</code>
      */
     com.google.protobuf.ByteString
         getProcessingModuleNameBytes();
@@ -3743,7 +3439,6 @@ public final class IoMappings {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.IOMapping)
       IOMappingOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use IOMapping.newBuilder() to construct.
     private IOMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3756,28 +3451,16 @@ public final class IoMappings {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new IOMapping();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private IOMapping(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3786,6 +3469,12 @@ public final class IoMappings {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3793,18 +3482,18 @@ public final class IoMappings {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 inputMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicInputMapping>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               inputMappings_.add(
                   input.readMessage(ubii.sessions.IoMappings.TopicInputMapping.parser(), extensionRegistry));
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 outputMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicOutputMapping>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               outputMappings_.add(
                   input.readMessage(ubii.sessions.IoMappings.TopicOutputMapping.parser(), extensionRegistry));
@@ -3816,13 +3505,6 @@ public final class IoMappings {
               processingModuleName_ = s;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3831,13 +3513,12 @@ public final class IoMappings {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           inputMappings_ = java.util.Collections.unmodifiableList(inputMappings_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           outputMappings_ = java.util.Collections.unmodifiableList(outputMappings_);
         }
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3846,7 +3527,6 @@ public final class IoMappings {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMapping_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMapping_fieldAccessorTable
@@ -3854,11 +3534,11 @@ public final class IoMappings {
               ubii.sessions.IoMappings.IOMapping.class, ubii.sessions.IoMappings.IOMapping.Builder.class);
     }
 
+    private int bitField0_;
     public static final int PROCESSING_MODULE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object processingModuleId_;
     /**
-     * <code>string processing_module_id = 1;</code>
-     * @return The processingModuleId.
+     * <code>optional string processing_module_id = 1;</code>
      */
     public java.lang.String getProcessingModuleId() {
       java.lang.Object ref = processingModuleId_;
@@ -3873,8 +3553,7 @@ public final class IoMappings {
       }
     }
     /**
-     * <code>string processing_module_id = 1;</code>
-     * @return The bytes for processingModuleId.
+     * <code>optional string processing_module_id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getProcessingModuleIdBytes() {
@@ -3963,8 +3642,7 @@ public final class IoMappings {
     public static final int PROCESSING_MODULE_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object processingModuleName_;
     /**
-     * <code>string processing_module_name = 4;</code>
-     * @return The processingModuleName.
+     * <code>optional string processing_module_name = 4;</code>
      */
     public java.lang.String getProcessingModuleName() {
       java.lang.Object ref = processingModuleName_;
@@ -3979,8 +3657,7 @@ public final class IoMappings {
       }
     }
     /**
-     * <code>string processing_module_name = 4;</code>
-     * @return The bytes for processingModuleName.
+     * <code>optional string processing_module_name = 4;</code>
      */
     public com.google.protobuf.ByteString
         getProcessingModuleNameBytes() {
@@ -3997,7 +3674,6 @@ public final class IoMappings {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4007,7 +3683,6 @@ public final class IoMappings {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getProcessingModuleIdBytes().isEmpty()) {
@@ -4022,10 +3697,8 @@ public final class IoMappings {
       if (!getProcessingModuleNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, processingModuleName_);
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4045,11 +3718,11 @@ public final class IoMappings {
       if (!getProcessingModuleNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, processingModuleName_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4060,16 +3733,16 @@ public final class IoMappings {
       }
       ubii.sessions.IoMappings.IOMapping other = (ubii.sessions.IoMappings.IOMapping) obj;
 
-      if (!getProcessingModuleId()
-          .equals(other.getProcessingModuleId())) return false;
-      if (!getInputMappingsList()
-          .equals(other.getInputMappingsList())) return false;
-      if (!getOutputMappingsList()
-          .equals(other.getOutputMappingsList())) return false;
-      if (!getProcessingModuleName()
-          .equals(other.getProcessingModuleName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getProcessingModuleId()
+          .equals(other.getProcessingModuleId());
+      result = result && getInputMappingsList()
+          .equals(other.getInputMappingsList());
+      result = result && getOutputMappingsList()
+          .equals(other.getOutputMappingsList());
+      result = result && getProcessingModuleName()
+          .equals(other.getProcessingModuleName());
+      return result;
     }
 
     @java.lang.Override
@@ -4078,7 +3751,7 @@ public final class IoMappings {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + PROCESSING_MODULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProcessingModuleId().hashCode();
       if (getInputMappingsCount() > 0) {
@@ -4096,17 +3769,6 @@ public final class IoMappings {
       return hash;
     }
 
-    public static ubii.sessions.IoMappings.IOMapping parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.sessions.IoMappings.IOMapping parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static ubii.sessions.IoMappings.IOMapping parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4166,7 +3828,6 @@ public final class IoMappings {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4174,7 +3835,6 @@ public final class IoMappings {
     public static Builder newBuilder(ubii.sessions.IoMappings.IOMapping prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4198,7 +3858,6 @@ public final class IoMappings {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMapping_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMapping_fieldAccessorTable
@@ -4223,20 +3882,19 @@ public final class IoMappings {
           getOutputMappingsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         processingModuleId_ = "";
 
         if (inputMappingsBuilder_ == null) {
           inputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           inputMappingsBuilder_.clear();
         }
         if (outputMappingsBuilder_ == null) {
           outputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           outputMappingsBuilder_.clear();
         }
@@ -4245,18 +3903,15 @@ public final class IoMappings {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMapping_descriptor;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.IOMapping getDefaultInstanceForType() {
         return ubii.sessions.IoMappings.IOMapping.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.IOMapping build() {
         ubii.sessions.IoMappings.IOMapping result = buildPartial();
         if (!result.isInitialized()) {
@@ -4265,67 +3920,61 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.IOMapping buildPartial() {
         ubii.sessions.IoMappings.IOMapping result = new ubii.sessions.IoMappings.IOMapping(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.processingModuleId_ = processingModuleId_;
         if (inputMappingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             inputMappings_ = java.util.Collections.unmodifiableList(inputMappings_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.inputMappings_ = inputMappings_;
         } else {
           result.inputMappings_ = inputMappingsBuilder_.build();
         }
         if (outputMappingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             outputMappings_ = java.util.Collections.unmodifiableList(outputMappings_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.outputMappings_ = outputMappings_;
         } else {
           result.outputMappings_ = outputMappingsBuilder_.build();
         }
         result.processingModuleName_ = processingModuleName_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.IoMappings.IOMapping) {
           return mergeFrom((ubii.sessions.IoMappings.IOMapping)other);
@@ -4345,7 +3994,7 @@ public final class IoMappings {
           if (!other.inputMappings_.isEmpty()) {
             if (inputMappings_.isEmpty()) {
               inputMappings_ = other.inputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureInputMappingsIsMutable();
               inputMappings_.addAll(other.inputMappings_);
@@ -4358,7 +4007,7 @@ public final class IoMappings {
               inputMappingsBuilder_.dispose();
               inputMappingsBuilder_ = null;
               inputMappings_ = other.inputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               inputMappingsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInputMappingsFieldBuilder() : null;
@@ -4371,7 +4020,7 @@ public final class IoMappings {
           if (!other.outputMappings_.isEmpty()) {
             if (outputMappings_.isEmpty()) {
               outputMappings_ = other.outputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureOutputMappingsIsMutable();
               outputMappings_.addAll(other.outputMappings_);
@@ -4384,7 +4033,7 @@ public final class IoMappings {
               outputMappingsBuilder_.dispose();
               outputMappingsBuilder_ = null;
               outputMappings_ = other.outputMappings_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               outputMappingsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOutputMappingsFieldBuilder() : null;
@@ -4397,17 +4046,14 @@ public final class IoMappings {
           processingModuleName_ = other.processingModuleName_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4429,8 +4075,7 @@ public final class IoMappings {
 
       private java.lang.Object processingModuleId_ = "";
       /**
-       * <code>string processing_module_id = 1;</code>
-       * @return The processingModuleId.
+       * <code>optional string processing_module_id = 1;</code>
        */
       public java.lang.String getProcessingModuleId() {
         java.lang.Object ref = processingModuleId_;
@@ -4445,8 +4090,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string processing_module_id = 1;</code>
-       * @return The bytes for processingModuleId.
+       * <code>optional string processing_module_id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getProcessingModuleIdBytes() {
@@ -4462,9 +4106,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string processing_module_id = 1;</code>
-       * @param value The processingModuleId to set.
-       * @return This builder for chaining.
+       * <code>optional string processing_module_id = 1;</code>
        */
       public Builder setProcessingModuleId(
           java.lang.String value) {
@@ -4477,8 +4119,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string processing_module_id = 1;</code>
-       * @return This builder for chaining.
+       * <code>optional string processing_module_id = 1;</code>
        */
       public Builder clearProcessingModuleId() {
         
@@ -4487,9 +4128,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string processing_module_id = 1;</code>
-       * @param value The bytes for processingModuleId to set.
-       * @return This builder for chaining.
+       * <code>optional string processing_module_id = 1;</code>
        */
       public Builder setProcessingModuleIdBytes(
           com.google.protobuf.ByteString value) {
@@ -4506,9 +4145,9 @@ public final class IoMappings {
       private java.util.List<ubii.sessions.IoMappings.TopicInputMapping> inputMappings_ =
         java.util.Collections.emptyList();
       private void ensureInputMappingsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           inputMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicInputMapping>(inputMappings_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -4658,7 +4297,7 @@ public final class IoMappings {
       public Builder clearInputMappings() {
         if (inputMappingsBuilder_ == null) {
           inputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           inputMappingsBuilder_.clear();
@@ -4735,7 +4374,7 @@ public final class IoMappings {
           inputMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMappings.TopicInputMapping, ubii.sessions.IoMappings.TopicInputMapping.Builder, ubii.sessions.IoMappings.TopicInputMappingOrBuilder>(
                   inputMappings_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           inputMappings_ = null;
@@ -4746,9 +4385,9 @@ public final class IoMappings {
       private java.util.List<ubii.sessions.IoMappings.TopicOutputMapping> outputMappings_ =
         java.util.Collections.emptyList();
       private void ensureOutputMappingsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           outputMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.TopicOutputMapping>(outputMappings_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -4898,7 +4537,7 @@ public final class IoMappings {
       public Builder clearOutputMappings() {
         if (outputMappingsBuilder_ == null) {
           outputMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           outputMappingsBuilder_.clear();
@@ -4975,7 +4614,7 @@ public final class IoMappings {
           outputMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMappings.TopicOutputMapping, ubii.sessions.IoMappings.TopicOutputMapping.Builder, ubii.sessions.IoMappings.TopicOutputMappingOrBuilder>(
                   outputMappings_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
           outputMappings_ = null;
@@ -4985,8 +4624,7 @@ public final class IoMappings {
 
       private java.lang.Object processingModuleName_ = "";
       /**
-       * <code>string processing_module_name = 4;</code>
-       * @return The processingModuleName.
+       * <code>optional string processing_module_name = 4;</code>
        */
       public java.lang.String getProcessingModuleName() {
         java.lang.Object ref = processingModuleName_;
@@ -5001,8 +4639,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string processing_module_name = 4;</code>
-       * @return The bytes for processingModuleName.
+       * <code>optional string processing_module_name = 4;</code>
        */
       public com.google.protobuf.ByteString
           getProcessingModuleNameBytes() {
@@ -5018,9 +4655,7 @@ public final class IoMappings {
         }
       }
       /**
-       * <code>string processing_module_name = 4;</code>
-       * @param value The processingModuleName to set.
-       * @return This builder for chaining.
+       * <code>optional string processing_module_name = 4;</code>
        */
       public Builder setProcessingModuleName(
           java.lang.String value) {
@@ -5033,8 +4668,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string processing_module_name = 4;</code>
-       * @return This builder for chaining.
+       * <code>optional string processing_module_name = 4;</code>
        */
       public Builder clearProcessingModuleName() {
         
@@ -5043,9 +4677,7 @@ public final class IoMappings {
         return this;
       }
       /**
-       * <code>string processing_module_name = 4;</code>
-       * @param value The bytes for processingModuleName to set.
-       * @return This builder for chaining.
+       * <code>optional string processing_module_name = 4;</code>
        */
       public Builder setProcessingModuleNameBytes(
           com.google.protobuf.ByteString value) {
@@ -5058,16 +4690,14 @@ public final class IoMappings {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -5086,12 +4716,11 @@ public final class IoMappings {
 
     private static final com.google.protobuf.Parser<IOMapping>
         PARSER = new com.google.protobuf.AbstractParser<IOMapping>() {
-      @java.lang.Override
       public IOMapping parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IOMapping(input, extensionRegistry);
+          return new IOMapping(input, extensionRegistry);
       }
     };
 
@@ -5104,7 +4733,6 @@ public final class IoMappings {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.sessions.IoMappings.IOMapping getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5146,7 +4774,6 @@ public final class IoMappings {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.IOMappingList)
       IOMappingListOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use IOMappingList.newBuilder() to construct.
     private IOMappingList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5156,28 +4783,16 @@ public final class IoMappings {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new IOMappingList();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private IOMappingList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5186,20 +4801,19 @@ public final class IoMappings {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 elements_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>();
                 mutable_bitField0_ |= 0x00000001;
               }
               elements_.add(
                   input.readMessage(ubii.sessions.IoMappings.IOMapping.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -5210,10 +4824,9 @@ public final class IoMappings {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5222,7 +4835,6 @@ public final class IoMappings {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMappingList_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMappingList_fieldAccessorTable
@@ -5266,7 +4878,6 @@ public final class IoMappings {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5276,16 +4887,13 @@ public final class IoMappings {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5295,11 +4903,11 @@ public final class IoMappings {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5310,10 +4918,10 @@ public final class IoMappings {
       }
       ubii.sessions.IoMappings.IOMappingList other = (ubii.sessions.IoMappings.IOMappingList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      return result;
     }
 
     @java.lang.Override
@@ -5322,7 +4930,7 @@ public final class IoMappings {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (getElementsCount() > 0) {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
@@ -5332,17 +4940,6 @@ public final class IoMappings {
       return hash;
     }
 
-    public static ubii.sessions.IoMappings.IOMappingList parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ubii.sessions.IoMappings.IOMappingList parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static ubii.sessions.IoMappings.IOMappingList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5402,7 +4999,6 @@ public final class IoMappings {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5410,7 +5006,6 @@ public final class IoMappings {
     public static Builder newBuilder(ubii.sessions.IoMappings.IOMappingList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5434,7 +5029,6 @@ public final class IoMappings {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMappingList_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMappingList_fieldAccessorTable
@@ -5458,7 +5052,6 @@ public final class IoMappings {
           getElementsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (elementsBuilder_ == null) {
@@ -5470,18 +5063,15 @@ public final class IoMappings {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.sessions.IoMappings.internal_static_ubii_sessions_IOMappingList_descriptor;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.IOMappingList getDefaultInstanceForType() {
         return ubii.sessions.IoMappings.IOMappingList.getDefaultInstance();
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.IOMappingList build() {
         ubii.sessions.IoMappings.IOMappingList result = buildPartial();
         if (!result.isInitialized()) {
@@ -5490,12 +5080,11 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public ubii.sessions.IoMappings.IOMappingList buildPartial() {
         ubii.sessions.IoMappings.IOMappingList result = new ubii.sessions.IoMappings.IOMappingList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -5507,39 +5096,32 @@ public final class IoMappings {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.sessions.IoMappings.IOMappingList) {
           return mergeFrom((ubii.sessions.IoMappings.IOMappingList)other);
@@ -5577,17 +5159,14 @@ public final class IoMappings {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5610,7 +5189,7 @@ public final class IoMappings {
       private java.util.List<ubii.sessions.IoMappings.IOMapping> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -5839,23 +5418,21 @@ public final class IoMappings {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMappings.IOMapping, ubii.sessions.IoMappings.IOMapping.Builder, ubii.sessions.IoMappings.IOMappingOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
         }
         return elementsBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -5874,12 +5451,11 @@ public final class IoMappings {
 
     private static final com.google.protobuf.Parser<IOMappingList>
         PARSER = new com.google.protobuf.AbstractParser<IOMappingList>() {
-      @java.lang.Override
       public IOMappingList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IOMappingList(input, extensionRegistry);
+          return new IOMappingList(input, extensionRegistry);
       }
     };
 
@@ -5892,7 +5468,6 @@ public final class IoMappings {
       return PARSER;
     }
 
-    @java.lang.Override
     public ubii.sessions.IoMappings.IOMappingList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5947,7 +5522,7 @@ public final class IoMappings {
       "putMappingList\0222\n\010elements\030\001 \003(\0132 .ubii." +
       "sessions.TopicInputMapping\"\200\001\n\022TopicOutp" +
       "utMapping\022\023\n\013output_name\030\001 \001(\t\022\017\n\005topic\030" +
-      "\002 \001(\tH\000\022/\n\013topic_demux\030\003 \001(\0132\030.ubii.devi" +
+      "\002 \001(\tH\000\022/\n\013topic_demux\030\003 \001(\0132\030.ubii.devi",
       "ces.TopicDemuxH\000B\023\n\021topic_destination\"M\n" +
       "\026TopicOutputMappingList\0223\n\010elements\030\001 \003(" +
       "\0132!.ubii.sessions.TopicOutputMapping\"\277\001\n" +
@@ -5959,12 +5534,20 @@ public final class IoMappings {
       "ingList\022*\n\010elements\030\001 \003(\0132\030.ubii.session" +
       "s.IOMappingb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.devices.TopicMuxOuterClass.getDescriptor(),
           ubii.devices.TopicDemuxOuterClass.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_sessions_TopicInputMapping_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_sessions_TopicInputMapping_fieldAccessorTable = new
