@@ -21,7 +21,8 @@
   "scripts": {
     "test": "ava",
     "update-snapshots": "ava --update-snapshots",
-    "generate-protobuf-static-code": "node scripts/generate-protobuf-static.js"
+    "generate-protobuf-static-code": "node scripts/generate-protobuf-static.js",
+    "compile": "node scripts/full-compile.js"
   },
   "keywords": [
     ""
