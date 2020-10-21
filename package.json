@@ -3,7 +3,10 @@
   "version": "0.15.2",
   "description": "",
   "main": "src/js/index.js",
-  "repository": "https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-formats",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SandroWeber/ubii-msg-formats.git"
+  },
   "contributors": [
     {
       "name": "Sandro Weber",
@@ -18,7 +21,8 @@
   "scripts": {
     "test": "ava",
     "update-snapshots": "ava --update-snapshots",
-    "generate-protobuf-static-code": "node scripts/generate-protobuf-static.js"
+    "generate-protobuf-static-code": "node scripts/generate-protobuf-static.js",
+    "compile": "node scripts/full-compile.js"
   },
   "keywords": [
     ""
