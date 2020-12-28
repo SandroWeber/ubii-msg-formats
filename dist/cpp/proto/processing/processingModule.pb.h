@@ -771,16 +771,16 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   ::std::string* release_description();
   void set_allocated_description(::std::string* description);
 
-  // optional string client_id = 6;
-  void clear_client_id();
-  static const int kClientIdFieldNumber = 6;
-  const ::std::string& client_id() const;
-  void set_client_id(const ::std::string& value);
-  void set_client_id(const char* value);
-  void set_client_id(const char* value, size_t size);
-  ::std::string* mutable_client_id();
-  ::std::string* release_client_id();
-  void set_allocated_client_id(::std::string* client_id);
+  // optional string node_id = 6;
+  void clear_node_id();
+  static const int kNodeIdFieldNumber = 6;
+  const ::std::string& node_id() const;
+  void set_node_id(const ::std::string& value);
+  void set_node_id(const char* value);
+  void set_node_id(const char* value, size_t size);
+  ::std::string* mutable_node_id();
+  ::std::string* release_node_id();
+  void set_allocated_node_id(::std::string* node_id);
 
   // optional .ubii.processing.ProcessingModule.Status status = 7;
   void clear_status();
@@ -881,7 +881,7 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::RepeatedPtrField< ::std::string> authors_;
   ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr description_;
-  ::google::protobuf::internal::ArenaStringPtr client_id_;
+  ::google::protobuf::internal::ArenaStringPtr node_id_;
   ::ubii::processing::ProcessingMode* processing_mode_;
   ::google::protobuf::RepeatedPtrField< ::ubii::processing::ModuleIO > inputs_;
   int status_;
@@ -1584,48 +1584,48 @@ inline void ProcessingModule::set_allocated_description(::std::string* descripti
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.description)
 }
 
-// optional string client_id = 6;
-inline void ProcessingModule::clear_client_id() {
-  client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// optional string node_id = 6;
+inline void ProcessingModule::clear_node_id() {
+  node_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ProcessingModule::client_id() const {
-  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.client_id)
-  return client_id_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline const ::std::string& ProcessingModule::node_id() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.node_id)
+  return node_id_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProcessingModule::set_client_id(const ::std::string& value) {
+inline void ProcessingModule::set_node_id(const ::std::string& value) {
   
-  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.client_id)
+  node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.node_id)
 }
-inline void ProcessingModule::set_client_id(const char* value) {
+inline void ProcessingModule::set_node_id(const char* value) {
   
-  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.client_id)
+  node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.node_id)
 }
-inline void ProcessingModule::set_client_id(const char* value, size_t size) {
+inline void ProcessingModule::set_node_id(const char* value, size_t size) {
   
-  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.client_id)
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.node_id)
 }
-inline ::std::string* ProcessingModule::mutable_client_id() {
+inline ::std::string* ProcessingModule::mutable_node_id() {
   
-  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.client_id)
-  return client_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.node_id)
+  return node_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ProcessingModule::release_client_id() {
-  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.client_id)
+inline ::std::string* ProcessingModule::release_node_id() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.node_id)
   
-  return client_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return node_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProcessingModule::set_allocated_client_id(::std::string* client_id) {
-  if (client_id != NULL) {
+inline void ProcessingModule::set_allocated_node_id(::std::string* node_id) {
+  if (node_id != NULL) {
     
   } else {
     
   }
-  client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
-  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.client_id)
+  node_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), node_id);
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.node_id)
 }
 
 // optional .ubii.processing.ProcessingModule.Status status = 7;

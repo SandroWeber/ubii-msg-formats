@@ -32,24 +32,24 @@ namespace Ubii.Processing {
             "c3RlcBIgChhwcm9jZXNzX3JlcXVlc3RfZW5kcG9pbnQYASABKAkaRgoOVHJp",
             "Z2dlck9uSW5wdXQSFAoMbWluX2RlbGF5X21zGAEgASgFEh4KFmFsbF9pbnB1",
             "dHNfbmVlZF91cGRhdGUYAiABKAhCBgoEbW9kZSI5CghNb2R1bGVJTxIVCg1p",
-            "bnRlcm5hbF9uYW1lGAEgASgJEhYKDm1lc3NhZ2VfZm9ybWF0GAIgASgJIooF",
+            "bnRlcm5hbF9uYW1lGAEgASgJEhYKDm1lc3NhZ2VfZm9ybWF0GAIgASgJIogF",
             "ChBQcm9jZXNzaW5nTW9kdWxlEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkS",
             "DwoHYXV0aG9ycxgDIAMoCRIMCgR0YWdzGAQgAygJEhMKC2Rlc2NyaXB0aW9u",
-            "GAUgASgJEhEKCWNsaWVudF9pZBgGIAEoCRI4CgZzdGF0dXMYByABKA4yKC51",
-            "YmlpLnByb2Nlc3NpbmcuUHJvY2Vzc2luZ01vZHVsZS5TdGF0dXMSOAoPcHJv",
-            "Y2Vzc2luZ19tb2RlGAggASgLMh8udWJpaS5wcm9jZXNzaW5nLlByb2Nlc3Np",
-            "bmdNb2RlEikKBmlucHV0cxgJIAMoCzIZLnViaWkucHJvY2Vzc2luZy5Nb2R1",
-            "bGVJTxIqCgdvdXRwdXRzGAogAygLMhkudWJpaS5wcm9jZXNzaW5nLk1vZHVs",
-            "ZUlPEjwKCGxhbmd1YWdlGAsgASgOMioudWJpaS5wcm9jZXNzaW5nLlByb2Nl",
-            "c3NpbmdNb2R1bGUuTGFuZ3VhZ2USIQoZb25fcHJvY2Vzc2luZ19zdHJpbmdp",
-            "ZmllZBgMIAEoCRIeChZvbl9jcmVhdGVkX3N0cmluZ2lmaWVkGA0gASgJEh0K",
-            "FW9uX2hhbHRlZF9zdHJpbmdpZmllZBgOIAEoCRIgChhvbl9kZXN0cm95ZWRf",
-            "c3RyaW5naWZpZWQYDyABKAkiUQoGU3RhdHVzEg8KC0lOSVRJQUxJWkVEEAAS",
-            "CwoHQ1JFQVRFRBABEg4KClBST0NFU1NJTkcQAhIKCgZIQUxURUQQAxINCglE",
-            "RVNUUk9ZRUQQBCI1CghMYW5ndWFnZRIHCgNDUFAQABIGCgJQWRABEgYKAkpT",
-            "EAISBgoCQ1MQAxIICgRKQVZBEAQiSwoUUHJvY2Vzc2luZ01vZHVsZUxpc3QS",
-            "MwoIZWxlbWVudHMYASADKAsyIS51YmlpLnByb2Nlc3NpbmcuUHJvY2Vzc2lu",
-            "Z01vZHVsZWIGcHJvdG8z"));
+            "GAUgASgJEg8KB25vZGVfaWQYBiABKAkSOAoGc3RhdHVzGAcgASgOMigudWJp",
+            "aS5wcm9jZXNzaW5nLlByb2Nlc3NpbmdNb2R1bGUuU3RhdHVzEjgKD3Byb2Nl",
+            "c3NpbmdfbW9kZRgIIAEoCzIfLnViaWkucHJvY2Vzc2luZy5Qcm9jZXNzaW5n",
+            "TW9kZRIpCgZpbnB1dHMYCSADKAsyGS51YmlpLnByb2Nlc3NpbmcuTW9kdWxl",
+            "SU8SKgoHb3V0cHV0cxgKIAMoCzIZLnViaWkucHJvY2Vzc2luZy5Nb2R1bGVJ",
+            "TxI8CghsYW5ndWFnZRgLIAEoDjIqLnViaWkucHJvY2Vzc2luZy5Qcm9jZXNz",
+            "aW5nTW9kdWxlLkxhbmd1YWdlEiEKGW9uX3Byb2Nlc3Npbmdfc3RyaW5naWZp",
+            "ZWQYDCABKAkSHgoWb25fY3JlYXRlZF9zdHJpbmdpZmllZBgNIAEoCRIdChVv",
+            "bl9oYWx0ZWRfc3RyaW5naWZpZWQYDiABKAkSIAoYb25fZGVzdHJveWVkX3N0",
+            "cmluZ2lmaWVkGA8gASgJIlEKBlN0YXR1cxIPCgtJTklUSUFMSVpFRBAAEgsK",
+            "B0NSRUFURUQQARIOCgpQUk9DRVNTSU5HEAISCgoGSEFMVEVEEAMSDQoJREVT",
+            "VFJPWUVEEAQiNQoITGFuZ3VhZ2USBwoDQ1BQEAASBgoCUFkQARIGCgJKUxAC",
+            "EgYKAkNTEAMSCAoESkFWQRAEIksKFFByb2Nlc3NpbmdNb2R1bGVMaXN0EjMK",
+            "CGVsZW1lbnRzGAEgAygLMiEudWJpaS5wcm9jZXNzaW5nLlByb2Nlc3NpbmdN",
+            "b2R1bGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -57,7 +57,7 @@ namespace Ubii.Processing {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode.Types.Lockstep), global::Ubii.Processing.ProcessingMode.Types.Lockstep.Parser, new[]{ "ProcessRequestEndpoint" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingMode.Types.TriggerOnInput), global::Ubii.Processing.ProcessingMode.Types.TriggerOnInput.Parser, new[]{ "MinDelayMs", "AllInputsNeedUpdate" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ModuleIO), global::Ubii.Processing.ModuleIO.Parser, new[]{ "InternalName", "MessageFormat" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModule), global::Ubii.Processing.ProcessingModule.Parser, new[]{ "Id", "Name", "Authors", "Tags", "Description", "ClientId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified" }, null, new[]{ typeof(global::Ubii.Processing.ProcessingModule.Types.Status), typeof(global::Ubii.Processing.ProcessingModule.Types.Language) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModule), global::Ubii.Processing.ProcessingModule.Parser, new[]{ "Id", "Name", "Authors", "Tags", "Description", "NodeId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified" }, null, new[]{ typeof(global::Ubii.Processing.ProcessingModule.Types.Status), typeof(global::Ubii.Processing.ProcessingModule.Types.Language) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Processing.ProcessingModuleList), global::Ubii.Processing.ProcessingModuleList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
@@ -847,7 +847,7 @@ namespace Ubii.Processing {
       authors_ = other.authors_.Clone();
       tags_ = other.tags_.Clone();
       description_ = other.description_;
-      clientId_ = other.clientId_;
+      nodeId_ = other.nodeId_;
       status_ = other.status_;
       ProcessingMode = other.processingMode_ != null ? other.ProcessingMode.Clone() : null;
       inputs_ = other.inputs_.Clone();
@@ -917,14 +917,14 @@ namespace Ubii.Processing {
       }
     }
 
-    /// <summary>Field number for the "client_id" field.</summary>
-    public const int ClientIdFieldNumber = 6;
-    private string clientId_ = "";
+    /// <summary>Field number for the "node_id" field.</summary>
+    public const int NodeIdFieldNumber = 6;
+    private string nodeId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ClientId {
-      get { return clientId_; }
+    public string NodeId {
+      get { return nodeId_; }
       set {
-        clientId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        nodeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1043,7 +1043,7 @@ namespace Ubii.Processing {
       if(!authors_.Equals(other.authors_)) return false;
       if(!tags_.Equals(other.tags_)) return false;
       if (Description != other.Description) return false;
-      if (ClientId != other.ClientId) return false;
+      if (NodeId != other.NodeId) return false;
       if (Status != other.Status) return false;
       if (!object.Equals(ProcessingMode, other.ProcessingMode)) return false;
       if(!inputs_.Equals(other.inputs_)) return false;
@@ -1064,7 +1064,7 @@ namespace Ubii.Processing {
       hash ^= authors_.GetHashCode();
       hash ^= tags_.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
+      if (NodeId.Length != 0) hash ^= NodeId.GetHashCode();
       if (Status != 0) hash ^= Status.GetHashCode();
       if (processingMode_ != null) hash ^= ProcessingMode.GetHashCode();
       hash ^= inputs_.GetHashCode();
@@ -1098,9 +1098,9 @@ namespace Ubii.Processing {
         output.WriteRawTag(42);
         output.WriteString(Description);
       }
-      if (ClientId.Length != 0) {
+      if (NodeId.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(ClientId);
+        output.WriteString(NodeId);
       }
       if (Status != 0) {
         output.WriteRawTag(56);
@@ -1148,8 +1148,8 @@ namespace Ubii.Processing {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (ClientId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientId);
+      if (NodeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeId);
       }
       if (Status != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
@@ -1193,8 +1193,8 @@ namespace Ubii.Processing {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.ClientId.Length != 0) {
-        ClientId = other.ClientId;
+      if (other.NodeId.Length != 0) {
+        NodeId = other.NodeId;
       }
       if (other.Status != 0) {
         Status = other.Status;
@@ -1253,7 +1253,7 @@ namespace Ubii.Processing {
             break;
           }
           case 50: {
-            ClientId = input.ReadString();
+            NodeId = input.ReadString();
             break;
           }
           case 56: {

@@ -12,15 +12,15 @@ test.beforeEach(t => {
     name: 'client name'
   };
 
-  let interaction = {
+  let processingModule = {
     id: 'interactionID',
     name: 'interaction name',
-    processingCallback: '() => {};',
-    inputFormats: [
+    onProcessingStringified: '() => {};',
+    inputs: [
       { internalName: 'internal_input_1', messageFormat: 'ubii.message.format.1' },
       { internalName: 'internal_input_2', messageFormat: 'ubii.message.format.2' }
     ],
-    outputFormats: [
+    outputs: [
       { internalName: 'internal_output_1', messageFormat: 'ubii.message.format.3' },
       { internalName: 'internal_output_2', messageFormat: 'ubii.message.format.4' }
     ]
@@ -47,9 +47,9 @@ test.beforeEach(t => {
       type: MSG_TYPES.SERVICE_REQUEST,
       validPayload: {
         topic: DEFAULT_TOPICS.SERVICES.CLIENT_REGISTRATION,
-        interaction: interaction
+        processingModule: processingModule
       },
-      oneofTypeExpected: 'interaction'
+      oneofTypeExpected: 'processingModule'
     },
     {
       type: MSG_TYPES.SERVICE_REPLY,

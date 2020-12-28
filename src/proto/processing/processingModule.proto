@@ -48,7 +48,7 @@ message ProcessingModule {
     repeated string authors = 3;
     repeated string tags = 4;
     string description = 5;
-    string client_id = 6;
+    string node_id = 6;
 
     Status status = 7;
     ProcessingMode processing_mode = 8;

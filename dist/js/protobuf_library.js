@@ -5695,7 +5695,7 @@ proto.ubii.processing.ProcessingModule.toObject = function(includeInstance, msg)
     authorsList: jspb.Message.getField(msg, 3),
     tagsList: jspb.Message.getField(msg, 4),
     description: msg.getDescription(),
-    clientId: msg.getClientId(),
+    nodeId: msg.getNodeId(),
     status: msg.getStatus(),
     processingMode: (f = msg.getProcessingMode()) && proto.ubii.processing.ProcessingMode.toObject(includeInstance, f),
     inputsList: jspb.Message.toObjectList(msg.getInputsList(),
@@ -5767,7 +5767,7 @@ proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader = function(ms
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClientId(value);
+      msg.setNodeId(value);
       break;
     case 7:
       var value = /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (reader.readEnum());
@@ -5883,7 +5883,7 @@ proto.ubii.processing.ProcessingModule.prototype.serializeBinaryToWriter = funct
       f
     );
   }
-  f = this.getClientId();
+  f = this.getNodeId();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -6058,16 +6058,16 @@ proto.ubii.processing.ProcessingModule.prototype.setDescription = function(value
 
 
 /**
- * optional string client_id = 6;
+ * optional string node_id = 6;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getClientId = function() {
+proto.ubii.processing.ProcessingModule.prototype.getNodeId = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 6, ""));
 };
 
 
 /** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setClientId = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setNodeId = function(value) {
   jspb.Message.setField(this, 6, value);
 };
 

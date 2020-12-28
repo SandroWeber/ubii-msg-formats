@@ -3191,14 +3191,14 @@ public final class ProcessingModuleOuterClass {
         getDescriptionBytes();
 
     /**
-     * <code>optional string client_id = 6;</code>
+     * <code>optional string node_id = 6;</code>
      */
-    java.lang.String getClientId();
+    java.lang.String getNodeId();
     /**
-     * <code>optional string client_id = 6;</code>
+     * <code>optional string node_id = 6;</code>
      */
     com.google.protobuf.ByteString
-        getClientIdBytes();
+        getNodeIdBytes();
 
     /**
      * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
@@ -3336,7 +3336,7 @@ public final class ProcessingModuleOuterClass {
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
-      clientId_ = "";
+      nodeId_ = "";
       status_ = 0;
       inputs_ = java.util.Collections.emptyList();
       outputs_ = java.util.Collections.emptyList();
@@ -3411,7 +3411,7 @@ public final class ProcessingModuleOuterClass {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              clientId_ = s;
+              nodeId_ = s;
               break;
             }
             case 56: {
@@ -3927,34 +3927,34 @@ public final class ProcessingModuleOuterClass {
       }
     }
 
-    public static final int CLIENT_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object clientId_;
+    public static final int NODE_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object nodeId_;
     /**
-     * <code>optional string client_id = 6;</code>
+     * <code>optional string node_id = 6;</code>
      */
-    public java.lang.String getClientId() {
-      java.lang.Object ref = clientId_;
+    public java.lang.String getNodeId() {
+      java.lang.Object ref = nodeId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        clientId_ = s;
+        nodeId_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string client_id = 6;</code>
+     * <code>optional string node_id = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getClientIdBytes() {
-      java.lang.Object ref = clientId_;
+        getNodeIdBytes() {
+      java.lang.Object ref = nodeId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        clientId_ = b;
+        nodeId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4247,8 +4247,8 @@ public final class ProcessingModuleOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
-      if (!getClientIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, clientId_);
+      if (!getNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nodeId_);
       }
       if (status_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.INITIALIZED.getNumber()) {
         output.writeEnum(7, status_);
@@ -4309,8 +4309,8 @@ public final class ProcessingModuleOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
-      if (!getClientIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, clientId_);
+      if (!getNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nodeId_);
       }
       if (status_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.INITIALIZED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -4370,8 +4370,8 @@ public final class ProcessingModuleOuterClass {
           .equals(other.getTagsList());
       result = result && getDescription()
           .equals(other.getDescription());
-      result = result && getClientId()
-          .equals(other.getClientId());
+      result = result && getNodeId()
+          .equals(other.getNodeId());
       result = result && status_ == other.status_;
       result = result && (hasProcessingMode() == other.hasProcessingMode());
       if (hasProcessingMode()) {
@@ -4415,8 +4415,8 @@ public final class ProcessingModuleOuterClass {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getClientId().hashCode();
+      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
       if (hasProcessingMode()) {
@@ -4571,7 +4571,7 @@ public final class ProcessingModuleOuterClass {
         bitField0_ = (bitField0_ & ~0x00000008);
         description_ = "";
 
-        clientId_ = "";
+        nodeId_ = "";
 
         status_ = 0;
 
@@ -4640,7 +4640,7 @@ public final class ProcessingModuleOuterClass {
         }
         result.tags_ = tags_;
         result.description_ = description_;
-        result.clientId_ = clientId_;
+        result.nodeId_ = nodeId_;
         result.status_ = status_;
         if (processingModeBuilder_ == null) {
           result.processingMode_ = processingMode_;
@@ -4744,8 +4744,8 @@ public final class ProcessingModuleOuterClass {
           description_ = other.description_;
           onChanged();
         }
-        if (!other.getClientId().isEmpty()) {
-          clientId_ = other.clientId_;
+        if (!other.getNodeId().isEmpty()) {
+          nodeId_ = other.nodeId_;
           onChanged();
         }
         if (other.status_ != 0) {
@@ -5247,71 +5247,71 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
 
-      private java.lang.Object clientId_ = "";
+      private java.lang.Object nodeId_ = "";
       /**
-       * <code>optional string client_id = 6;</code>
+       * <code>optional string node_id = 6;</code>
        */
-      public java.lang.String getClientId() {
-        java.lang.Object ref = clientId_;
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          clientId_ = s;
+          nodeId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string client_id = 6;</code>
+       * <code>optional string node_id = 6;</code>
        */
       public com.google.protobuf.ByteString
-          getClientIdBytes() {
-        java.lang.Object ref = clientId_;
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          clientId_ = b;
+          nodeId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string client_id = 6;</code>
+       * <code>optional string node_id = 6;</code>
        */
-      public Builder setClientId(
+      public Builder setNodeId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        clientId_ = value;
+        nodeId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string client_id = 6;</code>
+       * <code>optional string node_id = 6;</code>
        */
-      public Builder clearClientId() {
+      public Builder clearNodeId() {
         
-        clientId_ = getDefaultInstance().getClientId();
+        nodeId_ = getDefaultInstance().getNodeId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string client_id = 6;</code>
+       * <code>optional string node_id = 6;</code>
        */
-      public Builder setClientIdBytes(
+      public Builder setNodeIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        clientId_ = value;
+        nodeId_ = value;
         onChanged();
         return this;
       }
@@ -7116,25 +7116,25 @@ public final class ProcessingModuleOuterClass {
       "ggerOnInput\022\024\n\014min_delay_ms\030\001 \001(\005\022\036\n\026all",
       "_inputs_need_update\030\002 \001(\010B\006\n\004mode\"9\n\010Mod" +
       "uleIO\022\025\n\rinternal_name\030\001 \001(\t\022\026\n\016message_" +
-      "format\030\002 \001(\t\"\212\005\n\020ProcessingModule\022\n\n\002id\030" +
+      "format\030\002 \001(\t\"\210\005\n\020ProcessingModule\022\n\n\002id\030" +
       "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003(\t\022\014\n\004" +
-      "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\021\n\tclien" +
-      "t_id\030\006 \001(\t\0228\n\006status\030\007 \001(\0162(.ubii.proces" +
-      "sing.ProcessingModule.Status\0228\n\017processi" +
-      "ng_mode\030\010 \001(\0132\037.ubii.processing.Processi" +
-      "ngMode\022)\n\006inputs\030\t \003(\0132\031.ubii.processing" +
-      ".ModuleIO\022*\n\007outputs\030\n \003(\0132\031.ubii.proces",
-      "sing.ModuleIO\022<\n\010language\030\013 \001(\0162*.ubii.p" +
-      "rocessing.ProcessingModule.Language\022!\n\031o" +
-      "n_processing_stringified\030\014 \001(\t\022\036\n\026on_cre" +
-      "ated_stringified\030\r \001(\t\022\035\n\025on_halted_stri" +
-      "ngified\030\016 \001(\t\022 \n\030on_destroyed_stringifie" +
-      "d\030\017 \001(\t\"Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CR" +
-      "EATED\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tD" +
-      "ESTROYED\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022" +
-      "\006\n\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingM" +
-      "oduleList\0223\n\010elements\030\001 \003(\0132!.ubii.proce",
-      "ssing.ProcessingModuleb\006proto3"
+      "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007node_" +
+      "id\030\006 \001(\t\0228\n\006status\030\007 \001(\0162(.ubii.processi" +
+      "ng.ProcessingModule.Status\0228\n\017processing" +
+      "_mode\030\010 \001(\0132\037.ubii.processing.Processing" +
+      "Mode\022)\n\006inputs\030\t \003(\0132\031.ubii.processing.M" +
+      "oduleIO\022*\n\007outputs\030\n \003(\0132\031.ubii.processi",
+      "ng.ModuleIO\022<\n\010language\030\013 \001(\0162*.ubii.pro" +
+      "cessing.ProcessingModule.Language\022!\n\031on_" +
+      "processing_stringified\030\014 \001(\t\022\036\n\026on_creat" +
+      "ed_stringified\030\r \001(\t\022\035\n\025on_halted_string" +
+      "ified\030\016 \001(\t\022 \n\030on_destroyed_stringified\030" +
+      "\017 \001(\t\"Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CREA" +
+      "TED\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tDES" +
+      "TROYED\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n" +
+      "\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingMod" +
+      "uleList\0223\n\010elements\030\001 \003(\0132!.ubii.process",
+      "ing.ProcessingModuleb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7183,7 +7183,7 @@ public final class ProcessingModuleOuterClass {
     internal_static_ubii_processing_ProcessingModule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_processing_ProcessingModule_descriptor,
-        new java.lang.String[] { "Id", "Name", "Authors", "Tags", "Description", "ClientId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified", });
+        new java.lang.String[] { "Id", "Name", "Authors", "Tags", "Description", "NodeId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified", });
     internal_static_ubii_processing_ProcessingModuleList_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ubii_processing_ProcessingModuleList_fieldAccessorTable = new

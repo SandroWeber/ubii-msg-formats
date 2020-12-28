@@ -4741,7 +4741,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [authors] ProcessingModule authors
              * @property {Array.<string>|null} [tags] ProcessingModule tags
              * @property {string|null} [description] ProcessingModule description
-             * @property {string|null} [clientId] ProcessingModule clientId
+             * @property {string|null} [nodeId] ProcessingModule nodeId
              * @property {ubii.processing.ProcessingModule.Status|null} [status] ProcessingModule status
              * @property {ubii.processing.IProcessingMode|null} [processingMode] ProcessingModule processingMode
              * @property {Array.<ubii.processing.IModuleIO>|null} [inputs] ProcessingModule inputs
@@ -4813,12 +4813,12 @@ $root.ubii = (function() {
             ProcessingModule.prototype.description = "";
 
             /**
-             * ProcessingModule clientId.
-             * @member {string} clientId
+             * ProcessingModule nodeId.
+             * @member {string} nodeId
              * @memberof ubii.processing.ProcessingModule
              * @instance
              */
-            ProcessingModule.prototype.clientId = "";
+            ProcessingModule.prototype.nodeId = "";
 
             /**
              * ProcessingModule status.
@@ -4928,8 +4928,8 @@ $root.ubii = (function() {
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
                 if (message.description != null && message.hasOwnProperty("description"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
-                if (message.clientId != null && message.hasOwnProperty("clientId"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.clientId);
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.nodeId);
                 if (message.status != null && message.hasOwnProperty("status"))
                     writer.uint32(/* id 7, wireType 0 =*/56).int32(message.status);
                 if (message.processingMode != null && message.hasOwnProperty("processingMode"))
@@ -5004,7 +5004,7 @@ $root.ubii = (function() {
                         message.description = reader.string();
                         break;
                     case 6:
-                        message.clientId = reader.string();
+                        message.nodeId = reader.string();
                         break;
                     case 7:
                         message.status = reader.int32();
@@ -5095,9 +5095,9 @@ $root.ubii = (function() {
                 if (message.description != null && message.hasOwnProperty("description"))
                     if (!$util.isString(message.description))
                         return "description: string expected";
-                if (message.clientId != null && message.hasOwnProperty("clientId"))
-                    if (!$util.isString(message.clientId))
-                        return "clientId: string expected";
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    if (!$util.isString(message.nodeId))
+                        return "nodeId: string expected";
                 if (message.status != null && message.hasOwnProperty("status"))
                     switch (message.status) {
                     default:
@@ -5190,8 +5190,8 @@ $root.ubii = (function() {
                 }
                 if (object.description != null)
                     message.description = String(object.description);
-                if (object.clientId != null)
-                    message.clientId = String(object.clientId);
+                if (object.nodeId != null)
+                    message.nodeId = String(object.nodeId);
                 switch (object.status) {
                 case "INITIALIZED":
                 case 0:
@@ -5295,7 +5295,7 @@ $root.ubii = (function() {
                     object.id = "";
                     object.name = "";
                     object.description = "";
-                    object.clientId = "";
+                    object.nodeId = "";
                     object.status = options.enums === String ? "INITIALIZED" : 0;
                     object.processingMode = null;
                     object.language = options.enums === String ? "CPP" : 0;
@@ -5320,8 +5320,8 @@ $root.ubii = (function() {
                 }
                 if (message.description != null && message.hasOwnProperty("description"))
                     object.description = message.description;
-                if (message.clientId != null && message.hasOwnProperty("clientId"))
-                    object.clientId = message.clientId;
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    object.nodeId = message.nodeId;
                 if (message.status != null && message.hasOwnProperty("status"))
                     object.status = options.enums === String ? $root.ubii.processing.ProcessingModule.Status[message.status] : message.status;
                 if (message.processingMode != null && message.hasOwnProperty("processingMode"))
