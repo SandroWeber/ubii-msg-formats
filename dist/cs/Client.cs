@@ -23,15 +23,18 @@ namespace Ubii.Clients {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chpwcm90by9jbGllbnRzL2NsaWVudC5wcm90bxIMdWJpaS5jbGllbnRzGhpw",
-            "cm90by9kZXZpY2VzL2RldmljZS5wcm90byJsCgZDbGllbnQSCgoCaWQYASAB",
-            "KAkSDAoEbmFtZRgCIAEoCRIlCgdkZXZpY2VzGAMgAygLMhQudWJpaS5kZXZp",
-            "Y2VzLkRldmljZRIMCgR0YWdzGAQgAygJEhMKC2Rlc2NyaXB0aW9uGAUgASgJ",
-            "IjQKCkNsaWVudExpc3QSJgoIZWxlbWVudHMYASADKAsyFC51YmlpLmNsaWVu",
-            "dHMuQ2xpZW50YgZwcm90bzM="));
+            "cm90by9kZXZpY2VzL2RldmljZS5wcm90bxoncHJvdG8vcHJvY2Vzc2luZy9w",
+            "cm9jZXNzaW5nTW9kdWxlLnByb3RvItEBCgZDbGllbnQSCgoCaWQYASABKAkS",
+            "DAoEbmFtZRgCIAEoCRIlCgdkZXZpY2VzGAMgAygLMhQudWJpaS5kZXZpY2Vz",
+            "LkRldmljZRIMCgR0YWdzGAQgAygJEhMKC2Rlc2NyaXB0aW9uGAUgASgJEj0K",
+            "EnByb2Nlc3NpbmdfbW9kdWxlcxgGIAMoCzIhLnViaWkucHJvY2Vzc2luZy5Q",
+            "cm9jZXNzaW5nTW9kdWxlEiQKHGlzX2RlZGljYXRlZF9wcm9jZXNzaW5nX25v",
+            "ZGUYByABKAgiNAoKQ2xpZW50TGlzdBImCghlbGVtZW50cxgBIAMoCzIULnVi",
+            "aWkuY2xpZW50cy5DbGllbnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.Devices.DeviceReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.Client), global::Ubii.Clients.Client.Parser, new[]{ "Id", "Name", "Devices", "Tags", "Description" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.Client), global::Ubii.Clients.Client.Parser, new[]{ "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.ClientList), global::Ubii.Clients.ClientList.Parser, new[]{ "Elements" }, null, null, null)
           }));
     }
@@ -68,6 +71,8 @@ namespace Ubii.Clients {
       devices_ = other.devices_.Clone();
       tags_ = other.tags_.Clone();
       description_ = other.description_;
+      processingModules_ = other.processingModules_.Clone();
+      isDedicatedProcessingNode_ = other.isDedicatedProcessingNode_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,6 +133,27 @@ namespace Ubii.Clients {
       }
     }
 
+    /// <summary>Field number for the "processing_modules" field.</summary>
+    public const int ProcessingModulesFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Ubii.Processing.ProcessingModule> _repeated_processingModules_codec
+        = pb::FieldCodec.ForMessage(50, global::Ubii.Processing.ProcessingModule.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.Processing.ProcessingModule> processingModules_ = new pbc::RepeatedField<global::Ubii.Processing.ProcessingModule>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Ubii.Processing.ProcessingModule> ProcessingModules {
+      get { return processingModules_; }
+    }
+
+    /// <summary>Field number for the "is_dedicated_processing_node" field.</summary>
+    public const int IsDedicatedProcessingNodeFieldNumber = 7;
+    private bool isDedicatedProcessingNode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsDedicatedProcessingNode {
+      get { return isDedicatedProcessingNode_; }
+      set {
+        isDedicatedProcessingNode_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Client);
@@ -146,6 +172,8 @@ namespace Ubii.Clients {
       if(!devices_.Equals(other.devices_)) return false;
       if(!tags_.Equals(other.tags_)) return false;
       if (Description != other.Description) return false;
+      if(!processingModules_.Equals(other.processingModules_)) return false;
+      if (IsDedicatedProcessingNode != other.IsDedicatedProcessingNode) return false;
       return true;
     }
 
@@ -157,6 +185,8 @@ namespace Ubii.Clients {
       hash ^= devices_.GetHashCode();
       hash ^= tags_.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      hash ^= processingModules_.GetHashCode();
+      if (IsDedicatedProcessingNode != false) hash ^= IsDedicatedProcessingNode.GetHashCode();
       return hash;
     }
 
@@ -181,6 +211,11 @@ namespace Ubii.Clients {
         output.WriteRawTag(42);
         output.WriteString(Description);
       }
+      processingModules_.WriteTo(output, _repeated_processingModules_codec);
+      if (IsDedicatedProcessingNode != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsDedicatedProcessingNode);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -196,6 +231,10 @@ namespace Ubii.Clients {
       size += tags_.CalculateSize(_repeated_tags_codec);
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      size += processingModules_.CalculateSize(_repeated_processingModules_codec);
+      if (IsDedicatedProcessingNode != false) {
+        size += 1 + 1;
       }
       return size;
     }
@@ -215,6 +254,10 @@ namespace Ubii.Clients {
       tags_.Add(other.tags_);
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      processingModules_.Add(other.processingModules_);
+      if (other.IsDedicatedProcessingNode != false) {
+        IsDedicatedProcessingNode = other.IsDedicatedProcessingNode;
       }
     }
 
@@ -244,6 +287,14 @@ namespace Ubii.Clients {
           }
           case 42: {
             Description = input.ReadString();
+            break;
+          }
+          case 50: {
+            processingModules_.AddEntriesFrom(input, _repeated_processingModules_codec);
+            break;
+          }
+          case 56: {
+            IsDedicatedProcessingNode = input.ReadBool();
             break;
           }
         }

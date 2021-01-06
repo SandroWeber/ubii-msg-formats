@@ -10,6 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
+var proto_processing_processingModule_pb = require('../../proto/processing/processingModule_pb.js');
 goog.exportSymbol('proto.ubii.clients.Client', null, global);
 goog.exportSymbol('proto.ubii.clients.ClientList', null, global);
 
@@ -35,7 +36,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.clients.Client.repeatedFields_ = [3,4];
+proto.ubii.clients.Client.repeatedFields_ = [3,4,6];
 
 
 
@@ -70,7 +71,10 @@ proto.ubii.clients.Client.toObject = function(includeInstance, msg) {
     devicesList: jspb.Message.toObjectList(msg.getDevicesList(),
     proto_devices_device_pb.Device.toObject, includeInstance),
     tagsList: jspb.Message.getField(msg, 4),
-    description: msg.getDescription()
+    description: msg.getDescription(),
+    processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
+    proto_processing_processingModule_pb.ProcessingModule.toObject, includeInstance),
+    isDedicatedProcessingNode: msg.getIsDedicatedProcessingNode()
   };
 
   if (includeInstance) {
@@ -129,6 +133,16 @@ proto.ubii.clients.Client.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 6:
+      var value = new proto_processing_processingModule_pb.ProcessingModule;
+      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModule.deserializeBinaryFromReader);
+      msg.getProcessingModulesList().push(value);
+      msg.setProcessingModulesList(msg.getProcessingModulesList());
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDedicatedProcessingNode(value);
       break;
     default:
       reader.skipField();
@@ -201,6 +215,21 @@ proto.ubii.clients.Client.prototype.serializeBinaryToWriter = function (writer) 
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = this.getProcessingModulesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto_processing_processingModule_pb.ProcessingModule.serializeBinaryToWriter
+    );
+  }
+  f = this.getIsDedicatedProcessingNode();
+  if (f) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -303,6 +332,46 @@ proto.ubii.clients.Client.prototype.getDescription = function() {
 /** @param {string} value  */
 proto.ubii.clients.Client.prototype.setDescription = function(value) {
   jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * repeated ubii.processing.ProcessingModule processing_modules = 6;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.ubii.processing.ProcessingModule>}
+ */
+proto.ubii.clients.Client.prototype.getProcessingModulesList = function() {
+  return /** @type{!Array.<!proto.ubii.processing.ProcessingModule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_processing_processingModule_pb.ProcessingModule, 6));
+};
+
+
+/** @param {Array.<!proto.ubii.processing.ProcessingModule>} value  */
+proto.ubii.clients.Client.prototype.setProcessingModulesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+proto.ubii.clients.Client.prototype.clearProcessingModulesList = function() {
+  this.setProcessingModulesList([]);
+};
+
+
+/**
+ * optional bool is_dedicated_processing_node = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.ubii.clients.Client.prototype.getIsDedicatedProcessingNode = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 7, false));
+};
+
+
+/** @param {boolean} value  */
+proto.ubii.clients.Client.prototype.setIsDedicatedProcessingNode = function(value) {
+  jspb.Message.setField(this, 7, value);
 };
 
 

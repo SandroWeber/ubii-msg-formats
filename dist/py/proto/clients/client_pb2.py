@@ -14,15 +14,16 @@ _sym_db = _symbol_database.Default()
 
 
 from proto.devices import device_pb2 as proto_dot_devices_dot_device__pb2
+from proto.processing import processingModule_pb2 as proto_dot_processing_dot_processingModule__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/clients/client.proto',
   package='ubii.clients',
   syntax='proto3',
-  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\"l\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Device\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"4\n\nClientList\x12&\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x14.ubii.clients.Clientb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\x1a\'proto/processing/processingModule.proto\"\xd1\x01\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Device\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x12processing_modules\x18\x06 \x03(\x0b\x32!.ubii.processing.ProcessingModule\x12$\n\x1cis_dedicated_processing_node\x18\x07 \x01(\x08\"4\n\nClientList\x12&\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x14.ubii.clients.Clientb\x06proto3')
   ,
-  dependencies=[proto_dot_devices_dot_device__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_processing_dot_processingModule__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -70,6 +71,20 @@ _CLIENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='processing_modules', full_name='ubii.clients.Client.processing_modules', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='is_dedicated_processing_node', full_name='ubii.clients.Client.is_dedicated_processing_node', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -82,8 +97,8 @@ _CLIENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=72,
-  serialized_end=180,
+  serialized_start=114,
+  serialized_end=323,
 )
 
 
@@ -113,11 +128,12 @@ _CLIENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=182,
-  serialized_end=234,
+  serialized_start=325,
+  serialized_end=377,
 )
 
 _CLIENT.fields_by_name['devices'].message_type = proto_dot_devices_dot_device__pb2._DEVICE
+_CLIENT.fields_by_name['processing_modules'].message_type = proto_dot_processing_dot_processingModule__pb2._PROCESSINGMODULE
 _CLIENTLIST.fields_by_name['elements'].message_type = _CLIENT
 DESCRIPTOR.message_types_by_name['Client'] = _CLIENT
 DESCRIPTOR.message_types_by_name['ClientList'] = _CLIENTLIST

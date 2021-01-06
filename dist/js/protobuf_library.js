@@ -1985,6 +1985,1790 @@ proto.ubii.devices.DeviceList.prototype.clearElementsList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ubii.processing.ProcessingMode = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.processing.ProcessingMode.oneofGroups_);
+};
+goog.inherits(proto.ubii.processing.ProcessingMode, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.processing.ProcessingMode.displayName = 'proto.ubii.processing.ProcessingMode';
+}
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.ubii.processing.ProcessingMode.oneofGroups_ = [[1,2,3]];
+
+/**
+ * @enum {number}
+ */
+proto.ubii.processing.ProcessingMode.ModeCase = {
+  MODE_NOT_SET: 0,
+  FREQUENCY: 1,
+  LOCKSTEP: 2,
+  TRIGGER_ON_INPUT: 3
+};
+
+/**
+ * @return {proto.ubii.processing.ProcessingMode.ModeCase}
+ */
+proto.ubii.processing.ProcessingMode.prototype.getModeCase = function() {
+  return /** @type {proto.ubii.processing.ProcessingMode.ModeCase} */(jspb.Message.computeOneofCase(this, proto.ubii.processing.ProcessingMode.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.processing.ProcessingMode.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.processing.ProcessingMode} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    frequency: (f = msg.getFrequency()) && proto.ubii.processing.ProcessingMode.Frequency.toObject(includeInstance, f),
+    lockstep: (f = msg.getLockstep()) && proto.ubii.processing.ProcessingMode.Lockstep.toObject(includeInstance, f),
+    triggerOnInput: (f = msg.getTriggerOnInput()) && proto.ubii.processing.ProcessingMode.TriggerOnInput.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.processing.ProcessingMode}
+ */
+proto.ubii.processing.ProcessingMode.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.processing.ProcessingMode;
+  return proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.processing.ProcessingMode} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.processing.ProcessingMode}
+ */
+proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.processing.ProcessingMode.Frequency;
+      reader.readMessage(value,proto.ubii.processing.ProcessingMode.Frequency.deserializeBinaryFromReader);
+      msg.setFrequency(value);
+      break;
+    case 2:
+      var value = new proto.ubii.processing.ProcessingMode.Lockstep;
+      reader.readMessage(value,proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinaryFromReader);
+      msg.setLockstep(value);
+      break;
+    case 3:
+      var value = new proto.ubii.processing.ProcessingMode.TriggerOnInput;
+      reader.readMessage(value,proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinaryFromReader);
+      msg.setTriggerOnInput(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.processing.ProcessingMode} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.processing.ProcessingMode.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getFrequency();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.ubii.processing.ProcessingMode.Frequency.serializeBinaryToWriter
+    );
+  }
+  f = this.getLockstep();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.ubii.processing.ProcessingMode.Lockstep.serializeBinaryToWriter
+    );
+  }
+  f = this.getTriggerOnInput();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.processing.ProcessingMode.TriggerOnInput.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.processing.ProcessingMode} The clone.
+ */
+proto.ubii.processing.ProcessingMode.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingMode} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional Frequency frequency = 1;
+ * @return {proto.ubii.processing.ProcessingMode.Frequency}
+ */
+proto.ubii.processing.ProcessingMode.prototype.getFrequency = function() {
+  return /** @type{proto.ubii.processing.ProcessingMode.Frequency} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode.Frequency, 1));
+};
+
+
+/** @param {proto.ubii.processing.ProcessingMode.Frequency|undefined} value  */
+proto.ubii.processing.ProcessingMode.prototype.setFrequency = function(value) {
+  jspb.Message.setOneofWrapperField(this, 1, proto.ubii.processing.ProcessingMode.oneofGroups_[0], value);
+};
+
+
+proto.ubii.processing.ProcessingMode.prototype.clearFrequency = function() {
+  this.setFrequency(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ubii.processing.ProcessingMode.prototype.hasFrequency = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Lockstep lockstep = 2;
+ * @return {proto.ubii.processing.ProcessingMode.Lockstep}
+ */
+proto.ubii.processing.ProcessingMode.prototype.getLockstep = function() {
+  return /** @type{proto.ubii.processing.ProcessingMode.Lockstep} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode.Lockstep, 2));
+};
+
+
+/** @param {proto.ubii.processing.ProcessingMode.Lockstep|undefined} value  */
+proto.ubii.processing.ProcessingMode.prototype.setLockstep = function(value) {
+  jspb.Message.setOneofWrapperField(this, 2, proto.ubii.processing.ProcessingMode.oneofGroups_[0], value);
+};
+
+
+proto.ubii.processing.ProcessingMode.prototype.clearLockstep = function() {
+  this.setLockstep(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ubii.processing.ProcessingMode.prototype.hasLockstep = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional TriggerOnInput trigger_on_input = 3;
+ * @return {proto.ubii.processing.ProcessingMode.TriggerOnInput}
+ */
+proto.ubii.processing.ProcessingMode.prototype.getTriggerOnInput = function() {
+  return /** @type{proto.ubii.processing.ProcessingMode.TriggerOnInput} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode.TriggerOnInput, 3));
+};
+
+
+/** @param {proto.ubii.processing.ProcessingMode.TriggerOnInput|undefined} value  */
+proto.ubii.processing.ProcessingMode.prototype.setTriggerOnInput = function(value) {
+  jspb.Message.setOneofWrapperField(this, 3, proto.ubii.processing.ProcessingMode.oneofGroups_[0], value);
+};
+
+
+proto.ubii.processing.ProcessingMode.prototype.clearTriggerOnInput = function() {
+  this.setTriggerOnInput(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ubii.processing.ProcessingMode.prototype.hasTriggerOnInput = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.processing.ProcessingMode.Frequency = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.processing.ProcessingMode.Frequency, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.processing.ProcessingMode.Frequency.displayName = 'proto.ubii.processing.ProcessingMode.Frequency';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.Frequency.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.processing.ProcessingMode.Frequency.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.processing.ProcessingMode.Frequency} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.Frequency.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    hertz: msg.getHertz()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.processing.ProcessingMode.Frequency}
+ */
+proto.ubii.processing.ProcessingMode.Frequency.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.processing.ProcessingMode.Frequency;
+  return proto.ubii.processing.ProcessingMode.Frequency.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.processing.ProcessingMode.Frequency} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.processing.ProcessingMode.Frequency}
+ */
+proto.ubii.processing.ProcessingMode.Frequency.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setHertz(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.processing.ProcessingMode.Frequency} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.Frequency.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.processing.ProcessingMode.Frequency.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.Frequency.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getHertz();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.processing.ProcessingMode.Frequency} The clone.
+ */
+proto.ubii.processing.ProcessingMode.Frequency.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingMode.Frequency} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional int32 hertz = 1;
+ * @return {number}
+ */
+proto.ubii.processing.ProcessingMode.Frequency.prototype.getHertz = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+};
+
+
+/** @param {number} value  */
+proto.ubii.processing.ProcessingMode.Frequency.prototype.setHertz = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.processing.ProcessingMode.Lockstep = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.processing.ProcessingMode.Lockstep, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.processing.ProcessingMode.Lockstep.displayName = 'proto.ubii.processing.ProcessingMode.Lockstep';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.processing.ProcessingMode.Lockstep.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.processing.ProcessingMode.Lockstep} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    processRequestEndpoint: msg.getProcessRequestEndpoint()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.processing.ProcessingMode.Lockstep}
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.processing.ProcessingMode.Lockstep;
+  return proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.processing.ProcessingMode.Lockstep} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.processing.ProcessingMode.Lockstep}
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProcessRequestEndpoint(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.processing.ProcessingMode.Lockstep} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getProcessRequestEndpoint();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.processing.ProcessingMode.Lockstep} The clone.
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingMode.Lockstep} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional string process_request_endpoint = 1;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingMode.Lockstep.prototype.getProcessRequestEndpoint = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingMode.Lockstep.prototype.setProcessRequestEndpoint = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.processing.ProcessingMode.TriggerOnInput, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.processing.ProcessingMode.TriggerOnInput.displayName = 'proto.ubii.processing.ProcessingMode.TriggerOnInput';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.processing.ProcessingMode.TriggerOnInput.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.processing.ProcessingMode.TriggerOnInput} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    minDelayMs: msg.getMinDelayMs(),
+    allInputsNeedUpdate: msg.getAllInputsNeedUpdate()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.processing.ProcessingMode.TriggerOnInput}
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.processing.ProcessingMode.TriggerOnInput;
+  return proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.processing.ProcessingMode.TriggerOnInput} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.processing.ProcessingMode.TriggerOnInput}
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMinDelayMs(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAllInputsNeedUpdate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.processing.ProcessingMode.TriggerOnInput} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getMinDelayMs();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+  f = this.getAllInputsNeedUpdate();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.processing.ProcessingMode.TriggerOnInput} The clone.
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingMode.TriggerOnInput} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional int32 min_delay_ms = 1;
+ * @return {number}
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.getMinDelayMs = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+};
+
+
+/** @param {number} value  */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.setMinDelayMs = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional bool all_inputs_need_update = 2;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.getAllInputsNeedUpdate = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 2, false));
+};
+
+
+/** @param {boolean} value  */
+proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.setAllInputsNeedUpdate = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.processing.ModuleIO = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.processing.ModuleIO, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.processing.ModuleIO.displayName = 'proto.ubii.processing.ModuleIO';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.processing.ModuleIO.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.processing.ModuleIO.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.processing.ModuleIO} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.ubii.processing.ModuleIO.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    internalName: msg.getInternalName(),
+    messageFormat: msg.getMessageFormat()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.processing.ModuleIO}
+ */
+proto.ubii.processing.ModuleIO.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.processing.ModuleIO;
+  return proto.ubii.processing.ModuleIO.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.processing.ModuleIO} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.processing.ModuleIO}
+ */
+proto.ubii.processing.ModuleIO.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInternalName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessageFormat(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.processing.ModuleIO} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ModuleIO.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.processing.ModuleIO.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ModuleIO.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getInternalName();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = this.getMessageFormat();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.processing.ModuleIO} The clone.
+ */
+proto.ubii.processing.ModuleIO.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.processing.ModuleIO} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional string internal_name = 1;
+ * @return {string}
+ */
+proto.ubii.processing.ModuleIO.prototype.getInternalName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ModuleIO.prototype.setInternalName = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional string message_format = 2;
+ * @return {string}
+ */
+proto.ubii.processing.ModuleIO.prototype.getMessageFormat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ModuleIO.prototype.setMessageFormat = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.processing.ProcessingModule = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.processing.ProcessingModule.repeatedFields_, null);
+};
+goog.inherits(proto.ubii.processing.ProcessingModule, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.processing.ProcessingModule.displayName = 'proto.ubii.processing.ProcessingModule';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.processing.ProcessingModule.repeatedFields_ = [3,4,9,10];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingModule.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.processing.ProcessingModule.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.processing.ProcessingModule} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingModule.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: msg.getId(),
+    name: msg.getName(),
+    authorsList: jspb.Message.getField(msg, 3),
+    tagsList: jspb.Message.getField(msg, 4),
+    description: msg.getDescription(),
+    nodeId: msg.getNodeId(),
+    status: msg.getStatus(),
+    processingMode: (f = msg.getProcessingMode()) && proto.ubii.processing.ProcessingMode.toObject(includeInstance, f),
+    inputsList: jspb.Message.toObjectList(msg.getInputsList(),
+    proto.ubii.processing.ModuleIO.toObject, includeInstance),
+    outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
+    proto.ubii.processing.ModuleIO.toObject, includeInstance),
+    language: msg.getLanguage(),
+    onProcessingStringified: msg.getOnProcessingStringified(),
+    onCreatedStringified: msg.getOnCreatedStringified(),
+    onHaltedStringified: msg.getOnHaltedStringified(),
+    onDestroyedStringified: msg.getOnDestroyedStringified()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.processing.ProcessingModule}
+ */
+proto.ubii.processing.ProcessingModule.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.processing.ProcessingModule;
+  return proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.processing.ProcessingModule} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.processing.ProcessingModule}
+ */
+proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.getAuthorsList().push(value);
+      msg.setAuthorsList(msg.getAuthorsList());
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.getTagsList().push(value);
+      msg.setTagsList(msg.getTagsList());
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNodeId(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 8:
+      var value = new proto.ubii.processing.ProcessingMode;
+      reader.readMessage(value,proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader);
+      msg.setProcessingMode(value);
+      break;
+    case 9:
+      var value = new proto.ubii.processing.ModuleIO;
+      reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
+      msg.getInputsList().push(value);
+      msg.setInputsList(msg.getInputsList());
+      break;
+    case 10:
+      var value = new proto.ubii.processing.ModuleIO;
+      reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
+      msg.getOutputsList().push(value);
+      msg.setOutputsList(msg.getOutputsList());
+      break;
+    case 11:
+      var value = /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (reader.readEnum());
+      msg.setLanguage(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnProcessingStringified(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnCreatedStringified(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnHaltedStringified(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOnDestroyedStringified(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.processing.ProcessingModule} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingModule.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.processing.ProcessingModule.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingModule.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = this.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = this.getAuthorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
+  f = this.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = this.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = this.getNodeId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = this.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
+      f
+    );
+  }
+  f = this.getProcessingMode();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.ubii.processing.ProcessingMode.serializeBinaryToWriter
+    );
+  }
+  f = this.getInputsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      proto.ubii.processing.ModuleIO.serializeBinaryToWriter
+    );
+  }
+  f = this.getOutputsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      proto.ubii.processing.ModuleIO.serializeBinaryToWriter
+    );
+  }
+  f = this.getLanguage();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      11,
+      f
+    );
+  }
+  f = this.getOnProcessingStringified();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = this.getOnCreatedStringified();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = this.getOnHaltedStringified();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = this.getOnDestroyedStringified();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.processing.ProcessingModule} The clone.
+ */
+proto.ubii.processing.ProcessingModule.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingModule} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional string id = 1;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setId = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setName = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * repeated string authors = 3;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<string>}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getAuthorsList = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 3));
+};
+
+
+/** @param {Array.<string>} value  */
+proto.ubii.processing.ProcessingModule.prototype.setAuthorsList = function(value) {
+  jspb.Message.setField(this, 3, value || []);
+};
+
+
+proto.ubii.processing.ProcessingModule.prototype.clearAuthorsList = function() {
+  jspb.Message.setField(this, 3, []);
+};
+
+
+/**
+ * repeated string tags = 4;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<string>}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getTagsList = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 4));
+};
+
+
+/** @param {Array.<string>} value  */
+proto.ubii.processing.ProcessingModule.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 4, value || []);
+};
+
+
+proto.ubii.processing.ProcessingModule.prototype.clearTagsList = function() {
+  jspb.Message.setField(this, 4, []);
+};
+
+
+/**
+ * optional string description = 5;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setDescription = function(value) {
+  jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * optional string node_id = 6;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getNodeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 6, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setNodeId = function(value) {
+  jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * optional Status status = 7;
+ * @return {!proto.ubii.processing.ProcessingModule.Status}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getStatus = function() {
+  return /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (jspb.Message.getFieldProto3(this, 7, 0));
+};
+
+
+/** @param {!proto.ubii.processing.ProcessingModule.Status} value  */
+proto.ubii.processing.ProcessingModule.prototype.setStatus = function(value) {
+  jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * optional ProcessingMode processing_mode = 8;
+ * @return {proto.ubii.processing.ProcessingMode}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getProcessingMode = function() {
+  return /** @type{proto.ubii.processing.ProcessingMode} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode, 8));
+};
+
+
+/** @param {proto.ubii.processing.ProcessingMode|undefined} value  */
+proto.ubii.processing.ProcessingModule.prototype.setProcessingMode = function(value) {
+  jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+proto.ubii.processing.ProcessingModule.prototype.clearProcessingMode = function() {
+  this.setProcessingMode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.ubii.processing.ProcessingModule.prototype.hasProcessingMode = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated ModuleIO inputs = 9;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.ubii.processing.ModuleIO>}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getInputsList = function() {
+  return /** @type{!Array.<!proto.ubii.processing.ModuleIO>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 9));
+};
+
+
+/** @param {Array.<!proto.ubii.processing.ModuleIO>} value  */
+proto.ubii.processing.ProcessingModule.prototype.setInputsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+proto.ubii.processing.ProcessingModule.prototype.clearInputsList = function() {
+  this.setInputsList([]);
+};
+
+
+/**
+ * repeated ModuleIO outputs = 10;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.ubii.processing.ModuleIO>}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOutputsList = function() {
+  return /** @type{!Array.<!proto.ubii.processing.ModuleIO>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 10));
+};
+
+
+/** @param {Array.<!proto.ubii.processing.ModuleIO>} value  */
+proto.ubii.processing.ProcessingModule.prototype.setOutputsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+proto.ubii.processing.ProcessingModule.prototype.clearOutputsList = function() {
+  this.setOutputsList([]);
+};
+
+
+/**
+ * optional Language language = 11;
+ * @return {!proto.ubii.processing.ProcessingModule.Language}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getLanguage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (jspb.Message.getFieldProto3(this, 11, 0));
+};
+
+
+/** @param {!proto.ubii.processing.ProcessingModule.Language} value  */
+proto.ubii.processing.ProcessingModule.prototype.setLanguage = function(value) {
+  jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * optional string on_processing_stringified = 12;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOnProcessingStringified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 12, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setOnProcessingStringified = function(value) {
+  jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * optional string on_created_stringified = 13;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOnCreatedStringified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 13, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setOnCreatedStringified = function(value) {
+  jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * optional string on_halted_stringified = 14;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOnHaltedStringified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 14, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setOnHaltedStringified = function(value) {
+  jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * optional string on_destroyed_stringified = 15;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOnDestroyedStringified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 15, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setOnDestroyedStringified = function(value) {
+  jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.ubii.processing.ProcessingModule.Status = {
+  INITIALIZED: 0,
+  CREATED: 1,
+  PROCESSING: 2,
+  HALTED: 3,
+  DESTROYED: 4
+};
+
+/**
+ * @enum {number}
+ */
+proto.ubii.processing.ProcessingModule.Language = {
+  CPP: 0,
+  PY: 1,
+  JS: 2,
+  CS: 3,
+  JAVA: 4
+};
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.processing.ProcessingModuleList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.processing.ProcessingModuleList.repeatedFields_, null);
+};
+goog.inherits(proto.ubii.processing.ProcessingModuleList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.processing.ProcessingModuleList.displayName = 'proto.ubii.processing.ProcessingModuleList';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.processing.ProcessingModuleList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingModuleList.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.processing.ProcessingModuleList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.processing.ProcessingModuleList} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.ubii.processing.ProcessingModuleList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.ubii.processing.ProcessingModule.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.processing.ProcessingModuleList}
+ */
+proto.ubii.processing.ProcessingModuleList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.processing.ProcessingModuleList;
+  return proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.processing.ProcessingModuleList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.processing.ProcessingModuleList}
+ */
+proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.processing.ProcessingModule;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
+      msg.getElementsList().push(value);
+      msg.setElementsList(msg.getElementsList());
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.processing.ProcessingModuleList} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingModuleList.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.processing.ProcessingModuleList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.ubii.processing.ProcessingModuleList.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.ubii.processing.ProcessingModuleList} The clone.
+ */
+proto.ubii.processing.ProcessingModuleList.prototype.cloneMessage = function() {
+  return /** @type {!proto.ubii.processing.ProcessingModuleList} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * repeated ProcessingModule elements = 1;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.ubii.processing.ProcessingModule>}
+ */
+proto.ubii.processing.ProcessingModuleList.prototype.getElementsList = function() {
+  return /** @type{!Array.<!proto.ubii.processing.ProcessingModule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ProcessingModule, 1));
+};
+
+
+/** @param {Array.<!proto.ubii.processing.ProcessingModule>} value  */
+proto.ubii.processing.ProcessingModuleList.prototype.setElementsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+proto.ubii.processing.ProcessingModuleList.prototype.clearElementsList = function() {
+  this.setElementsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ubii.clients.Client = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.clients.Client.repeatedFields_, null);
 };
@@ -1997,7 +3781,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.clients.Client.repeatedFields_ = [3,4];
+proto.ubii.clients.Client.repeatedFields_ = [3,4,6];
 
 
 
@@ -2032,7 +3816,10 @@ proto.ubii.clients.Client.toObject = function(includeInstance, msg) {
     devicesList: jspb.Message.toObjectList(msg.getDevicesList(),
     proto.ubii.devices.Device.toObject, includeInstance),
     tagsList: jspb.Message.getField(msg, 4),
-    description: msg.getDescription()
+    description: msg.getDescription(),
+    processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
+    proto.ubii.processing.ProcessingModule.toObject, includeInstance),
+    isDedicatedProcessingNode: msg.getIsDedicatedProcessingNode()
   };
 
   if (includeInstance) {
@@ -2091,6 +3878,16 @@ proto.ubii.clients.Client.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 6:
+      var value = new proto.ubii.processing.ProcessingModule;
+      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
+      msg.getProcessingModulesList().push(value);
+      msg.setProcessingModulesList(msg.getProcessingModulesList());
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsDedicatedProcessingNode(value);
       break;
     default:
       reader.skipField();
@@ -2163,6 +3960,21 @@ proto.ubii.clients.Client.prototype.serializeBinaryToWriter = function (writer) 
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = this.getProcessingModulesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
+    );
+  }
+  f = this.getIsDedicatedProcessingNode();
+  if (f) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -2265,6 +4077,46 @@ proto.ubii.clients.Client.prototype.getDescription = function() {
 /** @param {string} value  */
 proto.ubii.clients.Client.prototype.setDescription = function(value) {
   jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * repeated ubii.processing.ProcessingModule processing_modules = 6;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.ubii.processing.ProcessingModule>}
+ */
+proto.ubii.clients.Client.prototype.getProcessingModulesList = function() {
+  return /** @type{!Array.<!proto.ubii.processing.ProcessingModule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ProcessingModule, 6));
+};
+
+
+/** @param {Array.<!proto.ubii.processing.ProcessingModule>} value  */
+proto.ubii.clients.Client.prototype.setProcessingModulesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+proto.ubii.clients.Client.prototype.clearProcessingModulesList = function() {
+  this.setProcessingModulesList([]);
+};
+
+
+/**
+ * optional bool is_dedicated_processing_node = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.ubii.clients.Client.prototype.getIsDedicatedProcessingNode = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 7, false));
+};
+
+
+/** @param {boolean} value  */
+proto.ubii.clients.Client.prototype.setIsDedicatedProcessingNode = function(value) {
+  jspb.Message.setField(this, 7, value);
 };
 
 
@@ -4650,1790 +6502,6 @@ proto.ubii.sessions.IOMappingList.prototype.setElementsList = function(value) {
 
 
 proto.ubii.sessions.IOMappingList.prototype.clearElementsList = function() {
-  this.setElementsList([]);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.processing.ProcessingMode = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.processing.ProcessingMode.oneofGroups_);
-};
-goog.inherits(proto.ubii.processing.ProcessingMode, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.processing.ProcessingMode.displayName = 'proto.ubii.processing.ProcessingMode';
-}
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.ubii.processing.ProcessingMode.oneofGroups_ = [[1,2,3]];
-
-/**
- * @enum {number}
- */
-proto.ubii.processing.ProcessingMode.ModeCase = {
-  MODE_NOT_SET: 0,
-  FREQUENCY: 1,
-  LOCKSTEP: 2,
-  TRIGGER_ON_INPUT: 3
-};
-
-/**
- * @return {proto.ubii.processing.ProcessingMode.ModeCase}
- */
-proto.ubii.processing.ProcessingMode.prototype.getModeCase = function() {
-  return /** @type {proto.ubii.processing.ProcessingMode.ModeCase} */(jspb.Message.computeOneofCase(this, proto.ubii.processing.ProcessingMode.oneofGroups_[0]));
-};
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.processing.ProcessingMode.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.processing.ProcessingMode} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    frequency: (f = msg.getFrequency()) && proto.ubii.processing.ProcessingMode.Frequency.toObject(includeInstance, f),
-    lockstep: (f = msg.getLockstep()) && proto.ubii.processing.ProcessingMode.Lockstep.toObject(includeInstance, f),
-    triggerOnInput: (f = msg.getTriggerOnInput()) && proto.ubii.processing.ProcessingMode.TriggerOnInput.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.processing.ProcessingMode}
- */
-proto.ubii.processing.ProcessingMode.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.processing.ProcessingMode;
-  return proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.processing.ProcessingMode} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.processing.ProcessingMode}
- */
-proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.ubii.processing.ProcessingMode.Frequency;
-      reader.readMessage(value,proto.ubii.processing.ProcessingMode.Frequency.deserializeBinaryFromReader);
-      msg.setFrequency(value);
-      break;
-    case 2:
-      var value = new proto.ubii.processing.ProcessingMode.Lockstep;
-      reader.readMessage(value,proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinaryFromReader);
-      msg.setLockstep(value);
-      break;
-    case 3:
-      var value = new proto.ubii.processing.ProcessingMode.TriggerOnInput;
-      reader.readMessage(value,proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinaryFromReader);
-      msg.setTriggerOnInput(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ubii.processing.ProcessingMode} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.processing.ProcessingMode.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getFrequency();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      proto.ubii.processing.ProcessingMode.Frequency.serializeBinaryToWriter
-    );
-  }
-  f = this.getLockstep();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      proto.ubii.processing.ProcessingMode.Lockstep.serializeBinaryToWriter
-    );
-  }
-  f = this.getTriggerOnInput();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.ubii.processing.ProcessingMode.TriggerOnInput.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ubii.processing.ProcessingMode} The clone.
- */
-proto.ubii.processing.ProcessingMode.prototype.cloneMessage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingMode} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional Frequency frequency = 1;
- * @return {proto.ubii.processing.ProcessingMode.Frequency}
- */
-proto.ubii.processing.ProcessingMode.prototype.getFrequency = function() {
-  return /** @type{proto.ubii.processing.ProcessingMode.Frequency} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode.Frequency, 1));
-};
-
-
-/** @param {proto.ubii.processing.ProcessingMode.Frequency|undefined} value  */
-proto.ubii.processing.ProcessingMode.prototype.setFrequency = function(value) {
-  jspb.Message.setOneofWrapperField(this, 1, proto.ubii.processing.ProcessingMode.oneofGroups_[0], value);
-};
-
-
-proto.ubii.processing.ProcessingMode.prototype.clearFrequency = function() {
-  this.setFrequency(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return{!boolean}
- */
-proto.ubii.processing.ProcessingMode.prototype.hasFrequency = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional Lockstep lockstep = 2;
- * @return {proto.ubii.processing.ProcessingMode.Lockstep}
- */
-proto.ubii.processing.ProcessingMode.prototype.getLockstep = function() {
-  return /** @type{proto.ubii.processing.ProcessingMode.Lockstep} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode.Lockstep, 2));
-};
-
-
-/** @param {proto.ubii.processing.ProcessingMode.Lockstep|undefined} value  */
-proto.ubii.processing.ProcessingMode.prototype.setLockstep = function(value) {
-  jspb.Message.setOneofWrapperField(this, 2, proto.ubii.processing.ProcessingMode.oneofGroups_[0], value);
-};
-
-
-proto.ubii.processing.ProcessingMode.prototype.clearLockstep = function() {
-  this.setLockstep(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return{!boolean}
- */
-proto.ubii.processing.ProcessingMode.prototype.hasLockstep = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional TriggerOnInput trigger_on_input = 3;
- * @return {proto.ubii.processing.ProcessingMode.TriggerOnInput}
- */
-proto.ubii.processing.ProcessingMode.prototype.getTriggerOnInput = function() {
-  return /** @type{proto.ubii.processing.ProcessingMode.TriggerOnInput} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode.TriggerOnInput, 3));
-};
-
-
-/** @param {proto.ubii.processing.ProcessingMode.TriggerOnInput|undefined} value  */
-proto.ubii.processing.ProcessingMode.prototype.setTriggerOnInput = function(value) {
-  jspb.Message.setOneofWrapperField(this, 3, proto.ubii.processing.ProcessingMode.oneofGroups_[0], value);
-};
-
-
-proto.ubii.processing.ProcessingMode.prototype.clearTriggerOnInput = function() {
-  this.setTriggerOnInput(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return{!boolean}
- */
-proto.ubii.processing.ProcessingMode.prototype.hasTriggerOnInput = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.processing.ProcessingMode.Frequency = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.ubii.processing.ProcessingMode.Frequency, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.processing.ProcessingMode.Frequency.displayName = 'proto.ubii.processing.ProcessingMode.Frequency';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.Frequency.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.processing.ProcessingMode.Frequency.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.processing.ProcessingMode.Frequency} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.Frequency.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    hertz: msg.getHertz()
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.processing.ProcessingMode.Frequency}
- */
-proto.ubii.processing.ProcessingMode.Frequency.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.processing.ProcessingMode.Frequency;
-  return proto.ubii.processing.ProcessingMode.Frequency.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.processing.ProcessingMode.Frequency} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.processing.ProcessingMode.Frequency}
- */
-proto.ubii.processing.ProcessingMode.Frequency.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setHertz(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ubii.processing.ProcessingMode.Frequency} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.Frequency.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.processing.ProcessingMode.Frequency.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.Frequency.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getHertz();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ubii.processing.ProcessingMode.Frequency} The clone.
- */
-proto.ubii.processing.ProcessingMode.Frequency.prototype.cloneMessage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingMode.Frequency} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional int32 hertz = 1;
- * @return {number}
- */
-proto.ubii.processing.ProcessingMode.Frequency.prototype.getHertz = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
-};
-
-
-/** @param {number} value  */
-proto.ubii.processing.ProcessingMode.Frequency.prototype.setHertz = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.processing.ProcessingMode.Lockstep = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.ubii.processing.ProcessingMode.Lockstep, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.processing.ProcessingMode.Lockstep.displayName = 'proto.ubii.processing.ProcessingMode.Lockstep';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.Lockstep.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.processing.ProcessingMode.Lockstep.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.processing.ProcessingMode.Lockstep} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.Lockstep.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    processRequestEndpoint: msg.getProcessRequestEndpoint()
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.processing.ProcessingMode.Lockstep}
- */
-proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.processing.ProcessingMode.Lockstep;
-  return proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.processing.ProcessingMode.Lockstep} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.processing.ProcessingMode.Lockstep}
- */
-proto.ubii.processing.ProcessingMode.Lockstep.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProcessRequestEndpoint(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ubii.processing.ProcessingMode.Lockstep} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.Lockstep.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.processing.ProcessingMode.Lockstep.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.Lockstep.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getProcessRequestEndpoint();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ubii.processing.ProcessingMode.Lockstep} The clone.
- */
-proto.ubii.processing.ProcessingMode.Lockstep.prototype.cloneMessage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingMode.Lockstep} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional string process_request_endpoint = 1;
- * @return {string}
- */
-proto.ubii.processing.ProcessingMode.Lockstep.prototype.getProcessRequestEndpoint = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingMode.Lockstep.prototype.setProcessRequestEndpoint = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.ubii.processing.ProcessingMode.TriggerOnInput, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.processing.ProcessingMode.TriggerOnInput.displayName = 'proto.ubii.processing.ProcessingMode.TriggerOnInput';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.processing.ProcessingMode.TriggerOnInput.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.processing.ProcessingMode.TriggerOnInput} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    minDelayMs: msg.getMinDelayMs(),
-    allInputsNeedUpdate: msg.getAllInputsNeedUpdate()
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.processing.ProcessingMode.TriggerOnInput}
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.processing.ProcessingMode.TriggerOnInput;
-  return proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.processing.ProcessingMode.TriggerOnInput} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.processing.ProcessingMode.TriggerOnInput}
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setMinDelayMs(value);
-      break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAllInputsNeedUpdate(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ubii.processing.ProcessingMode.TriggerOnInput} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getMinDelayMs();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-  f = this.getAllInputsNeedUpdate();
-  if (f) {
-    writer.writeBool(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ubii.processing.ProcessingMode.TriggerOnInput} The clone.
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.cloneMessage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingMode.TriggerOnInput} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional int32 min_delay_ms = 1;
- * @return {number}
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.getMinDelayMs = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
-};
-
-
-/** @param {number} value  */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.setMinDelayMs = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * optional bool all_inputs_need_update = 2;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.getAllInputsNeedUpdate = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 2, false));
-};
-
-
-/** @param {boolean} value  */
-proto.ubii.processing.ProcessingMode.TriggerOnInput.prototype.setAllInputsNeedUpdate = function(value) {
-  jspb.Message.setField(this, 2, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.processing.ModuleIO = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.ubii.processing.ModuleIO, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.processing.ModuleIO.displayName = 'proto.ubii.processing.ModuleIO';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.processing.ModuleIO.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.processing.ModuleIO.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.processing.ModuleIO} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.ubii.processing.ModuleIO.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    internalName: msg.getInternalName(),
-    messageFormat: msg.getMessageFormat()
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.processing.ModuleIO}
- */
-proto.ubii.processing.ModuleIO.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.processing.ModuleIO;
-  return proto.ubii.processing.ModuleIO.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.processing.ModuleIO} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.processing.ModuleIO}
- */
-proto.ubii.processing.ModuleIO.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setInternalName(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMessageFormat(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ubii.processing.ModuleIO} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ModuleIO.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.processing.ModuleIO.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ModuleIO.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getInternalName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = this.getMessageFormat();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ubii.processing.ModuleIO} The clone.
- */
-proto.ubii.processing.ModuleIO.prototype.cloneMessage = function() {
-  return /** @type {!proto.ubii.processing.ModuleIO} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional string internal_name = 1;
- * @return {string}
- */
-proto.ubii.processing.ModuleIO.prototype.getInternalName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ModuleIO.prototype.setInternalName = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * optional string message_format = 2;
- * @return {string}
- */
-proto.ubii.processing.ModuleIO.prototype.getMessageFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ModuleIO.prototype.setMessageFormat = function(value) {
-  jspb.Message.setField(this, 2, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.processing.ProcessingModule = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.processing.ProcessingModule.repeatedFields_, null);
-};
-goog.inherits(proto.ubii.processing.ProcessingModule, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.processing.ProcessingModule.displayName = 'proto.ubii.processing.ProcessingModule';
-}
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.ubii.processing.ProcessingModule.repeatedFields_ = [3,4,9,10];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingModule.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.processing.ProcessingModule.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.processing.ProcessingModule} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingModule.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: msg.getId(),
-    name: msg.getName(),
-    authorsList: jspb.Message.getField(msg, 3),
-    tagsList: jspb.Message.getField(msg, 4),
-    description: msg.getDescription(),
-    nodeId: msg.getNodeId(),
-    status: msg.getStatus(),
-    processingMode: (f = msg.getProcessingMode()) && proto.ubii.processing.ProcessingMode.toObject(includeInstance, f),
-    inputsList: jspb.Message.toObjectList(msg.getInputsList(),
-    proto.ubii.processing.ModuleIO.toObject, includeInstance),
-    outputsList: jspb.Message.toObjectList(msg.getOutputsList(),
-    proto.ubii.processing.ModuleIO.toObject, includeInstance),
-    language: msg.getLanguage(),
-    onProcessingStringified: msg.getOnProcessingStringified(),
-    onCreatedStringified: msg.getOnCreatedStringified(),
-    onHaltedStringified: msg.getOnHaltedStringified(),
-    onDestroyedStringified: msg.getOnDestroyedStringified()
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.processing.ProcessingModule}
- */
-proto.ubii.processing.ProcessingModule.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.processing.ProcessingModule;
-  return proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.processing.ProcessingModule} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.processing.ProcessingModule}
- */
-proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.getAuthorsList().push(value);
-      msg.setAuthorsList(msg.getAuthorsList());
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.getTagsList().push(value);
-      msg.setTagsList(msg.getTagsList());
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNodeId(value);
-      break;
-    case 7:
-      var value = /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (reader.readEnum());
-      msg.setStatus(value);
-      break;
-    case 8:
-      var value = new proto.ubii.processing.ProcessingMode;
-      reader.readMessage(value,proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader);
-      msg.setProcessingMode(value);
-      break;
-    case 9:
-      var value = new proto.ubii.processing.ModuleIO;
-      reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
-      msg.getInputsList().push(value);
-      msg.setInputsList(msg.getInputsList());
-      break;
-    case 10:
-      var value = new proto.ubii.processing.ModuleIO;
-      reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
-      msg.getOutputsList().push(value);
-      msg.setOutputsList(msg.getOutputsList());
-      break;
-    case 11:
-      var value = /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (reader.readEnum());
-      msg.setLanguage(value);
-      break;
-    case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOnProcessingStringified(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOnCreatedStringified(value);
-      break;
-    case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOnHaltedStringified(value);
-      break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOnDestroyedStringified(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ubii.processing.ProcessingModule} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingModule.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.processing.ProcessingModule.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingModule.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = this.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = this.getAuthorsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      3,
-      f
-    );
-  }
-  f = this.getTagsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      4,
-      f
-    );
-  }
-  f = this.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = this.getNodeId();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = this.getStatus();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      7,
-      f
-    );
-  }
-  f = this.getProcessingMode();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      proto.ubii.processing.ProcessingMode.serializeBinaryToWriter
-    );
-  }
-  f = this.getInputsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      9,
-      f,
-      proto.ubii.processing.ModuleIO.serializeBinaryToWriter
-    );
-  }
-  f = this.getOutputsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      10,
-      f,
-      proto.ubii.processing.ModuleIO.serializeBinaryToWriter
-    );
-  }
-  f = this.getLanguage();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      11,
-      f
-    );
-  }
-  f = this.getOnProcessingStringified();
-  if (f.length > 0) {
-    writer.writeString(
-      12,
-      f
-    );
-  }
-  f = this.getOnCreatedStringified();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
-  f = this.getOnHaltedStringified();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = this.getOnDestroyedStringified();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ubii.processing.ProcessingModule} The clone.
- */
-proto.ubii.processing.ProcessingModule.prototype.cloneMessage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingModule} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setName = function(value) {
-  jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * repeated string authors = 3;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
- */
-proto.ubii.processing.ProcessingModule.prototype.getAuthorsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 3));
-};
-
-
-/** @param {Array.<string>} value  */
-proto.ubii.processing.ProcessingModule.prototype.setAuthorsList = function(value) {
-  jspb.Message.setField(this, 3, value || []);
-};
-
-
-proto.ubii.processing.ProcessingModule.prototype.clearAuthorsList = function() {
-  jspb.Message.setField(this, 3, []);
-};
-
-
-/**
- * repeated string tags = 4;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
- */
-proto.ubii.processing.ProcessingModule.prototype.getTagsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 4));
-};
-
-
-/** @param {Array.<string>} value  */
-proto.ubii.processing.ProcessingModule.prototype.setTagsList = function(value) {
-  jspb.Message.setField(this, 4, value || []);
-};
-
-
-proto.ubii.processing.ProcessingModule.prototype.clearTagsList = function() {
-  jspb.Message.setField(this, 4, []);
-};
-
-
-/**
- * optional string description = 5;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setDescription = function(value) {
-  jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * optional string node_id = 6;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getNodeId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 6, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setNodeId = function(value) {
-  jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * optional Status status = 7;
- * @return {!proto.ubii.processing.ProcessingModule.Status}
- */
-proto.ubii.processing.ProcessingModule.prototype.getStatus = function() {
-  return /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (jspb.Message.getFieldProto3(this, 7, 0));
-};
-
-
-/** @param {!proto.ubii.processing.ProcessingModule.Status} value  */
-proto.ubii.processing.ProcessingModule.prototype.setStatus = function(value) {
-  jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * optional ProcessingMode processing_mode = 8;
- * @return {proto.ubii.processing.ProcessingMode}
- */
-proto.ubii.processing.ProcessingModule.prototype.getProcessingMode = function() {
-  return /** @type{proto.ubii.processing.ProcessingMode} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode, 8));
-};
-
-
-/** @param {proto.ubii.processing.ProcessingMode|undefined} value  */
-proto.ubii.processing.ProcessingModule.prototype.setProcessingMode = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-proto.ubii.processing.ProcessingModule.prototype.clearProcessingMode = function() {
-  this.setProcessingMode(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return{!boolean}
- */
-proto.ubii.processing.ProcessingModule.prototype.hasProcessingMode = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * repeated ModuleIO inputs = 9;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.ubii.processing.ModuleIO>}
- */
-proto.ubii.processing.ProcessingModule.prototype.getInputsList = function() {
-  return /** @type{!Array.<!proto.ubii.processing.ModuleIO>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 9));
-};
-
-
-/** @param {Array.<!proto.ubii.processing.ModuleIO>} value  */
-proto.ubii.processing.ProcessingModule.prototype.setInputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 9, value);
-};
-
-
-proto.ubii.processing.ProcessingModule.prototype.clearInputsList = function() {
-  this.setInputsList([]);
-};
-
-
-/**
- * repeated ModuleIO outputs = 10;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.ubii.processing.ModuleIO>}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOutputsList = function() {
-  return /** @type{!Array.<!proto.ubii.processing.ModuleIO>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 10));
-};
-
-
-/** @param {Array.<!proto.ubii.processing.ModuleIO>} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOutputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 10, value);
-};
-
-
-proto.ubii.processing.ProcessingModule.prototype.clearOutputsList = function() {
-  this.setOutputsList([]);
-};
-
-
-/**
- * optional Language language = 11;
- * @return {!proto.ubii.processing.ProcessingModule.Language}
- */
-proto.ubii.processing.ProcessingModule.prototype.getLanguage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (jspb.Message.getFieldProto3(this, 11, 0));
-};
-
-
-/** @param {!proto.ubii.processing.ProcessingModule.Language} value  */
-proto.ubii.processing.ProcessingModule.prototype.setLanguage = function(value) {
-  jspb.Message.setField(this, 11, value);
-};
-
-
-/**
- * optional string on_processing_stringified = 12;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOnProcessingStringified = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 12, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnProcessingStringified = function(value) {
-  jspb.Message.setField(this, 12, value);
-};
-
-
-/**
- * optional string on_created_stringified = 13;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOnCreatedStringified = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 13, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnCreatedStringified = function(value) {
-  jspb.Message.setField(this, 13, value);
-};
-
-
-/**
- * optional string on_halted_stringified = 14;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOnHaltedStringified = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 14, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnHaltedStringified = function(value) {
-  jspb.Message.setField(this, 14, value);
-};
-
-
-/**
- * optional string on_destroyed_stringified = 15;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOnDestroyedStringified = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 15, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnDestroyedStringified = function(value) {
-  jspb.Message.setField(this, 15, value);
-};
-
-
-/**
- * @enum {number}
- */
-proto.ubii.processing.ProcessingModule.Status = {
-  INITIALIZED: 0,
-  CREATED: 1,
-  PROCESSING: 2,
-  HALTED: 3,
-  DESTROYED: 4
-};
-
-/**
- * @enum {number}
- */
-proto.ubii.processing.ProcessingModule.Language = {
-  CPP: 0,
-  PY: 1,
-  JS: 2,
-  CS: 3,
-  JAVA: 4
-};
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.processing.ProcessingModuleList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.processing.ProcessingModuleList.repeatedFields_, null);
-};
-goog.inherits(proto.ubii.processing.ProcessingModuleList, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.processing.ProcessingModuleList.displayName = 'proto.ubii.processing.ProcessingModuleList';
-}
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.ubii.processing.ProcessingModuleList.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingModuleList.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.processing.ProcessingModuleList.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.processing.ProcessingModuleList} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.ubii.processing.ProcessingModuleList.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
-    proto.ubii.processing.ProcessingModule.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.processing.ProcessingModuleList}
- */
-proto.ubii.processing.ProcessingModuleList.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.processing.ProcessingModuleList;
-  return proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.processing.ProcessingModuleList} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.processing.ProcessingModuleList}
- */
-proto.ubii.processing.ProcessingModuleList.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.ubii.processing.ProcessingModule;
-      reader.readMessage(value,proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader);
-      msg.getElementsList().push(value);
-      msg.setElementsList(msg.getElementsList());
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ubii.processing.ProcessingModuleList} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingModuleList.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.processing.ProcessingModuleList.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ubii.processing.ProcessingModuleList.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getElementsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.ubii.processing.ProcessingModule.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ubii.processing.ProcessingModuleList} The clone.
- */
-proto.ubii.processing.ProcessingModuleList.prototype.cloneMessage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingModuleList} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * repeated ProcessingModule elements = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.ubii.processing.ProcessingModule>}
- */
-proto.ubii.processing.ProcessingModuleList.prototype.getElementsList = function() {
-  return /** @type{!Array.<!proto.ubii.processing.ProcessingModule>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ProcessingModule, 1));
-};
-
-
-/** @param {Array.<!proto.ubii.processing.ProcessingModule>} value  */
-proto.ubii.processing.ProcessingModuleList.prototype.setElementsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-proto.ubii.processing.ProcessingModuleList.prototype.clearElementsList = function() {
   this.setElementsList([]);
 };
 

@@ -2,6 +2,7 @@ syntax = "proto3";
 package ubii.clients;
 
 import "proto/devices/device.proto";
+import "proto/processing/processingModule.proto";
 
 message Client {
     string id = 1;
@@ -9,6 +10,8 @@ message Client {
     repeated ubii.devices.Device devices = 3;
     repeated string tags = 4;
     string description = 5;
+    repeated ubii.processing.ProcessingModule processing_modules = 6;
+    bool is_dedicated_processing_node = 7;
 }
 
 message ClientList {

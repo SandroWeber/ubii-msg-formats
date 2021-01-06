@@ -90,6 +90,35 @@ public final class ClientOuterClass {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> 
+        getProcessingModulesList();
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index);
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    int getProcessingModulesCount();
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+        getProcessingModulesOrBuilderList();
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
+        int index);
+
+    /**
+     * <code>optional bool is_dedicated_processing_node = 7;</code>
+     */
+    boolean getIsDedicatedProcessingNode();
   }
   /**
    * Protobuf type {@code ubii.clients.Client}
@@ -108,6 +137,8 @@ public final class ClientOuterClass {
       devices_ = java.util.Collections.emptyList();
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
+      processingModules_ = java.util.Collections.emptyList();
+      isDedicatedProcessingNode_ = false;
     }
 
     @java.lang.Override
@@ -171,6 +202,20 @@ public final class ClientOuterClass {
               description_ = s;
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              processingModules_.add(
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry));
+              break;
+            }
+            case 56: {
+
+              isDedicatedProcessingNode_ = input.readBool();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -184,6 +229,9 @@ public final class ClientOuterClass {
         }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           tags_ = tags_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
         }
         makeExtensionsImmutable();
       }
@@ -367,6 +415,50 @@ public final class ClientOuterClass {
       }
     }
 
+    public static final int PROCESSING_MODULES_FIELD_NUMBER = 6;
+    private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_;
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
+      return processingModules_;
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+        getProcessingModulesOrBuilderList() {
+      return processingModules_;
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    public int getProcessingModulesCount() {
+      return processingModules_.size();
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
+      return processingModules_.get(index);
+    }
+    /**
+     * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
+        int index) {
+      return processingModules_.get(index);
+    }
+
+    public static final int IS_DEDICATED_PROCESSING_NODE_FIELD_NUMBER = 7;
+    private boolean isDedicatedProcessingNode_;
+    /**
+     * <code>optional bool is_dedicated_processing_node = 7;</code>
+     */
+    public boolean getIsDedicatedProcessingNode() {
+      return isDedicatedProcessingNode_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -393,6 +485,12 @@ public final class ClientOuterClass {
       }
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
+      }
+      for (int i = 0; i < processingModules_.size(); i++) {
+        output.writeMessage(6, processingModules_.get(i));
+      }
+      if (isDedicatedProcessingNode_ != false) {
+        output.writeBool(7, isDedicatedProcessingNode_);
       }
     }
 
@@ -422,6 +520,14 @@ public final class ClientOuterClass {
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
+      for (int i = 0; i < processingModules_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, processingModules_.get(i));
+      }
+      if (isDedicatedProcessingNode_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isDedicatedProcessingNode_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -448,6 +554,10 @@ public final class ClientOuterClass {
           .equals(other.getTagsList());
       result = result && getDescription()
           .equals(other.getDescription());
+      result = result && getProcessingModulesList()
+          .equals(other.getProcessingModulesList());
+      result = result && (getIsDedicatedProcessingNode()
+          == other.getIsDedicatedProcessingNode());
       return result;
     }
 
@@ -472,6 +582,13 @@ public final class ClientOuterClass {
       }
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      if (getProcessingModulesCount() > 0) {
+        hash = (37 * hash) + PROCESSING_MODULES_FIELD_NUMBER;
+        hash = (53 * hash) + getProcessingModulesList().hashCode();
+      }
+      hash = (37 * hash) + IS_DEDICATED_PROCESSING_NODE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDedicatedProcessingNode());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -587,6 +704,7 @@ public final class ClientOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getDevicesFieldBuilder();
+          getProcessingModulesFieldBuilder();
         }
       }
       public Builder clear() {
@@ -604,6 +722,14 @@ public final class ClientOuterClass {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
         description_ = "";
+
+        if (processingModulesBuilder_ == null) {
+          processingModules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          processingModulesBuilder_.clear();
+        }
+        isDedicatedProcessingNode_ = false;
 
         return this;
       }
@@ -646,6 +772,16 @@ public final class ClientOuterClass {
         }
         result.tags_ = tags_;
         result.description_ = description_;
+        if (processingModulesBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.processingModules_ = processingModules_;
+        } else {
+          result.processingModules_ = processingModulesBuilder_.build();
+        }
+        result.isDedicatedProcessingNode_ = isDedicatedProcessingNode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -735,6 +871,35 @@ public final class ClientOuterClass {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
+        }
+        if (processingModulesBuilder_ == null) {
+          if (!other.processingModules_.isEmpty()) {
+            if (processingModules_.isEmpty()) {
+              processingModules_ = other.processingModules_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureProcessingModulesIsMutable();
+              processingModules_.addAll(other.processingModules_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.processingModules_.isEmpty()) {
+            if (processingModulesBuilder_.isEmpty()) {
+              processingModulesBuilder_.dispose();
+              processingModulesBuilder_ = null;
+              processingModules_ = other.processingModules_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              processingModulesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProcessingModulesFieldBuilder() : null;
+            } else {
+              processingModulesBuilder_.addAllMessages(other.processingModules_);
+            }
+          }
+        }
+        if (other.getIsDedicatedProcessingNode() != false) {
+          setIsDedicatedProcessingNode(other.getIsDedicatedProcessingNode());
         }
         onChanged();
         return this;
@@ -1300,6 +1465,272 @@ public final class ClientOuterClass {
   checkByteStringIsUtf8(value);
         
         description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_ =
+        java.util.Collections.emptyList();
+      private void ensureProcessingModulesIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>(processingModules_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> processingModulesBuilder_;
+
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
+        if (processingModulesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(processingModules_);
+        } else {
+          return processingModulesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public int getProcessingModulesCount() {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.size();
+        } else {
+          return processingModulesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.get(index);
+        } else {
+          return processingModulesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder setProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProcessingModulesIsMutable();
+          processingModules_.set(index, value);
+          onChanged();
+        } else {
+          processingModulesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder setProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          processingModulesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder addProcessingModules(ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(value);
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder addProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule value) {
+        if (processingModulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(index, value);
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder addProcessingModules(
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(builderForValue.build());
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder addProcessingModules(
+          int index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder builderForValue) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          processingModulesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder addAllProcessingModules(
+          java.lang.Iterable<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModule> values) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, processingModules_);
+          onChanged();
+        } else {
+          processingModulesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder clearProcessingModules() {
+        if (processingModulesBuilder_ == null) {
+          processingModules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          processingModulesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public Builder removeProcessingModules(int index) {
+        if (processingModulesBuilder_ == null) {
+          ensureProcessingModulesIsMutable();
+          processingModules_.remove(index);
+          onChanged();
+        } else {
+          processingModulesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder getProcessingModulesBuilder(
+          int index) {
+        return getProcessingModulesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
+          int index) {
+        if (processingModulesBuilder_ == null) {
+          return processingModules_.get(index);  } else {
+          return processingModulesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+           getProcessingModulesOrBuilderList() {
+        if (processingModulesBuilder_ != null) {
+          return processingModulesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(processingModules_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder() {
+        return getProcessingModulesFieldBuilder().addBuilder(
+            ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder addProcessingModulesBuilder(
+          int index) {
+        return getProcessingModulesFieldBuilder().addBuilder(
+            index, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
+       */
+      public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder> 
+           getProcessingModulesBuilderList() {
+        return getProcessingModulesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
+          getProcessingModulesFieldBuilder() {
+        if (processingModulesBuilder_ == null) {
+          processingModulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
+                  processingModules_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          processingModules_ = null;
+        }
+        return processingModulesBuilder_;
+      }
+
+      private boolean isDedicatedProcessingNode_ ;
+      /**
+       * <code>optional bool is_dedicated_processing_node = 7;</code>
+       */
+      public boolean getIsDedicatedProcessingNode() {
+        return isDedicatedProcessingNode_;
+      }
+      /**
+       * <code>optional bool is_dedicated_processing_node = 7;</code>
+       */
+      public Builder setIsDedicatedProcessingNode(boolean value) {
+        
+        isDedicatedProcessingNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_dedicated_processing_node = 7;</code>
+       */
+      public Builder clearIsDedicatedProcessingNode() {
+        
+        isDedicatedProcessingNode_ = false;
         onChanged();
         return this;
       }
@@ -2107,12 +2538,15 @@ public final class ClientOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032proto/clients/client.proto\022\014ubii.clien" +
-      "ts\032\032proto/devices/device.proto\"l\n\006Client" +
-      "\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030\003 " +
-      "\003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003(\t\022" +
-      "\023\n\013description\030\005 \001(\t\"4\n\nClientList\022&\n\010el" +
-      "ements\030\001 \003(\0132\024.ubii.clients.Clientb\006prot" +
-      "o3"
+      "ts\032\032proto/devices/device.proto\032\'proto/pr" +
+      "ocessing/processingModule.proto\"\321\001\n\006Clie" +
+      "nt\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030" +
+      "\003 \003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003(" +
+      "\t\022\023\n\013description\030\005 \001(\t\022=\n\022processing_mod" +
+      "ules\030\006 \003(\0132!.ubii.processing.ProcessingM" +
+      "odule\022$\n\034is_dedicated_processing_node\030\007 " +
+      "\001(\010\"4\n\nClientList\022&\n\010elements\030\001 \003(\0132\024.ub" +
+      "ii.clients.Clientb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2126,13 +2560,14 @@ public final class ClientOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.devices.DeviceOuterClass.getDescriptor(),
+          ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_clients_Client_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_clients_Client_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_clients_Client_descriptor,
-        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", });
+        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", });
     internal_static_ubii_clients_ClientList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_clients_ClientList_fieldAccessorTable = new
@@ -2140,6 +2575,7 @@ public final class ClientOuterClass {
         internal_static_ubii_clients_ClientList_descriptor,
         new java.lang.String[] { "Elements", });
     ubii.devices.DeviceOuterClass.getDescriptor();
+    ubii.processing.ProcessingModuleOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

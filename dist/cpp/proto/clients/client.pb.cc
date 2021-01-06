@@ -40,12 +40,14 @@ void protobuf_AssignDesc_proto_2fclients_2fclient_2eproto() {
       "proto/clients/client.proto");
   GOOGLE_CHECK(file != NULL);
   Client_descriptor_ = file->message_type(0);
-  static const int Client_offsets_[5] = {
+  static const int Client_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client, id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client, name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client, devices_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client, tags_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client, description_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client, processing_modules_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client, is_dedicated_processing_node_),
   };
   Client_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -109,14 +111,18 @@ void protobuf_AddDesc_proto_2fclients_2fclient_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::ubii::devices::protobuf_AddDesc_proto_2fdevices_2fdevice_2eproto();
+  ::ubii::processing::protobuf_AddDesc_proto_2fprocessing_2fprocessingModule_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\032proto/clients/client.proto\022\014ubii.clien"
-    "ts\032\032proto/devices/device.proto\"l\n\006Client"
-    "\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030\003 "
-    "\003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003(\t\022"
-    "\023\n\013description\030\005 \001(\t\"4\n\nClientList\022&\n\010el"
-    "ements\030\001 \003(\0132\024.ubii.clients.Clientb\006prot"
-    "o3", 242);
+    "ts\032\032proto/devices/device.proto\032\'proto/pr"
+    "ocessing/processingModule.proto\"\321\001\n\006Clie"
+    "nt\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030"
+    "\003 \003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003("
+    "\t\022\023\n\013description\030\005 \001(\t\022=\n\022processing_mod"
+    "ules\030\006 \003(\0132!.ubii.processing.ProcessingM"
+    "odule\022$\n\034is_dedicated_processing_node\030\007 "
+    "\001(\010\"4\n\nClientList\022&\n\010elements\030\001 \003(\0132\024.ub"
+    "ii.clients.Clientb\006proto3", 385);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/clients/client.proto", &protobuf_RegisterTypes);
   Client::default_instance_ = new Client();
@@ -141,6 +147,8 @@ const int Client::kNameFieldNumber;
 const int Client::kDevicesFieldNumber;
 const int Client::kTagsFieldNumber;
 const int Client::kDescriptionFieldNumber;
+const int Client::kProcessingModulesFieldNumber;
+const int Client::kIsDedicatedProcessingNodeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Client::Client()
@@ -168,6 +176,7 @@ void Client::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  is_dedicated_processing_node_ = false;
 }
 
 Client::~Client() {
@@ -213,8 +222,10 @@ void Client::Clear() {
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  is_dedicated_processing_node_ = false;
   devices_.Clear();
   tags_.Clear();
+  processing_modules_.Clear();
 }
 
 bool Client::MergePartialFromCodedStream(
@@ -309,6 +320,38 @@ bool Client::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(50)) goto parse_processing_modules;
+        break;
+      }
+
+      // repeated .ubii.processing.ProcessingModule processing_modules = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_processing_modules:
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_processing_modules:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+                input, add_processing_modules()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_loop_processing_modules;
+        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(56)) goto parse_is_dedicated_processing_node;
+        break;
+      }
+
+      // optional bool is_dedicated_processing_node = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_is_dedicated_processing_node:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_dedicated_processing_node_)));
+
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -383,6 +426,17 @@ void Client::SerializeWithCachedSizes(
       5, this->description(), output);
   }
 
+  // repeated .ubii.processing.ProcessingModule processing_modules = 6;
+  for (unsigned int i = 0, n = this->processing_modules_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->processing_modules(i), output);
+  }
+
+  // optional bool is_dedicated_processing_node = 7;
+  if (this->is_dedicated_processing_node() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->is_dedicated_processing_node(), output);
+  }
+
   // @@protoc_insertion_point(serialize_end:ubii.clients.Client)
 }
 
@@ -439,6 +493,18 @@ void Client::SerializeWithCachedSizes(
         5, this->description(), target);
   }
 
+  // repeated .ubii.processing.ProcessingModule processing_modules = 6;
+  for (unsigned int i = 0, n = this->processing_modules_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        6, this->processing_modules(i), false, target);
+  }
+
+  // optional bool is_dedicated_processing_node = 7;
+  if (this->is_dedicated_processing_node() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->is_dedicated_processing_node(), target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:ubii.clients.Client)
   return target;
 }
@@ -468,6 +534,11 @@ int Client::ByteSize() const {
         this->description());
   }
 
+  // optional bool is_dedicated_processing_node = 7;
+  if (this->is_dedicated_processing_node() != 0) {
+    total_size += 1 + 1;
+  }
+
   // repeated .ubii.devices.Device devices = 3;
   total_size += 1 * this->devices_size();
   for (int i = 0; i < this->devices_size(); i++) {
@@ -481,6 +552,14 @@ int Client::ByteSize() const {
   for (int i = 0; i < this->tags_size(); i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
       this->tags(i));
+  }
+
+  // repeated .ubii.processing.ProcessingModule processing_modules = 6;
+  total_size += 1 * this->processing_modules_size();
+  for (int i = 0; i < this->processing_modules_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->processing_modules(i));
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -513,6 +592,7 @@ void Client::MergeFrom(const Client& from) {
   }
   devices_.MergeFrom(from.devices_);
   tags_.MergeFrom(from.tags_);
+  processing_modules_.MergeFrom(from.processing_modules_);
   if (from.id().size() > 0) {
 
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
@@ -524,6 +604,9 @@ void Client::MergeFrom(const Client& from) {
   if (from.description().size() > 0) {
 
     description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  if (from.is_dedicated_processing_node() != 0) {
+    set_is_dedicated_processing_node(from.is_dedicated_processing_node());
   }
 }
 
@@ -556,6 +639,8 @@ void Client::InternalSwap(Client* other) {
   devices_.UnsafeArenaSwap(&other->devices_);
   tags_.UnsafeArenaSwap(&other->tags_);
   description_.Swap(&other->description_);
+  processing_modules_.UnsafeArenaSwap(&other->processing_modules_);
+  std::swap(is_dedicated_processing_node_, other->is_dedicated_processing_node_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -786,6 +871,50 @@ void Client::clear_description() {
   }
   description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
   // @@protoc_insertion_point(field_set_allocated:ubii.clients.Client.description)
+}
+
+// repeated .ubii.processing.ProcessingModule processing_modules = 6;
+int Client::processing_modules_size() const {
+  return processing_modules_.size();
+}
+void Client::clear_processing_modules() {
+  processing_modules_.Clear();
+}
+const ::ubii::processing::ProcessingModule& Client::processing_modules(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.processing_modules)
+  return processing_modules_.Get(index);
+}
+::ubii::processing::ProcessingModule* Client::mutable_processing_modules(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.clients.Client.processing_modules)
+  return processing_modules_.Mutable(index);
+}
+::ubii::processing::ProcessingModule* Client::add_processing_modules() {
+  // @@protoc_insertion_point(field_add:ubii.clients.Client.processing_modules)
+  return processing_modules_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
+Client::mutable_processing_modules() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.clients.Client.processing_modules)
+  return &processing_modules_;
+}
+const ::google::protobuf::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
+Client::processing_modules() const {
+  // @@protoc_insertion_point(field_list:ubii.clients.Client.processing_modules)
+  return processing_modules_;
+}
+
+// optional bool is_dedicated_processing_node = 7;
+void Client::clear_is_dedicated_processing_node() {
+  is_dedicated_processing_node_ = false;
+}
+ bool Client::is_dedicated_processing_node() const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.is_dedicated_processing_node)
+  return is_dedicated_processing_node_;
+}
+ void Client::set_is_dedicated_processing_node(bool value) {
+  
+  is_dedicated_processing_node_ = value;
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.is_dedicated_processing_node)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

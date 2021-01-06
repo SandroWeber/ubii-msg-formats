@@ -38,6 +38,8 @@ $root.ubii = (function() {
              * @property {Array.<ubii.devices.IDevice>|null} [devices] Client devices
              * @property {Array.<string>|null} [tags] Client tags
              * @property {string|null} [description] Client description
+             * @property {Array.<ubii.processing.IProcessingModule>|null} [processingModules] Client processingModules
+             * @property {boolean|null} [isDedicatedProcessingNode] Client isDedicatedProcessingNode
              */
 
             /**
@@ -51,6 +53,7 @@ $root.ubii = (function() {
             function Client(properties) {
                 this.devices = [];
                 this.tags = [];
+                this.processingModules = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -98,6 +101,22 @@ $root.ubii = (function() {
             Client.prototype.description = "";
 
             /**
+             * Client processingModules.
+             * @member {Array.<ubii.processing.IProcessingModule>} processingModules
+             * @memberof ubii.clients.Client
+             * @instance
+             */
+            Client.prototype.processingModules = $util.emptyArray;
+
+            /**
+             * Client isDedicatedProcessingNode.
+             * @member {boolean} isDedicatedProcessingNode
+             * @memberof ubii.clients.Client
+             * @instance
+             */
+            Client.prototype.isDedicatedProcessingNode = false;
+
+            /**
              * Creates a new Client instance using the specified properties.
              * @function create
              * @memberof ubii.clients.Client
@@ -133,6 +152,11 @@ $root.ubii = (function() {
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
                 if (message.description != null && message.hasOwnProperty("description"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
+                if (message.processingModules != null && message.processingModules.length)
+                    for (var i = 0; i < message.processingModules.length; ++i)
+                        $root.ubii.processing.ProcessingModule.encode(message.processingModules[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.isDedicatedProcessingNode != null && message.hasOwnProperty("isDedicatedProcessingNode"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).bool(message.isDedicatedProcessingNode);
                 return writer;
             };
 
@@ -185,6 +209,14 @@ $root.ubii = (function() {
                         break;
                     case 5:
                         message.description = reader.string();
+                        break;
+                    case 6:
+                        if (!(message.processingModules && message.processingModules.length))
+                            message.processingModules = [];
+                        message.processingModules.push($root.ubii.processing.ProcessingModule.decode(reader, reader.uint32()));
+                        break;
+                    case 7:
+                        message.isDedicatedProcessingNode = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -246,6 +278,18 @@ $root.ubii = (function() {
                 if (message.description != null && message.hasOwnProperty("description"))
                     if (!$util.isString(message.description))
                         return "description: string expected";
+                if (message.processingModules != null && message.hasOwnProperty("processingModules")) {
+                    if (!Array.isArray(message.processingModules))
+                        return "processingModules: array expected";
+                    for (var i = 0; i < message.processingModules.length; ++i) {
+                        var error = $root.ubii.processing.ProcessingModule.verify(message.processingModules[i]);
+                        if (error)
+                            return "processingModules." + error;
+                    }
+                }
+                if (message.isDedicatedProcessingNode != null && message.hasOwnProperty("isDedicatedProcessingNode"))
+                    if (typeof message.isDedicatedProcessingNode !== "boolean")
+                        return "isDedicatedProcessingNode: boolean expected";
                 return null;
             };
 
@@ -284,6 +328,18 @@ $root.ubii = (function() {
                 }
                 if (object.description != null)
                     message.description = String(object.description);
+                if (object.processingModules) {
+                    if (!Array.isArray(object.processingModules))
+                        throw TypeError(".ubii.clients.Client.processingModules: array expected");
+                    message.processingModules = [];
+                    for (var i = 0; i < object.processingModules.length; ++i) {
+                        if (typeof object.processingModules[i] !== "object")
+                            throw TypeError(".ubii.clients.Client.processingModules: object expected");
+                        message.processingModules[i] = $root.ubii.processing.ProcessingModule.fromObject(object.processingModules[i]);
+                    }
+                }
+                if (object.isDedicatedProcessingNode != null)
+                    message.isDedicatedProcessingNode = Boolean(object.isDedicatedProcessingNode);
                 return message;
             };
 
@@ -303,11 +359,13 @@ $root.ubii = (function() {
                 if (options.arrays || options.defaults) {
                     object.devices = [];
                     object.tags = [];
+                    object.processingModules = [];
                 }
                 if (options.defaults) {
                     object.id = "";
                     object.name = "";
                     object.description = "";
+                    object.isDedicatedProcessingNode = false;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -325,6 +383,13 @@ $root.ubii = (function() {
                 }
                 if (message.description != null && message.hasOwnProperty("description"))
                     object.description = message.description;
+                if (message.processingModules && message.processingModules.length) {
+                    object.processingModules = [];
+                    for (var j = 0; j < message.processingModules.length; ++j)
+                        object.processingModules[j] = $root.ubii.processing.ProcessingModule.toObject(message.processingModules[j], options);
+                }
+                if (message.isDedicatedProcessingNode != null && message.hasOwnProperty("isDedicatedProcessingNode"))
+                    object.isDedicatedProcessingNode = message.isDedicatedProcessingNode;
                 return object;
             };
 

@@ -28,6 +28,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/devices/device.pb.h"
+#include "proto/processing/processingModule.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace ubii {
@@ -164,6 +165,24 @@ class Client : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_description();
   void set_allocated_description(::std::string* description);
 
+  // repeated .ubii.processing.ProcessingModule processing_modules = 6;
+  int processing_modules_size() const;
+  void clear_processing_modules();
+  static const int kProcessingModulesFieldNumber = 6;
+  const ::ubii::processing::ProcessingModule& processing_modules(int index) const;
+  ::ubii::processing::ProcessingModule* mutable_processing_modules(int index);
+  ::ubii::processing::ProcessingModule* add_processing_modules();
+  ::google::protobuf::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
+      mutable_processing_modules();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
+      processing_modules() const;
+
+  // optional bool is_dedicated_processing_node = 7;
+  void clear_is_dedicated_processing_node();
+  static const int kIsDedicatedProcessingNodeFieldNumber = 7;
+  bool is_dedicated_processing_node() const;
+  void set_is_dedicated_processing_node(bool value);
+
   // @@protoc_insertion_point(class_scope:ubii.clients.Client)
  private:
 
@@ -174,6 +193,8 @@ class Client : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::RepeatedPtrField< ::ubii::devices::Device > devices_;
   ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr description_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::processing::ProcessingModule > processing_modules_;
+  bool is_dedicated_processing_node_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_proto_2fclients_2fclient_2eproto();
   friend void protobuf_AssignDesc_proto_2fclients_2fclient_2eproto();
@@ -493,6 +514,50 @@ inline void Client::set_allocated_description(::std::string* description) {
   }
   description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
   // @@protoc_insertion_point(field_set_allocated:ubii.clients.Client.description)
+}
+
+// repeated .ubii.processing.ProcessingModule processing_modules = 6;
+inline int Client::processing_modules_size() const {
+  return processing_modules_.size();
+}
+inline void Client::clear_processing_modules() {
+  processing_modules_.Clear();
+}
+inline const ::ubii::processing::ProcessingModule& Client::processing_modules(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.processing_modules)
+  return processing_modules_.Get(index);
+}
+inline ::ubii::processing::ProcessingModule* Client::mutable_processing_modules(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.clients.Client.processing_modules)
+  return processing_modules_.Mutable(index);
+}
+inline ::ubii::processing::ProcessingModule* Client::add_processing_modules() {
+  // @@protoc_insertion_point(field_add:ubii.clients.Client.processing_modules)
+  return processing_modules_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::ubii::processing::ProcessingModule >*
+Client::mutable_processing_modules() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.clients.Client.processing_modules)
+  return &processing_modules_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::processing::ProcessingModule >&
+Client::processing_modules() const {
+  // @@protoc_insertion_point(field_list:ubii.clients.Client.processing_modules)
+  return processing_modules_;
+}
+
+// optional bool is_dedicated_processing_node = 7;
+inline void Client::clear_is_dedicated_processing_node() {
+  is_dedicated_processing_node_ = false;
+}
+inline bool Client::is_dedicated_processing_node() const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.is_dedicated_processing_node)
+  return is_dedicated_processing_node_;
+}
+inline void Client::set_is_dedicated_processing_node(bool value) {
+  
+  is_dedicated_processing_node_ = value;
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.is_dedicated_processing_node)
 }
 
 // -------------------------------------------------------------------
