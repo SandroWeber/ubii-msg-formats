@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/processing/processingModule.proto',
   package='ubii.processing',
   syntax='proto3',
-  serialized_pb=_b('\n\'proto/processing/processingModule.proto\x12\x0fubii.processing\"\xf4\x02\n\x0eProcessingMode\x12>\n\tfrequency\x18\x01 \x01(\x0b\x32).ubii.processing.ProcessingMode.FrequencyH\x00\x12<\n\x08lockstep\x18\x02 \x01(\x0b\x32(.ubii.processing.ProcessingMode.LockstepH\x00\x12J\n\x10trigger_on_input\x18\x03 \x01(\x0b\x32..ubii.processing.ProcessingMode.TriggerOnInputH\x00\x1a\x1a\n\tFrequency\x12\r\n\x05hertz\x18\x01 \x01(\x05\x1a,\n\x08Lockstep\x12 \n\x18process_request_endpoint\x18\x01 \x01(\t\x1a\x46\n\x0eTriggerOnInput\x12\x14\n\x0cmin_delay_ms\x18\x01 \x01(\x05\x12\x1e\n\x16\x61ll_inputs_need_update\x18\x02 \x01(\x08\x42\x06\n\x04mode\"9\n\x08ModuleIO\x12\x15\n\rinternal_name\x18\x01 \x01(\t\x12\x16\n\x0emessage_format\x18\x02 \x01(\t\"\x88\x05\n\x10ProcessingModule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x0f\n\x07node_id\x18\x06 \x01(\t\x12\x38\n\x06status\x18\x07 \x01(\x0e\x32(.ubii.processing.ProcessingModule.Status\x12\x38\n\x0fprocessing_mode\x18\x08 \x01(\x0b\x32\x1f.ubii.processing.ProcessingMode\x12)\n\x06inputs\x18\t \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12*\n\x07outputs\x18\n \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12<\n\x08language\x18\x0b \x01(\x0e\x32*.ubii.processing.ProcessingModule.Language\x12!\n\x19on_processing_stringified\x18\x0c \x01(\t\x12\x1e\n\x16on_created_stringified\x18\r \x01(\t\x12\x1d\n\x15on_halted_stringified\x18\x0e \x01(\t\x12 \n\x18on_destroyed_stringified\x18\x0f \x01(\t\"Q\n\x06Status\x12\x0f\n\x0bINITIALIZED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\n\n\x06HALTED\x10\x03\x12\r\n\tDESTROYED\x10\x04\"5\n\x08Language\x12\x07\n\x03\x43PP\x10\x00\x12\x06\n\x02PY\x10\x01\x12\x06\n\x02JS\x10\x02\x12\x06\n\x02\x43S\x10\x03\x12\x08\n\x04JAVA\x10\x04\"K\n\x14ProcessingModuleList\x12\x33\n\x08\x65lements\x18\x01 \x03(\x0b\x32!.ubii.processing.ProcessingModuleb\x06proto3')
+  serialized_pb=_b('\n\'proto/processing/processingModule.proto\x12\x0fubii.processing\"\xf4\x02\n\x0eProcessingMode\x12>\n\tfrequency\x18\x01 \x01(\x0b\x32).ubii.processing.ProcessingMode.FrequencyH\x00\x12<\n\x08lockstep\x18\x02 \x01(\x0b\x32(.ubii.processing.ProcessingMode.LockstepH\x00\x12J\n\x10trigger_on_input\x18\x03 \x01(\x0b\x32..ubii.processing.ProcessingMode.TriggerOnInputH\x00\x1a\x1a\n\tFrequency\x12\r\n\x05hertz\x18\x01 \x01(\x05\x1a,\n\x08Lockstep\x12 \n\x18process_request_endpoint\x18\x01 \x01(\t\x1a\x46\n\x0eTriggerOnInput\x12\x14\n\x0cmin_delay_ms\x18\x01 \x01(\x05\x12\x1e\n\x16\x61ll_inputs_need_update\x18\x02 \x01(\x08\x42\x06\n\x04mode\"9\n\x08ModuleIO\x12\x15\n\rinternal_name\x18\x01 \x01(\t\x12\x16\n\x0emessage_format\x18\x02 \x01(\t\"\x9c\x05\n\x10ProcessingModule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x0f\n\x07node_id\x18\x06 \x01(\t\x12\x12\n\nsession_id\x18\x07 \x01(\t\x12\x38\n\x06status\x18\x08 \x01(\x0e\x32(.ubii.processing.ProcessingModule.Status\x12\x38\n\x0fprocessing_mode\x18\t \x01(\x0b\x32\x1f.ubii.processing.ProcessingMode\x12)\n\x06inputs\x18\n \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12*\n\x07outputs\x18\x0b \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12<\n\x08language\x18\x0c \x01(\x0e\x32*.ubii.processing.ProcessingModule.Language\x12!\n\x19on_processing_stringified\x18\r \x01(\t\x12\x1e\n\x16on_created_stringified\x18\x0e \x01(\t\x12\x1d\n\x15on_halted_stringified\x18\x0f \x01(\t\x12 \n\x18on_destroyed_stringified\x18\x10 \x01(\t\"Q\n\x06Status\x12\x0f\n\x0bINITIALIZED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\n\n\x06HALTED\x10\x03\x12\r\n\tDESTROYED\x10\x04\"5\n\x08Language\x12\x07\n\x03\x43PP\x10\x00\x12\x06\n\x02PY\x10\x01\x12\x06\n\x02JS\x10\x02\x12\x06\n\x02\x43S\x10\x03\x12\x08\n\x04JAVA\x10\x04\"K\n\x14ProcessingModuleList\x12\x33\n\x08\x65lements\x18\x01 \x03(\x0b\x32!.ubii.processing.ProcessingModuleb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -54,8 +54,8 @@ _PROCESSINGMODULE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1007,
-  serialized_end=1088,
+  serialized_start=1027,
+  serialized_end=1108,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSINGMODULE_STATUS)
 
@@ -88,8 +88,8 @@ _PROCESSINGMODULE_LANGUAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1090,
-  serialized_end=1143,
+  serialized_start=1110,
+  serialized_end=1163,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSINGMODULE_LANGUAGE)
 
@@ -327,64 +327,71 @@ _PROCESSINGMODULE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='status', full_name='ubii.processing.ProcessingModule.status', index=6,
-      number=7, type=14, cpp_type=8, label=1,
+      name='session_id', full_name='ubii.processing.ProcessingModule.session_id', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='ubii.processing.ProcessingModule.status', index=7,
+      number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='processing_mode', full_name='ubii.processing.ProcessingModule.processing_mode', index=7,
-      number=8, type=11, cpp_type=10, label=1,
+      name='processing_mode', full_name='ubii.processing.ProcessingModule.processing_mode', index=8,
+      number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='inputs', full_name='ubii.processing.ProcessingModule.inputs', index=8,
-      number=9, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='outputs', full_name='ubii.processing.ProcessingModule.outputs', index=9,
+      name='inputs', full_name='ubii.processing.ProcessingModule.inputs', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='language', full_name='ubii.processing.ProcessingModule.language', index=10,
-      number=11, type=14, cpp_type=8, label=1,
+      name='outputs', full_name='ubii.processing.ProcessingModule.outputs', index=10,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='language', full_name='ubii.processing.ProcessingModule.language', index=11,
+      number=12, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='on_processing_stringified', full_name='ubii.processing.ProcessingModule.on_processing_stringified', index=11,
-      number=12, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='on_created_stringified', full_name='ubii.processing.ProcessingModule.on_created_stringified', index=12,
+      name='on_processing_stringified', full_name='ubii.processing.ProcessingModule.on_processing_stringified', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='on_halted_stringified', full_name='ubii.processing.ProcessingModule.on_halted_stringified', index=13,
+      name='on_created_stringified', full_name='ubii.processing.ProcessingModule.on_created_stringified', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='on_destroyed_stringified', full_name='ubii.processing.ProcessingModule.on_destroyed_stringified', index=14,
+      name='on_halted_stringified', full_name='ubii.processing.ProcessingModule.on_halted_stringified', index=14,
       number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='on_destroyed_stringified', full_name='ubii.processing.ProcessingModule.on_destroyed_stringified', index=15,
+      number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -404,7 +411,7 @@ _PROCESSINGMODULE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=495,
-  serialized_end=1143,
+  serialized_end=1163,
 )
 
 
@@ -434,8 +441,8 @@ _PROCESSINGMODULELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1145,
-  serialized_end=1220,
+  serialized_start=1165,
+  serialized_end=1240,
 )
 
 _PROCESSINGMODE_FREQUENCY.containing_type = _PROCESSINGMODE

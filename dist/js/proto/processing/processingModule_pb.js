@@ -1024,7 +1024,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.processing.ProcessingModule.repeatedFields_ = [3,4,9,10];
+proto.ubii.processing.ProcessingModule.repeatedFields_ = [3,4,10,11];
 
 
 
@@ -1060,6 +1060,7 @@ proto.ubii.processing.ProcessingModule.toObject = function(includeInstance, msg)
     tagsList: jspb.Message.getField(msg, 4),
     description: msg.getDescription(),
     nodeId: msg.getNodeId(),
+    sessionId: msg.getSessionId(),
     status: msg.getStatus(),
     processingMode: (f = msg.getProcessingMode()) && proto.ubii.processing.ProcessingMode.toObject(includeInstance, f),
     inputsList: jspb.Message.toObjectList(msg.getInputsList(),
@@ -1134,43 +1135,47 @@ proto.ubii.processing.ProcessingModule.deserializeBinaryFromReader = function(ms
       msg.setNodeId(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSessionId(value);
+      break;
+    case 8:
       var value = /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (reader.readEnum());
       msg.setStatus(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.ubii.processing.ProcessingMode;
       reader.readMessage(value,proto.ubii.processing.ProcessingMode.deserializeBinaryFromReader);
       msg.setProcessingMode(value);
       break;
-    case 9:
+    case 10:
       var value = new proto.ubii.processing.ModuleIO;
       reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
       msg.getInputsList().push(value);
       msg.setInputsList(msg.getInputsList());
       break;
-    case 10:
+    case 11:
       var value = new proto.ubii.processing.ModuleIO;
       reader.readMessage(value,proto.ubii.processing.ModuleIO.deserializeBinaryFromReader);
       msg.getOutputsList().push(value);
       msg.setOutputsList(msg.getOutputsList());
       break;
-    case 11:
+    case 12:
       var value = /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (reader.readEnum());
       msg.setLanguage(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setOnProcessingStringified(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setOnCreatedStringified(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setOnHaltedStringified(value);
       break;
-    case 15:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setOnDestroyedStringified(value);
       break;
@@ -1254,17 +1259,24 @@ proto.ubii.processing.ProcessingModule.prototype.serializeBinaryToWriter = funct
       f
     );
   }
+  f = this.getSessionId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
   f = this.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
-      7,
+      8,
       f
     );
   }
   f = this.getProcessingMode();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       proto.ubii.processing.ProcessingMode.serializeBinaryToWriter
     );
@@ -1272,7 +1284,7 @@ proto.ubii.processing.ProcessingModule.prototype.serializeBinaryToWriter = funct
   f = this.getInputsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.ubii.processing.ModuleIO.serializeBinaryToWriter
     );
@@ -1280,7 +1292,7 @@ proto.ubii.processing.ProcessingModule.prototype.serializeBinaryToWriter = funct
   f = this.getOutputsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      10,
+      11,
       f,
       proto.ubii.processing.ModuleIO.serializeBinaryToWriter
     );
@@ -1288,35 +1300,35 @@ proto.ubii.processing.ProcessingModule.prototype.serializeBinaryToWriter = funct
   f = this.getLanguage();
   if (f !== 0.0) {
     writer.writeEnum(
-      11,
+      12,
       f
     );
   }
   f = this.getOnProcessingStringified();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      13,
       f
     );
   }
   f = this.getOnCreatedStringified();
   if (f.length > 0) {
     writer.writeString(
-      13,
+      14,
       f
     );
   }
   f = this.getOnHaltedStringified();
   if (f.length > 0) {
     writer.writeString(
-      14,
+      15,
       f
     );
   }
   f = this.getOnDestroyedStringified();
   if (f.length > 0) {
     writer.writeString(
-      15,
+      16,
       f
     );
   }
@@ -1437,33 +1449,48 @@ proto.ubii.processing.ProcessingModule.prototype.setNodeId = function(value) {
 
 
 /**
- * optional Status status = 7;
- * @return {!proto.ubii.processing.ProcessingModule.Status}
+ * optional string session_id = 7;
+ * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getStatus = function() {
-  return /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (jspb.Message.getFieldProto3(this, 7, 0));
+proto.ubii.processing.ProcessingModule.prototype.getSessionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 7, ""));
 };
 
 
-/** @param {!proto.ubii.processing.ProcessingModule.Status} value  */
-proto.ubii.processing.ProcessingModule.prototype.setStatus = function(value) {
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setSessionId = function(value) {
   jspb.Message.setField(this, 7, value);
 };
 
 
 /**
- * optional ProcessingMode processing_mode = 8;
+ * optional Status status = 8;
+ * @return {!proto.ubii.processing.ProcessingModule.Status}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getStatus = function() {
+  return /** @type {!proto.ubii.processing.ProcessingModule.Status} */ (jspb.Message.getFieldProto3(this, 8, 0));
+};
+
+
+/** @param {!proto.ubii.processing.ProcessingModule.Status} value  */
+proto.ubii.processing.ProcessingModule.prototype.setStatus = function(value) {
+  jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * optional ProcessingMode processing_mode = 9;
  * @return {proto.ubii.processing.ProcessingMode}
  */
 proto.ubii.processing.ProcessingModule.prototype.getProcessingMode = function() {
   return /** @type{proto.ubii.processing.ProcessingMode} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode, 8));
+    jspb.Message.getWrapperField(this, proto.ubii.processing.ProcessingMode, 9));
 };
 
 
 /** @param {proto.ubii.processing.ProcessingMode|undefined} value  */
 proto.ubii.processing.ProcessingModule.prototype.setProcessingMode = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -1477,25 +1504,25 @@ proto.ubii.processing.ProcessingModule.prototype.clearProcessingMode = function(
  * @return{!boolean}
  */
 proto.ubii.processing.ProcessingModule.prototype.hasProcessingMode = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * repeated ModuleIO inputs = 9;
+ * repeated ModuleIO inputs = 10;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.ubii.processing.ModuleIO>}
  */
 proto.ubii.processing.ProcessingModule.prototype.getInputsList = function() {
   return /** @type{!Array.<!proto.ubii.processing.ModuleIO>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 10));
 };
 
 
 /** @param {Array.<!proto.ubii.processing.ModuleIO>} value  */
 proto.ubii.processing.ProcessingModule.prototype.setInputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 9, value);
+  jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -1505,20 +1532,20 @@ proto.ubii.processing.ProcessingModule.prototype.clearInputsList = function() {
 
 
 /**
- * repeated ModuleIO outputs = 10;
+ * repeated ModuleIO outputs = 11;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.ubii.processing.ModuleIO>}
  */
 proto.ubii.processing.ProcessingModule.prototype.getOutputsList = function() {
   return /** @type{!Array.<!proto.ubii.processing.ModuleIO>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 10));
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.processing.ModuleIO, 11));
 };
 
 
 /** @param {Array.<!proto.ubii.processing.ModuleIO>} value  */
 proto.ubii.processing.ProcessingModule.prototype.setOutputsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 10, value);
+  jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -1528,77 +1555,77 @@ proto.ubii.processing.ProcessingModule.prototype.clearOutputsList = function() {
 
 
 /**
- * optional Language language = 11;
+ * optional Language language = 12;
  * @return {!proto.ubii.processing.ProcessingModule.Language}
  */
 proto.ubii.processing.ProcessingModule.prototype.getLanguage = function() {
-  return /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (jspb.Message.getFieldProto3(this, 11, 0));
+  return /** @type {!proto.ubii.processing.ProcessingModule.Language} */ (jspb.Message.getFieldProto3(this, 12, 0));
 };
 
 
 /** @param {!proto.ubii.processing.ProcessingModule.Language} value  */
 proto.ubii.processing.ProcessingModule.prototype.setLanguage = function(value) {
-  jspb.Message.setField(this, 11, value);
-};
-
-
-/**
- * optional string on_processing_stringified = 12;
- * @return {string}
- */
-proto.ubii.processing.ProcessingModule.prototype.getOnProcessingStringified = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 12, ""));
-};
-
-
-/** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnProcessingStringified = function(value) {
   jspb.Message.setField(this, 12, value);
 };
 
 
 /**
- * optional string on_created_stringified = 13;
+ * optional string on_processing_stringified = 13;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnCreatedStringified = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnProcessingStringified = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 13, ""));
 };
 
 
 /** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnCreatedStringified = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnProcessingStringified = function(value) {
   jspb.Message.setField(this, 13, value);
 };
 
 
 /**
- * optional string on_halted_stringified = 14;
+ * optional string on_created_stringified = 14;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnHaltedStringified = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnCreatedStringified = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 14, ""));
 };
 
 
 /** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnHaltedStringified = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnCreatedStringified = function(value) {
   jspb.Message.setField(this, 14, value);
 };
 
 
 /**
- * optional string on_destroyed_stringified = 15;
+ * optional string on_halted_stringified = 15;
  * @return {string}
  */
-proto.ubii.processing.ProcessingModule.prototype.getOnDestroyedStringified = function() {
+proto.ubii.processing.ProcessingModule.prototype.getOnHaltedStringified = function() {
   return /** @type {string} */ (jspb.Message.getFieldProto3(this, 15, ""));
 };
 
 
 /** @param {string} value  */
-proto.ubii.processing.ProcessingModule.prototype.setOnDestroyedStringified = function(value) {
+proto.ubii.processing.ProcessingModule.prototype.setOnHaltedStringified = function(value) {
   jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * optional string on_destroyed_stringified = 16;
+ * @return {string}
+ */
+proto.ubii.processing.ProcessingModule.prototype.getOnDestroyedStringified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 16, ""));
+};
+
+
+/** @param {string} value  */
+proto.ubii.processing.ProcessingModule.prototype.setOnDestroyedStringified = function(value) {
+  jspb.Message.setField(this, 16, value);
 };
 
 

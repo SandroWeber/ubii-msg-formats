@@ -782,25 +782,36 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   ::std::string* release_node_id();
   void set_allocated_node_id(::std::string* node_id);
 
-  // optional .ubii.processing.ProcessingModule.Status status = 7;
+  // optional string session_id = 7;
+  void clear_session_id();
+  static const int kSessionIdFieldNumber = 7;
+  const ::std::string& session_id() const;
+  void set_session_id(const ::std::string& value);
+  void set_session_id(const char* value);
+  void set_session_id(const char* value, size_t size);
+  ::std::string* mutable_session_id();
+  ::std::string* release_session_id();
+  void set_allocated_session_id(::std::string* session_id);
+
+  // optional .ubii.processing.ProcessingModule.Status status = 8;
   void clear_status();
-  static const int kStatusFieldNumber = 7;
+  static const int kStatusFieldNumber = 8;
   ::ubii::processing::ProcessingModule_Status status() const;
   void set_status(::ubii::processing::ProcessingModule_Status value);
 
-  // optional .ubii.processing.ProcessingMode processing_mode = 8;
+  // optional .ubii.processing.ProcessingMode processing_mode = 9;
   bool has_processing_mode() const;
   void clear_processing_mode();
-  static const int kProcessingModeFieldNumber = 8;
+  static const int kProcessingModeFieldNumber = 9;
   const ::ubii::processing::ProcessingMode& processing_mode() const;
   ::ubii::processing::ProcessingMode* mutable_processing_mode();
   ::ubii::processing::ProcessingMode* release_processing_mode();
   void set_allocated_processing_mode(::ubii::processing::ProcessingMode* processing_mode);
 
-  // repeated .ubii.processing.ModuleIO inputs = 9;
+  // repeated .ubii.processing.ModuleIO inputs = 10;
   int inputs_size() const;
   void clear_inputs();
-  static const int kInputsFieldNumber = 9;
+  static const int kInputsFieldNumber = 10;
   const ::ubii::processing::ModuleIO& inputs(int index) const;
   ::ubii::processing::ModuleIO* mutable_inputs(int index);
   ::ubii::processing::ModuleIO* add_inputs();
@@ -809,10 +820,10 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   const ::google::protobuf::RepeatedPtrField< ::ubii::processing::ModuleIO >&
       inputs() const;
 
-  // repeated .ubii.processing.ModuleIO outputs = 10;
+  // repeated .ubii.processing.ModuleIO outputs = 11;
   int outputs_size() const;
   void clear_outputs();
-  static const int kOutputsFieldNumber = 10;
+  static const int kOutputsFieldNumber = 11;
   const ::ubii::processing::ModuleIO& outputs(int index) const;
   ::ubii::processing::ModuleIO* mutable_outputs(int index);
   ::ubii::processing::ModuleIO* add_outputs();
@@ -821,15 +832,15 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   const ::google::protobuf::RepeatedPtrField< ::ubii::processing::ModuleIO >&
       outputs() const;
 
-  // optional .ubii.processing.ProcessingModule.Language language = 11;
+  // optional .ubii.processing.ProcessingModule.Language language = 12;
   void clear_language();
-  static const int kLanguageFieldNumber = 11;
+  static const int kLanguageFieldNumber = 12;
   ::ubii::processing::ProcessingModule_Language language() const;
   void set_language(::ubii::processing::ProcessingModule_Language value);
 
-  // optional string on_processing_stringified = 12;
+  // optional string on_processing_stringified = 13;
   void clear_on_processing_stringified();
-  static const int kOnProcessingStringifiedFieldNumber = 12;
+  static const int kOnProcessingStringifiedFieldNumber = 13;
   const ::std::string& on_processing_stringified() const;
   void set_on_processing_stringified(const ::std::string& value);
   void set_on_processing_stringified(const char* value);
@@ -838,9 +849,9 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   ::std::string* release_on_processing_stringified();
   void set_allocated_on_processing_stringified(::std::string* on_processing_stringified);
 
-  // optional string on_created_stringified = 13;
+  // optional string on_created_stringified = 14;
   void clear_on_created_stringified();
-  static const int kOnCreatedStringifiedFieldNumber = 13;
+  static const int kOnCreatedStringifiedFieldNumber = 14;
   const ::std::string& on_created_stringified() const;
   void set_on_created_stringified(const ::std::string& value);
   void set_on_created_stringified(const char* value);
@@ -849,9 +860,9 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   ::std::string* release_on_created_stringified();
   void set_allocated_on_created_stringified(::std::string* on_created_stringified);
 
-  // optional string on_halted_stringified = 14;
+  // optional string on_halted_stringified = 15;
   void clear_on_halted_stringified();
-  static const int kOnHaltedStringifiedFieldNumber = 14;
+  static const int kOnHaltedStringifiedFieldNumber = 15;
   const ::std::string& on_halted_stringified() const;
   void set_on_halted_stringified(const ::std::string& value);
   void set_on_halted_stringified(const char* value);
@@ -860,9 +871,9 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   ::std::string* release_on_halted_stringified();
   void set_allocated_on_halted_stringified(::std::string* on_halted_stringified);
 
-  // optional string on_destroyed_stringified = 15;
+  // optional string on_destroyed_stringified = 16;
   void clear_on_destroyed_stringified();
-  static const int kOnDestroyedStringifiedFieldNumber = 15;
+  static const int kOnDestroyedStringifiedFieldNumber = 16;
   const ::std::string& on_destroyed_stringified() const;
   void set_on_destroyed_stringified(const ::std::string& value);
   void set_on_destroyed_stringified(const char* value);
@@ -882,6 +893,7 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::google::protobuf::internal::ArenaStringPtr node_id_;
+  ::google::protobuf::internal::ArenaStringPtr session_id_;
   ::ubii::processing::ProcessingMode* processing_mode_;
   ::google::protobuf::RepeatedPtrField< ::ubii::processing::ModuleIO > inputs_;
   int status_;
@@ -1628,7 +1640,51 @@ inline void ProcessingModule::set_allocated_node_id(::std::string* node_id) {
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.node_id)
 }
 
-// optional .ubii.processing.ProcessingModule.Status status = 7;
+// optional string session_id = 7;
+inline void ProcessingModule::clear_session_id() {
+  session_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ProcessingModule::session_id() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingModule.session_id)
+  return session_id_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ProcessingModule::set_session_id(const ::std::string& value) {
+  
+  session_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.session_id)
+}
+inline void ProcessingModule::set_session_id(const char* value) {
+  
+  session_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.processing.ProcessingModule.session_id)
+}
+inline void ProcessingModule::set_session_id(const char* value, size_t size) {
+  
+  session_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.processing.ProcessingModule.session_id)
+}
+inline ::std::string* ProcessingModule::mutable_session_id() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingModule.session_id)
+  return session_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ProcessingModule::release_session_id() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingModule.session_id)
+  
+  return session_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ProcessingModule::set_allocated_session_id(::std::string* session_id) {
+  if (session_id != NULL) {
+    
+  } else {
+    
+  }
+  session_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), session_id);
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.session_id)
+}
+
+// optional .ubii.processing.ProcessingModule.Status status = 8;
 inline void ProcessingModule::clear_status() {
   status_ = 0;
 }
@@ -1642,7 +1698,7 @@ inline void ProcessingModule::set_status(::ubii::processing::ProcessingModule_St
   // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.status)
 }
 
-// optional .ubii.processing.ProcessingMode processing_mode = 8;
+// optional .ubii.processing.ProcessingMode processing_mode = 9;
 inline bool ProcessingModule::has_processing_mode() const {
   return !_is_default_instance_ && processing_mode_ != NULL;
 }
@@ -1680,7 +1736,7 @@ inline void ProcessingModule::set_allocated_processing_mode(::ubii::processing::
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.processing_mode)
 }
 
-// repeated .ubii.processing.ModuleIO inputs = 9;
+// repeated .ubii.processing.ModuleIO inputs = 10;
 inline int ProcessingModule::inputs_size() const {
   return inputs_.size();
 }
@@ -1710,7 +1766,7 @@ ProcessingModule::inputs() const {
   return inputs_;
 }
 
-// repeated .ubii.processing.ModuleIO outputs = 10;
+// repeated .ubii.processing.ModuleIO outputs = 11;
 inline int ProcessingModule::outputs_size() const {
   return outputs_.size();
 }
@@ -1740,7 +1796,7 @@ ProcessingModule::outputs() const {
   return outputs_;
 }
 
-// optional .ubii.processing.ProcessingModule.Language language = 11;
+// optional .ubii.processing.ProcessingModule.Language language = 12;
 inline void ProcessingModule::clear_language() {
   language_ = 0;
 }
@@ -1754,7 +1810,7 @@ inline void ProcessingModule::set_language(::ubii::processing::ProcessingModule_
   // @@protoc_insertion_point(field_set:ubii.processing.ProcessingModule.language)
 }
 
-// optional string on_processing_stringified = 12;
+// optional string on_processing_stringified = 13;
 inline void ProcessingModule::clear_on_processing_stringified() {
   on_processing_stringified_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1798,7 +1854,7 @@ inline void ProcessingModule::set_allocated_on_processing_stringified(::std::str
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_processing_stringified)
 }
 
-// optional string on_created_stringified = 13;
+// optional string on_created_stringified = 14;
 inline void ProcessingModule::clear_on_created_stringified() {
   on_created_stringified_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1842,7 +1898,7 @@ inline void ProcessingModule::set_allocated_on_created_stringified(::std::string
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_created_stringified)
 }
 
-// optional string on_halted_stringified = 14;
+// optional string on_halted_stringified = 15;
 inline void ProcessingModule::clear_on_halted_stringified() {
   on_halted_stringified_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1886,7 +1942,7 @@ inline void ProcessingModule::set_allocated_on_halted_stringified(::std::string*
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingModule.on_halted_stringified)
 }
 
-// optional string on_destroyed_stringified = 15;
+// optional string on_destroyed_stringified = 16;
 inline void ProcessingModule::clear_on_destroyed_stringified() {
   on_destroyed_stringified_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

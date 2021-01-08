@@ -4807,6 +4807,7 @@ $root.ubii = (function() {
              * @property {Array.<string>|null} [tags] ProcessingModule tags
              * @property {string|null} [description] ProcessingModule description
              * @property {string|null} [nodeId] ProcessingModule nodeId
+             * @property {string|null} [sessionId] ProcessingModule sessionId
              * @property {ubii.processing.ProcessingModule.Status|null} [status] ProcessingModule status
              * @property {ubii.processing.IProcessingMode|null} [processingMode] ProcessingModule processingMode
              * @property {Array.<ubii.processing.IModuleIO>|null} [inputs] ProcessingModule inputs
@@ -4884,6 +4885,14 @@ $root.ubii = (function() {
              * @instance
              */
             ProcessingModule.prototype.nodeId = "";
+
+            /**
+             * ProcessingModule sessionId.
+             * @member {string} sessionId
+             * @memberof ubii.processing.ProcessingModule
+             * @instance
+             */
+            ProcessingModule.prototype.sessionId = "";
 
             /**
              * ProcessingModule status.
@@ -4995,26 +5004,28 @@ $root.ubii = (function() {
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
                 if (message.nodeId != null && message.hasOwnProperty("nodeId"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.nodeId);
+                if (message.sessionId != null && message.hasOwnProperty("sessionId"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.sessionId);
                 if (message.status != null && message.hasOwnProperty("status"))
-                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.status);
+                    writer.uint32(/* id 8, wireType 0 =*/64).int32(message.status);
                 if (message.processingMode != null && message.hasOwnProperty("processingMode"))
-                    $root.ubii.processing.ProcessingMode.encode(message.processingMode, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    $root.ubii.processing.ProcessingMode.encode(message.processingMode, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.inputs != null && message.inputs.length)
                     for (var i = 0; i < message.inputs.length; ++i)
-                        $root.ubii.processing.ModuleIO.encode(message.inputs[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                        $root.ubii.processing.ModuleIO.encode(message.inputs[i], writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.outputs != null && message.outputs.length)
                     for (var i = 0; i < message.outputs.length; ++i)
-                        $root.ubii.processing.ModuleIO.encode(message.outputs[i], writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                        $root.ubii.processing.ModuleIO.encode(message.outputs[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.language != null && message.hasOwnProperty("language"))
-                    writer.uint32(/* id 11, wireType 0 =*/88).int32(message.language);
+                    writer.uint32(/* id 12, wireType 0 =*/96).int32(message.language);
                 if (message.onProcessingStringified != null && message.hasOwnProperty("onProcessingStringified"))
-                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.onProcessingStringified);
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.onProcessingStringified);
                 if (message.onCreatedStringified != null && message.hasOwnProperty("onCreatedStringified"))
-                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.onCreatedStringified);
+                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.onCreatedStringified);
                 if (message.onHaltedStringified != null && message.hasOwnProperty("onHaltedStringified"))
-                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.onHaltedStringified);
+                    writer.uint32(/* id 15, wireType 2 =*/122).string(message.onHaltedStringified);
                 if (message.onDestroyedStringified != null && message.hasOwnProperty("onDestroyedStringified"))
-                    writer.uint32(/* id 15, wireType 2 =*/122).string(message.onDestroyedStringified);
+                    writer.uint32(/* id 16, wireType 2 =*/130).string(message.onDestroyedStringified);
                 return writer;
             };
 
@@ -5072,34 +5083,37 @@ $root.ubii = (function() {
                         message.nodeId = reader.string();
                         break;
                     case 7:
-                        message.status = reader.int32();
+                        message.sessionId = reader.string();
                         break;
                     case 8:
-                        message.processingMode = $root.ubii.processing.ProcessingMode.decode(reader, reader.uint32());
+                        message.status = reader.int32();
                         break;
                     case 9:
+                        message.processingMode = $root.ubii.processing.ProcessingMode.decode(reader, reader.uint32());
+                        break;
+                    case 10:
                         if (!(message.inputs && message.inputs.length))
                             message.inputs = [];
                         message.inputs.push($root.ubii.processing.ModuleIO.decode(reader, reader.uint32()));
                         break;
-                    case 10:
+                    case 11:
                         if (!(message.outputs && message.outputs.length))
                             message.outputs = [];
                         message.outputs.push($root.ubii.processing.ModuleIO.decode(reader, reader.uint32()));
                         break;
-                    case 11:
+                    case 12:
                         message.language = reader.int32();
                         break;
-                    case 12:
+                    case 13:
                         message.onProcessingStringified = reader.string();
                         break;
-                    case 13:
+                    case 14:
                         message.onCreatedStringified = reader.string();
                         break;
-                    case 14:
+                    case 15:
                         message.onHaltedStringified = reader.string();
                         break;
-                    case 15:
+                    case 16:
                         message.onDestroyedStringified = reader.string();
                         break;
                     default:
@@ -5163,6 +5177,9 @@ $root.ubii = (function() {
                 if (message.nodeId != null && message.hasOwnProperty("nodeId"))
                     if (!$util.isString(message.nodeId))
                         return "nodeId: string expected";
+                if (message.sessionId != null && message.hasOwnProperty("sessionId"))
+                    if (!$util.isString(message.sessionId))
+                        return "sessionId: string expected";
                 if (message.status != null && message.hasOwnProperty("status"))
                     switch (message.status) {
                     default:
@@ -5257,6 +5274,8 @@ $root.ubii = (function() {
                     message.description = String(object.description);
                 if (object.nodeId != null)
                     message.nodeId = String(object.nodeId);
+                if (object.sessionId != null)
+                    message.sessionId = String(object.sessionId);
                 switch (object.status) {
                 case "INITIALIZED":
                 case 0:
@@ -5361,6 +5380,7 @@ $root.ubii = (function() {
                     object.name = "";
                     object.description = "";
                     object.nodeId = "";
+                    object.sessionId = "";
                     object.status = options.enums === String ? "INITIALIZED" : 0;
                     object.processingMode = null;
                     object.language = options.enums === String ? "CPP" : 0;
@@ -5387,6 +5407,8 @@ $root.ubii = (function() {
                     object.description = message.description;
                 if (message.nodeId != null && message.hasOwnProperty("nodeId"))
                     object.nodeId = message.nodeId;
+                if (message.sessionId != null && message.hasOwnProperty("sessionId"))
+                    object.sessionId = message.sessionId;
                 if (message.status != null && message.hasOwnProperty("status"))
                     object.status = options.enums === String ? $root.ubii.processing.ProcessingModule.Status[message.status] : message.status;
                 if (message.processingMode != null && message.hasOwnProperty("processingMode"))

@@ -3201,120 +3201,130 @@ public final class ProcessingModuleOuterClass {
         getNodeIdBytes();
 
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+     * <code>optional string session_id = 7;</code>
+     */
+    java.lang.String getSessionId();
+    /**
+     * <code>optional string session_id = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
+
+    /**
+     * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
      */
     int getStatusValue();
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+     * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status getStatus();
 
     /**
-     * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+     * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
      */
     boolean hasProcessingMode();
     /**
-     * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+     * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingMode getProcessingMode();
     /**
-     * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+     * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModeOrBuilder getProcessingModeOrBuilder();
 
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> 
         getInputsList();
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ModuleIO getInputs(int index);
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     int getInputsCount();
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
         getInputsOrBuilderList();
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getInputsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> 
         getOutputsList();
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ModuleIO getOutputs(int index);
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     int getOutputsCount();
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
         getOutputsOrBuilderList();
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getOutputsOrBuilder(
         int index);
 
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+     * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
      */
     int getLanguageValue();
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+     * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language getLanguage();
 
     /**
-     * <code>optional string on_processing_stringified = 12;</code>
+     * <code>optional string on_processing_stringified = 13;</code>
      */
     java.lang.String getOnProcessingStringified();
     /**
-     * <code>optional string on_processing_stringified = 12;</code>
+     * <code>optional string on_processing_stringified = 13;</code>
      */
     com.google.protobuf.ByteString
         getOnProcessingStringifiedBytes();
 
     /**
-     * <code>optional string on_created_stringified = 13;</code>
+     * <code>optional string on_created_stringified = 14;</code>
      */
     java.lang.String getOnCreatedStringified();
     /**
-     * <code>optional string on_created_stringified = 13;</code>
+     * <code>optional string on_created_stringified = 14;</code>
      */
     com.google.protobuf.ByteString
         getOnCreatedStringifiedBytes();
 
     /**
-     * <code>optional string on_halted_stringified = 14;</code>
+     * <code>optional string on_halted_stringified = 15;</code>
      */
     java.lang.String getOnHaltedStringified();
     /**
-     * <code>optional string on_halted_stringified = 14;</code>
+     * <code>optional string on_halted_stringified = 15;</code>
      */
     com.google.protobuf.ByteString
         getOnHaltedStringifiedBytes();
 
     /**
-     * <code>optional string on_destroyed_stringified = 15;</code>
+     * <code>optional string on_destroyed_stringified = 16;</code>
      */
     java.lang.String getOnDestroyedStringified();
     /**
-     * <code>optional string on_destroyed_stringified = 15;</code>
+     * <code>optional string on_destroyed_stringified = 16;</code>
      */
     com.google.protobuf.ByteString
         getOnDestroyedStringifiedBytes();
@@ -3337,6 +3347,7 @@ public final class ProcessingModuleOuterClass {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
       nodeId_ = "";
+      sessionId_ = "";
       status_ = 0;
       inputs_ = java.util.Collections.emptyList();
       outputs_ = java.util.Collections.emptyList();
@@ -3414,13 +3425,19 @@ public final class ProcessingModuleOuterClass {
               nodeId_ = s;
               break;
             }
-            case 56: {
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sessionId_ = s;
+              break;
+            }
+            case 64: {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
               break;
             }
-            case 66: {
+            case 74: {
               ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Builder subBuilder = null;
               if (processingMode_ != null) {
                 subBuilder = processingMode_.toBuilder();
@@ -3433,49 +3450,49 @@ public final class ProcessingModuleOuterClass {
 
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
                 inputs_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ModuleIO>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000200;
               }
               inputs_.add(
                   input.readMessage(ubii.processing.ProcessingModuleOuterClass.ModuleIO.parser(), extensionRegistry));
               break;
             }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 outputs_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ModuleIO>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               outputs_.add(
                   input.readMessage(ubii.processing.ProcessingModuleOuterClass.ModuleIO.parser(), extensionRegistry));
               break;
             }
-            case 88: {
+            case 96: {
               int rawValue = input.readEnum();
 
               language_ = rawValue;
               break;
             }
-            case 98: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               onProcessingStringified_ = s;
               break;
             }
-            case 106: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               onCreatedStringified_ = s;
               break;
             }
-            case 114: {
+            case 122: {
               java.lang.String s = input.readStringRequireUtf8();
 
               onHaltedStringified_ = s;
               break;
             }
-            case 122: {
+            case 130: {
               java.lang.String s = input.readStringRequireUtf8();
 
               onDestroyedStringified_ = s;
@@ -3495,10 +3512,10 @@ public final class ProcessingModuleOuterClass {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           tags_ = tags_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
           inputs_ = java.util.Collections.unmodifiableList(inputs_);
         }
-        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           outputs_ = java.util.Collections.unmodifiableList(outputs_);
         }
         makeExtensionsImmutable();
@@ -3961,133 +3978,167 @@ public final class ProcessingModuleOuterClass {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 7;
+    public static final int SESSION_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object sessionId_;
+    /**
+     * <code>optional string session_id = 7;</code>
+     */
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string session_id = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 8;
     private int status_;
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+     * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
      */
     public int getStatusValue() {
       return status_;
     }
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+     * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status getStatus() {
       ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.valueOf(status_);
       return result == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.UNRECOGNIZED : result;
     }
 
-    public static final int PROCESSING_MODE_FIELD_NUMBER = 8;
+    public static final int PROCESSING_MODE_FIELD_NUMBER = 9;
     private ubii.processing.ProcessingModuleOuterClass.ProcessingMode processingMode_;
     /**
-     * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+     * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
      */
     public boolean hasProcessingMode() {
       return processingMode_ != null;
     }
     /**
-     * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+     * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode getProcessingMode() {
       return processingMode_ == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingMode.getDefaultInstance() : processingMode_;
     }
     /**
-     * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+     * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModeOrBuilder getProcessingModeOrBuilder() {
       return getProcessingMode();
     }
 
-    public static final int INPUTS_FIELD_NUMBER = 9;
+    public static final int INPUTS_FIELD_NUMBER = 10;
     private java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> inputs_;
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> getInputsList() {
       return inputs_;
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
         getInputsOrBuilderList() {
       return inputs_;
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     public int getInputsCount() {
       return inputs_.size();
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ModuleIO getInputs(int index) {
       return inputs_.get(index);
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+     * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getInputsOrBuilder(
         int index) {
       return inputs_.get(index);
     }
 
-    public static final int OUTPUTS_FIELD_NUMBER = 10;
+    public static final int OUTPUTS_FIELD_NUMBER = 11;
     private java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> outputs_;
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> getOutputsList() {
       return outputs_;
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
         getOutputsOrBuilderList() {
       return outputs_;
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     public int getOutputsCount() {
       return outputs_.size();
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ModuleIO getOutputs(int index) {
       return outputs_.get(index);
     }
     /**
-     * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+     * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getOutputsOrBuilder(
         int index) {
       return outputs_.get(index);
     }
 
-    public static final int LANGUAGE_FIELD_NUMBER = 11;
+    public static final int LANGUAGE_FIELD_NUMBER = 12;
     private int language_;
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+     * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
      */
     public int getLanguageValue() {
       return language_;
     }
     /**
-     * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+     * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language getLanguage() {
       ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.valueOf(language_);
       return result == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.UNRECOGNIZED : result;
     }
 
-    public static final int ON_PROCESSING_STRINGIFIED_FIELD_NUMBER = 12;
+    public static final int ON_PROCESSING_STRINGIFIED_FIELD_NUMBER = 13;
     private volatile java.lang.Object onProcessingStringified_;
     /**
-     * <code>optional string on_processing_stringified = 12;</code>
+     * <code>optional string on_processing_stringified = 13;</code>
      */
     public java.lang.String getOnProcessingStringified() {
       java.lang.Object ref = onProcessingStringified_;
@@ -4102,7 +4153,7 @@ public final class ProcessingModuleOuterClass {
       }
     }
     /**
-     * <code>optional string on_processing_stringified = 12;</code>
+     * <code>optional string on_processing_stringified = 13;</code>
      */
     public com.google.protobuf.ByteString
         getOnProcessingStringifiedBytes() {
@@ -4118,10 +4169,10 @@ public final class ProcessingModuleOuterClass {
       }
     }
 
-    public static final int ON_CREATED_STRINGIFIED_FIELD_NUMBER = 13;
+    public static final int ON_CREATED_STRINGIFIED_FIELD_NUMBER = 14;
     private volatile java.lang.Object onCreatedStringified_;
     /**
-     * <code>optional string on_created_stringified = 13;</code>
+     * <code>optional string on_created_stringified = 14;</code>
      */
     public java.lang.String getOnCreatedStringified() {
       java.lang.Object ref = onCreatedStringified_;
@@ -4136,7 +4187,7 @@ public final class ProcessingModuleOuterClass {
       }
     }
     /**
-     * <code>optional string on_created_stringified = 13;</code>
+     * <code>optional string on_created_stringified = 14;</code>
      */
     public com.google.protobuf.ByteString
         getOnCreatedStringifiedBytes() {
@@ -4152,10 +4203,10 @@ public final class ProcessingModuleOuterClass {
       }
     }
 
-    public static final int ON_HALTED_STRINGIFIED_FIELD_NUMBER = 14;
+    public static final int ON_HALTED_STRINGIFIED_FIELD_NUMBER = 15;
     private volatile java.lang.Object onHaltedStringified_;
     /**
-     * <code>optional string on_halted_stringified = 14;</code>
+     * <code>optional string on_halted_stringified = 15;</code>
      */
     public java.lang.String getOnHaltedStringified() {
       java.lang.Object ref = onHaltedStringified_;
@@ -4170,7 +4221,7 @@ public final class ProcessingModuleOuterClass {
       }
     }
     /**
-     * <code>optional string on_halted_stringified = 14;</code>
+     * <code>optional string on_halted_stringified = 15;</code>
      */
     public com.google.protobuf.ByteString
         getOnHaltedStringifiedBytes() {
@@ -4186,10 +4237,10 @@ public final class ProcessingModuleOuterClass {
       }
     }
 
-    public static final int ON_DESTROYED_STRINGIFIED_FIELD_NUMBER = 15;
+    public static final int ON_DESTROYED_STRINGIFIED_FIELD_NUMBER = 16;
     private volatile java.lang.Object onDestroyedStringified_;
     /**
-     * <code>optional string on_destroyed_stringified = 15;</code>
+     * <code>optional string on_destroyed_stringified = 16;</code>
      */
     public java.lang.String getOnDestroyedStringified() {
       java.lang.Object ref = onDestroyedStringified_;
@@ -4204,7 +4255,7 @@ public final class ProcessingModuleOuterClass {
       }
     }
     /**
-     * <code>optional string on_destroyed_stringified = 15;</code>
+     * <code>optional string on_destroyed_stringified = 16;</code>
      */
     public com.google.protobuf.ByteString
         getOnDestroyedStringifiedBytes() {
@@ -4250,32 +4301,35 @@ public final class ProcessingModuleOuterClass {
       if (!getNodeIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nodeId_);
       }
+      if (!getSessionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sessionId_);
+      }
       if (status_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.INITIALIZED.getNumber()) {
-        output.writeEnum(7, status_);
+        output.writeEnum(8, status_);
       }
       if (processingMode_ != null) {
-        output.writeMessage(8, getProcessingMode());
+        output.writeMessage(9, getProcessingMode());
       }
       for (int i = 0; i < inputs_.size(); i++) {
-        output.writeMessage(9, inputs_.get(i));
+        output.writeMessage(10, inputs_.get(i));
       }
       for (int i = 0; i < outputs_.size(); i++) {
-        output.writeMessage(10, outputs_.get(i));
+        output.writeMessage(11, outputs_.get(i));
       }
       if (language_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.CPP.getNumber()) {
-        output.writeEnum(11, language_);
+        output.writeEnum(12, language_);
       }
       if (!getOnProcessingStringifiedBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, onProcessingStringified_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, onProcessingStringified_);
       }
       if (!getOnCreatedStringifiedBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, onCreatedStringified_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, onCreatedStringified_);
       }
       if (!getOnHaltedStringifiedBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, onHaltedStringified_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, onHaltedStringified_);
       }
       if (!getOnDestroyedStringifiedBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, onDestroyedStringified_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, onDestroyedStringified_);
       }
     }
 
@@ -4312,37 +4366,40 @@ public final class ProcessingModuleOuterClass {
       if (!getNodeIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nodeId_);
       }
+      if (!getSessionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sessionId_);
+      }
       if (status_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.INITIALIZED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, status_);
+          .computeEnumSize(8, status_);
       }
       if (processingMode_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getProcessingMode());
+          .computeMessageSize(9, getProcessingMode());
       }
       for (int i = 0; i < inputs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, inputs_.get(i));
+          .computeMessageSize(10, inputs_.get(i));
       }
       for (int i = 0; i < outputs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, outputs_.get(i));
+          .computeMessageSize(11, outputs_.get(i));
       }
       if (language_ != ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.CPP.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, language_);
+          .computeEnumSize(12, language_);
       }
       if (!getOnProcessingStringifiedBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, onProcessingStringified_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, onProcessingStringified_);
       }
       if (!getOnCreatedStringifiedBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, onCreatedStringified_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, onCreatedStringified_);
       }
       if (!getOnHaltedStringifiedBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, onHaltedStringified_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, onHaltedStringified_);
       }
       if (!getOnDestroyedStringifiedBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, onDestroyedStringified_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, onDestroyedStringified_);
       }
       memoizedSize = size;
       return size;
@@ -4372,6 +4429,8 @@ public final class ProcessingModuleOuterClass {
           .equals(other.getDescription());
       result = result && getNodeId()
           .equals(other.getNodeId());
+      result = result && getSessionId()
+          .equals(other.getSessionId());
       result = result && status_ == other.status_;
       result = result && (hasProcessingMode() == other.hasProcessingMode());
       if (hasProcessingMode()) {
@@ -4417,6 +4476,8 @@ public final class ProcessingModuleOuterClass {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNodeId().hashCode();
+      hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
       if (hasProcessingMode()) {
@@ -4573,6 +4634,8 @@ public final class ProcessingModuleOuterClass {
 
         nodeId_ = "";
 
+        sessionId_ = "";
+
         status_ = 0;
 
         if (processingModeBuilder_ == null) {
@@ -4583,13 +4646,13 @@ public final class ProcessingModuleOuterClass {
         }
         if (inputsBuilder_ == null) {
           inputs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           inputsBuilder_.clear();
         }
         if (outputsBuilder_ == null) {
           outputs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           outputsBuilder_.clear();
         }
@@ -4641,6 +4704,7 @@ public final class ProcessingModuleOuterClass {
         result.tags_ = tags_;
         result.description_ = description_;
         result.nodeId_ = nodeId_;
+        result.sessionId_ = sessionId_;
         result.status_ = status_;
         if (processingModeBuilder_ == null) {
           result.processingMode_ = processingMode_;
@@ -4648,18 +4712,18 @@ public final class ProcessingModuleOuterClass {
           result.processingMode_ = processingModeBuilder_.build();
         }
         if (inputsBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
             inputs_ = java.util.Collections.unmodifiableList(inputs_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           }
           result.inputs_ = inputs_;
         } else {
           result.inputs_ = inputsBuilder_.build();
         }
         if (outputsBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
             outputs_ = java.util.Collections.unmodifiableList(outputs_);
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           }
           result.outputs_ = outputs_;
         } else {
@@ -4748,6 +4812,10 @@ public final class ProcessingModuleOuterClass {
           nodeId_ = other.nodeId_;
           onChanged();
         }
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
+          onChanged();
+        }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
@@ -4758,7 +4826,7 @@ public final class ProcessingModuleOuterClass {
           if (!other.inputs_.isEmpty()) {
             if (inputs_.isEmpty()) {
               inputs_ = other.inputs_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
             } else {
               ensureInputsIsMutable();
               inputs_.addAll(other.inputs_);
@@ -4771,7 +4839,7 @@ public final class ProcessingModuleOuterClass {
               inputsBuilder_.dispose();
               inputsBuilder_ = null;
               inputs_ = other.inputs_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
               inputsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInputsFieldBuilder() : null;
@@ -4784,7 +4852,7 @@ public final class ProcessingModuleOuterClass {
           if (!other.outputs_.isEmpty()) {
             if (outputs_.isEmpty()) {
               outputs_ = other.outputs_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000400);
             } else {
               ensureOutputsIsMutable();
               outputs_.addAll(other.outputs_);
@@ -4797,7 +4865,7 @@ public final class ProcessingModuleOuterClass {
               outputsBuilder_.dispose();
               outputsBuilder_ = null;
               outputs_ = other.outputs_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000400);
               outputsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOutputsFieldBuilder() : null;
@@ -5316,15 +5384,84 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
 
+      private java.lang.Object sessionId_ = "";
+      /**
+       * <code>optional string session_id = 7;</code>
+       */
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string session_id = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string session_id = 7;</code>
+       */
+      public Builder setSessionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string session_id = 7;</code>
+       */
+      public Builder clearSessionId() {
+        
+        sessionId_ = getDefaultInstance().getSessionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string session_id = 7;</code>
+       */
+      public Builder setSessionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+
       private int status_ = 0;
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
        */
       public int getStatusValue() {
         return status_;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
        */
       public Builder setStatusValue(int value) {
         status_ = value;
@@ -5332,14 +5469,14 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status getStatus() {
         ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.valueOf(status_);
         return result == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
        */
       public Builder setStatus(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status value) {
         if (value == null) {
@@ -5351,7 +5488,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Status status = 7;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Status status = 8;</code>
        */
       public Builder clearStatus() {
         
@@ -5364,13 +5501,13 @@ public final class ProcessingModuleOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.ProcessingModuleOuterClass.ProcessingMode, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModeOrBuilder> processingModeBuilder_;
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public boolean hasProcessingMode() {
         return processingModeBuilder_ != null || processingMode_ != null;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode getProcessingMode() {
         if (processingModeBuilder_ == null) {
@@ -5380,7 +5517,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public Builder setProcessingMode(ubii.processing.ProcessingModuleOuterClass.ProcessingMode value) {
         if (processingModeBuilder_ == null) {
@@ -5396,7 +5533,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public Builder setProcessingMode(
           ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Builder builderForValue) {
@@ -5410,7 +5547,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public Builder mergeProcessingMode(ubii.processing.ProcessingModuleOuterClass.ProcessingMode value) {
         if (processingModeBuilder_ == null) {
@@ -5428,7 +5565,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public Builder clearProcessingMode() {
         if (processingModeBuilder_ == null) {
@@ -5442,7 +5579,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Builder getProcessingModeBuilder() {
         
@@ -5450,7 +5587,7 @@ public final class ProcessingModuleOuterClass {
         return getProcessingModeFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModeOrBuilder getProcessingModeOrBuilder() {
         if (processingModeBuilder_ != null) {
@@ -5461,7 +5598,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional .ubii.processing.ProcessingMode processing_mode = 8;</code>
+       * <code>optional .ubii.processing.ProcessingMode processing_mode = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.processing.ProcessingModuleOuterClass.ProcessingMode, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModeOrBuilder> 
@@ -5480,9 +5617,9 @@ public final class ProcessingModuleOuterClass {
       private java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> inputs_ =
         java.util.Collections.emptyList();
       private void ensureInputsIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
           inputs_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ModuleIO>(inputs_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
          }
       }
 
@@ -5490,7 +5627,7 @@ public final class ProcessingModuleOuterClass {
           ubii.processing.ProcessingModuleOuterClass.ModuleIO, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder, ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> inputsBuilder_;
 
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> getInputsList() {
         if (inputsBuilder_ == null) {
@@ -5500,7 +5637,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public int getInputsCount() {
         if (inputsBuilder_ == null) {
@@ -5510,7 +5647,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO getInputs(int index) {
         if (inputsBuilder_ == null) {
@@ -5520,7 +5657,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder setInputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO value) {
@@ -5537,7 +5674,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder setInputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder builderForValue) {
@@ -5551,7 +5688,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder addInputs(ubii.processing.ProcessingModuleOuterClass.ModuleIO value) {
         if (inputsBuilder_ == null) {
@@ -5567,7 +5704,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder addInputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO value) {
@@ -5584,7 +5721,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder addInputs(
           ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder builderForValue) {
@@ -5598,7 +5735,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder addInputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder builderForValue) {
@@ -5612,7 +5749,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder addAllInputs(
           java.lang.Iterable<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIO> values) {
@@ -5627,12 +5764,12 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder clearInputs() {
         if (inputsBuilder_ == null) {
           inputs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
         } else {
           inputsBuilder_.clear();
@@ -5640,7 +5777,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public Builder removeInputs(int index) {
         if (inputsBuilder_ == null) {
@@ -5653,14 +5790,14 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder getInputsBuilder(
           int index) {
         return getInputsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getInputsOrBuilder(
           int index) {
@@ -5670,7 +5807,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
            getInputsOrBuilderList() {
@@ -5681,14 +5818,14 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder addInputsBuilder() {
         return getInputsFieldBuilder().addBuilder(
             ubii.processing.ProcessingModuleOuterClass.ModuleIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder addInputsBuilder(
           int index) {
@@ -5696,7 +5833,7 @@ public final class ProcessingModuleOuterClass {
             index, ubii.processing.ProcessingModuleOuterClass.ModuleIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO inputs = 9;</code>
+       * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
        */
       public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder> 
            getInputsBuilderList() {
@@ -5709,7 +5846,7 @@ public final class ProcessingModuleOuterClass {
           inputsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.processing.ProcessingModuleOuterClass.ModuleIO, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder, ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder>(
                   inputs_,
-                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  ((bitField0_ & 0x00000200) == 0x00000200),
                   getParentForChildren(),
                   isClean());
           inputs_ = null;
@@ -5720,9 +5857,9 @@ public final class ProcessingModuleOuterClass {
       private java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> outputs_ =
         java.util.Collections.emptyList();
       private void ensureOutputsIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           outputs_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ModuleIO>(outputs_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
          }
       }
 
@@ -5730,7 +5867,7 @@ public final class ProcessingModuleOuterClass {
           ubii.processing.ProcessingModuleOuterClass.ModuleIO, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder, ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> outputsBuilder_;
 
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> getOutputsList() {
         if (outputsBuilder_ == null) {
@@ -5740,7 +5877,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public int getOutputsCount() {
         if (outputsBuilder_ == null) {
@@ -5750,7 +5887,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO getOutputs(int index) {
         if (outputsBuilder_ == null) {
@@ -5760,7 +5897,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder setOutputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO value) {
@@ -5777,7 +5914,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder setOutputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder builderForValue) {
@@ -5791,7 +5928,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder addOutputs(ubii.processing.ProcessingModuleOuterClass.ModuleIO value) {
         if (outputsBuilder_ == null) {
@@ -5807,7 +5944,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder addOutputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO value) {
@@ -5824,7 +5961,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder addOutputs(
           ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder builderForValue) {
@@ -5838,7 +5975,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder addOutputs(
           int index, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder builderForValue) {
@@ -5852,7 +5989,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder addAllOutputs(
           java.lang.Iterable<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIO> values) {
@@ -5867,12 +6004,12 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder clearOutputs() {
         if (outputsBuilder_ == null) {
           outputs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
           onChanged();
         } else {
           outputsBuilder_.clear();
@@ -5880,7 +6017,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public Builder removeOutputs(int index) {
         if (outputsBuilder_ == null) {
@@ -5893,14 +6030,14 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder getOutputsBuilder(
           int index) {
         return getOutputsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getOutputsOrBuilder(
           int index) {
@@ -5910,7 +6047,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
            getOutputsOrBuilderList() {
@@ -5921,14 +6058,14 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder addOutputsBuilder() {
         return getOutputsFieldBuilder().addBuilder(
             ubii.processing.ProcessingModuleOuterClass.ModuleIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder addOutputsBuilder(
           int index) {
@@ -5936,7 +6073,7 @@ public final class ProcessingModuleOuterClass {
             index, ubii.processing.ProcessingModuleOuterClass.ModuleIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .ubii.processing.ModuleIO outputs = 10;</code>
+       * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
        */
       public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder> 
            getOutputsBuilderList() {
@@ -5949,7 +6086,7 @@ public final class ProcessingModuleOuterClass {
           outputsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.processing.ProcessingModuleOuterClass.ModuleIO, ubii.processing.ProcessingModuleOuterClass.ModuleIO.Builder, ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder>(
                   outputs_,
-                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  ((bitField0_ & 0x00000400) == 0x00000400),
                   getParentForChildren(),
                   isClean());
           outputs_ = null;
@@ -5959,13 +6096,13 @@ public final class ProcessingModuleOuterClass {
 
       private int language_ = 0;
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
        */
       public int getLanguageValue() {
         return language_;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
        */
       public Builder setLanguageValue(int value) {
         language_ = value;
@@ -5973,14 +6110,14 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language getLanguage() {
         ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.valueOf(language_);
         return result == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
        */
       public Builder setLanguage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language value) {
         if (value == null) {
@@ -5992,7 +6129,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional .ubii.processing.ProcessingModule.Language language = 11;</code>
+       * <code>optional .ubii.processing.ProcessingModule.Language language = 12;</code>
        */
       public Builder clearLanguage() {
         
@@ -6003,7 +6140,7 @@ public final class ProcessingModuleOuterClass {
 
       private java.lang.Object onProcessingStringified_ = "";
       /**
-       * <code>optional string on_processing_stringified = 12;</code>
+       * <code>optional string on_processing_stringified = 13;</code>
        */
       public java.lang.String getOnProcessingStringified() {
         java.lang.Object ref = onProcessingStringified_;
@@ -6018,7 +6155,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_processing_stringified = 12;</code>
+       * <code>optional string on_processing_stringified = 13;</code>
        */
       public com.google.protobuf.ByteString
           getOnProcessingStringifiedBytes() {
@@ -6034,7 +6171,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_processing_stringified = 12;</code>
+       * <code>optional string on_processing_stringified = 13;</code>
        */
       public Builder setOnProcessingStringified(
           java.lang.String value) {
@@ -6047,7 +6184,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_processing_stringified = 12;</code>
+       * <code>optional string on_processing_stringified = 13;</code>
        */
       public Builder clearOnProcessingStringified() {
         
@@ -6056,7 +6193,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_processing_stringified = 12;</code>
+       * <code>optional string on_processing_stringified = 13;</code>
        */
       public Builder setOnProcessingStringifiedBytes(
           com.google.protobuf.ByteString value) {
@@ -6072,7 +6209,7 @@ public final class ProcessingModuleOuterClass {
 
       private java.lang.Object onCreatedStringified_ = "";
       /**
-       * <code>optional string on_created_stringified = 13;</code>
+       * <code>optional string on_created_stringified = 14;</code>
        */
       public java.lang.String getOnCreatedStringified() {
         java.lang.Object ref = onCreatedStringified_;
@@ -6087,7 +6224,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_created_stringified = 13;</code>
+       * <code>optional string on_created_stringified = 14;</code>
        */
       public com.google.protobuf.ByteString
           getOnCreatedStringifiedBytes() {
@@ -6103,7 +6240,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_created_stringified = 13;</code>
+       * <code>optional string on_created_stringified = 14;</code>
        */
       public Builder setOnCreatedStringified(
           java.lang.String value) {
@@ -6116,7 +6253,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_created_stringified = 13;</code>
+       * <code>optional string on_created_stringified = 14;</code>
        */
       public Builder clearOnCreatedStringified() {
         
@@ -6125,7 +6262,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_created_stringified = 13;</code>
+       * <code>optional string on_created_stringified = 14;</code>
        */
       public Builder setOnCreatedStringifiedBytes(
           com.google.protobuf.ByteString value) {
@@ -6141,7 +6278,7 @@ public final class ProcessingModuleOuterClass {
 
       private java.lang.Object onHaltedStringified_ = "";
       /**
-       * <code>optional string on_halted_stringified = 14;</code>
+       * <code>optional string on_halted_stringified = 15;</code>
        */
       public java.lang.String getOnHaltedStringified() {
         java.lang.Object ref = onHaltedStringified_;
@@ -6156,7 +6293,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_halted_stringified = 14;</code>
+       * <code>optional string on_halted_stringified = 15;</code>
        */
       public com.google.protobuf.ByteString
           getOnHaltedStringifiedBytes() {
@@ -6172,7 +6309,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_halted_stringified = 14;</code>
+       * <code>optional string on_halted_stringified = 15;</code>
        */
       public Builder setOnHaltedStringified(
           java.lang.String value) {
@@ -6185,7 +6322,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_halted_stringified = 14;</code>
+       * <code>optional string on_halted_stringified = 15;</code>
        */
       public Builder clearOnHaltedStringified() {
         
@@ -6194,7 +6331,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_halted_stringified = 14;</code>
+       * <code>optional string on_halted_stringified = 15;</code>
        */
       public Builder setOnHaltedStringifiedBytes(
           com.google.protobuf.ByteString value) {
@@ -6210,7 +6347,7 @@ public final class ProcessingModuleOuterClass {
 
       private java.lang.Object onDestroyedStringified_ = "";
       /**
-       * <code>optional string on_destroyed_stringified = 15;</code>
+       * <code>optional string on_destroyed_stringified = 16;</code>
        */
       public java.lang.String getOnDestroyedStringified() {
         java.lang.Object ref = onDestroyedStringified_;
@@ -6225,7 +6362,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_destroyed_stringified = 15;</code>
+       * <code>optional string on_destroyed_stringified = 16;</code>
        */
       public com.google.protobuf.ByteString
           getOnDestroyedStringifiedBytes() {
@@ -6241,7 +6378,7 @@ public final class ProcessingModuleOuterClass {
         }
       }
       /**
-       * <code>optional string on_destroyed_stringified = 15;</code>
+       * <code>optional string on_destroyed_stringified = 16;</code>
        */
       public Builder setOnDestroyedStringified(
           java.lang.String value) {
@@ -6254,7 +6391,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_destroyed_stringified = 15;</code>
+       * <code>optional string on_destroyed_stringified = 16;</code>
        */
       public Builder clearOnDestroyedStringified() {
         
@@ -6263,7 +6400,7 @@ public final class ProcessingModuleOuterClass {
         return this;
       }
       /**
-       * <code>optional string on_destroyed_stringified = 15;</code>
+       * <code>optional string on_destroyed_stringified = 16;</code>
        */
       public Builder setOnDestroyedStringifiedBytes(
           com.google.protobuf.ByteString value) {
@@ -7116,25 +7253,26 @@ public final class ProcessingModuleOuterClass {
       "ggerOnInput\022\024\n\014min_delay_ms\030\001 \001(\005\022\036\n\026all",
       "_inputs_need_update\030\002 \001(\010B\006\n\004mode\"9\n\010Mod" +
       "uleIO\022\025\n\rinternal_name\030\001 \001(\t\022\026\n\016message_" +
-      "format\030\002 \001(\t\"\210\005\n\020ProcessingModule\022\n\n\002id\030" +
+      "format\030\002 \001(\t\"\234\005\n\020ProcessingModule\022\n\n\002id\030" +
       "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003(\t\022\014\n\004" +
       "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007node_" +
-      "id\030\006 \001(\t\0228\n\006status\030\007 \001(\0162(.ubii.processi" +
-      "ng.ProcessingModule.Status\0228\n\017processing" +
-      "_mode\030\010 \001(\0132\037.ubii.processing.Processing" +
-      "Mode\022)\n\006inputs\030\t \003(\0132\031.ubii.processing.M" +
-      "oduleIO\022*\n\007outputs\030\n \003(\0132\031.ubii.processi",
-      "ng.ModuleIO\022<\n\010language\030\013 \001(\0162*.ubii.pro" +
-      "cessing.ProcessingModule.Language\022!\n\031on_" +
-      "processing_stringified\030\014 \001(\t\022\036\n\026on_creat" +
-      "ed_stringified\030\r \001(\t\022\035\n\025on_halted_string" +
-      "ified\030\016 \001(\t\022 \n\030on_destroyed_stringified\030" +
-      "\017 \001(\t\"Q\n\006Status\022\017\n\013INITIALIZED\020\000\022\013\n\007CREA" +
-      "TED\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tDES" +
-      "TROYED\020\004\"5\n\010Language\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n" +
-      "\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAVA\020\004\"K\n\024ProcessingMod" +
-      "uleList\0223\n\010elements\030\001 \003(\0132!.ubii.process",
-      "ing.ProcessingModuleb\006proto3"
+      "id\030\006 \001(\t\022\022\n\nsession_id\030\007 \001(\t\0228\n\006status\030\010" +
+      " \001(\0162(.ubii.processing.ProcessingModule." +
+      "Status\0228\n\017processing_mode\030\t \001(\0132\037.ubii.p" +
+      "rocessing.ProcessingMode\022)\n\006inputs\030\n \003(\013" +
+      "2\031.ubii.processing.ModuleIO\022*\n\007outputs\030\013",
+      " \003(\0132\031.ubii.processing.ModuleIO\022<\n\010langu" +
+      "age\030\014 \001(\0162*.ubii.processing.ProcessingMo" +
+      "dule.Language\022!\n\031on_processing_stringifi" +
+      "ed\030\r \001(\t\022\036\n\026on_created_stringified\030\016 \001(\t" +
+      "\022\035\n\025on_halted_stringified\030\017 \001(\t\022 \n\030on_de" +
+      "stroyed_stringified\030\020 \001(\t\"Q\n\006Status\022\017\n\013I" +
+      "NITIALIZED\020\000\022\013\n\007CREATED\020\001\022\016\n\nPROCESSING\020" +
+      "\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED\020\004\"5\n\010Language" +
+      "\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAV" +
+      "A\020\004\"K\n\024ProcessingModuleList\0223\n\010elements\030",
+      "\001 \003(\0132!.ubii.processing.ProcessingModule" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7183,7 +7321,7 @@ public final class ProcessingModuleOuterClass {
     internal_static_ubii_processing_ProcessingModule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_processing_ProcessingModule_descriptor,
-        new java.lang.String[] { "Id", "Name", "Authors", "Tags", "Description", "NodeId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified", });
+        new java.lang.String[] { "Id", "Name", "Authors", "Tags", "Description", "NodeId", "SessionId", "Status", "ProcessingMode", "Inputs", "Outputs", "Language", "OnProcessingStringified", "OnCreatedStringified", "OnHaltedStringified", "OnDestroyedStringified", });
     internal_static_ubii_processing_ProcessingModuleList_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_ubii_processing_ProcessingModuleList_fieldAccessorTable = new
