@@ -19,66 +19,78 @@ public final class Matrix3X2 {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional double m00 = 1;</code>
+     * <code>double m00 = 1;</code>
+     * @return The m00.
      */
     double getM00();
 
     /**
-     * <code>optional double m01 = 2;</code>
+     * <code>double m01 = 2;</code>
+     * @return The m01.
      */
     double getM01();
 
     /**
-     * <code>optional double m10 = 3;</code>
+     * <code>double m10 = 3;</code>
+     * @return The m10.
      */
     double getM10();
 
     /**
-     * <code>optional double m11 = 4;</code>
+     * <code>double m11 = 4;</code>
+     * @return The m11.
      */
     double getM11();
 
     /**
-     * <code>optional double m20 = 5;</code>
+     * <code>double m20 = 5;</code>
+     * @return The m20.
      */
     double getM20();
 
     /**
-     * <code>optional double m21 = 6;</code>
+     * <code>double m21 = 6;</code>
+     * @return The m21.
      */
     double getM21();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.Matrix3x2}
    */
-  public  static final class Matrix3x2 extends
+  public static final class Matrix3x2 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Matrix3x2)
       Matrix3x2OrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Matrix3x2.newBuilder() to construct.
     private Matrix3x2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Matrix3x2() {
-      m00_ = 0D;
-      m01_ = 0D;
-      m10_ = 0D;
-      m11_ = 0D;
-      m20_ = 0D;
-      m21_ = 0D;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Matrix3x2();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Matrix3x2(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -87,12 +99,6 @@ public final class Matrix3X2 {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 9: {
 
               m00_ = input.readDouble();
@@ -123,6 +129,13 @@ public final class Matrix3X2 {
               m21_ = input.readDouble();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -131,6 +144,7 @@ public final class Matrix3X2 {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -139,6 +153,7 @@ public final class Matrix3X2 {
       return ubii.dataStructure.Matrix3X2.internal_static_ubii_dataStructure_Matrix3x2_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.dataStructure.Matrix3X2.internal_static_ubii_dataStructure_Matrix3x2_fieldAccessorTable
@@ -149,8 +164,10 @@ public final class Matrix3X2 {
     public static final int M00_FIELD_NUMBER = 1;
     private double m00_;
     /**
-     * <code>optional double m00 = 1;</code>
+     * <code>double m00 = 1;</code>
+     * @return The m00.
      */
+    @java.lang.Override
     public double getM00() {
       return m00_;
     }
@@ -158,8 +175,10 @@ public final class Matrix3X2 {
     public static final int M01_FIELD_NUMBER = 2;
     private double m01_;
     /**
-     * <code>optional double m01 = 2;</code>
+     * <code>double m01 = 2;</code>
+     * @return The m01.
      */
+    @java.lang.Override
     public double getM01() {
       return m01_;
     }
@@ -167,8 +186,10 @@ public final class Matrix3X2 {
     public static final int M10_FIELD_NUMBER = 3;
     private double m10_;
     /**
-     * <code>optional double m10 = 3;</code>
+     * <code>double m10 = 3;</code>
+     * @return The m10.
      */
+    @java.lang.Override
     public double getM10() {
       return m10_;
     }
@@ -176,8 +197,10 @@ public final class Matrix3X2 {
     public static final int M11_FIELD_NUMBER = 4;
     private double m11_;
     /**
-     * <code>optional double m11 = 4;</code>
+     * <code>double m11 = 4;</code>
+     * @return The m11.
      */
+    @java.lang.Override
     public double getM11() {
       return m11_;
     }
@@ -185,8 +208,10 @@ public final class Matrix3X2 {
     public static final int M20_FIELD_NUMBER = 5;
     private double m20_;
     /**
-     * <code>optional double m20 = 5;</code>
+     * <code>double m20 = 5;</code>
+     * @return The m20.
      */
+    @java.lang.Override
     public double getM20() {
       return m20_;
     }
@@ -194,13 +219,16 @@ public final class Matrix3X2 {
     public static final int M21_FIELD_NUMBER = 6;
     private double m21_;
     /**
-     * <code>optional double m21 = 6;</code>
+     * <code>double m21 = 6;</code>
+     * @return The m21.
      */
+    @java.lang.Override
     public double getM21() {
       return m21_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -210,6 +238,7 @@ public final class Matrix3X2 {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (m00_ != 0D) {
@@ -230,8 +259,10 @@ public final class Matrix3X2 {
       if (m21_ != 0D) {
         output.writeDouble(6, m21_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -261,11 +292,11 @@ public final class Matrix3X2 {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(6, m21_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -276,32 +307,26 @@ public final class Matrix3X2 {
       }
       ubii.dataStructure.Matrix3X2.Matrix3x2 other = (ubii.dataStructure.Matrix3X2.Matrix3x2) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM00())
-          == java.lang.Double.doubleToLongBits(
-              other.getM00()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM01())
-          == java.lang.Double.doubleToLongBits(
-              other.getM01()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM10())
-          == java.lang.Double.doubleToLongBits(
-              other.getM10()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM11())
-          == java.lang.Double.doubleToLongBits(
-              other.getM11()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM20())
-          == java.lang.Double.doubleToLongBits(
-              other.getM20()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM21())
-          == java.lang.Double.doubleToLongBits(
-              other.getM21()));
-      return result;
+      if (java.lang.Double.doubleToLongBits(getM00())
+          != java.lang.Double.doubleToLongBits(
+              other.getM00())) return false;
+      if (java.lang.Double.doubleToLongBits(getM01())
+          != java.lang.Double.doubleToLongBits(
+              other.getM01())) return false;
+      if (java.lang.Double.doubleToLongBits(getM10())
+          != java.lang.Double.doubleToLongBits(
+              other.getM10())) return false;
+      if (java.lang.Double.doubleToLongBits(getM11())
+          != java.lang.Double.doubleToLongBits(
+              other.getM11())) return false;
+      if (java.lang.Double.doubleToLongBits(getM20())
+          != java.lang.Double.doubleToLongBits(
+              other.getM20())) return false;
+      if (java.lang.Double.doubleToLongBits(getM21())
+          != java.lang.Double.doubleToLongBits(
+              other.getM21())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -310,7 +335,7 @@ public final class Matrix3X2 {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + M00_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getM00()));
@@ -334,6 +359,17 @@ public final class Matrix3X2 {
       return hash;
     }
 
+    public static ubii.dataStructure.Matrix3X2.Matrix3x2 parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.dataStructure.Matrix3X2.Matrix3x2 parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ubii.dataStructure.Matrix3X2.Matrix3x2 parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -393,6 +429,7 @@ public final class Matrix3X2 {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -400,6 +437,7 @@ public final class Matrix3X2 {
     public static Builder newBuilder(ubii.dataStructure.Matrix3X2.Matrix3x2 prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -423,6 +461,7 @@ public final class Matrix3X2 {
         return ubii.dataStructure.Matrix3X2.internal_static_ubii_dataStructure_Matrix3x2_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.dataStructure.Matrix3X2.internal_static_ubii_dataStructure_Matrix3x2_fieldAccessorTable
@@ -445,6 +484,7 @@ public final class Matrix3X2 {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         m00_ = 0D;
@@ -462,15 +502,18 @@ public final class Matrix3X2 {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.dataStructure.Matrix3X2.internal_static_ubii_dataStructure_Matrix3x2_descriptor;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Matrix3X2.Matrix3x2 getDefaultInstanceForType() {
         return ubii.dataStructure.Matrix3X2.Matrix3x2.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Matrix3X2.Matrix3x2 build() {
         ubii.dataStructure.Matrix3X2.Matrix3x2 result = buildPartial();
         if (!result.isInitialized()) {
@@ -479,6 +522,7 @@ public final class Matrix3X2 {
         return result;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Matrix3X2.Matrix3x2 buildPartial() {
         ubii.dataStructure.Matrix3X2.Matrix3x2 result = new ubii.dataStructure.Matrix3X2.Matrix3x2(this);
         result.m00_ = m00_;
@@ -491,32 +535,39 @@ public final class Matrix3X2 {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Matrix3X2.Matrix3x2) {
           return mergeFrom((ubii.dataStructure.Matrix3X2.Matrix3x2)other);
@@ -546,14 +597,17 @@ public final class Matrix3X2 {
         if (other.getM21() != 0D) {
           setM21(other.getM21());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -574,13 +628,17 @@ public final class Matrix3X2 {
 
       private double m00_ ;
       /**
-       * <code>optional double m00 = 1;</code>
+       * <code>double m00 = 1;</code>
+       * @return The m00.
        */
+      @java.lang.Override
       public double getM00() {
         return m00_;
       }
       /**
-       * <code>optional double m00 = 1;</code>
+       * <code>double m00 = 1;</code>
+       * @param value The m00 to set.
+       * @return This builder for chaining.
        */
       public Builder setM00(double value) {
         
@@ -589,7 +647,8 @@ public final class Matrix3X2 {
         return this;
       }
       /**
-       * <code>optional double m00 = 1;</code>
+       * <code>double m00 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM00() {
         
@@ -600,13 +659,17 @@ public final class Matrix3X2 {
 
       private double m01_ ;
       /**
-       * <code>optional double m01 = 2;</code>
+       * <code>double m01 = 2;</code>
+       * @return The m01.
        */
+      @java.lang.Override
       public double getM01() {
         return m01_;
       }
       /**
-       * <code>optional double m01 = 2;</code>
+       * <code>double m01 = 2;</code>
+       * @param value The m01 to set.
+       * @return This builder for chaining.
        */
       public Builder setM01(double value) {
         
@@ -615,7 +678,8 @@ public final class Matrix3X2 {
         return this;
       }
       /**
-       * <code>optional double m01 = 2;</code>
+       * <code>double m01 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM01() {
         
@@ -626,13 +690,17 @@ public final class Matrix3X2 {
 
       private double m10_ ;
       /**
-       * <code>optional double m10 = 3;</code>
+       * <code>double m10 = 3;</code>
+       * @return The m10.
        */
+      @java.lang.Override
       public double getM10() {
         return m10_;
       }
       /**
-       * <code>optional double m10 = 3;</code>
+       * <code>double m10 = 3;</code>
+       * @param value The m10 to set.
+       * @return This builder for chaining.
        */
       public Builder setM10(double value) {
         
@@ -641,7 +709,8 @@ public final class Matrix3X2 {
         return this;
       }
       /**
-       * <code>optional double m10 = 3;</code>
+       * <code>double m10 = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM10() {
         
@@ -652,13 +721,17 @@ public final class Matrix3X2 {
 
       private double m11_ ;
       /**
-       * <code>optional double m11 = 4;</code>
+       * <code>double m11 = 4;</code>
+       * @return The m11.
        */
+      @java.lang.Override
       public double getM11() {
         return m11_;
       }
       /**
-       * <code>optional double m11 = 4;</code>
+       * <code>double m11 = 4;</code>
+       * @param value The m11 to set.
+       * @return This builder for chaining.
        */
       public Builder setM11(double value) {
         
@@ -667,7 +740,8 @@ public final class Matrix3X2 {
         return this;
       }
       /**
-       * <code>optional double m11 = 4;</code>
+       * <code>double m11 = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM11() {
         
@@ -678,13 +752,17 @@ public final class Matrix3X2 {
 
       private double m20_ ;
       /**
-       * <code>optional double m20 = 5;</code>
+       * <code>double m20 = 5;</code>
+       * @return The m20.
        */
+      @java.lang.Override
       public double getM20() {
         return m20_;
       }
       /**
-       * <code>optional double m20 = 5;</code>
+       * <code>double m20 = 5;</code>
+       * @param value The m20 to set.
+       * @return This builder for chaining.
        */
       public Builder setM20(double value) {
         
@@ -693,7 +771,8 @@ public final class Matrix3X2 {
         return this;
       }
       /**
-       * <code>optional double m20 = 5;</code>
+       * <code>double m20 = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM20() {
         
@@ -704,13 +783,17 @@ public final class Matrix3X2 {
 
       private double m21_ ;
       /**
-       * <code>optional double m21 = 6;</code>
+       * <code>double m21 = 6;</code>
+       * @return The m21.
        */
+      @java.lang.Override
       public double getM21() {
         return m21_;
       }
       /**
-       * <code>optional double m21 = 6;</code>
+       * <code>double m21 = 6;</code>
+       * @param value The m21 to set.
+       * @return This builder for chaining.
        */
       public Builder setM21(double value) {
         
@@ -719,7 +802,8 @@ public final class Matrix3X2 {
         return this;
       }
       /**
-       * <code>optional double m21 = 6;</code>
+       * <code>double m21 = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM21() {
         
@@ -727,14 +811,16 @@ public final class Matrix3X2 {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -753,11 +839,12 @@ public final class Matrix3X2 {
 
     private static final com.google.protobuf.Parser<Matrix3x2>
         PARSER = new com.google.protobuf.AbstractParser<Matrix3x2>() {
+      @java.lang.Override
       public Matrix3x2 parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Matrix3x2(input, extensionRegistry);
+        return new Matrix3x2(input, extensionRegistry);
       }
     };
 
@@ -770,6 +857,7 @@ public final class Matrix3X2 {
       return PARSER;
     }
 
+    @java.lang.Override
     public ubii.dataStructure.Matrix3X2.Matrix3x2 getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -796,18 +884,10 @@ public final class Matrix3X2 {
       "(\001\022\013\n\003m10\030\003 \001(\001\022\013\n\003m11\030\004 \001(\001\022\013\n\003m20\030\005 \001(" +
       "\001\022\013\n\003m21\030\006 \001(\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Matrix3x2_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Matrix3x2_fieldAccessorTable = new

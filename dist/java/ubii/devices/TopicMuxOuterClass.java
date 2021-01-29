@@ -19,51 +19,61 @@ public final class TopicMuxOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string name = 2;</code>
+     * <code>string name = 2;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 2;</code>
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional string data_type = 3;</code>
+     * <code>string data_type = 3;</code>
+     * @return The dataType.
      */
     java.lang.String getDataType();
     /**
-     * <code>optional string data_type = 3;</code>
+     * <code>string data_type = 3;</code>
+     * @return The bytes for dataType.
      */
     com.google.protobuf.ByteString
         getDataTypeBytes();
 
     /**
-     * <code>optional string topic_selector = 4;</code>
+     * <code>string topic_selector = 4;</code>
+     * @return The topicSelector.
      */
     java.lang.String getTopicSelector();
     /**
-     * <code>optional string topic_selector = 4;</code>
+     * <code>string topic_selector = 4;</code>
+     * @return The bytes for topicSelector.
      */
     com.google.protobuf.ByteString
         getTopicSelectorBytes();
 
     /**
-     * <code>optional string identity_match_pattern = 5;</code>
+     * <code>string identity_match_pattern = 5;</code>
+     * @return The identityMatchPattern.
      */
     java.lang.String getIdentityMatchPattern();
     /**
-     * <code>optional string identity_match_pattern = 5;</code>
+     * <code>string identity_match_pattern = 5;</code>
+     * @return The bytes for identityMatchPattern.
      */
     com.google.protobuf.ByteString
         getIdentityMatchPatternBytes();
@@ -71,10 +81,11 @@ public final class TopicMuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicMux}
    */
-  public  static final class TopicMux extends
+  public static final class TopicMux extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicMux)
       TopicMuxOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TopicMux.newBuilder() to construct.
     private TopicMux(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -88,16 +99,27 @@ public final class TopicMuxOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TopicMux();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private TopicMux(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -106,12 +128,6 @@ public final class TopicMuxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -142,6 +158,13 @@ public final class TopicMuxOuterClass {
               identityMatchPattern_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -150,6 +173,7 @@ public final class TopicMuxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -158,6 +182,7 @@ public final class TopicMuxOuterClass {
       return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMux_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMux_fieldAccessorTable
@@ -168,8 +193,10 @@ public final class TopicMuxOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -183,8 +210,10 @@ public final class TopicMuxOuterClass {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -202,8 +231,10 @@ public final class TopicMuxOuterClass {
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 2;</code>
+     * <code>string name = 2;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -217,8 +248,10 @@ public final class TopicMuxOuterClass {
       }
     }
     /**
-     * <code>optional string name = 2;</code>
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -236,8 +269,10 @@ public final class TopicMuxOuterClass {
     public static final int DATA_TYPE_FIELD_NUMBER = 3;
     private volatile java.lang.Object dataType_;
     /**
-     * <code>optional string data_type = 3;</code>
+     * <code>string data_type = 3;</code>
+     * @return The dataType.
      */
+    @java.lang.Override
     public java.lang.String getDataType() {
       java.lang.Object ref = dataType_;
       if (ref instanceof java.lang.String) {
@@ -251,8 +286,10 @@ public final class TopicMuxOuterClass {
       }
     }
     /**
-     * <code>optional string data_type = 3;</code>
+     * <code>string data_type = 3;</code>
+     * @return The bytes for dataType.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDataTypeBytes() {
       java.lang.Object ref = dataType_;
@@ -270,8 +307,10 @@ public final class TopicMuxOuterClass {
     public static final int TOPIC_SELECTOR_FIELD_NUMBER = 4;
     private volatile java.lang.Object topicSelector_;
     /**
-     * <code>optional string topic_selector = 4;</code>
+     * <code>string topic_selector = 4;</code>
+     * @return The topicSelector.
      */
+    @java.lang.Override
     public java.lang.String getTopicSelector() {
       java.lang.Object ref = topicSelector_;
       if (ref instanceof java.lang.String) {
@@ -285,8 +324,10 @@ public final class TopicMuxOuterClass {
       }
     }
     /**
-     * <code>optional string topic_selector = 4;</code>
+     * <code>string topic_selector = 4;</code>
+     * @return The bytes for topicSelector.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicSelectorBytes() {
       java.lang.Object ref = topicSelector_;
@@ -304,8 +345,10 @@ public final class TopicMuxOuterClass {
     public static final int IDENTITY_MATCH_PATTERN_FIELD_NUMBER = 5;
     private volatile java.lang.Object identityMatchPattern_;
     /**
-     * <code>optional string identity_match_pattern = 5;</code>
+     * <code>string identity_match_pattern = 5;</code>
+     * @return The identityMatchPattern.
      */
+    @java.lang.Override
     public java.lang.String getIdentityMatchPattern() {
       java.lang.Object ref = identityMatchPattern_;
       if (ref instanceof java.lang.String) {
@@ -319,8 +362,10 @@ public final class TopicMuxOuterClass {
       }
     }
     /**
-     * <code>optional string identity_match_pattern = 5;</code>
+     * <code>string identity_match_pattern = 5;</code>
+     * @return The bytes for identityMatchPattern.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdentityMatchPatternBytes() {
       java.lang.Object ref = identityMatchPattern_;
@@ -336,6 +381,7 @@ public final class TopicMuxOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -345,6 +391,7 @@ public final class TopicMuxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -362,8 +409,10 @@ public final class TopicMuxOuterClass {
       if (!getIdentityMatchPatternBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, identityMatchPattern_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -384,11 +433,11 @@ public final class TopicMuxOuterClass {
       if (!getIdentityMatchPatternBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, identityMatchPattern_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -399,18 +448,18 @@ public final class TopicMuxOuterClass {
       }
       ubii.devices.TopicMuxOuterClass.TopicMux other = (ubii.devices.TopicMuxOuterClass.TopicMux) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getDataType()
-          .equals(other.getDataType());
-      result = result && getTopicSelector()
-          .equals(other.getTopicSelector());
-      result = result && getIdentityMatchPattern()
-          .equals(other.getIdentityMatchPattern());
-      return result;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDataType()
+          .equals(other.getDataType())) return false;
+      if (!getTopicSelector()
+          .equals(other.getTopicSelector())) return false;
+      if (!getIdentityMatchPattern()
+          .equals(other.getIdentityMatchPattern())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -419,7 +468,7 @@ public final class TopicMuxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -435,6 +484,17 @@ public final class TopicMuxOuterClass {
       return hash;
     }
 
+    public static ubii.devices.TopicMuxOuterClass.TopicMux parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.devices.TopicMuxOuterClass.TopicMux parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ubii.devices.TopicMuxOuterClass.TopicMux parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -494,6 +554,7 @@ public final class TopicMuxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -501,6 +562,7 @@ public final class TopicMuxOuterClass {
     public static Builder newBuilder(ubii.devices.TopicMuxOuterClass.TopicMux prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -524,6 +586,7 @@ public final class TopicMuxOuterClass {
         return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMux_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMux_fieldAccessorTable
@@ -546,6 +609,7 @@ public final class TopicMuxOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -561,15 +625,18 @@ public final class TopicMuxOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMux_descriptor;
       }
 
+      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMux getDefaultInstanceForType() {
         return ubii.devices.TopicMuxOuterClass.TopicMux.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMux build() {
         ubii.devices.TopicMuxOuterClass.TopicMux result = buildPartial();
         if (!result.isInitialized()) {
@@ -578,6 +645,7 @@ public final class TopicMuxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMux buildPartial() {
         ubii.devices.TopicMuxOuterClass.TopicMux result = new ubii.devices.TopicMuxOuterClass.TopicMux(this);
         result.id_ = id_;
@@ -589,32 +657,39 @@ public final class TopicMuxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.devices.TopicMuxOuterClass.TopicMux) {
           return mergeFrom((ubii.devices.TopicMuxOuterClass.TopicMux)other);
@@ -646,14 +721,17 @@ public final class TopicMuxOuterClass {
           identityMatchPattern_ = other.identityMatchPattern_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -674,7 +752,8 @@ public final class TopicMuxOuterClass {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -689,7 +768,8 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -705,7 +785,9 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
@@ -718,7 +800,8 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -727,7 +810,9 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -743,7 +828,8 @@ public final class TopicMuxOuterClass {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 2;</code>
+       * <code>string name = 2;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -758,7 +844,8 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string name = 2;</code>
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -774,7 +861,9 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string name = 2;</code>
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -787,7 +876,8 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 2;</code>
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -796,7 +886,9 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 2;</code>
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -812,7 +904,8 @@ public final class TopicMuxOuterClass {
 
       private java.lang.Object dataType_ = "";
       /**
-       * <code>optional string data_type = 3;</code>
+       * <code>string data_type = 3;</code>
+       * @return The dataType.
        */
       public java.lang.String getDataType() {
         java.lang.Object ref = dataType_;
@@ -827,7 +920,8 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string data_type = 3;</code>
+       * <code>string data_type = 3;</code>
+       * @return The bytes for dataType.
        */
       public com.google.protobuf.ByteString
           getDataTypeBytes() {
@@ -843,7 +937,9 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string data_type = 3;</code>
+       * <code>string data_type = 3;</code>
+       * @param value The dataType to set.
+       * @return This builder for chaining.
        */
       public Builder setDataType(
           java.lang.String value) {
@@ -856,7 +952,8 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string data_type = 3;</code>
+       * <code>string data_type = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDataType() {
         
@@ -865,7 +962,9 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string data_type = 3;</code>
+       * <code>string data_type = 3;</code>
+       * @param value The bytes for dataType to set.
+       * @return This builder for chaining.
        */
       public Builder setDataTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -881,7 +980,8 @@ public final class TopicMuxOuterClass {
 
       private java.lang.Object topicSelector_ = "";
       /**
-       * <code>optional string topic_selector = 4;</code>
+       * <code>string topic_selector = 4;</code>
+       * @return The topicSelector.
        */
       public java.lang.String getTopicSelector() {
         java.lang.Object ref = topicSelector_;
@@ -896,7 +996,8 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string topic_selector = 4;</code>
+       * <code>string topic_selector = 4;</code>
+       * @return The bytes for topicSelector.
        */
       public com.google.protobuf.ByteString
           getTopicSelectorBytes() {
@@ -912,7 +1013,9 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string topic_selector = 4;</code>
+       * <code>string topic_selector = 4;</code>
+       * @param value The topicSelector to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicSelector(
           java.lang.String value) {
@@ -925,7 +1028,8 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic_selector = 4;</code>
+       * <code>string topic_selector = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopicSelector() {
         
@@ -934,7 +1038,9 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic_selector = 4;</code>
+       * <code>string topic_selector = 4;</code>
+       * @param value The bytes for topicSelector to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicSelectorBytes(
           com.google.protobuf.ByteString value) {
@@ -950,7 +1056,8 @@ public final class TopicMuxOuterClass {
 
       private java.lang.Object identityMatchPattern_ = "";
       /**
-       * <code>optional string identity_match_pattern = 5;</code>
+       * <code>string identity_match_pattern = 5;</code>
+       * @return The identityMatchPattern.
        */
       public java.lang.String getIdentityMatchPattern() {
         java.lang.Object ref = identityMatchPattern_;
@@ -965,7 +1072,8 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string identity_match_pattern = 5;</code>
+       * <code>string identity_match_pattern = 5;</code>
+       * @return The bytes for identityMatchPattern.
        */
       public com.google.protobuf.ByteString
           getIdentityMatchPatternBytes() {
@@ -981,7 +1089,9 @@ public final class TopicMuxOuterClass {
         }
       }
       /**
-       * <code>optional string identity_match_pattern = 5;</code>
+       * <code>string identity_match_pattern = 5;</code>
+       * @param value The identityMatchPattern to set.
+       * @return This builder for chaining.
        */
       public Builder setIdentityMatchPattern(
           java.lang.String value) {
@@ -994,7 +1104,8 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string identity_match_pattern = 5;</code>
+       * <code>string identity_match_pattern = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIdentityMatchPattern() {
         
@@ -1003,7 +1114,9 @@ public final class TopicMuxOuterClass {
         return this;
       }
       /**
-       * <code>optional string identity_match_pattern = 5;</code>
+       * <code>string identity_match_pattern = 5;</code>
+       * @param value The bytes for identityMatchPattern to set.
+       * @return This builder for chaining.
        */
       public Builder setIdentityMatchPatternBytes(
           com.google.protobuf.ByteString value) {
@@ -1016,14 +1129,16 @@ public final class TopicMuxOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1042,11 +1157,12 @@ public final class TopicMuxOuterClass {
 
     private static final com.google.protobuf.Parser<TopicMux>
         PARSER = new com.google.protobuf.AbstractParser<TopicMux>() {
+      @java.lang.Override
       public TopicMux parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TopicMux(input, extensionRegistry);
+        return new TopicMux(input, extensionRegistry);
       }
     };
 
@@ -1059,6 +1175,7 @@ public final class TopicMuxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMux getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1096,10 +1213,11 @@ public final class TopicMuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicMuxList}
    */
-  public  static final class TopicMuxList extends
+  public static final class TopicMuxList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicMuxList)
       TopicMuxListOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TopicMuxList.newBuilder() to construct.
     private TopicMuxList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1109,16 +1227,28 @@ public final class TopicMuxOuterClass {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TopicMuxList();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private TopicMuxList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1127,19 +1257,20 @@ public final class TopicMuxOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 elements_ = new java.util.ArrayList<ubii.devices.TopicMuxOuterClass.TopicMux>();
                 mutable_bitField0_ |= 0x00000001;
               }
               elements_.add(
                   input.readMessage(ubii.devices.TopicMuxOuterClass.TopicMux.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1150,9 +1281,10 @@ public final class TopicMuxOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1161,6 +1293,7 @@ public final class TopicMuxOuterClass {
       return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMuxList_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMuxList_fieldAccessorTable
@@ -1173,12 +1306,14 @@ public final class TopicMuxOuterClass {
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.devices.TopicMuxOuterClass.TopicMux> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1186,24 +1321,28 @@ public final class TopicMuxOuterClass {
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMux getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1213,13 +1352,16 @@ public final class TopicMuxOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1229,11 +1371,11 @@ public final class TopicMuxOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1244,10 +1386,10 @@ public final class TopicMuxOuterClass {
       }
       ubii.devices.TopicMuxOuterClass.TopicMuxList other = (ubii.devices.TopicMuxOuterClass.TopicMuxList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1256,7 +1398,7 @@ public final class TopicMuxOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getElementsCount() > 0) {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
@@ -1266,6 +1408,17 @@ public final class TopicMuxOuterClass {
       return hash;
     }
 
+    public static ubii.devices.TopicMuxOuterClass.TopicMuxList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.devices.TopicMuxOuterClass.TopicMuxList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ubii.devices.TopicMuxOuterClass.TopicMuxList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1325,6 +1478,7 @@ public final class TopicMuxOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1332,6 +1486,7 @@ public final class TopicMuxOuterClass {
     public static Builder newBuilder(ubii.devices.TopicMuxOuterClass.TopicMuxList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1355,6 +1510,7 @@ public final class TopicMuxOuterClass {
         return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMuxList_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMuxList_fieldAccessorTable
@@ -1378,6 +1534,7 @@ public final class TopicMuxOuterClass {
           getElementsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (elementsBuilder_ == null) {
@@ -1389,15 +1546,18 @@ public final class TopicMuxOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.devices.TopicMuxOuterClass.internal_static_ubii_devices_TopicMuxList_descriptor;
       }
 
+      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMuxList getDefaultInstanceForType() {
         return ubii.devices.TopicMuxOuterClass.TopicMuxList.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMuxList build() {
         ubii.devices.TopicMuxOuterClass.TopicMuxList result = buildPartial();
         if (!result.isInitialized()) {
@@ -1406,11 +1566,12 @@ public final class TopicMuxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public ubii.devices.TopicMuxOuterClass.TopicMuxList buildPartial() {
         ubii.devices.TopicMuxOuterClass.TopicMuxList result = new ubii.devices.TopicMuxOuterClass.TopicMuxList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1422,32 +1583,39 @@ public final class TopicMuxOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.devices.TopicMuxOuterClass.TopicMuxList) {
           return mergeFrom((ubii.devices.TopicMuxOuterClass.TopicMuxList)other);
@@ -1485,14 +1653,17 @@ public final class TopicMuxOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1515,7 +1686,7 @@ public final class TopicMuxOuterClass {
       private java.util.List<ubii.devices.TopicMuxOuterClass.TopicMux> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.devices.TopicMuxOuterClass.TopicMux>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1744,21 +1915,23 @@ public final class TopicMuxOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
         }
         return elementsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1777,11 +1950,12 @@ public final class TopicMuxOuterClass {
 
     private static final com.google.protobuf.Parser<TopicMuxList>
         PARSER = new com.google.protobuf.AbstractParser<TopicMuxList>() {
+      @java.lang.Override
       public TopicMuxList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TopicMuxList(input, extensionRegistry);
+        return new TopicMuxList(input, extensionRegistry);
       }
     };
 
@@ -1794,6 +1968,7 @@ public final class TopicMuxOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMuxList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1826,18 +2001,10 @@ public final class TopicMuxOuterClass {
       "\014TopicMuxList\022(\n\010elements\030\001 \003(\0132\026.ubii.d" +
       "evices.TopicMuxb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_devices_TopicMux_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_devices_TopicMux_fieldAccessorTable = new

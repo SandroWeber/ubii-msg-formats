@@ -19,54 +19,66 @@ public final class ColorOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional double r = 1;</code>
+     * <code>double r = 1;</code>
+     * @return The r.
      */
     double getR();
 
     /**
-     * <code>optional double g = 2;</code>
+     * <code>double g = 2;</code>
+     * @return The g.
      */
     double getG();
 
     /**
-     * <code>optional double b = 3;</code>
+     * <code>double b = 3;</code>
+     * @return The b.
      */
     double getB();
 
     /**
-     * <code>optional double a = 4;</code>
+     * <code>double a = 4;</code>
+     * @return The a.
      */
     double getA();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.Color}
    */
-  public  static final class Color extends
+  public static final class Color extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Color)
       ColorOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Color.newBuilder() to construct.
     private Color(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Color() {
-      r_ = 0D;
-      g_ = 0D;
-      b_ = 0D;
-      a_ = 0D;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Color();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Color(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -75,12 +87,6 @@ public final class ColorOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 9: {
 
               r_ = input.readDouble();
@@ -101,6 +107,13 @@ public final class ColorOuterClass {
               a_ = input.readDouble();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -109,6 +122,7 @@ public final class ColorOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -117,6 +131,7 @@ public final class ColorOuterClass {
       return ubii.dataStructure.ColorOuterClass.internal_static_ubii_dataStructure_Color_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.dataStructure.ColorOuterClass.internal_static_ubii_dataStructure_Color_fieldAccessorTable
@@ -127,8 +142,10 @@ public final class ColorOuterClass {
     public static final int R_FIELD_NUMBER = 1;
     private double r_;
     /**
-     * <code>optional double r = 1;</code>
+     * <code>double r = 1;</code>
+     * @return The r.
      */
+    @java.lang.Override
     public double getR() {
       return r_;
     }
@@ -136,8 +153,10 @@ public final class ColorOuterClass {
     public static final int G_FIELD_NUMBER = 2;
     private double g_;
     /**
-     * <code>optional double g = 2;</code>
+     * <code>double g = 2;</code>
+     * @return The g.
      */
+    @java.lang.Override
     public double getG() {
       return g_;
     }
@@ -145,8 +164,10 @@ public final class ColorOuterClass {
     public static final int B_FIELD_NUMBER = 3;
     private double b_;
     /**
-     * <code>optional double b = 3;</code>
+     * <code>double b = 3;</code>
+     * @return The b.
      */
+    @java.lang.Override
     public double getB() {
       return b_;
     }
@@ -154,13 +175,16 @@ public final class ColorOuterClass {
     public static final int A_FIELD_NUMBER = 4;
     private double a_;
     /**
-     * <code>optional double a = 4;</code>
+     * <code>double a = 4;</code>
+     * @return The a.
      */
+    @java.lang.Override
     public double getA() {
       return a_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -170,6 +194,7 @@ public final class ColorOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (r_ != 0D) {
@@ -184,8 +209,10 @@ public final class ColorOuterClass {
       if (a_ != 0D) {
         output.writeDouble(4, a_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -207,11 +234,11 @@ public final class ColorOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, a_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -222,24 +249,20 @@ public final class ColorOuterClass {
       }
       ubii.dataStructure.ColorOuterClass.Color other = (ubii.dataStructure.ColorOuterClass.Color) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getR())
-          == java.lang.Double.doubleToLongBits(
-              other.getR()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getG())
-          == java.lang.Double.doubleToLongBits(
-              other.getG()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getB())
-          == java.lang.Double.doubleToLongBits(
-              other.getB()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getA())
-          == java.lang.Double.doubleToLongBits(
-              other.getA()));
-      return result;
+      if (java.lang.Double.doubleToLongBits(getR())
+          != java.lang.Double.doubleToLongBits(
+              other.getR())) return false;
+      if (java.lang.Double.doubleToLongBits(getG())
+          != java.lang.Double.doubleToLongBits(
+              other.getG())) return false;
+      if (java.lang.Double.doubleToLongBits(getB())
+          != java.lang.Double.doubleToLongBits(
+              other.getB())) return false;
+      if (java.lang.Double.doubleToLongBits(getA())
+          != java.lang.Double.doubleToLongBits(
+              other.getA())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -248,7 +271,7 @@ public final class ColorOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + R_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getR()));
@@ -266,6 +289,17 @@ public final class ColorOuterClass {
       return hash;
     }
 
+    public static ubii.dataStructure.ColorOuterClass.Color parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.dataStructure.ColorOuterClass.Color parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ubii.dataStructure.ColorOuterClass.Color parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -325,6 +359,7 @@ public final class ColorOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -332,6 +367,7 @@ public final class ColorOuterClass {
     public static Builder newBuilder(ubii.dataStructure.ColorOuterClass.Color prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -355,6 +391,7 @@ public final class ColorOuterClass {
         return ubii.dataStructure.ColorOuterClass.internal_static_ubii_dataStructure_Color_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.dataStructure.ColorOuterClass.internal_static_ubii_dataStructure_Color_fieldAccessorTable
@@ -377,6 +414,7 @@ public final class ColorOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         r_ = 0D;
@@ -390,15 +428,18 @@ public final class ColorOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.dataStructure.ColorOuterClass.internal_static_ubii_dataStructure_Color_descriptor;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.ColorOuterClass.Color getDefaultInstanceForType() {
         return ubii.dataStructure.ColorOuterClass.Color.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ubii.dataStructure.ColorOuterClass.Color build() {
         ubii.dataStructure.ColorOuterClass.Color result = buildPartial();
         if (!result.isInitialized()) {
@@ -407,6 +448,7 @@ public final class ColorOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.ColorOuterClass.Color buildPartial() {
         ubii.dataStructure.ColorOuterClass.Color result = new ubii.dataStructure.ColorOuterClass.Color(this);
         result.r_ = r_;
@@ -417,32 +459,39 @@ public final class ColorOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.ColorOuterClass.Color) {
           return mergeFrom((ubii.dataStructure.ColorOuterClass.Color)other);
@@ -466,14 +515,17 @@ public final class ColorOuterClass {
         if (other.getA() != 0D) {
           setA(other.getA());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -494,13 +546,17 @@ public final class ColorOuterClass {
 
       private double r_ ;
       /**
-       * <code>optional double r = 1;</code>
+       * <code>double r = 1;</code>
+       * @return The r.
        */
+      @java.lang.Override
       public double getR() {
         return r_;
       }
       /**
-       * <code>optional double r = 1;</code>
+       * <code>double r = 1;</code>
+       * @param value The r to set.
+       * @return This builder for chaining.
        */
       public Builder setR(double value) {
         
@@ -509,7 +565,8 @@ public final class ColorOuterClass {
         return this;
       }
       /**
-       * <code>optional double r = 1;</code>
+       * <code>double r = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearR() {
         
@@ -520,13 +577,17 @@ public final class ColorOuterClass {
 
       private double g_ ;
       /**
-       * <code>optional double g = 2;</code>
+       * <code>double g = 2;</code>
+       * @return The g.
        */
+      @java.lang.Override
       public double getG() {
         return g_;
       }
       /**
-       * <code>optional double g = 2;</code>
+       * <code>double g = 2;</code>
+       * @param value The g to set.
+       * @return This builder for chaining.
        */
       public Builder setG(double value) {
         
@@ -535,7 +596,8 @@ public final class ColorOuterClass {
         return this;
       }
       /**
-       * <code>optional double g = 2;</code>
+       * <code>double g = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearG() {
         
@@ -546,13 +608,17 @@ public final class ColorOuterClass {
 
       private double b_ ;
       /**
-       * <code>optional double b = 3;</code>
+       * <code>double b = 3;</code>
+       * @return The b.
        */
+      @java.lang.Override
       public double getB() {
         return b_;
       }
       /**
-       * <code>optional double b = 3;</code>
+       * <code>double b = 3;</code>
+       * @param value The b to set.
+       * @return This builder for chaining.
        */
       public Builder setB(double value) {
         
@@ -561,7 +627,8 @@ public final class ColorOuterClass {
         return this;
       }
       /**
-       * <code>optional double b = 3;</code>
+       * <code>double b = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearB() {
         
@@ -572,13 +639,17 @@ public final class ColorOuterClass {
 
       private double a_ ;
       /**
-       * <code>optional double a = 4;</code>
+       * <code>double a = 4;</code>
+       * @return The a.
        */
+      @java.lang.Override
       public double getA() {
         return a_;
       }
       /**
-       * <code>optional double a = 4;</code>
+       * <code>double a = 4;</code>
+       * @param value The a to set.
+       * @return This builder for chaining.
        */
       public Builder setA(double value) {
         
@@ -587,7 +658,8 @@ public final class ColorOuterClass {
         return this;
       }
       /**
-       * <code>optional double a = 4;</code>
+       * <code>double a = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearA() {
         
@@ -595,14 +667,16 @@ public final class ColorOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -621,11 +695,12 @@ public final class ColorOuterClass {
 
     private static final com.google.protobuf.Parser<Color>
         PARSER = new com.google.protobuf.AbstractParser<Color>() {
+      @java.lang.Override
       public Color parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Color(input, extensionRegistry);
+        return new Color(input, extensionRegistry);
       }
     };
 
@@ -638,6 +713,7 @@ public final class ColorOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public ubii.dataStructure.ColorOuterClass.Color getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -663,18 +739,10 @@ public final class ColorOuterClass {
       "3\n\005Color\022\t\n\001r\030\001 \001(\001\022\t\n\001g\030\002 \001(\001\022\t\n\001b\030\003 \001(" +
       "\001\022\t\n\001a\030\004 \001(\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Color_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Color_fieldAccessorTable = new

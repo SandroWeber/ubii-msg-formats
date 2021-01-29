@@ -19,58 +19,73 @@ public final class Image {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 width = 1;</code>
+     * <code>int32 width = 1;</code>
+     * @return The width.
      */
     int getWidth();
 
     /**
-     * <code>optional int32 height = 2;</code>
+     * <code>int32 height = 2;</code>
+     * @return The height.
      */
     int getHeight();
 
     /**
-     * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * @return The enum numeric value on the wire for dataFormat.
      */
     int getDataFormatValue();
     /**
-     * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * @return The dataFormat.
      */
     ubii.dataStructure.Image.Image2D.DataFormat getDataFormat();
 
     /**
-     * <code>optional bytes data = 4;</code>
+     * <code>bytes data = 4;</code>
+     * @return The data.
      */
     com.google.protobuf.ByteString getData();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.Image2D}
    */
-  public  static final class Image2D extends
+  public static final class Image2D extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Image2D)
       Image2DOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Image2D.newBuilder() to construct.
     private Image2D(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Image2D() {
-      width_ = 0;
-      height_ = 0;
       dataFormat_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Image2D();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Image2D(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -79,12 +94,6 @@ public final class Image {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               width_ = input.readInt32();
@@ -106,6 +115,13 @@ public final class Image {
               data_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -114,6 +130,7 @@ public final class Image {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -122,6 +139,7 @@ public final class Image {
       return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2D_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2D_fieldAccessorTable
@@ -172,6 +190,8 @@ public final class Image {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -179,6 +199,10 @@ public final class Image {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static DataFormat forNumber(int value) {
         switch (value) {
           case 0: return GRAY8;
@@ -202,6 +226,10 @@ public final class Image {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -239,8 +267,10 @@ public final class Image {
     public static final int WIDTH_FIELD_NUMBER = 1;
     private int width_;
     /**
-     * <code>optional int32 width = 1;</code>
+     * <code>int32 width = 1;</code>
+     * @return The width.
      */
+    @java.lang.Override
     public int getWidth() {
       return width_;
     }
@@ -248,8 +278,10 @@ public final class Image {
     public static final int HEIGHT_FIELD_NUMBER = 2;
     private int height_;
     /**
-     * <code>optional int32 height = 2;</code>
+     * <code>int32 height = 2;</code>
+     * @return The height.
      */
+    @java.lang.Override
     public int getHeight() {
       return height_;
     }
@@ -257,15 +289,18 @@ public final class Image {
     public static final int DATA_FORMAT_FIELD_NUMBER = 3;
     private int dataFormat_;
     /**
-     * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * @return The enum numeric value on the wire for dataFormat.
      */
-    public int getDataFormatValue() {
+    @java.lang.Override public int getDataFormatValue() {
       return dataFormat_;
     }
     /**
-     * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+     * @return The dataFormat.
      */
-    public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
+    @java.lang.Override public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
+      @SuppressWarnings("deprecation")
       ubii.dataStructure.Image.Image2D.DataFormat result = ubii.dataStructure.Image.Image2D.DataFormat.valueOf(dataFormat_);
       return result == null ? ubii.dataStructure.Image.Image2D.DataFormat.UNRECOGNIZED : result;
     }
@@ -273,13 +308,16 @@ public final class Image {
     public static final int DATA_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>optional bytes data = 4;</code>
+     * <code>bytes data = 4;</code>
+     * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -289,6 +327,7 @@ public final class Image {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (width_ != 0) {
@@ -303,8 +342,10 @@ public final class Image {
       if (!data_.isEmpty()) {
         output.writeBytes(4, data_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -326,11 +367,11 @@ public final class Image {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, data_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -341,15 +382,15 @@ public final class Image {
       }
       ubii.dataStructure.Image.Image2D other = (ubii.dataStructure.Image.Image2D) obj;
 
-      boolean result = true;
-      result = result && (getWidth()
-          == other.getWidth());
-      result = result && (getHeight()
-          == other.getHeight());
-      result = result && dataFormat_ == other.dataFormat_;
-      result = result && getData()
-          .equals(other.getData());
-      return result;
+      if (getWidth()
+          != other.getWidth()) return false;
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (dataFormat_ != other.dataFormat_) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -358,7 +399,7 @@ public final class Image {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + WIDTH_FIELD_NUMBER;
       hash = (53 * hash) + getWidth();
       hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
@@ -372,6 +413,17 @@ public final class Image {
       return hash;
     }
 
+    public static ubii.dataStructure.Image.Image2D parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.dataStructure.Image.Image2D parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ubii.dataStructure.Image.Image2D parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -431,6 +483,7 @@ public final class Image {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -438,6 +491,7 @@ public final class Image {
     public static Builder newBuilder(ubii.dataStructure.Image.Image2D prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -461,6 +515,7 @@ public final class Image {
         return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2D_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2D_fieldAccessorTable
@@ -483,6 +538,7 @@ public final class Image {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         width_ = 0;
@@ -496,15 +552,18 @@ public final class Image {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2D_descriptor;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2D getDefaultInstanceForType() {
         return ubii.dataStructure.Image.Image2D.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2D build() {
         ubii.dataStructure.Image.Image2D result = buildPartial();
         if (!result.isInitialized()) {
@@ -513,6 +572,7 @@ public final class Image {
         return result;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2D buildPartial() {
         ubii.dataStructure.Image.Image2D result = new ubii.dataStructure.Image.Image2D(this);
         result.width_ = width_;
@@ -523,32 +583,39 @@ public final class Image {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Image.Image2D) {
           return mergeFrom((ubii.dataStructure.Image.Image2D)other);
@@ -572,14 +639,17 @@ public final class Image {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -600,13 +670,17 @@ public final class Image {
 
       private int width_ ;
       /**
-       * <code>optional int32 width = 1;</code>
+       * <code>int32 width = 1;</code>
+       * @return The width.
        */
+      @java.lang.Override
       public int getWidth() {
         return width_;
       }
       /**
-       * <code>optional int32 width = 1;</code>
+       * <code>int32 width = 1;</code>
+       * @param value The width to set.
+       * @return This builder for chaining.
        */
       public Builder setWidth(int value) {
         
@@ -615,7 +689,8 @@ public final class Image {
         return this;
       }
       /**
-       * <code>optional int32 width = 1;</code>
+       * <code>int32 width = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearWidth() {
         
@@ -626,13 +701,17 @@ public final class Image {
 
       private int height_ ;
       /**
-       * <code>optional int32 height = 2;</code>
+       * <code>int32 height = 2;</code>
+       * @return The height.
        */
+      @java.lang.Override
       public int getHeight() {
         return height_;
       }
       /**
-       * <code>optional int32 height = 2;</code>
+       * <code>int32 height = 2;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
        */
       public Builder setHeight(int value) {
         
@@ -641,7 +720,8 @@ public final class Image {
         return this;
       }
       /**
-       * <code>optional int32 height = 2;</code>
+       * <code>int32 height = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHeight() {
         
@@ -652,28 +732,37 @@ public final class Image {
 
       private int dataFormat_ = 0;
       /**
-       * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * @return The enum numeric value on the wire for dataFormat.
        */
-      public int getDataFormatValue() {
+      @java.lang.Override public int getDataFormatValue() {
         return dataFormat_;
       }
       /**
-       * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * @param value The enum numeric value on the wire for dataFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setDataFormatValue(int value) {
+        
         dataFormat_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * @return The dataFormat.
        */
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
+        @SuppressWarnings("deprecation")
         ubii.dataStructure.Image.Image2D.DataFormat result = ubii.dataStructure.Image.Image2D.DataFormat.valueOf(dataFormat_);
         return result == null ? ubii.dataStructure.Image.Image2D.DataFormat.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * @param value The dataFormat to set.
+       * @return This builder for chaining.
        */
       public Builder setDataFormat(ubii.dataStructure.Image.Image2D.DataFormat value) {
         if (value == null) {
@@ -685,7 +774,8 @@ public final class Image {
         return this;
       }
       /**
-       * <code>optional .ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDataFormat() {
         
@@ -696,13 +786,17 @@ public final class Image {
 
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes data = 4;</code>
+       * <code>bytes data = 4;</code>
+       * @return The data.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
-       * <code>optional bytes data = 4;</code>
+       * <code>bytes data = 4;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -714,7 +808,8 @@ public final class Image {
         return this;
       }
       /**
-       * <code>optional bytes data = 4;</code>
+       * <code>bytes data = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearData() {
         
@@ -722,14 +817,16 @@ public final class Image {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -748,11 +845,12 @@ public final class Image {
 
     private static final com.google.protobuf.Parser<Image2D>
         PARSER = new com.google.protobuf.AbstractParser<Image2D>() {
+      @java.lang.Override
       public Image2D parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Image2D(input, extensionRegistry);
+        return new Image2D(input, extensionRegistry);
       }
     };
 
@@ -765,6 +863,7 @@ public final class Image {
       return PARSER;
     }
 
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2D getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -802,10 +901,11 @@ public final class Image {
   /**
    * Protobuf type {@code ubii.dataStructure.Image2DList}
    */
-  public  static final class Image2DList extends
+  public static final class Image2DList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Image2DList)
       Image2DListOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Image2DList.newBuilder() to construct.
     private Image2DList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -815,16 +915,28 @@ public final class Image {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Image2DList();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Image2DList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -833,19 +945,20 @@ public final class Image {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 elements_ = new java.util.ArrayList<ubii.dataStructure.Image.Image2D>();
                 mutable_bitField0_ |= 0x00000001;
               }
               elements_.add(
                   input.readMessage(ubii.dataStructure.Image.Image2D.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -856,9 +969,10 @@ public final class Image {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -867,6 +981,7 @@ public final class Image {
       return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2DList_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2DList_fieldAccessorTable
@@ -879,12 +994,14 @@ public final class Image {
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.dataStructure.Image.Image2D> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.dataStructure.Image.Image2DOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -892,24 +1009,28 @@ public final class Image {
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2D getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2DOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -919,13 +1040,16 @@ public final class Image {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < elements_.size(); i++) {
         output.writeMessage(1, elements_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -935,11 +1059,11 @@ public final class Image {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, elements_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -950,10 +1074,10 @@ public final class Image {
       }
       ubii.dataStructure.Image.Image2DList other = (ubii.dataStructure.Image.Image2DList) obj;
 
-      boolean result = true;
-      result = result && getElementsList()
-          .equals(other.getElementsList());
-      return result;
+      if (!getElementsList()
+          .equals(other.getElementsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -962,7 +1086,7 @@ public final class Image {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getElementsCount() > 0) {
         hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getElementsList().hashCode();
@@ -972,6 +1096,17 @@ public final class Image {
       return hash;
     }
 
+    public static ubii.dataStructure.Image.Image2DList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.dataStructure.Image.Image2DList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ubii.dataStructure.Image.Image2DList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1031,6 +1166,7 @@ public final class Image {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1038,6 +1174,7 @@ public final class Image {
     public static Builder newBuilder(ubii.dataStructure.Image.Image2DList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1061,6 +1198,7 @@ public final class Image {
         return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2DList_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2DList_fieldAccessorTable
@@ -1084,6 +1222,7 @@ public final class Image {
           getElementsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (elementsBuilder_ == null) {
@@ -1095,15 +1234,18 @@ public final class Image {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.dataStructure.Image.internal_static_ubii_dataStructure_Image2DList_descriptor;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2DList getDefaultInstanceForType() {
         return ubii.dataStructure.Image.Image2DList.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2DList build() {
         ubii.dataStructure.Image.Image2DList result = buildPartial();
         if (!result.isInitialized()) {
@@ -1112,11 +1254,12 @@ public final class Image {
         return result;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Image.Image2DList buildPartial() {
         ubii.dataStructure.Image.Image2DList result = new ubii.dataStructure.Image.Image2DList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1128,32 +1271,39 @@ public final class Image {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Image.Image2DList) {
           return mergeFrom((ubii.dataStructure.Image.Image2DList)other);
@@ -1191,14 +1341,17 @@ public final class Image {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1221,7 +1374,7 @@ public final class Image {
       private java.util.List<ubii.dataStructure.Image.Image2D> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           elements_ = new java.util.ArrayList<ubii.dataStructure.Image.Image2D>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1450,21 +1603,23 @@ public final class Image {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.dataStructure.Image.Image2D, ubii.dataStructure.Image.Image2D.Builder, ubii.dataStructure.Image.Image2DOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
         }
         return elementsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1483,11 +1638,12 @@ public final class Image {
 
     private static final com.google.protobuf.Parser<Image2DList>
         PARSER = new com.google.protobuf.AbstractParser<Image2DList>() {
+      @java.lang.Override
       public Image2DList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Image2DList(input, extensionRegistry);
+        return new Image2DList(input, extensionRegistry);
       }
     };
 
@@ -1500,6 +1656,7 @@ public final class Image {
       return PARSER;
     }
 
+    @java.lang.Override
     public ubii.dataStructure.Image.Image2DList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1534,18 +1691,10 @@ public final class Image {
       "8\020\002\"<\n\013Image2DList\022-\n\010elements\030\001 \003(\0132\033.u" +
       "bii.dataStructure.Image2Db\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Image2D_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Image2D_fieldAccessorTable = new

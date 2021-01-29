@@ -19,126 +19,138 @@ public final class Matrix4X4 {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional double m00 = 1;</code>
+     * <code>double m00 = 1;</code>
+     * @return The m00.
      */
     double getM00();
 
     /**
-     * <code>optional double m01 = 2;</code>
+     * <code>double m01 = 2;</code>
+     * @return The m01.
      */
     double getM01();
 
     /**
-     * <code>optional double m02 = 3;</code>
+     * <code>double m02 = 3;</code>
+     * @return The m02.
      */
     double getM02();
 
     /**
-     * <code>optional double m03 = 4;</code>
+     * <code>double m03 = 4;</code>
+     * @return The m03.
      */
     double getM03();
 
     /**
-     * <code>optional double m10 = 5;</code>
+     * <code>double m10 = 5;</code>
+     * @return The m10.
      */
     double getM10();
 
     /**
-     * <code>optional double m11 = 6;</code>
+     * <code>double m11 = 6;</code>
+     * @return The m11.
      */
     double getM11();
 
     /**
-     * <code>optional double m12 = 7;</code>
+     * <code>double m12 = 7;</code>
+     * @return The m12.
      */
     double getM12();
 
     /**
-     * <code>optional double m13 = 8;</code>
+     * <code>double m13 = 8;</code>
+     * @return The m13.
      */
     double getM13();
 
     /**
-     * <code>optional double m20 = 9;</code>
+     * <code>double m20 = 9;</code>
+     * @return The m20.
      */
     double getM20();
 
     /**
-     * <code>optional double m21 = 10;</code>
+     * <code>double m21 = 10;</code>
+     * @return The m21.
      */
     double getM21();
 
     /**
-     * <code>optional double m22 = 11;</code>
+     * <code>double m22 = 11;</code>
+     * @return The m22.
      */
     double getM22();
 
     /**
-     * <code>optional double m23 = 12;</code>
+     * <code>double m23 = 12;</code>
+     * @return The m23.
      */
     double getM23();
 
     /**
-     * <code>optional double m30 = 13;</code>
+     * <code>double m30 = 13;</code>
+     * @return The m30.
      */
     double getM30();
 
     /**
-     * <code>optional double m31 = 14;</code>
+     * <code>double m31 = 14;</code>
+     * @return The m31.
      */
     double getM31();
 
     /**
-     * <code>optional double m32 = 15;</code>
+     * <code>double m32 = 15;</code>
+     * @return The m32.
      */
     double getM32();
 
     /**
-     * <code>optional double m33 = 16;</code>
+     * <code>double m33 = 16;</code>
+     * @return The m33.
      */
     double getM33();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.Matrix4x4}
    */
-  public  static final class Matrix4x4 extends
+  public static final class Matrix4x4 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Matrix4x4)
       Matrix4x4OrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Matrix4x4.newBuilder() to construct.
     private Matrix4x4(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Matrix4x4() {
-      m00_ = 0D;
-      m01_ = 0D;
-      m02_ = 0D;
-      m03_ = 0D;
-      m10_ = 0D;
-      m11_ = 0D;
-      m12_ = 0D;
-      m13_ = 0D;
-      m20_ = 0D;
-      m21_ = 0D;
-      m22_ = 0D;
-      m23_ = 0D;
-      m30_ = 0D;
-      m31_ = 0D;
-      m32_ = 0D;
-      m33_ = 0D;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Matrix4x4();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Matrix4x4(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      int mutable_bitField0_ = 0;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -147,12 +159,6 @@ public final class Matrix4X4 {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 9: {
 
               m00_ = input.readDouble();
@@ -233,6 +239,13 @@ public final class Matrix4X4 {
               m33_ = input.readDouble();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -241,6 +254,7 @@ public final class Matrix4X4 {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -249,6 +263,7 @@ public final class Matrix4X4 {
       return ubii.dataStructure.Matrix4X4.internal_static_ubii_dataStructure_Matrix4x4_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ubii.dataStructure.Matrix4X4.internal_static_ubii_dataStructure_Matrix4x4_fieldAccessorTable
@@ -259,8 +274,10 @@ public final class Matrix4X4 {
     public static final int M00_FIELD_NUMBER = 1;
     private double m00_;
     /**
-     * <code>optional double m00 = 1;</code>
+     * <code>double m00 = 1;</code>
+     * @return The m00.
      */
+    @java.lang.Override
     public double getM00() {
       return m00_;
     }
@@ -268,8 +285,10 @@ public final class Matrix4X4 {
     public static final int M01_FIELD_NUMBER = 2;
     private double m01_;
     /**
-     * <code>optional double m01 = 2;</code>
+     * <code>double m01 = 2;</code>
+     * @return The m01.
      */
+    @java.lang.Override
     public double getM01() {
       return m01_;
     }
@@ -277,8 +296,10 @@ public final class Matrix4X4 {
     public static final int M02_FIELD_NUMBER = 3;
     private double m02_;
     /**
-     * <code>optional double m02 = 3;</code>
+     * <code>double m02 = 3;</code>
+     * @return The m02.
      */
+    @java.lang.Override
     public double getM02() {
       return m02_;
     }
@@ -286,8 +307,10 @@ public final class Matrix4X4 {
     public static final int M03_FIELD_NUMBER = 4;
     private double m03_;
     /**
-     * <code>optional double m03 = 4;</code>
+     * <code>double m03 = 4;</code>
+     * @return The m03.
      */
+    @java.lang.Override
     public double getM03() {
       return m03_;
     }
@@ -295,8 +318,10 @@ public final class Matrix4X4 {
     public static final int M10_FIELD_NUMBER = 5;
     private double m10_;
     /**
-     * <code>optional double m10 = 5;</code>
+     * <code>double m10 = 5;</code>
+     * @return The m10.
      */
+    @java.lang.Override
     public double getM10() {
       return m10_;
     }
@@ -304,8 +329,10 @@ public final class Matrix4X4 {
     public static final int M11_FIELD_NUMBER = 6;
     private double m11_;
     /**
-     * <code>optional double m11 = 6;</code>
+     * <code>double m11 = 6;</code>
+     * @return The m11.
      */
+    @java.lang.Override
     public double getM11() {
       return m11_;
     }
@@ -313,8 +340,10 @@ public final class Matrix4X4 {
     public static final int M12_FIELD_NUMBER = 7;
     private double m12_;
     /**
-     * <code>optional double m12 = 7;</code>
+     * <code>double m12 = 7;</code>
+     * @return The m12.
      */
+    @java.lang.Override
     public double getM12() {
       return m12_;
     }
@@ -322,8 +351,10 @@ public final class Matrix4X4 {
     public static final int M13_FIELD_NUMBER = 8;
     private double m13_;
     /**
-     * <code>optional double m13 = 8;</code>
+     * <code>double m13 = 8;</code>
+     * @return The m13.
      */
+    @java.lang.Override
     public double getM13() {
       return m13_;
     }
@@ -331,8 +362,10 @@ public final class Matrix4X4 {
     public static final int M20_FIELD_NUMBER = 9;
     private double m20_;
     /**
-     * <code>optional double m20 = 9;</code>
+     * <code>double m20 = 9;</code>
+     * @return The m20.
      */
+    @java.lang.Override
     public double getM20() {
       return m20_;
     }
@@ -340,8 +373,10 @@ public final class Matrix4X4 {
     public static final int M21_FIELD_NUMBER = 10;
     private double m21_;
     /**
-     * <code>optional double m21 = 10;</code>
+     * <code>double m21 = 10;</code>
+     * @return The m21.
      */
+    @java.lang.Override
     public double getM21() {
       return m21_;
     }
@@ -349,8 +384,10 @@ public final class Matrix4X4 {
     public static final int M22_FIELD_NUMBER = 11;
     private double m22_;
     /**
-     * <code>optional double m22 = 11;</code>
+     * <code>double m22 = 11;</code>
+     * @return The m22.
      */
+    @java.lang.Override
     public double getM22() {
       return m22_;
     }
@@ -358,8 +395,10 @@ public final class Matrix4X4 {
     public static final int M23_FIELD_NUMBER = 12;
     private double m23_;
     /**
-     * <code>optional double m23 = 12;</code>
+     * <code>double m23 = 12;</code>
+     * @return The m23.
      */
+    @java.lang.Override
     public double getM23() {
       return m23_;
     }
@@ -367,8 +406,10 @@ public final class Matrix4X4 {
     public static final int M30_FIELD_NUMBER = 13;
     private double m30_;
     /**
-     * <code>optional double m30 = 13;</code>
+     * <code>double m30 = 13;</code>
+     * @return The m30.
      */
+    @java.lang.Override
     public double getM30() {
       return m30_;
     }
@@ -376,8 +417,10 @@ public final class Matrix4X4 {
     public static final int M31_FIELD_NUMBER = 14;
     private double m31_;
     /**
-     * <code>optional double m31 = 14;</code>
+     * <code>double m31 = 14;</code>
+     * @return The m31.
      */
+    @java.lang.Override
     public double getM31() {
       return m31_;
     }
@@ -385,8 +428,10 @@ public final class Matrix4X4 {
     public static final int M32_FIELD_NUMBER = 15;
     private double m32_;
     /**
-     * <code>optional double m32 = 15;</code>
+     * <code>double m32 = 15;</code>
+     * @return The m32.
      */
+    @java.lang.Override
     public double getM32() {
       return m32_;
     }
@@ -394,13 +439,16 @@ public final class Matrix4X4 {
     public static final int M33_FIELD_NUMBER = 16;
     private double m33_;
     /**
-     * <code>optional double m33 = 16;</code>
+     * <code>double m33 = 16;</code>
+     * @return The m33.
      */
+    @java.lang.Override
     public double getM33() {
       return m33_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -410,6 +458,7 @@ public final class Matrix4X4 {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (m00_ != 0D) {
@@ -460,8 +509,10 @@ public final class Matrix4X4 {
       if (m33_ != 0D) {
         output.writeDouble(16, m33_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -531,11 +582,11 @@ public final class Matrix4X4 {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(16, m33_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -546,72 +597,56 @@ public final class Matrix4X4 {
       }
       ubii.dataStructure.Matrix4X4.Matrix4x4 other = (ubii.dataStructure.Matrix4X4.Matrix4x4) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM00())
-          == java.lang.Double.doubleToLongBits(
-              other.getM00()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM01())
-          == java.lang.Double.doubleToLongBits(
-              other.getM01()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM02())
-          == java.lang.Double.doubleToLongBits(
-              other.getM02()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM03())
-          == java.lang.Double.doubleToLongBits(
-              other.getM03()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM10())
-          == java.lang.Double.doubleToLongBits(
-              other.getM10()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM11())
-          == java.lang.Double.doubleToLongBits(
-              other.getM11()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM12())
-          == java.lang.Double.doubleToLongBits(
-              other.getM12()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM13())
-          == java.lang.Double.doubleToLongBits(
-              other.getM13()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM20())
-          == java.lang.Double.doubleToLongBits(
-              other.getM20()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM21())
-          == java.lang.Double.doubleToLongBits(
-              other.getM21()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM22())
-          == java.lang.Double.doubleToLongBits(
-              other.getM22()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM23())
-          == java.lang.Double.doubleToLongBits(
-              other.getM23()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM30())
-          == java.lang.Double.doubleToLongBits(
-              other.getM30()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM31())
-          == java.lang.Double.doubleToLongBits(
-              other.getM31()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM32())
-          == java.lang.Double.doubleToLongBits(
-              other.getM32()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getM33())
-          == java.lang.Double.doubleToLongBits(
-              other.getM33()));
-      return result;
+      if (java.lang.Double.doubleToLongBits(getM00())
+          != java.lang.Double.doubleToLongBits(
+              other.getM00())) return false;
+      if (java.lang.Double.doubleToLongBits(getM01())
+          != java.lang.Double.doubleToLongBits(
+              other.getM01())) return false;
+      if (java.lang.Double.doubleToLongBits(getM02())
+          != java.lang.Double.doubleToLongBits(
+              other.getM02())) return false;
+      if (java.lang.Double.doubleToLongBits(getM03())
+          != java.lang.Double.doubleToLongBits(
+              other.getM03())) return false;
+      if (java.lang.Double.doubleToLongBits(getM10())
+          != java.lang.Double.doubleToLongBits(
+              other.getM10())) return false;
+      if (java.lang.Double.doubleToLongBits(getM11())
+          != java.lang.Double.doubleToLongBits(
+              other.getM11())) return false;
+      if (java.lang.Double.doubleToLongBits(getM12())
+          != java.lang.Double.doubleToLongBits(
+              other.getM12())) return false;
+      if (java.lang.Double.doubleToLongBits(getM13())
+          != java.lang.Double.doubleToLongBits(
+              other.getM13())) return false;
+      if (java.lang.Double.doubleToLongBits(getM20())
+          != java.lang.Double.doubleToLongBits(
+              other.getM20())) return false;
+      if (java.lang.Double.doubleToLongBits(getM21())
+          != java.lang.Double.doubleToLongBits(
+              other.getM21())) return false;
+      if (java.lang.Double.doubleToLongBits(getM22())
+          != java.lang.Double.doubleToLongBits(
+              other.getM22())) return false;
+      if (java.lang.Double.doubleToLongBits(getM23())
+          != java.lang.Double.doubleToLongBits(
+              other.getM23())) return false;
+      if (java.lang.Double.doubleToLongBits(getM30())
+          != java.lang.Double.doubleToLongBits(
+              other.getM30())) return false;
+      if (java.lang.Double.doubleToLongBits(getM31())
+          != java.lang.Double.doubleToLongBits(
+              other.getM31())) return false;
+      if (java.lang.Double.doubleToLongBits(getM32())
+          != java.lang.Double.doubleToLongBits(
+              other.getM32())) return false;
+      if (java.lang.Double.doubleToLongBits(getM33())
+          != java.lang.Double.doubleToLongBits(
+              other.getM33())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -620,7 +655,7 @@ public final class Matrix4X4 {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + M00_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getM00()));
@@ -674,6 +709,17 @@ public final class Matrix4X4 {
       return hash;
     }
 
+    public static ubii.dataStructure.Matrix4X4.Matrix4x4 parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ubii.dataStructure.Matrix4X4.Matrix4x4 parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ubii.dataStructure.Matrix4X4.Matrix4x4 parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -733,6 +779,7 @@ public final class Matrix4X4 {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -740,6 +787,7 @@ public final class Matrix4X4 {
     public static Builder newBuilder(ubii.dataStructure.Matrix4X4.Matrix4x4 prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -763,6 +811,7 @@ public final class Matrix4X4 {
         return ubii.dataStructure.Matrix4X4.internal_static_ubii_dataStructure_Matrix4x4_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ubii.dataStructure.Matrix4X4.internal_static_ubii_dataStructure_Matrix4x4_fieldAccessorTable
@@ -785,6 +834,7 @@ public final class Matrix4X4 {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         m00_ = 0D;
@@ -822,15 +872,18 @@ public final class Matrix4X4 {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return ubii.dataStructure.Matrix4X4.internal_static_ubii_dataStructure_Matrix4x4_descriptor;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Matrix4X4.Matrix4x4 getDefaultInstanceForType() {
         return ubii.dataStructure.Matrix4X4.Matrix4x4.getDefaultInstance();
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Matrix4X4.Matrix4x4 build() {
         ubii.dataStructure.Matrix4X4.Matrix4x4 result = buildPartial();
         if (!result.isInitialized()) {
@@ -839,6 +892,7 @@ public final class Matrix4X4 {
         return result;
       }
 
+      @java.lang.Override
       public ubii.dataStructure.Matrix4X4.Matrix4x4 buildPartial() {
         ubii.dataStructure.Matrix4X4.Matrix4x4 result = new ubii.dataStructure.Matrix4X4.Matrix4x4(this);
         result.m00_ = m00_;
@@ -861,32 +915,39 @@ public final class Matrix4X4 {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.Matrix4X4.Matrix4x4) {
           return mergeFrom((ubii.dataStructure.Matrix4X4.Matrix4x4)other);
@@ -946,14 +1007,17 @@ public final class Matrix4X4 {
         if (other.getM33() != 0D) {
           setM33(other.getM33());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -974,13 +1038,17 @@ public final class Matrix4X4 {
 
       private double m00_ ;
       /**
-       * <code>optional double m00 = 1;</code>
+       * <code>double m00 = 1;</code>
+       * @return The m00.
        */
+      @java.lang.Override
       public double getM00() {
         return m00_;
       }
       /**
-       * <code>optional double m00 = 1;</code>
+       * <code>double m00 = 1;</code>
+       * @param value The m00 to set.
+       * @return This builder for chaining.
        */
       public Builder setM00(double value) {
         
@@ -989,7 +1057,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m00 = 1;</code>
+       * <code>double m00 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM00() {
         
@@ -1000,13 +1069,17 @@ public final class Matrix4X4 {
 
       private double m01_ ;
       /**
-       * <code>optional double m01 = 2;</code>
+       * <code>double m01 = 2;</code>
+       * @return The m01.
        */
+      @java.lang.Override
       public double getM01() {
         return m01_;
       }
       /**
-       * <code>optional double m01 = 2;</code>
+       * <code>double m01 = 2;</code>
+       * @param value The m01 to set.
+       * @return This builder for chaining.
        */
       public Builder setM01(double value) {
         
@@ -1015,7 +1088,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m01 = 2;</code>
+       * <code>double m01 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM01() {
         
@@ -1026,13 +1100,17 @@ public final class Matrix4X4 {
 
       private double m02_ ;
       /**
-       * <code>optional double m02 = 3;</code>
+       * <code>double m02 = 3;</code>
+       * @return The m02.
        */
+      @java.lang.Override
       public double getM02() {
         return m02_;
       }
       /**
-       * <code>optional double m02 = 3;</code>
+       * <code>double m02 = 3;</code>
+       * @param value The m02 to set.
+       * @return This builder for chaining.
        */
       public Builder setM02(double value) {
         
@@ -1041,7 +1119,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m02 = 3;</code>
+       * <code>double m02 = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM02() {
         
@@ -1052,13 +1131,17 @@ public final class Matrix4X4 {
 
       private double m03_ ;
       /**
-       * <code>optional double m03 = 4;</code>
+       * <code>double m03 = 4;</code>
+       * @return The m03.
        */
+      @java.lang.Override
       public double getM03() {
         return m03_;
       }
       /**
-       * <code>optional double m03 = 4;</code>
+       * <code>double m03 = 4;</code>
+       * @param value The m03 to set.
+       * @return This builder for chaining.
        */
       public Builder setM03(double value) {
         
@@ -1067,7 +1150,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m03 = 4;</code>
+       * <code>double m03 = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM03() {
         
@@ -1078,13 +1162,17 @@ public final class Matrix4X4 {
 
       private double m10_ ;
       /**
-       * <code>optional double m10 = 5;</code>
+       * <code>double m10 = 5;</code>
+       * @return The m10.
        */
+      @java.lang.Override
       public double getM10() {
         return m10_;
       }
       /**
-       * <code>optional double m10 = 5;</code>
+       * <code>double m10 = 5;</code>
+       * @param value The m10 to set.
+       * @return This builder for chaining.
        */
       public Builder setM10(double value) {
         
@@ -1093,7 +1181,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m10 = 5;</code>
+       * <code>double m10 = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM10() {
         
@@ -1104,13 +1193,17 @@ public final class Matrix4X4 {
 
       private double m11_ ;
       /**
-       * <code>optional double m11 = 6;</code>
+       * <code>double m11 = 6;</code>
+       * @return The m11.
        */
+      @java.lang.Override
       public double getM11() {
         return m11_;
       }
       /**
-       * <code>optional double m11 = 6;</code>
+       * <code>double m11 = 6;</code>
+       * @param value The m11 to set.
+       * @return This builder for chaining.
        */
       public Builder setM11(double value) {
         
@@ -1119,7 +1212,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m11 = 6;</code>
+       * <code>double m11 = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM11() {
         
@@ -1130,13 +1224,17 @@ public final class Matrix4X4 {
 
       private double m12_ ;
       /**
-       * <code>optional double m12 = 7;</code>
+       * <code>double m12 = 7;</code>
+       * @return The m12.
        */
+      @java.lang.Override
       public double getM12() {
         return m12_;
       }
       /**
-       * <code>optional double m12 = 7;</code>
+       * <code>double m12 = 7;</code>
+       * @param value The m12 to set.
+       * @return This builder for chaining.
        */
       public Builder setM12(double value) {
         
@@ -1145,7 +1243,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m12 = 7;</code>
+       * <code>double m12 = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM12() {
         
@@ -1156,13 +1255,17 @@ public final class Matrix4X4 {
 
       private double m13_ ;
       /**
-       * <code>optional double m13 = 8;</code>
+       * <code>double m13 = 8;</code>
+       * @return The m13.
        */
+      @java.lang.Override
       public double getM13() {
         return m13_;
       }
       /**
-       * <code>optional double m13 = 8;</code>
+       * <code>double m13 = 8;</code>
+       * @param value The m13 to set.
+       * @return This builder for chaining.
        */
       public Builder setM13(double value) {
         
@@ -1171,7 +1274,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m13 = 8;</code>
+       * <code>double m13 = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM13() {
         
@@ -1182,13 +1286,17 @@ public final class Matrix4X4 {
 
       private double m20_ ;
       /**
-       * <code>optional double m20 = 9;</code>
+       * <code>double m20 = 9;</code>
+       * @return The m20.
        */
+      @java.lang.Override
       public double getM20() {
         return m20_;
       }
       /**
-       * <code>optional double m20 = 9;</code>
+       * <code>double m20 = 9;</code>
+       * @param value The m20 to set.
+       * @return This builder for chaining.
        */
       public Builder setM20(double value) {
         
@@ -1197,7 +1305,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m20 = 9;</code>
+       * <code>double m20 = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM20() {
         
@@ -1208,13 +1317,17 @@ public final class Matrix4X4 {
 
       private double m21_ ;
       /**
-       * <code>optional double m21 = 10;</code>
+       * <code>double m21 = 10;</code>
+       * @return The m21.
        */
+      @java.lang.Override
       public double getM21() {
         return m21_;
       }
       /**
-       * <code>optional double m21 = 10;</code>
+       * <code>double m21 = 10;</code>
+       * @param value The m21 to set.
+       * @return This builder for chaining.
        */
       public Builder setM21(double value) {
         
@@ -1223,7 +1336,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m21 = 10;</code>
+       * <code>double m21 = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM21() {
         
@@ -1234,13 +1348,17 @@ public final class Matrix4X4 {
 
       private double m22_ ;
       /**
-       * <code>optional double m22 = 11;</code>
+       * <code>double m22 = 11;</code>
+       * @return The m22.
        */
+      @java.lang.Override
       public double getM22() {
         return m22_;
       }
       /**
-       * <code>optional double m22 = 11;</code>
+       * <code>double m22 = 11;</code>
+       * @param value The m22 to set.
+       * @return This builder for chaining.
        */
       public Builder setM22(double value) {
         
@@ -1249,7 +1367,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m22 = 11;</code>
+       * <code>double m22 = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM22() {
         
@@ -1260,13 +1379,17 @@ public final class Matrix4X4 {
 
       private double m23_ ;
       /**
-       * <code>optional double m23 = 12;</code>
+       * <code>double m23 = 12;</code>
+       * @return The m23.
        */
+      @java.lang.Override
       public double getM23() {
         return m23_;
       }
       /**
-       * <code>optional double m23 = 12;</code>
+       * <code>double m23 = 12;</code>
+       * @param value The m23 to set.
+       * @return This builder for chaining.
        */
       public Builder setM23(double value) {
         
@@ -1275,7 +1398,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m23 = 12;</code>
+       * <code>double m23 = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM23() {
         
@@ -1286,13 +1410,17 @@ public final class Matrix4X4 {
 
       private double m30_ ;
       /**
-       * <code>optional double m30 = 13;</code>
+       * <code>double m30 = 13;</code>
+       * @return The m30.
        */
+      @java.lang.Override
       public double getM30() {
         return m30_;
       }
       /**
-       * <code>optional double m30 = 13;</code>
+       * <code>double m30 = 13;</code>
+       * @param value The m30 to set.
+       * @return This builder for chaining.
        */
       public Builder setM30(double value) {
         
@@ -1301,7 +1429,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m30 = 13;</code>
+       * <code>double m30 = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM30() {
         
@@ -1312,13 +1441,17 @@ public final class Matrix4X4 {
 
       private double m31_ ;
       /**
-       * <code>optional double m31 = 14;</code>
+       * <code>double m31 = 14;</code>
+       * @return The m31.
        */
+      @java.lang.Override
       public double getM31() {
         return m31_;
       }
       /**
-       * <code>optional double m31 = 14;</code>
+       * <code>double m31 = 14;</code>
+       * @param value The m31 to set.
+       * @return This builder for chaining.
        */
       public Builder setM31(double value) {
         
@@ -1327,7 +1460,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m31 = 14;</code>
+       * <code>double m31 = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM31() {
         
@@ -1338,13 +1472,17 @@ public final class Matrix4X4 {
 
       private double m32_ ;
       /**
-       * <code>optional double m32 = 15;</code>
+       * <code>double m32 = 15;</code>
+       * @return The m32.
        */
+      @java.lang.Override
       public double getM32() {
         return m32_;
       }
       /**
-       * <code>optional double m32 = 15;</code>
+       * <code>double m32 = 15;</code>
+       * @param value The m32 to set.
+       * @return This builder for chaining.
        */
       public Builder setM32(double value) {
         
@@ -1353,7 +1491,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m32 = 15;</code>
+       * <code>double m32 = 15;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM32() {
         
@@ -1364,13 +1503,17 @@ public final class Matrix4X4 {
 
       private double m33_ ;
       /**
-       * <code>optional double m33 = 16;</code>
+       * <code>double m33 = 16;</code>
+       * @return The m33.
        */
+      @java.lang.Override
       public double getM33() {
         return m33_;
       }
       /**
-       * <code>optional double m33 = 16;</code>
+       * <code>double m33 = 16;</code>
+       * @param value The m33 to set.
+       * @return This builder for chaining.
        */
       public Builder setM33(double value) {
         
@@ -1379,7 +1522,8 @@ public final class Matrix4X4 {
         return this;
       }
       /**
-       * <code>optional double m33 = 16;</code>
+       * <code>double m33 = 16;</code>
+       * @return This builder for chaining.
        */
       public Builder clearM33() {
         
@@ -1387,14 +1531,16 @@ public final class Matrix4X4 {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1413,11 +1559,12 @@ public final class Matrix4X4 {
 
     private static final com.google.protobuf.Parser<Matrix4x4>
         PARSER = new com.google.protobuf.AbstractParser<Matrix4x4>() {
+      @java.lang.Override
       public Matrix4x4 parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Matrix4x4(input, extensionRegistry);
+        return new Matrix4x4(input, extensionRegistry);
       }
     };
 
@@ -1430,6 +1577,7 @@ public final class Matrix4X4 {
       return PARSER;
     }
 
+    @java.lang.Override
     public ubii.dataStructure.Matrix4X4.Matrix4x4 getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1459,18 +1607,10 @@ public final class Matrix4X4 {
       "\022\013\n\003m23\030\014 \001(\001\022\013\n\003m30\030\r \001(\001\022\013\n\003m31\030\016 \001(\001\022" +
       "\013\n\003m32\030\017 \001(\001\022\013\n\003m33\030\020 \001(\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_Matrix4x4_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Matrix4x4_fieldAccessorTable = new
