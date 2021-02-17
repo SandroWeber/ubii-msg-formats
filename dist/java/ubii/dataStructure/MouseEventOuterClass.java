@@ -38,7 +38,7 @@ public final class MouseEventOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.MouseEvent}
    */
-  public static final class MouseEvent extends
+  public  static final class MouseEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.MouseEvent)
       MouseEventOrBuilder {
@@ -130,14 +130,14 @@ public final class MouseEventOuterClass {
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getTypeValue() {
+    public int getTypeValue() {
       return type_;
     }
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
      * @return The type.
      */
-    @java.lang.Override public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
+    public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
       @SuppressWarnings("deprecation")
       ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType result = ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.valueOf(type_);
       return result == null ? ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.UNRECOGNIZED : result;
@@ -149,7 +149,6 @@ public final class MouseEventOuterClass {
      * <code>int32 button = 2;</code>
      * @return The button.
      */
-    @java.lang.Override
     public int getButton() {
       return button_;
     }
@@ -477,7 +476,7 @@ public final class MouseEventOuterClass {
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getTypeValue() {
+      public int getTypeValue() {
         return type_;
       }
       /**
@@ -486,7 +485,6 @@ public final class MouseEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        
         type_ = value;
         onChanged();
         return this;
@@ -495,7 +493,6 @@ public final class MouseEventOuterClass {
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
        * @return The type.
        */
-      @java.lang.Override
       public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
         @SuppressWarnings("deprecation")
         ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType result = ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.valueOf(type_);
@@ -531,7 +528,6 @@ public final class MouseEventOuterClass {
        * <code>int32 button = 2;</code>
        * @return The button.
        */
-      @java.lang.Override
       public int getButton() {
         return button_;
       }

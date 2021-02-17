@@ -35,6 +35,7 @@ static void InitDefaultsscc_info_Image2D_proto_2ftopicData_2ftopicDataRecord_2fd
     new (ptr) ::ubii::dataStructure::Image2D();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::Image2D::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Image2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto =
@@ -48,6 +49,7 @@ static void InitDefaultsscc_info_Image2DList_proto_2ftopicData_2ftopicDataRecord
     new (ptr) ::ubii::dataStructure::Image2DList();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::Image2DList::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Image2DList_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto =
@@ -102,15 +104,16 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Image2DList_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto, "proto/topicData/topicDataRecord/dataStructure/image.proto", 313,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto, "proto/topicData/topicDataRecord/dataStructure/image.proto", 313,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto, 2, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Image2D_DataFormat_descriptor() {
@@ -139,23 +142,24 @@ constexpr int Image2D::DataFormat_ARRAYSIZE;
 
 // ===================================================================
 
+void Image2D::InitAsDefaultInstance() {
+}
 class Image2D::_Internal {
  public:
 };
 
-Image2D::Image2D(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Image2D::Image2D()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.Image2D)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Image2D)
 }
 Image2D::Image2D(const Image2D& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_data().empty()) {
-    data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_data(), 
-      GetArena());
+    data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_);
   }
   ::memcpy(&width_, &from.width_,
     static_cast<size_t>(reinterpret_cast<char*>(&data_format_) -
@@ -166,29 +170,20 @@ Image2D::Image2D(const Image2D& from)
 void Image2D::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Image2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fimage_2eproto.base);
   data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&width_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&data_format_) -
+  ::memset(&width_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&data_format_) -
       reinterpret_cast<char*>(&width_)) + sizeof(data_format_));
 }
 
 Image2D::~Image2D() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.Image2D)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Image2D::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void Image2D::ArenaDtor(void* object) {
-  Image2D* _this = reinterpret_cast< Image2D* >(object);
-  (void)_this;
-}
-void Image2D::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Image2D::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -204,11 +199,11 @@ void Image2D::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  data_.ClearToEmpty();
+  data_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&width_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&data_format_) -
       reinterpret_cast<char*>(&width_)) + sizeof(data_format_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Image2D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -221,21 +216,21 @@ const char* Image2D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       // int32 width = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 height = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .ubii.dataStructure.Image2D.DataFormat data_format = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_data_format(static_cast<::ubii::dataStructure::Image2D_DataFormat>(val));
         } else goto handle_unusual;
@@ -254,9 +249,7 @@ const char* Image2D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -303,7 +296,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Image2D)
   return target;
@@ -371,12 +364,13 @@ void Image2D::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Image2D::MergeFrom(const Image2D& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Image2D)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.data().size() > 0) {
-    _internal_set_data(from._internal_data());
+
+    data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_);
   }
   if (from.width() != 0) {
     _internal_set_width(from._internal_width());
@@ -409,14 +403,12 @@ bool Image2D::IsInitialized() const {
 
 void Image2D::InternalSwap(Image2D* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  data_.Swap(&other->data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Image2D, data_format_)
-      + sizeof(Image2D::data_format_)
-      - PROTOBUF_FIELD_OFFSET(Image2D, width_)>(
-          reinterpret_cast<char*>(&width_),
-          reinterpret_cast<char*>(&other->width_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  data_.Swap(&other->data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(width_, other->width_);
+  swap(height_, other->height_);
+  swap(data_format_, other->data_format_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Image2D::GetMetadata() const {
@@ -426,21 +418,22 @@ void Image2D::InternalSwap(Image2D* other) {
 
 // ===================================================================
 
+void Image2DList::InitAsDefaultInstance() {
+}
 class Image2DList::_Internal {
  public:
 };
 
-Image2DList::Image2DList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  elements_(arena) {
+Image2DList::Image2DList()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.Image2DList)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Image2DList)
 }
 Image2DList::Image2DList(const Image2DList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       elements_(from.elements_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.Image2DList)
 }
 
@@ -451,19 +444,11 @@ void Image2DList::SharedCtor() {
 Image2DList::~Image2DList() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.Image2DList)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Image2DList::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void Image2DList::ArenaDtor(void* object) {
-  Image2DList* _this = reinterpret_cast< Image2DList* >(object);
-  (void)_this;
-}
-void Image2DList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Image2DList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -480,7 +465,7 @@ void Image2DList::Clear() {
   (void) cached_has_bits;
 
   elements_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Image2DList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -508,9 +493,7 @@ const char* Image2DList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -540,7 +523,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Image2DList)
   return target;
@@ -588,7 +571,7 @@ void Image2DList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Image2DList::MergeFrom(const Image2DList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Image2DList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -615,7 +598,7 @@ bool Image2DList::IsInitialized() const {
 
 void Image2DList::InternalSwap(Image2DList* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   elements_.InternalSwap(&other->elements_);
 }
 
@@ -629,10 +612,10 @@ void Image2DList::InternalSwap(Image2DList* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Image2D* Arena::CreateMaybeMessage< ::ubii::dataStructure::Image2D >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::Image2D >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::Image2D >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Image2DList* Arena::CreateMaybeMessage< ::ubii::dataStructure::Image2DList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::Image2DList >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::Image2DList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

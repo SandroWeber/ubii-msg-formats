@@ -40,11 +40,7 @@ namespace Ubii.Servers {
 
   }
   #region Messages
-  public sealed partial class Server : pb::IMessage<Server>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class Server : pb::IMessage<Server> {
     private static readonly pb::MessageParser<Server> _parser = new pb::MessageParser<Server>(() => new Server());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -235,9 +231,6 @@ namespace Ubii.Servers {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (Id.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Id);
@@ -277,53 +270,7 @@ namespace Ubii.Servers {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (IpEthernet.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(IpEthernet);
-      }
-      if (IpWlan.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(IpWlan);
-      }
-      if (PortServiceZmq.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(PortServiceZmq);
-      }
-      if (PortServiceRest.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(PortServiceRest);
-      }
-      if (PortTopicDataZmq.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(PortTopicDataZmq);
-      }
-      if (PortTopicDataWs.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(PortTopicDataWs);
-      }
-      if (ConstantsJson.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(ConstantsJson);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -398,9 +345,6 @@ namespace Ubii.Servers {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -445,58 +389,7 @@ namespace Ubii.Servers {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            Id = input.ReadString();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            IpEthernet = input.ReadString();
-            break;
-          }
-          case 34: {
-            IpWlan = input.ReadString();
-            break;
-          }
-          case 42: {
-            PortServiceZmq = input.ReadString();
-            break;
-          }
-          case 50: {
-            PortServiceRest = input.ReadString();
-            break;
-          }
-          case 58: {
-            PortTopicDataZmq = input.ReadString();
-            break;
-          }
-          case 66: {
-            PortTopicDataWs = input.ReadString();
-            break;
-          }
-          case 74: {
-            ConstantsJson = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

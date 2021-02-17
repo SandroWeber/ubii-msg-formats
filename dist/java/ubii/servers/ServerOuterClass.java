@@ -129,7 +129,7 @@ public final class ServerOuterClass {
   /**
    * Protobuf type {@code ubii.servers.Server}
    */
-  public static final class Server extends
+  public  static final class Server extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.servers.Server)
       ServerOrBuilder {
@@ -272,7 +272,6 @@ public final class ServerOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -289,7 +288,6 @@ public final class ServerOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -310,7 +308,6 @@ public final class ServerOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -327,7 +324,6 @@ public final class ServerOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -348,7 +344,6 @@ public final class ServerOuterClass {
      * <code>string ip_ethernet = 3;</code>
      * @return The ipEthernet.
      */
-    @java.lang.Override
     public java.lang.String getIpEthernet() {
       java.lang.Object ref = ipEthernet_;
       if (ref instanceof java.lang.String) {
@@ -365,7 +360,6 @@ public final class ServerOuterClass {
      * <code>string ip_ethernet = 3;</code>
      * @return The bytes for ipEthernet.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIpEthernetBytes() {
       java.lang.Object ref = ipEthernet_;
@@ -386,7 +380,6 @@ public final class ServerOuterClass {
      * <code>string ip_wlan = 4;</code>
      * @return The ipWlan.
      */
-    @java.lang.Override
     public java.lang.String getIpWlan() {
       java.lang.Object ref = ipWlan_;
       if (ref instanceof java.lang.String) {
@@ -403,7 +396,6 @@ public final class ServerOuterClass {
      * <code>string ip_wlan = 4;</code>
      * @return The bytes for ipWlan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIpWlanBytes() {
       java.lang.Object ref = ipWlan_;
@@ -424,7 +416,6 @@ public final class ServerOuterClass {
      * <code>string port_service_zmq = 5;</code>
      * @return The portServiceZmq.
      */
-    @java.lang.Override
     public java.lang.String getPortServiceZmq() {
       java.lang.Object ref = portServiceZmq_;
       if (ref instanceof java.lang.String) {
@@ -441,7 +432,6 @@ public final class ServerOuterClass {
      * <code>string port_service_zmq = 5;</code>
      * @return The bytes for portServiceZmq.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortServiceZmqBytes() {
       java.lang.Object ref = portServiceZmq_;
@@ -462,7 +452,6 @@ public final class ServerOuterClass {
      * <code>string port_service_rest = 6;</code>
      * @return The portServiceRest.
      */
-    @java.lang.Override
     public java.lang.String getPortServiceRest() {
       java.lang.Object ref = portServiceRest_;
       if (ref instanceof java.lang.String) {
@@ -479,7 +468,6 @@ public final class ServerOuterClass {
      * <code>string port_service_rest = 6;</code>
      * @return The bytes for portServiceRest.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortServiceRestBytes() {
       java.lang.Object ref = portServiceRest_;
@@ -500,7 +488,6 @@ public final class ServerOuterClass {
      * <code>string port_topic_data_zmq = 7;</code>
      * @return The portTopicDataZmq.
      */
-    @java.lang.Override
     public java.lang.String getPortTopicDataZmq() {
       java.lang.Object ref = portTopicDataZmq_;
       if (ref instanceof java.lang.String) {
@@ -517,7 +504,6 @@ public final class ServerOuterClass {
      * <code>string port_topic_data_zmq = 7;</code>
      * @return The bytes for portTopicDataZmq.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortTopicDataZmqBytes() {
       java.lang.Object ref = portTopicDataZmq_;
@@ -538,7 +524,6 @@ public final class ServerOuterClass {
      * <code>string port_topic_data_ws = 8;</code>
      * @return The portTopicDataWs.
      */
-    @java.lang.Override
     public java.lang.String getPortTopicDataWs() {
       java.lang.Object ref = portTopicDataWs_;
       if (ref instanceof java.lang.String) {
@@ -555,7 +540,6 @@ public final class ServerOuterClass {
      * <code>string port_topic_data_ws = 8;</code>
      * @return The bytes for portTopicDataWs.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getPortTopicDataWsBytes() {
       java.lang.Object ref = portTopicDataWs_;
@@ -576,7 +560,6 @@ public final class ServerOuterClass {
      * <code>string constants_json = 9;</code>
      * @return The constantsJson.
      */
-    @java.lang.Override
     public java.lang.String getConstantsJson() {
       java.lang.Object ref = constantsJson_;
       if (ref instanceof java.lang.String) {
@@ -593,7 +576,6 @@ public final class ServerOuterClass {
      * <code>string constants_json = 9;</code>
      * @return The bytes for constantsJson.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getConstantsJsonBytes() {
       java.lang.Object ref = constantsJson_;

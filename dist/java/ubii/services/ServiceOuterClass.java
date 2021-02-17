@@ -94,7 +94,7 @@ public final class ServiceOuterClass {
   /**
    * Protobuf type {@code ubii.services.Service}
    */
-  public static final class Service extends
+  public  static final class Service extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.services.Service)
       ServiceOrBuilder {
@@ -216,7 +216,6 @@ public final class ServiceOuterClass {
      * <code>string topic = 1;</code>
      * @return The topic.
      */
-    @java.lang.Override
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -233,7 +232,6 @@ public final class ServiceOuterClass {
      * <code>string topic = 1;</code>
      * @return The bytes for topic.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -254,7 +252,6 @@ public final class ServiceOuterClass {
      * <code>string request_message_format = 2;</code>
      * @return The requestMessageFormat.
      */
-    @java.lang.Override
     public java.lang.String getRequestMessageFormat() {
       java.lang.Object ref = requestMessageFormat_;
       if (ref instanceof java.lang.String) {
@@ -271,7 +268,6 @@ public final class ServiceOuterClass {
      * <code>string request_message_format = 2;</code>
      * @return The bytes for requestMessageFormat.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getRequestMessageFormatBytes() {
       java.lang.Object ref = requestMessageFormat_;
@@ -292,7 +288,6 @@ public final class ServiceOuterClass {
      * <code>string response_message_format = 3;</code>
      * @return The responseMessageFormat.
      */
-    @java.lang.Override
     public java.lang.String getResponseMessageFormat() {
       java.lang.Object ref = responseMessageFormat_;
       if (ref instanceof java.lang.String) {
@@ -309,7 +304,6 @@ public final class ServiceOuterClass {
      * <code>string response_message_format = 3;</code>
      * @return The bytes for responseMessageFormat.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getResponseMessageFormatBytes() {
       java.lang.Object ref = responseMessageFormat_;
@@ -365,7 +359,6 @@ public final class ServiceOuterClass {
      * <code>string description = 5;</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -382,7 +375,6 @@ public final class ServiceOuterClass {
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1283,7 +1275,7 @@ public final class ServiceOuterClass {
   /**
    * Protobuf type {@code ubii.services.ServiceList}
    */
-  public static final class ServiceList extends
+  public  static final class ServiceList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.services.ServiceList)
       ServiceListOrBuilder {
@@ -1376,14 +1368,12 @@ public final class ServiceOuterClass {
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.services.ServiceOuterClass.Service> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.services.ServiceOuterClass.ServiceOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1391,21 +1381,18 @@ public final class ServiceOuterClass {
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.Service getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.services.Service elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.services.ServiceOuterClass.ServiceOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

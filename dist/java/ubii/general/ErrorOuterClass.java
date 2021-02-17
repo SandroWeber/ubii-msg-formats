@@ -57,7 +57,7 @@ public final class ErrorOuterClass {
   /**
    * Protobuf type {@code ubii.general.Error}
    */
-  public static final class Error extends
+  public  static final class Error extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.general.Error)
       ErrorOrBuilder {
@@ -158,7 +158,6 @@ public final class ErrorOuterClass {
      * <code>string title = 1;</code>
      * @return The title.
      */
-    @java.lang.Override
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
@@ -175,7 +174,6 @@ public final class ErrorOuterClass {
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTitleBytes() {
       java.lang.Object ref = title_;
@@ -196,7 +194,6 @@ public final class ErrorOuterClass {
      * <code>string message = 2;</code>
      * @return The message.
      */
-    @java.lang.Override
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -213,7 +210,6 @@ public final class ErrorOuterClass {
      * <code>string message = 2;</code>
      * @return The bytes for message.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
       java.lang.Object ref = message_;
@@ -234,7 +230,6 @@ public final class ErrorOuterClass {
      * <code>string stack = 3;</code>
      * @return The stack.
      */
-    @java.lang.Override
     public java.lang.String getStack() {
       java.lang.Object ref = stack_;
       if (ref instanceof java.lang.String) {
@@ -251,7 +246,6 @@ public final class ErrorOuterClass {
      * <code>string stack = 3;</code>
      * @return The bytes for stack.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getStackBytes() {
       java.lang.Object ref = stack_;

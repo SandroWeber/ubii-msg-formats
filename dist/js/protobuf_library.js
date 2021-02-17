@@ -6,8 +6,6 @@
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 
 goog.provide('proto.ubii.clients.Client');
@@ -4055,7 +4053,9 @@ proto.ubii.clients.Client.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
     proto.ubii.processing.ProcessingModule.toObject, includeInstance),
-    isDedicatedProcessingNode: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+    isDedicatedProcessingNode: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    hostIp: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    metadataJson: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -4121,6 +4121,14 @@ proto.ubii.clients.Client.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDedicatedProcessingNode(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHostIp(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetadataJson(value);
       break;
     default:
       reader.skipField();
@@ -4199,6 +4207,20 @@ proto.ubii.clients.Client.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = message.getHostIp();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getMetadataJson();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -4387,6 +4409,42 @@ proto.ubii.clients.Client.prototype.getIsDedicatedProcessingNode = function() {
  */
 proto.ubii.clients.Client.prototype.setIsDedicatedProcessingNode = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional string host_ip = 8;
+ * @return {string}
+ */
+proto.ubii.clients.Client.prototype.getHostIp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.clients.Client} returns this
+ */
+proto.ubii.clients.Client.prototype.setHostIp = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string metadata_json = 9;
+ * @return {string}
+ */
+proto.ubii.clients.Client.prototype.getMetadataJson = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.clients.Client} returns this
+ */
+proto.ubii.clients.Client.prototype.setMetadataJson = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -7485,10 +7543,8 @@ proto.ubii.dataStructure.DoubleList.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addElements(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setElementsList(value);
       break;
     default:
       reader.skipField();
@@ -7643,10 +7699,8 @@ proto.ubii.dataStructure.FloatList.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addElements(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedFloat());
+      msg.setElementsList(value);
       break;
     default:
       reader.skipField();
@@ -7801,10 +7855,8 @@ proto.ubii.dataStructure.BoolList.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<boolean>} */ (reader.isDelimited() ? reader.readPackedBool() : [reader.readBool()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addElements(values[i]);
-      }
+      var value = /** @type {!Array<boolean>} */ (reader.readPackedBool());
+      msg.setElementsList(value);
       break;
     default:
       reader.skipField();
@@ -7959,10 +8011,8 @@ proto.ubii.dataStructure.Int32List.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addElements(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
+      msg.setElementsList(value);
       break;
     default:
       reader.skipField();

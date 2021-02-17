@@ -129,7 +129,7 @@ public final class DeviceOuterClass {
   /**
    * Protobuf type {@code ubii.devices.Device}
    */
-  public static final class Device extends
+  public  static final class Device extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.Device)
       DeviceOrBuilder {
@@ -335,10 +335,6 @@ public final class DeviceOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -379,7 +375,6 @@ public final class DeviceOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -396,7 +391,6 @@ public final class DeviceOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -417,7 +411,6 @@ public final class DeviceOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -434,7 +427,6 @@ public final class DeviceOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -455,14 +447,14 @@ public final class DeviceOuterClass {
      * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
      * @return The enum numeric value on the wire for deviceType.
      */
-    @java.lang.Override public int getDeviceTypeValue() {
+    public int getDeviceTypeValue() {
       return deviceType_;
     }
     /**
      * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
      * @return The deviceType.
      */
-    @java.lang.Override public ubii.devices.DeviceOuterClass.Device.DeviceType getDeviceType() {
+    public ubii.devices.DeviceOuterClass.Device.DeviceType getDeviceType() {
       @SuppressWarnings("deprecation")
       ubii.devices.DeviceOuterClass.Device.DeviceType result = ubii.devices.DeviceOuterClass.Device.DeviceType.valueOf(deviceType_);
       return result == null ? ubii.devices.DeviceOuterClass.Device.DeviceType.UNRECOGNIZED : result;
@@ -473,14 +465,12 @@ public final class DeviceOuterClass {
     /**
      * <code>repeated .ubii.devices.Component components = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.devices.ComponentOuterClass.Component> getComponentsList() {
       return components_;
     }
     /**
      * <code>repeated .ubii.devices.Component components = 4;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
         getComponentsOrBuilderList() {
       return components_;
@@ -488,21 +478,18 @@ public final class DeviceOuterClass {
     /**
      * <code>repeated .ubii.devices.Component components = 4;</code>
      */
-    @java.lang.Override
     public int getComponentsCount() {
       return components_.size();
     }
     /**
      * <code>repeated .ubii.devices.Component components = 4;</code>
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.Component getComponents(int index) {
       return components_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.Component components = 4;</code>
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentsOrBuilder(
         int index) {
       return components_.get(index);
@@ -514,7 +501,6 @@ public final class DeviceOuterClass {
      * <code>string client_id = 5;</code>
      * @return The clientId.
      */
-    @java.lang.Override
     public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
       if (ref instanceof java.lang.String) {
@@ -531,7 +517,6 @@ public final class DeviceOuterClass {
      * <code>string client_id = 5;</code>
      * @return The bytes for clientId.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getClientIdBytes() {
       java.lang.Object ref = clientId_;
@@ -587,7 +572,6 @@ public final class DeviceOuterClass {
      * <code>string description = 7;</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -604,7 +588,6 @@ public final class DeviceOuterClass {
      * <code>string description = 7;</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1236,7 +1219,7 @@ public final class DeviceOuterClass {
        * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
        * @return The enum numeric value on the wire for deviceType.
        */
-      @java.lang.Override public int getDeviceTypeValue() {
+      public int getDeviceTypeValue() {
         return deviceType_;
       }
       /**
@@ -1245,7 +1228,6 @@ public final class DeviceOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDeviceTypeValue(int value) {
-        
         deviceType_ = value;
         onChanged();
         return this;
@@ -1254,7 +1236,6 @@ public final class DeviceOuterClass {
        * <code>.ubii.devices.Device.DeviceType device_type = 3;</code>
        * @return The deviceType.
        */
-      @java.lang.Override
       public ubii.devices.DeviceOuterClass.Device.DeviceType getDeviceType() {
         @SuppressWarnings("deprecation")
         ubii.devices.DeviceOuterClass.Device.DeviceType result = ubii.devices.DeviceOuterClass.Device.DeviceType.valueOf(deviceType_);
@@ -1870,7 +1851,7 @@ public final class DeviceOuterClass {
   /**
    * Protobuf type {@code ubii.devices.DeviceList}
    */
-  public static final class DeviceList extends
+  public  static final class DeviceList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.DeviceList)
       DeviceListOrBuilder {
@@ -1963,14 +1944,12 @@ public final class DeviceOuterClass {
     /**
      * <code>repeated .ubii.devices.Device elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.devices.DeviceOuterClass.Device> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.devices.Device elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.devices.DeviceOuterClass.DeviceOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1978,21 +1957,18 @@ public final class DeviceOuterClass {
     /**
      * <code>repeated .ubii.devices.Device elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.devices.Device elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.Device getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.Device elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

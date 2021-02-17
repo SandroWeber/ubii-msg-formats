@@ -37,6 +37,7 @@ static void InitDefaultsscc_info_Session_proto_2fsessions_2fsession_2eproto() {
     new (ptr) ::ubii::sessions::Session();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::sessions::Session::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Session_proto_2fsessions_2fsession_2eproto =
@@ -52,6 +53,7 @@ static void InitDefaultsscc_info_SessionList_proto_2fsessions_2fsession_2eproto(
     new (ptr) ::ubii::sessions::SessionList();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::sessions::SessionList::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SessionList_proto_2fsessions_2fsession_2eproto =
@@ -118,15 +120,16 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_SessionList_proto_2fsessions_2fsession_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fsessions_2fsession_2eproto_once;
+static bool descriptor_table_proto_2fsessions_2fsession_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fsessions_2fsession_2eproto = {
-  false, false, descriptor_table_protodef_proto_2fsessions_2fsession_2eproto, "proto/sessions/session.proto", 516,
+  &descriptor_table_proto_2fsessions_2fsession_2eproto_initialized, descriptor_table_protodef_proto_2fsessions_2fsession_2eproto, "proto/sessions/session.proto", 516,
   &descriptor_table_proto_2fsessions_2fsession_2eproto_once, descriptor_table_proto_2fsessions_2fsession_2eproto_sccs, descriptor_table_proto_2fsessions_2fsession_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_proto_2fsessions_2fsession_2eproto::offsets,
   file_level_metadata_proto_2fsessions_2fsession_2eproto, 2, file_level_enum_descriptors_proto_2fsessions_2fsession_2eproto, file_level_service_descriptors_proto_2fsessions_2fsession_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fsessions_2fsession_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fsessions_2fsession_2eproto)), true);
+static bool dynamic_init_dummy_proto_2fsessions_2fsession_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fsessions_2fsession_2eproto), true);
 namespace ubii {
 namespace sessions {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SessionStatus_descriptor() {
@@ -148,6 +151,8 @@ bool SessionStatus_IsValid(int value) {
 
 // ===================================================================
 
+void Session::InitAsDefaultInstance() {
+}
 class Session::_Internal {
  public:
 };
@@ -158,37 +163,30 @@ void Session::clear_processing_modules() {
 void Session::clear_io_mappings() {
   io_mappings_.Clear();
 }
-Session::Session(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  processing_modules_(arena),
-  io_mappings_(arena),
-  tags_(arena),
-  authors_(arena) {
+Session::Session()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.sessions.Session)
+  // @@protoc_insertion_point(constructor:ubii.sessions.Session)
 }
 Session::Session(const Session& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       processing_modules_(from.processing_modules_),
       io_mappings_(from.io_mappings_),
       tags_(from.tags_),
       authors_(from.authors_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArena());
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArena());
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_description().empty()) {
-    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
-      GetArena());
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   ::memcpy(&status_, &from.status_,
     static_cast<size_t>(reinterpret_cast<char*>(&editable_) -
@@ -201,31 +199,22 @@ void Session::SharedCtor() {
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&status_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&editable_) -
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&editable_) -
       reinterpret_cast<char*>(&status_)) + sizeof(editable_));
 }
 
 Session::~Session() {
   // @@protoc_insertion_point(destructor:ubii.sessions.Session)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Session::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void Session::ArenaDtor(void* object) {
-  Session* _this = reinterpret_cast< Session* >(object);
-  (void)_this;
-}
-void Session::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Session::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -245,13 +234,13 @@ void Session::Clear() {
   io_mappings_.Clear();
   tags_.Clear();
   authors_.Clear();
-  id_.ClearToEmpty();
-  name_.ClearToEmpty();
-  description_.ClearToEmpty();
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&editable_) -
       reinterpret_cast<char*>(&status_)) + sizeof(editable_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Session::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -343,7 +332,7 @@ const char* Session::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       // .ubii.sessions.SessionStatus status = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::ubii::sessions::SessionStatus>(val));
         } else goto handle_unusual;
@@ -351,7 +340,7 @@ const char* Session::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       // bool editable = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
-          editable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          editable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -361,9 +350,7 @@ const char* Session::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -464,7 +451,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.sessions.Session)
   return target;
@@ -567,7 +554,7 @@ void Session::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Session::MergeFrom(const Session& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.sessions.Session)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -576,13 +563,16 @@ void Session::MergeFrom(const Session& from) {
   tags_.MergeFrom(from.tags_);
   authors_.MergeFrom(from.authors_);
   if (from.id().size() > 0) {
-    _internal_set_id(from._internal_id());
+
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   if (from.name().size() > 0) {
-    _internal_set_name(from._internal_name());
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.description().size() > 0) {
-    _internal_set_description(from._internal_description());
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   if (from.status() != 0) {
     _internal_set_status(from._internal_status());
@@ -612,20 +602,19 @@ bool Session::IsInitialized() const {
 
 void Session::InternalSwap(Session* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   processing_modules_.InternalSwap(&other->processing_modules_);
   io_mappings_.InternalSwap(&other->io_mappings_);
   tags_.InternalSwap(&other->tags_);
   authors_.InternalSwap(&other->authors_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Session, editable_)
-      + sizeof(Session::editable_)
-      - PROTOBUF_FIELD_OFFSET(Session, status_)>(
-          reinterpret_cast<char*>(&status_),
-          reinterpret_cast<char*>(&other->status_));
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(status_, other->status_);
+  swap(editable_, other->editable_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Session::GetMetadata() const {
@@ -635,21 +624,22 @@ void Session::InternalSwap(Session* other) {
 
 // ===================================================================
 
+void SessionList::InitAsDefaultInstance() {
+}
 class SessionList::_Internal {
  public:
 };
 
-SessionList::SessionList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  elements_(arena) {
+SessionList::SessionList()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.sessions.SessionList)
+  // @@protoc_insertion_point(constructor:ubii.sessions.SessionList)
 }
 SessionList::SessionList(const SessionList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       elements_(from.elements_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.sessions.SessionList)
 }
 
@@ -660,19 +650,11 @@ void SessionList::SharedCtor() {
 SessionList::~SessionList() {
   // @@protoc_insertion_point(destructor:ubii.sessions.SessionList)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void SessionList::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void SessionList::ArenaDtor(void* object) {
-  SessionList* _this = reinterpret_cast< SessionList* >(object);
-  (void)_this;
-}
-void SessionList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void SessionList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -689,7 +671,7 @@ void SessionList::Clear() {
   (void) cached_has_bits;
 
   elements_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* SessionList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -717,9 +699,7 @@ const char* SessionList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -749,7 +729,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.sessions.SessionList)
   return target;
@@ -797,7 +777,7 @@ void SessionList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void SessionList::MergeFrom(const SessionList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.sessions.SessionList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -824,7 +804,7 @@ bool SessionList::IsInitialized() const {
 
 void SessionList::InternalSwap(SessionList* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   elements_.InternalSwap(&other->elements_);
 }
 
@@ -838,10 +818,10 @@ void SessionList::InternalSwap(SessionList* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::sessions::Session* Arena::CreateMaybeMessage< ::ubii::sessions::Session >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::sessions::Session >(arena);
+  return Arena::CreateInternal< ::ubii::sessions::Session >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::sessions::SessionList* Arena::CreateMaybeMessage< ::ubii::sessions::SessionList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::sessions::SessionList >(arena);
+  return Arena::CreateInternal< ::ubii::sessions::SessionList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

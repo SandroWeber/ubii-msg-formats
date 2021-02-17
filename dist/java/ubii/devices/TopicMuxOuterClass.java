@@ -81,7 +81,7 @@ public final class TopicMuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicMux}
    */
-  public static final class TopicMux extends
+  public  static final class TopicMux extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicMux)
       TopicMuxOrBuilder {
@@ -196,7 +196,6 @@ public final class TopicMuxOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -213,7 +212,6 @@ public final class TopicMuxOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -234,7 +232,6 @@ public final class TopicMuxOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -251,7 +248,6 @@ public final class TopicMuxOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -272,7 +268,6 @@ public final class TopicMuxOuterClass {
      * <code>string data_type = 3;</code>
      * @return The dataType.
      */
-    @java.lang.Override
     public java.lang.String getDataType() {
       java.lang.Object ref = dataType_;
       if (ref instanceof java.lang.String) {
@@ -289,7 +284,6 @@ public final class TopicMuxOuterClass {
      * <code>string data_type = 3;</code>
      * @return The bytes for dataType.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDataTypeBytes() {
       java.lang.Object ref = dataType_;
@@ -310,7 +304,6 @@ public final class TopicMuxOuterClass {
      * <code>string topic_selector = 4;</code>
      * @return The topicSelector.
      */
-    @java.lang.Override
     public java.lang.String getTopicSelector() {
       java.lang.Object ref = topicSelector_;
       if (ref instanceof java.lang.String) {
@@ -327,7 +320,6 @@ public final class TopicMuxOuterClass {
      * <code>string topic_selector = 4;</code>
      * @return The bytes for topicSelector.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicSelectorBytes() {
       java.lang.Object ref = topicSelector_;
@@ -348,7 +340,6 @@ public final class TopicMuxOuterClass {
      * <code>string identity_match_pattern = 5;</code>
      * @return The identityMatchPattern.
      */
-    @java.lang.Override
     public java.lang.String getIdentityMatchPattern() {
       java.lang.Object ref = identityMatchPattern_;
       if (ref instanceof java.lang.String) {
@@ -365,7 +356,6 @@ public final class TopicMuxOuterClass {
      * <code>string identity_match_pattern = 5;</code>
      * @return The bytes for identityMatchPattern.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdentityMatchPatternBytes() {
       java.lang.Object ref = identityMatchPattern_;
@@ -1213,7 +1203,7 @@ public final class TopicMuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicMuxList}
    */
-  public static final class TopicMuxList extends
+  public  static final class TopicMuxList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicMuxList)
       TopicMuxListOrBuilder {
@@ -1306,14 +1296,12 @@ public final class TopicMuxOuterClass {
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.devices.TopicMuxOuterClass.TopicMux> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1321,21 +1309,18 @@ public final class TopicMuxOuterClass {
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMux getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.TopicMux elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

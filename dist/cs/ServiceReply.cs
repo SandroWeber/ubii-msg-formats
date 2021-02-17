@@ -67,11 +67,7 @@ namespace Ubii.Services {
 
   }
   #region Messages
-  public sealed partial class ServiceReply : pb::IMessage<ServiceReply>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class ServiceReply : pb::IMessage<ServiceReply> {
     private static readonly pb::MessageParser<ServiceReply> _parser = new pb::MessageParser<ServiceReply>(() => new ServiceReply());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -481,9 +477,6 @@ namespace Ubii.Services {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (typeCase_ == TypeOneofCase.Success) {
         output.WriteRawTag(10);
         output.WriteMessage(Success);
@@ -563,93 +556,7 @@ namespace Ubii.Services {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (typeCase_ == TypeOneofCase.Success) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Success);
-      }
-      if (typeCase_ == TypeOneofCase.Error) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Error);
-      }
-      if (typeCase_ == TypeOneofCase.Client) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Client);
-      }
-      if (typeCase_ == TypeOneofCase.Device) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Device);
-      }
-      if (typeCase_ == TypeOneofCase.Server) {
-        output.WriteRawTag(42);
-        output.WriteMessage(Server);
-      }
-      if (typeCase_ == TypeOneofCase.Session) {
-        output.WriteRawTag(50);
-        output.WriteMessage(Session);
-      }
-      if (typeCase_ == TypeOneofCase.SessionList) {
-        output.WriteRawTag(58);
-        output.WriteMessage(SessionList);
-      }
-      if (typeCase_ == TypeOneofCase.ProcessingModule) {
-        output.WriteRawTag(66);
-        output.WriteMessage(ProcessingModule);
-      }
-      if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
-        output.WriteRawTag(74);
-        output.WriteMessage(ProcessingModuleList);
-      }
-      if (typeCase_ == TypeOneofCase.StringList) {
-        output.WriteRawTag(82);
-        output.WriteMessage(StringList);
-      }
-      if (typeCase_ == TypeOneofCase.TopicMux) {
-        output.WriteRawTag(90);
-        output.WriteMessage(TopicMux);
-      }
-      if (typeCase_ == TypeOneofCase.TopicMuxList) {
-        output.WriteRawTag(98);
-        output.WriteMessage(TopicMuxList);
-      }
-      if (typeCase_ == TypeOneofCase.TopicDemux) {
-        output.WriteRawTag(106);
-        output.WriteMessage(TopicDemux);
-      }
-      if (typeCase_ == TypeOneofCase.TopicDemuxList) {
-        output.WriteRawTag(114);
-        output.WriteMessage(TopicDemuxList);
-      }
-      if (typeCase_ == TypeOneofCase.ClientList) {
-        output.WriteRawTag(122);
-        output.WriteMessage(ClientList);
-      }
-      if (typeCase_ == TypeOneofCase.DeviceList) {
-        output.WriteRawTag(130, 1);
-        output.WriteMessage(DeviceList);
-      }
-      if (typeCase_ == TypeOneofCase.Service) {
-        output.WriteRawTag(138, 1);
-        output.WriteMessage(Service);
-      }
-      if (typeCase_ == TypeOneofCase.ServiceList) {
-        output.WriteRawTag(146, 1);
-        output.WriteMessage(ServiceList);
-      }
-      if (typeCase_ == TypeOneofCase.LockstepProcessingReply) {
-        output.WriteRawTag(154, 1);
-        output.WriteMessage(LockstepProcessingReply);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -844,9 +751,6 @@ namespace Ubii.Services {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1026,193 +930,7 @@ namespace Ubii.Services {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            global::Ubii.General.Success subBuilder = new global::Ubii.General.Success();
-            if (typeCase_ == TypeOneofCase.Success) {
-              subBuilder.MergeFrom(Success);
-            }
-            input.ReadMessage(subBuilder);
-            Success = subBuilder;
-            break;
-          }
-          case 18: {
-            global::Ubii.General.Error subBuilder = new global::Ubii.General.Error();
-            if (typeCase_ == TypeOneofCase.Error) {
-              subBuilder.MergeFrom(Error);
-            }
-            input.ReadMessage(subBuilder);
-            Error = subBuilder;
-            break;
-          }
-          case 26: {
-            global::Ubii.Clients.Client subBuilder = new global::Ubii.Clients.Client();
-            if (typeCase_ == TypeOneofCase.Client) {
-              subBuilder.MergeFrom(Client);
-            }
-            input.ReadMessage(subBuilder);
-            Client = subBuilder;
-            break;
-          }
-          case 34: {
-            global::Ubii.Devices.Device subBuilder = new global::Ubii.Devices.Device();
-            if (typeCase_ == TypeOneofCase.Device) {
-              subBuilder.MergeFrom(Device);
-            }
-            input.ReadMessage(subBuilder);
-            Device = subBuilder;
-            break;
-          }
-          case 42: {
-            global::Ubii.Servers.Server subBuilder = new global::Ubii.Servers.Server();
-            if (typeCase_ == TypeOneofCase.Server) {
-              subBuilder.MergeFrom(Server);
-            }
-            input.ReadMessage(subBuilder);
-            Server = subBuilder;
-            break;
-          }
-          case 50: {
-            global::Ubii.Sessions.Session subBuilder = new global::Ubii.Sessions.Session();
-            if (typeCase_ == TypeOneofCase.Session) {
-              subBuilder.MergeFrom(Session);
-            }
-            input.ReadMessage(subBuilder);
-            Session = subBuilder;
-            break;
-          }
-          case 58: {
-            global::Ubii.Sessions.SessionList subBuilder = new global::Ubii.Sessions.SessionList();
-            if (typeCase_ == TypeOneofCase.SessionList) {
-              subBuilder.MergeFrom(SessionList);
-            }
-            input.ReadMessage(subBuilder);
-            SessionList = subBuilder;
-            break;
-          }
-          case 66: {
-            global::Ubii.Processing.ProcessingModule subBuilder = new global::Ubii.Processing.ProcessingModule();
-            if (typeCase_ == TypeOneofCase.ProcessingModule) {
-              subBuilder.MergeFrom(ProcessingModule);
-            }
-            input.ReadMessage(subBuilder);
-            ProcessingModule = subBuilder;
-            break;
-          }
-          case 74: {
-            global::Ubii.Processing.ProcessingModuleList subBuilder = new global::Ubii.Processing.ProcessingModuleList();
-            if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
-              subBuilder.MergeFrom(ProcessingModuleList);
-            }
-            input.ReadMessage(subBuilder);
-            ProcessingModuleList = subBuilder;
-            break;
-          }
-          case 82: {
-            global::Ubii.DataStructure.StringList subBuilder = new global::Ubii.DataStructure.StringList();
-            if (typeCase_ == TypeOneofCase.StringList) {
-              subBuilder.MergeFrom(StringList);
-            }
-            input.ReadMessage(subBuilder);
-            StringList = subBuilder;
-            break;
-          }
-          case 90: {
-            global::Ubii.Devices.TopicMux subBuilder = new global::Ubii.Devices.TopicMux();
-            if (typeCase_ == TypeOneofCase.TopicMux) {
-              subBuilder.MergeFrom(TopicMux);
-            }
-            input.ReadMessage(subBuilder);
-            TopicMux = subBuilder;
-            break;
-          }
-          case 98: {
-            global::Ubii.Devices.TopicMuxList subBuilder = new global::Ubii.Devices.TopicMuxList();
-            if (typeCase_ == TypeOneofCase.TopicMuxList) {
-              subBuilder.MergeFrom(TopicMuxList);
-            }
-            input.ReadMessage(subBuilder);
-            TopicMuxList = subBuilder;
-            break;
-          }
-          case 106: {
-            global::Ubii.Devices.TopicDemux subBuilder = new global::Ubii.Devices.TopicDemux();
-            if (typeCase_ == TypeOneofCase.TopicDemux) {
-              subBuilder.MergeFrom(TopicDemux);
-            }
-            input.ReadMessage(subBuilder);
-            TopicDemux = subBuilder;
-            break;
-          }
-          case 114: {
-            global::Ubii.Devices.TopicDemuxList subBuilder = new global::Ubii.Devices.TopicDemuxList();
-            if (typeCase_ == TypeOneofCase.TopicDemuxList) {
-              subBuilder.MergeFrom(TopicDemuxList);
-            }
-            input.ReadMessage(subBuilder);
-            TopicDemuxList = subBuilder;
-            break;
-          }
-          case 122: {
-            global::Ubii.Clients.ClientList subBuilder = new global::Ubii.Clients.ClientList();
-            if (typeCase_ == TypeOneofCase.ClientList) {
-              subBuilder.MergeFrom(ClientList);
-            }
-            input.ReadMessage(subBuilder);
-            ClientList = subBuilder;
-            break;
-          }
-          case 130: {
-            global::Ubii.Devices.DeviceList subBuilder = new global::Ubii.Devices.DeviceList();
-            if (typeCase_ == TypeOneofCase.DeviceList) {
-              subBuilder.MergeFrom(DeviceList);
-            }
-            input.ReadMessage(subBuilder);
-            DeviceList = subBuilder;
-            break;
-          }
-          case 138: {
-            global::Ubii.Services.Service subBuilder = new global::Ubii.Services.Service();
-            if (typeCase_ == TypeOneofCase.Service) {
-              subBuilder.MergeFrom(Service);
-            }
-            input.ReadMessage(subBuilder);
-            Service = subBuilder;
-            break;
-          }
-          case 146: {
-            global::Ubii.Services.ServiceList subBuilder = new global::Ubii.Services.ServiceList();
-            if (typeCase_ == TypeOneofCase.ServiceList) {
-              subBuilder.MergeFrom(ServiceList);
-            }
-            input.ReadMessage(subBuilder);
-            ServiceList = subBuilder;
-            break;
-          }
-          case 154: {
-            global::Ubii.Processing.LockstepProcessingReply subBuilder = new global::Ubii.Processing.LockstepProcessingReply();
-            if (typeCase_ == TypeOneofCase.LockstepProcessingReply) {
-              subBuilder.MergeFrom(LockstepProcessingReply);
-            }
-            input.ReadMessage(subBuilder);
-            LockstepProcessingReply = subBuilder;
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

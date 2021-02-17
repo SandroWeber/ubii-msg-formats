@@ -43,11 +43,7 @@ namespace Ubii.DataStructure {
 
   }
   #region Messages
-  public sealed partial class Pose3D : pb::IMessage<Pose3D>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class Pose3D : pb::IMessage<Pose3D> {
     private static readonly pb::MessageParser<Pose3D> _parser = new pb::MessageParser<Pose3D>(() => new Pose3D());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,9 +178,6 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (position_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(Position);
@@ -200,29 +193,7 @@ namespace Ubii.DataStructure {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (position_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Position);
-      }
-      if (orientationCase_ == OrientationOneofCase.Quaternion) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Quaternion);
-      }
-      if (orientationCase_ == OrientationOneofCase.Euler) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Euler);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -273,9 +244,6 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -309,47 +277,7 @@ namespace Ubii.DataStructure {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            if (position_ == null) {
-              Position = new global::Ubii.DataStructure.Vector3();
-            }
-            input.ReadMessage(Position);
-            break;
-          }
-          case 18: {
-            global::Ubii.DataStructure.Quaternion subBuilder = new global::Ubii.DataStructure.Quaternion();
-            if (orientationCase_ == OrientationOneofCase.Quaternion) {
-              subBuilder.MergeFrom(Quaternion);
-            }
-            input.ReadMessage(subBuilder);
-            Quaternion = subBuilder;
-            break;
-          }
-          case 26: {
-            global::Ubii.DataStructure.Vector3 subBuilder = new global::Ubii.DataStructure.Vector3();
-            if (orientationCase_ == OrientationOneofCase.Euler) {
-              subBuilder.MergeFrom(Euler);
-            }
-            input.ReadMessage(subBuilder);
-            Euler = subBuilder;
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

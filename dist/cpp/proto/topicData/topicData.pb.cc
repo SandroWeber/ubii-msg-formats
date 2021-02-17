@@ -22,6 +22,9 @@ namespace topicData {
 class TopicDataDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TopicData> _instance;
+  const ::ubii::topicData::TopicDataRecord* topic_data_record_;
+  const ::ubii::topicData::TopicDataRecordList* topic_data_record_list_;
+  const ::ubii::general::Error* error_;
 } _TopicData_default_instance_;
 }  // namespace topicData
 }  // namespace ubii
@@ -33,6 +36,7 @@ static void InitDefaultsscc_info_TopicData_proto_2ftopicData_2ftopicData_2eproto
     new (ptr) ::ubii::topicData::TopicData();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::topicData::TopicData::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_TopicData_proto_2ftopicData_2ftopicData_2eproto =
@@ -51,9 +55,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicData_
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicData, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  offsetof(::ubii::topicData::TopicDataDefaultTypeInternal, topic_data_record_),
+  offsetof(::ubii::topicData::TopicDataDefaultTypeInternal, topic_data_record_list_),
+  offsetof(::ubii::topicData::TopicDataDefaultTypeInternal, error_),
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicData, type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -83,20 +87,29 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_TopicData_proto_2ftopicData_2ftopicData_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicData_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicData_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicData_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicData_2eproto, "proto/topicData/topicData.proto", 332,
+  &descriptor_table_proto_2ftopicData_2ftopicData_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicData_2eproto, "proto/topicData/topicData.proto", 332,
   &descriptor_table_proto_2ftopicData_2ftopicData_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicData_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicData_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicData_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicData_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicData_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicData_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicData_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicData_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicData_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicData_2eproto), true);
 namespace ubii {
 namespace topicData {
 
 // ===================================================================
 
+void TopicData::InitAsDefaultInstance() {
+  ::ubii::topicData::_TopicData_default_instance_.topic_data_record_ = const_cast< ::ubii::topicData::TopicDataRecord*>(
+      ::ubii::topicData::TopicDataRecord::internal_default_instance());
+  ::ubii::topicData::_TopicData_default_instance_.topic_data_record_list_ = const_cast< ::ubii::topicData::TopicDataRecordList*>(
+      ::ubii::topicData::TopicDataRecordList::internal_default_instance());
+  ::ubii::topicData::_TopicData_default_instance_.error_ = const_cast< ::ubii::general::Error*>(
+      ::ubii::general::Error::internal_default_instance());
+}
 class TopicData::_Internal {
  public:
   static const ::ubii::topicData::TopicDataRecord& topic_data_record(const TopicData* msg);
@@ -117,11 +130,10 @@ TopicData::_Internal::error(const TopicData* msg) {
   return *msg->type_.error_;
 }
 void TopicData::set_allocated_topic_data_record(::ubii::topicData::TopicDataRecord* topic_data_record) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (topic_data_record) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(topic_data_record)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       topic_data_record = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_data_record, submessage_arena);
@@ -133,18 +145,15 @@ void TopicData::set_allocated_topic_data_record(::ubii::topicData::TopicDataReco
 }
 void TopicData::clear_topic_data_record() {
   if (_internal_has_topic_data_record()) {
-    if (GetArena() == nullptr) {
-      delete type_.topic_data_record_;
-    }
+    delete type_.topic_data_record_;
     clear_has_type();
   }
 }
 void TopicData::set_allocated_topic_data_record_list(::ubii::topicData::TopicDataRecordList* topic_data_record_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (topic_data_record_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(topic_data_record_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       topic_data_record_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_data_record_list, submessage_arena);
@@ -156,18 +165,15 @@ void TopicData::set_allocated_topic_data_record_list(::ubii::topicData::TopicDat
 }
 void TopicData::clear_topic_data_record_list() {
   if (_internal_has_topic_data_record_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.topic_data_record_list_;
-    }
+    delete type_.topic_data_record_list_;
     clear_has_type();
   }
 }
 void TopicData::set_allocated_error(::ubii::general::Error* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (error) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, error, submessage_arena);
@@ -179,21 +185,19 @@ void TopicData::set_allocated_error(::ubii::general::Error* error) {
 }
 void TopicData::clear_error() {
   if (_internal_has_error()) {
-    if (GetArena() == nullptr) {
-      delete type_.error_;
-    }
+    delete type_.error_;
     clear_has_type();
   }
 }
-TopicData::TopicData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+TopicData::TopicData()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.topicData.TopicData)
+  // @@protoc_insertion_point(constructor:ubii.topicData.TopicData)
 }
 TopicData::TopicData(const TopicData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   clear_has_type();
   switch (from.type_case()) {
     case kTopicDataRecord: {
@@ -223,22 +227,14 @@ void TopicData::SharedCtor() {
 TopicData::~TopicData() {
   // @@protoc_insertion_point(destructor:ubii.topicData.TopicData)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TopicData::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   if (has_type()) {
     clear_type();
   }
 }
 
-void TopicData::ArenaDtor(void* object) {
-  TopicData* _this = reinterpret_cast< TopicData* >(object);
-  (void)_this;
-}
-void TopicData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TopicData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -252,21 +248,15 @@ void TopicData::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.topicData.TopicData)
   switch (type_case()) {
     case kTopicDataRecord: {
-      if (GetArena() == nullptr) {
-        delete type_.topic_data_record_;
-      }
+      delete type_.topic_data_record_;
       break;
     }
     case kTopicDataRecordList: {
-      if (GetArena() == nullptr) {
-        delete type_.topic_data_record_list_;
-      }
+      delete type_.topic_data_record_list_;
       break;
     }
     case kError: {
-      if (GetArena() == nullptr) {
-        delete type_.error_;
-      }
+      delete type_.error_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -284,7 +274,7 @@ void TopicData::Clear() {
   (void) cached_has_bits;
 
   clear_type();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* TopicData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -321,9 +311,7 @@ const char* TopicData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -369,7 +357,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.topicData.TopicData)
   return target;
@@ -436,7 +424,7 @@ void TopicData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void TopicData::MergeFrom(const TopicData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.topicData.TopicData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -479,7 +467,7 @@ bool TopicData::IsInitialized() const {
 
 void TopicData::InternalSwap(TopicData* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -494,7 +482,7 @@ void TopicData::InternalSwap(TopicData* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::topicData::TopicData* Arena::CreateMaybeMessage< ::ubii::topicData::TopicData >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::topicData::TopicData >(arena);
+  return Arena::CreateInternal< ::ubii::topicData::TopicData >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

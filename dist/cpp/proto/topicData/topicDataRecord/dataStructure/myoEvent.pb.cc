@@ -33,6 +33,7 @@ static void InitDefaultsscc_info_MyoEvent_proto_2ftopicData_2ftopicDataRecord_2f
     new (ptr) ::ubii::dataStructure::MyoEvent();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::MyoEvent::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_MyoEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto =
@@ -93,20 +94,31 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_MyoEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/myoEvent.proto", 607,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/myoEvent.proto", 607,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
+void MyoEvent::InitAsDefaultInstance() {
+  ::ubii::dataStructure::_MyoEvent_default_instance_._instance.get_mutable()->emg_ = const_cast< ::ubii::dataStructure::Vector8*>(
+      ::ubii::dataStructure::Vector8::internal_default_instance());
+  ::ubii::dataStructure::_MyoEvent_default_instance_._instance.get_mutable()->orientation_ = const_cast< ::ubii::dataStructure::Quaternion*>(
+      ::ubii::dataStructure::Quaternion::internal_default_instance());
+  ::ubii::dataStructure::_MyoEvent_default_instance_._instance.get_mutable()->gyroscope_ = const_cast< ::ubii::dataStructure::Vector3*>(
+      ::ubii::dataStructure::Vector3::internal_default_instance());
+  ::ubii::dataStructure::_MyoEvent_default_instance_._instance.get_mutable()->accelerometer_ = const_cast< ::ubii::dataStructure::Vector3*>(
+      ::ubii::dataStructure::Vector3::internal_default_instance());
+}
 class MyoEvent::_Internal {
  public:
   static const ::ubii::dataStructure::Vector8& emg(const MyoEvent* msg);
@@ -132,38 +144,38 @@ MyoEvent::_Internal::accelerometer(const MyoEvent* msg) {
   return *msg->accelerometer_;
 }
 void MyoEvent::clear_emg() {
-  if (GetArena() == nullptr && emg_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && emg_ != nullptr) {
     delete emg_;
   }
   emg_ = nullptr;
 }
 void MyoEvent::clear_orientation() {
-  if (GetArena() == nullptr && orientation_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && orientation_ != nullptr) {
     delete orientation_;
   }
   orientation_ = nullptr;
 }
 void MyoEvent::clear_gyroscope() {
-  if (GetArena() == nullptr && gyroscope_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && gyroscope_ != nullptr) {
     delete gyroscope_;
   }
   gyroscope_ = nullptr;
 }
 void MyoEvent::clear_accelerometer() {
-  if (GetArena() == nullptr && accelerometer_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && accelerometer_ != nullptr) {
     delete accelerometer_;
   }
   accelerometer_ = nullptr;
 }
-MyoEvent::MyoEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+MyoEvent::MyoEvent()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.MyoEvent)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.MyoEvent)
 }
 MyoEvent::MyoEvent(const MyoEvent& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_emg()) {
     emg_ = new ::ubii::dataStructure::Vector8(*from.emg_);
   } else {
@@ -190,32 +202,23 @@ MyoEvent::MyoEvent(const MyoEvent& from)
 
 void MyoEvent::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MyoEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto.base);
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&emg_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&gesture_) -
+  ::memset(&emg_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&gesture_) -
       reinterpret_cast<char*>(&emg_)) + sizeof(gesture_));
 }
 
 MyoEvent::~MyoEvent() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.MyoEvent)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void MyoEvent::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete emg_;
   if (this != internal_default_instance()) delete orientation_;
   if (this != internal_default_instance()) delete gyroscope_;
   if (this != internal_default_instance()) delete accelerometer_;
 }
 
-void MyoEvent::ArenaDtor(void* object) {
-  MyoEvent* _this = reinterpret_cast< MyoEvent* >(object);
-  (void)_this;
-}
-void MyoEvent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void MyoEvent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -231,24 +234,24 @@ void MyoEvent::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && emg_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && emg_ != nullptr) {
     delete emg_;
   }
   emg_ = nullptr;
-  if (GetArena() == nullptr && orientation_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && orientation_ != nullptr) {
     delete orientation_;
   }
   orientation_ = nullptr;
-  if (GetArena() == nullptr && gyroscope_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && gyroscope_ != nullptr) {
     delete gyroscope_;
   }
   gyroscope_ = nullptr;
-  if (GetArena() == nullptr && accelerometer_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && accelerometer_ != nullptr) {
     delete accelerometer_;
   }
   accelerometer_ = nullptr;
   gesture_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* MyoEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -289,7 +292,7 @@ const char* MyoEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // .ubii.dataStructure.HandGestureType gesture = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_gesture(static_cast<::ubii::dataStructure::HandGestureType>(val));
         } else goto handle_unusual;
@@ -300,9 +303,7 @@ const char* MyoEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -363,7 +364,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.MyoEvent)
   return target;
@@ -438,7 +439,7 @@ void MyoEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void MyoEvent::MergeFrom(const MyoEvent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.MyoEvent)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -479,13 +480,12 @@ bool MyoEvent::IsInitialized() const {
 
 void MyoEvent::InternalSwap(MyoEvent* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(MyoEvent, gesture_)
-      + sizeof(MyoEvent::gesture_)
-      - PROTOBUF_FIELD_OFFSET(MyoEvent, emg_)>(
-          reinterpret_cast<char*>(&emg_),
-          reinterpret_cast<char*>(&other->emg_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(emg_, other->emg_);
+  swap(orientation_, other->orientation_);
+  swap(gyroscope_, other->gyroscope_);
+  swap(accelerometer_, other->accelerometer_);
+  swap(gesture_, other->gesture_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MyoEvent::GetMetadata() const {
@@ -498,7 +498,7 @@ void MyoEvent::InternalSwap(MyoEvent* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::MyoEvent* Arena::CreateMaybeMessage< ::ubii::dataStructure::MyoEvent >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::MyoEvent >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::MyoEvent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

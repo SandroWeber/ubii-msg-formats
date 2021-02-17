@@ -30,6 +30,7 @@ static void InitDefaultsscc_info_Success_proto_2fgeneral_2fsuccess_2eproto() {
     new (ptr) ::ubii::general::Success();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::general::Success::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Success_proto_2fgeneral_2fsuccess_2eproto =
@@ -67,42 +68,43 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Success_proto_2fgeneral_2fsuccess_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fgeneral_2fsuccess_2eproto_once;
+static bool descriptor_table_proto_2fgeneral_2fsuccess_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fgeneral_2fsuccess_2eproto = {
-  false, false, descriptor_table_protodef_proto_2fgeneral_2fsuccess_2eproto, "proto/general/success.proto", 94,
+  &descriptor_table_proto_2fgeneral_2fsuccess_2eproto_initialized, descriptor_table_protodef_proto_2fgeneral_2fsuccess_2eproto, "proto/general/success.proto", 94,
   &descriptor_table_proto_2fgeneral_2fsuccess_2eproto_once, descriptor_table_proto_2fgeneral_2fsuccess_2eproto_sccs, descriptor_table_proto_2fgeneral_2fsuccess_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2fgeneral_2fsuccess_2eproto::offsets,
   file_level_metadata_proto_2fgeneral_2fsuccess_2eproto, 1, file_level_enum_descriptors_proto_2fgeneral_2fsuccess_2eproto, file_level_service_descriptors_proto_2fgeneral_2fsuccess_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fgeneral_2fsuccess_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fgeneral_2fsuccess_2eproto)), true);
+static bool dynamic_init_dummy_proto_2fgeneral_2fsuccess_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fgeneral_2fsuccess_2eproto), true);
 namespace ubii {
 namespace general {
 
 // ===================================================================
 
+void Success::InitAsDefaultInstance() {
+}
 class Success::_Internal {
  public:
 };
 
-Success::Success(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Success::Success()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.general.Success)
+  // @@protoc_insertion_point(constructor:ubii.general.Success)
 }
 Success::Success(const Success& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   title_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_title().empty()) {
-    title_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_title(), 
-      GetArena());
+    title_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.title_);
   }
   message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_message().empty()) {
-    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
-      GetArena());
+    message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_);
   }
   // @@protoc_insertion_point(copy_constructor:ubii.general.Success)
 }
@@ -116,21 +118,13 @@ void Success::SharedCtor() {
 Success::~Success() {
   // @@protoc_insertion_point(destructor:ubii.general.Success)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Success::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   title_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void Success::ArenaDtor(void* object) {
-  Success* _this = reinterpret_cast< Success* >(object);
-  (void)_this;
-}
-void Success::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Success::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -146,9 +140,9 @@ void Success::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  title_.ClearToEmpty();
-  message_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  title_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
 }
 
 const char* Success::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -182,9 +176,7 @@ const char* Success::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -226,7 +218,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.general.Success)
   return target;
@@ -281,15 +273,17 @@ void Success::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Success::MergeFrom(const Success& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.general.Success)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.title().size() > 0) {
-    _internal_set_title(from._internal_title());
+
+    title_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.title_);
   }
   if (from.message().size() > 0) {
-    _internal_set_message(from._internal_message());
+
+    message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_);
   }
 }
 
@@ -313,9 +307,11 @@ bool Success::IsInitialized() const {
 
 void Success::InternalSwap(Success* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  title_.Swap(&other->title_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  message_.Swap(&other->message_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  title_.Swap(&other->title_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  message_.Swap(&other->message_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Success::GetMetadata() const {
@@ -328,7 +324,7 @@ void Success::InternalSwap(Success* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::general::Success* Arena::CreateMaybeMessage< ::ubii::general::Success >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::general::Success >(arena);
+  return Arena::CreateInternal< ::ubii::general::Success >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

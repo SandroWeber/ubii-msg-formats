@@ -21,6 +21,8 @@ namespace dataStructure {
 class Pose3DDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Pose3D> _instance;
+  const ::ubii::dataStructure::Quaternion* quaternion_;
+  const ::ubii::dataStructure::Vector3* euler_;
 } _Pose3D_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
@@ -32,6 +34,7 @@ static void InitDefaultsscc_info_Pose3D_proto_2ftopicData_2ftopicDataRecord_2fda
     new (ptr) ::ubii::dataStructure::Pose3D();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::Pose3D::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Pose3D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto =
@@ -50,8 +53,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataR
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose3D, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose3D, position_),
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  offsetof(::ubii::dataStructure::Pose3DDefaultTypeInternal, quaternion_),
+  offsetof(::ubii::dataStructure::Pose3DDefaultTypeInternal, euler_),
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose3D, orientation_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -82,20 +85,29 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Pose3D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto, "proto/topicData/topicDataRecord/dataStructure/pose3d.proto", 386,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto, "proto/topicData/topicDataRecord/dataStructure/pose3d.proto", 386,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose3d_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
+void Pose3D::InitAsDefaultInstance() {
+  ::ubii::dataStructure::_Pose3D_default_instance_._instance.get_mutable()->position_ = const_cast< ::ubii::dataStructure::Vector3*>(
+      ::ubii::dataStructure::Vector3::internal_default_instance());
+  ::ubii::dataStructure::_Pose3D_default_instance_.quaternion_ = const_cast< ::ubii::dataStructure::Quaternion*>(
+      ::ubii::dataStructure::Quaternion::internal_default_instance());
+  ::ubii::dataStructure::_Pose3D_default_instance_.euler_ = const_cast< ::ubii::dataStructure::Vector3*>(
+      ::ubii::dataStructure::Vector3::internal_default_instance());
+}
 class Pose3D::_Internal {
  public:
   static const ::ubii::dataStructure::Vector3& position(const Pose3D* msg);
@@ -116,17 +128,16 @@ Pose3D::_Internal::euler(const Pose3D* msg) {
   return *msg->orientation_.euler_;
 }
 void Pose3D::clear_position() {
-  if (GetArena() == nullptr && position_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
 }
 void Pose3D::set_allocated_quaternion(::ubii::dataStructure::Quaternion* quaternion) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_orientation();
   if (quaternion) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(quaternion)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       quaternion = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, quaternion, submessage_arena);
@@ -138,18 +149,15 @@ void Pose3D::set_allocated_quaternion(::ubii::dataStructure::Quaternion* quatern
 }
 void Pose3D::clear_quaternion() {
   if (_internal_has_quaternion()) {
-    if (GetArena() == nullptr) {
-      delete orientation_.quaternion_;
-    }
+    delete orientation_.quaternion_;
     clear_has_orientation();
   }
 }
 void Pose3D::set_allocated_euler(::ubii::dataStructure::Vector3* euler) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_orientation();
   if (euler) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(euler)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       euler = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, euler, submessage_arena);
@@ -161,21 +169,19 @@ void Pose3D::set_allocated_euler(::ubii::dataStructure::Vector3* euler) {
 }
 void Pose3D::clear_euler() {
   if (_internal_has_euler()) {
-    if (GetArena() == nullptr) {
-      delete orientation_.euler_;
-    }
+    delete orientation_.euler_;
     clear_has_orientation();
   }
 }
-Pose3D::Pose3D(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Pose3D::Pose3D()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.Pose3D)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Pose3D)
 }
 Pose3D::Pose3D(const Pose3D& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_position()) {
     position_ = new ::ubii::dataStructure::Vector3(*from.position_);
   } else {
@@ -207,23 +213,15 @@ void Pose3D::SharedCtor() {
 Pose3D::~Pose3D() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.Pose3D)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Pose3D::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete position_;
   if (has_orientation()) {
     clear_orientation();
   }
 }
 
-void Pose3D::ArenaDtor(void* object) {
-  Pose3D* _this = reinterpret_cast< Pose3D* >(object);
-  (void)_this;
-}
-void Pose3D::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Pose3D::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -237,15 +235,11 @@ void Pose3D::clear_orientation() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.dataStructure.Pose3D)
   switch (orientation_case()) {
     case kQuaternion: {
-      if (GetArena() == nullptr) {
-        delete orientation_.quaternion_;
-      }
+      delete orientation_.quaternion_;
       break;
     }
     case kEuler: {
-      if (GetArena() == nullptr) {
-        delete orientation_.euler_;
-      }
+      delete orientation_.euler_;
       break;
     }
     case ORIENTATION_NOT_SET: {
@@ -262,12 +256,12 @@ void Pose3D::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && position_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
   clear_orientation();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Pose3D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -304,9 +298,7 @@ const char* Pose3D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -352,7 +344,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Pose3D)
   return target;
@@ -419,7 +411,7 @@ void Pose3D::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Pose3D::MergeFrom(const Pose3D& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Pose3D)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -461,7 +453,7 @@ bool Pose3D::IsInitialized() const {
 
 void Pose3D::InternalSwap(Pose3D* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(position_, other->position_);
   swap(orientation_, other->orientation_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
@@ -477,7 +469,7 @@ void Pose3D::InternalSwap(Pose3D* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Pose3D* Arena::CreateMaybeMessage< ::ubii::dataStructure::Pose3D >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::Pose3D >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::Pose3D >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

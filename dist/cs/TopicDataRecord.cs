@@ -99,11 +99,7 @@ namespace Ubii.TopicData {
 
   }
   #region Messages
-  public sealed partial class TopicDataRecord : pb::IMessage<TopicDataRecord>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class TopicDataRecord : pb::IMessage<TopicDataRecord> {
     private static readonly pb::MessageParser<TopicDataRecord> _parser = new pb::MessageParser<TopicDataRecord>(() => new TopicDataRecord());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -745,9 +741,6 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (Topic.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Topic);
@@ -883,149 +876,7 @@ namespace Ubii.TopicData {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Topic.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Topic);
-      }
-      if (timestamp_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Timestamp);
-      }
-      if (typeCase_ == TypeOneofCase.Double) {
-        output.WriteRawTag(25);
-        output.WriteDouble(Double);
-      }
-      if (typeCase_ == TypeOneofCase.Bool) {
-        output.WriteRawTag(32);
-        output.WriteBool(Bool);
-      }
-      if (typeCase_ == TypeOneofCase.String) {
-        output.WriteRawTag(42);
-        output.WriteString(String);
-      }
-      if (typeCase_ == TypeOneofCase.Vector2) {
-        output.WriteRawTag(50);
-        output.WriteMessage(Vector2);
-      }
-      if (typeCase_ == TypeOneofCase.Vector3) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Vector3);
-      }
-      if (typeCase_ == TypeOneofCase.Vector4) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Vector4);
-      }
-      if (typeCase_ == TypeOneofCase.Quaternion) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Quaternion);
-      }
-      if (typeCase_ == TypeOneofCase.Matrix3X2) {
-        output.WriteRawTag(82);
-        output.WriteMessage(Matrix3X2);
-      }
-      if (typeCase_ == TypeOneofCase.Matrix4X4) {
-        output.WriteRawTag(90);
-        output.WriteMessage(Matrix4X4);
-      }
-      if (typeCase_ == TypeOneofCase.Color) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Color);
-      }
-      if (typeCase_ == TypeOneofCase.TouchEvent) {
-        output.WriteRawTag(106);
-        output.WriteMessage(TouchEvent);
-      }
-      if (typeCase_ == TypeOneofCase.KeyEvent) {
-        output.WriteRawTag(114);
-        output.WriteMessage(KeyEvent);
-      }
-      if (typeCase_ == TypeOneofCase.MouseEvent) {
-        output.WriteRawTag(122);
-        output.WriteMessage(MouseEvent);
-      }
-      if (typeCase_ == TypeOneofCase.MyoEvent) {
-        output.WriteRawTag(130, 1);
-        output.WriteMessage(MyoEvent);
-      }
-      if (typeCase_ == TypeOneofCase.Pose2D) {
-        output.WriteRawTag(138, 1);
-        output.WriteMessage(Pose2D);
-      }
-      if (typeCase_ == TypeOneofCase.Pose3D) {
-        output.WriteRawTag(146, 1);
-        output.WriteMessage(Pose3D);
-      }
-      if (typeCase_ == TypeOneofCase.Object2D) {
-        output.WriteRawTag(154, 1);
-        output.WriteMessage(Object2D);
-      }
-      if (typeCase_ == TypeOneofCase.Object3D) {
-        output.WriteRawTag(162, 1);
-        output.WriteMessage(Object3D);
-      }
-      if (typeCase_ == TypeOneofCase.Object2DList) {
-        output.WriteRawTag(170, 1);
-        output.WriteMessage(Object2DList);
-      }
-      if (typeCase_ == TypeOneofCase.Object3DList) {
-        output.WriteRawTag(178, 1);
-        output.WriteMessage(Object3DList);
-      }
-      if (typeCase_ == TypeOneofCase.Int32) {
-        output.WriteRawTag(184, 1);
-        output.WriteInt32(Int32);
-      }
-      if (typeCase_ == TypeOneofCase.Float) {
-        output.WriteRawTag(197, 1);
-        output.WriteFloat(Float);
-      }
-      if (typeCase_ == TypeOneofCase.Int32List) {
-        output.WriteRawTag(202, 1);
-        output.WriteMessage(Int32List);
-      }
-      if (typeCase_ == TypeOneofCase.FloatList) {
-        output.WriteRawTag(210, 1);
-        output.WriteMessage(FloatList);
-      }
-      if (typeCase_ == TypeOneofCase.DoubleList) {
-        output.WriteRawTag(218, 1);
-        output.WriteMessage(DoubleList);
-      }
-      if (typeCase_ == TypeOneofCase.StringList) {
-        output.WriteRawTag(226, 1);
-        output.WriteMessage(StringList);
-      }
-      if (typeCase_ == TypeOneofCase.BoolList) {
-        output.WriteRawTag(234, 1);
-        output.WriteMessage(BoolList);
-      }
-      if (typeCase_ == TypeOneofCase.Image2D) {
-        output.WriteRawTag(242, 1);
-        output.WriteMessage(Image2D);
-      }
-      if (typeCase_ == TypeOneofCase.Image2DList) {
-        output.WriteRawTag(250, 1);
-        output.WriteMessage(Image2DList);
-      }
-      if (typeCase_ == TypeOneofCase.Session) {
-        output.WriteRawTag(130, 2);
-        output.WriteMessage(Session);
-      }
-      if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
-        output.WriteRawTag(138, 2);
-        output.WriteMessage(ProcessingModuleList);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -1328,9 +1179,6 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1604,295 +1452,11 @@ namespace Ubii.TopicData {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            Topic = input.ReadString();
-            break;
-          }
-          case 18: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Ubii.TopicData.Timestamp();
-            }
-            input.ReadMessage(Timestamp);
-            break;
-          }
-          case 25: {
-            Double = input.ReadDouble();
-            break;
-          }
-          case 32: {
-            Bool = input.ReadBool();
-            break;
-          }
-          case 42: {
-            String = input.ReadString();
-            break;
-          }
-          case 50: {
-            global::Ubii.DataStructure.Vector2 subBuilder = new global::Ubii.DataStructure.Vector2();
-            if (typeCase_ == TypeOneofCase.Vector2) {
-              subBuilder.MergeFrom(Vector2);
-            }
-            input.ReadMessage(subBuilder);
-            Vector2 = subBuilder;
-            break;
-          }
-          case 58: {
-            global::Ubii.DataStructure.Vector3 subBuilder = new global::Ubii.DataStructure.Vector3();
-            if (typeCase_ == TypeOneofCase.Vector3) {
-              subBuilder.MergeFrom(Vector3);
-            }
-            input.ReadMessage(subBuilder);
-            Vector3 = subBuilder;
-            break;
-          }
-          case 66: {
-            global::Ubii.DataStructure.Vector4 subBuilder = new global::Ubii.DataStructure.Vector4();
-            if (typeCase_ == TypeOneofCase.Vector4) {
-              subBuilder.MergeFrom(Vector4);
-            }
-            input.ReadMessage(subBuilder);
-            Vector4 = subBuilder;
-            break;
-          }
-          case 74: {
-            global::Ubii.DataStructure.Quaternion subBuilder = new global::Ubii.DataStructure.Quaternion();
-            if (typeCase_ == TypeOneofCase.Quaternion) {
-              subBuilder.MergeFrom(Quaternion);
-            }
-            input.ReadMessage(subBuilder);
-            Quaternion = subBuilder;
-            break;
-          }
-          case 82: {
-            global::Ubii.DataStructure.Matrix3x2 subBuilder = new global::Ubii.DataStructure.Matrix3x2();
-            if (typeCase_ == TypeOneofCase.Matrix3X2) {
-              subBuilder.MergeFrom(Matrix3X2);
-            }
-            input.ReadMessage(subBuilder);
-            Matrix3X2 = subBuilder;
-            break;
-          }
-          case 90: {
-            global::Ubii.DataStructure.Matrix4x4 subBuilder = new global::Ubii.DataStructure.Matrix4x4();
-            if (typeCase_ == TypeOneofCase.Matrix4X4) {
-              subBuilder.MergeFrom(Matrix4X4);
-            }
-            input.ReadMessage(subBuilder);
-            Matrix4X4 = subBuilder;
-            break;
-          }
-          case 98: {
-            global::Ubii.DataStructure.Color subBuilder = new global::Ubii.DataStructure.Color();
-            if (typeCase_ == TypeOneofCase.Color) {
-              subBuilder.MergeFrom(Color);
-            }
-            input.ReadMessage(subBuilder);
-            Color = subBuilder;
-            break;
-          }
-          case 106: {
-            global::Ubii.DataStructure.TouchEvent subBuilder = new global::Ubii.DataStructure.TouchEvent();
-            if (typeCase_ == TypeOneofCase.TouchEvent) {
-              subBuilder.MergeFrom(TouchEvent);
-            }
-            input.ReadMessage(subBuilder);
-            TouchEvent = subBuilder;
-            break;
-          }
-          case 114: {
-            global::Ubii.DataStructure.KeyEvent subBuilder = new global::Ubii.DataStructure.KeyEvent();
-            if (typeCase_ == TypeOneofCase.KeyEvent) {
-              subBuilder.MergeFrom(KeyEvent);
-            }
-            input.ReadMessage(subBuilder);
-            KeyEvent = subBuilder;
-            break;
-          }
-          case 122: {
-            global::Ubii.DataStructure.MouseEvent subBuilder = new global::Ubii.DataStructure.MouseEvent();
-            if (typeCase_ == TypeOneofCase.MouseEvent) {
-              subBuilder.MergeFrom(MouseEvent);
-            }
-            input.ReadMessage(subBuilder);
-            MouseEvent = subBuilder;
-            break;
-          }
-          case 130: {
-            global::Ubii.DataStructure.MyoEvent subBuilder = new global::Ubii.DataStructure.MyoEvent();
-            if (typeCase_ == TypeOneofCase.MyoEvent) {
-              subBuilder.MergeFrom(MyoEvent);
-            }
-            input.ReadMessage(subBuilder);
-            MyoEvent = subBuilder;
-            break;
-          }
-          case 138: {
-            global::Ubii.DataStructure.Pose2D subBuilder = new global::Ubii.DataStructure.Pose2D();
-            if (typeCase_ == TypeOneofCase.Pose2D) {
-              subBuilder.MergeFrom(Pose2D);
-            }
-            input.ReadMessage(subBuilder);
-            Pose2D = subBuilder;
-            break;
-          }
-          case 146: {
-            global::Ubii.DataStructure.Pose3D subBuilder = new global::Ubii.DataStructure.Pose3D();
-            if (typeCase_ == TypeOneofCase.Pose3D) {
-              subBuilder.MergeFrom(Pose3D);
-            }
-            input.ReadMessage(subBuilder);
-            Pose3D = subBuilder;
-            break;
-          }
-          case 154: {
-            global::Ubii.DataStructure.Object2D subBuilder = new global::Ubii.DataStructure.Object2D();
-            if (typeCase_ == TypeOneofCase.Object2D) {
-              subBuilder.MergeFrom(Object2D);
-            }
-            input.ReadMessage(subBuilder);
-            Object2D = subBuilder;
-            break;
-          }
-          case 162: {
-            global::Ubii.DataStructure.Object3D subBuilder = new global::Ubii.DataStructure.Object3D();
-            if (typeCase_ == TypeOneofCase.Object3D) {
-              subBuilder.MergeFrom(Object3D);
-            }
-            input.ReadMessage(subBuilder);
-            Object3D = subBuilder;
-            break;
-          }
-          case 170: {
-            global::Ubii.DataStructure.Object2DList subBuilder = new global::Ubii.DataStructure.Object2DList();
-            if (typeCase_ == TypeOneofCase.Object2DList) {
-              subBuilder.MergeFrom(Object2DList);
-            }
-            input.ReadMessage(subBuilder);
-            Object2DList = subBuilder;
-            break;
-          }
-          case 178: {
-            global::Ubii.DataStructure.Object3DList subBuilder = new global::Ubii.DataStructure.Object3DList();
-            if (typeCase_ == TypeOneofCase.Object3DList) {
-              subBuilder.MergeFrom(Object3DList);
-            }
-            input.ReadMessage(subBuilder);
-            Object3DList = subBuilder;
-            break;
-          }
-          case 184: {
-            Int32 = input.ReadInt32();
-            break;
-          }
-          case 197: {
-            Float = input.ReadFloat();
-            break;
-          }
-          case 202: {
-            global::Ubii.DataStructure.Int32List subBuilder = new global::Ubii.DataStructure.Int32List();
-            if (typeCase_ == TypeOneofCase.Int32List) {
-              subBuilder.MergeFrom(Int32List);
-            }
-            input.ReadMessage(subBuilder);
-            Int32List = subBuilder;
-            break;
-          }
-          case 210: {
-            global::Ubii.DataStructure.FloatList subBuilder = new global::Ubii.DataStructure.FloatList();
-            if (typeCase_ == TypeOneofCase.FloatList) {
-              subBuilder.MergeFrom(FloatList);
-            }
-            input.ReadMessage(subBuilder);
-            FloatList = subBuilder;
-            break;
-          }
-          case 218: {
-            global::Ubii.DataStructure.DoubleList subBuilder = new global::Ubii.DataStructure.DoubleList();
-            if (typeCase_ == TypeOneofCase.DoubleList) {
-              subBuilder.MergeFrom(DoubleList);
-            }
-            input.ReadMessage(subBuilder);
-            DoubleList = subBuilder;
-            break;
-          }
-          case 226: {
-            global::Ubii.DataStructure.StringList subBuilder = new global::Ubii.DataStructure.StringList();
-            if (typeCase_ == TypeOneofCase.StringList) {
-              subBuilder.MergeFrom(StringList);
-            }
-            input.ReadMessage(subBuilder);
-            StringList = subBuilder;
-            break;
-          }
-          case 234: {
-            global::Ubii.DataStructure.BoolList subBuilder = new global::Ubii.DataStructure.BoolList();
-            if (typeCase_ == TypeOneofCase.BoolList) {
-              subBuilder.MergeFrom(BoolList);
-            }
-            input.ReadMessage(subBuilder);
-            BoolList = subBuilder;
-            break;
-          }
-          case 242: {
-            global::Ubii.DataStructure.Image2D subBuilder = new global::Ubii.DataStructure.Image2D();
-            if (typeCase_ == TypeOneofCase.Image2D) {
-              subBuilder.MergeFrom(Image2D);
-            }
-            input.ReadMessage(subBuilder);
-            Image2D = subBuilder;
-            break;
-          }
-          case 250: {
-            global::Ubii.DataStructure.Image2DList subBuilder = new global::Ubii.DataStructure.Image2DList();
-            if (typeCase_ == TypeOneofCase.Image2DList) {
-              subBuilder.MergeFrom(Image2DList);
-            }
-            input.ReadMessage(subBuilder);
-            Image2DList = subBuilder;
-            break;
-          }
-          case 258: {
-            global::Ubii.Sessions.Session subBuilder = new global::Ubii.Sessions.Session();
-            if (typeCase_ == TypeOneofCase.Session) {
-              subBuilder.MergeFrom(Session);
-            }
-            input.ReadMessage(subBuilder);
-            Session = subBuilder;
-            break;
-          }
-          case 266: {
-            global::Ubii.Processing.ProcessingModuleList subBuilder = new global::Ubii.Processing.ProcessingModuleList();
-            if (typeCase_ == TypeOneofCase.ProcessingModuleList) {
-              subBuilder.MergeFrom(ProcessingModuleList);
-            }
-            input.ReadMessage(subBuilder);
-            ProcessingModuleList = subBuilder;
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 
-  public sealed partial class TopicDataRecordList : pb::IMessage<TopicDataRecordList>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class TopicDataRecordList : pb::IMessage<TopicDataRecordList> {
     private static readonly pb::MessageParser<TopicDataRecordList> _parser = new pb::MessageParser<TopicDataRecordList>(() => new TopicDataRecordList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1970,25 +1534,11 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       elements_.WriteTo(output, _repeated_elements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      elements_.WriteTo(ref output, _repeated_elements_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -2011,9 +1561,6 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2026,26 +1573,7 @@ namespace Ubii.TopicData {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            elements_.AddEntriesFrom(ref input, _repeated_elements_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

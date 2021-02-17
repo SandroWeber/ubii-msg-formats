@@ -133,7 +133,7 @@ public final class TopicSubscriptionOuterClass {
   /**
    * Protobuf type {@code ubii.services.request.TopicSubscription}
    */
-  public static final class TopicSubscription extends
+  public  static final class TopicSubscription extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.services.request.TopicSubscription)
       TopicSubscriptionOrBuilder {
@@ -273,7 +273,6 @@ public final class TopicSubscriptionOuterClass {
      * <code>string client_id = 1;</code>
      * @return The clientId.
      */
-    @java.lang.Override
     public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
       if (ref instanceof java.lang.String) {
@@ -290,7 +289,6 @@ public final class TopicSubscriptionOuterClass {
      * <code>string client_id = 1;</code>
      * @return The bytes for clientId.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getClientIdBytes() {
       java.lang.Object ref = clientId_;

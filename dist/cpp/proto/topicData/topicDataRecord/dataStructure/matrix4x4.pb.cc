@@ -30,6 +30,7 @@ static void InitDefaultsscc_info_Matrix4x4_proto_2ftopicData_2ftopicDataRecord_2
     new (ptr) ::ubii::dataStructure::Matrix4x4();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::Matrix4x4::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Matrix4x4_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto =
@@ -86,33 +87,36 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Matrix4x4_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto, "proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto", 313,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto, "proto/topicData/topicDataRecord/dataStructure/matrix4x4.proto", 313,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
+void Matrix4x4::InitAsDefaultInstance() {
+}
 class Matrix4x4::_Internal {
  public:
 };
 
-Matrix4x4::Matrix4x4(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Matrix4x4::Matrix4x4()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.Matrix4x4)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Matrix4x4)
 }
 Matrix4x4::Matrix4x4(const Matrix4x4& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&m00_, &from.m00_,
     static_cast<size_t>(reinterpret_cast<char*>(&m33_) -
     reinterpret_cast<char*>(&m00_)) + sizeof(m33_));
@@ -120,28 +124,19 @@ Matrix4x4::Matrix4x4(const Matrix4x4& from)
 }
 
 void Matrix4x4::SharedCtor() {
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&m00_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&m33_) -
+  ::memset(&m00_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&m33_) -
       reinterpret_cast<char*>(&m00_)) + sizeof(m33_));
 }
 
 Matrix4x4::~Matrix4x4() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.Matrix4x4)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Matrix4x4::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void Matrix4x4::ArenaDtor(void* object) {
-  Matrix4x4* _this = reinterpret_cast< Matrix4x4* >(object);
-  (void)_this;
-}
-void Matrix4x4::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Matrix4x4::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -160,7 +155,7 @@ void Matrix4x4::Clear() {
   ::memset(&m00_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&m33_) -
       reinterpret_cast<char*>(&m00_)) + sizeof(m33_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Matrix4x4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -288,9 +283,7 @@ const char* Matrix4x4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -408,7 +401,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Matrix4x4)
   return target;
@@ -529,7 +522,7 @@ void Matrix4x4::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Matrix4x4::MergeFrom(const Matrix4x4& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Matrix4x4)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -603,13 +596,23 @@ bool Matrix4x4::IsInitialized() const {
 
 void Matrix4x4::InternalSwap(Matrix4x4* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Matrix4x4, m33_)
-      + sizeof(Matrix4x4::m33_)
-      - PROTOBUF_FIELD_OFFSET(Matrix4x4, m00_)>(
-          reinterpret_cast<char*>(&m00_),
-          reinterpret_cast<char*>(&other->m00_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(m00_, other->m00_);
+  swap(m01_, other->m01_);
+  swap(m02_, other->m02_);
+  swap(m03_, other->m03_);
+  swap(m10_, other->m10_);
+  swap(m11_, other->m11_);
+  swap(m12_, other->m12_);
+  swap(m13_, other->m13_);
+  swap(m20_, other->m20_);
+  swap(m21_, other->m21_);
+  swap(m22_, other->m22_);
+  swap(m23_, other->m23_);
+  swap(m30_, other->m30_);
+  swap(m31_, other->m31_);
+  swap(m32_, other->m32_);
+  swap(m33_, other->m33_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Matrix4x4::GetMetadata() const {
@@ -622,7 +625,7 @@ void Matrix4x4::InternalSwap(Matrix4x4* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Matrix4x4* Arena::CreateMaybeMessage< ::ubii::dataStructure::Matrix4x4 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::Matrix4x4 >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::Matrix4x4 >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

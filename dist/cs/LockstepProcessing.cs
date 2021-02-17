@@ -44,11 +44,7 @@ namespace Ubii.Processing {
 
   }
   #region Messages
-  public sealed partial class LockstepProcessingRequest : pb::IMessage<LockstepProcessingRequest>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class LockstepProcessingRequest : pb::IMessage<LockstepProcessingRequest> {
     private static readonly pb::MessageParser<LockstepProcessingRequest> _parser = new pb::MessageParser<LockstepProcessingRequest>(() => new LockstepProcessingRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,9 +149,6 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       processingModuleIds_.WriteTo(output, _repeated_processingModuleIds_codec);
       records_.WriteTo(output, _repeated_records_codec);
       if (DeltaTimeMs != 0) {
@@ -165,23 +158,7 @@ namespace Ubii.Processing {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      processingModuleIds_.WriteTo(ref output, _repeated_processingModuleIds_codec);
-      records_.WriteTo(ref output, _repeated_records_codec);
-      if (DeltaTimeMs != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(DeltaTimeMs);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -212,9 +189,6 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -235,42 +209,11 @@ namespace Ubii.Processing {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            processingModuleIds_.AddEntriesFrom(ref input, _repeated_processingModuleIds_codec);
-            break;
-          }
-          case 18: {
-            records_.AddEntriesFrom(ref input, _repeated_records_codec);
-            break;
-          }
-          case 24: {
-            DeltaTimeMs = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 
-  public sealed partial class LockstepProcessingReply : pb::IMessage<LockstepProcessingReply>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class LockstepProcessingReply : pb::IMessage<LockstepProcessingReply> {
     private static readonly pb::MessageParser<LockstepProcessingReply> _parser = new pb::MessageParser<LockstepProcessingReply>(() => new LockstepProcessingReply());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -361,27 +304,12 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       processingModuleIds_.WriteTo(output, _repeated_processingModuleIds_codec);
       records_.WriteTo(output, _repeated_records_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      processingModuleIds_.WriteTo(ref output, _repeated_processingModuleIds_codec);
-      records_.WriteTo(ref output, _repeated_records_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -406,9 +334,6 @@ namespace Ubii.Processing {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -425,30 +350,7 @@ namespace Ubii.Processing {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            processingModuleIds_.AddEntriesFrom(ref input, _repeated_processingModuleIds_codec);
-            break;
-          }
-          case 18: {
-            records_.AddEntriesFrom(ref input, _repeated_records_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

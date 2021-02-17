@@ -92,7 +92,7 @@ public final class MyoEventOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.MyoEvent}
    */
-  public static final class MyoEvent extends
+  public  static final class MyoEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.MyoEvent)
       MyoEventOrBuilder {
@@ -231,7 +231,6 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
      * @return Whether the emg field is set.
      */
-    @java.lang.Override
     public boolean hasEmg() {
       return emg_ != null;
     }
@@ -239,14 +238,12 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
      * @return The emg.
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector8OuterClass.Vector8 getEmg() {
       return emg_ == null ? ubii.dataStructure.Vector8OuterClass.Vector8.getDefaultInstance() : emg_;
     }
     /**
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector8OuterClass.Vector8OrBuilder getEmgOrBuilder() {
       return getEmg();
     }
@@ -257,7 +254,6 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
      * @return Whether the orientation field is set.
      */
-    @java.lang.Override
     public boolean hasOrientation() {
       return orientation_ != null;
     }
@@ -265,14 +261,12 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
      * @return The orientation.
      */
-    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.Quaternion getOrientation() {
       return orientation_ == null ? ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance() : orientation_;
     }
     /**
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getOrientationOrBuilder() {
       return getOrientation();
     }
@@ -283,7 +277,6 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
      * @return Whether the gyroscope field is set.
      */
-    @java.lang.Override
     public boolean hasGyroscope() {
       return gyroscope_ != null;
     }
@@ -291,14 +284,12 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
      * @return The gyroscope.
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getGyroscope() {
       return gyroscope_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : gyroscope_;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getGyroscopeOrBuilder() {
       return getGyroscope();
     }
@@ -309,7 +300,6 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
      * @return Whether the accelerometer field is set.
      */
-    @java.lang.Override
     public boolean hasAccelerometer() {
       return accelerometer_ != null;
     }
@@ -317,14 +307,12 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
      * @return The accelerometer.
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getAccelerometer() {
       return accelerometer_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : accelerometer_;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getAccelerometerOrBuilder() {
       return getAccelerometer();
     }
@@ -335,14 +323,14 @@ public final class MyoEventOuterClass {
      * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
      * @return The enum numeric value on the wire for gesture.
      */
-    @java.lang.Override public int getGestureValue() {
+    public int getGestureValue() {
       return gesture_;
     }
     /**
      * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
      * @return The gesture.
      */
-    @java.lang.Override public ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType getGesture() {
+    public ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType getGesture() {
       @SuppressWarnings("deprecation")
       ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType result = ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.valueOf(gesture_);
       return result == null ? ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.UNRECOGNIZED : result;
@@ -1250,7 +1238,7 @@ public final class MyoEventOuterClass {
        * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
        * @return The enum numeric value on the wire for gesture.
        */
-      @java.lang.Override public int getGestureValue() {
+      public int getGestureValue() {
         return gesture_;
       }
       /**
@@ -1259,7 +1247,6 @@ public final class MyoEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder setGestureValue(int value) {
-        
         gesture_ = value;
         onChanged();
         return this;
@@ -1268,7 +1255,6 @@ public final class MyoEventOuterClass {
        * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
        * @return The gesture.
        */
-      @java.lang.Override
       public ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType getGesture() {
         @SuppressWarnings("deprecation")
         ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType result = ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.valueOf(gesture_);
