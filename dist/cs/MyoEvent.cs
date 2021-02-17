@@ -48,11 +48,7 @@ namespace Ubii.DataStructure {
 
   }
   #region Messages
-  public sealed partial class MyoEvent : pb::IMessage<MyoEvent>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class MyoEvent : pb::IMessage<MyoEvent> {
     private static readonly pb::MessageParser<MyoEvent> _parser = new pb::MessageParser<MyoEvent>(() => new MyoEvent());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -187,9 +183,6 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (emg_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(Emg);
@@ -213,37 +206,7 @@ namespace Ubii.DataStructure {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (emg_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Emg);
-      }
-      if (orientation_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Orientation);
-      }
-      if (gyroscope_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Gyroscope);
-      }
-      if (accelerometer_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Accelerometer);
-      }
-      if (Gesture != global::Ubii.DataStructure.HandGestureType.Rest) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) Gesture);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -306,9 +269,6 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -349,54 +309,7 @@ namespace Ubii.DataStructure {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            if (emg_ == null) {
-              Emg = new global::Ubii.DataStructure.Vector8();
-            }
-            input.ReadMessage(Emg);
-            break;
-          }
-          case 18: {
-            if (orientation_ == null) {
-              Orientation = new global::Ubii.DataStructure.Quaternion();
-            }
-            input.ReadMessage(Orientation);
-            break;
-          }
-          case 26: {
-            if (gyroscope_ == null) {
-              Gyroscope = new global::Ubii.DataStructure.Vector3();
-            }
-            input.ReadMessage(Gyroscope);
-            break;
-          }
-          case 34: {
-            if (accelerometer_ == null) {
-              Accelerometer = new global::Ubii.DataStructure.Vector3();
-            }
-            input.ReadMessage(Accelerometer);
-            break;
-          }
-          case 40: {
-            Gesture = (global::Ubii.DataStructure.HandGestureType) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

@@ -35,6 +35,7 @@ static void InitDefaultsscc_info_LockstepProcessingReply_proto_2fprocessing_2flo
     new (ptr) ::ubii::processing::LockstepProcessingReply();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::processing::LockstepProcessingReply::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto =
@@ -49,6 +50,7 @@ static void InitDefaultsscc_info_LockstepProcessingRequest_proto_2fprocessing_2f
     new (ptr) ::ubii::processing::LockstepProcessingRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::processing::LockstepProcessingRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto =
@@ -106,20 +108,23 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once;
+static bool descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto = {
-  false, false, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 365,
+  &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2flockstepProcessing_2eproto, "proto/processing/lockstepProcessing.proto", 365,
   &descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_once, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_sccs, descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_proto_2fprocessing_2flockstepProcessing_2eproto::offsets,
   file_level_metadata_proto_2fprocessing_2flockstepProcessing_2eproto, 2, file_level_enum_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto, file_level_service_descriptors_proto_2fprocessing_2flockstepProcessing_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fprocessing_2flockstepProcessing_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto)), true);
+static bool dynamic_init_dummy_proto_2fprocessing_2flockstepProcessing_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto), true);
 namespace ubii {
 namespace processing {
 
 // ===================================================================
 
+void LockstepProcessingRequest::InitAsDefaultInstance() {
+}
 class LockstepProcessingRequest::_Internal {
  public:
 };
@@ -127,19 +132,17 @@ class LockstepProcessingRequest::_Internal {
 void LockstepProcessingRequest::clear_records() {
   records_.Clear();
 }
-LockstepProcessingRequest::LockstepProcessingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  processing_module_ids_(arena),
-  records_(arena) {
+LockstepProcessingRequest::LockstepProcessingRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.processing.LockstepProcessingRequest)
+  // @@protoc_insertion_point(constructor:ubii.processing.LockstepProcessingRequest)
 }
 LockstepProcessingRequest::LockstepProcessingRequest(const LockstepProcessingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       processing_module_ids_(from.processing_module_ids_),
       records_(from.records_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   delta_time_ms_ = from.delta_time_ms_;
   // @@protoc_insertion_point(copy_constructor:ubii.processing.LockstepProcessingRequest)
 }
@@ -152,19 +155,11 @@ void LockstepProcessingRequest::SharedCtor() {
 LockstepProcessingRequest::~LockstepProcessingRequest() {
   // @@protoc_insertion_point(destructor:ubii.processing.LockstepProcessingRequest)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void LockstepProcessingRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void LockstepProcessingRequest::ArenaDtor(void* object) {
-  LockstepProcessingRequest* _this = reinterpret_cast< LockstepProcessingRequest* >(object);
-  (void)_this;
-}
-void LockstepProcessingRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void LockstepProcessingRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -183,7 +178,7 @@ void LockstepProcessingRequest::Clear() {
   processing_module_ids_.Clear();
   records_.Clear();
   delta_time_ms_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* LockstepProcessingRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -222,7 +217,7 @@ const char* LockstepProcessingRequest::_InternalParse(const char* ptr, ::PROTOBU
       // int32 delta_time_ms = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          delta_time_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          delta_time_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -232,9 +227,7 @@ const char* LockstepProcessingRequest::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -280,7 +273,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.LockstepProcessingRequest)
   return target;
@@ -343,7 +336,7 @@ void LockstepProcessingRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void LockstepProcessingRequest::MergeFrom(const LockstepProcessingRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.LockstepProcessingRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -374,7 +367,7 @@ bool LockstepProcessingRequest::IsInitialized() const {
 
 void LockstepProcessingRequest::InternalSwap(LockstepProcessingRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   processing_module_ids_.InternalSwap(&other->processing_module_ids_);
   records_.InternalSwap(&other->records_);
   swap(delta_time_ms_, other->delta_time_ms_);
@@ -387,6 +380,8 @@ void LockstepProcessingRequest::InternalSwap(LockstepProcessingRequest* other) {
 
 // ===================================================================
 
+void LockstepProcessingReply::InitAsDefaultInstance() {
+}
 class LockstepProcessingReply::_Internal {
  public:
 };
@@ -394,19 +389,17 @@ class LockstepProcessingReply::_Internal {
 void LockstepProcessingReply::clear_records() {
   records_.Clear();
 }
-LockstepProcessingReply::LockstepProcessingReply(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  processing_module_ids_(arena),
-  records_(arena) {
+LockstepProcessingReply::LockstepProcessingReply()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.processing.LockstepProcessingReply)
+  // @@protoc_insertion_point(constructor:ubii.processing.LockstepProcessingReply)
 }
 LockstepProcessingReply::LockstepProcessingReply(const LockstepProcessingReply& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       processing_module_ids_(from.processing_module_ids_),
       records_(from.records_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.processing.LockstepProcessingReply)
 }
 
@@ -417,19 +410,11 @@ void LockstepProcessingReply::SharedCtor() {
 LockstepProcessingReply::~LockstepProcessingReply() {
   // @@protoc_insertion_point(destructor:ubii.processing.LockstepProcessingReply)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void LockstepProcessingReply::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void LockstepProcessingReply::ArenaDtor(void* object) {
-  LockstepProcessingReply* _this = reinterpret_cast< LockstepProcessingReply* >(object);
-  (void)_this;
-}
-void LockstepProcessingReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void LockstepProcessingReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -447,7 +432,7 @@ void LockstepProcessingReply::Clear() {
 
   processing_module_ids_.Clear();
   records_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* LockstepProcessingReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -489,9 +474,7 @@ const char* LockstepProcessingReply::_InternalParse(const char* ptr, ::PROTOBUF_
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -531,7 +514,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.LockstepProcessingReply)
   return target;
@@ -587,7 +570,7 @@ void LockstepProcessingReply::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& 
 void LockstepProcessingReply::MergeFrom(const LockstepProcessingReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.LockstepProcessingReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -615,7 +598,7 @@ bool LockstepProcessingReply::IsInitialized() const {
 
 void LockstepProcessingReply::InternalSwap(LockstepProcessingReply* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   processing_module_ids_.InternalSwap(&other->processing_module_ids_);
   records_.InternalSwap(&other->records_);
 }
@@ -630,10 +613,10 @@ void LockstepProcessingReply::InternalSwap(LockstepProcessingReply* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::processing::LockstepProcessingRequest* Arena::CreateMaybeMessage< ::ubii::processing::LockstepProcessingRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::processing::LockstepProcessingRequest >(arena);
+  return Arena::CreateInternal< ::ubii::processing::LockstepProcessingRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::processing::LockstepProcessingReply* Arena::CreateMaybeMessage< ::ubii::processing::LockstepProcessingReply >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::processing::LockstepProcessingReply >(arena);
+  return Arena::CreateInternal< ::ubii::processing::LockstepProcessingReply >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -36,6 +36,7 @@ static void InitDefaultsscc_info_Device_proto_2fdevices_2fdevice_2eproto() {
     new (ptr) ::ubii::devices::Device();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::devices::Device::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Device_proto_2fdevices_2fdevice_2eproto =
@@ -50,6 +51,7 @@ static void InitDefaultsscc_info_DeviceList_proto_2fdevices_2fdevice_2eproto() {
     new (ptr) ::ubii::devices::DeviceList();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::devices::DeviceList::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeviceList_proto_2fdevices_2fdevice_2eproto =
@@ -110,15 +112,16 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_DeviceList_proto_2fdevices_2fdevice_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fdevices_2fdevice_2eproto_once;
+static bool descriptor_table_proto_2fdevices_2fdevice_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fdevices_2fdevice_2eproto = {
-  false, false, descriptor_table_protodef_proto_2fdevices_2fdevice_2eproto, "proto/devices/device.proto", 369,
+  &descriptor_table_proto_2fdevices_2fdevice_2eproto_initialized, descriptor_table_protodef_proto_2fdevices_2fdevice_2eproto, "proto/devices/device.proto", 369,
   &descriptor_table_proto_2fdevices_2fdevice_2eproto_once, descriptor_table_proto_2fdevices_2fdevice_2eproto_sccs, descriptor_table_proto_2fdevices_2fdevice_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_proto_2fdevices_2fdevice_2eproto::offsets,
   file_level_metadata_proto_2fdevices_2fdevice_2eproto, 2, file_level_enum_descriptors_proto_2fdevices_2fdevice_2eproto, file_level_service_descriptors_proto_2fdevices_2fdevice_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fdevices_2fdevice_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fdevices_2fdevice_2eproto)), true);
+static bool dynamic_init_dummy_proto_2fdevices_2fdevice_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fdevices_2fdevice_2eproto), true);
 namespace ubii {
 namespace devices {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Device_DeviceType_descriptor() {
@@ -145,6 +148,8 @@ constexpr int Device::DeviceType_ARRAYSIZE;
 
 // ===================================================================
 
+void Device::InitAsDefaultInstance() {
+}
 class Device::_Internal {
  public:
 };
@@ -152,38 +157,32 @@ class Device::_Internal {
 void Device::clear_components() {
   components_.Clear();
 }
-Device::Device(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  components_(arena),
-  tags_(arena) {
+Device::Device()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.devices.Device)
+  // @@protoc_insertion_point(constructor:ubii.devices.Device)
 }
 Device::Device(const Device& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       components_(from.components_),
       tags_(from.tags_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArena());
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArena());
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_client_id().empty()) {
-    client_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_client_id(), 
-      GetArena());
+    client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
   }
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_description().empty()) {
-    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
-      GetArena());
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   device_type_ = from.device_type_;
   // @@protoc_insertion_point(copy_constructor:ubii.devices.Device)
@@ -201,23 +200,15 @@ void Device::SharedCtor() {
 Device::~Device() {
   // @@protoc_insertion_point(destructor:ubii.devices.Device)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Device::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void Device::ArenaDtor(void* object) {
-  Device* _this = reinterpret_cast< Device* >(object);
-  (void)_this;
-}
-void Device::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Device::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -235,12 +226,12 @@ void Device::Clear() {
 
   components_.Clear();
   tags_.Clear();
-  id_.ClearToEmpty();
-  name_.ClearToEmpty();
-  client_id_.ClearToEmpty();
-  description_.ClearToEmpty();
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   device_type_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Device::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -271,7 +262,7 @@ const char* Device::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       // .ubii.devices.Device.DeviceType device_type = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_device_type(static_cast<::ubii::devices::Device_DeviceType>(val));
         } else goto handle_unusual;
@@ -326,9 +317,7 @@ const char* Device::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -415,7 +404,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.devices.Device)
   return target;
@@ -505,23 +494,27 @@ void Device::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Device::MergeFrom(const Device& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.devices.Device)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   components_.MergeFrom(from.components_);
   tags_.MergeFrom(from.tags_);
   if (from.id().size() > 0) {
-    _internal_set_id(from._internal_id());
+
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   if (from.name().size() > 0) {
-    _internal_set_name(from._internal_name());
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.client_id().size() > 0) {
-    _internal_set_client_id(from._internal_client_id());
+
+    client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
   }
   if (from.description().size() > 0) {
-    _internal_set_description(from._internal_description());
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   if (from.device_type() != 0) {
     _internal_set_device_type(from._internal_device_type());
@@ -548,13 +541,17 @@ bool Device::IsInitialized() const {
 
 void Device::InternalSwap(Device* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   components_.InternalSwap(&other->components_);
   tags_.InternalSwap(&other->tags_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(device_type_, other->device_type_);
 }
 
@@ -565,21 +562,22 @@ void Device::InternalSwap(Device* other) {
 
 // ===================================================================
 
+void DeviceList::InitAsDefaultInstance() {
+}
 class DeviceList::_Internal {
  public:
 };
 
-DeviceList::DeviceList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  elements_(arena) {
+DeviceList::DeviceList()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.devices.DeviceList)
+  // @@protoc_insertion_point(constructor:ubii.devices.DeviceList)
 }
 DeviceList::DeviceList(const DeviceList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       elements_(from.elements_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.devices.DeviceList)
 }
 
@@ -590,19 +588,11 @@ void DeviceList::SharedCtor() {
 DeviceList::~DeviceList() {
   // @@protoc_insertion_point(destructor:ubii.devices.DeviceList)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeviceList::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void DeviceList::ArenaDtor(void* object) {
-  DeviceList* _this = reinterpret_cast< DeviceList* >(object);
-  (void)_this;
-}
-void DeviceList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DeviceList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -619,7 +609,7 @@ void DeviceList::Clear() {
   (void) cached_has_bits;
 
   elements_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* DeviceList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -647,9 +637,7 @@ const char* DeviceList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -679,7 +667,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.devices.DeviceList)
   return target;
@@ -727,7 +715,7 @@ void DeviceList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void DeviceList::MergeFrom(const DeviceList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.devices.DeviceList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -754,7 +742,7 @@ bool DeviceList::IsInitialized() const {
 
 void DeviceList::InternalSwap(DeviceList* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   elements_.InternalSwap(&other->elements_);
 }
 
@@ -768,10 +756,10 @@ void DeviceList::InternalSwap(DeviceList* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::devices::Device* Arena::CreateMaybeMessage< ::ubii::devices::Device >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::devices::Device >(arena);
+  return Arena::CreateInternal< ::ubii::devices::Device >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::devices::DeviceList* Arena::CreateMaybeMessage< ::ubii::devices::DeviceList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::devices::DeviceList >(arena);
+  return Arena::CreateInternal< ::ubii::devices::DeviceList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

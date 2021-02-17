@@ -57,11 +57,7 @@ namespace Ubii.Sessions {
   #endregion
 
   #region Messages
-  public sealed partial class Session : pb::IMessage<Session>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class Session : pb::IMessage<Session> {
     private static readonly pb::MessageParser<Session> _parser = new pb::MessageParser<Session>(() => new Session());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -248,9 +244,6 @@ namespace Ubii.Sessions {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (Id.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Id);
@@ -278,41 +271,7 @@ namespace Ubii.Sessions {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      processingModules_.WriteTo(ref output, _repeated_processingModules_codec);
-      ioMappings_.WriteTo(ref output, _repeated_ioMappings_codec);
-      tags_.WriteTo(ref output, _repeated_tags_codec);
-      if (Description.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Description);
-      }
-      authors_.WriteTo(ref output, _repeated_authors_codec);
-      if (Status != global::Ubii.Sessions.SessionStatus.Created) {
-        output.WriteRawTag(64);
-        output.WriteEnum((int) Status);
-      }
-      if (Editable != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(Editable);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -371,9 +330,6 @@ namespace Ubii.Sessions {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -418,66 +374,11 @@ namespace Ubii.Sessions {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            Id = input.ReadString();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            processingModules_.AddEntriesFrom(ref input, _repeated_processingModules_codec);
-            break;
-          }
-          case 34: {
-            ioMappings_.AddEntriesFrom(ref input, _repeated_ioMappings_codec);
-            break;
-          }
-          case 42: {
-            tags_.AddEntriesFrom(ref input, _repeated_tags_codec);
-            break;
-          }
-          case 50: {
-            Description = input.ReadString();
-            break;
-          }
-          case 58: {
-            authors_.AddEntriesFrom(ref input, _repeated_authors_codec);
-            break;
-          }
-          case 64: {
-            Status = (global::Ubii.Sessions.SessionStatus) input.ReadEnum();
-            break;
-          }
-          case 72: {
-            Editable = input.ReadBool();
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 
-  public sealed partial class SessionList : pb::IMessage<SessionList>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class SessionList : pb::IMessage<SessionList> {
     private static readonly pb::MessageParser<SessionList> _parser = new pb::MessageParser<SessionList>(() => new SessionList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -555,25 +456,11 @@ namespace Ubii.Sessions {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       elements_.WriteTo(output, _repeated_elements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      elements_.WriteTo(ref output, _repeated_elements_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -596,9 +483,6 @@ namespace Ubii.Sessions {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -611,26 +495,7 @@ namespace Ubii.Sessions {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            elements_.AddEntriesFrom(ref input, _repeated_elements_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

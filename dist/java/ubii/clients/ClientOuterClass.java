@@ -132,11 +132,35 @@ public final class ClientOuterClass {
      * @return The isDedicatedProcessingNode.
      */
     boolean getIsDedicatedProcessingNode();
+
+    /**
+     * <code>string host_ip = 8;</code>
+     * @return The hostIp.
+     */
+    java.lang.String getHostIp();
+    /**
+     * <code>string host_ip = 8;</code>
+     * @return The bytes for hostIp.
+     */
+    com.google.protobuf.ByteString
+        getHostIpBytes();
+
+    /**
+     * <code>string metadata_json = 9;</code>
+     * @return The metadataJson.
+     */
+    java.lang.String getMetadataJson();
+    /**
+     * <code>string metadata_json = 9;</code>
+     * @return The bytes for metadataJson.
+     */
+    com.google.protobuf.ByteString
+        getMetadataJsonBytes();
   }
   /**
    * Protobuf type {@code ubii.clients.Client}
    */
-  public static final class Client extends
+  public  static final class Client extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.clients.Client)
       ClientOrBuilder {
@@ -152,6 +176,8 @@ public final class ClientOuterClass {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
       processingModules_ = java.util.Collections.emptyList();
+      hostIp_ = "";
+      metadataJson_ = "";
     }
 
     @java.lang.Override
@@ -235,6 +261,18 @@ public final class ClientOuterClass {
               isDedicatedProcessingNode_ = input.readBool();
               break;
             }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hostIp_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              metadataJson_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -282,7 +320,6 @@ public final class ClientOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -299,7 +336,6 @@ public final class ClientOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -320,7 +356,6 @@ public final class ClientOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -337,7 +372,6 @@ public final class ClientOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -357,14 +391,12 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.devices.DeviceOuterClass.Device> getDevicesList() {
       return devices_;
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.devices.DeviceOuterClass.DeviceOrBuilder> 
         getDevicesOrBuilderList() {
       return devices_;
@@ -372,21 +404,18 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
-    @java.lang.Override
     public int getDevicesCount() {
       return devices_.size();
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.Device getDevices(int index) {
       return devices_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
-    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDevicesOrBuilder(
         int index) {
       return devices_.get(index);
@@ -433,7 +462,6 @@ public final class ClientOuterClass {
      * <code>string description = 5;</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -450,7 +478,6 @@ public final class ClientOuterClass {
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -470,14 +497,12 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
       return processingModules_;
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
         getProcessingModulesOrBuilderList() {
       return processingModules_;
@@ -485,21 +510,18 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
-    @java.lang.Override
     public int getProcessingModulesCount() {
       return processingModules_.size();
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
       return processingModules_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
-    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
         int index) {
       return processingModules_.get(index);
@@ -511,9 +533,80 @@ public final class ClientOuterClass {
      * <code>bool is_dedicated_processing_node = 7;</code>
      * @return The isDedicatedProcessingNode.
      */
-    @java.lang.Override
     public boolean getIsDedicatedProcessingNode() {
       return isDedicatedProcessingNode_;
+    }
+
+    public static final int HOST_IP_FIELD_NUMBER = 8;
+    private volatile java.lang.Object hostIp_;
+    /**
+     * <code>string host_ip = 8;</code>
+     * @return The hostIp.
+     */
+    public java.lang.String getHostIp() {
+      java.lang.Object ref = hostIp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hostIp_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string host_ip = 8;</code>
+     * @return The bytes for hostIp.
+     */
+    public com.google.protobuf.ByteString
+        getHostIpBytes() {
+      java.lang.Object ref = hostIp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hostIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int METADATA_JSON_FIELD_NUMBER = 9;
+    private volatile java.lang.Object metadataJson_;
+    /**
+     * <code>string metadata_json = 9;</code>
+     * @return The metadataJson.
+     */
+    public java.lang.String getMetadataJson() {
+      java.lang.Object ref = metadataJson_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataJson_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string metadata_json = 9;</code>
+     * @return The bytes for metadataJson.
+     */
+    public com.google.protobuf.ByteString
+        getMetadataJsonBytes() {
+      java.lang.Object ref = metadataJson_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metadataJson_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -550,6 +643,12 @@ public final class ClientOuterClass {
       }
       if (isDedicatedProcessingNode_ != false) {
         output.writeBool(7, isDedicatedProcessingNode_);
+      }
+      if (!getHostIpBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, hostIp_);
+      }
+      if (!getMetadataJsonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, metadataJson_);
       }
       unknownFields.writeTo(output);
     }
@@ -589,6 +688,12 @@ public final class ClientOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isDedicatedProcessingNode_);
       }
+      if (!getHostIpBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, hostIp_);
+      }
+      if (!getMetadataJsonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, metadataJson_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -618,6 +723,10 @@ public final class ClientOuterClass {
           .equals(other.getProcessingModulesList())) return false;
       if (getIsDedicatedProcessingNode()
           != other.getIsDedicatedProcessingNode()) return false;
+      if (!getHostIp()
+          .equals(other.getHostIp())) return false;
+      if (!getMetadataJson()
+          .equals(other.getMetadataJson())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -650,6 +759,10 @@ public final class ClientOuterClass {
       hash = (37 * hash) + IS_DEDICATED_PROCESSING_NODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDedicatedProcessingNode());
+      hash = (37 * hash) + HOST_IP_FIELD_NUMBER;
+      hash = (53 * hash) + getHostIp().hashCode();
+      hash = (37 * hash) + METADATA_JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataJson().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -807,6 +920,10 @@ public final class ClientOuterClass {
         }
         isDedicatedProcessingNode_ = false;
 
+        hostIp_ = "";
+
+        metadataJson_ = "";
+
         return this;
       }
 
@@ -861,6 +978,8 @@ public final class ClientOuterClass {
           result.processingModules_ = processingModulesBuilder_.build();
         }
         result.isDedicatedProcessingNode_ = isDedicatedProcessingNode_;
+        result.hostIp_ = hostIp_;
+        result.metadataJson_ = metadataJson_;
         onBuilt();
         return result;
       }
@@ -985,6 +1104,14 @@ public final class ClientOuterClass {
         }
         if (other.getIsDedicatedProcessingNode() != false) {
           setIsDedicatedProcessingNode(other.getIsDedicatedProcessingNode());
+        }
+        if (!other.getHostIp().isEmpty()) {
+          hostIp_ = other.hostIp_;
+          onChanged();
+        }
+        if (!other.getMetadataJson().isEmpty()) {
+          metadataJson_ = other.metadataJson_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1839,7 +1966,6 @@ public final class ClientOuterClass {
        * <code>bool is_dedicated_processing_node = 7;</code>
        * @return The isDedicatedProcessingNode.
        */
-      @java.lang.Override
       public boolean getIsDedicatedProcessingNode() {
         return isDedicatedProcessingNode_;
       }
@@ -1861,6 +1987,158 @@ public final class ClientOuterClass {
       public Builder clearIsDedicatedProcessingNode() {
         
         isDedicatedProcessingNode_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object hostIp_ = "";
+      /**
+       * <code>string host_ip = 8;</code>
+       * @return The hostIp.
+       */
+      public java.lang.String getHostIp() {
+        java.lang.Object ref = hostIp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hostIp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string host_ip = 8;</code>
+       * @return The bytes for hostIp.
+       */
+      public com.google.protobuf.ByteString
+          getHostIpBytes() {
+        java.lang.Object ref = hostIp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hostIp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string host_ip = 8;</code>
+       * @param value The hostIp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostIp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hostIp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string host_ip = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHostIp() {
+        
+        hostIp_ = getDefaultInstance().getHostIp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string host_ip = 8;</code>
+       * @param value The bytes for hostIp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostIpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hostIp_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object metadataJson_ = "";
+      /**
+       * <code>string metadata_json = 9;</code>
+       * @return The metadataJson.
+       */
+      public java.lang.String getMetadataJson() {
+        java.lang.Object ref = metadataJson_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metadataJson_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string metadata_json = 9;</code>
+       * @return The bytes for metadataJson.
+       */
+      public com.google.protobuf.ByteString
+          getMetadataJsonBytes() {
+        java.lang.Object ref = metadataJson_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metadataJson_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string metadata_json = 9;</code>
+       * @param value The metadataJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetadataJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        metadataJson_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metadata_json = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMetadataJson() {
+        
+        metadataJson_ = getDefaultInstance().getMetadataJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string metadata_json = 9;</code>
+       * @param value The bytes for metadataJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetadataJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        metadataJson_ = value;
         onChanged();
         return this;
       }
@@ -1948,7 +2226,7 @@ public final class ClientOuterClass {
   /**
    * Protobuf type {@code ubii.clients.ClientList}
    */
-  public static final class ClientList extends
+  public  static final class ClientList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.clients.ClientList)
       ClientListOrBuilder {
@@ -2041,14 +2319,12 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.clients.ClientOuterClass.Client> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.clients.ClientOuterClass.ClientOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -2056,21 +2332,18 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.Client getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
@@ -2731,13 +3004,14 @@ public final class ClientOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032proto/clients/client.proto\022\014ubii.clien" +
       "ts\032\032proto/devices/device.proto\032\'proto/pr" +
-      "ocessing/processingModule.proto\"\321\001\n\006Clie" +
+      "ocessing/processingModule.proto\"\371\001\n\006Clie" +
       "nt\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030" +
       "\003 \003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003(" +
       "\t\022\023\n\013description\030\005 \001(\t\022=\n\022processing_mod" +
       "ules\030\006 \003(\0132!.ubii.processing.ProcessingM" +
       "odule\022$\n\034is_dedicated_processing_node\030\007 " +
-      "\001(\010\"4\n\nClientList\022&\n\010elements\030\001 \003(\0132\024.ub" +
+      "\001(\010\022\017\n\007host_ip\030\010 \001(\t\022\025\n\rmetadata_json\030\t " +
+      "\001(\t\"4\n\nClientList\022&\n\010elements\030\001 \003(\0132\024.ub" +
       "ii.clients.Clientb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -2751,7 +3025,7 @@ public final class ClientOuterClass {
     internal_static_ubii_clients_Client_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_clients_Client_descriptor,
-        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", });
+        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", });
     internal_static_ubii_clients_ClientList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_clients_ClientList_fieldAccessorTable = new

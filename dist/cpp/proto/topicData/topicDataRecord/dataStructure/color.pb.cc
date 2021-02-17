@@ -30,6 +30,7 @@ static void InitDefaultsscc_info_Color_proto_2ftopicData_2ftopicDataRecord_2fdat
     new (ptr) ::ubii::dataStructure::Color();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::Color::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Color_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto =
@@ -70,33 +71,36 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Color_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto, "proto/topicData/topicDataRecord/dataStructure/color.proto", 140,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto, "proto/topicData/topicDataRecord/dataStructure/color.proto", 140,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
+void Color::InitAsDefaultInstance() {
+}
 class Color::_Internal {
  public:
 };
 
-Color::Color(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Color::Color()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.Color)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Color)
 }
 Color::Color(const Color& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&r_, &from.r_,
     static_cast<size_t>(reinterpret_cast<char*>(&a_) -
     reinterpret_cast<char*>(&r_)) + sizeof(a_));
@@ -104,28 +108,19 @@ Color::Color(const Color& from)
 }
 
 void Color::SharedCtor() {
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&r_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&a_) -
+  ::memset(&r_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&a_) -
       reinterpret_cast<char*>(&r_)) + sizeof(a_));
 }
 
 Color::~Color() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.Color)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Color::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void Color::ArenaDtor(void* object) {
-  Color* _this = reinterpret_cast< Color* >(object);
-  (void)_this;
-}
-void Color::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Color::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -144,7 +139,7 @@ void Color::Clear() {
   ::memset(&r_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&a_) -
       reinterpret_cast<char*>(&r_)) + sizeof(a_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Color::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -188,9 +183,7 @@ const char* Color::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -236,7 +229,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Color)
   return target;
@@ -297,7 +290,7 @@ void Color::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Color::MergeFrom(const Color& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Color)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -335,13 +328,11 @@ bool Color::IsInitialized() const {
 
 void Color::InternalSwap(Color* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Color, a_)
-      + sizeof(Color::a_)
-      - PROTOBUF_FIELD_OFFSET(Color, r_)>(
-          reinterpret_cast<char*>(&r_),
-          reinterpret_cast<char*>(&other->r_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(r_, other->r_);
+  swap(g_, other->g_);
+  swap(b_, other->b_);
+  swap(a_, other->a_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Color::GetMetadata() const {
@@ -354,7 +345,7 @@ void Color::InternalSwap(Color* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Color* Arena::CreateMaybeMessage< ::ubii::dataStructure::Color >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::Color >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::Color >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

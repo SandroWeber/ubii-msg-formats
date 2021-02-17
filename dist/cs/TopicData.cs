@@ -42,11 +42,7 @@ namespace Ubii.TopicData {
 
   }
   #region Messages
-  public sealed partial class TopicData : pb::IMessage<TopicData>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class TopicData : pb::IMessage<TopicData> {
     private static readonly pb::MessageParser<TopicData> _parser = new pb::MessageParser<TopicData>(() => new TopicData());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -184,9 +180,6 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (typeCase_ == TypeOneofCase.TopicDataRecord) {
         output.WriteRawTag(18);
         output.WriteMessage(TopicDataRecord);
@@ -202,29 +195,7 @@ namespace Ubii.TopicData {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (typeCase_ == TypeOneofCase.TopicDataRecord) {
-        output.WriteRawTag(18);
-        output.WriteMessage(TopicDataRecord);
-      }
-      if (typeCase_ == TypeOneofCase.TopicDataRecordList) {
-        output.WriteRawTag(26);
-        output.WriteMessage(TopicDataRecordList);
-      }
-      if (typeCase_ == TypeOneofCase.Error) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Error);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -275,9 +246,6 @@ namespace Ubii.TopicData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -313,49 +281,7 @@ namespace Ubii.TopicData {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 18: {
-            global::Ubii.TopicData.TopicDataRecord subBuilder = new global::Ubii.TopicData.TopicDataRecord();
-            if (typeCase_ == TypeOneofCase.TopicDataRecord) {
-              subBuilder.MergeFrom(TopicDataRecord);
-            }
-            input.ReadMessage(subBuilder);
-            TopicDataRecord = subBuilder;
-            break;
-          }
-          case 26: {
-            global::Ubii.TopicData.TopicDataRecordList subBuilder = new global::Ubii.TopicData.TopicDataRecordList();
-            if (typeCase_ == TypeOneofCase.TopicDataRecordList) {
-              subBuilder.MergeFrom(TopicDataRecordList);
-            }
-            input.ReadMessage(subBuilder);
-            TopicDataRecordList = subBuilder;
-            break;
-          }
-          case 34: {
-            global::Ubii.General.Error subBuilder = new global::Ubii.General.Error();
-            if (typeCase_ == TypeOneofCase.Error) {
-              subBuilder.MergeFrom(Error);
-            }
-            input.ReadMessage(subBuilder);
-            Error = subBuilder;
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

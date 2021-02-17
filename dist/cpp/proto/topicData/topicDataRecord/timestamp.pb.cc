@@ -30,6 +30,7 @@ static void InitDefaultsscc_info_Timestamp_proto_2ftopicData_2ftopicDataRecord_2
     new (ptr) ::ubii::topicData::Timestamp();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::topicData::Timestamp::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto =
@@ -67,33 +68,36 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Timestamp_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, "proto/topicData/topicDataRecord/timestamp.proto", 118,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, "proto/topicData/topicDataRecord/timestamp.proto", 118,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto), true);
 namespace ubii {
 namespace topicData {
 
 // ===================================================================
 
+void Timestamp::InitAsDefaultInstance() {
+}
 class Timestamp::_Internal {
  public:
 };
 
-Timestamp::Timestamp(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Timestamp::Timestamp()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.topicData.Timestamp)
+  // @@protoc_insertion_point(constructor:ubii.topicData.Timestamp)
 }
 Timestamp::Timestamp(const Timestamp& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&seconds_, &from.seconds_,
     static_cast<size_t>(reinterpret_cast<char*>(&nanos_) -
     reinterpret_cast<char*>(&seconds_)) + sizeof(nanos_));
@@ -101,28 +105,19 @@ Timestamp::Timestamp(const Timestamp& from)
 }
 
 void Timestamp::SharedCtor() {
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&seconds_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&nanos_) -
+  ::memset(&seconds_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&nanos_) -
       reinterpret_cast<char*>(&seconds_)) + sizeof(nanos_));
 }
 
 Timestamp::~Timestamp() {
   // @@protoc_insertion_point(destructor:ubii.topicData.Timestamp)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Timestamp::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void Timestamp::ArenaDtor(void* object) {
-  Timestamp* _this = reinterpret_cast< Timestamp* >(object);
-  (void)_this;
-}
-void Timestamp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Timestamp::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -141,7 +136,7 @@ void Timestamp::Clear() {
   ::memset(&seconds_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&nanos_) -
       reinterpret_cast<char*>(&seconds_)) + sizeof(nanos_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Timestamp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -154,14 +149,14 @@ const char* Timestamp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int64 seconds = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 nanos = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          nanos_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          nanos_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -171,9 +166,7 @@ const char* Timestamp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -207,7 +200,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.topicData.Timestamp)
   return target;
@@ -262,7 +255,7 @@ void Timestamp::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Timestamp::MergeFrom(const Timestamp& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.topicData.Timestamp)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -294,13 +287,9 @@ bool Timestamp::IsInitialized() const {
 
 void Timestamp::InternalSwap(Timestamp* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Timestamp, nanos_)
-      + sizeof(Timestamp::nanos_)
-      - PROTOBUF_FIELD_OFFSET(Timestamp, seconds_)>(
-          reinterpret_cast<char*>(&seconds_),
-          reinterpret_cast<char*>(&other->seconds_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(seconds_, other->seconds_);
+  swap(nanos_, other->nanos_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Timestamp::GetMetadata() const {
@@ -313,7 +302,7 @@ void Timestamp::InternalSwap(Timestamp* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::topicData::Timestamp* Arena::CreateMaybeMessage< ::ubii::topicData::Timestamp >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::topicData::Timestamp >(arena);
+  return Arena::CreateInternal< ::ubii::topicData::Timestamp >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

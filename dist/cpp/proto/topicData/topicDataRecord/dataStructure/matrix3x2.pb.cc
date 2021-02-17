@@ -30,6 +30,7 @@ static void InitDefaultsscc_info_Matrix3x2_proto_2ftopicData_2ftopicDataRecord_2
     new (ptr) ::ubii::dataStructure::Matrix3x2();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::Matrix3x2::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Matrix3x2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto =
@@ -73,33 +74,36 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Matrix3x2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto, "proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto", 182,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto, "proto/topicData/topicDataRecord/dataStructure/matrix3x2.proto", 182,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix3x2_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
+void Matrix3x2::InitAsDefaultInstance() {
+}
 class Matrix3x2::_Internal {
  public:
 };
 
-Matrix3x2::Matrix3x2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Matrix3x2::Matrix3x2()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.Matrix3x2)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Matrix3x2)
 }
 Matrix3x2::Matrix3x2(const Matrix3x2& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&m00_, &from.m00_,
     static_cast<size_t>(reinterpret_cast<char*>(&m21_) -
     reinterpret_cast<char*>(&m00_)) + sizeof(m21_));
@@ -107,28 +111,19 @@ Matrix3x2::Matrix3x2(const Matrix3x2& from)
 }
 
 void Matrix3x2::SharedCtor() {
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&m00_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&m21_) -
+  ::memset(&m00_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&m21_) -
       reinterpret_cast<char*>(&m00_)) + sizeof(m21_));
 }
 
 Matrix3x2::~Matrix3x2() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.Matrix3x2)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Matrix3x2::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void Matrix3x2::ArenaDtor(void* object) {
-  Matrix3x2* _this = reinterpret_cast< Matrix3x2* >(object);
-  (void)_this;
-}
-void Matrix3x2::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Matrix3x2::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -147,7 +142,7 @@ void Matrix3x2::Clear() {
   ::memset(&m00_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&m21_) -
       reinterpret_cast<char*>(&m00_)) + sizeof(m21_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* Matrix3x2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -205,9 +200,7 @@ const char* Matrix3x2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -265,7 +258,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Matrix3x2)
   return target;
@@ -336,7 +329,7 @@ void Matrix3x2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Matrix3x2::MergeFrom(const Matrix3x2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Matrix3x2)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -380,13 +373,13 @@ bool Matrix3x2::IsInitialized() const {
 
 void Matrix3x2::InternalSwap(Matrix3x2* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Matrix3x2, m21_)
-      + sizeof(Matrix3x2::m21_)
-      - PROTOBUF_FIELD_OFFSET(Matrix3x2, m00_)>(
-          reinterpret_cast<char*>(&m00_),
-          reinterpret_cast<char*>(&other->m00_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(m00_, other->m00_);
+  swap(m01_, other->m01_);
+  swap(m10_, other->m10_);
+  swap(m11_, other->m11_);
+  swap(m20_, other->m20_);
+  swap(m21_, other->m21_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Matrix3x2::GetMetadata() const {
@@ -399,7 +392,7 @@ void Matrix3x2::InternalSwap(Matrix3x2* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Matrix3x2* Arena::CreateMaybeMessage< ::ubii::dataStructure::Matrix3x2 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::Matrix3x2 >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::Matrix3x2 >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

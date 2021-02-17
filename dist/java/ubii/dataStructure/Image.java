@@ -50,7 +50,7 @@ public final class Image {
   /**
    * Protobuf type {@code ubii.dataStructure.Image2D}
    */
-  public static final class Image2D extends
+  public  static final class Image2D extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Image2D)
       Image2DOrBuilder {
@@ -226,10 +226,6 @@ public final class Image {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -270,7 +266,6 @@ public final class Image {
      * <code>int32 width = 1;</code>
      * @return The width.
      */
-    @java.lang.Override
     public int getWidth() {
       return width_;
     }
@@ -281,7 +276,6 @@ public final class Image {
      * <code>int32 height = 2;</code>
      * @return The height.
      */
-    @java.lang.Override
     public int getHeight() {
       return height_;
     }
@@ -292,14 +286,14 @@ public final class Image {
      * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
      * @return The enum numeric value on the wire for dataFormat.
      */
-    @java.lang.Override public int getDataFormatValue() {
+    public int getDataFormatValue() {
       return dataFormat_;
     }
     /**
      * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
      * @return The dataFormat.
      */
-    @java.lang.Override public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
+    public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
       @SuppressWarnings("deprecation")
       ubii.dataStructure.Image.Image2D.DataFormat result = ubii.dataStructure.Image.Image2D.DataFormat.valueOf(dataFormat_);
       return result == null ? ubii.dataStructure.Image.Image2D.DataFormat.UNRECOGNIZED : result;
@@ -311,7 +305,6 @@ public final class Image {
      * <code>bytes data = 4;</code>
      * @return The data.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
@@ -673,7 +666,6 @@ public final class Image {
        * <code>int32 width = 1;</code>
        * @return The width.
        */
-      @java.lang.Override
       public int getWidth() {
         return width_;
       }
@@ -704,7 +696,6 @@ public final class Image {
        * <code>int32 height = 2;</code>
        * @return The height.
        */
-      @java.lang.Override
       public int getHeight() {
         return height_;
       }
@@ -735,7 +726,7 @@ public final class Image {
        * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
        * @return The enum numeric value on the wire for dataFormat.
        */
-      @java.lang.Override public int getDataFormatValue() {
+      public int getDataFormatValue() {
         return dataFormat_;
       }
       /**
@@ -744,7 +735,6 @@ public final class Image {
        * @return This builder for chaining.
        */
       public Builder setDataFormatValue(int value) {
-        
         dataFormat_ = value;
         onChanged();
         return this;
@@ -753,7 +743,6 @@ public final class Image {
        * <code>.ubii.dataStructure.Image2D.DataFormat data_format = 3;</code>
        * @return The dataFormat.
        */
-      @java.lang.Override
       public ubii.dataStructure.Image.Image2D.DataFormat getDataFormat() {
         @SuppressWarnings("deprecation")
         ubii.dataStructure.Image.Image2D.DataFormat result = ubii.dataStructure.Image.Image2D.DataFormat.valueOf(dataFormat_);
@@ -789,7 +778,6 @@ public final class Image {
        * <code>bytes data = 4;</code>
        * @return The data.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
@@ -901,7 +889,7 @@ public final class Image {
   /**
    * Protobuf type {@code ubii.dataStructure.Image2DList}
    */
-  public static final class Image2DList extends
+  public  static final class Image2DList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Image2DList)
       Image2DListOrBuilder {
@@ -994,14 +982,12 @@ public final class Image {
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.dataStructure.Image.Image2D> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.dataStructure.Image.Image2DOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1009,21 +995,18 @@ public final class Image {
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Image.Image2D getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.dataStructure.Image2D elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Image.Image2DOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

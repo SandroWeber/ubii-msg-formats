@@ -40,6 +40,8 @@ $root.ubii = (function() {
              * @property {string|null} [description] Client description
              * @property {Array.<ubii.processing.IProcessingModule>|null} [processingModules] Client processingModules
              * @property {boolean|null} [isDedicatedProcessingNode] Client isDedicatedProcessingNode
+             * @property {string|null} [hostIp] Client hostIp
+             * @property {string|null} [metadataJson] Client metadataJson
              */
 
             /**
@@ -117,6 +119,22 @@ $root.ubii = (function() {
             Client.prototype.isDedicatedProcessingNode = false;
 
             /**
+             * Client hostIp.
+             * @member {string} hostIp
+             * @memberof ubii.clients.Client
+             * @instance
+             */
+            Client.prototype.hostIp = "";
+
+            /**
+             * Client metadataJson.
+             * @member {string} metadataJson
+             * @memberof ubii.clients.Client
+             * @instance
+             */
+            Client.prototype.metadataJson = "";
+
+            /**
              * Creates a new Client instance using the specified properties.
              * @function create
              * @memberof ubii.clients.Client
@@ -157,6 +175,10 @@ $root.ubii = (function() {
                         $root.ubii.processing.ProcessingModule.encode(message.processingModules[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.isDedicatedProcessingNode != null && message.hasOwnProperty("isDedicatedProcessingNode"))
                     writer.uint32(/* id 7, wireType 0 =*/56).bool(message.isDedicatedProcessingNode);
+                if (message.hostIp != null && message.hasOwnProperty("hostIp"))
+                    writer.uint32(/* id 8, wireType 2 =*/66).string(message.hostIp);
+                if (message.metadataJson != null && message.hasOwnProperty("metadataJson"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.metadataJson);
                 return writer;
             };
 
@@ -217,6 +239,12 @@ $root.ubii = (function() {
                         break;
                     case 7:
                         message.isDedicatedProcessingNode = reader.bool();
+                        break;
+                    case 8:
+                        message.hostIp = reader.string();
+                        break;
+                    case 9:
+                        message.metadataJson = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -290,6 +318,12 @@ $root.ubii = (function() {
                 if (message.isDedicatedProcessingNode != null && message.hasOwnProperty("isDedicatedProcessingNode"))
                     if (typeof message.isDedicatedProcessingNode !== "boolean")
                         return "isDedicatedProcessingNode: boolean expected";
+                if (message.hostIp != null && message.hasOwnProperty("hostIp"))
+                    if (!$util.isString(message.hostIp))
+                        return "hostIp: string expected";
+                if (message.metadataJson != null && message.hasOwnProperty("metadataJson"))
+                    if (!$util.isString(message.metadataJson))
+                        return "metadataJson: string expected";
                 return null;
             };
 
@@ -340,6 +374,10 @@ $root.ubii = (function() {
                 }
                 if (object.isDedicatedProcessingNode != null)
                     message.isDedicatedProcessingNode = Boolean(object.isDedicatedProcessingNode);
+                if (object.hostIp != null)
+                    message.hostIp = String(object.hostIp);
+                if (object.metadataJson != null)
+                    message.metadataJson = String(object.metadataJson);
                 return message;
             };
 
@@ -366,6 +404,8 @@ $root.ubii = (function() {
                     object.name = "";
                     object.description = "";
                     object.isDedicatedProcessingNode = false;
+                    object.hostIp = "";
+                    object.metadataJson = "";
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -390,6 +430,10 @@ $root.ubii = (function() {
                 }
                 if (message.isDedicatedProcessingNode != null && message.hasOwnProperty("isDedicatedProcessingNode"))
                     object.isDedicatedProcessingNode = message.isDedicatedProcessingNode;
+                if (message.hostIp != null && message.hasOwnProperty("hostIp"))
+                    object.hostIp = message.hostIp;
+                if (message.metadataJson != null && message.hasOwnProperty("metadataJson"))
+                    object.metadataJson = message.metadataJson;
                 return object;
             };
 

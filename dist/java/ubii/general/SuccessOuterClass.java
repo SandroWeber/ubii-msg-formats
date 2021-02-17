@@ -45,7 +45,7 @@ public final class SuccessOuterClass {
   /**
    * Protobuf type {@code ubii.general.Success}
    */
-  public static final class Success extends
+  public  static final class Success extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.general.Success)
       SuccessOrBuilder {
@@ -139,7 +139,6 @@ public final class SuccessOuterClass {
      * <code>string title = 1;</code>
      * @return The title.
      */
-    @java.lang.Override
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
@@ -156,7 +155,6 @@ public final class SuccessOuterClass {
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTitleBytes() {
       java.lang.Object ref = title_;
@@ -177,7 +175,6 @@ public final class SuccessOuterClass {
      * <code>string message = 2;</code>
      * @return The message.
      */
-    @java.lang.Override
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -194,7 +191,6 @@ public final class SuccessOuterClass {
      * <code>string message = 2;</code>
      * @return The bytes for message.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
       java.lang.Object ref = message_;

@@ -45,7 +45,7 @@ public final class Vector4OuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Vector4}
    */
-  public static final class Vector4 extends
+  public  static final class Vector4 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Vector4)
       Vector4OrBuilder {
@@ -145,7 +145,6 @@ public final class Vector4OuterClass {
      * <code>double x = 1;</code>
      * @return The x.
      */
-    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -156,7 +155,6 @@ public final class Vector4OuterClass {
      * <code>double y = 2;</code>
      * @return The y.
      */
-    @java.lang.Override
     public double getY() {
       return y_;
     }
@@ -167,7 +165,6 @@ public final class Vector4OuterClass {
      * <code>double z = 3;</code>
      * @return The z.
      */
-    @java.lang.Override
     public double getZ() {
       return z_;
     }
@@ -178,7 +175,6 @@ public final class Vector4OuterClass {
      * <code>double w = 4;</code>
      * @return The w.
      */
-    @java.lang.Override
     public double getW() {
       return w_;
     }
@@ -549,7 +545,6 @@ public final class Vector4OuterClass {
        * <code>double x = 1;</code>
        * @return The x.
        */
-      @java.lang.Override
       public double getX() {
         return x_;
       }
@@ -580,7 +575,6 @@ public final class Vector4OuterClass {
        * <code>double y = 2;</code>
        * @return The y.
        */
-      @java.lang.Override
       public double getY() {
         return y_;
       }
@@ -611,7 +605,6 @@ public final class Vector4OuterClass {
        * <code>double z = 3;</code>
        * @return The z.
        */
-      @java.lang.Override
       public double getZ() {
         return z_;
       }
@@ -642,7 +635,6 @@ public final class Vector4OuterClass {
        * <code>double w = 4;</code>
        * @return The w.
        */
-      @java.lang.Override
       public double getW() {
         return w_;
       }

@@ -7,8 +7,6 @@
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
@@ -109,7 +107,9 @@ proto.ubii.clients.Client.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     processingModulesList: jspb.Message.toObjectList(msg.getProcessingModulesList(),
     proto_processing_processingModule_pb.ProcessingModule.toObject, includeInstance),
-    isDedicatedProcessingNode: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+    isDedicatedProcessingNode: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    hostIp: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    metadataJson: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -175,6 +175,14 @@ proto.ubii.clients.Client.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsDedicatedProcessingNode(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHostIp(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetadataJson(value);
       break;
     default:
       reader.skipField();
@@ -253,6 +261,20 @@ proto.ubii.clients.Client.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       7,
+      f
+    );
+  }
+  f = message.getHostIp();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getMetadataJson();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -441,6 +463,42 @@ proto.ubii.clients.Client.prototype.getIsDedicatedProcessingNode = function() {
  */
 proto.ubii.clients.Client.prototype.setIsDedicatedProcessingNode = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional string host_ip = 8;
+ * @return {string}
+ */
+proto.ubii.clients.Client.prototype.getHostIp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.clients.Client} returns this
+ */
+proto.ubii.clients.Client.prototype.setHostIp = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string metadata_json = 9;
+ * @return {string}
+ */
+proto.ubii.clients.Client.prototype.getMetadataJson = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.clients.Client} returns this
+ */
+proto.ubii.clients.Client.prototype.setMetadataJson = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

@@ -117,7 +117,7 @@ public final class Matrix4X4 {
   /**
    * Protobuf type {@code ubii.dataStructure.Matrix4x4}
    */
-  public static final class Matrix4x4 extends
+  public  static final class Matrix4x4 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Matrix4x4)
       Matrix4x4OrBuilder {
@@ -277,7 +277,6 @@ public final class Matrix4X4 {
      * <code>double m00 = 1;</code>
      * @return The m00.
      */
-    @java.lang.Override
     public double getM00() {
       return m00_;
     }
@@ -288,7 +287,6 @@ public final class Matrix4X4 {
      * <code>double m01 = 2;</code>
      * @return The m01.
      */
-    @java.lang.Override
     public double getM01() {
       return m01_;
     }
@@ -299,7 +297,6 @@ public final class Matrix4X4 {
      * <code>double m02 = 3;</code>
      * @return The m02.
      */
-    @java.lang.Override
     public double getM02() {
       return m02_;
     }
@@ -310,7 +307,6 @@ public final class Matrix4X4 {
      * <code>double m03 = 4;</code>
      * @return The m03.
      */
-    @java.lang.Override
     public double getM03() {
       return m03_;
     }
@@ -321,7 +317,6 @@ public final class Matrix4X4 {
      * <code>double m10 = 5;</code>
      * @return The m10.
      */
-    @java.lang.Override
     public double getM10() {
       return m10_;
     }
@@ -332,7 +327,6 @@ public final class Matrix4X4 {
      * <code>double m11 = 6;</code>
      * @return The m11.
      */
-    @java.lang.Override
     public double getM11() {
       return m11_;
     }
@@ -343,7 +337,6 @@ public final class Matrix4X4 {
      * <code>double m12 = 7;</code>
      * @return The m12.
      */
-    @java.lang.Override
     public double getM12() {
       return m12_;
     }
@@ -354,7 +347,6 @@ public final class Matrix4X4 {
      * <code>double m13 = 8;</code>
      * @return The m13.
      */
-    @java.lang.Override
     public double getM13() {
       return m13_;
     }
@@ -365,7 +357,6 @@ public final class Matrix4X4 {
      * <code>double m20 = 9;</code>
      * @return The m20.
      */
-    @java.lang.Override
     public double getM20() {
       return m20_;
     }
@@ -376,7 +367,6 @@ public final class Matrix4X4 {
      * <code>double m21 = 10;</code>
      * @return The m21.
      */
-    @java.lang.Override
     public double getM21() {
       return m21_;
     }
@@ -387,7 +377,6 @@ public final class Matrix4X4 {
      * <code>double m22 = 11;</code>
      * @return The m22.
      */
-    @java.lang.Override
     public double getM22() {
       return m22_;
     }
@@ -398,7 +387,6 @@ public final class Matrix4X4 {
      * <code>double m23 = 12;</code>
      * @return The m23.
      */
-    @java.lang.Override
     public double getM23() {
       return m23_;
     }
@@ -409,7 +397,6 @@ public final class Matrix4X4 {
      * <code>double m30 = 13;</code>
      * @return The m30.
      */
-    @java.lang.Override
     public double getM30() {
       return m30_;
     }
@@ -420,7 +407,6 @@ public final class Matrix4X4 {
      * <code>double m31 = 14;</code>
      * @return The m31.
      */
-    @java.lang.Override
     public double getM31() {
       return m31_;
     }
@@ -431,7 +417,6 @@ public final class Matrix4X4 {
      * <code>double m32 = 15;</code>
      * @return The m32.
      */
-    @java.lang.Override
     public double getM32() {
       return m32_;
     }
@@ -442,7 +427,6 @@ public final class Matrix4X4 {
      * <code>double m33 = 16;</code>
      * @return The m33.
      */
-    @java.lang.Override
     public double getM33() {
       return m33_;
     }
@@ -1041,7 +1025,6 @@ public final class Matrix4X4 {
        * <code>double m00 = 1;</code>
        * @return The m00.
        */
-      @java.lang.Override
       public double getM00() {
         return m00_;
       }
@@ -1072,7 +1055,6 @@ public final class Matrix4X4 {
        * <code>double m01 = 2;</code>
        * @return The m01.
        */
-      @java.lang.Override
       public double getM01() {
         return m01_;
       }
@@ -1103,7 +1085,6 @@ public final class Matrix4X4 {
        * <code>double m02 = 3;</code>
        * @return The m02.
        */
-      @java.lang.Override
       public double getM02() {
         return m02_;
       }
@@ -1134,7 +1115,6 @@ public final class Matrix4X4 {
        * <code>double m03 = 4;</code>
        * @return The m03.
        */
-      @java.lang.Override
       public double getM03() {
         return m03_;
       }
@@ -1165,7 +1145,6 @@ public final class Matrix4X4 {
        * <code>double m10 = 5;</code>
        * @return The m10.
        */
-      @java.lang.Override
       public double getM10() {
         return m10_;
       }
@@ -1196,7 +1175,6 @@ public final class Matrix4X4 {
        * <code>double m11 = 6;</code>
        * @return The m11.
        */
-      @java.lang.Override
       public double getM11() {
         return m11_;
       }
@@ -1227,7 +1205,6 @@ public final class Matrix4X4 {
        * <code>double m12 = 7;</code>
        * @return The m12.
        */
-      @java.lang.Override
       public double getM12() {
         return m12_;
       }
@@ -1258,7 +1235,6 @@ public final class Matrix4X4 {
        * <code>double m13 = 8;</code>
        * @return The m13.
        */
-      @java.lang.Override
       public double getM13() {
         return m13_;
       }
@@ -1289,7 +1265,6 @@ public final class Matrix4X4 {
        * <code>double m20 = 9;</code>
        * @return The m20.
        */
-      @java.lang.Override
       public double getM20() {
         return m20_;
       }
@@ -1320,7 +1295,6 @@ public final class Matrix4X4 {
        * <code>double m21 = 10;</code>
        * @return The m21.
        */
-      @java.lang.Override
       public double getM21() {
         return m21_;
       }
@@ -1351,7 +1325,6 @@ public final class Matrix4X4 {
        * <code>double m22 = 11;</code>
        * @return The m22.
        */
-      @java.lang.Override
       public double getM22() {
         return m22_;
       }
@@ -1382,7 +1355,6 @@ public final class Matrix4X4 {
        * <code>double m23 = 12;</code>
        * @return The m23.
        */
-      @java.lang.Override
       public double getM23() {
         return m23_;
       }
@@ -1413,7 +1385,6 @@ public final class Matrix4X4 {
        * <code>double m30 = 13;</code>
        * @return The m30.
        */
-      @java.lang.Override
       public double getM30() {
         return m30_;
       }
@@ -1444,7 +1415,6 @@ public final class Matrix4X4 {
        * <code>double m31 = 14;</code>
        * @return The m31.
        */
-      @java.lang.Override
       public double getM31() {
         return m31_;
       }
@@ -1475,7 +1445,6 @@ public final class Matrix4X4 {
        * <code>double m32 = 15;</code>
        * @return The m32.
        */
-      @java.lang.Override
       public double getM32() {
         return m32_;
       }
@@ -1506,7 +1475,6 @@ public final class Matrix4X4 {
        * <code>double m33 = 16;</code>
        * @return The m33.
        */
-      @java.lang.Override
       public double getM33() {
         return m33_;
       }

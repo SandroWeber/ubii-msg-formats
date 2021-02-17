@@ -43,11 +43,7 @@ namespace Ubii.Devices {
 
   }
   #region Messages
-  public sealed partial class Component : pb::IMessage<Component>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class Component : pb::IMessage<Component> {
     private static readonly pb::MessageParser<Component> _parser = new pb::MessageParser<Component>(() => new Component());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -209,9 +205,6 @@ namespace Ubii.Devices {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (Topic.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Topic);
@@ -240,42 +233,7 @@ namespace Ubii.Devices {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Topic.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Topic);
-      }
-      if (MessageFormat.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(MessageFormat);
-      }
-      if (IoType != global::Ubii.Devices.Component.Types.IOType.Publisher) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) IoType);
-      }
-      if (DeviceId.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(DeviceId);
-      }
-      tags_.WriteTo(ref output, _repeated_tags_codec);
-      if (Description.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Description);
-      }
-      if (Id.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Id);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -334,9 +292,6 @@ namespace Ubii.Devices {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -373,50 +328,7 @@ namespace Ubii.Devices {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            Topic = input.ReadString();
-            break;
-          }
-          case 18: {
-            MessageFormat = input.ReadString();
-            break;
-          }
-          case 24: {
-            IoType = (global::Ubii.Devices.Component.Types.IOType) input.ReadEnum();
-            break;
-          }
-          case 34: {
-            DeviceId = input.ReadString();
-            break;
-          }
-          case 42: {
-            tags_.AddEntriesFrom(ref input, _repeated_tags_codec);
-            break;
-          }
-          case 50: {
-            Description = input.ReadString();
-            break;
-          }
-          case 58: {
-            Id = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the Component message type.</summary>
@@ -432,11 +344,7 @@ namespace Ubii.Devices {
 
   }
 
-  public sealed partial class ComponentList : pb::IMessage<ComponentList>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class ComponentList : pb::IMessage<ComponentList> {
     private static readonly pb::MessageParser<ComponentList> _parser = new pb::MessageParser<ComponentList>(() => new ComponentList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -514,25 +422,11 @@ namespace Ubii.Devices {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       elements_.WriteTo(output, _repeated_elements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      elements_.WriteTo(ref output, _repeated_elements_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -555,9 +449,6 @@ namespace Ubii.Devices {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -570,26 +461,7 @@ namespace Ubii.Devices {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            elements_.AddEntriesFrom(ref input, _repeated_elements_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

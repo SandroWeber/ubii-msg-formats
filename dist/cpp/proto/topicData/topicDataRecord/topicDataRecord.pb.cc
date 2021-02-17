@@ -47,6 +47,37 @@ namespace topicData {
 class TopicDataRecordDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TopicDataRecord> _instance;
+  double double__;
+  bool bool__;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr string_;
+  const ::ubii::dataStructure::Vector2* vector2_;
+  const ::ubii::dataStructure::Vector3* vector3_;
+  const ::ubii::dataStructure::Vector4* vector4_;
+  const ::ubii::dataStructure::Quaternion* quaternion_;
+  const ::ubii::dataStructure::Matrix3x2* matrix3x2_;
+  const ::ubii::dataStructure::Matrix4x4* matrix4x4_;
+  const ::ubii::dataStructure::Color* color_;
+  const ::ubii::dataStructure::TouchEvent* touch_event_;
+  const ::ubii::dataStructure::KeyEvent* key_event_;
+  const ::ubii::dataStructure::MouseEvent* mouse_event_;
+  const ::ubii::dataStructure::MyoEvent* myo_event_;
+  const ::ubii::dataStructure::Pose2D* pose2d_;
+  const ::ubii::dataStructure::Pose3D* pose3d_;
+  const ::ubii::dataStructure::Object2D* object2d_;
+  const ::ubii::dataStructure::Object3D* object3d_;
+  const ::ubii::dataStructure::Object2DList* object2d_list_;
+  const ::ubii::dataStructure::Object3DList* object3d_list_;
+  ::PROTOBUF_NAMESPACE_ID::int32 int32_;
+  float float__;
+  const ::ubii::dataStructure::Int32List* int32_list_;
+  const ::ubii::dataStructure::FloatList* float_list_;
+  const ::ubii::dataStructure::DoubleList* double_list_;
+  const ::ubii::dataStructure::StringList* string_list_;
+  const ::ubii::dataStructure::BoolList* bool_list_;
+  const ::ubii::dataStructure::Image2D* image2d_;
+  const ::ubii::dataStructure::Image2DList* image2d_list_;
+  const ::ubii::sessions::Session* session_;
+  const ::ubii::processing::ProcessingModuleList* processing_module_list_;
 } _TopicDataRecord_default_instance_;
 class TopicDataRecordListDefaultTypeInternal {
  public:
@@ -62,6 +93,7 @@ static void InitDefaultsscc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRe
     new (ptr) ::ubii::topicData::TopicDataRecord();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::topicData::TopicDataRecord::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<27> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto =
@@ -102,6 +134,7 @@ static void InitDefaultsscc_info_TopicDataRecordList_proto_2ftopicData_2ftopicDa
     new (ptr) ::ubii::topicData::TopicDataRecordList();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::topicData::TopicDataRecordList::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicDataRecordList_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto =
@@ -120,37 +153,37 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataR
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, topic_),
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, timestamp_),
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, double__),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, bool__),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, string_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, vector2_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, vector3_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, vector4_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, quaternion_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, matrix3x2_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, matrix4x4_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, color_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, touch_event_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, key_event_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, mouse_event_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, myo_event_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, pose2d_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, pose3d_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object2d_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object3d_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object2d_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, object3d_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, int32_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, float__),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, int32_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, float_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, double_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, string_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, bool_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, image2d_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, image2d_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, session_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, processing_module_list_),
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, _internal_metadata_),
@@ -270,20 +303,83 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_TopicDataRecordList_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, "proto/topicData/topicDataRecord/topicDataRecord.proto", 2850,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, "proto/topicData/topicDataRecord/topicDataRecord.proto", 2850,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_deps, 2, 20,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, 2, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto), true);
 namespace ubii {
 namespace topicData {
 
 // ===================================================================
 
+void TopicDataRecord::InitAsDefaultInstance() {
+  ::ubii::topicData::_TopicDataRecord_default_instance_._instance.get_mutable()->timestamp_ = const_cast< ::ubii::topicData::Timestamp*>(
+      ::ubii::topicData::Timestamp::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.double__ = 0;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.bool__ = false;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.string_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.vector2_ = const_cast< ::ubii::dataStructure::Vector2*>(
+      ::ubii::dataStructure::Vector2::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.vector3_ = const_cast< ::ubii::dataStructure::Vector3*>(
+      ::ubii::dataStructure::Vector3::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.vector4_ = const_cast< ::ubii::dataStructure::Vector4*>(
+      ::ubii::dataStructure::Vector4::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.quaternion_ = const_cast< ::ubii::dataStructure::Quaternion*>(
+      ::ubii::dataStructure::Quaternion::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.matrix3x2_ = const_cast< ::ubii::dataStructure::Matrix3x2*>(
+      ::ubii::dataStructure::Matrix3x2::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.matrix4x4_ = const_cast< ::ubii::dataStructure::Matrix4x4*>(
+      ::ubii::dataStructure::Matrix4x4::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.color_ = const_cast< ::ubii::dataStructure::Color*>(
+      ::ubii::dataStructure::Color::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.touch_event_ = const_cast< ::ubii::dataStructure::TouchEvent*>(
+      ::ubii::dataStructure::TouchEvent::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.key_event_ = const_cast< ::ubii::dataStructure::KeyEvent*>(
+      ::ubii::dataStructure::KeyEvent::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.mouse_event_ = const_cast< ::ubii::dataStructure::MouseEvent*>(
+      ::ubii::dataStructure::MouseEvent::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.myo_event_ = const_cast< ::ubii::dataStructure::MyoEvent*>(
+      ::ubii::dataStructure::MyoEvent::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.pose2d_ = const_cast< ::ubii::dataStructure::Pose2D*>(
+      ::ubii::dataStructure::Pose2D::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.pose3d_ = const_cast< ::ubii::dataStructure::Pose3D*>(
+      ::ubii::dataStructure::Pose3D::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.object2d_ = const_cast< ::ubii::dataStructure::Object2D*>(
+      ::ubii::dataStructure::Object2D::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.object3d_ = const_cast< ::ubii::dataStructure::Object3D*>(
+      ::ubii::dataStructure::Object3D::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.object2d_list_ = const_cast< ::ubii::dataStructure::Object2DList*>(
+      ::ubii::dataStructure::Object2DList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.object3d_list_ = const_cast< ::ubii::dataStructure::Object3DList*>(
+      ::ubii::dataStructure::Object3DList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.int32_ = 0;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.float__ = 0;
+  ::ubii::topicData::_TopicDataRecord_default_instance_.int32_list_ = const_cast< ::ubii::dataStructure::Int32List*>(
+      ::ubii::dataStructure::Int32List::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.float_list_ = const_cast< ::ubii::dataStructure::FloatList*>(
+      ::ubii::dataStructure::FloatList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.double_list_ = const_cast< ::ubii::dataStructure::DoubleList*>(
+      ::ubii::dataStructure::DoubleList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.string_list_ = const_cast< ::ubii::dataStructure::StringList*>(
+      ::ubii::dataStructure::StringList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.bool_list_ = const_cast< ::ubii::dataStructure::BoolList*>(
+      ::ubii::dataStructure::BoolList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.image2d_ = const_cast< ::ubii::dataStructure::Image2D*>(
+      ::ubii::dataStructure::Image2D::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.image2d_list_ = const_cast< ::ubii::dataStructure::Image2DList*>(
+      ::ubii::dataStructure::Image2DList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.session_ = const_cast< ::ubii::sessions::Session*>(
+      ::ubii::sessions::Session::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.processing_module_list_ = const_cast< ::ubii::processing::ProcessingModuleList*>(
+      ::ubii::processing::ProcessingModuleList::internal_default_instance());
+}
 class TopicDataRecord::_Internal {
  public:
   static const ::ubii::topicData::Timestamp& timestamp(const TopicDataRecord* msg);
@@ -424,17 +520,16 @@ TopicDataRecord::_Internal::processing_module_list(const TopicDataRecord* msg) {
   return *msg->type_.processing_module_list_;
 }
 void TopicDataRecord::clear_timestamp() {
-  if (GetArena() == nullptr && timestamp_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && timestamp_ != nullptr) {
     delete timestamp_;
   }
   timestamp_ = nullptr;
 }
 void TopicDataRecord::set_allocated_vector2(::ubii::dataStructure::Vector2* vector2) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (vector2) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vector2)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       vector2 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, vector2, submessage_arena);
@@ -446,18 +541,15 @@ void TopicDataRecord::set_allocated_vector2(::ubii::dataStructure::Vector2* vect
 }
 void TopicDataRecord::clear_vector2() {
   if (_internal_has_vector2()) {
-    if (GetArena() == nullptr) {
-      delete type_.vector2_;
-    }
+    delete type_.vector2_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_vector3(::ubii::dataStructure::Vector3* vector3) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (vector3) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vector3)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       vector3 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, vector3, submessage_arena);
@@ -469,18 +561,15 @@ void TopicDataRecord::set_allocated_vector3(::ubii::dataStructure::Vector3* vect
 }
 void TopicDataRecord::clear_vector3() {
   if (_internal_has_vector3()) {
-    if (GetArena() == nullptr) {
-      delete type_.vector3_;
-    }
+    delete type_.vector3_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_vector4(::ubii::dataStructure::Vector4* vector4) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (vector4) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vector4)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       vector4 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, vector4, submessage_arena);
@@ -492,18 +581,15 @@ void TopicDataRecord::set_allocated_vector4(::ubii::dataStructure::Vector4* vect
 }
 void TopicDataRecord::clear_vector4() {
   if (_internal_has_vector4()) {
-    if (GetArena() == nullptr) {
-      delete type_.vector4_;
-    }
+    delete type_.vector4_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_quaternion(::ubii::dataStructure::Quaternion* quaternion) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (quaternion) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(quaternion)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       quaternion = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, quaternion, submessage_arena);
@@ -515,18 +601,15 @@ void TopicDataRecord::set_allocated_quaternion(::ubii::dataStructure::Quaternion
 }
 void TopicDataRecord::clear_quaternion() {
   if (_internal_has_quaternion()) {
-    if (GetArena() == nullptr) {
-      delete type_.quaternion_;
-    }
+    delete type_.quaternion_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_matrix3x2(::ubii::dataStructure::Matrix3x2* matrix3x2) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (matrix3x2) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(matrix3x2)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       matrix3x2 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, matrix3x2, submessage_arena);
@@ -538,18 +621,15 @@ void TopicDataRecord::set_allocated_matrix3x2(::ubii::dataStructure::Matrix3x2* 
 }
 void TopicDataRecord::clear_matrix3x2() {
   if (_internal_has_matrix3x2()) {
-    if (GetArena() == nullptr) {
-      delete type_.matrix3x2_;
-    }
+    delete type_.matrix3x2_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_matrix4x4(::ubii::dataStructure::Matrix4x4* matrix4x4) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (matrix4x4) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(matrix4x4)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       matrix4x4 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, matrix4x4, submessage_arena);
@@ -561,18 +641,15 @@ void TopicDataRecord::set_allocated_matrix4x4(::ubii::dataStructure::Matrix4x4* 
 }
 void TopicDataRecord::clear_matrix4x4() {
   if (_internal_has_matrix4x4()) {
-    if (GetArena() == nullptr) {
-      delete type_.matrix4x4_;
-    }
+    delete type_.matrix4x4_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_color(::ubii::dataStructure::Color* color) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (color) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(color)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       color = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, color, submessage_arena);
@@ -584,18 +661,15 @@ void TopicDataRecord::set_allocated_color(::ubii::dataStructure::Color* color) {
 }
 void TopicDataRecord::clear_color() {
   if (_internal_has_color()) {
-    if (GetArena() == nullptr) {
-      delete type_.color_;
-    }
+    delete type_.color_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_touch_event(::ubii::dataStructure::TouchEvent* touch_event) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (touch_event) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(touch_event)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       touch_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, touch_event, submessage_arena);
@@ -607,18 +681,15 @@ void TopicDataRecord::set_allocated_touch_event(::ubii::dataStructure::TouchEven
 }
 void TopicDataRecord::clear_touch_event() {
   if (_internal_has_touch_event()) {
-    if (GetArena() == nullptr) {
-      delete type_.touch_event_;
-    }
+    delete type_.touch_event_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_key_event(::ubii::dataStructure::KeyEvent* key_event) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (key_event) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(key_event)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       key_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, key_event, submessage_arena);
@@ -630,18 +701,15 @@ void TopicDataRecord::set_allocated_key_event(::ubii::dataStructure::KeyEvent* k
 }
 void TopicDataRecord::clear_key_event() {
   if (_internal_has_key_event()) {
-    if (GetArena() == nullptr) {
-      delete type_.key_event_;
-    }
+    delete type_.key_event_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_mouse_event(::ubii::dataStructure::MouseEvent* mouse_event) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (mouse_event) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(mouse_event)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       mouse_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, mouse_event, submessage_arena);
@@ -653,18 +721,15 @@ void TopicDataRecord::set_allocated_mouse_event(::ubii::dataStructure::MouseEven
 }
 void TopicDataRecord::clear_mouse_event() {
   if (_internal_has_mouse_event()) {
-    if (GetArena() == nullptr) {
-      delete type_.mouse_event_;
-    }
+    delete type_.mouse_event_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_myo_event(::ubii::dataStructure::MyoEvent* myo_event) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (myo_event) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(myo_event)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       myo_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, myo_event, submessage_arena);
@@ -676,18 +741,15 @@ void TopicDataRecord::set_allocated_myo_event(::ubii::dataStructure::MyoEvent* m
 }
 void TopicDataRecord::clear_myo_event() {
   if (_internal_has_myo_event()) {
-    if (GetArena() == nullptr) {
-      delete type_.myo_event_;
-    }
+    delete type_.myo_event_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_pose2d(::ubii::dataStructure::Pose2D* pose2d) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (pose2d) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pose2d)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       pose2d = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, pose2d, submessage_arena);
@@ -699,18 +761,15 @@ void TopicDataRecord::set_allocated_pose2d(::ubii::dataStructure::Pose2D* pose2d
 }
 void TopicDataRecord::clear_pose2d() {
   if (_internal_has_pose2d()) {
-    if (GetArena() == nullptr) {
-      delete type_.pose2d_;
-    }
+    delete type_.pose2d_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_pose3d(::ubii::dataStructure::Pose3D* pose3d) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (pose3d) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pose3d)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       pose3d = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, pose3d, submessage_arena);
@@ -722,18 +781,15 @@ void TopicDataRecord::set_allocated_pose3d(::ubii::dataStructure::Pose3D* pose3d
 }
 void TopicDataRecord::clear_pose3d() {
   if (_internal_has_pose3d()) {
-    if (GetArena() == nullptr) {
-      delete type_.pose3d_;
-    }
+    delete type_.pose3d_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_object2d(::ubii::dataStructure::Object2D* object2d) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (object2d) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(object2d)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       object2d = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, object2d, submessage_arena);
@@ -745,18 +801,15 @@ void TopicDataRecord::set_allocated_object2d(::ubii::dataStructure::Object2D* ob
 }
 void TopicDataRecord::clear_object2d() {
   if (_internal_has_object2d()) {
-    if (GetArena() == nullptr) {
-      delete type_.object2d_;
-    }
+    delete type_.object2d_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_object3d(::ubii::dataStructure::Object3D* object3d) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (object3d) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(object3d)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       object3d = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, object3d, submessage_arena);
@@ -768,18 +821,15 @@ void TopicDataRecord::set_allocated_object3d(::ubii::dataStructure::Object3D* ob
 }
 void TopicDataRecord::clear_object3d() {
   if (_internal_has_object3d()) {
-    if (GetArena() == nullptr) {
-      delete type_.object3d_;
-    }
+    delete type_.object3d_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_object2d_list(::ubii::dataStructure::Object2DList* object2d_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (object2d_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(object2d_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       object2d_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, object2d_list, submessage_arena);
@@ -791,18 +841,15 @@ void TopicDataRecord::set_allocated_object2d_list(::ubii::dataStructure::Object2
 }
 void TopicDataRecord::clear_object2d_list() {
   if (_internal_has_object2d_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.object2d_list_;
-    }
+    delete type_.object2d_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_object3d_list(::ubii::dataStructure::Object3DList* object3d_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (object3d_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(object3d_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       object3d_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, object3d_list, submessage_arena);
@@ -814,18 +861,15 @@ void TopicDataRecord::set_allocated_object3d_list(::ubii::dataStructure::Object3
 }
 void TopicDataRecord::clear_object3d_list() {
   if (_internal_has_object3d_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.object3d_list_;
-    }
+    delete type_.object3d_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_int32_list(::ubii::dataStructure::Int32List* int32_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (int32_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(int32_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       int32_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, int32_list, submessage_arena);
@@ -837,18 +881,15 @@ void TopicDataRecord::set_allocated_int32_list(::ubii::dataStructure::Int32List*
 }
 void TopicDataRecord::clear_int32_list() {
   if (_internal_has_int32_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.int32_list_;
-    }
+    delete type_.int32_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_float_list(::ubii::dataStructure::FloatList* float_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (float_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(float_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       float_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, float_list, submessage_arena);
@@ -860,18 +901,15 @@ void TopicDataRecord::set_allocated_float_list(::ubii::dataStructure::FloatList*
 }
 void TopicDataRecord::clear_float_list() {
   if (_internal_has_float_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.float_list_;
-    }
+    delete type_.float_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_double_list(::ubii::dataStructure::DoubleList* double_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (double_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(double_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       double_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, double_list, submessage_arena);
@@ -883,18 +921,15 @@ void TopicDataRecord::set_allocated_double_list(::ubii::dataStructure::DoubleLis
 }
 void TopicDataRecord::clear_double_list() {
   if (_internal_has_double_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.double_list_;
-    }
+    delete type_.double_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_string_list(::ubii::dataStructure::StringList* string_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (string_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(string_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       string_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, string_list, submessage_arena);
@@ -906,18 +941,15 @@ void TopicDataRecord::set_allocated_string_list(::ubii::dataStructure::StringLis
 }
 void TopicDataRecord::clear_string_list() {
   if (_internal_has_string_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.string_list_;
-    }
+    delete type_.string_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_bool_list(::ubii::dataStructure::BoolList* bool_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (bool_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(bool_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       bool_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, bool_list, submessage_arena);
@@ -929,18 +961,15 @@ void TopicDataRecord::set_allocated_bool_list(::ubii::dataStructure::BoolList* b
 }
 void TopicDataRecord::clear_bool_list() {
   if (_internal_has_bool_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.bool_list_;
-    }
+    delete type_.bool_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_image2d(::ubii::dataStructure::Image2D* image2d) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (image2d) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(image2d)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       image2d = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, image2d, submessage_arena);
@@ -952,18 +981,15 @@ void TopicDataRecord::set_allocated_image2d(::ubii::dataStructure::Image2D* imag
 }
 void TopicDataRecord::clear_image2d() {
   if (_internal_has_image2d()) {
-    if (GetArena() == nullptr) {
-      delete type_.image2d_;
-    }
+    delete type_.image2d_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_image2d_list(::ubii::dataStructure::Image2DList* image2d_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (image2d_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(image2d_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       image2d_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, image2d_list, submessage_arena);
@@ -975,18 +1001,15 @@ void TopicDataRecord::set_allocated_image2d_list(::ubii::dataStructure::Image2DL
 }
 void TopicDataRecord::clear_image2d_list() {
   if (_internal_has_image2d_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.image2d_list_;
-    }
+    delete type_.image2d_list_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_session(::ubii::sessions::Session* session) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (session) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(session)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       session = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, session, submessage_arena);
@@ -998,18 +1021,15 @@ void TopicDataRecord::set_allocated_session(::ubii::sessions::Session* session) 
 }
 void TopicDataRecord::clear_session() {
   if (_internal_has_session()) {
-    if (GetArena() == nullptr) {
-      delete type_.session_;
-    }
+    delete type_.session_;
     clear_has_type();
   }
 }
 void TopicDataRecord::set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (processing_module_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(processing_module_list)->GetArena();
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
       processing_module_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, processing_module_list, submessage_arena);
@@ -1021,25 +1041,22 @@ void TopicDataRecord::set_allocated_processing_module_list(::ubii::processing::P
 }
 void TopicDataRecord::clear_processing_module_list() {
   if (_internal_has_processing_module_list()) {
-    if (GetArena() == nullptr) {
-      delete type_.processing_module_list_;
-    }
+    delete type_.processing_module_list_;
     clear_has_type();
   }
 }
-TopicDataRecord::TopicDataRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+TopicDataRecord::TopicDataRecord()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.topicData.TopicDataRecord)
+  // @@protoc_insertion_point(constructor:ubii.topicData.TopicDataRecord)
 }
 TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_topic().empty()) {
-    topic_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_topic(), 
-      GetArena());
+    topic_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.topic_);
   }
   if (from._internal_has_timestamp()) {
     timestamp_ = new ::ubii::topicData::Timestamp(*from.timestamp_);
@@ -1189,11 +1206,9 @@ void TopicDataRecord::SharedCtor() {
 TopicDataRecord::~TopicDataRecord() {
   // @@protoc_insertion_point(destructor:ubii.topicData.TopicDataRecord)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TopicDataRecord::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete timestamp_;
   if (has_type()) {
@@ -1201,12 +1216,6 @@ void TopicDataRecord::SharedDtor() {
   }
 }
 
-void TopicDataRecord::ArenaDtor(void* object) {
-  TopicDataRecord* _this = reinterpret_cast< TopicDataRecord* >(object);
-  (void)_this;
-}
-void TopicDataRecord::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TopicDataRecord::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1228,109 +1237,75 @@ void TopicDataRecord::clear_type() {
       break;
     }
     case kString: {
-      type_.string_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+      type_.string_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
       break;
     }
     case kVector2: {
-      if (GetArena() == nullptr) {
-        delete type_.vector2_;
-      }
+      delete type_.vector2_;
       break;
     }
     case kVector3: {
-      if (GetArena() == nullptr) {
-        delete type_.vector3_;
-      }
+      delete type_.vector3_;
       break;
     }
     case kVector4: {
-      if (GetArena() == nullptr) {
-        delete type_.vector4_;
-      }
+      delete type_.vector4_;
       break;
     }
     case kQuaternion: {
-      if (GetArena() == nullptr) {
-        delete type_.quaternion_;
-      }
+      delete type_.quaternion_;
       break;
     }
     case kMatrix3X2: {
-      if (GetArena() == nullptr) {
-        delete type_.matrix3x2_;
-      }
+      delete type_.matrix3x2_;
       break;
     }
     case kMatrix4X4: {
-      if (GetArena() == nullptr) {
-        delete type_.matrix4x4_;
-      }
+      delete type_.matrix4x4_;
       break;
     }
     case kColor: {
-      if (GetArena() == nullptr) {
-        delete type_.color_;
-      }
+      delete type_.color_;
       break;
     }
     case kTouchEvent: {
-      if (GetArena() == nullptr) {
-        delete type_.touch_event_;
-      }
+      delete type_.touch_event_;
       break;
     }
     case kKeyEvent: {
-      if (GetArena() == nullptr) {
-        delete type_.key_event_;
-      }
+      delete type_.key_event_;
       break;
     }
     case kMouseEvent: {
-      if (GetArena() == nullptr) {
-        delete type_.mouse_event_;
-      }
+      delete type_.mouse_event_;
       break;
     }
     case kMyoEvent: {
-      if (GetArena() == nullptr) {
-        delete type_.myo_event_;
-      }
+      delete type_.myo_event_;
       break;
     }
     case kPose2D: {
-      if (GetArena() == nullptr) {
-        delete type_.pose2d_;
-      }
+      delete type_.pose2d_;
       break;
     }
     case kPose3D: {
-      if (GetArena() == nullptr) {
-        delete type_.pose3d_;
-      }
+      delete type_.pose3d_;
       break;
     }
     case kObject2D: {
-      if (GetArena() == nullptr) {
-        delete type_.object2d_;
-      }
+      delete type_.object2d_;
       break;
     }
     case kObject3D: {
-      if (GetArena() == nullptr) {
-        delete type_.object3d_;
-      }
+      delete type_.object3d_;
       break;
     }
     case kObject2DList: {
-      if (GetArena() == nullptr) {
-        delete type_.object2d_list_;
-      }
+      delete type_.object2d_list_;
       break;
     }
     case kObject3DList: {
-      if (GetArena() == nullptr) {
-        delete type_.object3d_list_;
-      }
+      delete type_.object3d_list_;
       break;
     }
     case kInt32: {
@@ -1342,57 +1317,39 @@ void TopicDataRecord::clear_type() {
       break;
     }
     case kInt32List: {
-      if (GetArena() == nullptr) {
-        delete type_.int32_list_;
-      }
+      delete type_.int32_list_;
       break;
     }
     case kFloatList: {
-      if (GetArena() == nullptr) {
-        delete type_.float_list_;
-      }
+      delete type_.float_list_;
       break;
     }
     case kDoubleList: {
-      if (GetArena() == nullptr) {
-        delete type_.double_list_;
-      }
+      delete type_.double_list_;
       break;
     }
     case kStringList: {
-      if (GetArena() == nullptr) {
-        delete type_.string_list_;
-      }
+      delete type_.string_list_;
       break;
     }
     case kBoolList: {
-      if (GetArena() == nullptr) {
-        delete type_.bool_list_;
-      }
+      delete type_.bool_list_;
       break;
     }
     case kImage2D: {
-      if (GetArena() == nullptr) {
-        delete type_.image2d_;
-      }
+      delete type_.image2d_;
       break;
     }
     case kImage2DList: {
-      if (GetArena() == nullptr) {
-        delete type_.image2d_list_;
-      }
+      delete type_.image2d_list_;
       break;
     }
     case kSession: {
-      if (GetArena() == nullptr) {
-        delete type_.session_;
-      }
+      delete type_.session_;
       break;
     }
     case kProcessingModuleList: {
-      if (GetArena() == nullptr) {
-        delete type_.processing_module_list_;
-      }
+      delete type_.processing_module_list_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -1409,13 +1366,13 @@ void TopicDataRecord::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  topic_.ClearToEmpty();
-  if (GetArena() == nullptr && timestamp_ != nullptr) {
+  topic_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && timestamp_ != nullptr) {
     delete timestamp_;
   }
   timestamp_ = nullptr;
   clear_type();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* TopicDataRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -1451,7 +1408,7 @@ const char* TopicDataRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       // bool bool = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          _internal_set_bool_(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          _internal_set_bool_(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1586,7 +1543,7 @@ const char* TopicDataRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       // int32 int32 = 23;
       case 23:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 184)) {
-          _internal_set_int32(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          _internal_set_int32(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1666,9 +1623,7 @@ const char* TopicDataRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1950,7 +1905,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.topicData.TopicDataRecord)
   return target;
@@ -2221,12 +2176,13 @@ void TopicDataRecord::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.topicData.TopicDataRecord)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.topic().size() > 0) {
-    _internal_set_topic(from._internal_topic());
+
+    topic_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.topic_);
   }
   if (from.has_timestamp()) {
     _internal_mutable_timestamp()->::ubii::topicData::Timestamp::MergeFrom(from._internal_timestamp());
@@ -2382,8 +2338,9 @@ bool TopicDataRecord::IsInitialized() const {
 
 void TopicDataRecord::InternalSwap(TopicDataRecord* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  topic_.Swap(&other->topic_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  topic_.Swap(&other->topic_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(timestamp_, other->timestamp_);
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
@@ -2396,21 +2353,22 @@ void TopicDataRecord::InternalSwap(TopicDataRecord* other) {
 
 // ===================================================================
 
+void TopicDataRecordList::InitAsDefaultInstance() {
+}
 class TopicDataRecordList::_Internal {
  public:
 };
 
-TopicDataRecordList::TopicDataRecordList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  elements_(arena) {
+TopicDataRecordList::TopicDataRecordList()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.topicData.TopicDataRecordList)
+  // @@protoc_insertion_point(constructor:ubii.topicData.TopicDataRecordList)
 }
 TopicDataRecordList::TopicDataRecordList(const TopicDataRecordList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       elements_(from.elements_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.topicData.TopicDataRecordList)
 }
 
@@ -2421,19 +2379,11 @@ void TopicDataRecordList::SharedCtor() {
 TopicDataRecordList::~TopicDataRecordList() {
   // @@protoc_insertion_point(destructor:ubii.topicData.TopicDataRecordList)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TopicDataRecordList::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void TopicDataRecordList::ArenaDtor(void* object) {
-  TopicDataRecordList* _this = reinterpret_cast< TopicDataRecordList* >(object);
-  (void)_this;
-}
-void TopicDataRecordList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TopicDataRecordList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2450,7 +2400,7 @@ void TopicDataRecordList::Clear() {
   (void) cached_has_bits;
 
   elements_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* TopicDataRecordList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -2478,9 +2428,7 @@ const char* TopicDataRecordList::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2510,7 +2458,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.topicData.TopicDataRecordList)
   return target;
@@ -2558,7 +2506,7 @@ void TopicDataRecordList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void TopicDataRecordList::MergeFrom(const TopicDataRecordList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.topicData.TopicDataRecordList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2585,7 +2533,7 @@ bool TopicDataRecordList::IsInitialized() const {
 
 void TopicDataRecordList::InternalSwap(TopicDataRecordList* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   elements_.InternalSwap(&other->elements_);
 }
 
@@ -2599,10 +2547,10 @@ void TopicDataRecordList::InternalSwap(TopicDataRecordList* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::topicData::TopicDataRecord* Arena::CreateMaybeMessage< ::ubii::topicData::TopicDataRecord >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::topicData::TopicDataRecord >(arena);
+  return Arena::CreateInternal< ::ubii::topicData::TopicDataRecord >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::topicData::TopicDataRecordList* Arena::CreateMaybeMessage< ::ubii::topicData::TopicDataRecordList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::topicData::TopicDataRecordList >(arena);
+  return Arena::CreateInternal< ::ubii::topicData::TopicDataRecordList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

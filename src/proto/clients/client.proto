@@ -12,6 +12,8 @@ message Client {
     string description = 5;
     repeated ubii.processing.ProcessingModule processing_modules = 6;
     bool is_dedicated_processing_node = 7;
+    string host_ip = 8;
+    string metadata_json = 9;
 }
 
 message ClientList {

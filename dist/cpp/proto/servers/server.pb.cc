@@ -30,6 +30,7 @@ static void InitDefaultsscc_info_Server_proto_2fservers_2fserver_2eproto() {
     new (ptr) ::ubii::servers::Server();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::servers::Server::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Server_proto_2fservers_2fserver_2eproto =
@@ -78,77 +79,71 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_Server_proto_2fservers_2fserver_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fservers_2fserver_2eproto_once;
+static bool descriptor_table_proto_2fservers_2fserver_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fservers_2fserver_2eproto = {
-  false, false, descriptor_table_protodef_proto_2fservers_2fserver_2eproto, "proto/servers/server.proto", 259,
+  &descriptor_table_proto_2fservers_2fserver_2eproto_initialized, descriptor_table_protodef_proto_2fservers_2fserver_2eproto, "proto/servers/server.proto", 259,
   &descriptor_table_proto_2fservers_2fserver_2eproto_once, descriptor_table_proto_2fservers_2fserver_2eproto_sccs, descriptor_table_proto_2fservers_2fserver_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2fservers_2fserver_2eproto::offsets,
   file_level_metadata_proto_2fservers_2fserver_2eproto, 1, file_level_enum_descriptors_proto_2fservers_2fserver_2eproto, file_level_service_descriptors_proto_2fservers_2fserver_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fservers_2fserver_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fservers_2fserver_2eproto)), true);
+static bool dynamic_init_dummy_proto_2fservers_2fserver_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fservers_2fserver_2eproto), true);
 namespace ubii {
 namespace servers {
 
 // ===================================================================
 
+void Server::InitAsDefaultInstance() {
+}
 class Server::_Internal {
  public:
 };
 
-Server::Server(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+Server::Server()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.servers.Server)
+  // @@protoc_insertion_point(constructor:ubii.servers.Server)
 }
 Server::Server(const Server& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArena());
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
-      GetArena());
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   ip_ethernet_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ip_ethernet().empty()) {
-    ip_ethernet_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ip_ethernet(), 
-      GetArena());
+    ip_ethernet_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_ethernet_);
   }
   ip_wlan_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ip_wlan().empty()) {
-    ip_wlan_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ip_wlan(), 
-      GetArena());
+    ip_wlan_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_wlan_);
   }
   port_service_zmq_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_port_service_zmq().empty()) {
-    port_service_zmq_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port_service_zmq(), 
-      GetArena());
+    port_service_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_zmq_);
   }
   port_service_rest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_port_service_rest().empty()) {
-    port_service_rest_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port_service_rest(), 
-      GetArena());
+    port_service_rest_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_rest_);
   }
   port_topic_data_zmq_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_port_topic_data_zmq().empty()) {
-    port_topic_data_zmq_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port_topic_data_zmq(), 
-      GetArena());
+    port_topic_data_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_zmq_);
   }
   port_topic_data_ws_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_port_topic_data_ws().empty()) {
-    port_topic_data_ws_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_port_topic_data_ws(), 
-      GetArena());
+    port_topic_data_ws_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_ws_);
   }
   constants_json_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_constants_json().empty()) {
-    constants_json_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_constants_json(), 
-      GetArena());
+    constants_json_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
   }
   // @@protoc_insertion_point(copy_constructor:ubii.servers.Server)
 }
@@ -169,11 +164,9 @@ void Server::SharedCtor() {
 Server::~Server() {
   // @@protoc_insertion_point(destructor:ubii.servers.Server)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Server::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ip_ethernet_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -185,12 +178,6 @@ void Server::SharedDtor() {
   constants_json_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void Server::ArenaDtor(void* object) {
-  Server* _this = reinterpret_cast< Server* >(object);
-  (void)_this;
-}
-void Server::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Server::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -206,16 +193,16 @@ void Server::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
-  name_.ClearToEmpty();
-  ip_ethernet_.ClearToEmpty();
-  ip_wlan_.ClearToEmpty();
-  port_service_zmq_.ClearToEmpty();
-  port_service_rest_.ClearToEmpty();
-  port_topic_data_zmq_.ClearToEmpty();
-  port_topic_data_ws_.ClearToEmpty();
-  constants_json_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ip_ethernet_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ip_wlan_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_service_zmq_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_service_rest_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_zmq_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_ws_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  constants_json_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
 }
 
 const char* Server::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -312,9 +299,7 @@ const char* Server::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -426,7 +411,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.servers.Server)
   return target;
@@ -530,36 +515,45 @@ void Server::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Server::MergeFrom(const Server& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.servers.Server)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.id().size() > 0) {
-    _internal_set_id(from._internal_id());
+
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   if (from.name().size() > 0) {
-    _internal_set_name(from._internal_name());
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.ip_ethernet().size() > 0) {
-    _internal_set_ip_ethernet(from._internal_ip_ethernet());
+
+    ip_ethernet_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_ethernet_);
   }
   if (from.ip_wlan().size() > 0) {
-    _internal_set_ip_wlan(from._internal_ip_wlan());
+
+    ip_wlan_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_wlan_);
   }
   if (from.port_service_zmq().size() > 0) {
-    _internal_set_port_service_zmq(from._internal_port_service_zmq());
+
+    port_service_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_zmq_);
   }
   if (from.port_service_rest().size() > 0) {
-    _internal_set_port_service_rest(from._internal_port_service_rest());
+
+    port_service_rest_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_rest_);
   }
   if (from.port_topic_data_zmq().size() > 0) {
-    _internal_set_port_topic_data_zmq(from._internal_port_topic_data_zmq());
+
+    port_topic_data_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_zmq_);
   }
   if (from.port_topic_data_ws().size() > 0) {
-    _internal_set_port_topic_data_ws(from._internal_port_topic_data_ws());
+
+    port_topic_data_ws_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_ws_);
   }
   if (from.constants_json().size() > 0) {
-    _internal_set_constants_json(from._internal_constants_json());
+
+    constants_json_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
   }
 }
 
@@ -583,16 +577,25 @@ bool Server::IsInitialized() const {
 
 void Server::InternalSwap(Server* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ip_ethernet_.Swap(&other->ip_ethernet_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ip_wlan_.Swap(&other->ip_wlan_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  port_service_zmq_.Swap(&other->port_service_zmq_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  port_service_rest_.Swap(&other->port_service_rest_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  port_topic_data_zmq_.Swap(&other->port_topic_data_zmq_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  port_topic_data_ws_.Swap(&other->port_topic_data_ws_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  constants_json_.Swap(&other->constants_json_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  ip_ethernet_.Swap(&other->ip_ethernet_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  ip_wlan_.Swap(&other->ip_wlan_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_service_zmq_.Swap(&other->port_service_zmq_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_service_rest_.Swap(&other->port_service_rest_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_topic_data_zmq_.Swap(&other->port_topic_data_zmq_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_topic_data_ws_.Swap(&other->port_topic_data_ws_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  constants_json_.Swap(&other->constants_json_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Server::GetMetadata() const {
@@ -605,7 +608,7 @@ void Server::InternalSwap(Server* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::servers::Server* Arena::CreateMaybeMessage< ::ubii::servers::Server >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::servers::Server >(arena);
+  return Arena::CreateInternal< ::ubii::servers::Server >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

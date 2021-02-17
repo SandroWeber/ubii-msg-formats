@@ -40,11 +40,7 @@ namespace Ubii.Services.Request {
 
   }
   #region Messages
-  public sealed partial class TopicSubscription : pb::IMessage<TopicSubscription>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class TopicSubscription : pb::IMessage<TopicSubscription> {
     private static readonly pb::MessageParser<TopicSubscription> _parser = new pb::MessageParser<TopicSubscription>(() => new TopicSubscription());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -175,9 +171,6 @@ namespace Ubii.Services.Request {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (ClientId.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(ClientId);
@@ -189,25 +182,7 @@ namespace Ubii.Services.Request {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ClientId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ClientId);
-      }
-      subscribeTopics_.WriteTo(ref output, _repeated_subscribeTopics_codec);
-      unsubscribeTopics_.WriteTo(ref output, _repeated_unsubscribeTopics_codec);
-      subscribeTopicRegexp_.WriteTo(ref output, _repeated_subscribeTopicRegexp_codec);
-      unsubscribeTopicRegexp_.WriteTo(ref output, _repeated_unsubscribeTopicRegexp_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -242,9 +217,6 @@ namespace Ubii.Services.Request {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -273,42 +245,7 @@ namespace Ubii.Services.Request {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            ClientId = input.ReadString();
-            break;
-          }
-          case 18: {
-            subscribeTopics_.AddEntriesFrom(ref input, _repeated_subscribeTopics_codec);
-            break;
-          }
-          case 26: {
-            unsubscribeTopics_.AddEntriesFrom(ref input, _repeated_unsubscribeTopics_codec);
-            break;
-          }
-          case 34: {
-            subscribeTopicRegexp_.AddEntriesFrom(ref input, _repeated_subscribeTopicRegexp_codec);
-            break;
-          }
-          case 42: {
-            unsubscribeTopicRegexp_.AddEntriesFrom(ref input, _repeated_unsubscribeTopicRegexp_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 

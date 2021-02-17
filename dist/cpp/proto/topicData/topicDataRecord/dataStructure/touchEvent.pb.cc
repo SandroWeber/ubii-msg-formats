@@ -31,6 +31,7 @@ static void InitDefaultsscc_info_TouchEvent_proto_2ftopicData_2ftopicDataRecord_
     new (ptr) ::ubii::dataStructure::TouchEvent();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::TouchEvent::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TouchEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto =
@@ -77,20 +78,25 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_TouchEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/touchEvent.proto", 334,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/touchEvent.proto", 334,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
+void TouchEvent::InitAsDefaultInstance() {
+  ::ubii::dataStructure::_TouchEvent_default_instance_._instance.get_mutable()->position_ = const_cast< ::ubii::dataStructure::Vector2*>(
+      ::ubii::dataStructure::Vector2::internal_default_instance());
+}
 class TouchEvent::_Internal {
  public:
   static const ::ubii::dataStructure::Vector2& position(const TouchEvent* msg);
@@ -101,20 +107,20 @@ TouchEvent::_Internal::position(const TouchEvent* msg) {
   return *msg->position_;
 }
 void TouchEvent::clear_position() {
-  if (GetArena() == nullptr && position_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
 }
-TouchEvent::TouchEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+TouchEvent::TouchEvent()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.TouchEvent)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.TouchEvent)
 }
 TouchEvent::TouchEvent(const TouchEvent& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_position()) {
     position_ = new ::ubii::dataStructure::Vector2(*from.position_);
   } else {
@@ -126,29 +132,20 @@ TouchEvent::TouchEvent(const TouchEvent& from)
 
 void TouchEvent::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TouchEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto.base);
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&position_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+  ::memset(&position_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&type_) -
       reinterpret_cast<char*>(&position_)) + sizeof(type_));
 }
 
 TouchEvent::~TouchEvent() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.TouchEvent)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TouchEvent::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete position_;
 }
 
-void TouchEvent::ArenaDtor(void* object) {
-  TouchEvent* _this = reinterpret_cast< TouchEvent* >(object);
-  (void)_this;
-}
-void TouchEvent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void TouchEvent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -164,12 +161,12 @@ void TouchEvent::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && position_ != nullptr) {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
   type_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* TouchEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -182,7 +179,7 @@ const char* TouchEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       // .ubii.dataStructure.ButtonEventType type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::ubii::dataStructure::ButtonEventType>(val));
         } else goto handle_unusual;
@@ -200,9 +197,7 @@ const char* TouchEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -239,7 +234,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.TouchEvent)
   return target;
@@ -293,7 +288,7 @@ void TouchEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void TouchEvent::MergeFrom(const TouchEvent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.TouchEvent)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -325,13 +320,9 @@ bool TouchEvent::IsInitialized() const {
 
 void TouchEvent::InternalSwap(TouchEvent* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TouchEvent, type_)
-      + sizeof(TouchEvent::type_)
-      - PROTOBUF_FIELD_OFFSET(TouchEvent, position_)>(
-          reinterpret_cast<char*>(&position_),
-          reinterpret_cast<char*>(&other->position_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(position_, other->position_);
+  swap(type_, other->type_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TouchEvent::GetMetadata() const {
@@ -344,7 +335,7 @@ void TouchEvent::InternalSwap(TouchEvent* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::TouchEvent* Arena::CreateMaybeMessage< ::ubii::dataStructure::TouchEvent >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::TouchEvent >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::TouchEvent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

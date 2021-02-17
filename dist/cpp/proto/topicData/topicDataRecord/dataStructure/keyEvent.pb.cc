@@ -30,6 +30,7 @@ static void InitDefaultsscc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2f
     new (ptr) ::ubii::dataStructure::KeyEvent();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::ubii::dataStructure::KeyEvent::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto =
@@ -71,37 +72,39 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
   &scc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto = {
-  false, false, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto", 235,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto", 235,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto)), true);
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
+void KeyEvent::InitAsDefaultInstance() {
+}
 class KeyEvent::_Internal {
  public:
 };
 
-KeyEvent::KeyEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+KeyEvent::KeyEvent()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.KeyEvent)
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.KeyEvent)
 }
 KeyEvent::KeyEvent(const KeyEvent& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
-      GetArena());
+    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
   }
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.KeyEvent)
@@ -116,20 +119,12 @@ void KeyEvent::SharedCtor() {
 KeyEvent::~KeyEvent() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.KeyEvent)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void KeyEvent::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void KeyEvent::ArenaDtor(void* object) {
-  KeyEvent* _this = reinterpret_cast< KeyEvent* >(object);
-  (void)_this;
-}
-void KeyEvent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void KeyEvent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -145,9 +140,9 @@ void KeyEvent::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  key_.ClearToEmpty();
+  key_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* KeyEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -160,7 +155,7 @@ const char* KeyEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // .ubii.dataStructure.ButtonEventType type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::ubii::dataStructure::ButtonEventType>(val));
         } else goto handle_unusual;
@@ -180,9 +175,7 @@ const char* KeyEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -221,7 +214,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.KeyEvent)
   return target;
@@ -275,12 +268,13 @@ void KeyEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void KeyEvent::MergeFrom(const KeyEvent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.KeyEvent)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.key().size() > 0) {
-    _internal_set_key(from._internal_key());
+
+    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
   }
   if (from.type() != 0) {
     _internal_set_type(from._internal_type());
@@ -307,8 +301,9 @@ bool KeyEvent::IsInitialized() const {
 
 void KeyEvent::InternalSwap(KeyEvent* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(type_, other->type_);
 }
 
@@ -322,7 +317,7 @@ void KeyEvent::InternalSwap(KeyEvent* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::KeyEvent* Arena::CreateMaybeMessage< ::ubii::dataStructure::KeyEvent >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::ubii::dataStructure::KeyEvent >(arena);
+  return Arena::CreateInternal< ::ubii::dataStructure::KeyEvent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

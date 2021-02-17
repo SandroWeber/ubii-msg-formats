@@ -45,7 +45,7 @@ public final class ColorOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Color}
    */
-  public static final class Color extends
+  public  static final class Color extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Color)
       ColorOrBuilder {
@@ -145,7 +145,6 @@ public final class ColorOuterClass {
      * <code>double r = 1;</code>
      * @return The r.
      */
-    @java.lang.Override
     public double getR() {
       return r_;
     }
@@ -156,7 +155,6 @@ public final class ColorOuterClass {
      * <code>double g = 2;</code>
      * @return The g.
      */
-    @java.lang.Override
     public double getG() {
       return g_;
     }
@@ -167,7 +165,6 @@ public final class ColorOuterClass {
      * <code>double b = 3;</code>
      * @return The b.
      */
-    @java.lang.Override
     public double getB() {
       return b_;
     }
@@ -178,7 +175,6 @@ public final class ColorOuterClass {
      * <code>double a = 4;</code>
      * @return The a.
      */
-    @java.lang.Override
     public double getA() {
       return a_;
     }
@@ -549,7 +545,6 @@ public final class ColorOuterClass {
        * <code>double r = 1;</code>
        * @return The r.
        */
-      @java.lang.Override
       public double getR() {
         return r_;
       }
@@ -580,7 +575,6 @@ public final class ColorOuterClass {
        * <code>double g = 2;</code>
        * @return The g.
        */
-      @java.lang.Override
       public double getG() {
         return g_;
       }
@@ -611,7 +605,6 @@ public final class ColorOuterClass {
        * <code>double b = 3;</code>
        * @return The b.
        */
-      @java.lang.Override
       public double getB() {
         return b_;
       }
@@ -642,7 +635,6 @@ public final class ColorOuterClass {
        * <code>double a = 4;</code>
        * @return The a.
        */
-      @java.lang.Override
       public double getA() {
         return a_;
       }

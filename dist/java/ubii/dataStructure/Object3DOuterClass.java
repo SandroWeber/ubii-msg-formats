@@ -75,7 +75,7 @@ public final class Object3DOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Object3D}
    */
-  public static final class Object3D extends
+  public  static final class Object3D extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Object3D)
       Object3DOrBuilder {
@@ -195,7 +195,6 @@ public final class Object3DOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -212,7 +211,6 @@ public final class Object3DOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -233,7 +231,6 @@ public final class Object3DOuterClass {
      * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      * @return Whether the pose field is set.
      */
-    @java.lang.Override
     public boolean hasPose() {
       return pose_ != null;
     }
@@ -241,14 +238,12 @@ public final class Object3DOuterClass {
      * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      * @return The pose.
      */
-    @java.lang.Override
     public ubii.dataStructure.Pose3DOuterClass.Pose3D getPose() {
       return pose_ == null ? ubii.dataStructure.Pose3DOuterClass.Pose3D.getDefaultInstance() : pose_;
     }
     /**
      * <code>.ubii.dataStructure.Pose3D pose = 2;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Pose3DOuterClass.Pose3DOrBuilder getPoseOrBuilder() {
       return getPose();
     }
@@ -259,7 +254,6 @@ public final class Object3DOuterClass {
      * <code>.ubii.dataStructure.Vector3 size = 3;</code>
      * @return Whether the size field is set.
      */
-    @java.lang.Override
     public boolean hasSize() {
       return size_ != null;
     }
@@ -267,14 +261,12 @@ public final class Object3DOuterClass {
      * <code>.ubii.dataStructure.Vector3 size = 3;</code>
      * @return The size.
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getSize() {
       return size_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : size_;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 size = 3;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getSizeOrBuilder() {
       return getSize();
     }
@@ -285,7 +277,6 @@ public final class Object3DOuterClass {
      * <code>string user_data_json = 4;</code>
      * @return The userDataJson.
      */
-    @java.lang.Override
     public java.lang.String getUserDataJson() {
       java.lang.Object ref = userDataJson_;
       if (ref instanceof java.lang.String) {
@@ -302,7 +293,6 @@ public final class Object3DOuterClass {
      * <code>string user_data_json = 4;</code>
      * @return The bytes for userDataJson.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getUserDataJsonBytes() {
       java.lang.Object ref = userDataJson_;
@@ -1169,7 +1159,7 @@ public final class Object3DOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Object3DList}
    */
-  public static final class Object3DList extends
+  public  static final class Object3DList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Object3DList)
       Object3DListOrBuilder {
@@ -1262,14 +1252,12 @@ public final class Object3DOuterClass {
     /**
      * <code>repeated .ubii.dataStructure.Object3D elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.dataStructure.Object3DOuterClass.Object3D> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.dataStructure.Object3D elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1277,21 +1265,18 @@ public final class Object3DOuterClass {
     /**
      * <code>repeated .ubii.dataStructure.Object3D elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.dataStructure.Object3D elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Object3DOuterClass.Object3D getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.dataStructure.Object3D elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.dataStructure.Object3DOuterClass.Object3DOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

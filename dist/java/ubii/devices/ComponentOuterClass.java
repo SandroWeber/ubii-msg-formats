@@ -117,7 +117,7 @@ public final class ComponentOuterClass {
   /**
    * Protobuf type {@code ubii.devices.Component}
    */
-  public static final class Component extends
+  public  static final class Component extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.Component)
       ComponentOrBuilder {
@@ -317,10 +317,6 @@ public final class ComponentOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -361,7 +357,6 @@ public final class ComponentOuterClass {
      * <code>string topic = 1;</code>
      * @return The topic.
      */
-    @java.lang.Override
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -378,7 +373,6 @@ public final class ComponentOuterClass {
      * <code>string topic = 1;</code>
      * @return The bytes for topic.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -399,7 +393,6 @@ public final class ComponentOuterClass {
      * <code>string message_format = 2;</code>
      * @return The messageFormat.
      */
-    @java.lang.Override
     public java.lang.String getMessageFormat() {
       java.lang.Object ref = messageFormat_;
       if (ref instanceof java.lang.String) {
@@ -416,7 +409,6 @@ public final class ComponentOuterClass {
      * <code>string message_format = 2;</code>
      * @return The bytes for messageFormat.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageFormatBytes() {
       java.lang.Object ref = messageFormat_;
@@ -437,14 +429,14 @@ public final class ComponentOuterClass {
      * <code>.ubii.devices.Component.IOType io_type = 3;</code>
      * @return The enum numeric value on the wire for ioType.
      */
-    @java.lang.Override public int getIoTypeValue() {
+    public int getIoTypeValue() {
       return ioType_;
     }
     /**
      * <code>.ubii.devices.Component.IOType io_type = 3;</code>
      * @return The ioType.
      */
-    @java.lang.Override public ubii.devices.ComponentOuterClass.Component.IOType getIoType() {
+    public ubii.devices.ComponentOuterClass.Component.IOType getIoType() {
       @SuppressWarnings("deprecation")
       ubii.devices.ComponentOuterClass.Component.IOType result = ubii.devices.ComponentOuterClass.Component.IOType.valueOf(ioType_);
       return result == null ? ubii.devices.ComponentOuterClass.Component.IOType.UNRECOGNIZED : result;
@@ -456,7 +448,6 @@ public final class ComponentOuterClass {
      * <code>string device_id = 4;</code>
      * @return The deviceId.
      */
-    @java.lang.Override
     public java.lang.String getDeviceId() {
       java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
@@ -473,7 +464,6 @@ public final class ComponentOuterClass {
      * <code>string device_id = 4;</code>
      * @return The bytes for deviceId.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDeviceIdBytes() {
       java.lang.Object ref = deviceId_;
@@ -529,7 +519,6 @@ public final class ComponentOuterClass {
      * <code>string description = 6;</code>
      * @return The description.
      */
-    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -546,7 +535,6 @@ public final class ComponentOuterClass {
      * <code>string description = 6;</code>
      * @return The bytes for description.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -567,7 +555,6 @@ public final class ComponentOuterClass {
      * <code>string id = 7;</code>
      * @return The id.
      */
-    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -584,7 +571,6 @@ public final class ComponentOuterClass {
      * <code>string id = 7;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -1178,7 +1164,7 @@ public final class ComponentOuterClass {
        * <code>.ubii.devices.Component.IOType io_type = 3;</code>
        * @return The enum numeric value on the wire for ioType.
        */
-      @java.lang.Override public int getIoTypeValue() {
+      public int getIoTypeValue() {
         return ioType_;
       }
       /**
@@ -1187,7 +1173,6 @@ public final class ComponentOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIoTypeValue(int value) {
-        
         ioType_ = value;
         onChanged();
         return this;
@@ -1196,7 +1181,6 @@ public final class ComponentOuterClass {
        * <code>.ubii.devices.Component.IOType io_type = 3;</code>
        * @return The ioType.
        */
-      @java.lang.Override
       public ubii.devices.ComponentOuterClass.Component.IOType getIoType() {
         @SuppressWarnings("deprecation")
         ubii.devices.ComponentOuterClass.Component.IOType result = ubii.devices.ComponentOuterClass.Component.IOType.valueOf(ioType_);
@@ -1648,7 +1632,7 @@ public final class ComponentOuterClass {
   /**
    * Protobuf type {@code ubii.devices.ComponentList}
    */
-  public static final class ComponentList extends
+  public  static final class ComponentList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.ComponentList)
       ComponentListOrBuilder {
@@ -1741,14 +1725,12 @@ public final class ComponentOuterClass {
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<ubii.devices.ComponentOuterClass.Component> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
-    @java.lang.Override
     public java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1756,21 +1738,18 @@ public final class ComponentOuterClass {
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
-    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.Component getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.Component elements = 1;</code>
      */
-    @java.lang.Override
     public ubii.devices.ComponentOuterClass.ComponentOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

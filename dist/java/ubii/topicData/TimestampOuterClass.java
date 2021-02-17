@@ -33,7 +33,7 @@ public final class TimestampOuterClass {
   /**
    * Protobuf type {@code ubii.topicData.Timestamp}
    */
-  public static final class Timestamp extends
+  public  static final class Timestamp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.topicData.Timestamp)
       TimestampOrBuilder {
@@ -123,7 +123,6 @@ public final class TimestampOuterClass {
      * <code>int64 seconds = 1;</code>
      * @return The seconds.
      */
-    @java.lang.Override
     public long getSeconds() {
       return seconds_;
     }
@@ -134,7 +133,6 @@ public final class TimestampOuterClass {
      * <code>int32 nanos = 2;</code>
      * @return The nanos.
      */
-    @java.lang.Override
     public int getNanos() {
       return nanos_;
     }
@@ -464,7 +462,6 @@ public final class TimestampOuterClass {
        * <code>int64 seconds = 1;</code>
        * @return The seconds.
        */
-      @java.lang.Override
       public long getSeconds() {
         return seconds_;
       }
@@ -495,7 +492,6 @@ public final class TimestampOuterClass {
        * <code>int32 nanos = 2;</code>
        * @return The nanos.
        */
-      @java.lang.Override
       public int getNanos() {
         return nanos_;
       }

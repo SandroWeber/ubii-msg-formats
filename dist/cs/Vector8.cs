@@ -39,11 +39,7 @@ namespace Ubii.DataStructure {
 
   }
   #region Messages
-  public sealed partial class Vector8 : pb::IMessage<Vector8>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
+  public sealed partial class Vector8 : pb::IMessage<Vector8> {
     private static readonly pb::MessageParser<Vector8> _parser = new pb::MessageParser<Vector8>(() => new Vector8());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -220,9 +216,6 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
       if (V0 != 0D) {
         output.WriteRawTag(9);
         output.WriteDouble(V0);
@@ -258,49 +251,7 @@ namespace Ubii.DataStructure {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (V0 != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(V0);
-      }
-      if (V1 != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(V1);
-      }
-      if (V2 != 0D) {
-        output.WriteRawTag(25);
-        output.WriteDouble(V2);
-      }
-      if (V3 != 0D) {
-        output.WriteRawTag(33);
-        output.WriteDouble(V3);
-      }
-      if (V4 != 0D) {
-        output.WriteRawTag(41);
-        output.WriteDouble(V4);
-      }
-      if (V5 != 0D) {
-        output.WriteRawTag(49);
-        output.WriteDouble(V5);
-      }
-      if (V6 != 0D) {
-        output.WriteRawTag(57);
-        output.WriteDouble(V6);
-      }
-      if (V7 != 0D) {
-        output.WriteRawTag(65);
-        output.WriteDouble(V7);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -369,9 +320,6 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -412,54 +360,7 @@ namespace Ubii.DataStructure {
           }
         }
       }
-    #endif
     }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 9: {
-            V0 = input.ReadDouble();
-            break;
-          }
-          case 17: {
-            V1 = input.ReadDouble();
-            break;
-          }
-          case 25: {
-            V2 = input.ReadDouble();
-            break;
-          }
-          case 33: {
-            V3 = input.ReadDouble();
-            break;
-          }
-          case 41: {
-            V4 = input.ReadDouble();
-            break;
-          }
-          case 49: {
-            V5 = input.ReadDouble();
-            break;
-          }
-          case 57: {
-            V6 = input.ReadDouble();
-            break;
-          }
-          case 65: {
-            V7 = input.ReadDouble();
-            break;
-          }
-        }
-      }
-    }
-    #endif
 
   }
 
