@@ -158,9 +158,9 @@ $root.ubii = (function() {
             Client.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.devices != null && message.devices.length)
                     for (var i = 0; i < message.devices.length; ++i)
@@ -168,16 +168,16 @@ $root.ubii = (function() {
                 if (message.tags != null && message.tags.length)
                     for (var i = 0; i < message.tags.length; ++i)
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
-                if (message.description != null && message.hasOwnProperty("description"))
+                if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
                 if (message.processingModules != null && message.processingModules.length)
                     for (var i = 0; i < message.processingModules.length; ++i)
                         $root.ubii.processing.ProcessingModule.encode(message.processingModules[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.isDedicatedProcessingNode != null && message.hasOwnProperty("isDedicatedProcessingNode"))
+                if (message.isDedicatedProcessingNode != null && Object.hasOwnProperty.call(message, "isDedicatedProcessingNode"))
                     writer.uint32(/* id 7, wireType 0 =*/56).bool(message.isDedicatedProcessingNode);
-                if (message.hostIp != null && message.hasOwnProperty("hostIp"))
+                if (message.hostIp != null && Object.hasOwnProperty.call(message, "hostIp"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.hostIp);
-                if (message.metadataJson != null && message.hasOwnProperty("metadataJson"))
+                if (message.metadataJson != null && Object.hasOwnProperty.call(message, "metadataJson"))
                     writer.uint32(/* id 9, wireType 2 =*/74).string(message.metadataJson);
                 return writer;
             };
@@ -782,20 +782,20 @@ $root.ubii = (function() {
             Component.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.topic != null && message.hasOwnProperty("topic"))
+                if (message.topic != null && Object.hasOwnProperty.call(message, "topic"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
-                if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
+                if (message.messageFormat != null && Object.hasOwnProperty.call(message, "messageFormat"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.messageFormat);
-                if (message.ioType != null && message.hasOwnProperty("ioType"))
+                if (message.ioType != null && Object.hasOwnProperty.call(message, "ioType"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.ioType);
-                if (message.deviceId != null && message.hasOwnProperty("deviceId"))
+                if (message.deviceId != null && Object.hasOwnProperty.call(message, "deviceId"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.deviceId);
                 if (message.tags != null && message.tags.length)
                     for (var i = 0; i < message.tags.length; ++i)
                         writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
-                if (message.description != null && message.hasOwnProperty("description"))
+                if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.id);
                 return writer;
             };
@@ -1021,7 +1021,7 @@ $root.ubii = (function() {
             /**
              * IOType enum.
              * @name ubii.devices.Component.IOType
-             * @enum {string}
+             * @enum {number}
              * @property {number} PUBLISHER=0 PUBLISHER value
              * @property {number} SUBSCRIBER=1 SUBSCRIBER value
              */
@@ -1355,21 +1355,21 @@ $root.ubii = (function() {
             Device.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.deviceType != null && message.hasOwnProperty("deviceType"))
+                if (message.deviceType != null && Object.hasOwnProperty.call(message, "deviceType"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.deviceType);
                 if (message.components != null && message.components.length)
                     for (var i = 0; i < message.components.length; ++i)
                         $root.ubii.devices.Component.encode(message.components[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                if (message.clientId != null && Object.hasOwnProperty.call(message, "clientId"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.clientId);
                 if (message.tags != null && message.tags.length)
                     for (var i = 0; i < message.tags.length; ++i)
                         writer.uint32(/* id 6, wireType 2 =*/50).string(message.tags[i]);
-                if (message.description != null && message.hasOwnProperty("description"))
+                if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.description);
                 return writer;
             };
@@ -1615,7 +1615,7 @@ $root.ubii = (function() {
             /**
              * DeviceType enum.
              * @name ubii.devices.Device.DeviceType
-             * @enum {string}
+             * @enum {number}
              * @property {number} PARTICIPANT=0 PARTICIPANT value
              * @property {number} WATCHER=1 WATCHER value
              */
@@ -1920,13 +1920,13 @@ $root.ubii = (function() {
             TopicDemux.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                if (message.dataType != null && Object.hasOwnProperty.call(message, "dataType"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.dataType);
-                if (message.outputTopicFormat != null && message.hasOwnProperty("outputTopicFormat"))
+                if (message.outputTopicFormat != null && Object.hasOwnProperty.call(message, "outputTopicFormat"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.outputTopicFormat);
                 return writer;
             };
@@ -2391,15 +2391,15 @@ $root.ubii = (function() {
             TopicMux.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.dataType != null && message.hasOwnProperty("dataType"))
+                if (message.dataType != null && Object.hasOwnProperty.call(message, "dataType"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.dataType);
-                if (message.topicSelector != null && message.hasOwnProperty("topicSelector"))
+                if (message.topicSelector != null && Object.hasOwnProperty.call(message, "topicSelector"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.topicSelector);
-                if (message.identityMatchPattern != null && message.hasOwnProperty("identityMatchPattern"))
+                if (message.identityMatchPattern != null && Object.hasOwnProperty.call(message, "identityMatchPattern"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.identityMatchPattern);
                 return writer;
             };
@@ -2869,11 +2869,11 @@ $root.ubii = (function() {
             Error.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.title != null && message.hasOwnProperty("title"))
+                if (message.title != null && Object.hasOwnProperty.call(message, "title"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.title);
-                if (message.message != null && message.hasOwnProperty("message"))
+                if (message.message != null && Object.hasOwnProperty.call(message, "message"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
-                if (message.stack != null && message.hasOwnProperty("stack"))
+                if (message.stack != null && Object.hasOwnProperty.call(message, "stack"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.stack);
                 return writer;
             };
@@ -3092,9 +3092,9 @@ $root.ubii = (function() {
             Success.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.title != null && message.hasOwnProperty("title"))
+                if (message.title != null && Object.hasOwnProperty.call(message, "title"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.title);
-                if (message.message != null && message.hasOwnProperty("message"))
+                if (message.message != null && Object.hasOwnProperty.call(message, "message"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
                 return writer;
             };
@@ -3331,7 +3331,7 @@ $root.ubii = (function() {
                 if (message.records != null && message.records.length)
                     for (var i = 0; i < message.records.length; ++i)
                         $root.ubii.topicData.TopicDataRecord.encode(message.records[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.deltaTimeMs != null && message.hasOwnProperty("deltaTimeMs"))
+                if (message.deltaTimeMs != null && Object.hasOwnProperty.call(message, "deltaTimeMs"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.deltaTimeMs);
                 return writer;
             };
@@ -3854,11 +3854,11 @@ $root.ubii = (function() {
             ProcessingMode.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.frequency != null && message.hasOwnProperty("frequency"))
+                if (message.frequency != null && Object.hasOwnProperty.call(message, "frequency"))
                     $root.ubii.processing.ProcessingMode.Frequency.encode(message.frequency, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.lockstep != null && message.hasOwnProperty("lockstep"))
+                if (message.lockstep != null && Object.hasOwnProperty.call(message, "lockstep"))
                     $root.ubii.processing.ProcessingMode.Lockstep.encode(message.lockstep, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.triggerOnInput != null && message.hasOwnProperty("triggerOnInput"))
+                if (message.triggerOnInput != null && Object.hasOwnProperty.call(message, "triggerOnInput"))
                     $root.ubii.processing.ProcessingMode.TriggerOnInput.encode(message.triggerOnInput, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -4098,7 +4098,7 @@ $root.ubii = (function() {
                 Frequency.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.hertz != null && message.hasOwnProperty("hertz"))
+                    if (message.hertz != null && Object.hasOwnProperty.call(message, "hertz"))
                         writer.uint32(/* id 1, wireType 0 =*/8).int32(message.hertz);
                     return writer;
                 };
@@ -4285,7 +4285,7 @@ $root.ubii = (function() {
                 Lockstep.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.processRequestEndpoint != null && message.hasOwnProperty("processRequestEndpoint"))
+                    if (message.processRequestEndpoint != null && Object.hasOwnProperty.call(message, "processRequestEndpoint"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.processRequestEndpoint);
                     return writer;
                 };
@@ -4481,9 +4481,9 @@ $root.ubii = (function() {
                 TriggerOnInput.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.minDelayMs != null && message.hasOwnProperty("minDelayMs"))
+                    if (message.minDelayMs != null && Object.hasOwnProperty.call(message, "minDelayMs"))
                         writer.uint32(/* id 1, wireType 0 =*/8).int32(message.minDelayMs);
-                    if (message.allInputsNeedUpdate != null && message.hasOwnProperty("allInputsNeedUpdate"))
+                    if (message.allInputsNeedUpdate != null && Object.hasOwnProperty.call(message, "allInputsNeedUpdate"))
                         writer.uint32(/* id 2, wireType 0 =*/16).bool(message.allInputsNeedUpdate);
                     return writer;
                 };
@@ -4694,9 +4694,9 @@ $root.ubii = (function() {
             ModuleIO.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.internalName != null && message.hasOwnProperty("internalName"))
+                if (message.internalName != null && Object.hasOwnProperty.call(message, "internalName"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.internalName);
-                if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
+                if (message.messageFormat != null && Object.hasOwnProperty.call(message, "messageFormat"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.messageFormat);
                 return writer;
             };
@@ -5034,9 +5034,9 @@ $root.ubii = (function() {
             ProcessingModule.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.authors != null && message.authors.length)
                     for (var i = 0; i < message.authors.length; ++i)
@@ -5044,15 +5044,15 @@ $root.ubii = (function() {
                 if (message.tags != null && message.tags.length)
                     for (var i = 0; i < message.tags.length; ++i)
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
-                if (message.description != null && message.hasOwnProperty("description"))
+                if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
-                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                if (message.nodeId != null && Object.hasOwnProperty.call(message, "nodeId"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.nodeId);
-                if (message.sessionId != null && message.hasOwnProperty("sessionId"))
+                if (message.sessionId != null && Object.hasOwnProperty.call(message, "sessionId"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.sessionId);
-                if (message.status != null && message.hasOwnProperty("status"))
+                if (message.status != null && Object.hasOwnProperty.call(message, "status"))
                     writer.uint32(/* id 8, wireType 0 =*/64).int32(message.status);
-                if (message.processingMode != null && message.hasOwnProperty("processingMode"))
+                if (message.processingMode != null && Object.hasOwnProperty.call(message, "processingMode"))
                     $root.ubii.processing.ProcessingMode.encode(message.processingMode, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.inputs != null && message.inputs.length)
                     for (var i = 0; i < message.inputs.length; ++i)
@@ -5060,15 +5060,15 @@ $root.ubii = (function() {
                 if (message.outputs != null && message.outputs.length)
                     for (var i = 0; i < message.outputs.length; ++i)
                         $root.ubii.processing.ModuleIO.encode(message.outputs[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
-                if (message.language != null && message.hasOwnProperty("language"))
+                if (message.language != null && Object.hasOwnProperty.call(message, "language"))
                     writer.uint32(/* id 12, wireType 0 =*/96).int32(message.language);
-                if (message.onProcessingStringified != null && message.hasOwnProperty("onProcessingStringified"))
+                if (message.onProcessingStringified != null && Object.hasOwnProperty.call(message, "onProcessingStringified"))
                     writer.uint32(/* id 13, wireType 2 =*/106).string(message.onProcessingStringified);
-                if (message.onCreatedStringified != null && message.hasOwnProperty("onCreatedStringified"))
+                if (message.onCreatedStringified != null && Object.hasOwnProperty.call(message, "onCreatedStringified"))
                     writer.uint32(/* id 14, wireType 2 =*/114).string(message.onCreatedStringified);
-                if (message.onHaltedStringified != null && message.hasOwnProperty("onHaltedStringified"))
+                if (message.onHaltedStringified != null && Object.hasOwnProperty.call(message, "onHaltedStringified"))
                     writer.uint32(/* id 15, wireType 2 =*/122).string(message.onHaltedStringified);
-                if (message.onDestroyedStringified != null && message.hasOwnProperty("onDestroyedStringified"))
+                if (message.onDestroyedStringified != null && Object.hasOwnProperty.call(message, "onDestroyedStringified"))
                     writer.uint32(/* id 16, wireType 2 =*/130).string(message.onDestroyedStringified);
                 return writer;
             };
@@ -5494,7 +5494,7 @@ $root.ubii = (function() {
             /**
              * Status enum.
              * @name ubii.processing.ProcessingModule.Status
-             * @enum {string}
+             * @enum {number}
              * @property {number} INITIALIZED=0 INITIALIZED value
              * @property {number} CREATED=1 CREATED value
              * @property {number} PROCESSING=2 PROCESSING value
@@ -5514,7 +5514,7 @@ $root.ubii = (function() {
             /**
              * Language enum.
              * @name ubii.processing.ProcessingModule.Language
-             * @enum {string}
+             * @enum {number}
              * @property {number} CPP=0 CPP value
              * @property {number} PY=1 PY value
              * @property {number} JS=2 JS value
@@ -5882,23 +5882,23 @@ $root.ubii = (function() {
             Server.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.ipEthernet != null && message.hasOwnProperty("ipEthernet"))
+                if (message.ipEthernet != null && Object.hasOwnProperty.call(message, "ipEthernet"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.ipEthernet);
-                if (message.ipWlan != null && message.hasOwnProperty("ipWlan"))
+                if (message.ipWlan != null && Object.hasOwnProperty.call(message, "ipWlan"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.ipWlan);
-                if (message.portServiceZmq != null && message.hasOwnProperty("portServiceZmq"))
+                if (message.portServiceZmq != null && Object.hasOwnProperty.call(message, "portServiceZmq"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.portServiceZmq);
-                if (message.portServiceRest != null && message.hasOwnProperty("portServiceRest"))
+                if (message.portServiceRest != null && Object.hasOwnProperty.call(message, "portServiceRest"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.portServiceRest);
-                if (message.portTopicDataZmq != null && message.hasOwnProperty("portTopicDataZmq"))
+                if (message.portTopicDataZmq != null && Object.hasOwnProperty.call(message, "portTopicDataZmq"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.portTopicDataZmq);
-                if (message.portTopicDataWs != null && message.hasOwnProperty("portTopicDataWs"))
+                if (message.portTopicDataWs != null && Object.hasOwnProperty.call(message, "portTopicDataWs"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.portTopicDataWs);
-                if (message.constantsJson != null && message.hasOwnProperty("constantsJson"))
+                if (message.constantsJson != null && Object.hasOwnProperty.call(message, "constantsJson"))
                     writer.uint32(/* id 9, wireType 2 =*/74).string(message.constantsJson);
                 return writer;
             };
@@ -6235,7 +6235,7 @@ $root.ubii = (function() {
                 TopicSubscription.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    if (message.clientId != null && Object.hasOwnProperty.call(message, "clientId"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.clientId);
                     if (message.subscribeTopics != null && message.subscribeTopics.length)
                         for (var i = 0; i < message.subscribeTopics.length; ++i)
@@ -6576,16 +6576,16 @@ $root.ubii = (function() {
             Service.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.topic != null && message.hasOwnProperty("topic"))
+                if (message.topic != null && Object.hasOwnProperty.call(message, "topic"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
-                if (message.requestMessageFormat != null && message.hasOwnProperty("requestMessageFormat"))
+                if (message.requestMessageFormat != null && Object.hasOwnProperty.call(message, "requestMessageFormat"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.requestMessageFormat);
-                if (message.responseMessageFormat != null && message.hasOwnProperty("responseMessageFormat"))
+                if (message.responseMessageFormat != null && Object.hasOwnProperty.call(message, "responseMessageFormat"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.responseMessageFormat);
                 if (message.tags != null && message.tags.length)
                     for (var i = 0; i < message.tags.length; ++i)
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
-                if (message.description != null && message.hasOwnProperty("description"))
+                if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
                 return writer;
             };
@@ -7216,43 +7216,43 @@ $root.ubii = (function() {
             ServiceReply.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.success != null && message.hasOwnProperty("success"))
+                if (message.success != null && Object.hasOwnProperty.call(message, "success"))
                     $root.ubii.general.Success.encode(message.success, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.error != null && message.hasOwnProperty("error"))
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
                     $root.ubii.general.Error.encode(message.error, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.client != null && message.hasOwnProperty("client"))
+                if (message.client != null && Object.hasOwnProperty.call(message, "client"))
                     $root.ubii.clients.Client.encode(message.client, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.device != null && message.hasOwnProperty("device"))
+                if (message.device != null && Object.hasOwnProperty.call(message, "device"))
                     $root.ubii.devices.Device.encode(message.device, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.server != null && message.hasOwnProperty("server"))
+                if (message.server != null && Object.hasOwnProperty.call(message, "server"))
                     $root.ubii.servers.Server.encode(message.server, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.session != null && message.hasOwnProperty("session"))
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.sessionList != null && message.hasOwnProperty("sessionList"))
+                if (message.sessionList != null && Object.hasOwnProperty.call(message, "sessionList"))
                     $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.processingModule != null && message.hasOwnProperty("processingModule"))
+                if (message.processingModule != null && Object.hasOwnProperty.call(message, "processingModule"))
                     $root.ubii.processing.ProcessingModule.encode(message.processingModule, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList"))
+                if (message.processingModuleList != null && Object.hasOwnProperty.call(message, "processingModuleList"))
                     $root.ubii.processing.ProcessingModuleList.encode(message.processingModuleList, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                if (message.stringList != null && message.hasOwnProperty("stringList"))
+                if (message.stringList != null && Object.hasOwnProperty.call(message, "stringList"))
                     $root.ubii.dataStructure.StringList.encode(message.stringList, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.topicMux != null && message.hasOwnProperty("topicMux"))
+                if (message.topicMux != null && Object.hasOwnProperty.call(message, "topicMux"))
                     $root.ubii.devices.TopicMux.encode(message.topicMux, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
-                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList"))
+                if (message.topicMuxList != null && Object.hasOwnProperty.call(message, "topicMuxList"))
                     $root.ubii.devices.TopicMuxList.encode(message.topicMuxList, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-                if (message.topicDemux != null && message.hasOwnProperty("topicDemux"))
+                if (message.topicDemux != null && Object.hasOwnProperty.call(message, "topicDemux"))
                     $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
-                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList"))
+                if (message.topicDemuxList != null && Object.hasOwnProperty.call(message, "topicDemuxList"))
                     $root.ubii.devices.TopicDemuxList.encode(message.topicDemuxList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-                if (message.clientList != null && message.hasOwnProperty("clientList"))
+                if (message.clientList != null && Object.hasOwnProperty.call(message, "clientList"))
                     $root.ubii.clients.ClientList.encode(message.clientList, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
-                if (message.deviceList != null && message.hasOwnProperty("deviceList"))
+                if (message.deviceList != null && Object.hasOwnProperty.call(message, "deviceList"))
                     $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
-                if (message.service != null && message.hasOwnProperty("service"))
+                if (message.service != null && Object.hasOwnProperty.call(message, "service"))
                     $root.ubii.services.Service.encode(message.service, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-                if (message.serviceList != null && message.hasOwnProperty("serviceList"))
+                if (message.serviceList != null && Object.hasOwnProperty.call(message, "serviceList"))
                     $root.ubii.services.ServiceList.encode(message.serviceList, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
-                if (message.lockstepProcessingReply != null && message.hasOwnProperty("lockstepProcessingReply"))
+                if (message.lockstepProcessingReply != null && Object.hasOwnProperty.call(message, "lockstepProcessingReply"))
                     $root.ubii.processing.LockstepProcessingReply.encode(message.lockstepProcessingReply, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
                 return writer;
             };
@@ -8003,35 +8003,35 @@ $root.ubii = (function() {
             ServiceRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.topic != null && message.hasOwnProperty("topic"))
+                if (message.topic != null && Object.hasOwnProperty.call(message, "topic"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
-                if (message.client != null && message.hasOwnProperty("client"))
+                if (message.client != null && Object.hasOwnProperty.call(message, "client"))
                     $root.ubii.clients.Client.encode(message.client, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.device != null && message.hasOwnProperty("device"))
+                if (message.device != null && Object.hasOwnProperty.call(message, "device"))
                     $root.ubii.devices.Device.encode(message.device, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.topicSubscription != null && message.hasOwnProperty("topicSubscription"))
+                if (message.topicSubscription != null && Object.hasOwnProperty.call(message, "topicSubscription"))
                     $root.ubii.services.request.TopicSubscription.encode(message.topicSubscription, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.session != null && message.hasOwnProperty("session"))
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.sessionList != null && message.hasOwnProperty("sessionList"))
+                if (message.sessionList != null && Object.hasOwnProperty.call(message, "sessionList"))
                     $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.processingModule != null && message.hasOwnProperty("processingModule"))
+                if (message.processingModule != null && Object.hasOwnProperty.call(message, "processingModule"))
                     $root.ubii.processing.ProcessingModule.encode(message.processingModule, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList"))
+                if (message.processingModuleList != null && Object.hasOwnProperty.call(message, "processingModuleList"))
                     $root.ubii.processing.ProcessingModuleList.encode(message.processingModuleList, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.topicMux != null && message.hasOwnProperty("topicMux"))
+                if (message.topicMux != null && Object.hasOwnProperty.call(message, "topicMux"))
                     $root.ubii.devices.TopicMux.encode(message.topicMux, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                if (message.topicMuxList != null && message.hasOwnProperty("topicMuxList"))
+                if (message.topicMuxList != null && Object.hasOwnProperty.call(message, "topicMuxList"))
                     $root.ubii.devices.TopicMuxList.encode(message.topicMuxList, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.topicDemux != null && message.hasOwnProperty("topicDemux"))
+                if (message.topicDemux != null && Object.hasOwnProperty.call(message, "topicDemux"))
                     $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
-                if (message.topicDemuxList != null && message.hasOwnProperty("topicDemuxList"))
+                if (message.topicDemuxList != null && Object.hasOwnProperty.call(message, "topicDemuxList"))
                     $root.ubii.devices.TopicDemuxList.encode(message.topicDemuxList, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-                if (message.clientList != null && message.hasOwnProperty("clientList"))
+                if (message.clientList != null && Object.hasOwnProperty.call(message, "clientList"))
                     $root.ubii.clients.ClientList.encode(message.clientList, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
-                if (message.deviceList != null && message.hasOwnProperty("deviceList"))
+                if (message.deviceList != null && Object.hasOwnProperty.call(message, "deviceList"))
                     $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-                if (message.lockstepProcessingRequest != null && message.hasOwnProperty("lockstepProcessingRequest"))
+                if (message.lockstepProcessingRequest != null && Object.hasOwnProperty.call(message, "lockstepProcessingRequest"))
                     $root.ubii.processing.LockstepProcessingRequest.encode(message.lockstepProcessingRequest, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -8583,11 +8583,11 @@ $root.ubii = (function() {
             TopicInputMapping.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.inputName != null && message.hasOwnProperty("inputName"))
+                if (message.inputName != null && Object.hasOwnProperty.call(message, "inputName"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.inputName);
-                if (message.topic != null && message.hasOwnProperty("topic"))
+                if (message.topic != null && Object.hasOwnProperty.call(message, "topic"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.topic);
-                if (message.topicMux != null && message.hasOwnProperty("topicMux"))
+                if (message.topicMux != null && Object.hasOwnProperty.call(message, "topicMux"))
                     $root.ubii.devices.TopicMux.encode(message.topicMux, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -9053,11 +9053,11 @@ $root.ubii = (function() {
             TopicOutputMapping.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.outputName != null && message.hasOwnProperty("outputName"))
+                if (message.outputName != null && Object.hasOwnProperty.call(message, "outputName"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.outputName);
-                if (message.topic != null && message.hasOwnProperty("topic"))
+                if (message.topic != null && Object.hasOwnProperty.call(message, "topic"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.topic);
-                if (message.topicDemux != null && message.hasOwnProperty("topicDemux"))
+                if (message.topicDemux != null && Object.hasOwnProperty.call(message, "topicDemux"))
                     $root.ubii.devices.TopicDemux.encode(message.topicDemux, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -9520,7 +9520,7 @@ $root.ubii = (function() {
             IOMapping.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.processingModuleId != null && message.hasOwnProperty("processingModuleId"))
+                if (message.processingModuleId != null && Object.hasOwnProperty.call(message, "processingModuleId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.processingModuleId);
                 if (message.inputMappings != null && message.inputMappings.length)
                     for (var i = 0; i < message.inputMappings.length; ++i)
@@ -9528,7 +9528,7 @@ $root.ubii = (function() {
                 if (message.outputMappings != null && message.outputMappings.length)
                     for (var i = 0; i < message.outputMappings.length; ++i)
                         $root.ubii.sessions.TopicOutputMapping.encode(message.outputMappings[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.processingModuleName != null && message.hasOwnProperty("processingModuleName"))
+                if (message.processingModuleName != null && Object.hasOwnProperty.call(message, "processingModuleName"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.processingModuleName);
                 return writer;
             };
@@ -9944,7 +9944,7 @@ $root.ubii = (function() {
         /**
          * SessionStatus enum.
          * @name ubii.sessions.SessionStatus
-         * @enum {string}
+         * @enum {number}
          * @property {number} CREATED=0 CREATED value
          * @property {number} RUNNING=1 RUNNING value
          * @property {number} PAUSED=2 PAUSED value
@@ -10091,9 +10091,9 @@ $root.ubii = (function() {
             Session.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.processingModules != null && message.processingModules.length)
                     for (var i = 0; i < message.processingModules.length; ++i)
@@ -10104,14 +10104,14 @@ $root.ubii = (function() {
                 if (message.tags != null && message.tags.length)
                     for (var i = 0; i < message.tags.length; ++i)
                         writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
-                if (message.description != null && message.hasOwnProperty("description"))
+                if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
                 if (message.authors != null && message.authors.length)
                     for (var i = 0; i < message.authors.length; ++i)
                         writer.uint32(/* id 7, wireType 2 =*/58).string(message.authors[i]);
-                if (message.status != null && message.hasOwnProperty("status"))
+                if (message.status != null && Object.hasOwnProperty.call(message, "status"))
                     writer.uint32(/* id 8, wireType 0 =*/64).int32(message.status);
-                if (message.editable != null && message.hasOwnProperty("editable"))
+                if (message.editable != null && Object.hasOwnProperty.call(message, "editable"))
                     writer.uint32(/* id 9, wireType 0 =*/72).bool(message.editable);
                 return writer;
             };
@@ -10730,11 +10730,11 @@ $root.ubii = (function() {
             TopicData.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.topicDataRecord != null && message.hasOwnProperty("topicDataRecord"))
+                if (message.topicDataRecord != null && Object.hasOwnProperty.call(message, "topicDataRecord"))
                     $root.ubii.topicData.TopicDataRecord.encode(message.topicDataRecord, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.topicDataRecordList != null && message.hasOwnProperty("topicDataRecordList"))
+                if (message.topicDataRecordList != null && Object.hasOwnProperty.call(message, "topicDataRecordList"))
                     $root.ubii.topicData.TopicDataRecordList.encode(message.topicDataRecordList, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.error != null && message.hasOwnProperty("error"))
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
                     $root.ubii.general.Error.encode(message.error, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
@@ -10986,9 +10986,9 @@ $root.ubii = (function() {
             Timestamp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                if (message.seconds != null && Object.hasOwnProperty.call(message, "seconds"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
-                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                if (message.nanos != null && Object.hasOwnProperty.call(message, "nanos"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
                 return writer;
             };
@@ -11503,71 +11503,71 @@ $root.ubii = (function() {
             TopicDataRecord.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.topic != null && message.hasOwnProperty("topic"))
+                if (message.topic != null && Object.hasOwnProperty.call(message, "topic"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
-                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                if (message.timestamp != null && Object.hasOwnProperty.call(message, "timestamp"))
                     $root.ubii.topicData.Timestamp.encode(message.timestamp, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.double != null && message.hasOwnProperty("double"))
+                if (message.double != null && Object.hasOwnProperty.call(message, "double"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.double);
-                if (message.bool != null && message.hasOwnProperty("bool"))
+                if (message.bool != null && Object.hasOwnProperty.call(message, "bool"))
                     writer.uint32(/* id 4, wireType 0 =*/32).bool(message.bool);
-                if (message.string != null && message.hasOwnProperty("string"))
+                if (message.string != null && Object.hasOwnProperty.call(message, "string"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.string);
-                if (message.vector2 != null && message.hasOwnProperty("vector2"))
+                if (message.vector2 != null && Object.hasOwnProperty.call(message, "vector2"))
                     $root.ubii.dataStructure.Vector2.encode(message.vector2, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.vector3 != null && message.hasOwnProperty("vector3"))
+                if (message.vector3 != null && Object.hasOwnProperty.call(message, "vector3"))
                     $root.ubii.dataStructure.Vector3.encode(message.vector3, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.vector4 != null && message.hasOwnProperty("vector4"))
+                if (message.vector4 != null && Object.hasOwnProperty.call(message, "vector4"))
                     $root.ubii.dataStructure.Vector4.encode(message.vector4, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.quaternion != null && message.hasOwnProperty("quaternion"))
+                if (message.quaternion != null && Object.hasOwnProperty.call(message, "quaternion"))
                     $root.ubii.dataStructure.Quaternion.encode(message.quaternion, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                if (message.matrix3x2 != null && message.hasOwnProperty("matrix3x2"))
+                if (message.matrix3x2 != null && Object.hasOwnProperty.call(message, "matrix3x2"))
                     $root.ubii.dataStructure.Matrix3x2.encode(message.matrix3x2, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.matrix4x4 != null && message.hasOwnProperty("matrix4x4"))
+                if (message.matrix4x4 != null && Object.hasOwnProperty.call(message, "matrix4x4"))
                     $root.ubii.dataStructure.Matrix4x4.encode(message.matrix4x4, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
-                if (message.color != null && message.hasOwnProperty("color"))
+                if (message.color != null && Object.hasOwnProperty.call(message, "color"))
                     $root.ubii.dataStructure.Color.encode(message.color, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-                if (message.touchEvent != null && message.hasOwnProperty("touchEvent"))
+                if (message.touchEvent != null && Object.hasOwnProperty.call(message, "touchEvent"))
                     $root.ubii.dataStructure.TouchEvent.encode(message.touchEvent, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
-                if (message.keyEvent != null && message.hasOwnProperty("keyEvent"))
+                if (message.keyEvent != null && Object.hasOwnProperty.call(message, "keyEvent"))
                     $root.ubii.dataStructure.KeyEvent.encode(message.keyEvent, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-                if (message.mouseEvent != null && message.hasOwnProperty("mouseEvent"))
+                if (message.mouseEvent != null && Object.hasOwnProperty.call(message, "mouseEvent"))
                     $root.ubii.dataStructure.MouseEvent.encode(message.mouseEvent, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
-                if (message.myoEvent != null && message.hasOwnProperty("myoEvent"))
+                if (message.myoEvent != null && Object.hasOwnProperty.call(message, "myoEvent"))
                     $root.ubii.dataStructure.MyoEvent.encode(message.myoEvent, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
-                if (message.pose2D != null && message.hasOwnProperty("pose2D"))
+                if (message.pose2D != null && Object.hasOwnProperty.call(message, "pose2D"))
                     $root.ubii.dataStructure.Pose2D.encode(message.pose2D, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-                if (message.pose3D != null && message.hasOwnProperty("pose3D"))
+                if (message.pose3D != null && Object.hasOwnProperty.call(message, "pose3D"))
                     $root.ubii.dataStructure.Pose3D.encode(message.pose3D, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
-                if (message.object2D != null && message.hasOwnProperty("object2D"))
+                if (message.object2D != null && Object.hasOwnProperty.call(message, "object2D"))
                     $root.ubii.dataStructure.Object2D.encode(message.object2D, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
-                if (message.object3D != null && message.hasOwnProperty("object3D"))
+                if (message.object3D != null && Object.hasOwnProperty.call(message, "object3D"))
                     $root.ubii.dataStructure.Object3D.encode(message.object3D, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
-                if (message.object2DList != null && message.hasOwnProperty("object2DList"))
+                if (message.object2DList != null && Object.hasOwnProperty.call(message, "object2DList"))
                     $root.ubii.dataStructure.Object2DList.encode(message.object2DList, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
-                if (message.object3DList != null && message.hasOwnProperty("object3DList"))
+                if (message.object3DList != null && Object.hasOwnProperty.call(message, "object3DList"))
                     $root.ubii.dataStructure.Object3DList.encode(message.object3DList, writer.uint32(/* id 22, wireType 2 =*/178).fork()).ldelim();
-                if (message.int32 != null && message.hasOwnProperty("int32"))
+                if (message.int32 != null && Object.hasOwnProperty.call(message, "int32"))
                     writer.uint32(/* id 23, wireType 0 =*/184).int32(message.int32);
-                if (message.float != null && message.hasOwnProperty("float"))
+                if (message.float != null && Object.hasOwnProperty.call(message, "float"))
                     writer.uint32(/* id 24, wireType 5 =*/197).float(message.float);
-                if (message.int32List != null && message.hasOwnProperty("int32List"))
+                if (message.int32List != null && Object.hasOwnProperty.call(message, "int32List"))
                     $root.ubii.dataStructure.Int32List.encode(message.int32List, writer.uint32(/* id 25, wireType 2 =*/202).fork()).ldelim();
-                if (message.floatList != null && message.hasOwnProperty("floatList"))
+                if (message.floatList != null && Object.hasOwnProperty.call(message, "floatList"))
                     $root.ubii.dataStructure.FloatList.encode(message.floatList, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
-                if (message.doubleList != null && message.hasOwnProperty("doubleList"))
+                if (message.doubleList != null && Object.hasOwnProperty.call(message, "doubleList"))
                     $root.ubii.dataStructure.DoubleList.encode(message.doubleList, writer.uint32(/* id 27, wireType 2 =*/218).fork()).ldelim();
-                if (message.stringList != null && message.hasOwnProperty("stringList"))
+                if (message.stringList != null && Object.hasOwnProperty.call(message, "stringList"))
                     $root.ubii.dataStructure.StringList.encode(message.stringList, writer.uint32(/* id 28, wireType 2 =*/226).fork()).ldelim();
-                if (message.boolList != null && message.hasOwnProperty("boolList"))
+                if (message.boolList != null && Object.hasOwnProperty.call(message, "boolList"))
                     $root.ubii.dataStructure.BoolList.encode(message.boolList, writer.uint32(/* id 29, wireType 2 =*/234).fork()).ldelim();
-                if (message.image2D != null && message.hasOwnProperty("image2D"))
+                if (message.image2D != null && Object.hasOwnProperty.call(message, "image2D"))
                     $root.ubii.dataStructure.Image2D.encode(message.image2D, writer.uint32(/* id 30, wireType 2 =*/242).fork()).ldelim();
-                if (message.image2DList != null && message.hasOwnProperty("image2DList"))
+                if (message.image2DList != null && Object.hasOwnProperty.call(message, "image2DList"))
                     $root.ubii.dataStructure.Image2DList.encode(message.image2DList, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
-                if (message.session != null && message.hasOwnProperty("session"))
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
-                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList"))
+                if (message.processingModuleList != null && Object.hasOwnProperty.call(message, "processingModuleList"))
                     $root.ubii.processing.ProcessingModuleList.encode(message.processingModuleList, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
                 return writer;
             };
@@ -12620,7 +12620,7 @@ $root.ubii = (function() {
         /**
          * ButtonEventType enum.
          * @name ubii.dataStructure.ButtonEventType
-         * @enum {string}
+         * @enum {number}
          * @property {number} UP=0 UP value
          * @property {number} DOWN=1 DOWN value
          */
@@ -12714,13 +12714,13 @@ $root.ubii = (function() {
             Color.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.r != null && message.hasOwnProperty("r"))
+                if (message.r != null && Object.hasOwnProperty.call(message, "r"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.r);
-                if (message.g != null && message.hasOwnProperty("g"))
+                if (message.g != null && Object.hasOwnProperty.call(message, "g"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.g);
-                if (message.b != null && message.hasOwnProperty("b"))
+                if (message.b != null && Object.hasOwnProperty.call(message, "b"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.b);
-                if (message.a != null && message.hasOwnProperty("a"))
+                if (message.a != null && Object.hasOwnProperty.call(message, "a"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.a);
                 return writer;
             };
@@ -12888,7 +12888,7 @@ $root.ubii = (function() {
         /**
          * HandGestureType enum.
          * @name ubii.dataStructure.HandGestureType
-         * @enum {string}
+         * @enum {number}
          * @property {number} REST=0 REST value
          * @property {number} FINGERS_SPREAD=1 FINGERS_SPREAD value
          * @property {number} WAVE_IN=2 WAVE_IN value
@@ -12990,13 +12990,13 @@ $root.ubii = (function() {
             Image2D.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.width != null && message.hasOwnProperty("width"))
+                if (message.width != null && Object.hasOwnProperty.call(message, "width"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.width);
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.height);
-                if (message.dataFormat != null && message.hasOwnProperty("dataFormat"))
+                if (message.dataFormat != null && Object.hasOwnProperty.call(message, "dataFormat"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.dataFormat);
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.data);
                 return writer;
             };
@@ -13188,7 +13188,7 @@ $root.ubii = (function() {
             /**
              * DataFormat enum.
              * @name ubii.dataStructure.Image2D.DataFormat
-             * @enum {string}
+             * @enum {number}
              * @property {number} GRAY8=0 GRAY8 value
              * @property {number} RGB8=1 RGB8 value
              * @property {number} RGBA8=2 RGBA8 value
@@ -13477,9 +13477,9 @@ $root.ubii = (function() {
             KeyEvent.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.key);
                 return writer;
             };
@@ -14783,17 +14783,17 @@ $root.ubii = (function() {
             Matrix3x2.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.m00 != null && message.hasOwnProperty("m00"))
+                if (message.m00 != null && Object.hasOwnProperty.call(message, "m00"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.m00);
-                if (message.m01 != null && message.hasOwnProperty("m01"))
+                if (message.m01 != null && Object.hasOwnProperty.call(message, "m01"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.m01);
-                if (message.m10 != null && message.hasOwnProperty("m10"))
+                if (message.m10 != null && Object.hasOwnProperty.call(message, "m10"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.m10);
-                if (message.m11 != null && message.hasOwnProperty("m11"))
+                if (message.m11 != null && Object.hasOwnProperty.call(message, "m11"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.m11);
-                if (message.m20 != null && message.hasOwnProperty("m20"))
+                if (message.m20 != null && Object.hasOwnProperty.call(message, "m20"))
                     writer.uint32(/* id 5, wireType 1 =*/41).double(message.m20);
-                if (message.m21 != null && message.hasOwnProperty("m21"))
+                if (message.m21 != null && Object.hasOwnProperty.call(message, "m21"))
                     writer.uint32(/* id 6, wireType 1 =*/49).double(message.m21);
                 return writer;
             };
@@ -15171,37 +15171,37 @@ $root.ubii = (function() {
             Matrix4x4.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.m00 != null && message.hasOwnProperty("m00"))
+                if (message.m00 != null && Object.hasOwnProperty.call(message, "m00"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.m00);
-                if (message.m01 != null && message.hasOwnProperty("m01"))
+                if (message.m01 != null && Object.hasOwnProperty.call(message, "m01"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.m01);
-                if (message.m02 != null && message.hasOwnProperty("m02"))
+                if (message.m02 != null && Object.hasOwnProperty.call(message, "m02"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.m02);
-                if (message.m03 != null && message.hasOwnProperty("m03"))
+                if (message.m03 != null && Object.hasOwnProperty.call(message, "m03"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.m03);
-                if (message.m10 != null && message.hasOwnProperty("m10"))
+                if (message.m10 != null && Object.hasOwnProperty.call(message, "m10"))
                     writer.uint32(/* id 5, wireType 1 =*/41).double(message.m10);
-                if (message.m11 != null && message.hasOwnProperty("m11"))
+                if (message.m11 != null && Object.hasOwnProperty.call(message, "m11"))
                     writer.uint32(/* id 6, wireType 1 =*/49).double(message.m11);
-                if (message.m12 != null && message.hasOwnProperty("m12"))
+                if (message.m12 != null && Object.hasOwnProperty.call(message, "m12"))
                     writer.uint32(/* id 7, wireType 1 =*/57).double(message.m12);
-                if (message.m13 != null && message.hasOwnProperty("m13"))
+                if (message.m13 != null && Object.hasOwnProperty.call(message, "m13"))
                     writer.uint32(/* id 8, wireType 1 =*/65).double(message.m13);
-                if (message.m20 != null && message.hasOwnProperty("m20"))
+                if (message.m20 != null && Object.hasOwnProperty.call(message, "m20"))
                     writer.uint32(/* id 9, wireType 1 =*/73).double(message.m20);
-                if (message.m21 != null && message.hasOwnProperty("m21"))
+                if (message.m21 != null && Object.hasOwnProperty.call(message, "m21"))
                     writer.uint32(/* id 10, wireType 1 =*/81).double(message.m21);
-                if (message.m22 != null && message.hasOwnProperty("m22"))
+                if (message.m22 != null && Object.hasOwnProperty.call(message, "m22"))
                     writer.uint32(/* id 11, wireType 1 =*/89).double(message.m22);
-                if (message.m23 != null && message.hasOwnProperty("m23"))
+                if (message.m23 != null && Object.hasOwnProperty.call(message, "m23"))
                     writer.uint32(/* id 12, wireType 1 =*/97).double(message.m23);
-                if (message.m30 != null && message.hasOwnProperty("m30"))
+                if (message.m30 != null && Object.hasOwnProperty.call(message, "m30"))
                     writer.uint32(/* id 13, wireType 1 =*/105).double(message.m30);
-                if (message.m31 != null && message.hasOwnProperty("m31"))
+                if (message.m31 != null && Object.hasOwnProperty.call(message, "m31"))
                     writer.uint32(/* id 14, wireType 1 =*/113).double(message.m31);
-                if (message.m32 != null && message.hasOwnProperty("m32"))
+                if (message.m32 != null && Object.hasOwnProperty.call(message, "m32"))
                     writer.uint32(/* id 15, wireType 1 =*/121).double(message.m32);
-                if (message.m33 != null && message.hasOwnProperty("m33"))
+                if (message.m33 != null && Object.hasOwnProperty.call(message, "m33"))
                     writer.uint32(/* id 16, wireType 1 =*/129).double(message.m33);
                 return writer;
             };
@@ -15563,9 +15563,9 @@ $root.ubii = (function() {
             MouseEvent.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-                if (message.button != null && message.hasOwnProperty("button"))
+                if (message.button != null && Object.hasOwnProperty.call(message, "button"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.button);
                 return writer;
             };
@@ -15813,15 +15813,15 @@ $root.ubii = (function() {
             MyoEvent.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.emg != null && message.hasOwnProperty("emg"))
+                if (message.emg != null && Object.hasOwnProperty.call(message, "emg"))
                     $root.ubii.dataStructure.Vector8.encode(message.emg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.orientation != null && message.hasOwnProperty("orientation"))
+                if (message.orientation != null && Object.hasOwnProperty.call(message, "orientation"))
                     $root.ubii.dataStructure.Quaternion.encode(message.orientation, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.gyroscope != null && message.hasOwnProperty("gyroscope"))
+                if (message.gyroscope != null && Object.hasOwnProperty.call(message, "gyroscope"))
                     $root.ubii.dataStructure.Vector3.encode(message.gyroscope, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.accelerometer != null && message.hasOwnProperty("accelerometer"))
+                if (message.accelerometer != null && Object.hasOwnProperty.call(message, "accelerometer"))
                     $root.ubii.dataStructure.Vector3.encode(message.accelerometer, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.gesture != null && message.hasOwnProperty("gesture"))
+                if (message.gesture != null && Object.hasOwnProperty.call(message, "gesture"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int32(message.gesture);
                 return writer;
             };
@@ -16133,13 +16133,13 @@ $root.ubii = (function() {
             Object2D.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.pose != null && message.hasOwnProperty("pose"))
+                if (message.pose != null && Object.hasOwnProperty.call(message, "pose"))
                     $root.ubii.dataStructure.Pose2D.encode(message.pose, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.size != null && message.hasOwnProperty("size"))
+                if (message.size != null && Object.hasOwnProperty.call(message, "size"))
                     $root.ubii.dataStructure.Vector2.encode(message.size, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                if (message.userDataJson != null && Object.hasOwnProperty.call(message, "userDataJson"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.userDataJson);
                 return writer;
             };
@@ -16605,13 +16605,13 @@ $root.ubii = (function() {
             Object3D.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.pose != null && message.hasOwnProperty("pose"))
+                if (message.pose != null && Object.hasOwnProperty.call(message, "pose"))
                     $root.ubii.dataStructure.Pose3D.encode(message.pose, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.size != null && message.hasOwnProperty("size"))
+                if (message.size != null && Object.hasOwnProperty.call(message, "size"))
                     $root.ubii.dataStructure.Vector3.encode(message.size, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.userDataJson != null && message.hasOwnProperty("userDataJson"))
+                if (message.userDataJson != null && Object.hasOwnProperty.call(message, "userDataJson"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.userDataJson);
                 return writer;
             };
@@ -17082,11 +17082,11 @@ $root.ubii = (function() {
             Pose2D.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.position != null && message.hasOwnProperty("position"))
+                if (message.position != null && Object.hasOwnProperty.call(message, "position"))
                     $root.ubii.dataStructure.Vector2.encode(message.position, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.direction != null && message.hasOwnProperty("direction"))
+                if (message.direction != null && Object.hasOwnProperty.call(message, "direction"))
                     $root.ubii.dataStructure.Vector2.encode(message.direction, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.angle != null && message.hasOwnProperty("angle"))
+                if (message.angle != null && Object.hasOwnProperty.call(message, "angle"))
                     writer.uint32(/* id 3, wireType 5 =*/29).float(message.angle);
                 return writer;
             };
@@ -17349,11 +17349,11 @@ $root.ubii = (function() {
             Pose3D.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.position != null && message.hasOwnProperty("position"))
+                if (message.position != null && Object.hasOwnProperty.call(message, "position"))
                     $root.ubii.dataStructure.Vector3.encode(message.position, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.quaternion != null && message.hasOwnProperty("quaternion"))
+                if (message.quaternion != null && Object.hasOwnProperty.call(message, "quaternion"))
                     $root.ubii.dataStructure.Quaternion.encode(message.quaternion, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.euler != null && message.hasOwnProperty("euler"))
+                if (message.euler != null && Object.hasOwnProperty.call(message, "euler"))
                     $root.ubii.dataStructure.Vector3.encode(message.euler, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -17617,13 +17617,13 @@ $root.ubii = (function() {
             Quaternion.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.x != null && message.hasOwnProperty("x"))
+                if (message.x != null && Object.hasOwnProperty.call(message, "x"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.x);
-                if (message.y != null && message.hasOwnProperty("y"))
+                if (message.y != null && Object.hasOwnProperty.call(message, "y"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.y);
-                if (message.z != null && message.hasOwnProperty("z"))
+                if (message.z != null && Object.hasOwnProperty.call(message, "z"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.z);
-                if (message.w != null && message.hasOwnProperty("w"))
+                if (message.w != null && Object.hasOwnProperty.call(message, "w"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.w);
                 return writer;
             };
@@ -17853,9 +17853,9 @@ $root.ubii = (function() {
             TouchEvent.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-                if (message.position != null && message.hasOwnProperty("position"))
+                if (message.position != null && Object.hasOwnProperty.call(message, "position"))
                     $root.ubii.dataStructure.Vector2.encode(message.position, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
@@ -18081,9 +18081,9 @@ $root.ubii = (function() {
             Vector2.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.x != null && message.hasOwnProperty("x"))
+                if (message.x != null && Object.hasOwnProperty.call(message, "x"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.x);
-                if (message.y != null && message.hasOwnProperty("y"))
+                if (message.y != null && Object.hasOwnProperty.call(message, "y"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.y);
                 return writer;
             };
@@ -18300,11 +18300,11 @@ $root.ubii = (function() {
             Vector3.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.x != null && message.hasOwnProperty("x"))
+                if (message.x != null && Object.hasOwnProperty.call(message, "x"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.x);
-                if (message.y != null && message.hasOwnProperty("y"))
+                if (message.y != null && Object.hasOwnProperty.call(message, "y"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.y);
-                if (message.z != null && message.hasOwnProperty("z"))
+                if (message.z != null && Object.hasOwnProperty.call(message, "z"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.z);
                 return writer;
             };
@@ -18541,13 +18541,13 @@ $root.ubii = (function() {
             Vector4.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.x != null && message.hasOwnProperty("x"))
+                if (message.x != null && Object.hasOwnProperty.call(message, "x"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.x);
-                if (message.y != null && message.hasOwnProperty("y"))
+                if (message.y != null && Object.hasOwnProperty.call(message, "y"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.y);
-                if (message.z != null && message.hasOwnProperty("z"))
+                if (message.z != null && Object.hasOwnProperty.call(message, "z"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.z);
-                if (message.w != null && message.hasOwnProperty("w"))
+                if (message.w != null && Object.hasOwnProperty.call(message, "w"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.w);
                 return writer;
             };
@@ -18831,21 +18831,21 @@ $root.ubii = (function() {
             Vector8.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.v0 != null && message.hasOwnProperty("v0"))
+                if (message.v0 != null && Object.hasOwnProperty.call(message, "v0"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.v0);
-                if (message.v1 != null && message.hasOwnProperty("v1"))
+                if (message.v1 != null && Object.hasOwnProperty.call(message, "v1"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.v1);
-                if (message.v2 != null && message.hasOwnProperty("v2"))
+                if (message.v2 != null && Object.hasOwnProperty.call(message, "v2"))
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.v2);
-                if (message.v3 != null && message.hasOwnProperty("v3"))
+                if (message.v3 != null && Object.hasOwnProperty.call(message, "v3"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.v3);
-                if (message.v4 != null && message.hasOwnProperty("v4"))
+                if (message.v4 != null && Object.hasOwnProperty.call(message, "v4"))
                     writer.uint32(/* id 5, wireType 1 =*/41).double(message.v4);
-                if (message.v5 != null && message.hasOwnProperty("v5"))
+                if (message.v5 != null && Object.hasOwnProperty.call(message, "v5"))
                     writer.uint32(/* id 6, wireType 1 =*/49).double(message.v5);
-                if (message.v6 != null && message.hasOwnProperty("v6"))
+                if (message.v6 != null && Object.hasOwnProperty.call(message, "v6"))
                     writer.uint32(/* id 7, wireType 1 =*/57).double(message.v6);
-                if (message.v7 != null && message.hasOwnProperty("v7"))
+                if (message.v7 != null && Object.hasOwnProperty.call(message, "v7"))
                     writer.uint32(/* id 8, wireType 1 =*/65).double(message.v7);
                 return writer;
             };

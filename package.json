@@ -32,7 +32,7 @@
     "@ava/babel": "1.0.1"
   },
   "dependencies": {
-    "protobufjs": "6.8.8",
+    "protobufjs": "6.10.2",
     "google-protobuf": "3.11.1",
     "google-closure-library": "20190929.0.0"
   }
