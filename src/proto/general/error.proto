@@ -6,3 +6,7 @@ message Error {
     string message = 2;
     string stack = 3;
 }
+
+message ErrorList {
+    repeated ubii.general.Error elements = 1;
+}
