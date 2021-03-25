@@ -61,7 +61,7 @@ static void InitDefaultsscc_info_ClientList_proto_2fclients_2fclient_2eproto() {
       &scc_info_Client_proto_2fclients_2fclient_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fclients_2fclient_2eproto[2];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fclients_2fclient_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fclients_2fclient_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fclients_2fclient_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fclients_2fclient_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -79,6 +79,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fclients_2fclient_2epro
   PROTOBUF_FIELD_OFFSET(::ubii::clients::Client, is_dedicated_processing_node_),
   PROTOBUF_FIELD_OFFSET(::ubii::clients::Client, host_ip_),
   PROTOBUF_FIELD_OFFSET(::ubii::clients::Client, metadata_json_),
+  PROTOBUF_FIELD_OFFSET(::ubii::clients::Client, state_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::clients::ClientList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -88,7 +89,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fclients_2fclient_2epro
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::clients::Client)},
-  { 14, -1, sizeof(::ubii::clients::ClientList)},
+  { 15, -1, sizeof(::ubii::clients::ClientList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -99,15 +100,17 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_proto_2fclients_2fclient_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\032proto/clients/client.proto\022\014ubii.clien"
   "ts\032\032proto/devices/device.proto\032\'proto/pr"
-  "ocessing/processingModule.proto\"\371\001\n\006Clie"
+  "ocessing/processingModule.proto\"\330\002\n\006Clie"
   "nt\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030"
   "\003 \003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003("
   "\t\022\023\n\013description\030\005 \001(\t\022=\n\022processing_mod"
   "ules\030\006 \003(\0132!.ubii.processing.ProcessingM"
   "odule\022$\n\034is_dedicated_processing_node\030\007 "
   "\001(\010\022\017\n\007host_ip\030\010 \001(\t\022\025\n\rmetadata_json\030\t "
-  "\001(\t\"4\n\nClientList\022&\n\010elements\030\001 \003(\0132\024.ub"
-  "ii.clients.Clientb\006proto3"
+  "\001(\t\022)\n\005state\030\n \001(\0162\032.ubii.clients.Client"
+  ".State\"2\n\005State\022\n\n\006ACTIVE\020\000\022\014\n\010INACTIVE\020"
+  "\001\022\017\n\013UNAVAILABLE\020\002\"4\n\nClientList\022&\n\010elem"
+  "ents\030\001 \003(\0132\024.ubii.clients.Clientb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fclients_2fclient_2eproto_deps[2] = {
   &::descriptor_table_proto_2fdevices_2fdevice_2eproto,
@@ -120,7 +123,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fclients_2fclient_2eproto_once;
 static bool descriptor_table_proto_2fclients_2fclient_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fclients_2fclient_2eproto = {
-  &descriptor_table_proto_2fclients_2fclient_2eproto_initialized, descriptor_table_protodef_proto_2fclients_2fclient_2eproto, "proto/clients/client.proto", 425,
+  &descriptor_table_proto_2fclients_2fclient_2eproto_initialized, descriptor_table_protodef_proto_2fclients_2fclient_2eproto, "proto/clients/client.proto", 520,
   &descriptor_table_proto_2fclients_2fclient_2eproto_once, descriptor_table_proto_2fclients_2fclient_2eproto_sccs, descriptor_table_proto_2fclients_2fclient_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_proto_2fclients_2fclient_2eproto::offsets,
   file_level_metadata_proto_2fclients_2fclient_2eproto, 2, file_level_enum_descriptors_proto_2fclients_2fclient_2eproto, file_level_service_descriptors_proto_2fclients_2fclient_2eproto,
@@ -130,6 +133,29 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_
 static bool dynamic_init_dummy_proto_2fclients_2fclient_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fclients_2fclient_2eproto), true);
 namespace ubii {
 namespace clients {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Client_State_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proto_2fclients_2fclient_2eproto);
+  return file_level_enum_descriptors_proto_2fclients_2fclient_2eproto[0];
+}
+bool Client_State_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr Client_State Client::ACTIVE;
+constexpr Client_State Client::INACTIVE;
+constexpr Client_State Client::UNAVAILABLE;
+constexpr Client_State Client::State_MIN;
+constexpr Client_State Client::State_MAX;
+constexpr int Client::State_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
@@ -177,7 +203,9 @@ Client::Client(const Client& from)
   if (!from._internal_metadata_json().empty()) {
     metadata_json_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.metadata_json_);
   }
-  is_dedicated_processing_node_ = from.is_dedicated_processing_node_;
+  ::memcpy(&is_dedicated_processing_node_, &from.is_dedicated_processing_node_,
+    static_cast<size_t>(reinterpret_cast<char*>(&state_) -
+    reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
   // @@protoc_insertion_point(copy_constructor:ubii.clients.Client)
 }
 
@@ -188,7 +216,9 @@ void Client::SharedCtor() {
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   host_ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   metadata_json_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  is_dedicated_processing_node_ = false;
+  ::memset(&is_dedicated_processing_node_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&state_) -
+      reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
 }
 
 Client::~Client() {
@@ -227,7 +257,9 @@ void Client::Clear() {
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   host_ip_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   metadata_json_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  is_dedicated_processing_node_ = false;
+  ::memset(&is_dedicated_processing_node_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&state_) -
+      reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
   _internal_metadata_.Clear();
 }
 
@@ -326,6 +358,14 @@ const char* Client::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.clients.Client.metadata_json"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .ubii.clients.Client.State state = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_state(static_cast<::ubii::clients::Client_State>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -436,6 +476,13 @@ failure:
         9, this->_internal_metadata_json(), target);
   }
 
+  // .ubii.clients.Client.State state = 10;
+  if (this->state() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      10, this->_internal_state(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -514,6 +561,12 @@ size_t Client::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
+  // .ubii.clients.Client.State state = 10;
+  if (this->state() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -571,6 +624,9 @@ void Client::MergeFrom(const Client& from) {
   if (from.is_dedicated_processing_node() != 0) {
     _internal_set_is_dedicated_processing_node(from._internal_is_dedicated_processing_node());
   }
+  if (from.state() != 0) {
+    _internal_set_state(from._internal_state());
+  }
 }
 
 void Client::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -608,6 +664,7 @@ void Client::InternalSwap(Client* other) {
   metadata_json_.Swap(&other->metadata_json_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(is_dedicated_processing_node_, other->is_dedicated_processing_node_);
+  swap(state_, other->state_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Client::GetMetadata() const {

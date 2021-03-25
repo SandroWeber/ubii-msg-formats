@@ -13,6 +13,7 @@ message Component {
     repeated string tags = 5;
     string description = 6;
     string id = 7;
+    string name = 8;
 }
 
 message ComponentList {

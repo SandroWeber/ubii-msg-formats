@@ -156,6 +156,17 @@ public final class ClientOuterClass {
      */
     com.google.protobuf.ByteString
         getMetadataJsonBytes();
+
+    /**
+     * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The state.
+     */
+    ubii.clients.ClientOuterClass.Client.State getState();
   }
   /**
    * Protobuf type {@code ubii.clients.Client}
@@ -178,6 +189,7 @@ public final class ClientOuterClass {
       processingModules_ = java.util.Collections.emptyList();
       hostIp_ = "";
       metadataJson_ = "";
+      state_ = 0;
     }
 
     @java.lang.Override
@@ -273,6 +285,12 @@ public final class ClientOuterClass {
               metadataJson_ = s;
               break;
             }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -312,6 +330,119 @@ public final class ClientOuterClass {
       return ubii.clients.ClientOuterClass.internal_static_ubii_clients_Client_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ubii.clients.ClientOuterClass.Client.class, ubii.clients.ClientOuterClass.Client.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code ubii.clients.Client.State}
+     */
+    public enum State
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ACTIVE = 0;</code>
+       */
+      ACTIVE(0),
+      /**
+       * <code>INACTIVE = 1;</code>
+       */
+      INACTIVE(1),
+      /**
+       * <code>UNAVAILABLE = 2;</code>
+       */
+      UNAVAILABLE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ACTIVE = 0;</code>
+       */
+      public static final int ACTIVE_VALUE = 0;
+      /**
+       * <code>INACTIVE = 1;</code>
+       */
+      public static final int INACTIVE_VALUE = 1;
+      /**
+       * <code>UNAVAILABLE = 2;</code>
+       */
+      public static final int UNAVAILABLE_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0: return ACTIVE;
+          case 1: return INACTIVE;
+          case 2: return UNAVAILABLE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          State> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<State>() {
+              public State findValueByNumber(int number) {
+                return State.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return ubii.clients.ClientOuterClass.Client.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ubii.clients.Client.State)
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -609,6 +740,25 @@ public final class ClientOuterClass {
       }
     }
 
+    public static final int STATE_FIELD_NUMBER = 10;
+    private int state_;
+    /**
+     * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The enum numeric value on the wire for state.
+     */
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     * <code>.ubii.clients.Client.State state = 10;</code>
+     * @return The state.
+     */
+    public ubii.clients.ClientOuterClass.Client.State getState() {
+      @SuppressWarnings("deprecation")
+      ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.valueOf(state_);
+      return result == null ? ubii.clients.ClientOuterClass.Client.State.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -649,6 +799,9 @@ public final class ClientOuterClass {
       }
       if (!getMetadataJsonBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, metadataJson_);
+      }
+      if (state_ != ubii.clients.ClientOuterClass.Client.State.ACTIVE.getNumber()) {
+        output.writeEnum(10, state_);
       }
       unknownFields.writeTo(output);
     }
@@ -694,6 +847,10 @@ public final class ClientOuterClass {
       if (!getMetadataJsonBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, metadataJson_);
       }
+      if (state_ != ubii.clients.ClientOuterClass.Client.State.ACTIVE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, state_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -727,6 +884,7 @@ public final class ClientOuterClass {
           .equals(other.getHostIp())) return false;
       if (!getMetadataJson()
           .equals(other.getMetadataJson())) return false;
+      if (state_ != other.state_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -763,6 +921,8 @@ public final class ClientOuterClass {
       hash = (53 * hash) + getHostIp().hashCode();
       hash = (37 * hash) + METADATA_JSON_FIELD_NUMBER;
       hash = (53 * hash) + getMetadataJson().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -924,6 +1084,8 @@ public final class ClientOuterClass {
 
         metadataJson_ = "";
 
+        state_ = 0;
+
         return this;
       }
 
@@ -980,6 +1142,7 @@ public final class ClientOuterClass {
         result.isDedicatedProcessingNode_ = isDedicatedProcessingNode_;
         result.hostIp_ = hostIp_;
         result.metadataJson_ = metadataJson_;
+        result.state_ = state_;
         onBuilt();
         return result;
       }
@@ -1112,6 +1275,9 @@ public final class ClientOuterClass {
         if (!other.getMetadataJson().isEmpty()) {
           metadataJson_ = other.metadataJson_;
           onChanged();
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2142,6 +2308,58 @@ public final class ClientOuterClass {
         onChanged();
         return this;
       }
+
+      private int state_ = 0;
+      /**
+       * <code>.ubii.clients.Client.State state = 10;</code>
+       * @return The enum numeric value on the wire for state.
+       */
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       * <code>.ubii.clients.Client.State state = 10;</code>
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ubii.clients.Client.State state = 10;</code>
+       * @return The state.
+       */
+      public ubii.clients.ClientOuterClass.Client.State getState() {
+        @SuppressWarnings("deprecation")
+        ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.valueOf(state_);
+        return result == null ? ubii.clients.ClientOuterClass.Client.State.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ubii.clients.Client.State state = 10;</code>
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(ubii.clients.ClientOuterClass.Client.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ubii.clients.Client.State state = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        
+        state_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3004,15 +3222,17 @@ public final class ClientOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032proto/clients/client.proto\022\014ubii.clien" +
       "ts\032\032proto/devices/device.proto\032\'proto/pr" +
-      "ocessing/processingModule.proto\"\371\001\n\006Clie" +
+      "ocessing/processingModule.proto\"\330\002\n\006Clie" +
       "nt\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030" +
       "\003 \003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003(" +
       "\t\022\023\n\013description\030\005 \001(\t\022=\n\022processing_mod" +
       "ules\030\006 \003(\0132!.ubii.processing.ProcessingM" +
       "odule\022$\n\034is_dedicated_processing_node\030\007 " +
       "\001(\010\022\017\n\007host_ip\030\010 \001(\t\022\025\n\rmetadata_json\030\t " +
-      "\001(\t\"4\n\nClientList\022&\n\010elements\030\001 \003(\0132\024.ub" +
-      "ii.clients.Clientb\006proto3"
+      "\001(\t\022)\n\005state\030\n \001(\0162\032.ubii.clients.Client" +
+      ".State\"2\n\005State\022\n\n\006ACTIVE\020\000\022\014\n\010INACTIVE\020" +
+      "\001\022\017\n\013UNAVAILABLE\020\002\"4\n\nClientList\022&\n\010elem" +
+      "ents\030\001 \003(\0132\024.ubii.clients.Clientb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3025,7 +3245,7 @@ public final class ClientOuterClass {
     internal_static_ubii_clients_Client_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_clients_Client_descriptor,
-        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", });
+        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", "State", });
     internal_static_ubii_clients_ClientList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_clients_ClientList_fieldAccessorTable = new

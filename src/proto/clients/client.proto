@@ -5,6 +5,12 @@ import "proto/devices/device.proto";
 import "proto/processing/processingModule.proto";
 
 message Client {
+    enum State {
+        ACTIVE = 0;
+        INACTIVE = 1;
+        UNAVAILABLE = 2;
+    }
+
     string id = 1;
     string name = 2;
     repeated ubii.devices.Device devices = 3;
@@ -14,6 +20,7 @@ message Client {
     bool is_dedicated_processing_node = 7;
     string host_ip = 8;
     string metadata_json = 9;
+    State state = 10;
 }
 
 message ClientList {

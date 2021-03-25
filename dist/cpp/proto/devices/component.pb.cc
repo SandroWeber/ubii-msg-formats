@@ -73,6 +73,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fdevices_2fcomponent_2e
   PROTOBUF_FIELD_OFFSET(::ubii::devices::Component, tags_),
   PROTOBUF_FIELD_OFFSET(::ubii::devices::Component, description_),
   PROTOBUF_FIELD_OFFSET(::ubii::devices::Component, id_),
+  PROTOBUF_FIELD_OFFSET(::ubii::devices::Component, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::devices::ComponentList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -82,7 +83,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fdevices_2fcomponent_2e
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::devices::Component)},
-  { 12, -1, sizeof(::ubii::devices::ComponentList)},
+  { 13, -1, sizeof(::ubii::devices::ComponentList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -92,14 +93,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_proto_2fdevices_2fcomponent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035proto/devices/component.proto\022\014ubii.de"
-  "vices\"\316\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me"
+  "vices\"\334\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me"
   "ssage_format\030\002 \001(\t\022/\n\007io_type\030\003 \001(\0162\036.ub"
   "ii.devices.Component.IOType\022\021\n\tdevice_id"
   "\030\004 \001(\t\022\014\n\004tags\030\005 \003(\t\022\023\n\013description\030\006 \001("
-  "\t\022\n\n\002id\030\007 \001(\t\"\'\n\006IOType\022\r\n\tPUBLISHER\020\000\022\016"
-  "\n\nSUBSCRIBER\020\001\":\n\rComponentList\022)\n\010eleme"
-  "nts\030\001 \003(\0132\027.ubii.devices.Componentb\006prot"
-  "o3"
+  "\t\022\n\n\002id\030\007 \001(\t\022\014\n\004name\030\010 \001(\t\"\'\n\006IOType\022\r\n"
+  "\tPUBLISHER\020\000\022\016\n\nSUBSCRIBER\020\001\":\n\rComponen"
+  "tList\022)\n\010elements\030\001 \003(\0132\027.ubii.devices.C"
+  "omponentb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fdevices_2fcomponent_2eproto_deps[1] = {
 };
@@ -110,7 +111,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fdevices_2fcomponent_2eproto_once;
 static bool descriptor_table_proto_2fdevices_2fcomponent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fdevices_2fcomponent_2eproto = {
-  &descriptor_table_proto_2fdevices_2fcomponent_2eproto_initialized, descriptor_table_protodef_proto_2fdevices_2fcomponent_2eproto, "proto/devices/component.proto", 322,
+  &descriptor_table_proto_2fdevices_2fcomponent_2eproto_initialized, descriptor_table_protodef_proto_2fdevices_2fcomponent_2eproto, "proto/devices/component.proto", 336,
   &descriptor_table_proto_2fdevices_2fcomponent_2eproto_once, descriptor_table_proto_2fdevices_2fcomponent_2eproto_sccs, descriptor_table_proto_2fdevices_2fcomponent_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_proto_2fdevices_2fcomponent_2eproto::offsets,
   file_level_metadata_proto_2fdevices_2fcomponent_2eproto, 2, file_level_enum_descriptors_proto_2fdevices_2fcomponent_2eproto, file_level_service_descriptors_proto_2fdevices_2fcomponent_2eproto,
@@ -180,6 +181,10 @@ Component::Component(const Component& from)
   if (!from._internal_id().empty()) {
     id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   io_type_ = from.io_type_;
   // @@protoc_insertion_point(copy_constructor:ubii.devices.Component)
 }
@@ -191,6 +196,7 @@ void Component::SharedCtor() {
   device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   io_type_ = 0;
 }
 
@@ -205,6 +211,7 @@ void Component::SharedDtor() {
   device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Component::SetCachedSize(int size) const {
@@ -228,6 +235,7 @@ void Component::Clear() {
   device_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   io_type_ = 0;
   _internal_metadata_.Clear();
 }
@@ -303,6 +311,15 @@ const char* Component::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           auto str = _internal_mutable_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.devices.Component.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.devices.Component.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -399,6 +416,16 @@ failure:
         7, this->_internal_id(), target);
   }
 
+  // string name = 8;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.name");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -456,6 +483,13 @@ size_t Component::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_id());
+  }
+
+  // string name = 8;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   // .ubii.devices.Component.IOType io_type = 3;
@@ -516,6 +550,10 @@ void Component::MergeFrom(const Component& from) {
 
     id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   if (from.io_type() != 0) {
     _internal_set_io_type(from._internal_io_type());
   }
@@ -552,6 +590,8 @@ void Component::InternalSwap(Component* other) {
   description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(io_type_, other->io_type_);
 }

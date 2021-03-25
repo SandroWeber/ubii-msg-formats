@@ -113,6 +113,18 @@ public final class ComponentOuterClass {
      */
     com.google.protobuf.ByteString
         getIdBytes();
+
+    /**
+     * <code>string name = 8;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 8;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
   }
   /**
    * Protobuf type {@code ubii.devices.Component}
@@ -134,6 +146,7 @@ public final class ComponentOuterClass {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       description_ = "";
       id_ = "";
+      name_ = "";
     }
 
     @java.lang.Override
@@ -210,6 +223,12 @@ public final class ComponentOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
             default: {
@@ -585,6 +604,42 @@ public final class ComponentOuterClass {
       }
     }
 
+    public static final int NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 8;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 8;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -619,6 +674,9 @@ public final class ComponentOuterClass {
       }
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
       }
       unknownFields.writeTo(output);
     }
@@ -656,6 +714,9 @@ public final class ComponentOuterClass {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, id_);
       }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -684,6 +745,8 @@ public final class ComponentOuterClass {
           .equals(other.getDescription())) return false;
       if (!getId()
           .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -711,6 +774,8 @@ public final class ComponentOuterClass {
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -858,6 +923,8 @@ public final class ComponentOuterClass {
 
         id_ = "";
 
+        name_ = "";
+
         return this;
       }
 
@@ -896,6 +963,7 @@ public final class ComponentOuterClass {
         result.tags_ = tags_;
         result.description_ = description_;
         result.id_ = id_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -975,6 +1043,10 @@ public final class ComponentOuterClass {
         }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1545,6 +1617,82 @@ public final class ComponentOuterClass {
   checkByteStringIsUtf8(value);
         
         id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 8;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 8;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 8;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 8;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
         onChanged();
         return this;
       }
@@ -2409,14 +2557,14 @@ public final class ComponentOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035proto/devices/component.proto\022\014ubii.de" +
-      "vices\"\316\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
+      "vices\"\334\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
       "ssage_format\030\002 \001(\t\022/\n\007io_type\030\003 \001(\0162\036.ub" +
       "ii.devices.Component.IOType\022\021\n\tdevice_id" +
       "\030\004 \001(\t\022\014\n\004tags\030\005 \003(\t\022\023\n\013description\030\006 \001(" +
-      "\t\022\n\n\002id\030\007 \001(\t\"\'\n\006IOType\022\r\n\tPUBLISHER\020\000\022\016" +
-      "\n\nSUBSCRIBER\020\001\":\n\rComponentList\022)\n\010eleme" +
-      "nts\030\001 \003(\0132\027.ubii.devices.Componentb\006prot" +
-      "o3"
+      "\t\022\n\n\002id\030\007 \001(\t\022\014\n\004name\030\010 \001(\t\"\'\n\006IOType\022\r\n" +
+      "\tPUBLISHER\020\000\022\016\n\nSUBSCRIBER\020\001\":\n\rComponen" +
+      "tList\022)\n\010elements\030\001 \003(\0132\027.ubii.devices.C" +
+      "omponentb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2427,7 +2575,7 @@ public final class ComponentOuterClass {
     internal_static_ubii_devices_Component_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_devices_Component_descriptor,
-        new java.lang.String[] { "Topic", "MessageFormat", "IoType", "DeviceId", "Tags", "Description", "Id", });
+        new java.lang.String[] { "Topic", "MessageFormat", "IoType", "DeviceId", "Tags", "Description", "Id", "Name", });
     internal_static_ubii_devices_ComponentList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_devices_ComponentList_fieldAccessorTable = new

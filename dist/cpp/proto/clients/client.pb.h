@@ -31,6 +31,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/devices/device.pb.h"
 #include "proto/processing/processingModule.pb.h"
@@ -73,6 +74,32 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace ubii {
 namespace clients {
 
+enum Client_State : int {
+  Client_State_ACTIVE = 0,
+  Client_State_INACTIVE = 1,
+  Client_State_UNAVAILABLE = 2,
+  Client_State_Client_State_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Client_State_Client_State_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool Client_State_IsValid(int value);
+constexpr Client_State Client_State_State_MIN = Client_State_ACTIVE;
+constexpr Client_State Client_State_State_MAX = Client_State_UNAVAILABLE;
+constexpr int Client_State_State_ARRAYSIZE = Client_State_State_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Client_State_descriptor();
+template<typename T>
+inline const std::string& Client_State_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Client_State>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Client_State_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Client_State_descriptor(), enum_t_value);
+}
+inline bool Client_State_Parse(
+    const std::string& name, Client_State* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Client_State>(
+    Client_State_descriptor(), name, value);
+}
 // ===================================================================
 
 class Client :
@@ -178,6 +205,38 @@ class Client :
 
   // nested types ----------------------------------------------------
 
+  typedef Client_State State;
+  static constexpr State ACTIVE =
+    Client_State_ACTIVE;
+  static constexpr State INACTIVE =
+    Client_State_INACTIVE;
+  static constexpr State UNAVAILABLE =
+    Client_State_UNAVAILABLE;
+  static inline bool State_IsValid(int value) {
+    return Client_State_IsValid(value);
+  }
+  static constexpr State State_MIN =
+    Client_State_State_MIN;
+  static constexpr State State_MAX =
+    Client_State_State_MAX;
+  static constexpr int State_ARRAYSIZE =
+    Client_State_State_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  State_descriptor() {
+    return Client_State_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& State_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, State>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function State_Name.");
+    return Client_State_Name(enum_t_value);
+  }
+  static inline bool State_Parse(const std::string& name,
+      State* value) {
+    return Client_State_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
@@ -190,6 +249,7 @@ class Client :
     kHostIpFieldNumber = 8,
     kMetadataJsonFieldNumber = 9,
     kIsDedicatedProcessingNodeFieldNumber = 7,
+    kStateFieldNumber = 10,
   };
   // repeated .ubii.devices.Device devices = 3;
   int devices_size() const;
@@ -340,6 +400,15 @@ class Client :
   void _internal_set_is_dedicated_processing_node(bool value);
   public:
 
+  // .ubii.clients.Client.State state = 10;
+  void clear_state();
+  ::ubii::clients::Client_State state() const;
+  void set_state(::ubii::clients::Client_State value);
+  private:
+  ::ubii::clients::Client_State _internal_state() const;
+  void _internal_set_state(::ubii::clients::Client_State value);
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.clients.Client)
  private:
   class _Internal;
@@ -354,6 +423,7 @@ class Client :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_ip_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr metadata_json_;
   bool is_dedicated_processing_node_;
+  int state_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fclients_2fclient_2eproto;
 };
@@ -971,6 +1041,26 @@ inline void Client::set_allocated_metadata_json(std::string* metadata_json) {
   // @@protoc_insertion_point(field_set_allocated:ubii.clients.Client.metadata_json)
 }
 
+// .ubii.clients.Client.State state = 10;
+inline void Client::clear_state() {
+  state_ = 0;
+}
+inline ::ubii::clients::Client_State Client::_internal_state() const {
+  return static_cast< ::ubii::clients::Client_State >(state_);
+}
+inline ::ubii::clients::Client_State Client::state() const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.state)
+  return _internal_state();
+}
+inline void Client::_internal_set_state(::ubii::clients::Client_State value) {
+  
+  state_ = value;
+}
+inline void Client::set_state(::ubii::clients::Client_State value) {
+  _internal_set_state(value);
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.state)
+}
+
 // -------------------------------------------------------------------
 
 // ClientList
@@ -1024,6 +1114,16 @@ ClientList::elements() const {
 
 }  // namespace clients
 }  // namespace ubii
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::ubii::clients::Client_State> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::clients::Client_State>() {
+  return ::ubii::clients::Client_State_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

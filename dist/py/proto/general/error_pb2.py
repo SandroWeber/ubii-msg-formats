@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.general',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x19proto/general/error.proto\x12\x0cubii.general\"6\n\x05\x45rror\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05stack\x18\x03 \x01(\tb\x06proto3'
+  serialized_pb=b'\n\x19proto/general/error.proto\x12\x0cubii.general\"6\n\x05\x45rror\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05stack\x18\x03 \x01(\t\"2\n\tErrorList\x12%\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x13.ubii.general.Errorb\x06proto3'
 )
 
 
@@ -68,7 +68,40 @@ _ERROR = _descriptor.Descriptor(
   serialized_end=97,
 )
 
+
+_ERRORLIST = _descriptor.Descriptor(
+  name='ErrorList',
+  full_name='ubii.general.ErrorList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.general.ErrorList.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=99,
+  serialized_end=149,
+)
+
+_ERRORLIST.fields_by_name['elements'].message_type = _ERROR
 DESCRIPTOR.message_types_by_name['Error'] = _ERROR
+DESCRIPTOR.message_types_by_name['ErrorList'] = _ERRORLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), {
@@ -77,6 +110,13 @@ Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:ubii.general.Error)
   })
 _sym_db.RegisterMessage(Error)
+
+ErrorList = _reflection.GeneratedProtocolMessageType('ErrorList', (_message.Message,), {
+  'DESCRIPTOR' : _ERRORLIST,
+  '__module__' : 'proto.general.error_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.general.ErrorList)
+  })
+_sym_db.RegisterMessage(ErrorList)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -241,6 +241,7 @@ class Component :
     kDeviceIdFieldNumber = 4,
     kDescriptionFieldNumber = 6,
     kIdFieldNumber = 7,
+    kNameFieldNumber = 8,
     kIoTypeFieldNumber = 3,
   };
   // repeated string tags = 5;
@@ -347,6 +348,22 @@ class Component :
   std::string* _internal_mutable_id();
   public:
 
+  // string name = 8;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
   // .ubii.devices.Component.IOType io_type = 3;
   void clear_io_type();
   ::ubii::devices::Component_IOType io_type() const;
@@ -367,6 +384,7 @@ class Component :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   int io_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fdevices_2fcomponent_2eproto;
@@ -911,6 +929,66 @@ inline void Component::set_allocated_id(std::string* id) {
   }
   id_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id);
   // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.id)
+}
+
+// string name = 8;
+inline void Component::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Component::name() const {
+  // @@protoc_insertion_point(field_get:ubii.devices.Component.name)
+  return _internal_name();
+}
+inline void Component::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.name)
+}
+inline std::string* Component::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:ubii.devices.Component.name)
+  return _internal_mutable_name();
+}
+inline const std::string& Component::_internal_name() const {
+  return name_.GetNoArena();
+}
+inline void Component::_internal_set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Component::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.devices.Component.name)
+}
+inline void Component::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.devices.Component.name)
+}
+inline void Component::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.devices.Component.name)
+}
+inline std::string* Component::_internal_mutable_name() {
+  
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Component::release_name() {
+  // @@protoc_insertion_point(field_release:ubii.devices.Component.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Component::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.name)
 }
 
 // -------------------------------------------------------------------

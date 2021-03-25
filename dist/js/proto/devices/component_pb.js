@@ -102,7 +102,8 @@ proto.ubii.devices.Component.toObject = function(includeInstance, msg) {
     deviceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
     tagsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 7, "")
+    id: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -166,6 +167,10 @@ proto.ubii.devices.Component.deserializeBinaryFromReader = function(msg, reader)
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     default:
       reader.skipField();
@@ -242,6 +247,13 @@ proto.ubii.devices.Component.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -398,6 +410,24 @@ proto.ubii.devices.Component.prototype.getId = function() {
  */
 proto.ubii.devices.Component.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string name = 8;
+ * @return {string}
+ */
+proto.ubii.devices.Component.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.devices.Component} returns this
+ */
+proto.ubii.devices.Component.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
