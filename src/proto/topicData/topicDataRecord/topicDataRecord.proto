@@ -38,6 +38,7 @@ message TopicDataRecord {
         ubii.dataStructure.Matrix4x4 matrix4x4 = 11;
         ubii.dataStructure.Color color = 12;
         ubii.dataStructure.TouchEvent touch_event = 13;
+        ubii.dataStructure.TouchEventList touch_event_list = 34;
         ubii.dataStructure.KeyEvent key_event = 14;
         ubii.dataStructure.MouseEvent mouse_event = 15;
         ubii.dataStructure.MyoEvent myo_event = 16;

@@ -8,3 +8,7 @@ message TouchEvent {
     ubii.dataStructure.ButtonEventType type = 1;
     ubii.dataStructure.Vector2 position = 2;
 }
+
+message TouchEventList {
+    repeated ubii.dataStructure.TouchEvent elements = 1;
+}

@@ -14,7 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<27> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto;
 namespace ubii {
 namespace processing {
 class LockstepProcessingRequestDefaultTypeInternal {

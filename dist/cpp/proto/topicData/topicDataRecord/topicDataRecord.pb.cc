@@ -35,13 +35,14 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStruct
 extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquaternion_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Quaternion_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquaternion_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StringList_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TouchEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TouchEventList_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector3_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector4_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector4_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector4_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Session_proto_2fsessions_2fsession_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<27> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto;
 namespace ubii {
 namespace topicData {
 class TopicDataRecordDefaultTypeInternal {
@@ -58,6 +59,7 @@ class TopicDataRecordDefaultTypeInternal {
   const ::ubii::dataStructure::Matrix4x4* matrix4x4_;
   const ::ubii::dataStructure::Color* color_;
   const ::ubii::dataStructure::TouchEvent* touch_event_;
+  const ::ubii::dataStructure::TouchEventList* touch_event_list_;
   const ::ubii::dataStructure::KeyEvent* key_event_;
   const ::ubii::dataStructure::MouseEvent* mouse_event_;
   const ::ubii::dataStructure::MyoEvent* myo_event_;
@@ -96,8 +98,8 @@ static void InitDefaultsscc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRe
   ::ubii::topicData::TopicDataRecord::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<27> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 27, 0, InitDefaultsscc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 28, 0, InitDefaultsscc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto}, {
       &scc_info_Timestamp_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto.base,
       &scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto.base,
       &scc_info_Vector3_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector3_2eproto.base,
@@ -107,6 +109,7 @@ static void InitDefaultsscc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRe
       &scc_info_Matrix4x4_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmatrix4x4_2eproto.base,
       &scc_info_Color_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fcolor_2eproto.base,
       &scc_info_TouchEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto.base,
+      &scc_info_TouchEventList_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto.base,
       &scc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto.base,
       &scc_info_MouseEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmouseEvent_2eproto.base,
       &scc_info_MyoEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fmyoEvent_2eproto.base,
@@ -164,6 +167,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataR
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, matrix4x4_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, color_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, touch_event_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, touch_event_list_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, key_event_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, mouse_event_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, myo_event_),
@@ -194,7 +198,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataR
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::topicData::TopicDataRecord)},
-  { 39, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
+  { 40, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -233,7 +237,7 @@ const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftopic
   "ataStructure/object3d.proto\0329proto/topic"
   "Data/topicDataRecord/dataStructure/image"
   ".proto\032\034proto/sessions/session.proto\032\'pr"
-  "oto/processing/processingModule.proto\"\370\013"
+  "oto/processing/processingModule.proto\"\270\014"
   "\n\017TopicDataRecord\022\r\n\005topic\030\001 \001(\t\022,\n\ttime"
   "stamp\030\002 \001(\0132\031.ubii.topicData.Timestamp\022\020"
   "\n\006double\030\003 \001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006stri"
@@ -247,34 +251,35 @@ const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftopic
   "\035.ubii.dataStructure.Matrix4x4H\000\022*\n\005colo"
   "r\030\014 \001(\0132\031.ubii.dataStructure.ColorH\000\0225\n\013"
   "touch_event\030\r \001(\0132\036.ubii.dataStructure.T"
-  "ouchEventH\000\0221\n\tkey_event\030\016 \001(\0132\034.ubii.da"
-  "taStructure.KeyEventH\000\0225\n\013mouse_event\030\017 "
-  "\001(\0132\036.ubii.dataStructure.MouseEventH\000\0221\n"
-  "\tmyo_event\030\020 \001(\0132\034.ubii.dataStructure.My"
-  "oEventH\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii.dataStru"
-  "cture.Pose2DH\000\022,\n\006pose3D\030\022 \001(\0132\032.ubii.da"
-  "taStructure.Pose3DH\000\0220\n\010object2D\030\023 \001(\0132\034"
-  ".ubii.dataStructure.Object2DH\000\0220\n\010object"
-  "3D\030\024 \001(\0132\034.ubii.dataStructure.Object3DH\000"
-  "\0229\n\robject2D_list\030\025 \001(\0132 .ubii.dataStruc"
-  "ture.Object2DListH\000\0229\n\robject3D_list\030\026 \001"
-  "(\0132 .ubii.dataStructure.Object3DListH\000\022\017"
-  "\n\005int32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H\000\0223\n\nint3"
-  "2_list\030\031 \001(\0132\035.ubii.dataStructure.Int32L"
-  "istH\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubii.dataStr"
-  "ucture.FloatListH\000\0225\n\013double_list\030\033 \001(\0132"
-  "\036.ubii.dataStructure.DoubleListH\000\0225\n\013str"
-  "ing_list\030\034 \001(\0132\036.ubii.dataStructure.Stri"
-  "ngListH\000\0221\n\tbool_list\030\035 \001(\0132\034.ubii.dataS"
-  "tructure.BoolListH\000\022.\n\007image2D\030\036 \001(\0132\033.u"
-  "bii.dataStructure.Image2DH\000\0227\n\014image2D_l"
-  "ist\030\037 \001(\0132\037.ubii.dataStructure.Image2DLi"
-  "stH\000\022)\n\007session\030  \001(\0132\026.ubii.sessions.Se"
-  "ssionH\000\022G\n\026processing_module_list\030! \001(\0132"
-  "%.ubii.processing.ProcessingModuleListH\000"
-  "B\006\n\004type\"H\n\023TopicDataRecordList\0221\n\010eleme"
-  "nts\030\001 \003(\0132\037.ubii.topicData.TopicDataReco"
-  "rdb\006proto3"
+  "ouchEventH\000\022>\n\020touch_event_list\030\" \001(\0132\"."
+  "ubii.dataStructure.TouchEventListH\000\0221\n\tk"
+  "ey_event\030\016 \001(\0132\034.ubii.dataStructure.KeyE"
+  "ventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.ubii.dataS"
+  "tructure.MouseEventH\000\0221\n\tmyo_event\030\020 \001(\013"
+  "2\034.ubii.dataStructure.MyoEventH\000\022,\n\006pose"
+  "2D\030\021 \001(\0132\032.ubii.dataStructure.Pose2DH\000\022,"
+  "\n\006pose3D\030\022 \001(\0132\032.ubii.dataStructure.Pose"
+  "3DH\000\0220\n\010object2D\030\023 \001(\0132\034.ubii.dataStruct"
+  "ure.Object2DH\000\0220\n\010object3D\030\024 \001(\0132\034.ubii."
+  "dataStructure.Object3DH\000\0229\n\robject2D_lis"
+  "t\030\025 \001(\0132 .ubii.dataStructure.Object2DLis"
+  "tH\000\0229\n\robject3D_list\030\026 \001(\0132 .ubii.dataSt"
+  "ructure.Object3DListH\000\022\017\n\005int32\030\027 \001(\005H\000\022"
+  "\017\n\005float\030\030 \001(\002H\000\0223\n\nint32_list\030\031 \001(\0132\035.u"
+  "bii.dataStructure.Int32ListH\000\0223\n\nfloat_l"
+  "ist\030\032 \001(\0132\035.ubii.dataStructure.FloatList"
+  "H\000\0225\n\013double_list\030\033 \001(\0132\036.ubii.dataStruc"
+  "ture.DoubleListH\000\0225\n\013string_list\030\034 \001(\0132\036"
+  ".ubii.dataStructure.StringListH\000\0221\n\tbool"
+  "_list\030\035 \001(\0132\034.ubii.dataStructure.BoolLis"
+  "tH\000\022.\n\007image2D\030\036 \001(\0132\033.ubii.dataStructur"
+  "e.Image2DH\000\0227\n\014image2D_list\030\037 \001(\0132\037.ubii"
+  ".dataStructure.Image2DListH\000\022)\n\007session\030"
+  "  \001(\0132\026.ubii.sessions.SessionH\000\022G\n\026proce"
+  "ssing_module_list\030! \001(\0132%.ubii.processin"
+  "g.ProcessingModuleListH\000B\006\n\004type\"H\n\023Topi"
+  "cDataRecordList\0221\n\010elements\030\001 \003(\0132\037.ubii"
+  ".topicData.TopicDataRecordb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_deps[20] = {
   &::descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto,
@@ -305,7 +310,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_once;
 static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto = {
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, "proto/topicData/topicDataRecord/topicDataRecord.proto", 2850,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, "proto/topicData/topicDataRecord/topicDataRecord.proto", 2914,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto_deps, 2, 20,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, 2, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto,
@@ -341,6 +346,8 @@ void TopicDataRecord::InitAsDefaultInstance() {
       ::ubii::dataStructure::Color::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.touch_event_ = const_cast< ::ubii::dataStructure::TouchEvent*>(
       ::ubii::dataStructure::TouchEvent::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.touch_event_list_ = const_cast< ::ubii::dataStructure::TouchEventList*>(
+      ::ubii::dataStructure::TouchEventList::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.key_event_ = const_cast< ::ubii::dataStructure::KeyEvent*>(
       ::ubii::dataStructure::KeyEvent::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.mouse_event_ = const_cast< ::ubii::dataStructure::MouseEvent*>(
@@ -391,6 +398,7 @@ class TopicDataRecord::_Internal {
   static const ::ubii::dataStructure::Matrix4x4& matrix4x4(const TopicDataRecord* msg);
   static const ::ubii::dataStructure::Color& color(const TopicDataRecord* msg);
   static const ::ubii::dataStructure::TouchEvent& touch_event(const TopicDataRecord* msg);
+  static const ::ubii::dataStructure::TouchEventList& touch_event_list(const TopicDataRecord* msg);
   static const ::ubii::dataStructure::KeyEvent& key_event(const TopicDataRecord* msg);
   static const ::ubii::dataStructure::MouseEvent& mouse_event(const TopicDataRecord* msg);
   static const ::ubii::dataStructure::MyoEvent& myo_event(const TopicDataRecord* msg);
@@ -446,6 +454,10 @@ TopicDataRecord::_Internal::color(const TopicDataRecord* msg) {
 const ::ubii::dataStructure::TouchEvent&
 TopicDataRecord::_Internal::touch_event(const TopicDataRecord* msg) {
   return *msg->type_.touch_event_;
+}
+const ::ubii::dataStructure::TouchEventList&
+TopicDataRecord::_Internal::touch_event_list(const TopicDataRecord* msg) {
+  return *msg->type_.touch_event_list_;
 }
 const ::ubii::dataStructure::KeyEvent&
 TopicDataRecord::_Internal::key_event(const TopicDataRecord* msg) {
@@ -682,6 +694,26 @@ void TopicDataRecord::set_allocated_touch_event(::ubii::dataStructure::TouchEven
 void TopicDataRecord::clear_touch_event() {
   if (_internal_has_touch_event()) {
     delete type_.touch_event_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_touch_event_list(::ubii::dataStructure::TouchEventList* touch_event_list) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (touch_event_list) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      touch_event_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, touch_event_list, submessage_arena);
+    }
+    set_has_touch_event_list();
+    type_.touch_event_list_ = touch_event_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.touch_event_list)
+}
+void TopicDataRecord::clear_touch_event_list() {
+  if (_internal_has_touch_event_list()) {
+    delete type_.touch_event_list_;
     clear_has_type();
   }
 }
@@ -1109,6 +1141,10 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
       _internal_mutable_touch_event()->::ubii::dataStructure::TouchEvent::MergeFrom(from._internal_touch_event());
       break;
     }
+    case kTouchEventList: {
+      _internal_mutable_touch_event_list()->::ubii::dataStructure::TouchEventList::MergeFrom(from._internal_touch_event_list());
+      break;
+    }
     case kKeyEvent: {
       _internal_mutable_key_event()->::ubii::dataStructure::KeyEvent::MergeFrom(from._internal_key_event());
       break;
@@ -1270,6 +1306,10 @@ void TopicDataRecord::clear_type() {
     }
     case kTouchEvent: {
       delete type_.touch_event_;
+      break;
+    }
+    case kTouchEventList: {
+      delete type_.touch_event_list_;
       break;
     }
     case kKeyEvent: {
@@ -1617,6 +1657,13 @@ const char* TopicDataRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // .ubii.dataStructure.TouchEventList touch_event_list = 34;
+      case 34:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_touch_event_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -1903,6 +1950,14 @@ failure:
         33, _Internal::processing_module_list(this), target, stream);
   }
 
+  // .ubii.dataStructure.TouchEventList touch_event_list = 34;
+  if (_internal_has_touch_event_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        34, _Internal::touch_event_list(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -2005,6 +2060,13 @@ size_t TopicDataRecord::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.touch_event_);
+      break;
+    }
+    // .ubii.dataStructure.TouchEventList touch_event_list = 34;
+    case kTouchEventList: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *type_.touch_event_list_);
       break;
     }
     // .ubii.dataStructure.KeyEvent key_event = 14;
@@ -2230,6 +2292,10 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
     }
     case kTouchEvent: {
       _internal_mutable_touch_event()->::ubii::dataStructure::TouchEvent::MergeFrom(from._internal_touch_event());
+      break;
+    }
+    case kTouchEventList: {
+      _internal_mutable_touch_event_list()->::ubii::dataStructure::TouchEventList::MergeFrom(from._internal_touch_event_list());
       break;
     }
     case kKeyEvent: {

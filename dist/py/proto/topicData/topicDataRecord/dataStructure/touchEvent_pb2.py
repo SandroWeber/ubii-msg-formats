@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x12\x12ubii.dataStructure\x1a\x43proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"n\n\nTouchEvent\x12\x31\n\x04type\x18\x01 \x01(\x0e\x32#.ubii.dataStructure.ButtonEventType\x12-\n\x08position\x18\x02 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2b\x06proto3'
+  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x12\x12ubii.dataStructure\x1a\x43proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"n\n\nTouchEvent\x12\x31\n\x04type\x18\x01 \x01(\x0e\x32#.ubii.dataStructure.ButtonEventType\x12-\n\x08position\x18\x02 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2\"B\n\x0eTouchEventList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.dataStructure.TouchEventb\x06proto3'
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_buttonEventType__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,])
 
@@ -64,9 +64,42 @@ _TOUCHEVENT = _descriptor.Descriptor(
   serialized_end=326,
 )
 
+
+_TOUCHEVENTLIST = _descriptor.Descriptor(
+  name='TouchEventList',
+  full_name='ubii.dataStructure.TouchEventList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.dataStructure.TouchEventList.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=328,
+  serialized_end=394,
+)
+
 _TOUCHEVENT.fields_by_name['type'].enum_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_buttonEventType__pb2._BUTTONEVENTTYPE
 _TOUCHEVENT.fields_by_name['position'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2._VECTOR2
+_TOUCHEVENTLIST.fields_by_name['elements'].message_type = _TOUCHEVENT
 DESCRIPTOR.message_types_by_name['TouchEvent'] = _TOUCHEVENT
+DESCRIPTOR.message_types_by_name['TouchEventList'] = _TOUCHEVENTLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 TouchEvent = _reflection.GeneratedProtocolMessageType('TouchEvent', (_message.Message,), {
@@ -75,6 +108,13 @@ TouchEvent = _reflection.GeneratedProtocolMessageType('TouchEvent', (_message.Me
   # @@protoc_insertion_point(class_scope:ubii.dataStructure.TouchEvent)
   })
 _sym_db.RegisterMessage(TouchEvent)
+
+TouchEventList = _reflection.GeneratedProtocolMessageType('TouchEventList', (_message.Message,), {
+  'DESCRIPTOR' : _TOUCHEVENTLIST,
+  '__module__' : 'proto.topicData.topicDataRecord.dataStructure.touchEvent_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.dataStructure.TouchEventList)
+  })
+_sym_db.RegisterMessage(TouchEventList)
 
 
 # @@protoc_insertion_point(module_scope)

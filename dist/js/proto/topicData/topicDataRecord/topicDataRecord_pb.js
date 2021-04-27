@@ -106,7 +106,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,34,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33]];
 
 /**
  * @enum {number}
@@ -124,6 +124,7 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   MATRIX4X4: 11,
   COLOR: 12,
   TOUCH_EVENT: 13,
+  TOUCH_EVENT_LIST: 34,
   KEY_EVENT: 14,
   MOUSE_EVENT: 15,
   MYO_EVENT: 16,
@@ -197,6 +198,7 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     matrix4x4: (f = msg.getMatrix4x4()) && proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4.toObject(includeInstance, f),
     color: (f = msg.getColor()) && proto_topicData_topicDataRecord_dataStructure_color_pb.Color.toObject(includeInstance, f),
     touchEvent: (f = msg.getTouchEvent()) && proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.toObject(includeInstance, f),
+    touchEventList: (f = msg.getTouchEventList()) && proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEventList.toObject(includeInstance, f),
     keyEvent: (f = msg.getKeyEvent()) && proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent.toObject(includeInstance, f),
     mouseEvent: (f = msg.getMouseEvent()) && proto_topicData_topicDataRecord_dataStructure_mouseEvent_pb.MouseEvent.toObject(includeInstance, f),
     myoEvent: (f = msg.getMyoEvent()) && proto_topicData_topicDataRecord_dataStructure_myoEvent_pb.MyoEvent.toObject(includeInstance, f),
@@ -313,6 +315,11 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.deserializeBinaryFromReader);
       msg.setTouchEvent(value);
+      break;
+    case 34:
+      var value = new proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEventList;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEventList.deserializeBinaryFromReader);
+      msg.setTouchEventList(value);
       break;
     case 14:
       var value = new proto_topicData_topicDataRecord_dataStructure_keyEvent_pb.KeyEvent;
@@ -539,6 +546,14 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       13,
       f,
       proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEvent.serializeBinaryToWriter
+    );
+  }
+  f = message.getTouchEventList();
+  if (f != null) {
+    writer.writeMessage(
+      34,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEventList.serializeBinaryToWriter
     );
   }
   f = message.getKeyEvent();
@@ -1158,6 +1173,43 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearTouchEvent = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasTouchEvent = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.TouchEventList touch_event_list = 34;
+ * @return {?proto.ubii.dataStructure.TouchEventList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getTouchEventList = function() {
+  return /** @type{?proto.ubii.dataStructure.TouchEventList} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_touchEvent_pb.TouchEventList, 34));
+};
+
+
+/**
+ * @param {?proto.ubii.dataStructure.TouchEventList|undefined} value
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+*/
+proto.ubii.topicData.TopicDataRecord.prototype.setTouchEventList = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 34, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.clearTouchEventList = function() {
+  return this.setTouchEventList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasTouchEventList = function() {
+  return jspb.Message.getField(this, 34) != null;
 };
 
 

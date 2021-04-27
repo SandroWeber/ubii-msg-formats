@@ -31,11 +31,13 @@ namespace Ubii.DataStructure {
             "UmVjb3JkL2RhdGFTdHJ1Y3R1cmUvdmVjdG9yMi5wcm90byJuCgpUb3VjaEV2",
             "ZW50EjEKBHR5cGUYASABKA4yIy51YmlpLmRhdGFTdHJ1Y3R1cmUuQnV0dG9u",
             "RXZlbnRUeXBlEi0KCHBvc2l0aW9uGAIgASgLMhsudWJpaS5kYXRhU3RydWN0",
-            "dXJlLlZlY3RvcjJiBnByb3RvMw=="));
+            "dXJlLlZlY3RvcjIiQgoOVG91Y2hFdmVudExpc3QSMAoIZWxlbWVudHMYASAD",
+            "KAsyHi51YmlpLmRhdGFTdHJ1Y3R1cmUuVG91Y2hFdmVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.DataStructure.ButtonEventTypeReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.TouchEvent), global::Ubii.DataStructure.TouchEvent.Parser, new[]{ "Type", "Position" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.TouchEvent), global::Ubii.DataStructure.TouchEvent.Parser, new[]{ "Type", "Position" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.TouchEventList), global::Ubii.DataStructure.TouchEventList.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
     #endregion
@@ -197,6 +199,127 @@ namespace Ubii.DataStructure {
               Position = new global::Ubii.DataStructure.Vector2();
             }
             input.ReadMessage(Position);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class TouchEventList : pb::IMessage<TouchEventList> {
+    private static readonly pb::MessageParser<TouchEventList> _parser = new pb::MessageParser<TouchEventList>(() => new TouchEventList());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TouchEventList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ubii.DataStructure.TouchEventReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TouchEventList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TouchEventList(TouchEventList other) : this() {
+      elements_ = other.elements_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TouchEventList Clone() {
+      return new TouchEventList(this);
+    }
+
+    /// <summary>Field number for the "elements" field.</summary>
+    public const int ElementsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Ubii.DataStructure.TouchEvent> _repeated_elements_codec
+        = pb::FieldCodec.ForMessage(10, global::Ubii.DataStructure.TouchEvent.Parser);
+    private readonly pbc::RepeatedField<global::Ubii.DataStructure.TouchEvent> elements_ = new pbc::RepeatedField<global::Ubii.DataStructure.TouchEvent>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Ubii.DataStructure.TouchEvent> Elements {
+      get { return elements_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TouchEventList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TouchEventList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!elements_.Equals(other.elements_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= elements_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      elements_.WriteTo(output, _repeated_elements_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += elements_.CalculateSize(_repeated_elements_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TouchEventList other) {
+      if (other == null) {
+        return;
+      }
+      elements_.Add(other.elements_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            elements_.AddEntriesFrom(input, _repeated_elements_codec);
             break;
           }
         }

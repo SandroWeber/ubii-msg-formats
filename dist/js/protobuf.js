@@ -11658,6 +11658,7 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IMatrix4x4|null} [matrix4x4] TopicDataRecord matrix4x4
              * @property {ubii.dataStructure.IColor|null} [color] TopicDataRecord color
              * @property {ubii.dataStructure.ITouchEvent|null} [touchEvent] TopicDataRecord touchEvent
+             * @property {ubii.dataStructure.ITouchEventList|null} [touchEventList] TopicDataRecord touchEventList
              * @property {ubii.dataStructure.IKeyEvent|null} [keyEvent] TopicDataRecord keyEvent
              * @property {ubii.dataStructure.IMouseEvent|null} [mouseEvent] TopicDataRecord mouseEvent
              * @property {ubii.dataStructure.IMyoEvent|null} [myoEvent] TopicDataRecord myoEvent
@@ -11798,6 +11799,14 @@ $root.ubii = (function() {
              * @instance
              */
             TopicDataRecord.prototype.touchEvent = null;
+
+            /**
+             * TopicDataRecord touchEventList.
+             * @member {ubii.dataStructure.ITouchEventList|null|undefined} touchEventList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.touchEventList = null;
 
             /**
              * TopicDataRecord keyEvent.
@@ -11964,12 +11973,12 @@ $root.ubii = (function() {
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32"|"float"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|"processingModuleList"|undefined} type
+             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"touchEventList"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32"|"float"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|"processingModuleList"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32", "float", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList", "session", "processingModuleList"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "touchEventList", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32", "float", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList", "session", "processingModuleList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -12063,6 +12072,8 @@ $root.ubii = (function() {
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
                 if (message.processingModuleList != null && Object.hasOwnProperty.call(message, "processingModuleList"))
                     $root.ubii.processing.ProcessingModuleList.encode(message.processingModuleList, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
+                if (message.touchEventList != null && Object.hasOwnProperty.call(message, "touchEventList"))
+                    $root.ubii.dataStructure.TouchEventList.encode(message.touchEventList, writer.uint32(/* id 34, wireType 2 =*/274).fork()).ldelim();
                 return writer;
             };
 
@@ -12135,6 +12146,9 @@ $root.ubii = (function() {
                         break;
                     case 13:
                         message.touchEvent = $root.ubii.dataStructure.TouchEvent.decode(reader, reader.uint32());
+                        break;
+                    case 34:
+                        message.touchEventList = $root.ubii.dataStructure.TouchEventList.decode(reader, reader.uint32());
                         break;
                     case 14:
                         message.keyEvent = $root.ubii.dataStructure.KeyEvent.decode(reader, reader.uint32());
@@ -12337,6 +12351,16 @@ $root.ubii = (function() {
                         var error = $root.ubii.dataStructure.TouchEvent.verify(message.touchEvent);
                         if (error)
                             return "touchEvent." + error;
+                    }
+                }
+                if (message.touchEventList != null && message.hasOwnProperty("touchEventList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.TouchEventList.verify(message.touchEventList);
+                        if (error)
+                            return "touchEventList." + error;
                     }
                 }
                 if (message.keyEvent != null && message.hasOwnProperty("keyEvent")) {
@@ -12600,6 +12624,11 @@ $root.ubii = (function() {
                     if (typeof object.touchEvent !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.touchEvent: object expected");
                     message.touchEvent = $root.ubii.dataStructure.TouchEvent.fromObject(object.touchEvent);
+                }
+                if (object.touchEventList != null) {
+                    if (typeof object.touchEventList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.touchEventList: object expected");
+                    message.touchEventList = $root.ubii.dataStructure.TouchEventList.fromObject(object.touchEventList);
                 }
                 if (object.keyEvent != null) {
                     if (typeof object.keyEvent !== "object")
@@ -12873,6 +12902,11 @@ $root.ubii = (function() {
                     object.processingModuleList = $root.ubii.processing.ProcessingModuleList.toObject(message.processingModuleList, options);
                     if (options.oneofs)
                         object.type = "processingModuleList";
+                }
+                if (message.touchEventList != null && message.hasOwnProperty("touchEventList")) {
+                    object.touchEventList = $root.ubii.dataStructure.TouchEventList.toObject(message.touchEventList, options);
+                    if (options.oneofs)
+                        object.type = "touchEventList";
                 }
                 return object;
             };
@@ -18508,6 +18542,214 @@ $root.ubii = (function() {
             };
 
             return TouchEvent;
+        })();
+
+        dataStructure.TouchEventList = (function() {
+
+            /**
+             * Properties of a TouchEventList.
+             * @memberof ubii.dataStructure
+             * @interface ITouchEventList
+             * @property {Array.<ubii.dataStructure.ITouchEvent>|null} [elements] TouchEventList elements
+             */
+
+            /**
+             * Constructs a new TouchEventList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a TouchEventList.
+             * @implements ITouchEventList
+             * @constructor
+             * @param {ubii.dataStructure.ITouchEventList=} [properties] Properties to set
+             */
+            function TouchEventList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TouchEventList elements.
+             * @member {Array.<ubii.dataStructure.ITouchEvent>} elements
+             * @memberof ubii.dataStructure.TouchEventList
+             * @instance
+             */
+            TouchEventList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new TouchEventList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {ubii.dataStructure.ITouchEventList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.TouchEventList} TouchEventList instance
+             */
+            TouchEventList.create = function create(properties) {
+                return new TouchEventList(properties);
+            };
+
+            /**
+             * Encodes the specified TouchEventList message. Does not implicitly {@link ubii.dataStructure.TouchEventList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {ubii.dataStructure.ITouchEventList} message TouchEventList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TouchEventList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.TouchEvent.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TouchEventList message, length delimited. Does not implicitly {@link ubii.dataStructure.TouchEventList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {ubii.dataStructure.ITouchEventList} message TouchEventList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TouchEventList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TouchEventList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.TouchEventList} TouchEventList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TouchEventList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.TouchEventList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.TouchEvent.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TouchEventList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.TouchEventList} TouchEventList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TouchEventList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TouchEventList message.
+             * @function verify
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TouchEventList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.TouchEvent.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a TouchEventList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.TouchEventList} TouchEventList
+             */
+            TouchEventList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.TouchEventList)
+                    return object;
+                var message = new $root.ubii.dataStructure.TouchEventList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.TouchEventList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.TouchEventList.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.TouchEvent.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TouchEventList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.TouchEventList
+             * @static
+             * @param {ubii.dataStructure.TouchEventList} message TouchEventList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TouchEventList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.TouchEvent.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this TouchEventList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.TouchEventList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TouchEventList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TouchEventList;
         })();
 
         dataStructure.Vector2 = (function() {

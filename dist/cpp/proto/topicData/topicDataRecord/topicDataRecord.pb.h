@@ -141,6 +141,7 @@ class TopicDataRecord :
     kMatrix4X4 = 11,
     kColor = 12,
     kTouchEvent = 13,
+    kTouchEventList = 34,
     kKeyEvent = 14,
     kMouseEvent = 15,
     kMyoEvent = 16,
@@ -247,6 +248,7 @@ class TopicDataRecord :
     kMatrix4X4FieldNumber = 11,
     kColorFieldNumber = 12,
     kTouchEventFieldNumber = 13,
+    kTouchEventListFieldNumber = 34,
     kKeyEventFieldNumber = 14,
     kMouseEventFieldNumber = 15,
     kMyoEventFieldNumber = 16,
@@ -460,6 +462,21 @@ class TopicDataRecord :
   private:
   const ::ubii::dataStructure::TouchEvent& _internal_touch_event() const;
   ::ubii::dataStructure::TouchEvent* _internal_mutable_touch_event();
+  public:
+
+  // .ubii.dataStructure.TouchEventList touch_event_list = 34;
+  bool has_touch_event_list() const;
+  private:
+  bool _internal_has_touch_event_list() const;
+  public:
+  void clear_touch_event_list();
+  const ::ubii::dataStructure::TouchEventList& touch_event_list() const;
+  ::ubii::dataStructure::TouchEventList* release_touch_event_list();
+  ::ubii::dataStructure::TouchEventList* mutable_touch_event_list();
+  void set_allocated_touch_event_list(::ubii::dataStructure::TouchEventList* touch_event_list);
+  private:
+  const ::ubii::dataStructure::TouchEventList& _internal_touch_event_list() const;
+  ::ubii::dataStructure::TouchEventList* _internal_mutable_touch_event_list();
   public:
 
   // .ubii.dataStructure.KeyEvent key_event = 14;
@@ -772,6 +789,7 @@ class TopicDataRecord :
   void set_has_matrix4x4();
   void set_has_color();
   void set_has_touch_event();
+  void set_has_touch_event_list();
   void set_has_key_event();
   void set_has_mouse_event();
   void set_has_myo_event();
@@ -812,6 +830,7 @@ class TopicDataRecord :
     ::ubii::dataStructure::Matrix4x4* matrix4x4_;
     ::ubii::dataStructure::Color* color_;
     ::ubii::dataStructure::TouchEvent* touch_event_;
+    ::ubii::dataStructure::TouchEventList* touch_event_list_;
     ::ubii::dataStructure::KeyEvent* key_event_;
     ::ubii::dataStructure::MouseEvent* mouse_event_;
     ::ubii::dataStructure::MyoEvent* myo_event_;
@@ -1618,6 +1637,50 @@ inline ::ubii::dataStructure::TouchEvent* TopicDataRecord::_internal_mutable_tou
 inline ::ubii::dataStructure::TouchEvent* TopicDataRecord::mutable_touch_event() {
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.touch_event)
   return _internal_mutable_touch_event();
+}
+
+// .ubii.dataStructure.TouchEventList touch_event_list = 34;
+inline bool TopicDataRecord::_internal_has_touch_event_list() const {
+  return type_case() == kTouchEventList;
+}
+inline bool TopicDataRecord::has_touch_event_list() const {
+  return _internal_has_touch_event_list();
+}
+inline void TopicDataRecord::set_has_touch_event_list() {
+  _oneof_case_[0] = kTouchEventList;
+}
+inline ::ubii::dataStructure::TouchEventList* TopicDataRecord::release_touch_event_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.touch_event_list)
+  if (_internal_has_touch_event_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::TouchEventList* temp = type_.touch_event_list_;
+    type_.touch_event_list_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::dataStructure::TouchEventList& TopicDataRecord::_internal_touch_event_list() const {
+  return _internal_has_touch_event_list()
+      ? *type_.touch_event_list_
+      : *reinterpret_cast< ::ubii::dataStructure::TouchEventList*>(&::ubii::dataStructure::_TouchEventList_default_instance_);
+}
+inline const ::ubii::dataStructure::TouchEventList& TopicDataRecord::touch_event_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.touch_event_list)
+  return _internal_touch_event_list();
+}
+inline ::ubii::dataStructure::TouchEventList* TopicDataRecord::_internal_mutable_touch_event_list() {
+  if (!_internal_has_touch_event_list()) {
+    clear_type();
+    set_has_touch_event_list();
+    type_.touch_event_list_ = CreateMaybeMessage< ::ubii::dataStructure::TouchEventList >(
+        GetArenaNoVirtual());
+  }
+  return type_.touch_event_list_;
+}
+inline ::ubii::dataStructure::TouchEventList* TopicDataRecord::mutable_touch_event_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.touch_event_list)
+  return _internal_mutable_touch_event_list();
 }
 
 // .ubii.dataStructure.KeyEvent key_event = 14;
