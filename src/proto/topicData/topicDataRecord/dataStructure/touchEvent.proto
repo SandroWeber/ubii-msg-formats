@@ -7,6 +7,8 @@ import "proto/topicData/topicDataRecord/dataStructure/vector2.proto";
 message TouchEvent {
     ubii.dataStructure.ButtonEventType type = 1;
     ubii.dataStructure.Vector2 position = 2;
+    string id = 3;
+    float force = 4;
 }
 
 message TouchEventList {

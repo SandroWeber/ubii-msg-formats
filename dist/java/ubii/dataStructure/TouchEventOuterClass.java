@@ -43,6 +43,24 @@ public final class TouchEventOuterClass {
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
      */
     ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getPositionOrBuilder();
+
+    /**
+     * <code>string id = 3;</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 3;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>float force = 4;</code>
+     * @return The force.
+     */
+    float getForce();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.TouchEvent}
@@ -58,6 +76,7 @@ public final class TouchEventOuterClass {
     }
     private TouchEvent() {
       type_ = 0;
+      id_ = "";
     }
 
     @java.lang.Override
@@ -107,6 +126,17 @@ public final class TouchEventOuterClass {
                 position_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 37: {
+
+              force_ = input.readFloat();
               break;
             }
             default: {
@@ -183,6 +213,52 @@ public final class TouchEventOuterClass {
       return getPosition();
     }
 
+    public static final int ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 3;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 3;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FORCE_FIELD_NUMBER = 4;
+    private float force_;
+    /**
+     * <code>float force = 4;</code>
+     * @return The force.
+     */
+    public float getForce() {
+      return force_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -203,6 +279,12 @@ public final class TouchEventOuterClass {
       if (position_ != null) {
         output.writeMessage(2, getPosition());
       }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
+      }
+      if (force_ != 0F) {
+        output.writeFloat(4, force_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -219,6 +301,13 @@ public final class TouchEventOuterClass {
       if (position_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPosition());
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
+      }
+      if (force_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, force_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -241,6 +330,11 @@ public final class TouchEventOuterClass {
         if (!getPosition()
             .equals(other.getPosition())) return false;
       }
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (java.lang.Float.floatToIntBits(getForce())
+          != java.lang.Float.floatToIntBits(
+              other.getForce())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -258,6 +352,11 @@ public final class TouchEventOuterClass {
         hash = (37 * hash) + POSITION_FIELD_NUMBER;
         hash = (53 * hash) + getPosition().hashCode();
       }
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + FORCE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getForce());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -399,6 +498,10 @@ public final class TouchEventOuterClass {
           position_ = null;
           positionBuilder_ = null;
         }
+        id_ = "";
+
+        force_ = 0F;
+
         return this;
       }
 
@@ -431,6 +534,8 @@ public final class TouchEventOuterClass {
         } else {
           result.position_ = positionBuilder_.build();
         }
+        result.id_ = id_;
+        result.force_ = force_;
         onBuilt();
         return result;
       }
@@ -484,6 +589,13 @@ public final class TouchEventOuterClass {
         }
         if (other.hasPosition()) {
           mergePosition(other.getPosition());
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.getForce() != 0F) {
+          setForce(other.getForce());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -683,6 +795,112 @@ public final class TouchEventOuterClass {
           position_ = null;
         }
         return positionBuilder_;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 3;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 3;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 3;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 3;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private float force_ ;
+      /**
+       * <code>float force = 4;</code>
+       * @return The force.
+       */
+      public float getForce() {
+        return force_;
+      }
+      /**
+       * <code>float force = 4;</code>
+       * @param value The force to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForce(float value) {
+        
+        force_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float force = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForce() {
+        
+        force_ = 0F;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1549,12 +1767,12 @@ public final class TouchEventOuterClass {
       "ture\032Cproto/topicData/topicDataRecord/da" +
       "taStructure/buttonEventType.proto\032;proto" +
       "/topicData/topicDataRecord/dataStructure" +
-      "/vector2.proto\"n\n\nTouchEvent\0221\n\004type\030\001 \001" +
-      "(\0162#.ubii.dataStructure.ButtonEventType\022" +
-      "-\n\010position\030\002 \001(\0132\033.ubii.dataStructure.V" +
-      "ector2\"B\n\016TouchEventList\0220\n\010elements\030\001 \003" +
-      "(\0132\036.ubii.dataStructure.TouchEventb\006prot" +
-      "o3"
+      "/vector2.proto\"\211\001\n\nTouchEvent\0221\n\004type\030\001 " +
+      "\001(\0162#.ubii.dataStructure.ButtonEventType" +
+      "\022-\n\010position\030\002 \001(\0132\033.ubii.dataStructure." +
+      "Vector2\022\n\n\002id\030\003 \001(\t\022\r\n\005force\030\004 \001(\002\"B\n\016To" +
+      "uchEventList\0220\n\010elements\030\001 \003(\0132\036.ubii.da" +
+      "taStructure.TouchEventb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1567,7 +1785,7 @@ public final class TouchEventOuterClass {
     internal_static_ubii_dataStructure_TouchEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_dataStructure_TouchEvent_descriptor,
-        new java.lang.String[] { "Type", "Position", });
+        new java.lang.String[] { "Type", "Position", "Id", "Force", });
     internal_static_ubii_dataStructure_TouchEventList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_dataStructure_TouchEventList_fieldAccessorTable = new

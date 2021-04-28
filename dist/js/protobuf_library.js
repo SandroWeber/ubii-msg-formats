@@ -10263,7 +10263,9 @@ proto.ubii.dataStructure.TouchEvent.prototype.toObject = function(opt_includeIns
 proto.ubii.dataStructure.TouchEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    position: (f = msg.getPosition()) && proto.ubii.dataStructure.Vector2.toObject(includeInstance, f)
+    position: (f = msg.getPosition()) && proto.ubii.dataStructure.Vector2.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    force: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
   };
 
   if (includeInstance) {
@@ -10309,6 +10311,14 @@ proto.ubii.dataStructure.TouchEvent.deserializeBinaryFromReader = function(msg, 
       reader.readMessage(value,proto.ubii.dataStructure.Vector2.deserializeBinaryFromReader);
       msg.setPosition(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setForce(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -10351,6 +10361,20 @@ proto.ubii.dataStructure.TouchEvent.serializeBinaryToWriter = function(message, 
       2,
       f,
       proto.ubii.dataStructure.Vector2.serializeBinaryToWriter
+    );
+  }
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getForce();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      4,
+      f
     );
   }
 };
@@ -10408,6 +10432,42 @@ proto.ubii.dataStructure.TouchEvent.prototype.clearPosition = function() {
  */
 proto.ubii.dataStructure.TouchEvent.prototype.hasPosition = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string id = 3;
+ * @return {string}
+ */
+proto.ubii.dataStructure.TouchEvent.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ubii.dataStructure.TouchEvent} returns this
+ */
+proto.ubii.dataStructure.TouchEvent.prototype.setId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional float force = 4;
+ * @return {number}
+ */
+proto.ubii.dataStructure.TouchEvent.prototype.getForce = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ubii.dataStructure.TouchEvent} returns this
+ */
+proto.ubii.dataStructure.TouchEvent.prototype.setForce = function(value) {
+  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 

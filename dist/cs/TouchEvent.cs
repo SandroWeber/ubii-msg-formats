@@ -28,15 +28,16 @@ namespace Ubii.DataStructure {
             "cmUvdG91Y2hFdmVudC5wcm90bxISdWJpaS5kYXRhU3RydWN0dXJlGkNwcm90",
             "by90b3BpY0RhdGEvdG9waWNEYXRhUmVjb3JkL2RhdGFTdHJ1Y3R1cmUvYnV0",
             "dG9uRXZlbnRUeXBlLnByb3RvGjtwcm90by90b3BpY0RhdGEvdG9waWNEYXRh",
-            "UmVjb3JkL2RhdGFTdHJ1Y3R1cmUvdmVjdG9yMi5wcm90byJuCgpUb3VjaEV2",
-            "ZW50EjEKBHR5cGUYASABKA4yIy51YmlpLmRhdGFTdHJ1Y3R1cmUuQnV0dG9u",
-            "RXZlbnRUeXBlEi0KCHBvc2l0aW9uGAIgASgLMhsudWJpaS5kYXRhU3RydWN0",
-            "dXJlLlZlY3RvcjIiQgoOVG91Y2hFdmVudExpc3QSMAoIZWxlbWVudHMYASAD",
-            "KAsyHi51YmlpLmRhdGFTdHJ1Y3R1cmUuVG91Y2hFdmVudGIGcHJvdG8z"));
+            "UmVjb3JkL2RhdGFTdHJ1Y3R1cmUvdmVjdG9yMi5wcm90byKJAQoKVG91Y2hF",
+            "dmVudBIxCgR0eXBlGAEgASgOMiMudWJpaS5kYXRhU3RydWN0dXJlLkJ1dHRv",
+            "bkV2ZW50VHlwZRItCghwb3NpdGlvbhgCIAEoCzIbLnViaWkuZGF0YVN0cnVj",
+            "dHVyZS5WZWN0b3IyEgoKAmlkGAMgASgJEg0KBWZvcmNlGAQgASgCIkIKDlRv",
+            "dWNoRXZlbnRMaXN0EjAKCGVsZW1lbnRzGAEgAygLMh4udWJpaS5kYXRhU3Ry",
+            "dWN0dXJlLlRvdWNoRXZlbnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.DataStructure.ButtonEventTypeReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.TouchEvent), global::Ubii.DataStructure.TouchEvent.Parser, new[]{ "Type", "Position" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.TouchEvent), global::Ubii.DataStructure.TouchEvent.Parser, new[]{ "Type", "Position", "Id", "Force" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.DataStructure.TouchEventList), global::Ubii.DataStructure.TouchEventList.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
@@ -71,6 +72,8 @@ namespace Ubii.DataStructure {
     public TouchEvent(TouchEvent other) : this() {
       type_ = other.type_;
       position_ = other.position_ != null ? other.position_.Clone() : null;
+      id_ = other.id_;
+      force_ = other.force_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -101,6 +104,28 @@ namespace Ubii.DataStructure {
       }
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 3;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "force" field.</summary>
+    public const int ForceFieldNumber = 4;
+    private float force_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Force {
+      get { return force_; }
+      set {
+        force_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as TouchEvent);
@@ -116,6 +141,8 @@ namespace Ubii.DataStructure {
       }
       if (Type != other.Type) return false;
       if (!object.Equals(Position, other.Position)) return false;
+      if (Id != other.Id) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Force, other.Force)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -124,6 +151,8 @@ namespace Ubii.DataStructure {
       int hash = 1;
       if (Type != global::Ubii.DataStructure.ButtonEventType.Up) hash ^= Type.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Force != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Force);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -145,6 +174,14 @@ namespace Ubii.DataStructure {
         output.WriteRawTag(18);
         output.WriteMessage(Position);
       }
+      if (Id.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Id);
+      }
+      if (Force != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Force);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -158,6 +195,12 @@ namespace Ubii.DataStructure {
       }
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+      }
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Force != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -179,6 +222,12 @@ namespace Ubii.DataStructure {
         }
         Position.MergeFrom(other.Position);
       }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Force != 0F) {
+        Force = other.Force;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -199,6 +248,14 @@ namespace Ubii.DataStructure {
               Position = new global::Ubii.DataStructure.Vector2();
             }
             input.ReadMessage(Position);
+            break;
+          }
+          case 26: {
+            Id = input.ReadString();
+            break;
+          }
+          case 37: {
+            Force = input.ReadFloat();
             break;
           }
         }

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x12\x12ubii.dataStructure\x1a\x43proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"n\n\nTouchEvent\x12\x31\n\x04type\x18\x01 \x01(\x0e\x32#.ubii.dataStructure.ButtonEventType\x12-\n\x08position\x18\x02 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2\"B\n\x0eTouchEventList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.dataStructure.TouchEventb\x06proto3'
+  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x12\x12ubii.dataStructure\x1a\x43proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"\x89\x01\n\nTouchEvent\x12\x31\n\x04type\x18\x01 \x01(\x0e\x32#.ubii.dataStructure.ButtonEventType\x12-\n\x08position\x18\x02 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2\x12\n\n\x02id\x18\x03 \x01(\t\x12\r\n\x05\x66orce\x18\x04 \x01(\x02\"B\n\x0eTouchEventList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.dataStructure.TouchEventb\x06proto3'
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_buttonEventType__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,])
 
@@ -48,6 +48,20 @@ _TOUCHEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='ubii.dataStructure.TouchEvent.id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='force', full_name='ubii.dataStructure.TouchEvent.force', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -60,8 +74,8 @@ _TOUCHEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=326,
+  serialized_start=217,
+  serialized_end=354,
 )
 
 
@@ -91,8 +105,8 @@ _TOUCHEVENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=328,
-  serialized_end=394,
+  serialized_start=356,
+  serialized_end=422,
 )
 
 _TOUCHEVENT.fields_by_name['type'].enum_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_buttonEventType__pb2._BUTTONEVENTTYPE

@@ -18324,6 +18324,8 @@ $root.ubii = (function() {
              * @interface ITouchEvent
              * @property {ubii.dataStructure.ButtonEventType|null} [type] TouchEvent type
              * @property {ubii.dataStructure.IVector2|null} [position] TouchEvent position
+             * @property {string|null} [id] TouchEvent id
+             * @property {number|null} [force] TouchEvent force
              */
 
             /**
@@ -18358,6 +18360,22 @@ $root.ubii = (function() {
             TouchEvent.prototype.position = null;
 
             /**
+             * TouchEvent id.
+             * @member {string} id
+             * @memberof ubii.dataStructure.TouchEvent
+             * @instance
+             */
+            TouchEvent.prototype.id = "";
+
+            /**
+             * TouchEvent force.
+             * @member {number} force
+             * @memberof ubii.dataStructure.TouchEvent
+             * @instance
+             */
+            TouchEvent.prototype.force = 0;
+
+            /**
              * Creates a new TouchEvent instance using the specified properties.
              * @function create
              * @memberof ubii.dataStructure.TouchEvent
@@ -18385,6 +18403,10 @@ $root.ubii = (function() {
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
                 if (message.position != null && Object.hasOwnProperty.call(message, "position"))
                     $root.ubii.dataStructure.Vector2.encode(message.position, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.id);
+                if (message.force != null && Object.hasOwnProperty.call(message, "force"))
+                    writer.uint32(/* id 4, wireType 5 =*/37).float(message.force);
                 return writer;
             };
 
@@ -18424,6 +18446,12 @@ $root.ubii = (function() {
                         break;
                     case 2:
                         message.position = $root.ubii.dataStructure.Vector2.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.id = reader.string();
+                        break;
+                    case 4:
+                        message.force = reader.float();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18473,6 +18501,12 @@ $root.ubii = (function() {
                     if (error)
                         return "position." + error;
                 }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.force != null && message.hasOwnProperty("force"))
+                    if (typeof message.force !== "number")
+                        return "force: number expected";
                 return null;
             };
 
@@ -18503,6 +18537,10 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.dataStructure.TouchEvent.position: object expected");
                     message.position = $root.ubii.dataStructure.Vector2.fromObject(object.position);
                 }
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.force != null)
+                    message.force = Number(object.force);
                 return message;
             };
 
@@ -18522,11 +18560,17 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.type = options.enums === String ? "UP" : 0;
                     object.position = null;
+                    object.id = "";
+                    object.force = 0;
                 }
                 if (message.type != null && message.hasOwnProperty("type"))
                     object.type = options.enums === String ? $root.ubii.dataStructure.ButtonEventType[message.type] : message.type;
                 if (message.position != null && message.hasOwnProperty("position"))
                     object.position = $root.ubii.dataStructure.Vector2.toObject(message.position, options);
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.force != null && message.hasOwnProperty("force"))
+                    object.force = options.json && !isFinite(message.force) ? String(message.force) : message.force;
                 return object;
             };
 

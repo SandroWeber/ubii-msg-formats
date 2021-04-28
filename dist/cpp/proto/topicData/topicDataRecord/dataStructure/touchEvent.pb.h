@@ -181,9 +181,27 @@ class TouchEvent :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kIdFieldNumber = 3,
     kPositionFieldNumber = 2,
     kTypeFieldNumber = 1,
+    kForceFieldNumber = 4,
   };
+  // string id = 3;
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
   // .ubii.dataStructure.Vector2 position = 2;
   bool has_position() const;
   private:
@@ -208,13 +226,24 @@ class TouchEvent :
   void _internal_set_type(::ubii::dataStructure::ButtonEventType value);
   public:
 
+  // float force = 4;
+  void clear_force();
+  float force() const;
+  void set_force(float value);
+  private:
+  float _internal_force() const;
+  void _internal_set_force(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.dataStructure.TouchEvent)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::ubii::dataStructure::Vector2* position_;
   int type_;
+  float force_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto;
 };
@@ -438,6 +467,86 @@ inline void TouchEvent::set_allocated_position(::ubii::dataStructure::Vector2* p
   }
   position_ = position;
   // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.TouchEvent.position)
+}
+
+// string id = 3;
+inline void TouchEvent::clear_id() {
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& TouchEvent::id() const {
+  // @@protoc_insertion_point(field_get:ubii.dataStructure.TouchEvent.id)
+  return _internal_id();
+}
+inline void TouchEvent::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:ubii.dataStructure.TouchEvent.id)
+}
+inline std::string* TouchEvent::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:ubii.dataStructure.TouchEvent.id)
+  return _internal_mutable_id();
+}
+inline const std::string& TouchEvent::_internal_id() const {
+  return id_.GetNoArena();
+}
+inline void TouchEvent::_internal_set_id(const std::string& value) {
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void TouchEvent::set_id(std::string&& value) {
+  
+  id_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.dataStructure.TouchEvent.id)
+}
+inline void TouchEvent::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.dataStructure.TouchEvent.id)
+}
+inline void TouchEvent::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.dataStructure.TouchEvent.id)
+}
+inline std::string* TouchEvent::_internal_mutable_id() {
+  
+  return id_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* TouchEvent::release_id() {
+  // @@protoc_insertion_point(field_release:ubii.dataStructure.TouchEvent.id)
+  
+  return id_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void TouchEvent::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.TouchEvent.id)
+}
+
+// float force = 4;
+inline void TouchEvent::clear_force() {
+  force_ = 0;
+}
+inline float TouchEvent::_internal_force() const {
+  return force_;
+}
+inline float TouchEvent::force() const {
+  // @@protoc_insertion_point(field_get:ubii.dataStructure.TouchEvent.force)
+  return _internal_force();
+}
+inline void TouchEvent::_internal_set_force(float value) {
+  
+  force_ = value;
+}
+inline void TouchEvent::set_force(float value) {
+  _internal_set_force(value);
+  // @@protoc_insertion_point(field_set:ubii.dataStructure.TouchEvent.force)
 }
 
 // -------------------------------------------------------------------
