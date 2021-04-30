@@ -1,7 +1,9 @@
 # ubii-msg-formats
 
 Hi. This is the repository for Ubii message formats. It contains everything about **what** ubii nodes and devices say to each other.
-If you are interested in how they communicate with each other, visit the [ubii-msg-transport repository](https://gitlab.lrz.de/IN-FAR/Ubi-Interact/ubii-msg-transport).
+If you are interested in how they communicate with each other, please see
+- https://zeromq.org/, https://zguide.zeromq.org/docs/chapter3/#The-REQ-to-REP-Combination, https://zguide.zeromq.org/docs/chapter3/#The-DEALER-to-ROUTER-Combination
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods, https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
 
 ## Table of Contents
 
@@ -55,47 +57,27 @@ The proto file of the first order messages imports all submessages. Thus the pro
 
 ### TopicData
 
-This message is used to communicate topic data from the client to the server and from the server to the client. It is used in a dealer router communication pattern context.
+This message is used to communicate topic data from the client to the server and from the server to the client. It is used in a router-dealer / websocket communication pattern context.
 
 Beside general information this message contains a topic data pair. The `TopicData` can contain the following data structures:
-
-- `Number`
-- `Boolean`
-- `String`
-- `Vector2`
-- `Vector3`
-- `Vector4`
-- `Quaternion`
-- `Matrix3x2`
-- `Matrix4x4`
-- `Color`
-- `TouchEvent`
-- `KeyEvent`
-- `MouseEvent`
+https://github.com/SandroWeber/ubii-msg-formats/blob/develop/src/proto/topicData/topicDataRecord/topicDataRecord.proto
 
 You can send a `TopicData` message to a master node in order to publish topic data pairs to a master node.
 In return, master nodes will send `TopicData` messages to registered devices to inform them about changes of their subscribed topics.
 
 ### ServiceRequest
 
-This message is used to formulate service request. It is sent from the client to the server. The message is used in a request reply communication pattern context.
+This message is used to formulate service request. It is sent from the client to the server. The message is used in a request-reply / HTTP(S) request communication pattern context.
 
 The `ServiceRequest` can have the following submessages specifing the type of the reply:
-
-- `ClientRegistration`: This message specifies a client that should be registered at a ubii node.
-- `DeviceRegistration`: This message specifies a device that should be registered at a ubii node.
-- `Subscribtion`: This message specifies a device and topics that should be subscribed and topics that should be unsubscribed.
+https://github.com/SandroWeber/ubii-msg-formats/blob/develop/src/proto/services/serviceRequest.proto
 
 ### ServiceReply
 
-This message is used by the server to formulate service replies to previous service requests from clients. The message is used in a request reply communication pattern context.
+This message is used by the server to formulate service replies to previous service requests from clients. The message is used in a request-reply / HTTP(S) request communication pattern context.
 
 The `ServiceReply` can have the following submessages specifing the type of the reply:
-
-- `Success`: This message is sent if a service request was processed successfully and has no special reply message.
-- `Error`: This message is sent if a service request was not processed successfully and caused an error.
-- `ClientSpecification`: This message is sent as reply to a client registration request. It contains all relevant information about the client such as its new unique uuid and the host adress and port number of the dealer router interface.
-- `DeviceSpecification`: This message is sent as reply to a device registration request.
+https://github.com/SandroWeber/ubii-msg-formats/blob/develop/src/proto/services/serviceReply.proto
 
 ## Protobuf
 
