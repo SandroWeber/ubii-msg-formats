@@ -19,15 +19,15 @@ public final class TouchEventOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+     * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+     * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The type.
      */
-    ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType();
+    ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType();
 
     /**
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
@@ -171,23 +171,136 @@ public final class TouchEventOuterClass {
               ubii.dataStructure.TouchEventOuterClass.TouchEvent.class, ubii.dataStructure.TouchEventOuterClass.TouchEvent.Builder.class);
     }
 
+    /**
+     * Protobuf enum {@code ubii.dataStructure.TouchEvent.TouchEventType}
+     */
+    public enum TouchEventType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TOUCH_START = 0;</code>
+       */
+      TOUCH_START(0),
+      /**
+       * <code>TOUCH_MOVE = 1;</code>
+       */
+      TOUCH_MOVE(1),
+      /**
+       * <code>TOUCH_END = 2;</code>
+       */
+      TOUCH_END(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TOUCH_START = 0;</code>
+       */
+      public static final int TOUCH_START_VALUE = 0;
+      /**
+       * <code>TOUCH_MOVE = 1;</code>
+       */
+      public static final int TOUCH_MOVE_VALUE = 1;
+      /**
+       * <code>TOUCH_END = 2;</code>
+       */
+      public static final int TOUCH_END_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TouchEventType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TouchEventType forNumber(int value) {
+        switch (value) {
+          case 0: return TOUCH_START;
+          case 1: return TOUCH_MOVE;
+          case 2: return TOUCH_END;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TouchEventType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          TouchEventType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TouchEventType>() {
+              public TouchEventType findValueByNumber(int number) {
+                return TouchEventType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return ubii.dataStructure.TouchEventOuterClass.TouchEvent.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final TouchEventType[] VALUES = values();
+
+      public static TouchEventType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TouchEventType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ubii.dataStructure.TouchEvent.TouchEventType)
+    }
+
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+     * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+     * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The type.
      */
-    public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
+    public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
       @SuppressWarnings("deprecation")
-      ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType result = ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.valueOf(type_);
-      return result == null ? ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.UNRECOGNIZED : result;
+      ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.valueOf(type_);
+      return result == null ? ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.UNRECOGNIZED : result;
     }
 
     public static final int POSITION_FIELD_NUMBER = 2;
@@ -273,7 +386,7 @@ public final class TouchEventOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.UP.getNumber()) {
+      if (type_ != ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.TOUCH_START.getNumber()) {
         output.writeEnum(1, type_);
       }
       if (position_ != null) {
@@ -294,7 +407,7 @@ public final class TouchEventOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.UP.getNumber()) {
+      if (type_ != ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.TOUCH_START.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
@@ -628,14 +741,14 @@ public final class TouchEventOuterClass {
 
       private int type_ = 0;
       /**
-       * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+       * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+       * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -645,20 +758,20 @@ public final class TouchEventOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+       * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @return The type.
        */
-      public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
+      public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
         @SuppressWarnings("deprecation")
-        ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType result = ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.valueOf(type_);
-        return result == null ? ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.UNRECOGNIZED : result;
+        ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.valueOf(type_);
+        return result == null ? ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+       * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType value) {
+      public Builder setType(ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -668,7 +781,7 @@ public final class TouchEventOuterClass {
         return this;
       }
       /**
-       * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
+       * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -1767,12 +1880,14 @@ public final class TouchEventOuterClass {
       "ture\032Cproto/topicData/topicDataRecord/da" +
       "taStructure/buttonEventType.proto\032;proto" +
       "/topicData/topicDataRecord/dataStructure" +
-      "/vector2.proto\"\211\001\n\nTouchEvent\0221\n\004type\030\001 " +
-      "\001(\0162#.ubii.dataStructure.ButtonEventType" +
-      "\022-\n\010position\030\002 \001(\0132\033.ubii.dataStructure." +
-      "Vector2\022\n\n\002id\030\003 \001(\t\022\r\n\005force\030\004 \001(\002\"B\n\016To" +
-      "uchEventList\0220\n\010elements\030\001 \003(\0132\036.ubii.da" +
-      "taStructure.TouchEventb\006proto3"
+      "/vector2.proto\"\325\001\n\nTouchEvent\022;\n\004type\030\001 " +
+      "\001(\0162-.ubii.dataStructure.TouchEvent.Touc" +
+      "hEventType\022-\n\010position\030\002 \001(\0132\033.ubii.data" +
+      "Structure.Vector2\022\n\n\002id\030\003 \001(\t\022\r\n\005force\030\004" +
+      " \001(\002\"@\n\016TouchEventType\022\017\n\013TOUCH_START\020\000\022" +
+      "\016\n\nTOUCH_MOVE\020\001\022\r\n\tTOUCH_END\020\002\"B\n\016TouchE" +
+      "ventList\0220\n\010elements\030\001 \003(\0132\036.ubii.dataSt" +
+      "ructure.TouchEventb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

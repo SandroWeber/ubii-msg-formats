@@ -37,6 +37,7 @@ goog.provide('proto.ubii.dataStructure.Pose3D.OrientationCase');
 goog.provide('proto.ubii.dataStructure.Quaternion');
 goog.provide('proto.ubii.dataStructure.StringList');
 goog.provide('proto.ubii.dataStructure.TouchEvent');
+goog.provide('proto.ubii.dataStructure.TouchEvent.TouchEventType');
 goog.provide('proto.ubii.dataStructure.TouchEventList');
 goog.provide('proto.ubii.dataStructure.Vector2');
 goog.provide('proto.ubii.dataStructure.Vector3');
@@ -10303,7 +10304,7 @@ proto.ubii.dataStructure.TouchEvent.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.ubii.dataStructure.ButtonEventType} */ (reader.readEnum());
+      var value = /** @type {!proto.ubii.dataStructure.TouchEvent.TouchEventType} */ (reader.readEnum());
       msg.setType(value);
       break;
     case 2:
@@ -10381,16 +10382,25 @@ proto.ubii.dataStructure.TouchEvent.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional ButtonEventType type = 1;
- * @return {!proto.ubii.dataStructure.ButtonEventType}
+ * @enum {number}
+ */
+proto.ubii.dataStructure.TouchEvent.TouchEventType = {
+  TOUCH_START: 0,
+  TOUCH_MOVE: 1,
+  TOUCH_END: 2
+};
+
+/**
+ * optional TouchEventType type = 1;
+ * @return {!proto.ubii.dataStructure.TouchEvent.TouchEventType}
  */
 proto.ubii.dataStructure.TouchEvent.prototype.getType = function() {
-  return /** @type {!proto.ubii.dataStructure.ButtonEventType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.ubii.dataStructure.TouchEvent.TouchEventType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.ubii.dataStructure.ButtonEventType} value
+ * @param {!proto.ubii.dataStructure.TouchEvent.TouchEventType} value
  * @return {!proto.ubii.dataStructure.TouchEvent} returns this
  */
 proto.ubii.dataStructure.TouchEvent.prototype.setType = function(value) {

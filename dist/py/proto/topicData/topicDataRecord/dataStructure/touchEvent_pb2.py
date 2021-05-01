@@ -20,11 +20,37 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x12\x12ubii.dataStructure\x1a\x43proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"\x89\x01\n\nTouchEvent\x12\x31\n\x04type\x18\x01 \x01(\x0e\x32#.ubii.dataStructure.ButtonEventType\x12-\n\x08position\x18\x02 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2\x12\n\n\x02id\x18\x03 \x01(\t\x12\r\n\x05\x66orce\x18\x04 \x01(\x02\"B\n\x0eTouchEventList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.dataStructure.TouchEventb\x06proto3'
+  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/touchEvent.proto\x12\x12ubii.dataStructure\x1a\x43proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto\x1a;proto/topicData/topicDataRecord/dataStructure/vector2.proto\"\xd5\x01\n\nTouchEvent\x12;\n\x04type\x18\x01 \x01(\x0e\x32-.ubii.dataStructure.TouchEvent.TouchEventType\x12-\n\x08position\x18\x02 \x01(\x0b\x32\x1b.ubii.dataStructure.Vector2\x12\n\n\x02id\x18\x03 \x01(\t\x12\r\n\x05\x66orce\x18\x04 \x01(\x02\"@\n\x0eTouchEventType\x12\x0f\n\x0bTOUCH_START\x10\x00\x12\x0e\n\nTOUCH_MOVE\x10\x01\x12\r\n\tTOUCH_END\x10\x02\"B\n\x0eTouchEventList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.dataStructure.TouchEventb\x06proto3'
   ,
   dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_buttonEventType__pb2.DESCRIPTOR,proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2.DESCRIPTOR,])
 
 
+
+_TOUCHEVENT_TOUCHEVENTTYPE = _descriptor.EnumDescriptor(
+  name='TouchEventType',
+  full_name='ubii.dataStructure.TouchEvent.TouchEventType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TOUCH_START', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TOUCH_MOVE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TOUCH_END', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=366,
+  serialized_end=430,
+)
+_sym_db.RegisterEnumDescriptor(_TOUCHEVENT_TOUCHEVENTTYPE)
 
 
 _TOUCHEVENT = _descriptor.Descriptor(
@@ -67,6 +93,7 @@ _TOUCHEVENT = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _TOUCHEVENT_TOUCHEVENTTYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -75,7 +102,7 @@ _TOUCHEVENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=217,
-  serialized_end=354,
+  serialized_end=430,
 )
 
 
@@ -105,12 +132,13 @@ _TOUCHEVENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=356,
-  serialized_end=422,
+  serialized_start=432,
+  serialized_end=498,
 )
 
-_TOUCHEVENT.fields_by_name['type'].enum_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_buttonEventType__pb2._BUTTONEVENTTYPE
+_TOUCHEVENT.fields_by_name['type'].enum_type = _TOUCHEVENT_TOUCHEVENTTYPE
 _TOUCHEVENT.fields_by_name['position'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_dataStructure_dot_vector2__pb2._VECTOR2
+_TOUCHEVENT_TOUCHEVENTTYPE.containing_type = _TOUCHEVENT
 _TOUCHEVENTLIST.fields_by_name['elements'].message_type = _TOUCHEVENT
 DESCRIPTOR.message_types_by_name['TouchEvent'] = _TOUCHEVENT
 DESCRIPTOR.message_types_by_name['TouchEventList'] = _TOUCHEVENTLIST

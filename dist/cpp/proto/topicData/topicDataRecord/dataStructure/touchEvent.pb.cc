@@ -59,7 +59,7 @@ static void InitDefaultsscc_info_TouchEventList_proto_2ftopicData_2ftopicDataRec
       &scc_info_TouchEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto[2];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -95,12 +95,14 @@ const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataS
   "ture\032Cproto/topicData/topicDataRecord/da"
   "taStructure/buttonEventType.proto\032;proto"
   "/topicData/topicDataRecord/dataStructure"
-  "/vector2.proto\"\211\001\n\nTouchEvent\0221\n\004type\030\001 "
-  "\001(\0162#.ubii.dataStructure.ButtonEventType"
-  "\022-\n\010position\030\002 \001(\0132\033.ubii.dataStructure."
-  "Vector2\022\n\n\002id\030\003 \001(\t\022\r\n\005force\030\004 \001(\002\"B\n\016To"
-  "uchEventList\0220\n\010elements\030\001 \003(\0132\036.ubii.da"
-  "taStructure.TouchEventb\006proto3"
+  "/vector2.proto\"\325\001\n\nTouchEvent\022;\n\004type\030\001 "
+  "\001(\0162-.ubii.dataStructure.TouchEvent.Touc"
+  "hEventType\022-\n\010position\030\002 \001(\0132\033.ubii.data"
+  "Structure.Vector2\022\n\n\002id\030\003 \001(\t\022\r\n\005force\030\004"
+  " \001(\002\"@\n\016TouchEventType\022\017\n\013TOUCH_START\020\000\022"
+  "\016\n\nTOUCH_MOVE\020\001\022\r\n\tTOUCH_END\020\002\"B\n\016TouchE"
+  "ventList\0220\n\010elements\030\001 \003(\0132\036.ubii.dataSt"
+  "ructure.TouchEventb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_deps[2] = {
   &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto,
@@ -113,7 +115,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_once;
 static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto = {
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/touchEvent.proto", 430,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/touchEvent.proto", 506,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, 2, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto,
@@ -123,6 +125,29 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_
 static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto), true);
 namespace ubii {
 namespace dataStructure {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TouchEvent_TouchEventType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto);
+  return file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2ftouchEvent_2eproto[0];
+}
+bool TouchEvent_TouchEventType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr TouchEvent_TouchEventType TouchEvent::TOUCH_START;
+constexpr TouchEvent_TouchEventType TouchEvent::TOUCH_MOVE;
+constexpr TouchEvent_TouchEventType TouchEvent::TOUCH_END;
+constexpr TouchEvent_TouchEventType TouchEvent::TouchEventType_MIN;
+constexpr TouchEvent_TouchEventType TouchEvent::TouchEventType_MAX;
+constexpr int TouchEvent::TouchEventType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
@@ -220,12 +245,12 @@ const char* TouchEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .ubii.dataStructure.ButtonEventType type = 1;
+      // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::ubii::dataStructure::ButtonEventType>(val));
+          _internal_set_type(static_cast<::ubii::dataStructure::TouchEvent_TouchEventType>(val));
         } else goto handle_unusual;
         continue;
       // .ubii.dataStructure.Vector2 position = 2;
@@ -277,7 +302,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .ubii.dataStructure.ButtonEventType type = 1;
+  // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
   if (this->type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -338,7 +363,7 @@ size_t TouchEvent::ByteSizeLong() const {
         *position_);
   }
 
-  // .ubii.dataStructure.ButtonEventType type = 1;
+  // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
   if (this->type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());

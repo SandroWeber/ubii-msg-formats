@@ -18322,7 +18322,7 @@ $root.ubii = (function() {
              * Properties of a TouchEvent.
              * @memberof ubii.dataStructure
              * @interface ITouchEvent
-             * @property {ubii.dataStructure.ButtonEventType|null} [type] TouchEvent type
+             * @property {ubii.dataStructure.TouchEvent.TouchEventType|null} [type] TouchEvent type
              * @property {ubii.dataStructure.IVector2|null} [position] TouchEvent position
              * @property {string|null} [id] TouchEvent id
              * @property {number|null} [force] TouchEvent force
@@ -18345,7 +18345,7 @@ $root.ubii = (function() {
 
             /**
              * TouchEvent type.
-             * @member {ubii.dataStructure.ButtonEventType} type
+             * @member {ubii.dataStructure.TouchEvent.TouchEventType} type
              * @memberof ubii.dataStructure.TouchEvent
              * @instance
              */
@@ -18494,6 +18494,7 @@ $root.ubii = (function() {
                         return "type: enum value expected";
                     case 0:
                     case 1:
+                    case 2:
                         break;
                     }
                 if (message.position != null && message.hasOwnProperty("position")) {
@@ -18523,13 +18524,17 @@ $root.ubii = (function() {
                     return object;
                 var message = new $root.ubii.dataStructure.TouchEvent();
                 switch (object.type) {
-                case "UP":
+                case "TOUCH_START":
                 case 0:
                     message.type = 0;
                     break;
-                case "DOWN":
+                case "TOUCH_MOVE":
                 case 1:
                     message.type = 1;
+                    break;
+                case "TOUCH_END":
+                case 2:
+                    message.type = 2;
                     break;
                 }
                 if (object.position != null) {
@@ -18558,13 +18563,13 @@ $root.ubii = (function() {
                     options = {};
                 var object = {};
                 if (options.defaults) {
-                    object.type = options.enums === String ? "UP" : 0;
+                    object.type = options.enums === String ? "TOUCH_START" : 0;
                     object.position = null;
                     object.id = "";
                     object.force = 0;
                 }
                 if (message.type != null && message.hasOwnProperty("type"))
-                    object.type = options.enums === String ? $root.ubii.dataStructure.ButtonEventType[message.type] : message.type;
+                    object.type = options.enums === String ? $root.ubii.dataStructure.TouchEvent.TouchEventType[message.type] : message.type;
                 if (message.position != null && message.hasOwnProperty("position"))
                     object.position = $root.ubii.dataStructure.Vector2.toObject(message.position, options);
                 if (message.id != null && message.hasOwnProperty("id"))
@@ -18584,6 +18589,22 @@ $root.ubii = (function() {
             TouchEvent.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
+
+            /**
+             * TouchEventType enum.
+             * @name ubii.dataStructure.TouchEvent.TouchEventType
+             * @enum {number}
+             * @property {number} TOUCH_START=0 TOUCH_START value
+             * @property {number} TOUCH_MOVE=1 TOUCH_MOVE value
+             * @property {number} TOUCH_END=2 TOUCH_END value
+             */
+            TouchEvent.TouchEventType = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "TOUCH_START"] = 0;
+                values[valuesById[1] = "TOUCH_MOVE"] = 1;
+                values[valuesById[2] = "TOUCH_END"] = 2;
+                return values;
+            })();
 
             return TouchEvent;
         })();

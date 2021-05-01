@@ -31,6 +31,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/topicData/topicDataRecord/dataStructure/buttonEventType.pb.h"
 #include "proto/topicData/topicDataRecord/dataStructure/vector2.pb.h"
@@ -73,6 +74,32 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace ubii {
 namespace dataStructure {
 
+enum TouchEvent_TouchEventType : int {
+  TouchEvent_TouchEventType_TOUCH_START = 0,
+  TouchEvent_TouchEventType_TOUCH_MOVE = 1,
+  TouchEvent_TouchEventType_TOUCH_END = 2,
+  TouchEvent_TouchEventType_TouchEvent_TouchEventType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  TouchEvent_TouchEventType_TouchEvent_TouchEventType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool TouchEvent_TouchEventType_IsValid(int value);
+constexpr TouchEvent_TouchEventType TouchEvent_TouchEventType_TouchEventType_MIN = TouchEvent_TouchEventType_TOUCH_START;
+constexpr TouchEvent_TouchEventType TouchEvent_TouchEventType_TouchEventType_MAX = TouchEvent_TouchEventType_TOUCH_END;
+constexpr int TouchEvent_TouchEventType_TouchEventType_ARRAYSIZE = TouchEvent_TouchEventType_TouchEventType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TouchEvent_TouchEventType_descriptor();
+template<typename T>
+inline const std::string& TouchEvent_TouchEventType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, TouchEvent_TouchEventType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function TouchEvent_TouchEventType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    TouchEvent_TouchEventType_descriptor(), enum_t_value);
+}
+inline bool TouchEvent_TouchEventType_Parse(
+    const std::string& name, TouchEvent_TouchEventType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TouchEvent_TouchEventType>(
+    TouchEvent_TouchEventType_descriptor(), name, value);
+}
 // ===================================================================
 
 class TouchEvent :
@@ -178,6 +205,38 @@ class TouchEvent :
 
   // nested types ----------------------------------------------------
 
+  typedef TouchEvent_TouchEventType TouchEventType;
+  static constexpr TouchEventType TOUCH_START =
+    TouchEvent_TouchEventType_TOUCH_START;
+  static constexpr TouchEventType TOUCH_MOVE =
+    TouchEvent_TouchEventType_TOUCH_MOVE;
+  static constexpr TouchEventType TOUCH_END =
+    TouchEvent_TouchEventType_TOUCH_END;
+  static inline bool TouchEventType_IsValid(int value) {
+    return TouchEvent_TouchEventType_IsValid(value);
+  }
+  static constexpr TouchEventType TouchEventType_MIN =
+    TouchEvent_TouchEventType_TouchEventType_MIN;
+  static constexpr TouchEventType TouchEventType_MAX =
+    TouchEvent_TouchEventType_TouchEventType_MAX;
+  static constexpr int TouchEventType_ARRAYSIZE =
+    TouchEvent_TouchEventType_TouchEventType_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  TouchEventType_descriptor() {
+    return TouchEvent_TouchEventType_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& TouchEventType_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, TouchEventType>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function TouchEventType_Name.");
+    return TouchEvent_TouchEventType_Name(enum_t_value);
+  }
+  static inline bool TouchEventType_Parse(const std::string& name,
+      TouchEventType* value) {
+    return TouchEvent_TouchEventType_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
@@ -217,13 +276,13 @@ class TouchEvent :
   ::ubii::dataStructure::Vector2* _internal_mutable_position();
   public:
 
-  // .ubii.dataStructure.ButtonEventType type = 1;
+  // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
   void clear_type();
-  ::ubii::dataStructure::ButtonEventType type() const;
-  void set_type(::ubii::dataStructure::ButtonEventType value);
+  ::ubii::dataStructure::TouchEvent_TouchEventType type() const;
+  void set_type(::ubii::dataStructure::TouchEvent_TouchEventType value);
   private:
-  ::ubii::dataStructure::ButtonEventType _internal_type() const;
-  void _internal_set_type(::ubii::dataStructure::ButtonEventType value);
+  ::ubii::dataStructure::TouchEvent_TouchEventType _internal_type() const;
+  void _internal_set_type(::ubii::dataStructure::TouchEvent_TouchEventType value);
   public:
 
   // float force = 4;
@@ -395,22 +454,22 @@ class TouchEventList :
 #endif  // __GNUC__
 // TouchEvent
 
-// .ubii.dataStructure.ButtonEventType type = 1;
+// .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
 inline void TouchEvent::clear_type() {
   type_ = 0;
 }
-inline ::ubii::dataStructure::ButtonEventType TouchEvent::_internal_type() const {
-  return static_cast< ::ubii::dataStructure::ButtonEventType >(type_);
+inline ::ubii::dataStructure::TouchEvent_TouchEventType TouchEvent::_internal_type() const {
+  return static_cast< ::ubii::dataStructure::TouchEvent_TouchEventType >(type_);
 }
-inline ::ubii::dataStructure::ButtonEventType TouchEvent::type() const {
+inline ::ubii::dataStructure::TouchEvent_TouchEventType TouchEvent::type() const {
   // @@protoc_insertion_point(field_get:ubii.dataStructure.TouchEvent.type)
   return _internal_type();
 }
-inline void TouchEvent::_internal_set_type(::ubii::dataStructure::ButtonEventType value) {
+inline void TouchEvent::_internal_set_type(::ubii::dataStructure::TouchEvent_TouchEventType value) {
   
   type_ = value;
 }
-inline void TouchEvent::set_type(::ubii::dataStructure::ButtonEventType value) {
+inline void TouchEvent::set_type(::ubii::dataStructure::TouchEvent_TouchEventType value) {
   _internal_set_type(value);
   // @@protoc_insertion_point(field_set:ubii.dataStructure.TouchEvent.type)
 }
@@ -602,6 +661,16 @@ TouchEventList::elements() const {
 
 }  // namespace dataStructure
 }  // namespace ubii
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::ubii::dataStructure::TouchEvent_TouchEventType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ubii::dataStructure::TouchEvent_TouchEventType>() {
+  return ::ubii::dataStructure::TouchEvent_TouchEventType_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 
