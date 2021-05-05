@@ -1,68 +1,47 @@
 #!/usr/bin/python
-
 import sys, argparse
 import os
-import platform
 import subprocess
-
+from pathlib import Path
+import logging
 from distutils.spawn import find_executable
 
-# Find the Protocol Compiler.
-protoc_local = os.path.join(os.path.dirname(__file__), '../external/bin/protoc')
-protoc_local_windows = os.path.join(os.path.dirname(__file__), '../external/bin/protoc.exe')
-if os.path.isfile(protoc_local):
-    protoc = protoc_local
-elif os.path.isfile(protoc_local_windows):
-    protoc = protoc_local_windows
-elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
-    protoc = os.environ['PROTOC']
-else:
-    protoc = find_executable("protoc")
+log = logging.getLogger(__name__)
+protoc = None
 
+
+def find_protoc():
+    global protoc
+    # Find the Protocol Compiler.
+    local_bin = Path(__file__).parent / "../external/bin/"
+    protoc_local = list(local_bin.glob("protoc*"))
+    if protoc_local:
+        if len(protoc_local) != 1:
+            log.error(f"Multiple files named 'protoc' found in {local_bin.resolve()}: "
+                      f"{', '.join(p.name for p in protoc_local)}")
+            sys.exit(2)
+
+        protoc = protoc_local[0]
+        log.info(f"Using protoc {protoc.resolve()} from {local_bin.resolve()}.")
+    elif 'PROTOC' in os.environ and os.path.exists(os.environ['PROTOC']):
+        protoc = os.environ['PROTOC']
+        log.info(f"Using protoc from PROTOC environment variable {protoc.resolve()}.")
+    else:
+        protoc = find_executable("protoc")
+        if protoc:
+            log.info(f"Found {protoc}")
+        else:
+            log.error("protoc is not installed nor found in /external/bin."
+                      " Please compile it or install the binary package.")
+            sys.exit(3)
 
 def generateInits(pathToOutput):
-   
-    dirn = []
-    start = True
+    for p in Path(pathToOutput).glob("**/"):
+        initpath = p / '__init__.py'
+        initpath.touch()
+    log.info("Generated __init__.py files for python package")
 
-    while len(dirn) != 0 or start:
-        if start: p = pathToOutput 
-        else: p = dirn.pop(0)
-        
-       
-        for (dirpath, dirnames, filenames) in os.walk(p):
-            dirn.extend([p+"/"+x for x in dirnames])
-            filename = dirpath+'/__init__.py'
-            #print(filename)
-            os.makedirs(os.path.dirname(filename), exist_ok=True)
-            if start != True:
-                with open(filename, "w") as f:
-                    pass
-            break
-
-        start = False
-
-
-def getAllProtos(pathToProtos):
-
-    dirn = []
-    files = []
-    start = True
-
-    while len(dirn) != 0 or start:
-        if start: p = pathToProtos 
-        else: p = dirn.pop(0)
-
-        start = False
-        for (dirpath, dirnames, filenames) in os.walk(p):
-            dirn.extend([p+"/"+x for x in dirnames])
-            #destdir.extend([po+"/"+x for x in dirnames])
-            files.extend(p+"/"+x for x in filenames)
-            break
-        
-    return files
-
-def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,require = True):
+def generate_proto(source, pathToOutput, includePath, protocArg, require=True):
     """Invokes the Protocol Compiler to generate a _pb2.py from the given
     .proto file.  Does nothing if the output already exists and is newer than
     the input."""
@@ -70,57 +49,50 @@ def generate_proto(source, pathToOutput, pathToProtos, includePath ,protocArg,re
     if not require and not os.path.exists(source):
         return
 
-    #print('path to protos: '+pathToProtos)
-    #print('path to output: '+pathToOutput)
-
     if not os.path.exists(source):
-        sys.stderr.write("Can't find required file: %s\n" % source)
-        sys.exit(-1)
+        sys.stderr.write(f"Can't find required file: {source}")
+        sys.exit(3)
 
-    if protoc is None:
-        sys.stderr.write(
-            "protoc is not installed nor found in /external/bin.  Please compile it "
-            "or install the binary package.\n")
-        sys.exit(-1)
+    protoc_command = [protoc, f"-I{includePath}", "-I.", f"--{protocArg}_out={pathToOutput}", source]
+    log.debug(" ".join(str(c) for c in protoc_command))
 
-    protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protocArg+"_out="+pathToOutput, source ]
-    print(protoc_command)
-    if subprocess.call(protoc_command) != 0:
-        sys.exit(-1)
+    result = subprocess.call(protoc_command)
+    if result != 0:
+        sys.exit(result)
+
 
 def generateProtos(pathToOutput = './../dist/py', pathToProtos='./../src/proto', includePath='./../src' , protoc_arg='python'):
-    re = getAllProtos(pathToProtos)
-    #print(re)
+    protolist = list(Path(pathToProtos).glob("**/*.proto"))
     os.makedirs(pathToOutput, exist_ok=True)
 
     if protoc_arg == 'js':
         ### build js library
         pathToOutputLibrary = 'library=protobuf_library,binary:' + pathToOutput
-        protoc_command = [ protoc, "-I"+includePath, "-I.", "--"+protoc_arg+"_out="+pathToOutputLibrary ]
-        for i in re:
-            protoc_command.append(i)
-        #print(protoc_command)
-        if subprocess.call(protoc_command) != 0:
-            sys.exit(-1)
+        protoc_command = [protoc, f"-I{includePath}", "-I.", f"--{protoc_arg}_out={pathToOutputLibrary}"] + protolist
+
+        log.debug(" ".join(str(c) for c in protoc_command))
+        result = subprocess.call(protoc_command)
+        if result != 0:
+            sys.exit(result)
 
         # prepare output path for individual file compilation
         pathToOutput = 'import_style=commonjs,binary:' + pathToOutput
 
-    for i in re:
-        generate_proto(i, pathToOutput, pathToProtos, includePath, protoc_arg, False)
+    for p in protolist:
+        generate_proto(p, pathToOutput, includePath, protoc_arg, False)
 
-    print("compiled for " + protoc_arg)
-    return pathToOutput
-
+    log.info("Compiled for " + protoc_arg)
+    return Path(pathToOutput)
 
 def chosen_option(args):
-    file_directory = os.path.dirname(__file__)
-    proto_src_directory = os.path.join(file_directory, '../src/proto')
-    src_directory = os.path.join(file_directory, '../src')
+    file_directory = Path(__file__).parent
+    proto_dir_name = "proto"
+    src_directory = file_directory / '../src'
+    proto_src_directory = src_directory / proto_dir_name
 
     if args.opt == 'py' or args.opt == 'python':
-        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
-        generateInits(p)
+        outdir = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        generateInits(outdir / proto_dir_name)
     elif args.opt == 'j' or args.opt == 'java':
         generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
     elif args.opt == 'js' or args.opt == 'javascript':
@@ -131,8 +103,8 @@ def chosen_option(args):
         generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
     elif args.opt == 'all':
         # python
-        p = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
-        generateInits(p)
+        outdir = generateProtos(os.path.join(file_directory, '../dist/py'), proto_src_directory, src_directory, 'python')
+        generateInits(outdir / proto_dir_name)
         # java
         generateProtos(os.path.join(file_directory, '../dist/java'), proto_src_directory, src_directory, 'java')
         # javascript
@@ -142,15 +114,18 @@ def chosen_option(args):
         # C++
         generateProtos(os.path.join(file_directory, '../dist/cpp'), proto_src_directory, src_directory, 'cpp')
 
-
+    log.info(f"Compiled proto files for option {args.opt}")
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--opt', type=str, default='all',
                         help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp, [all] all')
-
+    
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
-    sys.stdout.write(str(chosen_option(args)))
+    logging.basicConfig(stream=sys.stdout, level=logging.ERROR - 10 * args.verbose, format="%(message)s")
+    find_protoc()
+    chosen_option(args)
 
 
 if __name__ == "__main__":
