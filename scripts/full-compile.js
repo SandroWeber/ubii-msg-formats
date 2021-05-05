@@ -1,14 +1,14 @@
 const childProcess = require('child_process');
 const path = require('path');
 
-let pythonExecutable = 'python3';
+let pythonExecutable = 'python';
 
 let compileProtoPython = () => {
   return new Promise((resolve, reject) => {
     // compile .proto via python
     let pathProtoCompile = path.join(__dirname, 'proto-compile.py');
     console.info(pathProtoCompile);
-    let processPythonProtoCompile = childProcess.spawn(pythonExecutable, [pathProtoCompile]);
+    let processPythonProtoCompile = childProcess.spawn(pythonExecutable, [pathProtoCompile].concat(process.argv.slice(2)));
 
     // Takes stdout data from script which executed
     // with arguments and send this data to res object
@@ -20,6 +20,9 @@ let compileProtoPython = () => {
       console.log(`python .proto compile process close all stdio with code ${code}`);
       if (code === 0) {
         return resolve(code);
+      } else if (code === 9009) {
+        console.log(`Check if python executable ${pythonExecutable} and python script ${pathProtoCompile} are correct.`);
+        return reject(code);
       } else {
         return reject(code);
       }
@@ -39,7 +42,7 @@ let compileProtobufJS = () => {
 
     processProtobufJS.on('exit', function (code) {
       var err = code === 0 ? null : new Error('exit code ' + code);
-      console.error(err);
+      if (err) console.error(err);
 
       if (code === 0) {
         return resolve();
@@ -60,7 +63,7 @@ let compileConstants = () => {
 
     processConstants.on('exit', function (code) {
       var err = code === 0 ? null : new Error('exit code ' + code);
-      console.error(err);
+      if (err) console.error(err);
 
       if (code === 0) {
         return resolve();
