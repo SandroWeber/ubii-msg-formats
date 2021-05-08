@@ -34,6 +34,6 @@
   "dependencies": {
     "protobufjs": "6.10.2",
     "google-protobuf": "3.11.1",
-    "google-closure-library": "20190929.0.0"
+    "google-closure-library": "20200315.0.0"
   }
 }
