@@ -14,52 +14,46 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fclients_2fclient_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Client_proto_2fclients_2fclient_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fdevice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Device_proto_2fdevices_2fdevice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace ubii {
 namespace clients {
-class ClientDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Client> _instance;
-} _Client_default_instance_;
-class ClientListDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClientList> _instance;
-} _ClientList_default_instance_;
+constexpr Client::Client(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : devices_()
+  , tags_()
+  , processing_modules_()
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , host_ip_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , metadata_json_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , is_dedicated_processing_node_(false)
+  , state_(0)
+{}
+struct ClientDefaultTypeInternal {
+  constexpr ClientDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClientDefaultTypeInternal() {}
+  union {
+    Client _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClientDefaultTypeInternal _Client_default_instance_;
+constexpr ClientList::ClientList(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : elements_(){}
+struct ClientListDefaultTypeInternal {
+  constexpr ClientListDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClientListDefaultTypeInternal() {}
+  union {
+    ClientList _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClientListDefaultTypeInternal _ClientList_default_instance_;
 }  // namespace clients
 }  // namespace ubii
-static void InitDefaultsscc_info_Client_proto_2fclients_2fclient_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::clients::_Client_default_instance_;
-    new (ptr) ::ubii::clients::Client();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::clients::Client::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Client_proto_2fclients_2fclient_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Client_proto_2fclients_2fclient_2eproto}, {
-      &scc_info_Device_proto_2fdevices_2fdevice_2eproto.base,
-      &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,}};
-
-static void InitDefaultsscc_info_ClientList_proto_2fclients_2fclient_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::clients::_ClientList_default_instance_;
-    new (ptr) ::ubii::clients::ClientList();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::clients::ClientList::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ClientList_proto_2fclients_2fclient_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ClientList_proto_2fclients_2fclient_2eproto}, {
-      &scc_info_Client_proto_2fclients_2fclient_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fclients_2fclient_2eproto[2];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fclients_2fclient_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fclients_2fclient_2eproto = nullptr;
@@ -116,21 +110,19 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_proto_2fdevices_2fdevice_2eproto,
   &::descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fclients_2fclient_2eproto_sccs[2] = {
-  &scc_info_Client_proto_2fclients_2fclient_2eproto.base,
-  &scc_info_ClientList_proto_2fclients_2fclient_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fclients_2fclient_2eproto_once;
-static bool descriptor_table_proto_2fclients_2fclient_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fclients_2fclient_2eproto = {
-  &descriptor_table_proto_2fclients_2fclient_2eproto_initialized, descriptor_table_protodef_proto_2fclients_2fclient_2eproto, "proto/clients/client.proto", 520,
-  &descriptor_table_proto_2fclients_2fclient_2eproto_once, descriptor_table_proto_2fclients_2fclient_2eproto_sccs, descriptor_table_proto_2fclients_2fclient_2eproto_deps, 2, 2,
+  false, false, 520, descriptor_table_protodef_proto_2fclients_2fclient_2eproto, "proto/clients/client.proto", 
+  &descriptor_table_proto_2fclients_2fclient_2eproto_once, descriptor_table_proto_2fclients_2fclient_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_proto_2fclients_2fclient_2eproto::offsets,
-  file_level_metadata_proto_2fclients_2fclient_2eproto, 2, file_level_enum_descriptors_proto_2fclients_2fclient_2eproto, file_level_service_descriptors_proto_2fclients_2fclient_2eproto,
+  file_level_metadata_proto_2fclients_2fclient_2eproto, file_level_enum_descriptors_proto_2fclients_2fclient_2eproto, file_level_service_descriptors_proto_2fclients_2fclient_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_proto_2fclients_2fclient_2eproto_getter() {
+  return &descriptor_table_proto_2fclients_2fclient_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fclients_2fclient_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fclients_2fclient_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_proto_2fclients_2fclient_2eproto(&descriptor_table_proto_2fclients_2fclient_2eproto);
 namespace ubii {
 namespace clients {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Client_State_descriptor() {
@@ -159,8 +151,6 @@ constexpr int Client::State_ARRAYSIZE;
 
 // ===================================================================
 
-void Client::InitAsDefaultInstance() {
-}
 class Client::_Internal {
  public:
 };
@@ -171,37 +161,45 @@ void Client::clear_devices() {
 void Client::clear_processing_modules() {
   processing_modules_.Clear();
 }
-Client::Client()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Client::Client(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  devices_(arena),
+  tags_(arena),
+  processing_modules_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.clients.Client)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.clients.Client)
 }
 Client::Client(const Client& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       devices_(from.devices_),
       tags_(from.tags_),
       processing_modules_(from.processing_modules_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArena());
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArena());
   }
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_description().empty()) {
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+      GetArena());
   }
   host_ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_host_ip().empty()) {
-    host_ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.host_ip_);
+    host_ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_host_ip(), 
+      GetArena());
   }
   metadata_json_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_metadata_json().empty()) {
-    metadata_json_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.metadata_json_);
+    metadata_json_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_metadata_json(), 
+      GetArena());
   }
   ::memcpy(&is_dedicated_processing_node_, &from.is_dedicated_processing_node_,
     static_cast<size_t>(reinterpret_cast<char*>(&state_) -
@@ -210,23 +208,25 @@ Client::Client(const Client& from)
 }
 
 void Client::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Client_proto_2fclients_2fclient_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  host_ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  metadata_json_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&is_dedicated_processing_node_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&state_) -
-      reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+host_ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+metadata_json_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&is_dedicated_processing_node_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&state_) -
+    reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
 }
 
 Client::~Client() {
   // @@protoc_insertion_point(destructor:ubii.clients.Client)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Client::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -234,14 +234,15 @@ void Client::SharedDtor() {
   metadata_json_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void Client::ArenaDtor(void* object) {
+  Client* _this = reinterpret_cast< Client* >(object);
+  (void)_this;
+}
+void Client::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Client::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Client& Client::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Client_proto_2fclients_2fclient_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Client::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.clients.Client)
@@ -252,15 +253,15 @@ void Client::Clear() {
   devices_.Clear();
   tags_.Clear();
   processing_modules_.Clear();
-  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  host_ip_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  metadata_json_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.ClearToEmpty();
+  name_.ClearToEmpty();
+  description_.ClearToEmpty();
+  host_ip_.ClearToEmpty();
+  metadata_json_.ClearToEmpty();
   ::memset(&is_dedicated_processing_node_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&state_) -
       reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Client::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -268,7 +269,6 @@ const char* Client::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string id = 1;
       case 1:
@@ -338,7 +338,7 @@ const char* Client::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       // bool is_dedicated_processing_node = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          is_dedicated_processing_node_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_dedicated_processing_node_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -363,18 +363,21 @@ const char* Client::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       // .ubii.clients.Client.State state = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_state(static_cast<::ubii::clients::Client_State>(val));
         } else goto handle_unusual;
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -485,7 +488,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.clients.Client)
   return target;
@@ -594,7 +597,7 @@ void Client::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Client::MergeFrom(const Client& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.clients.Client)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -602,24 +605,19 @@ void Client::MergeFrom(const Client& from) {
   tags_.MergeFrom(from.tags_);
   processing_modules_.MergeFrom(from.processing_modules_);
   if (from.id().size() > 0) {
-
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    _internal_set_id(from._internal_id());
   }
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.description().size() > 0) {
-
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    _internal_set_description(from._internal_description());
   }
   if (from.host_ip().size() > 0) {
-
-    host_ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.host_ip_);
+    _internal_set_host_ip(from._internal_host_ip());
   }
   if (from.metadata_json().size() > 0) {
-
-    metadata_json_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.metadata_json_);
+    _internal_set_metadata_json(from._internal_metadata_json());
   }
   if (from.is_dedicated_processing_node() != 0) {
     _internal_set_is_dedicated_processing_node(from._internal_is_dedicated_processing_node());
@@ -649,70 +647,71 @@ bool Client::IsInitialized() const {
 
 void Client::InternalSwap(Client* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   devices_.InternalSwap(&other->devices_);
   tags_.InternalSwap(&other->tags_);
   processing_modules_.InternalSwap(&other->processing_modules_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  host_ip_.Swap(&other->host_ip_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  metadata_json_.Swap(&other->metadata_json_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(is_dedicated_processing_node_, other->is_dedicated_processing_node_);
-  swap(state_, other->state_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  host_ip_.Swap(&other->host_ip_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  metadata_json_.Swap(&other->metadata_json_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Client, state_)
+      + sizeof(Client::state_)
+      - PROTOBUF_FIELD_OFFSET(Client, is_dedicated_processing_node_)>(
+          reinterpret_cast<char*>(&is_dedicated_processing_node_),
+          reinterpret_cast<char*>(&other->is_dedicated_processing_node_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Client::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fclients_2fclient_2eproto_getter, &descriptor_table_proto_2fclients_2fclient_2eproto_once,
+      file_level_metadata_proto_2fclients_2fclient_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void ClientList::InitAsDefaultInstance() {
-}
 class ClientList::_Internal {
  public:
 };
 
-ClientList::ClientList()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ClientList::ClientList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  elements_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.clients.ClientList)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.clients.ClientList)
 }
 ClientList::ClientList(const ClientList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       elements_(from.elements_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.clients.ClientList)
 }
 
 void ClientList::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ClientList_proto_2fclients_2fclient_2eproto.base);
 }
 
 ClientList::~ClientList() {
   // @@protoc_insertion_point(destructor:ubii.clients.ClientList)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ClientList::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ClientList::ArenaDtor(void* object) {
+  ClientList* _this = reinterpret_cast< ClientList* >(object);
+  (void)_this;
+}
+void ClientList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ClientList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClientList& ClientList::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClientList_proto_2fclients_2fclient_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClientList::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.clients.ClientList)
@@ -721,7 +720,7 @@ void ClientList::Clear() {
   (void) cached_has_bits;
 
   elements_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ClientList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -729,7 +728,6 @@ const char* ClientList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .ubii.clients.Client elements = 1;
       case 1:
@@ -745,11 +743,14 @@ const char* ClientList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -779,7 +780,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.clients.ClientList)
   return target;
@@ -827,7 +828,7 @@ void ClientList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ClientList::MergeFrom(const ClientList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.clients.ClientList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -854,24 +855,25 @@ bool ClientList::IsInitialized() const {
 
 void ClientList::InternalSwap(ClientList* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   elements_.InternalSwap(&other->elements_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ClientList::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fclients_2fclient_2eproto_getter, &descriptor_table_proto_2fclients_2fclient_2eproto_once,
+      file_level_metadata_proto_2fclients_2fclient_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace clients
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::clients::Client* Arena::CreateMaybeMessage< ::ubii::clients::Client >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::clients::Client >(arena);
+  return Arena::CreateMessageInternal< ::ubii::clients::Client >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::clients::ClientList* Arena::CreateMaybeMessage< ::ubii::clients::ClientList >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::clients::ClientList >(arena);
+  return Arena::CreateMessageInternal< ::ubii::clients::ClientList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

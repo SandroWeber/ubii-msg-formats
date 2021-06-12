@@ -46,7 +46,7 @@ public final class Lists {
   /**
    * Protobuf type {@code ubii.dataStructure.StringList}
    */
-  public  static final class StringList extends
+  public static final class StringList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.StringList)
       StringListOrBuilder {
@@ -676,7 +676,7 @@ public final class Lists {
   /**
    * Protobuf type {@code ubii.dataStructure.DoubleList}
    */
-  public  static final class DoubleList extends
+  public static final class DoubleList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.DoubleList)
       DoubleListOrBuilder {
@@ -782,6 +782,7 @@ public final class Lists {
      * <code>repeated double elements = 1;</code>
      * @return A list containing the elements.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Double>
         getElementsList() {
       return elements_;
@@ -1287,7 +1288,7 @@ public final class Lists {
   /**
    * Protobuf type {@code ubii.dataStructure.FloatList}
    */
-  public  static final class FloatList extends
+  public static final class FloatList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.FloatList)
       FloatListOrBuilder {
@@ -1393,6 +1394,7 @@ public final class Lists {
      * <code>repeated float elements = 1;</code>
      * @return A list containing the elements.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Float>
         getElementsList() {
       return elements_;
@@ -1898,7 +1900,7 @@ public final class Lists {
   /**
    * Protobuf type {@code ubii.dataStructure.BoolList}
    */
-  public  static final class BoolList extends
+  public static final class BoolList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.BoolList)
       BoolListOrBuilder {
@@ -2004,6 +2006,7 @@ public final class Lists {
      * <code>repeated bool elements = 1;</code>
      * @return A list containing the elements.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Boolean>
         getElementsList() {
       return elements_;
@@ -2509,7 +2512,7 @@ public final class Lists {
   /**
    * Protobuf type {@code ubii.dataStructure.Int32List}
    */
-  public  static final class Int32List extends
+  public static final class Int32List extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Int32List)
       Int32ListOrBuilder {
@@ -2615,6 +2618,7 @@ public final class Lists {
      * <code>repeated int32 elements = 1;</code>
      * @return A list containing the elements.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer>
         getElementsList() {
       return elements_;

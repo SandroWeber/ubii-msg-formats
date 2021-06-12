@@ -102,6 +102,10 @@ public final class SessionOuterClass {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -294,7 +298,7 @@ public final class SessionOuterClass {
   /**
    * Protobuf type {@code ubii.sessions.Session}
    */
-  public  static final class Session extends
+  public static final class Session extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.Session)
       SessionOrBuilder {
@@ -460,6 +464,7 @@ public final class SessionOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -476,6 +481,7 @@ public final class SessionOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -496,6 +502,7 @@ public final class SessionOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -512,6 +519,7 @@ public final class SessionOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -531,12 +539,14 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
       return processingModules_;
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
         getProcessingModulesOrBuilderList() {
       return processingModules_;
@@ -544,18 +554,21 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
+    @java.lang.Override
     public int getProcessingModulesCount() {
       return processingModules_.size();
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
       return processingModules_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 3;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
         int index) {
       return processingModules_.get(index);
@@ -566,12 +579,14 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.sessions.IoMappings.IOMapping> getIoMappingsList() {
       return ioMappings_;
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.sessions.IoMappings.IOMappingOrBuilder> 
         getIoMappingsOrBuilderList() {
       return ioMappings_;
@@ -579,18 +594,21 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
+    @java.lang.Override
     public int getIoMappingsCount() {
       return ioMappings_.size();
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
+    @java.lang.Override
     public ubii.sessions.IoMappings.IOMapping getIoMappings(int index) {
       return ioMappings_.get(index);
     }
     /**
      * <code>repeated .ubii.sessions.IOMapping io_mappings = 4;</code>
      */
+    @java.lang.Override
     public ubii.sessions.IoMappings.IOMappingOrBuilder getIoMappingsOrBuilder(
         int index) {
       return ioMappings_.get(index);
@@ -637,6 +655,7 @@ public final class SessionOuterClass {
      * <code>string description = 6;</code>
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -653,6 +672,7 @@ public final class SessionOuterClass {
      * <code>string description = 6;</code>
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -708,14 +728,14 @@ public final class SessionOuterClass {
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The enum numeric value on the wire for status.
      */
-    public int getStatusValue() {
+    @java.lang.Override public int getStatusValue() {
       return status_;
     }
     /**
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
      * @return The status.
      */
-    public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
+    @java.lang.Override public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
       @SuppressWarnings("deprecation")
       ubii.sessions.SessionOuterClass.SessionStatus result = ubii.sessions.SessionOuterClass.SessionStatus.valueOf(status_);
       return result == null ? ubii.sessions.SessionOuterClass.SessionStatus.UNRECOGNIZED : result;
@@ -727,6 +747,7 @@ public final class SessionOuterClass {
      * <code>bool editable = 9;</code>
      * @return The editable.
      */
+    @java.lang.Override
     public boolean getEditable() {
       return editable_;
     }
@@ -2214,7 +2235,7 @@ public final class SessionOuterClass {
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @return The enum numeric value on the wire for status.
        */
-      public int getStatusValue() {
+      @java.lang.Override public int getStatusValue() {
         return status_;
       }
       /**
@@ -2223,6 +2244,7 @@ public final class SessionOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
+        
         status_ = value;
         onChanged();
         return this;
@@ -2231,6 +2253,7 @@ public final class SessionOuterClass {
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
        * @return The status.
        */
+      @java.lang.Override
       public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
         @SuppressWarnings("deprecation")
         ubii.sessions.SessionOuterClass.SessionStatus result = ubii.sessions.SessionOuterClass.SessionStatus.valueOf(status_);
@@ -2266,6 +2289,7 @@ public final class SessionOuterClass {
        * <code>bool editable = 9;</code>
        * @return The editable.
        */
+      @java.lang.Override
       public boolean getEditable() {
         return editable_;
       }
@@ -2374,7 +2398,7 @@ public final class SessionOuterClass {
   /**
    * Protobuf type {@code ubii.sessions.SessionList}
    */
-  public  static final class SessionList extends
+  public static final class SessionList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.sessions.SessionList)
       SessionListOrBuilder {
@@ -2467,12 +2491,14 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.sessions.SessionOuterClass.Session> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.sessions.SessionOuterClass.SessionOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -2480,18 +2506,21 @@ public final class SessionOuterClass {
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.sessions.SessionOuterClass.Session getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.sessions.Session elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.sessions.SessionOuterClass.SessionOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

@@ -69,7 +69,7 @@ public final class Vector8OuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Vector8}
    */
-  public  static final class Vector8 extends
+  public static final class Vector8 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Vector8)
       Vector8OrBuilder {
@@ -189,6 +189,7 @@ public final class Vector8OuterClass {
      * <code>double v0 = 1;</code>
      * @return The v0.
      */
+    @java.lang.Override
     public double getV0() {
       return v0_;
     }
@@ -199,6 +200,7 @@ public final class Vector8OuterClass {
      * <code>double v1 = 2;</code>
      * @return The v1.
      */
+    @java.lang.Override
     public double getV1() {
       return v1_;
     }
@@ -209,6 +211,7 @@ public final class Vector8OuterClass {
      * <code>double v2 = 3;</code>
      * @return The v2.
      */
+    @java.lang.Override
     public double getV2() {
       return v2_;
     }
@@ -219,6 +222,7 @@ public final class Vector8OuterClass {
      * <code>double v3 = 4;</code>
      * @return The v3.
      */
+    @java.lang.Override
     public double getV3() {
       return v3_;
     }
@@ -229,6 +233,7 @@ public final class Vector8OuterClass {
      * <code>double v4 = 5;</code>
      * @return The v4.
      */
+    @java.lang.Override
     public double getV4() {
       return v4_;
     }
@@ -239,6 +244,7 @@ public final class Vector8OuterClass {
      * <code>double v5 = 6;</code>
      * @return The v5.
      */
+    @java.lang.Override
     public double getV5() {
       return v5_;
     }
@@ -249,6 +255,7 @@ public final class Vector8OuterClass {
      * <code>double v6 = 7;</code>
      * @return The v6.
      */
+    @java.lang.Override
     public double getV6() {
       return v6_;
     }
@@ -259,6 +266,7 @@ public final class Vector8OuterClass {
      * <code>double v7 = 8;</code>
      * @return The v7.
      */
+    @java.lang.Override
     public double getV7() {
       return v7_;
     }
@@ -705,6 +713,7 @@ public final class Vector8OuterClass {
        * <code>double v0 = 1;</code>
        * @return The v0.
        */
+      @java.lang.Override
       public double getV0() {
         return v0_;
       }
@@ -735,6 +744,7 @@ public final class Vector8OuterClass {
        * <code>double v1 = 2;</code>
        * @return The v1.
        */
+      @java.lang.Override
       public double getV1() {
         return v1_;
       }
@@ -765,6 +775,7 @@ public final class Vector8OuterClass {
        * <code>double v2 = 3;</code>
        * @return The v2.
        */
+      @java.lang.Override
       public double getV2() {
         return v2_;
       }
@@ -795,6 +806,7 @@ public final class Vector8OuterClass {
        * <code>double v3 = 4;</code>
        * @return The v3.
        */
+      @java.lang.Override
       public double getV3() {
         return v3_;
       }
@@ -825,6 +837,7 @@ public final class Vector8OuterClass {
        * <code>double v4 = 5;</code>
        * @return The v4.
        */
+      @java.lang.Override
       public double getV4() {
         return v4_;
       }
@@ -855,6 +868,7 @@ public final class Vector8OuterClass {
        * <code>double v5 = 6;</code>
        * @return The v5.
        */
+      @java.lang.Override
       public double getV5() {
         return v5_;
       }
@@ -885,6 +899,7 @@ public final class Vector8OuterClass {
        * <code>double v6 = 7;</code>
        * @return The v6.
        */
+      @java.lang.Override
       public double getV6() {
         return v6_;
       }
@@ -915,6 +930,7 @@ public final class Vector8OuterClass {
        * <code>double v7 = 8;</code>
        * @return The v7.
        */
+      @java.lang.Override
       public double getV7() {
         return v7_;
       }

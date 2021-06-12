@@ -65,7 +65,7 @@ public final class TouchEventOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.TouchEvent}
    */
-  public  static final class TouchEvent extends
+  public static final class TouchEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.TouchEvent)
       TouchEventOrBuilder {
@@ -250,6 +250,10 @@ public final class TouchEventOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -290,14 +294,14 @@ public final class TouchEventOuterClass {
      * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
      * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
      * @return The type.
      */
-    public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
+    @java.lang.Override public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
       @SuppressWarnings("deprecation")
       ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.valueOf(type_);
       return result == null ? ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.UNRECOGNIZED : result;
@@ -309,6 +313,7 @@ public final class TouchEventOuterClass {
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
      * @return Whether the position field is set.
      */
+    @java.lang.Override
     public boolean hasPosition() {
       return position_ != null;
     }
@@ -316,12 +321,14 @@ public final class TouchEventOuterClass {
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
      * @return The position.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2 getPosition() {
       return position_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : position_;
     }
     /**
      * <code>.ubii.dataStructure.Vector2 position = 2;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getPositionOrBuilder() {
       return getPosition();
     }
@@ -332,6 +339,7 @@ public final class TouchEventOuterClass {
      * <code>string id = 3;</code>
      * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -348,6 +356,7 @@ public final class TouchEventOuterClass {
      * <code>string id = 3;</code>
      * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -368,6 +377,7 @@ public final class TouchEventOuterClass {
      * <code>float force = 4;</code>
      * @return The force.
      */
+    @java.lang.Override
     public float getForce() {
       return force_;
     }
@@ -744,7 +754,7 @@ public final class TouchEventOuterClass {
        * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
-      public int getTypeValue() {
+      @java.lang.Override public int getTypeValue() {
         return type_;
       }
       /**
@@ -753,6 +763,7 @@ public final class TouchEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+        
         type_ = value;
         onChanged();
         return this;
@@ -761,6 +772,7 @@ public final class TouchEventOuterClass {
        * <code>.ubii.dataStructure.TouchEvent.TouchEventType type = 1;</code>
        * @return The type.
        */
+      @java.lang.Override
       public ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType getType() {
         @SuppressWarnings("deprecation")
         ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType result = ubii.dataStructure.TouchEventOuterClass.TouchEvent.TouchEventType.valueOf(type_);
@@ -991,6 +1003,7 @@ public final class TouchEventOuterClass {
        * <code>float force = 4;</code>
        * @return The force.
        */
+      @java.lang.Override
       public float getForce() {
         return force_;
       }
@@ -1099,7 +1112,7 @@ public final class TouchEventOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.TouchEventList}
    */
-  public  static final class TouchEventList extends
+  public static final class TouchEventList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.TouchEventList)
       TouchEventListOrBuilder {
@@ -1192,12 +1205,14 @@ public final class TouchEventOuterClass {
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.dataStructure.TouchEventOuterClass.TouchEvent> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1205,18 +1220,21 @@ public final class TouchEventOuterClass {
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEvent getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.dataStructure.TouchEvent elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.TouchEventOuterClass.TouchEventOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

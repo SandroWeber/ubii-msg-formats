@@ -14,48 +14,39 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicDemux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace ubii {
 namespace devices {
-class TopicDemuxDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TopicDemux> _instance;
-} _TopicDemux_default_instance_;
-class TopicDemuxListDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TopicDemuxList> _instance;
-} _TopicDemuxList_default_instance_;
+constexpr TopicDemux::TopicDemux(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , data_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , output_topic_format_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct TopicDemuxDefaultTypeInternal {
+  constexpr TopicDemuxDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TopicDemuxDefaultTypeInternal() {}
+  union {
+    TopicDemux _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TopicDemuxDefaultTypeInternal _TopicDemux_default_instance_;
+constexpr TopicDemuxList::TopicDemuxList(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : elements_(){}
+struct TopicDemuxListDefaultTypeInternal {
+  constexpr TopicDemuxListDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TopicDemuxListDefaultTypeInternal() {}
+  union {
+    TopicDemuxList _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TopicDemuxListDefaultTypeInternal _TopicDemuxList_default_instance_;
 }  // namespace devices
 }  // namespace ubii
-static void InitDefaultsscc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::devices::_TopicDemux_default_instance_;
-    new (ptr) ::ubii::devices::TopicDemux();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::devices::TopicDemux::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto}, {}};
-
-static void InitDefaultsscc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::devices::_TopicDemuxList_default_instance_;
-    new (ptr) ::ubii::devices::TopicDemuxList();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::devices::TopicDemuxList::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto}, {
-      &scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fdevices_2ftopicDemux_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fdevices_2ftopicDemux_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fdevices_2ftopicDemux_2eproto = nullptr;
@@ -95,90 +86,90 @@ const char descriptor_table_protodef_proto_2fdevices_2ftopicDemux_2eproto[] PROT
   "ents\030\001 \003(\0132\030.ubii.devices.TopicDemuxb\006pr"
   "oto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_sccs[2] = {
-  &scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto.base,
-  &scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_once;
-static bool descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fdevices_2ftopicDemux_2eproto = {
-  &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_initialized, descriptor_table_protodef_proto_2fdevices_2ftopicDemux_2eproto, "proto/devices/topicDemux.proto", 204,
-  &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_once, descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_sccs, descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_deps, 2, 0,
+  false, false, 204, descriptor_table_protodef_proto_2fdevices_2ftopicDemux_2eproto, "proto/devices/topicDemux.proto", 
+  &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_proto_2fdevices_2ftopicDemux_2eproto::offsets,
-  file_level_metadata_proto_2fdevices_2ftopicDemux_2eproto, 2, file_level_enum_descriptors_proto_2fdevices_2ftopicDemux_2eproto, file_level_service_descriptors_proto_2fdevices_2ftopicDemux_2eproto,
+  file_level_metadata_proto_2fdevices_2ftopicDemux_2eproto, file_level_enum_descriptors_proto_2fdevices_2ftopicDemux_2eproto, file_level_service_descriptors_proto_2fdevices_2ftopicDemux_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_getter() {
+  return &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fdevices_2ftopicDemux_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fdevices_2ftopicDemux_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_proto_2fdevices_2ftopicDemux_2eproto(&descriptor_table_proto_2fdevices_2ftopicDemux_2eproto);
 namespace ubii {
 namespace devices {
 
 // ===================================================================
 
-void TopicDemux::InitAsDefaultInstance() {
-}
 class TopicDemux::_Internal {
  public:
 };
 
-TopicDemux::TopicDemux()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+TopicDemux::TopicDemux(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.devices.TopicDemux)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.devices.TopicDemux)
 }
 TopicDemux::TopicDemux(const TopicDemux& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArena());
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArena());
   }
   data_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_data_type().empty()) {
-    data_type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_type_);
+    data_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_data_type(), 
+      GetArena());
   }
   output_topic_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_output_topic_format().empty()) {
-    output_topic_format_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.output_topic_format_);
+    output_topic_format_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_output_topic_format(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:ubii.devices.TopicDemux)
 }
 
 void TopicDemux::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  data_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  output_topic_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+data_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+output_topic_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 TopicDemux::~TopicDemux() {
   // @@protoc_insertion_point(destructor:ubii.devices.TopicDemux)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TopicDemux::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   data_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   output_topic_format_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void TopicDemux::ArenaDtor(void* object) {
+  TopicDemux* _this = reinterpret_cast< TopicDemux* >(object);
+  (void)_this;
+}
+void TopicDemux::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TopicDemux::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const TopicDemux& TopicDemux::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void TopicDemux::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.devices.TopicDemux)
@@ -186,11 +177,11 @@ void TopicDemux::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  data_type_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  output_topic_format_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  id_.ClearToEmpty();
+  name_.ClearToEmpty();
+  data_type_.ClearToEmpty();
+  output_topic_format_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* TopicDemux::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -198,7 +189,6 @@ const char* TopicDemux::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string id = 1;
       case 1:
@@ -238,11 +228,14 @@ const char* TopicDemux::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -304,7 +297,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.devices.TopicDemux)
   return target;
@@ -373,25 +366,21 @@ void TopicDemux::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void TopicDemux::MergeFrom(const TopicDemux& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.devices.TopicDemux)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.id().size() > 0) {
-
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    _internal_set_id(from._internal_id());
   }
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.data_type().size() > 0) {
-
-    data_type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_type_);
+    _internal_set_data_type(from._internal_data_type());
   }
   if (from.output_topic_format().size() > 0) {
-
-    output_topic_format_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.output_topic_format_);
+    _internal_set_output_topic_format(from._internal_output_topic_format());
   }
 }
 
@@ -415,63 +404,61 @@ bool TopicDemux::IsInitialized() const {
 
 void TopicDemux::InternalSwap(TopicDemux* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  data_type_.Swap(&other->data_type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  output_topic_format_.Swap(&other->output_topic_format_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  data_type_.Swap(&other->data_type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  output_topic_format_.Swap(&other->output_topic_format_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TopicDemux::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_getter, &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_once,
+      file_level_metadata_proto_2fdevices_2ftopicDemux_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void TopicDemuxList::InitAsDefaultInstance() {
-}
 class TopicDemuxList::_Internal {
  public:
 };
 
-TopicDemuxList::TopicDemuxList()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+TopicDemuxList::TopicDemuxList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  elements_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.devices.TopicDemuxList)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.devices.TopicDemuxList)
 }
 TopicDemuxList::TopicDemuxList(const TopicDemuxList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       elements_(from.elements_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.devices.TopicDemuxList)
 }
 
 void TopicDemuxList::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto.base);
 }
 
 TopicDemuxList::~TopicDemuxList() {
   // @@protoc_insertion_point(destructor:ubii.devices.TopicDemuxList)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TopicDemuxList::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void TopicDemuxList::ArenaDtor(void* object) {
+  TopicDemuxList* _this = reinterpret_cast< TopicDemuxList* >(object);
+  (void)_this;
+}
+void TopicDemuxList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TopicDemuxList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const TopicDemuxList& TopicDemuxList::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void TopicDemuxList::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.devices.TopicDemuxList)
@@ -480,7 +467,7 @@ void TopicDemuxList::Clear() {
   (void) cached_has_bits;
 
   elements_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* TopicDemuxList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -488,7 +475,6 @@ const char* TopicDemuxList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .ubii.devices.TopicDemux elements = 1;
       case 1:
@@ -504,11 +490,14 @@ const char* TopicDemuxList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -538,7 +527,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.devices.TopicDemuxList)
   return target;
@@ -586,7 +575,7 @@ void TopicDemuxList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void TopicDemuxList::MergeFrom(const TopicDemuxList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.devices.TopicDemuxList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -613,24 +602,25 @@ bool TopicDemuxList::IsInitialized() const {
 
 void TopicDemuxList::InternalSwap(TopicDemuxList* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   elements_.InternalSwap(&other->elements_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TopicDemuxList::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_getter, &descriptor_table_proto_2fdevices_2ftopicDemux_2eproto_once,
+      file_level_metadata_proto_2fdevices_2ftopicDemux_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace devices
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::devices::TopicDemux* Arena::CreateMaybeMessage< ::ubii::devices::TopicDemux >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::devices::TopicDemux >(arena);
+  return Arena::CreateMessageInternal< ::ubii::devices::TopicDemux >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::devices::TopicDemuxList* Arena::CreateMaybeMessage< ::ubii::devices::TopicDemuxList >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::devices::TopicDemuxList >(arena);
+  return Arena::CreateMessageInternal< ::ubii::devices::TopicDemuxList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

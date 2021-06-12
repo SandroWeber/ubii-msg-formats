@@ -45,7 +45,7 @@ public final class SuccessOuterClass {
   /**
    * Protobuf type {@code ubii.general.Success}
    */
-  public  static final class Success extends
+  public static final class Success extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.general.Success)
       SuccessOrBuilder {
@@ -139,6 +139,7 @@ public final class SuccessOuterClass {
      * <code>string title = 1;</code>
      * @return The title.
      */
+    @java.lang.Override
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
@@ -155,6 +156,7 @@ public final class SuccessOuterClass {
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTitleBytes() {
       java.lang.Object ref = title_;
@@ -175,6 +177,7 @@ public final class SuccessOuterClass {
      * <code>string message = 2;</code>
      * @return The message.
      */
+    @java.lang.Override
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -191,6 +194,7 @@ public final class SuccessOuterClass {
      * <code>string message = 2;</code>
      * @return The bytes for message.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
       java.lang.Object ref = message_;
@@ -759,7 +763,7 @@ public final class SuccessOuterClass {
   /**
    * Protobuf type {@code ubii.general.SuccessList}
    */
-  public  static final class SuccessList extends
+  public static final class SuccessList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.general.SuccessList)
       SuccessListOrBuilder {
@@ -852,12 +856,14 @@ public final class SuccessOuterClass {
     /**
      * <code>repeated .ubii.general.Success elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.general.SuccessOuterClass.Success> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.general.Success elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.general.SuccessOuterClass.SuccessOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -865,18 +871,21 @@ public final class SuccessOuterClass {
     /**
      * <code>repeated .ubii.general.Success elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.general.Success elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.general.SuccessOuterClass.Success getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.general.Success elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.general.SuccessOuterClass.SuccessOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

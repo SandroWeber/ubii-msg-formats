@@ -68,7 +68,7 @@ public final class TopicDataOuterClass {
   /**
    * Protobuf type {@code ubii.topicData.TopicData}
    */
-  public  static final class TopicData extends
+  public static final class TopicData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.topicData.TopicData)
       TopicDataOrBuilder {
@@ -232,6 +232,7 @@ public final class TopicDataOuterClass {
      * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
      * @return Whether the topicDataRecord field is set.
      */
+    @java.lang.Override
     public boolean hasTopicDataRecord() {
       return typeCase_ == 2;
     }
@@ -239,6 +240,7 @@ public final class TopicDataOuterClass {
      * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
      * @return The topicDataRecord.
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getTopicDataRecord() {
       if (typeCase_ == 2) {
          return (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_;
@@ -248,6 +250,7 @@ public final class TopicDataOuterClass {
     /**
      * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getTopicDataRecordOrBuilder() {
       if (typeCase_ == 2) {
          return (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord) type_;
@@ -260,6 +263,7 @@ public final class TopicDataOuterClass {
      * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
      * @return Whether the topicDataRecordList field is set.
      */
+    @java.lang.Override
     public boolean hasTopicDataRecordList() {
       return typeCase_ == 3;
     }
@@ -267,6 +271,7 @@ public final class TopicDataOuterClass {
      * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
      * @return The topicDataRecordList.
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList getTopicDataRecordList() {
       if (typeCase_ == 3) {
          return (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList) type_;
@@ -276,6 +281,7 @@ public final class TopicDataOuterClass {
     /**
      * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
      */
+    @java.lang.Override
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordListOrBuilder getTopicDataRecordListOrBuilder() {
       if (typeCase_ == 3) {
          return (ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList) type_;
@@ -288,6 +294,7 @@ public final class TopicDataOuterClass {
      * <code>.ubii.general.Error error = 4;</code>
      * @return Whether the error field is set.
      */
+    @java.lang.Override
     public boolean hasError() {
       return typeCase_ == 4;
     }
@@ -295,6 +302,7 @@ public final class TopicDataOuterClass {
      * <code>.ubii.general.Error error = 4;</code>
      * @return The error.
      */
+    @java.lang.Override
     public ubii.general.ErrorOuterClass.Error getError() {
       if (typeCase_ == 4) {
          return (ubii.general.ErrorOuterClass.Error) type_;
@@ -304,6 +312,7 @@ public final class TopicDataOuterClass {
     /**
      * <code>.ubii.general.Error error = 4;</code>
      */
+    @java.lang.Override
     public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
       if (typeCase_ == 4) {
          return (ubii.general.ErrorOuterClass.Error) type_;
@@ -712,6 +721,7 @@ public final class TopicDataOuterClass {
        * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
        * @return Whether the topicDataRecord field is set.
        */
+      @java.lang.Override
       public boolean hasTopicDataRecord() {
         return typeCase_ == 2;
       }
@@ -719,6 +729,7 @@ public final class TopicDataOuterClass {
        * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
        * @return The topicDataRecord.
        */
+      @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord getTopicDataRecord() {
         if (topicDataRecordBuilder_ == null) {
           if (typeCase_ == 2) {
@@ -812,6 +823,7 @@ public final class TopicDataOuterClass {
       /**
        * <code>.ubii.topicData.TopicDataRecord topic_data_record = 2;</code>
        */
+      @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordOrBuilder getTopicDataRecordOrBuilder() {
         if ((typeCase_ == 2) && (topicDataRecordBuilder_ != null)) {
           return topicDataRecordBuilder_.getMessageOrBuilder();
@@ -850,6 +862,7 @@ public final class TopicDataOuterClass {
        * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
        * @return Whether the topicDataRecordList field is set.
        */
+      @java.lang.Override
       public boolean hasTopicDataRecordList() {
         return typeCase_ == 3;
       }
@@ -857,6 +870,7 @@ public final class TopicDataOuterClass {
        * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
        * @return The topicDataRecordList.
        */
+      @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordList getTopicDataRecordList() {
         if (topicDataRecordListBuilder_ == null) {
           if (typeCase_ == 3) {
@@ -950,6 +964,7 @@ public final class TopicDataOuterClass {
       /**
        * <code>.ubii.topicData.TopicDataRecordList topic_data_record_list = 3;</code>
        */
+      @java.lang.Override
       public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecordListOrBuilder getTopicDataRecordListOrBuilder() {
         if ((typeCase_ == 3) && (topicDataRecordListBuilder_ != null)) {
           return topicDataRecordListBuilder_.getMessageOrBuilder();
@@ -988,6 +1003,7 @@ public final class TopicDataOuterClass {
        * <code>.ubii.general.Error error = 4;</code>
        * @return Whether the error field is set.
        */
+      @java.lang.Override
       public boolean hasError() {
         return typeCase_ == 4;
       }
@@ -995,6 +1011,7 @@ public final class TopicDataOuterClass {
        * <code>.ubii.general.Error error = 4;</code>
        * @return The error.
        */
+      @java.lang.Override
       public ubii.general.ErrorOuterClass.Error getError() {
         if (errorBuilder_ == null) {
           if (typeCase_ == 4) {
@@ -1088,6 +1105,7 @@ public final class TopicDataOuterClass {
       /**
        * <code>.ubii.general.Error error = 4;</code>
        */
+      @java.lang.Override
       public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
         if ((typeCase_ == 4) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();

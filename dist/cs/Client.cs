@@ -47,7 +47,11 @@ namespace Ubii.Clients {
 
   }
   #region Messages
-  public sealed partial class Client : pb::IMessage<Client> {
+  public sealed partial class Client : pb::IMessage<Client>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<Client> _parser = new pb::MessageParser<Client>(() => new Client());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -249,6 +253,9 @@ namespace Ubii.Clients {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (Id.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Id);
@@ -283,7 +290,48 @@ namespace Ubii.Clients {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      devices_.WriteTo(ref output, _repeated_devices_codec);
+      tags_.WriteTo(ref output, _repeated_tags_codec);
+      if (Description.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Description);
+      }
+      processingModules_.WriteTo(ref output, _repeated_processingModules_codec);
+      if (IsDedicatedProcessingNode != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsDedicatedProcessingNode);
+      }
+      if (HostIp.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(HostIp);
+      }
+      if (MetadataJson.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(MetadataJson);
+      }
+      if (State != global::Ubii.Clients.Client.Types.State.Active) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) State);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -352,6 +400,9 @@ namespace Ubii.Clients {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -400,7 +451,62 @@ namespace Ubii.Clients {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            devices_.AddEntriesFrom(ref input, _repeated_devices_codec);
+            break;
+          }
+          case 34: {
+            tags_.AddEntriesFrom(ref input, _repeated_tags_codec);
+            break;
+          }
+          case 42: {
+            Description = input.ReadString();
+            break;
+          }
+          case 50: {
+            processingModules_.AddEntriesFrom(ref input, _repeated_processingModules_codec);
+            break;
+          }
+          case 56: {
+            IsDedicatedProcessingNode = input.ReadBool();
+            break;
+          }
+          case 66: {
+            HostIp = input.ReadString();
+            break;
+          }
+          case 74: {
+            MetadataJson = input.ReadString();
+            break;
+          }
+          case 80: {
+            State = (global::Ubii.Clients.Client.Types.State) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the Client message type.</summary>
@@ -417,7 +523,11 @@ namespace Ubii.Clients {
 
   }
 
-  public sealed partial class ClientList : pb::IMessage<ClientList> {
+  public sealed partial class ClientList : pb::IMessage<ClientList>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ClientList> _parser = new pb::MessageParser<ClientList>(() => new ClientList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -495,11 +605,25 @@ namespace Ubii.Clients {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       elements_.WriteTo(output, _repeated_elements_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      elements_.WriteTo(ref output, _repeated_elements_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -522,6 +646,9 @@ namespace Ubii.Clients {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -534,7 +661,26 @@ namespace Ubii.Clients {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            elements_.AddEntriesFrom(ref input, _repeated_elements_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

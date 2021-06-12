@@ -44,7 +44,7 @@ public final class KeyEventOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.KeyEvent}
    */
-  public  static final class KeyEvent extends
+  public static final class KeyEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.KeyEvent)
       KeyEventOrBuilder {
@@ -138,14 +138,14 @@ public final class KeyEventOuterClass {
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
      * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
      * @return The type.
      */
-    public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
+    @java.lang.Override public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
       @SuppressWarnings("deprecation")
       ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType result = ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.valueOf(type_);
       return result == null ? ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.UNRECOGNIZED : result;
@@ -157,6 +157,7 @@ public final class KeyEventOuterClass {
      * <code>string key = 2;</code>
      * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class KeyEventOuterClass {
      * <code>string key = 2;</code>
      * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKeyBytes() {
       java.lang.Object ref = key_;
@@ -510,7 +512,7 @@ public final class KeyEventOuterClass {
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
-      public int getTypeValue() {
+      @java.lang.Override public int getTypeValue() {
         return type_;
       }
       /**
@@ -519,6 +521,7 @@ public final class KeyEventOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+        
         type_ = value;
         onChanged();
         return this;
@@ -527,6 +530,7 @@ public final class KeyEventOuterClass {
        * <code>.ubii.dataStructure.ButtonEventType type = 1;</code>
        * @return The type.
        */
+      @java.lang.Override
       public ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType getType() {
         @SuppressWarnings("deprecation")
         ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType result = ubii.dataStructure.ButtonEventTypeOuterClass.ButtonEventType.valueOf(type_);

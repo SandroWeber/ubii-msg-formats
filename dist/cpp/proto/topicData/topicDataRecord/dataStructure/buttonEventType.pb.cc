@@ -14,11 +14,12 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace ubii {
 namespace dataStructure {
 }  // namespace dataStructure
 }  // namespace ubii
-static constexpr ::PROTOBUF_NAMESPACE_ID::Metadata* file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto = nullptr;
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto = nullptr;
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto::offsets[1] = {};
@@ -31,21 +32,19 @@ const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataS
   "Structure*#\n\017ButtonEventType\022\006\n\002UP\020\000\022\010\n\004"
   "DOWN\020\001b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_sccs[1] = {
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_once;
-static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto = {
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto, "proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto", 134,
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_deps, 0, 0,
+  false, false, 134, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto, "proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto", 
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto::offsets,
-  file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto, 0, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto,
+  nullptr, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto_getter() {
+  return &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto);
 namespace ubii {
 namespace dataStructure {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ButtonEventType_descriptor() {

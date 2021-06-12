@@ -68,7 +68,7 @@ public final class ProcessingModuleOuterClass {
   /**
    * Protobuf type {@code ubii.processing.ProcessingMode}
    */
-  public  static final class ProcessingMode extends
+  public static final class ProcessingMode extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.processing.ProcessingMode)
       ProcessingModeOrBuilder {
@@ -197,7 +197,7 @@ public final class ProcessingModuleOuterClass {
     /**
      * Protobuf type {@code ubii.processing.ProcessingMode.Frequency}
      */
-    public  static final class Frequency extends
+    public static final class Frequency extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:ubii.processing.ProcessingMode.Frequency)
         FrequencyOrBuilder {
@@ -282,6 +282,7 @@ public final class ProcessingModuleOuterClass {
        * <code>int32 hertz = 1;</code>
        * @return The hertz.
        */
+      @java.lang.Override
       public int getHertz() {
         return hertz_;
       }
@@ -593,6 +594,7 @@ public final class ProcessingModuleOuterClass {
          * <code>int32 hertz = 1;</code>
          * @return The hertz.
          */
+        @java.lang.Override
         public int getHertz() {
           return hertz_;
         }
@@ -689,7 +691,7 @@ public final class ProcessingModuleOuterClass {
     /**
      * Protobuf type {@code ubii.processing.ProcessingMode.Lockstep}
      */
-    public  static final class Lockstep extends
+    public static final class Lockstep extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:ubii.processing.ProcessingMode.Lockstep)
         LockstepOrBuilder {
@@ -776,6 +778,7 @@ public final class ProcessingModuleOuterClass {
        * <code>string process_request_endpoint = 1;</code>
        * @return The processRequestEndpoint.
        */
+      @java.lang.Override
       public java.lang.String getProcessRequestEndpoint() {
         java.lang.Object ref = processRequestEndpoint_;
         if (ref instanceof java.lang.String) {
@@ -792,6 +795,7 @@ public final class ProcessingModuleOuterClass {
        * <code>string process_request_endpoint = 1;</code>
        * @return The bytes for processRequestEndpoint.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getProcessRequestEndpointBytes() {
         java.lang.Object ref = processRequestEndpoint_;
@@ -1255,7 +1259,7 @@ public final class ProcessingModuleOuterClass {
     /**
      * Protobuf type {@code ubii.processing.ProcessingMode.TriggerOnInput}
      */
-    public  static final class TriggerOnInput extends
+    public static final class TriggerOnInput extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:ubii.processing.ProcessingMode.TriggerOnInput)
         TriggerOnInputOrBuilder {
@@ -1345,6 +1349,7 @@ public final class ProcessingModuleOuterClass {
        * <code>int32 min_delay_ms = 1;</code>
        * @return The minDelayMs.
        */
+      @java.lang.Override
       public int getMinDelayMs() {
         return minDelayMs_;
       }
@@ -1355,6 +1360,7 @@ public final class ProcessingModuleOuterClass {
        * <code>bool all_inputs_need_update = 2;</code>
        * @return The allInputsNeedUpdate.
        */
+      @java.lang.Override
       public boolean getAllInputsNeedUpdate() {
         return allInputsNeedUpdate_;
       }
@@ -1684,6 +1690,7 @@ public final class ProcessingModuleOuterClass {
          * <code>int32 min_delay_ms = 1;</code>
          * @return The minDelayMs.
          */
+        @java.lang.Override
         public int getMinDelayMs() {
           return minDelayMs_;
         }
@@ -1714,6 +1721,7 @@ public final class ProcessingModuleOuterClass {
          * <code>bool all_inputs_need_update = 2;</code>
          * @return The allInputsNeedUpdate.
          */
+        @java.lang.Override
         public boolean getAllInputsNeedUpdate() {
           return allInputsNeedUpdate_;
         }
@@ -1839,6 +1847,7 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode.Frequency frequency = 1;</code>
      * @return Whether the frequency field is set.
      */
+    @java.lang.Override
     public boolean hasFrequency() {
       return modeCase_ == 1;
     }
@@ -1846,6 +1855,7 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode.Frequency frequency = 1;</code>
      * @return The frequency.
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Frequency getFrequency() {
       if (modeCase_ == 1) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Frequency) mode_;
@@ -1855,6 +1865,7 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>.ubii.processing.ProcessingMode.Frequency frequency = 1;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FrequencyOrBuilder getFrequencyOrBuilder() {
       if (modeCase_ == 1) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Frequency) mode_;
@@ -1867,6 +1878,7 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode.Lockstep lockstep = 2;</code>
      * @return Whether the lockstep field is set.
      */
+    @java.lang.Override
     public boolean hasLockstep() {
       return modeCase_ == 2;
     }
@@ -1874,6 +1886,7 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode.Lockstep lockstep = 2;</code>
      * @return The lockstep.
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Lockstep getLockstep() {
       if (modeCase_ == 2) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Lockstep) mode_;
@@ -1883,6 +1896,7 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>.ubii.processing.ProcessingMode.Lockstep lockstep = 2;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.LockstepOrBuilder getLockstepOrBuilder() {
       if (modeCase_ == 2) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Lockstep) mode_;
@@ -1895,6 +1909,7 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode.TriggerOnInput trigger_on_input = 3;</code>
      * @return Whether the triggerOnInput field is set.
      */
+    @java.lang.Override
     public boolean hasTriggerOnInput() {
       return modeCase_ == 3;
     }
@@ -1902,6 +1917,7 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode.TriggerOnInput trigger_on_input = 3;</code>
      * @return The triggerOnInput.
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInput getTriggerOnInput() {
       if (modeCase_ == 3) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInput) mode_;
@@ -1911,6 +1927,7 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>.ubii.processing.ProcessingMode.TriggerOnInput trigger_on_input = 3;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInputOrBuilder getTriggerOnInputOrBuilder() {
       if (modeCase_ == 3) {
          return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInput) mode_;
@@ -2319,6 +2336,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingMode.Frequency frequency = 1;</code>
        * @return Whether the frequency field is set.
        */
+      @java.lang.Override
       public boolean hasFrequency() {
         return modeCase_ == 1;
       }
@@ -2326,6 +2344,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingMode.Frequency frequency = 1;</code>
        * @return The frequency.
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Frequency getFrequency() {
         if (frequencyBuilder_ == null) {
           if (modeCase_ == 1) {
@@ -2419,6 +2438,7 @@ public final class ProcessingModuleOuterClass {
       /**
        * <code>.ubii.processing.ProcessingMode.Frequency frequency = 1;</code>
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FrequencyOrBuilder getFrequencyOrBuilder() {
         if ((modeCase_ == 1) && (frequencyBuilder_ != null)) {
           return frequencyBuilder_.getMessageOrBuilder();
@@ -2457,6 +2477,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingMode.Lockstep lockstep = 2;</code>
        * @return Whether the lockstep field is set.
        */
+      @java.lang.Override
       public boolean hasLockstep() {
         return modeCase_ == 2;
       }
@@ -2464,6 +2485,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingMode.Lockstep lockstep = 2;</code>
        * @return The lockstep.
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Lockstep getLockstep() {
         if (lockstepBuilder_ == null) {
           if (modeCase_ == 2) {
@@ -2557,6 +2579,7 @@ public final class ProcessingModuleOuterClass {
       /**
        * <code>.ubii.processing.ProcessingMode.Lockstep lockstep = 2;</code>
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.LockstepOrBuilder getLockstepOrBuilder() {
         if ((modeCase_ == 2) && (lockstepBuilder_ != null)) {
           return lockstepBuilder_.getMessageOrBuilder();
@@ -2595,6 +2618,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingMode.TriggerOnInput trigger_on_input = 3;</code>
        * @return Whether the triggerOnInput field is set.
        */
+      @java.lang.Override
       public boolean hasTriggerOnInput() {
         return modeCase_ == 3;
       }
@@ -2602,6 +2626,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingMode.TriggerOnInput trigger_on_input = 3;</code>
        * @return The triggerOnInput.
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInput getTriggerOnInput() {
         if (triggerOnInputBuilder_ == null) {
           if (modeCase_ == 3) {
@@ -2695,6 +2720,7 @@ public final class ProcessingModuleOuterClass {
       /**
        * <code>.ubii.processing.ProcessingMode.TriggerOnInput trigger_on_input = 3;</code>
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInputOrBuilder getTriggerOnInputOrBuilder() {
         if ((modeCase_ == 3) && (triggerOnInputBuilder_ != null)) {
           return triggerOnInputBuilder_.getMessageOrBuilder();
@@ -2810,7 +2836,7 @@ public final class ProcessingModuleOuterClass {
   /**
    * Protobuf type {@code ubii.processing.ModuleIO}
    */
-  public  static final class ModuleIO extends
+  public static final class ModuleIO extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.processing.ModuleIO)
       ModuleIOOrBuilder {
@@ -2904,6 +2930,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string internal_name = 1;</code>
      * @return The internalName.
      */
+    @java.lang.Override
     public java.lang.String getInternalName() {
       java.lang.Object ref = internalName_;
       if (ref instanceof java.lang.String) {
@@ -2920,6 +2947,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string internal_name = 1;</code>
      * @return The bytes for internalName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getInternalNameBytes() {
       java.lang.Object ref = internalName_;
@@ -2940,6 +2968,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string message_format = 2;</code>
      * @return The messageFormat.
      */
+    @java.lang.Override
     public java.lang.String getMessageFormat() {
       java.lang.Object ref = messageFormat_;
       if (ref instanceof java.lang.String) {
@@ -2956,6 +2985,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string message_format = 2;</code>
      * @return The bytes for messageFormat.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageFormatBytes() {
       java.lang.Object ref = messageFormat_;
@@ -3743,7 +3773,7 @@ public final class ProcessingModuleOuterClass {
   /**
    * Protobuf type {@code ubii.processing.ProcessingModule}
    */
-  public  static final class ProcessingModule extends
+  public static final class ProcessingModule extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.processing.ProcessingModule)
       ProcessingModuleOrBuilder {
@@ -4057,6 +4087,10 @@ public final class ProcessingModuleOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -4188,6 +4222,10 @@ public final class ProcessingModuleOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -4228,6 +4266,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -4244,6 +4283,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -4264,6 +4304,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4280,6 +4321,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -4370,6 +4412,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string description = 5;</code>
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -4386,6 +4429,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -4406,6 +4450,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string node_id = 6;</code>
      * @return The nodeId.
      */
+    @java.lang.Override
     public java.lang.String getNodeId() {
       java.lang.Object ref = nodeId_;
       if (ref instanceof java.lang.String) {
@@ -4422,6 +4467,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string node_id = 6;</code>
      * @return The bytes for nodeId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNodeIdBytes() {
       java.lang.Object ref = nodeId_;
@@ -4442,6 +4488,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string session_id = 7;</code>
      * @return The sessionId.
      */
+    @java.lang.Override
     public java.lang.String getSessionId() {
       java.lang.Object ref = sessionId_;
       if (ref instanceof java.lang.String) {
@@ -4458,6 +4505,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string session_id = 7;</code>
      * @return The bytes for sessionId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSessionIdBytes() {
       java.lang.Object ref = sessionId_;
@@ -4478,14 +4526,14 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingModule.Status status = 8;</code>
      * @return The enum numeric value on the wire for status.
      */
-    public int getStatusValue() {
+    @java.lang.Override public int getStatusValue() {
       return status_;
     }
     /**
      * <code>.ubii.processing.ProcessingModule.Status status = 8;</code>
      * @return The status.
      */
-    public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status getStatus() {
+    @java.lang.Override public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status getStatus() {
       @SuppressWarnings("deprecation")
       ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.valueOf(status_);
       return result == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.UNRECOGNIZED : result;
@@ -4497,6 +4545,7 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode processing_mode = 9;</code>
      * @return Whether the processingMode field is set.
      */
+    @java.lang.Override
     public boolean hasProcessingMode() {
       return processingMode_ != null;
     }
@@ -4504,12 +4553,14 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingMode processing_mode = 9;</code>
      * @return The processingMode.
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode getProcessingMode() {
       return processingMode_ == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingMode.getDefaultInstance() : processingMode_;
     }
     /**
      * <code>.ubii.processing.ProcessingMode processing_mode = 9;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModeOrBuilder getProcessingModeOrBuilder() {
       return getProcessingMode();
     }
@@ -4519,12 +4570,14 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> getInputsList() {
       return inputs_;
     }
     /**
      * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
         getInputsOrBuilderList() {
       return inputs_;
@@ -4532,18 +4585,21 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
+    @java.lang.Override
     public int getInputsCount() {
       return inputs_.size();
     }
     /**
      * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ModuleIO getInputs(int index) {
       return inputs_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ModuleIO inputs = 10;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getInputsOrBuilder(
         int index) {
       return inputs_.get(index);
@@ -4554,12 +4610,14 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ModuleIO> getOutputsList() {
       return outputs_;
     }
     /**
      * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder> 
         getOutputsOrBuilderList() {
       return outputs_;
@@ -4567,18 +4625,21 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
+    @java.lang.Override
     public int getOutputsCount() {
       return outputs_.size();
     }
     /**
      * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ModuleIO getOutputs(int index) {
       return outputs_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ModuleIO outputs = 11;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ModuleIOOrBuilder getOutputsOrBuilder(
         int index) {
       return outputs_.get(index);
@@ -4590,14 +4651,14 @@ public final class ProcessingModuleOuterClass {
      * <code>.ubii.processing.ProcessingModule.Language language = 12;</code>
      * @return The enum numeric value on the wire for language.
      */
-    public int getLanguageValue() {
+    @java.lang.Override public int getLanguageValue() {
       return language_;
     }
     /**
      * <code>.ubii.processing.ProcessingModule.Language language = 12;</code>
      * @return The language.
      */
-    public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language getLanguage() {
+    @java.lang.Override public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language getLanguage() {
       @SuppressWarnings("deprecation")
       ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.valueOf(language_);
       return result == null ? ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.UNRECOGNIZED : result;
@@ -4609,6 +4670,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_processing_stringified = 13;</code>
      * @return The onProcessingStringified.
      */
+    @java.lang.Override
     public java.lang.String getOnProcessingStringified() {
       java.lang.Object ref = onProcessingStringified_;
       if (ref instanceof java.lang.String) {
@@ -4625,6 +4687,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_processing_stringified = 13;</code>
      * @return The bytes for onProcessingStringified.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOnProcessingStringifiedBytes() {
       java.lang.Object ref = onProcessingStringified_;
@@ -4645,6 +4708,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_created_stringified = 14;</code>
      * @return The onCreatedStringified.
      */
+    @java.lang.Override
     public java.lang.String getOnCreatedStringified() {
       java.lang.Object ref = onCreatedStringified_;
       if (ref instanceof java.lang.String) {
@@ -4661,6 +4725,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_created_stringified = 14;</code>
      * @return The bytes for onCreatedStringified.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOnCreatedStringifiedBytes() {
       java.lang.Object ref = onCreatedStringified_;
@@ -4681,6 +4746,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_halted_stringified = 15;</code>
      * @return The onHaltedStringified.
      */
+    @java.lang.Override
     public java.lang.String getOnHaltedStringified() {
       java.lang.Object ref = onHaltedStringified_;
       if (ref instanceof java.lang.String) {
@@ -4697,6 +4763,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_halted_stringified = 15;</code>
      * @return The bytes for onHaltedStringified.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOnHaltedStringifiedBytes() {
       java.lang.Object ref = onHaltedStringified_;
@@ -4717,6 +4784,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_destroyed_stringified = 16;</code>
      * @return The onDestroyedStringified.
      */
+    @java.lang.Override
     public java.lang.String getOnDestroyedStringified() {
       java.lang.Object ref = onDestroyedStringified_;
       if (ref instanceof java.lang.String) {
@@ -4733,6 +4801,7 @@ public final class ProcessingModuleOuterClass {
      * <code>string on_destroyed_stringified = 16;</code>
      * @return The bytes for onDestroyedStringified.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOnDestroyedStringifiedBytes() {
       java.lang.Object ref = onDestroyedStringified_;
@@ -6032,7 +6101,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingModule.Status status = 8;</code>
        * @return The enum numeric value on the wire for status.
        */
-      public int getStatusValue() {
+      @java.lang.Override public int getStatusValue() {
         return status_;
       }
       /**
@@ -6041,6 +6110,7 @@ public final class ProcessingModuleOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
+        
         status_ = value;
         onChanged();
         return this;
@@ -6049,6 +6119,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingModule.Status status = 8;</code>
        * @return The status.
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status getStatus() {
         @SuppressWarnings("deprecation")
         ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Status.valueOf(status_);
@@ -6683,7 +6754,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingModule.Language language = 12;</code>
        * @return The enum numeric value on the wire for language.
        */
-      public int getLanguageValue() {
+      @java.lang.Override public int getLanguageValue() {
         return language_;
       }
       /**
@@ -6692,6 +6763,7 @@ public final class ProcessingModuleOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLanguageValue(int value) {
+        
         language_ = value;
         onChanged();
         return this;
@@ -6700,6 +6772,7 @@ public final class ProcessingModuleOuterClass {
        * <code>.ubii.processing.ProcessingModule.Language language = 12;</code>
        * @return The language.
        */
+      @java.lang.Override
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language getLanguage() {
         @SuppressWarnings("deprecation")
         ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language result = ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Language.valueOf(language_);
@@ -7117,7 +7190,7 @@ public final class ProcessingModuleOuterClass {
   /**
    * Protobuf type {@code ubii.processing.ProcessingModuleList}
    */
-  public  static final class ProcessingModuleList extends
+  public static final class ProcessingModuleList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.processing.ProcessingModuleList)
       ProcessingModuleListOrBuilder {
@@ -7210,12 +7283,14 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -7223,18 +7298,21 @@ public final class ProcessingModuleOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);
