@@ -171,7 +171,7 @@ public final class ClientOuterClass {
   /**
    * Protobuf type {@code ubii.clients.Client}
    */
-  public  static final class Client extends
+  public static final class Client extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.clients.Client)
       ClientOrBuilder {
@@ -411,6 +411,10 @@ public final class ClientOuterClass {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -451,6 +455,7 @@ public final class ClientOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -467,6 +472,7 @@ public final class ClientOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -487,6 +493,7 @@ public final class ClientOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -503,6 +510,7 @@ public final class ClientOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -522,12 +530,14 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.devices.DeviceOuterClass.Device> getDevicesList() {
       return devices_;
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.devices.DeviceOuterClass.DeviceOrBuilder> 
         getDevicesOrBuilderList() {
       return devices_;
@@ -535,18 +545,21 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public int getDevicesCount() {
       return devices_.size();
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.Device getDevices(int index) {
       return devices_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.Device devices = 3;</code>
      */
+    @java.lang.Override
     public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDevicesOrBuilder(
         int index) {
       return devices_.get(index);
@@ -593,6 +606,7 @@ public final class ClientOuterClass {
      * <code>string description = 5;</code>
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -609,6 +623,7 @@ public final class ClientOuterClass {
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -628,12 +643,14 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> getProcessingModulesList() {
       return processingModules_;
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> 
         getProcessingModulesOrBuilderList() {
       return processingModules_;
@@ -641,18 +658,21 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public int getProcessingModulesCount() {
       return processingModules_.size();
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModules(int index) {
       return processingModules_.get(index);
     }
     /**
      * <code>repeated .ubii.processing.ProcessingModule processing_modules = 6;</code>
      */
+    @java.lang.Override
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder getProcessingModulesOrBuilder(
         int index) {
       return processingModules_.get(index);
@@ -664,6 +684,7 @@ public final class ClientOuterClass {
      * <code>bool is_dedicated_processing_node = 7;</code>
      * @return The isDedicatedProcessingNode.
      */
+    @java.lang.Override
     public boolean getIsDedicatedProcessingNode() {
       return isDedicatedProcessingNode_;
     }
@@ -674,6 +695,7 @@ public final class ClientOuterClass {
      * <code>string host_ip = 8;</code>
      * @return The hostIp.
      */
+    @java.lang.Override
     public java.lang.String getHostIp() {
       java.lang.Object ref = hostIp_;
       if (ref instanceof java.lang.String) {
@@ -690,6 +712,7 @@ public final class ClientOuterClass {
      * <code>string host_ip = 8;</code>
      * @return The bytes for hostIp.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getHostIpBytes() {
       java.lang.Object ref = hostIp_;
@@ -710,6 +733,7 @@ public final class ClientOuterClass {
      * <code>string metadata_json = 9;</code>
      * @return The metadataJson.
      */
+    @java.lang.Override
     public java.lang.String getMetadataJson() {
       java.lang.Object ref = metadataJson_;
       if (ref instanceof java.lang.String) {
@@ -726,6 +750,7 @@ public final class ClientOuterClass {
      * <code>string metadata_json = 9;</code>
      * @return The bytes for metadataJson.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMetadataJsonBytes() {
       java.lang.Object ref = metadataJson_;
@@ -746,14 +771,14 @@ public final class ClientOuterClass {
      * <code>.ubii.clients.Client.State state = 10;</code>
      * @return The enum numeric value on the wire for state.
      */
-    public int getStateValue() {
+    @java.lang.Override public int getStateValue() {
       return state_;
     }
     /**
      * <code>.ubii.clients.Client.State state = 10;</code>
      * @return The state.
      */
-    public ubii.clients.ClientOuterClass.Client.State getState() {
+    @java.lang.Override public ubii.clients.ClientOuterClass.Client.State getState() {
       @SuppressWarnings("deprecation")
       ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.valueOf(state_);
       return result == null ? ubii.clients.ClientOuterClass.Client.State.UNRECOGNIZED : result;
@@ -2132,6 +2157,7 @@ public final class ClientOuterClass {
        * <code>bool is_dedicated_processing_node = 7;</code>
        * @return The isDedicatedProcessingNode.
        */
+      @java.lang.Override
       public boolean getIsDedicatedProcessingNode() {
         return isDedicatedProcessingNode_;
       }
@@ -2314,7 +2340,7 @@ public final class ClientOuterClass {
        * <code>.ubii.clients.Client.State state = 10;</code>
        * @return The enum numeric value on the wire for state.
        */
-      public int getStateValue() {
+      @java.lang.Override public int getStateValue() {
         return state_;
       }
       /**
@@ -2323,6 +2349,7 @@ public final class ClientOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+        
         state_ = value;
         onChanged();
         return this;
@@ -2331,6 +2358,7 @@ public final class ClientOuterClass {
        * <code>.ubii.clients.Client.State state = 10;</code>
        * @return The state.
        */
+      @java.lang.Override
       public ubii.clients.ClientOuterClass.Client.State getState() {
         @SuppressWarnings("deprecation")
         ubii.clients.ClientOuterClass.Client.State result = ubii.clients.ClientOuterClass.Client.State.valueOf(state_);
@@ -2444,7 +2472,7 @@ public final class ClientOuterClass {
   /**
    * Protobuf type {@code ubii.clients.ClientList}
    */
-  public  static final class ClientList extends
+  public static final class ClientList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.clients.ClientList)
       ClientListOrBuilder {
@@ -2537,12 +2565,14 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.clients.ClientOuterClass.Client> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.clients.ClientOuterClass.ClientOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -2550,18 +2580,21 @@ public final class ClientOuterClass {
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.clients.ClientOuterClass.Client getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.clients.Client elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.clients.ClientOuterClass.ClientOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

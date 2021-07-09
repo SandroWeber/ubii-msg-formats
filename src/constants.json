@@ -19,7 +19,7 @@
       "PM_DATABASE_ONLINE_GET_LIST": "/services/processing_module/database/online/get_list",
       "PM_DATABASE_LOCAL_GET_LIST": "/services/processing_module/database/local/get_list",
       "PM_RUNTIME_ADD": "/services/processing_module/runtime/add",
-      "PM_RUNTIME_REMOVE": "/services/processing_module/runtime/remove",
+      "PM_RUNTIME_REMOVE": "/services/processing_module/runtime/remove_aslakslaks",
       "PM_RUNTIME_GET": "/services/processing_module/runtime/get",
       "PM_RUNTIME_GET_LIST": "/services/processing_module/runtime/get_list",
 

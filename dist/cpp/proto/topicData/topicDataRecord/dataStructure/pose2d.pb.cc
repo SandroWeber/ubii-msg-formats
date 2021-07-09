@@ -14,32 +14,25 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace ubii {
 namespace dataStructure {
-class Pose2DDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Pose2D> _instance;
-  const ::ubii::dataStructure::Vector2* direction_;
-  float angle_;
-} _Pose2D_default_instance_;
+constexpr Pose2D::Pose2D(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : position_(nullptr)
+  , _oneof_case_{}{}
+struct Pose2DDefaultTypeInternal {
+  constexpr Pose2DDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Pose2DDefaultTypeInternal() {}
+  union {
+    Pose2D _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Pose2DDefaultTypeInternal _Pose2D_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
-static void InitDefaultsscc_info_Pose2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::dataStructure::_Pose2D_default_instance_;
-    new (ptr) ::ubii::dataStructure::Pose2D();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::dataStructure::Pose2D::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Pose2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Pose2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto}, {
-      &scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto = nullptr;
@@ -51,8 +44,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataR
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose2D, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose2D, position_),
-  offsetof(::ubii::dataStructure::Pose2DDefaultTypeInternal, direction_),
-  offsetof(::ubii::dataStructure::Pose2DDefaultTypeInternal, angle_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose2D, orientation_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -76,32 +69,24 @@ const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataS
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_deps[1] = {
   &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_sccs[1] = {
-  &scc_info_Pose2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_once;
-static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto = {
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto, "proto/topicData/topicDataRecord/dataStructure/pose2d.proto", 289,
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_deps, 1, 1,
+  false, false, 289, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto, "proto/topicData/topicDataRecord/dataStructure/pose2d.proto", 
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto::offsets,
-  file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto,
+  file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_getter() {
+  return &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto);
 namespace ubii {
 namespace dataStructure {
 
 // ===================================================================
 
-void Pose2D::InitAsDefaultInstance() {
-  ::ubii::dataStructure::_Pose2D_default_instance_._instance.get_mutable()->position_ = const_cast< ::ubii::dataStructure::Vector2*>(
-      ::ubii::dataStructure::Vector2::internal_default_instance());
-  ::ubii::dataStructure::_Pose2D_default_instance_.direction_ = const_cast< ::ubii::dataStructure::Vector2*>(
-      ::ubii::dataStructure::Vector2::internal_default_instance());
-  ::ubii::dataStructure::_Pose2D_default_instance_.angle_ = 0;
-}
 class Pose2D::_Internal {
  public:
   static const ::ubii::dataStructure::Vector2& position(const Pose2D* msg);
@@ -117,16 +102,17 @@ Pose2D::_Internal::direction(const Pose2D* msg) {
   return *msg->orientation_.direction_;
 }
 void Pose2D::clear_position() {
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
 }
 void Pose2D::set_allocated_direction(::ubii::dataStructure::Vector2* direction) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_orientation();
   if (direction) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(direction)->GetArena();
     if (message_arena != submessage_arena) {
       direction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, direction, submessage_arena);
@@ -138,19 +124,21 @@ void Pose2D::set_allocated_direction(::ubii::dataStructure::Vector2* direction) 
 }
 void Pose2D::clear_direction() {
   if (_internal_has_direction()) {
-    delete orientation_.direction_;
+    if (GetArena() == nullptr) {
+      delete orientation_.direction_;
+    }
     clear_has_orientation();
   }
 }
-Pose2D::Pose2D()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Pose2D::Pose2D(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.dataStructure.Pose2D)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.dataStructure.Pose2D)
 }
 Pose2D::Pose2D(const Pose2D& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_position()) {
     position_ = new ::ubii::dataStructure::Vector2(*from.position_);
   } else {
@@ -174,37 +162,41 @@ Pose2D::Pose2D(const Pose2D& from)
 }
 
 void Pose2D::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Pose2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto.base);
-  position_ = nullptr;
-  clear_has_orientation();
+position_ = nullptr;
+clear_has_orientation();
 }
 
 Pose2D::~Pose2D() {
   // @@protoc_insertion_point(destructor:ubii.dataStructure.Pose2D)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Pose2D::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete position_;
   if (has_orientation()) {
     clear_orientation();
   }
 }
 
+void Pose2D::ArenaDtor(void* object) {
+  Pose2D* _this = reinterpret_cast< Pose2D* >(object);
+  (void)_this;
+}
+void Pose2D::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Pose2D::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Pose2D& Pose2D::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Pose2D_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Pose2D::clear_orientation() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.dataStructure.Pose2D)
   switch (orientation_case()) {
     case kDirection: {
-      delete orientation_.direction_;
+      if (GetArena() == nullptr) {
+        delete orientation_.direction_;
+      }
       break;
     }
     case kAngle: {
@@ -225,12 +217,12 @@ void Pose2D::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
   clear_orientation();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Pose2D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -238,7 +230,6 @@ const char* Pose2D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .ubii.dataStructure.Vector2 position = 1;
       case 1:
@@ -263,11 +254,14 @@ const char* Pose2D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -311,7 +305,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Pose2D)
   return target;
@@ -376,7 +370,7 @@ void Pose2D::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Pose2D::MergeFrom(const Pose2D& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Pose2D)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -418,23 +412,24 @@ bool Pose2D::IsInitialized() const {
 
 void Pose2D::InternalSwap(Pose2D* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(position_, other->position_);
   swap(orientation_, other->orientation_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Pose2D::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_getter, &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto_once,
+      file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fpose2d_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dataStructure
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Pose2D* Arena::CreateMaybeMessage< ::ubii::dataStructure::Pose2D >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::dataStructure::Pose2D >(arena);
+  return Arena::CreateMessageInternal< ::ubii::dataStructure::Pose2D >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

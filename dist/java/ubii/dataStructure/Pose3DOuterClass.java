@@ -68,7 +68,7 @@ public final class Pose3DOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Pose3D}
    */
-  public  static final class Pose3D extends
+  public static final class Pose3D extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Pose3D)
       Pose3DOrBuilder {
@@ -230,6 +230,7 @@ public final class Pose3DOuterClass {
      * <code>.ubii.dataStructure.Vector3 position = 1;</code>
      * @return Whether the position field is set.
      */
+    @java.lang.Override
     public boolean hasPosition() {
       return position_ != null;
     }
@@ -237,12 +238,14 @@ public final class Pose3DOuterClass {
      * <code>.ubii.dataStructure.Vector3 position = 1;</code>
      * @return The position.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getPosition() {
       return position_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : position_;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 position = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getPositionOrBuilder() {
       return getPosition();
     }
@@ -252,6 +255,7 @@ public final class Pose3DOuterClass {
      * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
      * @return Whether the quaternion field is set.
      */
+    @java.lang.Override
     public boolean hasQuaternion() {
       return orientationCase_ == 2;
     }
@@ -259,6 +263,7 @@ public final class Pose3DOuterClass {
      * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
      * @return The quaternion.
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
       if (orientationCase_ == 2) {
          return (ubii.dataStructure.QuaternionOuterClass.Quaternion) orientation_;
@@ -268,6 +273,7 @@ public final class Pose3DOuterClass {
     /**
      * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
       if (orientationCase_ == 2) {
          return (ubii.dataStructure.QuaternionOuterClass.Quaternion) orientation_;
@@ -280,6 +286,7 @@ public final class Pose3DOuterClass {
      * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
      * @return Whether the euler field is set.
      */
+    @java.lang.Override
     public boolean hasEuler() {
       return orientationCase_ == 3;
     }
@@ -287,6 +294,7 @@ public final class Pose3DOuterClass {
      * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
      * @return The euler.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getEuler() {
       if (orientationCase_ == 3) {
          return (ubii.dataStructure.Vector3OuterClass.Vector3) orientation_;
@@ -296,6 +304,7 @@ public final class Pose3DOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getEulerOrBuilder() {
       if (orientationCase_ == 3) {
          return (ubii.dataStructure.Vector3OuterClass.Vector3) orientation_;
@@ -827,6 +836,7 @@ public final class Pose3DOuterClass {
        * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
        * @return Whether the quaternion field is set.
        */
+      @java.lang.Override
       public boolean hasQuaternion() {
         return orientationCase_ == 2;
       }
@@ -834,6 +844,7 @@ public final class Pose3DOuterClass {
        * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
        * @return The quaternion.
        */
+      @java.lang.Override
       public ubii.dataStructure.QuaternionOuterClass.Quaternion getQuaternion() {
         if (quaternionBuilder_ == null) {
           if (orientationCase_ == 2) {
@@ -927,6 +938,7 @@ public final class Pose3DOuterClass {
       /**
        * <code>.ubii.dataStructure.Quaternion quaternion = 2;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getQuaternionOrBuilder() {
         if ((orientationCase_ == 2) && (quaternionBuilder_ != null)) {
           return quaternionBuilder_.getMessageOrBuilder();
@@ -965,6 +977,7 @@ public final class Pose3DOuterClass {
        * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
        * @return Whether the euler field is set.
        */
+      @java.lang.Override
       public boolean hasEuler() {
         return orientationCase_ == 3;
       }
@@ -972,6 +985,7 @@ public final class Pose3DOuterClass {
        * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
        * @return The euler.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector3OuterClass.Vector3 getEuler() {
         if (eulerBuilder_ == null) {
           if (orientationCase_ == 3) {
@@ -1065,6 +1079,7 @@ public final class Pose3DOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector3 euler = 3;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getEulerOrBuilder() {
         if ((orientationCase_ == 3) && (eulerBuilder_ != null)) {
           return eulerBuilder_.getMessageOrBuilder();

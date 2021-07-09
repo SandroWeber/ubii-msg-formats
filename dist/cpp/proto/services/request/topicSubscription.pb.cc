@@ -14,30 +14,30 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace ubii {
 namespace services {
 namespace request {
-class TopicSubscriptionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TopicSubscription> _instance;
-} _TopicSubscription_default_instance_;
+constexpr TopicSubscription::TopicSubscription(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : subscribe_topics_()
+  , unsubscribe_topics_()
+  , subscribe_topic_regexp_()
+  , unsubscribe_topic_regexp_()
+  , client_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct TopicSubscriptionDefaultTypeInternal {
+  constexpr TopicSubscriptionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TopicSubscriptionDefaultTypeInternal() {}
+  union {
+    TopicSubscription _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TopicSubscriptionDefaultTypeInternal _TopicSubscription_default_instance_;
 }  // namespace request
 }  // namespace services
 }  // namespace ubii
-static void InitDefaultsscc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::services::request::_TopicSubscription_default_instance_;
-    new (ptr) ::ubii::services::request::TopicSubscription();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::services::request::TopicSubscription::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fservices_2frequest_2ftopicSubscription_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto = nullptr;
@@ -70,76 +70,78 @@ const char descriptor_table_protodef_proto_2fservices_2frequest_2ftopicSubscript
   "\030\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \003(\t\022 "
   "\n\030unsubscribe_topic_regexp\030\005 \003(\tb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_sccs[1] = {
-  &scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_once;
-static bool descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto = {
-  &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_initialized, descriptor_table_protodef_proto_2fservices_2frequest_2ftopicSubscription_2eproto, "proto/services/request/topicSubscription.proto", 240,
-  &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_once, descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_sccs, descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_deps, 1, 0,
+  false, false, 240, descriptor_table_protodef_proto_2fservices_2frequest_2ftopicSubscription_2eproto, "proto/services/request/topicSubscription.proto", 
+  &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_proto_2fservices_2frequest_2ftopicSubscription_2eproto::offsets,
-  file_level_metadata_proto_2fservices_2frequest_2ftopicSubscription_2eproto, 1, file_level_enum_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto, file_level_service_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto,
+  file_level_metadata_proto_2fservices_2frequest_2ftopicSubscription_2eproto, file_level_enum_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto, file_level_service_descriptors_proto_2fservices_2frequest_2ftopicSubscription_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_getter() {
+  return &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fservices_2frequest_2ftopicSubscription_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_proto_2fservices_2frequest_2ftopicSubscription_2eproto(&descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto);
 namespace ubii {
 namespace services {
 namespace request {
 
 // ===================================================================
 
-void TopicSubscription::InitAsDefaultInstance() {
-}
 class TopicSubscription::_Internal {
  public:
 };
 
-TopicSubscription::TopicSubscription()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+TopicSubscription::TopicSubscription(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  subscribe_topics_(arena),
+  unsubscribe_topics_(arena),
+  subscribe_topic_regexp_(arena),
+  unsubscribe_topic_regexp_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.services.request.TopicSubscription)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.services.request.TopicSubscription)
 }
 TopicSubscription::TopicSubscription(const TopicSubscription& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       subscribe_topics_(from.subscribe_topics_),
       unsubscribe_topics_(from.unsubscribe_topics_),
       subscribe_topic_regexp_(from.subscribe_topic_regexp_),
       unsubscribe_topic_regexp_(from.unsubscribe_topic_regexp_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_client_id().empty()) {
-    client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
+    client_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_client_id(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:ubii.services.request.TopicSubscription)
 }
 
 void TopicSubscription::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto.base);
-  client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 TopicSubscription::~TopicSubscription() {
   // @@protoc_insertion_point(destructor:ubii.services.request.TopicSubscription)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TopicSubscription::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void TopicSubscription::ArenaDtor(void* object) {
+  TopicSubscription* _this = reinterpret_cast< TopicSubscription* >(object);
+  (void)_this;
+}
+void TopicSubscription::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TopicSubscription::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const TopicSubscription& TopicSubscription::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void TopicSubscription::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.services.request.TopicSubscription)
@@ -151,8 +153,8 @@ void TopicSubscription::Clear() {
   unsubscribe_topics_.Clear();
   subscribe_topic_regexp_.Clear();
   unsubscribe_topic_regexp_.Clear();
-  client_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  client_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* TopicSubscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -160,7 +162,6 @@ const char* TopicSubscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string client_id = 1;
       case 1:
@@ -229,11 +230,14 @@ const char* TopicSubscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -305,7 +309,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.services.request.TopicSubscription)
   return target;
@@ -385,7 +389,7 @@ void TopicSubscription::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) 
 void TopicSubscription::MergeFrom(const TopicSubscription& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.services.request.TopicSubscription)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -394,8 +398,7 @@ void TopicSubscription::MergeFrom(const TopicSubscription& from) {
   subscribe_topic_regexp_.MergeFrom(from.subscribe_topic_regexp_);
   unsubscribe_topic_regexp_.MergeFrom(from.unsubscribe_topic_regexp_);
   if (from.client_id().size() > 0) {
-
-    client_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.client_id_);
+    _internal_set_client_id(from._internal_client_id());
   }
 }
 
@@ -419,19 +422,19 @@ bool TopicSubscription::IsInitialized() const {
 
 void TopicSubscription::InternalSwap(TopicSubscription* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   subscribe_topics_.InternalSwap(&other->subscribe_topics_);
   unsubscribe_topics_.InternalSwap(&other->unsubscribe_topics_);
   subscribe_topic_regexp_.InternalSwap(&other->subscribe_topic_regexp_);
   unsubscribe_topic_regexp_.InternalSwap(&other->unsubscribe_topic_regexp_);
-  client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  client_id_.Swap(&other->client_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TopicSubscription::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_getter, &descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto_once,
+      file_level_metadata_proto_2fservices_2frequest_2ftopicSubscription_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace request
@@ -439,7 +442,7 @@ void TopicSubscription::InternalSwap(TopicSubscription* other) {
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::services::request::TopicSubscription* Arena::CreateMaybeMessage< ::ubii::services::request::TopicSubscription >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::services::request::TopicSubscription >(arena);
+  return Arena::CreateMessageInternal< ::ubii::services::request::TopicSubscription >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

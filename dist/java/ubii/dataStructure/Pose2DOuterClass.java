@@ -50,6 +50,11 @@ public final class Pose2DOuterClass {
 
     /**
      * <code>float angle = 3;</code>
+     * @return Whether the angle field is set.
+     */
+    boolean hasAngle();
+    /**
+     * <code>float angle = 3;</code>
      * @return The angle.
      */
     float getAngle();
@@ -59,7 +64,7 @@ public final class Pose2DOuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Pose2D}
    */
-  public  static final class Pose2D extends
+  public static final class Pose2D extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Pose2D)
       Pose2DOrBuilder {
@@ -212,6 +217,7 @@ public final class Pose2DOuterClass {
      * <code>.ubii.dataStructure.Vector2 position = 1;</code>
      * @return Whether the position field is set.
      */
+    @java.lang.Override
     public boolean hasPosition() {
       return position_ != null;
     }
@@ -219,12 +225,14 @@ public final class Pose2DOuterClass {
      * <code>.ubii.dataStructure.Vector2 position = 1;</code>
      * @return The position.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2 getPosition() {
       return position_ == null ? ubii.dataStructure.Vector2OuterClass.Vector2.getDefaultInstance() : position_;
     }
     /**
      * <code>.ubii.dataStructure.Vector2 position = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getPositionOrBuilder() {
       return getPosition();
     }
@@ -234,6 +242,7 @@ public final class Pose2DOuterClass {
      * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
      * @return Whether the direction field is set.
      */
+    @java.lang.Override
     public boolean hasDirection() {
       return orientationCase_ == 2;
     }
@@ -241,6 +250,7 @@ public final class Pose2DOuterClass {
      * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
      * @return The direction.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2 getDirection() {
       if (orientationCase_ == 2) {
          return (ubii.dataStructure.Vector2OuterClass.Vector2) orientation_;
@@ -250,6 +260,7 @@ public final class Pose2DOuterClass {
     /**
      * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getDirectionOrBuilder() {
       if (orientationCase_ == 2) {
          return (ubii.dataStructure.Vector2OuterClass.Vector2) orientation_;
@@ -260,8 +271,17 @@ public final class Pose2DOuterClass {
     public static final int ANGLE_FIELD_NUMBER = 3;
     /**
      * <code>float angle = 3;</code>
+     * @return Whether the angle field is set.
+     */
+    @java.lang.Override
+    public boolean hasAngle() {
+      return orientationCase_ == 3;
+    }
+    /**
+     * <code>float angle = 3;</code>
      * @return The angle.
      */
+    @java.lang.Override
     public float getAngle() {
       if (orientationCase_ == 3) {
         return (java.lang.Float) orientation_;
@@ -793,6 +813,7 @@ public final class Pose2DOuterClass {
        * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
        * @return Whether the direction field is set.
        */
+      @java.lang.Override
       public boolean hasDirection() {
         return orientationCase_ == 2;
       }
@@ -800,6 +821,7 @@ public final class Pose2DOuterClass {
        * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
        * @return The direction.
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector2OuterClass.Vector2 getDirection() {
         if (directionBuilder_ == null) {
           if (orientationCase_ == 2) {
@@ -893,6 +915,7 @@ public final class Pose2DOuterClass {
       /**
        * <code>.ubii.dataStructure.Vector2 direction = 2;</code>
        */
+      @java.lang.Override
       public ubii.dataStructure.Vector2OuterClass.Vector2OrBuilder getDirectionOrBuilder() {
         if ((orientationCase_ == 2) && (directionBuilder_ != null)) {
           return directionBuilder_.getMessageOrBuilder();
@@ -925,6 +948,13 @@ public final class Pose2DOuterClass {
         return directionBuilder_;
       }
 
+      /**
+       * <code>float angle = 3;</code>
+       * @return Whether the angle field is set.
+       */
+      public boolean hasAngle() {
+        return orientationCase_ == 3;
+      }
       /**
        * <code>float angle = 3;</code>
        * @return The angle.

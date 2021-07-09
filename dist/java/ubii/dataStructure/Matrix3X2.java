@@ -57,7 +57,7 @@ public final class Matrix3X2 {
   /**
    * Protobuf type {@code ubii.dataStructure.Matrix3x2}
    */
-  public  static final class Matrix3x2 extends
+  public static final class Matrix3x2 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Matrix3x2)
       Matrix3x2OrBuilder {
@@ -167,6 +167,7 @@ public final class Matrix3X2 {
      * <code>double m00 = 1;</code>
      * @return The m00.
      */
+    @java.lang.Override
     public double getM00() {
       return m00_;
     }
@@ -177,6 +178,7 @@ public final class Matrix3X2 {
      * <code>double m01 = 2;</code>
      * @return The m01.
      */
+    @java.lang.Override
     public double getM01() {
       return m01_;
     }
@@ -187,6 +189,7 @@ public final class Matrix3X2 {
      * <code>double m10 = 3;</code>
      * @return The m10.
      */
+    @java.lang.Override
     public double getM10() {
       return m10_;
     }
@@ -197,6 +200,7 @@ public final class Matrix3X2 {
      * <code>double m11 = 4;</code>
      * @return The m11.
      */
+    @java.lang.Override
     public double getM11() {
       return m11_;
     }
@@ -207,6 +211,7 @@ public final class Matrix3X2 {
      * <code>double m20 = 5;</code>
      * @return The m20.
      */
+    @java.lang.Override
     public double getM20() {
       return m20_;
     }
@@ -217,6 +222,7 @@ public final class Matrix3X2 {
      * <code>double m21 = 6;</code>
      * @return The m21.
      */
+    @java.lang.Override
     public double getM21() {
       return m21_;
     }
@@ -625,6 +631,7 @@ public final class Matrix3X2 {
        * <code>double m00 = 1;</code>
        * @return The m00.
        */
+      @java.lang.Override
       public double getM00() {
         return m00_;
       }
@@ -655,6 +662,7 @@ public final class Matrix3X2 {
        * <code>double m01 = 2;</code>
        * @return The m01.
        */
+      @java.lang.Override
       public double getM01() {
         return m01_;
       }
@@ -685,6 +693,7 @@ public final class Matrix3X2 {
        * <code>double m10 = 3;</code>
        * @return The m10.
        */
+      @java.lang.Override
       public double getM10() {
         return m10_;
       }
@@ -715,6 +724,7 @@ public final class Matrix3X2 {
        * <code>double m11 = 4;</code>
        * @return The m11.
        */
+      @java.lang.Override
       public double getM11() {
         return m11_;
       }
@@ -745,6 +755,7 @@ public final class Matrix3X2 {
        * <code>double m20 = 5;</code>
        * @return The m20.
        */
+      @java.lang.Override
       public double getM20() {
         return m20_;
       }
@@ -775,6 +786,7 @@ public final class Matrix3X2 {
        * <code>double m21 = 6;</code>
        * @return The m21.
        */
+      @java.lang.Override
       public double getM21() {
         return m21_;
       }

@@ -33,7 +33,7 @@ public final class Vector2OuterClass {
   /**
    * Protobuf type {@code ubii.dataStructure.Vector2}
    */
-  public  static final class Vector2 extends
+  public static final class Vector2 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.Vector2)
       Vector2OrBuilder {
@@ -123,6 +123,7 @@ public final class Vector2OuterClass {
      * <code>double x = 1;</code>
      * @return The x.
      */
+    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -133,6 +134,7 @@ public final class Vector2OuterClass {
      * <code>double y = 2;</code>
      * @return The y.
      */
+    @java.lang.Override
     public double getY() {
       return y_;
     }
@@ -465,6 +467,7 @@ public final class Vector2OuterClass {
        * <code>double x = 1;</code>
        * @return The x.
        */
+      @java.lang.Override
       public double getX() {
         return x_;
       }
@@ -495,6 +498,7 @@ public final class Vector2OuterClass {
        * <code>double y = 2;</code>
        * @return The y.
        */
+      @java.lang.Override
       public double getY() {
         return y_;
       }

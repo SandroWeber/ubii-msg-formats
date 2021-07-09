@@ -41,7 +41,11 @@ namespace Ubii.DataStructure {
 
   }
   #region Messages
-  public sealed partial class Matrix4x4 : pb::IMessage<Matrix4x4> {
+  public sealed partial class Matrix4x4 : pb::IMessage<Matrix4x4>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<Matrix4x4> _parser = new pb::MessageParser<Matrix4x4>(() => new Matrix4x4());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -330,6 +334,9 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (M00 != 0D) {
         output.WriteRawTag(9);
         output.WriteDouble(M00);
@@ -397,7 +404,81 @@ namespace Ubii.DataStructure {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (M00 != 0D) {
+        output.WriteRawTag(9);
+        output.WriteDouble(M00);
+      }
+      if (M01 != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(M01);
+      }
+      if (M02 != 0D) {
+        output.WriteRawTag(25);
+        output.WriteDouble(M02);
+      }
+      if (M03 != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(M03);
+      }
+      if (M10 != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(M10);
+      }
+      if (M11 != 0D) {
+        output.WriteRawTag(49);
+        output.WriteDouble(M11);
+      }
+      if (M12 != 0D) {
+        output.WriteRawTag(57);
+        output.WriteDouble(M12);
+      }
+      if (M13 != 0D) {
+        output.WriteRawTag(65);
+        output.WriteDouble(M13);
+      }
+      if (M20 != 0D) {
+        output.WriteRawTag(73);
+        output.WriteDouble(M20);
+      }
+      if (M21 != 0D) {
+        output.WriteRawTag(81);
+        output.WriteDouble(M21);
+      }
+      if (M22 != 0D) {
+        output.WriteRawTag(89);
+        output.WriteDouble(M22);
+      }
+      if (M23 != 0D) {
+        output.WriteRawTag(97);
+        output.WriteDouble(M23);
+      }
+      if (M30 != 0D) {
+        output.WriteRawTag(105);
+        output.WriteDouble(M30);
+      }
+      if (M31 != 0D) {
+        output.WriteRawTag(113);
+        output.WriteDouble(M31);
+      }
+      if (M32 != 0D) {
+        output.WriteRawTag(121);
+        output.WriteDouble(M32);
+      }
+      if (M33 != 0D) {
+        output.WriteRawTag(129, 1);
+        output.WriteDouble(M33);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -514,6 +595,9 @@ namespace Ubii.DataStructure {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -586,7 +670,86 @@ namespace Ubii.DataStructure {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 9: {
+            M00 = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            M01 = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            M02 = input.ReadDouble();
+            break;
+          }
+          case 33: {
+            M03 = input.ReadDouble();
+            break;
+          }
+          case 41: {
+            M10 = input.ReadDouble();
+            break;
+          }
+          case 49: {
+            M11 = input.ReadDouble();
+            break;
+          }
+          case 57: {
+            M12 = input.ReadDouble();
+            break;
+          }
+          case 65: {
+            M13 = input.ReadDouble();
+            break;
+          }
+          case 73: {
+            M20 = input.ReadDouble();
+            break;
+          }
+          case 81: {
+            M21 = input.ReadDouble();
+            break;
+          }
+          case 89: {
+            M22 = input.ReadDouble();
+            break;
+          }
+          case 97: {
+            M23 = input.ReadDouble();
+            break;
+          }
+          case 105: {
+            M30 = input.ReadDouble();
+            break;
+          }
+          case 113: {
+            M31 = input.ReadDouble();
+            break;
+          }
+          case 121: {
+            M32 = input.ReadDouble();
+            break;
+          }
+          case 129: {
+            M33 = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

@@ -57,7 +57,7 @@ public final class ErrorOuterClass {
   /**
    * Protobuf type {@code ubii.general.Error}
    */
-  public  static final class Error extends
+  public static final class Error extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.general.Error)
       ErrorOrBuilder {
@@ -158,6 +158,7 @@ public final class ErrorOuterClass {
      * <code>string title = 1;</code>
      * @return The title.
      */
+    @java.lang.Override
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class ErrorOuterClass {
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTitleBytes() {
       java.lang.Object ref = title_;
@@ -194,6 +196,7 @@ public final class ErrorOuterClass {
      * <code>string message = 2;</code>
      * @return The message.
      */
+    @java.lang.Override
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -210,6 +213,7 @@ public final class ErrorOuterClass {
      * <code>string message = 2;</code>
      * @return The bytes for message.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
       java.lang.Object ref = message_;
@@ -230,6 +234,7 @@ public final class ErrorOuterClass {
      * <code>string stack = 3;</code>
      * @return The stack.
      */
+    @java.lang.Override
     public java.lang.String getStack() {
       java.lang.Object ref = stack_;
       if (ref instanceof java.lang.String) {
@@ -246,6 +251,7 @@ public final class ErrorOuterClass {
      * <code>string stack = 3;</code>
      * @return The bytes for stack.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStackBytes() {
       java.lang.Object ref = stack_;
@@ -907,7 +913,7 @@ public final class ErrorOuterClass {
   /**
    * Protobuf type {@code ubii.general.ErrorList}
    */
-  public  static final class ErrorList extends
+  public static final class ErrorList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.general.ErrorList)
       ErrorListOrBuilder {
@@ -1000,12 +1006,14 @@ public final class ErrorOuterClass {
     /**
      * <code>repeated .ubii.general.Error elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.general.ErrorOuterClass.Error> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.general.Error elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.general.ErrorOuterClass.ErrorOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1013,18 +1021,21 @@ public final class ErrorOuterClass {
     /**
      * <code>repeated .ubii.general.Error elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.general.Error elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.general.ErrorOuterClass.Error getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.general.Error elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.general.ErrorOuterClass.ErrorOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

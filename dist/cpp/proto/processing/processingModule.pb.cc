@@ -14,151 +14,115 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProcessingMode_Frequency_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProcessingMode_TriggerOnInput_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace ubii {
 namespace processing {
-class ProcessingMode_FrequencyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProcessingMode_Frequency> _instance;
-} _ProcessingMode_Frequency_default_instance_;
-class ProcessingMode_LockstepDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProcessingMode_Lockstep> _instance;
-} _ProcessingMode_Lockstep_default_instance_;
-class ProcessingMode_TriggerOnInputDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProcessingMode_TriggerOnInput> _instance;
-} _ProcessingMode_TriggerOnInput_default_instance_;
-class ProcessingModeDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProcessingMode> _instance;
-  const ::ubii::processing::ProcessingMode_Frequency* frequency_;
-  const ::ubii::processing::ProcessingMode_Lockstep* lockstep_;
-  const ::ubii::processing::ProcessingMode_TriggerOnInput* trigger_on_input_;
-} _ProcessingMode_default_instance_;
-class ModuleIODefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ModuleIO> _instance;
-} _ModuleIO_default_instance_;
-class ProcessingModuleDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProcessingModule> _instance;
-} _ProcessingModule_default_instance_;
-class ProcessingModuleListDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProcessingModuleList> _instance;
-} _ProcessingModuleList_default_instance_;
+constexpr ProcessingMode_Frequency::ProcessingMode_Frequency(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : hertz_(0){}
+struct ProcessingMode_FrequencyDefaultTypeInternal {
+  constexpr ProcessingMode_FrequencyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProcessingMode_FrequencyDefaultTypeInternal() {}
+  union {
+    ProcessingMode_Frequency _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProcessingMode_FrequencyDefaultTypeInternal _ProcessingMode_Frequency_default_instance_;
+constexpr ProcessingMode_Lockstep::ProcessingMode_Lockstep(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : process_request_endpoint_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ProcessingMode_LockstepDefaultTypeInternal {
+  constexpr ProcessingMode_LockstepDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProcessingMode_LockstepDefaultTypeInternal() {}
+  union {
+    ProcessingMode_Lockstep _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProcessingMode_LockstepDefaultTypeInternal _ProcessingMode_Lockstep_default_instance_;
+constexpr ProcessingMode_TriggerOnInput::ProcessingMode_TriggerOnInput(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : min_delay_ms_(0)
+  , all_inputs_need_update_(false){}
+struct ProcessingMode_TriggerOnInputDefaultTypeInternal {
+  constexpr ProcessingMode_TriggerOnInputDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProcessingMode_TriggerOnInputDefaultTypeInternal() {}
+  union {
+    ProcessingMode_TriggerOnInput _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProcessingMode_TriggerOnInputDefaultTypeInternal _ProcessingMode_TriggerOnInput_default_instance_;
+constexpr ProcessingMode::ProcessingMode(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct ProcessingModeDefaultTypeInternal {
+  constexpr ProcessingModeDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProcessingModeDefaultTypeInternal() {}
+  union {
+    ProcessingMode _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProcessingModeDefaultTypeInternal _ProcessingMode_default_instance_;
+constexpr ModuleIO::ModuleIO(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : internal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , message_format_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ModuleIODefaultTypeInternal {
+  constexpr ModuleIODefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ModuleIODefaultTypeInternal() {}
+  union {
+    ModuleIO _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ModuleIODefaultTypeInternal _ModuleIO_default_instance_;
+constexpr ProcessingModule::ProcessingModule(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : authors_()
+  , tags_()
+  , inputs_()
+  , outputs_()
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , node_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , session_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , on_processing_stringified_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , on_created_stringified_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , on_halted_stringified_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , on_destroyed_stringified_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , processing_mode_(nullptr)
+  , status_(0)
+
+  , language_(0)
+{}
+struct ProcessingModuleDefaultTypeInternal {
+  constexpr ProcessingModuleDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProcessingModuleDefaultTypeInternal() {}
+  union {
+    ProcessingModule _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProcessingModuleDefaultTypeInternal _ProcessingModule_default_instance_;
+constexpr ProcessingModuleList::ProcessingModuleList(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : elements_(){}
+struct ProcessingModuleListDefaultTypeInternal {
+  constexpr ProcessingModuleListDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProcessingModuleListDefaultTypeInternal() {}
+  union {
+    ProcessingModuleList _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProcessingModuleListDefaultTypeInternal _ProcessingModuleList_default_instance_;
 }  // namespace processing
 }  // namespace ubii
-static void InitDefaultsscc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::processing::_ModuleIO_default_instance_;
-    new (ptr) ::ubii::processing::ModuleIO();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::processing::ModuleIO::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto}, {}};
-
-static void InitDefaultsscc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::processing::_ProcessingMode_default_instance_;
-    new (ptr) ::ubii::processing::ProcessingMode();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::processing::ProcessingMode::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto}, {
-      &scc_info_ProcessingMode_Frequency_proto_2fprocessing_2fprocessingModule_2eproto.base,
-      &scc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto.base,
-      &scc_info_ProcessingMode_TriggerOnInput_proto_2fprocessing_2fprocessingModule_2eproto.base,}};
-
-static void InitDefaultsscc_info_ProcessingMode_Frequency_proto_2fprocessing_2fprocessingModule_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::processing::_ProcessingMode_Frequency_default_instance_;
-    new (ptr) ::ubii::processing::ProcessingMode_Frequency();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::processing::ProcessingMode_Frequency::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProcessingMode_Frequency_proto_2fprocessing_2fprocessingModule_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProcessingMode_Frequency_proto_2fprocessing_2fprocessingModule_2eproto}, {}};
-
-static void InitDefaultsscc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::processing::_ProcessingMode_Lockstep_default_instance_;
-    new (ptr) ::ubii::processing::ProcessingMode_Lockstep();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::processing::ProcessingMode_Lockstep::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto}, {}};
-
-static void InitDefaultsscc_info_ProcessingMode_TriggerOnInput_proto_2fprocessing_2fprocessingModule_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::processing::_ProcessingMode_TriggerOnInput_default_instance_;
-    new (ptr) ::ubii::processing::ProcessingMode_TriggerOnInput();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::processing::ProcessingMode_TriggerOnInput::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProcessingMode_TriggerOnInput_proto_2fprocessing_2fprocessingModule_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProcessingMode_TriggerOnInput_proto_2fprocessing_2fprocessingModule_2eproto}, {}};
-
-static void InitDefaultsscc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::processing::_ProcessingModule_default_instance_;
-    new (ptr) ::ubii::processing::ProcessingModule();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::processing::ProcessingModule::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto}, {
-      &scc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto.base,
-      &scc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto.base,}};
-
-static void InitDefaultsscc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::processing::_ProcessingModuleList_default_instance_;
-    new (ptr) ::ubii::processing::ProcessingModuleList();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::processing::ProcessingModuleList::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto}, {
-      &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[7];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fprocessing_2fprocessingModule_2eproto = nullptr;
@@ -188,9 +152,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fprocessing_2fprocessin
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingMode, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  offsetof(::ubii::processing::ProcessingModeDefaultTypeInternal, frequency_),
-  offsetof(::ubii::processing::ProcessingModeDefaultTypeInternal, lockstep_),
-  offsetof(::ubii::processing::ProcessingModeDefaultTypeInternal, trigger_on_input_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ProcessingMode, mode_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::ubii::processing::ModuleIO, _internal_metadata_),
@@ -281,28 +245,19 @@ const char descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2epro
   "\001 \003(\0132!.ubii.processing.ProcessingModule"
   "b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_sccs[7] = {
-  &scc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto.base,
-  &scc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto.base,
-  &scc_info_ProcessingMode_Frequency_proto_2fprocessing_2fprocessingModule_2eproto.base,
-  &scc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto.base,
-  &scc_info_ProcessingMode_TriggerOnInput_proto_2fprocessing_2fprocessingModule_2eproto.base,
-  &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,
-  &scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once;
-static bool descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto = {
-  &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_initialized, descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2eproto, "proto/processing/processingModule.proto", 1248,
-  &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once, descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_sccs, descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_deps, 7, 0,
+  false, false, 1248, descriptor_table_protodef_proto_2fprocessing_2fprocessingModule_2eproto, "proto/processing/processingModule.proto", 
+  &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once, nullptr, 0, 7,
   schemas, file_default_instances, TableStruct_proto_2fprocessing_2fprocessingModule_2eproto::offsets,
-  file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto, 7, file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto, file_level_service_descriptors_proto_2fprocessing_2fprocessingModule_2eproto,
+  file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto, file_level_enum_descriptors_proto_2fprocessing_2fprocessingModule_2eproto, file_level_service_descriptors_proto_2fprocessing_2fprocessingModule_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter() {
+  return &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fprocessing_2fprocessingModule_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_proto_2fprocessing_2fprocessingModule_2eproto(&descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto);
 namespace ubii {
 namespace processing {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProcessingModule_Status_descriptor() {
@@ -362,45 +317,46 @@ constexpr int ProcessingModule::Language_ARRAYSIZE;
 
 // ===================================================================
 
-void ProcessingMode_Frequency::InitAsDefaultInstance() {
-}
 class ProcessingMode_Frequency::_Internal {
  public:
 };
 
-ProcessingMode_Frequency::ProcessingMode_Frequency()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ProcessingMode_Frequency::ProcessingMode_Frequency(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.processing.ProcessingMode.Frequency)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.processing.ProcessingMode.Frequency)
 }
 ProcessingMode_Frequency::ProcessingMode_Frequency(const ProcessingMode_Frequency& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   hertz_ = from.hertz_;
   // @@protoc_insertion_point(copy_constructor:ubii.processing.ProcessingMode.Frequency)
 }
 
 void ProcessingMode_Frequency::SharedCtor() {
-  hertz_ = 0;
+hertz_ = 0;
 }
 
 ProcessingMode_Frequency::~ProcessingMode_Frequency() {
   // @@protoc_insertion_point(destructor:ubii.processing.ProcessingMode.Frequency)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ProcessingMode_Frequency::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ProcessingMode_Frequency::ArenaDtor(void* object) {
+  ProcessingMode_Frequency* _this = reinterpret_cast< ProcessingMode_Frequency* >(object);
+  (void)_this;
+}
+void ProcessingMode_Frequency::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProcessingMode_Frequency::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProcessingMode_Frequency& ProcessingMode_Frequency::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProcessingMode_Frequency_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProcessingMode_Frequency::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.processing.ProcessingMode.Frequency)
@@ -409,7 +365,7 @@ void ProcessingMode_Frequency::Clear() {
   (void) cached_has_bits;
 
   hertz_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ProcessingMode_Frequency::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -417,22 +373,24 @@ const char* ProcessingMode_Frequency::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 hertz = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          hertz_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          hertz_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -460,7 +418,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ProcessingMode.Frequency)
   return target;
@@ -508,7 +466,7 @@ void ProcessingMode_Frequency::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message&
 void ProcessingMode_Frequency::MergeFrom(const ProcessingMode_Frequency& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ProcessingMode.Frequency)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -537,61 +495,63 @@ bool ProcessingMode_Frequency::IsInitialized() const {
 
 void ProcessingMode_Frequency::InternalSwap(ProcessingMode_Frequency* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(hertz_, other->hertz_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProcessingMode_Frequency::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter, &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once,
+      file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void ProcessingMode_Lockstep::InitAsDefaultInstance() {
-}
 class ProcessingMode_Lockstep::_Internal {
  public:
 };
 
-ProcessingMode_Lockstep::ProcessingMode_Lockstep()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ProcessingMode_Lockstep::ProcessingMode_Lockstep(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.processing.ProcessingMode.Lockstep)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.processing.ProcessingMode.Lockstep)
 }
 ProcessingMode_Lockstep::ProcessingMode_Lockstep(const ProcessingMode_Lockstep& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   process_request_endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_process_request_endpoint().empty()) {
-    process_request_endpoint_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.process_request_endpoint_);
+    process_request_endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_process_request_endpoint(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:ubii.processing.ProcessingMode.Lockstep)
 }
 
 void ProcessingMode_Lockstep::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  process_request_endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+process_request_endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ProcessingMode_Lockstep::~ProcessingMode_Lockstep() {
   // @@protoc_insertion_point(destructor:ubii.processing.ProcessingMode.Lockstep)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ProcessingMode_Lockstep::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   process_request_endpoint_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ProcessingMode_Lockstep::ArenaDtor(void* object) {
+  ProcessingMode_Lockstep* _this = reinterpret_cast< ProcessingMode_Lockstep* >(object);
+  (void)_this;
+}
+void ProcessingMode_Lockstep::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProcessingMode_Lockstep::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProcessingMode_Lockstep& ProcessingMode_Lockstep::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProcessingMode_Lockstep_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProcessingMode_Lockstep::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.processing.ProcessingMode.Lockstep)
@@ -599,8 +559,8 @@ void ProcessingMode_Lockstep::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  process_request_endpoint_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  process_request_endpoint_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ProcessingMode_Lockstep::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -608,7 +568,6 @@ const char* ProcessingMode_Lockstep::_InternalParse(const char* ptr, ::PROTOBUF_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string process_request_endpoint = 1;
       case 1:
@@ -621,11 +580,14 @@ const char* ProcessingMode_Lockstep::_InternalParse(const char* ptr, ::PROTOBUF_
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -657,7 +619,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ProcessingMode.Lockstep)
   return target;
@@ -705,13 +667,12 @@ void ProcessingMode_Lockstep::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& 
 void ProcessingMode_Lockstep::MergeFrom(const ProcessingMode_Lockstep& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ProcessingMode.Lockstep)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.process_request_endpoint().size() > 0) {
-
-    process_request_endpoint_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.process_request_endpoint_);
+    _internal_set_process_request_endpoint(from._internal_process_request_endpoint());
   }
 }
 
@@ -735,33 +696,31 @@ bool ProcessingMode_Lockstep::IsInitialized() const {
 
 void ProcessingMode_Lockstep::InternalSwap(ProcessingMode_Lockstep* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  process_request_endpoint_.Swap(&other->process_request_endpoint_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  process_request_endpoint_.Swap(&other->process_request_endpoint_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProcessingMode_Lockstep::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter, &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once,
+      file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[1]);
 }
-
 
 // ===================================================================
 
-void ProcessingMode_TriggerOnInput::InitAsDefaultInstance() {
-}
 class ProcessingMode_TriggerOnInput::_Internal {
  public:
 };
 
-ProcessingMode_TriggerOnInput::ProcessingMode_TriggerOnInput()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ProcessingMode_TriggerOnInput::ProcessingMode_TriggerOnInput(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.processing.ProcessingMode.TriggerOnInput)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.processing.ProcessingMode.TriggerOnInput)
 }
 ProcessingMode_TriggerOnInput::ProcessingMode_TriggerOnInput(const ProcessingMode_TriggerOnInput& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&min_delay_ms_, &from.min_delay_ms_,
     static_cast<size_t>(reinterpret_cast<char*>(&all_inputs_need_update_) -
     reinterpret_cast<char*>(&min_delay_ms_)) + sizeof(all_inputs_need_update_));
@@ -769,27 +728,31 @@ ProcessingMode_TriggerOnInput::ProcessingMode_TriggerOnInput(const ProcessingMod
 }
 
 void ProcessingMode_TriggerOnInput::SharedCtor() {
-  ::memset(&min_delay_ms_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&all_inputs_need_update_) -
-      reinterpret_cast<char*>(&min_delay_ms_)) + sizeof(all_inputs_need_update_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&min_delay_ms_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&all_inputs_need_update_) -
+    reinterpret_cast<char*>(&min_delay_ms_)) + sizeof(all_inputs_need_update_));
 }
 
 ProcessingMode_TriggerOnInput::~ProcessingMode_TriggerOnInput() {
   // @@protoc_insertion_point(destructor:ubii.processing.ProcessingMode.TriggerOnInput)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ProcessingMode_TriggerOnInput::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ProcessingMode_TriggerOnInput::ArenaDtor(void* object) {
+  ProcessingMode_TriggerOnInput* _this = reinterpret_cast< ProcessingMode_TriggerOnInput* >(object);
+  (void)_this;
+}
+void ProcessingMode_TriggerOnInput::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProcessingMode_TriggerOnInput::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProcessingMode_TriggerOnInput& ProcessingMode_TriggerOnInput::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProcessingMode_TriggerOnInput_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProcessingMode_TriggerOnInput::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.processing.ProcessingMode.TriggerOnInput)
@@ -800,7 +763,7 @@ void ProcessingMode_TriggerOnInput::Clear() {
   ::memset(&min_delay_ms_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&all_inputs_need_update_) -
       reinterpret_cast<char*>(&min_delay_ms_)) + sizeof(all_inputs_need_update_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ProcessingMode_TriggerOnInput::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -808,29 +771,31 @@ const char* ProcessingMode_TriggerOnInput::_InternalParse(const char* ptr, ::PRO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 min_delay_ms = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          min_delay_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          min_delay_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool all_inputs_need_update = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          all_inputs_need_update_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          all_inputs_need_update_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -864,7 +829,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ProcessingMode.TriggerOnInput)
   return target;
@@ -917,7 +882,7 @@ void ProcessingMode_TriggerOnInput::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Mes
 void ProcessingMode_TriggerOnInput::MergeFrom(const ProcessingMode_TriggerOnInput& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ProcessingMode.TriggerOnInput)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -949,26 +914,23 @@ bool ProcessingMode_TriggerOnInput::IsInitialized() const {
 
 void ProcessingMode_TriggerOnInput::InternalSwap(ProcessingMode_TriggerOnInput* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(min_delay_ms_, other->min_delay_ms_);
-  swap(all_inputs_need_update_, other->all_inputs_need_update_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProcessingMode_TriggerOnInput, all_inputs_need_update_)
+      + sizeof(ProcessingMode_TriggerOnInput::all_inputs_need_update_)
+      - PROTOBUF_FIELD_OFFSET(ProcessingMode_TriggerOnInput, min_delay_ms_)>(
+          reinterpret_cast<char*>(&min_delay_ms_),
+          reinterpret_cast<char*>(&other->min_delay_ms_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProcessingMode_TriggerOnInput::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter, &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once,
+      file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[2]);
 }
-
 
 // ===================================================================
 
-void ProcessingMode::InitAsDefaultInstance() {
-  ::ubii::processing::_ProcessingMode_default_instance_.frequency_ = const_cast< ::ubii::processing::ProcessingMode_Frequency*>(
-      ::ubii::processing::ProcessingMode_Frequency::internal_default_instance());
-  ::ubii::processing::_ProcessingMode_default_instance_.lockstep_ = const_cast< ::ubii::processing::ProcessingMode_Lockstep*>(
-      ::ubii::processing::ProcessingMode_Lockstep::internal_default_instance());
-  ::ubii::processing::_ProcessingMode_default_instance_.trigger_on_input_ = const_cast< ::ubii::processing::ProcessingMode_TriggerOnInput*>(
-      ::ubii::processing::ProcessingMode_TriggerOnInput::internal_default_instance());
-}
 class ProcessingMode::_Internal {
  public:
   static const ::ubii::processing::ProcessingMode_Frequency& frequency(const ProcessingMode* msg);
@@ -989,10 +951,11 @@ ProcessingMode::_Internal::trigger_on_input(const ProcessingMode* msg) {
   return *msg->mode_.trigger_on_input_;
 }
 void ProcessingMode::set_allocated_frequency(::ubii::processing::ProcessingMode_Frequency* frequency) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_mode();
   if (frequency) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(frequency);
     if (message_arena != submessage_arena) {
       frequency = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, frequency, submessage_arena);
@@ -1003,10 +966,11 @@ void ProcessingMode::set_allocated_frequency(::ubii::processing::ProcessingMode_
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingMode.frequency)
 }
 void ProcessingMode::set_allocated_lockstep(::ubii::processing::ProcessingMode_Lockstep* lockstep) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_mode();
   if (lockstep) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(lockstep);
     if (message_arena != submessage_arena) {
       lockstep = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, lockstep, submessage_arena);
@@ -1017,10 +981,11 @@ void ProcessingMode::set_allocated_lockstep(::ubii::processing::ProcessingMode_L
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingMode.lockstep)
 }
 void ProcessingMode::set_allocated_trigger_on_input(::ubii::processing::ProcessingMode_TriggerOnInput* trigger_on_input) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_mode();
   if (trigger_on_input) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(trigger_on_input);
     if (message_arena != submessage_arena) {
       trigger_on_input = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, trigger_on_input, submessage_arena);
@@ -1030,15 +995,15 @@ void ProcessingMode::set_allocated_trigger_on_input(::ubii::processing::Processi
   }
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingMode.trigger_on_input)
 }
-ProcessingMode::ProcessingMode()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ProcessingMode::ProcessingMode(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.processing.ProcessingMode)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.processing.ProcessingMode)
 }
 ProcessingMode::ProcessingMode(const ProcessingMode& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_mode();
   switch (from.mode_case()) {
     case kFrequency: {
@@ -1061,43 +1026,51 @@ ProcessingMode::ProcessingMode(const ProcessingMode& from)
 }
 
 void ProcessingMode::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  clear_has_mode();
+clear_has_mode();
 }
 
 ProcessingMode::~ProcessingMode() {
   // @@protoc_insertion_point(destructor:ubii.processing.ProcessingMode)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ProcessingMode::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (has_mode()) {
     clear_mode();
   }
 }
 
+void ProcessingMode::ArenaDtor(void* object) {
+  ProcessingMode* _this = reinterpret_cast< ProcessingMode* >(object);
+  (void)_this;
+}
+void ProcessingMode::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProcessingMode::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProcessingMode& ProcessingMode::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProcessingMode_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProcessingMode::clear_mode() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.processing.ProcessingMode)
   switch (mode_case()) {
     case kFrequency: {
-      delete mode_.frequency_;
+      if (GetArena() == nullptr) {
+        delete mode_.frequency_;
+      }
       break;
     }
     case kLockstep: {
-      delete mode_.lockstep_;
+      if (GetArena() == nullptr) {
+        delete mode_.lockstep_;
+      }
       break;
     }
     case kTriggerOnInput: {
-      delete mode_.trigger_on_input_;
+      if (GetArena() == nullptr) {
+        delete mode_.trigger_on_input_;
+      }
       break;
     }
     case MODE_NOT_SET: {
@@ -1115,7 +1088,7 @@ void ProcessingMode::Clear() {
   (void) cached_has_bits;
 
   clear_mode();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ProcessingMode::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -1123,7 +1096,6 @@ const char* ProcessingMode::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .ubii.processing.ProcessingMode.Frequency frequency = 1;
       case 1:
@@ -1148,11 +1120,14 @@ const char* ProcessingMode::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1198,7 +1173,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ProcessingMode)
   return target;
@@ -1265,7 +1240,7 @@ void ProcessingMode::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ProcessingMode::MergeFrom(const ProcessingMode& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ProcessingMode)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1308,68 +1283,71 @@ bool ProcessingMode::IsInitialized() const {
 
 void ProcessingMode::InternalSwap(ProcessingMode* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(mode_, other->mode_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProcessingMode::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter, &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once,
+      file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[3]);
 }
-
 
 // ===================================================================
 
-void ModuleIO::InitAsDefaultInstance() {
-}
 class ModuleIO::_Internal {
  public:
 };
 
-ModuleIO::ModuleIO()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ModuleIO::ModuleIO(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.processing.ModuleIO)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.processing.ModuleIO)
 }
 ModuleIO::ModuleIO(const ModuleIO& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_internal_name().empty()) {
-    internal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.internal_name_);
+    internal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_internal_name(), 
+      GetArena());
   }
   message_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_message_format().empty()) {
-    message_format_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_format_);
+    message_format_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message_format(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:ubii.processing.ModuleIO)
 }
 
 void ModuleIO::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  message_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+internal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+message_format_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ModuleIO::~ModuleIO() {
   // @@protoc_insertion_point(destructor:ubii.processing.ModuleIO)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ModuleIO::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   internal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   message_format_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ModuleIO::ArenaDtor(void* object) {
+  ModuleIO* _this = reinterpret_cast< ModuleIO* >(object);
+  (void)_this;
+}
+void ModuleIO::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ModuleIO::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ModuleIO& ModuleIO::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ModuleIO_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ModuleIO::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.processing.ModuleIO)
@@ -1377,9 +1355,9 @@ void ModuleIO::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  internal_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  message_format_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  internal_name_.ClearToEmpty();
+  message_format_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ModuleIO::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -1387,7 +1365,6 @@ const char* ModuleIO::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string internal_name = 1;
       case 1:
@@ -1409,11 +1386,14 @@ const char* ModuleIO::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1455,7 +1435,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ModuleIO)
   return target;
@@ -1510,17 +1490,15 @@ void ModuleIO::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ModuleIO::MergeFrom(const ModuleIO& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ModuleIO)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.internal_name().size() > 0) {
-
-    internal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.internal_name_);
+    _internal_set_internal_name(from._internal_internal_name());
   }
   if (from.message_format().size() > 0) {
-
-    message_format_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_format_);
+    _internal_set_message_format(from._internal_message_format());
   }
 }
 
@@ -1544,24 +1522,19 @@ bool ModuleIO::IsInitialized() const {
 
 void ModuleIO::InternalSwap(ModuleIO* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  internal_name_.Swap(&other->internal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  message_format_.Swap(&other->message_format_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  internal_name_.Swap(&other->internal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  message_format_.Swap(&other->message_format_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ModuleIO::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter, &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once,
+      file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[4]);
 }
-
 
 // ===================================================================
 
-void ProcessingModule::InitAsDefaultInstance() {
-  ::ubii::processing::_ProcessingModule_default_instance_._instance.get_mutable()->processing_mode_ = const_cast< ::ubii::processing::ProcessingMode*>(
-      ::ubii::processing::ProcessingMode::internal_default_instance());
-}
 class ProcessingModule::_Internal {
  public:
   static const ::ubii::processing::ProcessingMode& processing_mode(const ProcessingModule* msg);
@@ -1571,54 +1544,67 @@ const ::ubii::processing::ProcessingMode&
 ProcessingModule::_Internal::processing_mode(const ProcessingModule* msg) {
   return *msg->processing_mode_;
 }
-ProcessingModule::ProcessingModule()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ProcessingModule::ProcessingModule(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  authors_(arena),
+  tags_(arena),
+  inputs_(arena),
+  outputs_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.processing.ProcessingModule)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.processing.ProcessingModule)
 }
 ProcessingModule::ProcessingModule(const ProcessingModule& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       authors_(from.authors_),
       tags_(from.tags_),
       inputs_(from.inputs_),
       outputs_(from.outputs_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArena());
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArena());
   }
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_description().empty()) {
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+      GetArena());
   }
   node_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_node_id().empty()) {
-    node_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.node_id_);
+    node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_node_id(), 
+      GetArena());
   }
   session_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_session_id().empty()) {
-    session_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.session_id_);
+    session_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_session_id(), 
+      GetArena());
   }
   on_processing_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_on_processing_stringified().empty()) {
-    on_processing_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_stringified_);
+    on_processing_stringified_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_on_processing_stringified(), 
+      GetArena());
   }
   on_created_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_on_created_stringified().empty()) {
-    on_created_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_created_stringified_);
+    on_created_stringified_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_on_created_stringified(), 
+      GetArena());
   }
   on_halted_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_on_halted_stringified().empty()) {
-    on_halted_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_halted_stringified_);
+    on_halted_stringified_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_on_halted_stringified(), 
+      GetArena());
   }
   on_destroyed_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_on_destroyed_stringified().empty()) {
-    on_destroyed_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_destroyed_stringified_);
+    on_destroyed_stringified_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_on_destroyed_stringified(), 
+      GetArena());
   }
   if (from._internal_has_processing_mode()) {
     processing_mode_ = new ::ubii::processing::ProcessingMode(*from.processing_mode_);
@@ -1632,27 +1618,29 @@ ProcessingModule::ProcessingModule(const ProcessingModule& from)
 }
 
 void ProcessingModule::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  node_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  session_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_processing_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_created_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_halted_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_destroyed_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&processing_mode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&language_) -
-      reinterpret_cast<char*>(&processing_mode_)) + sizeof(language_));
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+node_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+session_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+on_processing_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+on_created_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+on_halted_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+on_destroyed_stringified_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&processing_mode_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&language_) -
+    reinterpret_cast<char*>(&processing_mode_)) + sizeof(language_));
 }
 
 ProcessingModule::~ProcessingModule() {
   // @@protoc_insertion_point(destructor:ubii.processing.ProcessingModule)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ProcessingModule::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1665,14 +1653,15 @@ void ProcessingModule::SharedDtor() {
   if (this != internal_default_instance()) delete processing_mode_;
 }
 
+void ProcessingModule::ArenaDtor(void* object) {
+  ProcessingModule* _this = reinterpret_cast< ProcessingModule* >(object);
+  (void)_this;
+}
+void ProcessingModule::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProcessingModule::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProcessingModule& ProcessingModule::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProcessingModule::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.processing.ProcessingModule)
@@ -1684,23 +1673,23 @@ void ProcessingModule::Clear() {
   tags_.Clear();
   inputs_.Clear();
   outputs_.Clear();
-  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  node_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  session_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_processing_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_created_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_halted_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  on_destroyed_stringified_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && processing_mode_ != nullptr) {
+  id_.ClearToEmpty();
+  name_.ClearToEmpty();
+  description_.ClearToEmpty();
+  node_id_.ClearToEmpty();
+  session_id_.ClearToEmpty();
+  on_processing_stringified_.ClearToEmpty();
+  on_created_stringified_.ClearToEmpty();
+  on_halted_stringified_.ClearToEmpty();
+  on_destroyed_stringified_.ClearToEmpty();
+  if (GetArena() == nullptr && processing_mode_ != nullptr) {
     delete processing_mode_;
   }
   processing_mode_ = nullptr;
   ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&language_) -
       reinterpret_cast<char*>(&status_)) + sizeof(language_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ProcessingModule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -1708,7 +1697,6 @@ const char* ProcessingModule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string id = 1;
       case 1:
@@ -1786,7 +1774,7 @@ const char* ProcessingModule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       // .ubii.processing.ProcessingModule.Status status = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::ubii::processing::ProcessingModule_Status>(val));
         } else goto handle_unusual;
@@ -1825,7 +1813,7 @@ const char* ProcessingModule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       // .ubii.processing.ProcessingModule.Language language = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_language(static_cast<::ubii::processing::ProcessingModule_Language>(val));
         } else goto handle_unusual;
@@ -1868,11 +1856,14 @@ const char* ProcessingModule::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2042,7 +2033,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ProcessingModule)
   return target;
@@ -2195,7 +2186,7 @@ void ProcessingModule::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ProcessingModule::MergeFrom(const ProcessingModule& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ProcessingModule)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2204,40 +2195,31 @@ void ProcessingModule::MergeFrom(const ProcessingModule& from) {
   inputs_.MergeFrom(from.inputs_);
   outputs_.MergeFrom(from.outputs_);
   if (from.id().size() > 0) {
-
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    _internal_set_id(from._internal_id());
   }
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.description().size() > 0) {
-
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    _internal_set_description(from._internal_description());
   }
   if (from.node_id().size() > 0) {
-
-    node_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.node_id_);
+    _internal_set_node_id(from._internal_node_id());
   }
   if (from.session_id().size() > 0) {
-
-    session_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.session_id_);
+    _internal_set_session_id(from._internal_session_id());
   }
   if (from.on_processing_stringified().size() > 0) {
-
-    on_processing_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_processing_stringified_);
+    _internal_set_on_processing_stringified(from._internal_on_processing_stringified());
   }
   if (from.on_created_stringified().size() > 0) {
-
-    on_created_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_created_stringified_);
+    _internal_set_on_created_stringified(from._internal_on_created_stringified());
   }
   if (from.on_halted_stringified().size() > 0) {
-
-    on_halted_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_halted_stringified_);
+    _internal_set_on_halted_stringified(from._internal_on_halted_stringified());
   }
   if (from.on_destroyed_stringified().size() > 0) {
-
-    on_destroyed_stringified_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.on_destroyed_stringified_);
+    _internal_set_on_destroyed_stringified(from._internal_on_destroyed_stringified());
   }
   if (from.has_processing_mode()) {
     _internal_mutable_processing_mode()->::ubii::processing::ProcessingMode::MergeFrom(from._internal_processing_mode());
@@ -2270,80 +2252,76 @@ bool ProcessingModule::IsInitialized() const {
 
 void ProcessingModule::InternalSwap(ProcessingModule* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   authors_.InternalSwap(&other->authors_);
   tags_.InternalSwap(&other->tags_);
   inputs_.InternalSwap(&other->inputs_);
   outputs_.InternalSwap(&other->outputs_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  node_id_.Swap(&other->node_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  session_id_.Swap(&other->session_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  on_processing_stringified_.Swap(&other->on_processing_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  on_created_stringified_.Swap(&other->on_created_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  on_halted_stringified_.Swap(&other->on_halted_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  on_destroyed_stringified_.Swap(&other->on_destroyed_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(processing_mode_, other->processing_mode_);
-  swap(status_, other->status_);
-  swap(language_, other->language_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  node_id_.Swap(&other->node_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  session_id_.Swap(&other->session_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  on_processing_stringified_.Swap(&other->on_processing_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  on_created_stringified_.Swap(&other->on_created_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  on_halted_stringified_.Swap(&other->on_halted_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  on_destroyed_stringified_.Swap(&other->on_destroyed_stringified_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProcessingModule, language_)
+      + sizeof(ProcessingModule::language_)
+      - PROTOBUF_FIELD_OFFSET(ProcessingModule, processing_mode_)>(
+          reinterpret_cast<char*>(&processing_mode_),
+          reinterpret_cast<char*>(&other->processing_mode_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProcessingModule::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter, &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once,
+      file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[5]);
 }
-
 
 // ===================================================================
 
-void ProcessingModuleList::InitAsDefaultInstance() {
-}
 class ProcessingModuleList::_Internal {
  public:
 };
 
-ProcessingModuleList::ProcessingModuleList()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ProcessingModuleList::ProcessingModuleList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  elements_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.processing.ProcessingModuleList)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.processing.ProcessingModuleList)
 }
 ProcessingModuleList::ProcessingModuleList(const ProcessingModuleList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       elements_(from.elements_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.processing.ProcessingModuleList)
 }
 
 void ProcessingModuleList::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto.base);
 }
 
 ProcessingModuleList::~ProcessingModuleList() {
   // @@protoc_insertion_point(destructor:ubii.processing.ProcessingModuleList)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ProcessingModuleList::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ProcessingModuleList::ArenaDtor(void* object) {
+  ProcessingModuleList* _this = reinterpret_cast< ProcessingModuleList* >(object);
+  (void)_this;
+}
+void ProcessingModuleList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProcessingModuleList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProcessingModuleList& ProcessingModuleList::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProcessingModuleList::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.processing.ProcessingModuleList)
@@ -2352,7 +2330,7 @@ void ProcessingModuleList::Clear() {
   (void) cached_has_bits;
 
   elements_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ProcessingModuleList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -2360,7 +2338,6 @@ const char* ProcessingModuleList::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .ubii.processing.ProcessingModule elements = 1;
       case 1:
@@ -2376,11 +2353,14 @@ const char* ProcessingModuleList::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2410,7 +2390,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ProcessingModuleList)
   return target;
@@ -2458,7 +2438,7 @@ void ProcessingModuleList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void ProcessingModuleList::MergeFrom(const ProcessingModuleList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ProcessingModuleList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2485,39 +2465,40 @@ bool ProcessingModuleList::IsInitialized() const {
 
 void ProcessingModuleList::InternalSwap(ProcessingModuleList* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   elements_.InternalSwap(&other->elements_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProcessingModuleList::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_getter, &descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto_once,
+      file_level_metadata_proto_2fprocessing_2fprocessingModule_2eproto[6]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace processing
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::processing::ProcessingMode_Frequency* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingMode_Frequency >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::processing::ProcessingMode_Frequency >(arena);
+  return Arena::CreateMessageInternal< ::ubii::processing::ProcessingMode_Frequency >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::processing::ProcessingMode_Lockstep* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingMode_Lockstep >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::processing::ProcessingMode_Lockstep >(arena);
+  return Arena::CreateMessageInternal< ::ubii::processing::ProcessingMode_Lockstep >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::processing::ProcessingMode_TriggerOnInput* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingMode_TriggerOnInput >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::processing::ProcessingMode_TriggerOnInput >(arena);
+  return Arena::CreateMessageInternal< ::ubii::processing::ProcessingMode_TriggerOnInput >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::processing::ProcessingMode* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingMode >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::processing::ProcessingMode >(arena);
+  return Arena::CreateMessageInternal< ::ubii::processing::ProcessingMode >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::processing::ModuleIO* Arena::CreateMaybeMessage< ::ubii::processing::ModuleIO >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::processing::ModuleIO >(arena);
+  return Arena::CreateMessageInternal< ::ubii::processing::ModuleIO >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::processing::ProcessingModule* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingModule >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::processing::ProcessingModule >(arena);
+  return Arena::CreateMessageInternal< ::ubii::processing::ProcessingModule >(arena);
 }
 template<> PROTOBUF_NOINLINE ::ubii::processing::ProcessingModuleList* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingModuleList >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::processing::ProcessingModuleList >(arena);
+  return Arena::CreateMessageInternal< ::ubii::processing::ProcessingModuleList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

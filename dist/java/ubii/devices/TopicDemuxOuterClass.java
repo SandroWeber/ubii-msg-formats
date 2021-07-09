@@ -69,7 +69,7 @@ public final class TopicDemuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicDemux}
    */
-  public  static final class TopicDemux extends
+  public static final class TopicDemux extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicDemux)
       TopicDemuxOrBuilder {
@@ -177,6 +177,7 @@ public final class TopicDemuxOuterClass {
      * <code>string id = 1;</code>
      * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class TopicDemuxOuterClass {
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -213,6 +215,7 @@ public final class TopicDemuxOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -229,6 +232,7 @@ public final class TopicDemuxOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -249,6 +253,7 @@ public final class TopicDemuxOuterClass {
      * <code>string data_type = 3;</code>
      * @return The dataType.
      */
+    @java.lang.Override
     public java.lang.String getDataType() {
       java.lang.Object ref = dataType_;
       if (ref instanceof java.lang.String) {
@@ -265,6 +270,7 @@ public final class TopicDemuxOuterClass {
      * <code>string data_type = 3;</code>
      * @return The bytes for dataType.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDataTypeBytes() {
       java.lang.Object ref = dataType_;
@@ -285,6 +291,7 @@ public final class TopicDemuxOuterClass {
      * <code>string output_topic_format = 4;</code>
      * @return The outputTopicFormat.
      */
+    @java.lang.Override
     public java.lang.String getOutputTopicFormat() {
       java.lang.Object ref = outputTopicFormat_;
       if (ref instanceof java.lang.String) {
@@ -301,6 +308,7 @@ public final class TopicDemuxOuterClass {
      * <code>string output_topic_format = 4;</code>
      * @return The bytes for outputTopicFormat.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOutputTopicFormatBytes() {
       java.lang.Object ref = outputTopicFormat_;
@@ -1055,7 +1063,7 @@ public final class TopicDemuxOuterClass {
   /**
    * Protobuf type {@code ubii.devices.TopicDemuxList}
    */
-  public  static final class TopicDemuxList extends
+  public static final class TopicDemuxList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.devices.TopicDemuxList)
       TopicDemuxListOrBuilder {
@@ -1148,12 +1156,14 @@ public final class TopicDemuxOuterClass {
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<ubii.devices.TopicDemuxOuterClass.TopicDemux> getElementsList() {
       return elements_;
     }
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> 
         getElementsOrBuilderList() {
       return elements_;
@@ -1161,18 +1171,21 @@ public final class TopicDemuxOuterClass {
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
+    @java.lang.Override
     public int getElementsCount() {
       return elements_.size();
     }
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemux getElements(int index) {
       return elements_.get(index);
     }
     /**
      * <code>repeated .ubii.devices.TopicDemux elements = 1;</code>
      */
+    @java.lang.Override
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder getElementsOrBuilder(
         int index) {
       return elements_.get(index);

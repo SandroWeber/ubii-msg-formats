@@ -14,85 +14,24 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fclients_2fclient_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Client_proto_2fclients_2fclient_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fclients_2fclient_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ClientList_proto_2fclients_2fclient_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StringList_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fdevice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Device_proto_2fdevices_2fdevice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fdevice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeviceList_proto_2fdevices_2fdevice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicDemux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicDemux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicMux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TopicMux_proto_2fdevices_2ftopicMux_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicMux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicMuxList_proto_2fdevices_2ftopicMux_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fgeneral_2ferror_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Error_proto_2fgeneral_2ferror_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fgeneral_2fsuccess_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Success_proto_2fgeneral_2fsuccess_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2flockstepProcessing_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fservers_2fserver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Server_proto_2fservers_2fserver_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fservices_2fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Service_proto_2fservices_2fservice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fservices_2fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ServiceList_proto_2fservices_2fservice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Session_proto_2fsessions_2fsession_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SessionList_proto_2fsessions_2fsession_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace ubii {
 namespace services {
-class ServiceReplyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServiceReply> _instance;
-  const ::ubii::general::Success* success_;
-  const ::ubii::general::Error* error_;
-  const ::ubii::clients::Client* client_;
-  const ::ubii::devices::Device* device_;
-  const ::ubii::servers::Server* server_;
-  const ::ubii::sessions::Session* session_;
-  const ::ubii::sessions::SessionList* session_list_;
-  const ::ubii::processing::ProcessingModule* processing_module_;
-  const ::ubii::processing::ProcessingModuleList* processing_module_list_;
-  const ::ubii::dataStructure::StringList* string_list_;
-  const ::ubii::devices::TopicMux* topic_mux_;
-  const ::ubii::devices::TopicMuxList* topic_mux_list_;
-  const ::ubii::devices::TopicDemux* topic_demux_;
-  const ::ubii::devices::TopicDemuxList* topic_demux_list_;
-  const ::ubii::clients::ClientList* client_list_;
-  const ::ubii::devices::DeviceList* device_list_;
-  const ::ubii::services::Service* service_;
-  const ::ubii::services::ServiceList* service_list_;
-  const ::ubii::processing::LockstepProcessingReply* lockstep_processing_reply_;
-} _ServiceReply_default_instance_;
+constexpr ServiceReply::ServiceReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct ServiceReplyDefaultTypeInternal {
+  constexpr ServiceReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ServiceReplyDefaultTypeInternal() {}
+  union {
+    ServiceReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ServiceReplyDefaultTypeInternal _ServiceReply_default_instance_;
 }  // namespace services
 }  // namespace ubii
-static void InitDefaultsscc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ubii::services::_ServiceReply_default_instance_;
-    new (ptr) ::ubii::services::ServiceReply();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ubii::services::ServiceReply::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<19> scc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 19, 0, InitDefaultsscc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto}, {
-      &scc_info_Success_proto_2fgeneral_2fsuccess_2eproto.base,
-      &scc_info_Error_proto_2fgeneral_2ferror_2eproto.base,
-      &scc_info_Client_proto_2fclients_2fclient_2eproto.base,
-      &scc_info_Device_proto_2fdevices_2fdevice_2eproto.base,
-      &scc_info_Server_proto_2fservers_2fserver_2eproto.base,
-      &scc_info_Session_proto_2fsessions_2fsession_2eproto.base,
-      &scc_info_SessionList_proto_2fsessions_2fsession_2eproto.base,
-      &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,
-      &scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto.base,
-      &scc_info_StringList_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto.base,
-      &scc_info_TopicMux_proto_2fdevices_2ftopicMux_2eproto.base,
-      &scc_info_TopicMuxList_proto_2fdevices_2ftopicMux_2eproto.base,
-      &scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto.base,
-      &scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto.base,
-      &scc_info_ClientList_proto_2fclients_2fclient_2eproto.base,
-      &scc_info_DeviceList_proto_2fdevices_2fdevice_2eproto.base,
-      &scc_info_Service_proto_2fservices_2fservice_2eproto.base,
-      &scc_info_ServiceList_proto_2fservices_2fservice_2eproto.base,
-      &scc_info_LockstepProcessingReply_proto_2fprocessing_2flockstepProcessing_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fservices_2fserviceReply_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fservices_2fserviceReply_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fservices_2fserviceReply_2eproto = nullptr;
@@ -103,25 +42,25 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fservices_2fserviceRepl
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::ubii::services::ServiceReply, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, success_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, error_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, client_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, device_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, server_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, session_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, session_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, processing_module_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, processing_module_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, string_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_mux_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_mux_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_demux_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, topic_demux_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, client_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, device_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, service_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, service_list_),
-  offsetof(::ubii::services::ServiceReplyDefaultTypeInternal, lockstep_processing_reply_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::ubii::services::ServiceReply, type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -185,65 +124,24 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_proto_2fsessions_2fsession_2eproto,
   &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2flists_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fservices_2fserviceReply_2eproto_sccs[1] = {
-  &scc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fservices_2fserviceReply_2eproto_once;
-static bool descriptor_table_proto_2fservices_2fserviceReply_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fservices_2fserviceReply_2eproto = {
-  &descriptor_table_proto_2fservices_2fserviceReply_2eproto_initialized, descriptor_table_protodef_proto_2fservices_2fserviceReply_2eproto, "proto/services/serviceReply.proto", 1453,
-  &descriptor_table_proto_2fservices_2fserviceReply_2eproto_once, descriptor_table_proto_2fservices_2fserviceReply_2eproto_sccs, descriptor_table_proto_2fservices_2fserviceReply_2eproto_deps, 1, 12,
+  false, false, 1453, descriptor_table_protodef_proto_2fservices_2fserviceReply_2eproto, "proto/services/serviceReply.proto", 
+  &descriptor_table_proto_2fservices_2fserviceReply_2eproto_once, descriptor_table_proto_2fservices_2fserviceReply_2eproto_deps, 12, 1,
   schemas, file_default_instances, TableStruct_proto_2fservices_2fserviceReply_2eproto::offsets,
-  file_level_metadata_proto_2fservices_2fserviceReply_2eproto, 1, file_level_enum_descriptors_proto_2fservices_2fserviceReply_2eproto, file_level_service_descriptors_proto_2fservices_2fserviceReply_2eproto,
+  file_level_metadata_proto_2fservices_2fserviceReply_2eproto, file_level_enum_descriptors_proto_2fservices_2fserviceReply_2eproto, file_level_service_descriptors_proto_2fservices_2fserviceReply_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_proto_2fservices_2fserviceReply_2eproto_getter() {
+  return &descriptor_table_proto_2fservices_2fserviceReply_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fservices_2fserviceReply_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fservices_2fserviceReply_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_proto_2fservices_2fserviceReply_2eproto(&descriptor_table_proto_2fservices_2fserviceReply_2eproto);
 namespace ubii {
 namespace services {
 
 // ===================================================================
 
-void ServiceReply::InitAsDefaultInstance() {
-  ::ubii::services::_ServiceReply_default_instance_.success_ = const_cast< ::ubii::general::Success*>(
-      ::ubii::general::Success::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.error_ = const_cast< ::ubii::general::Error*>(
-      ::ubii::general::Error::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.client_ = const_cast< ::ubii::clients::Client*>(
-      ::ubii::clients::Client::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.device_ = const_cast< ::ubii::devices::Device*>(
-      ::ubii::devices::Device::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.server_ = const_cast< ::ubii::servers::Server*>(
-      ::ubii::servers::Server::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.session_ = const_cast< ::ubii::sessions::Session*>(
-      ::ubii::sessions::Session::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.session_list_ = const_cast< ::ubii::sessions::SessionList*>(
-      ::ubii::sessions::SessionList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.processing_module_ = const_cast< ::ubii::processing::ProcessingModule*>(
-      ::ubii::processing::ProcessingModule::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.processing_module_list_ = const_cast< ::ubii::processing::ProcessingModuleList*>(
-      ::ubii::processing::ProcessingModuleList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.string_list_ = const_cast< ::ubii::dataStructure::StringList*>(
-      ::ubii::dataStructure::StringList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.topic_mux_ = const_cast< ::ubii::devices::TopicMux*>(
-      ::ubii::devices::TopicMux::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.topic_mux_list_ = const_cast< ::ubii::devices::TopicMuxList*>(
-      ::ubii::devices::TopicMuxList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.topic_demux_ = const_cast< ::ubii::devices::TopicDemux*>(
-      ::ubii::devices::TopicDemux::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.topic_demux_list_ = const_cast< ::ubii::devices::TopicDemuxList*>(
-      ::ubii::devices::TopicDemuxList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.client_list_ = const_cast< ::ubii::clients::ClientList*>(
-      ::ubii::clients::ClientList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.device_list_ = const_cast< ::ubii::devices::DeviceList*>(
-      ::ubii::devices::DeviceList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.service_ = const_cast< ::ubii::services::Service*>(
-      ::ubii::services::Service::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.service_list_ = const_cast< ::ubii::services::ServiceList*>(
-      ::ubii::services::ServiceList::internal_default_instance());
-  ::ubii::services::_ServiceReply_default_instance_.lockstep_processing_reply_ = const_cast< ::ubii::processing::LockstepProcessingReply*>(
-      ::ubii::processing::LockstepProcessingReply::internal_default_instance());
-}
 class ServiceReply::_Internal {
  public:
   static const ::ubii::general::Success& success(const ServiceReply* msg);
@@ -344,10 +242,11 @@ ServiceReply::_Internal::lockstep_processing_reply(const ServiceReply* msg) {
   return *msg->type_.lockstep_processing_reply_;
 }
 void ServiceReply::set_allocated_success(::ubii::general::Success* success) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (success) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(success)->GetArena();
     if (message_arena != submessage_arena) {
       success = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, success, submessage_arena);
@@ -359,15 +258,18 @@ void ServiceReply::set_allocated_success(::ubii::general::Success* success) {
 }
 void ServiceReply::clear_success() {
   if (_internal_has_success()) {
-    delete type_.success_;
+    if (GetArena() == nullptr) {
+      delete type_.success_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_error(::ubii::general::Error* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (error) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error)->GetArena();
     if (message_arena != submessage_arena) {
       error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, error, submessage_arena);
@@ -379,15 +281,18 @@ void ServiceReply::set_allocated_error(::ubii::general::Error* error) {
 }
 void ServiceReply::clear_error() {
   if (_internal_has_error()) {
-    delete type_.error_;
+    if (GetArena() == nullptr) {
+      delete type_.error_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_client(::ubii::clients::Client* client) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (client) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(client)->GetArena();
     if (message_arena != submessage_arena) {
       client = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, client, submessage_arena);
@@ -399,15 +304,18 @@ void ServiceReply::set_allocated_client(::ubii::clients::Client* client) {
 }
 void ServiceReply::clear_client() {
   if (_internal_has_client()) {
-    delete type_.client_;
+    if (GetArena() == nullptr) {
+      delete type_.client_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_device(::ubii::devices::Device* device) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (device) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(device)->GetArena();
     if (message_arena != submessage_arena) {
       device = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, device, submessage_arena);
@@ -419,15 +327,18 @@ void ServiceReply::set_allocated_device(::ubii::devices::Device* device) {
 }
 void ServiceReply::clear_device() {
   if (_internal_has_device()) {
-    delete type_.device_;
+    if (GetArena() == nullptr) {
+      delete type_.device_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_server(::ubii::servers::Server* server) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (server) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(server)->GetArena();
     if (message_arena != submessage_arena) {
       server = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, server, submessage_arena);
@@ -439,15 +350,18 @@ void ServiceReply::set_allocated_server(::ubii::servers::Server* server) {
 }
 void ServiceReply::clear_server() {
   if (_internal_has_server()) {
-    delete type_.server_;
+    if (GetArena() == nullptr) {
+      delete type_.server_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_session(::ubii::sessions::Session* session) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (session) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(session)->GetArena();
     if (message_arena != submessage_arena) {
       session = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, session, submessage_arena);
@@ -459,15 +373,18 @@ void ServiceReply::set_allocated_session(::ubii::sessions::Session* session) {
 }
 void ServiceReply::clear_session() {
   if (_internal_has_session()) {
-    delete type_.session_;
+    if (GetArena() == nullptr) {
+      delete type_.session_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_session_list(::ubii::sessions::SessionList* session_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (session_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(session_list)->GetArena();
     if (message_arena != submessage_arena) {
       session_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, session_list, submessage_arena);
@@ -479,15 +396,18 @@ void ServiceReply::set_allocated_session_list(::ubii::sessions::SessionList* ses
 }
 void ServiceReply::clear_session_list() {
   if (_internal_has_session_list()) {
-    delete type_.session_list_;
+    if (GetArena() == nullptr) {
+      delete type_.session_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_processing_module(::ubii::processing::ProcessingModule* processing_module) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (processing_module) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(processing_module)->GetArena();
     if (message_arena != submessage_arena) {
       processing_module = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, processing_module, submessage_arena);
@@ -499,15 +419,18 @@ void ServiceReply::set_allocated_processing_module(::ubii::processing::Processin
 }
 void ServiceReply::clear_processing_module() {
   if (_internal_has_processing_module()) {
-    delete type_.processing_module_;
+    if (GetArena() == nullptr) {
+      delete type_.processing_module_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (processing_module_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(processing_module_list)->GetArena();
     if (message_arena != submessage_arena) {
       processing_module_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, processing_module_list, submessage_arena);
@@ -519,15 +442,18 @@ void ServiceReply::set_allocated_processing_module_list(::ubii::processing::Proc
 }
 void ServiceReply::clear_processing_module_list() {
   if (_internal_has_processing_module_list()) {
-    delete type_.processing_module_list_;
+    if (GetArena() == nullptr) {
+      delete type_.processing_module_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_string_list(::ubii::dataStructure::StringList* string_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (string_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(string_list)->GetArena();
     if (message_arena != submessage_arena) {
       string_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, string_list, submessage_arena);
@@ -539,15 +465,18 @@ void ServiceReply::set_allocated_string_list(::ubii::dataStructure::StringList* 
 }
 void ServiceReply::clear_string_list() {
   if (_internal_has_string_list()) {
-    delete type_.string_list_;
+    if (GetArena() == nullptr) {
+      delete type_.string_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_topic_mux(::ubii::devices::TopicMux* topic_mux) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (topic_mux) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(topic_mux)->GetArena();
     if (message_arena != submessage_arena) {
       topic_mux = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_mux, submessage_arena);
@@ -559,15 +488,18 @@ void ServiceReply::set_allocated_topic_mux(::ubii::devices::TopicMux* topic_mux)
 }
 void ServiceReply::clear_topic_mux() {
   if (_internal_has_topic_mux()) {
-    delete type_.topic_mux_;
+    if (GetArena() == nullptr) {
+      delete type_.topic_mux_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_topic_mux_list(::ubii::devices::TopicMuxList* topic_mux_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (topic_mux_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(topic_mux_list)->GetArena();
     if (message_arena != submessage_arena) {
       topic_mux_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_mux_list, submessage_arena);
@@ -579,15 +511,18 @@ void ServiceReply::set_allocated_topic_mux_list(::ubii::devices::TopicMuxList* t
 }
 void ServiceReply::clear_topic_mux_list() {
   if (_internal_has_topic_mux_list()) {
-    delete type_.topic_mux_list_;
+    if (GetArena() == nullptr) {
+      delete type_.topic_mux_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_topic_demux(::ubii::devices::TopicDemux* topic_demux) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (topic_demux) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(topic_demux)->GetArena();
     if (message_arena != submessage_arena) {
       topic_demux = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_demux, submessage_arena);
@@ -599,15 +534,18 @@ void ServiceReply::set_allocated_topic_demux(::ubii::devices::TopicDemux* topic_
 }
 void ServiceReply::clear_topic_demux() {
   if (_internal_has_topic_demux()) {
-    delete type_.topic_demux_;
+    if (GetArena() == nullptr) {
+      delete type_.topic_demux_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_topic_demux_list(::ubii::devices::TopicDemuxList* topic_demux_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (topic_demux_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(topic_demux_list)->GetArena();
     if (message_arena != submessage_arena) {
       topic_demux_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_demux_list, submessage_arena);
@@ -619,15 +557,18 @@ void ServiceReply::set_allocated_topic_demux_list(::ubii::devices::TopicDemuxLis
 }
 void ServiceReply::clear_topic_demux_list() {
   if (_internal_has_topic_demux_list()) {
-    delete type_.topic_demux_list_;
+    if (GetArena() == nullptr) {
+      delete type_.topic_demux_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_client_list(::ubii::clients::ClientList* client_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (client_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(client_list)->GetArena();
     if (message_arena != submessage_arena) {
       client_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, client_list, submessage_arena);
@@ -639,15 +580,18 @@ void ServiceReply::set_allocated_client_list(::ubii::clients::ClientList* client
 }
 void ServiceReply::clear_client_list() {
   if (_internal_has_client_list()) {
-    delete type_.client_list_;
+    if (GetArena() == nullptr) {
+      delete type_.client_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_device_list(::ubii::devices::DeviceList* device_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (device_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(device_list)->GetArena();
     if (message_arena != submessage_arena) {
       device_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, device_list, submessage_arena);
@@ -659,15 +603,18 @@ void ServiceReply::set_allocated_device_list(::ubii::devices::DeviceList* device
 }
 void ServiceReply::clear_device_list() {
   if (_internal_has_device_list()) {
-    delete type_.device_list_;
+    if (GetArena() == nullptr) {
+      delete type_.device_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_service(::ubii::services::Service* service) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (service) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(service)->GetArena();
     if (message_arena != submessage_arena) {
       service = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, service, submessage_arena);
@@ -679,15 +626,18 @@ void ServiceReply::set_allocated_service(::ubii::services::Service* service) {
 }
 void ServiceReply::clear_service() {
   if (_internal_has_service()) {
-    delete type_.service_;
+    if (GetArena() == nullptr) {
+      delete type_.service_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_service_list(::ubii::services::ServiceList* service_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (service_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(service_list)->GetArena();
     if (message_arena != submessage_arena) {
       service_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, service_list, submessage_arena);
@@ -699,15 +649,18 @@ void ServiceReply::set_allocated_service_list(::ubii::services::ServiceList* ser
 }
 void ServiceReply::clear_service_list() {
   if (_internal_has_service_list()) {
-    delete type_.service_list_;
+    if (GetArena() == nullptr) {
+      delete type_.service_list_;
+    }
     clear_has_type();
   }
 }
 void ServiceReply::set_allocated_lockstep_processing_reply(::ubii::processing::LockstepProcessingReply* lockstep_processing_reply) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_type();
   if (lockstep_processing_reply) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(lockstep_processing_reply)->GetArena();
     if (message_arena != submessage_arena) {
       lockstep_processing_reply = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, lockstep_processing_reply, submessage_arena);
@@ -719,19 +672,21 @@ void ServiceReply::set_allocated_lockstep_processing_reply(::ubii::processing::L
 }
 void ServiceReply::clear_lockstep_processing_reply() {
   if (_internal_has_lockstep_processing_reply()) {
-    delete type_.lockstep_processing_reply_;
+    if (GetArena() == nullptr) {
+      delete type_.lockstep_processing_reply_;
+    }
     clear_has_type();
   }
 }
-ServiceReply::ServiceReply()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ServiceReply::ServiceReply(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:ubii.services.ServiceReply)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ubii.services.ServiceReply)
 }
 ServiceReply::ServiceReply(const ServiceReply& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_type();
   switch (from.type_case()) {
     case kSuccess: {
@@ -818,107 +773,147 @@ ServiceReply::ServiceReply(const ServiceReply& from)
 }
 
 void ServiceReply::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto.base);
-  clear_has_type();
+clear_has_type();
 }
 
 ServiceReply::~ServiceReply() {
   // @@protoc_insertion_point(destructor:ubii.services.ServiceReply)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServiceReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (has_type()) {
     clear_type();
   }
 }
 
+void ServiceReply::ArenaDtor(void* object) {
+  ServiceReply* _this = reinterpret_cast< ServiceReply* >(object);
+  (void)_this;
+}
+void ServiceReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ServiceReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ServiceReply& ServiceReply::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ServiceReply_proto_2fservices_2fserviceReply_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ServiceReply::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.services.ServiceReply)
   switch (type_case()) {
     case kSuccess: {
-      delete type_.success_;
+      if (GetArena() == nullptr) {
+        delete type_.success_;
+      }
       break;
     }
     case kError: {
-      delete type_.error_;
+      if (GetArena() == nullptr) {
+        delete type_.error_;
+      }
       break;
     }
     case kClient: {
-      delete type_.client_;
+      if (GetArena() == nullptr) {
+        delete type_.client_;
+      }
       break;
     }
     case kDevice: {
-      delete type_.device_;
+      if (GetArena() == nullptr) {
+        delete type_.device_;
+      }
       break;
     }
     case kServer: {
-      delete type_.server_;
+      if (GetArena() == nullptr) {
+        delete type_.server_;
+      }
       break;
     }
     case kSession: {
-      delete type_.session_;
+      if (GetArena() == nullptr) {
+        delete type_.session_;
+      }
       break;
     }
     case kSessionList: {
-      delete type_.session_list_;
+      if (GetArena() == nullptr) {
+        delete type_.session_list_;
+      }
       break;
     }
     case kProcessingModule: {
-      delete type_.processing_module_;
+      if (GetArena() == nullptr) {
+        delete type_.processing_module_;
+      }
       break;
     }
     case kProcessingModuleList: {
-      delete type_.processing_module_list_;
+      if (GetArena() == nullptr) {
+        delete type_.processing_module_list_;
+      }
       break;
     }
     case kStringList: {
-      delete type_.string_list_;
+      if (GetArena() == nullptr) {
+        delete type_.string_list_;
+      }
       break;
     }
     case kTopicMux: {
-      delete type_.topic_mux_;
+      if (GetArena() == nullptr) {
+        delete type_.topic_mux_;
+      }
       break;
     }
     case kTopicMuxList: {
-      delete type_.topic_mux_list_;
+      if (GetArena() == nullptr) {
+        delete type_.topic_mux_list_;
+      }
       break;
     }
     case kTopicDemux: {
-      delete type_.topic_demux_;
+      if (GetArena() == nullptr) {
+        delete type_.topic_demux_;
+      }
       break;
     }
     case kTopicDemuxList: {
-      delete type_.topic_demux_list_;
+      if (GetArena() == nullptr) {
+        delete type_.topic_demux_list_;
+      }
       break;
     }
     case kClientList: {
-      delete type_.client_list_;
+      if (GetArena() == nullptr) {
+        delete type_.client_list_;
+      }
       break;
     }
     case kDeviceList: {
-      delete type_.device_list_;
+      if (GetArena() == nullptr) {
+        delete type_.device_list_;
+      }
       break;
     }
     case kService: {
-      delete type_.service_;
+      if (GetArena() == nullptr) {
+        delete type_.service_;
+      }
       break;
     }
     case kServiceList: {
-      delete type_.service_list_;
+      if (GetArena() == nullptr) {
+        delete type_.service_list_;
+      }
       break;
     }
     case kLockstepProcessingReply: {
-      delete type_.lockstep_processing_reply_;
+      if (GetArena() == nullptr) {
+        delete type_.lockstep_processing_reply_;
+      }
       break;
     }
     case TYPE_NOT_SET: {
@@ -936,7 +931,7 @@ void ServiceReply::Clear() {
   (void) cached_has_bits;
 
   clear_type();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ServiceReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
@@ -944,7 +939,6 @@ const char* ServiceReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .ubii.general.Success success = 1;
       case 1:
@@ -1081,11 +1075,14 @@ const char* ServiceReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1259,7 +1256,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.services.ServiceReply)
   return target;
@@ -1438,7 +1435,7 @@ void ServiceReply::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServiceReply::MergeFrom(const ServiceReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.services.ServiceReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1545,22 +1542,23 @@ bool ServiceReply::IsInitialized() const {
 
 void ServiceReply::InternalSwap(ServiceReply* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ServiceReply::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_proto_2fservices_2fserviceReply_2eproto_getter, &descriptor_table_proto_2fservices_2fserviceReply_2eproto_once,
+      file_level_metadata_proto_2fservices_2fserviceReply_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace services
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::services::ServiceReply* Arena::CreateMaybeMessage< ::ubii::services::ServiceReply >(Arena* arena) {
-  return Arena::CreateInternal< ::ubii::services::ServiceReply >(arena);
+  return Arena::CreateMessageInternal< ::ubii::services::ServiceReply >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
