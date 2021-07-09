@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n;proto/topicData/topicDataRecord/dataStructure/vector8.proto\x12\x12ubii.dataStructure\"i\n\x07Vector8\x12\n\n\x02v0\x18\x01 \x01(\x01\x12\n\n\x02v1\x18\x02 \x01(\x01\x12\n\n\x02v2\x18\x03 \x01(\x01\x12\n\n\x02v3\x18\x04 \x01(\x01\x12\n\n\x02v4\x18\x05 \x01(\x01\x12\n\n\x02v5\x18\x06 \x01(\x01\x12\n\n\x02v6\x18\x07 \x01(\x01\x12\n\n\x02v7\x18\x08 \x01(\x01\x62\x06proto3'
+  serialized_pb=b'\n;proto/topicData/topicDataRecord/dataStructure/vector8.proto\x12\x12ubii.dataStructure\"i\n\x07Vector8\x12\n\n\x02v0\x18\x01 \x01(\x01\x12\n\n\x02v1\x18\x02 \x01(\x01\x12\n\n\x02v2\x18\x03 \x01(\x01\x12\n\n\x02v3\x18\x04 \x01(\x01\x12\n\n\x02v4\x18\x05 \x01(\x01\x12\n\n\x02v5\x18\x06 \x01(\x01\x12\n\n\x02v6\x18\x07 \x01(\x01\x12\n\n\x02v7\x18\x08 \x01(\x01\"<\n\x0bVector8List\x12-\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1b.ubii.dataStructure.Vector8b\x06proto3'
 )
 
 
@@ -103,7 +103,40 @@ _VECTOR8 = _descriptor.Descriptor(
   serialized_end=188,
 )
 
+
+_VECTOR8LIST = _descriptor.Descriptor(
+  name='Vector8List',
+  full_name='ubii.dataStructure.Vector8List',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.dataStructure.Vector8List.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=190,
+  serialized_end=250,
+)
+
+_VECTOR8LIST.fields_by_name['elements'].message_type = _VECTOR8
 DESCRIPTOR.message_types_by_name['Vector8'] = _VECTOR8
+DESCRIPTOR.message_types_by_name['Vector8List'] = _VECTOR8LIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Vector8 = _reflection.GeneratedProtocolMessageType('Vector8', (_message.Message,), {
@@ -112,6 +145,13 @@ Vector8 = _reflection.GeneratedProtocolMessageType('Vector8', (_message.Message,
   # @@protoc_insertion_point(class_scope:ubii.dataStructure.Vector8)
   })
 _sym_db.RegisterMessage(Vector8)
+
+Vector8List = _reflection.GeneratedProtocolMessageType('Vector8List', (_message.Message,), {
+  'DESCRIPTOR' : _VECTOR8LIST,
+  '__module__' : 'proto.topicData.topicDataRecord.dataStructure.vector8_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.dataStructure.Vector8List)
+  })
+_sym_db.RegisterMessage(Vector8List)
 
 
 # @@protoc_insertion_point(module_scope)

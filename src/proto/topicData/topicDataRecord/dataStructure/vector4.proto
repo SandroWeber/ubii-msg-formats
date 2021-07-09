@@ -7,3 +7,7 @@ message Vector4 {
     double z = 3;
     double w = 4;
 }
+
+message Vector4List {
+    repeated ubii.dataStructure.Vector4 elements = 1;
+}

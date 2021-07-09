@@ -47,7 +47,7 @@ struct TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquatern
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,10 +59,14 @@ namespace dataStructure {
 class Quaternion;
 class QuaternionDefaultTypeInternal;
 extern QuaternionDefaultTypeInternal _Quaternion_default_instance_;
+class QuaternionList;
+class QuaternionListDefaultTypeInternal;
+extern QuaternionListDefaultTypeInternal _QuaternionList_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> ::ubii::dataStructure::Quaternion* Arena::CreateMaybeMessage<::ubii::dataStructure::Quaternion>(Arena*);
+template<> ::ubii::dataStructure::QuaternionList* Arena::CreateMaybeMessage<::ubii::dataStructure::QuaternionList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace ubii {
 namespace dataStructure {
@@ -228,6 +232,143 @@ class Quaternion :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquaternion_2eproto;
 };
+// -------------------------------------------------------------------
+
+class QuaternionList :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ubii.dataStructure.QuaternionList) */ {
+ public:
+  QuaternionList();
+  virtual ~QuaternionList();
+
+  QuaternionList(const QuaternionList& from);
+  QuaternionList(QuaternionList&& from) noexcept
+    : QuaternionList() {
+    *this = ::std::move(from);
+  }
+
+  inline QuaternionList& operator=(const QuaternionList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline QuaternionList& operator=(QuaternionList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const QuaternionList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const QuaternionList* internal_default_instance() {
+    return reinterpret_cast<const QuaternionList*>(
+               &_QuaternionList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(QuaternionList& a, QuaternionList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(QuaternionList* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline QuaternionList* New() const final {
+    return CreateMaybeMessage<QuaternionList>(nullptr);
+  }
+
+  QuaternionList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<QuaternionList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const QuaternionList& from);
+  void MergeFrom(const QuaternionList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(QuaternionList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "ubii.dataStructure.QuaternionList";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquaternion_2eproto);
+    return ::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquaternion_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kElementsFieldNumber = 1,
+  };
+  // repeated .ubii.dataStructure.Quaternion elements = 1;
+  int elements_size() const;
+  private:
+  int _internal_elements_size() const;
+  public:
+  void clear_elements();
+  ::ubii::dataStructure::Quaternion* mutable_elements(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Quaternion >*
+      mutable_elements();
+  private:
+  const ::ubii::dataStructure::Quaternion& _internal_elements(int index) const;
+  ::ubii::dataStructure::Quaternion* _internal_add_elements();
+  public:
+  const ::ubii::dataStructure::Quaternion& elements(int index) const;
+  ::ubii::dataStructure::Quaternion* add_elements();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Quaternion >&
+      elements() const;
+
+  // @@protoc_insertion_point(class_scope:ubii.dataStructure.QuaternionList)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Quaternion > elements_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fquaternion_2eproto;
+};
 // ===================================================================
 
 
@@ -319,9 +460,54 @@ inline void Quaternion::set_w(double value) {
   // @@protoc_insertion_point(field_set:ubii.dataStructure.Quaternion.w)
 }
 
+// -------------------------------------------------------------------
+
+// QuaternionList
+
+// repeated .ubii.dataStructure.Quaternion elements = 1;
+inline int QuaternionList::_internal_elements_size() const {
+  return elements_.size();
+}
+inline int QuaternionList::elements_size() const {
+  return _internal_elements_size();
+}
+inline void QuaternionList::clear_elements() {
+  elements_.Clear();
+}
+inline ::ubii::dataStructure::Quaternion* QuaternionList::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.dataStructure.QuaternionList.elements)
+  return elements_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Quaternion >*
+QuaternionList::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.dataStructure.QuaternionList.elements)
+  return &elements_;
+}
+inline const ::ubii::dataStructure::Quaternion& QuaternionList::_internal_elements(int index) const {
+  return elements_.Get(index);
+}
+inline const ::ubii::dataStructure::Quaternion& QuaternionList::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.dataStructure.QuaternionList.elements)
+  return _internal_elements(index);
+}
+inline ::ubii::dataStructure::Quaternion* QuaternionList::_internal_add_elements() {
+  return elements_.Add();
+}
+inline ::ubii::dataStructure::Quaternion* QuaternionList::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.dataStructure.QuaternionList.elements)
+  return _internal_add_elements();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Quaternion >&
+QuaternionList::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.dataStructure.QuaternionList.elements)
+  return elements_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

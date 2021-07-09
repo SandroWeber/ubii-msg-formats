@@ -106,7 +106,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,6,7,8,9,10,11,12,13,34,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,23,24,6,35,7,36,8,37,9,38,10,11,12,13,34,14,15,16,17,18,19,20,21,22,25,26,27,28,29,30,31,32]];
 
 /**
  * @enum {number}
@@ -116,10 +116,16 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   DOUBLE: 3,
   BOOL: 4,
   STRING: 5,
+  INT32: 23,
+  FLOAT: 24,
   VECTOR2: 6,
+  VECTOR2_LIST: 35,
   VECTOR3: 7,
+  VECTOR3_LIST: 36,
   VECTOR4: 8,
+  VECTOR4_LIST: 37,
   QUATERNION: 9,
+  QUATERNION_LIST: 38,
   MATRIX3X2: 10,
   MATRIX4X4: 11,
   COLOR: 12,
@@ -134,8 +140,6 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   OBJECT3D: 20,
   OBJECT2D_LIST: 21,
   OBJECT3D_LIST: 22,
-  INT32: 23,
-  FLOAT: 24,
   INT32_LIST: 25,
   FLOAT_LIST: 26,
   DOUBLE_LIST: 27,
@@ -143,8 +147,7 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   BOOL_LIST: 29,
   IMAGE2D: 30,
   IMAGE2D_LIST: 31,
-  SESSION: 32,
-  PROCESSING_MODULE_LIST: 33
+  SESSION: 32
 };
 
 /**
@@ -190,10 +193,16 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     pb_double: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     bool: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     string: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    int32: jspb.Message.getFieldWithDefault(msg, 23, 0),
+    pb_float: jspb.Message.getFloatingPointFieldWithDefault(msg, 24, 0.0),
     vector2: (f = msg.getVector2()) && proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.toObject(includeInstance, f),
+    vector2List: (f = msg.getVector2List()) && proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2List.toObject(includeInstance, f),
     vector3: (f = msg.getVector3()) && proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.toObject(includeInstance, f),
+    vector3List: (f = msg.getVector3List()) && proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3List.toObject(includeInstance, f),
     vector4: (f = msg.getVector4()) && proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.toObject(includeInstance, f),
+    vector4List: (f = msg.getVector4List()) && proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4List.toObject(includeInstance, f),
     quaternion: (f = msg.getQuaternion()) && proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.toObject(includeInstance, f),
+    quaternionList: (f = msg.getQuaternionList()) && proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.toObject(includeInstance, f),
     matrix3x2: (f = msg.getMatrix3x2()) && proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2.toObject(includeInstance, f),
     matrix4x4: (f = msg.getMatrix4x4()) && proto_topicData_topicDataRecord_dataStructure_matrix4x4_pb.Matrix4x4.toObject(includeInstance, f),
     color: (f = msg.getColor()) && proto_topicData_topicDataRecord_dataStructure_color_pb.Color.toObject(includeInstance, f),
@@ -208,8 +217,6 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     object3d: (f = msg.getObject3d()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3D.toObject(includeInstance, f),
     object2dList: (f = msg.getObject2dList()) && proto_topicData_topicDataRecord_dataStructure_object2d_pb.Object2DList.toObject(includeInstance, f),
     object3dList: (f = msg.getObject3dList()) && proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.toObject(includeInstance, f),
-    int32: jspb.Message.getFieldWithDefault(msg, 23, 0),
-    pb_float: jspb.Message.getFloatingPointFieldWithDefault(msg, 24, 0.0),
     int32List: (f = msg.getInt32List()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.Int32List.toObject(includeInstance, f),
     floatList: (f = msg.getFloatList()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.FloatList.toObject(includeInstance, f),
     doubleList: (f = msg.getDoubleList()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.DoubleList.toObject(includeInstance, f),
@@ -217,8 +224,7 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     boolList: (f = msg.getBoolList()) && proto_topicData_topicDataRecord_dataStructure_lists_pb.BoolList.toObject(includeInstance, f),
     image2d: (f = msg.getImage2d()) && proto_topicData_topicDataRecord_dataStructure_image_pb.Image2D.toObject(includeInstance, f),
     image2dList: (f = msg.getImage2dList()) && proto_topicData_topicDataRecord_dataStructure_image_pb.Image2DList.toObject(includeInstance, f),
-    session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
-    processingModuleList: (f = msg.getProcessingModuleList()) && proto_processing_processingModule_pb.ProcessingModuleList.toObject(includeInstance, f)
+    session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -276,25 +282,53 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = /** @type {string} */ (reader.readString());
       msg.setString(value);
       break;
+    case 23:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInt32(value);
+      break;
+    case 24:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setFloat(value);
+      break;
     case 6:
       var value = new proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.deserializeBinaryFromReader);
       msg.setVector2(value);
+      break;
+    case 35:
+      var value = new proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2List;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2List.deserializeBinaryFromReader);
+      msg.setVector2List(value);
       break;
     case 7:
       var value = new proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.deserializeBinaryFromReader);
       msg.setVector3(value);
       break;
+    case 36:
+      var value = new proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3List;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3List.deserializeBinaryFromReader);
+      msg.setVector3List(value);
+      break;
     case 8:
       var value = new proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.deserializeBinaryFromReader);
       msg.setVector4(value);
       break;
+    case 37:
+      var value = new proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4List;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4List.deserializeBinaryFromReader);
+      msg.setVector4List(value);
+      break;
     case 9:
       var value = new proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.deserializeBinaryFromReader);
       msg.setQuaternion(value);
+      break;
+    case 38:
+      var value = new proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion;
+      reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.deserializeBinaryFromReader);
+      msg.setQuaternionList(value);
       break;
     case 10:
       var value = new proto_topicData_topicDataRecord_dataStructure_matrix3x2_pb.Matrix3x2;
@@ -366,14 +400,6 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.deserializeBinaryFromReader);
       msg.setObject3dList(value);
       break;
-    case 23:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setInt32(value);
-      break;
-    case 24:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setFloat(value);
-      break;
     case 25:
       var value = new proto_topicData_topicDataRecord_dataStructure_lists_pb.Int32List;
       reader.readMessage(value,proto_topicData_topicDataRecord_dataStructure_lists_pb.Int32List.deserializeBinaryFromReader);
@@ -413,11 +439,6 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto_sessions_session_pb.Session;
       reader.readMessage(value,proto_sessions_session_pb.Session.deserializeBinaryFromReader);
       msg.setSession(value);
-      break;
-    case 33:
-      var value = new proto_processing_processingModule_pb.ProcessingModuleList;
-      reader.readMessage(value,proto_processing_processingModule_pb.ProcessingModuleList.deserializeBinaryFromReader);
-      msg.setProcessingModuleList(value);
       break;
     default:
       reader.skipField();
@@ -484,12 +505,34 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 23));
+  if (f != null) {
+    writer.writeInt32(
+      23,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 24));
+  if (f != null) {
+    writer.writeFloat(
+      24,
+      f
+    );
+  }
   f = message.getVector2();
   if (f != null) {
     writer.writeMessage(
       6,
       f,
       proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2.serializeBinaryToWriter
+    );
+  }
+  f = message.getVector2List();
+  if (f != null) {
+    writer.writeMessage(
+      35,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2List.serializeBinaryToWriter
     );
   }
   f = message.getVector3();
@@ -500,6 +543,14 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3.serializeBinaryToWriter
     );
   }
+  f = message.getVector3List();
+  if (f != null) {
+    writer.writeMessage(
+      36,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3List.serializeBinaryToWriter
+    );
+  }
   f = message.getVector4();
   if (f != null) {
     writer.writeMessage(
@@ -508,10 +559,26 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4.serializeBinaryToWriter
     );
   }
+  f = message.getVector4List();
+  if (f != null) {
+    writer.writeMessage(
+      37,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4List.serializeBinaryToWriter
+    );
+  }
   f = message.getQuaternion();
   if (f != null) {
     writer.writeMessage(
       9,
+      f,
+      proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.serializeBinaryToWriter
+    );
+  }
+  f = message.getQuaternionList();
+  if (f != null) {
+    writer.writeMessage(
+      38,
       f,
       proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion.serializeBinaryToWriter
     );
@@ -628,20 +695,6 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_topicData_topicDataRecord_dataStructure_object3d_pb.Object3DList.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 23));
-  if (f != null) {
-    writer.writeInt32(
-      23,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 24));
-  if (f != null) {
-    writer.writeFloat(
-      24,
-      f
-    );
-  }
   f = message.getInt32List();
   if (f != null) {
     writer.writeMessage(
@@ -704,14 +757,6 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       32,
       f,
       proto_sessions_session_pb.Session.serializeBinaryToWriter
-    );
-  }
-  f = message.getProcessingModuleList();
-  if (f != null) {
-    writer.writeMessage(
-      33,
-      f,
-      proto_processing_processingModule_pb.ProcessingModuleList.serializeBinaryToWriter
     );
   }
 };
@@ -881,6 +926,78 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasString = function() {
 
 
 /**
+ * optional int32 int32 = 23;
+ * @return {number}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getInt32 = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.setInt32 = function(value) {
+  return jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.clearInt32 = function() {
+  return jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasInt32 = function() {
+  return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional float float = 24;
+ * @return {number}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getFloat = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 24, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.setFloat = function(value) {
+  return jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.clearFloat = function() {
+  return jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasFloat = function() {
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
  * optional ubii.dataStructure.Vector2 vector2 = 6;
  * @return {?proto.ubii.dataStructure.Vector2}
  */
@@ -914,6 +1031,43 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearVector2 = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasVector2 = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Vector2List vector2_list = 35;
+ * @return {?proto.ubii.dataStructure.Vector2List}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getVector2List = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector2List} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector2_pb.Vector2List, 35));
+};
+
+
+/**
+ * @param {?proto.ubii.dataStructure.Vector2List|undefined} value
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+*/
+proto.ubii.topicData.TopicDataRecord.prototype.setVector2List = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 35, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.clearVector2List = function() {
+  return this.setVector2List(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasVector2List = function() {
+  return jspb.Message.getField(this, 35) != null;
 };
 
 
@@ -955,6 +1109,43 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasVector3 = function() {
 
 
 /**
+ * optional ubii.dataStructure.Vector3List vector3_list = 36;
+ * @return {?proto.ubii.dataStructure.Vector3List}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getVector3List = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector3List} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector3_pb.Vector3List, 36));
+};
+
+
+/**
+ * @param {?proto.ubii.dataStructure.Vector3List|undefined} value
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+*/
+proto.ubii.topicData.TopicDataRecord.prototype.setVector3List = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 36, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.clearVector3List = function() {
+  return this.setVector3List(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasVector3List = function() {
+  return jspb.Message.getField(this, 36) != null;
+};
+
+
+/**
  * optional ubii.dataStructure.Vector4 vector4 = 8;
  * @return {?proto.ubii.dataStructure.Vector4}
  */
@@ -992,6 +1183,43 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasVector4 = function() {
 
 
 /**
+ * optional ubii.dataStructure.Vector4List vector4_list = 37;
+ * @return {?proto.ubii.dataStructure.Vector4List}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getVector4List = function() {
+  return /** @type{?proto.ubii.dataStructure.Vector4List} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_vector4_pb.Vector4List, 37));
+};
+
+
+/**
+ * @param {?proto.ubii.dataStructure.Vector4List|undefined} value
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+*/
+proto.ubii.topicData.TopicDataRecord.prototype.setVector4List = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 37, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.clearVector4List = function() {
+  return this.setVector4List(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasVector4List = function() {
+  return jspb.Message.getField(this, 37) != null;
+};
+
+
+/**
  * optional ubii.dataStructure.Quaternion quaternion = 9;
  * @return {?proto.ubii.dataStructure.Quaternion}
  */
@@ -1025,6 +1253,43 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearQuaternion = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasQuaternion = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional ubii.dataStructure.Quaternion quaternion_list = 38;
+ * @return {?proto.ubii.dataStructure.Quaternion}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getQuaternionList = function() {
+  return /** @type{?proto.ubii.dataStructure.Quaternion} */ (
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_dataStructure_quaternion_pb.Quaternion, 38));
+};
+
+
+/**
+ * @param {?proto.ubii.dataStructure.Quaternion|undefined} value
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+*/
+proto.ubii.topicData.TopicDataRecord.prototype.setQuaternionList = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 38, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.ubii.topicData.TopicDataRecord} returns this
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.clearQuaternionList = function() {
+  return this.setQuaternionList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasQuaternionList = function() {
+  return jspb.Message.getField(this, 38) != null;
 };
 
 
@@ -1547,78 +1812,6 @@ proto.ubii.topicData.TopicDataRecord.prototype.hasObject3dList = function() {
 
 
 /**
- * optional int32 int32 = 23;
- * @return {number}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getInt32 = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
-proto.ubii.topicData.TopicDataRecord.prototype.setInt32 = function(value) {
-  return jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
-proto.ubii.topicData.TopicDataRecord.prototype.clearInt32 = function() {
-  return jspb.Message.setOneofField(this, 23, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasInt32 = function() {
-  return jspb.Message.getField(this, 23) != null;
-};
-
-
-/**
- * optional float float = 24;
- * @return {number}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getFloat = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 24, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
-proto.ubii.topicData.TopicDataRecord.prototype.setFloat = function(value) {
-  return jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
-proto.ubii.topicData.TopicDataRecord.prototype.clearFloat = function() {
-  return jspb.Message.setOneofField(this, 24, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasFloat = function() {
-  return jspb.Message.getField(this, 24) != null;
-};
-
-
-/**
  * optional ubii.dataStructure.Int32List int32_list = 25;
  * @return {?proto.ubii.dataStructure.Int32List}
  */
@@ -1911,43 +2104,6 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearSession = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasSession = function() {
   return jspb.Message.getField(this, 32) != null;
-};
-
-
-/**
- * optional ubii.processing.ProcessingModuleList processing_module_list = 33;
- * @return {?proto.ubii.processing.ProcessingModuleList}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.getProcessingModuleList = function() {
-  return /** @type{?proto.ubii.processing.ProcessingModuleList} */ (
-    jspb.Message.getWrapperField(this, proto_processing_processingModule_pb.ProcessingModuleList, 33));
-};
-
-
-/**
- * @param {?proto.ubii.processing.ProcessingModuleList|undefined} value
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
-*/
-proto.ubii.topicData.TopicDataRecord.prototype.setProcessingModuleList = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 33, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.ubii.topicData.TopicDataRecord} returns this
- */
-proto.ubii.topicData.TopicDataRecord.prototype.clearProcessingModuleList = function() {
-  return this.setProcessingModuleList(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.ubii.topicData.TopicDataRecord.prototype.hasProcessingModuleList = function() {
-  return jspb.Message.getField(this, 33) != null;
 };
 
 

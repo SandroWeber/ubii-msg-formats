@@ -70,12 +70,16 @@ let compileConstants = () => {
 };
 
 (async function () {
-  // compile .proto files via python
-  await compileProtoPython();
+  try {
+    // compile .proto files via python
+    await compileProtoPython();
 
-  // compile protobuf.js
-  await compileProtobufJS();
+    // compile protobuf.js
+    await compileProtobufJS();
 
-  // compile constants
-  await compileConstants();
+    // compile constants
+    await compileConstants();
+  } catch (error) {
+    console.error(error);
+  }
 })();

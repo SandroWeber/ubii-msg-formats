@@ -67,7 +67,8 @@ proto.ubii.topicData.Timestamp.prototype.toObject = function(opt_includeInstance
 proto.ubii.topicData.Timestamp.toObject = function(includeInstance, msg) {
   var f, obj = {
     seconds: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    nanos: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    nanos: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    millis: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -112,6 +113,10 @@ proto.ubii.topicData.Timestamp.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {number} */ (reader.readInt32());
       msg.setNanos(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setMillis(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -155,6 +160,13 @@ proto.ubii.topicData.Timestamp.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getMillis();
+  if (f !== 0) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -191,6 +203,24 @@ proto.ubii.topicData.Timestamp.prototype.getNanos = function() {
  */
 proto.ubii.topicData.Timestamp.prototype.setNanos = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional int64 millis = 3;
+ * @return {number}
+ */
+proto.ubii.topicData.Timestamp.prototype.getMillis = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ubii.topicData.Timestamp} returns this
+ */
+proto.ubii.topicData.Timestamp.prototype.setMillis = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 

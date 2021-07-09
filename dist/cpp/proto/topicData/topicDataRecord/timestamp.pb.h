@@ -176,6 +176,7 @@ class Timestamp :
 
   enum : int {
     kSecondsFieldNumber = 1,
+    kMillisFieldNumber = 3,
     kNanosFieldNumber = 2,
   };
   // int64 seconds = 1;
@@ -185,6 +186,15 @@ class Timestamp :
   private:
   ::PROTOBUF_NAMESPACE_ID::int64 _internal_seconds() const;
   void _internal_set_seconds(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 millis = 3;
+  void clear_millis();
+  ::PROTOBUF_NAMESPACE_ID::int64 millis() const;
+  void set_millis(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_millis() const;
+  void _internal_set_millis(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // int32 nanos = 2;
@@ -202,6 +212,7 @@ class Timestamp :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::int64 seconds_;
+  ::PROTOBUF_NAMESPACE_ID::int64 millis_;
   ::PROTOBUF_NAMESPACE_ID::int32 nanos_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto;
@@ -255,6 +266,26 @@ inline void Timestamp::_internal_set_nanos(::PROTOBUF_NAMESPACE_ID::int32 value)
 inline void Timestamp::set_nanos(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_nanos(value);
   // @@protoc_insertion_point(field_set:ubii.topicData.Timestamp.nanos)
+}
+
+// int64 millis = 3;
+inline void Timestamp::clear_millis() {
+  millis_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Timestamp::_internal_millis() const {
+  return millis_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Timestamp::millis() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.Timestamp.millis)
+  return _internal_millis();
+}
+inline void Timestamp::_internal_set_millis(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  millis_ = value;
+}
+inline void Timestamp::set_millis(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_millis(value);
+  // @@protoc_insertion_point(field_set:ubii.topicData.Timestamp.millis)
 }
 
 #ifdef __GNUC__

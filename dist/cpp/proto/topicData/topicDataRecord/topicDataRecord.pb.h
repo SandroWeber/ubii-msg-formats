@@ -133,10 +133,16 @@ class TopicDataRecord :
     kDouble = 3,
     kBool = 4,
     kString = 5,
+    kInt32 = 23,
+    kFloat = 24,
     kVector2 = 6,
+    kVector2List = 35,
     kVector3 = 7,
+    kVector3List = 36,
     kVector4 = 8,
+    kVector4List = 37,
     kQuaternion = 9,
+    kQuaternionList = 38,
     kMatrix3X2 = 10,
     kMatrix4X4 = 11,
     kColor = 12,
@@ -151,8 +157,6 @@ class TopicDataRecord :
     kObject3D = 20,
     kObject2DList = 21,
     kObject3DList = 22,
-    kInt32 = 23,
-    kFloat = 24,
     kInt32List = 25,
     kFloatList = 26,
     kDoubleList = 27,
@@ -161,7 +165,6 @@ class TopicDataRecord :
     kImage2D = 30,
     kImage2DList = 31,
     kSession = 32,
-    kProcessingModuleList = 33,
     TYPE_NOT_SET = 0,
   };
 
@@ -240,10 +243,16 @@ class TopicDataRecord :
     kDoubleFieldNumber = 3,
     kBoolFieldNumber = 4,
     kStringFieldNumber = 5,
+    kInt32FieldNumber = 23,
+    kFloatFieldNumber = 24,
     kVector2FieldNumber = 6,
+    kVector2ListFieldNumber = 35,
     kVector3FieldNumber = 7,
+    kVector3ListFieldNumber = 36,
     kVector4FieldNumber = 8,
+    kVector4ListFieldNumber = 37,
     kQuaternionFieldNumber = 9,
+    kQuaternionListFieldNumber = 38,
     kMatrix3X2FieldNumber = 10,
     kMatrix4X4FieldNumber = 11,
     kColorFieldNumber = 12,
@@ -258,8 +267,6 @@ class TopicDataRecord :
     kObject3DFieldNumber = 20,
     kObject2DListFieldNumber = 21,
     kObject3DListFieldNumber = 22,
-    kInt32FieldNumber = 23,
-    kFloatFieldNumber = 24,
     kInt32ListFieldNumber = 25,
     kFloatListFieldNumber = 26,
     kDoubleListFieldNumber = 27,
@@ -268,7 +275,6 @@ class TopicDataRecord :
     kImage2DFieldNumber = 30,
     kImage2DListFieldNumber = 31,
     kSessionFieldNumber = 32,
-    kProcessingModuleListFieldNumber = 33,
   };
   // string topic = 1;
   void clear_topic();
@@ -344,6 +350,30 @@ class TopicDataRecord :
   std::string* _internal_mutable_string();
   public:
 
+  // int32 int32 = 23;
+  private:
+  bool _internal_has_int32() const;
+  public:
+  void clear_int32();
+  ::PROTOBUF_NAMESPACE_ID::int32 int32() const;
+  void set_int32(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_int32() const;
+  void _internal_set_int32(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float float = 24;
+  private:
+  bool _internal_has_float_() const;
+  public:
+  void clear_float_();
+  float float_() const;
+  void set_float_(float value);
+  private:
+  float _internal_float_() const;
+  void _internal_set_float_(float value);
+  public:
+
   // .ubii.dataStructure.Vector2 vector2 = 6;
   bool has_vector2() const;
   private:
@@ -357,6 +387,21 @@ class TopicDataRecord :
   private:
   const ::ubii::dataStructure::Vector2& _internal_vector2() const;
   ::ubii::dataStructure::Vector2* _internal_mutable_vector2();
+  public:
+
+  // .ubii.dataStructure.Vector2List vector2_list = 35;
+  bool has_vector2_list() const;
+  private:
+  bool _internal_has_vector2_list() const;
+  public:
+  void clear_vector2_list();
+  const ::ubii::dataStructure::Vector2List& vector2_list() const;
+  ::ubii::dataStructure::Vector2List* release_vector2_list();
+  ::ubii::dataStructure::Vector2List* mutable_vector2_list();
+  void set_allocated_vector2_list(::ubii::dataStructure::Vector2List* vector2_list);
+  private:
+  const ::ubii::dataStructure::Vector2List& _internal_vector2_list() const;
+  ::ubii::dataStructure::Vector2List* _internal_mutable_vector2_list();
   public:
 
   // .ubii.dataStructure.Vector3 vector3 = 7;
@@ -374,6 +419,21 @@ class TopicDataRecord :
   ::ubii::dataStructure::Vector3* _internal_mutable_vector3();
   public:
 
+  // .ubii.dataStructure.Vector3List vector3_list = 36;
+  bool has_vector3_list() const;
+  private:
+  bool _internal_has_vector3_list() const;
+  public:
+  void clear_vector3_list();
+  const ::ubii::dataStructure::Vector3List& vector3_list() const;
+  ::ubii::dataStructure::Vector3List* release_vector3_list();
+  ::ubii::dataStructure::Vector3List* mutable_vector3_list();
+  void set_allocated_vector3_list(::ubii::dataStructure::Vector3List* vector3_list);
+  private:
+  const ::ubii::dataStructure::Vector3List& _internal_vector3_list() const;
+  ::ubii::dataStructure::Vector3List* _internal_mutable_vector3_list();
+  public:
+
   // .ubii.dataStructure.Vector4 vector4 = 8;
   bool has_vector4() const;
   private:
@@ -389,6 +449,21 @@ class TopicDataRecord :
   ::ubii::dataStructure::Vector4* _internal_mutable_vector4();
   public:
 
+  // .ubii.dataStructure.Vector4List vector4_list = 37;
+  bool has_vector4_list() const;
+  private:
+  bool _internal_has_vector4_list() const;
+  public:
+  void clear_vector4_list();
+  const ::ubii::dataStructure::Vector4List& vector4_list() const;
+  ::ubii::dataStructure::Vector4List* release_vector4_list();
+  ::ubii::dataStructure::Vector4List* mutable_vector4_list();
+  void set_allocated_vector4_list(::ubii::dataStructure::Vector4List* vector4_list);
+  private:
+  const ::ubii::dataStructure::Vector4List& _internal_vector4_list() const;
+  ::ubii::dataStructure::Vector4List* _internal_mutable_vector4_list();
+  public:
+
   // .ubii.dataStructure.Quaternion quaternion = 9;
   bool has_quaternion() const;
   private:
@@ -402,6 +477,21 @@ class TopicDataRecord :
   private:
   const ::ubii::dataStructure::Quaternion& _internal_quaternion() const;
   ::ubii::dataStructure::Quaternion* _internal_mutable_quaternion();
+  public:
+
+  // .ubii.dataStructure.Quaternion quaternion_list = 38;
+  bool has_quaternion_list() const;
+  private:
+  bool _internal_has_quaternion_list() const;
+  public:
+  void clear_quaternion_list();
+  const ::ubii::dataStructure::Quaternion& quaternion_list() const;
+  ::ubii::dataStructure::Quaternion* release_quaternion_list();
+  ::ubii::dataStructure::Quaternion* mutable_quaternion_list();
+  void set_allocated_quaternion_list(::ubii::dataStructure::Quaternion* quaternion_list);
+  private:
+  const ::ubii::dataStructure::Quaternion& _internal_quaternion_list() const;
+  ::ubii::dataStructure::Quaternion* _internal_mutable_quaternion_list();
   public:
 
   // .ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
@@ -614,30 +704,6 @@ class TopicDataRecord :
   ::ubii::dataStructure::Object3DList* _internal_mutable_object3d_list();
   public:
 
-  // int32 int32 = 23;
-  private:
-  bool _internal_has_int32() const;
-  public:
-  void clear_int32();
-  ::PROTOBUF_NAMESPACE_ID::int32 int32() const;
-  void set_int32(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_int32() const;
-  void _internal_set_int32(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // float float = 24;
-  private:
-  bool _internal_has_float_() const;
-  public:
-  void clear_float_();
-  float float_() const;
-  void set_float_(float value);
-  private:
-  float _internal_float_() const;
-  void _internal_set_float_(float value);
-  public:
-
   // .ubii.dataStructure.Int32List int32_list = 25;
   bool has_int32_list() const;
   private:
@@ -758,21 +824,6 @@ class TopicDataRecord :
   ::ubii::sessions::Session* _internal_mutable_session();
   public:
 
-  // .ubii.processing.ProcessingModuleList processing_module_list = 33;
-  bool has_processing_module_list() const;
-  private:
-  bool _internal_has_processing_module_list() const;
-  public:
-  void clear_processing_module_list();
-  const ::ubii::processing::ProcessingModuleList& processing_module_list() const;
-  ::ubii::processing::ProcessingModuleList* release_processing_module_list();
-  ::ubii::processing::ProcessingModuleList* mutable_processing_module_list();
-  void set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list);
-  private:
-  const ::ubii::processing::ProcessingModuleList& _internal_processing_module_list() const;
-  ::ubii::processing::ProcessingModuleList* _internal_mutable_processing_module_list();
-  public:
-
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
@@ -781,10 +832,16 @@ class TopicDataRecord :
   void set_has_double_();
   void set_has_bool_();
   void set_has_string();
+  void set_has_int32();
+  void set_has_float_();
   void set_has_vector2();
+  void set_has_vector2_list();
   void set_has_vector3();
+  void set_has_vector3_list();
   void set_has_vector4();
+  void set_has_vector4_list();
   void set_has_quaternion();
+  void set_has_quaternion_list();
   void set_has_matrix3x2();
   void set_has_matrix4x4();
   void set_has_color();
@@ -799,8 +856,6 @@ class TopicDataRecord :
   void set_has_object3d();
   void set_has_object2d_list();
   void set_has_object3d_list();
-  void set_has_int32();
-  void set_has_float_();
   void set_has_int32_list();
   void set_has_float_list();
   void set_has_double_list();
@@ -809,7 +864,6 @@ class TopicDataRecord :
   void set_has_image2d();
   void set_has_image2d_list();
   void set_has_session();
-  void set_has_processing_module_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -822,10 +876,16 @@ class TopicDataRecord :
     double double__;
     bool bool__;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr string_;
+    ::PROTOBUF_NAMESPACE_ID::int32 int32_;
+    float float__;
     ::ubii::dataStructure::Vector2* vector2_;
+    ::ubii::dataStructure::Vector2List* vector2_list_;
     ::ubii::dataStructure::Vector3* vector3_;
+    ::ubii::dataStructure::Vector3List* vector3_list_;
     ::ubii::dataStructure::Vector4* vector4_;
+    ::ubii::dataStructure::Vector4List* vector4_list_;
     ::ubii::dataStructure::Quaternion* quaternion_;
+    ::ubii::dataStructure::Quaternion* quaternion_list_;
     ::ubii::dataStructure::Matrix3x2* matrix3x2_;
     ::ubii::dataStructure::Matrix4x4* matrix4x4_;
     ::ubii::dataStructure::Color* color_;
@@ -840,8 +900,6 @@ class TopicDataRecord :
     ::ubii::dataStructure::Object3D* object3d_;
     ::ubii::dataStructure::Object2DList* object2d_list_;
     ::ubii::dataStructure::Object3DList* object3d_list_;
-    ::PROTOBUF_NAMESPACE_ID::int32 int32_;
-    float float__;
     ::ubii::dataStructure::Int32List* int32_list_;
     ::ubii::dataStructure::FloatList* float_list_;
     ::ubii::dataStructure::DoubleList* double_list_;
@@ -850,7 +908,6 @@ class TopicDataRecord :
     ::ubii::dataStructure::Image2D* image2d_;
     ::ubii::dataStructure::Image2DList* image2d_list_;
     ::ubii::sessions::Session* session_;
-    ::ubii::processing::ProcessingModuleList* processing_module_list_;
   } type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1287,6 +1344,76 @@ inline void TopicDataRecord::set_allocated_string(std::string* string) {
   // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.string)
 }
 
+// int32 int32 = 23;
+inline bool TopicDataRecord::_internal_has_int32() const {
+  return type_case() == kInt32;
+}
+inline void TopicDataRecord::set_has_int32() {
+  _oneof_case_[0] = kInt32;
+}
+inline void TopicDataRecord::clear_int32() {
+  if (_internal_has_int32()) {
+    type_.int32_ = 0;
+    clear_has_type();
+  }
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 TopicDataRecord::_internal_int32() const {
+  if (_internal_has_int32()) {
+    return type_.int32_;
+  }
+  return 0;
+}
+inline void TopicDataRecord::_internal_set_int32(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  if (!_internal_has_int32()) {
+    clear_type();
+    set_has_int32();
+  }
+  type_.int32_ = value;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 TopicDataRecord::int32() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.int32)
+  return _internal_int32();
+}
+inline void TopicDataRecord::set_int32(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_int32(value);
+  // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.int32)
+}
+
+// float float = 24;
+inline bool TopicDataRecord::_internal_has_float_() const {
+  return type_case() == kFloat;
+}
+inline void TopicDataRecord::set_has_float_() {
+  _oneof_case_[0] = kFloat;
+}
+inline void TopicDataRecord::clear_float_() {
+  if (_internal_has_float_()) {
+    type_.float__ = 0;
+    clear_has_type();
+  }
+}
+inline float TopicDataRecord::_internal_float_() const {
+  if (_internal_has_float_()) {
+    return type_.float__;
+  }
+  return 0;
+}
+inline void TopicDataRecord::_internal_set_float_(float value) {
+  if (!_internal_has_float_()) {
+    clear_type();
+    set_has_float_();
+  }
+  type_.float__ = value;
+}
+inline float TopicDataRecord::float_() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.float)
+  return _internal_float_();
+}
+inline void TopicDataRecord::set_float_(float value) {
+  _internal_set_float_(value);
+  // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.float)
+}
+
 // .ubii.dataStructure.Vector2 vector2 = 6;
 inline bool TopicDataRecord::_internal_has_vector2() const {
   return type_case() == kVector2;
@@ -1329,6 +1456,50 @@ inline ::ubii::dataStructure::Vector2* TopicDataRecord::_internal_mutable_vector
 inline ::ubii::dataStructure::Vector2* TopicDataRecord::mutable_vector2() {
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.vector2)
   return _internal_mutable_vector2();
+}
+
+// .ubii.dataStructure.Vector2List vector2_list = 35;
+inline bool TopicDataRecord::_internal_has_vector2_list() const {
+  return type_case() == kVector2List;
+}
+inline bool TopicDataRecord::has_vector2_list() const {
+  return _internal_has_vector2_list();
+}
+inline void TopicDataRecord::set_has_vector2_list() {
+  _oneof_case_[0] = kVector2List;
+}
+inline ::ubii::dataStructure::Vector2List* TopicDataRecord::release_vector2_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.vector2_list)
+  if (_internal_has_vector2_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Vector2List* temp = type_.vector2_list_;
+    type_.vector2_list_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::dataStructure::Vector2List& TopicDataRecord::_internal_vector2_list() const {
+  return _internal_has_vector2_list()
+      ? *type_.vector2_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Vector2List*>(&::ubii::dataStructure::_Vector2List_default_instance_);
+}
+inline const ::ubii::dataStructure::Vector2List& TopicDataRecord::vector2_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.vector2_list)
+  return _internal_vector2_list();
+}
+inline ::ubii::dataStructure::Vector2List* TopicDataRecord::_internal_mutable_vector2_list() {
+  if (!_internal_has_vector2_list()) {
+    clear_type();
+    set_has_vector2_list();
+    type_.vector2_list_ = CreateMaybeMessage< ::ubii::dataStructure::Vector2List >(
+        GetArenaNoVirtual());
+  }
+  return type_.vector2_list_;
+}
+inline ::ubii::dataStructure::Vector2List* TopicDataRecord::mutable_vector2_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.vector2_list)
+  return _internal_mutable_vector2_list();
 }
 
 // .ubii.dataStructure.Vector3 vector3 = 7;
@@ -1375,6 +1546,50 @@ inline ::ubii::dataStructure::Vector3* TopicDataRecord::mutable_vector3() {
   return _internal_mutable_vector3();
 }
 
+// .ubii.dataStructure.Vector3List vector3_list = 36;
+inline bool TopicDataRecord::_internal_has_vector3_list() const {
+  return type_case() == kVector3List;
+}
+inline bool TopicDataRecord::has_vector3_list() const {
+  return _internal_has_vector3_list();
+}
+inline void TopicDataRecord::set_has_vector3_list() {
+  _oneof_case_[0] = kVector3List;
+}
+inline ::ubii::dataStructure::Vector3List* TopicDataRecord::release_vector3_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.vector3_list)
+  if (_internal_has_vector3_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Vector3List* temp = type_.vector3_list_;
+    type_.vector3_list_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::dataStructure::Vector3List& TopicDataRecord::_internal_vector3_list() const {
+  return _internal_has_vector3_list()
+      ? *type_.vector3_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Vector3List*>(&::ubii::dataStructure::_Vector3List_default_instance_);
+}
+inline const ::ubii::dataStructure::Vector3List& TopicDataRecord::vector3_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.vector3_list)
+  return _internal_vector3_list();
+}
+inline ::ubii::dataStructure::Vector3List* TopicDataRecord::_internal_mutable_vector3_list() {
+  if (!_internal_has_vector3_list()) {
+    clear_type();
+    set_has_vector3_list();
+    type_.vector3_list_ = CreateMaybeMessage< ::ubii::dataStructure::Vector3List >(
+        GetArenaNoVirtual());
+  }
+  return type_.vector3_list_;
+}
+inline ::ubii::dataStructure::Vector3List* TopicDataRecord::mutable_vector3_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.vector3_list)
+  return _internal_mutable_vector3_list();
+}
+
 // .ubii.dataStructure.Vector4 vector4 = 8;
 inline bool TopicDataRecord::_internal_has_vector4() const {
   return type_case() == kVector4;
@@ -1419,6 +1634,50 @@ inline ::ubii::dataStructure::Vector4* TopicDataRecord::mutable_vector4() {
   return _internal_mutable_vector4();
 }
 
+// .ubii.dataStructure.Vector4List vector4_list = 37;
+inline bool TopicDataRecord::_internal_has_vector4_list() const {
+  return type_case() == kVector4List;
+}
+inline bool TopicDataRecord::has_vector4_list() const {
+  return _internal_has_vector4_list();
+}
+inline void TopicDataRecord::set_has_vector4_list() {
+  _oneof_case_[0] = kVector4List;
+}
+inline ::ubii::dataStructure::Vector4List* TopicDataRecord::release_vector4_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.vector4_list)
+  if (_internal_has_vector4_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Vector4List* temp = type_.vector4_list_;
+    type_.vector4_list_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::dataStructure::Vector4List& TopicDataRecord::_internal_vector4_list() const {
+  return _internal_has_vector4_list()
+      ? *type_.vector4_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Vector4List*>(&::ubii::dataStructure::_Vector4List_default_instance_);
+}
+inline const ::ubii::dataStructure::Vector4List& TopicDataRecord::vector4_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.vector4_list)
+  return _internal_vector4_list();
+}
+inline ::ubii::dataStructure::Vector4List* TopicDataRecord::_internal_mutable_vector4_list() {
+  if (!_internal_has_vector4_list()) {
+    clear_type();
+    set_has_vector4_list();
+    type_.vector4_list_ = CreateMaybeMessage< ::ubii::dataStructure::Vector4List >(
+        GetArenaNoVirtual());
+  }
+  return type_.vector4_list_;
+}
+inline ::ubii::dataStructure::Vector4List* TopicDataRecord::mutable_vector4_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.vector4_list)
+  return _internal_mutable_vector4_list();
+}
+
 // .ubii.dataStructure.Quaternion quaternion = 9;
 inline bool TopicDataRecord::_internal_has_quaternion() const {
   return type_case() == kQuaternion;
@@ -1461,6 +1720,50 @@ inline ::ubii::dataStructure::Quaternion* TopicDataRecord::_internal_mutable_qua
 inline ::ubii::dataStructure::Quaternion* TopicDataRecord::mutable_quaternion() {
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.quaternion)
   return _internal_mutable_quaternion();
+}
+
+// .ubii.dataStructure.Quaternion quaternion_list = 38;
+inline bool TopicDataRecord::_internal_has_quaternion_list() const {
+  return type_case() == kQuaternionList;
+}
+inline bool TopicDataRecord::has_quaternion_list() const {
+  return _internal_has_quaternion_list();
+}
+inline void TopicDataRecord::set_has_quaternion_list() {
+  _oneof_case_[0] = kQuaternionList;
+}
+inline ::ubii::dataStructure::Quaternion* TopicDataRecord::release_quaternion_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.quaternion_list)
+  if (_internal_has_quaternion_list()) {
+    clear_has_type();
+      ::ubii::dataStructure::Quaternion* temp = type_.quaternion_list_;
+    type_.quaternion_list_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::ubii::dataStructure::Quaternion& TopicDataRecord::_internal_quaternion_list() const {
+  return _internal_has_quaternion_list()
+      ? *type_.quaternion_list_
+      : *reinterpret_cast< ::ubii::dataStructure::Quaternion*>(&::ubii::dataStructure::_Quaternion_default_instance_);
+}
+inline const ::ubii::dataStructure::Quaternion& TopicDataRecord::quaternion_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.quaternion_list)
+  return _internal_quaternion_list();
+}
+inline ::ubii::dataStructure::Quaternion* TopicDataRecord::_internal_mutable_quaternion_list() {
+  if (!_internal_has_quaternion_list()) {
+    clear_type();
+    set_has_quaternion_list();
+    type_.quaternion_list_ = CreateMaybeMessage< ::ubii::dataStructure::Quaternion >(
+        GetArenaNoVirtual());
+  }
+  return type_.quaternion_list_;
+}
+inline ::ubii::dataStructure::Quaternion* TopicDataRecord::mutable_quaternion_list() {
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.quaternion_list)
+  return _internal_mutable_quaternion_list();
 }
 
 // .ubii.dataStructure.Matrix3x2 matrix3x2 = 10;
@@ -2079,76 +2382,6 @@ inline ::ubii::dataStructure::Object3DList* TopicDataRecord::mutable_object3d_li
   return _internal_mutable_object3d_list();
 }
 
-// int32 int32 = 23;
-inline bool TopicDataRecord::_internal_has_int32() const {
-  return type_case() == kInt32;
-}
-inline void TopicDataRecord::set_has_int32() {
-  _oneof_case_[0] = kInt32;
-}
-inline void TopicDataRecord::clear_int32() {
-  if (_internal_has_int32()) {
-    type_.int32_ = 0;
-    clear_has_type();
-  }
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 TopicDataRecord::_internal_int32() const {
-  if (_internal_has_int32()) {
-    return type_.int32_;
-  }
-  return 0;
-}
-inline void TopicDataRecord::_internal_set_int32(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  if (!_internal_has_int32()) {
-    clear_type();
-    set_has_int32();
-  }
-  type_.int32_ = value;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 TopicDataRecord::int32() const {
-  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.int32)
-  return _internal_int32();
-}
-inline void TopicDataRecord::set_int32(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_int32(value);
-  // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.int32)
-}
-
-// float float = 24;
-inline bool TopicDataRecord::_internal_has_float_() const {
-  return type_case() == kFloat;
-}
-inline void TopicDataRecord::set_has_float_() {
-  _oneof_case_[0] = kFloat;
-}
-inline void TopicDataRecord::clear_float_() {
-  if (_internal_has_float_()) {
-    type_.float__ = 0;
-    clear_has_type();
-  }
-}
-inline float TopicDataRecord::_internal_float_() const {
-  if (_internal_has_float_()) {
-    return type_.float__;
-  }
-  return 0;
-}
-inline void TopicDataRecord::_internal_set_float_(float value) {
-  if (!_internal_has_float_()) {
-    clear_type();
-    set_has_float_();
-  }
-  type_.float__ = value;
-}
-inline float TopicDataRecord::float_() const {
-  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.float)
-  return _internal_float_();
-}
-inline void TopicDataRecord::set_float_(float value) {
-  _internal_set_float_(value);
-  // @@protoc_insertion_point(field_set:ubii.topicData.TopicDataRecord.float)
-}
-
 // .ubii.dataStructure.Int32List int32_list = 25;
 inline bool TopicDataRecord::_internal_has_int32_list() const {
   return type_case() == kInt32List;
@@ -2499,50 +2732,6 @@ inline ::ubii::sessions::Session* TopicDataRecord::_internal_mutable_session() {
 inline ::ubii::sessions::Session* TopicDataRecord::mutable_session() {
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.session)
   return _internal_mutable_session();
-}
-
-// .ubii.processing.ProcessingModuleList processing_module_list = 33;
-inline bool TopicDataRecord::_internal_has_processing_module_list() const {
-  return type_case() == kProcessingModuleList;
-}
-inline bool TopicDataRecord::has_processing_module_list() const {
-  return _internal_has_processing_module_list();
-}
-inline void TopicDataRecord::set_has_processing_module_list() {
-  _oneof_case_[0] = kProcessingModuleList;
-}
-inline ::ubii::processing::ProcessingModuleList* TopicDataRecord::release_processing_module_list() {
-  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.processing_module_list)
-  if (_internal_has_processing_module_list()) {
-    clear_has_type();
-      ::ubii::processing::ProcessingModuleList* temp = type_.processing_module_list_;
-    type_.processing_module_list_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::ubii::processing::ProcessingModuleList& TopicDataRecord::_internal_processing_module_list() const {
-  return _internal_has_processing_module_list()
-      ? *type_.processing_module_list_
-      : *reinterpret_cast< ::ubii::processing::ProcessingModuleList*>(&::ubii::processing::_ProcessingModuleList_default_instance_);
-}
-inline const ::ubii::processing::ProcessingModuleList& TopicDataRecord::processing_module_list() const {
-  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.processing_module_list)
-  return _internal_processing_module_list();
-}
-inline ::ubii::processing::ProcessingModuleList* TopicDataRecord::_internal_mutable_processing_module_list() {
-  if (!_internal_has_processing_module_list()) {
-    clear_type();
-    set_has_processing_module_list();
-    type_.processing_module_list_ = CreateMaybeMessage< ::ubii::processing::ProcessingModuleList >(
-        GetArenaNoVirtual());
-  }
-  return type_.processing_module_list_;
-}
-inline ::ubii::processing::ProcessingModuleList* TopicDataRecord::mutable_processing_module_list() {
-  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.processing_module_list)
-  return _internal_mutable_processing_module_list();
 }
 
 inline bool TopicDataRecord::has_type() const {

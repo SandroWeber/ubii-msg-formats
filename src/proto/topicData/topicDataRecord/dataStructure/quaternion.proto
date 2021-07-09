@@ -7,3 +7,7 @@ message Quaternion {
     double z = 3;
     double w = 4;
 }
+
+message QuaternionList {
+    repeated ubii.dataStructure.Quaternion elements = 1;
+}

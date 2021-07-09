@@ -14,12 +14,17 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto;
 namespace ubii {
 namespace dataStructure {
 class Vector2DefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Vector2> _instance;
 } _Vector2_default_instance_;
+class Vector2ListDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Vector2List> _instance;
+} _Vector2List_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
 static void InitDefaultsscc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto() {
@@ -36,7 +41,22 @@ static void InitDefaultsscc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fd
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto[1];
+static void InitDefaultsscc_info_Vector2List_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::ubii::dataStructure::_Vector2List_default_instance_;
+    new (ptr) ::ubii::dataStructure::Vector2List();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::ubii::dataStructure::Vector2List::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Vector2List_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Vector2List_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto}, {
+      &scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto.base,}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto = nullptr;
 
@@ -48,33 +68,43 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataR
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Vector2, x_),
   PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Vector2, y_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Vector2List, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Vector2List, elements_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::Vector2)},
+  { 7, -1, sizeof(::ubii::dataStructure::Vector2List)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::dataStructure::_Vector2_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::dataStructure::_Vector2List_default_instance_),
 };
 
 const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n;proto/topicData/topicDataRecord/dataSt"
   "ructure/vector2.proto\022\022ubii.dataStructur"
-  "e\"\037\n\007Vector2\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001b\006prot"
-  "o3"
+  "e\"\037\n\007Vector2\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\"<\n\013Ve"
+  "ctor2List\022-\n\010elements\030\001 \003(\0132\033.ubii.dataS"
+  "tructure.Vector2b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_sccs[1] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_sccs[2] = {
   &scc_info_Vector2_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto.base,
+  &scc_info_Vector2List_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_once;
 static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto = {
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto, "proto/topicData/topicDataRecord/dataStructure/vector2.proto", 122,
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_deps, 1, 0,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto, "proto/topicData/topicDataRecord/dataStructure/vector2.proto", 184,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto::offsets,
-  file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto,
+  file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto, 2, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -294,12 +324,206 @@ void Vector2::InternalSwap(Vector2* other) {
 }
 
 
+// ===================================================================
+
+void Vector2List::InitAsDefaultInstance() {
+}
+class Vector2List::_Internal {
+ public:
+};
+
+Vector2List::Vector2List()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ubii.dataStructure.Vector2List)
+}
+Vector2List::Vector2List(const Vector2List& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      elements_(from.elements_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.Vector2List)
+}
+
+void Vector2List::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Vector2List_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto.base);
+}
+
+Vector2List::~Vector2List() {
+  // @@protoc_insertion_point(destructor:ubii.dataStructure.Vector2List)
+  SharedDtor();
+}
+
+void Vector2List::SharedDtor() {
+}
+
+void Vector2List::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Vector2List& Vector2List::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Vector2List_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector2_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Vector2List::Clear() {
+// @@protoc_insertion_point(message_clear_start:ubii.dataStructure.Vector2List)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  elements_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* Vector2List::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .ubii.dataStructure.Vector2 elements = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_elements(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Vector2List::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:ubii.dataStructure.Vector2List)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .ubii.dataStructure.Vector2 elements = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_elements_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_elements(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Vector2List)
+  return target;
+}
+
+size_t Vector2List::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ubii.dataStructure.Vector2List)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .ubii.dataStructure.Vector2 elements = 1;
+  total_size += 1UL * this->_internal_elements_size();
+  for (const auto& msg : this->elements_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Vector2List::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:ubii.dataStructure.Vector2List)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Vector2List* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Vector2List>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.dataStructure.Vector2List)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.dataStructure.Vector2List)
+    MergeFrom(*source);
+  }
+}
+
+void Vector2List::MergeFrom(const Vector2List& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Vector2List)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  elements_.MergeFrom(from.elements_);
+}
+
+void Vector2List::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:ubii.dataStructure.Vector2List)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Vector2List::CopyFrom(const Vector2List& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ubii.dataStructure.Vector2List)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Vector2List::IsInitialized() const {
+  return true;
+}
+
+void Vector2List::InternalSwap(Vector2List* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  elements_.InternalSwap(&other->elements_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Vector2List::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dataStructure
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Vector2* Arena::CreateMaybeMessage< ::ubii::dataStructure::Vector2 >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::dataStructure::Vector2 >(arena);
+}
+template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Vector2List* Arena::CreateMaybeMessage< ::ubii::dataStructure::Vector2List >(Arena* arena) {
+  return Arena::CreateInternal< ::ubii::dataStructure::Vector2List >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

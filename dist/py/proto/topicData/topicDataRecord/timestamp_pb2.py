@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.topicData',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n/proto/topicData/topicDataRecord/timestamp.proto\x12\x0eubii.topicData\"+\n\tTimestamp\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\x62\x06proto3'
+  serialized_pb=b'\n/proto/topicData/topicDataRecord/timestamp.proto\x12\x0eubii.topicData\";\n\tTimestamp\x12\x0f\n\x07seconds\x18\x01 \x01(\x03\x12\r\n\x05nanos\x18\x02 \x01(\x05\x12\x0e\n\x06millis\x18\x03 \x01(\x03\x62\x06proto3'
 )
 
 
@@ -45,6 +45,13 @@ _TIMESTAMP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='millis', full_name='ubii.topicData.Timestamp.millis', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -58,7 +65,7 @@ _TIMESTAMP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=67,
-  serialized_end=110,
+  serialized_end=126,
 )
 
 DESCRIPTOR.message_types_by_name['Timestamp'] = _TIMESTAMP

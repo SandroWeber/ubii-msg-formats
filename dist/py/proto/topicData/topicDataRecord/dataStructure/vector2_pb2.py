@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x12\x12ubii.dataStructure\"\x1f\n\x07Vector2\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x62\x06proto3'
+  serialized_pb=b'\n;proto/topicData/topicDataRecord/dataStructure/vector2.proto\x12\x12ubii.dataStructure\"\x1f\n\x07Vector2\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\"<\n\x0bVector2List\x12-\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1b.ubii.dataStructure.Vector2b\x06proto3'
 )
 
 
@@ -61,7 +61,40 @@ _VECTOR2 = _descriptor.Descriptor(
   serialized_end=114,
 )
 
+
+_VECTOR2LIST = _descriptor.Descriptor(
+  name='Vector2List',
+  full_name='ubii.dataStructure.Vector2List',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.dataStructure.Vector2List.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=116,
+  serialized_end=176,
+)
+
+_VECTOR2LIST.fields_by_name['elements'].message_type = _VECTOR2
 DESCRIPTOR.message_types_by_name['Vector2'] = _VECTOR2
+DESCRIPTOR.message_types_by_name['Vector2List'] = _VECTOR2LIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Vector2 = _reflection.GeneratedProtocolMessageType('Vector2', (_message.Message,), {
@@ -70,6 +103,13 @@ Vector2 = _reflection.GeneratedProtocolMessageType('Vector2', (_message.Message,
   # @@protoc_insertion_point(class_scope:ubii.dataStructure.Vector2)
   })
 _sym_db.RegisterMessage(Vector2)
+
+Vector2List = _reflection.GeneratedProtocolMessageType('Vector2List', (_message.Message,), {
+  'DESCRIPTOR' : _VECTOR2LIST,
+  '__module__' : 'proto.topicData.topicDataRecord.dataStructure.vector2_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.dataStructure.Vector2List)
+  })
+_sym_db.RegisterMessage(Vector2List)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.dataStructure',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x12\x12ubii.dataStructure\"8\n\nQuaternion\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x12\t\n\x01w\x18\x04 \x01(\x01\x62\x06proto3'
+  serialized_pb=b'\n>proto/topicData/topicDataRecord/dataStructure/quaternion.proto\x12\x12ubii.dataStructure\"8\n\nQuaternion\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x12\t\n\x01w\x18\x04 \x01(\x01\"B\n\x0eQuaternionList\x12\x30\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x1e.ubii.dataStructure.Quaternionb\x06proto3'
 )
 
 
@@ -75,7 +75,40 @@ _QUATERNION = _descriptor.Descriptor(
   serialized_end=142,
 )
 
+
+_QUATERNIONLIST = _descriptor.Descriptor(
+  name='QuaternionList',
+  full_name='ubii.dataStructure.QuaternionList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='elements', full_name='ubii.dataStructure.QuaternionList.elements', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=144,
+  serialized_end=210,
+)
+
+_QUATERNIONLIST.fields_by_name['elements'].message_type = _QUATERNION
 DESCRIPTOR.message_types_by_name['Quaternion'] = _QUATERNION
+DESCRIPTOR.message_types_by_name['QuaternionList'] = _QUATERNIONLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Message,), {
@@ -84,6 +117,13 @@ Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Me
   # @@protoc_insertion_point(class_scope:ubii.dataStructure.Quaternion)
   })
 _sym_db.RegisterMessage(Quaternion)
+
+QuaternionList = _reflection.GeneratedProtocolMessageType('QuaternionList', (_message.Message,), {
+  'DESCRIPTOR' : _QUATERNIONLIST,
+  '__module__' : 'proto.topicData.topicDataRecord.dataStructure.quaternion_pb2'
+  # @@protoc_insertion_point(class_scope:ubii.dataStructure.QuaternionList)
+  })
+_sym_db.RegisterMessage(QuaternionList)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -48,6 +48,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataR
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::Timestamp, seconds_),
   PROTOBUF_FIELD_OFFSET(::ubii::topicData::Timestamp, nanos_),
+  PROTOBUF_FIELD_OFFSET(::ubii::topicData::Timestamp, millis_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::topicData::Timestamp)},
@@ -59,8 +60,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n/proto/topicData/topicDataRecord/timest"
-  "amp.proto\022\016ubii.topicData\"+\n\tTimestamp\022\017"
-  "\n\007seconds\030\001 \001(\003\022\r\n\005nanos\030\002 \001(\005b\006proto3"
+  "amp.proto\022\016ubii.topicData\";\n\tTimestamp\022\017"
+  "\n\007seconds\030\001 \001(\003\022\r\n\005nanos\030\002 \001(\005\022\016\n\006millis"
+  "\030\003 \001(\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_deps[1] = {
 };
@@ -70,7 +72,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_once;
 static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto = {
-  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, "proto/topicData/topicDataRecord/timestamp.proto", 118,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, "proto/topicData/topicDataRecord/timestamp.proto", 134,
   &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto::offsets,
   file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2ftimestamp_2eproto,
@@ -160,6 +162,13 @@ const char* Timestamp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // int64 millis = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          millis_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -198,6 +207,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_nanos(), target);
   }
 
+  // int64 millis = 3;
+  if (this->millis() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_millis(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -219,6 +234,13 @@ size_t Timestamp::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_seconds());
+  }
+
+  // int64 millis = 3;
+  if (this->millis() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_millis());
   }
 
   // int32 nanos = 2;
@@ -262,6 +284,9 @@ void Timestamp::MergeFrom(const Timestamp& from) {
   if (from.seconds() != 0) {
     _internal_set_seconds(from._internal_seconds());
   }
+  if (from.millis() != 0) {
+    _internal_set_millis(from._internal_millis());
+  }
   if (from.nanos() != 0) {
     _internal_set_nanos(from._internal_nanos());
   }
@@ -289,6 +314,7 @@ void Timestamp::InternalSwap(Timestamp* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(seconds_, other->seconds_);
+  swap(millis_, other->millis_);
   swap(nanos_, other->nanos_);
 }
 

@@ -6,3 +6,7 @@ message Vector3 {
     double y = 2;
     double z = 3;
 }
+
+message Vector3List {
+    repeated ubii.dataStructure.Vector3 elements = 1;
+}

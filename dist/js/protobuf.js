@@ -11423,6 +11423,7 @@ $root.ubii = (function() {
              * @interface ITimestamp
              * @property {number|Long|null} [seconds] Timestamp seconds
              * @property {number|null} [nanos] Timestamp nanos
+             * @property {number|Long|null} [millis] Timestamp millis
              */
 
             /**
@@ -11457,6 +11458,14 @@ $root.ubii = (function() {
             Timestamp.prototype.nanos = 0;
 
             /**
+             * Timestamp millis.
+             * @member {number|Long} millis
+             * @memberof ubii.topicData.Timestamp
+             * @instance
+             */
+            Timestamp.prototype.millis = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
              * Creates a new Timestamp instance using the specified properties.
              * @function create
              * @memberof ubii.topicData.Timestamp
@@ -11484,6 +11493,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
                 if (message.nanos != null && Object.hasOwnProperty.call(message, "nanos"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
+                if (message.millis != null && Object.hasOwnProperty.call(message, "millis"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.millis);
                 return writer;
             };
 
@@ -11523,6 +11534,9 @@ $root.ubii = (function() {
                         break;
                     case 2:
                         message.nanos = reader.int32();
+                        break;
+                    case 3:
+                        message.millis = reader.int64();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11565,6 +11579,9 @@ $root.ubii = (function() {
                 if (message.nanos != null && message.hasOwnProperty("nanos"))
                     if (!$util.isInteger(message.nanos))
                         return "nanos: integer expected";
+                if (message.millis != null && message.hasOwnProperty("millis"))
+                    if (!$util.isInteger(message.millis) && !(message.millis && $util.isInteger(message.millis.low) && $util.isInteger(message.millis.high)))
+                        return "millis: integer|Long expected";
                 return null;
             };
 
@@ -11591,6 +11608,15 @@ $root.ubii = (function() {
                         message.seconds = new $util.LongBits(object.seconds.low >>> 0, object.seconds.high >>> 0).toNumber();
                 if (object.nanos != null)
                     message.nanos = object.nanos | 0;
+                if (object.millis != null)
+                    if ($util.Long)
+                        (message.millis = $util.Long.fromValue(object.millis)).unsigned = false;
+                    else if (typeof object.millis === "string")
+                        message.millis = parseInt(object.millis, 10);
+                    else if (typeof object.millis === "number")
+                        message.millis = object.millis;
+                    else if (typeof object.millis === "object")
+                        message.millis = new $util.LongBits(object.millis.low >>> 0, object.millis.high >>> 0).toNumber();
                 return message;
             };
 
@@ -11614,6 +11640,11 @@ $root.ubii = (function() {
                     } else
                         object.seconds = options.longs === String ? "0" : 0;
                     object.nanos = 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.millis = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.millis = options.longs === String ? "0" : 0;
                 }
                 if (message.seconds != null && message.hasOwnProperty("seconds"))
                     if (typeof message.seconds === "number")
@@ -11622,6 +11653,11 @@ $root.ubii = (function() {
                         object.seconds = options.longs === String ? $util.Long.prototype.toString.call(message.seconds) : options.longs === Number ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber() : message.seconds;
                 if (message.nanos != null && message.hasOwnProperty("nanos"))
                     object.nanos = message.nanos;
+                if (message.millis != null && message.hasOwnProperty("millis"))
+                    if (typeof message.millis === "number")
+                        object.millis = options.longs === String ? String(message.millis) : message.millis;
+                    else
+                        object.millis = options.longs === String ? $util.Long.prototype.toString.call(message.millis) : options.longs === Number ? new $util.LongBits(message.millis.low >>> 0, message.millis.high >>> 0).toNumber() : message.millis;
                 return object;
             };
 
@@ -11650,10 +11686,16 @@ $root.ubii = (function() {
              * @property {number|null} [double] TopicDataRecord double
              * @property {boolean|null} [bool] TopicDataRecord bool
              * @property {string|null} [string] TopicDataRecord string
+             * @property {number|null} [int32] TopicDataRecord int32
+             * @property {number|null} [float] TopicDataRecord float
              * @property {ubii.dataStructure.IVector2|null} [vector2] TopicDataRecord vector2
+             * @property {ubii.dataStructure.IVector2List|null} [vector2List] TopicDataRecord vector2List
              * @property {ubii.dataStructure.IVector3|null} [vector3] TopicDataRecord vector3
+             * @property {ubii.dataStructure.IVector3List|null} [vector3List] TopicDataRecord vector3List
              * @property {ubii.dataStructure.IVector4|null} [vector4] TopicDataRecord vector4
+             * @property {ubii.dataStructure.IVector4List|null} [vector4List] TopicDataRecord vector4List
              * @property {ubii.dataStructure.IQuaternion|null} [quaternion] TopicDataRecord quaternion
+             * @property {ubii.dataStructure.IQuaternion|null} [quaternionList] TopicDataRecord quaternionList
              * @property {ubii.dataStructure.IMatrix3x2|null} [matrix3x2] TopicDataRecord matrix3x2
              * @property {ubii.dataStructure.IMatrix4x4|null} [matrix4x4] TopicDataRecord matrix4x4
              * @property {ubii.dataStructure.IColor|null} [color] TopicDataRecord color
@@ -11668,8 +11710,6 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IObject3D|null} [object3D] TopicDataRecord object3D
              * @property {ubii.dataStructure.IObject2DList|null} [object2DList] TopicDataRecord object2DList
              * @property {ubii.dataStructure.IObject3DList|null} [object3DList] TopicDataRecord object3DList
-             * @property {number|null} [int32] TopicDataRecord int32
-             * @property {number|null} [float] TopicDataRecord float
              * @property {ubii.dataStructure.IInt32List|null} [int32List] TopicDataRecord int32List
              * @property {ubii.dataStructure.IFloatList|null} [floatList] TopicDataRecord floatList
              * @property {ubii.dataStructure.IDoubleList|null} [doubleList] TopicDataRecord doubleList
@@ -11678,7 +11718,6 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IImage2D|null} [image2D] TopicDataRecord image2D
              * @property {ubii.dataStructure.IImage2DList|null} [image2DList] TopicDataRecord image2DList
              * @property {ubii.sessions.ISession|null} [session] TopicDataRecord session
-             * @property {ubii.processing.IProcessingModuleList|null} [processingModuleList] TopicDataRecord processingModuleList
              */
 
             /**
@@ -11737,12 +11776,36 @@ $root.ubii = (function() {
             TopicDataRecord.prototype.string = "";
 
             /**
+             * TopicDataRecord int32.
+             * @member {number} int32
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.int32 = 0;
+
+            /**
+             * TopicDataRecord float.
+             * @member {number} float
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.float = 0;
+
+            /**
              * TopicDataRecord vector2.
              * @member {ubii.dataStructure.IVector2|null|undefined} vector2
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             TopicDataRecord.prototype.vector2 = null;
+
+            /**
+             * TopicDataRecord vector2List.
+             * @member {ubii.dataStructure.IVector2List|null|undefined} vector2List
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.vector2List = null;
 
             /**
              * TopicDataRecord vector3.
@@ -11753,6 +11816,14 @@ $root.ubii = (function() {
             TopicDataRecord.prototype.vector3 = null;
 
             /**
+             * TopicDataRecord vector3List.
+             * @member {ubii.dataStructure.IVector3List|null|undefined} vector3List
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.vector3List = null;
+
+            /**
              * TopicDataRecord vector4.
              * @member {ubii.dataStructure.IVector4|null|undefined} vector4
              * @memberof ubii.topicData.TopicDataRecord
@@ -11761,12 +11832,28 @@ $root.ubii = (function() {
             TopicDataRecord.prototype.vector4 = null;
 
             /**
+             * TopicDataRecord vector4List.
+             * @member {ubii.dataStructure.IVector4List|null|undefined} vector4List
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.vector4List = null;
+
+            /**
              * TopicDataRecord quaternion.
              * @member {ubii.dataStructure.IQuaternion|null|undefined} quaternion
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             TopicDataRecord.prototype.quaternion = null;
+
+            /**
+             * TopicDataRecord quaternionList.
+             * @member {ubii.dataStructure.IQuaternion|null|undefined} quaternionList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.quaternionList = null;
 
             /**
              * TopicDataRecord matrix3x2.
@@ -11881,22 +11968,6 @@ $root.ubii = (function() {
             TopicDataRecord.prototype.object3DList = null;
 
             /**
-             * TopicDataRecord int32.
-             * @member {number} int32
-             * @memberof ubii.topicData.TopicDataRecord
-             * @instance
-             */
-            TopicDataRecord.prototype.int32 = 0;
-
-            /**
-             * TopicDataRecord float.
-             * @member {number} float
-             * @memberof ubii.topicData.TopicDataRecord
-             * @instance
-             */
-            TopicDataRecord.prototype.float = 0;
-
-            /**
              * TopicDataRecord int32List.
              * @member {ubii.dataStructure.IInt32List|null|undefined} int32List
              * @memberof ubii.topicData.TopicDataRecord
@@ -11960,25 +12031,17 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.session = null;
 
-            /**
-             * TopicDataRecord processingModuleList.
-             * @member {ubii.processing.IProcessingModuleList|null|undefined} processingModuleList
-             * @memberof ubii.topicData.TopicDataRecord
-             * @instance
-             */
-            TopicDataRecord.prototype.processingModuleList = null;
-
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"vector2"|"vector3"|"vector4"|"quaternion"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"touchEventList"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32"|"float"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|"processingModuleList"|undefined} type
+             * @member {"double"|"bool"|"string"|"int32"|"float"|"vector2"|"vector2List"|"vector3"|"vector3List"|"vector4"|"vector4List"|"quaternion"|"quaternionList"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"touchEventList"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "vector2", "vector3", "vector4", "quaternion", "matrix3x2", "matrix4x4", "color", "touchEvent", "touchEventList", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32", "float", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList", "session", "processingModuleList"]),
+                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "int32", "float", "vector2", "vector2List", "vector3", "vector3List", "vector4", "vector4List", "quaternion", "quaternionList", "matrix3x2", "matrix4x4", "color", "touchEvent", "touchEventList", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList", "session"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -12070,10 +12133,16 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Image2DList.encode(message.image2DList, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
                 if (message.session != null && Object.hasOwnProperty.call(message, "session"))
                     $root.ubii.sessions.Session.encode(message.session, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
-                if (message.processingModuleList != null && Object.hasOwnProperty.call(message, "processingModuleList"))
-                    $root.ubii.processing.ProcessingModuleList.encode(message.processingModuleList, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
                 if (message.touchEventList != null && Object.hasOwnProperty.call(message, "touchEventList"))
                     $root.ubii.dataStructure.TouchEventList.encode(message.touchEventList, writer.uint32(/* id 34, wireType 2 =*/274).fork()).ldelim();
+                if (message.vector2List != null && Object.hasOwnProperty.call(message, "vector2List"))
+                    $root.ubii.dataStructure.Vector2List.encode(message.vector2List, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
+                if (message.vector3List != null && Object.hasOwnProperty.call(message, "vector3List"))
+                    $root.ubii.dataStructure.Vector3List.encode(message.vector3List, writer.uint32(/* id 36, wireType 2 =*/290).fork()).ldelim();
+                if (message.vector4List != null && Object.hasOwnProperty.call(message, "vector4List"))
+                    $root.ubii.dataStructure.Vector4List.encode(message.vector4List, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
+                if (message.quaternionList != null && Object.hasOwnProperty.call(message, "quaternionList"))
+                    $root.ubii.dataStructure.Quaternion.encode(message.quaternionList, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
                 return writer;
             };
 
@@ -12123,17 +12192,35 @@ $root.ubii = (function() {
                     case 5:
                         message.string = reader.string();
                         break;
+                    case 23:
+                        message.int32 = reader.int32();
+                        break;
+                    case 24:
+                        message.float = reader.float();
+                        break;
                     case 6:
                         message.vector2 = $root.ubii.dataStructure.Vector2.decode(reader, reader.uint32());
+                        break;
+                    case 35:
+                        message.vector2List = $root.ubii.dataStructure.Vector2List.decode(reader, reader.uint32());
                         break;
                     case 7:
                         message.vector3 = $root.ubii.dataStructure.Vector3.decode(reader, reader.uint32());
                         break;
+                    case 36:
+                        message.vector3List = $root.ubii.dataStructure.Vector3List.decode(reader, reader.uint32());
+                        break;
                     case 8:
                         message.vector4 = $root.ubii.dataStructure.Vector4.decode(reader, reader.uint32());
                         break;
+                    case 37:
+                        message.vector4List = $root.ubii.dataStructure.Vector4List.decode(reader, reader.uint32());
+                        break;
                     case 9:
                         message.quaternion = $root.ubii.dataStructure.Quaternion.decode(reader, reader.uint32());
+                        break;
+                    case 38:
+                        message.quaternionList = $root.ubii.dataStructure.Quaternion.decode(reader, reader.uint32());
                         break;
                     case 10:
                         message.matrix3x2 = $root.ubii.dataStructure.Matrix3x2.decode(reader, reader.uint32());
@@ -12177,12 +12264,6 @@ $root.ubii = (function() {
                     case 22:
                         message.object3DList = $root.ubii.dataStructure.Object3DList.decode(reader, reader.uint32());
                         break;
-                    case 23:
-                        message.int32 = reader.int32();
-                        break;
-                    case 24:
-                        message.float = reader.float();
-                        break;
                     case 25:
                         message.int32List = $root.ubii.dataStructure.Int32List.decode(reader, reader.uint32());
                         break;
@@ -12206,9 +12287,6 @@ $root.ubii = (function() {
                         break;
                     case 32:
                         message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
-                        break;
-                    case 33:
-                        message.processingModuleList = $root.ubii.processing.ProcessingModuleList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -12273,6 +12351,20 @@ $root.ubii = (function() {
                     if (!$util.isString(message.string))
                         return "string: string expected";
                 }
+                if (message.int32 != null && message.hasOwnProperty("int32")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    if (!$util.isInteger(message.int32))
+                        return "int32: integer expected";
+                }
+                if (message.float != null && message.hasOwnProperty("float")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    if (typeof message.float !== "number")
+                        return "float: number expected";
+                }
                 if (message.vector2 != null && message.hasOwnProperty("vector2")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -12281,6 +12373,16 @@ $root.ubii = (function() {
                         var error = $root.ubii.dataStructure.Vector2.verify(message.vector2);
                         if (error)
                             return "vector2." + error;
+                    }
+                }
+                if (message.vector2List != null && message.hasOwnProperty("vector2List")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Vector2List.verify(message.vector2List);
+                        if (error)
+                            return "vector2List." + error;
                     }
                 }
                 if (message.vector3 != null && message.hasOwnProperty("vector3")) {
@@ -12293,6 +12395,16 @@ $root.ubii = (function() {
                             return "vector3." + error;
                     }
                 }
+                if (message.vector3List != null && message.hasOwnProperty("vector3List")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Vector3List.verify(message.vector3List);
+                        if (error)
+                            return "vector3List." + error;
+                    }
+                }
                 if (message.vector4 != null && message.hasOwnProperty("vector4")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -12303,6 +12415,16 @@ $root.ubii = (function() {
                             return "vector4." + error;
                     }
                 }
+                if (message.vector4List != null && message.hasOwnProperty("vector4List")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Vector4List.verify(message.vector4List);
+                        if (error)
+                            return "vector4List." + error;
+                    }
+                }
                 if (message.quaternion != null && message.hasOwnProperty("quaternion")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -12311,6 +12433,16 @@ $root.ubii = (function() {
                         var error = $root.ubii.dataStructure.Quaternion.verify(message.quaternion);
                         if (error)
                             return "quaternion." + error;
+                    }
+                }
+                if (message.quaternionList != null && message.hasOwnProperty("quaternionList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.dataStructure.Quaternion.verify(message.quaternionList);
+                        if (error)
+                            return "quaternionList." + error;
                     }
                 }
                 if (message.matrix3x2 != null && message.hasOwnProperty("matrix3x2")) {
@@ -12453,20 +12585,6 @@ $root.ubii = (function() {
                             return "object3DList." + error;
                     }
                 }
-                if (message.int32 != null && message.hasOwnProperty("int32")) {
-                    if (properties.type === 1)
-                        return "type: multiple values";
-                    properties.type = 1;
-                    if (!$util.isInteger(message.int32))
-                        return "int32: integer expected";
-                }
-                if (message.float != null && message.hasOwnProperty("float")) {
-                    if (properties.type === 1)
-                        return "type: multiple values";
-                    properties.type = 1;
-                    if (typeof message.float !== "number")
-                        return "float: number expected";
-                }
                 if (message.int32List != null && message.hasOwnProperty("int32List")) {
                     if (properties.type === 1)
                         return "type: multiple values";
@@ -12547,16 +12665,6 @@ $root.ubii = (function() {
                             return "session." + error;
                     }
                 }
-                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList")) {
-                    if (properties.type === 1)
-                        return "type: multiple values";
-                    properties.type = 1;
-                    {
-                        var error = $root.ubii.processing.ProcessingModuleList.verify(message.processingModuleList);
-                        if (error)
-                            return "processingModuleList." + error;
-                    }
-                }
                 return null;
             };
 
@@ -12585,25 +12693,49 @@ $root.ubii = (function() {
                     message.bool = Boolean(object.bool);
                 if (object.string != null)
                     message.string = String(object.string);
+                if (object.int32 != null)
+                    message.int32 = object.int32 | 0;
+                if (object.float != null)
+                    message.float = Number(object.float);
                 if (object.vector2 != null) {
                     if (typeof object.vector2 !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.vector2: object expected");
                     message.vector2 = $root.ubii.dataStructure.Vector2.fromObject(object.vector2);
+                }
+                if (object.vector2List != null) {
+                    if (typeof object.vector2List !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.vector2List: object expected");
+                    message.vector2List = $root.ubii.dataStructure.Vector2List.fromObject(object.vector2List);
                 }
                 if (object.vector3 != null) {
                     if (typeof object.vector3 !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.vector3: object expected");
                     message.vector3 = $root.ubii.dataStructure.Vector3.fromObject(object.vector3);
                 }
+                if (object.vector3List != null) {
+                    if (typeof object.vector3List !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.vector3List: object expected");
+                    message.vector3List = $root.ubii.dataStructure.Vector3List.fromObject(object.vector3List);
+                }
                 if (object.vector4 != null) {
                     if (typeof object.vector4 !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.vector4: object expected");
                     message.vector4 = $root.ubii.dataStructure.Vector4.fromObject(object.vector4);
                 }
+                if (object.vector4List != null) {
+                    if (typeof object.vector4List !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.vector4List: object expected");
+                    message.vector4List = $root.ubii.dataStructure.Vector4List.fromObject(object.vector4List);
+                }
                 if (object.quaternion != null) {
                     if (typeof object.quaternion !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.quaternion: object expected");
                     message.quaternion = $root.ubii.dataStructure.Quaternion.fromObject(object.quaternion);
+                }
+                if (object.quaternionList != null) {
+                    if (typeof object.quaternionList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.quaternionList: object expected");
+                    message.quaternionList = $root.ubii.dataStructure.Quaternion.fromObject(object.quaternionList);
                 }
                 if (object.matrix3x2 != null) {
                     if (typeof object.matrix3x2 !== "object")
@@ -12675,10 +12807,6 @@ $root.ubii = (function() {
                         throw TypeError(".ubii.topicData.TopicDataRecord.object3DList: object expected");
                     message.object3DList = $root.ubii.dataStructure.Object3DList.fromObject(object.object3DList);
                 }
-                if (object.int32 != null)
-                    message.int32 = object.int32 | 0;
-                if (object.float != null)
-                    message.float = Number(object.float);
                 if (object.int32List != null) {
                     if (typeof object.int32List !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.int32List: object expected");
@@ -12718,11 +12846,6 @@ $root.ubii = (function() {
                     if (typeof object.session !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.session: object expected");
                     message.session = $root.ubii.sessions.Session.fromObject(object.session);
-                }
-                if (object.processingModuleList != null) {
-                    if (typeof object.processingModuleList !== "object")
-                        throw TypeError(".ubii.topicData.TopicDataRecord.processingModuleList: object expected");
-                    message.processingModuleList = $root.ubii.processing.ProcessingModuleList.fromObject(object.processingModuleList);
                 }
                 return message;
             };
@@ -12898,15 +13021,30 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "session";
                 }
-                if (message.processingModuleList != null && message.hasOwnProperty("processingModuleList")) {
-                    object.processingModuleList = $root.ubii.processing.ProcessingModuleList.toObject(message.processingModuleList, options);
-                    if (options.oneofs)
-                        object.type = "processingModuleList";
-                }
                 if (message.touchEventList != null && message.hasOwnProperty("touchEventList")) {
                     object.touchEventList = $root.ubii.dataStructure.TouchEventList.toObject(message.touchEventList, options);
                     if (options.oneofs)
                         object.type = "touchEventList";
+                }
+                if (message.vector2List != null && message.hasOwnProperty("vector2List")) {
+                    object.vector2List = $root.ubii.dataStructure.Vector2List.toObject(message.vector2List, options);
+                    if (options.oneofs)
+                        object.type = "vector2List";
+                }
+                if (message.vector3List != null && message.hasOwnProperty("vector3List")) {
+                    object.vector3List = $root.ubii.dataStructure.Vector3List.toObject(message.vector3List, options);
+                    if (options.oneofs)
+                        object.type = "vector3List";
+                }
+                if (message.vector4List != null && message.hasOwnProperty("vector4List")) {
+                    object.vector4List = $root.ubii.dataStructure.Vector4List.toObject(message.vector4List, options);
+                    if (options.oneofs)
+                        object.type = "vector4List";
+                }
+                if (message.quaternionList != null && message.hasOwnProperty("quaternionList")) {
+                    object.quaternionList = $root.ubii.dataStructure.Quaternion.toObject(message.quaternionList, options);
+                    if (options.oneofs)
+                        object.type = "quaternionList";
                 }
                 return object;
             };
@@ -18316,6 +18454,214 @@ $root.ubii = (function() {
             return Quaternion;
         })();
 
+        dataStructure.QuaternionList = (function() {
+
+            /**
+             * Properties of a QuaternionList.
+             * @memberof ubii.dataStructure
+             * @interface IQuaternionList
+             * @property {Array.<ubii.dataStructure.IQuaternion>|null} [elements] QuaternionList elements
+             */
+
+            /**
+             * Constructs a new QuaternionList.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a QuaternionList.
+             * @implements IQuaternionList
+             * @constructor
+             * @param {ubii.dataStructure.IQuaternionList=} [properties] Properties to set
+             */
+            function QuaternionList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * QuaternionList elements.
+             * @member {Array.<ubii.dataStructure.IQuaternion>} elements
+             * @memberof ubii.dataStructure.QuaternionList
+             * @instance
+             */
+            QuaternionList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new QuaternionList instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {ubii.dataStructure.IQuaternionList=} [properties] Properties to set
+             * @returns {ubii.dataStructure.QuaternionList} QuaternionList instance
+             */
+            QuaternionList.create = function create(properties) {
+                return new QuaternionList(properties);
+            };
+
+            /**
+             * Encodes the specified QuaternionList message. Does not implicitly {@link ubii.dataStructure.QuaternionList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {ubii.dataStructure.IQuaternionList} message QuaternionList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            QuaternionList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Quaternion.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified QuaternionList message, length delimited. Does not implicitly {@link ubii.dataStructure.QuaternionList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {ubii.dataStructure.IQuaternionList} message QuaternionList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            QuaternionList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a QuaternionList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.QuaternionList} QuaternionList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            QuaternionList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.QuaternionList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Quaternion.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a QuaternionList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.QuaternionList} QuaternionList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            QuaternionList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a QuaternionList message.
+             * @function verify
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            QuaternionList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Quaternion.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a QuaternionList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.QuaternionList} QuaternionList
+             */
+            QuaternionList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.QuaternionList)
+                    return object;
+                var message = new $root.ubii.dataStructure.QuaternionList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.QuaternionList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.QuaternionList.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Quaternion.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a QuaternionList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.QuaternionList
+             * @static
+             * @param {ubii.dataStructure.QuaternionList} message QuaternionList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            QuaternionList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Quaternion.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this QuaternionList to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.QuaternionList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            QuaternionList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return QuaternionList;
+        })();
+
         dataStructure.TouchEvent = (function() {
 
             /**
@@ -19027,6 +19373,214 @@ $root.ubii = (function() {
             return Vector2;
         })();
 
+        dataStructure.Vector2List = (function() {
+
+            /**
+             * Properties of a Vector2List.
+             * @memberof ubii.dataStructure
+             * @interface IVector2List
+             * @property {Array.<ubii.dataStructure.IVector2>|null} [elements] Vector2List elements
+             */
+
+            /**
+             * Constructs a new Vector2List.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a Vector2List.
+             * @implements IVector2List
+             * @constructor
+             * @param {ubii.dataStructure.IVector2List=} [properties] Properties to set
+             */
+            function Vector2List(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Vector2List elements.
+             * @member {Array.<ubii.dataStructure.IVector2>} elements
+             * @memberof ubii.dataStructure.Vector2List
+             * @instance
+             */
+            Vector2List.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Vector2List instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {ubii.dataStructure.IVector2List=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Vector2List} Vector2List instance
+             */
+            Vector2List.create = function create(properties) {
+                return new Vector2List(properties);
+            };
+
+            /**
+             * Encodes the specified Vector2List message. Does not implicitly {@link ubii.dataStructure.Vector2List.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {ubii.dataStructure.IVector2List} message Vector2List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector2List.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Vector2.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Vector2List message, length delimited. Does not implicitly {@link ubii.dataStructure.Vector2List.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {ubii.dataStructure.IVector2List} message Vector2List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector2List.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Vector2List message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Vector2List} Vector2List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector2List.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Vector2List();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Vector2.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Vector2List message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Vector2List} Vector2List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector2List.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Vector2List message.
+             * @function verify
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Vector2List.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Vector2.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a Vector2List message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Vector2List} Vector2List
+             */
+            Vector2List.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Vector2List)
+                    return object;
+                var message = new $root.ubii.dataStructure.Vector2List();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Vector2List.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.Vector2List.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Vector2.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Vector2List message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Vector2List
+             * @static
+             * @param {ubii.dataStructure.Vector2List} message Vector2List
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Vector2List.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Vector2.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Vector2List to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Vector2List
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Vector2List.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Vector2List;
+        })();
+
         dataStructure.Vector3 = (function() {
 
             /**
@@ -19257,6 +19811,214 @@ $root.ubii = (function() {
             };
 
             return Vector3;
+        })();
+
+        dataStructure.Vector3List = (function() {
+
+            /**
+             * Properties of a Vector3List.
+             * @memberof ubii.dataStructure
+             * @interface IVector3List
+             * @property {Array.<ubii.dataStructure.IVector3>|null} [elements] Vector3List elements
+             */
+
+            /**
+             * Constructs a new Vector3List.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a Vector3List.
+             * @implements IVector3List
+             * @constructor
+             * @param {ubii.dataStructure.IVector3List=} [properties] Properties to set
+             */
+            function Vector3List(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Vector3List elements.
+             * @member {Array.<ubii.dataStructure.IVector3>} elements
+             * @memberof ubii.dataStructure.Vector3List
+             * @instance
+             */
+            Vector3List.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Vector3List instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {ubii.dataStructure.IVector3List=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Vector3List} Vector3List instance
+             */
+            Vector3List.create = function create(properties) {
+                return new Vector3List(properties);
+            };
+
+            /**
+             * Encodes the specified Vector3List message. Does not implicitly {@link ubii.dataStructure.Vector3List.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {ubii.dataStructure.IVector3List} message Vector3List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector3List.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Vector3.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Vector3List message, length delimited. Does not implicitly {@link ubii.dataStructure.Vector3List.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {ubii.dataStructure.IVector3List} message Vector3List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector3List.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Vector3List message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Vector3List} Vector3List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector3List.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Vector3List();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Vector3.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Vector3List message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Vector3List} Vector3List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector3List.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Vector3List message.
+             * @function verify
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Vector3List.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Vector3.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a Vector3List message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Vector3List} Vector3List
+             */
+            Vector3List.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Vector3List)
+                    return object;
+                var message = new $root.ubii.dataStructure.Vector3List();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Vector3List.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.Vector3List.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Vector3.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Vector3List message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Vector3List
+             * @static
+             * @param {ubii.dataStructure.Vector3List} message Vector3List
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Vector3List.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Vector3.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Vector3List to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Vector3List
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Vector3List.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Vector3List;
         })();
 
         dataStructure.Vector4 = (function() {
@@ -19511,6 +20273,214 @@ $root.ubii = (function() {
             };
 
             return Vector4;
+        })();
+
+        dataStructure.Vector4List = (function() {
+
+            /**
+             * Properties of a Vector4List.
+             * @memberof ubii.dataStructure
+             * @interface IVector4List
+             * @property {Array.<ubii.dataStructure.IVector4>|null} [elements] Vector4List elements
+             */
+
+            /**
+             * Constructs a new Vector4List.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a Vector4List.
+             * @implements IVector4List
+             * @constructor
+             * @param {ubii.dataStructure.IVector4List=} [properties] Properties to set
+             */
+            function Vector4List(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Vector4List elements.
+             * @member {Array.<ubii.dataStructure.IVector4>} elements
+             * @memberof ubii.dataStructure.Vector4List
+             * @instance
+             */
+            Vector4List.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Vector4List instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {ubii.dataStructure.IVector4List=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Vector4List} Vector4List instance
+             */
+            Vector4List.create = function create(properties) {
+                return new Vector4List(properties);
+            };
+
+            /**
+             * Encodes the specified Vector4List message. Does not implicitly {@link ubii.dataStructure.Vector4List.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {ubii.dataStructure.IVector4List} message Vector4List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector4List.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Vector4.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Vector4List message, length delimited. Does not implicitly {@link ubii.dataStructure.Vector4List.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {ubii.dataStructure.IVector4List} message Vector4List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector4List.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Vector4List message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Vector4List} Vector4List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector4List.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Vector4List();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Vector4.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Vector4List message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Vector4List} Vector4List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector4List.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Vector4List message.
+             * @function verify
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Vector4List.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Vector4.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a Vector4List message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Vector4List} Vector4List
+             */
+            Vector4List.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Vector4List)
+                    return object;
+                var message = new $root.ubii.dataStructure.Vector4List();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Vector4List.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.Vector4List.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Vector4.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Vector4List message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Vector4List
+             * @static
+             * @param {ubii.dataStructure.Vector4List} message Vector4List
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Vector4List.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Vector4.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Vector4List to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Vector4List
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Vector4List.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Vector4List;
         })();
 
         dataStructure.Vector8 = (function() {
@@ -19853,6 +20823,214 @@ $root.ubii = (function() {
             };
 
             return Vector8;
+        })();
+
+        dataStructure.Vector8List = (function() {
+
+            /**
+             * Properties of a Vector8List.
+             * @memberof ubii.dataStructure
+             * @interface IVector8List
+             * @property {Array.<ubii.dataStructure.IVector8>|null} [elements] Vector8List elements
+             */
+
+            /**
+             * Constructs a new Vector8List.
+             * @memberof ubii.dataStructure
+             * @classdesc Represents a Vector8List.
+             * @implements IVector8List
+             * @constructor
+             * @param {ubii.dataStructure.IVector8List=} [properties] Properties to set
+             */
+            function Vector8List(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Vector8List elements.
+             * @member {Array.<ubii.dataStructure.IVector8>} elements
+             * @memberof ubii.dataStructure.Vector8List
+             * @instance
+             */
+            Vector8List.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new Vector8List instance using the specified properties.
+             * @function create
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {ubii.dataStructure.IVector8List=} [properties] Properties to set
+             * @returns {ubii.dataStructure.Vector8List} Vector8List instance
+             */
+            Vector8List.create = function create(properties) {
+                return new Vector8List(properties);
+            };
+
+            /**
+             * Encodes the specified Vector8List message. Does not implicitly {@link ubii.dataStructure.Vector8List.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {ubii.dataStructure.IVector8List} message Vector8List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector8List.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.dataStructure.Vector8.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Vector8List message, length delimited. Does not implicitly {@link ubii.dataStructure.Vector8List.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {ubii.dataStructure.IVector8List} message Vector8List message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vector8List.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Vector8List message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.dataStructure.Vector8List} Vector8List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector8List.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.dataStructure.Vector8List();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.dataStructure.Vector8.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Vector8List message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.dataStructure.Vector8List} Vector8List
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vector8List.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Vector8List message.
+             * @function verify
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Vector8List.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.dataStructure.Vector8.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a Vector8List message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.dataStructure.Vector8List} Vector8List
+             */
+            Vector8List.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.dataStructure.Vector8List)
+                    return object;
+                var message = new $root.ubii.dataStructure.Vector8List();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.dataStructure.Vector8List.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.dataStructure.Vector8List.elements: object expected");
+                        message.elements[i] = $root.ubii.dataStructure.Vector8.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Vector8List message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.dataStructure.Vector8List
+             * @static
+             * @param {ubii.dataStructure.Vector8List} message Vector8List
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Vector8List.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.dataStructure.Vector8.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Vector8List to JSON.
+             * @function toJSON
+             * @memberof ubii.dataStructure.Vector8List
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Vector8List.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Vector8List;
         })();
 
         return dataStructure;

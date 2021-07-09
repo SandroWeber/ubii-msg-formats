@@ -47,7 +47,7 @@ struct TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector8
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,10 +59,14 @@ namespace dataStructure {
 class Vector8;
 class Vector8DefaultTypeInternal;
 extern Vector8DefaultTypeInternal _Vector8_default_instance_;
+class Vector8List;
+class Vector8ListDefaultTypeInternal;
+extern Vector8ListDefaultTypeInternal _Vector8List_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
 PROTOBUF_NAMESPACE_OPEN
 template<> ::ubii::dataStructure::Vector8* Arena::CreateMaybeMessage<::ubii::dataStructure::Vector8>(Arena*);
+template<> ::ubii::dataStructure::Vector8List* Arena::CreateMaybeMessage<::ubii::dataStructure::Vector8List>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace ubii {
 namespace dataStructure {
@@ -272,6 +276,143 @@ class Vector8 :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector8_2eproto;
 };
+// -------------------------------------------------------------------
+
+class Vector8List :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ubii.dataStructure.Vector8List) */ {
+ public:
+  Vector8List();
+  virtual ~Vector8List();
+
+  Vector8List(const Vector8List& from);
+  Vector8List(Vector8List&& from) noexcept
+    : Vector8List() {
+    *this = ::std::move(from);
+  }
+
+  inline Vector8List& operator=(const Vector8List& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Vector8List& operator=(Vector8List&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Vector8List& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Vector8List* internal_default_instance() {
+    return reinterpret_cast<const Vector8List*>(
+               &_Vector8List_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Vector8List& a, Vector8List& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Vector8List* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Vector8List* New() const final {
+    return CreateMaybeMessage<Vector8List>(nullptr);
+  }
+
+  Vector8List* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Vector8List>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Vector8List& from);
+  void MergeFrom(const Vector8List& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Vector8List* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "ubii.dataStructure.Vector8List";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector8_2eproto);
+    return ::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector8_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kElementsFieldNumber = 1,
+  };
+  // repeated .ubii.dataStructure.Vector8 elements = 1;
+  int elements_size() const;
+  private:
+  int _internal_elements_size() const;
+  public:
+  void clear_elements();
+  ::ubii::dataStructure::Vector8* mutable_elements(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Vector8 >*
+      mutable_elements();
+  private:
+  const ::ubii::dataStructure::Vector8& _internal_elements(int index) const;
+  ::ubii::dataStructure::Vector8* _internal_add_elements();
+  public:
+  const ::ubii::dataStructure::Vector8& elements(int index) const;
+  ::ubii::dataStructure::Vector8* add_elements();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Vector8 >&
+      elements() const;
+
+  // @@protoc_insertion_point(class_scope:ubii.dataStructure.Vector8List)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Vector8 > elements_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fvector8_2eproto;
+};
 // ===================================================================
 
 
@@ -443,9 +584,54 @@ inline void Vector8::set_v7(double value) {
   // @@protoc_insertion_point(field_set:ubii.dataStructure.Vector8.v7)
 }
 
+// -------------------------------------------------------------------
+
+// Vector8List
+
+// repeated .ubii.dataStructure.Vector8 elements = 1;
+inline int Vector8List::_internal_elements_size() const {
+  return elements_.size();
+}
+inline int Vector8List::elements_size() const {
+  return _internal_elements_size();
+}
+inline void Vector8List::clear_elements() {
+  elements_.Clear();
+}
+inline ::ubii::dataStructure::Vector8* Vector8List::mutable_elements(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.dataStructure.Vector8List.elements)
+  return elements_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Vector8 >*
+Vector8List::mutable_elements() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.dataStructure.Vector8List.elements)
+  return &elements_;
+}
+inline const ::ubii::dataStructure::Vector8& Vector8List::_internal_elements(int index) const {
+  return elements_.Get(index);
+}
+inline const ::ubii::dataStructure::Vector8& Vector8List::elements(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.dataStructure.Vector8List.elements)
+  return _internal_elements(index);
+}
+inline ::ubii::dataStructure::Vector8* Vector8List::_internal_add_elements() {
+  return elements_.Add();
+}
+inline ::ubii::dataStructure::Vector8* Vector8List::add_elements() {
+  // @@protoc_insertion_point(field_add:ubii.dataStructure.Vector8List.elements)
+  return _internal_add_elements();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::ubii::dataStructure::Vector8 >&
+Vector8List::elements() const {
+  // @@protoc_insertion_point(field_list:ubii.dataStructure.Vector8List.elements)
+  return elements_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

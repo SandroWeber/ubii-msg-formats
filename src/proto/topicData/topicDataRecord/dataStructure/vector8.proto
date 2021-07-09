@@ -11,3 +11,7 @@ message Vector8 {
     double v6 = 7;
     double v7 = 8;
 }
+
+message Vector8List {
+    repeated ubii.dataStructure.Vector8 elements = 1;
+}
