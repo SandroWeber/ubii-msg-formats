@@ -21,6 +21,7 @@ message Client {
     string host_ip = 8;
     string metadata_json = 9;
     State state = 10;
+    float latenz = 11;
 }
 
 message ClientList {

@@ -43,6 +43,7 @@ $root.ubii = (function() {
              * @property {string|null} [hostIp] Client hostIp
              * @property {string|null} [metadataJson] Client metadataJson
              * @property {ubii.clients.Client.State|null} [state] Client state
+             * @property {number|null} [latenz] Client latenz
              */
 
             /**
@@ -144,6 +145,14 @@ $root.ubii = (function() {
             Client.prototype.state = 0;
 
             /**
+             * Client latenz.
+             * @member {number} latenz
+             * @memberof ubii.clients.Client
+             * @instance
+             */
+            Client.prototype.latenz = 0;
+
+            /**
              * Creates a new Client instance using the specified properties.
              * @function create
              * @memberof ubii.clients.Client
@@ -190,6 +199,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 9, wireType 2 =*/74).string(message.metadataJson);
                 if (message.state != null && Object.hasOwnProperty.call(message, "state"))
                     writer.uint32(/* id 10, wireType 0 =*/80).int32(message.state);
+                if (message.latenz != null && Object.hasOwnProperty.call(message, "latenz"))
+                    writer.uint32(/* id 11, wireType 5 =*/93).float(message.latenz);
                 return writer;
             };
 
@@ -259,6 +270,9 @@ $root.ubii = (function() {
                         break;
                     case 10:
                         message.state = reader.int32();
+                        break;
+                    case 11:
+                        message.latenz = reader.float();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -347,6 +361,9 @@ $root.ubii = (function() {
                     case 2:
                         break;
                     }
+                if (message.latenz != null && message.hasOwnProperty("latenz"))
+                    if (typeof message.latenz !== "number")
+                        return "latenz: number expected";
                 return null;
             };
 
@@ -415,6 +432,8 @@ $root.ubii = (function() {
                     message.state = 2;
                     break;
                 }
+                if (object.latenz != null)
+                    message.latenz = Number(object.latenz);
                 return message;
             };
 
@@ -444,6 +463,7 @@ $root.ubii = (function() {
                     object.hostIp = "";
                     object.metadataJson = "";
                     object.state = options.enums === String ? "ACTIVE" : 0;
+                    object.latenz = 0;
                 }
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
@@ -474,6 +494,8 @@ $root.ubii = (function() {
                     object.metadataJson = message.metadataJson;
                 if (message.state != null && message.hasOwnProperty("state"))
                     object.state = options.enums === String ? $root.ubii.clients.Client.State[message.state] : message.state;
+                if (message.latenz != null && message.hasOwnProperty("latenz"))
+                    object.latenz = options.json && !isFinite(message.latenz) ? String(message.latenz) : message.latenz;
                 return object;
             };
 

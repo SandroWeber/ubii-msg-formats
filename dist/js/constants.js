@@ -31,6 +31,7 @@ let constants = {
       SESSION_RUNTIME_GET_LIST: '/services/session/runtime/get_list',
       SESSION_RUNTIME_START: '/services/session/runtime/start',
       SESSION_RUNTIME_STOP: '/services/session/runtime/stop',
+      SESSION_RUNTIME_UPDATE: '/services/session/runtime/update',
       TOPIC_DEMUX_DATABASE_SAVE: '/services/device/topic_demux/database/save',
       TOPIC_DEMUX_DATABASE_DELETE: '/services/device/topic_demux/database/delete',
       TOPIC_DEMUX_DATABASE_GET: '/services/device/topic_demux/database/get',
@@ -45,7 +46,8 @@ let constants = {
       TOPIC_MUX_RUNTIME_GET_LIST: '/services/device/topic_mux/runtime/get_list',
       SERVICE_LIST: '/services/service_list',
       TOPIC_LIST: '/services/topic_list',
-      TOPIC_SUBSCRIPTION: '/services/topic_subscription'
+      TOPIC_SUBSCRIPTION: '/services/topic_subscription',
+      LATENZ_CLIENTS_LIST: '/services/latenz_clients_list'
     },
     INFO_TOPICS: {
       REGEX_ALL_INFOS: '/info/*',

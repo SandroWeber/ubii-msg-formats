@@ -250,6 +250,7 @@ class Client :
     kMetadataJsonFieldNumber = 9,
     kIsDedicatedProcessingNodeFieldNumber = 7,
     kStateFieldNumber = 10,
+    kLatenzFieldNumber = 11,
   };
   // repeated .ubii.devices.Device devices = 3;
   int devices_size() const;
@@ -409,6 +410,15 @@ class Client :
   void _internal_set_state(::ubii::clients::Client_State value);
   public:
 
+  // float latenz = 11;
+  void clear_latenz();
+  float latenz() const;
+  void set_latenz(float value);
+  private:
+  float _internal_latenz() const;
+  void _internal_set_latenz(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:ubii.clients.Client)
  private:
   class _Internal;
@@ -424,6 +434,7 @@ class Client :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr metadata_json_;
   bool is_dedicated_processing_node_;
   int state_;
+  float latenz_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fclients_2fclient_2eproto;
 };
@@ -1059,6 +1070,26 @@ inline void Client::_internal_set_state(::ubii::clients::Client_State value) {
 inline void Client::set_state(::ubii::clients::Client_State value) {
   _internal_set_state(value);
   // @@protoc_insertion_point(field_set:ubii.clients.Client.state)
+}
+
+// float latenz = 11;
+inline void Client::clear_latenz() {
+  latenz_ = 0;
+}
+inline float Client::_internal_latenz() const {
+  return latenz_;
+}
+inline float Client::latenz() const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.latenz)
+  return _internal_latenz();
+}
+inline void Client::_internal_set_latenz(float value) {
+  
+  latenz_ = value;
+}
+inline void Client::set_latenz(float value) {
+  _internal_set_latenz(value);
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.latenz)
 }
 
 // -------------------------------------------------------------------
