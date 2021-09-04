@@ -5,90 +5,120 @@
 
 #include <algorithm>
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
+// This is a temporary google only hack
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+#include "third_party/protobuf/version.h"
+#endif
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
+
 namespace ubii {
 namespace servers {
 class ServerDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Server> _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<Server>
+      _instance;
 } _Server_default_instance_;
 }  // namespace servers
 }  // namespace ubii
-static void InitDefaultsscc_info_Server_proto_2fservers_2fserver_2eproto() {
+namespace protobuf_proto_2fservers_2fserver_2eproto {
+static void InitDefaultsServer() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::servers::_Server_default_instance_;
     new (ptr) ::ubii::servers::Server();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::servers::Server::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Server_proto_2fservers_2fserver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Server_proto_2fservers_2fserver_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Server =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsServer}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fservers_2fserver_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fservers_2fserver_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fservers_2fserver_2eproto = nullptr;
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Server.base);
+}
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fservers_2fserver_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+::google::protobuf::Metadata file_level_metadata[1];
+
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, id_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, name_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, ip_ethernet_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, ip_wlan_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, port_service_zmq_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, port_service_rest_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, port_topic_data_zmq_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, port_topic_data_ws_),
-  PROTOBUF_FIELD_OFFSET(::ubii::servers::Server, constants_json_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, ip_ethernet_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, ip_wlan_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, port_service_zmq_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, port_service_rest_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, port_topic_data_zmq_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, port_topic_data_ws_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, constants_json_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::servers::Server)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::servers::_Server_default_instance_),
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::servers::_Server_default_instance_),
 };
 
-const char descriptor_table_protodef_proto_2fservers_2fserver_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\032proto/servers/server.proto\022\014ubii.serve"
-  "rs\"\316\001\n\006Server\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022"
-  "\023\n\013ip_ethernet\030\003 \001(\t\022\017\n\007ip_wlan\030\004 \001(\t\022\030\n"
-  "\020port_service_zmq\030\005 \001(\t\022\031\n\021port_service_"
-  "rest\030\006 \001(\t\022\033\n\023port_topic_data_zmq\030\007 \001(\t\022"
-  "\032\n\022port_topic_data_ws\030\010 \001(\t\022\026\n\016constants"
-  "_json\030\t \001(\tb\006proto3"
-  ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fservers_2fserver_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fservers_2fserver_2eproto_sccs[1] = {
-  &scc_info_Server_proto_2fservers_2fserver_2eproto.base,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fservers_2fserver_2eproto_once;
-static bool descriptor_table_proto_2fservers_2fserver_2eproto_initialized = false;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fservers_2fserver_2eproto = {
-  &descriptor_table_proto_2fservers_2fserver_2eproto_initialized, descriptor_table_protodef_proto_2fservers_2fserver_2eproto, "proto/servers/server.proto", 259,
-  &descriptor_table_proto_2fservers_2fserver_2eproto_once, descriptor_table_proto_2fservers_2fserver_2eproto_sccs, descriptor_table_proto_2fservers_2fserver_2eproto_deps, 1, 0,
-  schemas, file_default_instances, TableStruct_proto_2fservers_2fserver_2eproto::offsets,
-  file_level_metadata_proto_2fservers_2fserver_2eproto, 1, file_level_enum_descriptors_proto_2fservers_2fserver_2eproto, file_level_service_descriptors_proto_2fservers_2fserver_2eproto,
-};
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  AssignDescriptors(
+      "proto/servers/server.proto", schemas, file_default_instances, TableStruct::offsets,
+      file_level_metadata, NULL, NULL);
+}
 
-// Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_proto_2fservers_2fserver_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fservers_2fserver_2eproto), true);
+void protobuf_AssignDescriptorsOnce() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
+void protobuf_RegisterTypes(const ::std::string&) {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+}
+
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+      "\n\032proto/servers/server.proto\022\014ubii.serve"
+      "rs\"\316\001\n\006Server\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022"
+      "\023\n\013ip_ethernet\030\003 \001(\t\022\017\n\007ip_wlan\030\004 \001(\t\022\030\n"
+      "\020port_service_zmq\030\005 \001(\t\022\031\n\021port_service_"
+      "rest\030\006 \001(\t\022\033\n\023port_topic_data_zmq\030\007 \001(\t\022"
+      "\032\n\022port_topic_data_ws\030\010 \001(\t\022\026\n\016constants"
+      "_json\030\t \001(\tb\006proto3"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 259);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "proto/servers/server.proto", &protobuf_RegisterTypes);
+}
+
+void AddDescriptors() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+}
+// Force AddDescriptors() to be called at dynamic initialization time.
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
+  }
+} static_descriptor_initializer;
+}  // namespace protobuf_proto_2fservers_2fserver_2eproto
 namespace ubii {
 namespace servers {
 
@@ -96,69 +126,78 @@ namespace servers {
 
 void Server::InitAsDefaultInstance() {
 }
-class Server::_Internal {
- public:
-};
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Server::kIdFieldNumber;
+const int Server::kNameFieldNumber;
+const int Server::kIpEthernetFieldNumber;
+const int Server::kIpWlanFieldNumber;
+const int Server::kPortServiceZmqFieldNumber;
+const int Server::kPortServiceRestFieldNumber;
+const int Server::kPortTopicDataZmqFieldNumber;
+const int Server::kPortTopicDataWsFieldNumber;
+const int Server::kConstantsJsonFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Server::Server()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_proto_2fservers_2fserver_2eproto::scc_info_Server.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.servers.Server)
 }
 Server::Server(const Server& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_id().empty()) {
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.id().size() > 0) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.name().size() > 0) {
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  ip_ethernet_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_ip_ethernet().empty()) {
-    ip_ethernet_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_ethernet_);
+  ip_ethernet_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.ip_ethernet().size() > 0) {
+    ip_ethernet_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_ethernet_);
   }
-  ip_wlan_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_ip_wlan().empty()) {
-    ip_wlan_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_wlan_);
+  ip_wlan_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.ip_wlan().size() > 0) {
+    ip_wlan_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_wlan_);
   }
-  port_service_zmq_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_port_service_zmq().empty()) {
-    port_service_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_zmq_);
+  port_service_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.port_service_zmq().size() > 0) {
+    port_service_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_service_zmq_);
   }
-  port_service_rest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_port_service_rest().empty()) {
-    port_service_rest_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_rest_);
+  port_service_rest_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.port_service_rest().size() > 0) {
+    port_service_rest_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_service_rest_);
   }
-  port_topic_data_zmq_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_port_topic_data_zmq().empty()) {
-    port_topic_data_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_zmq_);
+  port_topic_data_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.port_topic_data_zmq().size() > 0) {
+    port_topic_data_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_zmq_);
   }
-  port_topic_data_ws_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_port_topic_data_ws().empty()) {
-    port_topic_data_ws_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_ws_);
+  port_topic_data_ws_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.port_topic_data_ws().size() > 0) {
+    port_topic_data_ws_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_ws_);
   }
-  constants_json_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_constants_json().empty()) {
-    constants_json_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
+  constants_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.constants_json().size() > 0) {
+    constants_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
   }
   // @@protoc_insertion_point(copy_constructor:ubii.servers.Server)
 }
 
 void Server::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Server_proto_2fservers_2fserver_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ip_ethernet_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ip_wlan_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_service_zmq_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_service_rest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_topic_data_zmq_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_topic_data_ws_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  constants_json_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ip_ethernet_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ip_wlan_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_service_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_service_rest_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_ws_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  constants_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 Server::~Server() {
@@ -167,251 +206,435 @@ Server::~Server() {
 }
 
 void Server::SharedDtor() {
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ip_ethernet_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ip_wlan_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_service_zmq_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_service_rest_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_topic_data_zmq_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_topic_data_ws_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  constants_json_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ip_ethernet_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ip_wlan_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_service_zmq_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_service_rest_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_zmq_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_ws_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  constants_json_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Server::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* Server::descriptor() {
+  ::protobuf_proto_2fservers_2fserver_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2fservers_2fserver_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
 const Server& Server::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Server_proto_2fservers_2fserver_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fservers_2fserver_2eproto::scc_info_Server.base);
   return *internal_default_instance();
 }
 
 
 void Server::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.servers.Server)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ip_ethernet_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ip_wlan_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_service_zmq_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_service_rest_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_topic_data_zmq_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  port_topic_data_ws_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  constants_json_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ip_ethernet_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ip_wlan_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_service_zmq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_service_rest_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_zmq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  port_topic_data_ws_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  constants_json_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
-const char* Server::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
+bool Server::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ubii.servers.Server)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->id().data(), static_cast<int>(this->id().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string name = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->name().data(), static_cast<int>(this->name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string ip_ethernet = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_ip_ethernet();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.ip_ethernet"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ip_ethernet()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->ip_ethernet().data(), static_cast<int>(this->ip_ethernet().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.ip_ethernet"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string ip_wlan = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_ip_wlan();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.ip_wlan"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ip_wlan()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->ip_wlan().data(), static_cast<int>(this->ip_wlan().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.ip_wlan"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string port_service_zmq = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_port_service_zmq();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.port_service_zmq"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_port_service_zmq()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->port_service_zmq().data(), static_cast<int>(this->port_service_zmq().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.port_service_zmq"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string port_service_rest = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          auto str = _internal_mutable_port_service_rest();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.port_service_rest"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_port_service_rest()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->port_service_rest().data(), static_cast<int>(this->port_service_rest().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.port_service_rest"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string port_topic_data_zmq = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          auto str = _internal_mutable_port_topic_data_zmq();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.port_topic_data_zmq"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_port_topic_data_zmq()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->port_topic_data_zmq().data(), static_cast<int>(this->port_topic_data_zmq().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.port_topic_data_zmq"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string port_topic_data_ws = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
-          auto str = _internal_mutable_port_topic_data_ws();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.port_topic_data_ws"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_port_topic_data_ws()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->port_topic_data_ws().data(), static_cast<int>(this->port_topic_data_ws().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.port_topic_data_ws"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string constants_json = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          auto str = _internal_mutable_constants_json();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.servers.Server.constants_json"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_constants_json()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->constants_json().data(), static_cast<int>(this->constants_json().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.constants_json"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
+        if (tag == 0) {
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
       }
-    }  // switch
-  }  // while
+    }
+  }
 success:
-  return ptr;
+  // @@protoc_insertion_point(parse_success:ubii.servers.Server)
+  return true;
 failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:ubii.servers.Server)
+  return false;
+#undef DO_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Server::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:ubii.servers.Server)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void Server::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ubii.servers.Server)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->id(), output);
   }
 
   // string name = 2;
   if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.name");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_name(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->name(), output);
   }
 
   // string ip_ethernet = 3;
   if (this->ip_ethernet().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_ip_ethernet().data(), static_cast<int>(this->_internal_ip_ethernet().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->ip_ethernet().data(), static_cast<int>(this->ip_ethernet().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.ip_ethernet");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_ip_ethernet(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->ip_ethernet(), output);
   }
 
   // string ip_wlan = 4;
   if (this->ip_wlan().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_ip_wlan().data(), static_cast<int>(this->_internal_ip_wlan().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->ip_wlan().data(), static_cast<int>(this->ip_wlan().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.ip_wlan");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_ip_wlan(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->ip_wlan(), output);
   }
 
   // string port_service_zmq = 5;
   if (this->port_service_zmq().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_port_service_zmq().data(), static_cast<int>(this->_internal_port_service_zmq().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_service_zmq().data(), static_cast<int>(this->port_service_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.port_service_zmq");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_port_service_zmq(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->port_service_zmq(), output);
   }
 
   // string port_service_rest = 6;
   if (this->port_service_rest().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_port_service_rest().data(), static_cast<int>(this->_internal_port_service_rest().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_service_rest().data(), static_cast<int>(this->port_service_rest().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.port_service_rest");
-    target = stream->WriteStringMaybeAliased(
-        6, this->_internal_port_service_rest(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->port_service_rest(), output);
   }
 
   // string port_topic_data_zmq = 7;
   if (this->port_topic_data_zmq().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_port_topic_data_zmq().data(), static_cast<int>(this->_internal_port_topic_data_zmq().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_topic_data_zmq().data(), static_cast<int>(this->port_topic_data_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.port_topic_data_zmq");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_port_topic_data_zmq(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      7, this->port_topic_data_zmq(), output);
   }
 
   // string port_topic_data_ws = 8;
   if (this->port_topic_data_ws().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_port_topic_data_ws().data(), static_cast<int>(this->_internal_port_topic_data_ws().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_topic_data_ws().data(), static_cast<int>(this->port_topic_data_ws().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.port_topic_data_ws");
-    target = stream->WriteStringMaybeAliased(
-        8, this->_internal_port_topic_data_ws(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      8, this->port_topic_data_ws(), output);
   }
 
   // string constants_json = 9;
   if (this->constants_json().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_constants_json().data(), static_cast<int>(this->_internal_constants_json().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->constants_json().data(), static_cast<int>(this->constants_json().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "ubii.servers.Server.constants_json");
-    target = stream->WriteStringMaybeAliased(
-        9, this->_internal_constants_json(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      9, this->constants_json(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:ubii.servers.Server)
+}
+
+::google::protobuf::uint8* Server::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:ubii.servers.Server)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->id(), target);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->name(), target);
+  }
+
+  // string ip_ethernet = 3;
+  if (this->ip_ethernet().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->ip_ethernet().data(), static_cast<int>(this->ip_ethernet().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.ip_ethernet");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->ip_ethernet(), target);
+  }
+
+  // string ip_wlan = 4;
+  if (this->ip_wlan().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->ip_wlan().data(), static_cast<int>(this->ip_wlan().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.ip_wlan");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->ip_wlan(), target);
+  }
+
+  // string port_service_zmq = 5;
+  if (this->port_service_zmq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_service_zmq().data(), static_cast<int>(this->port_service_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.port_service_zmq");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->port_service_zmq(), target);
+  }
+
+  // string port_service_rest = 6;
+  if (this->port_service_rest().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_service_rest().data(), static_cast<int>(this->port_service_rest().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.port_service_rest");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->port_service_rest(), target);
+  }
+
+  // string port_topic_data_zmq = 7;
+  if (this->port_topic_data_zmq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_topic_data_zmq().data(), static_cast<int>(this->port_topic_data_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.port_topic_data_zmq");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        7, this->port_topic_data_zmq(), target);
+  }
+
+  // string port_topic_data_ws = 8;
+  if (this->port_topic_data_ws().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->port_topic_data_ws().data(), static_cast<int>(this->port_topic_data_ws().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.port_topic_data_ws");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        8, this->port_topic_data_ws(), target);
+  }
+
+  // string constants_json = 9;
+  if (this->constants_json().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->constants_json().data(), static_cast<int>(this->constants_json().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.constants_json");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        9, this->constants_json(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.servers.Server)
   return target;
@@ -421,91 +644,88 @@ size_t Server::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.servers.Server)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // string id = 1;
   if (this->id().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
   }
 
   // string name = 2;
   if (this->name().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->name());
   }
 
   // string ip_ethernet = 3;
   if (this->ip_ethernet().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ip_ethernet());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip_ethernet());
   }
 
   // string ip_wlan = 4;
   if (this->ip_wlan().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ip_wlan());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip_wlan());
   }
 
   // string port_service_zmq = 5;
   if (this->port_service_zmq().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_port_service_zmq());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->port_service_zmq());
   }
 
   // string port_service_rest = 6;
   if (this->port_service_rest().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_port_service_rest());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->port_service_rest());
   }
 
   // string port_topic_data_zmq = 7;
   if (this->port_topic_data_zmq().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_port_topic_data_zmq());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->port_topic_data_zmq());
   }
 
   // string port_topic_data_ws = 8;
   if (this->port_topic_data_ws().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_port_topic_data_ws());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->port_topic_data_ws());
   }
 
   // string constants_json = 9;
   if (this->constants_json().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_constants_json());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->constants_json());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Server::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void Server::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.servers.Server)
   GOOGLE_DCHECK_NE(&from, this);
   const Server* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Server>(
+      ::google::protobuf::internal::DynamicCastToGenerated<const Server>(
           &from);
-  if (source == nullptr) {
+  if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.servers.Server)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.servers.Server)
     MergeFrom(*source);
@@ -516,48 +736,48 @@ void Server::MergeFrom(const Server& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.servers.Server)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.id().size() > 0) {
 
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   if (from.name().size() > 0) {
 
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.ip_ethernet().size() > 0) {
 
-    ip_ethernet_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_ethernet_);
+    ip_ethernet_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_ethernet_);
   }
   if (from.ip_wlan().size() > 0) {
 
-    ip_wlan_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_wlan_);
+    ip_wlan_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_wlan_);
   }
   if (from.port_service_zmq().size() > 0) {
 
-    port_service_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_zmq_);
+    port_service_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_service_zmq_);
   }
   if (from.port_service_rest().size() > 0) {
 
-    port_service_rest_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_service_rest_);
+    port_service_rest_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_service_rest_);
   }
   if (from.port_topic_data_zmq().size() > 0) {
 
-    port_topic_data_zmq_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_zmq_);
+    port_topic_data_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_zmq_);
   }
   if (from.port_topic_data_ws().size() > 0) {
 
-    port_topic_data_ws_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_ws_);
+    port_topic_data_ws_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.port_topic_data_ws_);
   }
   if (from.constants_json().size() > 0) {
 
-    constants_json_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
+    constants_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
   }
 }
 
-void Server::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void Server::CopyFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.servers.Server)
   if (&from == this) return;
   Clear();
@@ -575,42 +795,48 @@ bool Server::IsInitialized() const {
   return true;
 }
 
+void Server::Swap(Server* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void Server::InternalSwap(Server* other) {
   using std::swap;
+  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  ip_ethernet_.Swap(&other->ip_ethernet_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  ip_wlan_.Swap(&other->ip_wlan_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_service_zmq_.Swap(&other->port_service_zmq_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_service_rest_.Swap(&other->port_service_rest_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_topic_data_zmq_.Swap(&other->port_topic_data_zmq_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  port_topic_data_ws_.Swap(&other->port_topic_data_ws_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  constants_json_.Swap(&other->constants_json_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  ip_ethernet_.Swap(&other->ip_ethernet_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  ip_wlan_.Swap(&other->ip_wlan_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  port_service_zmq_.Swap(&other->port_service_zmq_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  port_service_rest_.Swap(&other->port_service_rest_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  port_topic_data_zmq_.Swap(&other->port_topic_data_zmq_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  port_topic_data_ws_.Swap(&other->port_topic_data_ws_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  constants_json_.Swap(&other->constants_json_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Server::GetMetadata() const {
-  return GetMetadataStatic();
+::google::protobuf::Metadata Server::GetMetadata() const {
+  protobuf_proto_2fservers_2fserver_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2fservers_2fserver_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace servers
 }  // namespace ubii
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::ubii::servers::Server* Arena::CreateMaybeMessage< ::ubii::servers::Server >(Arena* arena) {
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::servers::Server* Arena::CreateMaybeMessage< ::ubii::servers::Server >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::servers::Server >(arena);
 }
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>

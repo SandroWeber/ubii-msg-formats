@@ -59,7 +59,8 @@ let constants = {
       DELETE_SESSION: '/info/session/delete',
       CHANGE_SESSION: '/info/session/change',
       START_SESSION: '/info/session/start',
-      STOP_SESSION: '/info/session/stop'
+      STOP_SESSION: '/info/session/stop',
+      RUNNING_SESSION: '/info/session/running'
     }
   },
   MSG_TYPES: {

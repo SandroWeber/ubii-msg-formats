@@ -20,25 +20,21 @@ public final class QuaternionOuterClass {
 
     /**
      * <code>double x = 1;</code>
-     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 2;</code>
-     * @return The y.
      */
     double getY();
 
     /**
      * <code>double z = 3;</code>
-     * @return The z.
      */
     double getZ();
 
     /**
      * <code>double w = 4;</code>
-     * @return The w.
      */
     double getW();
   }
@@ -55,13 +51,10 @@ public final class QuaternionOuterClass {
       super(builder);
     }
     private Quaternion() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Quaternion();
+      x_ = 0D;
+      y_ = 0D;
+      z_ = 0D;
+      w_ = 0D;
     }
 
     @java.lang.Override
@@ -77,6 +70,7 @@ public final class QuaternionOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -108,7 +102,7 @@ public final class QuaternionOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -143,7 +137,6 @@ public final class QuaternionOuterClass {
     private double x_;
     /**
      * <code>double x = 1;</code>
-     * @return The x.
      */
     public double getX() {
       return x_;
@@ -153,7 +146,6 @@ public final class QuaternionOuterClass {
     private double y_;
     /**
      * <code>double y = 2;</code>
-     * @return The y.
      */
     public double getY() {
       return y_;
@@ -163,7 +155,6 @@ public final class QuaternionOuterClass {
     private double z_;
     /**
      * <code>double z = 3;</code>
-     * @return The z.
      */
     public double getZ() {
       return z_;
@@ -173,7 +164,6 @@ public final class QuaternionOuterClass {
     private double w_;
     /**
      * <code>double w = 4;</code>
-     * @return The w.
      */
     public double getW() {
       return w_;
@@ -245,20 +235,25 @@ public final class QuaternionOuterClass {
       }
       ubii.dataStructure.QuaternionOuterClass.Quaternion other = (ubii.dataStructure.QuaternionOuterClass.Quaternion) obj;
 
-      if (java.lang.Double.doubleToLongBits(getX())
-          != java.lang.Double.doubleToLongBits(
-              other.getX())) return false;
-      if (java.lang.Double.doubleToLongBits(getY())
-          != java.lang.Double.doubleToLongBits(
-              other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getZ())
-          != java.lang.Double.doubleToLongBits(
-              other.getZ())) return false;
-      if (java.lang.Double.doubleToLongBits(getW())
-          != java.lang.Double.doubleToLongBits(
-              other.getW())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getX())
+          == java.lang.Double.doubleToLongBits(
+              other.getX()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getY())
+          == java.lang.Double.doubleToLongBits(
+              other.getY()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getZ())
+          == java.lang.Double.doubleToLongBits(
+              other.getZ()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getW())
+          == java.lang.Double.doubleToLongBits(
+              other.getW()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -457,35 +452,35 @@ public final class QuaternionOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -543,15 +538,12 @@ public final class QuaternionOuterClass {
       private double x_ ;
       /**
        * <code>double x = 1;</code>
-       * @return The x.
        */
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -561,7 +553,6 @@ public final class QuaternionOuterClass {
       }
       /**
        * <code>double x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -573,15 +564,12 @@ public final class QuaternionOuterClass {
       private double y_ ;
       /**
        * <code>double y = 2;</code>
-       * @return The y.
        */
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -591,7 +579,6 @@ public final class QuaternionOuterClass {
       }
       /**
        * <code>double y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -603,15 +590,12 @@ public final class QuaternionOuterClass {
       private double z_ ;
       /**
        * <code>double z = 3;</code>
-       * @return The z.
        */
       public double getZ() {
         return z_;
       }
       /**
        * <code>double z = 3;</code>
-       * @param value The z to set.
-       * @return This builder for chaining.
        */
       public Builder setZ(double value) {
         
@@ -621,7 +605,6 @@ public final class QuaternionOuterClass {
       }
       /**
        * <code>double z = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearZ() {
         
@@ -633,15 +616,12 @@ public final class QuaternionOuterClass {
       private double w_ ;
       /**
        * <code>double w = 4;</code>
-       * @return The w.
        */
       public double getW() {
         return w_;
       }
       /**
        * <code>double w = 4;</code>
-       * @param value The w to set.
-       * @return This builder for chaining.
        */
       public Builder setW(double value) {
         
@@ -651,7 +631,6 @@ public final class QuaternionOuterClass {
       }
       /**
        * <code>double w = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearW() {
         
@@ -662,7 +641,7 @@ public final class QuaternionOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -757,13 +736,6 @@ public final class QuaternionOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new QuaternionList();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -788,7 +760,7 @@ public final class QuaternionOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 elements_ = new java.util.ArrayList<ubii.dataStructure.QuaternionOuterClass.Quaternion>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -797,7 +769,7 @@ public final class QuaternionOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -811,7 +783,7 @@ public final class QuaternionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
@@ -911,10 +883,11 @@ public final class QuaternionOuterClass {
       }
       ubii.dataStructure.QuaternionOuterClass.QuaternionList other = (ubii.dataStructure.QuaternionOuterClass.QuaternionList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1096,7 +1069,7 @@ public final class QuaternionOuterClass {
         ubii.dataStructure.QuaternionOuterClass.QuaternionList result = new ubii.dataStructure.QuaternionOuterClass.QuaternionList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1110,35 +1083,35 @@ public final class QuaternionOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1211,7 +1184,7 @@ public final class QuaternionOuterClass {
       private java.util.List<ubii.dataStructure.QuaternionOuterClass.Quaternion> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = new java.util.ArrayList<ubii.dataStructure.QuaternionOuterClass.Quaternion>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -1440,7 +1413,7 @@ public final class QuaternionOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -1450,7 +1423,7 @@ public final class QuaternionOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1526,10 +1499,18 @@ public final class QuaternionOuterClass {
       "\0220\n\010elements\030\001 \003(\0132\036.ubii.dataStructure." +
       "Quaternionb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_ubii_dataStructure_Quaternion_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_Quaternion_fieldAccessorTable = new
