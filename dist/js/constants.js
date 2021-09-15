@@ -51,6 +51,7 @@ let constants = {
       REGEX_ALL_INFOS: '/info/*',
       REGEX_PM_INFOS: '/info/processing_module/*',
       NEW_PM: '/info/processing_module/new',
+      START_PM: '/info/processing_module/start',
       DELETE_PM: '/info/processing_module/delete',
       CHANGE_PM: '/info/processing_module/change',
       PROCESSED_PM: '/info/processing_module/processed',
