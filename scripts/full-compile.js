@@ -1,7 +1,7 @@
 const childProcess = require('child_process');
 const path = require('path');
 
-let pythonExecutable = 'python';
+let pythonExecutable = 'venv/bin/python';
 
 let compileProtoPython = () => {
   return new Promise((resolve, reject) => {
@@ -14,6 +14,10 @@ let compileProtoPython = () => {
     // with arguments and send this data to res object
     processPythonProtoCompile.stdout.on('data', function (data) {
       console.info(data.toString());
+    });
+
+    processPythonProtoCompile.stderr.on('data', function (data) {
+      console.error(data.toString());
     });
 
     processPythonProtoCompile.on('close', (code) => {

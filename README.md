@@ -26,8 +26,8 @@ If you are interested in how they communicate with each other, please see
 
 ## Compilation
 
-- required: python >=3.5
-- required: 'protoc' compiler =3.11.1. If compiler is not installed/available in system path, get the release matching your OS from https://github.com/protocolbuffers/protobuf/releases/tag/v3.11.1 and copy the executable (/bin/protoc) to ubii-msg-formats/external/bin.
+- required: python >=3.5 (optionally with `mypy` and `mypy-protobuf` installed - see [Python Static Typing](#python-typing))
+- required: 'protoc' compiler =3.11.1. If compiler is not installed/available in system path, get the release matching your OS from https://github.com/protocolbuffers/protobuf/releases and copy the executable (/bin/protoc) to ubii-msg-formats/external/bin.
 - run 'node scripts/full-compile.js' to compile all parts (if python3 executable not automatically found path needs to be edited manually in script)
 - to compile just specific parts:
     - run 'python scripts/compile.py --opt [language]' where [language] is one of py/python, j/java, js/javascript, cs/csharp, all
@@ -42,6 +42,17 @@ If you are interested in how they communicate with each other, please see
 
 - Run `npm test` to process all standard tests.
 - If snapshot assertions fail you can run `npm run-script update-snapshots` to process all standard tests and update all snapshots if the changes are intentional.
+
+## Python Typing
+
+The python code in the `ubii-msg-formats` module includes [python stub files](https://mypy.readthedocs.io/en/stable/stubs.html)
+which can be interpreted by e.g. _PyCharm_ or _mypy_. If you want to build the python package yourself, you will need to choose a
+python executable whith working [`mypy`](https://github.com/python/mypy/) and [`mypy-protobuf`](https://github.com/dropbox/mypy-protobuf)
+when you are running `scripts/proto-compile.py`.
+
+> **Attention!** The node.js entry script `scripts/full-compile.js` defines the python executable 
+> which it will use. You need to change this to the right executable when you don't install `mypy`
+> and `mypy-protobuf` globally in your `$PATH`!
 
 ## Ubii Messages
 

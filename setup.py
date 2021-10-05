@@ -2,9 +2,20 @@ import setuptools
 import shutil
 from pathlib import Path
 from setuptools.command.sdist import sdist as sdist_orig
+from itertools import chain
 
 CONSTANTS_FILE = Path(f"{__file__}").parent / 'dist/constants.json'
 SOURCE_DIR = Path("dist/py/proto")
+
+
+def generate_recursive_inits():
+    for initfile in SOURCE_DIR.glob('**/__init__.py'):
+        modules = (p.stem for p in initfile.parent.glob('*.py') if not p.stem.startswith('_'))
+        packages = (p.stem for p in initfile.parent.glob('*') if not p.stem.startswith('_') and
+                    p.is_dir())
+        with initfile.open('w') as f:
+            f.write('\n'.join(f"from .{s} import *" for s in chain(modules, packages)))
+
 
 class sdist(sdist_orig):
     def run(self):
@@ -16,6 +27,7 @@ class sdist(sdist_orig):
         except OSError:
             raise
 
+        generate_recursive_inits()
         super().run()
 
 
@@ -24,7 +36,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="ubii-msg-formats",
-    version="0.0.1",
+    version="0.0.2",
     author="Maximilian Schmidt",
     author_email="ga97lul@in.tum.de",
     description="Python Package for Ubi Interact Protocol Buffers",
@@ -40,6 +52,6 @@ setuptools.setup(
     packages=setuptools.find_packages(where=str(SOURCE_DIR.parent)),
     package_data={'': ['constants.json']},
     python_requires=">=3.6",
-    cmdclass={'sdist': sdist,},
+    cmdclass={'sdist': sdist},
     install_requires=['protobuf >= 3.16.0']
 )
