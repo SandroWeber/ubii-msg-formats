@@ -36,7 +36,7 @@ If you are interested in how they communicate with each other, please see
 
 ## Contribution
 
-- don't commit /dist for feature branches. you can test compilation, just don't commit the compiled files.
+- don't commit /dist for feature branches. you can test compilation, just don't commit the compiled files. You may want to use $GIT_DIR/info/exclude functionality to avoid unintentional commits.
 
 ## CLIs 
 
