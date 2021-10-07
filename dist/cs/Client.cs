@@ -26,20 +26,20 @@ namespace Ubii.Clients {
           string.Concat(
             "Chpwcm90by9jbGllbnRzL2NsaWVudC5wcm90bxIMdWJpaS5jbGllbnRzGhpw",
             "cm90by9kZXZpY2VzL2RldmljZS5wcm90bxoncHJvdG8vcHJvY2Vzc2luZy9w",
-            "cm9jZXNzaW5nTW9kdWxlLnByb3RvIugCCgZDbGllbnQSCgoCaWQYASABKAkS",
+            "cm9jZXNzaW5nTW9kdWxlLnByb3RvIukCCgZDbGllbnQSCgoCaWQYASABKAkS",
             "DAoEbmFtZRgCIAEoCRIlCgdkZXZpY2VzGAMgAygLMhQudWJpaS5kZXZpY2Vz",
             "LkRldmljZRIMCgR0YWdzGAQgAygJEhMKC2Rlc2NyaXB0aW9uGAUgASgJEj0K",
             "EnByb2Nlc3NpbmdfbW9kdWxlcxgGIAMoCzIhLnViaWkucHJvY2Vzc2luZy5Q",
             "cm9jZXNzaW5nTW9kdWxlEiQKHGlzX2RlZGljYXRlZF9wcm9jZXNzaW5nX25v",
             "ZGUYByABKAgSDwoHaG9zdF9pcBgIIAEoCRIVCg1tZXRhZGF0YV9qc29uGAkg",
             "ASgJEikKBXN0YXRlGAogASgOMhoudWJpaS5jbGllbnRzLkNsaWVudC5TdGF0",
-            "ZRIOCgZsYXRlbnoYCyABKAIiMgoFU3RhdGUSCgoGQUNUSVZFEAASDAoISU5B",
-            "Q1RJVkUQARIPCgtVTkFWQUlMQUJMRRACIjQKCkNsaWVudExpc3QSJgoIZWxl",
-            "bWVudHMYASADKAsyFC51YmlpLmNsaWVudHMuQ2xpZW50YgZwcm90bzM="));
+            "ZRIPCgdsYXRlbmN5GAsgASgCIjIKBVN0YXRlEgoKBkFDVElWRRAAEgwKCElO",
+            "QUNUSVZFEAESDwoLVU5BVkFJTEFCTEUQAiI0CgpDbGllbnRMaXN0EiYKCGVs",
+            "ZW1lbnRzGAEgAygLMhQudWJpaS5jbGllbnRzLkNsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.Client), global::Ubii.Clients.Client.Parser, new[]{ "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", "State", "Latenz" }, null, new[]{ typeof(global::Ubii.Clients.Client.Types.State) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.Client), global::Ubii.Clients.Client.Parser, new[]{ "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", "State", "Latency" }, null, new[]{ typeof(global::Ubii.Clients.Client.Types.State) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.ClientList), global::Ubii.Clients.ClientList.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
@@ -82,7 +82,7 @@ namespace Ubii.Clients {
       hostIp_ = other.hostIp_;
       metadataJson_ = other.metadataJson_;
       state_ = other.state_;
-      latenz_ = other.latenz_;
+      latency_ = other.latency_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -198,14 +198,14 @@ namespace Ubii.Clients {
       }
     }
 
-    /// <summary>Field number for the "latenz" field.</summary>
-    public const int LatenzFieldNumber = 11;
-    private float latenz_;
+    /// <summary>Field number for the "latency" field.</summary>
+    public const int LatencyFieldNumber = 11;
+    private float latency_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Latenz {
-      get { return latenz_; }
+    public float Latency {
+      get { return latency_; }
       set {
-        latenz_ = value;
+        latency_ = value;
       }
     }
 
@@ -232,7 +232,7 @@ namespace Ubii.Clients {
       if (HostIp != other.HostIp) return false;
       if (MetadataJson != other.MetadataJson) return false;
       if (State != other.State) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Latenz, other.Latenz)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Latency, other.Latency)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -249,7 +249,7 @@ namespace Ubii.Clients {
       if (HostIp.Length != 0) hash ^= HostIp.GetHashCode();
       if (MetadataJson.Length != 0) hash ^= MetadataJson.GetHashCode();
       if (State != global::Ubii.Clients.Client.Types.State.Active) hash ^= State.GetHashCode();
-      if (Latenz != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Latenz);
+      if (Latency != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Latency);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -294,9 +294,9 @@ namespace Ubii.Clients {
         output.WriteRawTag(80);
         output.WriteEnum((int) State);
       }
-      if (Latenz != 0F) {
+      if (Latency != 0F) {
         output.WriteRawTag(93);
-        output.WriteFloat(Latenz);
+        output.WriteFloat(Latency);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -330,7 +330,7 @@ namespace Ubii.Clients {
       if (State != global::Ubii.Clients.Client.Types.State.Active) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
-      if (Latenz != 0F) {
+      if (Latency != 0F) {
         size += 1 + 4;
       }
       if (_unknownFields != null) {
@@ -368,8 +368,8 @@ namespace Ubii.Clients {
       if (other.State != global::Ubii.Clients.Client.Types.State.Active) {
         State = other.State;
       }
-      if (other.Latenz != 0F) {
-        Latenz = other.Latenz;
+      if (other.Latency != 0F) {
+        Latency = other.Latency;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -423,7 +423,7 @@ namespace Ubii.Clients {
             break;
           }
           case 93: {
-            Latenz = input.ReadFloat();
+            Latency = input.ReadFloat();
             break;
           }
         }
