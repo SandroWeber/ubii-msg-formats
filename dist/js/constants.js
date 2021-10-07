@@ -53,6 +53,7 @@ let constants = {
       REGEX_ALL_INFOS: '/info/*',
       REGEX_PM_INFOS: '/info/processing_module/*',
       NEW_PM: '/info/processing_module/new',
+      START_PM: '/info/processing_module/start',
       DELETE_PM: '/info/processing_module/delete',
       CHANGE_PM: '/info/processing_module/change',
       PROCESSED_PM: '/info/processing_module/processed',
@@ -61,7 +62,8 @@ let constants = {
       DELETE_SESSION: '/info/session/delete',
       CHANGE_SESSION: '/info/session/change',
       START_SESSION: '/info/session/start',
-      STOP_SESSION: '/info/session/stop'
+      STOP_SESSION: '/info/session/stop',
+      RUNNING_SESSION: '/info/session/running'
     }
   },
   MSG_TYPES: {

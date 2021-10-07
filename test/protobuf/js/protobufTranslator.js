@@ -39,7 +39,8 @@ test.beforeEach(t => {
       type: MSG_TYPES.SERVICE_REQUEST,
       validPayload: {
         topic: DEFAULT_TOPICS.SERVICES.CLIENT_REGISTRATION,
-        client: client
+        client: client,
+        type: 'client'
       },
       oneofTypeExpected: 'client'
     },
@@ -47,14 +48,16 @@ test.beforeEach(t => {
       type: MSG_TYPES.SERVICE_REQUEST,
       validPayload: {
         topic: DEFAULT_TOPICS.SERVICES.CLIENT_REGISTRATION,
-        processingModule: processingModule
+        processingModule: processingModule,
+        type: 'processingModule'
       },
       oneofTypeExpected: 'processingModule'
     },
     {
       type: MSG_TYPES.SERVICE_REPLY,
       validPayload: {
-        client: client
+        client: client,
+        type: 'client'
       },
       oneofTypeExpected: 'client'
     },
@@ -67,8 +70,10 @@ test.beforeEach(t => {
             x: 2000.1,
             y: 100.0,
             z: 567.000678
-          }
-        }
+          },
+          type: 'vector3'
+        },
+        type: 'topicDataRecord'
       },
       oneofTypeExpected: 'topicDataRecord'
     }

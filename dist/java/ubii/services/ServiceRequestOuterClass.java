@@ -20,24 +20,20 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>string topic = 1;</code>
-     * @return The topic.
      */
     java.lang.String getTopic();
     /**
      * <code>string topic = 1;</code>
-     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
      * <code>.ubii.clients.Client client = 2;</code>
-     * @return Whether the client field is set.
      */
     boolean hasClient();
     /**
      * <code>.ubii.clients.Client client = 2;</code>
-     * @return The client.
      */
     ubii.clients.ClientOuterClass.Client getClient();
     /**
@@ -47,12 +43,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.devices.Device device = 3;</code>
-     * @return Whether the device field is set.
      */
     boolean hasDevice();
     /**
      * <code>.ubii.devices.Device device = 3;</code>
-     * @return The device.
      */
     ubii.devices.DeviceOuterClass.Device getDevice();
     /**
@@ -62,12 +56,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return Whether the topicSubscription field is set.
      */
     boolean hasTopicSubscription();
     /**
      * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return The topicSubscription.
      */
     ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription getTopicSubscription();
     /**
@@ -77,12 +69,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.sessions.Session session = 5;</code>
-     * @return Whether the session field is set.
      */
     boolean hasSession();
     /**
      * <code>.ubii.sessions.Session session = 5;</code>
-     * @return The session.
      */
     ubii.sessions.SessionOuterClass.Session getSession();
     /**
@@ -92,12 +82,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return Whether the sessionList field is set.
      */
     boolean hasSessionList();
     /**
      * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return The sessionList.
      */
     ubii.sessions.SessionOuterClass.SessionList getSessionList();
     /**
@@ -107,12 +95,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return Whether the processingModule field is set.
      */
     boolean hasProcessingModule();
     /**
      * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return The processingModule.
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule();
     /**
@@ -122,12 +108,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return Whether the processingModuleList field is set.
      */
     boolean hasProcessingModuleList();
     /**
      * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return The processingModuleList.
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList();
     /**
@@ -137,12 +121,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return Whether the topicMux field is set.
      */
     boolean hasTopicMux();
     /**
      * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return The topicMux.
      */
     ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux();
     /**
@@ -152,12 +134,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return Whether the topicMuxList field is set.
      */
     boolean hasTopicMuxList();
     /**
      * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return The topicMuxList.
      */
     ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList();
     /**
@@ -167,12 +147,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return Whether the topicDemux field is set.
      */
     boolean hasTopicDemux();
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return The topicDemux.
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux();
     /**
@@ -182,12 +160,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return Whether the topicDemuxList field is set.
      */
     boolean hasTopicDemuxList();
     /**
      * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return The topicDemuxList.
      */
     ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList();
     /**
@@ -197,12 +173,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return Whether the clientList field is set.
      */
     boolean hasClientList();
     /**
      * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return The clientList.
      */
     ubii.clients.ClientOuterClass.ClientList getClientList();
     /**
@@ -212,12 +186,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return Whether the deviceList field is set.
      */
     boolean hasDeviceList();
     /**
      * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return The deviceList.
      */
     ubii.devices.DeviceOuterClass.DeviceList getDeviceList();
     /**
@@ -227,12 +199,10 @@ public final class ServiceRequestOuterClass {
 
     /**
      * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return Whether the lockstepProcessingRequest field is set.
      */
     boolean hasLockstepProcessingRequest();
     /**
      * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return The lockstepProcessingRequest.
      */
     ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest();
     /**
@@ -259,13 +229,6 @@ public final class ServiceRequestOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ServiceRequest();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -278,6 +241,7 @@ public final class ServiceRequestOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -491,7 +455,7 @@ public final class ServiceRequestOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -525,8 +489,7 @@ public final class ServiceRequestOuterClass {
     private int typeCase_ = 0;
     private java.lang.Object type_;
     public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       CLIENT(2),
       DEVICE(3),
       TOPIC_SUBSCRIPTION(4),
@@ -547,8 +510,6 @@ public final class ServiceRequestOuterClass {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -591,7 +552,6 @@ public final class ServiceRequestOuterClass {
     private volatile java.lang.Object topic_;
     /**
      * <code>string topic = 1;</code>
-     * @return The topic.
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -607,7 +567,6 @@ public final class ServiceRequestOuterClass {
     }
     /**
      * <code>string topic = 1;</code>
-     * @return The bytes for topic.
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -626,14 +585,12 @@ public final class ServiceRequestOuterClass {
     public static final int CLIENT_FIELD_NUMBER = 2;
     /**
      * <code>.ubii.clients.Client client = 2;</code>
-     * @return Whether the client field is set.
      */
     public boolean hasClient() {
       return typeCase_ == 2;
     }
     /**
      * <code>.ubii.clients.Client client = 2;</code>
-     * @return The client.
      */
     public ubii.clients.ClientOuterClass.Client getClient() {
       if (typeCase_ == 2) {
@@ -654,14 +611,12 @@ public final class ServiceRequestOuterClass {
     public static final int DEVICE_FIELD_NUMBER = 3;
     /**
      * <code>.ubii.devices.Device device = 3;</code>
-     * @return Whether the device field is set.
      */
     public boolean hasDevice() {
       return typeCase_ == 3;
     }
     /**
      * <code>.ubii.devices.Device device = 3;</code>
-     * @return The device.
      */
     public ubii.devices.DeviceOuterClass.Device getDevice() {
       if (typeCase_ == 3) {
@@ -682,14 +637,12 @@ public final class ServiceRequestOuterClass {
     public static final int TOPIC_SUBSCRIPTION_FIELD_NUMBER = 4;
     /**
      * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return Whether the topicSubscription field is set.
      */
     public boolean hasTopicSubscription() {
       return typeCase_ == 4;
     }
     /**
      * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-     * @return The topicSubscription.
      */
     public ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription getTopicSubscription() {
       if (typeCase_ == 4) {
@@ -710,14 +663,12 @@ public final class ServiceRequestOuterClass {
     public static final int SESSION_FIELD_NUMBER = 5;
     /**
      * <code>.ubii.sessions.Session session = 5;</code>
-     * @return Whether the session field is set.
      */
     public boolean hasSession() {
       return typeCase_ == 5;
     }
     /**
      * <code>.ubii.sessions.Session session = 5;</code>
-     * @return The session.
      */
     public ubii.sessions.SessionOuterClass.Session getSession() {
       if (typeCase_ == 5) {
@@ -738,14 +689,12 @@ public final class ServiceRequestOuterClass {
     public static final int SESSION_LIST_FIELD_NUMBER = 6;
     /**
      * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return Whether the sessionList field is set.
      */
     public boolean hasSessionList() {
       return typeCase_ == 6;
     }
     /**
      * <code>.ubii.sessions.SessionList session_list = 6;</code>
-     * @return The sessionList.
      */
     public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
       if (typeCase_ == 6) {
@@ -766,14 +715,12 @@ public final class ServiceRequestOuterClass {
     public static final int PROCESSING_MODULE_FIELD_NUMBER = 7;
     /**
      * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return Whether the processingModule field is set.
      */
     public boolean hasProcessingModule() {
       return typeCase_ == 7;
     }
     /**
      * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-     * @return The processingModule.
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
       if (typeCase_ == 7) {
@@ -794,14 +741,12 @@ public final class ServiceRequestOuterClass {
     public static final int PROCESSING_MODULE_LIST_FIELD_NUMBER = 8;
     /**
      * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return Whether the processingModuleList field is set.
      */
     public boolean hasProcessingModuleList() {
       return typeCase_ == 8;
     }
     /**
      * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-     * @return The processingModuleList.
      */
     public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
       if (typeCase_ == 8) {
@@ -822,14 +767,12 @@ public final class ServiceRequestOuterClass {
     public static final int TOPIC_MUX_FIELD_NUMBER = 9;
     /**
      * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return Whether the topicMux field is set.
      */
     public boolean hasTopicMux() {
       return typeCase_ == 9;
     }
     /**
      * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-     * @return The topicMux.
      */
     public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
       if (typeCase_ == 9) {
@@ -850,14 +793,12 @@ public final class ServiceRequestOuterClass {
     public static final int TOPIC_MUX_LIST_FIELD_NUMBER = 10;
     /**
      * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return Whether the topicMuxList field is set.
      */
     public boolean hasTopicMuxList() {
       return typeCase_ == 10;
     }
     /**
      * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-     * @return The topicMuxList.
      */
     public ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList() {
       if (typeCase_ == 10) {
@@ -878,14 +819,12 @@ public final class ServiceRequestOuterClass {
     public static final int TOPIC_DEMUX_FIELD_NUMBER = 11;
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return Whether the topicDemux field is set.
      */
     public boolean hasTopicDemux() {
       return typeCase_ == 11;
     }
     /**
      * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-     * @return The topicDemux.
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
       if (typeCase_ == 11) {
@@ -906,14 +845,12 @@ public final class ServiceRequestOuterClass {
     public static final int TOPIC_DEMUX_LIST_FIELD_NUMBER = 12;
     /**
      * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return Whether the topicDemuxList field is set.
      */
     public boolean hasTopicDemuxList() {
       return typeCase_ == 12;
     }
     /**
      * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-     * @return The topicDemuxList.
      */
     public ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList() {
       if (typeCase_ == 12) {
@@ -934,14 +871,12 @@ public final class ServiceRequestOuterClass {
     public static final int CLIENT_LIST_FIELD_NUMBER = 13;
     /**
      * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return Whether the clientList field is set.
      */
     public boolean hasClientList() {
       return typeCase_ == 13;
     }
     /**
      * <code>.ubii.clients.ClientList client_list = 13;</code>
-     * @return The clientList.
      */
     public ubii.clients.ClientOuterClass.ClientList getClientList() {
       if (typeCase_ == 13) {
@@ -962,14 +897,12 @@ public final class ServiceRequestOuterClass {
     public static final int DEVICE_LIST_FIELD_NUMBER = 14;
     /**
      * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return Whether the deviceList field is set.
      */
     public boolean hasDeviceList() {
       return typeCase_ == 14;
     }
     /**
      * <code>.ubii.devices.DeviceList device_list = 14;</code>
-     * @return The deviceList.
      */
     public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
       if (typeCase_ == 14) {
@@ -990,14 +923,12 @@ public final class ServiceRequestOuterClass {
     public static final int LOCKSTEP_PROCESSING_REQUEST_FIELD_NUMBER = 15;
     /**
      * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return Whether the lockstepProcessingRequest field is set.
      */
     public boolean hasLockstepProcessingRequest() {
       return typeCase_ == 15;
     }
     /**
      * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-     * @return The lockstepProcessingRequest.
      */
     public ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest() {
       if (typeCase_ == 15) {
@@ -1157,71 +1088,74 @@ public final class ServiceRequestOuterClass {
       }
       ubii.services.ServiceRequestOuterClass.ServiceRequest other = (ubii.services.ServiceRequestOuterClass.ServiceRequest) obj;
 
-      if (!getTopic()
-          .equals(other.getTopic())) return false;
-      if (!getTypeCase().equals(other.getTypeCase())) return false;
+      boolean result = true;
+      result = result && getTopic()
+          .equals(other.getTopic());
+      result = result && getTypeCase().equals(
+          other.getTypeCase());
+      if (!result) return false;
       switch (typeCase_) {
         case 2:
-          if (!getClient()
-              .equals(other.getClient())) return false;
+          result = result && getClient()
+              .equals(other.getClient());
           break;
         case 3:
-          if (!getDevice()
-              .equals(other.getDevice())) return false;
+          result = result && getDevice()
+              .equals(other.getDevice());
           break;
         case 4:
-          if (!getTopicSubscription()
-              .equals(other.getTopicSubscription())) return false;
+          result = result && getTopicSubscription()
+              .equals(other.getTopicSubscription());
           break;
         case 5:
-          if (!getSession()
-              .equals(other.getSession())) return false;
+          result = result && getSession()
+              .equals(other.getSession());
           break;
         case 6:
-          if (!getSessionList()
-              .equals(other.getSessionList())) return false;
+          result = result && getSessionList()
+              .equals(other.getSessionList());
           break;
         case 7:
-          if (!getProcessingModule()
-              .equals(other.getProcessingModule())) return false;
+          result = result && getProcessingModule()
+              .equals(other.getProcessingModule());
           break;
         case 8:
-          if (!getProcessingModuleList()
-              .equals(other.getProcessingModuleList())) return false;
+          result = result && getProcessingModuleList()
+              .equals(other.getProcessingModuleList());
           break;
         case 9:
-          if (!getTopicMux()
-              .equals(other.getTopicMux())) return false;
+          result = result && getTopicMux()
+              .equals(other.getTopicMux());
           break;
         case 10:
-          if (!getTopicMuxList()
-              .equals(other.getTopicMuxList())) return false;
+          result = result && getTopicMuxList()
+              .equals(other.getTopicMuxList());
           break;
         case 11:
-          if (!getTopicDemux()
-              .equals(other.getTopicDemux())) return false;
+          result = result && getTopicDemux()
+              .equals(other.getTopicDemux());
           break;
         case 12:
-          if (!getTopicDemuxList()
-              .equals(other.getTopicDemuxList())) return false;
+          result = result && getTopicDemuxList()
+              .equals(other.getTopicDemuxList());
           break;
         case 13:
-          if (!getClientList()
-              .equals(other.getClientList())) return false;
+          result = result && getClientList()
+              .equals(other.getClientList());
           break;
         case 14:
-          if (!getDeviceList()
-              .equals(other.getDeviceList())) return false;
+          result = result && getDeviceList()
+              .equals(other.getDeviceList());
           break;
         case 15:
-          if (!getLockstepProcessingRequest()
-              .equals(other.getLockstepProcessingRequest())) return false;
+          result = result && getLockstepProcessingRequest()
+              .equals(other.getLockstepProcessingRequest());
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1562,35 +1496,35 @@ public final class ServiceRequestOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1716,7 +1650,6 @@ public final class ServiceRequestOuterClass {
       private java.lang.Object topic_ = "";
       /**
        * <code>string topic = 1;</code>
-       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -1732,7 +1665,6 @@ public final class ServiceRequestOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
-       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -1749,8 +1681,6 @@ public final class ServiceRequestOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
-       * @param value The topic to set.
-       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -1764,7 +1694,6 @@ public final class ServiceRequestOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTopic() {
         
@@ -1774,8 +1703,6 @@ public final class ServiceRequestOuterClass {
       }
       /**
        * <code>string topic = 1;</code>
-       * @param value The bytes for topic to set.
-       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -1793,14 +1720,12 @@ public final class ServiceRequestOuterClass {
           ubii.clients.ClientOuterClass.Client, ubii.clients.ClientOuterClass.Client.Builder, ubii.clients.ClientOuterClass.ClientOrBuilder> clientBuilder_;
       /**
        * <code>.ubii.clients.Client client = 2;</code>
-       * @return Whether the client field is set.
        */
       public boolean hasClient() {
         return typeCase_ == 2;
       }
       /**
        * <code>.ubii.clients.Client client = 2;</code>
-       * @return The client.
        */
       public ubii.clients.ClientOuterClass.Client getClient() {
         if (clientBuilder_ == null) {
@@ -1931,14 +1856,12 @@ public final class ServiceRequestOuterClass {
           ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder> deviceBuilder_;
       /**
        * <code>.ubii.devices.Device device = 3;</code>
-       * @return Whether the device field is set.
        */
       public boolean hasDevice() {
         return typeCase_ == 3;
       }
       /**
        * <code>.ubii.devices.Device device = 3;</code>
-       * @return The device.
        */
       public ubii.devices.DeviceOuterClass.Device getDevice() {
         if (deviceBuilder_ == null) {
@@ -2069,14 +1992,12 @@ public final class ServiceRequestOuterClass {
           ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription, ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription.Builder, ubii.services.request.TopicSubscriptionOuterClass.TopicSubscriptionOrBuilder> topicSubscriptionBuilder_;
       /**
        * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-       * @return Whether the topicSubscription field is set.
        */
       public boolean hasTopicSubscription() {
         return typeCase_ == 4;
       }
       /**
        * <code>.ubii.services.request.TopicSubscription topic_subscription = 4;</code>
-       * @return The topicSubscription.
        */
       public ubii.services.request.TopicSubscriptionOuterClass.TopicSubscription getTopicSubscription() {
         if (topicSubscriptionBuilder_ == null) {
@@ -2207,14 +2128,12 @@ public final class ServiceRequestOuterClass {
           ubii.sessions.SessionOuterClass.Session, ubii.sessions.SessionOuterClass.Session.Builder, ubii.sessions.SessionOuterClass.SessionOrBuilder> sessionBuilder_;
       /**
        * <code>.ubii.sessions.Session session = 5;</code>
-       * @return Whether the session field is set.
        */
       public boolean hasSession() {
         return typeCase_ == 5;
       }
       /**
        * <code>.ubii.sessions.Session session = 5;</code>
-       * @return The session.
        */
       public ubii.sessions.SessionOuterClass.Session getSession() {
         if (sessionBuilder_ == null) {
@@ -2345,14 +2264,12 @@ public final class ServiceRequestOuterClass {
           ubii.sessions.SessionOuterClass.SessionList, ubii.sessions.SessionOuterClass.SessionList.Builder, ubii.sessions.SessionOuterClass.SessionListOrBuilder> sessionListBuilder_;
       /**
        * <code>.ubii.sessions.SessionList session_list = 6;</code>
-       * @return Whether the sessionList field is set.
        */
       public boolean hasSessionList() {
         return typeCase_ == 6;
       }
       /**
        * <code>.ubii.sessions.SessionList session_list = 6;</code>
-       * @return The sessionList.
        */
       public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
         if (sessionListBuilder_ == null) {
@@ -2483,14 +2400,12 @@ public final class ServiceRequestOuterClass {
           ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder> processingModuleBuilder_;
       /**
        * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-       * @return Whether the processingModule field is set.
        */
       public boolean hasProcessingModule() {
         return typeCase_ == 7;
       }
       /**
        * <code>.ubii.processing.ProcessingModule processing_module = 7;</code>
-       * @return The processingModule.
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModule getProcessingModule() {
         if (processingModuleBuilder_ == null) {
@@ -2621,14 +2536,12 @@ public final class ServiceRequestOuterClass {
           ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleListOrBuilder> processingModuleListBuilder_;
       /**
        * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-       * @return Whether the processingModuleList field is set.
        */
       public boolean hasProcessingModuleList() {
         return typeCase_ == 8;
       }
       /**
        * <code>.ubii.processing.ProcessingModuleList processing_module_list = 8;</code>
-       * @return The processingModuleList.
        */
       public ubii.processing.ProcessingModuleOuterClass.ProcessingModuleList getProcessingModuleList() {
         if (processingModuleListBuilder_ == null) {
@@ -2759,14 +2672,12 @@ public final class ServiceRequestOuterClass {
           ubii.devices.TopicMuxOuterClass.TopicMux, ubii.devices.TopicMuxOuterClass.TopicMux.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxOrBuilder> topicMuxBuilder_;
       /**
        * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-       * @return Whether the topicMux field is set.
        */
       public boolean hasTopicMux() {
         return typeCase_ == 9;
       }
       /**
        * <code>.ubii.devices.TopicMux topic_mux = 9;</code>
-       * @return The topicMux.
        */
       public ubii.devices.TopicMuxOuterClass.TopicMux getTopicMux() {
         if (topicMuxBuilder_ == null) {
@@ -2897,14 +2808,12 @@ public final class ServiceRequestOuterClass {
           ubii.devices.TopicMuxOuterClass.TopicMuxList, ubii.devices.TopicMuxOuterClass.TopicMuxList.Builder, ubii.devices.TopicMuxOuterClass.TopicMuxListOrBuilder> topicMuxListBuilder_;
       /**
        * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-       * @return Whether the topicMuxList field is set.
        */
       public boolean hasTopicMuxList() {
         return typeCase_ == 10;
       }
       /**
        * <code>.ubii.devices.TopicMuxList topic_mux_list = 10;</code>
-       * @return The topicMuxList.
        */
       public ubii.devices.TopicMuxOuterClass.TopicMuxList getTopicMuxList() {
         if (topicMuxListBuilder_ == null) {
@@ -3035,14 +2944,12 @@ public final class ServiceRequestOuterClass {
           ubii.devices.TopicDemuxOuterClass.TopicDemux, ubii.devices.TopicDemuxOuterClass.TopicDemux.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxOrBuilder> topicDemuxBuilder_;
       /**
        * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-       * @return Whether the topicDemux field is set.
        */
       public boolean hasTopicDemux() {
         return typeCase_ == 11;
       }
       /**
        * <code>.ubii.devices.TopicDemux topic_demux = 11;</code>
-       * @return The topicDemux.
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemux getTopicDemux() {
         if (topicDemuxBuilder_ == null) {
@@ -3173,14 +3080,12 @@ public final class ServiceRequestOuterClass {
           ubii.devices.TopicDemuxOuterClass.TopicDemuxList, ubii.devices.TopicDemuxOuterClass.TopicDemuxList.Builder, ubii.devices.TopicDemuxOuterClass.TopicDemuxListOrBuilder> topicDemuxListBuilder_;
       /**
        * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-       * @return Whether the topicDemuxList field is set.
        */
       public boolean hasTopicDemuxList() {
         return typeCase_ == 12;
       }
       /**
        * <code>.ubii.devices.TopicDemuxList topic_demux_list = 12;</code>
-       * @return The topicDemuxList.
        */
       public ubii.devices.TopicDemuxOuterClass.TopicDemuxList getTopicDemuxList() {
         if (topicDemuxListBuilder_ == null) {
@@ -3311,14 +3216,12 @@ public final class ServiceRequestOuterClass {
           ubii.clients.ClientOuterClass.ClientList, ubii.clients.ClientOuterClass.ClientList.Builder, ubii.clients.ClientOuterClass.ClientListOrBuilder> clientListBuilder_;
       /**
        * <code>.ubii.clients.ClientList client_list = 13;</code>
-       * @return Whether the clientList field is set.
        */
       public boolean hasClientList() {
         return typeCase_ == 13;
       }
       /**
        * <code>.ubii.clients.ClientList client_list = 13;</code>
-       * @return The clientList.
        */
       public ubii.clients.ClientOuterClass.ClientList getClientList() {
         if (clientListBuilder_ == null) {
@@ -3449,14 +3352,12 @@ public final class ServiceRequestOuterClass {
           ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> deviceListBuilder_;
       /**
        * <code>.ubii.devices.DeviceList device_list = 14;</code>
-       * @return Whether the deviceList field is set.
        */
       public boolean hasDeviceList() {
         return typeCase_ == 14;
       }
       /**
        * <code>.ubii.devices.DeviceList device_list = 14;</code>
-       * @return The deviceList.
        */
       public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
         if (deviceListBuilder_ == null) {
@@ -3587,14 +3488,12 @@ public final class ServiceRequestOuterClass {
           ubii.processing.LockstepProcessing.LockstepProcessingRequest, ubii.processing.LockstepProcessing.LockstepProcessingRequest.Builder, ubii.processing.LockstepProcessing.LockstepProcessingRequestOrBuilder> lockstepProcessingRequestBuilder_;
       /**
        * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-       * @return Whether the lockstepProcessingRequest field is set.
        */
       public boolean hasLockstepProcessingRequest() {
         return typeCase_ == 15;
       }
       /**
        * <code>.ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;</code>
-       * @return The lockstepProcessingRequest.
        */
       public ubii.processing.LockstepProcessing.LockstepProcessingRequest getLockstepProcessingRequest() {
         if (lockstepProcessingRequestBuilder_ == null) {
@@ -3723,7 +3622,7 @@ public final class ServiceRequestOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -3817,7 +3716,15 @@ public final class ServiceRequestOuterClass {
       "quest\030\017 \001(\0132*.ubii.processing.LockstepPr" +
       "ocessingRequestH\000B\006\n\004typeb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.clients.ClientOuterClass.getDescriptor(),
@@ -3828,7 +3735,7 @@ public final class ServiceRequestOuterClass {
           ubii.services.request.TopicSubscriptionOuterClass.getDescriptor(),
           ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
           ubii.processing.LockstepProcessing.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_services_ServiceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_services_ServiceRequest_fieldAccessorTable = new
