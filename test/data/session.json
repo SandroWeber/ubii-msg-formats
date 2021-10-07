@@ -1,0 +1,15 @@
+{
+    "bytes": "",
+    "dict": {
+        "authors": [],
+        "description": "",
+        "editable": false,
+        "id": "",
+        "ioMappings": [],
+        "name": "",
+        "processingModules": [],
+        "status": 0,
+        "tags": []
+    },
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"processingModules\": [],\n  \"ioMappings\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"authors\": [],\n  \"status\": 0,\n  \"editable\": false\n}"
+}

@@ -1,0 +1,11 @@
+{
+    "bytes": "",
+    "dict": {
+        "dataType": "",
+        "id": "",
+        "identityMatchPattern": "",
+        "name": "",
+        "topicSelector": ""
+    },
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"dataType\": \"\",\n  \"topicSelector\": \"\",\n  \"identityMatchPattern\": \"\"\n}"
+}

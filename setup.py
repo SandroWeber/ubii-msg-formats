@@ -1,15 +1,20 @@
+import os
+
 import setuptools
-import shutil
+from distutils import file_util, dir_util
 from pathlib import Path
 from setuptools.command.sdist import sdist as sdist_orig
 from itertools import chain
 
-CONSTANTS_FILE = Path(f"{__file__}").parent / 'dist/constants.json'
-SOURCE_DIR = Path("dist/py/proto")
+NAME = "ubii-msg-formats"
+CONSTANTS_FILE = Path("dist/constants.json")
+PROTO_DIR = Path("dist/py/proto")
+UTIL_DIR = Path("src/py")
+PACKAGE_DIR = Path(f"build/{NAME}")
 
 
-def generate_recursive_inits():
-    for initfile in SOURCE_DIR.glob('**/__init__.py'):
+def generate_recursive_inits(dir):
+    for initfile in dir.glob('**/__init__.py'):
         modules = (p.stem for p in initfile.parent.glob('*.py') if not p.stem.startswith('_'))
         packages = (p.stem for p in initfile.parent.glob('*') if not p.stem.startswith('_') and
                     p.is_dir())
@@ -19,15 +24,16 @@ def generate_recursive_inits():
 
 class sdist(sdist_orig):
     def run(self):
-        assert CONSTANTS_FILE.exists(), f"{CONSTANTS_FILE.resolve()} is missing, can't build python package!"
-        assert SOURCE_DIR.exists(), f"Python Code expected in {SOURCE_DIR.resolve()} but directory is missing!"
+        assert PROTO_DIR.exists(), f"Python Code expected in {PROTO_DIR.resolve()} but directory is missing!"
+        
+        generate_recursive_inits(PROTO_DIR)
         try:
-            shutil.copy(CONSTANTS_FILE, SOURCE_DIR)
-            print(f"copying {CONSTANTS_FILE.name} -> {(SOURCE_DIR / CONSTANTS_FILE.name).resolve()}")
+            file_util.copy_file(os.fspath(CONSTANTS_FILE), os.fspath(PROTO_DIR))
+            dir_util.copy_tree(os.fspath(PROTO_DIR), os.fspath(PACKAGE_DIR / 'proto'))
+            dir_util.copy_tree(os.fspath(UTIL_DIR), os.fspath(PACKAGE_DIR / 'util'))
         except OSError:
             raise
 
-        generate_recursive_inits()
         super().run()
 
 
@@ -35,8 +41,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="ubii-msg-formats",
-    version="0.0.2",
+    name=NAME,
+    version="0.1.0",
     author="Maximilian Schmidt",
     author_email="ga97lul@in.tum.de",
     description="Python Package for Ubi Interact Protocol Buffers",
@@ -48,8 +54,8 @@ setuptools.setup(
     #     "License :: OSI Approved :: MIT License",
     #     "Operating System :: OS Independent",
     # ],
-    package_dir={"": str(SOURCE_DIR.parent)},
-    packages=setuptools.find_packages(where=str(SOURCE_DIR.parent)),
+    package_dir={"": str(PACKAGE_DIR.parent)},
+    packages=setuptools.find_packages(where=str(PACKAGE_DIR.parent)),
     package_data={'': ['constants.json']},
     python_requires=">=3.6",
     cmdclass={'sdist': sdist},

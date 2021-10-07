@@ -1,7 +1,7 @@
 const childProcess = require('child_process');
 const path = require('path');
 
-let pythonExecutable = 'venv/bin/python';
+let pythonExecutable = 'python';
 
 let compileProtoPython = () => {
   return new Promise((resolve, reject) => {

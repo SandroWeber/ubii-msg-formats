@@ -30,7 +30,7 @@ try:
     import mypy_protobuf
     USING_MYPY = True
 except ImportError:
-    warn(f"No working `mypy` found in $PYTHONPATH."
+    warn(f"No working `mypy` found in $PYTHONPATH. "
          f"If you want to generate stub files, "
          f"make sure `mypy` and `mypy-protobuf` are installed for the python executable {sys.executable}.")
 

@@ -1,0 +1,15 @@
+{
+    "bytes": "",
+    "dict": {
+        "constantsJson": "",
+        "id": "",
+        "ipEthernet": "",
+        "ipWlan": "",
+        "name": "",
+        "portServiceRest": "",
+        "portServiceZmq": "",
+        "portTopicDataWs": "",
+        "portTopicDataZmq": ""
+    },
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"ipEthernet\": \"\",\n  \"ipWlan\": \"\",\n  \"portServiceZmq\": \"\",\n  \"portServiceRest\": \"\",\n  \"portTopicDataZmq\": \"\",\n  \"portTopicDataWs\": \"\",\n  \"constantsJson\": \"\"\n}"
+}

@@ -1,0 +1,21 @@
+{
+    "bytes": "",
+    "dict": {
+        "authors": [],
+        "description": "",
+        "id": "",
+        "inputs": [],
+        "language": 0,
+        "name": "",
+        "nodeId": "",
+        "onCreatedStringified": "",
+        "onDestroyedStringified": "",
+        "onHaltedStringified": "",
+        "onProcessingStringified": "",
+        "outputs": [],
+        "sessionId": "",
+        "status": 0,
+        "tags": []
+    },
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"authors\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"nodeId\": \"\",\n  \"sessionId\": \"\",\n  \"status\": 0,\n  \"inputs\": [],\n  \"outputs\": [],\n  \"language\": 0,\n  \"onProcessingStringified\": \"\",\n  \"onCreatedStringified\": \"\",\n  \"onHaltedStringified\": \"\",\n  \"onDestroyedStringified\": \"\"\n}"
+}

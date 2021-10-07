@@ -1,0 +1,11 @@
+{
+    "bytes": "",
+    "dict": {
+        "clientId": "",
+        "subscribeTopicRegexp": [],
+        "subscribeTopics": [],
+        "unsubscribeTopicRegexp": [],
+        "unsubscribeTopics": []
+    },
+    "json": "{\n  \"clientId\": \"\",\n  \"subscribeTopics\": [],\n  \"unsubscribeTopics\": [],\n  \"subscribeTopicRegexp\": [],\n  \"unsubscribeTopicRegexp\": []\n}"
+}

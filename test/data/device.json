@@ -1,0 +1,13 @@
+{
+    "bytes": "",
+    "dict": {
+        "clientId": "",
+        "components": [],
+        "description": "",
+        "deviceType": 0,
+        "id": "",
+        "name": "",
+        "tags": []
+    },
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"deviceType\": 0,\n  \"components\": [],\n  \"clientId\": \"\",\n  \"tags\": [],\n  \"description\": \"\"\n}"
+}

@@ -1,0 +1,14 @@
+{
+    "bytes": "",
+    "dict": {
+        "description": "",
+        "deviceId": "",
+        "id": "",
+        "ioType": 0,
+        "messageFormat": "",
+        "name": "",
+        "tags": [],
+        "topic": ""
+    },
+    "json": "{\n  \"topic\": \"\",\n  \"messageFormat\": \"\",\n  \"ioType\": 0,\n  \"deviceId\": \"\",\n  \"tags\": [],\n  \"description\": \"\",\n  \"id\": \"\",\n  \"name\": \"\"\n}"
+}

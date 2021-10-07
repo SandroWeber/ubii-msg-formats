@@ -1,0 +1,16 @@
+{
+    "bytes": "",
+    "dict": {
+        "description": "",
+        "devices": [],
+        "hostIp": "",
+        "id": "",
+        "isDedicatedProcessingNode": false,
+        "metadataJson": "",
+        "name": "",
+        "processingModules": [],
+        "state": 0,
+        "tags": []
+    },
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"devices\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"processingModules\": [],\n  \"isDedicatedProcessingNode\": false,\n  \"hostIp\": \"\",\n  \"metadataJson\": \"\",\n  \"state\": 0\n}"
+}
