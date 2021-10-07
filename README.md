@@ -33,6 +33,11 @@ If you are interested in how they communicate with each other, please see
     - run 'python scripts/compile.py --opt [language]' where [language] is one of py/python, j/java, js/javascript, cs/csharp, all
     - run 'node scripts/generate-protobuf-static.js'
 
+
+## Contribution
+
+- don't commit /dist for feature branches. you can test compilation, just don't commit the compiled files. You may want to use $GIT_DIR/info/exclude functionality to avoid unintentional commits.
+
 ## CLIs 
 
 - Run `npm test` to process all standard tests.

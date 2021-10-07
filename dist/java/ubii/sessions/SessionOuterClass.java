@@ -65,8 +65,6 @@ public final class SessionOuterClass {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -74,10 +72,6 @@ public final class SessionOuterClass {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static SessionStatus forNumber(int value) {
       switch (value) {
         case 0: return CREATED;
@@ -142,24 +136,20 @@ public final class SessionOuterClass {
 
     /**
      * <code>string id = 1;</code>
-     * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
-     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
      * <code>string name = 2;</code>
-     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 2;</code>
-     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -214,80 +204,63 @@ public final class SessionOuterClass {
 
     /**
      * <code>repeated string tags = 5;</code>
-     * @return A list containing the tags.
      */
     java.util.List<java.lang.String>
         getTagsList();
     /**
      * <code>repeated string tags = 5;</code>
-     * @return The count of tags.
      */
     int getTagsCount();
     /**
      * <code>repeated string tags = 5;</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
     /**
      * <code>repeated string tags = 5;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
 
     /**
      * <code>string description = 6;</code>
-     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 6;</code>
-     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>repeated string authors = 7;</code>
-     * @return A list containing the authors.
      */
     java.util.List<java.lang.String>
         getAuthorsList();
     /**
      * <code>repeated string authors = 7;</code>
-     * @return The count of authors.
      */
     int getAuthorsCount();
     /**
      * <code>repeated string authors = 7;</code>
-     * @param index The index of the element to return.
-     * @return The authors at the given index.
      */
     java.lang.String getAuthors(int index);
     /**
      * <code>repeated string authors = 7;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the authors at the given index.
      */
     com.google.protobuf.ByteString
         getAuthorsBytes(int index);
 
     /**
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
-     * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
     /**
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
-     * @return The status.
      */
     ubii.sessions.SessionOuterClass.SessionStatus getStatus();
 
     /**
      * <code>bool editable = 9;</code>
-     * @return The editable.
      */
     boolean getEditable();
   }
@@ -312,13 +285,7 @@ public final class SessionOuterClass {
       description_ = "";
       authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       status_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Session();
+      editable_ = false;
     }
 
     @java.lang.Override
@@ -358,18 +325,18 @@ public final class SessionOuterClass {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               processingModules_.add(
                   input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingModule.parser(), extensionRegistry));
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               ioMappings_.add(
                   input.readMessage(ubii.sessions.IoMappings.IOMapping.parser(), extensionRegistry));
@@ -377,9 +344,9 @@ public final class SessionOuterClass {
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000010;
               }
               tags_.add(s);
               break;
@@ -392,9 +359,9 @@ public final class SessionOuterClass {
             }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                 authors_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000040;
               }
               authors_.add(s);
               break;
@@ -411,7 +378,7 @@ public final class SessionOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -425,16 +392,16 @@ public final class SessionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           ioMappings_ = java.util.Collections.unmodifiableList(ioMappings_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           tags_ = tags_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
           authors_ = authors_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -454,11 +421,11 @@ public final class SessionOuterClass {
               ubii.sessions.SessionOuterClass.Session.class, ubii.sessions.SessionOuterClass.Session.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
-     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -474,7 +441,6 @@ public final class SessionOuterClass {
     }
     /**
      * <code>string id = 1;</code>
-     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -494,7 +460,6 @@ public final class SessionOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 2;</code>
-     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -510,7 +475,6 @@ public final class SessionOuterClass {
     }
     /**
      * <code>string name = 2;</code>
-     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -600,7 +564,6 @@ public final class SessionOuterClass {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <code>repeated string tags = 5;</code>
-     * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -608,23 +571,18 @@ public final class SessionOuterClass {
     }
     /**
      * <code>repeated string tags = 5;</code>
-     * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
      * <code>repeated string tags = 5;</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
     /**
      * <code>repeated string tags = 5;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -635,7 +593,6 @@ public final class SessionOuterClass {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 6;</code>
-     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -651,7 +608,6 @@ public final class SessionOuterClass {
     }
     /**
      * <code>string description = 6;</code>
-     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -671,7 +627,6 @@ public final class SessionOuterClass {
     private com.google.protobuf.LazyStringList authors_;
     /**
      * <code>repeated string authors = 7;</code>
-     * @return A list containing the authors.
      */
     public com.google.protobuf.ProtocolStringList
         getAuthorsList() {
@@ -679,23 +634,18 @@ public final class SessionOuterClass {
     }
     /**
      * <code>repeated string authors = 7;</code>
-     * @return The count of authors.
      */
     public int getAuthorsCount() {
       return authors_.size();
     }
     /**
      * <code>repeated string authors = 7;</code>
-     * @param index The index of the element to return.
-     * @return The authors at the given index.
      */
     public java.lang.String getAuthors(int index) {
       return authors_.get(index);
     }
     /**
      * <code>repeated string authors = 7;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the authors at the given index.
      */
     public com.google.protobuf.ByteString
         getAuthorsBytes(int index) {
@@ -706,14 +656,12 @@ public final class SessionOuterClass {
     private int status_;
     /**
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
-     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
     }
     /**
      * <code>.ubii.sessions.SessionStatus status = 8;</code>
-     * @return The status.
      */
     public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
       @SuppressWarnings("deprecation")
@@ -725,7 +673,6 @@ public final class SessionOuterClass {
     private boolean editable_;
     /**
      * <code>bool editable = 9;</code>
-     * @return The editable.
      */
     public boolean getEditable() {
       return editable_;
@@ -837,25 +784,26 @@ public final class SessionOuterClass {
       }
       ubii.sessions.SessionOuterClass.Session other = (ubii.sessions.SessionOuterClass.Session) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getProcessingModulesList()
-          .equals(other.getProcessingModulesList())) return false;
-      if (!getIoMappingsList()
-          .equals(other.getIoMappingsList())) return false;
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
-      if (!getDescription()
-          .equals(other.getDescription())) return false;
-      if (!getAuthorsList()
-          .equals(other.getAuthorsList())) return false;
-      if (status_ != other.status_) return false;
-      if (getEditable()
-          != other.getEditable()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getName()
+          .equals(other.getName());
+      result = result && getProcessingModulesList()
+          .equals(other.getProcessingModulesList());
+      result = result && getIoMappingsList()
+          .equals(other.getIoMappingsList());
+      result = result && getTagsList()
+          .equals(other.getTagsList());
+      result = result && getDescription()
+          .equals(other.getDescription());
+      result = result && getAuthorsList()
+          .equals(other.getAuthorsList());
+      result = result && status_ == other.status_;
+      result = result && (getEditable()
+          == other.getEditable());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1033,22 +981,22 @@ public final class SessionOuterClass {
 
         if (processingModulesBuilder_ == null) {
           processingModules_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           processingModulesBuilder_.clear();
         }
         if (ioMappingsBuilder_ == null) {
           ioMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ioMappingsBuilder_.clear();
         }
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         description_ = "";
 
         authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         status_ = 0;
 
         editable_ = false;
@@ -1080,74 +1028,76 @@ public final class SessionOuterClass {
       public ubii.sessions.SessionOuterClass.Session buildPartial() {
         ubii.sessions.SessionOuterClass.Session result = new ubii.sessions.SessionOuterClass.Session(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.id_ = id_;
         result.name_ = name_;
         if (processingModulesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             processingModules_ = java.util.Collections.unmodifiableList(processingModules_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.processingModules_ = processingModules_;
         } else {
           result.processingModules_ = processingModulesBuilder_.build();
         }
         if (ioMappingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             ioMappings_ = java.util.Collections.unmodifiableList(ioMappings_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.ioMappings_ = ioMappings_;
         } else {
           result.ioMappings_ = ioMappingsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.tags_ = tags_;
         result.description_ = description_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
           authors_ = authors_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.authors_ = authors_;
         result.status_ = status_;
         result.editable_ = editable_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1173,7 +1123,7 @@ public final class SessionOuterClass {
           if (!other.processingModules_.isEmpty()) {
             if (processingModules_.isEmpty()) {
               processingModules_ = other.processingModules_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureProcessingModulesIsMutable();
               processingModules_.addAll(other.processingModules_);
@@ -1186,7 +1136,7 @@ public final class SessionOuterClass {
               processingModulesBuilder_.dispose();
               processingModulesBuilder_ = null;
               processingModules_ = other.processingModules_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               processingModulesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getProcessingModulesFieldBuilder() : null;
@@ -1199,7 +1149,7 @@ public final class SessionOuterClass {
           if (!other.ioMappings_.isEmpty()) {
             if (ioMappings_.isEmpty()) {
               ioMappings_ = other.ioMappings_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureIoMappingsIsMutable();
               ioMappings_.addAll(other.ioMappings_);
@@ -1212,7 +1162,7 @@ public final class SessionOuterClass {
               ioMappingsBuilder_.dispose();
               ioMappingsBuilder_ = null;
               ioMappings_ = other.ioMappings_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               ioMappingsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getIoMappingsFieldBuilder() : null;
@@ -1224,7 +1174,7 @@ public final class SessionOuterClass {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1238,7 +1188,7 @@ public final class SessionOuterClass {
         if (!other.authors_.isEmpty()) {
           if (authors_.isEmpty()) {
             authors_ = other.authors_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureAuthorsIsMutable();
             authors_.addAll(other.authors_);
@@ -1284,7 +1234,6 @@ public final class SessionOuterClass {
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
-       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1300,7 +1249,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
-       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1317,8 +1265,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
@@ -1332,7 +1278,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -1342,8 +1287,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string id = 1;</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1360,7 +1303,6 @@ public final class SessionOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
-       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1376,7 +1318,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
-       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1393,8 +1334,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1408,7 +1347,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1418,8 +1356,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1436,9 +1372,9 @@ public final class SessionOuterClass {
       private java.util.List<ubii.processing.ProcessingModuleOuterClass.ProcessingModule> processingModules_ =
         java.util.Collections.emptyList();
       private void ensureProcessingModulesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           processingModules_ = new java.util.ArrayList<ubii.processing.ProcessingModuleOuterClass.ProcessingModule>(processingModules_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1588,7 +1524,7 @@ public final class SessionOuterClass {
       public Builder clearProcessingModules() {
         if (processingModulesBuilder_ == null) {
           processingModules_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           processingModulesBuilder_.clear();
@@ -1665,7 +1601,7 @@ public final class SessionOuterClass {
           processingModulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.processing.ProcessingModuleOuterClass.ProcessingModule, ubii.processing.ProcessingModuleOuterClass.ProcessingModule.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingModuleOrBuilder>(
                   processingModules_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
           processingModules_ = null;
@@ -1676,9 +1612,9 @@ public final class SessionOuterClass {
       private java.util.List<ubii.sessions.IoMappings.IOMapping> ioMappings_ =
         java.util.Collections.emptyList();
       private void ensureIoMappingsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           ioMappings_ = new java.util.ArrayList<ubii.sessions.IoMappings.IOMapping>(ioMappings_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1828,7 +1764,7 @@ public final class SessionOuterClass {
       public Builder clearIoMappings() {
         if (ioMappingsBuilder_ == null) {
           ioMappings_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           ioMappingsBuilder_.clear();
@@ -1905,7 +1841,7 @@ public final class SessionOuterClass {
           ioMappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.IoMappings.IOMapping, ubii.sessions.IoMappings.IOMapping.Builder, ubii.sessions.IoMappings.IOMappingOrBuilder>(
                   ioMappings_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           ioMappings_ = null;
@@ -1915,14 +1851,13 @@ public final class SessionOuterClass {
 
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
          }
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -1930,23 +1865,18 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @return The count of tags.
        */
       public int getTagsCount() {
         return tags_.size();
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @param index The index of the element to return.
-       * @return The tags at the given index.
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the tags at the given index.
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1954,9 +1884,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @param index The index to set the value at.
-       * @param value The tags to set.
-       * @return This builder for chaining.
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1970,8 +1897,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @param value The tags to add.
-       * @return This builder for chaining.
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1985,8 +1910,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @param values The tags to add.
-       * @return This builder for chaining.
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1998,18 +1921,15 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
        * <code>repeated string tags = 5;</code>
-       * @param value The bytes of the tags to add.
-       * @return This builder for chaining.
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -2026,7 +1946,6 @@ public final class SessionOuterClass {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 6;</code>
-       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -2042,7 +1961,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string description = 6;</code>
-       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -2059,8 +1977,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string description = 6;</code>
-       * @param value The description to set.
-       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -2074,7 +1990,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string description = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -2084,8 +1999,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>string description = 6;</code>
-       * @param value The bytes for description to set.
-       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -2101,14 +2014,13 @@ public final class SessionOuterClass {
 
       private com.google.protobuf.LazyStringList authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureAuthorsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           authors_ = new com.google.protobuf.LazyStringArrayList(authors_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000040;
          }
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @return A list containing the authors.
        */
       public com.google.protobuf.ProtocolStringList
           getAuthorsList() {
@@ -2116,23 +2028,18 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @return The count of authors.
        */
       public int getAuthorsCount() {
         return authors_.size();
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @param index The index of the element to return.
-       * @return The authors at the given index.
        */
       public java.lang.String getAuthors(int index) {
         return authors_.get(index);
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the authors at the given index.
        */
       public com.google.protobuf.ByteString
           getAuthorsBytes(int index) {
@@ -2140,9 +2047,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @param index The index to set the value at.
-       * @param value The authors to set.
-       * @return This builder for chaining.
        */
       public Builder setAuthors(
           int index, java.lang.String value) {
@@ -2156,8 +2060,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @param value The authors to add.
-       * @return This builder for chaining.
        */
       public Builder addAuthors(
           java.lang.String value) {
@@ -2171,8 +2073,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @param values The authors to add.
-       * @return This builder for chaining.
        */
       public Builder addAllAuthors(
           java.lang.Iterable<java.lang.String> values) {
@@ -2184,18 +2084,15 @@ public final class SessionOuterClass {
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAuthors() {
         authors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
       /**
        * <code>repeated string authors = 7;</code>
-       * @param value The bytes of the authors to add.
-       * @return This builder for chaining.
        */
       public Builder addAuthorsBytes(
           com.google.protobuf.ByteString value) {
@@ -2212,15 +2109,12 @@ public final class SessionOuterClass {
       private int status_ = 0;
       /**
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
-       * @return The enum numeric value on the wire for status.
        */
       public int getStatusValue() {
         return status_;
       }
       /**
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
         status_ = value;
@@ -2229,7 +2123,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
-       * @return The status.
        */
       public ubii.sessions.SessionOuterClass.SessionStatus getStatus() {
         @SuppressWarnings("deprecation")
@@ -2238,8 +2131,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
        */
       public Builder setStatus(ubii.sessions.SessionOuterClass.SessionStatus value) {
         if (value == null) {
@@ -2252,7 +2143,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>.ubii.sessions.SessionStatus status = 8;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStatus() {
         
@@ -2264,15 +2154,12 @@ public final class SessionOuterClass {
       private boolean editable_ ;
       /**
        * <code>bool editable = 9;</code>
-       * @return The editable.
        */
       public boolean getEditable() {
         return editable_;
       }
       /**
        * <code>bool editable = 9;</code>
-       * @param value The editable to set.
-       * @return This builder for chaining.
        */
       public Builder setEditable(boolean value) {
         
@@ -2282,7 +2169,6 @@ public final class SessionOuterClass {
       }
       /**
        * <code>bool editable = 9;</code>
-       * @return This builder for chaining.
        */
       public Builder clearEditable() {
         
@@ -2293,7 +2179,7 @@ public final class SessionOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -2388,13 +2274,6 @@ public final class SessionOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SessionList();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2419,7 +2298,7 @@ public final class SessionOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 elements_ = new java.util.ArrayList<ubii.sessions.SessionOuterClass.Session>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -2428,7 +2307,7 @@ public final class SessionOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -2442,7 +2321,7 @@ public final class SessionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = java.util.Collections.unmodifiableList(elements_);
         }
         this.unknownFields = unknownFields.build();
@@ -2542,10 +2421,11 @@ public final class SessionOuterClass {
       }
       ubii.sessions.SessionOuterClass.SessionList other = (ubii.sessions.SessionOuterClass.SessionList) obj;
 
-      if (!getElementsList()
-          .equals(other.getElementsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getElementsList()
+          .equals(other.getElementsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2727,7 +2607,7 @@ public final class SessionOuterClass {
         ubii.sessions.SessionOuterClass.SessionList result = new ubii.sessions.SessionOuterClass.SessionList(this);
         int from_bitField0_ = bitField0_;
         if (elementsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             elements_ = java.util.Collections.unmodifiableList(elements_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2741,35 +2621,35 @@ public final class SessionOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2842,7 +2722,7 @@ public final class SessionOuterClass {
       private java.util.List<ubii.sessions.SessionOuterClass.Session> elements_ =
         java.util.Collections.emptyList();
       private void ensureElementsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           elements_ = new java.util.ArrayList<ubii.sessions.SessionOuterClass.Session>(elements_);
           bitField0_ |= 0x00000001;
          }
@@ -3071,7 +2951,7 @@ public final class SessionOuterClass {
           elementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ubii.sessions.SessionOuterClass.Session, ubii.sessions.SessionOuterClass.Session.Builder, ubii.sessions.SessionOuterClass.SessionOrBuilder>(
                   elements_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           elements_ = null;
@@ -3081,7 +2961,7 @@ public final class SessionOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -3164,12 +3044,20 @@ public final class SessionOuterClass {
       "*B\n\rSessionStatus\022\013\n\007CREATED\020\000\022\013\n\007RUNNIN" +
       "G\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPPED\020\003b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.sessions.IoMappings.getDescriptor(),
           ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
-        });
+        }, assigner);
     internal_static_ubii_sessions_Session_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_sessions_Session_fieldAccessorTable = new
