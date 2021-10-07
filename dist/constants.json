@@ -55,7 +55,7 @@
       "TOPIC_LIST": "/services/topic_list",
       "TOPIC_SUBSCRIPTION": "/services/topic_subscription",
 
-      "LATENZ_CLIENTS_LIST": "/services/latenz_clients_list"
+      "LATENCY_CLIENTS_LIST": "/services/latency_clients_list"
     },
     "INFO_TOPICS": {
       "REGEX_ALL_INFOS": "/info/*",
