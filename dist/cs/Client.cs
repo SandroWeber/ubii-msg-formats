@@ -38,15 +38,9 @@ namespace Ubii.Clients {
             "ZW1lbnRzGAEgAygLMhQudWJpaS5jbGllbnRzLkNsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, },
-<<<<<<< HEAD
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.Client), global::Ubii.Clients.Client.Parser, new[]{ "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", "State", "Latency" }, null, new[]{ typeof(global::Ubii.Clients.Client.Types.State) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.ClientList), global::Ubii.Clients.ClientList.Parser, new[]{ "Elements" }, null, null, null, null)
-=======
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.Client), global::Ubii.Clients.Client.Parser, new[]{ "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", "State" }, null, new[]{ typeof(global::Ubii.Clients.Client.Types.State) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Clients.ClientList), global::Ubii.Clients.ClientList.Parser, new[]{ "Elements" }, null, null, null)
->>>>>>> a71bb6d79422e064405eb205b303301a5051fecf
           }));
     }
     #endregion
@@ -195,7 +189,7 @@ namespace Ubii.Clients {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 10;
-    private global::Ubii.Clients.Client.Types.State state_ = 0;
+    private global::Ubii.Clients.Client.Types.State state_ = global::Ubii.Clients.Client.Types.State.Active;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Ubii.Clients.Client.Types.State State {
       get { return state_; }
@@ -254,12 +248,8 @@ namespace Ubii.Clients {
       if (IsDedicatedProcessingNode != false) hash ^= IsDedicatedProcessingNode.GetHashCode();
       if (HostIp.Length != 0) hash ^= HostIp.GetHashCode();
       if (MetadataJson.Length != 0) hash ^= MetadataJson.GetHashCode();
-<<<<<<< HEAD
       if (State != global::Ubii.Clients.Client.Types.State.Active) hash ^= State.GetHashCode();
       if (Latency != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Latency);
-=======
-      if (State != 0) hash ^= State.GetHashCode();
->>>>>>> a71bb6d79422e064405eb205b303301a5051fecf
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -300,7 +290,7 @@ namespace Ubii.Clients {
         output.WriteRawTag(74);
         output.WriteString(MetadataJson);
       }
-      if (State != 0) {
+      if (State != global::Ubii.Clients.Client.Types.State.Active) {
         output.WriteRawTag(80);
         output.WriteEnum((int) State);
       }
@@ -337,7 +327,7 @@ namespace Ubii.Clients {
       if (MetadataJson.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MetadataJson);
       }
-      if (State != 0) {
+      if (State != global::Ubii.Clients.Client.Types.State.Active) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (Latency != 0F) {
@@ -375,7 +365,7 @@ namespace Ubii.Clients {
       if (other.MetadataJson.Length != 0) {
         MetadataJson = other.MetadataJson;
       }
-      if (other.State != 0) {
+      if (other.State != global::Ubii.Clients.Client.Types.State.Active) {
         State = other.State;
       }
       if (other.Latency != 0F) {
@@ -429,7 +419,7 @@ namespace Ubii.Clients {
             break;
           }
           case 80: {
-            state_ = (global::Ubii.Clients.Client.Types.State) input.ReadEnum();
+            State = (global::Ubii.Clients.Client.Types.State) input.ReadEnum();
             break;
           }
           case 93: {

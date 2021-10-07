@@ -5,113 +5,83 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
+#include <google/protobuf/port_def.inc>
 namespace ubii {
 namespace dataStructure {
 class KeyEventDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<KeyEvent>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KeyEvent> _instance;
 } _KeyEvent_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
-namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto {
-static void InitDefaultsKeyEvent() {
+static void InitDefaultsscc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::dataStructure::_KeyEvent_default_instance_;
     new (ptr) ::ubii::dataStructure::KeyEvent();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::dataStructure::KeyEvent::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_KeyEvent =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsKeyEvent}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto}, {}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_KeyEvent.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[1];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::KeyEvent, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::KeyEvent, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::KeyEvent, type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::KeyEvent, key_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::KeyEvent, type_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::KeyEvent, key_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::KeyEvent)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::dataStructure::_KeyEvent_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::dataStructure::_KeyEvent_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n<proto/topicData/topicDataRecord/dataSt"
+  "ructure/keyEvent.proto\022\022ubii.dataStructu"
+  "re\032Cproto/topicData/topicDataRecord/data"
+  "Structure/buttonEventType.proto\"J\n\010KeyEv"
+  "ent\0221\n\004type\030\001 \001(\0162#.ubii.dataStructure.B"
+  "uttonEventType\022\013\n\003key\030\002 \001(\tb\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_deps[1] = {
+  &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_sccs[1] = {
+  &scc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto = {
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto, "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto", 235,
+  &descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto_deps, 1, 1,
+  schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::offsets,
+  file_level_metadata_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto, 1, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n<proto/topicData/topicDataRecord/dataSt"
-      "ructure/keyEvent.proto\022\022ubii.dataStructu"
-      "re\032Cproto/topicData/topicDataRecord/data"
-      "Structure/buttonEventType.proto\"J\n\010KeyEv"
-      "ent\0221\n\004type\030\001 \001(\0162#.ubii.dataStructure.B"
-      "uttonEventType\022\013\n\003key\030\002 \001(\tb\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 235);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/topicData/topicDataRecord/dataStructure/keyEvent.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fbuttonEventType_2eproto::AddDescriptors();
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
@@ -119,32 +89,30 @@ namespace dataStructure {
 
 void KeyEvent::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int KeyEvent::kTypeFieldNumber;
-const int KeyEvent::kKeyFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class KeyEvent::_Internal {
+ public:
+};
 
 KeyEvent::KeyEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::scc_info_KeyEvent.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.dataStructure.KeyEvent)
 }
 KeyEvent::KeyEvent(const KeyEvent& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.key().size() > 0) {
-    key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_key().empty()) {
+    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
   }
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.KeyEvent)
 }
 
 void KeyEvent::SharedCtor() {
-  key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto.base);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
 }
 
@@ -154,151 +122,99 @@ KeyEvent::~KeyEvent() {
 }
 
 void KeyEvent::SharedDtor() {
-  key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void KeyEvent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* KeyEvent::descriptor() {
-  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const KeyEvent& KeyEvent::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::scc_info_KeyEvent.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KeyEvent_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void KeyEvent::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.dataStructure.KeyEvent)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  key_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
   _internal_metadata_.Clear();
 }
 
-bool KeyEvent::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.dataStructure.KeyEvent)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* KeyEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // .ubii.dataStructure.ButtonEventType type = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_type(static_cast< ::ubii::dataStructure::ButtonEventType >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::ubii::dataStructure::ButtonEventType>(val));
+        } else goto handle_unusual;
+        continue;
       // string key = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_key()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->key().data(), static_cast<int>(this->key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.dataStructure.KeyEvent.key"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_key();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.dataStructure.KeyEvent.key"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.dataStructure.KeyEvent)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.dataStructure.KeyEvent)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void KeyEvent::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.dataStructure.KeyEvent)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .ubii.dataStructure.ButtonEventType type = 1;
-  if (this->type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->type(), output);
-  }
-
-  // string key = 2;
-  if (this->key().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->key().data(), static_cast<int>(this->key().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.dataStructure.KeyEvent.key");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->key(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.dataStructure.KeyEvent)
-}
-
-::google::protobuf::uint8* KeyEvent::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* KeyEvent::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.dataStructure.KeyEvent)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ubii.dataStructure.ButtonEventType type = 1;
   if (this->type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->type(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_type(), target);
   }
 
   // string key = 2;
   if (this->key().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->key().data(), static_cast<int>(this->key().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_key().data(), static_cast<int>(this->_internal_key().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.dataStructure.KeyEvent.key");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->key(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_key(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.KeyEvent)
   return target;
@@ -308,38 +224,41 @@ size_t KeyEvent::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.dataStructure.KeyEvent)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string key = 2;
   if (this->key().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->key());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_key());
   }
 
   // .ubii.dataStructure.ButtonEventType type = 1;
   if (this->type() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void KeyEvent::MergeFrom(const ::google::protobuf::Message& from) {
+void KeyEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.dataStructure.KeyEvent)
   GOOGLE_DCHECK_NE(&from, this);
   const KeyEvent* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const KeyEvent>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<KeyEvent>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.dataStructure.KeyEvent)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.dataStructure.KeyEvent)
     MergeFrom(*source);
@@ -350,19 +269,19 @@ void KeyEvent::MergeFrom(const KeyEvent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.KeyEvent)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.key().size() > 0) {
 
-    key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
+    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
   }
   if (from.type() != 0) {
-    set_type(from.type());
+    _internal_set_type(from._internal_type());
   }
 }
 
-void KeyEvent::CopyFrom(const ::google::protobuf::Message& from) {
+void KeyEvent::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.dataStructure.KeyEvent)
   if (&from == this) return;
   Clear();
@@ -380,33 +299,27 @@ bool KeyEvent::IsInitialized() const {
   return true;
 }
 
-void KeyEvent::Swap(KeyEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void KeyEvent::InternalSwap(KeyEvent* other) {
   using std::swap;
-  key_.Swap(&other->key_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(type_, other->type_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata KeyEvent::GetMetadata() const {
-  protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2ftopicData_2ftopicDataRecord_2fdataStructure_2fkeyEvent_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata KeyEvent::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dataStructure
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::dataStructure::KeyEvent* Arena::CreateMaybeMessage< ::ubii::dataStructure::KeyEvent >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::dataStructure::KeyEvent* Arena::CreateMaybeMessage< ::ubii::dataStructure::KeyEvent >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::dataStructure::KeyEvent >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

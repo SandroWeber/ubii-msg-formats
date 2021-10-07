@@ -95,9 +95,9 @@ namespace Ubii.TopicData {
             "b3JkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ubii.TopicData.TimestampReflection.Descriptor, global::Ubii.DataStructure.ListsReflection.Descriptor, global::Ubii.DataStructure.Vector2Reflection.Descriptor, global::Ubii.DataStructure.Vector3Reflection.Descriptor, global::Ubii.DataStructure.Vector4Reflection.Descriptor, global::Ubii.DataStructure.QuaternionReflection.Descriptor, global::Ubii.DataStructure.Matrix3X2Reflection.Descriptor, global::Ubii.DataStructure.Matrix4X4Reflection.Descriptor, global::Ubii.DataStructure.ColorReflection.Descriptor, global::Ubii.DataStructure.TouchEventReflection.Descriptor, global::Ubii.DataStructure.KeyEventReflection.Descriptor, global::Ubii.DataStructure.MouseEventReflection.Descriptor, global::Ubii.DataStructure.MyoEventReflection.Descriptor, global::Ubii.DataStructure.Pose2DReflection.Descriptor, global::Ubii.DataStructure.Pose3DReflection.Descriptor, global::Ubii.DataStructure.Object2DReflection.Descriptor, global::Ubii.DataStructure.Object3DReflection.Descriptor, global::Ubii.DataStructure.ImageReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Timestamp", "Double", "Bool", "String", "Int32", "Float", "Vector2", "Vector2List", "Vector3", "Vector3List", "Vector4", "Vector4List", "Quaternion", "QuaternionList", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "TouchEventList", "KeyEvent", "MouseEvent", "MyoEvent", "Pose2D", "Pose3D", "Object2D", "Object3D", "Object2DList", "Object3DList", "Int32List", "FloatList", "DoubleList", "StringList", "BoolList", "Image2D", "Image2DList", "Session" }, new[]{ "Type" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecordList), global::Ubii.TopicData.TopicDataRecordList.Parser, new[]{ "Elements" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecord), global::Ubii.TopicData.TopicDataRecord.Parser, new[]{ "Topic", "Timestamp", "Double", "Bool", "String", "Int32", "Float", "Vector2", "Vector2List", "Vector3", "Vector3List", "Vector4", "Vector4List", "Quaternion", "QuaternionList", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "TouchEventList", "KeyEvent", "MouseEvent", "MyoEvent", "Pose2D", "Pose3D", "Object2D", "Object3D", "Object2DList", "Object3DList", "Int32List", "FloatList", "DoubleList", "StringList", "BoolList", "Image2D", "Image2DList", "Session" }, new[]{ "Type" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.TopicData.TopicDataRecordList), global::Ubii.TopicData.TopicDataRecordList.Parser, new[]{ "Elements" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1100,7 +1100,7 @@ namespace Ubii.TopicData {
       }
       if (other.timestamp_ != null) {
         if (timestamp_ == null) {
-          timestamp_ = new global::Ubii.TopicData.Timestamp();
+          Timestamp = new global::Ubii.TopicData.Timestamp();
         }
         Timestamp.MergeFrom(other.Timestamp);
       }
@@ -1319,9 +1319,9 @@ namespace Ubii.TopicData {
           }
           case 18: {
             if (timestamp_ == null) {
-              timestamp_ = new global::Ubii.TopicData.Timestamp();
+              Timestamp = new global::Ubii.TopicData.Timestamp();
             }
-            input.ReadMessage(timestamp_);
+            input.ReadMessage(Timestamp);
             break;
           }
           case 25: {
