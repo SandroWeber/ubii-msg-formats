@@ -3,7 +3,9 @@ from dataclasses import dataclass
 from warnings import warn
 import json
 from importlib.resources import read_text as _read_text_resource
-import proto
+import ubii.proto as proto
+from . import diff_dicts
+
 
 @dataclass(frozen=True)
 class _DefaultTopics:
@@ -189,16 +191,6 @@ class _MsgTypes:
 MSG_TYPES = _MsgTypes()
 
 
-def _diff_dicts(compare, expected, **kwargs):
-    import json
-    left = json.dumps(compare, indent=2, sort_keys=True)
-    right = json.dumps(expected, indent=2, sort_keys=True)
-
-    import difflib
-    diff = difflib.unified_diff(left.splitlines(True), right.splitlines(True), **kwargs)
-    return list(diff)
-
-
 def _check_constants():
     """
     Loads 'constants.json' (additional file in the ubi-msg-formats python package) and checks the values of
@@ -210,7 +202,7 @@ def _check_constants():
     __current__ = {k: dataclasses.asdict(v)
                    for k, v in globals().items() if dataclasses.is_dataclass(v) and not isinstance(v, type)}
 
-    diff = _diff_dicts(compare=__current__, expected=__constants__, fromfile=__name__, tofile=str(proto))
+    diff = diff_dicts(compare=__current__, expected=__constants__, fromfile=__name__, tofile=str(proto))
     if diff:
         warn(f"Constants mismatch: \n{diff}")
 

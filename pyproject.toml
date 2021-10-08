@@ -2,7 +2,14 @@
 requires = [
     "setuptools>=42",
     "wheel",
+    "argparse",
     "mypy",
     "mypy-protobuf",
 ]
 build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "test/pytest",
+]

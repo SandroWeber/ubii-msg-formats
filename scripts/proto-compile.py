@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import shutil
 import sys
 import os
 import argparse
@@ -45,20 +46,36 @@ class Options(Enum):
     CS = 'csharp'
     CPP = 'cpp'
 
+    @property
+    def arguments(self) -> List:
+        if self == Options.PY:
+            return ['py', 'python']
+        if self == Options.JAVA:
+            return ['j', 'java']
+        if self == Options.JS:
+            return ['js', 'javascript']
+        if self == Options.CS:
+            return ['cs', 'csharp']
+        if self == Options.CPP:
+            return ['cpp', 'cpp']
+
     @staticmethod
     def from_str(value) -> Set['Options']:
         if value in ['all']:
             return set(Options)
-        elif value in ['py', 'python']:
-            return {Options.PY}
-        elif value in ['j', 'java']:
-            return {Options.JAVA}
-        elif value in ['js', 'javascript']:
-            return {Options.JS}
-        elif value in ['cs', 'csharp']:
-            return {Options.CS}
+
+        matching = {o for o in Options if value in o.arguments}
+        if matching:
+            return matching
+
+        raise ValueError(f"{value} is no valid option.")
+
+    @property
+    def output_dir(self):
+        if self == Options.PY:
+            return f"{self.name.lower()}/ubii"
         else:
-            raise ValueError(f"{value} is no valid option.")
+            return self.name.lower()
 
 
 __protoc__ = None
@@ -146,12 +163,13 @@ def generate_protos(output_dir: Path, proto_sources: Path, include: Path, langua
         output_dir = f'import_style=commonjs,binary:{output_dir}'
 
     if language == 'python' and USING_MYPY:
-        protoc_args['mypy_out'] = output_dir
+        run_protoc(include=include, sources=proto_files, mypy_out=output_dir, **protoc_args)
 
     for p in proto_files:
         run_protoc(include=include, sources=[p], **protoc_args)
 
     log.info("Compiled for " + language)
+
 
 def chosen_option(args):
     options: Set[Options] = args.opt
@@ -161,25 +179,32 @@ def chosen_option(args):
     dist_dir = file_directory / f'../dist'
 
     for option in options:
-        generate_protos(output_dir=dist_dir / option.name.lower(),
+        generate_protos(output_dir=dist_dir / option.output_dir,
                         proto_sources=src_directory / 'proto',
                         include=src_directory,
                         language=option.value)
 
     if Options.PY in options:
-        generate_recursive_inits(dist_dir / 'py/proto')
+        # generate inits and copy additonal files to output dir
+        generate_recursive_inits(dist_dir / Options.PY.output_dir / 'proto')
+        shutil.copy(src=src_directory / 'constants.json', dst=dist_dir / Options.PY.output_dir / 'proto')
 
-    log.info(f"Compiled proto files for option[s] {' '.join(o.name for o in options)}")
+    log.info(f"Compiled proto files for option[s] {', '.join(o.value for o in options)}")
 
 def main():
     parser = argparse.ArgumentParser()
+    choices = list(dict.fromkeys(v for o in Options for v in o.arguments)) + ['all']
+
     parser.add_argument('--opt',
-                        type=Options.from_str,
+                        type=str,
                         default='all',
-                        help='Supported options: [py] python, [j] java, [js] javascript, [cs] csharp, [all] all')
+                        choices=choices,
+                        help='Supported options: [all] all, ' + ', '.join("[{}] {}".format(*o.arguments) for o in Options))
     
-    parser.add_argument('--verbose', '-v', action='count', default=0)
+    parser.add_argument('--verbose', '-v', action='count', default=0,
+                        help='pass multiple times to increase verbosity, e.g. -vvv')
     args = parser.parse_args()
+    args.opt = Options.from_str(args.opt)
     logging.basicConfig(stream=sys.stdout, level=logging.ERROR - 10 * args.verbose, format="%(message)s")
     update_path()
     chosen_option(args)
