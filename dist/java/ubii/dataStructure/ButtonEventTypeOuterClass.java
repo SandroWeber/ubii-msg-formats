@@ -49,8 +49,6 @@ public final class ButtonEventTypeOuterClass {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -58,10 +56,6 @@ public final class ButtonEventTypeOuterClass {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static ButtonEventType forNumber(int value) {
       switch (value) {
         case 0: return UP;
@@ -132,10 +126,18 @@ public final class ButtonEventTypeOuterClass {
       "Structure*#\n\017ButtonEventType\022\006\n\002UP\020\000\022\010\n\004" +
       "DOWN\020\001b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

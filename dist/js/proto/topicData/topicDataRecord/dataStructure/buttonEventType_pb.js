@@ -1,4 +1,3 @@
-// source: proto/topicData/topicDataRecord/dataStructure/buttonEventType.proto
 /**
  * @fileoverview
  * @enhanceable
