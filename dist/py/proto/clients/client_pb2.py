@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.clients',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\x1a\'proto/processing/processingModule.proto\"\xd8\x02\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Device\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x12processing_modules\x18\x06 \x03(\x0b\x32!.ubii.processing.ProcessingModule\x12$\n\x1cis_dedicated_processing_node\x18\x07 \x01(\x08\x12\x0f\n\x07host_ip\x18\x08 \x01(\t\x12\x15\n\rmetadata_json\x18\t \x01(\t\x12)\n\x05state\x18\n \x01(\x0e\x32\x1a.ubii.clients.Client.State\"2\n\x05State\x12\n\n\x06\x41\x43TIVE\x10\x00\x12\x0c\n\x08INACTIVE\x10\x01\x12\x0f\n\x0bUNAVAILABLE\x10\x02\"4\n\nClientList\x12&\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x14.ubii.clients.Clientb\x06proto3')
+  serialized_pb=_b('\n\x1aproto/clients/client.proto\x12\x0cubii.clients\x1a\x1aproto/devices/device.proto\x1a\'proto/processing/processingModule.proto\"\xe9\x02\n\x06\x43lient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12%\n\x07\x64\x65vices\x18\x03 \x03(\x0b\x32\x14.ubii.devices.Device\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x12processing_modules\x18\x06 \x03(\x0b\x32!.ubii.processing.ProcessingModule\x12$\n\x1cis_dedicated_processing_node\x18\x07 \x01(\x08\x12\x0f\n\x07host_ip\x18\x08 \x01(\t\x12\x15\n\rmetadata_json\x18\t \x01(\t\x12)\n\x05state\x18\n \x01(\x0e\x32\x1a.ubii.clients.Client.State\x12\x0f\n\x07latency\x18\x0b \x01(\x02\"2\n\x05State\x12\n\n\x06\x41\x43TIVE\x10\x00\x12\x0c\n\x08INACTIVE\x10\x01\x12\x0f\n\x0bUNAVAILABLE\x10\x02\"4\n\nClientList\x12&\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x14.ubii.clients.Clientb\x06proto3')
   ,
   dependencies=[proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_processing_dot_processingModule__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _CLIENT_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=408,
-  serialized_end=458,
+  serialized_start=425,
+  serialized_end=475,
 )
 _sym_db.RegisterEnumDescriptor(_CLIENT_STATE)
 
@@ -131,6 +131,13 @@ _CLIENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='latency', full_name='ubii.clients.Client.latency', index=10,
+      number=11, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -145,7 +152,7 @@ _CLIENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=114,
-  serialized_end=458,
+  serialized_end=475,
 )
 
 
@@ -175,8 +182,8 @@ _CLIENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=460,
-  serialized_end=512,
+  serialized_start=477,
+  serialized_end=529,
 )
 
 _CLIENT.fields_by_name['devices'].message_type = proto_dot_devices_dot_device__pb2._DEVICE

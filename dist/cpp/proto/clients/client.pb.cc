@@ -98,6 +98,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::clients::Client, host_ip_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::clients::Client, metadata_json_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::clients::Client, state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::clients::Client, latency_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::clients::ClientList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -107,7 +108,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::clients::Client)},
-  { 15, -1, sizeof(::ubii::clients::ClientList)},
+  { 16, -1, sizeof(::ubii::clients::ClientList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -138,7 +139,7 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\032proto/clients/client.proto\022\014ubii.clien"
       "ts\032\032proto/devices/device.proto\032\'proto/pr"
-      "ocessing/processingModule.proto\"\330\002\n\006Clie"
+      "ocessing/processingModule.proto\"\351\002\n\006Clie"
       "nt\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030"
       "\003 \003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003("
       "\t\022\023\n\013description\030\005 \001(\t\022=\n\022processing_mod"
@@ -146,12 +147,13 @@ void AddDescriptorsImpl() {
       "odule\022$\n\034is_dedicated_processing_node\030\007 "
       "\001(\010\022\017\n\007host_ip\030\010 \001(\t\022\025\n\rmetadata_json\030\t "
       "\001(\t\022)\n\005state\030\n \001(\0162\032.ubii.clients.Client"
-      ".State\"2\n\005State\022\n\n\006ACTIVE\020\000\022\014\n\010INACTIVE\020"
-      "\001\022\017\n\013UNAVAILABLE\020\002\"4\n\nClientList\022&\n\010elem"
-      "ents\030\001 \003(\0132\024.ubii.clients.Clientb\006proto3"
+      ".State\022\017\n\007latency\030\013 \001(\002\"2\n\005State\022\n\n\006ACTI"
+      "VE\020\000\022\014\n\010INACTIVE\020\001\022\017\n\013UNAVAILABLE\020\002\"4\n\nC"
+      "lientList\022&\n\010elements\030\001 \003(\0132\024.ubii.clien"
+      "ts.Clientb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 520);
+      descriptor, 537);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/clients/client.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fdevices_2fdevice_2eproto::AddDescriptors();
@@ -216,6 +218,7 @@ const int Client::kIsDedicatedProcessingNodeFieldNumber;
 const int Client::kHostIpFieldNumber;
 const int Client::kMetadataJsonFieldNumber;
 const int Client::kStateFieldNumber;
+const int Client::kLatencyFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Client::Client()
@@ -253,8 +256,8 @@ Client::Client(const Client& from)
     metadata_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.metadata_json_);
   }
   ::memcpy(&is_dedicated_processing_node_, &from.is_dedicated_processing_node_,
-    static_cast<size_t>(reinterpret_cast<char*>(&state_) -
-    reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
+    static_cast<size_t>(reinterpret_cast<char*>(&latency_) -
+    reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(latency_));
   // @@protoc_insertion_point(copy_constructor:ubii.clients.Client)
 }
 
@@ -265,8 +268,8 @@ void Client::SharedCtor() {
   host_ip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   metadata_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&is_dedicated_processing_node_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&state_) -
-      reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
+      reinterpret_cast<char*>(&latency_) -
+      reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(latency_));
 }
 
 Client::~Client() {
@@ -311,8 +314,8 @@ void Client::Clear() {
   host_ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   metadata_json_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&is_dedicated_processing_node_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&state_) -
-      reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(state_));
+      reinterpret_cast<char*>(&latency_) -
+      reinterpret_cast<char*>(&is_dedicated_processing_node_)) + sizeof(latency_));
   _internal_metadata_.Clear();
 }
 
@@ -476,6 +479,20 @@ bool Client::MergePartialFromCodedStream(
         break;
       }
 
+      // float latency = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(93u /* 93 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &latency_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -591,6 +608,11 @@ void Client::SerializeWithCachedSizes(
       10, this->state(), output);
   }
 
+  // float latency = 11;
+  if (this->latency() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(11, this->latency(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -697,6 +719,11 @@ void Client::SerializeWithCachedSizes(
       10, this->state(), target);
   }
 
+  // float latency = 11;
+  if (this->latency() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(11, this->latency(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -790,6 +817,11 @@ size_t Client::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->state());
   }
 
+  // float latency = 11;
+  if (this->latency() != 0) {
+    total_size += 1 + 4;
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -846,6 +878,9 @@ void Client::MergeFrom(const Client& from) {
   if (from.state() != 0) {
     set_state(from.state());
   }
+  if (from.latency() != 0) {
+    set_latency(from.latency());
+  }
 }
 
 void Client::CopyFrom(const ::google::protobuf::Message& from) {
@@ -887,6 +922,7 @@ void Client::InternalSwap(Client* other) {
     GetArenaNoVirtual());
   swap(is_dedicated_processing_node_, other->is_dedicated_processing_node_);
   swap(state_, other->state_);
+  swap(latency_, other->latency_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

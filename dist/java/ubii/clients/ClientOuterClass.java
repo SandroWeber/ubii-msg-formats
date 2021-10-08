@@ -148,6 +148,11 @@ public final class ClientOuterClass {
      * <code>.ubii.clients.Client.State state = 10;</code>
      */
     ubii.clients.ClientOuterClass.Client.State getState();
+
+    /**
+     * <code>float latency = 11;</code>
+     */
+    float getLatency();
   }
   /**
    * Protobuf type {@code ubii.clients.Client}
@@ -172,6 +177,7 @@ public final class ClientOuterClass {
       hostIp_ = "";
       metadataJson_ = "";
       state_ = 0;
+      latency_ = 0F;
     }
 
     @java.lang.Override
@@ -264,6 +270,11 @@ public final class ClientOuterClass {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
+              break;
+            }
+            case 93: {
+
+              latency_ = input.readFloat();
               break;
             }
             default: {
@@ -710,6 +721,15 @@ public final class ClientOuterClass {
       return result == null ? ubii.clients.ClientOuterClass.Client.State.UNRECOGNIZED : result;
     }
 
+    public static final int LATENCY_FIELD_NUMBER = 11;
+    private float latency_;
+    /**
+     * <code>float latency = 11;</code>
+     */
+    public float getLatency() {
+      return latency_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -753,6 +773,9 @@ public final class ClientOuterClass {
       }
       if (state_ != ubii.clients.ClientOuterClass.Client.State.ACTIVE.getNumber()) {
         output.writeEnum(10, state_);
+      }
+      if (latency_ != 0F) {
+        output.writeFloat(11, latency_);
       }
       unknownFields.writeTo(output);
     }
@@ -802,6 +825,10 @@ public final class ClientOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, state_);
       }
+      if (latency_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(11, latency_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -837,6 +864,10 @@ public final class ClientOuterClass {
       result = result && getMetadataJson()
           .equals(other.getMetadataJson());
       result = result && state_ == other.state_;
+      result = result && (
+          java.lang.Float.floatToIntBits(getLatency())
+          == java.lang.Float.floatToIntBits(
+              other.getLatency()));
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -875,6 +906,9 @@ public final class ClientOuterClass {
       hash = (53 * hash) + getMetadataJson().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      hash = (37 * hash) + LATENCY_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLatency());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1038,6 +1072,8 @@ public final class ClientOuterClass {
 
         state_ = 0;
 
+        latency_ = 0F;
+
         return this;
       }
 
@@ -1096,6 +1132,7 @@ public final class ClientOuterClass {
         result.hostIp_ = hostIp_;
         result.metadataJson_ = metadataJson_;
         result.state_ = state_;
+        result.latency_ = latency_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1232,6 +1269,9 @@ public final class ClientOuterClass {
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (other.getLatency() != 0F) {
+          setLatency(other.getLatency());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2252,6 +2292,32 @@ public final class ClientOuterClass {
         onChanged();
         return this;
       }
+
+      private float latency_ ;
+      /**
+       * <code>float latency = 11;</code>
+       */
+      public float getLatency() {
+        return latency_;
+      }
+      /**
+       * <code>float latency = 11;</code>
+       */
+      public Builder setLatency(float value) {
+        
+        latency_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float latency = 11;</code>
+       */
+      public Builder clearLatency() {
+        
+        latency_ = 0F;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3108,7 +3174,7 @@ public final class ClientOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032proto/clients/client.proto\022\014ubii.clien" +
       "ts\032\032proto/devices/device.proto\032\'proto/pr" +
-      "ocessing/processingModule.proto\"\330\002\n\006Clie" +
+      "ocessing/processingModule.proto\"\351\002\n\006Clie" +
       "nt\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\007devices\030" +
       "\003 \003(\0132\024.ubii.devices.Device\022\014\n\004tags\030\004 \003(" +
       "\t\022\023\n\013description\030\005 \001(\t\022=\n\022processing_mod" +
@@ -3116,9 +3182,10 @@ public final class ClientOuterClass {
       "odule\022$\n\034is_dedicated_processing_node\030\007 " +
       "\001(\010\022\017\n\007host_ip\030\010 \001(\t\022\025\n\rmetadata_json\030\t " +
       "\001(\t\022)\n\005state\030\n \001(\0162\032.ubii.clients.Client" +
-      ".State\"2\n\005State\022\n\n\006ACTIVE\020\000\022\014\n\010INACTIVE\020" +
-      "\001\022\017\n\013UNAVAILABLE\020\002\"4\n\nClientList\022&\n\010elem" +
-      "ents\030\001 \003(\0132\024.ubii.clients.Clientb\006proto3"
+      ".State\022\017\n\007latency\030\013 \001(\002\"2\n\005State\022\n\n\006ACTI" +
+      "VE\020\000\022\014\n\010INACTIVE\020\001\022\017\n\013UNAVAILABLE\020\002\"4\n\nC" +
+      "lientList\022&\n\010elements\030\001 \003(\0132\024.ubii.clien" +
+      "ts.Clientb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3139,7 +3206,7 @@ public final class ClientOuterClass {
     internal_static_ubii_clients_Client_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_clients_Client_descriptor,
-        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", "State", });
+        new java.lang.String[] { "Id", "Name", "Devices", "Tags", "Description", "ProcessingModules", "IsDedicatedProcessingNode", "HostIp", "MetadataJson", "State", "Latency", });
     internal_static_ubii_clients_ClientList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_clients_ClientList_fieldAccessorTable = new

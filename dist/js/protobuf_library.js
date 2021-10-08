@@ -14968,7 +14968,8 @@ proto.ubii.clients.Client.toObject = function(includeInstance, msg) {
     isDedicatedProcessingNode: jspb.Message.getFieldWithDefault(msg, 7, false),
     hostIp: jspb.Message.getFieldWithDefault(msg, 8, ""),
     metadataJson: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    state: jspb.Message.getFieldWithDefault(msg, 10, 0)
+    state: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    latency: +jspb.Message.getFieldWithDefault(msg, 11, 0.0)
   };
 
   if (includeInstance) {
@@ -15046,6 +15047,10 @@ proto.ubii.clients.Client.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = /** @type {!proto.ubii.clients.Client.State} */ (reader.readEnum());
       msg.setState(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setLatency(value);
       break;
     default:
       reader.skipField();
@@ -15145,6 +15150,13 @@ proto.ubii.clients.Client.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       10,
+      f
+    );
+  }
+  f = message.getLatency();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      11,
       f
     );
   }
@@ -15355,6 +15367,21 @@ proto.ubii.clients.Client.prototype.getState = function() {
 /** @param {!proto.ubii.clients.Client.State} value */
 proto.ubii.clients.Client.prototype.setState = function(value) {
   jspb.Message.setProto3EnumField(this, 10, value);
+};
+
+
+/**
+ * optional float latency = 11;
+ * @return {number}
+ */
+proto.ubii.clients.Client.prototype.getLatency = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 11, 0.0));
+};
+
+
+/** @param {number} value */
+proto.ubii.clients.Client.prototype.setLatency = function(value) {
+  jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 

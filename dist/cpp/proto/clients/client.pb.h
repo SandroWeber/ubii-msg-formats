@@ -334,6 +334,12 @@ class Client : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::ubii::clients::Client_State state() const;
   void set_state(::ubii::clients::Client_State value);
 
+  // float latency = 11;
+  void clear_latency();
+  static const int kLatencyFieldNumber = 11;
+  float latency() const;
+  void set_latency(float value);
+
   // @@protoc_insertion_point(class_scope:ubii.clients.Client)
  private:
 
@@ -348,6 +354,7 @@ class Client : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::internal::ArenaStringPtr metadata_json_;
   bool is_dedicated_processing_node_;
   int state_;
+  float latency_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fclients_2fclient_2eproto::TableStruct;
 };
@@ -885,6 +892,20 @@ inline void Client::set_state(::ubii::clients::Client_State value) {
   
   state_ = value;
   // @@protoc_insertion_point(field_set:ubii.clients.Client.state)
+}
+
+// float latency = 11;
+inline void Client::clear_latency() {
+  latency_ = 0;
+}
+inline float Client::latency() const {
+  // @@protoc_insertion_point(field_get:ubii.clients.Client.latency)
+  return latency_;
+}
+inline void Client::set_latency(float value) {
+  
+  latency_ = value;
+  // @@protoc_insertion_point(field_set:ubii.clients.Client.latency)
 }
 
 // -------------------------------------------------------------------
