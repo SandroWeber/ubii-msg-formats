@@ -2,9 +2,6 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "argparse",
-    "mypy",
-    "mypy-protobuf",
 ]
 build-backend = "setuptools.build_meta"
 

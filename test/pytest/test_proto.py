@@ -3,7 +3,7 @@ import re
 
 from typing import Dict, TypedDict, Any
 import pytest
-from ubii.util.proto import Translators, Translator, Message
+from ubii.custom.proto import Translators, Translator, Message
 
 
 GENERATE_TEST_DATA = False

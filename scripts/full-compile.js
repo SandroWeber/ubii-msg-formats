@@ -1,14 +1,12 @@
 const childProcess = require('child_process');
 const path = require('path');
 
-let pythonExecutable = 'venv/Scripts/python';
 
 let compileProtoPython = () => {
   return new Promise((resolve, reject) => {
     // compile .proto via python
-    let pathProtoCompile = path.join(__dirname, 'proto-compile.py');
-    console.info(pathProtoCompile);
-    let processPythonProtoCompile = childProcess.spawn(pythonExecutable, [pathProtoCompile].concat(process.argv.slice(2)));
+    let protocompilescript = 'proto-compile.py';
+    let processPythonProtoCompile = childProcess.spawn(protocompilescript, process.argv.slice(2), {env: process.env});
 
     // Takes stdout data from script which executed
     // with arguments and send this data to res object
@@ -20,17 +18,25 @@ let compileProtoPython = () => {
       console.error(data.toString());
     });
 
+    processPythonProtoCompile.on('error', function(err) {
+      if (err.code === 'ENOENT') {
+        console.error(`${protocompilescript} not found in $PATH for your current python interpreter?`)
+      }
+      console.error(`Node error when calling ${protocompilescript}: ` + err);
+      return reject(err)
+    });
+
     processPythonProtoCompile.on('close', (code) => {
-      console.log(`python .proto compile process close all stdio with code ${code}`);
+      console.log(`proto-compile process close all stdio with code ${code}`);
       if (code === 0) {
         return resolve(code);
-      } else if (code === 9009) {
-        console.log(`Check if python executable ${pythonExecutable} and python script ${pathProtoCompile} are correct.`);
-        return reject(code);
       } else {
         return reject(code);
       }
     });
+  }).catch(error => {
+    console.error(`Proto Compile Python rejected with error ${error}`)
+    console.error(process.env.PATH)
   });
 };
 
@@ -52,6 +58,8 @@ let compileProtobufJS = () => {
         return resolve();
       }
     });
+  }).catch(error => {
+    console.error(`Static Javascript Compile rejected with error ${error}`)
   });
 };
 
@@ -73,20 +81,21 @@ let compileConstants = () => {
         return resolve();
       }
     });
+  }).catch(error => {
+    console.error(`Constants Compile rejected with error ${error}`)
   });
 };
 
 (async function () {
-  try {
-    // compile .proto files via python
-    await compileProtoPython();
+  // compile .proto files via python
+  let protoPython = compileProtoPython();
+  let protoStatic = compileProtobufJS();
+  let protoConstants = compileConstants();
 
-    // compile protobuf.js
-    await compileProtobufJS();
-
-    // compile constants
-    await compileConstants();
-  } catch (error) {
-    console.error(error);
-  }
+  // compile with python
+  await protoPython;
+  // compile protobuf.js
+  await protoStatic;
+  // compile constants
+  await protoConstants;
 })();

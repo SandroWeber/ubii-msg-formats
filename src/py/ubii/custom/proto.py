@@ -15,7 +15,7 @@ from google.protobuf.json_format import Parse, ParseDict, MessageToDict, Message
 from google.protobuf.message import Message
 
 from typing import Union, Dict, Any, Generic, TypeVar, Type, overload, List
-from ubii.proto import *
+from proto import *
 from ubii.util.constants import MSG_TYPES
 
 log = logging.getLogger(__name__)

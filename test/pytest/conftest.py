@@ -3,9 +3,20 @@ import pytest
 import json
 from pathlib import Path
 
+from _pytest.config.argparsing import Parser
+
+
+def pytest_addoption(parser: Parser, pluginmanager):
+    parser.addini(name='data_dir',
+                  default='./data',
+                  help='Relative path to directory with test data.')
+
 @pytest.fixture(scope='session')
-def data_dir() -> Path:
-    yield Path(__file__).parent / 'data'
+def data_dir(pytestconfig) -> Path:
+    data_dir_config_value = pytestconfig.getini('data_dir')
+    data_dir = pytestconfig.rootpath / data_dir_config_value
+    assert data_dir.exists(), f"Wrong data dir: {data_dir.resolve()} does not exist."
+    yield data_dir
 
 
 def write_json(file, data, indent=4, sort_keys=True, **kwargs):

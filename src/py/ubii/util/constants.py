@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from warnings import warn
 import json
 from importlib.resources import read_text as _read_text_resource
-import ubii.proto as proto
+import proto
 from . import diff_dicts
 
 
