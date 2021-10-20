@@ -2,6 +2,7 @@
 requires = [
     "setuptools>=42",
     "wheel",
+    "ubii-msg-compiler @ git+https://github.com/saggitar/ubii-msg-compiler.git@v0.0.2-alpha",
 ]
 build-backend = "setuptools.build_meta"
 
@@ -10,3 +11,4 @@ minversion = "6.0"
 testpaths = [
     "test/pytest",
 ]
+

@@ -5,7 +5,7 @@ const path = require('path');
 let compileProtoPython = () => {
   return new Promise((resolve, reject) => {
     // compile .proto via python
-    let protocompilescript = 'proto-compile.py';
+    let protocompilescript = 'proto_compile.py';
     let processPythonProtoCompile = childProcess.spawn(protocompilescript, process.argv.slice(2), {env: process.env});
 
     // Takes stdout data from script which executed
