@@ -3,13 +3,12 @@ import pytest
 import json
 from pathlib import Path
 
-from _pytest.config.argparsing import Parser
 
-
-def pytest_addoption(parser: Parser, pluginmanager):
+def pytest_addoption(parser, pluginmanager):
     parser.addini(name='data_dir',
                   default='./data',
                   help='Relative path to directory with test data.')
+
 
 @pytest.fixture(scope='session')
 def data_dir(pytestconfig) -> Path:

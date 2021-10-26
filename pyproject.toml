@@ -2,13 +2,10 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "ubii-msg-compiler @ git+https://github.com/saggitar/ubii-msg-compiler.git@v0.0.2-alpha",
+    "setuptools_scm>=6.2",
+    "ubii-msg-compiler[mypy] @ git+https://github.com/saggitar/ubii-msg-compiler.git@develop",
 ]
+
 build-backend = "setuptools.build_meta"
 
-[tool.pytest.ini_options]
-minversion = "6.0"
-testpaths = [
-    "test/pytest",
-]
-
+[tool.setuptools_scm]
