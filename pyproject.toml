@@ -2,7 +2,6 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "setuptools_scm>=6.2",
     "ubii-msg-compiler[mypy] @ git+https://github.com/saggitar/ubii-msg-compiler.git@develop",
 ]
 
