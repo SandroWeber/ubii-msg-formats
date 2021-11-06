@@ -1,0 +1,39 @@
+syntax = "proto3";
+package ubii.proto.services;
+
+import "ubii/proto/general/success.proto";
+import "ubii/proto/general/error.proto";
+import "ubii/proto/dataStructure/lists.proto";
+import "ubii/proto/clients/client.proto";
+import "ubii/proto/devices/device.proto";
+import "ubii/proto/devices/topicMux.proto";
+import "ubii/proto/devices/topicDemux.proto";
+import "ubii/proto/servers/server.proto";
+import "ubii/proto/sessions/session.proto";
+import "ubii/proto/services/service.proto";
+import "ubii/proto/processing/processingModule.proto";
+import "ubii/proto/processing/lockstepProcessing.proto";
+
+message ServiceReply {
+    oneof type {
+        ubii.proto.general.Success success = 1;
+        ubii.proto.general.Error error = 2;
+        ubii.proto.clients.Client client = 3;
+        ubii.proto.devices.Device device = 4;
+        ubii.proto.servers.Server server = 5;
+        ubii.proto.sessions.Session session = 6;
+        ubii.proto.sessions.SessionList session_list = 7;
+        ubii.proto.processing.ProcessingModule processing_module = 8;
+        ubii.proto.processing.ProcessingModuleList processing_module_list = 9;
+        ubii.proto.dataStructure.StringList string_list = 10;
+        ubii.proto.devices.TopicMux topic_mux = 11;
+        ubii.proto.devices.TopicMuxList topic_mux_list = 12;
+        ubii.proto.devices.TopicDemux topic_demux = 13;
+        ubii.proto.devices.TopicDemuxList topic_demux_list = 14;
+        ubii.proto.clients.ClientList client_list = 15;
+        ubii.proto.devices.DeviceList device_list = 16;
+        ubii.proto.services.Service service = 17;
+        ubii.proto.services.ServiceList service_list = 18;
+        ubii.proto.processing.LockstepProcessingReply lockstep_processing_reply = 19;
+    }
+}

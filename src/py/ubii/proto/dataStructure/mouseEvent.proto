@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ubii.proto.dataStructure;
+
+import "ubii/proto/dataStructure/buttonEventType.proto";
+
+message MouseEvent {
+    ubii.proto.dataStructure.ButtonEventType type = 1;
+    int32 button = 2;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+package ubii.proto.services;
+
+import "ubii/proto/clients/client.proto";
+import "ubii/proto/devices/device.proto";
+import "ubii/proto/devices/topicMux.proto";
+import "ubii/proto/devices/topicDemux.proto";
+import "ubii/proto/sessions/session.proto";
+import "ubii/proto/services/request/topicSubscription.proto";
+import "ubii/proto/processing/processingModule.proto";
+import "ubii/proto/processing/lockstepProcessing.proto";
+
+message ServiceRequest {
+    string topic = 1;
+    oneof type {
+        ubii.proto.clients.Client client = 2;
+        ubii.proto.devices.Device device = 3;
+        ubii.proto.services.request.TopicSubscription topic_subscription = 4;
+        ubii.proto.sessions.Session session = 5;
+        ubii.proto.sessions.SessionList session_list = 6;
+        ubii.proto.processing.ProcessingModule processing_module = 7;
+        ubii.proto.processing.ProcessingModuleList processing_module_list = 8;
+        ubii.proto.devices.TopicMux topic_mux = 9;
+        ubii.proto.devices.TopicMuxList topic_mux_list = 10;
+        ubii.proto.devices.TopicDemux topic_demux = 11;
+        ubii.proto.devices.TopicDemuxList topic_demux_list = 12;
+        ubii.proto.clients.ClientList client_list = 13;
+        ubii.proto.devices.DeviceList device_list = 14;
+        ubii.proto.processing.LockstepProcessingRequest lockstep_processing_request = 15;
+    }
+}
