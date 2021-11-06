@@ -1,9 +1,9 @@
 import dataclasses
+import importlib
+import logging
 from dataclasses import dataclass
 from warnings import warn
-import json
-from importlib.resources import read_text as _read_text_resource
-import proto
+import ubii.proto
 from . import diff_dicts
 
 
@@ -156,6 +156,11 @@ class _MsgTypes:
     TOPIC_DATA_RECORD: str = 'ubii.topicData.TopicDataRecord'
     TOPIC_DATA_RECORD_LIST: str = 'ubii.topicData.TopicDataRecordList'
     TOPIC_DATA_TIMESTAMP: str = 'ubii.topicData.Timestamp'
+    DATASTRUCTURE_BOOL: str = "bool"
+    DATASTRUCTURE_INT32: str = "int32"
+    DATASTRUCTURE_STRING: str = "string"
+    DATASTRUCTURE_FLOAT: str =  "float"
+    DATASTRUCTURE_DOUBLE: str = "double"
     DATASTRUCTURE_BOOL_LIST: str = 'ubii.dataStructure.BoolList'
     DATASTRUCTURE_INT32_LIST: str = 'ubii.dataStructure.Int32List'
     DATASTRUCTURE_STRING_LIST: str = 'ubii.dataStructure.StringList'
@@ -191,20 +196,23 @@ class _MsgTypes:
 MSG_TYPES = _MsgTypes()
 
 
-def _check_constants():
+def check_constants(dict_data: dict):
     """
-    Loads 'constants.json' (additional file in the ubi-msg-formats python package) and checks the values of
-    constants defined in the .json file vs. constants defined in this module.
+    compares a dictionary vs. constants defined in this module.
+    should be used to validate that this module is up to date by comparing it against the `constants` retrieved
+    from the master node.
 
-    Issues a warning if there are mismatches.
+    Issues a warning containing a dictionary diff if there are mismatches.
+
+    :param dict_data: dictionary (should contain the same values as combined in this module)
+    :return: True if no difference is found, false otherwise
+
     """
-    __constants__ = json.loads(_read_text_resource(proto, "constants.json"))
-    __current__ = {k: dataclasses.asdict(v)
-                   for k, v in globals().items() if dataclasses.is_dataclass(v) and not isinstance(v, type)}
+    current = {k: dataclasses.asdict(v)
+               for k, v in globals().items() if dataclasses.is_dataclass(v) and not isinstance(v, type)}
 
-    diff = diff_dicts(compare=__current__, expected=__constants__, fromfile=__name__, tofile=str(proto))
+    diff = diff_dicts(compare=current, expected=dict_data, fromfile=__name__, tofile=str(ubii.proto))
     if diff:
-        warn(f"Constants mismatch: \n{diff}")
+        warn("Constants mismatch: {}".format('\n'.join(diff)))
 
-
-_check_constants()
+    return not diff
