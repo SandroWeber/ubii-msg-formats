@@ -2,7 +2,7 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "ubii-msg-compiler[mypy] @ git+https://github.com/saggitar/ubii-msg-compiler.git@develop",
+    "ubii-msg-compiler[mypy,protoplus]",
 ]
 
 build-backend = "setuptools.build_meta"

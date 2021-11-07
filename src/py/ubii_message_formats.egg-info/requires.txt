@@ -1,0 +1,5 @@
+protobuf
+proto-plus
+
+[compiler]
+ubii-msg-compiler[mypy,protoplus]
