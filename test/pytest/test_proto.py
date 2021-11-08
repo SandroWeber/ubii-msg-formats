@@ -5,9 +5,7 @@ from itertools import product
 from typing import Dict, TypedDict, Any
 import pytest
 from ubii.custom.proto import Translators, Translator, Message
-from proto.message import Message as ProtoPlusMessage
-from ubii.custom.proto_plus import convert_protobuf_to_proto_plus
-
+from ubii.util import import_type
 
 GENERATE_TEST_DATA = False
 
@@ -23,7 +21,6 @@ class Data:
     translator: Translator
     test_data: TestData
     message: Message
-    protoplus: ProtoPlusMessage
 
 
 translators: Dict[str, Translator] = dataclasses.asdict(Translators)
@@ -32,7 +29,7 @@ translators: Dict[str, Translator] = dataclasses.asdict(Translators)
 @pytest.fixture
 def data(get_json_data, write_json_data, make_file, request):
     msg_type, use_protoplus = request.param
-    translator = translators.get(msg_type)
+    msg_type = import_type(msg_type)
 
     if GENERATE_TEST_DATA:
         file = make_file(f"{msg_type.lower()}.json")
@@ -52,7 +49,6 @@ def data(get_json_data, write_json_data, make_file, request):
 
         yield Data(translator=translator,
                    message=message,
-                   protoplus=use_protoplus,
                    test_data=data)
 
 

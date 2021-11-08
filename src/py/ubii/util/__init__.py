@@ -23,7 +23,7 @@ def import_type(data_type):
     The directory structure determines python package names see
     https://developers.google.com/protocol-buffers/docs/reference/python-generated#package
 
-    See the documentation of the ubii-msg-compile at https://github.com/saggitar/ubii-msg-compiler
+    See the documentation of the ubii-msg-compiler at https://github.com/saggitar/ubii-msg-compiler
     for more information about updating the .proto files to generate a different package structure.
 
     :param datatype: Ubii data type, starting with "ubii."
