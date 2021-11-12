@@ -2,7 +2,7 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "ubii-msg-compiler[mypy,protoplus] >= 0.0.2.rc0.post5",
+    "ubii-msg-compiler[mypy,protoplus] >= 0.0.3a0",
 ]
 
 build-backend = "setuptools.build_meta"
