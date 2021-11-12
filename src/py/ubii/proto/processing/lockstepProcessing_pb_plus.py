@@ -6,11 +6,29 @@ import proto
 import proto.message
 import ubii.proto.topicData.topicDataRecord_pb_plus
 
+
 class LockstepProcessingRequest(proto.message.Message):
-    processing_module_ids = proto.RepeatedField(proto.STRING, number=1)
-    records = proto.RepeatedField(ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecord, number=2)
-    delta_time_ms = proto.Field(proto.INT32, number=3)
+    processing_module_ids = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    records = proto.RepeatedField(
+        ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecord,
+        number=2,
+    )
+    delta_time_ms = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+
 
 class LockstepProcessingReply(proto.message.Message):
-    processing_module_ids = proto.RepeatedField(proto.STRING, number=1)
-    records = proto.RepeatedField(ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecord, number=2)
+    processing_module_ids = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    records = proto.RepeatedField(
+        ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecord,
+        number=2,
+    )
+

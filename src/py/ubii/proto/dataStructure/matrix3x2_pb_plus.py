@@ -5,10 +5,30 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class Matrix3x2(proto.message.Message):
-    m00 = proto.Field(proto.DOUBLE, number=1)
-    m01 = proto.Field(proto.DOUBLE, number=2)
-    m10 = proto.Field(proto.DOUBLE, number=3)
-    m11 = proto.Field(proto.DOUBLE, number=4)
-    m20 = proto.Field(proto.DOUBLE, number=5)
-    m21 = proto.Field(proto.DOUBLE, number=6)
+    m00 = proto.Field(
+        proto.DOUBLE,
+        number=1,
+    )
+    m01 = proto.Field(
+        proto.DOUBLE,
+        number=2,
+    )
+    m10 = proto.Field(
+        proto.DOUBLE,
+        number=3,
+    )
+    m11 = proto.Field(
+        proto.DOUBLE,
+        number=4,
+    )
+    m20 = proto.Field(
+        proto.DOUBLE,
+        number=5,
+    )
+    m21 = proto.Field(
+        proto.DOUBLE,
+        number=6,
+    )
+

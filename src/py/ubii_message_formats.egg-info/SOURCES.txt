@@ -101,5 +101,6 @@ src/py/ubii/util/constants.py
 src/py/ubii_message_formats.egg-info/PKG-INFO
 src/py/ubii_message_formats.egg-info/SOURCES.txt
 src/py/ubii_message_formats.egg-info/dependency_links.txt
+src/py/ubii_message_formats.egg-info/proto_package.txt
 src/py/ubii_message_formats.egg-info/requires.txt
 src/py/ubii_message_formats.egg-info/top_level.txt

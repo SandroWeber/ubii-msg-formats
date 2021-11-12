@@ -5,16 +5,34 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class Image2D(proto.message.Message):
     class DataFormat(proto.Enum):
         GRAY8 = 0
         RGB8 = 1
         RGBA8 = 2
 
-    width = proto.Field(proto.INT32, number=1)
-    height = proto.Field(proto.INT32, number=2)
-    data_format = proto.Field(DataFormat, number=3)
-    data = proto.Field(proto.BYTES, number=4)
+    width = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    height = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    data_format = proto.Field(
+        DataFormat,
+        number=3,
+    )
+    data = proto.Field(
+        proto.BYTES,
+        number=4,
+    )
+
 
 class Image2DList(proto.message.Message):
-    elements = proto.RepeatedField(Image2D, number=1)
+    elements = proto.RepeatedField(
+        Image2D,
+        number=1,
+    )
+

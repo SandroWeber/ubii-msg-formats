@@ -1,13 +1,16 @@
-import dataclasses
 import re
 from itertools import product
+from typing import Dict, TypedDict, Any, Type, overload, List
+from collections import namedtuple
 
-from typing import Dict, TypedDict, Any
 import pytest
-from ubii.custom.proto import Translators, Translator, Message
-from ubii.util import import_type
+from google.protobuf.wrappers_pb2 import DESCRIPTOR as wrapper_desc
 
-GENERATE_TEST_DATA = False
+from ubii.custom.proto import Translator, ITranslator, GPM, CONVERTIBLE
+from ubii.util import import_type, MSG_TYPES
+from proto.message import Message as ProtoPlusMessage
+
+GENERATE_TEST_DATA = True
 
 
 class TestData(TypedDict):
@@ -16,20 +19,50 @@ class TestData(TypedDict):
     json: str
 
 
-@dataclasses.dataclass
-class Data:
-    translator: Translator
-    test_data: TestData
-    message: Message
-
-
-translators: Dict[str, Translator] = dataclasses.asdict(Translators)
+Data = namedtuple('Data', ['message', 'translator', 'test_data'])
 
 
 @pytest.fixture
 def data(get_json_data, write_json_data, make_file, request):
     msg_type, use_protoplus = request.param
-    msg_type = import_type(msg_type)
+    msg: Type[ProtoPlusMessage] = import_type(getattr(MSG_TYPES, msg_type))
+
+    if use_protoplus:
+        # noinspection PyPep8Naming
+        class translator(ITranslator):
+            _protopluswrapper = msg
+
+            @classmethod
+            def to_dict(cls, message: GPM, *args, **kwargs):
+                return cls._protopluswrapper.to_dict(cls._protopluswrapper(message), *args, **kwargs)
+
+            @classmethod
+            def to_json(cls, message: GPM, *args, **kwargs):
+                return cls._protopluswrapper.to_json(cls._protopluswrapper(message), *args, **kwargs)
+
+            @classmethod
+            def from_bytes(cls, obj, *args, **kwargs) -> GPM:
+                return cls._protopluswrapper.pb(cls._protopluswrapper.deserialize(obj))
+
+            @classmethod
+            def from_json(cls, obj, *args, **kwargs) -> GPM:
+                return cls._protopluswrapper.pb(cls._protopluswrapper.from_json(obj, *args, **kwargs))
+
+            @classmethod
+            def from_dict(cls, obj, *args, **kwargs) -> GPM:
+                return cls._protopluswrapper.pb(cls._protopluswrapper(mapping=obj, *args, **kwargs))
+
+            @classmethod
+            def create(cls, *args, **kwargs) -> GPM:
+                return cls._protopluswrapper.pb(cls._protopluswrapper(*args, **kwargs))
+
+            @classmethod
+            def validate(cls, message):
+                raise NotImplementedError("Validation is not supported")
+
+
+    else:
+        translator = Translator.get_type(type(msg.pb(msg())))
 
     if GENERATE_TEST_DATA:
         file = make_file(f"{msg_type.lower()}.json")
@@ -42,10 +75,11 @@ def data(get_json_data, write_json_data, make_file, request):
         write_json_data(file, data)
 
     test_data = get_json_data(msg_type)
+
     for path, data in test_data.items():
         data['bytes'] = data['bytes'].encode('utf-8')
-        message: Message = translator.proto()
-        message.ParseFromString(data['bytes'])
+        message = translator.create()
+        message.FromString(data['bytes'])
 
         yield Data(translator=translator,
                    message=message,
@@ -53,12 +87,13 @@ def data(get_json_data, write_json_data, make_file, request):
 
 
 def testparams():
-    for p in product(translators, [True, False]):
+    for p in product(MSG_TYPES, [True, False]):
         msg_type, use_protoplus = p
-        yield pytest.param(p, id=f"{msg_type}, {'protoplus' if use_protoplus else 'custom'}")
+        yield pytest.param(p,
+                           id=f"{msg_type}, {'protoplus' if use_protoplus else 'custom'}")
 
 
-@pytest.mark.parametrize('data', testparams(), indirect=True)
+@pytest.mark.parametrize('data', list(testparams()), indirect=True)
 class TestTranslators:
 
     def test_from_bytes(self, data: Data):
@@ -89,7 +124,10 @@ class TestTranslators:
         test_dict: dict = data.test_data['dict']
         assert data.message == data.translator.create(**test_dict)
 
-    def test_validate(self, data: Data):
+    def test_validate(self, data: Data, request):
+        if 'protoplus' in request.node.name:
+            pytest.xfail("Validation is not supported for proto plus")
+
         validate = data.translator.validate
 
         assert data.message == validate(data.message)

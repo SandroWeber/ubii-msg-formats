@@ -5,7 +5,18 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class Vector3(proto.message.Message):
-    x = proto.Field(proto.DOUBLE, number=1)
-    y = proto.Field(proto.DOUBLE, number=2)
-    z = proto.Field(proto.DOUBLE, number=3)
+    x = proto.Field(
+        proto.DOUBLE,
+        number=1,
+    )
+    y = proto.Field(
+        proto.DOUBLE,
+        number=2,
+    )
+    z = proto.Field(
+        proto.DOUBLE,
+        number=3,
+    )
+

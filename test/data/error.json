@@ -1,9 +1,9 @@
 {
-    "bytes": "\n\u000berror title\u0012\rerror message\u001a\u000berror stack",
+    "bytes": "",
     "dict": {
-        "message": "error message",
-        "stack": "error stack",
-        "title": "error title"
+        "message": "",
+        "stack": "",
+        "title": ""
     },
-    "json": "{\n  \"title\": \"error title\",\n  \"message\": \"error message\",\n  \"stack\": \"error stack\"\n}"
+    "json": "{\n  \"title\": \"\",\n  \"message\": \"\",\n  \"stack\": \"\"\n}"
 }

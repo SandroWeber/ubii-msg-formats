@@ -5,12 +5,38 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class Vector8(proto.message.Message):
-    v0 = proto.Field(proto.DOUBLE, number=1)
-    v1 = proto.Field(proto.DOUBLE, number=2)
-    v2 = proto.Field(proto.DOUBLE, number=3)
-    v3 = proto.Field(proto.DOUBLE, number=4)
-    v4 = proto.Field(proto.DOUBLE, number=5)
-    v5 = proto.Field(proto.DOUBLE, number=6)
-    v6 = proto.Field(proto.DOUBLE, number=7)
-    v7 = proto.Field(proto.DOUBLE, number=8)
+    v0 = proto.Field(
+        proto.DOUBLE,
+        number=1,
+    )
+    v1 = proto.Field(
+        proto.DOUBLE,
+        number=2,
+    )
+    v2 = proto.Field(
+        proto.DOUBLE,
+        number=3,
+    )
+    v3 = proto.Field(
+        proto.DOUBLE,
+        number=4,
+    )
+    v4 = proto.Field(
+        proto.DOUBLE,
+        number=5,
+    )
+    v5 = proto.Field(
+        proto.DOUBLE,
+        number=6,
+    )
+    v6 = proto.Field(
+        proto.DOUBLE,
+        number=7,
+    )
+    v7 = proto.Field(
+        proto.DOUBLE,
+        number=8,
+    )
+

@@ -6,6 +6,14 @@ import proto
 import proto.message
 import ubii.proto.dataStructure.buttonEventType_pb_plus
 
+
 class KeyEvent(proto.message.Message):
-    type = proto.Field(ubii.proto.dataStructure.buttonEventType_pb_plus.ButtonEventType, number=1)
-    key = proto.Field(proto.STRING, number=2)
+    type = proto.Field(
+        ubii.proto.dataStructure.buttonEventType_pb_plus.ButtonEventType,
+        number=1,
+    )
+    key = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+

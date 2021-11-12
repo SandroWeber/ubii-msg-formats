@@ -1,8 +1,8 @@
 {
-    "bytes": "\n\rsuccess title\u0012\u000fsuccess message",
+    "bytes": "",
     "dict": {
-        "message": "success message",
-        "title": "success title"
+        "message": "",
+        "title": ""
     },
-    "json": "{\n  \"title\": \"success title\",\n  \"message\": \"success message\"\n}"
+    "json": "{\n  \"title\": \"\",\n  \"message\": \"\"\n}"
 }

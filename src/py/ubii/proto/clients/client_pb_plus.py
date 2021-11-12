@@ -7,22 +7,58 @@ import proto.message
 import ubii.proto.devices.device_pb_plus
 import ubii.proto.processing.processingModule_pb_plus
 
+
 class Client(proto.message.Message):
     class State(proto.Enum):
         ACTIVE = 0
         INACTIVE = 1
         UNAVAILABLE = 2
 
-    id = proto.Field(proto.STRING, number=1)
-    name = proto.Field(proto.STRING, number=2)
-    devices = proto.RepeatedField(ubii.proto.devices.device_pb_plus.Device, number=3)
-    tags = proto.RepeatedField(proto.STRING, number=4)
-    description = proto.Field(proto.STRING, number=5)
-    processing_modules = proto.RepeatedField(ubii.proto.processing.processingModule_pb_plus.ProcessingModule, number=6)
-    is_dedicated_processing_node = proto.Field(proto.BOOL, number=7)
-    host_ip = proto.Field(proto.STRING, number=8)
-    metadata_json = proto.Field(proto.STRING, number=9)
-    state = proto.Field(State, number=10)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    devices = proto.RepeatedField(
+        ubii.proto.devices.device_pb_plus.Device,
+        number=3,
+    )
+    tags = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    processing_modules = proto.RepeatedField(
+        ubii.proto.processing.processingModule_pb_plus.ProcessingModule,
+        number=6,
+    )
+    is_dedicated_processing_node = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
+    host_ip = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    metadata_json = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    state = proto.Field(
+        State,
+        number=10,
+    )
+
 
 class ClientList(proto.message.Message):
-    elements = proto.RepeatedField(Client, number=1)
+    elements = proto.RepeatedField(
+        Client,
+        number=1,
+    )
+

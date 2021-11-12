@@ -5,9 +5,21 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class Success(proto.message.Message):
-    title = proto.Field(proto.STRING, number=1)
-    message = proto.Field(proto.STRING, number=2)
+    title = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    message = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
 
 class SuccessList(proto.message.Message):
-    elements = proto.RepeatedField(Success, number=1)
+    elements = proto.RepeatedField(
+        Success,
+        number=1,
+    )
+

@@ -5,8 +5,22 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class Color(proto.message.Message):
-    r = proto.Field(proto.DOUBLE, number=1)
-    g = proto.Field(proto.DOUBLE, number=2)
-    b = proto.Field(proto.DOUBLE, number=3)
-    a = proto.Field(proto.DOUBLE, number=4)
+    r = proto.Field(
+        proto.DOUBLE,
+        number=1,
+    )
+    g = proto.Field(
+        proto.DOUBLE,
+        number=2,
+    )
+    b = proto.Field(
+        proto.DOUBLE,
+        number=3,
+    )
+    a = proto.Field(
+        proto.DOUBLE,
+        number=4,
+    )
+

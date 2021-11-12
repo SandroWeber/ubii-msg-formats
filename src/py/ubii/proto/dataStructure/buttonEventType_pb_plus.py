@@ -4,6 +4,7 @@ isort:skip_file
 """
 import proto
 
+
 class ButtonEventType(proto.Enum):
     UP = 0
     DOWN = 1

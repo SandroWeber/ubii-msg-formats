@@ -17,42 +17,6 @@ from google.protobuf.message import Message
 from typing import Union, Dict, Any, Generic, TypeVar, Type, overload, List
 
 from google.protobuf.wrappers_pb2 import BoolValue, Int32Value, StringValue, FloatValue, DoubleValue
-from ubii.proto.clients.client_pb_plus import Client, ClientList
-from ubii.proto.dataStructure.color_pb_plus import Color
-from ubii.proto.dataStructure.image_pb_plus import Image2D, Image2DList
-from ubii.proto.dataStructure.keyEvent_pb_plus import KeyEvent
-from ubii.proto.dataStructure.lists_pb_plus import BoolList, Int32List, StringList, FloatList, DoubleList
-from ubii.proto.dataStructure.matrix3x2_pb_plus import Matrix3x2
-from ubii.proto.dataStructure.matrix4x4_pb_plus import Matrix4x4
-from ubii.proto.dataStructure.mouseEvent_pb_plus import MouseEvent
-from ubii.proto.dataStructure.object2d_pb_plus import Object2D, Object2DList
-from ubii.proto.dataStructure.object3d_pb_plus import Object3D, Object3DList
-from ubii.proto.dataStructure.pose2d_pb_plus import Pose2D
-from ubii.proto.dataStructure.pose3d_pb_plus import Pose3D
-from ubii.proto.dataStructure.quaternion_pb_plus import Quaternion
-from ubii.proto.dataStructure.touchEvent_pb_plus import TouchEvent
-from ubii.proto.dataStructure.vector2_pb_plus import Vector2
-from ubii.proto.dataStructure.vector3_pb_plus import Vector3
-from ubii.proto.dataStructure.vector4_pb_plus import Vector4
-from ubii.proto.dataStructure.vector8_pb_plus import Vector8
-from ubii.proto.devices.component_pb_plus import Component, ComponentList
-from ubii.proto.devices.device_pb_plus import Device, DeviceList
-from ubii.proto.devices.topicDemux_pb_plus import TopicDemux, TopicDemuxList
-from ubii.proto.devices.topicMux_pb_plus import TopicMux, TopicMuxList
-from ubii.proto.general.error_pb_plus import Error
-from ubii.proto.general.success_pb_plus import Success
-from ubii.proto.processing.processingModule_pb_plus import ProcessingModule, ProcessingModuleList, ModuleIO, \
-    ProcessingMode
-from ubii.proto.servers.server_pb_plus import Server
-from ubii.proto.services.request.topicSubscription_pb_plus import TopicSubscription
-from ubii.proto.services.serviceReply_pb_plus import ServiceReply
-from ubii.proto.services.serviceRequest_pb_plus import ServiceRequest
-from ubii.proto.services.service_pb_plus import Service, ServiceList
-from ubii.proto.sessions.ioMappings_pb_plus import IOMapping
-from ubii.proto.sessions.session_pb_plus import Session, SessionList
-from ubii.proto.topicData.timestamp_pb_plus import Timestamp
-from ubii.proto.topicData.topicDataRecord_pb_plus import TopicDataRecord, TopicDataRecordList
-from ubii.proto.topicData.topicData_pb_plus import TopicData
 from ubii.util import import_type
 from ubii.util.constants import MSG_TYPES
 
@@ -89,7 +53,7 @@ class ProtoMessageFactory(Generic[GPM], metaclass=ABCMeta):
         :param base: a protomessage type
         :return: a subclass of the class calling `get_type`, with `.proto` attribute set to the base parameter.
         """
-        name = f"{cls.__name__}{base.__name__}"
+        name = f"{cls.__name__}{base.DESCRIPTOR.name}"
         return cls.__types.setdefault(name, type(name, (cls,), {}, proto=base))
 
     def __init_subclass__(cls, proto=None, **kwargs):
@@ -118,7 +82,62 @@ def serialize(*args, **kwargs):
         return result
 
 
-class Translator(ProtoMessageFactory[GPM]):
+class ITranslator(ProtoMessageFactory[GPM], metaclass=ABCMeta):
+    @classmethod
+    @abstractmethod
+    def from_bytes(cls, obj, *args, **kwargs) -> GPM: ...
+
+    @classmethod
+    @abstractmethod
+    def from_json(cls, obj, *args, **kwargs) -> GPM: ...
+
+    @classmethod
+    @abstractmethod
+    def from_dict(cls, obj, *args, **kwargs) -> GPM: ...
+
+    @classmethod
+    @abstractmethod
+    def validate(cls, message): ...
+
+    @classmethod
+    @abstractmethod
+    def to_dict(cls, message: GPM, *args, **kwargs): ...
+
+    @classmethod
+    @abstractmethod
+    def to_json(cls, message: GPM, *args, **kwargs): ...
+
+    @overload
+    @classmethod
+    def convert_to_message(cls, obj: CONVERTIBLE, *args, **kwargs) -> GPM: ...
+
+    @overload
+    @classmethod
+    def convert_to_message(cls, obj: List[CONVERTIBLE], *args, **kwargs) -> List[GPM]: ...
+
+    @classmethod
+    def convert_to_message(cls, obj, *args, **kwargs):
+        try:
+            if isinstance(obj, bytes):
+                return cls.from_bytes(obj, *args, **kwargs)
+            if isinstance(obj, dict):
+                return cls.from_dict(obj, *args, **kwargs)
+            elif isinstance(obj, str):
+                return cls.from_json(obj, *args, **kwargs)
+            elif dataclasses.is_dataclass(obj) and not isinstance(obj, type):
+                return cls.from_dict(dataclasses.asdict(obj))
+            elif isinstance(obj, list):
+                return [cls.convert_to_message(o, *args, **kwargs) for o in obj]
+            else:
+                return cls.create(value=obj)
+        except ParseError as initial:
+            try:
+                return cls.create(value=obj)
+            except ParseError as current:
+                raise current from initial
+
+
+class Translator(ITranslator[GPM]):
     """
     A Translator is a factory for Proto messages. In addition to a `create` method, it provides
     several other means of converting json, python dictionaries and proto messages back and forth.
@@ -202,13 +221,6 @@ class Translator(ProtoMessageFactory[GPM]):
                              use_integers_for_enums=use_integers_for_enums,
                              including_default_value_fields=including_default_value_fields,
                              **kwargs)
-    @overload
-    @classmethod
-    def convert_to_message(cls, obj: CONVERTIBLE, *args, **kwargs) -> GPM: ...
-
-    @overload
-    @classmethod
-    def convert_to_message(cls, obj: List[CONVERTIBLE], *args, **kwargs) -> List[GPM]: ...
 
     @classmethod
     def convert_to_message(cls, obj, *args, **kwargs):
@@ -220,24 +232,8 @@ class Translator(ProtoMessageFactory[GPM]):
         if not cls.proto:
             raise NotImplementedError
 
-        try:
-            if isinstance(obj, bytes):
-                return cls.from_bytes(obj, *args, **kwargs)
-            if isinstance(obj, dict):
-                return cls.from_dict(obj, *args, **kwargs)
-            elif isinstance(obj, str):
-                return cls.from_json(obj, *args, **kwargs)
-            elif dataclasses.is_dataclass(obj) and not isinstance(obj, type):
-                return cls.from_dict(dataclasses.asdict(obj))
-            elif isinstance(obj, list):
-                return [cls.convert_to_message(o, *args, **kwargs) for o in obj]
-            else:
-                return cls.create(value=obj)
-        except ParseError as initial:
-            try:
-                return cls.create(value=obj)
-            except ParseError as current:
-                raise current from initial
+        return super().convert_to_message(obj, *args, **kwargs)
+
 
     @classmethod
     @wraps(from_dict)
@@ -252,6 +248,7 @@ class Translator(ProtoMessageFactory[GPM]):
         """
         :return: Translator for matching python type
         """
+
         type_ = import_type(datatype)
         if not type_:
             raise ValueError(f"{datatype} is not valid, can't find matching protobuf type.")
@@ -282,86 +279,86 @@ class Translator(ProtoMessageFactory[GPM]):
         except ParseError:
             return cls.from_json(serialize(message))
 
-
-class _ProtoTranslators(MSG_TYPES.__class__):
-    """
-    This class extends the `MSG_TYPES` constants (which represent relative imports for protobuf message types).
-
-    The result is a dataclass which uses the same attribute names, with the difference that the values are not
-    just string for relative imports, but fully initialized `Translator` objects for the correct message type.
-
-    Note: Type hinting seems to work, and the Translators should have the correct generic Type applied, but
-    hinting might still produce different results depending on your IDE / editor and python version.
-    """
-    ERROR: Translator[Error]
-    SUCCESS: Translator[Success]
-    SERVER: Translator[Server]
-    CLIENT: Translator[Client]
-    CLIENT_LIST: Translator[ClientList]
-    DEVICE: Translator[Device]
-    DEVICE_LIST: Translator[DeviceList]
-    COMPONENT: Translator[Component]
-    COMPONENT_LIST: Translator[ComponentList]
-    TOPIC_MUX: Translator[TopicMux]
-    TOPIC_MUX_LIST: Translator[TopicMuxList]
-    TOPIC_DEMUX: Translator[TopicDemux]
-    TOPIC_DEMUX_LIST: Translator[TopicDemuxList]
-    SERVICE: Translator[Service]
-    SERVICE_LIST: Translator[ServiceList]
-    SERVICE_REQUEST: Translator[ServiceRequest]
-    SERVICE_REPLY: Translator[ServiceReply]
-    SERVICE_REUEST_TOPIC_SUBSCRIPTION: Translator[TopicSubscription]
-    SESSION: Translator[Session]
-    SESSION_LIST: Translator[SessionList]
-    SESSION_IO_MAPPING: Translator[IOMapping]
-    PM: Translator[ProcessingModule]
-    PM_LIST: Translator[ProcessingModuleList]
-    PM_MODULE_IO: Translator[ModuleIO]
-    PM_PROCESSING_MODE: Translator[ProcessingMode]
-    TOPIC_DATA: Translator[TopicData]
-    TOPIC_DATA_RECORD: Translator[TopicDataRecord]
-    TOPIC_DATA_RECORD_LIST: Translator[TopicDataRecordList]
-    TOPIC_DATA_TIMESTAMP: Translator[Timestamp]
-    DATASTRUCTURE_BOOL: Translator[BoolValue]
-    DATASTRUCTURE_INT32: Translator[Int32Value]
-    DATASTRUCTURE_STRING: Translator[StringValue]
-    DATASTRUCTURE_FLOAT: Translator[FloatValue]
-    DATASTRUCTURE_DOUBLE: Translator[DoubleValue]
-    DATASTRUCTURE_BOOL_LIST: Translator[BoolList]
-    DATASTRUCTURE_INT32_LIST: Translator[Int32List]
-    DATASTRUCTURE_STRING_LIST: Translator[StringList]
-    DATASTRUCTURE_FLOAT_LIST: Translator[FloatList]
-    DATASTRUCTURE_DOUBLE_LIST: Translator[DoubleList]
-    DATASTRUCTURE_COLOR: Translator[Color]
-    DATASTRUCTURE_IMAGE: Translator[Image2D]
-    DATASTRUCTURE_IMAGE_LIST: Translator[Image2DList]
-    DATASTRUCTURE_KEY_EVENT: Translator[KeyEvent]
-    DATASTRUCTURE_MATRIX_3X2: Translator[Matrix3x2]
-    DATASTRUCTURE_MATRIX_4X4: Translator[Matrix4x4]
-    DATASTRUCTURE_MOUSE_EVENT: Translator[MouseEvent]
-    DATASTRUCTURE_OBJECT2D: Translator[Object2D]
-    DATASTRUCTURE_OBJECT2D_LIST: Translator[Object2DList]
-    DATASTRUCTURE_OBJECT3D: Translator[Object3D]
-    DATASTRUCTURE_OBJECT3D_LIST: Translator[Object3DList]
-    DATASTRUCTURE_POSE2D: Translator[Pose2D]
-    DATASTRUCTURE_POSE3D: Translator[Pose3D]
-    DATASTRUCTURE_QUATERNION: Translator[Quaternion]
-    DATASTRUCTURE_TOUCH_EVENT: Translator[TouchEvent]
-    DATASTRUCTURE_VECTOR2: Translator[Vector2]
-    DATASTRUCTURE_VECTOR3: Translator[Vector3]
-    DATASTRUCTURE_VECTOR4: Translator[Vector4]
-    DATASTRUCTURE_VECTOR8: Translator[Vector8]
-
-    def __init__(self):
-        """
-        We just generate Translator objects from the relative import string on initialization.
-        """
-        for field in dataclasses.fields(super()):
-            translator = Translator.generate_translator(field.default)
-            object.__setattr__(self, field.name, translator)
-
-
-Translators = _ProtoTranslators()
+# This is not necessary with the current proto-plus-implementation
+# class _ProtoTranslators(MSG_TYPES.__class__):
+#     """
+#     This class extends the `MSG_TYPES` constants (which represent relative imports for protobuf message types).
+#
+#     The result is a dataclass which uses the same attribute names, with the difference that the values are not
+#     just string for relative imports, but fully initialized `Translator` objects for the correct message type.
+#
+#     Note: Type hinting seems to work, and the Translators should have the correct generic Type applied, but
+#     hinting might still produce different results depending on your IDE / editor and python version.
+#     """
+#     ERROR: Translator[Error]
+#     SUCCESS: Translator[Success]
+#     SERVER: Translator[Server]
+#     CLIENT: Translator[Client]
+#     CLIENT_LIST: Translator[ClientList]
+#     DEVICE: Translator[Device]
+#     DEVICE_LIST: Translator[DeviceList]
+#     COMPONENT: Translator[Component]
+#     COMPONENT_LIST: Translator[ComponentList]
+#     TOPIC_MUX: Translator[TopicMux]
+#     TOPIC_MUX_LIST: Translator[TopicMuxList]
+#     TOPIC_DEMUX: Translator[TopicDemux]
+#     TOPIC_DEMUX_LIST: Translator[TopicDemuxList]
+#     SERVICE: Translator[Service]
+#     SERVICE_LIST: Translator[ServiceList]
+#     SERVICE_REQUEST: Translator[ServiceRequest]
+#     SERVICE_REPLY: Translator[ServiceReply]
+#     SERVICE_REUEST_TOPIC_SUBSCRIPTION: Translator[TopicSubscription]
+#     SESSION: Translator[Session]
+#     SESSION_LIST: Translator[SessionList]
+#     SESSION_IO_MAPPING: Translator[IOMapping]
+#     PM: Translator[ProcessingModule]
+#     PM_LIST: Translator[ProcessingModuleList]
+#     PM_MODULE_IO: Translator[ModuleIO]
+#     PM_PROCESSING_MODE: Translator[ProcessingMode]
+#     TOPIC_DATA: Translator[TopicData]
+#     TOPIC_DATA_RECORD: Translator[TopicDataRecord]
+#     TOPIC_DATA_RECORD_LIST: Translator[TopicDataRecordList]
+#     TOPIC_DATA_TIMESTAMP: Translator[Timestamp]
+#     DATASTRUCTURE_BOOL: Translator[BoolValue]
+#     DATASTRUCTURE_INT32: Translator[Int32Value]
+#     DATASTRUCTURE_STRING: Translator[StringValue]
+#     DATASTRUCTURE_FLOAT: Translator[FloatValue]
+#     DATASTRUCTURE_DOUBLE: Translator[DoubleValue]
+#     DATASTRUCTURE_BOOL_LIST: Translator[BoolList]
+#     DATASTRUCTURE_INT32_LIST: Translator[Int32List]
+#     DATASTRUCTURE_STRING_LIST: Translator[StringList]
+#     DATASTRUCTURE_FLOAT_LIST: Translator[FloatList]
+#     DATASTRUCTURE_DOUBLE_LIST: Translator[DoubleList]
+#     DATASTRUCTURE_COLOR: Translator[Color]
+#     DATASTRUCTURE_IMAGE: Translator[Image2D]
+#     DATASTRUCTURE_IMAGE_LIST: Translator[Image2DList]
+#     DATASTRUCTURE_KEY_EVENT: Translator[KeyEvent]
+#     DATASTRUCTURE_MATRIX_3X2: Translator[Matrix3x2]
+#     DATASTRUCTURE_MATRIX_4X4: Translator[Matrix4x4]
+#     DATASTRUCTURE_MOUSE_EVENT: Translator[MouseEvent]
+#     DATASTRUCTURE_OBJECT2D: Translator[Object2D]
+#     DATASTRUCTURE_OBJECT2D_LIST: Translator[Object2DList]
+#     DATASTRUCTURE_OBJECT3D: Translator[Object3D]
+#     DATASTRUCTURE_OBJECT3D_LIST: Translator[Object3DList]
+#     DATASTRUCTURE_POSE2D: Translator[Pose2D]
+#     DATASTRUCTURE_POSE3D: Translator[Pose3D]
+#     DATASTRUCTURE_QUATERNION: Translator[Quaternion]
+#     DATASTRUCTURE_TOUCH_EVENT: Translator[TouchEvent]
+#     DATASTRUCTURE_VECTOR2: Translator[Vector2]
+#     DATASTRUCTURE_VECTOR3: Translator[Vector3]
+#     DATASTRUCTURE_VECTOR4: Translator[Vector4]
+#     DATASTRUCTURE_VECTOR8: Translator[Vector8]
+#
+#     def __init__(self):
+#         """
+#         We just generate Translator objects from the relative import string on initialization.
+#         """
+#         for field in dataclasses.fields(super()):
+#             translator = Translator.generate_translator(field.default)
+#             object.__setattr__(self, field.name, translator)
+#
+#
+# Translators = _ProtoTranslators()
 
 
 class Proto(Generic[GPM]):
@@ -458,6 +455,9 @@ class Proto(Generic[GPM]):
         return cls.__types.setdefault(name, type(name, (cls,), {}, translator=base.DESCRIPTOR.full_name))
 
 
-ProcessingModule = Proto.get_type(ProcessingModule)
-Client = Proto.get_type(Client)
-Server = Proto.get_type(Server)
+# commented out since we are using proto-plus currently
+# this whole file is useless.
+
+# ProcessingModule = Proto.get_type(ProcessingModule)
+# Client = Proto.get_type(Client)
+# Server = Proto.get_type(Server)

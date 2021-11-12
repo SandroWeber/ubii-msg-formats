@@ -4,6 +4,7 @@ isort:skip_file
 """
 import proto
 
+
 class HandGestureType(proto.Enum):
     REST = 0
     FINGERS_SPREAD = 1

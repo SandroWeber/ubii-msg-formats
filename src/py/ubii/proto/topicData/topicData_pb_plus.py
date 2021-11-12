@@ -7,7 +7,21 @@ import proto.message
 import ubii.proto.general.error_pb_plus
 import ubii.proto.topicData.topicDataRecord_pb_plus
 
+
 class TopicData(proto.message.Message):
-    topic_data_record = proto.Field(ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecord, number=1)
-    topic_data_record_list = proto.Field(ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecordList, number=2)
-    error = proto.Field(ubii.proto.general.error_pb_plus.Error, number=3)
+    topic_data_record = proto.Field(
+        ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecord,
+        number=1,
+        oneof='type',
+    )
+    topic_data_record_list = proto.Field(
+        ubii.proto.topicData.topicDataRecord_pb_plus.TopicDataRecordList,
+        number=2,
+        oneof='type',
+    )
+    error = proto.Field(
+        ubii.proto.general.error_pb_plus.Error,
+        number=3,
+        oneof='type',
+    )
+

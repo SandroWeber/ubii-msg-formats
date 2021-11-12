@@ -1,18 +1,17 @@
 import importlib
-import json
-import difflib
 import logging
+from collections import UserDict
+from importlib.metadata import distribution
+from typing import Type
+
+from proto import Message as ProtoPlusMessage
+from .constants import MSG_TYPES
+
+__proto_package__ = distribution('ubii-message-formats').read_text('proto_package.txt')
+assert __proto_package__
 
 log = logging.getLogger(__name__)
-
-def diff_dicts(compare, expected, **kwargs):
-    """
-    Show diff of dictionaries for better error messages.
-    """
-    left = json.dumps(compare, indent=2, sort_keys=True)
-    right = json.dumps(expected, indent=2, sort_keys=True)
-    diff = difflib.unified_diff(left.splitlines(True), right.splitlines(True), **kwargs)
-    return list(diff)
+__imported_types__ = {}
 
 
 def import_type(data_type):
@@ -27,15 +26,27 @@ def import_type(data_type):
     for more information about updating the .proto files to generate a different package structure.
 
     :param datatype: Ubii data type, starting with "ubii."
+    :param proto_type: Enumerator
     """
+    def _make_wrapper_type(name: str) -> ProtoPlusMessage:
+        if not name.startswith('ubii.'):
+            log.debug(f"Type {name} is not a protobuf type. Trying google wrapper type {name.title()}Value.")
+            from google.protobuf import wrappers_pb2 as wrappers
+            wrapper = getattr(wrappers, f"{name.title()}Value", None)
+            type_ = type(f"{name.title()}Value", (ProtoPlusMessage,), {})
+            type_ = type(type_.wrap(wrapper()))
+        else:
+            package, type_ = name.replace(MSG_TYPES.proto_package, __proto_package__).rsplit('.', maxsplit=1)
+            package = importlib.import_module(package)
+            type_ = getattr(package, type_, None)
 
-    if not data_type.startswith('ubii.'):
-        log.debug(f"Type {data_type} is not a protobuf type. Trying google wrapper type {data_type.title()}Value.")
-        from google.protobuf import wrappers_pb2 as wrappers
-        type_ = getattr(wrappers, f'{data_type.title()}Value', None)
-    else:
-        package, type_ = data_type.replace('ubii.', 'ubii.proto.').rsplit('.', maxsplit=1)
-        package = importlib.import_module(package)
-        type_ = getattr(package, type_, None)
+        if type_ is None:
+            raise ValueError(f"{data_type} could not be imported.")
 
-    return type_
+        return type_
+
+    if data_type not in __imported_types__:
+        __imported_types__[data_type] = _make_wrapper_type(data_type)
+
+    return __imported_types__[data_type]
+

@@ -6,18 +6,45 @@ import proto
 import proto.message
 import ubii.proto.devices.component_pb_plus
 
+
 class Device(proto.message.Message):
     class DeviceType(proto.Enum):
         PARTICIPANT = 0
         WATCHER = 1
 
-    id = proto.Field(proto.STRING, number=1)
-    name = proto.Field(proto.STRING, number=2)
-    device_type = proto.Field(DeviceType, number=3)
-    components = proto.RepeatedField(ubii.proto.devices.component_pb_plus.Component, number=4)
-    client_id = proto.Field(proto.STRING, number=5)
-    tags = proto.RepeatedField(proto.STRING, number=6)
-    description = proto.Field(proto.STRING, number=7)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    device_type = proto.Field(
+        DeviceType,
+        number=3,
+    )
+    components = proto.RepeatedField(
+        ubii.proto.devices.component_pb_plus.Component,
+        number=4,
+    )
+    client_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    tags = proto.RepeatedField(
+        proto.STRING,
+        number=6,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+
 
 class DeviceList(proto.message.Message):
-    elements = proto.RepeatedField(Device, number=1)
+    elements = proto.RepeatedField(
+        Device,
+        number=1,
+    )
+

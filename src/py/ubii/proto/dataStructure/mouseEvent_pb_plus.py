@@ -6,6 +6,14 @@ import proto
 import proto.message
 import ubii.proto.dataStructure.buttonEventType_pb_plus
 
+
 class MouseEvent(proto.message.Message):
-    type = proto.Field(ubii.proto.dataStructure.buttonEventType_pb_plus.ButtonEventType, number=1)
-    button = proto.Field(proto.INT32, number=2)
+    type = proto.Field(
+        ubii.proto.dataStructure.buttonEventType_pb_plus.ButtonEventType,
+        number=1,
+    )
+    button = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+

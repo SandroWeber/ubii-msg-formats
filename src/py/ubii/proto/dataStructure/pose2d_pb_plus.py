@@ -6,7 +6,20 @@ import proto
 import proto.message
 import ubii.proto.dataStructure.vector2_pb_plus
 
+
 class Pose2D(proto.message.Message):
-    position = proto.Field(ubii.proto.dataStructure.vector2_pb_plus.Vector2, number=1)
-    direction = proto.Field(ubii.proto.dataStructure.vector2_pb_plus.Vector2, number=2)
-    angle = proto.Field(proto.FLOAT, number=3)
+    position = proto.Field(
+        ubii.proto.dataStructure.vector2_pb_plus.Vector2,
+        number=1,
+    )
+    direction = proto.Field(
+        ubii.proto.dataStructure.vector2_pb_plus.Vector2,
+        number=2,
+        oneof='orientation',
+    )
+    angle = proto.Field(
+        proto.FLOAT,
+        number=3,
+        oneof='orientation',
+    )
+

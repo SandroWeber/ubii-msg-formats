@@ -1,10 +1,6 @@
 import dataclasses
-import importlib
-import logging
 from dataclasses import dataclass
 from warnings import warn
-import ubii.proto
-from . import diff_dicts
 
 
 @dataclass(frozen=True)
@@ -126,65 +122,66 @@ class _MsgTypes:
     when using it in a loop) will work correctly.
     It also implements an `items` method, which is just a wrapper to call dataclasses.asdict(cls).items()
     """
+    proto_package = 'ubii'
 
-    ERROR: str = 'ubii.general.Error'
-    SUCCESS: str = 'ubii.general.Success'
-    SERVER: str = 'ubii.servers.Server'
-    CLIENT: str = 'ubii.clients.Client'
-    CLIENT_LIST: str = 'ubii.clients.ClientList'
-    DEVICE: str = 'ubii.devices.Device'
-    DEVICE_LIST: str = 'ubii.devices.DeviceList'
-    COMPONENT: str = 'ubii.devices.Component'
-    COMPONENT_LIST: str = 'ubii.devices.ComponentList'
-    TOPIC_MUX: str = 'ubii.devices.TopicMux'
-    TOPIC_MUX_LIST: str = 'ubii.devices.TopicMuxList'
-    TOPIC_DEMUX: str = 'ubii.devices.TopicDemux'
-    TOPIC_DEMUX_LIST: str = 'ubii.devices.TopicDemuxList'
-    SERVICE: str = 'ubii.services.Service'
-    SERVICE_LIST: str = 'ubii.services.ServiceList'
-    SERVICE_REQUEST: str = 'ubii.services.ServiceRequest'
-    SERVICE_REPLY: str = 'ubii.services.ServiceReply'
-    SERVICE_REUEST_TOPIC_SUBSCRIPTION: str = 'ubii.services.request.TopicSubscription'
-    SESSION: str = 'ubii.sessions.Session'
-    SESSION_LIST: str = 'ubii.sessions.SessionList'
-    SESSION_IO_MAPPING: str = 'ubii.sessions.IOMapping'
-    PM: str = 'ubii.processing.ProcessingModule'
-    PM_LIST: str = 'ubii.processing.ProcessingModuleList'
-    PM_MODULE_IO: str = 'ubii.processing.ModuleIO'
-    PM_PROCESSING_MODE: str = 'ubii.processing.ProcessingMode'
-    TOPIC_DATA: str = 'ubii.topicData.TopicData'
-    TOPIC_DATA_RECORD: str = 'ubii.topicData.TopicDataRecord'
-    TOPIC_DATA_RECORD_LIST: str = 'ubii.topicData.TopicDataRecordList'
-    TOPIC_DATA_TIMESTAMP: str = 'ubii.topicData.Timestamp'
+    ERROR: str = proto_package + '.general.Error'
+    SUCCESS: str = proto_package + '.general.Success'
+    SERVER: str = proto_package + '.servers.Server'
+    CLIENT: str = proto_package + '.clients.Client'
+    CLIENT_LIST: str = proto_package + '.clients.ClientList'
+    DEVICE: str = proto_package + '.devices.Device'
+    DEVICE_LIST: str = proto_package + '.devices.DeviceList'
+    COMPONENT: str = proto_package + '.devices.Component'
+    COMPONENT_LIST: str = proto_package + '.devices.ComponentList'
+    TOPIC_MUX: str = proto_package + '.devices.TopicMux'
+    TOPIC_MUX_LIST: str = proto_package + '.devices.TopicMuxList'
+    TOPIC_DEMUX: str = proto_package + '.devices.TopicDemux'
+    TOPIC_DEMUX_LIST: str = proto_package + '.devices.TopicDemuxList'
+    SERVICE: str = proto_package + '.services.Service'
+    SERVICE_LIST: str = proto_package + '.services.ServiceList'
+    SERVICE_REQUEST: str = proto_package + '.services.ServiceRequest'
+    SERVICE_REPLY: str = proto_package + '.services.ServiceReply'
+    SERVICE_REUEST_TOPIC_SUBSCRIPTION: str = proto_package + '.services.request.TopicSubscription'
+    SESSION: str = proto_package + '.sessions.Session'
+    SESSION_LIST: str = proto_package + '.sessions.SessionList'
+    SESSION_IO_MAPPING: str = proto_package + '.sessions.IOMapping'
+    PM: str = proto_package + '.processing.ProcessingModule'
+    PM_LIST: str = proto_package + '.processing.ProcessingModuleList'
+    PM_MODULE_IO: str = proto_package + '.processing.ModuleIO'
+    PM_PROCESSING_MODE: str = proto_package + '.processing.ProcessingMode'
+    TOPIC_DATA: str = proto_package + '.topicData.TopicData'
+    TOPIC_DATA_RECORD: str = proto_package + '.topicData.TopicDataRecord'
+    TOPIC_DATA_RECORD_LIST: str = proto_package + '.topicData.TopicDataRecordList'
+    TOPIC_DATA_TIMESTAMP: str = proto_package + '.topicData.Timestamp'
     DATASTRUCTURE_BOOL: str = "bool"
     DATASTRUCTURE_INT32: str = "int32"
     DATASTRUCTURE_STRING: str = "string"
-    DATASTRUCTURE_FLOAT: str =  "float"
+    DATASTRUCTURE_FLOAT: str = "float"
     DATASTRUCTURE_DOUBLE: str = "double"
-    DATASTRUCTURE_BOOL_LIST: str = 'ubii.dataStructure.BoolList'
-    DATASTRUCTURE_INT32_LIST: str = 'ubii.dataStructure.Int32List'
-    DATASTRUCTURE_STRING_LIST: str = 'ubii.dataStructure.StringList'
-    DATASTRUCTURE_FLOAT_LIST: str = 'ubii.dataStructure.FloatList'
-    DATASTRUCTURE_DOUBLE_LIST: str = 'ubii.dataStructure.DoubleList'
-    DATASTRUCTURE_COLOR: str = 'ubii.dataStructure.Color'
-    DATASTRUCTURE_IMAGE: str = 'ubii.dataStructure.Image2D'
-    DATASTRUCTURE_IMAGE_LIST: str = 'ubii.dataStructure.Image2DList'
-    DATASTRUCTURE_KEY_EVENT: str = 'ubii.dataStructure.KeyEvent'
-    DATASTRUCTURE_MATRIX_3X2: str = 'ubii.dataStructure.Matrix3x2'
-    DATASTRUCTURE_MATRIX_4X4: str = 'ubii.dataStructure.Matrix4x4'
-    DATASTRUCTURE_MOUSE_EVENT: str = 'ubii.dataStructure.MouseEvent'
-    DATASTRUCTURE_OBJECT2D: str = 'ubii.dataStructure.Object2D'
-    DATASTRUCTURE_OBJECT2D_LIST: str = 'ubii.dataStructure.Object2DList'
-    DATASTRUCTURE_OBJECT3D: str = 'ubii.dataStructure.Object3D'
-    DATASTRUCTURE_OBJECT3D_LIST: str = 'ubii.dataStructure.Object3DList'
-    DATASTRUCTURE_POSE2D: str = 'ubii.dataStructure.Pose2D'
-    DATASTRUCTURE_POSE3D: str = 'ubii.dataStructure.Pose3D'
-    DATASTRUCTURE_QUATERNION: str = 'ubii.dataStructure.Quaternion'
-    DATASTRUCTURE_TOUCH_EVENT: str = 'ubii.dataStructure.TouchEvent'
-    DATASTRUCTURE_VECTOR2: str = 'ubii.dataStructure.Vector2'
-    DATASTRUCTURE_VECTOR3: str = 'ubii.dataStructure.Vector3'
-    DATASTRUCTURE_VECTOR4: str = 'ubii.dataStructure.Vector4'
-    DATASTRUCTURE_VECTOR8: str = 'ubii.dataStructure.Vector8'
+    DATASTRUCTURE_BOOL_LIST: str = proto_package + '.dataStructure.BoolList'
+    DATASTRUCTURE_INT32_LIST: str = proto_package + '.dataStructure.Int32List'
+    DATASTRUCTURE_STRING_LIST: str = proto_package + '.dataStructure.StringList'
+    DATASTRUCTURE_FLOAT_LIST: str = proto_package + '.dataStructure.FloatList'
+    DATASTRUCTURE_DOUBLE_LIST: str = proto_package + '.dataStructure.DoubleList'
+    DATASTRUCTURE_COLOR: str = proto_package + '.dataStructure.Color'
+    DATASTRUCTURE_IMAGE: str = proto_package + '.dataStructure.Image2D'
+    DATASTRUCTURE_IMAGE_LIST: str = proto_package + '.dataStructure.Image2DList'
+    DATASTRUCTURE_KEY_EVENT: str = proto_package + '.dataStructure.KeyEvent'
+    DATASTRUCTURE_MATRIX_3X2: str = proto_package + '.dataStructure.Matrix3x2'
+    DATASTRUCTURE_MATRIX_4X4: str = proto_package + '.dataStructure.Matrix4x4'
+    DATASTRUCTURE_MOUSE_EVENT: str = proto_package + '.dataStructure.MouseEvent'
+    DATASTRUCTURE_OBJECT2D: str = proto_package + '.dataStructure.Object2D'
+    DATASTRUCTURE_OBJECT2D_LIST: str = proto_package + '.dataStructure.Object2DList'
+    DATASTRUCTURE_OBJECT3D: str = proto_package + '.dataStructure.Object3D'
+    DATASTRUCTURE_OBJECT3D_LIST: str = proto_package + '.dataStructure.Object3DList'
+    DATASTRUCTURE_POSE2D: str = proto_package + '.dataStructure.Pose2D'
+    DATASTRUCTURE_POSE3D: str = proto_package + '.dataStructure.Pose3D'
+    DATASTRUCTURE_QUATERNION: str = proto_package + '.dataStructure.Quaternion'
+    DATASTRUCTURE_TOUCH_EVENT: str = proto_package + '.dataStructure.TouchEvent'
+    DATASTRUCTURE_VECTOR2: str = proto_package + '.dataStructure.Vector2'
+    DATASTRUCTURE_VECTOR3: str = proto_package + '.dataStructure.Vector3'
+    DATASTRUCTURE_VECTOR4: str = proto_package + '.dataStructure.Vector4'
+    DATASTRUCTURE_VECTOR8: str = proto_package + '.dataStructure.Vector8'
 
     def __iter__(self):
         yield from dataclasses.asdict(self)
@@ -206,12 +203,22 @@ def check_constants(dict_data: dict):
 
     :param dict_data: dictionary (should contain the same values as combined in this module)
     :return: True if no difference is found, false otherwise
-
     """
+
+    def diff_dicts(compare, expected, **kwargs):
+        """
+        Show diff of dictionaries for better error messages.
+        """
+        import json
+        import difflib
+        left = json.dumps(compare, indent=2, sort_keys=True)
+        right = json.dumps(expected, indent=2, sort_keys=True)
+        return difflib.unified_diff(left.splitlines(True), right.splitlines(True), **kwargs)
+
     current = {k: dataclasses.asdict(v)
                for k, v in globals().items() if dataclasses.is_dataclass(v) and not isinstance(v, type)}
 
-    diff = diff_dicts(compare=current, expected=dict_data, fromfile=__name__, tofile=str(ubii.proto))
+    diff = list(diff_dicts(compare=current, expected=dict_data, fromfile=__name__, tofile='ubii.proto'))
     if diff:
         warn("Constants mismatch: {}".format('\n'.join(diff)))
 

@@ -5,9 +5,26 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class TopicSubscription(proto.message.Message):
-    client_id = proto.Field(proto.STRING, number=1)
-    subscribe_topics = proto.RepeatedField(proto.STRING, number=2)
-    unsubscribe_topics = proto.RepeatedField(proto.STRING, number=3)
-    subscribe_topic_regexp = proto.RepeatedField(proto.STRING, number=4)
-    unsubscribe_topic_regexp = proto.RepeatedField(proto.STRING, number=5)
+    client_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    subscribe_topics = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    unsubscribe_topics = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    subscribe_topic_regexp = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    unsubscribe_topic_regexp = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
+

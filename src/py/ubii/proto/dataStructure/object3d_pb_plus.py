@@ -7,11 +7,29 @@ import proto.message
 import ubii.proto.dataStructure.pose3d_pb_plus
 import ubii.proto.dataStructure.vector3_pb_plus
 
+
 class Object3D(proto.message.Message):
-    id = proto.Field(proto.STRING, number=1)
-    pose = proto.Field(ubii.proto.dataStructure.pose3d_pb_plus.Pose3D, number=2)
-    size = proto.Field(ubii.proto.dataStructure.vector3_pb_plus.Vector3, number=3)
-    user_data_json = proto.Field(proto.STRING, number=4)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    pose = proto.Field(
+        ubii.proto.dataStructure.pose3d_pb_plus.Pose3D,
+        number=2,
+    )
+    size = proto.Field(
+        ubii.proto.dataStructure.vector3_pb_plus.Vector3,
+        number=3,
+    )
+    user_data_json = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+
 
 class Object3DList(proto.message.Message):
-    elements = proto.RepeatedField(Object3D, number=1)
+    elements = proto.RepeatedField(
+        Object3D,
+        number=1,
+    )
+

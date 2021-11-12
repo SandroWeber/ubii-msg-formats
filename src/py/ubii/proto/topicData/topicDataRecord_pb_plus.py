@@ -25,41 +25,181 @@ import ubii.proto.processing.processingModule_pb_plus
 import ubii.proto.sessions.session_pb_plus
 import ubii.proto.topicData.timestamp_pb_plus
 
+
 class TopicDataRecord(proto.message.Message):
-    topic = proto.Field(proto.STRING, number=1)
-    timestamp = proto.Field(ubii.proto.topicData.timestamp_pb_plus.Timestamp, number=2)
-    double = proto.Field(proto.DOUBLE, number=3)
-    bool = proto.Field(proto.BOOL, number=4)
-    string = proto.Field(proto.STRING, number=5)
-    vector2 = proto.Field(ubii.proto.dataStructure.vector2_pb_plus.Vector2, number=6)
-    vector3 = proto.Field(ubii.proto.dataStructure.vector3_pb_plus.Vector3, number=7)
-    vector4 = proto.Field(ubii.proto.dataStructure.vector4_pb_plus.Vector4, number=8)
-    quaternion = proto.Field(ubii.proto.dataStructure.quaternion_pb_plus.Quaternion, number=9)
-    matrix3x2 = proto.Field(ubii.proto.dataStructure.matrix3x2_pb_plus.Matrix3x2, number=10)
-    matrix4x4 = proto.Field(ubii.proto.dataStructure.matrix4x4_pb_plus.Matrix4x4, number=11)
-    color = proto.Field(ubii.proto.dataStructure.color_pb_plus.Color, number=12)
-    touch_event = proto.Field(ubii.proto.dataStructure.touchEvent_pb_plus.TouchEvent, number=13)
-    touch_event_list = proto.Field(ubii.proto.dataStructure.touchEvent_pb_plus.TouchEventList, number=14)
-    key_event = proto.Field(ubii.proto.dataStructure.keyEvent_pb_plus.KeyEvent, number=15)
-    mouse_event = proto.Field(ubii.proto.dataStructure.mouseEvent_pb_plus.MouseEvent, number=16)
-    myo_event = proto.Field(ubii.proto.dataStructure.myoEvent_pb_plus.MyoEvent, number=17)
-    pose2D = proto.Field(ubii.proto.dataStructure.pose2d_pb_plus.Pose2D, number=18)
-    pose3D = proto.Field(ubii.proto.dataStructure.pose3d_pb_plus.Pose3D, number=19)
-    object2D = proto.Field(ubii.proto.dataStructure.object2d_pb_plus.Object2D, number=20)
-    object3D = proto.Field(ubii.proto.dataStructure.object3d_pb_plus.Object3D, number=21)
-    object2D_list = proto.Field(ubii.proto.dataStructure.object2d_pb_plus.Object2DList, number=22)
-    object3D_list = proto.Field(ubii.proto.dataStructure.object3d_pb_plus.Object3DList, number=23)
-    int32 = proto.Field(proto.INT32, number=24)
-    float = proto.Field(proto.FLOAT, number=25)
-    int32_list = proto.Field(ubii.proto.dataStructure.lists_pb_plus.Int32List, number=26)
-    float_list = proto.Field(ubii.proto.dataStructure.lists_pb_plus.FloatList, number=27)
-    double_list = proto.Field(ubii.proto.dataStructure.lists_pb_plus.DoubleList, number=28)
-    string_list = proto.Field(ubii.proto.dataStructure.lists_pb_plus.StringList, number=29)
-    bool_list = proto.Field(ubii.proto.dataStructure.lists_pb_plus.BoolList, number=30)
-    image2D = proto.Field(ubii.proto.dataStructure.image_pb_plus.Image2D, number=31)
-    image2D_list = proto.Field(ubii.proto.dataStructure.image_pb_plus.Image2DList, number=32)
-    session = proto.Field(ubii.proto.sessions.session_pb_plus.Session, number=33)
-    processing_module_list = proto.Field(ubii.proto.processing.processingModule_pb_plus.ProcessingModuleList, number=34)
+    topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    timestamp = proto.Field(
+        ubii.proto.topicData.timestamp_pb_plus.Timestamp,
+        number=2,
+    )
+    double = proto.Field(
+        proto.DOUBLE,
+        number=3,
+        oneof='type',
+    )
+    bool = proto.Field(
+        proto.BOOL,
+        number=4,
+        oneof='type',
+    )
+    string = proto.Field(
+        proto.STRING,
+        number=5,
+        oneof='type',
+    )
+    vector2 = proto.Field(
+        ubii.proto.dataStructure.vector2_pb_plus.Vector2,
+        number=6,
+        oneof='type',
+    )
+    vector3 = proto.Field(
+        ubii.proto.dataStructure.vector3_pb_plus.Vector3,
+        number=7,
+        oneof='type',
+    )
+    vector4 = proto.Field(
+        ubii.proto.dataStructure.vector4_pb_plus.Vector4,
+        number=8,
+        oneof='type',
+    )
+    quaternion = proto.Field(
+        ubii.proto.dataStructure.quaternion_pb_plus.Quaternion,
+        number=9,
+        oneof='type',
+    )
+    matrix3x2 = proto.Field(
+        ubii.proto.dataStructure.matrix3x2_pb_plus.Matrix3x2,
+        number=10,
+        oneof='type',
+    )
+    matrix4x4 = proto.Field(
+        ubii.proto.dataStructure.matrix4x4_pb_plus.Matrix4x4,
+        number=11,
+        oneof='type',
+    )
+    color = proto.Field(
+        ubii.proto.dataStructure.color_pb_plus.Color,
+        number=12,
+        oneof='type',
+    )
+    touch_event = proto.Field(
+        ubii.proto.dataStructure.touchEvent_pb_plus.TouchEvent,
+        number=13,
+        oneof='type',
+    )
+    touch_event_list = proto.Field(
+        ubii.proto.dataStructure.touchEvent_pb_plus.TouchEventList,
+        number=14,
+        oneof='type',
+    )
+    key_event = proto.Field(
+        ubii.proto.dataStructure.keyEvent_pb_plus.KeyEvent,
+        number=15,
+        oneof='type',
+    )
+    mouse_event = proto.Field(
+        ubii.proto.dataStructure.mouseEvent_pb_plus.MouseEvent,
+        number=16,
+        oneof='type',
+    )
+    myo_event = proto.Field(
+        ubii.proto.dataStructure.myoEvent_pb_plus.MyoEvent,
+        number=17,
+        oneof='type',
+    )
+    pose2D = proto.Field(
+        ubii.proto.dataStructure.pose2d_pb_plus.Pose2D,
+        number=18,
+        oneof='type',
+    )
+    pose3D = proto.Field(
+        ubii.proto.dataStructure.pose3d_pb_plus.Pose3D,
+        number=19,
+        oneof='type',
+    )
+    object2D = proto.Field(
+        ubii.proto.dataStructure.object2d_pb_plus.Object2D,
+        number=20,
+        oneof='type',
+    )
+    object3D = proto.Field(
+        ubii.proto.dataStructure.object3d_pb_plus.Object3D,
+        number=21,
+        oneof='type',
+    )
+    object2D_list = proto.Field(
+        ubii.proto.dataStructure.object2d_pb_plus.Object2DList,
+        number=22,
+        oneof='type',
+    )
+    object3D_list = proto.Field(
+        ubii.proto.dataStructure.object3d_pb_plus.Object3DList,
+        number=23,
+        oneof='type',
+    )
+    int32 = proto.Field(
+        proto.INT32,
+        number=24,
+        oneof='type',
+    )
+    float = proto.Field(
+        proto.FLOAT,
+        number=25,
+        oneof='type',
+    )
+    int32_list = proto.Field(
+        ubii.proto.dataStructure.lists_pb_plus.Int32List,
+        number=26,
+        oneof='type',
+    )
+    float_list = proto.Field(
+        ubii.proto.dataStructure.lists_pb_plus.FloatList,
+        number=27,
+        oneof='type',
+    )
+    double_list = proto.Field(
+        ubii.proto.dataStructure.lists_pb_plus.DoubleList,
+        number=28,
+        oneof='type',
+    )
+    string_list = proto.Field(
+        ubii.proto.dataStructure.lists_pb_plus.StringList,
+        number=29,
+        oneof='type',
+    )
+    bool_list = proto.Field(
+        ubii.proto.dataStructure.lists_pb_plus.BoolList,
+        number=30,
+        oneof='type',
+    )
+    image2D = proto.Field(
+        ubii.proto.dataStructure.image_pb_plus.Image2D,
+        number=31,
+        oneof='type',
+    )
+    image2D_list = proto.Field(
+        ubii.proto.dataStructure.image_pb_plus.Image2DList,
+        number=32,
+        oneof='type',
+    )
+    session = proto.Field(
+        ubii.proto.sessions.session_pb_plus.Session,
+        number=33,
+        oneof='type',
+    )
+    processing_module_list = proto.Field(
+        ubii.proto.processing.processingModule_pb_plus.ProcessingModuleList,
+        number=34,
+        oneof='type',
+    )
+
 
 class TopicDataRecordList(proto.message.Message):
-    elements = proto.RepeatedField(TopicDataRecord, number=1)
+    elements = proto.RepeatedField(
+        TopicDataRecord,
+        number=1,
+    )
+

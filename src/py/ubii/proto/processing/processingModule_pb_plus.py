@@ -5,24 +5,60 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class ProcessingMode(proto.message.Message):
     class Frequency(proto.message.Message):
-        hertz = proto.Field(proto.INT32, number=1)
+        hertz = proto.Field(
+            proto.INT32,
+            number=1,
+        )
+
 
     class Lockstep(proto.message.Message):
-        process_request_endpoint = proto.Field(proto.STRING, number=1)
+        process_request_endpoint = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+
 
     class TriggerOnInput(proto.message.Message):
-        min_delay_ms = proto.Field(proto.INT32, number=1)
-        all_inputs_need_update = proto.Field(proto.BOOL, number=2)
+        min_delay_ms = proto.Field(
+            proto.INT32,
+            number=1,
+        )
+        all_inputs_need_update = proto.Field(
+            proto.BOOL,
+            number=2,
+        )
 
-    frequency = proto.Field(Frequency, number=1)
-    lockstep = proto.Field(Lockstep, number=2)
-    trigger_on_input = proto.Field(TriggerOnInput, number=3)
+
+    frequency = proto.Field(
+        Frequency,
+        number=1,
+        oneof='mode',
+    )
+    lockstep = proto.Field(
+        Lockstep,
+        number=2,
+        oneof='mode',
+    )
+    trigger_on_input = proto.Field(
+        TriggerOnInput,
+        number=3,
+        oneof='mode',
+    )
+
 
 class ModuleIO(proto.message.Message):
-    internal_name = proto.Field(proto.STRING, number=1)
-    message_format = proto.Field(proto.STRING, number=2)
+    internal_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    message_format = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
 
 class ProcessingModule(proto.message.Message):
     class Status(proto.Enum):
@@ -39,22 +75,75 @@ class ProcessingModule(proto.message.Message):
         CS = 3
         JAVA = 4
 
-    id = proto.Field(proto.STRING, number=1)
-    name = proto.Field(proto.STRING, number=2)
-    authors = proto.RepeatedField(proto.STRING, number=3)
-    tags = proto.RepeatedField(proto.STRING, number=4)
-    description = proto.Field(proto.STRING, number=5)
-    node_id = proto.Field(proto.STRING, number=6)
-    session_id = proto.Field(proto.STRING, number=7)
-    status = proto.Field(Status, number=8)
-    processing_mode = proto.Field(ProcessingMode, number=9)
-    inputs = proto.RepeatedField(ModuleIO, number=10)
-    outputs = proto.RepeatedField(ModuleIO, number=11)
-    language = proto.Field(Language, number=12)
-    on_processing_stringified = proto.Field(proto.STRING, number=13)
-    on_created_stringified = proto.Field(proto.STRING, number=14)
-    on_halted_stringified = proto.Field(proto.STRING, number=15)
-    on_destroyed_stringified = proto.Field(proto.STRING, number=16)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    authors = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    tags = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    node_id = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    session_id = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    status = proto.Field(
+        Status,
+        number=8,
+    )
+    processing_mode = proto.Field(
+        ProcessingMode,
+        number=9,
+    )
+    inputs = proto.RepeatedField(
+        ModuleIO,
+        number=10,
+    )
+    outputs = proto.RepeatedField(
+        ModuleIO,
+        number=11,
+    )
+    language = proto.Field(
+        Language,
+        number=12,
+    )
+    on_processing_stringified = proto.Field(
+        proto.STRING,
+        number=13,
+    )
+    on_created_stringified = proto.Field(
+        proto.STRING,
+        number=14,
+    )
+    on_halted_stringified = proto.Field(
+        proto.STRING,
+        number=15,
+    )
+    on_destroyed_stringified = proto.Field(
+        proto.STRING,
+        number=16,
+    )
+
 
 class ProcessingModuleList(proto.message.Message):
-    elements = proto.RepeatedField(ProcessingModule, number=1)
+    elements = proto.RepeatedField(
+        ProcessingModule,
+        number=1,
+    )
+

@@ -13,19 +13,80 @@ import ubii.proto.processing.processingModule_pb_plus
 import ubii.proto.services.request.topicSubscription_pb_plus
 import ubii.proto.sessions.session_pb_plus
 
+
 class ServiceRequest(proto.message.Message):
-    topic = proto.Field(proto.STRING, number=1)
-    client = proto.Field(ubii.proto.clients.client_pb_plus.Client, number=2)
-    device = proto.Field(ubii.proto.devices.device_pb_plus.Device, number=3)
-    topic_subscription = proto.Field(ubii.proto.services.request.topicSubscription_pb_plus.TopicSubscription, number=4)
-    session = proto.Field(ubii.proto.sessions.session_pb_plus.Session, number=5)
-    session_list = proto.Field(ubii.proto.sessions.session_pb_plus.SessionList, number=6)
-    processing_module = proto.Field(ubii.proto.processing.processingModule_pb_plus.ProcessingModule, number=7)
-    processing_module_list = proto.Field(ubii.proto.processing.processingModule_pb_plus.ProcessingModuleList, number=8)
-    topic_mux = proto.Field(ubii.proto.devices.topicMux_pb_plus.TopicMux, number=9)
-    topic_mux_list = proto.Field(ubii.proto.devices.topicMux_pb_plus.TopicMuxList, number=10)
-    topic_demux = proto.Field(ubii.proto.devices.topicDemux_pb_plus.TopicDemux, number=11)
-    topic_demux_list = proto.Field(ubii.proto.devices.topicDemux_pb_plus.TopicDemuxList, number=12)
-    client_list = proto.Field(ubii.proto.clients.client_pb_plus.ClientList, number=13)
-    device_list = proto.Field(ubii.proto.devices.device_pb_plus.DeviceList, number=14)
-    lockstep_processing_request = proto.Field(ubii.proto.processing.lockstepProcessing_pb_plus.LockstepProcessingRequest, number=15)
+    topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    client = proto.Field(
+        ubii.proto.clients.client_pb_plus.Client,
+        number=2,
+        oneof='type',
+    )
+    device = proto.Field(
+        ubii.proto.devices.device_pb_plus.Device,
+        number=3,
+        oneof='type',
+    )
+    topic_subscription = proto.Field(
+        ubii.proto.services.request.topicSubscription_pb_plus.TopicSubscription,
+        number=4,
+        oneof='type',
+    )
+    session = proto.Field(
+        ubii.proto.sessions.session_pb_plus.Session,
+        number=5,
+        oneof='type',
+    )
+    session_list = proto.Field(
+        ubii.proto.sessions.session_pb_plus.SessionList,
+        number=6,
+        oneof='type',
+    )
+    processing_module = proto.Field(
+        ubii.proto.processing.processingModule_pb_plus.ProcessingModule,
+        number=7,
+        oneof='type',
+    )
+    processing_module_list = proto.Field(
+        ubii.proto.processing.processingModule_pb_plus.ProcessingModuleList,
+        number=8,
+        oneof='type',
+    )
+    topic_mux = proto.Field(
+        ubii.proto.devices.topicMux_pb_plus.TopicMux,
+        number=9,
+        oneof='type',
+    )
+    topic_mux_list = proto.Field(
+        ubii.proto.devices.topicMux_pb_plus.TopicMuxList,
+        number=10,
+        oneof='type',
+    )
+    topic_demux = proto.Field(
+        ubii.proto.devices.topicDemux_pb_plus.TopicDemux,
+        number=11,
+        oneof='type',
+    )
+    topic_demux_list = proto.Field(
+        ubii.proto.devices.topicDemux_pb_plus.TopicDemuxList,
+        number=12,
+        oneof='type',
+    )
+    client_list = proto.Field(
+        ubii.proto.clients.client_pb_plus.ClientList,
+        number=13,
+        oneof='type',
+    )
+    device_list = proto.Field(
+        ubii.proto.devices.device_pb_plus.DeviceList,
+        number=14,
+        oneof='type',
+    )
+    lockstep_processing_request = proto.Field(
+        ubii.proto.processing.lockstepProcessing_pb_plus.LockstepProcessingRequest,
+        number=15,
+        oneof='type',
+    )
+

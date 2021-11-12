@@ -5,12 +5,33 @@ isort:skip_file
 import proto
 import proto.message
 
+
 class TopicMux(proto.message.Message):
-    id = proto.Field(proto.STRING, number=1)
-    name = proto.Field(proto.STRING, number=2)
-    data_type = proto.Field(proto.STRING, number=3)
-    topic_selector = proto.Field(proto.STRING, number=4)
-    identity_match_pattern = proto.Field(proto.STRING, number=5)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    data_type = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    topic_selector = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    identity_match_pattern = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+
 
 class TopicMuxList(proto.message.Message):
-    elements = proto.RepeatedField(TopicMux, number=1)
+    elements = proto.RepeatedField(
+        TopicMux,
+        number=1,
+    )
+

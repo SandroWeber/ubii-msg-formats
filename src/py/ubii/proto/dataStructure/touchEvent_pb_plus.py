@@ -6,16 +6,34 @@ import proto
 import proto.message
 import ubii.proto.dataStructure.vector2_pb_plus
 
+
 class TouchEvent(proto.message.Message):
     class TouchEventType(proto.Enum):
         TOUCH_START = 0
         TOUCH_MOVE = 1
         TOUCH_END = 2
 
-    type = proto.Field(TouchEventType, number=1)
-    position = proto.Field(ubii.proto.dataStructure.vector2_pb_plus.Vector2, number=2)
-    id = proto.Field(proto.STRING, number=3)
-    force = proto.Field(proto.FLOAT, number=4)
+    type = proto.Field(
+        TouchEventType,
+        number=1,
+    )
+    position = proto.Field(
+        ubii.proto.dataStructure.vector2_pb_plus.Vector2,
+        number=2,
+    )
+    id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    force = proto.Field(
+        proto.FLOAT,
+        number=4,
+    )
+
 
 class TouchEventList(proto.message.Message):
-    elements = proto.RepeatedField(TouchEvent, number=1)
+    elements = proto.RepeatedField(
+        TouchEvent,
+        number=1,
+    )
+

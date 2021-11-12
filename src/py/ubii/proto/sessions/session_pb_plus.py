@@ -7,6 +7,7 @@ import proto.message
 import ubii.proto.processing.processingModule_pb_plus
 import ubii.proto.sessions.ioMappings_pb_plus
 
+
 class SessionStatus(proto.Enum):
     CREATED = 0
     RUNNING = 1
@@ -14,15 +15,47 @@ class SessionStatus(proto.Enum):
     STOPPED = 3
 
 class Session(proto.message.Message):
-    id = proto.Field(proto.STRING, number=1)
-    name = proto.Field(proto.STRING, number=2)
-    processing_modules = proto.RepeatedField(ubii.proto.processing.processingModule_pb_plus.ProcessingModule, number=3)
-    io_mappings = proto.RepeatedField(ubii.proto.sessions.ioMappings_pb_plus.IOMapping, number=4)
-    tags = proto.RepeatedField(proto.STRING, number=5)
-    description = proto.Field(proto.STRING, number=6)
-    authors = proto.RepeatedField(proto.STRING, number=7)
-    status = proto.Field(SessionStatus, number=8)
-    editable = proto.Field(proto.BOOL, number=9)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    processing_modules = proto.RepeatedField(
+        ubii.proto.processing.processingModule_pb_plus.ProcessingModule,
+        number=3,
+    )
+    io_mappings = proto.RepeatedField(
+        ubii.proto.sessions.ioMappings_pb_plus.IOMapping,
+        number=4,
+    )
+    tags = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    authors = proto.RepeatedField(
+        proto.STRING,
+        number=7,
+    )
+    status = proto.Field(
+        SessionStatus,
+        number=8,
+    )
+    editable = proto.Field(
+        proto.BOOL,
+        number=9,
+    )
+
 
 class SessionList(proto.message.Message):
-    elements = proto.RepeatedField(Session, number=1)
+    elements = proto.RepeatedField(
+        Session,
+        number=1,
+    )
+
