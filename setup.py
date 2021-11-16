@@ -1,6 +1,4 @@
-import distutils.log
 import sys
-
 import setuptools
 from importlib import metadata
 

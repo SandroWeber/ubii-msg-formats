@@ -1,20 +1,34 @@
-import importlib
-from importlib.util import find_spec
-from itertools import chain
-from pathlib import Path
+import json
+from functools import wraps
+from json import JSONEncoder
+from proto.message import Message as ProtoPlusMessage
+from google.protobuf.message import Message as ProtoMessage
+from google.protobuf.json_format import MessageToDict
 
 
-def __getattr__(name):
-    submodule_paths = chain.from_iterable(Path(p).glob("*.py") for p in find_spec(__name__).submodule_search_locations or ())
-    submodules = (importlib.import_module(f".{p.stem}", package=__name__)
-                  for p in submodule_paths
-                  if not p.name.startswith('_'))
+@wraps(json.dumps)
+def serialize(*args, **kwargs):
+    """
+    This function calls `json.dumps` with `Translator.ProtoEncoder` as optional `cls` argument.
+    This tells the json module to use this encode when trying to serialize the message.
+    """
+    try:
+        result = json.dumps(*args, cls=ProtoEncoder, **kwargs)
+    except Exception as e:
+        raise e
+    else:
+        return result
 
-    with_name = [m for m in submodules if hasattr(m, name)]
-    if not with_name:
-        raise AttributeError(f"{__name__} has no attribute {name}")
 
-    if len(with_name) > 1:
-        raise AttributeError(f"{__name__} has no attribute {name}, but submodules {', '.join(m.__name__ for m in with_name)}")
+class ProtoEncoder(JSONEncoder):
+    """
+    Custom encoder to convert Protobuf Messages and Proto-Plus Messages to valid json
+    """
+    def default(self, o):
+        if isinstance(o, ProtoPlusMessage):
+            return type(o).to_dict(o)
 
-    return getattr(with_name[0], name)
+        if isinstance(o, ProtoMessage):
+            return MessageToDict(o, use_integers_for_enums=True, including_default_value_fields=True)
+
+        return JSONEncoder.default(self, o)

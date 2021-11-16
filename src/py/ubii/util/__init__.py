@@ -1,8 +1,6 @@
 import importlib
 import logging
-from collections import UserDict
 from importlib.metadata import distribution
-from typing import Type
 
 from proto import Message as ProtoPlusMessage
 from .constants import MSG_TYPES

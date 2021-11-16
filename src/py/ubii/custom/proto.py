@@ -16,9 +16,7 @@ from google.protobuf.message import Message
 
 from typing import Union, Dict, Any, Generic, TypeVar, Type, overload, List
 
-from google.protobuf.wrappers_pb2 import BoolValue, Int32Value, StringValue, FloatValue, DoubleValue
 from ubii.util import import_type
-from ubii.util.constants import MSG_TYPES
 
 log = logging.getLogger(__name__)
 
@@ -72,7 +70,7 @@ class ProtoMessageFactory(Generic[GPM], metaclass=ABCMeta):
 def serialize(*args, **kwargs):
     """
     This function calls `json.dumps` with `Translator.ProtoEncoder` as optional `cls` argument.
-    This tells the json module to use this encode when trying to serialzze the message.
+    This tells the json module to use this encode when trying to serialize the message.
     """
     try:
         result = json.dumps(*args, cls=Translator.ProtoEncoder, **kwargs)
