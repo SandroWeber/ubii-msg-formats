@@ -1,1 +1,1 @@
-ubii.proto
+ubii.proto_v1.types=ubii.interact.v1

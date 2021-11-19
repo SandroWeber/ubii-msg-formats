@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ubii.proto_v1.types.devices;
+
+
+message TopicMux {
+    string id = 1;
+    string name = 2;
+    string data_type = 3;
+    string topic_selector = 4;
+    string identity_match_pattern = 5;
+}
+
+message TopicMuxList {
+    repeated ubii.proto_v1.types.devices.TopicMux elements = 1;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+package ubii.proto_v1.types.dataStructure;
+
+message Vector2 {
+    double x = 1;
+    double y = 2;
+}

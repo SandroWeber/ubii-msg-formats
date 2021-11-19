@@ -1,0 +1,22 @@
+syntax = "proto3";
+package ubii.proto_v1.types.dataStructure;
+
+import "ubii/proto_v1/types/dataStructure/buttonEventType.proto";
+import "ubii/proto_v1/types/dataStructure/vector2.proto";
+
+message TouchEvent {
+    enum TouchEventType {
+        TOUCH_START = 0;
+        TOUCH_MOVE = 1;
+        TOUCH_END = 2;
+    }
+
+    TouchEventType type = 1;
+    ubii.proto_v1.types.dataStructure.Vector2 position = 2;
+    string id = 3;
+    float force = 4;
+}
+
+message TouchEventList {
+    repeated ubii.proto_v1.types.dataStructure.TouchEvent elements = 1;
+}

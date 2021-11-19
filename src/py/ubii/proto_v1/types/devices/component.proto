@@ -1,0 +1,21 @@
+syntax = "proto3";
+package ubii.proto_v1.types.devices;
+
+message Component {
+    string topic = 1;
+    string message_format = 2;
+    enum IOType {
+        PUBLISHER = 0;
+        SUBSCRIBER = 1;
+    }
+    IOType io_type = 3;
+    string device_id = 4;
+    repeated string tags = 5;
+    string description = 6;
+    string id = 7;
+    string name = 8;
+}
+
+message ComponentList {
+    repeated ubii.proto_v1.types.devices.Component elements = 1;
+}

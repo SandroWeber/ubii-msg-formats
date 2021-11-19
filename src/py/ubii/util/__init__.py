@@ -1,12 +1,10 @@
 import importlib
 import logging
-from importlib.metadata import distribution
 
 from proto import Message as ProtoPlusMessage
 from .constants import MSG_TYPES
+import ubii.proto
 
-__proto_package__ = distribution('ubii-message-formats').read_text('proto_package.txt')
-assert __proto_package__
 
 log = logging.getLogger(__name__)
 __imported_types__ = {}
@@ -34,7 +32,7 @@ def import_type(data_type):
             type_ = type(f"{name.title()}Value", (ProtoPlusMessage,), {})
             type_ = type(type_.wrap(wrapper()))
         else:
-            package, type_ = name.replace(MSG_TYPES.proto_package, __proto_package__).rsplit('.', maxsplit=1)
+            package, type_ = name.replace(MSG_TYPES.proto_package, ubii.proto.__proto_module__).rsplit('.', maxsplit=1)
             package = importlib.import_module(package)
             type_ = getattr(package, type_, None)
 

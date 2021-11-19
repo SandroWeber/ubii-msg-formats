@@ -1,0 +1,16 @@
+syntax = "proto3";
+package ubii.proto_v1.types.dataStructure;
+
+import "ubii/proto_v1/types/dataStructure/pose2d.proto";
+import "ubii/proto_v1/types/dataStructure/vector2.proto";
+
+message Object2D {
+    string id = 1;
+    ubii.proto_v1.types.dataStructure.Pose2D pose = 2;
+    ubii.proto_v1.types.dataStructure.Vector2 size = 3;
+    string user_data_json = 4;
+}
+
+message Object2DList {
+    repeated ubii.proto_v1.types.dataStructure.Object2D elements = 1;
+}

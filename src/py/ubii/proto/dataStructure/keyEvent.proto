@@ -1,9 +1,0 @@
-syntax = "proto3";
-package ubii.proto.dataStructure;
-
-import "ubii/proto/dataStructure/buttonEventType.proto";
-
-message KeyEvent {
-    ubii.proto.dataStructure.ButtonEventType type = 1;
-    string key = 2;
-}

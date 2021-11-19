@@ -16,6 +16,7 @@ else:
 
 setuptools.setup(
     cmdclass={
-        'build_py': build_py
+        'build_py': build_py,
+        build_proto_name: build_py,
     }
 )

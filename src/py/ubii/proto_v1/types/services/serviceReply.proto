@@ -1,0 +1,39 @@
+syntax = "proto3";
+package ubii.proto_v1.types.services;
+
+import "ubii/proto_v1/types/general/success.proto";
+import "ubii/proto_v1/types/general/error.proto";
+import "ubii/proto_v1/types/dataStructure/lists.proto";
+import "ubii/proto_v1/types/clients/client.proto";
+import "ubii/proto_v1/types/devices/device.proto";
+import "ubii/proto_v1/types/devices/topicMux.proto";
+import "ubii/proto_v1/types/devices/topicDemux.proto";
+import "ubii/proto_v1/types/servers/server.proto";
+import "ubii/proto_v1/types/sessions/session.proto";
+import "ubii/proto_v1/types/services/service.proto";
+import "ubii/proto_v1/types/processing/processingModule.proto";
+import "ubii/proto_v1/types/processing/lockstepProcessing.proto";
+
+message ServiceReply {
+    oneof type {
+        ubii.proto_v1.types.general.Success success = 1;
+        ubii.proto_v1.types.general.Error error = 2;
+        ubii.proto_v1.types.clients.Client client = 3;
+        ubii.proto_v1.types.devices.Device device = 4;
+        ubii.proto_v1.types.servers.Server server = 5;
+        ubii.proto_v1.types.sessions.Session session = 6;
+        ubii.proto_v1.types.sessions.SessionList session_list = 7;
+        ubii.proto_v1.types.processing.ProcessingModule processing_module = 8;
+        ubii.proto_v1.types.processing.ProcessingModuleList processing_module_list = 9;
+        ubii.proto_v1.types.dataStructure.StringList string_list = 10;
+        ubii.proto_v1.types.devices.TopicMux topic_mux = 11;
+        ubii.proto_v1.types.devices.TopicMuxList topic_mux_list = 12;
+        ubii.proto_v1.types.devices.TopicDemux topic_demux = 13;
+        ubii.proto_v1.types.devices.TopicDemuxList topic_demux_list = 14;
+        ubii.proto_v1.types.clients.ClientList client_list = 15;
+        ubii.proto_v1.types.devices.DeviceList device_list = 16;
+        ubii.proto_v1.types.services.Service service = 17;
+        ubii.proto_v1.types.services.ServiceList service_list = 18;
+        ubii.proto_v1.types.processing.LockstepProcessingReply lockstep_processing_reply = 19;
+    }
+}

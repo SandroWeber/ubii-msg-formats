@@ -1,0 +1,28 @@
+syntax = "proto3";
+package ubii.proto_v1.types.sessions;
+
+import "ubii/proto_v1/types/sessions/ioMappings.proto";
+import "ubii/proto_v1/types/processing/processingModule.proto";
+
+enum SessionStatus {
+    CREATED = 0;
+    RUNNING = 1;
+    PAUSED = 2;
+    STOPPED = 3;
+}
+
+message Session {
+    string id = 1;
+    string name = 2;
+    repeated ubii.proto_v1.types.processing.ProcessingModule processing_modules = 3;
+    repeated ubii.proto_v1.types.sessions.IOMapping io_mappings = 4;
+    repeated string tags = 5;
+    string description = 6;
+    repeated string authors = 7;
+    SessionStatus status = 8;
+    bool editable = 9;
+}
+
+message SessionList {
+    repeated ubii.proto_v1.types.sessions.Session elements = 1;
+}
