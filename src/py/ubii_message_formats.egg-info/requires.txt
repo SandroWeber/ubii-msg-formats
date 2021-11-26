@@ -1,7 +1,0 @@
-protobuf
-proto-plus
-generic-proto-plus-stubs
-more-itertools
-
-[compiler]
-ubii-msg-compiler[protoplus]>=0.0.3a0.post8.dev1
