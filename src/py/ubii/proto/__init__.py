@@ -181,12 +181,18 @@ class ProtoEncoder(JSONEncoder):
     """
     Custom encoder to convert Protobuf Messages and Proto-Plus Messages to valid json
     """
+    format_options = {
+        "use_integers_for_enums": True,
+        "including_default_value_fields": True,
+        "preserving_proto_field_name": False,
+    }
+
     def default(self, o):
         if isinstance(o, ProtoPlusMessage):
-            return type(o).to_dict(o)
+            return type(o).to_dict(o, **self.format_options)
 
         if isinstance(o, ProtoMessage):
-            return MessageToDict(o, use_integers_for_enums=True, including_default_value_fields=True)
+            return MessageToDict(o, **self.format_options)
 
         return JSONEncoder.default(self, o)
 
