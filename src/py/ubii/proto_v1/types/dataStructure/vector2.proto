@@ -5,3 +5,7 @@ message Vector2 {
     double x = 1;
     double y = 2;
 }
+
+message Vector2List {
+    repeated ubii.proto_v1.types.dataStructure.Vector2 elements = 1;
+}

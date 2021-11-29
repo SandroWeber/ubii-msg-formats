@@ -6,6 +6,7 @@ import proto
 from proto import (
     DOUBLE,
     Field,
+    RepeatedField,
 )
 
 from proto.message import (
@@ -17,6 +18,7 @@ __protobuf__ = proto.module(
     package="ubii.interact.v1",
     manifest={
         "Quaternion",
+        "QuaternionList",
     }
 )
 
@@ -37,6 +39,14 @@ class Quaternion(Message):
     w = Field(
         DOUBLE,
         number=4,
+    )
+
+
+
+class QuaternionList(Message):
+    elements = RepeatedField(
+        Quaternion,
+        number=1,
     )
 
 

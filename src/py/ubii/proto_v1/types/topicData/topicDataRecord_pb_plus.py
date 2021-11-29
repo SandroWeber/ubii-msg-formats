@@ -83,18 +83,17 @@ from ubii.proto_v1.types.dataStructure.touchEvent_pb_plus import (
 
 from ubii.proto_v1.types.dataStructure.vector2_pb_plus import (
     Vector2,
+    Vector2List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector3_pb_plus import (
     Vector3,
+    Vector3List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector4_pb_plus import (
     Vector4,
-)
-
-from ubii.proto_v1.types.processing.processingModule_pb_plus import (
-    ProcessingModuleList,
+    Vector4List,
 )
 
 from ubii.proto_v1.types.sessions.session_pb_plus import (
@@ -116,6 +115,7 @@ __protobuf__ = proto.module(
 
 
 class TopicDataRecord(Message):
+    """continuous index: 38"""
     topic = Field(
         STRING,
         number=1,
@@ -139,149 +139,164 @@ class TopicDataRecord(Message):
         number=5,
         oneof='type',
     )
-    vector2 = Field(
-        Vector2,
-        number=6,
-        oneof='type',
-    )
-    vector3 = Field(
-        Vector3,
-        number=7,
-        oneof='type',
-    )
-    vector4 = Field(
-        Vector4,
-        number=8,
-        oneof='type',
-    )
-    quaternion = Field(
-        Quaternion,
-        number=9,
-        oneof='type',
-    )
-    matrix3x2 = Field(
-        Matrix3x2,
-        number=10,
-        oneof='type',
-    )
-    matrix4x4 = Field(
-        Matrix4x4,
-        number=11,
-        oneof='type',
-    )
-    color = Field(
-        Color,
-        number=12,
-        oneof='type',
-    )
-    touch_event = Field(
-        TouchEvent,
-        number=13,
-        oneof='type',
-    )
-    touch_event_list = Field(
-        TouchEventList,
-        number=14,
-        oneof='type',
-    )
-    key_event = Field(
-        KeyEvent,
-        number=15,
-        oneof='type',
-    )
-    mouse_event = Field(
-        MouseEvent,
-        number=16,
-        oneof='type',
-    )
-    myo_event = Field(
-        MyoEvent,
-        number=17,
-        oneof='type',
-    )
-    pose2D = Field(
-        Pose2D,
-        number=18,
-        oneof='type',
-    )
-    pose3D = Field(
-        Pose3D,
-        number=19,
-        oneof='type',
-    )
-    object2D = Field(
-        Object2D,
-        number=20,
-        oneof='type',
-    )
-    object3D = Field(
-        Object3D,
-        number=21,
-        oneof='type',
-    )
-    object2D_list = Field(
-        Object2DList,
-        number=22,
-        oneof='type',
-    )
-    object3D_list = Field(
-        Object3DList,
-        number=23,
-        oneof='type',
-    )
     int32 = Field(
         INT32,
-        number=24,
+        number=6,
         oneof='type',
     )
     float = Field(
         FLOAT,
+        number=7,
+        oneof='type',
+    )
+    vector2 = Field(
+        Vector2,
+        number=8,
+        oneof='type',
+    )
+    vector2_list = Field(
+        Vector2List,
+        number=9,
+        oneof='type',
+    )
+    vector3 = Field(
+        Vector3,
+        number=10,
+        oneof='type',
+    )
+    vector3_list = Field(
+        Vector3List,
+        number=11,
+        oneof='type',
+    )
+    vector4 = Field(
+        Vector4,
+        number=12,
+        oneof='type',
+    )
+    vector4_list = Field(
+        Vector4List,
+        number=13,
+        oneof='type',
+    )
+    quaternion = Field(
+        Quaternion,
+        number=14,
+        oneof='type',
+    )
+    quaternion_list = Field(
+        Quaternion,
+        number=15,
+        oneof='type',
+    )
+    matrix3x2 = Field(
+        Matrix3x2,
+        number=16,
+        oneof='type',
+    )
+    matrix4x4 = Field(
+        Matrix4x4,
+        number=17,
+        oneof='type',
+    )
+    color = Field(
+        Color,
+        number=18,
+        oneof='type',
+    )
+    touch_event = Field(
+        TouchEvent,
+        number=19,
+        oneof='type',
+    )
+    touch_event_list = Field(
+        TouchEventList,
+        number=20,
+        oneof='type',
+    )
+    key_event = Field(
+        KeyEvent,
+        number=21,
+        oneof='type',
+    )
+    mouse_event = Field(
+        MouseEvent,
+        number=22,
+        oneof='type',
+    )
+    myo_event = Field(
+        MyoEvent,
+        number=23,
+        oneof='type',
+    )
+    pose2D = Field(
+        Pose2D,
+        number=24,
+        oneof='type',
+    )
+    pose3D = Field(
+        Pose3D,
         number=25,
+        oneof='type',
+    )
+    object2D = Field(
+        Object2D,
+        number=26,
+        oneof='type',
+    )
+    object3D = Field(
+        Object3D,
+        number=27,
+        oneof='type',
+    )
+    object2D_list = Field(
+        Object2DList,
+        number=28,
+        oneof='type',
+    )
+    object3D_list = Field(
+        Object3DList,
+        number=29,
         oneof='type',
     )
     int32_list = Field(
         Int32List,
-        number=26,
+        number=30,
         oneof='type',
     )
     float_list = Field(
         FloatList,
-        number=27,
+        number=31,
         oneof='type',
     )
     double_list = Field(
         DoubleList,
-        number=28,
+        number=32,
         oneof='type',
     )
     string_list = Field(
         StringList,
-        number=29,
+        number=33,
         oneof='type',
     )
     bool_list = Field(
         BoolList,
-        number=30,
+        number=34,
         oneof='type',
     )
     image2D = Field(
         Image2D,
-        number=31,
+        number=35,
         oneof='type',
     )
     image2D_list = Field(
         Image2DList,
-        number=32,
+        number=36,
         oneof='type',
     )
     session = Field(
         Session,
-        number=33,
-        oneof='type',
-    )
-    processing_module_list = Field(
-        ProcessingModuleList,
-        number=34,
+        number=37,
         oneof='type',
     )
 

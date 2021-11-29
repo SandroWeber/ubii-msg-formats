@@ -31,5 +31,9 @@ class Timestamp(Message):
         INT32,
         number=2,
     )
+    millis = Field(
+        INT64,
+        number=3,
+    )
 
 

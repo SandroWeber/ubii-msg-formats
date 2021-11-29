@@ -59,6 +59,7 @@ from ubii.proto_v1.types.dataStructure.pose3d_pb_plus import (
 
 from ubii.proto_v1.types.dataStructure.quaternion_pb_plus import (
     Quaternion,
+    QuaternionList,
 )
 
 from ubii.proto_v1.types.dataStructure.touchEvent_pb_plus import (
@@ -68,18 +69,22 @@ from ubii.proto_v1.types.dataStructure.touchEvent_pb_plus import (
 
 from ubii.proto_v1.types.dataStructure.vector2_pb_plus import (
     Vector2,
+    Vector2List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector3_pb_plus import (
     Vector3,
+    Vector3List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector4_pb_plus import (
     Vector4,
+    Vector4List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector8_pb_plus import (
     Vector8,
+    Vector8List,
 )
 
 
@@ -104,10 +109,15 @@ __all__ = (
     "Pose2D",
     "Pose3D",
     "Quaternion",
+    "QuaternionList",
     "TouchEvent",
     "TouchEventList",
     "Vector2",
+    "Vector2List",
     "Vector3",
+    "Vector3List",
     "Vector4",
+    "Vector4List",
     "Vector8",
+    "Vector8List",
 )

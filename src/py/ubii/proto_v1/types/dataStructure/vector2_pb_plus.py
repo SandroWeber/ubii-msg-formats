@@ -6,6 +6,7 @@ import proto
 from proto import (
     DOUBLE,
     Field,
+    RepeatedField,
 )
 
 from proto.message import (
@@ -17,6 +18,7 @@ __protobuf__ = proto.module(
     package="ubii.interact.v1",
     manifest={
         "Vector2",
+        "Vector2List",
     }
 )
 
@@ -29,6 +31,14 @@ class Vector2(Message):
     y = Field(
         DOUBLE,
         number=2,
+    )
+
+
+
+class Vector2List(Message):
+    elements = RepeatedField(
+        Vector2,
+        number=1,
     )
 
 

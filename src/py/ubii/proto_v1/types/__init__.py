@@ -64,6 +64,7 @@ from ubii.proto_v1.types.dataStructure.pose3d_pb_plus import (
 
 from ubii.proto_v1.types.dataStructure.quaternion_pb_plus import (
     Quaternion,
+    QuaternionList,
 )
 
 from ubii.proto_v1.types.dataStructure.touchEvent_pb_plus import (
@@ -73,18 +74,22 @@ from ubii.proto_v1.types.dataStructure.touchEvent_pb_plus import (
 
 from ubii.proto_v1.types.dataStructure.vector2_pb_plus import (
     Vector2,
+    Vector2List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector3_pb_plus import (
     Vector3,
+    Vector3List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector4_pb_plus import (
     Vector4,
+    Vector4List,
 )
 
 from ubii.proto_v1.types.dataStructure.vector8_pb_plus import (
     Vector8,
+    Vector8List,
 )
 
 from ubii.proto_v1.types.devices.component_pb_plus import (
@@ -181,6 +186,37 @@ from ubii.proto_v1.types.topicData.topicData_pb_plus import (
 __all__ = (
     "Client",
     "ClientList",
+    "Color",
+    "Image2D",
+    "Image2DList",
+    "KeyEvent",
+    "StringList",
+    "DoubleList",
+    "FloatList",
+    "BoolList",
+    "Int32List",
+    "Matrix3x2",
+    "Matrix4x4",
+    "MouseEvent",
+    "MyoEvent",
+    "Object2D",
+    "Object2DList",
+    "Object3D",
+    "Object3DList",
+    "Pose2D",
+    "Pose3D",
+    "Quaternion",
+    "QuaternionList",
+    "TouchEvent",
+    "TouchEventList",
+    "Vector2",
+    "Vector2List",
+    "Vector3",
+    "Vector3List",
+    "Vector4",
+    "Vector4List",
+    "Vector8",
+    "Vector8List",
     "Component",
     "ComponentList",
     "Device",
@@ -213,34 +249,8 @@ __all__ = (
     "IOMappingList",
     "Session",
     "SessionList",
-    "TopicData",
     "Timestamp",
+    "TopicData",
     "TopicDataRecord",
     "TopicDataRecordList",
-    "Color",
-    "Image2D",
-    "Image2DList",
-    "KeyEvent",
-    "StringList",
-    "DoubleList",
-    "FloatList",
-    "BoolList",
-    "Int32List",
-    "Matrix3x2",
-    "Matrix4x4",
-    "MouseEvent",
-    "MyoEvent",
-    "Object2D",
-    "Object2DList",
-    "Object3D",
-    "Object3DList",
-    "Pose2D",
-    "Pose3D",
-    "Quaternion",
-    "TouchEvent",
-    "TouchEventList",
-    "Vector2",
-    "Vector3",
-    "Vector4",
-    "Vector8",
 )

@@ -23,6 +23,7 @@ import "ubii/proto_v1/types/dataStructure/image.proto";
 import "ubii/proto_v1/types/sessions/session.proto";
 import "ubii/proto_v1/types/processing/processingModule.proto";
 
+// continuous index: 38
 message TopicDataRecord {
     string topic = 1;
     ubii.proto_v1.types.topicData.Timestamp timestamp = 2;
@@ -30,10 +31,16 @@ message TopicDataRecord {
         double double = 3;
         bool bool = 4;
         string string = 5;
+        int32 int32 = 23;
+        float float = 24;
         ubii.proto_v1.types.dataStructure.Vector2 vector2 = 6;
+        ubii.proto_v1.types.dataStructure.Vector2List vector2_list = 35;
         ubii.proto_v1.types.dataStructure.Vector3 vector3 = 7;
+        ubii.proto_v1.types.dataStructure.Vector3List vector3_list = 36;
         ubii.proto_v1.types.dataStructure.Vector4 vector4 = 8;
+        ubii.proto_v1.types.dataStructure.Vector4List vector4_list = 37;
         ubii.proto_v1.types.dataStructure.Quaternion quaternion = 9;
+        ubii.proto_v1.types.dataStructure.Quaternion quaternion_list = 38;
         ubii.proto_v1.types.dataStructure.Matrix3x2 matrix3x2 = 10;
         ubii.proto_v1.types.dataStructure.Matrix4x4 matrix4x4 = 11;
         ubii.proto_v1.types.dataStructure.Color color = 12;
@@ -48,8 +55,6 @@ message TopicDataRecord {
         ubii.proto_v1.types.dataStructure.Object3D object3D = 20;
         ubii.proto_v1.types.dataStructure.Object2DList object2D_list = 21;
         ubii.proto_v1.types.dataStructure.Object3DList object3D_list = 22;
-        int32 int32 = 23;
-        float float = 24;
         ubii.proto_v1.types.dataStructure.Int32List int32_list = 25;
         ubii.proto_v1.types.dataStructure.FloatList float_list = 26;
         ubii.proto_v1.types.dataStructure.DoubleList double_list = 27;
@@ -58,7 +63,6 @@ message TopicDataRecord {
         ubii.proto_v1.types.dataStructure.Image2D image2D = 30;
         ubii.proto_v1.types.dataStructure.Image2DList image2D_list = 31;
         ubii.proto_v1.types.sessions.Session session = 32;
-        ubii.proto_v1.types.processing.ProcessingModuleList processing_module_list = 33;
     }    
 }
 

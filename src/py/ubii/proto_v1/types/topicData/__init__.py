@@ -17,8 +17,8 @@ from ubii.proto_v1.types.topicData.topicData_pb_plus import (
 
 
 __all__ = (
-    "TopicData",
     "Timestamp",
+    "TopicData",
     "TopicDataRecord",
     "TopicDataRecordList",
 )

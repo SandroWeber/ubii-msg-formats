@@ -6,6 +6,7 @@ import proto
 from proto import (
     BOOL,
     Enum,
+    FLOAT,
     Field,
     RepeatedField,
     STRING,
@@ -78,6 +79,10 @@ class Client(Message):
     state = Field(
         State,
         number=10,
+    )
+    latency = Field(
+        FLOAT,
+        number=11,
     )
 
 
