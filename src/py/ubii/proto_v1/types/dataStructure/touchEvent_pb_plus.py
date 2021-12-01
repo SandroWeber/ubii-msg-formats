@@ -35,6 +35,7 @@ class TouchEvent(Message):
         TOUCH_MOVE = 1
         TOUCH_END = 2
 
+
     type = Field(
         TouchEventType,
         number=1,

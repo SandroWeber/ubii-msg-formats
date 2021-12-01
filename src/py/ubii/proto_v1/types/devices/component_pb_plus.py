@@ -29,6 +29,7 @@ class Component(Message):
         PUBLISHER = 0
         SUBSCRIBER = 1
 
+
     topic = Field(
         STRING,
         number=1,

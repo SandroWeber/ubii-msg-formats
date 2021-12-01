@@ -31,6 +31,7 @@ class Image2D(Message):
         RGB8 = 1
         RGBA8 = 2
 
+
     width = Field(
         INT32,
         number=1,

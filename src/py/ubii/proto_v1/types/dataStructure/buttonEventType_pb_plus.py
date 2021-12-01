@@ -11,6 +11,7 @@ from proto import (
 __protobuf__ = proto.module(
     package="ubii.interact.v1",
     manifest={
+        "ButtonEventType",
     }
 )
 
@@ -18,3 +19,4 @@ __protobuf__ = proto.module(
 class ButtonEventType(Enum):
     UP = 0
     DOWN = 1
+

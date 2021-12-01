@@ -7,8 +7,16 @@ from ubii.proto_v1.types.clients.client_pb_plus import (
     ClientList,
 )
 
+from ubii.proto_v1.types.dataStructure.buttonEventType_pb_plus import (
+    ButtonEventType,
+)
+
 from ubii.proto_v1.types.dataStructure.color_pb_plus import (
     Color,
+)
+
+from ubii.proto_v1.types.dataStructure.handGestureType_pb_plus import (
+    HandGestureType,
 )
 
 from ubii.proto_v1.types.dataStructure.image_pb_plus import (
@@ -167,6 +175,7 @@ from ubii.proto_v1.types.sessions.ioMappings_pb_plus import (
 from ubii.proto_v1.types.sessions.session_pb_plus import (
     Session,
     SessionList,
+    SessionStatus,
 )
 
 from ubii.proto_v1.types.topicData.timestamp_pb_plus import (
@@ -186,6 +195,8 @@ from ubii.proto_v1.types.topicData.topicData_pb_plus import (
 __all__ = (
     "Client",
     "ClientList",
+    "ButtonEventType",
+    "HandGestureType",
     "Color",
     "Image2D",
     "Image2DList",
@@ -241,6 +252,7 @@ __all__ = (
     "ServiceReply",
     "ServiceRequest",
     "TopicSubscription",
+    "SessionStatus",
     "TopicInputMapping",
     "TopicInputMappingList",
     "TopicOutputMapping",

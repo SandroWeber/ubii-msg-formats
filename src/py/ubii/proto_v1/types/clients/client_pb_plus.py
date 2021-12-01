@@ -40,6 +40,7 @@ class Client(Message):
         INACTIVE = 1
         UNAVAILABLE = 2
 
+
     id = Field(
         STRING,
         number=1,

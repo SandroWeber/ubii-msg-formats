@@ -14,10 +14,12 @@ from ubii.proto_v1.types.sessions.ioMappings_pb_plus import (
 from ubii.proto_v1.types.sessions.session_pb_plus import (
     Session,
     SessionList,
+    SessionStatus,
 )
 
 
 __all__ = (
+    "SessionStatus",
     "TopicInputMapping",
     "TopicInputMappingList",
     "TopicOutputMapping",

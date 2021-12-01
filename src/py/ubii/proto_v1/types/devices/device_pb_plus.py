@@ -33,6 +33,7 @@ class Device(Message):
         PARTICIPANT = 0
         WATCHER = 1
 
+
     id = Field(
         STRING,
         number=1,

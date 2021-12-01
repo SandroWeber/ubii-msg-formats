@@ -11,6 +11,7 @@ from proto import (
 __protobuf__ = proto.module(
     package="ubii.interact.v1",
     manifest={
+        "HandGestureType",
     }
 )
 
@@ -22,3 +23,4 @@ class HandGestureType(Enum):
     WAVE_OUT = 3
     FIST = 4
     DOUBLE_TAP = 5
+

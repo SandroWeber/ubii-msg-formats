@@ -95,12 +95,14 @@ class ProcessingModule(Message):
         HALTED = 3
         DESTROYED = 4
 
+
     class Language(Enum):
         CPP = 0
         PY = 1
         JS = 2
         CS = 3
         JAVA = 4
+
 
     id = Field(
         STRING,

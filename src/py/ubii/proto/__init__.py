@@ -1,88 +1,96 @@
 import json
 from abc import ABCMeta
-from functools import wraps, partialmethod
+from functools import wraps
 from importlib.metadata import distribution
 from json import JSONEncoder
 from warnings import warn
 
 import proto
+from google.protobuf.json_format import MessageToDict as _MessageToDict
+from google.protobuf.message import Message as ProtoMessage
 from more_itertools import take, pad_none
 from proto.message import Message as ProtoPlusMessage, MessageMeta
-from google.protobuf.message import Message as ProtoMessage
-from google.protobuf.json_format import MessageToDict
 
-from ..proto_v1.types.clients import Client
-from ..proto_v1.types.clients import ClientList
-from ..proto_v1.types.dataStructure import Color
-from ..proto_v1.types.dataStructure import Image2D
-from ..proto_v1.types.dataStructure import Image2DList
-from ..proto_v1.types.dataStructure import KeyEvent
-from ..proto_v1.types.dataStructure import StringList
-from ..proto_v1.types.dataStructure import DoubleList
-from ..proto_v1.types.dataStructure import FloatList
-from ..proto_v1.types.dataStructure import BoolList
-from ..proto_v1.types.dataStructure import Int32List
-from ..proto_v1.types.dataStructure import Matrix3x2
-from ..proto_v1.types.dataStructure import Matrix4x4
-from ..proto_v1.types.dataStructure import MouseEvent
-from ..proto_v1.types.dataStructure import MyoEvent
-from ..proto_v1.types.dataStructure import Object2D
-from ..proto_v1.types.dataStructure import Object2DList
-from ..proto_v1.types.dataStructure import Object3D
-from ..proto_v1.types.dataStructure import Object3DList
-from ..proto_v1.types.dataStructure import Pose2D
-from ..proto_v1.types.dataStructure import Pose3D
-from ..proto_v1.types.dataStructure import Quaternion
-from ..proto_v1.types.dataStructure import TouchEvent
-from ..proto_v1.types.dataStructure import TouchEventList
-from ..proto_v1.types.dataStructure import Vector2
-from ..proto_v1.types.dataStructure import Vector3
-from ..proto_v1.types.dataStructure import Vector4
-from ..proto_v1.types.dataStructure import Vector8
-from ..proto_v1.types.devices import Component
-from ..proto_v1.types.devices import ComponentList
-from ..proto_v1.types.devices import Device
-from ..proto_v1.types.devices import DeviceList
-from ..proto_v1.types.devices import TopicDemux
-from ..proto_v1.types.devices import TopicDemuxList
-from ..proto_v1.types.devices import TopicMux
-from ..proto_v1.types.devices import TopicMuxList
-from ..proto_v1.types.general import Error
-from ..proto_v1.types.general import ErrorList
-from ..proto_v1.types.general import Success
-from ..proto_v1.types.general import SuccessList
-from ..proto_v1.types.processing import LockstepProcessingRequest
-from ..proto_v1.types.processing import LockstepProcessingReply
-from ..proto_v1.types.processing import ProcessingMode
-from ..proto_v1.types.processing import ModuleIO
-from ..proto_v1.types.processing import ProcessingModule
-from ..proto_v1.types.processing import ProcessingModuleList
-from ..proto_v1.types.servers import Server
-from ..proto_v1.types.services import Service
-from ..proto_v1.types.services import ServiceList
-from ..proto_v1.types.services import ServiceReply
-from ..proto_v1.types.services import ServiceRequest
-from ..proto_v1.types.services.request import TopicSubscription
-from ..proto_v1.types.sessions import TopicInputMapping
-from ..proto_v1.types.sessions import TopicInputMappingList
-from ..proto_v1.types.sessions import TopicOutputMapping
-from ..proto_v1.types.sessions import TopicOutputMappingList
-from ..proto_v1.types.sessions import IOMapping
-from ..proto_v1.types.sessions import IOMappingList
-from ..proto_v1.types.sessions import Session
-from ..proto_v1.types.sessions import SessionList
-from ..proto_v1.types.topicData import TopicData
-from ..proto_v1.types.topicData import Timestamp
-from ..proto_v1.types.topicData import TopicDataRecord
-from ..proto_v1.types.topicData import TopicDataRecordList
+from ubii.proto_v1.types import (
+    Client,
+    ClientList,
+    ButtonEventType,
+    HandGestureType,
+    Color,
+    Image2D,
+    Image2DList,
+    KeyEvent,
+    StringList,
+    DoubleList,
+    FloatList,
+    BoolList,
+    Int32List,
+    Matrix3x2,
+    Matrix4x4,
+    MouseEvent,
+    MyoEvent,
+    Object2D,
+    Object2DList,
+    Object3D,
+    Object3DList,
+    Pose2D,
+    Pose3D,
+    Quaternion,
+    QuaternionList,
+    TouchEvent,
+    TouchEventList,
+    Vector2,
+    Vector2List,
+    Vector3,
+    Vector3List,
+    Vector4,
+    Vector4List,
+    Vector8,
+    Vector8List,
+    Component,
+    ComponentList,
+    Device,
+    DeviceList,
+    TopicDemux,
+    TopicDemuxList,
+    TopicMux,
+    TopicMuxList,
+    Error,
+    ErrorList,
+    Success,
+    SuccessList,
+    LockstepProcessingRequest,
+    LockstepProcessingReply,
+    ProcessingMode,
+    ModuleIO,
+    ProcessingModule,
+    ProcessingModuleList,
+    Server,
+    Service,
+    ServiceList,
+    ServiceReply,
+    ServiceRequest,
+    TopicSubscription,
+    SessionStatus,
+    TopicInputMapping,
+    TopicInputMappingList,
+    TopicOutputMapping,
+    TopicOutputMappingList,
+    IOMapping,
+    IOMappingList,
+    Session,
+    SessionList,
+    Timestamp,
+    TopicData,
+    TopicDataRecord,
+    TopicDataRecordList,
+)
 
-__all__ = (
-    "ProtoMeta",
-    "ProtoEncoder",
-    "serialize",
-
+__proto_types__ = (
     "Client",
     "ClientList",
+    "ButtonEventType",
+    "HandGestureType",
     "Color",
     "Image2D",
     "Image2DList",
@@ -103,12 +111,17 @@ __all__ = (
     "Pose2D",
     "Pose3D",
     "Quaternion",
+    "QuaternionList",
     "TouchEvent",
     "TouchEventList",
     "Vector2",
+    "Vector2List",
     "Vector3",
+    "Vector3List",
     "Vector4",
+    "Vector4List",
     "Vector8",
+    "Vector8List",
     "Component",
     "ComponentList",
     "Device",
@@ -133,6 +146,7 @@ __all__ = (
     "ServiceReply",
     "ServiceRequest",
     "TopicSubscription",
+    "SessionStatus",
     "TopicInputMapping",
     "TopicInputMappingList",
     "TopicOutputMapping",
@@ -141,10 +155,16 @@ __all__ = (
     "IOMappingList",
     "Session",
     "SessionList",
-    "TopicData",
     "Timestamp",
+    "TopicData",
     "TopicDataRecord",
     "TopicDataRecordList",
+)
+
+__all__ = __proto_types__ + (
+    "ProtoMeta",
+    "ProtoEncoder",
+    "serialize",
 )
 
 __proto_module__, __proto_package__ = take(2, pad_none(distribution('ubii-message-formats')
@@ -153,7 +173,7 @@ __proto_module__, __proto_package__ = take(2, pad_none(distribution('ubii-messag
                                            )
 __protobuf__ = proto.module(
     package=__proto_package__ or __proto_module__,
-    manifest=set(__all__)
+    manifest=set(__proto_types__)
 )
 
 if __proto_package__ is None:
@@ -192,7 +212,7 @@ class ProtoEncoder(JSONEncoder):
             return type(o).to_dict(o, **self.format_options)
 
         if isinstance(o, ProtoMessage):
-            return MessageToDict(o, **self.format_options)
+            return _MessageToDict(o, **self.format_options)
 
         return JSONEncoder.default(self, o)
 

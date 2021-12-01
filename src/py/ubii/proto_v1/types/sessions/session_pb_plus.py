@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
     manifest={
         "Session",
         "SessionList",
+        "SessionStatus",
     }
 )
 
@@ -38,6 +39,7 @@ class SessionStatus(Enum):
     RUNNING = 1
     PAUSED = 2
     STOPPED = 3
+
 
 class Session(Message):
     id = Field(
