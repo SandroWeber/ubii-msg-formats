@@ -1,0 +1,11 @@
+syntax = "proto3";
+package ubii.proto_v2.types.general;
+
+message Success {
+    string title = 1;
+    string message = 2;
+}
+
+message SuccessList {
+    repeated ubii.proto_v2.types.general.Success elements = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ubii.proto_v2.types.services;
+
+
+message Service {
+    string topic = 1;
+    string request_message_format = 2;
+    string response_message_format = 3;
+    repeated string tags = 4;
+    string description = 5;
+}
+
+message ServiceList {
+    repeated ubii.proto_v2.types.services.Service elements = 1;
+}

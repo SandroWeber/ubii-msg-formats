@@ -7,3 +7,7 @@ external/bin/*
 *.log
 .vscode/
 .idea/
+dist/
+__pycache__
+/.eggs
+/external

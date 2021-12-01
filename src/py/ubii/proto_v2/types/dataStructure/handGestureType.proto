@@ -1,0 +1,11 @@
+syntax = "proto3";
+package ubii.proto_v2.types.dataStructure;
+
+enum HandGestureType {
+    REST = 0;
+    FINGERS_SPREAD = 1;
+    WAVE_IN = 2;
+    WAVE_OUT = 3;
+    FIST = 4;
+    DOUBLE_TAP = 5;
+}

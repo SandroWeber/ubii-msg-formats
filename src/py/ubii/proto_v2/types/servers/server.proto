@@ -1,0 +1,14 @@
+syntax = "proto3";
+package ubii.proto_v2.types.servers;
+
+message Server {
+    string id = 1;
+    string name = 2;
+    string ip_ethernet = 3;
+    string ip_wlan = 4;
+    string port_service_zmq = 5;
+    string port_service_rest = 6;
+    string port_topic_data_zmq = 7;
+    string port_topic_data_ws = 8;
+    string constants_json = 9;
+}

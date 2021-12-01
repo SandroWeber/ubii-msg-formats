@@ -1,0 +1,7 @@
+syntax = "proto3";
+package ubii.proto_v2.types.dataStructure;
+
+enum ButtonEventType {
+    UP = 0;
+    DOWN = 1;
+}

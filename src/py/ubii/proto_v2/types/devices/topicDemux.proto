@@ -1,0 +1,14 @@
+syntax = "proto3";
+package ubii.proto_v2.types.devices;
+
+
+message TopicDemux {
+    string id = 1;
+    string name = 2;
+    string data_type = 3;
+    string output_topic_format = 4;
+}
+
+message TopicDemuxList {
+    repeated ubii.proto_v2.types.devices.TopicDemux elements = 1;
+}

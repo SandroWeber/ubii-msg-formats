@@ -1,0 +1,17 @@
+syntax = "proto3";
+package ubii.proto_v2.types.dataStructure;
+
+message Vector8 {
+    double v0 = 1;
+    double v1 = 2;
+    double v2 = 3;
+    double v3 = 4;
+    double v4 = 5;
+    double v5 = 6;
+    double v6 = 7;
+    double v7 = 8;
+}
+
+message Vector8List {
+    repeated ubii.proto_v2.types.dataStructure.Vector8 elements = 1;
+}

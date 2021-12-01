@@ -2,9 +2,11 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "ubii-msg-compiler[protoplus] >= 0.0.3a0.post8.dev1",
+    "ubii-msg-compiler[protoplus] >= 0.0.3rc0.post2",
 ]
 
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
+version_scheme = "post"
+local_scheme = "no-local-version"

@@ -1,0 +1,10 @@
+syntax = "proto3";
+package ubii.proto_v2.types.services.request;
+
+message TopicSubscription {
+    string client_id = 1;
+    repeated string subscribe_topics = 2;
+    repeated string unsubscribe_topics = 3;
+    repeated string subscribe_topic_regexp = 4;
+    repeated string unsubscribe_topic_regexp = 5;
+}

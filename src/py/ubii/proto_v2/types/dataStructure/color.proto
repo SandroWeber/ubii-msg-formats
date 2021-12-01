@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ubii.proto_v2.types.dataStructure;
+
+message Color {
+    double r = 1;
+    double g = 2;
+    double b = 3;
+    double a = 4;
+}

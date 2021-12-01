@@ -1,0 +1,29 @@
+syntax = "proto3";
+package ubii.proto_v2.types.clients;
+
+import "ubii/proto_v2/types/devices/device.proto";
+import "ubii/proto_v2/types/processing/processingModule.proto";
+
+message Client {
+    enum State {
+        ACTIVE = 0;
+        INACTIVE = 1;
+        UNAVAILABLE = 2;
+    }
+
+    string id = 1;
+    string name = 2;
+    repeated ubii.proto_v2.types.devices.Device devices = 3;
+    repeated string tags = 4;
+    string description = 5;
+    repeated ubii.proto_v2.types.processing.ProcessingModule processing_modules = 6;
+    bool is_dedicated_processing_node = 7;
+    string host_ip = 8;
+    string metadata_json = 9;
+    State state = 10;
+    float latency = 11;
+}
+
+message ClientList {
+    repeated ubii.proto_v2.types.clients.Client elements = 1;
+}

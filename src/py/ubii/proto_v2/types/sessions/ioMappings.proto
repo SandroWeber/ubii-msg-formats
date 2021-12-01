@@ -1,0 +1,41 @@
+syntax = "proto3";
+package ubii.proto_v2.types.sessions;
+
+import "ubii/proto_v2/types/devices/topicMux.proto";
+import "ubii/proto_v2/types/devices/topicDemux.proto";
+
+message TopicInputMapping {
+    string input_name = 1;
+    oneof topic_source {
+        string topic = 2;
+        ubii.proto_v2.types.devices.TopicMux topic_mux = 3;
+    }
+}
+
+message TopicInputMappingList {
+    repeated ubii.proto_v2.types.sessions.TopicInputMapping elements = 1;
+}
+
+
+message TopicOutputMapping {
+    string output_name = 1;
+    oneof topic_destination {
+        string topic = 2;
+        ubii.proto_v2.types.devices.TopicDemux topic_demux = 3;
+    }
+}
+
+message TopicOutputMappingList {
+    repeated ubii.proto_v2.types.sessions.TopicOutputMapping elements = 1;
+}
+
+message IOMapping {
+    string processing_module_id = 1;
+    repeated ubii.proto_v2.types.sessions.TopicInputMapping input_mappings = 2;
+    repeated ubii.proto_v2.types.sessions.TopicOutputMapping output_mappings = 3;
+    string processing_module_name = 4;
+}
+
+message IOMappingList {
+    repeated ubii.proto_v2.types.sessions.IOMapping elements = 1;
+}
