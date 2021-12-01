@@ -2,6 +2,13 @@ import sys
 import setuptools
 from importlib import metadata
 
+# disable file finder of setuptools_scm, maybe change MANIFEST.in sometime
+try:
+    import setuptools_scm.integration
+    setuptools_scm.integration.find_files = lambda _: []
+except ImportError:
+    pass
+
 build_proto_name = 'build_py_proto'
 build_cmds = [c for c in metadata.entry_points()['distutils.commands']
               if c.name == build_proto_name]
