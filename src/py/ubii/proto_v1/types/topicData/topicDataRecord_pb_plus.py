@@ -141,162 +141,162 @@ class TopicDataRecord(Message):
     )
     int32 = Field(
         INT32,
-        number=6,
+        number=23,
         oneof='type',
     )
     float = Field(
         FLOAT,
-        number=7,
+        number=24,
         oneof='type',
     )
     vector2 = Field(
         Vector2,
-        number=8,
+        number=6,
         oneof='type',
     )
     vector2_list = Field(
         Vector2List,
-        number=9,
+        number=35,
         oneof='type',
     )
     vector3 = Field(
         Vector3,
-        number=10,
+        number=7,
         oneof='type',
     )
     vector3_list = Field(
         Vector3List,
-        number=11,
+        number=36,
         oneof='type',
     )
     vector4 = Field(
         Vector4,
-        number=12,
+        number=8,
         oneof='type',
     )
     vector4_list = Field(
         Vector4List,
-        number=13,
+        number=37,
         oneof='type',
     )
     quaternion = Field(
         Quaternion,
-        number=14,
+        number=9,
         oneof='type',
     )
     quaternion_list = Field(
         Quaternion,
-        number=15,
+        number=38,
         oneof='type',
     )
     matrix3x2 = Field(
         Matrix3x2,
-        number=16,
+        number=10,
         oneof='type',
     )
     matrix4x4 = Field(
         Matrix4x4,
-        number=17,
+        number=11,
         oneof='type',
     )
     color = Field(
         Color,
-        number=18,
+        number=12,
         oneof='type',
     )
     touch_event = Field(
         TouchEvent,
-        number=19,
+        number=13,
         oneof='type',
     )
     touch_event_list = Field(
         TouchEventList,
-        number=20,
+        number=34,
         oneof='type',
     )
     key_event = Field(
         KeyEvent,
-        number=21,
+        number=14,
         oneof='type',
     )
     mouse_event = Field(
         MouseEvent,
-        number=22,
+        number=15,
         oneof='type',
     )
     myo_event = Field(
         MyoEvent,
-        number=23,
+        number=16,
         oneof='type',
     )
     pose2D = Field(
         Pose2D,
-        number=24,
+        number=17,
         oneof='type',
     )
     pose3D = Field(
         Pose3D,
-        number=25,
+        number=18,
         oneof='type',
     )
     object2D = Field(
         Object2D,
-        number=26,
+        number=19,
         oneof='type',
     )
     object3D = Field(
         Object3D,
-        number=27,
+        number=20,
         oneof='type',
     )
     object2D_list = Field(
         Object2DList,
-        number=28,
+        number=21,
         oneof='type',
     )
     object3D_list = Field(
         Object3DList,
-        number=29,
+        number=22,
         oneof='type',
     )
     int32_list = Field(
         Int32List,
-        number=30,
+        number=25,
         oneof='type',
     )
     float_list = Field(
         FloatList,
-        number=31,
+        number=26,
         oneof='type',
     )
     double_list = Field(
         DoubleList,
-        number=32,
+        number=27,
         oneof='type',
     )
     string_list = Field(
         StringList,
-        number=33,
+        number=28,
         oneof='type',
     )
     bool_list = Field(
         BoolList,
-        number=34,
+        number=29,
         oneof='type',
     )
     image2D = Field(
         Image2D,
-        number=35,
+        number=30,
         oneof='type',
     )
     image2D_list = Field(
         Image2DList,
-        number=36,
+        number=31,
         oneof='type',
     )
     session = Field(
         Session,
-        number=37,
+        number=32,
         oneof='type',
     )
 

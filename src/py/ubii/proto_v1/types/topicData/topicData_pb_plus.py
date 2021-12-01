@@ -32,17 +32,17 @@ __protobuf__ = proto.module(
 class TopicData(Message):
     topic_data_record = Field(
         TopicDataRecord,
-        number=1,
+        number=2,
         oneof='type',
     )
     topic_data_record_list = Field(
         TopicDataRecordList,
-        number=2,
+        number=3,
         oneof='type',
     )
     error = Field(
         Error,
-        number=3,
+        number=4,
         oneof='type',
     )
 
