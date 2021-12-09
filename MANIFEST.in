@@ -1,2 +1,2 @@
 recursive-include src/proto *.proto
-include src/constants.json
+recursive-include src/py *.json
