@@ -1,10 +1,16 @@
 import importlib
 import logging
+from importlib.metadata import version, PackageNotFoundError
 
 from proto import Message as ProtoPlusMessage
-from .constants import MSG_TYPES
-import ubii.proto
 
+import ubii.proto
+from .constants import MSG_TYPES
+
+try:
+    __version__ = version("ubii-msg-formats")
+except PackageNotFoundError:
+    __version__ = None
 
 log = logging.getLogger(__name__)
 __imported_types__ = {}
@@ -24,6 +30,7 @@ def import_type(data_type: str, reimport=False):
     :param datatype: Ubii data type, starting with "ubii."
     :param proto_type: Enumerator
     """
+
     def _make_wrapper_type(name: str) -> ProtoPlusMessage:
         log.debug(f"Type {name} is not a protobuf type. Trying google wrapper type {name.title()}Value.")
         from google.protobuf import wrappers_pb2 as wrappers
@@ -50,4 +57,3 @@ def import_type(data_type: str, reimport=False):
         )
 
     return __imported_types__[data_type]
-

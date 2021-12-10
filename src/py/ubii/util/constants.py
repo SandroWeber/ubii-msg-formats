@@ -28,6 +28,7 @@ class _DefaultTopics:
         DEVICE_DEREGISTRATION: str = '/services/device/deregistration'
         DEVICE_GET: str = '/services/device/get'
         DEVICE_GET_LIST: str = '/services/device/get_list'
+        LATENCY_CLIENTS_LIST: str = '/services/latency_clients_list'
         PM_DATABASE_SAVE: str = '/services/processing_module/database/save'
         PM_DATABASE_DELETE: str = '/services/processing_module/database/delete'
         PM_DATABASE_GET: str = '/services/processing_module/database/get'
@@ -50,6 +51,7 @@ class _DefaultTopics:
         SESSION_RUNTIME_GET_LIST: str = '/services/session/runtime/get_list'
         SESSION_RUNTIME_START: str = '/services/session/runtime/start'
         SESSION_RUNTIME_STOP: str = '/services/session/runtime/stop'
+        SESSION_RUNTIME_UPDATE: str = '/services/session/runtime/update'
         TOPIC_DEMUX_DATABASE_SAVE: str = '/services/device/topic_demux/database/save'
         TOPIC_DEMUX_DATABASE_DELETE: str = '/services/device/topic_demux/database/delete'
         TOPIC_DEMUX_DATABASE_GET: str = '/services/device/topic_demux/database/get'
@@ -86,6 +88,8 @@ class _DefaultTopics:
         CHANGE_SESSION: str = '/info/session/change'
         START_SESSION: str = '/info/session/start'
         STOP_SESSION: str = '/info/session/stop'
+        RUNNING_SESSION: str = '/info/session/running'
+        START_PM: str = '/info/processing_module/start'
 
         def __iter__(self):
             yield from dataclasses.asdict(self)
@@ -93,8 +97,19 @@ class _DefaultTopics:
         def items(self):
             yield from dataclasses.asdict(self).items()
 
+        @property
+        def regexes(self):
+            return [self.REGEX_SESSION_INFOS, self.REGEX_PM_INFOS, self.REGEX_ALL_INFOS]
+
     SERVICES: Services = Services()
     INFO_TOPICS: InfoTopics = InfoTopics()
+
+    def __post_init__(self):
+        if isinstance(self.SERVICES, dict):
+            object.__setattr__(self, 'SERVICES', self.Services(**self.SERVICES))
+
+        if isinstance(self.INFO_TOPICS, dict):
+            object.__setattr__(self, 'INFO_TOPICS', self.Services(**self.SERVICES))
 
     def __iter__(self):
         yield from dataclasses.asdict(self)
@@ -202,7 +217,7 @@ def check_constants(dict_data: dict):
     Issues a warning containing a dictionary diff if there are mismatches.
 
     :param dict_data: dictionary (should contain the same values as combined in this module)
-    :return: True if no difference is found, false otherwise
+    :return: True if valid, false if mismatch
     """
 
     def diff_dicts(compare, expected, **kwargs):
@@ -218,8 +233,12 @@ def check_constants(dict_data: dict):
     current = {k: dataclasses.asdict(v)
                for k, v in globals().items() if dataclasses.is_dataclass(v) and not isinstance(v, type)}
 
-    diff = list(diff_dicts(compare=current, expected=dict_data, fromfile=__name__, tofile='ubii.proto'))
+    diff = list(diff_dicts(compare=current, expected=dict_data, fromfile=__name__, tofile='constants.json'))
     if diff:
-        warn("Constants mismatch: {}".format('\n'.join(diff)))
+        from . import __version__
+        warning = "Constants in constants.py and constants.json don't match:\n{}".format('\n'.join(diff))
+        if __version__:
+            warning += f"\n You are using version {__version__} of ubii-msg-formats, is this the most recent version?"
+        warn(warning)
 
-    return not diff
+    return not bool(diff)

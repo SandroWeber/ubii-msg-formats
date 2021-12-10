@@ -1,7 +1,7 @@
 import json
 from abc import ABCMeta
 from functools import wraps
-from importlib.metadata import distribution
+from importlib.metadata import distribution, version, PackageNotFoundError
 from json import JSONEncoder
 from warnings import warn
 
@@ -167,10 +167,17 @@ __all__ = __proto_types__ + (
     "serialize",
 )
 
-__proto_module__, __proto_package__ = take(2, pad_none(distribution('ubii-message-formats')
-                                                       .read_text('proto_package.txt')
-                                                       .split('='))
-                                           )
+_pkg_name = 'ubii-message-formats'
+try:
+    __version__ = version(_pkg_name)
+    __proto_module__, __proto_package__ = take(2, pad_none(distribution(_pkg_name)
+                                                           .read_text('proto_package.txt')
+                                                           .split('='))
+                                               )
+except PackageNotFoundError as e:
+    raise PackageNotFoundError(f"{_pkg_name} is not found, did the package name change?") from e
+del _pkg_name
+
 __protobuf__ = proto.module(
     package=__proto_package__ or __proto_module__,
     manifest=set(__proto_types__)
