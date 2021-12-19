@@ -1,6 +1,6 @@
 import json
 from abc import ABCMeta
-from functools import wraps
+from functools import partial
 from importlib.metadata import distribution, version, PackageNotFoundError
 from json import JSONEncoder
 from warnings import warn
@@ -65,6 +65,7 @@ from ubii.proto_v1.types import (
     ModuleIO,
     ProcessingModule,
     ProcessingModuleList,
+    Constants,
     Server,
     Service,
     ServiceList,
@@ -140,6 +141,7 @@ __proto_types__ = (
     "ModuleIO",
     "ProcessingModule",
     "ProcessingModuleList",
+    "Constants",
     "Server",
     "Service",
     "ServiceList",
@@ -190,20 +192,6 @@ if __proto_package__ is None:
          " ubii-message-formats plugin")
 
 
-@wraps(json.dumps)
-def serialize(*args, **kwargs):
-    """
-    This function calls `json.dumps` with `Translator.ProtoEncoder` as optional `cls` argument.
-    This tells the json module to use this encoder when trying to serialize the message.
-    """
-    try:
-        result = json.dumps(*args, cls=ProtoEncoder, **kwargs)
-    except Exception as e:
-        raise e
-    else:
-        return result
-
-
 class ProtoEncoder(JSONEncoder):
     """
     Custom encoder to convert Protobuf Messages and Proto-Plus Messages to valid json
@@ -234,3 +222,6 @@ class ProtoMeta(ABCMeta, MessageMeta):
         cls = super().__new__(mcs, name, bases, {**attrs, **parent.meta.fields})
         cls.meta._pb = parent.pb()
         return cls
+
+
+serialize = partial(json.dumps, cls=ProtoEncoder)

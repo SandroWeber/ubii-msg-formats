@@ -142,6 +142,10 @@ from ubii.proto_v1.types.processing.processingModule_pb_plus import (
     ProcessingModuleList,
 )
 
+from ubii.proto_v1.types.servers.constants_pb_plus import (
+    Constants,
+)
+
 from ubii.proto_v1.types.servers.server_pb_plus import (
     Server,
 )
@@ -198,17 +202,17 @@ __all__ = (
     "ButtonEventType",
     "HandGestureType",
     "Color",
+    "Image2D",
+    "Image2DList",
     "KeyEvent",
     "StringList",
     "DoubleList",
     "FloatList",
     "BoolList",
     "Int32List",
-    "Image2D",
-    "Image2DList",
     "Matrix3x2",
-    "MouseEvent",
     "Matrix4x4",
+    "MouseEvent",
     "MyoEvent",
     "Object2D",
     "Object2DList",
@@ -246,6 +250,7 @@ __all__ = (
     "ModuleIO",
     "ProcessingModule",
     "ProcessingModuleList",
+    "Constants",
     "Server",
     "Service",
     "ServiceList",

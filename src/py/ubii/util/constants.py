@@ -1,16 +1,13 @@
 import dataclasses
 from dataclasses import dataclass
-from warnings import warn
 
 
 @dataclass(frozen=True)
 class _DefaultTopics:
     """
     This is a nested dataclass that contains all defined constants for Ubi Interact Default
-    Topics. When loading the module, the same constants are dynamically loaded from the
-    constants.json file of the installed ubii-msg-formats package which supplies the `proto` module.
-    If there is a mismatch between constants defined in this class and constants loaded from
-    `constants.json` the module will not load and give an error message.
+    Topics. The node should check if the constants are up-to-date by comparing the constants with the
+    constants_json field of the Server message the master node sends for a SERVER_CONFIG service request.
 
     The dataclass is frozen, so you are not allowed to change the constants.
     It also implements the iterable interface, thus calling `iter` on the class (e.g. implicitly
@@ -126,11 +123,8 @@ class _MsgTypes:
     """
     This is a dataclass that contains all defined constants for Ubi Interact Message Types.
     These can be used as paths for imports relative to the `proto` module, see `ProtoTranslators`.
-
-    When loading the module, the same constants are dynamically loaded from the
-    constants.json file of the installed ubii-msg-formats package which supplies the `proto` module.
-    If there is a mismatch between constants defined in this class and constants loaded from
-    `constants.json` the module will not load and give an error message.
+    The node should check if the constants are up-to-date by comparing the constants with the
+    constants_json field of the Server message the master node sends for a SERVER_CONFIG service request.
 
     The dataclass is frozen, so you are not allowed to change the constants.
     It also implements the iterable interface, thus calling `iter` on the class (e.g. implicitly
@@ -206,39 +200,3 @@ class _MsgTypes:
 
 
 MSG_TYPES = _MsgTypes()
-
-
-def check_constants(dict_data: dict):
-    """
-    compares a dictionary vs. constants defined in this module.
-    should be used to validate that this module is up to date by comparing it against the `constants` retrieved
-    from the master node.
-
-    Issues a warning containing a dictionary diff if there are mismatches.
-
-    :param dict_data: dictionary (should contain the same values as combined in this module)
-    :return: True if valid, false if mismatch
-    """
-
-    def diff_dicts(compare, expected, **kwargs):
-        """
-        Show diff of dictionaries for better error messages.
-        """
-        import json
-        import difflib
-        left = json.dumps(compare, indent=2, sort_keys=True)
-        right = json.dumps(expected, indent=2, sort_keys=True)
-        return difflib.unified_diff(left.splitlines(True), right.splitlines(True), **kwargs)
-
-    current = {k: dataclasses.asdict(v)
-               for k, v in globals().items() if dataclasses.is_dataclass(v) and not isinstance(v, type)}
-
-    diff = list(diff_dicts(compare=current, expected=dict_data, fromfile=__name__, tofile='constants.json'))
-    if diff:
-        from . import __version__
-        warning = "Constants in constants.py and constants.json don't match:\n{}".format('\n'.join(diff))
-        if __version__:
-            warning += f"\n You are using version {__version__} of ubii-msg-formats, is this the most recent version?"
-        warn(warning)
-
-    return not bool(diff)

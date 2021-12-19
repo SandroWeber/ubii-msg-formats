@@ -2,9 +2,8 @@ import importlib
 import logging
 from importlib.metadata import version, PackageNotFoundError
 
-from proto import Message as ProtoPlusMessage
-
 import ubii.proto
+from proto import Message as ProtoPlusMessage
 from .constants import MSG_TYPES
 
 try:
@@ -16,7 +15,7 @@ log = logging.getLogger(__name__)
 __imported_types__ = {}
 
 
-def import_type(data_type: str, reimport=False):
+def import_type(message_type: str, reimport=False):
     """
     The .proto files declare a package name 'ubii', but this is not reflected in the python package.
     Instead the package is named ubii.proto, to not clash with different packages in the ubii namespace.
@@ -27,33 +26,23 @@ def import_type(data_type: str, reimport=False):
     See the documentation of the ubii-msg-compiler at https://github.com/saggitar/ubii-msg-compiler
     for more information about updating the .proto files to generate a different package structure.
 
-    :param datatype: Ubii data type, starting with "ubii."
-    :param proto_type: Enumerator
+    :param message_type: string describing the data type
+    :param reimport: If true force reimport of type
     """
 
-    def _make_wrapper_type(name: str) -> ProtoPlusMessage:
-        log.debug(f"Type {name} is not a protobuf type. Trying google wrapper type {name.title()}Value.")
-        from google.protobuf import wrappers_pb2 as wrappers
-        wrapper = getattr(wrappers, f"{name.title()}Value", None)
-        type_ = type(f"{name.title()}Value", (ProtoPlusMessage,), {})
-        return type(type_.wrap(wrapper()))
-
     def _import(name: str) -> ProtoPlusMessage:
+        if not name.startswith('ubii.'):
+            raise ValueError(f"{name} does not seem to be a special ubi-interact message type.")
+
         package, type_ = name.replace(MSG_TYPES.proto_package, ubii.proto.__proto_module__).rsplit('.', maxsplit=1)
         package = importlib.import_module(package)
-        return getattr(package, type_, None)
+        type_ = getattr(package, type_, None)
 
-    def _check(type_):
         if type_ is None:
-            raise ValueError(f"{data_type} could not be imported.")
-
+            raise ValueError(f"{name} could not be imported.")
         return type_
 
-    if data_type not in __imported_types__ or reimport:
-        __imported_types__[data_type] = _check(
-            _make_wrapper_type(data_type)
-            if not data_type.startswith('ubii.')
-            else _import(data_type)
-        )
+    if message_type not in __imported_types__ or reimport:
+        __imported_types__[message_type] = _import(message_type)
 
-    return __imported_types__[data_type]
+    return __imported_types__[message_type]
