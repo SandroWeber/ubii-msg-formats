@@ -7,9 +7,10 @@ from warnings import warn
 
 import proto
 from google.protobuf.json_format import MessageToDict as _MessageToDict
-from google.protobuf.message import Message as ProtoMessage
+from google.protobuf.message import Message as GoogleProtoMessage
 from more_itertools import take, pad_none
-from proto.message import Message as ProtoPlusMessage, MessageMeta
+from proto.message import Message as ProtoMessage, MessageMeta
+from proto.fields import Field as ProtoField
 
 from ubii.proto_v1.types import (
     Client,
@@ -166,6 +167,8 @@ __proto_types__ = (
 __all__ = __proto_types__ + (
     "ProtoMeta",
     "ProtoEncoder",
+    "ProtoMessage",
+    "ProtoField",
     "serialize",
 )
 
@@ -203,10 +206,10 @@ class ProtoEncoder(JSONEncoder):
     }
 
     def default(self, o):
-        if isinstance(o, ProtoPlusMessage):
+        if isinstance(o, ProtoMessage):
             return type(o).to_dict(o, **self.format_options)
 
-        if isinstance(o, ProtoMessage):
+        if isinstance(o, GoogleProtoMessage):
             return _MessageToDict(o, **self.format_options)
 
         return JSONEncoder.default(self, o)
