@@ -1,9 +1,11 @@
 import importlib
 import logging
+from collections import namedtuple
 from importlib.metadata import version, PackageNotFoundError
 
-import ubii.proto
 from proto import Message as ProtoPlusMessage
+
+import ubii.proto
 from .constants import MSG_TYPES
 
 try:
@@ -14,8 +16,10 @@ except PackageNotFoundError:
 log = logging.getLogger(__name__)
 __imported_types__ = {}
 
+import_name = namedtuple('import_name', ['package', 'type'])
 
-def import_type(message_type: str, reimport=False):
+
+def get_import_name(message_type: str):
     """
     The .proto files declare a package name 'ubii', but this is not reflected in the python package.
     Instead the package is named ubii.proto, to not clash with different packages in the ubii namespace.
@@ -23,6 +27,21 @@ def import_type(message_type: str, reimport=False):
     The directory structure determines python package names see
     https://developers.google.com/protocol-buffers/docs/reference/python-generated#package
 
+    :param message_type: string describing the data type
+    """
+
+    if not message_type.startswith('ubii.'):
+        raise ValueError(f"{message_type} does not seem to be a special ubi-interact message type.")
+
+    package, typ = message_type.replace(
+        MSG_TYPES.proto_package, ubii.proto.__proto_module__
+    ).rsplit('.', maxsplit=1)
+
+    return import_name(package=package, type=typ)
+
+
+def import_type(message_type: str, reimport=False):
+    """
     See the documentation of the ubii-msg-compiler at https://github.com/saggitar/ubii-msg-compiler
     for more information about updating the .proto files to generate a different package structure.
 
@@ -31,10 +50,7 @@ def import_type(message_type: str, reimport=False):
     """
 
     def _import(name: str) -> ProtoPlusMessage:
-        if not name.startswith('ubii.'):
-            raise ValueError(f"{name} does not seem to be a special ubi-interact message type.")
-
-        package, type_ = name.replace(MSG_TYPES.proto_package, ubii.proto.__proto_module__).rsplit('.', maxsplit=1)
+        package, type_ = get_import_name(name)
         package = importlib.import_module(package)
         type_ = getattr(package, type_, None)
 
