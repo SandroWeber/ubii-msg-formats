@@ -1,7 +1,12 @@
 import json
 from abc import ABCMeta
 from functools import partial
-from importlib.metadata import distribution, version, PackageNotFoundError
+
+try:
+    from importlib.metadata import distribution, version, PackageNotFoundError
+except ImportError:  # for Python<3.8
+    from importlib_metadata import distribution, version, PackageNotFoundError
+
 from json import JSONEncoder
 from warnings import warn
 
