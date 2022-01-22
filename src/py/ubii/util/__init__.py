@@ -1,7 +1,12 @@
+from collections import namedtuple
+
 import importlib
 import logging
-from collections import namedtuple
-from importlib.metadata import version, PackageNotFoundError
+
+try:
+    from importlib.metadata import version, PackageNotFoundError
+except ImportError:  # for Python<3.8
+    from importlib_metadata import version, PackageNotFoundError
 
 from proto import Message as ProtoPlusMessage
 
