@@ -22,8 +22,8 @@ __protobuf__ = proto.module(
 
 
 class Constants(Message):
-    class DEFAULT_TOPICS(Message):
-        class SERVICES(Message):
+    class DefaultTopics(Message):
+        class Services(Message):
             SERVER_CONFIG = Field(
                 STRING,
                 number=1,
@@ -215,7 +215,7 @@ class Constants(Message):
         
 
 
-        class INFO_TOPICS(Message):
+        class InfoTopics(Message):
             REGEX_ALL_INFOS = Field(
                 STRING,
                 number=1,
@@ -275,10 +275,18 @@ class Constants(Message):
         
 
 
+        SERVICES = Field(
+            Services,
+            number=1,
+        )
+        INFO_TOPICS = Field(
+            InfoTopics,
+            number=2,
+        )
     
 
 
-    class MSG_TYPES(Message):
+    class MsgTypes(Message):
         ERROR = Field(
             STRING,
             number=1,
@@ -514,5 +522,13 @@ class Constants(Message):
     
 
 
+    DEFAULT_TOPICS = Field(
+        DefaultTopics,
+        number=1,
+    )
+    MSG_TYPES = Field(
+        MsgTypes,
+        number=2,
+    )
 
 

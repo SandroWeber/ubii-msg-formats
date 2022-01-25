@@ -2,8 +2,8 @@ syntax = "proto3";
 package ubii.proto_v1.types.servers;
 
 message Constants {
-  message DEFAULT_TOPICS {
-    message SERVICES {
+  message DefaultTopics {
+    message Services {
       string SERVER_CONFIG = 1;
 
       string CLIENT_REGISTRATION = 2;
@@ -60,8 +60,7 @@ message Constants {
 
       string LATENCY_CLIENTS_LIST = 47;
     }
-
-    message INFO_TOPICS {
+    message InfoTopics {
       string REGEX_ALL_INFOS = 1;
       string REGEX_PM_INFOS = 2;
       string NEW_PM = 3;
@@ -77,8 +76,12 @@ message Constants {
       string STOP_SESSION = 13;
       string RUNNING_SESSION = 14;
     }
+
+    Services SERVICES = 1;
+    InfoTopics INFO_TOPICS = 2;
   }
-  message MSG_TYPES {
+
+  message MsgTypes {
     string ERROR = 1;
     string SUCCESS = 2;
 
@@ -144,4 +147,6 @@ message Constants {
     string DATASTRUCTURE_VECTOR4 = 58;
     string DATASTRUCTURE_VECTOR8 = 59;
   }
+  DefaultTopics DEFAULT_TOPICS = 1;
+  MsgTypes MSG_TYPES = 2;
 }
