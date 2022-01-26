@@ -3,7 +3,7 @@ requires = [
     "setuptools>=42",
     "wheel",
     "importlib_metadata;python_version<='3.7'",
-    "ubii-msg-compiler[protoplus] >= 0.0.4a1dev1",
+    "ubii-msg-compiler[protoplus] >= 0.0.4a1dev2",
     "setuptools_scm>=6.2",
 ]
 
