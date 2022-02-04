@@ -197,7 +197,7 @@ if __proto_package__ is None:
     warn("package is not set in proto_package.txt from ubii-message-formats."
          " This is unexpected, make sure you compiled the ubii-message-formats with a recent"
          " version of the proto-plus-plugin. For more info resort to the documentation of the"
-         " ubii-message-formats plugin")
+         " proto-plus plugin")
 
 
 class ProtoEncoder(JSONEncoder):

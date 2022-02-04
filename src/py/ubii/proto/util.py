@@ -1,22 +1,11 @@
-from collections import namedtuple
-
 import importlib
 import logging
-
-try:
-    from importlib.metadata import version, PackageNotFoundError
-except ImportError:  # for Python<3.8
-    from importlib_metadata import version, PackageNotFoundError
-
-from proto import Message as ProtoPlusMessage
+import re
+from collections import namedtuple
+from functools import wraps
 
 import ubii.proto
-from .constants import MSG_TYPES
-
-try:
-    __version__ = version("ubii-msg-formats")
-except PackageNotFoundError:
-    __version__ = None
+from proto import Message as ProtoPlusMessage
 
 log = logging.getLogger(__name__)
 __imported_types__ = {}
@@ -39,7 +28,7 @@ def get_import_name(message_type: str):
         raise ValueError(f"{message_type} does not seem to be a special ubi-interact message type.")
 
     package, typ = message_type.replace(
-        MSG_TYPES.proto_package, ubii.proto.__proto_module__
+        'ubii', ubii.proto.__proto_module__
     ).rsplit('.', maxsplit=1)
 
     return import_name(package=package, type=typ)
@@ -67,3 +56,40 @@ def import_type(message_type: str, reimport=False):
         __imported_types__[message_type] = _import(message_type)
 
     return __imported_types__[message_type]
+
+
+def clean_json(message: str):
+    """
+    Format json strings (like representations of proto messages) in a nice way.
+
+    :param message:
+    """
+    cleaned = message.strip()
+    formatted = re.sub(r'{\s+', '{', cleaned)
+    formatted = re.sub(r'\s', '', formatted)
+    return formatted
+
+
+def patch_wrapper_class_repr():
+    def patch(__repr__):
+        @wraps(__repr__)
+        def wrapped(self):
+            type_ = self.__class__
+            pb_type_descr = type_.pb().DESCRIPTOR
+            vars_ = {name: getattr(self, name) for name in pb_type_descr.fields_by_name}
+
+            def short_repr(value, max_len=50):
+                orig = clean_json(str(value))
+                if len(orig) < max_len:
+                    return orig
+                else:
+                    return '...'
+
+            formatted = {name: short_repr(value) for name, value in vars_.items() if value}
+            return f"{type_.__name__}({formatted})"
+
+            # return f"{name}({clean_json(old_repr)})"
+
+        return wrapped
+
+    ProtoPlusMessage.__repr__ = patch(ProtoPlusMessage.__repr__)
