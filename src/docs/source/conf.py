@@ -90,5 +90,18 @@ html_theme_options = {
 # autodoc_typehints_description_target = 'documented'
 # autodoc_class_signature = 'separated'
 # autodoc_class_signature = 'mixed'
+autodoc_default_options = {
+    'member-order': 'bysource',
+    'members': True,
+    'undoc-members': True,
+    'imported-members': True,
+}
 
-intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
+autodoc_inherit_docstrings = False
+napoleon_include_special_with_doc = True
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'plus': ('https://proto-plus-python.readthedocs.io/en/latest', None),
+    'proto': ('https://googleapis.dev/python/protobuf/latest/', None)
+}

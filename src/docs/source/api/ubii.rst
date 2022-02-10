@@ -8,6 +8,8 @@ Subpackages
 
 .. toctree::
    :maxdepth: 4
+   :glob:
 
    ubii.proto
-   ubii.proto_v1
+   autodoc/*
+
