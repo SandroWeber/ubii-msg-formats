@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ubii.proto.v1.dataStructure;
+
+import "ubii/proto/v1/dataStructure/vector2.proto";
+
+message Pose2D {
+    ubii.proto.v1.dataStructure.Vector2 position = 1;
+    oneof orientation {
+        ubii.proto.v1.dataStructure.Vector2 direction = 2;
+        float angle = 3;
+    }
+}

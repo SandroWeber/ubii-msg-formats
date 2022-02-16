@@ -13,7 +13,7 @@ except ImportError:  # for Python<3.8
 import proto
 from more_itertools import take, pad_none
 
-from .v1.types import (
+from .v1 import (
     Client,
     ClientList,
     ButtonEventType,

@@ -21,6 +21,7 @@ if not build_cmds:
           f" Did you install the `ubii-msg-compiler` package?")
     sys.exit(1)
 else:
+    build_cmds = list(set(build_cmds))
     assert len(build_cmds) == 1
     build_py = build_cmds[0].load()
 

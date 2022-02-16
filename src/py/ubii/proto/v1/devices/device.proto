@@ -1,0 +1,22 @@
+syntax = "proto3";
+package ubii.proto.v1.devices;
+
+import "ubii/proto/v1/devices/component.proto";
+
+message Device {
+    string id = 1;
+    string name = 2;
+    enum DeviceType {
+        PARTICIPANT = 0;
+        WATCHER = 1;
+    }
+    ubii.proto.v1.devices.Device.DeviceType device_type = 3;
+    repeated ubii.proto.v1.devices.Component components = 4;
+    string client_id = 5;
+    repeated string tags = 6;
+    string description = 7;
+}
+
+message DeviceList {
+    repeated ubii.proto.v1.devices.Device elements = 1;
+}

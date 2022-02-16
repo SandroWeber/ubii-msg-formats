@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ubii.proto.v1.topicData;
+
+import "ubii/proto/v1/topicData/topicDataRecord.proto";
+import "ubii/proto/v1/general/error.proto";
+
+message TopicData {
+    oneof type {
+        ubii.proto.v1.topicData.TopicDataRecord topic_data_record = 2;
+        ubii.proto.v1.topicData.TopicDataRecordList topic_data_record_list = 3;
+        ubii.proto.v1.general.Error error = 4;
+    }
+}

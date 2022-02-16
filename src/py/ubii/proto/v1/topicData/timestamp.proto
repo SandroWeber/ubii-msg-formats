@@ -1,0 +1,8 @@
+syntax = "proto3";
+package ubii.proto.v1.topicData;
+
+message Timestamp {
+    int64 seconds = 1;
+    int32 nanos = 2;
+    int64 millis = 3;
+}

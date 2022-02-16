@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ubii.proto.v1.dataStructure;
+
+message Vector3 {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
+message Vector3List {
+    repeated ubii.proto.v1.dataStructure.Vector3 elements = 1;
+}
