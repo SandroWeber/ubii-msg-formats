@@ -32,21 +32,28 @@ class Device(Message):
 
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         device_type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.DeviceType`
+            :obj:`~.DeviceType`
+
         components (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~ubii.proto.v1.devices.component_pb_plus.Component`
+            type :obj:`~ubii.proto.v1.devices.component_pb_plus.Component`
+
         client_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     class DeviceType(Enum):
         PARTICIPANT = 0
         WATCHER = 1
@@ -86,9 +93,10 @@ class DeviceList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Device`
+            type :obj:`~.Device`
 
     """
+
     elements = RepeatedField(
         Device,
         number=1,

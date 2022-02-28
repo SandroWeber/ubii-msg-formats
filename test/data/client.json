@@ -3,14 +3,15 @@
     "dict": {
         "description": "",
         "devices": [],
-        "hostIp": "",
+        "host_ip": "",
         "id": "",
-        "isDedicatedProcessingNode": false,
-        "metadataJson": "",
+        "is_dedicated_processing_node": false,
+        "latency": 0.0,
+        "metadata_json": "",
         "name": "",
-        "processingModules": [],
+        "processing_modules": [],
         "state": 0,
         "tags": []
     },
-    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"devices\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"processingModules\": [],\n  \"isDedicatedProcessingNode\": false,\n  \"hostIp\": \"\",\n  \"metadataJson\": \"\",\n  \"state\": 0\n}"
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"devices\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"processing_modules\": [],\n  \"is_dedicated_processing_node\": false,\n  \"host_ip\": \"\",\n  \"metadata_json\": \"\",\n  \"state\": 0,\n  \"latency\": 0.0\n}"
 }

@@ -1,13 +1,13 @@
 {
     "bytes": "",
     "dict": {
-        "clientId": "",
+        "client_id": "",
         "components": [],
         "description": "",
-        "deviceType": 0,
+        "device_type": 0,
         "id": "",
         "name": "",
         "tags": []
     },
-    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"deviceType\": 0,\n  \"components\": [],\n  \"clientId\": \"\",\n  \"tags\": [],\n  \"description\": \"\"\n}"
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"device_type\": 0,\n  \"components\": [],\n  \"client_id\": \"\",\n  \"tags\": [],\n  \"description\": \"\"\n}"
 }

@@ -1,0 +1,17 @@
+syntax = "proto3";
+package ubii.proto_baseline.dataStructure;
+
+import "ubii/proto_baseline/dataStructure/pose3d.proto";
+import "ubii/proto_baseline/dataStructure/vector3.proto";
+
+message Object3D {
+    string id = 1;
+    ubii.proto_baseline.dataStructure.Pose3D pose = 2;
+    ubii.proto_baseline.dataStructure.Vector3 size = 3;
+    string user_data_json = 4;
+}
+
+message Object3DList {
+    repeated ubii.proto_baseline.dataStructure.Object3D elements = 1;
+}
+

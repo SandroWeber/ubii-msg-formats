@@ -27,17 +27,22 @@ class Service(Message):
 
     Attributes:
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         request_message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         response_message_format (proto.fields.Field): :obj:`~proto.fields.Field` of
-             type :obj:`~proto.STRING`
+            type :obj:`~proto.STRING`
+
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     topic = Field(
         STRING,
         number=1,
@@ -65,9 +70,10 @@ class ServiceList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Service`
+            type :obj:`~.Service`
 
     """
+
     elements = RepeatedField(
         Service,
         number=1,

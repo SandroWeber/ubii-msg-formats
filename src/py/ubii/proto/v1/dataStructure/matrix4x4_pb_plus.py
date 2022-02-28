@@ -25,39 +25,55 @@ class Matrix4x4(Message):
 
     Attributes:
         m00 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m01 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m02 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m03 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m10 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m11 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m12 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m13 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m20 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m21 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m22 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m23 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m30 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m31 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m32 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m33 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
 
     """
+
     m00 = Field(
         DOUBLE,
         number=1,

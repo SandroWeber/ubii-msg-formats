@@ -27,13 +27,16 @@ class Error(Message):
 
     Attributes:
         title (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         message (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         stack (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     title = Field(
         STRING,
         number=1,
@@ -53,9 +56,10 @@ class ErrorList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Error`
+            type :obj:`~.Error`
 
     """
+
     elements = RepeatedField(
         Error,
         number=1,

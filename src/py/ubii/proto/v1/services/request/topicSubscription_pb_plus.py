@@ -26,17 +26,22 @@ class TopicSubscription(Message):
 
     Attributes:
         client_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         subscribe_topics (proto.fields.RepeatedField):
-             :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
+            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
+
         unsubscribe_topics (proto.fields.RepeatedField):
-             :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
+            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
+
         subscribe_topic_regexp (proto.fields.RepeatedField):
-             :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
+            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
+
         unsubscribe_topic_regexp (proto.fields.RepeatedField):
-             :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
+            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
 
     """
+
     client_id = Field(
         STRING,
         number=1,

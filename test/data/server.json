@@ -1,15 +1,15 @@
 {
     "bytes": "",
     "dict": {
-        "constantsJson": "",
+        "constants_json": "",
         "id": "",
-        "ipEthernet": "",
-        "ipWlan": "",
+        "ip_ethernet": "",
+        "ip_wlan": "",
         "name": "",
-        "portServiceRest": "",
-        "portServiceZmq": "",
-        "portTopicDataWs": "",
-        "portTopicDataZmq": ""
+        "port_service_rest": "",
+        "port_service_zmq": "",
+        "port_topic_data_ws": "",
+        "port_topic_data_zmq": ""
     },
-    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"ipEthernet\": \"\",\n  \"ipWlan\": \"\",\n  \"portServiceZmq\": \"\",\n  \"portServiceRest\": \"\",\n  \"portTopicDataZmq\": \"\",\n  \"portTopicDataWs\": \"\",\n  \"constantsJson\": \"\"\n}"
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"ip_ethernet\": \"\",\n  \"ip_wlan\": \"\",\n  \"port_service_zmq\": \"\",\n  \"port_service_rest\": \"\",\n  \"port_topic_data_zmq\": \"\",\n  \"port_topic_data_ws\": \"\",\n  \"constants_json\": \"\"\n}"
 }

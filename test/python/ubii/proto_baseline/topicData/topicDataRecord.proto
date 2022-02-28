@@ -1,0 +1,71 @@
+syntax = "proto3";
+package ubii.proto_baseline.topicData;
+
+import "ubii/proto_baseline/topicData/timestamp.proto";
+import "ubii/proto_baseline/dataStructure/lists.proto";
+import "ubii/proto_baseline/dataStructure/vector2.proto";
+import "ubii/proto_baseline/dataStructure/vector3.proto";
+import "ubii/proto_baseline/dataStructure/vector4.proto";
+import "ubii/proto_baseline/dataStructure/quaternion.proto";
+import "ubii/proto_baseline/dataStructure/matrix3x2.proto";
+import "ubii/proto_baseline/dataStructure/matrix4x4.proto";
+import "ubii/proto_baseline/dataStructure/color.proto";
+import "ubii/proto_baseline/dataStructure/touchEvent.proto";
+import "ubii/proto_baseline/dataStructure/keyEvent.proto";
+import "ubii/proto_baseline/dataStructure/mouseEvent.proto";
+import "ubii/proto_baseline/dataStructure/myoEvent.proto";
+import "ubii/proto_baseline/dataStructure/pose2d.proto";
+import "ubii/proto_baseline/dataStructure/pose3d.proto";
+import "ubii/proto_baseline/dataStructure/object2d.proto";
+import "ubii/proto_baseline/dataStructure/object3d.proto";
+import "ubii/proto_baseline/dataStructure/image.proto";
+
+import "ubii/proto_baseline/sessions/session.proto";
+import "ubii/proto_baseline/processing/processingModule.proto";
+
+// continuous index: 38
+message TopicDataRecord {
+    string topic = 1;
+    ubii.proto_baseline.topicData.Timestamp timestamp = 2;
+    oneof type {
+        double double = 3;
+        bool bool = 4;
+        string string = 5;
+        int32 int32 = 23;
+        float float = 24;
+        ubii.proto_baseline.dataStructure.Vector2 vector2 = 6;
+        ubii.proto_baseline.dataStructure.Vector2List vector2_list = 35;
+        ubii.proto_baseline.dataStructure.Vector3 vector3 = 7;
+        ubii.proto_baseline.dataStructure.Vector3List vector3_list = 36;
+        ubii.proto_baseline.dataStructure.Vector4 vector4 = 8;
+        ubii.proto_baseline.dataStructure.Vector4List vector4_list = 37;
+        ubii.proto_baseline.dataStructure.Quaternion quaternion = 9;
+        ubii.proto_baseline.dataStructure.Quaternion quaternion_list = 38;
+        ubii.proto_baseline.dataStructure.Matrix3x2 matrix3x2 = 10;
+        ubii.proto_baseline.dataStructure.Matrix4x4 matrix4x4 = 11;
+        ubii.proto_baseline.dataStructure.Color color = 12;
+        ubii.proto_baseline.dataStructure.TouchEvent touch_event = 13;
+        ubii.proto_baseline.dataStructure.TouchEventList touch_event_list = 34;
+        ubii.proto_baseline.dataStructure.KeyEvent key_event = 14;
+        ubii.proto_baseline.dataStructure.MouseEvent mouse_event = 15;
+        ubii.proto_baseline.dataStructure.MyoEvent myo_event = 16;
+        ubii.proto_baseline.dataStructure.Pose2D pose2D = 17;
+        ubii.proto_baseline.dataStructure.Pose3D pose3D = 18;
+        ubii.proto_baseline.dataStructure.Object2D object2D = 19;
+        ubii.proto_baseline.dataStructure.Object3D object3D = 20;
+        ubii.proto_baseline.dataStructure.Object2DList object2D_list = 21;
+        ubii.proto_baseline.dataStructure.Object3DList object3D_list = 22;
+        ubii.proto_baseline.dataStructure.Int32List int32_list = 25;
+        ubii.proto_baseline.dataStructure.FloatList float_list = 26;
+        ubii.proto_baseline.dataStructure.DoubleList double_list = 27;
+        ubii.proto_baseline.dataStructure.StringList string_list = 28;
+        ubii.proto_baseline.dataStructure.BoolList bool_list = 29;
+        ubii.proto_baseline.dataStructure.Image2D image2D = 30;
+        ubii.proto_baseline.dataStructure.Image2DList image2D_list = 31;
+        ubii.proto_baseline.sessions.Session session = 32;
+    }    
+}
+
+message TopicDataRecordList {
+    repeated ubii.proto_baseline.topicData.TopicDataRecord elements = 1;
+}

@@ -29,11 +29,13 @@ class MouseEvent(Message):
 
     Attributes:
         type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.buttonEventType_pb_plus.ButtonEventType`
+            :obj:`~ubii.proto.v1.dataStructure.buttonEventType_pb_plus.ButtonEventType`
+
         button (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.INT32`
+            :obj:`~proto.INT32`
 
     """
+
     type = Field(
         ButtonEventType,
         number=1,

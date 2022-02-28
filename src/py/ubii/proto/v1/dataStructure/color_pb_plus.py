@@ -25,15 +25,19 @@ class Color(Message):
 
     Attributes:
         r (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         g (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         b (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         a (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
 
     """
+
     r = Field(
         DOUBLE,
         number=1,

@@ -7,15 +7,15 @@
         "inputs": [],
         "language": 0,
         "name": "",
-        "nodeId": "",
-        "onCreatedStringified": "",
-        "onDestroyedStringified": "",
-        "onHaltedStringified": "",
-        "onProcessingStringified": "",
+        "node_id": "",
+        "on_created_stringified": "",
+        "on_destroyed_stringified": "",
+        "on_halted_stringified": "",
+        "on_processing_stringified": "",
         "outputs": [],
-        "sessionId": "",
+        "session_id": "",
         "status": 0,
         "tags": []
     },
-    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"authors\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"nodeId\": \"\",\n  \"sessionId\": \"\",\n  \"status\": 0,\n  \"inputs\": [],\n  \"outputs\": [],\n  \"language\": 0,\n  \"onProcessingStringified\": \"\",\n  \"onCreatedStringified\": \"\",\n  \"onHaltedStringified\": \"\",\n  \"onDestroyedStringified\": \"\"\n}"
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"authors\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"node_id\": \"\",\n  \"session_id\": \"\",\n  \"status\": 0,\n  \"inputs\": [],\n  \"outputs\": [],\n  \"language\": 0,\n  \"on_processing_stringified\": \"\",\n  \"on_created_stringified\": \"\",\n  \"on_halted_stringified\": \"\",\n  \"on_destroyed_stringified\": \"\"\n}"
 }

@@ -63,38 +63,53 @@ class ServiceRequest(Message):
 
     Attributes:
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         client (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.clients.client_pb_plus.Client`
+            :obj:`~ubii.proto.v1.clients.client_pb_plus.Client`
+
         device (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.device_pb_plus.Device`
+            :obj:`~ubii.proto.v1.devices.device_pb_plus.Device`
+
         topic_subscription (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.services.request.topicSubscription_pb_plus.TopicSubscription`
+            :obj:`~ubii.proto.v1.services.request.topicSubscription_pb_plus.TopicSubscription`
+
         session (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.sessions.session_pb_plus.Session`
+            :obj:`~ubii.proto.v1.sessions.session_pb_plus.Session`
+
         session_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.sessions.session_pb_plus.SessionList`
+            :obj:`~ubii.proto.v1.sessions.session_pb_plus.SessionList`
+
         processing_module (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
+            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
+
         processing_module_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModuleList`
+            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModuleList`
+
         topic_mux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux`
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux`
+
         topic_mux_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMuxList`
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMuxList`
+
         topic_demux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux`
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux`
+
         topic_demux_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemuxList`
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemuxList`
+
         client_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.clients.client_pb_plus.ClientList`
+            :obj:`~ubii.proto.v1.clients.client_pb_plus.ClientList`
+
         device_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.device_pb_plus.DeviceList`
+            :obj:`~ubii.proto.v1.devices.device_pb_plus.DeviceList`
+
         lockstep_processing_request (proto.fields.Field): :obj:`~proto.fields.Field` of
-             type
-             :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingRequest`
+            type
+            :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingRequest`
 
     """
+
     topic = Field(
         STRING,
         number=1,

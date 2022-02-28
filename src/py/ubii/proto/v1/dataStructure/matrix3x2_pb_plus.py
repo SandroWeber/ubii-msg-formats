@@ -25,19 +25,25 @@ class Matrix3x2(Message):
 
     Attributes:
         m00 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m01 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m10 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m11 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m20 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         m21 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
 
     """
+
     m00 = Field(
         DOUBLE,
         number=1,

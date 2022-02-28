@@ -28,23 +28,31 @@ class Component(Message):
 
     Attributes:
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         io_type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.IOType`
+            :obj:`~.IOType`
+
         device_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     class IOType(Enum):
         PUBLISHER = 0
         SUBSCRIBER = 1
@@ -88,9 +96,10 @@ class ComponentList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Component`
+            type :obj:`~.Component`
 
     """
+
     elements = RepeatedField(
         Component,
         number=1,

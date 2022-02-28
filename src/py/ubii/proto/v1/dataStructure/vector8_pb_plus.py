@@ -27,23 +27,31 @@ class Vector8(Message):
 
     Attributes:
         v0 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         v1 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         v2 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         v3 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         v4 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         v5 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         v6 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         v7 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
 
     """
+
     v0 = Field(
         DOUBLE,
         number=1,
@@ -83,9 +91,10 @@ class Vector8List(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Vector8`
+            type :obj:`~.Vector8`
 
     """
+
     elements = RepeatedField(
         Vector8,
         number=1,

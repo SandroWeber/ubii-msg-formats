@@ -114,7 +114,123 @@ __protobuf__ = module(
 
 
 class TopicDataRecord(Message):
-    """continuous index: 38"""
+    """continuous index: 38
+    Generated from ubii/proto/v1/topicData/topicDataRecord.proto
+
+    Attributes:
+        topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.STRING`
+
+        timestamp (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.topicData.timestamp_pb_plus.Timestamp`
+
+        double (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.DOUBLE`
+
+        bool (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.BOOL`
+
+        string (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.STRING`
+
+        int32 (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.INT32`
+
+        float (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.FLOAT`
+
+        vector2 (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
+
+        vector2_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2List`
+
+        vector3 (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
+
+        vector3_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3List`
+
+        vector4 (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.vector4_pb_plus.Vector4`
+
+        vector4_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.vector4_pb_plus.Vector4List`
+
+        quaternion (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.quaternion_pb_plus.Quaternion`
+
+        quaternion_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.quaternion_pb_plus.Quaternion`
+
+        matrix3x2 (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.matrix3x2_pb_plus.Matrix3x2`
+
+        matrix4x4 (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.matrix4x4_pb_plus.Matrix4x4`
+
+        color (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.color_pb_plus.Color`
+
+        touch_event (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.touchEvent_pb_plus.TouchEvent`
+
+        touch_event_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.touchEvent_pb_plus.TouchEventList`
+
+        key_event (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.keyEvent_pb_plus.KeyEvent`
+
+        mouse_event (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.mouseEvent_pb_plus.MouseEvent`
+
+        myo_event (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.myoEvent_pb_plus.MyoEvent`
+
+        pose2D (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.pose2d_pb_plus.Pose2D`
+
+        pose3D (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.pose3d_pb_plus.Pose3D`
+
+        object2D (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.object2d_pb_plus.Object2D`
+
+        object3D (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.object3d_pb_plus.Object3D`
+
+        object2D_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.object2d_pb_plus.Object2DList`
+
+        object3D_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.object3d_pb_plus.Object3DList`
+
+        int32_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.lists_pb_plus.Int32List`
+
+        float_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.lists_pb_plus.FloatList`
+
+        double_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.lists_pb_plus.DoubleList`
+
+        string_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.lists_pb_plus.StringList`
+
+        bool_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.lists_pb_plus.BoolList`
+
+        image2D (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.image_pb_plus.Image2D`
+
+        image2D_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.dataStructure.image_pb_plus.Image2DList`
+
+        session (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.sessions.session_pb_plus.Session`
+
+    """
+
     topic = Field(
         STRING,
         number=1,
@@ -305,9 +421,10 @@ class TopicDataRecordList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.TopicDataRecord`
+            type :obj:`~.TopicDataRecord`
 
     """
+
     elements = RepeatedField(
         TopicDataRecord,
         number=1,

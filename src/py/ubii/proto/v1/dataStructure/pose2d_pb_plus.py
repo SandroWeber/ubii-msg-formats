@@ -29,13 +29,16 @@ class Pose2D(Message):
 
     Attributes:
         position (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
+            :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
+
         direction (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
+            :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
+
         angle (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.FLOAT`
+            :obj:`~proto.FLOAT`
 
     """
+
     position = Field(
         Vector2,
         number=1,

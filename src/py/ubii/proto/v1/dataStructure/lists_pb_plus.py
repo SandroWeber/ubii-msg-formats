@@ -33,9 +33,10 @@ class StringList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~proto.STRING`
+            type :obj:`~proto.STRING`
 
     """
+
     elements = RepeatedField(
         STRING,
         number=1,
@@ -47,9 +48,10 @@ class DoubleList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~proto.DOUBLE`
+            type :obj:`~proto.DOUBLE`
 
     """
+
     elements = RepeatedField(
         DOUBLE,
         number=1,
@@ -61,9 +63,10 @@ class FloatList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~proto.FLOAT`
+            type :obj:`~proto.FLOAT`
 
     """
+
     elements = RepeatedField(
         FLOAT,
         number=1,
@@ -75,9 +78,10 @@ class BoolList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~proto.BOOL`
+            type :obj:`~proto.BOOL`
 
     """
+
     elements = RepeatedField(
         BOOL,
         number=1,
@@ -89,9 +93,10 @@ class Int32List(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~proto.INT32`
+            type :obj:`~proto.INT32`
 
     """
+
     elements = RepeatedField(
         INT32,
         number=1,

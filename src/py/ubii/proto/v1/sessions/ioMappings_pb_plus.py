@@ -39,13 +39,16 @@ class TopicInputMapping(Message):
 
     Attributes:
         input_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         topic_mux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux`
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux`
 
     """
+
     input_name = Field(
         STRING,
         number=1,
@@ -67,9 +70,10 @@ class TopicInputMappingList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.TopicInputMapping`
+            type :obj:`~.TopicInputMapping`
 
     """
+
     elements = RepeatedField(
         TopicInputMapping,
         number=1,
@@ -81,13 +85,16 @@ class TopicOutputMapping(Message):
 
     Attributes:
         output_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         topic_demux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux`
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux`
 
     """
+
     output_name = Field(
         STRING,
         number=1,
@@ -109,9 +116,10 @@ class TopicOutputMappingList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.TopicOutputMapping`
+            type :obj:`~.TopicOutputMapping`
 
     """
+
     elements = RepeatedField(
         TopicOutputMapping,
         number=1,
@@ -123,16 +131,20 @@ class IOMapping(Message):
 
     Attributes:
         processing_module_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         input_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField`
-             of type :obj:`~.TopicInputMapping`
+            of type :obj:`~.TopicInputMapping`
+
         output_mappings (proto.fields.RepeatedField):
-             :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~.TopicOutputMapping`
+            :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.TopicOutputMapping`
+
         processing_module_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     processing_module_id = Field(
         STRING,
         number=1,
@@ -156,9 +168,10 @@ class IOMappingList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.IOMapping`
+            type :obj:`~.IOMapping`
 
     """
+
     elements = RepeatedField(
         IOMapping,
         number=1,

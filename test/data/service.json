@@ -2,10 +2,10 @@
     "bytes": "",
     "dict": {
         "description": "",
-        "requestMessageFormat": "",
-        "responseMessageFormat": "",
+        "request_message_format": "",
+        "response_message_format": "",
         "tags": [],
         "topic": ""
     },
-    "json": "{\n  \"topic\": \"\",\n  \"requestMessageFormat\": \"\",\n  \"responseMessageFormat\": \"\",\n  \"tags\": [],\n  \"description\": \"\"\n}"
+    "json": "{\n  \"topic\": \"\",\n  \"request_message_format\": \"\",\n  \"response_message_format\": \"\",\n  \"tags\": [],\n  \"description\": \"\"\n}"
 }

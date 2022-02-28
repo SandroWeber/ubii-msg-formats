@@ -1,11 +1,11 @@
 {
     "bytes": "",
     "dict": {
-        "dataType": "",
+        "data_type": "",
         "id": "",
-        "identityMatchPattern": "",
+        "identity_match_pattern": "",
         "name": "",
-        "topicSelector": ""
+        "topic_selector": ""
     },
-    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"dataType\": \"\",\n  \"topicSelector\": \"\",\n  \"identityMatchPattern\": \"\"\n}"
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"data_type\": \"\",\n  \"topic_selector\": \"\",\n  \"identity_match_pattern\": \"\"\n}"
 }

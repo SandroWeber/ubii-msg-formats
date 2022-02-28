@@ -5,11 +5,11 @@
         "description": "",
         "editable": false,
         "id": "",
-        "ioMappings": [],
+        "io_mappings": [],
         "name": "",
-        "processingModules": [],
+        "processing_modules": [],
         "status": 0,
         "tags": []
     },
-    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"processingModules\": [],\n  \"ioMappings\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"authors\": [],\n  \"status\": 0,\n  \"editable\": false\n}"
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"processing_modules\": [],\n  \"io_mappings\": [],\n  \"tags\": [],\n  \"description\": \"\",\n  \"authors\": [],\n  \"status\": 0,\n  \"editable\": false\n}"
 }

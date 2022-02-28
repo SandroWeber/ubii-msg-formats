@@ -33,15 +33,19 @@ class TouchEvent(Message):
 
     Attributes:
         type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.TouchEventType`
+            :obj:`~.TouchEventType`
+
         position (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
+            :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
+
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         force (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.FLOAT`
+            :obj:`~proto.FLOAT`
 
     """
+
     class TouchEventType(Enum):
         TOUCH_START = 0
         TOUCH_MOVE = 1
@@ -70,9 +74,10 @@ class TouchEventList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.TouchEvent`
+            type :obj:`~.TouchEvent`
 
     """
+
     elements = RepeatedField(
         TouchEvent,
         number=1,

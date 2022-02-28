@@ -35,15 +35,19 @@ class Object3D(Message):
 
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         pose (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.pose3d_pb_plus.Pose3D`
+            :obj:`~ubii.proto.v1.dataStructure.pose3d_pb_plus.Pose3D`
+
         size (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
+            :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
+
         user_data_json (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     id = Field(
         STRING,
         number=1,
@@ -67,9 +71,10 @@ class Object3DList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Object3D`
+            type :obj:`~.Object3D`
 
     """
+
     elements = RepeatedField(
         Object3D,
         number=1,

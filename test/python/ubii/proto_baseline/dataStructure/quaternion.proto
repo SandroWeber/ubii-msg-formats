@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ubii.proto_baseline.dataStructure;
+
+message Quaternion {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+    double w = 4;
+}
+
+message QuaternionList {
+    repeated ubii.proto_baseline.dataStructure.Quaternion elements = 1;
+}

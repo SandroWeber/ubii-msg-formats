@@ -44,26 +44,35 @@ class Session(Message):
 
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         processing_modules (proto.fields.RepeatedField):
-             :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
+            :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
+
         io_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~ubii.proto.v1.sessions.ioMappings_pb_plus.IOMapping`
+            type :obj:`~ubii.proto.v1.sessions.ioMappings_pb_plus.IOMapping`
+
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         authors (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~proto.STRING`
+            type :obj:`~proto.STRING`
+
         status (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.SessionStatus`
+            :obj:`~.SessionStatus`
+
         editable (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.BOOL`
+            :obj:`~proto.BOOL`
 
     """
+
     id = Field(
         STRING,
         number=1,
@@ -107,9 +116,10 @@ class SessionList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Session`
+            type :obj:`~.Session`
 
     """
+
     elements = RepeatedField(
         Session,
         number=1,

@@ -26,13 +26,16 @@ class Timestamp(Message):
 
     Attributes:
         seconds (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.INT64`
+            :obj:`~proto.INT64`
+
         nanos (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.INT32`
+            :obj:`~proto.INT32`
+
         millis (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.INT64`
+            :obj:`~proto.INT64`
 
     """
+
     seconds = Field(
         INT64,
         number=1,

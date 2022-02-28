@@ -2,13 +2,13 @@
     "bytes": "",
     "dict": {
         "description": "",
-        "deviceId": "",
+        "device_id": "",
         "id": "",
-        "ioType": 0,
-        "messageFormat": "",
+        "io_type": 0,
+        "message_format": "",
         "name": "",
         "tags": [],
         "topic": ""
     },
-    "json": "{\n  \"topic\": \"\",\n  \"messageFormat\": \"\",\n  \"ioType\": 0,\n  \"deviceId\": \"\",\n  \"tags\": [],\n  \"description\": \"\",\n  \"id\": \"\",\n  \"name\": \"\"\n}"
+    "json": "{\n  \"topic\": \"\",\n  \"message_format\": \"\",\n  \"io_type\": 0,\n  \"device_id\": \"\",\n  \"tags\": [],\n  \"description\": \"\",\n  \"id\": \"\",\n  \"name\": \"\"\n}"
 }

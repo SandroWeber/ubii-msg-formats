@@ -27,15 +27,19 @@ class TopicDemux(Message):
 
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         data_type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         output_topic_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     id = Field(
         STRING,
         number=1,
@@ -59,9 +63,10 @@ class TopicDemuxList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.TopicDemux`
+            type :obj:`~.TopicDemux`
 
     """
+
     elements = RepeatedField(
         TopicDemux,
         number=1,

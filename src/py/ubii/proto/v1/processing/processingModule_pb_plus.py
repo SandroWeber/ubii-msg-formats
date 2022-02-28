@@ -32,21 +32,25 @@ class ProcessingMode(Message):
 
     Attributes:
         frequency (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.Frequency`
+            :obj:`~.Frequency`
+
         lockstep (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.Lockstep`
+            :obj:`~.Lockstep`
+
         trigger_on_input (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.TriggerOnInput`
+            :obj:`~.TriggerOnInput`
 
     """
+
     class Frequency(Message):
         """Generated from ubii/proto/v1/processing/processingModule.proto
 
         Attributes:
             hertz (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                 :obj:`~proto.INT32`
+                :obj:`~proto.INT32`
 
         """
+
         hertz = Field(
             INT32,
             number=1,
@@ -58,9 +62,10 @@ class ProcessingMode(Message):
 
         Attributes:
             process_request_endpoint (proto.fields.Field): :obj:`~proto.fields.Field` of
-                 type :obj:`~proto.STRING`
+                type :obj:`~proto.STRING`
 
         """
+
         process_request_endpoint = Field(
             STRING,
             number=1,
@@ -72,11 +77,13 @@ class ProcessingMode(Message):
 
         Attributes:
             min_delay_ms (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                 :obj:`~proto.INT32`
+                :obj:`~proto.INT32`
+
             all_inputs_need_update (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                 :obj:`~proto.BOOL`
+                :obj:`~proto.BOOL`
 
         """
+
         min_delay_ms = Field(
             INT32,
             number=1,
@@ -109,11 +116,13 @@ class ModuleIO(Message):
 
     Attributes:
         internal_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     internal_name = Field(
         STRING,
         number=1,
@@ -129,39 +138,55 @@ class ProcessingModule(Message):
 
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         authors (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~proto.STRING`
+            type :obj:`~proto.STRING`
+
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         node_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         session_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         status (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.Status`
+            :obj:`~.Status`
+
         processing_mode (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.ProcessingMode`
+            :obj:`~.ProcessingMode`
+
         inputs (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~.ModuleIO`
+            :obj:`~.ModuleIO`
+
         outputs (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.ModuleIO`
+            type :obj:`~.ModuleIO`
+
         language (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.Language`
+            :obj:`~.Language`
+
         on_processing_stringified (proto.fields.Field): :obj:`~proto.fields.Field` of
-             type :obj:`~proto.STRING`
+            type :obj:`~proto.STRING`
+
         on_created_stringified (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         on_halted_stringified (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         on_destroyed_stringified (proto.fields.Field): :obj:`~proto.fields.Field` of
-             type :obj:`~proto.STRING`
+            type :obj:`~proto.STRING`
 
     """
+
     class Status(Enum):
         INITIALIZED = 0
         CREATED = 1
@@ -247,9 +272,10 @@ class ProcessingModuleList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.ProcessingModule`
+            type :obj:`~.ProcessingModule`
 
     """
+
     elements = RepeatedField(
         ProcessingModule,
         number=1,

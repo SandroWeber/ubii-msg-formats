@@ -1,8 +1,8 @@
 {
     "bytes": "",
     "dict": {
-        "internalName": "",
-        "messageFormat": ""
+        "internal_name": "",
+        "message_format": ""
     },
-    "json": "{\n  \"internalName\": \"\",\n  \"messageFormat\": \"\"\n}"
+    "json": "{\n  \"internal_name\": \"\",\n  \"message_format\": \"\"\n}"
 }

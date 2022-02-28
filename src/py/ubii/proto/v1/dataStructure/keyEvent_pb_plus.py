@@ -29,11 +29,13 @@ class KeyEvent(Message):
 
     Attributes:
         type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.buttonEventType_pb_plus.ButtonEventType`
+            :obj:`~ubii.proto.v1.dataStructure.buttonEventType_pb_plus.ButtonEventType`
+
         key (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     type = Field(
         ButtonEventType,
         number=1,

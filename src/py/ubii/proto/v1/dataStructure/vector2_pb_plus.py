@@ -27,11 +27,13 @@ class Vector2(Message):
 
     Attributes:
         x (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
+
         y (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.DOUBLE`
+            :obj:`~proto.DOUBLE`
 
     """
+
     x = Field(
         DOUBLE,
         number=1,
@@ -47,9 +49,10 @@ class Vector2List(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Vector2`
+            type :obj:`~.Vector2`
 
     """
+
     elements = RepeatedField(
         Vector2,
         number=1,

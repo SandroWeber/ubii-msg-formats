@@ -1,51 +1,76 @@
-import re
 import pytest
-from ubii.util import MSG_TYPES
 
-GENERATE_TEST_DATA = True
+import ubii.proto as ub
+from .conftest import compare
+
+GENERATE_TEST_DATA = False
+
+__protobuf__ = None
 
 
-@pytest.mark.parametrize('message_data', MSG_TYPES, indirect=True)
-class TestTranslators:
+class TestProtoPlus:
+    @pytest.fixture(scope='class')
+    def mock_protobuf(self, request):
+        if request.param:
+            global __protobuf__
+            __protobuf__ = ub.__protobuf__
+
+        yield
+
+        if request.param:
+            __protobuf__ = None
 
     def test_from_bytes(self, message_data):
-        wrapped = type(message_data.plus_message).pb(message_data.plus_message)
-        assert message_data.proto_message == wrapped
+        data = message_data.plus_message
+        compare(message_data.proto_message, data)
 
     def test_from_json(self, message_data):
-        assert message_data.message == message_data.proto_plus_type(message_data.test_data['json'])
+        data = type(message_data.plus_message).from_json(message_data.test_data['json'])
+        compare(message_data.proto_message, data)
 
     def test_from_dict(self, message_data):
-        assert message_data.message == message_data.proto_plus_message.from_dict(message_data.test_data['dict'])
+        data = type(message_data.plus_message)(mapping=message_data.test_data['dict'])
+        compare(message_data.proto_message, data)
 
     def test_to_dict(self, message_data):
-        assert message_data.test_data['dict'] == message_data.proto_plus_message.to_dict(message_data.message)
+        assert message_data.test_data['dict'] == (
+            type(message_data.plus_message).to_dict(message_data.plus_message, **message_data.conversion_options)
+        )
 
     def test_to_json(self, message_data):
-        assert message_data.test_data['json'] == message_data.translator.to_json(message_data.proto_plus_message, **conversion_options)
+        assert message_data.test_data['json'] == (
+            type(message_data.plus_message).to_json(message_data.plus_message, **message_data.conversion_options)
+        )
 
-    def test_convert_to_message(self, message_data):
-        list_values = list(message_data.test_data.values())
+    @pytest.mark.parametrize('mock_protobuf', [
+        pytest.param(True, id='correct __protobuf__'),
+        pytest.param(False, id='wrong __protobuf__', marks=[pytest.mark.xfail]),
+    ], indirect=True)
+    def test_inheritance(self, mock_protobuf):
+        class Empty(ub.Session, metaclass=ub.ProtoMeta):
+            pass
 
-        # check all items individually
-        assert all(message_data.message == message_data.translator.convert_to_message(obj) for obj in message_data.test_data.values())
+        inherited = Empty()
+        basic = ub.Session()
 
-        # also check if List conversion works
-        assert [message_data.message] * len(list_values) == message_data.translator.convert_to_message(list_values)
+        assert type(inherited).serialize(inherited) == type(basic).serialize(basic)
 
-    def test_create(self, message_data):
-        test_dict: dict = message_data.test_data['dict']
-        assert message_data.message == message_data.translator.create(**test_dict)
+        class WithAttributes(ub.Session, metaclass=ub.ProtoMeta):
+            def foo(self):
+                return "Foo"
 
-    def test_validate(self, message_data, request):
-        if 'protoplus' in request.node.name:
-            pytest.xfail("Validation is not supported for proto plus")
+        fancy = WithAttributes()
 
-        validate = message_data.translator.validate
+        assert type(fancy).serialize(fancy) == type(basic).serialize(basic)
+        assert fancy.foo() == "Foo"
 
-        assert message_data.message == validate(message_data.message)
-        assert all(message_data.message == validate(message_data.test_data[serializable]) for serializable in ['dict', 'json'])
-        snake_case_dict = {re.sub('([A-Z]+)', r'_\1', k).lower(): v for k, v in message_data.test_data['dict'].items()}
-        assert message_data.message == validate(snake_case_dict)
+        class WeirdProcessing(ub.ProcessingModule, metaclass=ub.ProtoMeta):
+            def process(self):
+                return "Bar"
 
+        processing = WeirdProcessing()
+        inherited.processing_modules = [processing]
+        basic.processing_modules = [ub.ProcessingModule()]
 
+        assert type(inherited).serialize(inherited) == type(basic).serialize(basic)
+        assert processing.process() == "Bar"

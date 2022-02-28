@@ -27,11 +27,13 @@ class Success(Message):
 
     Attributes:
         title (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         message (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
 
     """
+
     title = Field(
         STRING,
         number=1,
@@ -47,9 +49,10 @@ class SuccessList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Success`
+            type :obj:`~.Success`
 
     """
+
     elements = RepeatedField(
         Success,
         number=1,

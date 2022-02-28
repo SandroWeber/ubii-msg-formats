@@ -38,30 +38,41 @@ class Client(Message):
 
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         devices (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~ubii.proto.v1.devices.device_pb_plus.Device`
+            type :obj:`~ubii.proto.v1.devices.device_pb_plus.Device`
+
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         processing_modules (proto.fields.RepeatedField):
-             :obj:`~proto.fields.RepeatedField` of type
-             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
+            :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
+
         is_dedicated_processing_node (proto.fields.Field): :obj:`~proto.fields.Field`
-             of type :obj:`~proto.BOOL`
+            of type :obj:`~proto.BOOL`
+
         host_ip (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         metadata_json (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.STRING`
+            :obj:`~proto.STRING`
+
         state (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.State`
+            :obj:`~.State`
+
         latency (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.FLOAT`
+            :obj:`~proto.FLOAT`
 
     """
+
     class State(Enum):
         ACTIVE = 0
         INACTIVE = 1
@@ -118,9 +129,10 @@ class ClientList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Client`
+            type :obj:`~.Client`
 
     """
+
     elements = RepeatedField(
         Client,
         number=1,

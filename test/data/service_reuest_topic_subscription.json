@@ -1,11 +1,11 @@
 {
     "bytes": "",
     "dict": {
-        "clientId": "",
-        "subscribeTopicRegexp": [],
-        "subscribeTopics": [],
-        "unsubscribeTopicRegexp": [],
-        "unsubscribeTopics": []
+        "client_id": "",
+        "subscribe_topic_regexp": [],
+        "subscribe_topics": [],
+        "unsubscribe_topic_regexp": [],
+        "unsubscribe_topics": []
     },
-    "json": "{\n  \"clientId\": \"\",\n  \"subscribeTopics\": [],\n  \"unsubscribeTopics\": [],\n  \"subscribeTopicRegexp\": [],\n  \"unsubscribeTopicRegexp\": []\n}"
+    "json": "{\n  \"client_id\": \"\",\n  \"subscribe_topics\": [],\n  \"unsubscribe_topics\": [],\n  \"subscribe_topic_regexp\": [],\n  \"unsubscribe_topic_regexp\": []\n}"
 }

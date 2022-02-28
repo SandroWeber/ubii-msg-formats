@@ -32,13 +32,16 @@ class Pose3D(Message):
 
     Attributes:
         position (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
+            :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
+
         quaternion (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.quaternion_pb_plus.Quaternion`
+            :obj:`~ubii.proto.v1.dataStructure.quaternion_pb_plus.Quaternion`
+
         euler (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
+            :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
 
     """
+
     position = Field(
         Vector3,
         number=1,

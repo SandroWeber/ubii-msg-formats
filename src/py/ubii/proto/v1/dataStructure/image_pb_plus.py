@@ -29,15 +29,19 @@ class Image2D(Message):
 
     Attributes:
         width (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.INT32`
+            :obj:`~proto.INT32`
+
         height (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.INT32`
+            :obj:`~proto.INT32`
+
         data_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~.DataFormat`
+            :obj:`~.DataFormat`
+
         data (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~proto.BYTES`
+            :obj:`~proto.BYTES`
 
     """
+
     class DataFormat(Enum):
         GRAY8 = 0
         RGB8 = 1
@@ -66,9 +70,10 @@ class Image2DList(Message):
 
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-             type :obj:`~.Image2D`
+            type :obj:`~.Image2D`
 
     """
+
     elements = RepeatedField(
         Image2D,
         number=1,

@@ -12,10 +12,10 @@
 #
 import datetime
 import os
+import sys
 import warnings
 
 import proto.message
-import sys
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../../src'))
@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.napoleon',
     'sphinx.ext.intersphinx',
+    'sphinxcontrib.programoutput',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -97,7 +98,7 @@ autodoc_default_options = {
     'member-order': 'bysource',
     'members': True,
     'undoc-members': False,
-    'show-inheritance': True,
+    'show-inheritance.py': True,
     'imported-members': False,
 }
 
@@ -110,9 +111,9 @@ intersphinx_mapping = {
     'proto': ('https://googleapis.dev/python/protobuf/latest/', None)
 }
 
-
 # patch some errors in proto plus package
 from pkg_resources import parse_version
+
 proto_plus_version = parse_version(importlib_metadata.version('proto-plus'))
 if proto_plus_version > parse_version('1.19.9'):
     warnings.warn(
@@ -122,11 +123,12 @@ if proto_plus_version > parse_version('1.19.9'):
 
     orig_dir = proto.message.MessageMeta.__dir__
 
+
     def patched_dir(self):
         if not hasattr(self, '_meta'):
             return object.__dir__(self)
         else:
             return orig_dir(self)
 
-    proto.message.MessageMeta.__dir__ = patched_dir
 
+    proto.message.MessageMeta.__dir__ = patched_dir

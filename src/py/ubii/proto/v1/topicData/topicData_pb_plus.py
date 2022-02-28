@@ -33,13 +33,16 @@ class TopicData(Message):
 
     Attributes:
         topic_data_record (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecord`
+            :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecord`
+
         topic_data_record_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecordList`
+            :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecordList`
+
         error (proto.fields.Field): :obj:`~proto.fields.Field` of type
-             :obj:`~ubii.proto.v1.general.error_pb_plus.Error`
+            :obj:`~ubii.proto.v1.general.error_pb_plus.Error`
 
     """
+
     topic_data_record = Field(
         TopicDataRecord,
         number=2,

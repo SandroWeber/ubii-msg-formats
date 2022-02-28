@@ -7,9 +7,9 @@ Ubi Interact Message Formats
 =============================
 
 This site covers the python API documentation for the Ubi Interact protobuf messages. For basic info on what
-Ubi Interact is see the `main project website <https://github.com/SandroWeber/ubi-interact/wiki>`_.
-For more general information about the Ubi Interact Messages refer to the ``README`` of the
-`github repository <https://github.com/SandroWeber/ubii-msg-formats>`_.
+Ubi Interact is refer to the `Ubi Interact Wiki`_.
+For more general information about the Ubi Interact messages refer to the `README`_.
+
 
 Getting started
 ---------------
@@ -43,3 +43,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+.. include:: links
