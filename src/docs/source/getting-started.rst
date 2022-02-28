@@ -98,17 +98,49 @@ Important messages if you are just getting started with the
     in the :attr:`ubii.proto.Constants.DEFAULT_TOPICS.INFO_TOPICS <ubii.proto.Constants.DefaultTopics.INFO_TOPICS>`,
     to notify subscribed clients of events such as started or stopped :class:`Sessions <ubii.proto.Session>`.
 
-A typical life-cycle of a *client node* would be to
+Typical communication of a *client node* (advanced):
 
--   request the *master node* specification by publishing the respective :class:`~ubii.proto.ServiceRequest` in the
+-   request the *master node* specification by sending respective :class:`~ubii.proto.ServiceRequest` for the
     :attr:`~ubii.proto.Constants.DefaultTopics.Services.SERVER_CONFIG` topic. This is the only interaction with
     the master node that has to rely on client side information about the service endpoint URL. Refer to
     `the wiki <https://github.com/SandroWeber/ubi-interact/wiki/Requests>`_ for information about possible default
-    values.
+    values and the response message format (typically a :class:`ubii.proto.Server` message).
 
 -   Use the :class:`~ubii.proto.Constants` (currently only supplied as JSON for backwards compatibility, see
     :attr:`ubii.proto.Server.constants_json`) to make requests and subscribe to relevant info topics. E.g.
     :attr:`register <ubii.proto.Constants.DefaultTopics.Services.CLIENT_REGISTRATION>` the *client node*,
     or get the :attr:`list of available services <ubii.proto.Constants.DefaultTopics.Services.SERVICE_LIST>`.
+    Registration is necessary to subscribe to data topics.
+
+-   Act on :class:`~ubii.proto.TopicData` published in subscribed topics. E.g. if the *client node* can run
+    :class:`ProcessingModules <ubii.proto.ProcessingModule>` the following communication could take place:
+
+        -   subscribe to the topic specified by :attr:`ubii.proto.Constants.DefaultTopics.INFO_TOPICS.NEW_SESSION`
+        -   on new :class:`~ubii.proto.TopicData` in this topic:
+
+            -   inspect the :attr:`ubii.proto.TopicData.topic_data_record` field, to get the
+                :class:`~ubii.proto.TopicDataRecord` message
+            -   inspect the :attr:`ubii.proto.TopicDataRecord.session` of this message, to get information about the
+                started session
+            -   inspect the :attr:`ubii.proto.Session.processing_modules` field to get information about
+                :class:`ProcessingModules <ubii.proto.ProcessingModule>` which could be started by *client node*.
+            -   inspect the :attr:`ubii.proto.Session.io_mappings` field and make
+                :class:`ServiceRequests <~ubii.proto.ServiceRequest>` to handle necessary subscriptions.
+                (The :attr:`ubii.proto.IOMapping.input_mappings` message field contains information about input
+                topics for the modules)
+            -   after successfully starting the module (depending on client node implementation) make a
+                :class:`~ubii.proto.ServiceRequest` (see above) for the
+                :attr:`ubii.proto.Constants.DefaultTopics.Services.PM_RUNTIME_ADD` topic -- as shown in the wiki the
+                sent :class:`~ubii.proto.ServiceRequest` needs to have the
+                :attr:`ubii.proto.ServiceRequest.processing_module_list` field set to a
+                :class:`~ubii.proto.ProcessingModuleList` informing the *master node* about the started modules --
+                and receive a :class:`~ubii.proto.Success` or :class:`~ubii.proto.Error` message as part of this
+                communication
+
+        -   process the data until stopped, respecting the :attr:`ubii.proto.Session.io_mappings` that have been
+            applied (if you look through the :class:`ubii.proto.IOMapping` documentation you will find
+            messages with relevant information about input and output topics)
+
+For more information refer to the documentation of a *client node* of your choice.
 
 .. include:: links
