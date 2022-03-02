@@ -85,7 +85,7 @@ html_theme_options = {
     'description': metadata['Summary'],
     'logo': 'logo.png',
     'github_user': 'saggitar',
-    'github_repo': 'ubii-node-python',
+    'github_repo': project,
     'page_width': '75%'
 }
 
@@ -98,7 +98,7 @@ autodoc_default_options = {
     'member-order': 'bysource',
     'members': True,
     'undoc-members': False,
-    'show-inheritance.py': True,
+    'show-inheritance': True,
     'imported-members': False,
 }
 
