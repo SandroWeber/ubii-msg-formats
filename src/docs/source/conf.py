@@ -98,9 +98,9 @@ html_theme_options = {
 autodoc_default_options = {
     'member-order': 'bysource',
     'members': True,
-    'undoc-members': False,
+    'no-undoc-members': False,
     'show-inheritance': True,
-    'imported-members': False,
+    'no-imported-members': True,
 }
 
 autodoc_inherit_docstrings = False
