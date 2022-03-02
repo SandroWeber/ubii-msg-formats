@@ -6,6 +6,7 @@ Message Types
 
 .. automodule:: ubii.proto
    :undoc-members:
+   :imported-members:
    :exclude-members: ProtoMeta, ProtoEncoder
 
 
