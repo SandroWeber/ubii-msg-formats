@@ -11,8 +11,9 @@ import importlib
 import json
 import logging
 import re
+import weakref
 from abc import ABCMeta
-from typing import Dict
+from typing import Dict, Iterable
 
 import google.protobuf.json_format
 import google.protobuf.message
@@ -167,6 +168,7 @@ class ProtoMeta(ABCMeta, proto.message.MessageMeta):
                     return "Wow"
 
     """
+    __additional_attributes = weakref.WeakKeyDictionary()
 
     def __new__(mcs, name, bases, attrs):
         message_bases = [b for b in bases if isinstance(b, proto.message.MessageMeta)]
@@ -176,7 +178,17 @@ class ProtoMeta(ABCMeta, proto.message.MessageMeta):
         parent: proto.message.MessageMeta = message_bases[0]
         cls = super().__new__(mcs, name, bases, {**attrs, **parent.meta.fields})
         cls.meta._pb = parent.pb()
+
+        assert cls not in mcs.__additional_attributes
+        mcs.__additional_attributes[cls] = attrs
+
         return cls
+
+    def __dir__(self) -> Iterable[str]:
+        names = set(super().__dir__())
+        attributes = self.__additional_attributes.get(self, self.__additional_attributes.get(type(self), {}))
+        names.update(set(attributes))
+        return names
 
 
 __all__ = (

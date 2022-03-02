@@ -98,7 +98,7 @@ html_theme_options = {
 autodoc_default_options = {
     'member-order': 'bysource',
     'members': True,
-    'no-undoc-members': False,
+    'no-undoc-members': True,
     'show-inheritance': True,
     'no-imported-members': True,
 }
@@ -116,10 +116,10 @@ intersphinx_mapping = {
 from pkg_resources import parse_version
 
 proto_plus_version = parse_version(importlib_metadata.version('proto-plus'))
-if proto_plus_version > parse_version('1.19.9'):
+if parse_version('1.19.9') < proto_plus_version < parse_version('1.20.2'):
     warnings.warn(
-        f"Possible bug in proto.message.MessageMeta.__dir__ in your proto-plus version {proto_plus_version}."
-        f"Check if bug has been resolved: https://github.com/googleapis/proto-plus-python/issues/296"
+        f"Bug in proto.message.MessageMeta.__dir__ in your proto-plus version {proto_plus_version}."
+        f"Resolved in 1.20.2, see https://github.com/googleapis/proto-plus-python/issues/296"
     )
 
     orig_dir = proto.message.MessageMeta.__dir__
