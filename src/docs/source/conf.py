@@ -90,21 +90,19 @@ html_theme_options = {
     'page_width': '75%'
 }
 
-# autodoc_preserve_defaults = True
-# autodoc_typehints = 'description'
-# autodoc_typehints_description_target = 'documented'
-# autodoc_class_signature = 'separated'
-# autodoc_class_signature = 'mixed'
 autodoc_default_options = {
     'member-order': 'bysource',
     'members': True,
-    'no-undoc-members': True,
+    'undoc-members': True,
     'show-inheritance': True,
     'no-imported-members': True,
 }
 
 autodoc_inherit_docstrings = False
 napoleon_include_special_with_doc = True
+napoleon_include_init_with_doc = True
+napoleon_include_private_with_doc = False
+napoleon_use_rtype = False
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
