@@ -29,9 +29,8 @@ const pbts = require('protobufjs/cli/pbts');
   };
 
   let generateCode = (protobufDirectory, compileTsDefinitions = true) => {
-    let definitionFile = path.resolve(__dirname + '/../dist/js/protobuf.d.ts');
-    let outputFile = path.resolve(__dirname + '/../dist/js/protobuf.js');
-    let params = ['--target', 'static-module', '--wrap', 'commonjs', '--out', outputFile];
+    let jsOutputFile = path.resolve(__dirname + '/../dist/js/protobuf.js');
+    let params = ['--target', 'static-module', '--wrap', 'commonjs', '--out', jsOutputFile];
     let files = getFilesSync(protobufDirectory, '.proto');
     params.push(...files);
 
@@ -41,12 +40,12 @@ const pbts = require('protobufjs/cli/pbts');
     });
     console.info('protobuf.js compiled');
 
-
     if(!compileTsDefinitions) {
       return;
     }
 
-    pbts.main(['-o', definitionFile, outputFile], function (err, output) {
+    let tsDefinitionFile = path.resolve(__dirname + '/../dist/js/protobuf.d.ts');
+    pbts.main(['-o', tsDefinitionFile, jsOutputFile], function (err, output) {
       if(err) throw err;
       // do something with output
     });
