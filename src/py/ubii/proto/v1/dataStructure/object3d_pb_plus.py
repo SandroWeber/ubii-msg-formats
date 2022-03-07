@@ -31,21 +31,16 @@ __protobuf__ = module(
 
 
 class Object3D(Message):
-    """Generated from ubii/proto/v1/dataStructure/object3d.proto
-
+    """
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         pose (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.pose3d_pb_plus.Pose3D`
-
         size (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
-
         user_data_json (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     id = Field(
@@ -67,12 +62,10 @@ class Object3D(Message):
 
 
 class Object3DList(Message):
-    """Generated from ubii/proto/v1/dataStructure/object3d.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Object3D`
-
     """
 
     elements = RepeatedField(

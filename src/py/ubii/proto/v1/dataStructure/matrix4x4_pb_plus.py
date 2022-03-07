@@ -21,57 +21,40 @@ __protobuf__ = module(
 
 
 class Matrix4x4(Message):
-    """Generated from ubii/proto/v1/dataStructure/matrix4x4.proto
-
+    """
     Attributes:
         m00 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m01 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m02 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m03 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m10 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m11 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m12 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m13 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m20 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m21 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m22 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m23 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m30 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m31 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m32 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         m33 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
     """
 
     m00 = Field(

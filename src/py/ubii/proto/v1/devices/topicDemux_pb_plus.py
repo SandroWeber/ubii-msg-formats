@@ -23,21 +23,16 @@ __protobuf__ = module(
 
 
 class TopicDemux(Message):
-    """Generated from ubii/proto/v1/devices/topicDemux.proto
-
+    """
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         data_type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         output_topic_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     id = Field(
@@ -59,12 +54,10 @@ class TopicDemux(Message):
 
 
 class TopicDemuxList(Message):
-    """Generated from ubii/proto/v1/devices/topicDemux.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.TopicDemux`
-
     """
 
     elements = RepeatedField(

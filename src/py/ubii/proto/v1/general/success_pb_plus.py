@@ -23,15 +23,12 @@ __protobuf__ = module(
 
 
 class Success(Message):
-    """Generated from ubii/proto/v1/general/success.proto
-
+    """
     Attributes:
         title (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         message (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     title = Field(
@@ -45,12 +42,10 @@ class Success(Message):
 
 
 class SuccessList(Message):
-    """Generated from ubii/proto/v1/general/success.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Success`
-
     """
 
     elements = RepeatedField(

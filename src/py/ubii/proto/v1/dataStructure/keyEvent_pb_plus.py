@@ -25,15 +25,12 @@ __protobuf__ = module(
 
 
 class KeyEvent(Message):
-    """Generated from ubii/proto/v1/dataStructure/keyEvent.proto
-
+    """
     Attributes:
         type (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.buttonEventType_pb_plus.ButtonEventType`
-
         key (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     type = Field(

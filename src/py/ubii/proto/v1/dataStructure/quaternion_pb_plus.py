@@ -23,21 +23,16 @@ __protobuf__ = module(
 
 
 class Quaternion(Message):
-    """Generated from ubii/proto/v1/dataStructure/quaternion.proto
-
+    """
     Attributes:
         x (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         y (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         z (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         w (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
     """
 
     x = Field(
@@ -59,12 +54,10 @@ class Quaternion(Message):
 
 
 class QuaternionList(Message):
-    """Generated from ubii/proto/v1/dataStructure/quaternion.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Quaternion`
-
     """
 
     elements = RepeatedField(

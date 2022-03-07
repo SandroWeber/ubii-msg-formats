@@ -24,33 +24,24 @@ __protobuf__ = module(
 
 
 class Component(Message):
-    """Generated from ubii/proto/v1/devices/component.proto
-
+    """
     Attributes:
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         io_type (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~.IOType`
-
         device_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     class IOType(Enum):
@@ -92,12 +83,10 @@ class Component(Message):
 
 
 class ComponentList(Message):
-    """Generated from ubii/proto/v1/devices/component.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Component`
-
     """
 
     elements = RepeatedField(

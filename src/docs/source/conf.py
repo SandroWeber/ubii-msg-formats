@@ -12,10 +12,10 @@
 #
 import datetime
 import os
-import sys
 import warnings
 
 import proto.message
+import sys
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../../src'))
@@ -103,6 +103,10 @@ napoleon_include_special_with_doc = True
 napoleon_include_init_with_doc = True
 napoleon_include_private_with_doc = False
 napoleon_use_rtype = False
+napoleon_custom_sections = [('OneOfs', 'Note')]
+napoleon_use_ivar = False
+
+# default_role = 'any'
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),

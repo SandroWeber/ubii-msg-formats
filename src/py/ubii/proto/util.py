@@ -11,6 +11,7 @@ import importlib
 import json
 import logging
 import re
+import warnings
 import weakref
 from abc import ABCMeta
 from typing import Dict, Iterable
@@ -170,6 +171,29 @@ class ProtoMeta(ABCMeta, proto.message.MessageMeta):
     """
     __additional_attributes = weakref.WeakKeyDictionary()
 
+    def _fix_docstring(cls, parent):
+        if not cls.__doc__:
+            warnings.warn(f"Missing docstring for {cls}")
+            return cls
+
+        if 'Attributes' not in cls.__doc__:
+            starting_indent = re.compile(r'^( +)\w+', re.MULTILINE)
+            attrs = re.findall(r'^(( *)Attributes:.*)', parent.__doc__, re.DOTALL | re.MULTILINE)
+            if not len(attrs) == 1:
+                return cls
+
+            attrs_doc, indent = attrs[0]
+            base_doc_indents = starting_indent.findall(cls.__doc__)
+            base_indent = base_doc_indents[0] if base_doc_indents else ''
+            fixed_lines = [re.sub(indent, base_indent, line) for line in attrs_doc.split('\n')]
+            cls.__doc__ += (
+                f'\n{base_indent}Fields are inherited from :class:`~{parent.__module__}.{parent.__qualname__}`\n' +
+                '\n' +
+                '\n'.join(fixed_lines)
+            )
+
+        return cls
+
     def __new__(mcs, name, bases, attrs):
         message_bases = [b for b in bases if isinstance(b, proto.message.MessageMeta)]
         if len(message_bases) != 1:
@@ -182,11 +206,12 @@ class ProtoMeta(ABCMeta, proto.message.MessageMeta):
         assert cls not in mcs.__additional_attributes
         mcs.__additional_attributes[cls] = attrs
 
+        cls = cls._fix_docstring(parent)
         return cls
 
-    def __dir__(self) -> Iterable[str]:
-        names = set(super().__dir__())
-        attributes = self.__additional_attributes.get(self, self.__additional_attributes.get(type(self), {}))
+    def __dir__(cls) -> Iterable[str]:
+        names = set(proto.message.MessageMeta.__dir__(cls))
+        attributes = cls.__additional_attributes.get(cls, {})
         names.update(set(attributes))
         return names
 

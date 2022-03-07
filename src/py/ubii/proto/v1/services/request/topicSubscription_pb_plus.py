@@ -22,24 +22,22 @@ __protobuf__ = module(
 
 
 class TopicSubscription(Message):
-    """Generated from ubii/proto/v1/services/request/topicSubscription.proto
-
+    """
     Attributes:
         client_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         subscribe_topics (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
-
+            :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
         unsubscribe_topics (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
-
+            :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
         subscribe_topic_regexp (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
-
+            :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
         unsubscribe_topic_regexp (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type :obj:`~proto.STRING`
-
+            :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     client_id = Field(

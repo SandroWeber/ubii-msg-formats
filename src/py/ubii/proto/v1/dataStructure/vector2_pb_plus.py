@@ -23,15 +23,12 @@ __protobuf__ = module(
 
 
 class Vector2(Message):
-    """Generated from ubii/proto/v1/dataStructure/vector2.proto
-
+    """
     Attributes:
         x (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         y (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
     """
 
     x = Field(
@@ -45,12 +42,10 @@ class Vector2(Message):
 
 
 class Vector2List(Message):
-    """Generated from ubii/proto/v1/dataStructure/vector2.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Vector2`
-
     """
 
     elements = RepeatedField(

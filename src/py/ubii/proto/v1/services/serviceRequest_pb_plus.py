@@ -59,55 +59,71 @@ __protobuf__ = module(
 
 
 class ServiceRequest(Message):
-    """Generated from ubii/proto/v1/services/serviceRequest.proto
+    """
+    .. admonition:: One Ofs
+
+        This message defines the following *oneof* group[s]
+
+        .. attribute:: type
+
+            - 	:attr:`.client`
+            - 	:attr:`.device`
+            - 	:attr:`.topic_subscription`
+            - 	:attr:`.session`
+            - 	:attr:`.session_list`
+            - 	:attr:`.processing_module`
+            - 	:attr:`.processing_module_list`
+            - 	:attr:`.topic_mux`
+            - 	:attr:`.topic_mux_list`
+            - 	:attr:`.topic_demux`
+            - 	:attr:`.topic_demux_list`
+            - 	:attr:`.client_list`
+            - 	:attr:`.device_list`
+            - 	:attr:`.lockstep_processing_request`
 
     Attributes:
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         client (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.clients.client_pb_plus.Client`
-
+            :obj:`~ubii.proto.v1.clients.client_pb_plus.Client` -- *oneof*
+            :attr:`.type`
         device (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.device_pb_plus.Device`
-
+            :obj:`~ubii.proto.v1.devices.device_pb_plus.Device` -- *oneof*
+            :attr:`.type`
         topic_subscription (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.services.request.topicSubscription_pb_plus.TopicSubscription`
-
+            :obj:`~ubii.proto.v1.services.request.topicSubscription_pb_plus.TopicSubscription` -- *oneof* :attr:`.type`
         session (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.sessions.session_pb_plus.Session`
-
+            :obj:`~ubii.proto.v1.sessions.session_pb_plus.Session` -- *oneof*
+            :attr:`.type`
         session_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.sessions.session_pb_plus.SessionList`
-
+            :obj:`~ubii.proto.v1.sessions.session_pb_plus.SessionList` -- *oneof*
+            :attr:`.type`
         processing_module (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
-
+            -- *oneof* :attr:`.type`
         processing_module_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModuleList`
-
+            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModuleList` -- *oneof* :attr:`.type`
         topic_mux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux`
-
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux` -- *oneof*
+            :attr:`.type`
         topic_mux_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMuxList`
-
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMuxList` -- *oneof*
+            :attr:`.type`
         topic_demux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux`
-
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux` -- *oneof*
+            :attr:`.type`
         topic_demux_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemuxList`
-
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemuxList` -- *oneof*
+            :attr:`.type`
         client_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.clients.client_pb_plus.ClientList`
-
+            :obj:`~ubii.proto.v1.clients.client_pb_plus.ClientList` -- *oneof*
+            :attr:`.type`
         device_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.device_pb_plus.DeviceList`
-
+            :obj:`~ubii.proto.v1.devices.device_pb_plus.DeviceList` -- *oneof*
+            :attr:`.type`
         lockstep_processing_request (proto.fields.Field): :obj:`~proto.fields.Field` of
             type
-            :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingRequest`
-
+            :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingRequest` -- *oneof* :attr:`.type`
     """
 
     topic = Field(

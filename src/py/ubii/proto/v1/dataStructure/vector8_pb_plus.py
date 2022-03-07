@@ -23,33 +23,24 @@ __protobuf__ = module(
 
 
 class Vector8(Message):
-    """Generated from ubii/proto/v1/dataStructure/vector8.proto
-
+    """
     Attributes:
         v0 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         v1 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         v2 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         v3 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         v4 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         v5 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         v6 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
         v7 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.DOUBLE`
-
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
     """
 
     v0 = Field(
@@ -87,12 +78,10 @@ class Vector8(Message):
 
 
 class Vector8List(Message):
-    """Generated from ubii/proto/v1/dataStructure/vector8.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Vector8`
-
     """
 
     elements = RepeatedField(

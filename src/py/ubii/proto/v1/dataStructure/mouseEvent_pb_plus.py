@@ -25,15 +25,12 @@ __protobuf__ = module(
 
 
 class MouseEvent(Message):
-    """Generated from ubii/proto/v1/dataStructure/mouseEvent.proto
-
+    """
     Attributes:
         type (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.buttonEventType_pb_plus.ButtonEventType`
-
         button (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.INT32`
-
+            :obj:`~proto.primitives.ProtoType.INT32`
     """
 
     type = Field(

@@ -29,12 +29,10 @@ __protobuf__ = module(
 
 
 class StringList(Message):
-    """Generated from ubii/proto/v1/dataStructure/lists.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.STRING`
-
+            type :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     elements = RepeatedField(
@@ -44,12 +42,10 @@ class StringList(Message):
 
 
 class DoubleList(Message):
-    """Generated from ubii/proto/v1/dataStructure/lists.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.DOUBLE`
-
+            type :obj:`~proto.primitives.ProtoType.DOUBLE`
     """
 
     elements = RepeatedField(
@@ -59,12 +55,10 @@ class DoubleList(Message):
 
 
 class FloatList(Message):
-    """Generated from ubii/proto/v1/dataStructure/lists.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.FLOAT`
-
+            type :obj:`~proto.primitives.ProtoType.FLOAT`
     """
 
     elements = RepeatedField(
@@ -74,12 +68,10 @@ class FloatList(Message):
 
 
 class BoolList(Message):
-    """Generated from ubii/proto/v1/dataStructure/lists.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.BOOL`
-
+            type :obj:`~proto.primitives.ProtoType.BOOL`
     """
 
     elements = RepeatedField(
@@ -89,12 +81,10 @@ class BoolList(Message):
 
 
 class Int32List(Message):
-    """Generated from ubii/proto/v1/dataStructure/lists.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.INT32`
-
+            type :obj:`~proto.primitives.ProtoType.INT32`
     """
 
     elements = RepeatedField(

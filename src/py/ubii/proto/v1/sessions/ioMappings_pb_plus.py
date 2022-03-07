@@ -35,18 +35,25 @@ __protobuf__ = module(
 
 
 class TopicInputMapping(Message):
-    """Generated from ubii/proto/v1/sessions/ioMappings.proto
+    """
+    .. admonition:: One Ofs
+
+        This message defines the following *oneof* group[s]
+
+        .. attribute:: topic_source
+
+            - 	:attr:`.topic`
+            - 	:attr:`.topic_mux`
 
     Attributes:
         input_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING` -- *oneof*
+            :attr:`.topic_source`
         topic_mux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux`
-
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux` -- *oneof*
+            :attr:`.topic_source`
     """
 
     input_name = Field(
@@ -66,12 +73,10 @@ class TopicInputMapping(Message):
 
 
 class TopicInputMappingList(Message):
-    """Generated from ubii/proto/v1/sessions/ioMappings.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.TopicInputMapping`
-
     """
 
     elements = RepeatedField(
@@ -81,18 +86,25 @@ class TopicInputMappingList(Message):
 
 
 class TopicOutputMapping(Message):
-    """Generated from ubii/proto/v1/sessions/ioMappings.proto
+    """
+    .. admonition:: One Ofs
+
+        This message defines the following *oneof* group[s]
+
+        .. attribute:: topic_destination
+
+            - 	:attr:`.topic`
+            - 	:attr:`.topic_demux`
 
     Attributes:
         output_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING` -- *oneof*
+            :attr:`.topic_destination`
         topic_demux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux`
-
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux` -- *oneof*
+            :attr:`.topic_destination`
     """
 
     output_name = Field(
@@ -112,12 +124,10 @@ class TopicOutputMapping(Message):
 
 
 class TopicOutputMappingList(Message):
-    """Generated from ubii/proto/v1/sessions/ioMappings.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.TopicOutputMapping`
-
     """
 
     elements = RepeatedField(
@@ -127,22 +137,17 @@ class TopicOutputMappingList(Message):
 
 
 class IOMapping(Message):
-    """Generated from ubii/proto/v1/sessions/ioMappings.proto
-
+    """
     Attributes:
         processing_module_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         input_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField`
             of type :obj:`~.TopicInputMapping`
-
         output_mappings (proto.fields.RepeatedField):
             :obj:`~proto.fields.RepeatedField` of type
             :obj:`~.TopicOutputMapping`
-
         processing_module_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     processing_module_id = Field(
@@ -164,12 +169,10 @@ class IOMapping(Message):
 
 
 class IOMappingList(Message):
-    """Generated from ubii/proto/v1/sessions/ioMappings.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.IOMapping`
-
     """
 
     elements = RepeatedField(

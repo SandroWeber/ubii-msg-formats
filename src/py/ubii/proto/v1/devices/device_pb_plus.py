@@ -28,30 +28,22 @@ __protobuf__ = module(
 
 
 class Device(Message):
-    """Generated from ubii/proto/v1/devices/device.proto
-
+    """
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         device_type (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~.DeviceType`
-
         components (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~ubii.proto.v1.devices.component_pb_plus.Component`
-
         client_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     class DeviceType(Enum):
@@ -89,12 +81,10 @@ class Device(Message):
 
 
 class DeviceList(Message):
-    """Generated from ubii/proto/v1/devices/device.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Device`
-
     """
 
     elements = RepeatedField(

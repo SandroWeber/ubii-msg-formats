@@ -36,24 +36,18 @@ __protobuf__ = module(
 
 
 class MyoEvent(Message):
-    """Generated from ubii/proto/v1/dataStructure/myoEvent.proto
-
+    """
     Attributes:
         emg (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector8_pb_plus.Vector8`
-
         orientation (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.quaternion_pb_plus.Quaternion`
-
         gyroscope (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
-
         accelerometer (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
-
         gesture (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.handGestureType_pb_plus.HandGestureType`
-
     """
 
     emg = Field(

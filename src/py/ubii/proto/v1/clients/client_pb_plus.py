@@ -34,43 +34,31 @@ __protobuf__ = module(
 
 
 class Client(Message):
-    """Generated from ubii/proto/v1/clients/client.proto
-
+    """
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         devices (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~ubii.proto.v1.devices.device_pb_plus.Device`
-
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         processing_modules (proto.fields.RepeatedField):
             :obj:`~proto.fields.RepeatedField` of type
             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
-
         is_dedicated_processing_node (proto.fields.Field): :obj:`~proto.fields.Field`
-            of type :obj:`~proto.BOOL`
-
+            of type :obj:`~proto.primitives.ProtoType.BOOL`
         host_ip (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         metadata_json (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         state (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~.State`
-
         latency (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.FLOAT`
-
+            :obj:`~proto.primitives.ProtoType.FLOAT`
     """
 
     class State(Enum):
@@ -125,12 +113,10 @@ class Client(Message):
 
 
 class ClientList(Message):
-    """Generated from ubii/proto/v1/clients/client.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Client`
-
     """
 
     elements = RepeatedField(

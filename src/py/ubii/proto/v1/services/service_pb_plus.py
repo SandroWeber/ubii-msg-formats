@@ -23,24 +23,18 @@ __protobuf__ = module(
 
 
 class Service(Message):
-    """Generated from ubii/proto/v1/services/service.proto
-
+    """
     Attributes:
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         request_message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         response_message_format (proto.fields.Field): :obj:`~proto.fields.Field` of
-            type :obj:`~proto.STRING`
-
+            type :obj:`~proto.primitives.ProtoType.STRING`
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     topic = Field(
@@ -66,12 +60,10 @@ class Service(Message):
 
 
 class ServiceList(Message):
-    """Generated from ubii/proto/v1/services/service.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Service`
-
     """
 
     elements = RepeatedField(

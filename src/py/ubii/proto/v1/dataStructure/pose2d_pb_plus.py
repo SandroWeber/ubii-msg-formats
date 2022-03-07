@@ -25,18 +25,25 @@ __protobuf__ = module(
 
 
 class Pose2D(Message):
-    """Generated from ubii/proto/v1/dataStructure/pose2d.proto
+    """
+    .. admonition:: One Ofs
+
+        This message defines the following *oneof* group[s]
+
+        .. attribute:: orientation
+
+            - 	:attr:`.direction`
+            - 	:attr:`.angle`
 
     Attributes:
         position (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
-
         direction (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
-
+            :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2` -- *oneof*
+            :attr:`.orientation`
         angle (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.FLOAT`
-
+            :obj:`~proto.primitives.ProtoType.FLOAT` -- *oneof*
+            :attr:`.orientation`
     """
 
     position = Field(

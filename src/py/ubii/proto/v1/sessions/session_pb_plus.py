@@ -40,37 +40,27 @@ class SessionStatus(Enum):
     STOPPED = 3
 
 class Session(Message):
-    """Generated from ubii/proto/v1/sessions/session.proto
-
+    """
     Attributes:
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         processing_modules (proto.fields.RepeatedField):
             :obj:`~proto.fields.RepeatedField` of type
             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
-
         io_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~ubii.proto.v1.sessions.ioMappings_pb_plus.IOMapping`
-
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         authors (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.STRING`
-
+            type :obj:`~proto.primitives.ProtoType.STRING`
         status (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~.SessionStatus`
-
         editable (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.BOOL`
-
+            :obj:`~proto.primitives.ProtoType.BOOL`
     """
 
     id = Field(
@@ -112,12 +102,10 @@ class Session(Message):
 
 
 class SessionList(Message):
-    """Generated from ubii/proto/v1/sessions/session.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.Session`
-
     """
 
     elements = RepeatedField(

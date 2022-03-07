@@ -29,21 +29,16 @@ __protobuf__ = module(
 
 
 class TouchEvent(Message):
-    """Generated from ubii/proto/v1/dataStructure/touchEvent.proto
-
+    """
     Attributes:
         type (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~.TouchEventType`
-
         position (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
-
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.STRING`
-
+            :obj:`~proto.primitives.ProtoType.STRING`
         force (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.FLOAT`
-
+            :obj:`~proto.primitives.ProtoType.FLOAT`
     """
 
     class TouchEventType(Enum):
@@ -70,12 +65,10 @@ class TouchEvent(Message):
 
 
 class TouchEventList(Message):
-    """Generated from ubii/proto/v1/dataStructure/touchEvent.proto
-
+    """
     Attributes:
         elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
             type :obj:`~.TouchEvent`
-
     """
 
     elements = RepeatedField(

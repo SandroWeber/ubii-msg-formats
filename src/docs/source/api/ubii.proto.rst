@@ -21,9 +21,9 @@ inside the auto-generated documentation:
 Utility
 -------
 
-Some features from :class:`ubii.proto.util.ProtoMeta` and
-:class:`ubii.proto.util.ProtoEncoder` are exposed to be
-directly importable from :mod:`ubii.proto`
+:class:`ubii.proto.util.ProtoMeta` and
+:class:`ubii.proto.util.ProtoEncoder` from :mod:`ubii.proto.util` are directly
+importable from :mod:`ubii.proto`
 
 
 Submodules
@@ -33,7 +33,5 @@ ubii.proto.util module
 ----------------------
 
 .. automodule:: ubii.proto.util
-   :no-undoc-members:
-   :show-inheritance:
 
 

@@ -21,174 +21,122 @@ __protobuf__ = module(
 
 
 class Constants(Message):
-    """Generated from ubii/proto/v1/servers/constants.proto
-
+    """
     Attributes:
         DEFAULT_TOPICS (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~.DefaultTopics`
-
         MSG_TYPES (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~.MsgTypes`
-
     """
 
     class DefaultTopics(Message):
-        """Generated from ubii/proto/v1/servers/constants.proto
-
+        """
         Attributes:
             SERVICES (proto.fields.Field): :obj:`~proto.fields.Field` of type
                 :obj:`~.Services`
-
             INFO_TOPICS (proto.fields.Field): :obj:`~proto.fields.Field` of type
                 :obj:`~.InfoTopics`
-
         """
 
         class Services(Message):
-            """Generated from ubii/proto/v1/servers/constants.proto
-
+            """
             Attributes:
                 SERVER_CONFIG (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 CLIENT_REGISTRATION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 CLIENT_DEREGISTRATION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 CLIENT_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 DEVICE_REGISTRATION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 DEVICE_DEREGISTRATION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 DEVICE_GET (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 DEVICE_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_SAVE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_DELETE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_GET (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_ONLINE_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_LOCAL_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 PM_RUNTIME_ADD (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_RUNTIME_REMOVE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_RUNTIME_GET (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_RUNTIME_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_SAVE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_DELETE (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_GET (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_ONLINE_GET_LIST (proto.fields.Field):
-                    :obj:`~proto.fields.Field` of type :obj:`~proto.STRING`
-
+                    :obj:`~proto.fields.Field` of type
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_LOCAL_GET_LIST (proto.fields.Field):
-                    :obj:`~proto.fields.Field` of type :obj:`~proto.STRING`
-
+                    :obj:`~proto.fields.Field` of type
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_RUNTIME_ADD (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_RUNTIME_REMOVE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_RUNTIME_GET (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_RUNTIME_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_RUNTIME_START (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_RUNTIME_STOP (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_RUNTIME_UPDATE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_DEMUX_DATABASE_SAVE (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_DEMUX_DATABASE_DELETE (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_DEMUX_DATABASE_GET (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_DEMUX_DATABASE_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field`
-                    of type :obj:`~proto.STRING`
-
+                    of type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_DEMUX_RUNTIME_GET (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_DEMUX_RUNTIME_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field`
-                    of type :obj:`~proto.STRING`
-
+                    of type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_MUX_DATABASE_SAVE (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_MUX_DATABASE_DELETE (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_MUX_DATABASE_GET (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_MUX_DATABASE_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_MUX_RUNTIME_GET (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_MUX_RUNTIME_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                    type :obj:`~proto.STRING`
-
+                    type :obj:`~proto.primitives.ProtoType.STRING`
                 SERVICE_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 TOPIC_SUBSCRIPTION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 LATENCY_CLIENTS_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
             """
 
             SERVER_CONFIG = Field(
@@ -382,51 +330,36 @@ class Constants(Message):
         
 
         class InfoTopics(Message):
-            """Generated from ubii/proto/v1/servers/constants.proto
-
+            """
             Attributes:
                 REGEX_ALL_INFOS (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 REGEX_PM_INFOS (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 NEW_PM (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 START_PM (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 DELETE_PM (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 CHANGE_PM (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PROCESSED_PM (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 REGEX_SESSION_INFOS (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 NEW_SESSION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 DELETE_SESSION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 CHANGE_SESSION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 START_SESSION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 STOP_SESSION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 RUNNING_SESSION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                    :obj:`~proto.STRING`
-
+                    :obj:`~proto.primitives.ProtoType.STRING`
             """
 
             REGEX_ALL_INFOS = Field(
@@ -498,183 +431,125 @@ class Constants(Message):
     
 
     class MsgTypes(Message):
-        """Generated from ubii/proto/v1/servers/constants.proto
-
+        """
         Attributes:
             ERROR (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SUCCESS (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SERVER (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             CLIENT (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             CLIENT_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DEVICE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DEVICE_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             COMPONENT (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             COMPONENT_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_MUX (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_MUX_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_DEMUX (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_DEMUX_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SERVICE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SERVICE_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SERVICE_REQUEST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SERVICE_REPLY (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SERVICE_REUEST_TOPIC_SUBSCRIPTION (proto.fields.Field):
-                :obj:`~proto.fields.Field` of type :obj:`~proto.STRING`
-
+                :obj:`~proto.fields.Field` of type
+                :obj:`~proto.primitives.ProtoType.STRING`
             SESSION (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SESSION_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             SESSION_IO_MAPPING (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             PM (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             PM_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             PM_MODULE_IO (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             PM_PROCESSING_MODE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_DATA (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_DATA_RECORD (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_DATA_RECORD_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             TOPIC_DATA_TIMESTAMP (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_BOOL (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_BOOL_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_INT32 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_INT32_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_STRING (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_STRING_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_FLOAT (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_FLOAT_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_DOUBLE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_DOUBLE_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_COLOR (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_IMAGE (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_IMAGE_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_KEY_EVENT (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_MATRIX_3X2 (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_MATRIX_4X4 (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_MOUSE_EVENT (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_OBJECT2D (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_OBJECT2D_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_OBJECT3D (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_OBJECT3D_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_POSE2D (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_POSE3D (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_QUATERNION (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_TOUCH_EVENT (proto.fields.Field): :obj:`~proto.fields.Field` of
-                type :obj:`~proto.STRING`
-
+                type :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_VECTOR2 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_VECTOR3 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_VECTOR4 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
             DATASTRUCTURE_VECTOR8 (proto.fields.Field): :obj:`~proto.fields.Field` of type
-                :obj:`~proto.STRING`
-
+                :obj:`~proto.primitives.ProtoType.STRING`
         """
 
         ERROR = Field(
