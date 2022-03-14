@@ -1,0 +1,19 @@
+syntax = "proto3";
+package ubii.topicData;
+
+import "proto/topicData/topicDataRecord/topicDataRecord.proto";
+import "proto/topicData/subscription.proto";
+
+
+message TopicComparator {
+    oneof argument_a {
+        ubii.topicData.TopicDataRecord topicDataRecord = 1;
+        ubii.topicData.Subscription subscription = 2;
+    }
+    oneof argument_b {
+        ubii.topicData.TopicDataRecord topicDataRecord = 3;
+        ubii.topicData.Subscription subscription = 4;
+    }
+     
+    string compare_function_stringified = 5;
+}
