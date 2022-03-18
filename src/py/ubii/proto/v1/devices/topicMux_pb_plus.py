@@ -62,8 +62,8 @@ class TopicMux(Message):
 class TopicMuxList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.TopicMux`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.TopicMux`
     """
 
     elements = RepeatedField(

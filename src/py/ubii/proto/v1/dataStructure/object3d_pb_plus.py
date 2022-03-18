@@ -64,8 +64,8 @@ class Object3D(Message):
 class Object3DList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Object3D`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Object3D`
     """
 
     elements = RepeatedField(

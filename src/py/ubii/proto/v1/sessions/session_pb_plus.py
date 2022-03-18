@@ -46,19 +46,17 @@ class Session(Message):
             :obj:`~proto.primitives.ProtoType.STRING`
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
-        processing_modules (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type
+        processing_modules (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
-        io_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~ubii.proto.v1.sessions.ioMappings_pb_plus.IOMapping`
+        io_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~ubii.proto.v1.sessions.ioMappings_pb_plus.IOMapping`
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~proto.primitives.ProtoType.STRING`
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
-        authors (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.primitives.ProtoType.STRING`
-        status (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~.SessionStatus`
+        authors (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
+        status (proto.fields.Field): :obj:`~proto.fields.Field` of type :obj:`~.SessionStatus`
         editable (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.BOOL`
     """
@@ -104,8 +102,8 @@ class Session(Message):
 class SessionList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Session`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Session`
     """
 
     elements = RepeatedField(

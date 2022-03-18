@@ -31,8 +31,8 @@ __protobuf__ = module(
 class StringList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.primitives.ProtoType.STRING`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     elements = RepeatedField(
@@ -44,8 +44,8 @@ class StringList(Message):
 class DoubleList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.primitives.ProtoType.DOUBLE`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.DOUBLE`
     """
 
     elements = RepeatedField(
@@ -57,8 +57,8 @@ class DoubleList(Message):
 class FloatList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.primitives.ProtoType.FLOAT`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.FLOAT`
     """
 
     elements = RepeatedField(
@@ -70,8 +70,8 @@ class FloatList(Message):
 class BoolList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.primitives.ProtoType.BOOL`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.BOOL`
     """
 
     elements = RepeatedField(
@@ -83,8 +83,8 @@ class BoolList(Message):
 class Int32List(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~proto.primitives.ProtoType.INT32`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~proto.primitives.ProtoType.INT32`
     """
 
     elements = RepeatedField(

@@ -31,8 +31,7 @@ __protobuf__ = module(
 class TouchEvent(Message):
     """
     Attributes:
-        type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~.TouchEventType`
+        type (proto.fields.Field): :obj:`~proto.fields.Field` of type :obj:`~.TouchEventType`
         position (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2`
         id (proto.fields.Field): :obj:`~proto.fields.Field` of type
@@ -67,8 +66,8 @@ class TouchEvent(Message):
 class TouchEventList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.TouchEvent`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.TouchEvent`
     """
 
     elements = RepeatedField(

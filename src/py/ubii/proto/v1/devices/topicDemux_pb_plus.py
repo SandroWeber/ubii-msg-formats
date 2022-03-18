@@ -56,8 +56,8 @@ class TopicDemux(Message):
 class TopicDemuxList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.TopicDemux`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.TopicDemux`
     """
 
     elements = RepeatedField(

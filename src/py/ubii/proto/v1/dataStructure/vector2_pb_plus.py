@@ -44,8 +44,8 @@ class Vector2(Message):
 class Vector2List(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Vector2`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Vector2`
     """
 
     elements = RepeatedField(

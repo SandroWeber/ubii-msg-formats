@@ -30,11 +30,9 @@ __protobuf__ = module(
 class LockstepProcessingRequest(Message):
     """
     Attributes:
-        processing_module_ids (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type
+        processing_module_ids (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~proto.primitives.ProtoType.STRING`
-        records (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type
+        records (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecord`
         delta_time_ms (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.INT32`
@@ -57,11 +55,9 @@ class LockstepProcessingRequest(Message):
 class LockstepProcessingReply(Message):
     """
     Attributes:
-        processing_module_ids (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type
+        processing_module_ids (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~proto.primitives.ProtoType.STRING`
-        records (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type
+        records (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecord`
     """
 

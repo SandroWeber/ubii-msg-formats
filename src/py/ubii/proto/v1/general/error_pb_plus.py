@@ -50,8 +50,8 @@ class Error(Message):
 class ErrorList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Error`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Error`
     """
 
     elements = RepeatedField(

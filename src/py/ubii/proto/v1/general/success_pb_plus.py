@@ -44,8 +44,8 @@ class Success(Message):
 class SuccessList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Success`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Success`
     """
 
     elements = RepeatedField(

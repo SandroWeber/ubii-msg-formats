@@ -42,8 +42,8 @@ class Pose3D(Message):
         position (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3`
         quaternion (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.dataStructure.quaternion_pb_plus.Quaternion` --
-            *oneof* :attr:`.orientation`
+            :obj:`~ubii.proto.v1.dataStructure.quaternion_pb_plus.Quaternion` -- *oneof*
+            :attr:`.orientation`
         euler (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.dataStructure.vector3_pb_plus.Vector3` -- *oneof*
             :attr:`.orientation`

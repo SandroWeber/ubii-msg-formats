@@ -64,8 +64,8 @@ class Object2D(Message):
 class Object2DList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Object2D`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Object2D`
     """
 
     elements = RepeatedField(

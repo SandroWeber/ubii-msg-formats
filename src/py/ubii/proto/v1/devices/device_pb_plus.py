@@ -34,10 +34,9 @@ class Device(Message):
             :obj:`~proto.primitives.ProtoType.STRING`
         name (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
-        device_type (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~.DeviceType`
-        components (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~ubii.proto.v1.devices.component_pb_plus.Component`
+        device_type (proto.fields.Field): :obj:`~proto.fields.Field` of type :obj:`~.DeviceType`
+        components (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~ubii.proto.v1.devices.component_pb_plus.Component`
         client_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
@@ -83,8 +82,8 @@ class Device(Message):
 class DeviceList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Device`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Device`
     """
 
     elements = RepeatedField(

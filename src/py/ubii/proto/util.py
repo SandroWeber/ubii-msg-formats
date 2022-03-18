@@ -8,6 +8,7 @@ Attributes:
 import collections
 import functools
 import importlib
+import itertools
 import json
 import logging
 import re
@@ -90,7 +91,21 @@ def clean_json(message: str):
     return formatted
 
 
-def patch_wrapper_class_repr():
+def patch_wrapper_class_repr(replacement='...', max_len=50) -> None:
+    """
+    E.g. for documentation purposes it's undesirable that the `__repr__` method of
+    :class:`proto.message.Message` simply returns formatted json for the message object.
+    For messages with many fields or long representation of field values this to much information.
+
+    This function simply monkeypatches the `__repr__` method of :class:`proto.message.Message` to replace
+    output that is longer than :param:`max_len` with :param:`replacement`
+
+    Args:
+        replacement: string used as replacement
+        max_len: shorter representations will not be converted
+
+    """
+
     def patch(__repr__):
         @functools.wraps(__repr__)
         def wrapped(self):
@@ -98,15 +113,15 @@ def patch_wrapper_class_repr():
             pb_type_descr = type_.pb().DESCRIPTOR
             vars_ = {name: getattr(self, name) for name in pb_type_descr.fields_by_name}
 
-            def short_repr(value, max_len=50):
-                orig = clean_json(str(value))
+            def short_repr(value, max_len=max_len):
+                orig = clean_json(str(value)) if isinstance(value, proto.Message) else repr(value)
                 if len(orig) < max_len:
                     return orig
                 else:
-                    return '...'
+                    return replacement
 
-            formatted = {name: short_repr(value) for name, value in vars_.items() if value}
-            return f"{type_.__name__}({formatted})"
+            formatted = ', '.join('{}={}'.format(name, short_repr(value)) for name, value in vars_.items() if value)
+            return f"{type_.__name__}(" + (formatted if len(formatted) < max_len else replacement) + ")"
 
             # return f"{name}({clean_json(old_repr)})"
 
@@ -165,32 +180,74 @@ class ProtoMeta(ABCMeta, proto.message.MessageMeta):
 
             class Fancy(ub.Component, metaclass=ub.ProtoMeta):
                 @property
-                def some_thing_amazing(self)
+                def something_amazing(self)
                     return "Wow"
 
     """
     __additional_attributes = weakref.WeakKeyDictionary()
+
+    # used for docstring processing, will be refactored into own class at some point
+    _starting_indent = re.compile(r'^( +)', re.MULTILINE)
+    _attributes_section = re.compile(r'^(( *)Attributes:.*)', re.DOTALL | re.MULTILINE)
+    _field = re.compile(r'^\s*(\w+) ?.*:')
 
     def _fix_docstring(cls, parent):
         if not cls.__doc__:
             warnings.warn(f"Missing docstring for {cls}")
             return cls
 
-        if 'Attributes' not in cls.__doc__:
-            starting_indent = re.compile(r'^( +)\w+', re.MULTILINE)
-            attrs = re.findall(r'^(( *)Attributes:.*)', parent.__doc__, re.DOTALL | re.MULTILINE)
-            if not len(attrs) == 1:
-                return cls
+        def get_attributes_section(kls):
+            sections = cls._attributes_section.findall(kls.__doc__)
+            assert len(sections) <= 1, f"{len(sections)} 'Attributes:' sections found in {kls}"
+            return sections[0] if sections else ('', cls._starting_indent.findall(kls.__doc__)[0])
 
-            attrs_doc, indent = attrs[0]
-            base_doc_indents = starting_indent.findall(cls.__doc__)
-            base_indent = base_doc_indents[0] if base_doc_indents else ''
-            fixed_lines = [re.sub(indent, base_indent, line) for line in attrs_doc.split('\n')]
-            cls.__doc__ += (
-                f'\n{base_indent}Fields are inherited from :class:`~{parent.__module__}.{parent.__qualname__}`\n' +
+        def make_attrs_dict(lines):
+            attributes = {}
+            name = None
+
+            for line in (lines.split('\n')[1:] if lines else []):
+                field = cls._field.match(line)
+                if field:
+                    name = field.groups()[0]
+                    attributes[name] = [line]
+                else:
+                    attributes[name] += [line]
+
+            return attributes
+
+        parent_section, parent_indent = get_attributes_section(parent)
+        parent_attributes = make_attrs_dict(parent_section)
+
+        this_section, this_indent = get_attributes_section(cls)
+        this_attributes = make_attrs_dict(this_section)
+        fix_indent = functools.partial(re.sub, f"^{parent_indent}", this_indent, flags=re.MULTILINE)
+
+        for key, lines in parent_attributes.items():
+            if key in this_attributes:
+                continue
+
+            this_attributes[key] = [fix_indent(line) for line in lines if line.strip()]
+
+            indent, = cls._starting_indent.findall(this_attributes[key][-1])  # indent of last line
+
+            if len(lines) == 1:
+                indent += ''.join([' '] * 4)
+
+            # append line with info
+            this_attributes[key] += [f"{indent}-- inherited from :class:`~{parent.__module__}.{parent.__qualname__}`"]
+
+        values = list(itertools.chain.from_iterable(this_attributes.values()))
+        doc = cls.__doc__
+        attr_loc = doc.index(this_section) if this_section else len(doc)
+        prev, after = doc[:attr_loc], doc[attr_loc + len(this_section) + 1:]  # parts before and after section
+
+        # insert new section in place of old
+        cls.__doc__ = (
+                fix_indent(prev) +
                 '\n' +
-                '\n'.join(fixed_lines)
-            )
+                '\n'.join(itertools.chain(map(fix_indent, parent_section.split('\n')[:1]), values)) +
+                fix_indent(after)
+        )
 
         return cls
 

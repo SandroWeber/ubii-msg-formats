@@ -42,8 +42,7 @@ class Pose2D(Message):
             :obj:`~ubii.proto.v1.dataStructure.vector2_pb_plus.Vector2` -- *oneof*
             :attr:`.orientation`
         angle (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.primitives.ProtoType.FLOAT` -- *oneof*
-            :attr:`.orientation`
+            :obj:`~proto.primitives.ProtoType.FLOAT` -- *oneof* :attr:`.orientation`
     """
 
     position = Field(

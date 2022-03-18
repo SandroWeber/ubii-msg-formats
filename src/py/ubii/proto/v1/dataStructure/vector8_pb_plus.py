@@ -80,8 +80,8 @@ class Vector8(Message):
 class Vector8List(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Vector8`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Vector8`
     """
 
     elements = RepeatedField(

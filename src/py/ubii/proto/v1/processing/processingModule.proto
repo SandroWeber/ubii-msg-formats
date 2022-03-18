@@ -2,12 +2,15 @@ syntax = "proto3";
 package ubii.proto.v1.processing;
 
 message ProcessingMode {
+    // Processing Callback is executed at a fixed time interval, with target frequency
     message Frequency {
         int32 hertz = 1;
     }
+    // Processing Callback is executed when the master node sends a lockstep processing request
     message Lockstep {
         string process_request_endpoint = 1;
     }
+    // Processing Callback is executed when all or any of the input data changes
     message TriggerOnInput {
         int32 min_delay_ms = 1;
         bool all_inputs_need_update = 2;

@@ -56,8 +56,8 @@ class Quaternion(Message):
 class QuaternionList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Quaternion`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Quaternion`
     """
 
     elements = RepeatedField(

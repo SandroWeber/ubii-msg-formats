@@ -29,8 +29,8 @@ class Service(Message):
             :obj:`~proto.primitives.ProtoType.STRING`
         request_message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
-        response_message_format (proto.fields.Field): :obj:`~proto.fields.Field` of
-            type :obj:`~proto.primitives.ProtoType.STRING`
+        response_message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
         tags (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~proto.primitives.ProtoType.STRING`
         description (proto.fields.Field): :obj:`~proto.fields.Field` of type
@@ -62,8 +62,8 @@ class Service(Message):
 class ServiceList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.Service`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.Service`
     """
 
     elements = RepeatedField(

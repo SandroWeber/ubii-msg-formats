@@ -104,61 +104,46 @@ class ServiceReply(Message):
 
     Attributes:
         success (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.general.success_pb_plus.Success` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.general.success_pb_plus.Success` -- *oneof* :attr:`.type`
         error (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.general.error_pb_plus.Error` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.general.error_pb_plus.Error` -- *oneof* :attr:`.type`
         client (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.clients.client_pb_plus.Client` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.clients.client_pb_plus.Client` -- *oneof* :attr:`.type`
         device (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.device_pb_plus.Device` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.devices.device_pb_plus.Device` -- *oneof* :attr:`.type`
         server (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.servers.server_pb_plus.Server` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.servers.server_pb_plus.Server` -- *oneof* :attr:`.type`
         session (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.sessions.session_pb_plus.Session` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.sessions.session_pb_plus.Session` -- *oneof* :attr:`.type`
         session_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.sessions.session_pb_plus.SessionList` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.sessions.session_pb_plus.SessionList` -- *oneof* :attr:`.type`
         processing_module (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule`
-            -- *oneof* :attr:`.type`
+            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModule` -- *oneof*
+            :attr:`.type`
         processing_module_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModuleList` -- *oneof* :attr:`.type`
+            :obj:`~ubii.proto.v1.processing.processingModule_pb_plus.ProcessingModuleList` -- *oneof*
+            :attr:`.type`
         string_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.dataStructure.lists_pb_plus.StringList` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.dataStructure.lists_pb_plus.StringList` -- *oneof* :attr:`.type`
         topic_mux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux` -- *oneof* :attr:`.type`
         topic_mux_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMuxList` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMuxList` -- *oneof* :attr:`.type`
         topic_demux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux` -- *oneof* :attr:`.type`
         topic_demux_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemuxList` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemuxList` -- *oneof* :attr:`.type`
         client_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.clients.client_pb_plus.ClientList` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.clients.client_pb_plus.ClientList` -- *oneof* :attr:`.type`
         device_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.device_pb_plus.DeviceList` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.devices.device_pb_plus.DeviceList` -- *oneof* :attr:`.type`
         service (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.services.service_pb_plus.Service` -- *oneof*
-            :attr:`.type`
+            :obj:`~ubii.proto.v1.services.service_pb_plus.Service` -- *oneof* :attr:`.type`
         service_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.services.service_pb_plus.ServiceList` -- *oneof*
+            :obj:`~ubii.proto.v1.services.service_pb_plus.ServiceList` -- *oneof* :attr:`.type`
+        lockstep_processing_reply (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingReply` -- *oneof*
             :attr:`.type`
-        lockstep_processing_reply (proto.fields.Field): :obj:`~proto.fields.Field` of
-            type
-            :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingReply` -- *oneof* :attr:`.type`
     """
 
     success = Field(

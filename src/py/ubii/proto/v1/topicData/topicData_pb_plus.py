@@ -42,14 +42,13 @@ class TopicData(Message):
 
     Attributes:
         topic_data_record (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecord` --
-            *oneof* :attr:`.type`
-        topic_data_record_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecordList`
-            -- *oneof* :attr:`.type`
-        error (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.general.error_pb_plus.Error` -- *oneof*
+            :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecord` -- *oneof*
             :attr:`.type`
+        topic_data_record_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecordList` -- *oneof*
+            :attr:`.type`
+        error (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.general.error_pb_plus.Error` -- *oneof* :attr:`.type`
     """
 
     topic_data_record = Field(

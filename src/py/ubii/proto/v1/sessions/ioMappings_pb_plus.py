@@ -49,11 +49,9 @@ class TopicInputMapping(Message):
         input_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.primitives.ProtoType.STRING` -- *oneof*
-            :attr:`.topic_source`
+            :obj:`~proto.primitives.ProtoType.STRING` -- *oneof* :attr:`.topic_source`
         topic_mux (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux` -- *oneof*
-            :attr:`.topic_source`
+            :obj:`~ubii.proto.v1.devices.topicMux_pb_plus.TopicMux` -- *oneof* :attr:`.topic_source`
     """
 
     input_name = Field(
@@ -75,8 +73,8 @@ class TopicInputMapping(Message):
 class TopicInputMappingList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.TopicInputMapping`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.TopicInputMapping`
     """
 
     elements = RepeatedField(
@@ -100,8 +98,7 @@ class TopicOutputMapping(Message):
         output_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
-            :obj:`~proto.primitives.ProtoType.STRING` -- *oneof*
-            :attr:`.topic_destination`
+            :obj:`~proto.primitives.ProtoType.STRING` -- *oneof* :attr:`.topic_destination`
         topic_demux (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.devices.topicDemux_pb_plus.TopicDemux` -- *oneof*
             :attr:`.topic_destination`
@@ -126,8 +123,8 @@ class TopicOutputMapping(Message):
 class TopicOutputMappingList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.TopicOutputMapping`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.TopicOutputMapping`
     """
 
     elements = RepeatedField(
@@ -141,10 +138,9 @@ class IOMapping(Message):
     Attributes:
         processing_module_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
-        input_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField`
-            of type :obj:`~.TopicInputMapping`
-        output_mappings (proto.fields.RepeatedField):
-            :obj:`~proto.fields.RepeatedField` of type
+        input_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.TopicInputMapping`
+        output_mappings (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
             :obj:`~.TopicOutputMapping`
         processing_module_name (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
@@ -171,8 +167,8 @@ class IOMapping(Message):
 class IOMappingList(Message):
     """
     Attributes:
-        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of
-            type :obj:`~.IOMapping`
+        elements (proto.fields.RepeatedField): :obj:`~proto.fields.RepeatedField` of type
+            :obj:`~.IOMapping`
     """
 
     elements = RepeatedField(
