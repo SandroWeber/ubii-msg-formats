@@ -275,6 +275,76 @@ class Server : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_constants_json();
   void set_allocated_constants_json(::std::string* constants_json);
 
+  // string external_address_service_zmq = 10;
+  void clear_external_address_service_zmq();
+  static const int kExternalAddressServiceZmqFieldNumber = 10;
+  const ::std::string& external_address_service_zmq() const;
+  void set_external_address_service_zmq(const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_address_service_zmq(::std::string&& value);
+  #endif
+  void set_external_address_service_zmq(const char* value);
+  void set_external_address_service_zmq(const char* value, size_t size);
+  ::std::string* mutable_external_address_service_zmq();
+  ::std::string* release_external_address_service_zmq();
+  void set_allocated_external_address_service_zmq(::std::string* external_address_service_zmq);
+
+  // string external_address_service_http_json = 11;
+  void clear_external_address_service_http_json();
+  static const int kExternalAddressServiceHttpJsonFieldNumber = 11;
+  const ::std::string& external_address_service_http_json() const;
+  void set_external_address_service_http_json(const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_address_service_http_json(::std::string&& value);
+  #endif
+  void set_external_address_service_http_json(const char* value);
+  void set_external_address_service_http_json(const char* value, size_t size);
+  ::std::string* mutable_external_address_service_http_json();
+  ::std::string* release_external_address_service_http_json();
+  void set_allocated_external_address_service_http_json(::std::string* external_address_service_http_json);
+
+  // string external_address_service_http_binary = 12;
+  void clear_external_address_service_http_binary();
+  static const int kExternalAddressServiceHttpBinaryFieldNumber = 12;
+  const ::std::string& external_address_service_http_binary() const;
+  void set_external_address_service_http_binary(const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_address_service_http_binary(::std::string&& value);
+  #endif
+  void set_external_address_service_http_binary(const char* value);
+  void set_external_address_service_http_binary(const char* value, size_t size);
+  ::std::string* mutable_external_address_service_http_binary();
+  ::std::string* release_external_address_service_http_binary();
+  void set_allocated_external_address_service_http_binary(::std::string* external_address_service_http_binary);
+
+  // string external_address_topic_data_zmq = 13;
+  void clear_external_address_topic_data_zmq();
+  static const int kExternalAddressTopicDataZmqFieldNumber = 13;
+  const ::std::string& external_address_topic_data_zmq() const;
+  void set_external_address_topic_data_zmq(const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_address_topic_data_zmq(::std::string&& value);
+  #endif
+  void set_external_address_topic_data_zmq(const char* value);
+  void set_external_address_topic_data_zmq(const char* value, size_t size);
+  ::std::string* mutable_external_address_topic_data_zmq();
+  ::std::string* release_external_address_topic_data_zmq();
+  void set_allocated_external_address_topic_data_zmq(::std::string* external_address_topic_data_zmq);
+
+  // string external_address_topic_data_ws = 14;
+  void clear_external_address_topic_data_ws();
+  static const int kExternalAddressTopicDataWsFieldNumber = 14;
+  const ::std::string& external_address_topic_data_ws() const;
+  void set_external_address_topic_data_ws(const ::std::string& value);
+  #if LANG_CXX11
+  void set_external_address_topic_data_ws(::std::string&& value);
+  #endif
+  void set_external_address_topic_data_ws(const char* value);
+  void set_external_address_topic_data_ws(const char* value, size_t size);
+  ::std::string* mutable_external_address_topic_data_ws();
+  ::std::string* release_external_address_topic_data_ws();
+  void set_allocated_external_address_topic_data_ws(::std::string* external_address_topic_data_ws);
+
   // @@protoc_insertion_point(class_scope:ubii.servers.Server)
  private:
 
@@ -288,6 +358,11 @@ class Server : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::internal::ArenaStringPtr port_topic_data_zmq_;
   ::google::protobuf::internal::ArenaStringPtr port_topic_data_ws_;
   ::google::protobuf::internal::ArenaStringPtr constants_json_;
+  ::google::protobuf::internal::ArenaStringPtr external_address_service_zmq_;
+  ::google::protobuf::internal::ArenaStringPtr external_address_service_http_json_;
+  ::google::protobuf::internal::ArenaStringPtr external_address_service_http_binary_;
+  ::google::protobuf::internal::ArenaStringPtr external_address_topic_data_zmq_;
+  ::google::protobuf::internal::ArenaStringPtr external_address_topic_data_ws_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fservers_2fserver_2eproto::TableStruct;
 };
@@ -777,6 +852,271 @@ inline void Server::set_allocated_constants_json(::std::string* constants_json) 
   }
   constants_json_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), constants_json);
   // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.constants_json)
+}
+
+// string external_address_service_zmq = 10;
+inline void Server::clear_external_address_service_zmq() {
+  external_address_service_zmq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Server::external_address_service_zmq() const {
+  // @@protoc_insertion_point(field_get:ubii.servers.Server.external_address_service_zmq)
+  return external_address_service_zmq_.GetNoArena();
+}
+inline void Server::set_external_address_service_zmq(const ::std::string& value) {
+  
+  external_address_service_zmq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.servers.Server.external_address_service_zmq)
+}
+#if LANG_CXX11
+inline void Server::set_external_address_service_zmq(::std::string&& value) {
+  
+  external_address_service_zmq_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.servers.Server.external_address_service_zmq)
+}
+#endif
+inline void Server::set_external_address_service_zmq(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  external_address_service_zmq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.servers.Server.external_address_service_zmq)
+}
+inline void Server::set_external_address_service_zmq(const char* value, size_t size) {
+  
+  external_address_service_zmq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.servers.Server.external_address_service_zmq)
+}
+inline ::std::string* Server::mutable_external_address_service_zmq() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.servers.Server.external_address_service_zmq)
+  return external_address_service_zmq_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Server::release_external_address_service_zmq() {
+  // @@protoc_insertion_point(field_release:ubii.servers.Server.external_address_service_zmq)
+  
+  return external_address_service_zmq_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Server::set_allocated_external_address_service_zmq(::std::string* external_address_service_zmq) {
+  if (external_address_service_zmq != NULL) {
+    
+  } else {
+    
+  }
+  external_address_service_zmq_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_address_service_zmq);
+  // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.external_address_service_zmq)
+}
+
+// string external_address_service_http_json = 11;
+inline void Server::clear_external_address_service_http_json() {
+  external_address_service_http_json_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Server::external_address_service_http_json() const {
+  // @@protoc_insertion_point(field_get:ubii.servers.Server.external_address_service_http_json)
+  return external_address_service_http_json_.GetNoArena();
+}
+inline void Server::set_external_address_service_http_json(const ::std::string& value) {
+  
+  external_address_service_http_json_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.servers.Server.external_address_service_http_json)
+}
+#if LANG_CXX11
+inline void Server::set_external_address_service_http_json(::std::string&& value) {
+  
+  external_address_service_http_json_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.servers.Server.external_address_service_http_json)
+}
+#endif
+inline void Server::set_external_address_service_http_json(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  external_address_service_http_json_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.servers.Server.external_address_service_http_json)
+}
+inline void Server::set_external_address_service_http_json(const char* value, size_t size) {
+  
+  external_address_service_http_json_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.servers.Server.external_address_service_http_json)
+}
+inline ::std::string* Server::mutable_external_address_service_http_json() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.servers.Server.external_address_service_http_json)
+  return external_address_service_http_json_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Server::release_external_address_service_http_json() {
+  // @@protoc_insertion_point(field_release:ubii.servers.Server.external_address_service_http_json)
+  
+  return external_address_service_http_json_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Server::set_allocated_external_address_service_http_json(::std::string* external_address_service_http_json) {
+  if (external_address_service_http_json != NULL) {
+    
+  } else {
+    
+  }
+  external_address_service_http_json_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_address_service_http_json);
+  // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.external_address_service_http_json)
+}
+
+// string external_address_service_http_binary = 12;
+inline void Server::clear_external_address_service_http_binary() {
+  external_address_service_http_binary_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Server::external_address_service_http_binary() const {
+  // @@protoc_insertion_point(field_get:ubii.servers.Server.external_address_service_http_binary)
+  return external_address_service_http_binary_.GetNoArena();
+}
+inline void Server::set_external_address_service_http_binary(const ::std::string& value) {
+  
+  external_address_service_http_binary_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.servers.Server.external_address_service_http_binary)
+}
+#if LANG_CXX11
+inline void Server::set_external_address_service_http_binary(::std::string&& value) {
+  
+  external_address_service_http_binary_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.servers.Server.external_address_service_http_binary)
+}
+#endif
+inline void Server::set_external_address_service_http_binary(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  external_address_service_http_binary_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.servers.Server.external_address_service_http_binary)
+}
+inline void Server::set_external_address_service_http_binary(const char* value, size_t size) {
+  
+  external_address_service_http_binary_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.servers.Server.external_address_service_http_binary)
+}
+inline ::std::string* Server::mutable_external_address_service_http_binary() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.servers.Server.external_address_service_http_binary)
+  return external_address_service_http_binary_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Server::release_external_address_service_http_binary() {
+  // @@protoc_insertion_point(field_release:ubii.servers.Server.external_address_service_http_binary)
+  
+  return external_address_service_http_binary_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Server::set_allocated_external_address_service_http_binary(::std::string* external_address_service_http_binary) {
+  if (external_address_service_http_binary != NULL) {
+    
+  } else {
+    
+  }
+  external_address_service_http_binary_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_address_service_http_binary);
+  // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.external_address_service_http_binary)
+}
+
+// string external_address_topic_data_zmq = 13;
+inline void Server::clear_external_address_topic_data_zmq() {
+  external_address_topic_data_zmq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Server::external_address_topic_data_zmq() const {
+  // @@protoc_insertion_point(field_get:ubii.servers.Server.external_address_topic_data_zmq)
+  return external_address_topic_data_zmq_.GetNoArena();
+}
+inline void Server::set_external_address_topic_data_zmq(const ::std::string& value) {
+  
+  external_address_topic_data_zmq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.servers.Server.external_address_topic_data_zmq)
+}
+#if LANG_CXX11
+inline void Server::set_external_address_topic_data_zmq(::std::string&& value) {
+  
+  external_address_topic_data_zmq_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.servers.Server.external_address_topic_data_zmq)
+}
+#endif
+inline void Server::set_external_address_topic_data_zmq(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  external_address_topic_data_zmq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.servers.Server.external_address_topic_data_zmq)
+}
+inline void Server::set_external_address_topic_data_zmq(const char* value, size_t size) {
+  
+  external_address_topic_data_zmq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.servers.Server.external_address_topic_data_zmq)
+}
+inline ::std::string* Server::mutable_external_address_topic_data_zmq() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.servers.Server.external_address_topic_data_zmq)
+  return external_address_topic_data_zmq_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Server::release_external_address_topic_data_zmq() {
+  // @@protoc_insertion_point(field_release:ubii.servers.Server.external_address_topic_data_zmq)
+  
+  return external_address_topic_data_zmq_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Server::set_allocated_external_address_topic_data_zmq(::std::string* external_address_topic_data_zmq) {
+  if (external_address_topic_data_zmq != NULL) {
+    
+  } else {
+    
+  }
+  external_address_topic_data_zmq_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_address_topic_data_zmq);
+  // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.external_address_topic_data_zmq)
+}
+
+// string external_address_topic_data_ws = 14;
+inline void Server::clear_external_address_topic_data_ws() {
+  external_address_topic_data_ws_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Server::external_address_topic_data_ws() const {
+  // @@protoc_insertion_point(field_get:ubii.servers.Server.external_address_topic_data_ws)
+  return external_address_topic_data_ws_.GetNoArena();
+}
+inline void Server::set_external_address_topic_data_ws(const ::std::string& value) {
+  
+  external_address_topic_data_ws_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:ubii.servers.Server.external_address_topic_data_ws)
+}
+#if LANG_CXX11
+inline void Server::set_external_address_topic_data_ws(::std::string&& value) {
+  
+  external_address_topic_data_ws_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ubii.servers.Server.external_address_topic_data_ws)
+}
+#endif
+inline void Server::set_external_address_topic_data_ws(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  external_address_topic_data_ws_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ubii.servers.Server.external_address_topic_data_ws)
+}
+inline void Server::set_external_address_topic_data_ws(const char* value, size_t size) {
+  
+  external_address_topic_data_ws_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ubii.servers.Server.external_address_topic_data_ws)
+}
+inline ::std::string* Server::mutable_external_address_topic_data_ws() {
+  
+  // @@protoc_insertion_point(field_mutable:ubii.servers.Server.external_address_topic_data_ws)
+  return external_address_topic_data_ws_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Server::release_external_address_topic_data_ws() {
+  // @@protoc_insertion_point(field_release:ubii.servers.Server.external_address_topic_data_ws)
+  
+  return external_address_topic_data_ws_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Server::set_allocated_external_address_topic_data_ws(::std::string* external_address_topic_data_ws) {
+  if (external_address_topic_data_ws != NULL) {
+    
+  } else {
+    
+  }
+  external_address_topic_data_ws_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_address_topic_data_ws);
+  // @@protoc_insertion_point(field_set_allocated:ubii.servers.Server.external_address_topic_data_ws)
 }
 
 #ifdef __GNUC__

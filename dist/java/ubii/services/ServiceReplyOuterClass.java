@@ -4636,41 +4636,40 @@ public final class ServiceReplyOuterClass {
     java.lang.String[] descriptorData = {
       "\n!proto/services/serviceReply.proto\022\rubi" +
       "i.services\032\033proto/general/success.proto\032" +
-      "\031proto/general/error.proto\0329proto/topicD" +
-      "ata/topicDataRecord/dataStructure/lists." +
-      "proto\032\032proto/clients/client.proto\032\032proto" +
-      "/devices/device.proto\032\034proto/devices/top" +
-      "icMux.proto\032\036proto/devices/topicDemux.pr" +
-      "oto\032\032proto/servers/server.proto\032\034proto/s" +
-      "essions/session.proto\032\034proto/services/se" +
-      "rvice.proto\032\'proto/processing/processing" +
-      "Module.proto\032)proto/processing/lockstepP" +
-      "rocessing.proto\"\333\007\n\014ServiceReply\022(\n\007succ" +
-      "ess\030\001 \001(\0132\025.ubii.general.SuccessH\000\022$\n\005er" +
-      "ror\030\002 \001(\0132\023.ubii.general.ErrorH\000\022&\n\006clie" +
-      "nt\030\003 \001(\0132\024.ubii.clients.ClientH\000\022&\n\006devi" +
-      "ce\030\004 \001(\0132\024.ubii.devices.DeviceH\000\022&\n\006serv" +
-      "er\030\005 \001(\0132\024.ubii.servers.ServerH\000\022)\n\007sess" +
-      "ion\030\006 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014s" +
-      "ession_list\030\007 \001(\0132\032.ubii.sessions.Sessio" +
-      "nListH\000\022>\n\021processing_module\030\010 \001(\0132!.ubi" +
-      "i.processing.ProcessingModuleH\000\022G\n\026proce" +
-      "ssing_module_list\030\t \001(\0132%.ubii.processin" +
-      "g.ProcessingModuleListH\000\0225\n\013string_list\030" +
-      "\n \001(\0132\036.ubii.dataStructure.StringListH\000\022" +
-      "+\n\ttopic_mux\030\013 \001(\0132\026.ubii.devices.TopicM" +
-      "uxH\000\0224\n\016topic_mux_list\030\014 \001(\0132\032.ubii.devi" +
-      "ces.TopicMuxListH\000\022/\n\013topic_demux\030\r \001(\0132" +
-      "\030.ubii.devices.TopicDemuxH\000\0228\n\020topic_dem" +
-      "ux_list\030\016 \001(\0132\034.ubii.devices.TopicDemuxL" +
-      "istH\000\022/\n\013client_list\030\017 \001(\0132\030.ubii.client" +
-      "s.ClientListH\000\022/\n\013device_list\030\020 \001(\0132\030.ub" +
-      "ii.devices.DeviceListH\000\022)\n\007service\030\021 \001(\013" +
-      "2\026.ubii.services.ServiceH\000\0222\n\014service_li" +
-      "st\030\022 \001(\0132\032.ubii.services.ServiceListH\000\022M" +
-      "\n\031lockstep_processing_reply\030\023 \001(\0132(.ubii" +
-      ".processing.LockstepProcessingReplyH\000B\006\n" +
-      "\004typeb\006proto3"
+      "\031proto/general/error.proto\032\037proto/dataSt" +
+      "ructure/lists.proto\032\032proto/clients/clien" +
+      "t.proto\032\032proto/devices/device.proto\032\034pro" +
+      "to/devices/topicMux.proto\032\036proto/devices" +
+      "/topicDemux.proto\032\032proto/servers/server." +
+      "proto\032\034proto/sessions/session.proto\032\034pro" +
+      "to/services/service.proto\032\'proto/process" +
+      "ing/processingModule.proto\032)proto/proces" +
+      "sing/lockstepProcessing.proto\"\333\007\n\014Servic" +
+      "eReply\022(\n\007success\030\001 \001(\0132\025.ubii.general.S" +
+      "uccessH\000\022$\n\005error\030\002 \001(\0132\023.ubii.general.E" +
+      "rrorH\000\022&\n\006client\030\003 \001(\0132\024.ubii.clients.Cl" +
+      "ientH\000\022&\n\006device\030\004 \001(\0132\024.ubii.devices.De" +
+      "viceH\000\022&\n\006server\030\005 \001(\0132\024.ubii.servers.Se" +
+      "rverH\000\022)\n\007session\030\006 \001(\0132\026.ubii.sessions." +
+      "SessionH\000\0222\n\014session_list\030\007 \001(\0132\032.ubii.s" +
+      "essions.SessionListH\000\022>\n\021processing_modu" +
+      "le\030\010 \001(\0132!.ubii.processing.ProcessingMod" +
+      "uleH\000\022G\n\026processing_module_list\030\t \001(\0132%." +
+      "ubii.processing.ProcessingModuleListH\000\0225" +
+      "\n\013string_list\030\n \001(\0132\036.ubii.dataStructure" +
+      ".StringListH\000\022+\n\ttopic_mux\030\013 \001(\0132\026.ubii." +
+      "devices.TopicMuxH\000\0224\n\016topic_mux_list\030\014 \001" +
+      "(\0132\032.ubii.devices.TopicMuxListH\000\022/\n\013topi" +
+      "c_demux\030\r \001(\0132\030.ubii.devices.TopicDemuxH" +
+      "\000\0228\n\020topic_demux_list\030\016 \001(\0132\034.ubii.devic" +
+      "es.TopicDemuxListH\000\022/\n\013client_list\030\017 \001(\013" +
+      "2\030.ubii.clients.ClientListH\000\022/\n\013device_l" +
+      "ist\030\020 \001(\0132\030.ubii.devices.DeviceListH\000\022)\n" +
+      "\007service\030\021 \001(\0132\026.ubii.services.ServiceH\000" +
+      "\0222\n\014service_list\030\022 \001(\0132\032.ubii.services.S" +
+      "erviceListH\000\022M\n\031lockstep_processing_repl" +
+      "y\030\023 \001(\0132(.ubii.processing.LockstepProces" +
+      "singReplyH\000B\006\n\004typeb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

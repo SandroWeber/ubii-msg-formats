@@ -22,10 +22,10 @@
 namespace protobuf_proto_2fgeneral_2ferror_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fgeneral_2ferror_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Error;
 }  // namespace protobuf_proto_2fgeneral_2ferror_2eproto
-namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicDataRecordList;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<30> scc_info_TopicDataRecord;
-}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicDataRecordList;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<30> scc_info_TopicDataRecord;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto
 namespace ubii {
 namespace topicData {
 class TopicDataDefaultTypeInternal {
@@ -52,8 +52,8 @@ static void InitDefaultsTopicData() {
 
 ::google::protobuf::internal::SCCInfo<3> scc_info_TopicData =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsTopicData}, {
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::scc_info_TopicDataRecord.base,
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::scc_info_TopicDataRecordList.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::scc_info_TopicDataRecord.base,
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::scc_info_TopicDataRecordList.base,
       &protobuf_proto_2fgeneral_2ferror_2eproto::scc_info_Error.base,}};
 
 void InitDefaults() {
@@ -103,20 +103,19 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\037proto/topicData/topicData.proto\022\016ubii."
-      "topicData\0325proto/topicData/topicDataReco"
-      "rd/topicDataRecord.proto\032\031proto/general/"
-      "error.proto\"\276\001\n\tTopicData\022<\n\021topic_data_"
-      "record\030\002 \001(\0132\037.ubii.topicData.TopicDataR"
-      "ecordH\000\022E\n\026topic_data_record_list\030\003 \001(\0132"
-      "#.ubii.topicData.TopicDataRecordListH\000\022$"
-      "\n\005error\030\004 \001(\0132\023.ubii.general.ErrorH\000B\006\n\004"
-      "typeb\006proto3"
+      "topicData\032%proto/topicData/topicDataReco"
+      "rd.proto\032\031proto/general/error.proto\"\276\001\n\t"
+      "TopicData\022<\n\021topic_data_record\030\002 \001(\0132\037.u"
+      "bii.topicData.TopicDataRecordH\000\022E\n\026topic"
+      "_data_record_list\030\003 \001(\0132#.ubii.topicData"
+      ".TopicDataRecordListH\000\022$\n\005error\030\004 \001(\0132\023."
+      "ubii.general.ErrorH\000B\006\n\004typeb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 332);
+      descriptor, 316);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicData.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::AddDescriptors();
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::AddDescriptors();
   ::protobuf_proto_2fgeneral_2ferror_2eproto::AddDescriptors();
 }
 

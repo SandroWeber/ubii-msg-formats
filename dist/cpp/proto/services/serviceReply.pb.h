@@ -32,7 +32,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/general/success.pb.h"
 #include "proto/general/error.pb.h"
-#include "proto/topicData/topicDataRecord/dataStructure/lists.pb.h"
+#include "proto/dataStructure/lists.pb.h"
 #include "proto/clients/client.pb.h"
 #include "proto/devices/device.pb.h"
 #include "proto/devices/topicMux.pb.h"

@@ -11578,6 +11578,7 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
   var f, obj = {
     topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
     timestamp: (f = msg.getTimestamp()) && proto.ubii.topicData.Timestamp.toObject(includeInstance, f),
+    clientId: jspb.Message.getFieldWithDefault(msg, 33, ""),
     pb_double: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
     bool: jspb.Message.getFieldWithDefault(msg, 4, false),
     string: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -11657,6 +11658,10 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       var value = new proto.ubii.topicData.Timestamp;
       reader.readMessage(value,proto.ubii.topicData.Timestamp.deserializeBinaryFromReader);
       msg.setTimestamp(value);
+      break;
+    case 33:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClientId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
@@ -11870,6 +11875,13 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       2,
       f,
       proto.ubii.topicData.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientId();
+  if (f.length > 0) {
+    writer.writeString(
+      33,
+      f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
@@ -12192,6 +12204,21 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearTimestamp = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasTimestamp = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string client_id = 33;
+ * @return {string}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getClientId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setClientId = function(value) {
+  jspb.Message.setProto3StringField(this, 33, value);
 };
 
 
@@ -17857,7 +17884,12 @@ proto.ubii.servers.Server.toObject = function(includeInstance, msg) {
     portServiceRest: jspb.Message.getFieldWithDefault(msg, 6, ""),
     portTopicDataZmq: jspb.Message.getFieldWithDefault(msg, 7, ""),
     portTopicDataWs: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    constantsJson: jspb.Message.getFieldWithDefault(msg, 9, "")
+    constantsJson: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    externalAddressServiceZmq: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    externalAddressServiceHttpJson: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    externalAddressServiceHttpBinary: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    externalAddressTopicDataZmq: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    externalAddressTopicDataWs: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -17929,6 +17961,26 @@ proto.ubii.servers.Server.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setConstantsJson(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalAddressServiceZmq(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalAddressServiceHttpJson(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalAddressServiceHttpBinary(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalAddressTopicDataZmq(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExternalAddressTopicDataWs(value);
       break;
     default:
       reader.skipField();
@@ -18019,6 +18071,41 @@ proto.ubii.servers.Server.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getExternalAddressServiceZmq();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getExternalAddressServiceHttpJson();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getExternalAddressServiceHttpBinary();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getExternalAddressTopicDataZmq();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getExternalAddressTopicDataWs();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -18157,6 +18244,81 @@ proto.ubii.servers.Server.prototype.getConstantsJson = function() {
 /** @param {string} value */
 proto.ubii.servers.Server.prototype.setConstantsJson = function(value) {
   jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string external_address_service_zmq = 10;
+ * @return {string}
+ */
+proto.ubii.servers.Server.prototype.getExternalAddressServiceZmq = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.servers.Server.prototype.setExternalAddressServiceZmq = function(value) {
+  jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string external_address_service_http_json = 11;
+ * @return {string}
+ */
+proto.ubii.servers.Server.prototype.getExternalAddressServiceHttpJson = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.servers.Server.prototype.setExternalAddressServiceHttpJson = function(value) {
+  jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string external_address_service_http_binary = 12;
+ * @return {string}
+ */
+proto.ubii.servers.Server.prototype.getExternalAddressServiceHttpBinary = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.servers.Server.prototype.setExternalAddressServiceHttpBinary = function(value) {
+  jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string external_address_topic_data_zmq = 13;
+ * @return {string}
+ */
+proto.ubii.servers.Server.prototype.getExternalAddressTopicDataZmq = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.servers.Server.prototype.setExternalAddressTopicDataZmq = function(value) {
+  jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string external_address_topic_data_ws = 14;
+ * @return {string}
+ */
+proto.ubii.servers.Server.prototype.getExternalAddressTopicDataWs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.servers.Server.prototype.setExternalAddressTopicDataWs = function(value) {
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 

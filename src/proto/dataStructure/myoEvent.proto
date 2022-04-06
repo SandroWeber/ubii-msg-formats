@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ubii.dataStructure;
+
+import "proto/dataStructure/vector8.proto";
+import "proto/dataStructure/vector3.proto";
+import "proto/dataStructure/quaternion.proto";
+import "proto/dataStructure/handGestureType.proto";
+
+message MyoEvent {
+    ubii.dataStructure.Vector8 emg = 1;
+    ubii.dataStructure.Quaternion orientation = 2;
+    ubii.dataStructure.Vector3 gyroscope = 3;
+    ubii.dataStructure.Vector3 accelerometer = 4;
+    ubii.dataStructure.HandGestureType gesture = 5;
+}

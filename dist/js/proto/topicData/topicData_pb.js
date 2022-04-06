@@ -11,7 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var proto_topicData_topicDataRecord_topicDataRecord_pb = require('../../proto/topicData/topicDataRecord/topicDataRecord_pb.js');
+var proto_topicData_topicDataRecord_pb = require('../../proto/topicData/topicDataRecord_pb.js');
 var proto_general_error_pb = require('../../proto/general/error_pb.js');
 goog.exportSymbol('proto.ubii.topicData.TopicData', null, global);
 
@@ -88,8 +88,8 @@ proto.ubii.topicData.TopicData.prototype.toObject = function(opt_includeInstance
  */
 proto.ubii.topicData.TopicData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    topicDataRecord: (f = msg.getTopicDataRecord()) && proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.toObject(includeInstance, f),
-    topicDataRecordList: (f = msg.getTopicDataRecordList()) && proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList.toObject(includeInstance, f),
+    topicDataRecord: (f = msg.getTopicDataRecord()) && proto_topicData_topicDataRecord_pb.TopicDataRecord.toObject(includeInstance, f),
+    topicDataRecordList: (f = msg.getTopicDataRecordList()) && proto_topicData_topicDataRecord_pb.TopicDataRecordList.toObject(includeInstance, f),
     error: (f = msg.getError()) && proto_general_error_pb.Error.toObject(includeInstance, f)
   };
 
@@ -128,13 +128,13 @@ proto.ubii.topicData.TopicData.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord;
-      reader.readMessage(value,proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.deserializeBinaryFromReader);
+      var value = new proto_topicData_topicDataRecord_pb.TopicDataRecord;
+      reader.readMessage(value,proto_topicData_topicDataRecord_pb.TopicDataRecord.deserializeBinaryFromReader);
       msg.setTopicDataRecord(value);
       break;
     case 3:
-      var value = new proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList;
-      reader.readMessage(value,proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList.deserializeBinaryFromReader);
+      var value = new proto_topicData_topicDataRecord_pb.TopicDataRecordList;
+      reader.readMessage(value,proto_topicData_topicDataRecord_pb.TopicDataRecordList.deserializeBinaryFromReader);
       msg.setTopicDataRecordList(value);
       break;
     case 4:
@@ -176,7 +176,7 @@ proto.ubii.topicData.TopicData.serializeBinaryToWriter = function(message, write
     writer.writeMessage(
       2,
       f,
-      proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord.serializeBinaryToWriter
+      proto_topicData_topicDataRecord_pb.TopicDataRecord.serializeBinaryToWriter
     );
   }
   f = message.getTopicDataRecordList();
@@ -184,7 +184,7 @@ proto.ubii.topicData.TopicData.serializeBinaryToWriter = function(message, write
     writer.writeMessage(
       3,
       f,
-      proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList.serializeBinaryToWriter
+      proto_topicData_topicDataRecord_pb.TopicDataRecordList.serializeBinaryToWriter
     );
   }
   f = message.getError();
@@ -204,7 +204,7 @@ proto.ubii.topicData.TopicData.serializeBinaryToWriter = function(message, write
  */
 proto.ubii.topicData.TopicData.prototype.getTopicDataRecord = function() {
   return /** @type{?proto.ubii.topicData.TopicDataRecord} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecord, 2));
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_pb.TopicDataRecord, 2));
 };
 
 
@@ -234,7 +234,7 @@ proto.ubii.topicData.TopicData.prototype.hasTopicDataRecord = function() {
  */
 proto.ubii.topicData.TopicData.prototype.getTopicDataRecordList = function() {
   return /** @type{?proto.ubii.topicData.TopicDataRecordList} */ (
-    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_topicDataRecord_pb.TopicDataRecordList, 3));
+    jspb.Message.getWrapperField(this, proto_topicData_topicDataRecord_pb.TopicDataRecordList, 3));
 };
 
 

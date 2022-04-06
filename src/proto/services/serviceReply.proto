@@ -3,7 +3,7 @@ package ubii.services;
 
 import "proto/general/success.proto";
 import "proto/general/error.proto";
-import "proto/topicData/topicDataRecord/dataStructure/lists.proto";
+import "proto/dataStructure/lists.proto";
 import "proto/clients/client.proto";
 import "proto/devices/device.proto";
 import "proto/devices/topicMux.proto";
