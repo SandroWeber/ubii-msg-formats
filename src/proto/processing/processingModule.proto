@@ -12,17 +12,20 @@ message ProcessingMode {
         int32 min_delay_ms = 1;
         bool all_inputs_need_update = 2;
     }
+    message Free {}
 
     oneof mode {
         Frequency frequency = 1;
         Lockstep lockstep = 2;
         TriggerOnInput trigger_on_input = 3;
+        Free free = 4;
     }
 }
 
 message ModuleIO {
     string internal_name = 1;
     string message_format = 2;
+    bool is_record_list = 3;
 }
 
 message ProcessingModule {

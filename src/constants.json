@@ -22,6 +22,8 @@
       "PM_RUNTIME_REMOVE": "/services/processing_module/runtime/remove",
       "PM_RUNTIME_GET": "/services/processing_module/runtime/get",
       "PM_RUNTIME_GET_LIST": "/services/processing_module/runtime/get_list",
+      "PM_REGISTRY_ADD": "/services/processing_module/registry/add_list",
+      "PM_REGISTRY_REMOVE": "/services/processing_module/registry/remove_list",
 
       "SESSION_DATABASE_SAVE": "/services/session/database/save",
       "SESSION_DATABASE_DELETE": "/services/session/database/delete",

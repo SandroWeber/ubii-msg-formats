@@ -57,6 +57,19 @@ public final class ProcessingModuleOuterClass {
      */
     ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInputOrBuilder getTriggerOnInputOrBuilder();
 
+    /**
+     * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+     */
+    boolean hasFree();
+    /**
+     * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free getFree();
+    /**
+     * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+     */
+    ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FreeOrBuilder getFreeOrBuilder();
+
     public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.ModeCase getModeCase();
   }
   /**
@@ -138,6 +151,20 @@ public final class ProcessingModuleOuterClass {
                 mode_ = subBuilder.buildPartial();
               }
               modeCase_ = 3;
+              break;
+            }
+            case 34: {
+              ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder subBuilder = null;
+              if (modeCase_ == 4) {
+                subBuilder = ((ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_).toBuilder();
+              }
+              mode_ =
+                  input.readMessage(ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_);
+                mode_ = subBuilder.buildPartial();
+              }
+              modeCase_ = 4;
               break;
             }
             default: {
@@ -1738,6 +1765,418 @@ public final class ProcessingModuleOuterClass {
 
     }
 
+    public interface FreeOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:ubii.processing.ProcessingMode.Free)
+        com.google.protobuf.MessageOrBuilder {
+    }
+    /**
+     * Protobuf type {@code ubii.processing.ProcessingMode.Free}
+     */
+    public  static final class Free extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:ubii.processing.ProcessingMode.Free)
+        FreeOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Free.newBuilder() to construct.
+      private Free(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Free() {
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Free(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ubii.processing.ProcessingModuleOuterClass.internal_static_ubii_processing_ProcessingMode_Free_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ubii.processing.ProcessingModuleOuterClass.internal_static_ubii_processing_ProcessingMode_Free_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.class, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free)) {
+          return super.equals(obj);
+        }
+        ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free other = (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) obj;
+
+        boolean result = true;
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code ubii.processing.ProcessingMode.Free}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:ubii.processing.ProcessingMode.Free)
+          ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FreeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return ubii.processing.ProcessingModuleOuterClass.internal_static_ubii_processing_ProcessingMode_Free_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return ubii.processing.ProcessingModuleOuterClass.internal_static_ubii_processing_ProcessingMode_Free_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.class, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder.class);
+        }
+
+        // Construct using ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return ubii.processing.ProcessingModuleOuterClass.internal_static_ubii_processing_ProcessingMode_Free_descriptor;
+        }
+
+        @java.lang.Override
+        public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free getDefaultInstanceForType() {
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free build() {
+          ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free buildPartial() {
+          ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free result = new ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) {
+            return mergeFrom((ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free other) {
+          if (other == ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:ubii.processing.ProcessingMode.Free)
+      }
+
+      // @@protoc_insertion_point(class_scope:ubii.processing.ProcessingMode.Free)
+      private static final ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free();
+      }
+
+      public static ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Free>
+          PARSER = new com.google.protobuf.AbstractParser<Free>() {
+        @java.lang.Override
+        public Free parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Free(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Free> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Free> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     private int modeCase_ = 0;
     private java.lang.Object mode_;
     public enum ModeCase
@@ -1745,6 +2184,7 @@ public final class ProcessingModuleOuterClass {
       FREQUENCY(1),
       LOCKSTEP(2),
       TRIGGER_ON_INPUT(3),
+      FREE(4),
       MODE_NOT_SET(0);
       private final int value;
       private ModeCase(int value) {
@@ -1763,6 +2203,7 @@ public final class ProcessingModuleOuterClass {
           case 1: return FREQUENCY;
           case 2: return LOCKSTEP;
           case 3: return TRIGGER_ON_INPUT;
+          case 4: return FREE;
           case 0: return MODE_NOT_SET;
           default: return null;
         }
@@ -1856,6 +2297,32 @@ public final class ProcessingModuleOuterClass {
       return ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInput.getDefaultInstance();
     }
 
+    public static final int FREE_FIELD_NUMBER = 4;
+    /**
+     * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+     */
+    public boolean hasFree() {
+      return modeCase_ == 4;
+    }
+    /**
+     * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free getFree() {
+      if (modeCase_ == 4) {
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_;
+      }
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+     */
+    public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FreeOrBuilder getFreeOrBuilder() {
+      if (modeCase_ == 4) {
+         return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_;
+      }
+      return ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1879,6 +2346,9 @@ public final class ProcessingModuleOuterClass {
       if (modeCase_ == 3) {
         output.writeMessage(3, (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInput) mode_);
       }
+      if (modeCase_ == 4) {
+        output.writeMessage(4, (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1899,6 +2369,10 @@ public final class ProcessingModuleOuterClass {
       if (modeCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.TriggerOnInput) mode_);
+      }
+      if (modeCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1932,6 +2406,10 @@ public final class ProcessingModuleOuterClass {
           result = result && getTriggerOnInput()
               .equals(other.getTriggerOnInput());
           break;
+        case 4:
+          result = result && getFree()
+              .equals(other.getFree());
+          break;
         case 0:
         default:
       }
@@ -1958,6 +2436,10 @@ public final class ProcessingModuleOuterClass {
         case 3:
           hash = (37 * hash) + TRIGGER_ON_INPUT_FIELD_NUMBER;
           hash = (53 * hash) + getTriggerOnInput().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + FREE_FIELD_NUMBER;
+          hash = (53 * hash) + getFree().hashCode();
           break;
         case 0:
         default:
@@ -2144,6 +2626,13 @@ public final class ProcessingModuleOuterClass {
             result.mode_ = triggerOnInputBuilder_.build();
           }
         }
+        if (modeCase_ == 4) {
+          if (freeBuilder_ == null) {
+            result.mode_ = mode_;
+          } else {
+            result.mode_ = freeBuilder_.build();
+          }
+        }
         result.modeCase_ = modeCase_;
         onBuilt();
         return result;
@@ -2204,6 +2693,10 @@ public final class ProcessingModuleOuterClass {
           }
           case TRIGGER_ON_INPUT: {
             mergeTriggerOnInput(other.getTriggerOnInput());
+            break;
+          }
+          case FREE: {
+            mergeFree(other.getFree());
             break;
           }
           case MODE_NOT_SET: {
@@ -2661,6 +3154,142 @@ public final class ProcessingModuleOuterClass {
         onChanged();;
         return triggerOnInputBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FreeOrBuilder> freeBuilder_;
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public boolean hasFree() {
+        return modeCase_ == 4;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free getFree() {
+        if (freeBuilder_ == null) {
+          if (modeCase_ == 4) {
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_;
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance();
+        } else {
+          if (modeCase_ == 4) {
+            return freeBuilder_.getMessage();
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public Builder setFree(ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free value) {
+        if (freeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mode_ = value;
+          onChanged();
+        } else {
+          freeBuilder_.setMessage(value);
+        }
+        modeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public Builder setFree(
+          ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder builderForValue) {
+        if (freeBuilder_ == null) {
+          mode_ = builderForValue.build();
+          onChanged();
+        } else {
+          freeBuilder_.setMessage(builderForValue.build());
+        }
+        modeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public Builder mergeFree(ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free value) {
+        if (freeBuilder_ == null) {
+          if (modeCase_ == 4 &&
+              mode_ != ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance()) {
+            mode_ = ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.newBuilder((ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            mode_ = value;
+          }
+          onChanged();
+        } else {
+          if (modeCase_ == 4) {
+            freeBuilder_.mergeFrom(value);
+          }
+          freeBuilder_.setMessage(value);
+        }
+        modeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public Builder clearFree() {
+        if (freeBuilder_ == null) {
+          if (modeCase_ == 4) {
+            modeCase_ = 0;
+            mode_ = null;
+            onChanged();
+          }
+        } else {
+          if (modeCase_ == 4) {
+            modeCase_ = 0;
+            mode_ = null;
+          }
+          freeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder getFreeBuilder() {
+        return getFreeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      public ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FreeOrBuilder getFreeOrBuilder() {
+        if ((modeCase_ == 4) && (freeBuilder_ != null)) {
+          return freeBuilder_.getMessageOrBuilder();
+        } else {
+          if (modeCase_ == 4) {
+            return (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_;
+          }
+          return ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.processing.ProcessingMode.Free free = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FreeOrBuilder> 
+          getFreeFieldBuilder() {
+        if (freeBuilder_ == null) {
+          if (!(modeCase_ == 4)) {
+            mode_ = ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.getDefaultInstance();
+          }
+          freeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free.Builder, ubii.processing.ProcessingModuleOuterClass.ProcessingMode.FreeOrBuilder>(
+                  (ubii.processing.ProcessingModuleOuterClass.ProcessingMode.Free) mode_,
+                  getParentForChildren(),
+                  isClean());
+          mode_ = null;
+        }
+        modeCase_ = 4;
+        onChanged();;
+        return freeBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2737,6 +3366,11 @@ public final class ProcessingModuleOuterClass {
      */
     com.google.protobuf.ByteString
         getMessageFormatBytes();
+
+    /**
+     * <code>bool is_record_list = 3;</code>
+     */
+    boolean getIsRecordList();
   }
   /**
    * Protobuf type {@code ubii.processing.ModuleIO}
@@ -2753,6 +3387,7 @@ public final class ProcessingModuleOuterClass {
     private ModuleIO() {
       internalName_ = "";
       messageFormat_ = "";
+      isRecordList_ = false;
     }
 
     @java.lang.Override
@@ -2789,6 +3424,11 @@ public final class ProcessingModuleOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               messageFormat_ = s;
+              break;
+            }
+            case 24: {
+
+              isRecordList_ = input.readBool();
               break;
             }
             default: {
@@ -2891,6 +3531,15 @@ public final class ProcessingModuleOuterClass {
       }
     }
 
+    public static final int IS_RECORD_LIST_FIELD_NUMBER = 3;
+    private boolean isRecordList_;
+    /**
+     * <code>bool is_record_list = 3;</code>
+     */
+    public boolean getIsRecordList() {
+      return isRecordList_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2911,6 +3560,9 @@ public final class ProcessingModuleOuterClass {
       if (!getMessageFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, messageFormat_);
       }
+      if (isRecordList_ != false) {
+        output.writeBool(3, isRecordList_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2925,6 +3577,10 @@ public final class ProcessingModuleOuterClass {
       }
       if (!getMessageFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, messageFormat_);
+      }
+      if (isRecordList_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isRecordList_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2946,6 +3602,8 @@ public final class ProcessingModuleOuterClass {
           .equals(other.getInternalName());
       result = result && getMessageFormat()
           .equals(other.getMessageFormat());
+      result = result && (getIsRecordList()
+          == other.getIsRecordList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2961,6 +3619,9 @@ public final class ProcessingModuleOuterClass {
       hash = (53 * hash) + getInternalName().hashCode();
       hash = (37 * hash) + MESSAGE_FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + getMessageFormat().hashCode();
+      hash = (37 * hash) + IS_RECORD_LIST_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsRecordList());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3098,6 +3759,8 @@ public final class ProcessingModuleOuterClass {
 
         messageFormat_ = "";
 
+        isRecordList_ = false;
+
         return this;
       }
 
@@ -3126,6 +3789,7 @@ public final class ProcessingModuleOuterClass {
         ubii.processing.ProcessingModuleOuterClass.ModuleIO result = new ubii.processing.ProcessingModuleOuterClass.ModuleIO(this);
         result.internalName_ = internalName_;
         result.messageFormat_ = messageFormat_;
+        result.isRecordList_ = isRecordList_;
         onBuilt();
         return result;
       }
@@ -3181,6 +3845,9 @@ public final class ProcessingModuleOuterClass {
         if (!other.getMessageFormat().isEmpty()) {
           messageFormat_ = other.messageFormat_;
           onChanged();
+        }
+        if (other.getIsRecordList() != false) {
+          setIsRecordList(other.getIsRecordList());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3345,6 +4012,32 @@ public final class ProcessingModuleOuterClass {
   checkByteStringIsUtf8(value);
         
         messageFormat_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isRecordList_ ;
+      /**
+       * <code>bool is_record_list = 3;</code>
+       */
+      public boolean getIsRecordList() {
+        return isRecordList_;
+      }
+      /**
+       * <code>bool is_record_list = 3;</code>
+       */
+      public Builder setIsRecordList(boolean value) {
+        
+        isRecordList_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_record_list = 3;</code>
+       */
+      public Builder clearIsRecordList() {
+        
+        isRecordList_ = false;
         onChanged();
         return this;
       }
@@ -7599,6 +8292,11 @@ public final class ProcessingModuleOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ubii_processing_ProcessingMode_TriggerOnInput_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ubii_processing_ProcessingMode_Free_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ubii_processing_ProcessingMode_Free_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ubii_processing_ModuleIO_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7623,37 +8321,39 @@ public final class ProcessingModuleOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'proto/processing/processingModule.prot" +
-      "o\022\017ubii.processing\"\364\002\n\016ProcessingMode\022>\n" +
+      "o\022\017ubii.processing\"\262\003\n\016ProcessingMode\022>\n" +
       "\tfrequency\030\001 \001(\0132).ubii.processing.Proce" +
       "ssingMode.FrequencyH\000\022<\n\010lockstep\030\002 \001(\0132" +
       "(.ubii.processing.ProcessingMode.Lockste" +
       "pH\000\022J\n\020trigger_on_input\030\003 \001(\0132..ubii.pro" +
-      "cessing.ProcessingMode.TriggerOnInputH\000\032" +
-      "\032\n\tFrequency\022\r\n\005hertz\030\001 \001(\005\032,\n\010Lockstep\022" +
-      " \n\030process_request_endpoint\030\001 \001(\t\032F\n\016Tri" +
-      "ggerOnInput\022\024\n\014min_delay_ms\030\001 \001(\005\022\036\n\026all" +
-      "_inputs_need_update\030\002 \001(\010B\006\n\004mode\"9\n\010Mod" +
-      "uleIO\022\025\n\rinternal_name\030\001 \001(\t\022\026\n\016message_" +
-      "format\030\002 \001(\t\"\234\005\n\020ProcessingModule\022\n\n\002id\030" +
-      "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003(\t\022\014\n\004" +
-      "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007node_" +
-      "id\030\006 \001(\t\022\022\n\nsession_id\030\007 \001(\t\0228\n\006status\030\010" +
-      " \001(\0162(.ubii.processing.ProcessingModule." +
-      "Status\0228\n\017processing_mode\030\t \001(\0132\037.ubii.p" +
-      "rocessing.ProcessingMode\022)\n\006inputs\030\n \003(\013" +
-      "2\031.ubii.processing.ModuleIO\022*\n\007outputs\030\013" +
-      " \003(\0132\031.ubii.processing.ModuleIO\022<\n\010langu" +
-      "age\030\014 \001(\0162*.ubii.processing.ProcessingMo" +
-      "dule.Language\022!\n\031on_processing_stringifi" +
-      "ed\030\r \001(\t\022\036\n\026on_created_stringified\030\016 \001(\t" +
-      "\022\035\n\025on_halted_stringified\030\017 \001(\t\022 \n\030on_de" +
-      "stroyed_stringified\030\020 \001(\t\"Q\n\006Status\022\017\n\013I" +
-      "NITIALIZED\020\000\022\013\n\007CREATED\020\001\022\016\n\nPROCESSING\020" +
-      "\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED\020\004\"5\n\010Language" +
-      "\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAV" +
-      "A\020\004\"K\n\024ProcessingModuleList\0223\n\010elements\030" +
-      "\001 \003(\0132!.ubii.processing.ProcessingModule" +
-      "b\006proto3"
+      "cessing.ProcessingMode.TriggerOnInputH\000\022" +
+      "4\n\004free\030\004 \001(\0132$.ubii.processing.Processi" +
+      "ngMode.FreeH\000\032\032\n\tFrequency\022\r\n\005hertz\030\001 \001(" +
+      "\005\032,\n\010Lockstep\022 \n\030process_request_endpoin" +
+      "t\030\001 \001(\t\032F\n\016TriggerOnInput\022\024\n\014min_delay_m" +
+      "s\030\001 \001(\005\022\036\n\026all_inputs_need_update\030\002 \001(\010\032" +
+      "\006\n\004FreeB\006\n\004mode\"Q\n\010ModuleIO\022\025\n\rinternal_" +
+      "name\030\001 \001(\t\022\026\n\016message_format\030\002 \001(\t\022\026\n\016is" +
+      "_record_list\030\003 \001(\010\"\234\005\n\020ProcessingModule\022" +
+      "\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003" +
+      "(\t\022\014\n\004tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\017\n" +
+      "\007node_id\030\006 \001(\t\022\022\n\nsession_id\030\007 \001(\t\0228\n\006st" +
+      "atus\030\010 \001(\0162(.ubii.processing.ProcessingM" +
+      "odule.Status\0228\n\017processing_mode\030\t \001(\0132\037." +
+      "ubii.processing.ProcessingMode\022)\n\006inputs" +
+      "\030\n \003(\0132\031.ubii.processing.ModuleIO\022*\n\007out" +
+      "puts\030\013 \003(\0132\031.ubii.processing.ModuleIO\022<\n" +
+      "\010language\030\014 \001(\0162*.ubii.processing.Proces" +
+      "singModule.Language\022!\n\031on_processing_str" +
+      "ingified\030\r \001(\t\022\036\n\026on_created_stringified" +
+      "\030\016 \001(\t\022\035\n\025on_halted_stringified\030\017 \001(\t\022 \n" +
+      "\030on_destroyed_stringified\030\020 \001(\t\"Q\n\006Statu" +
+      "s\022\017\n\013INITIALIZED\020\000\022\013\n\007CREATED\020\001\022\016\n\nPROCE" +
+      "SSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED\020\004\"5\n\010La" +
+      "nguage\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022\006\n\002CS\020\003\022" +
+      "\010\n\004JAVA\020\004\"K\n\024ProcessingModuleList\0223\n\010ele" +
+      "ments\030\001 \003(\0132!.ubii.processing.Processing" +
+      "Moduleb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7672,7 +8372,7 @@ public final class ProcessingModuleOuterClass {
     internal_static_ubii_processing_ProcessingMode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_processing_ProcessingMode_descriptor,
-        new java.lang.String[] { "Frequency", "Lockstep", "TriggerOnInput", "Mode", });
+        new java.lang.String[] { "Frequency", "Lockstep", "TriggerOnInput", "Free", "Mode", });
     internal_static_ubii_processing_ProcessingMode_Frequency_descriptor =
       internal_static_ubii_processing_ProcessingMode_descriptor.getNestedTypes().get(0);
     internal_static_ubii_processing_ProcessingMode_Frequency_fieldAccessorTable = new
@@ -7691,12 +8391,18 @@ public final class ProcessingModuleOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_processing_ProcessingMode_TriggerOnInput_descriptor,
         new java.lang.String[] { "MinDelayMs", "AllInputsNeedUpdate", });
+    internal_static_ubii_processing_ProcessingMode_Free_descriptor =
+      internal_static_ubii_processing_ProcessingMode_descriptor.getNestedTypes().get(3);
+    internal_static_ubii_processing_ProcessingMode_Free_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ubii_processing_ProcessingMode_Free_descriptor,
+        new java.lang.String[] { });
     internal_static_ubii_processing_ModuleIO_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_processing_ModuleIO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_processing_ModuleIO_descriptor,
-        new java.lang.String[] { "InternalName", "MessageFormat", });
+        new java.lang.String[] { "InternalName", "MessageFormat", "IsRecordList", });
     internal_static_ubii_processing_ProcessingModule_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_ubii_processing_ProcessingModule_fieldAccessorTable = new
