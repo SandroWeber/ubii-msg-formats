@@ -9,6 +9,7 @@ let constants = {
       DEVICE_DEREGISTRATION: '/services/device/deregistration',
       DEVICE_GET: '/services/device/get',
       DEVICE_GET_LIST: '/services/device/get_list',
+      COMPONENT_GET_LIST: '/services/component/get_list',
       PM_DATABASE_SAVE: '/services/processing_module/database/save',
       PM_DATABASE_DELETE: '/services/processing_module/database/delete',
       PM_DATABASE_GET: '/services/processing_module/database/get',
