@@ -27,5 +27,7 @@ message ServiceRequest {
         ubii.clients.ClientList client_list = 13;
         ubii.devices.DeviceList device_list = 14;
         ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
+        ubii.devices.Component component = 16;
+        ubii.devices.ComponentList component_list = 17;
     }
 }
