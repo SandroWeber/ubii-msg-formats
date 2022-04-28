@@ -6327,6 +6327,12 @@ export namespace ubii {
 
             /** ServiceReply lockstepProcessingReply */
             lockstepProcessingReply?: (ubii.processing.ILockstepProcessingReply|null);
+
+            /** ServiceReply component */
+            component?: (ubii.devices.IComponent|null);
+
+            /** ServiceReply componentList */
+            componentList?: (ubii.devices.IComponentList|null);
         }
 
         /** Represents a ServiceReply. */
@@ -6395,8 +6401,14 @@ export namespace ubii {
             /** ServiceReply lockstepProcessingReply. */
             public lockstepProcessingReply?: (ubii.processing.ILockstepProcessingReply|null);
 
+            /** ServiceReply component. */
+            public component?: (ubii.devices.IComponent|null);
+
+            /** ServiceReply componentList. */
+            public componentList?: (ubii.devices.IComponentList|null);
+
             /** ServiceReply type. */
-            public type?: ("success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply");
+            public type?: ("success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList");
 
             /**
              * Creates a new ServiceReply instance using the specified properties.
@@ -6516,6 +6528,12 @@ export namespace ubii {
 
             /** ServiceRequest lockstepProcessingRequest */
             lockstepProcessingRequest?: (ubii.processing.ILockstepProcessingRequest|null);
+
+            /** ServiceRequest component */
+            component?: (ubii.devices.IComponent|null);
+
+            /** ServiceRequest componentList */
+            componentList?: (ubii.devices.IComponentList|null);
         }
 
         /** Represents a ServiceRequest. */
@@ -6572,8 +6590,14 @@ export namespace ubii {
             /** ServiceRequest lockstepProcessingRequest. */
             public lockstepProcessingRequest?: (ubii.processing.ILockstepProcessingRequest|null);
 
+            /** ServiceRequest component. */
+            public component?: (ubii.devices.IComponent|null);
+
+            /** ServiceRequest componentList. */
+            public componentList?: (ubii.devices.IComponentList|null);
+
             /** ServiceRequest type. */
-            public type?: ("client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest");
+            public type?: ("client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList");
 
             /**
              * Creates a new ServiceRequest instance using the specified properties.

@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/clients/client.pb.h"
+#include "proto/devices/component.pb.h"
 #include "proto/devices/device.pb.h"
 #include "proto/devices/topicMux.pb.h"
 #include "proto/devices/topicDemux.pb.h"
@@ -114,6 +115,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     kClientList = 13,
     kDeviceList = 14,
     kLockstepProcessingRequest = 15,
+    kComponent = 16,
+    kComponentList = 17,
     TYPE_NOT_SET = 0,
   };
 
@@ -357,6 +360,30 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   ::ubii::processing::LockstepProcessingRequest* mutable_lockstep_processing_request();
   void set_allocated_lockstep_processing_request(::ubii::processing::LockstepProcessingRequest* lockstep_processing_request);
 
+  // .ubii.devices.Component component = 16;
+  bool has_component() const;
+  void clear_component();
+  static const int kComponentFieldNumber = 16;
+  private:
+  const ::ubii::devices::Component& _internal_component() const;
+  public:
+  const ::ubii::devices::Component& component() const;
+  ::ubii::devices::Component* release_component();
+  ::ubii::devices::Component* mutable_component();
+  void set_allocated_component(::ubii::devices::Component* component);
+
+  // .ubii.devices.ComponentList component_list = 17;
+  bool has_component_list() const;
+  void clear_component_list();
+  static const int kComponentListFieldNumber = 17;
+  private:
+  const ::ubii::devices::ComponentList& _internal_component_list() const;
+  public:
+  const ::ubii::devices::ComponentList& component_list() const;
+  ::ubii::devices::ComponentList* release_component_list();
+  ::ubii::devices::ComponentList* mutable_component_list();
+  void set_allocated_component_list(::ubii::devices::ComponentList* component_list);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.services.ServiceRequest)
@@ -375,6 +402,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   void set_has_client_list();
   void set_has_device_list();
   void set_has_lockstep_processing_request();
+  void set_has_component();
+  void set_has_component_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -397,6 +426,8 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     ::ubii::clients::ClientList* client_list_;
     ::ubii::devices::DeviceList* device_list_;
     ::ubii::processing::LockstepProcessingRequest* lockstep_processing_request_;
+    ::ubii::devices::Component* component_;
+    ::ubii::devices::ComponentList* component_list_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -997,6 +1028,82 @@ inline ::ubii::processing::LockstepProcessingRequest* ServiceRequest::mutable_lo
   }
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.lockstep_processing_request)
   return type_.lockstep_processing_request_;
+}
+
+// .ubii.devices.Component component = 16;
+inline bool ServiceRequest::has_component() const {
+  return type_case() == kComponent;
+}
+inline void ServiceRequest::set_has_component() {
+  _oneof_case_[0] = kComponent;
+}
+inline const ::ubii::devices::Component& ServiceRequest::_internal_component() const {
+  return *type_.component_;
+}
+inline ::ubii::devices::Component* ServiceRequest::release_component() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceRequest.component)
+  if (has_component()) {
+    clear_has_type();
+      ::ubii::devices::Component* temp = type_.component_;
+    type_.component_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::Component& ServiceRequest::component() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceRequest.component)
+  return has_component()
+      ? *type_.component_
+      : *reinterpret_cast< ::ubii::devices::Component*>(&::ubii::devices::_Component_default_instance_);
+}
+inline ::ubii::devices::Component* ServiceRequest::mutable_component() {
+  if (!has_component()) {
+    clear_type();
+    set_has_component();
+    type_.component_ = CreateMaybeMessage< ::ubii::devices::Component >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.component)
+  return type_.component_;
+}
+
+// .ubii.devices.ComponentList component_list = 17;
+inline bool ServiceRequest::has_component_list() const {
+  return type_case() == kComponentList;
+}
+inline void ServiceRequest::set_has_component_list() {
+  _oneof_case_[0] = kComponentList;
+}
+inline const ::ubii::devices::ComponentList& ServiceRequest::_internal_component_list() const {
+  return *type_.component_list_;
+}
+inline ::ubii::devices::ComponentList* ServiceRequest::release_component_list() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceRequest.component_list)
+  if (has_component_list()) {
+    clear_has_type();
+      ::ubii::devices::ComponentList* temp = type_.component_list_;
+    type_.component_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::ComponentList& ServiceRequest::component_list() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceRequest.component_list)
+  return has_component_list()
+      ? *type_.component_list_
+      : *reinterpret_cast< ::ubii::devices::ComponentList*>(&::ubii::devices::_ComponentList_default_instance_);
+}
+inline ::ubii::devices::ComponentList* ServiceRequest::mutable_component_list() {
+  if (!has_component_list()) {
+    clear_type();
+    set_has_component_list();
+    type_.component_list_ = CreateMaybeMessage< ::ubii::devices::ComponentList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.component_list)
+  return type_.component_list_;
 }
 
 inline bool ServiceRequest::has_type() const {

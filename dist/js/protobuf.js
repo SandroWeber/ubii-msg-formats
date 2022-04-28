@@ -15613,6 +15613,8 @@ $root.ubii = (function() {
              * @property {ubii.services.IService|null} [service] ServiceReply service
              * @property {ubii.services.IServiceList|null} [serviceList] ServiceReply serviceList
              * @property {ubii.processing.ILockstepProcessingReply|null} [lockstepProcessingReply] ServiceReply lockstepProcessingReply
+             * @property {ubii.devices.IComponent|null} [component] ServiceReply component
+             * @property {ubii.devices.IComponentList|null} [componentList] ServiceReply componentList
              */
 
             /**
@@ -15782,17 +15784,33 @@ $root.ubii = (function() {
              */
             ServiceReply.prototype.lockstepProcessingReply = null;
 
+            /**
+             * ServiceReply component.
+             * @member {ubii.devices.IComponent|null|undefined} component
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.component = null;
+
+            /**
+             * ServiceReply componentList.
+             * @member {ubii.devices.IComponentList|null|undefined} componentList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.componentList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "processingModule", "processingModuleList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList", "lockstepProcessingReply"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "processingModule", "processingModuleList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList", "lockstepProcessingReply", "component", "componentList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -15858,6 +15876,10 @@ $root.ubii = (function() {
                     $root.ubii.services.ServiceList.encode(message.serviceList, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 if (message.lockstepProcessingReply != null && Object.hasOwnProperty.call(message, "lockstepProcessingReply"))
                     $root.ubii.processing.LockstepProcessingReply.encode(message.lockstepProcessingReply, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                if (message.component != null && Object.hasOwnProperty.call(message, "component"))
+                    $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
+                if (message.componentList != null && Object.hasOwnProperty.call(message, "componentList"))
+                    $root.ubii.devices.ComponentList.encode(message.componentList, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                 return writer;
             };
 
@@ -15948,6 +15970,12 @@ $root.ubii = (function() {
                         break;
                     case 19:
                         message.lockstepProcessingReply = $root.ubii.processing.LockstepProcessingReply.decode(reader, reader.uint32());
+                        break;
+                    case 20:
+                        message.component = $root.ubii.devices.Component.decode(reader, reader.uint32());
+                        break;
+                    case 21:
+                        message.componentList = $root.ubii.devices.ComponentList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16173,6 +16201,26 @@ $root.ubii = (function() {
                             return "lockstepProcessingReply." + error;
                     }
                 }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.Component.verify(message.component);
+                        if (error)
+                            return "component." + error;
+                    }
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.ComponentList.verify(message.componentList);
+                        if (error)
+                            return "componentList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -16282,6 +16330,16 @@ $root.ubii = (function() {
                     if (typeof object.lockstepProcessingReply !== "object")
                         throw TypeError(".ubii.services.ServiceReply.lockstepProcessingReply: object expected");
                     message.lockstepProcessingReply = $root.ubii.processing.LockstepProcessingReply.fromObject(object.lockstepProcessingReply);
+                }
+                if (object.component != null) {
+                    if (typeof object.component !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.component: object expected");
+                    message.component = $root.ubii.devices.Component.fromObject(object.component);
+                }
+                if (object.componentList != null) {
+                    if (typeof object.componentList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.componentList: object expected");
+                    message.componentList = $root.ubii.devices.ComponentList.fromObject(object.componentList);
                 }
                 return message;
             };
@@ -16394,6 +16452,16 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "lockstepProcessingReply";
                 }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    object.component = $root.ubii.devices.Component.toObject(message.component, options);
+                    if (options.oneofs)
+                        object.type = "component";
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    object.componentList = $root.ubii.devices.ComponentList.toObject(message.componentList, options);
+                    if (options.oneofs)
+                        object.type = "componentList";
+                }
                 return object;
             };
 
@@ -16432,6 +16500,8 @@ $root.ubii = (function() {
              * @property {ubii.clients.IClientList|null} [clientList] ServiceRequest clientList
              * @property {ubii.devices.IDeviceList|null} [deviceList] ServiceRequest deviceList
              * @property {ubii.processing.ILockstepProcessingRequest|null} [lockstepProcessingRequest] ServiceRequest lockstepProcessingRequest
+             * @property {ubii.devices.IComponent|null} [component] ServiceRequest component
+             * @property {ubii.devices.IComponentList|null} [componentList] ServiceRequest componentList
              */
 
             /**
@@ -16569,17 +16639,33 @@ $root.ubii = (function() {
              */
             ServiceRequest.prototype.lockstepProcessingRequest = null;
 
+            /**
+             * ServiceRequest component.
+             * @member {ubii.devices.IComponent|null|undefined} component
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.component = null;
+
+            /**
+             * ServiceRequest componentList.
+             * @member {ubii.devices.IComponentList|null|undefined} componentList
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.componentList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "processingModule", "processingModuleList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "lockstepProcessingRequest"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "processingModule", "processingModuleList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "lockstepProcessingRequest", "component", "componentList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -16637,6 +16723,10 @@ $root.ubii = (function() {
                     $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 if (message.lockstepProcessingRequest != null && Object.hasOwnProperty.call(message, "lockstepProcessingRequest"))
                     $root.ubii.processing.LockstepProcessingRequest.encode(message.lockstepProcessingRequest, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
+                if (message.component != null && Object.hasOwnProperty.call(message, "component"))
+                    $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.componentList != null && Object.hasOwnProperty.call(message, "componentList"))
+                    $root.ubii.devices.ComponentList.encode(message.componentList, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -16715,6 +16805,12 @@ $root.ubii = (function() {
                         break;
                     case 15:
                         message.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.component = $root.ubii.devices.Component.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.componentList = $root.ubii.devices.ComponentList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16893,6 +16989,26 @@ $root.ubii = (function() {
                             return "lockstepProcessingRequest." + error;
                     }
                 }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.Component.verify(message.component);
+                        if (error)
+                            return "component." + error;
+                    }
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.ComponentList.verify(message.componentList);
+                        if (error)
+                            return "componentList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -16979,6 +17095,16 @@ $root.ubii = (function() {
                     if (typeof object.lockstepProcessingRequest !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.lockstepProcessingRequest: object expected");
                     message.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.fromObject(object.lockstepProcessingRequest);
+                }
+                if (object.component != null) {
+                    if (typeof object.component !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.component: object expected");
+                    message.component = $root.ubii.devices.Component.fromObject(object.component);
+                }
+                if (object.componentList != null) {
+                    if (typeof object.componentList !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.componentList: object expected");
+                    message.componentList = $root.ubii.devices.ComponentList.fromObject(object.componentList);
                 }
                 return message;
             };
@@ -17069,6 +17195,16 @@ $root.ubii = (function() {
                     object.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.toObject(message.lockstepProcessingRequest, options);
                     if (options.oneofs)
                         object.type = "lockstepProcessingRequest";
+                }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    object.component = $root.ubii.devices.Component.toObject(message.component, options);
+                    if (options.oneofs)
+                        object.type = "component";
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    object.componentList = $root.ubii.devices.ComponentList.toObject(message.componentList, options);
+                    if (options.oneofs)
+                        object.type = "componentList";
                 }
                 return object;
             };

@@ -2,6 +2,7 @@ syntax = "proto3";
 package ubii.services;
 
 import "proto/clients/client.proto";
+import "proto/devices/component.proto";
 import "proto/devices/device.proto";
 import "proto/devices/topicMux.proto";
 import "proto/devices/topicDemux.proto";

@@ -16110,7 +16110,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14,15]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]];
 
 /**
  * @enum {number}
@@ -16130,7 +16130,9 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   TOPIC_DEMUX_LIST: 12,
   CLIENT_LIST: 13,
   DEVICE_LIST: 14,
-  LOCKSTEP_PROCESSING_REQUEST: 15
+  LOCKSTEP_PROCESSING_REQUEST: 15,
+  COMPONENT: 16,
+  COMPONENT_LIST: 17
 };
 
 /**
@@ -16183,7 +16185,9 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     topicDemuxList: (f = msg.getTopicDemuxList()) && proto.ubii.devices.TopicDemuxList.toObject(includeInstance, f),
     clientList: (f = msg.getClientList()) && proto.ubii.clients.ClientList.toObject(includeInstance, f),
     deviceList: (f = msg.getDeviceList()) && proto.ubii.devices.DeviceList.toObject(includeInstance, f),
-    lockstepProcessingRequest: (f = msg.getLockstepProcessingRequest()) && proto.ubii.processing.LockstepProcessingRequest.toObject(includeInstance, f)
+    lockstepProcessingRequest: (f = msg.getLockstepProcessingRequest()) && proto.ubii.processing.LockstepProcessingRequest.toObject(includeInstance, f),
+    component: (f = msg.getComponent()) && proto.ubii.devices.Component.toObject(includeInstance, f),
+    componentList: (f = msg.getComponentList()) && proto.ubii.devices.ComponentList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16293,6 +16297,16 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       var value = new proto.ubii.processing.LockstepProcessingRequest;
       reader.readMessage(value,proto.ubii.processing.LockstepProcessingRequest.deserializeBinaryFromReader);
       msg.setLockstepProcessingRequest(value);
+      break;
+    case 16:
+      var value = new proto.ubii.devices.Component;
+      reader.readMessage(value,proto.ubii.devices.Component.deserializeBinaryFromReader);
+      msg.setComponent(value);
+      break;
+    case 17:
+      var value = new proto.ubii.devices.ComponentList;
+      reader.readMessage(value,proto.ubii.devices.ComponentList.deserializeBinaryFromReader);
+      msg.setComponentList(value);
       break;
     default:
       reader.skipField();
@@ -16440,6 +16454,22 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       15,
       f,
       proto.ubii.processing.LockstepProcessingRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getComponent();
+  if (f != null) {
+    writer.writeMessage(
+      16,
+      f,
+      proto.ubii.devices.Component.serializeBinaryToWriter
+    );
+  }
+  f = message.getComponentList();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      proto.ubii.devices.ComponentList.serializeBinaryToWriter
     );
   }
 };
@@ -16877,6 +16907,66 @@ proto.ubii.services.ServiceRequest.prototype.clearLockstepProcessingRequest = fu
  */
 proto.ubii.services.ServiceRequest.prototype.hasLockstepProcessingRequest = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional ubii.devices.Component component = 16;
+ * @return {?proto.ubii.devices.Component}
+ */
+proto.ubii.services.ServiceRequest.prototype.getComponent = function() {
+  return /** @type{?proto.ubii.devices.Component} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.Component, 16));
+};
+
+
+/** @param {?proto.ubii.devices.Component|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setComponent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 16, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearComponent = function() {
+  this.setComponent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasComponent = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional ubii.devices.ComponentList component_list = 17;
+ * @return {?proto.ubii.devices.ComponentList}
+ */
+proto.ubii.services.ServiceRequest.prototype.getComponentList = function() {
+  return /** @type{?proto.ubii.devices.ComponentList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.ComponentList, 17));
+};
+
+
+/** @param {?proto.ubii.devices.ComponentList|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setComponentList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 17, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearComponentList = function() {
+  this.setComponentList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasComponentList = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -18539,7 +18629,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]];
 
 /**
  * @enum {number}
@@ -18564,7 +18654,9 @@ proto.ubii.services.ServiceReply.TypeCase = {
   DEVICE_LIST: 16,
   SERVICE: 17,
   SERVICE_LIST: 18,
-  LOCKSTEP_PROCESSING_REPLY: 19
+  LOCKSTEP_PROCESSING_REPLY: 19,
+  COMPONENT: 20,
+  COMPONENT_LIST: 21
 };
 
 /**
@@ -18621,7 +18713,9 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     deviceList: (f = msg.getDeviceList()) && proto.ubii.devices.DeviceList.toObject(includeInstance, f),
     service: (f = msg.getService()) && proto.ubii.services.Service.toObject(includeInstance, f),
     serviceList: (f = msg.getServiceList()) && proto.ubii.services.ServiceList.toObject(includeInstance, f),
-    lockstepProcessingReply: (f = msg.getLockstepProcessingReply()) && proto.ubii.processing.LockstepProcessingReply.toObject(includeInstance, f)
+    lockstepProcessingReply: (f = msg.getLockstepProcessingReply()) && proto.ubii.processing.LockstepProcessingReply.toObject(includeInstance, f),
+    component: (f = msg.getComponent()) && proto.ubii.devices.Component.toObject(includeInstance, f),
+    componentList: (f = msg.getComponentList()) && proto.ubii.devices.ComponentList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18752,6 +18846,16 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.ubii.processing.LockstepProcessingReply;
       reader.readMessage(value,proto.ubii.processing.LockstepProcessingReply.deserializeBinaryFromReader);
       msg.setLockstepProcessingReply(value);
+      break;
+    case 20:
+      var value = new proto.ubii.devices.Component;
+      reader.readMessage(value,proto.ubii.devices.Component.deserializeBinaryFromReader);
+      msg.setComponent(value);
+      break;
+    case 21:
+      var value = new proto.ubii.devices.ComponentList;
+      reader.readMessage(value,proto.ubii.devices.ComponentList.deserializeBinaryFromReader);
+      msg.setComponentList(value);
       break;
     default:
       reader.skipField();
@@ -18932,6 +19036,22 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       19,
       f,
       proto.ubii.processing.LockstepProcessingReply.serializeBinaryToWriter
+    );
+  }
+  f = message.getComponent();
+  if (f != null) {
+    writer.writeMessage(
+      20,
+      f,
+      proto.ubii.devices.Component.serializeBinaryToWriter
+    );
+  }
+  f = message.getComponentList();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
+      proto.ubii.devices.ComponentList.serializeBinaryToWriter
     );
   }
 };
@@ -19504,6 +19624,66 @@ proto.ubii.services.ServiceReply.prototype.clearLockstepProcessingReply = functi
  */
 proto.ubii.services.ServiceReply.prototype.hasLockstepProcessingReply = function() {
   return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional ubii.devices.Component component = 20;
+ * @return {?proto.ubii.devices.Component}
+ */
+proto.ubii.services.ServiceReply.prototype.getComponent = function() {
+  return /** @type{?proto.ubii.devices.Component} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.Component, 20));
+};
+
+
+/** @param {?proto.ubii.devices.Component|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setComponent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 20, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearComponent = function() {
+  this.setComponent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasComponent = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional ubii.devices.ComponentList component_list = 21;
+ * @return {?proto.ubii.devices.ComponentList}
+ */
+proto.ubii.services.ServiceReply.prototype.getComponentList = function() {
+  return /** @type{?proto.ubii.devices.ComponentList} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.ComponentList, 21));
+};
+
+
+/** @param {?proto.ubii.devices.ComponentList|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setComponentList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 21, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearComponentList = function() {
+  this.setComponentList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasComponentList = function() {
+  return jspb.Message.getField(this, 21) != null;
 };
 
 

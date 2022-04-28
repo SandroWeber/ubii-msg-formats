@@ -5,6 +5,7 @@ import "proto/general/success.proto";
 import "proto/general/error.proto";
 import "proto/dataStructure/lists.proto";
 import "proto/clients/client.proto";
+import "proto/devices/component.proto";
 import "proto/devices/device.proto";
 import "proto/devices/topicMux.proto";
 import "proto/devices/topicDemux.proto";
@@ -35,5 +36,7 @@ message ServiceReply {
         ubii.services.Service service = 17;
         ubii.services.ServiceList service_list = 18;
         ubii.processing.LockstepProcessingReply lockstep_processing_reply = 19;
+        ubii.devices.Component component = 20;
+        ubii.devices.ComponentList component_list = 21;
     }
 }

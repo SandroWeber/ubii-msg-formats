@@ -34,6 +34,7 @@
 #include "proto/general/error.pb.h"
 #include "proto/dataStructure/lists.pb.h"
 #include "proto/clients/client.pb.h"
+#include "proto/devices/component.pb.h"
 #include "proto/devices/device.pb.h"
 #include "proto/devices/topicMux.pb.h"
 #include "proto/devices/topicDemux.pb.h"
@@ -123,6 +124,8 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
     kService = 17,
     kServiceList = 18,
     kLockstepProcessingReply = 19,
+    kComponent = 20,
+    kComponentList = 21,
     TYPE_NOT_SET = 0,
   };
 
@@ -412,6 +415,30 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::ubii::processing::LockstepProcessingReply* mutable_lockstep_processing_reply();
   void set_allocated_lockstep_processing_reply(::ubii::processing::LockstepProcessingReply* lockstep_processing_reply);
 
+  // .ubii.devices.Component component = 20;
+  bool has_component() const;
+  void clear_component();
+  static const int kComponentFieldNumber = 20;
+  private:
+  const ::ubii::devices::Component& _internal_component() const;
+  public:
+  const ::ubii::devices::Component& component() const;
+  ::ubii::devices::Component* release_component();
+  ::ubii::devices::Component* mutable_component();
+  void set_allocated_component(::ubii::devices::Component* component);
+
+  // .ubii.devices.ComponentList component_list = 21;
+  bool has_component_list() const;
+  void clear_component_list();
+  static const int kComponentListFieldNumber = 21;
+  private:
+  const ::ubii::devices::ComponentList& _internal_component_list() const;
+  public:
+  const ::ubii::devices::ComponentList& component_list() const;
+  ::ubii::devices::ComponentList* release_component_list();
+  ::ubii::devices::ComponentList* mutable_component_list();
+  void set_allocated_component_list(::ubii::devices::ComponentList* component_list);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.services.ServiceReply)
@@ -435,6 +462,8 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
   void set_has_service();
   void set_has_service_list();
   void set_has_lockstep_processing_reply();
+  void set_has_component();
+  void set_has_component_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -461,6 +490,8 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
     ::ubii::services::Service* service_;
     ::ubii::services::ServiceList* service_list_;
     ::ubii::processing::LockstepProcessingReply* lockstep_processing_reply_;
+    ::ubii::devices::Component* component_;
+    ::ubii::devices::ComponentList* component_list_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1198,6 +1229,82 @@ inline ::ubii::processing::LockstepProcessingReply* ServiceReply::mutable_lockst
   }
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.lockstep_processing_reply)
   return type_.lockstep_processing_reply_;
+}
+
+// .ubii.devices.Component component = 20;
+inline bool ServiceReply::has_component() const {
+  return type_case() == kComponent;
+}
+inline void ServiceReply::set_has_component() {
+  _oneof_case_[0] = kComponent;
+}
+inline const ::ubii::devices::Component& ServiceReply::_internal_component() const {
+  return *type_.component_;
+}
+inline ::ubii::devices::Component* ServiceReply::release_component() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.component)
+  if (has_component()) {
+    clear_has_type();
+      ::ubii::devices::Component* temp = type_.component_;
+    type_.component_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::Component& ServiceReply::component() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.component)
+  return has_component()
+      ? *type_.component_
+      : *reinterpret_cast< ::ubii::devices::Component*>(&::ubii::devices::_Component_default_instance_);
+}
+inline ::ubii::devices::Component* ServiceReply::mutable_component() {
+  if (!has_component()) {
+    clear_type();
+    set_has_component();
+    type_.component_ = CreateMaybeMessage< ::ubii::devices::Component >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.component)
+  return type_.component_;
+}
+
+// .ubii.devices.ComponentList component_list = 21;
+inline bool ServiceReply::has_component_list() const {
+  return type_case() == kComponentList;
+}
+inline void ServiceReply::set_has_component_list() {
+  _oneof_case_[0] = kComponentList;
+}
+inline const ::ubii::devices::ComponentList& ServiceReply::_internal_component_list() const {
+  return *type_.component_list_;
+}
+inline ::ubii::devices::ComponentList* ServiceReply::release_component_list() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.component_list)
+  if (has_component_list()) {
+    clear_has_type();
+      ::ubii::devices::ComponentList* temp = type_.component_list_;
+    type_.component_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::ComponentList& ServiceReply::component_list() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.component_list)
+  return has_component_list()
+      ? *type_.component_list_
+      : *reinterpret_cast< ::ubii::devices::ComponentList*>(&::ubii::devices::_ComponentList_default_instance_);
+}
+inline ::ubii::devices::ComponentList* ServiceReply::mutable_component_list() {
+  if (!has_component_list()) {
+    clear_type();
+    set_has_component_list();
+    type_.component_list_ = CreateMaybeMessage< ::ubii::devices::ComponentList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.component_list)
+  return type_.component_list_;
 }
 
 inline bool ServiceReply::has_type() const {
