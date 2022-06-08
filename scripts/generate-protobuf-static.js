@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const pbjs = require('protobufjs/cli/pbjs');
+const pbts = require('protobufjs/cli/pbts');
 
 (function () {
   let getFilesSync = (dir, filter) => {
@@ -27,9 +28,9 @@ const pbjs = require('protobufjs/cli/pbjs');
     return files;
   };
 
-  let generateCode = (protobufDirectory) => {
-    let outputFile = path.resolve(__dirname + '/../dist/js/protobuf.js');
-    let params = ['--target', 'static-module', '--wrap', 'commonjs', '--out', outputFile];
+  let generateCode = (protobufDirectory, compileTsDefinitions = true) => {
+    let jsOutputFile = path.resolve(__dirname + '/../dist/js/protobuf.js');
+    let params = ['--target', 'static-module', '--wrap', 'commonjs', '--out', jsOutputFile];
     let files = getFilesSync(protobufDirectory, '.proto');
     params.push(...files);
 
@@ -37,8 +38,19 @@ const pbjs = require('protobufjs/cli/pbjs');
       if (err) throw err;
       // do something with output
     });
-
     console.info('protobuf.js compiled');
+
+    if(!compileTsDefinitions) {
+      return;
+    }
+
+    let tsDefinitionFile = path.resolve(__dirname + '/../dist/js/protobuf.d.ts');
+    pbts.main(['-o', tsDefinitionFile, jsOutputFile], function (err, output) {
+      if(err) throw err;
+      // do something with output
+    });
+    console.info('protobuf.d.ts compiled');
+
   };
 
   let protobufDirectory = path.normalize(__dirname + '/../src/proto');

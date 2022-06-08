@@ -64,6 +64,11 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, port_topic_data_zmq_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, port_topic_data_ws_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, constants_json_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, external_address_service_zmq_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, external_address_service_http_json_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, external_address_service_http_binary_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, external_address_topic_data_zmq_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::servers::Server, external_address_topic_data_ws_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::servers::Server)},
@@ -95,15 +100,20 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\032proto/servers/server.proto\022\014ubii.serve"
-      "rs\"\316\001\n\006Server\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022"
+      "rs\"\237\003\n\006Server\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022"
       "\023\n\013ip_ethernet\030\003 \001(\t\022\017\n\007ip_wlan\030\004 \001(\t\022\030\n"
       "\020port_service_zmq\030\005 \001(\t\022\031\n\021port_service_"
       "rest\030\006 \001(\t\022\033\n\023port_topic_data_zmq\030\007 \001(\t\022"
       "\032\n\022port_topic_data_ws\030\010 \001(\t\022\026\n\016constants"
-      "_json\030\t \001(\tb\006proto3"
+      "_json\030\t \001(\t\022$\n\034external_address_service_"
+      "zmq\030\n \001(\t\022*\n\"external_address_service_ht"
+      "tp_json\030\013 \001(\t\022,\n$external_address_servic"
+      "e_http_binary\030\014 \001(\t\022\'\n\037external_address_"
+      "topic_data_zmq\030\r \001(\t\022&\n\036external_address"
+      "_topic_data_ws\030\016 \001(\tb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 259);
+      descriptor, 468);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/servers/server.proto", &protobuf_RegisterTypes);
 }
@@ -136,6 +146,11 @@ const int Server::kPortServiceRestFieldNumber;
 const int Server::kPortTopicDataZmqFieldNumber;
 const int Server::kPortTopicDataWsFieldNumber;
 const int Server::kConstantsJsonFieldNumber;
+const int Server::kExternalAddressServiceZmqFieldNumber;
+const int Server::kExternalAddressServiceHttpJsonFieldNumber;
+const int Server::kExternalAddressServiceHttpBinaryFieldNumber;
+const int Server::kExternalAddressTopicDataZmqFieldNumber;
+const int Server::kExternalAddressTopicDataWsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Server::Server()
@@ -185,6 +200,26 @@ Server::Server(const Server& from)
   if (from.constants_json().size() > 0) {
     constants_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
   }
+  external_address_service_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.external_address_service_zmq().size() > 0) {
+    external_address_service_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_service_zmq_);
+  }
+  external_address_service_http_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.external_address_service_http_json().size() > 0) {
+    external_address_service_http_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_service_http_json_);
+  }
+  external_address_service_http_binary_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.external_address_service_http_binary().size() > 0) {
+    external_address_service_http_binary_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_service_http_binary_);
+  }
+  external_address_topic_data_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.external_address_topic_data_zmq().size() > 0) {
+    external_address_topic_data_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_topic_data_zmq_);
+  }
+  external_address_topic_data_ws_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.external_address_topic_data_ws().size() > 0) {
+    external_address_topic_data_ws_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_topic_data_ws_);
+  }
   // @@protoc_insertion_point(copy_constructor:ubii.servers.Server)
 }
 
@@ -198,6 +233,11 @@ void Server::SharedCtor() {
   port_topic_data_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   port_topic_data_ws_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   constants_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_http_json_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_http_binary_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_topic_data_zmq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_topic_data_ws_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 Server::~Server() {
@@ -215,6 +255,11 @@ void Server::SharedDtor() {
   port_topic_data_zmq_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   port_topic_data_ws_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   constants_json_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_zmq_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_http_json_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_http_binary_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_topic_data_zmq_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_topic_data_ws_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Server::SetCachedSize(int size) const {
@@ -246,6 +291,11 @@ void Server::Clear() {
   port_topic_data_zmq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   port_topic_data_ws_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   constants_json_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_zmq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_http_json_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_service_http_binary_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_topic_data_zmq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  external_address_topic_data_ws_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -403,6 +453,86 @@ bool Server::MergePartialFromCodedStream(
         break;
       }
 
+      // string external_address_service_zmq = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_external_address_service_zmq()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->external_address_service_zmq().data(), static_cast<int>(this->external_address_service_zmq().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.external_address_service_zmq"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string external_address_service_http_json = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_external_address_service_http_json()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->external_address_service_http_json().data(), static_cast<int>(this->external_address_service_http_json().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.external_address_service_http_json"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string external_address_service_http_binary = 12;
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_external_address_service_http_binary()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->external_address_service_http_binary().data(), static_cast<int>(this->external_address_service_http_binary().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.external_address_service_http_binary"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string external_address_topic_data_zmq = 13;
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_external_address_topic_data_zmq()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->external_address_topic_data_zmq().data(), static_cast<int>(this->external_address_topic_data_zmq().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.external_address_topic_data_zmq"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string external_address_topic_data_ws = 14;
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_external_address_topic_data_ws()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->external_address_topic_data_ws().data(), static_cast<int>(this->external_address_topic_data_ws().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.servers.Server.external_address_topic_data_ws"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -519,6 +649,56 @@ void Server::SerializeWithCachedSizes(
       9, this->constants_json(), output);
   }
 
+  // string external_address_service_zmq = 10;
+  if (this->external_address_service_zmq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_service_zmq().data(), static_cast<int>(this->external_address_service_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_service_zmq");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      10, this->external_address_service_zmq(), output);
+  }
+
+  // string external_address_service_http_json = 11;
+  if (this->external_address_service_http_json().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_service_http_json().data(), static_cast<int>(this->external_address_service_http_json().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_service_http_json");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      11, this->external_address_service_http_json(), output);
+  }
+
+  // string external_address_service_http_binary = 12;
+  if (this->external_address_service_http_binary().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_service_http_binary().data(), static_cast<int>(this->external_address_service_http_binary().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_service_http_binary");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->external_address_service_http_binary(), output);
+  }
+
+  // string external_address_topic_data_zmq = 13;
+  if (this->external_address_topic_data_zmq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_topic_data_zmq().data(), static_cast<int>(this->external_address_topic_data_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_topic_data_zmq");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      13, this->external_address_topic_data_zmq(), output);
+  }
+
+  // string external_address_topic_data_ws = 14;
+  if (this->external_address_topic_data_ws().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_topic_data_ws().data(), static_cast<int>(this->external_address_topic_data_ws().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_topic_data_ws");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      14, this->external_address_topic_data_ws(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -632,6 +812,61 @@ void Server::SerializeWithCachedSizes(
         9, this->constants_json(), target);
   }
 
+  // string external_address_service_zmq = 10;
+  if (this->external_address_service_zmq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_service_zmq().data(), static_cast<int>(this->external_address_service_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_service_zmq");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        10, this->external_address_service_zmq(), target);
+  }
+
+  // string external_address_service_http_json = 11;
+  if (this->external_address_service_http_json().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_service_http_json().data(), static_cast<int>(this->external_address_service_http_json().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_service_http_json");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        11, this->external_address_service_http_json(), target);
+  }
+
+  // string external_address_service_http_binary = 12;
+  if (this->external_address_service_http_binary().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_service_http_binary().data(), static_cast<int>(this->external_address_service_http_binary().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_service_http_binary");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        12, this->external_address_service_http_binary(), target);
+  }
+
+  // string external_address_topic_data_zmq = 13;
+  if (this->external_address_topic_data_zmq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_topic_data_zmq().data(), static_cast<int>(this->external_address_topic_data_zmq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_topic_data_zmq");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        13, this->external_address_topic_data_zmq(), target);
+  }
+
+  // string external_address_topic_data_ws = 14;
+  if (this->external_address_topic_data_ws().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->external_address_topic_data_ws().data(), static_cast<int>(this->external_address_topic_data_ws().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.servers.Server.external_address_topic_data_ws");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        14, this->external_address_topic_data_ws(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -712,6 +947,41 @@ size_t Server::ByteSizeLong() const {
         this->constants_json());
   }
 
+  // string external_address_service_zmq = 10;
+  if (this->external_address_service_zmq().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->external_address_service_zmq());
+  }
+
+  // string external_address_service_http_json = 11;
+  if (this->external_address_service_http_json().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->external_address_service_http_json());
+  }
+
+  // string external_address_service_http_binary = 12;
+  if (this->external_address_service_http_binary().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->external_address_service_http_binary());
+  }
+
+  // string external_address_topic_data_zmq = 13;
+  if (this->external_address_topic_data_zmq().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->external_address_topic_data_zmq());
+  }
+
+  // string external_address_topic_data_ws = 14;
+  if (this->external_address_topic_data_ws().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->external_address_topic_data_ws());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -775,6 +1045,26 @@ void Server::MergeFrom(const Server& from) {
 
     constants_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.constants_json_);
   }
+  if (from.external_address_service_zmq().size() > 0) {
+
+    external_address_service_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_service_zmq_);
+  }
+  if (from.external_address_service_http_json().size() > 0) {
+
+    external_address_service_http_json_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_service_http_json_);
+  }
+  if (from.external_address_service_http_binary().size() > 0) {
+
+    external_address_service_http_binary_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_service_http_binary_);
+  }
+  if (from.external_address_topic_data_zmq().size() > 0) {
+
+    external_address_topic_data_zmq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_topic_data_zmq_);
+  }
+  if (from.external_address_topic_data_ws().size() > 0) {
+
+    external_address_topic_data_ws_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.external_address_topic_data_ws_);
+  }
 }
 
 void Server::CopyFrom(const ::google::protobuf::Message& from) {
@@ -818,6 +1108,16 @@ void Server::InternalSwap(Server* other) {
   port_topic_data_ws_.Swap(&other->port_topic_data_ws_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   constants_json_.Swap(&other->constants_json_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  external_address_service_zmq_.Swap(&other->external_address_service_zmq_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  external_address_service_http_json_.Swap(&other->external_address_service_http_json_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  external_address_service_http_binary_.Swap(&other->external_address_service_http_binary_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  external_address_topic_data_zmq_.Swap(&other->external_address_topic_data_zmq_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  external_address_topic_data_ws_.Swap(&other->external_address_topic_data_ws_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }

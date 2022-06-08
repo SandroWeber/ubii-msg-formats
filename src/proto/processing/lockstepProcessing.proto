@@ -1,7 +1,7 @@
 syntax = "proto3";
 package ubii.processing;
 
-import "proto/topicData/topicDataRecord/topicDataRecord.proto";
+import "proto/topicData/topicDataRecord.proto";
 
 message LockstepProcessingRequest {
     repeated string processing_module_ids = 1;
