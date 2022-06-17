@@ -1,8 +1,8 @@
 syntax = "proto3";
 package ubii.sessions;
 
-import "proto/sessions/ioMappings.proto";
-import "proto/processing/processingModule.proto";
+import "sessions/ioMappings.proto";
+import "processing/processingModule.proto";
 
 enum SessionStatus {
     CREATED = 0;

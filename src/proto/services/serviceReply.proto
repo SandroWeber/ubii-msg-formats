@@ -1,19 +1,19 @@
 syntax = "proto3";
 package ubii.services;
 
-import "proto/general/success.proto";
-import "proto/general/error.proto";
-import "proto/dataStructure/lists.proto";
-import "proto/clients/client.proto";
-import "proto/devices/component.proto";
-import "proto/devices/device.proto";
-import "proto/devices/topicMux.proto";
-import "proto/devices/topicDemux.proto";
-import "proto/servers/server.proto";
-import "proto/sessions/session.proto";
-import "proto/services/service.proto";
-import "proto/processing/processingModule.proto";
-import "proto/processing/lockstepProcessing.proto";
+import "general/success.proto";
+import "general/error.proto";
+import "dataStructure/lists.proto";
+import "clients/client.proto";
+import "devices/component.proto";
+import "devices/device.proto";
+import "devices/topicMux.proto";
+import "devices/topicDemux.proto";
+import "servers/server.proto";
+import "sessions/session.proto";
+import "services/service.proto";
+import "processing/processingModule.proto";
+import "processing/lockstepProcessing.proto";
 
 message ServiceReply {
     oneof type {

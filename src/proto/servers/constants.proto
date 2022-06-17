@@ -15,6 +15,8 @@ message Constants {
       string DEVICE_GET = 7;
       string DEVICE_GET_LIST = 8;
 
+      string COMPONENT_GET_LIST = 48;
+
       string PM_DATABASE_SAVE = 9;
       string PM_DATABASE_DELETE = 10;
       string PM_DATABASE_GET = 11;

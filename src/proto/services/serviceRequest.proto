@@ -1,15 +1,15 @@
 syntax = "proto3";
 package ubii.services;
 
-import "proto/clients/client.proto";
-import "proto/devices/component.proto";
-import "proto/devices/device.proto";
-import "proto/devices/topicMux.proto";
-import "proto/devices/topicDemux.proto";
-import "proto/sessions/session.proto";
-import "proto/services/request/topicSubscription.proto";
-import "proto/processing/processingModule.proto";
-import "proto/processing/lockstepProcessing.proto";
+import "clients/client.proto";
+import "devices/component.proto";
+import "devices/device.proto";
+import "devices/topicMux.proto";
+import "devices/topicDemux.proto";
+import "sessions/session.proto";
+import "services/request/topicSubscription.proto";
+import "processing/processingModule.proto";
+import "processing/lockstepProcessing.proto";
 
 message ServiceRequest {
     string topic = 1;

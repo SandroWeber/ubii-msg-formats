@@ -1,8 +1,8 @@
 syntax = "proto3";
 package ubii.sessions;
 
-import "proto/devices/topicMux.proto";
-import "proto/devices/topicDemux.proto";
+import "devices/topicMux.proto";
+import "devices/topicDemux.proto";
 
 message TopicInputMapping {
     string input_name = 1;
