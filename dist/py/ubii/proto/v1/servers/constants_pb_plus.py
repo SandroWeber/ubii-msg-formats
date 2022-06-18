@@ -76,6 +76,10 @@ class Constants(Message):
                     :obj:`~proto.primitives.ProtoType.STRING`
                 PM_RUNTIME_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
                     :obj:`~proto.primitives.ProtoType.STRING`
+                PM_REGISTRY_ADD (proto.fields.Field): :obj:`~proto.fields.Field` of type
+                    :obj:`~proto.primitives.ProtoType.STRING`
+                PM_REGISTRY_REMOVE (proto.fields.Field): :obj:`~proto.fields.Field` of type
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_SAVE (proto.fields.Field): :obj:`~proto.fields.Field` of type
                     :obj:`~proto.primitives.ProtoType.STRING`
                 SESSION_DATABASE_DELETE (proto.fields.Field): :obj:`~proto.fields.Field` of type
@@ -211,6 +215,14 @@ class Constants(Message):
             PM_RUNTIME_GET_LIST = Field(
                 STRING,
                 number=18,
+            )
+            PM_REGISTRY_ADD = Field(
+                STRING,
+                number=49,
+            )
+            PM_REGISTRY_REMOVE = Field(
+                STRING,
+                number=50,
             )
             SESSION_DATABASE_SAVE = Field(
                 STRING,
