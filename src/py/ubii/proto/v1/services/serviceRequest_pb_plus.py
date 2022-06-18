@@ -16,6 +16,11 @@ from ubii.proto.v1.clients.client_pb_plus import (
     ClientList,
 )
 
+from ubii.proto.v1.devices.component_pb_plus import (
+    Component,
+    ComponentList,
+)
+
 from ubii.proto.v1.devices.device_pb_plus import (
     Device,
     DeviceList,
@@ -80,6 +85,8 @@ class ServiceRequest(Message):
             - 	:attr:`.client_list`
             - 	:attr:`.device_list`
             - 	:attr:`.lockstep_processing_request`
+            - 	:attr:`.component`
+            - 	:attr:`.component_list`
 
     Attributes:
         topic (proto.fields.Field): :obj:`~proto.fields.Field` of type
@@ -116,6 +123,10 @@ class ServiceRequest(Message):
         lockstep_processing_request (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingRequest` --
             *oneof* :attr:`.type`
+        component (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.devices.component_pb_plus.Component` -- *oneof* :attr:`.type`
+        component_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.devices.component_pb_plus.ComponentList` -- *oneof* :attr:`.type`
     """
 
     topic = Field(
@@ -190,6 +201,16 @@ class ServiceRequest(Message):
     lockstep_processing_request = Field(
         LockstepProcessingRequest,
         number=15,
+        oneof='type',
+    )
+    component = Field(
+        Component,
+        number=16,
+        oneof='type',
+    )
+    component_list = Field(
+        ComponentList,
+        number=17,
         oneof='type',
     )
 

@@ -19,8 +19,8 @@ from .topicData_pb_plus import (
 
 
 __all__ = (
-    "TopicData",
     "Timestamp",
+    "TopicData",
     "TopicDataRecord",
     "TopicDataRecordList",
 )

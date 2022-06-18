@@ -28,10 +28,10 @@ from .topicMux_pb_plus import (
 __all__ = (
     "Component",
     "ComponentList",
+    "Device",
+    "DeviceList",
     "TopicDemux",
     "TopicDemuxList",
     "TopicMux",
     "TopicMuxList",
-    "Device",
-    "DeviceList",
 )

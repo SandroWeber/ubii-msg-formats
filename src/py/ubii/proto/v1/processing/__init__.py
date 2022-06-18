@@ -18,10 +18,10 @@ from .processingModule_pb_plus import (
 
 
 __all__ = (
-    "ProcessingMode",
+    "LockstepProcessingReply",
+    "LockstepProcessingRequest",
     "ModuleIO",
+    "ProcessingMode",
     "ProcessingModule",
     "ProcessingModuleList",
-    "LockstepProcessingRequest",
-    "LockstepProcessingReply",
 )

@@ -41,6 +41,16 @@ class Server(Message):
             :obj:`~proto.primitives.ProtoType.STRING`
         constants_json (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
+        external_address_service_zmq (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
+        external_address_service_http_json (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
+        external_address_service_http_binary (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
+        external_address_topic_data_zmq (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
+        external_address_topic_data_ws (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
     """
 
     id = Field(
@@ -78,5 +88,25 @@ class Server(Message):
     constants_json = Field(
         STRING,
         number=9,
+    )
+    external_address_service_zmq = Field(
+        STRING,
+        number=10,
+    )
+    external_address_service_http_json = Field(
+        STRING,
+        number=11,
+    )
+    external_address_service_http_binary = Field(
+        STRING,
+        number=12,
+    )
+    external_address_topic_data_zmq = Field(
+        STRING,
+        number=13,
+    )
+    external_address_topic_data_ws = Field(
+        STRING,
+        number=14,
     )
 

@@ -19,6 +19,11 @@ from ubii.proto.v1.dataStructure.lists_pb_plus import (
     StringList,
 )
 
+from ubii.proto.v1.devices.component_pb_plus import (
+    Component,
+    ComponentList,
+)
+
 from ubii.proto.v1.devices.device_pb_plus import (
     Device,
     DeviceList,
@@ -101,6 +106,8 @@ class ServiceReply(Message):
             - 	:attr:`.service`
             - 	:attr:`.service_list`
             - 	:attr:`.lockstep_processing_reply`
+            - 	:attr:`.component`
+            - 	:attr:`.component_list`
 
     Attributes:
         success (proto.fields.Field): :obj:`~proto.fields.Field` of type
@@ -144,6 +151,10 @@ class ServiceReply(Message):
         lockstep_processing_reply (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.processing.lockstepProcessing_pb_plus.LockstepProcessingReply` -- *oneof*
             :attr:`.type`
+        component (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.devices.component_pb_plus.Component` -- *oneof* :attr:`.type`
+        component_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~ubii.proto.v1.devices.component_pb_plus.ComponentList` -- *oneof* :attr:`.type`
     """
 
     success = Field(
@@ -239,6 +250,16 @@ class ServiceReply(Message):
     lockstep_processing_reply = Field(
         LockstepProcessingReply,
         number=19,
+        oneof='type',
+    )
+    component = Field(
+        Component,
+        number=20,
+        oneof='type',
+    )
+    component_list = Field(
+        ComponentList,
+        number=21,
         oneof='type',
     )
 

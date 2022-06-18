@@ -164,6 +164,8 @@ class TopicDataRecord(Message):
             :obj:`~proto.primitives.ProtoType.STRING`
         timestamp (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~ubii.proto.v1.topicData.timestamp_pb_plus.Timestamp`
+        client_id (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.STRING`
         double (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.DOUBLE` -- *oneof* :attr:`.type`
         bool (proto.fields.Field): :obj:`~proto.fields.Field` of type
@@ -250,6 +252,10 @@ class TopicDataRecord(Message):
     timestamp = Field(
         Timestamp,
         number=2,
+    )
+    client_id = Field(
+        STRING,
+        number=33,
     )
     double = Field(
         DOUBLE,

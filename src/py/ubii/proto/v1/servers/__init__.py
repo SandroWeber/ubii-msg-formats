@@ -14,6 +14,6 @@ from .server_pb_plus import (
 
 
 __all__ = (
-    "Server",
     "Constants",
+    "Server",
 )

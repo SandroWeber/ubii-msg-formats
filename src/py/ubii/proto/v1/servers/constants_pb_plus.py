@@ -54,6 +54,8 @@ class Constants(Message):
                     :obj:`~proto.primitives.ProtoType.STRING`
                 DEVICE_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
                     :obj:`~proto.primitives.ProtoType.STRING`
+                COMPONENT_GET_LIST (proto.fields.Field): :obj:`~proto.fields.Field` of type
+                    :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_SAVE (proto.fields.Field): :obj:`~proto.fields.Field` of type
                     :obj:`~proto.primitives.ProtoType.STRING`
                 PM_DATABASE_DELETE (proto.fields.Field): :obj:`~proto.fields.Field` of type
@@ -165,6 +167,10 @@ class Constants(Message):
             DEVICE_GET_LIST = Field(
                 STRING,
                 number=8,
+            )
+            COMPONENT_GET_LIST = Field(
+                STRING,
+                number=48,
             )
             PM_DATABASE_SAVE = Field(
                 STRING,

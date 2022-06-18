@@ -38,6 +38,7 @@ class ProcessingMode(Message):
             - 	:attr:`.frequency`
             - 	:attr:`.lockstep`
             - 	:attr:`.trigger_on_input`
+            - 	:attr:`.free`
 
     Attributes:
         frequency (proto.fields.Field): :obj:`~proto.fields.Field` of type :obj:`~.Frequency` -- *oneof*
@@ -46,6 +47,8 @@ class ProcessingMode(Message):
             :attr:`.mode`
         trigger_on_input (proto.fields.Field): :obj:`~proto.fields.Field` of type :obj:`~.TriggerOnInput`
             -- *oneof* :attr:`.mode`
+        free (proto.fields.Field): :obj:`~proto.fields.Field` of type :obj:`~.Free` -- *oneof*
+            :attr:`.mode`
     """
 
     class Frequency(Message):
@@ -99,6 +102,11 @@ class ProcessingMode(Message):
         )
     
 
+    class Free(Message):
+        """"""
+
+    
+
     frequency = Field(
         Frequency,
         number=1,
@@ -114,6 +122,11 @@ class ProcessingMode(Message):
         number=3,
         oneof='mode',
     )
+    free = Field(
+        Free,
+        number=4,
+        oneof='mode',
+    )
 
 
 class ModuleIO(Message):
@@ -123,6 +136,8 @@ class ModuleIO(Message):
             :obj:`~proto.primitives.ProtoType.STRING`
         message_format (proto.fields.Field): :obj:`~proto.fields.Field` of type
             :obj:`~proto.primitives.ProtoType.STRING`
+        is_record_list (proto.fields.Field): :obj:`~proto.fields.Field` of type
+            :obj:`~proto.primitives.ProtoType.BOOL`
     """
 
     internal_name = Field(
@@ -132,6 +147,10 @@ class ModuleIO(Message):
     message_format = Field(
         STRING,
         number=2,
+    )
+    is_record_list = Field(
+        BOOL,
+        number=3,
     )
 
 
