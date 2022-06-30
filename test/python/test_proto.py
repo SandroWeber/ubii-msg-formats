@@ -48,7 +48,8 @@ class TestProtoPlus:
     ], indirect=True)
     def test_inheritance(self, mock_protobuf):
         class Empty(ub.Session, metaclass=ub.ProtoMeta):
-            pass
+            """
+            """
 
         inherited = Empty()
         basic = ub.Session()
@@ -56,6 +57,8 @@ class TestProtoPlus:
         assert type(inherited).serialize(inherited) == type(basic).serialize(basic)
 
         class WithAttributes(ub.Session, metaclass=ub.ProtoMeta):
+            """
+            """
             def foo(self):
                 return "Foo"
 
@@ -65,6 +68,8 @@ class TestProtoPlus:
         assert fancy.foo() == "Foo"
 
         class WeirdProcessing(ub.ProcessingModule, metaclass=ub.ProtoMeta):
+            """
+            """
             def process(self):
                 return "Bar"
 
@@ -74,3 +79,21 @@ class TestProtoPlus:
 
         assert type(inherited).serialize(inherited) == type(basic).serialize(basic)
         assert processing.process() == "Bar"
+
+    def test_repeated_container(self, message_data, import_type, import_proto_modules, message_types):
+        from importlib import import_module
+        for field_dsc in type(message_data.plus_message).pb().DESCRIPTOR.fields:
+            if field_dsc.label != field_dsc.LABEL_REPEATED:
+                continue
+            full_name: str = (
+                field_dsc.message_type.full_name
+                if field_dsc.message_type else
+                None
+            )
+
+            if full_name:
+                module, name = full_name.rsplit('.', maxsplit=1)
+                msg_type = getattr(import_module(*module.rsplit('.', maxsplit=1)), name)
+
+                # test putting stuff in container
+                setattr(message_data.plus_message, field_dsc.name, [msg_type()] * 10)

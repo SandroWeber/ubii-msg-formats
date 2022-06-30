@@ -124,10 +124,10 @@ def import_type(import_proto_modules):
         yield
         root_module.__proto_module__ = old
 
-    def _import(data_type: str, module: types.ModuleType):
+    def _import(data_type: str, module: types.ModuleType, reimport=True):
         with mock_proto_module(module):
             if data_type.startswith('ubii.'):
-                return _import_type(data_type, reimport=True)
+                return _import_type(data_type, reimport=reimport)
             else:
                 pytest.skip(f"Not testing primitive type {data_type!r}")
                 return

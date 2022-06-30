@@ -105,7 +105,8 @@ from ubii.proto.v1.topicData.timestamp_pb_plus import (
 
 
 __protobuf__ = module(
-    package="ubii.proto.v1",
+    package="ubii.proto.v1.topicData",
+    marshal="ubii.proto.v1",
     manifest={
         "TopicDataRecord",
         "TopicDataRecordList",

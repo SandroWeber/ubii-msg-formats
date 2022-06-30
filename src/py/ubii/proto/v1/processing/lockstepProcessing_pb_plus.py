@@ -19,7 +19,8 @@ from ubii.proto.v1.topicData.topicDataRecord_pb_plus import (
 
 
 __protobuf__ = module(
-    package="ubii.proto.v1",
+    package="ubii.proto.v1.processing",
+    marshal="ubii.proto.v1",
     manifest={
         "LockstepProcessingRequest",
         "LockstepProcessingReply",

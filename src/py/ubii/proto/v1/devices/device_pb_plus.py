@@ -19,7 +19,8 @@ from ubii.proto.v1.devices.component_pb_plus import (
 
 
 __protobuf__ = module(
-    package="ubii.proto.v1",
+    package="ubii.proto.v1.devices",
+    marshal="ubii.proto.v1",
     manifest={
         "Device",
         "DeviceList",

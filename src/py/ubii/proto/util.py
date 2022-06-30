@@ -78,7 +78,7 @@ def import_type(message_type: str, reimport=False):
 
 
 def clean_json(message: str):
-    """
+    r"""
     Format json strings (like representations of proto messages) in a nice way.
     Close to ``re.sub(r'{\s+', '{', message.strip())``
 

@@ -14,7 +14,8 @@ from proto.message import (
 
 
 __protobuf__ = module(
-    package="ubii.proto.v1",
+    package="ubii.proto.v1.services.request",
+    marshal="ubii.proto.v1",
     manifest={
         "TopicSubscription",
     }

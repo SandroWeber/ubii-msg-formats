@@ -2,6 +2,11 @@
     "bytes": "",
     "dict": {
         "constants_json": "",
+        "external_address_service_http_binary": "",
+        "external_address_service_http_json": "",
+        "external_address_service_zmq": "",
+        "external_address_topic_data_ws": "",
+        "external_address_topic_data_zmq": "",
         "id": "",
         "ip_ethernet": "",
         "ip_wlan": "",
@@ -11,5 +16,5 @@
         "port_topic_data_ws": "",
         "port_topic_data_zmq": ""
     },
-    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"ip_ethernet\": \"\",\n  \"ip_wlan\": \"\",\n  \"port_service_zmq\": \"\",\n  \"port_service_rest\": \"\",\n  \"port_topic_data_zmq\": \"\",\n  \"port_topic_data_ws\": \"\",\n  \"constants_json\": \"\"\n}"
+    "json": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"ip_ethernet\": \"\",\n  \"ip_wlan\": \"\",\n  \"port_service_zmq\": \"\",\n  \"port_service_rest\": \"\",\n  \"port_topic_data_zmq\": \"\",\n  \"port_topic_data_ws\": \"\",\n  \"constants_json\": \"\",\n  \"external_address_service_zmq\": \"\",\n  \"external_address_service_http_json\": \"\",\n  \"external_address_service_http_binary\": \"\",\n  \"external_address_topic_data_zmq\": \"\",\n  \"external_address_topic_data_ws\": \"\"\n}"
 }

@@ -22,7 +22,7 @@ if not build_cmds:
     sys.exit(1)
 else:
     build_cmds = list(set(build_cmds))
-    assert len(build_cmds) == 1
+    assert len(build_cmds) == 1, f"Too many build commands named {build_proto_name}"
     build_py = build_cmds[0].load()
 
 setuptools.setup(

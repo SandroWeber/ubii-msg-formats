@@ -14,7 +14,8 @@ from proto.message import (
 
 
 __protobuf__ = module(
-    package="ubii.proto.v1",
+    package="ubii.proto.v1.dataStructure",
+    marshal="ubii.proto.v1",
     manifest={
         "Vector8",
         "Vector8List",

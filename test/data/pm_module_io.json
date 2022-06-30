@@ -2,7 +2,8 @@
     "bytes": "",
     "dict": {
         "internal_name": "",
+        "is_record_list": false,
         "message_format": ""
     },
-    "json": "{\n  \"internal_name\": \"\",\n  \"message_format\": \"\"\n}"
+    "json": "{\n  \"internal_name\": \"\",\n  \"message_format\": \"\",\n  \"is_record_list\": false\n}"
 }

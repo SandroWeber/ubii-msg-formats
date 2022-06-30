@@ -15,7 +15,8 @@ from proto.message import (
 
 
 __protobuf__ = module(
-    package="ubii.proto.v1",
+    package="ubii.proto.v1.devices",
+    marshal="ubii.proto.v1",
     manifest={
         "Component",
         "ComponentList",

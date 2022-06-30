@@ -27,6 +27,7 @@ import "ubii/proto_baseline/processing/processingModule.proto";
 message TopicDataRecord {
     string topic = 1;
     ubii.proto_baseline.topicData.Timestamp timestamp = 2;
+    string client_id = 33;
     oneof type {
         double double = 3;
         bool bool = 4;

@@ -28,7 +28,8 @@ from ubii.proto.v1.dataStructure.vector8_pb_plus import (
 
 
 __protobuf__ = module(
-    package="ubii.proto.v1",
+    package="ubii.proto.v1.dataStructure",
+    marshal="ubii.proto.v1",
     manifest={
         "MyoEvent",
     }

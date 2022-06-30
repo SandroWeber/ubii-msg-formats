@@ -15,6 +15,8 @@ message Constants {
       string DEVICE_GET = 7;
       string DEVICE_GET_LIST = 8;
 
+      string COMPONENT_GET_LIST = 48;
+
       string PM_DATABASE_SAVE = 9;
       string PM_DATABASE_DELETE = 10;
       string PM_DATABASE_GET = 11;
@@ -25,6 +27,8 @@ message Constants {
       string PM_RUNTIME_REMOVE = 16;
       string PM_RUNTIME_GET = 17;
       string PM_RUNTIME_GET_LIST = 18;
+      string PM_REGISTRY_ADD = 49;
+      string PM_REGISTRY_REMOVE = 50;
 
       string SESSION_DATABASE_SAVE = 19;
       string SESSION_DATABASE_DELETE = 20;

@@ -11,4 +11,9 @@ message Server {
     string port_topic_data_zmq = 7;
     string port_topic_data_ws = 8;
     string constants_json = 9;
+    string external_address_service_zmq = 10;
+    string external_address_service_http_json = 11;
+    string external_address_service_http_binary = 12;
+    string external_address_topic_data_zmq = 13;
+    string external_address_topic_data_ws = 14;
 }
