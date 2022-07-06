@@ -439,15 +439,15 @@ class Constants(Message):
             )
         
 
-        SERVICES: Constants.DefaultTopics.Services = Field(
+        SERVICES: Services = Field(
             MESSAGE,
             number=1,
-            message=Constants.DefaultTopics.Services,
+            message=Services,
         )
-        INFO_TOPICS: Constants.DefaultTopics.InfoTopics = Field(
+        INFO_TOPICS: InfoTopics = Field(
             MESSAGE,
             number=2,
-            message=Constants.DefaultTopics.InfoTopics,
+            message=InfoTopics,
         )
     
 
