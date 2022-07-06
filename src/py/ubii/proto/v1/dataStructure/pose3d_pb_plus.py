@@ -3,6 +3,7 @@
 """
 from proto import (
     Field,
+    MESSAGE,
     module,
 )
 
@@ -50,18 +51,21 @@ class Pose3D(Message):
             :attr:`.orientation`
     """
 
-    position = Field(
-        Vector3,
+    position: Vector3 = Field(
+        MESSAGE,
         number=1,
+        message=Vector3,
     )
-    quaternion = Field(
-        Quaternion,
+    quaternion: Quaternion = Field(
+        MESSAGE,
         number=2,
+        message=Quaternion,
         oneof='orientation',
     )
-    euler = Field(
-        Vector3,
+    euler: Vector3 = Field(
+        MESSAGE,
         number=3,
+        message=Vector3,
         oneof='orientation',
     )
 

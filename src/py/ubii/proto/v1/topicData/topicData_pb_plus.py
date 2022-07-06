@@ -3,6 +3,7 @@
 """
 from proto import (
     Field,
+    MESSAGE,
     module,
 )
 
@@ -52,19 +53,22 @@ class TopicData(Message):
             :obj:`~ubii.proto.v1.general.error_pb_plus.Error` -- *oneof* :attr:`.type`
     """
 
-    topic_data_record = Field(
-        TopicDataRecord,
+    topic_data_record: TopicDataRecord = Field(
+        MESSAGE,
         number=2,
+        message=TopicDataRecord,
         oneof='type',
     )
-    topic_data_record_list = Field(
-        TopicDataRecordList,
+    topic_data_record_list: TopicDataRecordList = Field(
+        MESSAGE,
         number=3,
+        message=TopicDataRecordList,
         oneof='type',
     )
-    error = Field(
-        Error,
+    error: Error = Field(
+        MESSAGE,
         number=4,
+        message=Error,
         oneof='type',
     )
 

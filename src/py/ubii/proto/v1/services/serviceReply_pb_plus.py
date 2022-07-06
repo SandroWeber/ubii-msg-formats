@@ -3,6 +3,7 @@
 """
 from proto import (
     Field,
+    MESSAGE,
     module,
 )
 
@@ -158,109 +159,130 @@ class ServiceReply(Message):
             :obj:`~ubii.proto.v1.devices.component_pb_plus.ComponentList` -- *oneof* :attr:`.type`
     """
 
-    success = Field(
-        Success,
+    success: Success = Field(
+        MESSAGE,
         number=1,
+        message=Success,
         oneof='type',
     )
-    error = Field(
-        Error,
+    error: Error = Field(
+        MESSAGE,
         number=2,
+        message=Error,
         oneof='type',
     )
-    client = Field(
-        Client,
+    client: Client = Field(
+        MESSAGE,
         number=3,
+        message=Client,
         oneof='type',
     )
-    device = Field(
-        Device,
+    device: Device = Field(
+        MESSAGE,
         number=4,
+        message=Device,
         oneof='type',
     )
-    server = Field(
-        Server,
+    server: Server = Field(
+        MESSAGE,
         number=5,
+        message=Server,
         oneof='type',
     )
-    session = Field(
-        Session,
+    session: Session = Field(
+        MESSAGE,
         number=6,
+        message=Session,
         oneof='type',
     )
-    session_list = Field(
-        SessionList,
+    session_list: SessionList = Field(
+        MESSAGE,
         number=7,
+        message=SessionList,
         oneof='type',
     )
-    processing_module = Field(
-        ProcessingModule,
+    processing_module: ProcessingModule = Field(
+        MESSAGE,
         number=8,
+        message=ProcessingModule,
         oneof='type',
     )
-    processing_module_list = Field(
-        ProcessingModuleList,
+    processing_module_list: ProcessingModuleList = Field(
+        MESSAGE,
         number=9,
+        message=ProcessingModuleList,
         oneof='type',
     )
-    string_list = Field(
-        StringList,
+    string_list: StringList = Field(
+        MESSAGE,
         number=10,
+        message=StringList,
         oneof='type',
     )
-    topic_mux = Field(
-        TopicMux,
+    topic_mux: TopicMux = Field(
+        MESSAGE,
         number=11,
+        message=TopicMux,
         oneof='type',
     )
-    topic_mux_list = Field(
-        TopicMuxList,
+    topic_mux_list: TopicMuxList = Field(
+        MESSAGE,
         number=12,
+        message=TopicMuxList,
         oneof='type',
     )
-    topic_demux = Field(
-        TopicDemux,
+    topic_demux: TopicDemux = Field(
+        MESSAGE,
         number=13,
+        message=TopicDemux,
         oneof='type',
     )
-    topic_demux_list = Field(
-        TopicDemuxList,
+    topic_demux_list: TopicDemuxList = Field(
+        MESSAGE,
         number=14,
+        message=TopicDemuxList,
         oneof='type',
     )
-    client_list = Field(
-        ClientList,
+    client_list: ClientList = Field(
+        MESSAGE,
         number=15,
+        message=ClientList,
         oneof='type',
     )
-    device_list = Field(
-        DeviceList,
+    device_list: DeviceList = Field(
+        MESSAGE,
         number=16,
+        message=DeviceList,
         oneof='type',
     )
-    service = Field(
-        Service,
+    service: Service = Field(
+        MESSAGE,
         number=17,
+        message=Service,
         oneof='type',
     )
-    service_list = Field(
-        ServiceList,
+    service_list: ServiceList = Field(
+        MESSAGE,
         number=18,
+        message=ServiceList,
         oneof='type',
     )
-    lockstep_processing_reply = Field(
-        LockstepProcessingReply,
+    lockstep_processing_reply: LockstepProcessingReply = Field(
+        MESSAGE,
         number=19,
+        message=LockstepProcessingReply,
         oneof='type',
     )
-    component = Field(
-        Component,
+    component: Component = Field(
+        MESSAGE,
         number=20,
+        message=Component,
         oneof='type',
     )
-    component_list = Field(
-        ComponentList,
+    component_list: ComponentList = Field(
+        MESSAGE,
         number=21,
+        message=ComponentList,
         oneof='type',
     )
 
