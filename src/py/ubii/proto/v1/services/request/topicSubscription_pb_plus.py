@@ -17,7 +17,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 
@@ -49,19 +49,19 @@ class TopicSubscription(Message):
         STRING,
         number=1,
     )
-    subscribe_topics: Iterable[str] = RepeatedField(
+    subscribe_topics: Sequence[str] = RepeatedField(
         STRING,
         number=2,
     )
-    unsubscribe_topics: Iterable[str] = RepeatedField(
+    unsubscribe_topics: Sequence[str] = RepeatedField(
         STRING,
         number=3,
     )
-    subscribe_topic_regexp: Iterable[str] = RepeatedField(
+    subscribe_topic_regexp: Sequence[str] = RepeatedField(
         STRING,
         number=4,
     )
-    unsubscribe_topic_regexp: Iterable[str] = RepeatedField(
+    unsubscribe_topic_regexp: Sequence[str] = RepeatedField(
         STRING,
         number=5,
     )

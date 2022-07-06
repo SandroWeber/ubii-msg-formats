@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 
@@ -59,7 +59,7 @@ class Service(Message):
         STRING,
         number=3,
     )
-    tags: Iterable[str] = RepeatedField(
+    tags: Sequence[str] = RepeatedField(
         STRING,
         number=4,
     )
@@ -76,7 +76,7 @@ class ServiceList(Message):
             :obj:`~.Service`
     """
 
-    elements: Iterable[Service] = RepeatedField(
+    elements: Sequence[Service] = RepeatedField(
         MESSAGE,
         number=1,
         message=Service,

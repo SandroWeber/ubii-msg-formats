@@ -22,7 +22,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 from ubii.proto.v1.dataStructure.vector2_pb_plus import (
@@ -84,7 +84,7 @@ class TouchEventList(Message):
             :obj:`~.TouchEvent`
     """
 
-    elements: Iterable[TouchEvent] = RepeatedField(
+    elements: Sequence[TouchEvent] = RepeatedField(
         MESSAGE,
         number=1,
         message=TouchEvent,

@@ -22,7 +22,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 
@@ -79,7 +79,7 @@ class Image2DList(Message):
             :obj:`~.Image2D`
     """
 
-    elements: Iterable[Image2D] = RepeatedField(
+    elements: Sequence[Image2D] = RepeatedField(
         MESSAGE,
         number=1,
         message=Image2D,

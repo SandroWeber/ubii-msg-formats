@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 
@@ -94,7 +94,7 @@ class Vector8List(Message):
             :obj:`~.Vector8`
     """
 
-    elements: Iterable[Vector8] = RepeatedField(
+    elements: Sequence[Vector8] = RepeatedField(
         MESSAGE,
         number=1,
         message=Vector8,

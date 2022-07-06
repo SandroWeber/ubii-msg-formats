@@ -20,7 +20,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 from ubii.proto.v1.topicData.topicDataRecord_pb_plus import (
@@ -49,11 +49,11 @@ class LockstepProcessingRequest(Message):
             :obj:`~proto.primitives.ProtoType.INT32`
     """
 
-    processing_module_ids: Iterable[str] = RepeatedField(
+    processing_module_ids: Sequence[str] = RepeatedField(
         STRING,
         number=1,
     )
-    records: Iterable[TopicDataRecord] = RepeatedField(
+    records: Sequence[TopicDataRecord] = RepeatedField(
         MESSAGE,
         number=2,
         message=TopicDataRecord,
@@ -73,11 +73,11 @@ class LockstepProcessingReply(Message):
             :obj:`~ubii.proto.v1.topicData.topicDataRecord_pb_plus.TopicDataRecord`
     """
 
-    processing_module_ids: Iterable[str] = RepeatedField(
+    processing_module_ids: Sequence[str] = RepeatedField(
         STRING,
         number=1,
     )
-    records: Iterable[TopicDataRecord] = RepeatedField(
+    records: Sequence[TopicDataRecord] = RepeatedField(
         MESSAGE,
         number=2,
         message=TopicDataRecord,

@@ -20,7 +20,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 
@@ -75,7 +75,7 @@ class Component(Message):
         STRING,
         number=4,
     )
-    tags: Iterable[str] = RepeatedField(
+    tags: Sequence[str] = RepeatedField(
         STRING,
         number=5,
     )
@@ -100,7 +100,7 @@ class ComponentList(Message):
             :obj:`~.Component`
     """
 
-    elements: Iterable[Component] = RepeatedField(
+    elements: Sequence[Component] = RepeatedField(
         MESSAGE,
         number=1,
         message=Component,

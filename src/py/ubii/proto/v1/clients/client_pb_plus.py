@@ -24,7 +24,7 @@ from proto.message import (
 )
 
 from typing import (
-    Iterable,
+    Sequence,
 )
 
 from ubii.proto.v1.devices.device_pb_plus import (
@@ -85,12 +85,12 @@ class Client(Message):
         STRING,
         number=2,
     )
-    devices: Iterable[Device] = RepeatedField(
+    devices: Sequence[Device] = RepeatedField(
         MESSAGE,
         number=3,
         message=Device,
     )
-    tags: Iterable[str] = RepeatedField(
+    tags: Sequence[str] = RepeatedField(
         STRING,
         number=4,
     )
@@ -98,7 +98,7 @@ class Client(Message):
         STRING,
         number=5,
     )
-    processing_modules: Iterable[ProcessingModule] = RepeatedField(
+    processing_modules: Sequence[ProcessingModule] = RepeatedField(
         MESSAGE,
         number=6,
         message=ProcessingModule,
@@ -133,7 +133,7 @@ class ClientList(Message):
             :obj:`~.Client`
     """
 
-    elements: Iterable[Client] = RepeatedField(
+    elements: Sequence[Client] = RepeatedField(
         MESSAGE,
         number=1,
         message=Client,
