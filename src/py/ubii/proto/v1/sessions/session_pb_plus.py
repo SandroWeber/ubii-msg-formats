@@ -22,7 +22,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 from ubii.proto.v1.processing.processingModule_pb_plus import (
@@ -81,17 +81,17 @@ class Session(Message):
         STRING,
         number=2,
     )
-    processing_modules: Sequence[ProcessingModule] = RepeatedField(
+    processing_modules: MutableSequence[ProcessingModule] = RepeatedField(
         MESSAGE,
         number=3,
         message=ProcessingModule,
     )
-    io_mappings: Sequence[IOMapping] = RepeatedField(
+    io_mappings: MutableSequence[IOMapping] = RepeatedField(
         MESSAGE,
         number=4,
         message=IOMapping,
     )
-    tags: Sequence[str] = RepeatedField(
+    tags: MutableSequence[str] = RepeatedField(
         STRING,
         number=5,
     )
@@ -99,7 +99,7 @@ class Session(Message):
         STRING,
         number=6,
     )
-    authors: Sequence[str] = RepeatedField(
+    authors: MutableSequence[str] = RepeatedField(
         STRING,
         number=7,
     )
@@ -121,7 +121,7 @@ class SessionList(Message):
             :obj:`~.Session`
     """
 
-    elements: Sequence[Session] = RepeatedField(
+    elements: MutableSequence[Session] = RepeatedField(
         MESSAGE,
         number=1,
         message=Session,

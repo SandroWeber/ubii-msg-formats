@@ -25,7 +25,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 from ubii.proto.v1.dataStructure.color_pb_plus import (
@@ -485,7 +485,7 @@ class TopicDataRecordList(Message):
             :obj:`~.TopicDataRecord`
     """
 
-    elements: Sequence[TopicDataRecord] = RepeatedField(
+    elements: MutableSequence[TopicDataRecord] = RepeatedField(
         MESSAGE,
         number=1,
         message=TopicDataRecord,

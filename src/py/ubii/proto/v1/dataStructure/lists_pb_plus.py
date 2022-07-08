@@ -23,7 +23,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -47,7 +47,7 @@ class StringList(Message):
             :obj:`~proto.primitives.ProtoType.STRING`
     """
 
-    elements: Sequence[str] = RepeatedField(
+    elements: MutableSequence[str] = RepeatedField(
         STRING,
         number=1,
     )
@@ -60,7 +60,7 @@ class DoubleList(Message):
             :obj:`~proto.primitives.ProtoType.DOUBLE`
     """
 
-    elements: Sequence[float] = RepeatedField(
+    elements: MutableSequence[float] = RepeatedField(
         DOUBLE,
         number=1,
     )
@@ -73,7 +73,7 @@ class FloatList(Message):
             :obj:`~proto.primitives.ProtoType.FLOAT`
     """
 
-    elements: Sequence[float] = RepeatedField(
+    elements: MutableSequence[float] = RepeatedField(
         FLOAT,
         number=1,
     )
@@ -86,7 +86,7 @@ class BoolList(Message):
             :obj:`~proto.primitives.ProtoType.BOOL`
     """
 
-    elements: Sequence[bool] = RepeatedField(
+    elements: MutableSequence[bool] = RepeatedField(
         BOOL,
         number=1,
     )
@@ -99,7 +99,7 @@ class Int32List(Message):
             :obj:`~proto.primitives.ProtoType.INT32`
     """
 
-    elements: Sequence[int] = RepeatedField(
+    elements: MutableSequence[int] = RepeatedField(
         INT32,
         number=1,
     )

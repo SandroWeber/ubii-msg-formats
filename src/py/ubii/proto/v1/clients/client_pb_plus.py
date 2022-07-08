@@ -24,7 +24,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 from ubii.proto.v1.devices.device_pb_plus import (
@@ -85,12 +85,12 @@ class Client(Message):
         STRING,
         number=2,
     )
-    devices: Sequence[Device] = RepeatedField(
+    devices: MutableSequence[Device] = RepeatedField(
         MESSAGE,
         number=3,
         message=Device,
     )
-    tags: Sequence[str] = RepeatedField(
+    tags: MutableSequence[str] = RepeatedField(
         STRING,
         number=4,
     )
@@ -98,7 +98,7 @@ class Client(Message):
         STRING,
         number=5,
     )
-    processing_modules: Sequence[ProcessingModule] = RepeatedField(
+    processing_modules: MutableSequence[ProcessingModule] = RepeatedField(
         MESSAGE,
         number=6,
         message=ProcessingModule,
@@ -133,7 +133,7 @@ class ClientList(Message):
             :obj:`~.Client`
     """
 
-    elements: Sequence[Client] = RepeatedField(
+    elements: MutableSequence[Client] = RepeatedField(
         MESSAGE,
         number=1,
         message=Client,

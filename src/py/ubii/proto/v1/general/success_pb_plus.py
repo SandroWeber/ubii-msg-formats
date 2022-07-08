@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -58,7 +58,7 @@ class SuccessList(Message):
             :obj:`~.Success`
     """
 
-    elements: Sequence[Success] = RepeatedField(
+    elements: MutableSequence[Success] = RepeatedField(
         MESSAGE,
         number=1,
         message=Success,

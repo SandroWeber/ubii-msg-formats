@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 from ubii.proto.v1.dataStructure.pose3d_pb_plus import (
@@ -80,7 +80,7 @@ class Object3DList(Message):
             :obj:`~.Object3D`
     """
 
-    elements: Sequence[Object3D] = RepeatedField(
+    elements: MutableSequence[Object3D] = RepeatedField(
         MESSAGE,
         number=1,
         message=Object3D,

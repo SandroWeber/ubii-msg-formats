@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -64,7 +64,7 @@ class Vector3List(Message):
             :obj:`~.Vector3`
     """
 
-    elements: Sequence[Vector3] = RepeatedField(
+    elements: MutableSequence[Vector3] = RepeatedField(
         MESSAGE,
         number=1,
         message=Vector3,

@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -76,7 +76,7 @@ class TopicMuxList(Message):
             :obj:`~.TopicMux`
     """
 
-    elements: Sequence[TopicMux] = RepeatedField(
+    elements: MutableSequence[TopicMux] = RepeatedField(
         MESSAGE,
         number=1,
         message=TopicMux,

@@ -24,7 +24,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -228,11 +228,11 @@ class ProcessingModule(Message):
         STRING,
         number=2,
     )
-    authors: Sequence[str] = RepeatedField(
+    authors: MutableSequence[str] = RepeatedField(
         STRING,
         number=3,
     )
-    tags: Sequence[str] = RepeatedField(
+    tags: MutableSequence[str] = RepeatedField(
         STRING,
         number=4,
     )
@@ -258,12 +258,12 @@ class ProcessingModule(Message):
         number=9,
         message=ProcessingMode,
     )
-    inputs: Sequence[ModuleIO] = RepeatedField(
+    inputs: MutableSequence[ModuleIO] = RepeatedField(
         MESSAGE,
         number=10,
         message=ModuleIO,
     )
-    outputs: Sequence[ModuleIO] = RepeatedField(
+    outputs: MutableSequence[ModuleIO] = RepeatedField(
         MESSAGE,
         number=11,
         message=ModuleIO,
@@ -298,7 +298,7 @@ class ProcessingModuleList(Message):
             :obj:`~.ProcessingModule`
     """
 
-    elements: Sequence[ProcessingModule] = RepeatedField(
+    elements: MutableSequence[ProcessingModule] = RepeatedField(
         MESSAGE,
         number=1,
         message=ProcessingModule,

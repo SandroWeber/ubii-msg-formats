@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -64,7 +64,7 @@ class ErrorList(Message):
             :obj:`~.Error`
     """
 
-    elements: Sequence[Error] = RepeatedField(
+    elements: MutableSequence[Error] = RepeatedField(
         MESSAGE,
         number=1,
         message=Error,

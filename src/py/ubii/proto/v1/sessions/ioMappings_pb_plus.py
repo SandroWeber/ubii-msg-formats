@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 from ubii.proto.v1.devices.topicDemux_pb_plus import (
@@ -88,7 +88,7 @@ class TopicInputMappingList(Message):
             :obj:`~.TopicInputMapping`
     """
 
-    elements: Sequence[TopicInputMapping] = RepeatedField(
+    elements: MutableSequence[TopicInputMapping] = RepeatedField(
         MESSAGE,
         number=1,
         message=TopicInputMapping,
@@ -140,7 +140,7 @@ class TopicOutputMappingList(Message):
             :obj:`~.TopicOutputMapping`
     """
 
-    elements: Sequence[TopicOutputMapping] = RepeatedField(
+    elements: MutableSequence[TopicOutputMapping] = RepeatedField(
         MESSAGE,
         number=1,
         message=TopicOutputMapping,
@@ -164,12 +164,12 @@ class IOMapping(Message):
         STRING,
         number=1,
     )
-    input_mappings: Sequence[TopicInputMapping] = RepeatedField(
+    input_mappings: MutableSequence[TopicInputMapping] = RepeatedField(
         MESSAGE,
         number=2,
         message=TopicInputMapping,
     )
-    output_mappings: Sequence[TopicOutputMapping] = RepeatedField(
+    output_mappings: MutableSequence[TopicOutputMapping] = RepeatedField(
         MESSAGE,
         number=3,
         message=TopicOutputMapping,
@@ -187,7 +187,7 @@ class IOMappingList(Message):
             :obj:`~.IOMapping`
     """
 
-    elements: Sequence[IOMapping] = RepeatedField(
+    elements: MutableSequence[IOMapping] = RepeatedField(
         MESSAGE,
         number=1,
         message=IOMapping,

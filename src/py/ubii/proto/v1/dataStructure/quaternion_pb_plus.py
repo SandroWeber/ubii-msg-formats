@@ -18,7 +18,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -70,7 +70,7 @@ class QuaternionList(Message):
             :obj:`~.Quaternion`
     """
 
-    elements: Sequence[Quaternion] = RepeatedField(
+    elements: MutableSequence[Quaternion] = RepeatedField(
         MESSAGE,
         number=1,
         message=Quaternion,

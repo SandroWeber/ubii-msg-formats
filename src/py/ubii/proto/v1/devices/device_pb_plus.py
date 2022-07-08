@@ -20,7 +20,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 from ubii.proto.v1.devices.component_pb_plus import (
@@ -73,7 +73,7 @@ class Device(Message):
         number=3,
         enum=DeviceType,
     )
-    components: Sequence[Component] = RepeatedField(
+    components: MutableSequence[Component] = RepeatedField(
         MESSAGE,
         number=4,
         message=Component,
@@ -82,7 +82,7 @@ class Device(Message):
         STRING,
         number=5,
     )
-    tags: Sequence[str] = RepeatedField(
+    tags: MutableSequence[str] = RepeatedField(
         STRING,
         number=6,
     )
@@ -99,7 +99,7 @@ class DeviceList(Message):
             :obj:`~.Device`
     """
 
-    elements: Sequence[Device] = RepeatedField(
+    elements: MutableSequence[Device] = RepeatedField(
         MESSAGE,
         number=1,
         message=Device,

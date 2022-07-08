@@ -20,7 +20,7 @@ from proto.message import (
 )
 
 from typing import (
-    Sequence,
+    MutableSequence,
 )
 
 
@@ -75,7 +75,7 @@ class Component(Message):
         STRING,
         number=4,
     )
-    tags: Sequence[str] = RepeatedField(
+    tags: MutableSequence[str] = RepeatedField(
         STRING,
         number=5,
     )
@@ -100,7 +100,7 @@ class ComponentList(Message):
             :obj:`~.Component`
     """
 
-    elements: Sequence[Component] = RepeatedField(
+    elements: MutableSequence[Component] = RepeatedField(
         MESSAGE,
         number=1,
         message=Component,
