@@ -263,7 +263,8 @@ class ProtoMeta(ABCMeta, proto.message.MessageMeta):
         assert cls not in mcs.__additional_attributes
         mcs.__additional_attributes[cls] = attrs
 
-        cls = cls._fix_docstring(parent)
+        if issubclass(parent, proto.message.MessageMeta):
+            cls = cls._fix_docstring(parent)
         return cls
 
     def __dir__(cls) -> Iterable[str]:
