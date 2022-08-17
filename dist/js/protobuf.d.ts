@@ -4914,6 +4914,9 @@ export namespace ubii {
 
             /** ProcessingMode triggerOnInput */
             triggerOnInput?: (ubii.processing.ProcessingMode.ITriggerOnInput|null);
+
+            /** ProcessingMode free */
+            free?: (ubii.processing.ProcessingMode.IFree|null);
         }
 
         /** Represents a ProcessingMode. */
@@ -4934,8 +4937,11 @@ export namespace ubii {
             /** ProcessingMode triggerOnInput. */
             public triggerOnInput?: (ubii.processing.ProcessingMode.ITriggerOnInput|null);
 
+            /** ProcessingMode free. */
+            public free?: (ubii.processing.ProcessingMode.IFree|null);
+
             /** ProcessingMode mode. */
-            public mode?: ("frequency"|"lockstep"|"triggerOnInput");
+            public mode?: ("frequency"|"lockstep"|"triggerOnInput"|"free");
 
             /**
              * Creates a new ProcessingMode instance using the specified properties.
@@ -5285,6 +5291,90 @@ export namespace ubii {
                  */
                 public toJSON(): { [k: string]: any };
             }
+
+            /** Properties of a Free. */
+            interface IFree {
+            }
+
+            /** Represents a Free. */
+            class Free implements IFree {
+
+                /**
+                 * Constructs a new Free.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: ubii.processing.ProcessingMode.IFree);
+
+                /**
+                 * Creates a new Free instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns Free instance
+                 */
+                public static create(properties?: ubii.processing.ProcessingMode.IFree): ubii.processing.ProcessingMode.Free;
+
+                /**
+                 * Encodes the specified Free message. Does not implicitly {@link ubii.processing.ProcessingMode.Free.verify|verify} messages.
+                 * @param message Free message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: ubii.processing.ProcessingMode.IFree, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified Free message, length delimited. Does not implicitly {@link ubii.processing.ProcessingMode.Free.verify|verify} messages.
+                 * @param message Free message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: ubii.processing.ProcessingMode.IFree, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a Free message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns Free
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ubii.processing.ProcessingMode.Free;
+
+                /**
+                 * Decodes a Free message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns Free
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ubii.processing.ProcessingMode.Free;
+
+                /**
+                 * Verifies a Free message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a Free message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns Free
+                 */
+                public static fromObject(object: { [k: string]: any }): ubii.processing.ProcessingMode.Free;
+
+                /**
+                 * Creates a plain object from a Free message. Also converts values to other types if specified.
+                 * @param message Free
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: ubii.processing.ProcessingMode.Free, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this Free to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
         }
 
         /** Properties of a ModuleIO. */
@@ -5295,6 +5385,9 @@ export namespace ubii {
 
             /** ModuleIO messageFormat */
             messageFormat?: (string|null);
+
+            /** ModuleIO isRecordList */
+            isRecordList?: (boolean|null);
         }
 
         /** Represents a ModuleIO. */
@@ -5311,6 +5404,9 @@ export namespace ubii {
 
             /** ModuleIO messageFormat. */
             public messageFormat: string;
+
+            /** ModuleIO isRecordList. */
+            public isRecordList: boolean;
 
             /**
              * Creates a new ModuleIO instance using the specified properties.
@@ -6231,6 +6327,12 @@ export namespace ubii {
 
             /** ServiceReply lockstepProcessingReply */
             lockstepProcessingReply?: (ubii.processing.ILockstepProcessingReply|null);
+
+            /** ServiceReply component */
+            component?: (ubii.devices.IComponent|null);
+
+            /** ServiceReply componentList */
+            componentList?: (ubii.devices.IComponentList|null);
         }
 
         /** Represents a ServiceReply. */
@@ -6299,8 +6401,14 @@ export namespace ubii {
             /** ServiceReply lockstepProcessingReply. */
             public lockstepProcessingReply?: (ubii.processing.ILockstepProcessingReply|null);
 
+            /** ServiceReply component. */
+            public component?: (ubii.devices.IComponent|null);
+
+            /** ServiceReply componentList. */
+            public componentList?: (ubii.devices.IComponentList|null);
+
             /** ServiceReply type. */
-            public type?: ("success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply");
+            public type?: ("success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList");
 
             /**
              * Creates a new ServiceReply instance using the specified properties.
@@ -6420,6 +6528,12 @@ export namespace ubii {
 
             /** ServiceRequest lockstepProcessingRequest */
             lockstepProcessingRequest?: (ubii.processing.ILockstepProcessingRequest|null);
+
+            /** ServiceRequest component */
+            component?: (ubii.devices.IComponent|null);
+
+            /** ServiceRequest componentList */
+            componentList?: (ubii.devices.IComponentList|null);
         }
 
         /** Represents a ServiceRequest. */
@@ -6476,8 +6590,14 @@ export namespace ubii {
             /** ServiceRequest lockstepProcessingRequest. */
             public lockstepProcessingRequest?: (ubii.processing.ILockstepProcessingRequest|null);
 
+            /** ServiceRequest component. */
+            public component?: (ubii.devices.IComponent|null);
+
+            /** ServiceRequest componentList. */
+            public componentList?: (ubii.devices.IComponentList|null);
+
             /** ServiceRequest type. */
-            public type?: ("client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest");
+            public type?: ("client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList");
 
             /**
              * Creates a new ServiceRequest instance using the specified properties.

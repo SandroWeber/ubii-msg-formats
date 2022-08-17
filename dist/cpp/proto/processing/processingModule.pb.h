@@ -39,7 +39,7 @@ namespace protobuf_proto_2fprocessing_2fprocessingModule_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[7];
+  static const ::google::protobuf::internal::ParseTable schema[8];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -54,6 +54,9 @@ extern ModuleIODefaultTypeInternal _ModuleIO_default_instance_;
 class ProcessingMode;
 class ProcessingModeDefaultTypeInternal;
 extern ProcessingModeDefaultTypeInternal _ProcessingMode_default_instance_;
+class ProcessingMode_Free;
+class ProcessingMode_FreeDefaultTypeInternal;
+extern ProcessingMode_FreeDefaultTypeInternal _ProcessingMode_Free_default_instance_;
 class ProcessingMode_Frequency;
 class ProcessingMode_FrequencyDefaultTypeInternal;
 extern ProcessingMode_FrequencyDefaultTypeInternal _ProcessingMode_Frequency_default_instance_;
@@ -75,6 +78,7 @@ namespace google {
 namespace protobuf {
 template<> ::ubii::processing::ModuleIO* Arena::CreateMaybeMessage<::ubii::processing::ModuleIO>(Arena*);
 template<> ::ubii::processing::ProcessingMode* Arena::CreateMaybeMessage<::ubii::processing::ProcessingMode>(Arena*);
+template<> ::ubii::processing::ProcessingMode_Free* Arena::CreateMaybeMessage<::ubii::processing::ProcessingMode_Free>(Arena*);
 template<> ::ubii::processing::ProcessingMode_Frequency* Arena::CreateMaybeMessage<::ubii::processing::ProcessingMode_Frequency>(Arena*);
 template<> ::ubii::processing::ProcessingMode_Lockstep* Arena::CreateMaybeMessage<::ubii::processing::ProcessingMode_Lockstep>(Arena*);
 template<> ::ubii::processing::ProcessingMode_TriggerOnInput* Arena::CreateMaybeMessage<::ubii::processing::ProcessingMode_TriggerOnInput>(Arena*);
@@ -459,6 +463,102 @@ class ProcessingMode_TriggerOnInput : public ::google::protobuf::Message /* @@pr
 };
 // -------------------------------------------------------------------
 
+class ProcessingMode_Free : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.processing.ProcessingMode.Free) */ {
+ public:
+  ProcessingMode_Free();
+  virtual ~ProcessingMode_Free();
+
+  ProcessingMode_Free(const ProcessingMode_Free& from);
+
+  inline ProcessingMode_Free& operator=(const ProcessingMode_Free& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ProcessingMode_Free(ProcessingMode_Free&& from) noexcept
+    : ProcessingMode_Free() {
+    *this = ::std::move(from);
+  }
+
+  inline ProcessingMode_Free& operator=(ProcessingMode_Free&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ProcessingMode_Free& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ProcessingMode_Free* internal_default_instance() {
+    return reinterpret_cast<const ProcessingMode_Free*>(
+               &_ProcessingMode_Free_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(ProcessingMode_Free* other);
+  friend void swap(ProcessingMode_Free& a, ProcessingMode_Free& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ProcessingMode_Free* New() const final {
+    return CreateMaybeMessage<ProcessingMode_Free>(NULL);
+  }
+
+  ProcessingMode_Free* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ProcessingMode_Free>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ProcessingMode_Free& from);
+  void MergeFrom(const ProcessingMode_Free& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ProcessingMode_Free* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:ubii.processing.ProcessingMode.Free)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_proto_2fprocessing_2fprocessingModule_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class ProcessingMode : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ubii.processing.ProcessingMode) */ {
  public:
   ProcessingMode();
@@ -492,6 +592,7 @@ class ProcessingMode : public ::google::protobuf::Message /* @@protoc_insertion_
     kFrequency = 1,
     kLockstep = 2,
     kTriggerOnInput = 3,
+    kFree = 4,
     MODE_NOT_SET = 0,
   };
 
@@ -501,7 +602,7 @@ class ProcessingMode : public ::google::protobuf::Message /* @@protoc_insertion_
                &_ProcessingMode_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(ProcessingMode* other);
   friend void swap(ProcessingMode& a, ProcessingMode& b) {
@@ -554,6 +655,7 @@ class ProcessingMode : public ::google::protobuf::Message /* @@protoc_insertion_
   typedef ProcessingMode_Frequency Frequency;
   typedef ProcessingMode_Lockstep Lockstep;
   typedef ProcessingMode_TriggerOnInput TriggerOnInput;
+  typedef ProcessingMode_Free Free;
 
   // accessors -------------------------------------------------------
 
@@ -593,6 +695,18 @@ class ProcessingMode : public ::google::protobuf::Message /* @@protoc_insertion_
   ::ubii::processing::ProcessingMode_TriggerOnInput* mutable_trigger_on_input();
   void set_allocated_trigger_on_input(::ubii::processing::ProcessingMode_TriggerOnInput* trigger_on_input);
 
+  // .ubii.processing.ProcessingMode.Free free = 4;
+  bool has_free() const;
+  void clear_free();
+  static const int kFreeFieldNumber = 4;
+  private:
+  const ::ubii::processing::ProcessingMode_Free& _internal_free() const;
+  public:
+  const ::ubii::processing::ProcessingMode_Free& free() const;
+  ::ubii::processing::ProcessingMode_Free* release_free();
+  ::ubii::processing::ProcessingMode_Free* mutable_free();
+  void set_allocated_free(::ubii::processing::ProcessingMode_Free* free);
+
   void clear_mode();
   ModeCase mode_case() const;
   // @@protoc_insertion_point(class_scope:ubii.processing.ProcessingMode)
@@ -600,6 +714,7 @@ class ProcessingMode : public ::google::protobuf::Message /* @@protoc_insertion_
   void set_has_frequency();
   void set_has_lockstep();
   void set_has_trigger_on_input();
+  void set_has_free();
 
   inline bool has_mode() const;
   inline void clear_has_mode();
@@ -610,6 +725,7 @@ class ProcessingMode : public ::google::protobuf::Message /* @@protoc_insertion_
     ::ubii::processing::ProcessingMode_Frequency* frequency_;
     ::ubii::processing::ProcessingMode_Lockstep* lockstep_;
     ::ubii::processing::ProcessingMode_TriggerOnInput* trigger_on_input_;
+    ::ubii::processing::ProcessingMode_Free* free_;
   } mode_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -653,7 +769,7 @@ class ModuleIO : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_ModuleIO_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(ModuleIO* other);
   friend void swap(ModuleIO& a, ModuleIO& b) {
@@ -733,12 +849,19 @@ class ModuleIO : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_message_format();
   void set_allocated_message_format(::std::string* message_format);
 
+  // bool is_record_list = 3;
+  void clear_is_record_list();
+  static const int kIsRecordListFieldNumber = 3;
+  bool is_record_list() const;
+  void set_is_record_list(bool value);
+
   // @@protoc_insertion_point(class_scope:ubii.processing.ModuleIO)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr internal_name_;
   ::google::protobuf::internal::ArenaStringPtr message_format_;
+  bool is_record_list_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fprocessing_2fprocessingModule_2eproto::TableStruct;
 };
@@ -779,7 +902,7 @@ class ProcessingModule : public ::google::protobuf::Message /* @@protoc_insertio
                &_ProcessingModule_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(ProcessingModule* other);
   friend void swap(ProcessingModule& a, ProcessingModule& b) {
@@ -1173,7 +1296,7 @@ class ProcessingModuleList : public ::google::protobuf::Message /* @@protoc_inse
                &_ProcessingModuleList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(ProcessingModuleList* other);
   friend void swap(ProcessingModuleList& a, ProcessingModuleList& b) {
@@ -1361,6 +1484,10 @@ inline void ProcessingMode_TriggerOnInput::set_all_inputs_need_update(bool value
 
 // -------------------------------------------------------------------
 
+// ProcessingMode_Free
+
+// -------------------------------------------------------------------
+
 // ProcessingMode
 
 // .ubii.processing.ProcessingMode.Frequency frequency = 1;
@@ -1495,6 +1622,50 @@ inline ::ubii::processing::ProcessingMode_TriggerOnInput* ProcessingMode::mutabl
   return mode_.trigger_on_input_;
 }
 
+// .ubii.processing.ProcessingMode.Free free = 4;
+inline bool ProcessingMode::has_free() const {
+  return mode_case() == kFree;
+}
+inline void ProcessingMode::set_has_free() {
+  _oneof_case_[0] = kFree;
+}
+inline void ProcessingMode::clear_free() {
+  if (has_free()) {
+    delete mode_.free_;
+    clear_has_mode();
+  }
+}
+inline const ::ubii::processing::ProcessingMode_Free& ProcessingMode::_internal_free() const {
+  return *mode_.free_;
+}
+inline ::ubii::processing::ProcessingMode_Free* ProcessingMode::release_free() {
+  // @@protoc_insertion_point(field_release:ubii.processing.ProcessingMode.free)
+  if (has_free()) {
+    clear_has_mode();
+      ::ubii::processing::ProcessingMode_Free* temp = mode_.free_;
+    mode_.free_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::processing::ProcessingMode_Free& ProcessingMode::free() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ProcessingMode.free)
+  return has_free()
+      ? *mode_.free_
+      : *reinterpret_cast< ::ubii::processing::ProcessingMode_Free*>(&::ubii::processing::_ProcessingMode_Free_default_instance_);
+}
+inline ::ubii::processing::ProcessingMode_Free* ProcessingMode::mutable_free() {
+  if (!has_free()) {
+    clear_mode();
+    set_has_free();
+    mode_.free_ = CreateMaybeMessage< ::ubii::processing::ProcessingMode_Free >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.processing.ProcessingMode.free)
+  return mode_.free_;
+}
+
 inline bool ProcessingMode::has_mode() const {
   return mode_case() != MODE_NOT_SET;
 }
@@ -1612,6 +1783,20 @@ inline void ModuleIO::set_allocated_message_format(::std::string* message_format
   }
   message_format_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message_format);
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ModuleIO.message_format)
+}
+
+// bool is_record_list = 3;
+inline void ModuleIO::clear_is_record_list() {
+  is_record_list_ = false;
+}
+inline bool ModuleIO::is_record_list() const {
+  // @@protoc_insertion_point(field_get:ubii.processing.ModuleIO.is_record_list)
+  return is_record_list_;
+}
+inline void ModuleIO::set_is_record_list(bool value) {
+  
+  is_record_list_ = value;
+  // @@protoc_insertion_point(field_set:ubii.processing.ModuleIO.is_record_list)
 }
 
 // -------------------------------------------------------------------
@@ -2412,6 +2597,8 @@ ProcessingModuleList::elements() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

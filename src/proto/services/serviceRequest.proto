@@ -2,6 +2,7 @@ syntax = "proto3";
 package ubii.services;
 
 import "proto/clients/client.proto";
+import "proto/devices/component.proto";
 import "proto/devices/device.proto";
 import "proto/devices/topicMux.proto";
 import "proto/devices/topicDemux.proto";
@@ -27,5 +28,7 @@ message ServiceRequest {
         ubii.clients.ClientList client_list = 13;
         ubii.devices.DeviceList device_list = 14;
         ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
+        ubii.devices.Component component = 16;
+        ubii.devices.ComponentList component_list = 17;
     }
 }

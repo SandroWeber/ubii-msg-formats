@@ -21,11 +21,12 @@
 
 namespace protobuf_proto_2fprocessing_2fprocessingModule_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ModuleIO;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProcessingMode_Free;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProcessingMode_Frequency;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProcessingMode_Lockstep;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProcessingMode_TriggerOnInput;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ProcessingModule;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_ProcessingMode;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_ProcessingMode;
 }  // namespace protobuf_proto_2fprocessing_2fprocessingModule_2eproto
 namespace ubii {
 namespace processing {
@@ -44,6 +45,11 @@ class ProcessingMode_TriggerOnInputDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<ProcessingMode_TriggerOnInput>
       _instance;
 } _ProcessingMode_TriggerOnInput_default_instance_;
+class ProcessingMode_FreeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<ProcessingMode_Free>
+      _instance;
+} _ProcessingMode_Free_default_instance_;
 class ProcessingModeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ProcessingMode>
@@ -51,6 +57,7 @@ class ProcessingModeDefaultTypeInternal {
   const ::ubii::processing::ProcessingMode_Frequency* frequency_;
   const ::ubii::processing::ProcessingMode_Lockstep* lockstep_;
   const ::ubii::processing::ProcessingMode_TriggerOnInput* trigger_on_input_;
+  const ::ubii::processing::ProcessingMode_Free* free_;
 } _ProcessingMode_default_instance_;
 class ModuleIODefaultTypeInternal {
  public:
@@ -112,6 +119,20 @@ static void InitDefaultsProcessingMode_TriggerOnInput() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_ProcessingMode_TriggerOnInput =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProcessingMode_TriggerOnInput}, {}};
 
+static void InitDefaultsProcessingMode_Free() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::ubii::processing::_ProcessingMode_Free_default_instance_;
+    new (ptr) ::ubii::processing::ProcessingMode_Free();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::ubii::processing::ProcessingMode_Free::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_ProcessingMode_Free =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProcessingMode_Free}, {}};
+
 static void InitDefaultsProcessingMode() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -123,11 +144,12 @@ static void InitDefaultsProcessingMode() {
   ::ubii::processing::ProcessingMode::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_ProcessingMode =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsProcessingMode}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_ProcessingMode =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsProcessingMode}, {
       &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingMode_Frequency.base,
       &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingMode_Lockstep.base,
-      &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingMode_TriggerOnInput.base,}};
+      &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingMode_TriggerOnInput.base,
+      &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingMode_Free.base,}};
 
 static void InitDefaultsModuleIO() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -178,13 +200,14 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ProcessingMode_Frequency.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProcessingMode_Lockstep.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProcessingMode_TriggerOnInput.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ProcessingMode_Free.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProcessingMode.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ModuleIO.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProcessingModule.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProcessingModuleList.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[7];
+::google::protobuf::Metadata file_level_metadata[8];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -208,6 +231,11 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ProcessingMode_TriggerOnInput, min_delay_ms_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ProcessingMode_TriggerOnInput, all_inputs_need_update_),
   ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ProcessingMode_Free, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ProcessingMode, _internal_metadata_),
   ~0u,  // no _extensions_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ProcessingMode, _oneof_case_[0]),
@@ -215,6 +243,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::processing::ProcessingModeDefaultTypeInternal, frequency_),
   offsetof(::ubii::processing::ProcessingModeDefaultTypeInternal, lockstep_),
   offsetof(::ubii::processing::ProcessingModeDefaultTypeInternal, trigger_on_input_),
+  offsetof(::ubii::processing::ProcessingModeDefaultTypeInternal, free_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ProcessingMode, mode_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ModuleIO, _internal_metadata_),
@@ -223,6 +252,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ModuleIO, internal_name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ModuleIO, message_format_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ModuleIO, is_record_list_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::processing::ProcessingModule, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -255,16 +285,18 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 0, -1, sizeof(::ubii::processing::ProcessingMode_Frequency)},
   { 6, -1, sizeof(::ubii::processing::ProcessingMode_Lockstep)},
   { 12, -1, sizeof(::ubii::processing::ProcessingMode_TriggerOnInput)},
-  { 19, -1, sizeof(::ubii::processing::ProcessingMode)},
-  { 28, -1, sizeof(::ubii::processing::ModuleIO)},
-  { 35, -1, sizeof(::ubii::processing::ProcessingModule)},
-  { 56, -1, sizeof(::ubii::processing::ProcessingModuleList)},
+  { 19, -1, sizeof(::ubii::processing::ProcessingMode_Free)},
+  { 24, -1, sizeof(::ubii::processing::ProcessingMode)},
+  { 34, -1, sizeof(::ubii::processing::ModuleIO)},
+  { 42, -1, sizeof(::ubii::processing::ProcessingModule)},
+  { 63, -1, sizeof(::ubii::processing::ProcessingModuleList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::processing::_ProcessingMode_Frequency_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::processing::_ProcessingMode_Lockstep_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::processing::_ProcessingMode_TriggerOnInput_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::processing::_ProcessingMode_Free_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::processing::_ProcessingMode_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::processing::_ModuleIO_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::processing::_ProcessingModule_default_instance_),
@@ -286,47 +318,49 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 7);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 8);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\'proto/processing/processingModule.prot"
-      "o\022\017ubii.processing\"\364\002\n\016ProcessingMode\022>\n"
+      "o\022\017ubii.processing\"\262\003\n\016ProcessingMode\022>\n"
       "\tfrequency\030\001 \001(\0132).ubii.processing.Proce"
       "ssingMode.FrequencyH\000\022<\n\010lockstep\030\002 \001(\0132"
       "(.ubii.processing.ProcessingMode.Lockste"
       "pH\000\022J\n\020trigger_on_input\030\003 \001(\0132..ubii.pro"
-      "cessing.ProcessingMode.TriggerOnInputH\000\032"
-      "\032\n\tFrequency\022\r\n\005hertz\030\001 \001(\005\032,\n\010Lockstep\022"
-      " \n\030process_request_endpoint\030\001 \001(\t\032F\n\016Tri"
-      "ggerOnInput\022\024\n\014min_delay_ms\030\001 \001(\005\022\036\n\026all"
-      "_inputs_need_update\030\002 \001(\010B\006\n\004mode\"9\n\010Mod"
-      "uleIO\022\025\n\rinternal_name\030\001 \001(\t\022\026\n\016message_"
-      "format\030\002 \001(\t\"\234\005\n\020ProcessingModule\022\n\n\002id\030"
-      "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003(\t\022\014\n\004"
-      "tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007node_"
-      "id\030\006 \001(\t\022\022\n\nsession_id\030\007 \001(\t\0228\n\006status\030\010"
-      " \001(\0162(.ubii.processing.ProcessingModule."
-      "Status\0228\n\017processing_mode\030\t \001(\0132\037.ubii.p"
-      "rocessing.ProcessingMode\022)\n\006inputs\030\n \003(\013"
-      "2\031.ubii.processing.ModuleIO\022*\n\007outputs\030\013"
-      " \003(\0132\031.ubii.processing.ModuleIO\022<\n\010langu"
-      "age\030\014 \001(\0162*.ubii.processing.ProcessingMo"
-      "dule.Language\022!\n\031on_processing_stringifi"
-      "ed\030\r \001(\t\022\036\n\026on_created_stringified\030\016 \001(\t"
-      "\022\035\n\025on_halted_stringified\030\017 \001(\t\022 \n\030on_de"
-      "stroyed_stringified\030\020 \001(\t\"Q\n\006Status\022\017\n\013I"
-      "NITIALIZED\020\000\022\013\n\007CREATED\020\001\022\016\n\nPROCESSING\020"
-      "\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED\020\004\"5\n\010Language"
-      "\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022\006\n\002CS\020\003\022\010\n\004JAV"
-      "A\020\004\"K\n\024ProcessingModuleList\0223\n\010elements\030"
-      "\001 \003(\0132!.ubii.processing.ProcessingModule"
-      "b\006proto3"
+      "cessing.ProcessingMode.TriggerOnInputH\000\022"
+      "4\n\004free\030\004 \001(\0132$.ubii.processing.Processi"
+      "ngMode.FreeH\000\032\032\n\tFrequency\022\r\n\005hertz\030\001 \001("
+      "\005\032,\n\010Lockstep\022 \n\030process_request_endpoin"
+      "t\030\001 \001(\t\032F\n\016TriggerOnInput\022\024\n\014min_delay_m"
+      "s\030\001 \001(\005\022\036\n\026all_inputs_need_update\030\002 \001(\010\032"
+      "\006\n\004FreeB\006\n\004mode\"Q\n\010ModuleIO\022\025\n\rinternal_"
+      "name\030\001 \001(\t\022\026\n\016message_format\030\002 \001(\t\022\026\n\016is"
+      "_record_list\030\003 \001(\010\"\234\005\n\020ProcessingModule\022"
+      "\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007authors\030\003 \003"
+      "(\t\022\014\n\004tags\030\004 \003(\t\022\023\n\013description\030\005 \001(\t\022\017\n"
+      "\007node_id\030\006 \001(\t\022\022\n\nsession_id\030\007 \001(\t\0228\n\006st"
+      "atus\030\010 \001(\0162(.ubii.processing.ProcessingM"
+      "odule.Status\0228\n\017processing_mode\030\t \001(\0132\037."
+      "ubii.processing.ProcessingMode\022)\n\006inputs"
+      "\030\n \003(\0132\031.ubii.processing.ModuleIO\022*\n\007out"
+      "puts\030\013 \003(\0132\031.ubii.processing.ModuleIO\022<\n"
+      "\010language\030\014 \001(\0162*.ubii.processing.Proces"
+      "singModule.Language\022!\n\031on_processing_str"
+      "ingified\030\r \001(\t\022\036\n\026on_created_stringified"
+      "\030\016 \001(\t\022\035\n\025on_halted_stringified\030\017 \001(\t\022 \n"
+      "\030on_destroyed_stringified\030\020 \001(\t\"Q\n\006Statu"
+      "s\022\017\n\013INITIALIZED\020\000\022\013\n\007CREATED\020\001\022\016\n\nPROCE"
+      "SSING\020\002\022\n\n\006HALTED\020\003\022\r\n\tDESTROYED\020\004\"5\n\010La"
+      "nguage\022\007\n\003CPP\020\000\022\006\n\002PY\020\001\022\006\n\002JS\020\002\022\006\n\002CS\020\003\022"
+      "\010\n\004JAVA\020\004\"K\n\024ProcessingModuleList\0223\n\010ele"
+      "ments\030\001 \003(\0132!.ubii.processing.Processing"
+      "Moduleb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1248);
+      descriptor, 1334);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/processing/processingModule.proto", &protobuf_RegisterTypes);
 }
@@ -1129,6 +1163,185 @@ void ProcessingMode_TriggerOnInput::InternalSwap(ProcessingMode_TriggerOnInput* 
 
 // ===================================================================
 
+void ProcessingMode_Free::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ProcessingMode_Free::ProcessingMode_Free()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingMode_Free.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ubii.processing.ProcessingMode.Free)
+}
+ProcessingMode_Free::ProcessingMode_Free(const ProcessingMode_Free& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:ubii.processing.ProcessingMode.Free)
+}
+
+void ProcessingMode_Free::SharedCtor() {
+}
+
+ProcessingMode_Free::~ProcessingMode_Free() {
+  // @@protoc_insertion_point(destructor:ubii.processing.ProcessingMode.Free)
+  SharedDtor();
+}
+
+void ProcessingMode_Free::SharedDtor() {
+}
+
+void ProcessingMode_Free::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* ProcessingMode_Free::descriptor() {
+  ::protobuf_proto_2fprocessing_2fprocessingModule_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2fprocessing_2fprocessingModule_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const ProcessingMode_Free& ProcessingMode_Free::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingMode_Free.base);
+  return *internal_default_instance();
+}
+
+
+void ProcessingMode_Free::Clear() {
+// @@protoc_insertion_point(message_clear_start:ubii.processing.ProcessingMode.Free)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+bool ProcessingMode_Free::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ubii.processing.ProcessingMode.Free)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ubii.processing.ProcessingMode.Free)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ubii.processing.ProcessingMode.Free)
+  return false;
+#undef DO_
+}
+
+void ProcessingMode_Free::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ubii.processing.ProcessingMode.Free)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:ubii.processing.ProcessingMode.Free)
+}
+
+::google::protobuf::uint8* ProcessingMode_Free::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:ubii.processing.ProcessingMode.Free)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:ubii.processing.ProcessingMode.Free)
+  return target;
+}
+
+size_t ProcessingMode_Free::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ubii.processing.ProcessingMode.Free)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ProcessingMode_Free::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:ubii.processing.ProcessingMode.Free)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ProcessingMode_Free* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const ProcessingMode_Free>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.processing.ProcessingMode.Free)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.processing.ProcessingMode.Free)
+    MergeFrom(*source);
+  }
+}
+
+void ProcessingMode_Free::MergeFrom(const ProcessingMode_Free& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ubii.processing.ProcessingMode.Free)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void ProcessingMode_Free::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:ubii.processing.ProcessingMode.Free)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ProcessingMode_Free::CopyFrom(const ProcessingMode_Free& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ubii.processing.ProcessingMode.Free)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ProcessingMode_Free::IsInitialized() const {
+  return true;
+}
+
+void ProcessingMode_Free::Swap(ProcessingMode_Free* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ProcessingMode_Free::InternalSwap(ProcessingMode_Free* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata ProcessingMode_Free::GetMetadata() const {
+  protobuf_proto_2fprocessing_2fprocessingModule_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_proto_2fprocessing_2fprocessingModule_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void ProcessingMode::InitAsDefaultInstance() {
   ::ubii::processing::_ProcessingMode_default_instance_.frequency_ = const_cast< ::ubii::processing::ProcessingMode_Frequency*>(
       ::ubii::processing::ProcessingMode_Frequency::internal_default_instance());
@@ -1136,6 +1349,8 @@ void ProcessingMode::InitAsDefaultInstance() {
       ::ubii::processing::ProcessingMode_Lockstep::internal_default_instance());
   ::ubii::processing::_ProcessingMode_default_instance_.trigger_on_input_ = const_cast< ::ubii::processing::ProcessingMode_TriggerOnInput*>(
       ::ubii::processing::ProcessingMode_TriggerOnInput::internal_default_instance());
+  ::ubii::processing::_ProcessingMode_default_instance_.free_ = const_cast< ::ubii::processing::ProcessingMode_Free*>(
+      ::ubii::processing::ProcessingMode_Free::internal_default_instance());
 }
 void ProcessingMode::set_allocated_frequency(::ubii::processing::ProcessingMode_Frequency* frequency) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -1179,10 +1394,25 @@ void ProcessingMode::set_allocated_trigger_on_input(::ubii::processing::Processi
   }
   // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingMode.trigger_on_input)
 }
+void ProcessingMode::set_allocated_free(::ubii::processing::ProcessingMode_Free* free) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_mode();
+  if (free) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      free = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, free, submessage_arena);
+    }
+    set_has_free();
+    mode_.free_ = free;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.processing.ProcessingMode.free)
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProcessingMode::kFrequencyFieldNumber;
 const int ProcessingMode::kLockstepFieldNumber;
 const int ProcessingMode::kTriggerOnInputFieldNumber;
+const int ProcessingMode::kFreeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ProcessingMode::ProcessingMode()
@@ -1208,6 +1438,10 @@ ProcessingMode::ProcessingMode(const ProcessingMode& from)
     }
     case kTriggerOnInput: {
       mutable_trigger_on_input()->::ubii::processing::ProcessingMode_TriggerOnInput::MergeFrom(from.trigger_on_input());
+      break;
+    }
+    case kFree: {
+      mutable_free()->::ubii::processing::ProcessingMode_Free::MergeFrom(from.free());
       break;
     }
     case MODE_NOT_SET: {
@@ -1259,6 +1493,10 @@ void ProcessingMode::clear_mode() {
     }
     case kTriggerOnInput: {
       delete mode_.trigger_on_input_;
+      break;
+    }
+    case kFree: {
+      delete mode_.free_;
       break;
     }
     case MODE_NOT_SET: {
@@ -1325,6 +1563,18 @@ bool ProcessingMode::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.processing.ProcessingMode.Free free = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_free()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1369,6 +1619,12 @@ void ProcessingMode::SerializeWithCachedSizes(
       3, this->_internal_trigger_on_input(), output);
   }
 
+  // .ubii.processing.ProcessingMode.Free free = 4;
+  if (has_free()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->_internal_free(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -1402,6 +1658,13 @@ void ProcessingMode::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         3, this->_internal_trigger_on_input(), deterministic, target);
+  }
+
+  // .ubii.processing.ProcessingMode.Free free = 4;
+  if (has_free()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->_internal_free(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1441,6 +1704,13 @@ size_t ProcessingMode::ByteSizeLong() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           *mode_.trigger_on_input_);
+      break;
+    }
+    // .ubii.processing.ProcessingMode.Free free = 4;
+    case kFree: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *mode_.free_);
       break;
     }
     case MODE_NOT_SET: {
@@ -1485,6 +1755,10 @@ void ProcessingMode::MergeFrom(const ProcessingMode& from) {
     }
     case kTriggerOnInput: {
       mutable_trigger_on_input()->::ubii::processing::ProcessingMode_TriggerOnInput::MergeFrom(from.trigger_on_input());
+      break;
+    }
+    case kFree: {
+      mutable_free()->::ubii::processing::ProcessingMode_Free::MergeFrom(from.free());
       break;
     }
     case MODE_NOT_SET: {
@@ -1535,6 +1809,7 @@ void ModuleIO::InitAsDefaultInstance() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ModuleIO::kInternalNameFieldNumber;
 const int ModuleIO::kMessageFormatFieldNumber;
+const int ModuleIO::kIsRecordListFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ModuleIO::ModuleIO()
@@ -1556,12 +1831,14 @@ ModuleIO::ModuleIO(const ModuleIO& from)
   if (from.message_format().size() > 0) {
     message_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_format_);
   }
+  is_record_list_ = from.is_record_list_;
   // @@protoc_insertion_point(copy_constructor:ubii.processing.ModuleIO)
 }
 
 void ModuleIO::SharedCtor() {
   internal_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  is_record_list_ = false;
 }
 
 ModuleIO::~ModuleIO() {
@@ -1596,6 +1873,7 @@ void ModuleIO::Clear() {
 
   internal_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  is_record_list_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -1635,6 +1913,20 @@ bool ModuleIO::MergePartialFromCodedStream(
             this->message_format().data(), static_cast<int>(this->message_format().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "ubii.processing.ModuleIO.message_format"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bool is_record_list = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_record_list_)));
         } else {
           goto handle_unusual;
         }
@@ -1687,6 +1979,11 @@ void ModuleIO::SerializeWithCachedSizes(
       2, this->message_format(), output);
   }
 
+  // bool is_record_list = 3;
+  if (this->is_record_list() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->is_record_list(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -1723,6 +2020,11 @@ void ModuleIO::SerializeWithCachedSizes(
         2, this->message_format(), target);
   }
 
+  // bool is_record_list = 3;
+  if (this->is_record_list() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->is_record_list(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -1752,6 +2054,11 @@ size_t ModuleIO::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->message_format());
+  }
+
+  // bool is_record_list = 3;
+  if (this->is_record_list() != 0) {
+    total_size += 1 + 1;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1789,6 +2096,9 @@ void ModuleIO::MergeFrom(const ModuleIO& from) {
 
     message_format_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_format_);
   }
+  if (from.is_record_list() != 0) {
+    set_is_record_list(from.is_record_list());
+  }
 }
 
 void ModuleIO::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1819,6 +2129,7 @@ void ModuleIO::InternalSwap(ModuleIO* other) {
     GetArenaNoVirtual());
   message_format_.Swap(&other->message_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(is_record_list_, other->is_record_list_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
@@ -3100,6 +3411,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::processing::ProcessingMode
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::processing::ProcessingMode_TriggerOnInput* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingMode_TriggerOnInput >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::processing::ProcessingMode_TriggerOnInput >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::processing::ProcessingMode_Free* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingMode_Free >(Arena* arena) {
+  return Arena::CreateInternal< ::ubii::processing::ProcessingMode_Free >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::processing::ProcessingMode* Arena::CreateMaybeMessage< ::ubii::processing::ProcessingMode >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::processing::ProcessingMode >(arena);

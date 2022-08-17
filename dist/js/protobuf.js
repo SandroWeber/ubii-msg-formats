@@ -12053,6 +12053,7 @@ $root.ubii = (function() {
              * @property {ubii.processing.ProcessingMode.IFrequency|null} [frequency] ProcessingMode frequency
              * @property {ubii.processing.ProcessingMode.ILockstep|null} [lockstep] ProcessingMode lockstep
              * @property {ubii.processing.ProcessingMode.ITriggerOnInput|null} [triggerOnInput] ProcessingMode triggerOnInput
+             * @property {ubii.processing.ProcessingMode.IFree|null} [free] ProcessingMode free
              */
 
             /**
@@ -12094,17 +12095,25 @@ $root.ubii = (function() {
              */
             ProcessingMode.prototype.triggerOnInput = null;
 
+            /**
+             * ProcessingMode free.
+             * @member {ubii.processing.ProcessingMode.IFree|null|undefined} free
+             * @memberof ubii.processing.ProcessingMode
+             * @instance
+             */
+            ProcessingMode.prototype.free = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ProcessingMode mode.
-             * @member {"frequency"|"lockstep"|"triggerOnInput"|undefined} mode
+             * @member {"frequency"|"lockstep"|"triggerOnInput"|"free"|undefined} mode
              * @memberof ubii.processing.ProcessingMode
              * @instance
              */
             Object.defineProperty(ProcessingMode.prototype, "mode", {
-                get: $util.oneOfGetter($oneOfFields = ["frequency", "lockstep", "triggerOnInput"]),
+                get: $util.oneOfGetter($oneOfFields = ["frequency", "lockstep", "triggerOnInput", "free"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -12138,6 +12147,8 @@ $root.ubii = (function() {
                     $root.ubii.processing.ProcessingMode.Lockstep.encode(message.lockstep, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.triggerOnInput != null && Object.hasOwnProperty.call(message, "triggerOnInput"))
                     $root.ubii.processing.ProcessingMode.TriggerOnInput.encode(message.triggerOnInput, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.free != null && Object.hasOwnProperty.call(message, "free"))
+                    $root.ubii.processing.ProcessingMode.Free.encode(message.free, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -12180,6 +12191,9 @@ $root.ubii = (function() {
                         break;
                     case 3:
                         message.triggerOnInput = $root.ubii.processing.ProcessingMode.TriggerOnInput.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.free = $root.ubii.processing.ProcessingMode.Free.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -12245,6 +12259,16 @@ $root.ubii = (function() {
                             return "triggerOnInput." + error;
                     }
                 }
+                if (message.free != null && message.hasOwnProperty("free")) {
+                    if (properties.mode === 1)
+                        return "mode: multiple values";
+                    properties.mode = 1;
+                    {
+                        var error = $root.ubii.processing.ProcessingMode.Free.verify(message.free);
+                        if (error)
+                            return "free." + error;
+                    }
+                }
                 return null;
             };
 
@@ -12274,6 +12298,11 @@ $root.ubii = (function() {
                     if (typeof object.triggerOnInput !== "object")
                         throw TypeError(".ubii.processing.ProcessingMode.triggerOnInput: object expected");
                     message.triggerOnInput = $root.ubii.processing.ProcessingMode.TriggerOnInput.fromObject(object.triggerOnInput);
+                }
+                if (object.free != null) {
+                    if (typeof object.free !== "object")
+                        throw TypeError(".ubii.processing.ProcessingMode.free: object expected");
+                    message.free = $root.ubii.processing.ProcessingMode.Free.fromObject(object.free);
                 }
                 return message;
             };
@@ -12305,6 +12334,11 @@ $root.ubii = (function() {
                     object.triggerOnInput = $root.ubii.processing.ProcessingMode.TriggerOnInput.toObject(message.triggerOnInput, options);
                     if (options.oneofs)
                         object.mode = "triggerOnInput";
+                }
+                if (message.free != null && message.hasOwnProperty("free")) {
+                    object.free = $root.ubii.processing.ProcessingMode.Free.toObject(message.free, options);
+                    if (options.oneofs)
+                        object.mode = "free";
                 }
                 return object;
             };
@@ -12904,6 +12938,166 @@ $root.ubii = (function() {
                 return TriggerOnInput;
             })();
 
+            ProcessingMode.Free = (function() {
+
+                /**
+                 * Properties of a Free.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @interface IFree
+                 */
+
+                /**
+                 * Constructs a new Free.
+                 * @memberof ubii.processing.ProcessingMode
+                 * @classdesc Represents a Free.
+                 * @implements IFree
+                 * @constructor
+                 * @param {ubii.processing.ProcessingMode.IFree=} [properties] Properties to set
+                 */
+                function Free(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * Creates a new Free instance using the specified properties.
+                 * @function create
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.IFree=} [properties] Properties to set
+                 * @returns {ubii.processing.ProcessingMode.Free} Free instance
+                 */
+                Free.create = function create(properties) {
+                    return new Free(properties);
+                };
+
+                /**
+                 * Encodes the specified Free message. Does not implicitly {@link ubii.processing.ProcessingMode.Free.verify|verify} messages.
+                 * @function encode
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.IFree} message Free message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Free.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified Free message, length delimited. Does not implicitly {@link ubii.processing.ProcessingMode.Free.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.IFree} message Free message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Free.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a Free message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {ubii.processing.ProcessingMode.Free} Free
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Free.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.processing.ProcessingMode.Free();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a Free message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {ubii.processing.ProcessingMode.Free} Free
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Free.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a Free message.
+                 * @function verify
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Free.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+
+                /**
+                 * Creates a Free message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {ubii.processing.ProcessingMode.Free} Free
+                 */
+                Free.fromObject = function fromObject(object) {
+                    if (object instanceof $root.ubii.processing.ProcessingMode.Free)
+                        return object;
+                    return new $root.ubii.processing.ProcessingMode.Free();
+                };
+
+                /**
+                 * Creates a plain object from a Free message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @static
+                 * @param {ubii.processing.ProcessingMode.Free} message Free
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Free.toObject = function toObject() {
+                    return {};
+                };
+
+                /**
+                 * Converts this Free to JSON.
+                 * @function toJSON
+                 * @memberof ubii.processing.ProcessingMode.Free
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Free.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                return Free;
+            })();
+
             return ProcessingMode;
         })();
 
@@ -12915,6 +13109,7 @@ $root.ubii = (function() {
              * @interface IModuleIO
              * @property {string|null} [internalName] ModuleIO internalName
              * @property {string|null} [messageFormat] ModuleIO messageFormat
+             * @property {boolean|null} [isRecordList] ModuleIO isRecordList
              */
 
             /**
@@ -12949,6 +13144,14 @@ $root.ubii = (function() {
             ModuleIO.prototype.messageFormat = "";
 
             /**
+             * ModuleIO isRecordList.
+             * @member {boolean} isRecordList
+             * @memberof ubii.processing.ModuleIO
+             * @instance
+             */
+            ModuleIO.prototype.isRecordList = false;
+
+            /**
              * Creates a new ModuleIO instance using the specified properties.
              * @function create
              * @memberof ubii.processing.ModuleIO
@@ -12976,6 +13179,8 @@ $root.ubii = (function() {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.internalName);
                 if (message.messageFormat != null && Object.hasOwnProperty.call(message, "messageFormat"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.messageFormat);
+                if (message.isRecordList != null && Object.hasOwnProperty.call(message, "isRecordList"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.isRecordList);
                 return writer;
             };
 
@@ -13015,6 +13220,9 @@ $root.ubii = (function() {
                         break;
                     case 2:
                         message.messageFormat = reader.string();
+                        break;
+                    case 3:
+                        message.isRecordList = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13057,6 +13265,9 @@ $root.ubii = (function() {
                 if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
                     if (!$util.isString(message.messageFormat))
                         return "messageFormat: string expected";
+                if (message.isRecordList != null && message.hasOwnProperty("isRecordList"))
+                    if (typeof message.isRecordList !== "boolean")
+                        return "isRecordList: boolean expected";
                 return null;
             };
 
@@ -13076,6 +13287,8 @@ $root.ubii = (function() {
                     message.internalName = String(object.internalName);
                 if (object.messageFormat != null)
                     message.messageFormat = String(object.messageFormat);
+                if (object.isRecordList != null)
+                    message.isRecordList = Boolean(object.isRecordList);
                 return message;
             };
 
@@ -13095,11 +13308,14 @@ $root.ubii = (function() {
                 if (options.defaults) {
                     object.internalName = "";
                     object.messageFormat = "";
+                    object.isRecordList = false;
                 }
                 if (message.internalName != null && message.hasOwnProperty("internalName"))
                     object.internalName = message.internalName;
                 if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
                     object.messageFormat = message.messageFormat;
+                if (message.isRecordList != null && message.hasOwnProperty("isRecordList"))
+                    object.isRecordList = message.isRecordList;
                 return object;
             };
 
@@ -15397,6 +15613,8 @@ $root.ubii = (function() {
              * @property {ubii.services.IService|null} [service] ServiceReply service
              * @property {ubii.services.IServiceList|null} [serviceList] ServiceReply serviceList
              * @property {ubii.processing.ILockstepProcessingReply|null} [lockstepProcessingReply] ServiceReply lockstepProcessingReply
+             * @property {ubii.devices.IComponent|null} [component] ServiceReply component
+             * @property {ubii.devices.IComponentList|null} [componentList] ServiceReply componentList
              */
 
             /**
@@ -15566,17 +15784,33 @@ $root.ubii = (function() {
              */
             ServiceReply.prototype.lockstepProcessingReply = null;
 
+            /**
+             * ServiceReply component.
+             * @member {ubii.devices.IComponent|null|undefined} component
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.component = null;
+
+            /**
+             * ServiceReply componentList.
+             * @member {ubii.devices.IComponentList|null|undefined} componentList
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.componentList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "processingModule", "processingModuleList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList", "lockstepProcessingReply"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "processingModule", "processingModuleList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList", "lockstepProcessingReply", "component", "componentList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -15642,6 +15876,10 @@ $root.ubii = (function() {
                     $root.ubii.services.ServiceList.encode(message.serviceList, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 if (message.lockstepProcessingReply != null && Object.hasOwnProperty.call(message, "lockstepProcessingReply"))
                     $root.ubii.processing.LockstepProcessingReply.encode(message.lockstepProcessingReply, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                if (message.component != null && Object.hasOwnProperty.call(message, "component"))
+                    $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
+                if (message.componentList != null && Object.hasOwnProperty.call(message, "componentList"))
+                    $root.ubii.devices.ComponentList.encode(message.componentList, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                 return writer;
             };
 
@@ -15732,6 +15970,12 @@ $root.ubii = (function() {
                         break;
                     case 19:
                         message.lockstepProcessingReply = $root.ubii.processing.LockstepProcessingReply.decode(reader, reader.uint32());
+                        break;
+                    case 20:
+                        message.component = $root.ubii.devices.Component.decode(reader, reader.uint32());
+                        break;
+                    case 21:
+                        message.componentList = $root.ubii.devices.ComponentList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15957,6 +16201,26 @@ $root.ubii = (function() {
                             return "lockstepProcessingReply." + error;
                     }
                 }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.Component.verify(message.component);
+                        if (error)
+                            return "component." + error;
+                    }
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.ComponentList.verify(message.componentList);
+                        if (error)
+                            return "componentList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -16066,6 +16330,16 @@ $root.ubii = (function() {
                     if (typeof object.lockstepProcessingReply !== "object")
                         throw TypeError(".ubii.services.ServiceReply.lockstepProcessingReply: object expected");
                     message.lockstepProcessingReply = $root.ubii.processing.LockstepProcessingReply.fromObject(object.lockstepProcessingReply);
+                }
+                if (object.component != null) {
+                    if (typeof object.component !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.component: object expected");
+                    message.component = $root.ubii.devices.Component.fromObject(object.component);
+                }
+                if (object.componentList != null) {
+                    if (typeof object.componentList !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.componentList: object expected");
+                    message.componentList = $root.ubii.devices.ComponentList.fromObject(object.componentList);
                 }
                 return message;
             };
@@ -16178,6 +16452,16 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "lockstepProcessingReply";
                 }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    object.component = $root.ubii.devices.Component.toObject(message.component, options);
+                    if (options.oneofs)
+                        object.type = "component";
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    object.componentList = $root.ubii.devices.ComponentList.toObject(message.componentList, options);
+                    if (options.oneofs)
+                        object.type = "componentList";
+                }
                 return object;
             };
 
@@ -16216,6 +16500,8 @@ $root.ubii = (function() {
              * @property {ubii.clients.IClientList|null} [clientList] ServiceRequest clientList
              * @property {ubii.devices.IDeviceList|null} [deviceList] ServiceRequest deviceList
              * @property {ubii.processing.ILockstepProcessingRequest|null} [lockstepProcessingRequest] ServiceRequest lockstepProcessingRequest
+             * @property {ubii.devices.IComponent|null} [component] ServiceRequest component
+             * @property {ubii.devices.IComponentList|null} [componentList] ServiceRequest componentList
              */
 
             /**
@@ -16353,17 +16639,33 @@ $root.ubii = (function() {
              */
             ServiceRequest.prototype.lockstepProcessingRequest = null;
 
+            /**
+             * ServiceRequest component.
+             * @member {ubii.devices.IComponent|null|undefined} component
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.component = null;
+
+            /**
+             * ServiceRequest componentList.
+             * @member {ubii.devices.IComponentList|null|undefined} componentList
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.componentList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "processingModule", "processingModuleList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "lockstepProcessingRequest"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "processingModule", "processingModuleList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "lockstepProcessingRequest", "component", "componentList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -16421,6 +16723,10 @@ $root.ubii = (function() {
                     $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 if (message.lockstepProcessingRequest != null && Object.hasOwnProperty.call(message, "lockstepProcessingRequest"))
                     $root.ubii.processing.LockstepProcessingRequest.encode(message.lockstepProcessingRequest, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
+                if (message.component != null && Object.hasOwnProperty.call(message, "component"))
+                    $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.componentList != null && Object.hasOwnProperty.call(message, "componentList"))
+                    $root.ubii.devices.ComponentList.encode(message.componentList, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -16499,6 +16805,12 @@ $root.ubii = (function() {
                         break;
                     case 15:
                         message.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.component = $root.ubii.devices.Component.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.componentList = $root.ubii.devices.ComponentList.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16677,6 +16989,26 @@ $root.ubii = (function() {
                             return "lockstepProcessingRequest." + error;
                     }
                 }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.Component.verify(message.component);
+                        if (error)
+                            return "component." + error;
+                    }
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.ComponentList.verify(message.componentList);
+                        if (error)
+                            return "componentList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -16763,6 +17095,16 @@ $root.ubii = (function() {
                     if (typeof object.lockstepProcessingRequest !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.lockstepProcessingRequest: object expected");
                     message.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.fromObject(object.lockstepProcessingRequest);
+                }
+                if (object.component != null) {
+                    if (typeof object.component !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.component: object expected");
+                    message.component = $root.ubii.devices.Component.fromObject(object.component);
+                }
+                if (object.componentList != null) {
+                    if (typeof object.componentList !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.componentList: object expected");
+                    message.componentList = $root.ubii.devices.ComponentList.fromObject(object.componentList);
                 }
                 return message;
             };
@@ -16853,6 +17195,16 @@ $root.ubii = (function() {
                     object.lockstepProcessingRequest = $root.ubii.processing.LockstepProcessingRequest.toObject(message.lockstepProcessingRequest, options);
                     if (options.oneofs)
                         object.type = "lockstepProcessingRequest";
+                }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    object.component = $root.ubii.devices.Component.toObject(message.component, options);
+                    if (options.oneofs)
+                        object.type = "component";
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    object.componentList = $root.ubii.devices.ComponentList.toObject(message.componentList, options);
+                    if (options.oneofs)
+                        object.type = "componentList";
                 }
                 return object;
             };

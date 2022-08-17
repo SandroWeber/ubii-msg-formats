@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.processing',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\'proto/processing/processingModule.proto\x12\x0fubii.processing\"\xf4\x02\n\x0eProcessingMode\x12>\n\tfrequency\x18\x01 \x01(\x0b\x32).ubii.processing.ProcessingMode.FrequencyH\x00\x12<\n\x08lockstep\x18\x02 \x01(\x0b\x32(.ubii.processing.ProcessingMode.LockstepH\x00\x12J\n\x10trigger_on_input\x18\x03 \x01(\x0b\x32..ubii.processing.ProcessingMode.TriggerOnInputH\x00\x1a\x1a\n\tFrequency\x12\r\n\x05hertz\x18\x01 \x01(\x05\x1a,\n\x08Lockstep\x12 \n\x18process_request_endpoint\x18\x01 \x01(\t\x1a\x46\n\x0eTriggerOnInput\x12\x14\n\x0cmin_delay_ms\x18\x01 \x01(\x05\x12\x1e\n\x16\x61ll_inputs_need_update\x18\x02 \x01(\x08\x42\x06\n\x04mode\"9\n\x08ModuleIO\x12\x15\n\rinternal_name\x18\x01 \x01(\t\x12\x16\n\x0emessage_format\x18\x02 \x01(\t\"\x9c\x05\n\x10ProcessingModule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x0f\n\x07node_id\x18\x06 \x01(\t\x12\x12\n\nsession_id\x18\x07 \x01(\t\x12\x38\n\x06status\x18\x08 \x01(\x0e\x32(.ubii.processing.ProcessingModule.Status\x12\x38\n\x0fprocessing_mode\x18\t \x01(\x0b\x32\x1f.ubii.processing.ProcessingMode\x12)\n\x06inputs\x18\n \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12*\n\x07outputs\x18\x0b \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12<\n\x08language\x18\x0c \x01(\x0e\x32*.ubii.processing.ProcessingModule.Language\x12!\n\x19on_processing_stringified\x18\r \x01(\t\x12\x1e\n\x16on_created_stringified\x18\x0e \x01(\t\x12\x1d\n\x15on_halted_stringified\x18\x0f \x01(\t\x12 \n\x18on_destroyed_stringified\x18\x10 \x01(\t\"Q\n\x06Status\x12\x0f\n\x0bINITIALIZED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\n\n\x06HALTED\x10\x03\x12\r\n\tDESTROYED\x10\x04\"5\n\x08Language\x12\x07\n\x03\x43PP\x10\x00\x12\x06\n\x02PY\x10\x01\x12\x06\n\x02JS\x10\x02\x12\x06\n\x02\x43S\x10\x03\x12\x08\n\x04JAVA\x10\x04\"K\n\x14ProcessingModuleList\x12\x33\n\x08\x65lements\x18\x01 \x03(\x0b\x32!.ubii.processing.ProcessingModuleb\x06proto3')
+  serialized_pb=_b('\n\'proto/processing/processingModule.proto\x12\x0fubii.processing\"\xb2\x03\n\x0eProcessingMode\x12>\n\tfrequency\x18\x01 \x01(\x0b\x32).ubii.processing.ProcessingMode.FrequencyH\x00\x12<\n\x08lockstep\x18\x02 \x01(\x0b\x32(.ubii.processing.ProcessingMode.LockstepH\x00\x12J\n\x10trigger_on_input\x18\x03 \x01(\x0b\x32..ubii.processing.ProcessingMode.TriggerOnInputH\x00\x12\x34\n\x04\x66ree\x18\x04 \x01(\x0b\x32$.ubii.processing.ProcessingMode.FreeH\x00\x1a\x1a\n\tFrequency\x12\r\n\x05hertz\x18\x01 \x01(\x05\x1a,\n\x08Lockstep\x12 \n\x18process_request_endpoint\x18\x01 \x01(\t\x1a\x46\n\x0eTriggerOnInput\x12\x14\n\x0cmin_delay_ms\x18\x01 \x01(\x05\x12\x1e\n\x16\x61ll_inputs_need_update\x18\x02 \x01(\x08\x1a\x06\n\x04\x46reeB\x06\n\x04mode\"Q\n\x08ModuleIO\x12\x15\n\rinternal_name\x18\x01 \x01(\t\x12\x16\n\x0emessage_format\x18\x02 \x01(\t\x12\x16\n\x0eis_record_list\x18\x03 \x01(\x08\"\x9c\x05\n\x10ProcessingModule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x61uthors\x18\x03 \x03(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x0f\n\x07node_id\x18\x06 \x01(\t\x12\x12\n\nsession_id\x18\x07 \x01(\t\x12\x38\n\x06status\x18\x08 \x01(\x0e\x32(.ubii.processing.ProcessingModule.Status\x12\x38\n\x0fprocessing_mode\x18\t \x01(\x0b\x32\x1f.ubii.processing.ProcessingMode\x12)\n\x06inputs\x18\n \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12*\n\x07outputs\x18\x0b \x03(\x0b\x32\x19.ubii.processing.ModuleIO\x12<\n\x08language\x18\x0c \x01(\x0e\x32*.ubii.processing.ProcessingModule.Language\x12!\n\x19on_processing_stringified\x18\r \x01(\t\x12\x1e\n\x16on_created_stringified\x18\x0e \x01(\t\x12\x1d\n\x15on_halted_stringified\x18\x0f \x01(\t\x12 \n\x18on_destroyed_stringified\x18\x10 \x01(\t\"Q\n\x06Status\x12\x0f\n\x0bINITIALIZED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\n\n\x06HALTED\x10\x03\x12\r\n\tDESTROYED\x10\x04\"5\n\x08Language\x12\x07\n\x03\x43PP\x10\x00\x12\x06\n\x02PY\x10\x01\x12\x06\n\x02JS\x10\x02\x12\x06\n\x02\x43S\x10\x03\x12\x08\n\x04JAVA\x10\x04\"K\n\x14ProcessingModuleList\x12\x33\n\x08\x65lements\x18\x01 \x03(\x0b\x32!.ubii.processing.ProcessingModuleb\x06proto3')
 )
 
 
@@ -53,8 +53,8 @@ _PROCESSINGMODULE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1027,
-  serialized_end=1108,
+  serialized_start=1113,
+  serialized_end=1194,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSINGMODULE_STATUS)
 
@@ -87,8 +87,8 @@ _PROCESSINGMODULE_LANGUAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1110,
-  serialized_end=1163,
+  serialized_start=1196,
+  serialized_end=1249,
 )
 _sym_db.RegisterEnumDescriptor(_PROCESSINGMODULE_LANGUAGE)
 
@@ -119,8 +119,8 @@ _PROCESSINGMODE_FREQUENCY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=281,
-  serialized_end=307,
+  serialized_start=335,
+  serialized_end=361,
 )
 
 _PROCESSINGMODE_LOCKSTEP = _descriptor.Descriptor(
@@ -149,8 +149,8 @@ _PROCESSINGMODE_LOCKSTEP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=309,
-  serialized_end=353,
+  serialized_start=363,
+  serialized_end=407,
 )
 
 _PROCESSINGMODE_TRIGGERONINPUT = _descriptor.Descriptor(
@@ -186,8 +186,31 @@ _PROCESSINGMODE_TRIGGERONINPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=425,
+  serialized_start=409,
+  serialized_end=479,
+)
+
+_PROCESSINGMODE_FREE = _descriptor.Descriptor(
+  name='Free',
+  full_name='ubii.processing.ProcessingMode.Free',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=481,
+  serialized_end=487,
 )
 
 _PROCESSINGMODE = _descriptor.Descriptor(
@@ -218,10 +241,17 @@ _PROCESSINGMODE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='free', full_name='ubii.processing.ProcessingMode.free', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_PROCESSINGMODE_FREQUENCY, _PROCESSINGMODE_LOCKSTEP, _PROCESSINGMODE_TRIGGERONINPUT, ],
+  nested_types=[_PROCESSINGMODE_FREQUENCY, _PROCESSINGMODE_LOCKSTEP, _PROCESSINGMODE_TRIGGERONINPUT, _PROCESSINGMODE_FREE, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -234,7 +264,7 @@ _PROCESSINGMODE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=61,
-  serialized_end=433,
+  serialized_end=495,
 )
 
 
@@ -259,6 +289,13 @@ _MODULEIO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='is_record_list', full_name='ubii.processing.ModuleIO.is_record_list', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -271,8 +308,8 @@ _MODULEIO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=435,
-  serialized_end=492,
+  serialized_start=497,
+  serialized_end=578,
 )
 
 
@@ -409,8 +446,8 @@ _PROCESSINGMODULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=495,
-  serialized_end=1163,
+  serialized_start=581,
+  serialized_end=1249,
 )
 
 
@@ -440,16 +477,18 @@ _PROCESSINGMODULELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1165,
-  serialized_end=1240,
+  serialized_start=1251,
+  serialized_end=1326,
 )
 
 _PROCESSINGMODE_FREQUENCY.containing_type = _PROCESSINGMODE
 _PROCESSINGMODE_LOCKSTEP.containing_type = _PROCESSINGMODE
 _PROCESSINGMODE_TRIGGERONINPUT.containing_type = _PROCESSINGMODE
+_PROCESSINGMODE_FREE.containing_type = _PROCESSINGMODE
 _PROCESSINGMODE.fields_by_name['frequency'].message_type = _PROCESSINGMODE_FREQUENCY
 _PROCESSINGMODE.fields_by_name['lockstep'].message_type = _PROCESSINGMODE_LOCKSTEP
 _PROCESSINGMODE.fields_by_name['trigger_on_input'].message_type = _PROCESSINGMODE_TRIGGERONINPUT
+_PROCESSINGMODE.fields_by_name['free'].message_type = _PROCESSINGMODE_FREE
 _PROCESSINGMODE.oneofs_by_name['mode'].fields.append(
   _PROCESSINGMODE.fields_by_name['frequency'])
 _PROCESSINGMODE.fields_by_name['frequency'].containing_oneof = _PROCESSINGMODE.oneofs_by_name['mode']
@@ -459,6 +498,9 @@ _PROCESSINGMODE.fields_by_name['lockstep'].containing_oneof = _PROCESSINGMODE.on
 _PROCESSINGMODE.oneofs_by_name['mode'].fields.append(
   _PROCESSINGMODE.fields_by_name['trigger_on_input'])
 _PROCESSINGMODE.fields_by_name['trigger_on_input'].containing_oneof = _PROCESSINGMODE.oneofs_by_name['mode']
+_PROCESSINGMODE.oneofs_by_name['mode'].fields.append(
+  _PROCESSINGMODE.fields_by_name['free'])
+_PROCESSINGMODE.fields_by_name['free'].containing_oneof = _PROCESSINGMODE.oneofs_by_name['mode']
 _PROCESSINGMODULE.fields_by_name['status'].enum_type = _PROCESSINGMODULE_STATUS
 _PROCESSINGMODULE.fields_by_name['processing_mode'].message_type = _PROCESSINGMODE
 _PROCESSINGMODULE.fields_by_name['inputs'].message_type = _MODULEIO
@@ -495,6 +537,13 @@ ProcessingMode = _reflection.GeneratedProtocolMessageType('ProcessingMode', (_me
     # @@protoc_insertion_point(class_scope:ubii.processing.ProcessingMode.TriggerOnInput)
     ))
   ,
+
+  Free = _reflection.GeneratedProtocolMessageType('Free', (_message.Message,), dict(
+    DESCRIPTOR = _PROCESSINGMODE_FREE,
+    __module__ = 'proto.processing.processingModule_pb2'
+    # @@protoc_insertion_point(class_scope:ubii.processing.ProcessingMode.Free)
+    ))
+  ,
   DESCRIPTOR = _PROCESSINGMODE,
   __module__ = 'proto.processing.processingModule_pb2'
   # @@protoc_insertion_point(class_scope:ubii.processing.ProcessingMode)
@@ -503,6 +552,7 @@ _sym_db.RegisterMessage(ProcessingMode)
 _sym_db.RegisterMessage(ProcessingMode.Frequency)
 _sym_db.RegisterMessage(ProcessingMode.Lockstep)
 _sym_db.RegisterMessage(ProcessingMode.TriggerOnInput)
+_sym_db.RegisterMessage(ProcessingMode.Free)
 
 ModuleIO = _reflection.GeneratedProtocolMessageType('ModuleIO', (_message.Message,), dict(
   DESCRIPTOR = _MODULEIO,
