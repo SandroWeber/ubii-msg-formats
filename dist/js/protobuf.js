@@ -5170,11 +5170,11 @@ $root.ubii = (function() {
 
             /**
              * Pose2D angle.
-             * @member {number} angle
+             * @member {number|null|undefined} angle
              * @memberof ubii.dataStructure.Pose2D
              * @instance
              */
-            Pose2D.prototype.angle = 0;
+            Pose2D.prototype.angle = null;
 
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
@@ -17271,11 +17271,11 @@ $root.ubii = (function() {
 
             /**
              * TopicInputMapping topic.
-             * @member {string} topic
+             * @member {string|null|undefined} topic
              * @memberof ubii.sessions.TopicInputMapping
              * @instance
              */
-            TopicInputMapping.prototype.topic = "";
+            TopicInputMapping.prototype.topic = null;
 
             /**
              * TopicInputMapping topicMux.
@@ -17741,11 +17741,11 @@ $root.ubii = (function() {
 
             /**
              * TopicOutputMapping topic.
-             * @member {string} topic
+             * @member {string|null|undefined} topic
              * @memberof ubii.sessions.TopicOutputMapping
              * @instance
              */
-            TopicOutputMapping.prototype.topic = "";
+            TopicOutputMapping.prototype.topic = null;
 
             /**
              * TopicOutputMapping topicDemux.
@@ -20008,43 +20008,43 @@ $root.ubii = (function() {
 
             /**
              * TopicDataRecord double.
-             * @member {number} double
+             * @member {number|null|undefined} double
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.double = 0;
+            TopicDataRecord.prototype.double = null;
 
             /**
              * TopicDataRecord bool.
-             * @member {boolean} bool
+             * @member {boolean|null|undefined} bool
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.bool = false;
+            TopicDataRecord.prototype.bool = null;
 
             /**
              * TopicDataRecord string.
-             * @member {string} string
+             * @member {string|null|undefined} string
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.string = "";
+            TopicDataRecord.prototype.string = null;
 
             /**
              * TopicDataRecord int32.
-             * @member {number} int32
+             * @member {number|null|undefined} int32
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.int32 = 0;
+            TopicDataRecord.prototype.int32 = null;
 
             /**
              * TopicDataRecord float.
-             * @member {number} float
+             * @member {number|null|undefined} float
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
-            TopicDataRecord.prototype.float = 0;
+            TopicDataRecord.prototype.float = null;
 
             /**
              * TopicDataRecord vector2.

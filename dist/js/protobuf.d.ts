@@ -2072,7 +2072,7 @@ export namespace ubii {
             public direction?: (ubii.dataStructure.IVector2|null);
 
             /** Pose2D angle. */
-            public angle: number;
+            public angle?: (number|null);
 
             /** Pose2D orientation. */
             public orientation?: ("direction"|"angle");
@@ -6700,7 +6700,7 @@ export namespace ubii {
             public inputName: string;
 
             /** TopicInputMapping topic. */
-            public topic: string;
+            public topic?: (string|null);
 
             /** TopicInputMapping topicMux. */
             public topicMux?: (ubii.devices.ITopicMux|null);
@@ -6895,7 +6895,7 @@ export namespace ubii {
             public outputName: string;
 
             /** TopicOutputMapping topic. */
-            public topic: string;
+            public topic?: (string|null);
 
             /** TopicOutputMapping topicDemux. */
             public topicDemux?: (ubii.devices.ITopicDemux|null);
@@ -7846,19 +7846,19 @@ export namespace ubii {
             public clientId: string;
 
             /** TopicDataRecord double. */
-            public double: number;
+            public double?: (number|null);
 
             /** TopicDataRecord bool. */
-            public bool: boolean;
+            public bool?: (boolean|null);
 
             /** TopicDataRecord string. */
-            public string: string;
+            public string?: (string|null);
 
             /** TopicDataRecord int32. */
-            public int32: number;
+            public int32?: (number|null);
 
             /** TopicDataRecord float. */
-            public float: number;
+            public float?: (number|null);
 
             /** TopicDataRecord vector2. */
             public vector2?: (ubii.dataStructure.IVector2|null);
