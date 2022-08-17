@@ -19,9 +19,9 @@
 #endif
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<30> scc_info_TopicDataRecord;
-}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto
+namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<30> scc_info_TopicDataRecord;
+}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto
 namespace ubii {
 namespace processing {
 class LockstepProcessingRequestDefaultTypeInternal {
@@ -50,7 +50,7 @@ static void InitDefaultsLockstepProcessingRequest() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_LockstepProcessingRequest =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsLockstepProcessingRequest}, {
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::scc_info_TopicDataRecord.base,}};
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::scc_info_TopicDataRecord.base,}};
 
 static void InitDefaultsLockstepProcessingReply() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -65,7 +65,7 @@ static void InitDefaultsLockstepProcessingReply() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_LockstepProcessingReply =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsLockstepProcessingReply}, {
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::scc_info_TopicDataRecord.base,}};
+      &protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::scc_info_TopicDataRecord.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_LockstepProcessingRequest.base);
@@ -123,21 +123,20 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n)proto/processing/lockstepProcessing.pr"
-      "oto\022\017ubii.processing\0325proto/topicData/to"
-      "picDataRecord/topicDataRecord.proto\"\203\001\n\031"
-      "LockstepProcessingRequest\022\035\n\025processing_"
-      "module_ids\030\001 \003(\t\0220\n\007records\030\002 \003(\0132\037.ubii"
-      ".topicData.TopicDataRecord\022\025\n\rdelta_time"
-      "_ms\030\003 \001(\005\"j\n\027LockstepProcessingReply\022\035\n\025"
-      "processing_module_ids\030\001 \003(\t\0220\n\007records\030\002"
-      " \003(\0132\037.ubii.topicData.TopicDataRecordb\006p"
-      "roto3"
+      "oto\022\017ubii.processing\032%proto/topicData/to"
+      "picDataRecord.proto\"\203\001\n\031LockstepProcessi"
+      "ngRequest\022\035\n\025processing_module_ids\030\001 \003(\t"
+      "\0220\n\007records\030\002 \003(\0132\037.ubii.topicData.Topic"
+      "DataRecord\022\025\n\rdelta_time_ms\030\003 \001(\005\"j\n\027Loc"
+      "kstepProcessingReply\022\035\n\025processing_modul"
+      "e_ids\030\001 \003(\t\0220\n\007records\030\002 \003(\0132\037.ubii.topi"
+      "cData.TopicDataRecordb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 365);
+      descriptor, 349);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/processing/lockstepProcessing.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2ftopicDataRecord_2eproto::AddDescriptors();
+  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {

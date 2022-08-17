@@ -2042,15 +2042,14 @@ public final class LockstepProcessing {
   static {
     java.lang.String[] descriptorData = {
       "\n)proto/processing/lockstepProcessing.pr" +
-      "oto\022\017ubii.processing\0325proto/topicData/to" +
-      "picDataRecord/topicDataRecord.proto\"\203\001\n\031" +
-      "LockstepProcessingRequest\022\035\n\025processing_" +
-      "module_ids\030\001 \003(\t\0220\n\007records\030\002 \003(\0132\037.ubii" +
-      ".topicData.TopicDataRecord\022\025\n\rdelta_time" +
-      "_ms\030\003 \001(\005\"j\n\027LockstepProcessingReply\022\035\n\025" +
-      "processing_module_ids\030\001 \003(\t\0220\n\007records\030\002" +
-      " \003(\0132\037.ubii.topicData.TopicDataRecordb\006p" +
-      "roto3"
+      "oto\022\017ubii.processing\032%proto/topicData/to" +
+      "picDataRecord.proto\"\203\001\n\031LockstepProcessi" +
+      "ngRequest\022\035\n\025processing_module_ids\030\001 \003(\t" +
+      "\0220\n\007records\030\002 \003(\0132\037.ubii.topicData.Topic" +
+      "DataRecord\022\025\n\rdelta_time_ms\030\003 \001(\005\"j\n\027Loc" +
+      "kstepProcessingReply\022\035\n\025processing_modul" +
+      "e_ids\030\001 \003(\t\0220\n\007records\030\002 \003(\0132\037.ubii.topi" +
+      "cData.TopicDataRecordb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

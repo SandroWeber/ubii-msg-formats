@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from proto.topicData.topicDataRecord import topicDataRecord_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2
+from proto.topicData import topicDataRecord_pb2 as proto_dot_topicData_dot_topicDataRecord__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.processing',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n)proto/processing/lockstepProcessing.proto\x12\x0fubii.processing\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\"\x83\x01\n\x19LockstepProcessingRequest\x12\x1d\n\x15processing_module_ids\x18\x01 \x03(\t\x12\x30\n\x07records\x18\x02 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecord\x12\x15\n\rdelta_time_ms\x18\x03 \x01(\x05\"j\n\x17LockstepProcessingReply\x12\x1d\n\x15processing_module_ids\x18\x01 \x03(\t\x12\x30\n\x07records\x18\x02 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3')
+  serialized_pb=_b('\n)proto/processing/lockstepProcessing.proto\x12\x0fubii.processing\x1a%proto/topicData/topicDataRecord.proto\"\x83\x01\n\x19LockstepProcessingRequest\x12\x1d\n\x15processing_module_ids\x18\x01 \x03(\t\x12\x30\n\x07records\x18\x02 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecord\x12\x15\n\rdelta_time_ms\x18\x03 \x01(\x05\"j\n\x17LockstepProcessingReply\x12\x1d\n\x15processing_module_ids\x18\x01 \x03(\t\x12\x30\n\x07records\x18\x02 \x03(\x0b\x32\x1f.ubii.topicData.TopicDataRecordb\x06proto3')
   ,
-  dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_topicData_dot_topicDataRecord__pb2.DESCRIPTOR,])
 
 
 
@@ -67,8 +67,8 @@ _LOCKSTEPPROCESSINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=118,
-  serialized_end=249,
+  serialized_start=102,
+  serialized_end=233,
 )
 
 
@@ -105,12 +105,12 @@ _LOCKSTEPPROCESSINGREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=251,
-  serialized_end=357,
+  serialized_start=235,
+  serialized_end=341,
 )
 
-_LOCKSTEPPROCESSINGREQUEST.fields_by_name['records'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORD
-_LOCKSTEPPROCESSINGREPLY.fields_by_name['records'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORD
+_LOCKSTEPPROCESSINGREQUEST.fields_by_name['records'].message_type = proto_dot_topicData_dot_topicDataRecord__pb2._TOPICDATARECORD
+_LOCKSTEPPROCESSINGREPLY.fields_by_name['records'].message_type = proto_dot_topicData_dot_topicDataRecord__pb2._TOPICDATARECORD
 DESCRIPTOR.message_types_by_name['LockstepProcessingRequest'] = _LOCKSTEPPROCESSINGREQUEST
 DESCRIPTOR.message_types_by_name['LockstepProcessingReply'] = _LOCKSTEPPROCESSINGREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

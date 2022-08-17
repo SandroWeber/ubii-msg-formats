@@ -10,16 +10,30 @@ class ProtobufTranslator {
     }
 
     /**
-     * Verifies any payload or message object. Throws an error for invalid objects.
+     * Exposes and returns protobuf.js verify() method. Verifies any payload or message object. Throws an error for invalid objects.
      * @param {*} object Object to be verified. Can be a payload or message object.
      * @return Returns true for valid objects. Throws an error for invalid objects.
      */
     verify(object) {
-        let errMsg = this.proto.verify(object);
-        if (errMsg) {
-            throw Error(errMsg);
-        }
-        return true;
+        return this.proto.verify(object);
+    }
+
+    /**
+     * Exposes and returns protobuf.js toObject() method.
+     * @param {Object} protoMessage A valid protobuf message
+     * @returns Returns a plain javascript object.
+     */
+    toObject(protoMessage) {
+        return this.proto.toObject(protoMessage);
+    }
+
+    /**
+     * Exposes and returns protobuf.js fromObject() method.
+     * @param {Object} protoMessage A plain javascript object
+     * @returns Returns a valid protobuf message.
+     */
+    fromObject(object) {
+        return this.proto.fromObject(object);
     }
 
     /**
@@ -29,7 +43,7 @@ class ProtobufTranslator {
      */
     createMessageFromPayload(payload) {
         // Verify the payload
-        this.verify(payload);
+        this.proto.verify(payload);
 
         // Create a new message
         return this.proto.create(payload);
@@ -41,14 +55,9 @@ class ProtobufTranslator {
      * @return Returns a plain JavaScript payload object.
      */
     createPayloadFromMessage(message) {
-        let payload = this.proto.toObject(message, {
+        return this.proto.toObject(message, {
             oneofs: true
         });
-
-        // Verify the object
-        this.verify(payload);
-
-        return payload;
     }
 
     /**
@@ -66,11 +75,7 @@ class ProtobufTranslator {
      * @return Returns a valid protobuf message object.
      */
     createMessageFromBuffer(buffer) {
-        let message = this.proto.decode(buffer);
-
-        this.verify(message);
-
-        return message;
+        return this.proto.decode(buffer);
     }
 
     /**

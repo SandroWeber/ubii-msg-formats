@@ -265,6 +265,32 @@ public final class ServiceReplyOuterClass {
      */
     ubii.processing.LockstepProcessing.LockstepProcessingReplyOrBuilder getLockstepProcessingReplyOrBuilder();
 
+    /**
+     * <code>.ubii.devices.Component component = 20;</code>
+     */
+    boolean hasComponent();
+    /**
+     * <code>.ubii.devices.Component component = 20;</code>
+     */
+    ubii.devices.ComponentOuterClass.Component getComponent();
+    /**
+     * <code>.ubii.devices.Component component = 20;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder();
+
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 21;</code>
+     */
+    boolean hasComponentList();
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 21;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentList getComponentList();
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 21;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder();
+
     public ubii.services.ServiceReplyOuterClass.ServiceReply.TypeCase getTypeCase();
   }
   /**
@@ -572,6 +598,34 @@ public final class ServiceReplyOuterClass {
               typeCase_ = 19;
               break;
             }
+            case 162: {
+              ubii.devices.ComponentOuterClass.Component.Builder subBuilder = null;
+              if (typeCase_ == 20) {
+                subBuilder = ((ubii.devices.ComponentOuterClass.Component) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.Component) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 20;
+              break;
+            }
+            case 170: {
+              ubii.devices.ComponentOuterClass.ComponentList.Builder subBuilder = null;
+              if (typeCase_ == 21) {
+                subBuilder = ((ubii.devices.ComponentOuterClass.ComponentList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.ComponentOuterClass.ComponentList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.ComponentList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 21;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -627,6 +681,8 @@ public final class ServiceReplyOuterClass {
       SERVICE(17),
       SERVICE_LIST(18),
       LOCKSTEP_PROCESSING_REPLY(19),
+      COMPONENT(20),
+      COMPONENT_LIST(21),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -661,6 +717,8 @@ public final class ServiceReplyOuterClass {
           case 17: return SERVICE;
           case 18: return SERVICE_LIST;
           case 19: return LOCKSTEP_PROCESSING_REPLY;
+          case 20: return COMPONENT;
+          case 21: return COMPONENT_LIST;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -1170,6 +1228,58 @@ public final class ServiceReplyOuterClass {
       return ubii.processing.LockstepProcessing.LockstepProcessingReply.getDefaultInstance();
     }
 
+    public static final int COMPONENT_FIELD_NUMBER = 20;
+    /**
+     * <code>.ubii.devices.Component component = 20;</code>
+     */
+    public boolean hasComponent() {
+      return typeCase_ == 20;
+    }
+    /**
+     * <code>.ubii.devices.Component component = 20;</code>
+     */
+    public ubii.devices.ComponentOuterClass.Component getComponent() {
+      if (typeCase_ == 20) {
+         return (ubii.devices.ComponentOuterClass.Component) type_;
+      }
+      return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.Component component = 20;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
+      if (typeCase_ == 20) {
+         return (ubii.devices.ComponentOuterClass.Component) type_;
+      }
+      return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+    }
+
+    public static final int COMPONENT_LIST_FIELD_NUMBER = 21;
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 21;</code>
+     */
+    public boolean hasComponentList() {
+      return typeCase_ == 21;
+    }
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 21;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
+      if (typeCase_ == 21) {
+         return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+      }
+      return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 21;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
+      if (typeCase_ == 21) {
+         return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+      }
+      return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1240,6 +1350,12 @@ public final class ServiceReplyOuterClass {
       }
       if (typeCase_ == 19) {
         output.writeMessage(19, (ubii.processing.LockstepProcessing.LockstepProcessingReply) type_);
+      }
+      if (typeCase_ == 20) {
+        output.writeMessage(20, (ubii.devices.ComponentOuterClass.Component) type_);
+      }
+      if (typeCase_ == 21) {
+        output.writeMessage(21, (ubii.devices.ComponentOuterClass.ComponentList) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -1325,6 +1441,14 @@ public final class ServiceReplyOuterClass {
       if (typeCase_ == 19) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(19, (ubii.processing.LockstepProcessing.LockstepProcessingReply) type_);
+      }
+      if (typeCase_ == 20) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, (ubii.devices.ComponentOuterClass.Component) type_);
+      }
+      if (typeCase_ == 21) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, (ubii.devices.ComponentOuterClass.ComponentList) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1422,6 +1546,14 @@ public final class ServiceReplyOuterClass {
           result = result && getLockstepProcessingReply()
               .equals(other.getLockstepProcessingReply());
           break;
+        case 20:
+          result = result && getComponent()
+              .equals(other.getComponent());
+          break;
+        case 21:
+          result = result && getComponentList()
+              .equals(other.getComponentList());
+          break;
         case 0:
         default:
       }
@@ -1512,6 +1644,14 @@ public final class ServiceReplyOuterClass {
         case 19:
           hash = (37 * hash) + LOCKSTEP_PROCESSING_REPLY_FIELD_NUMBER;
           hash = (53 * hash) + getLockstepProcessingReply().hashCode();
+          break;
+        case 20:
+          hash = (37 * hash) + COMPONENT_FIELD_NUMBER;
+          hash = (53 * hash) + getComponent().hashCode();
+          break;
+        case 21:
+          hash = (37 * hash) + COMPONENT_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getComponentList().hashCode();
           break;
         case 0:
         default:
@@ -1810,6 +1950,20 @@ public final class ServiceReplyOuterClass {
             result.type_ = lockstepProcessingReplyBuilder_.build();
           }
         }
+        if (typeCase_ == 20) {
+          if (componentBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = componentBuilder_.build();
+          }
+        }
+        if (typeCase_ == 21) {
+          if (componentListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = componentListBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -1934,6 +2088,14 @@ public final class ServiceReplyOuterClass {
           }
           case LOCKSTEP_PROCESSING_REPLY: {
             mergeLockstepProcessingReply(other.getLockstepProcessingReply());
+            break;
+          }
+          case COMPONENT: {
+            mergeComponent(other.getComponent());
+            break;
+          }
+          case COMPONENT_LIST: {
+            mergeComponentList(other.getComponentList());
             break;
           }
           case TYPE_NOT_SET: {
@@ -4567,6 +4729,278 @@ public final class ServiceReplyOuterClass {
         onChanged();;
         return lockstepProcessingReplyBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> componentBuilder_;
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public boolean hasComponent() {
+        return typeCase_ == 20;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component getComponent() {
+        if (componentBuilder_ == null) {
+          if (typeCase_ == 20) {
+            return (ubii.devices.ComponentOuterClass.Component) type_;
+          }
+          return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+        } else {
+          if (typeCase_ == 20) {
+            return componentBuilder_.getMessage();
+          }
+          return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public Builder setComponent(ubii.devices.ComponentOuterClass.Component value) {
+        if (componentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          componentBuilder_.setMessage(value);
+        }
+        typeCase_ = 20;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public Builder setComponent(
+          ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (componentBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          componentBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 20;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public Builder mergeComponent(ubii.devices.ComponentOuterClass.Component value) {
+        if (componentBuilder_ == null) {
+          if (typeCase_ == 20 &&
+              type_ != ubii.devices.ComponentOuterClass.Component.getDefaultInstance()) {
+            type_ = ubii.devices.ComponentOuterClass.Component.newBuilder((ubii.devices.ComponentOuterClass.Component) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 20) {
+            componentBuilder_.mergeFrom(value);
+          }
+          componentBuilder_.setMessage(value);
+        }
+        typeCase_ = 20;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public Builder clearComponent() {
+        if (componentBuilder_ == null) {
+          if (typeCase_ == 20) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 20) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          componentBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder getComponentBuilder() {
+        return getComponentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
+        if ((typeCase_ == 20) && (componentBuilder_ != null)) {
+          return componentBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 20) {
+            return (ubii.devices.ComponentOuterClass.Component) type_;
+          }
+          return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.Component component = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+          getComponentFieldBuilder() {
+        if (componentBuilder_ == null) {
+          if (!(typeCase_ == 20)) {
+            type_ = ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+          }
+          componentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder>(
+                  (ubii.devices.ComponentOuterClass.Component) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 20;
+        onChanged();;
+        return componentBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.ComponentList, ubii.devices.ComponentOuterClass.ComponentList.Builder, ubii.devices.ComponentOuterClass.ComponentListOrBuilder> componentListBuilder_;
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public boolean hasComponentList() {
+        return typeCase_ == 21;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
+        if (componentListBuilder_ == null) {
+          if (typeCase_ == 21) {
+            return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+          }
+          return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 21) {
+            return componentListBuilder_.getMessage();
+          }
+          return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public Builder setComponentList(ubii.devices.ComponentOuterClass.ComponentList value) {
+        if (componentListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          componentListBuilder_.setMessage(value);
+        }
+        typeCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public Builder setComponentList(
+          ubii.devices.ComponentOuterClass.ComponentList.Builder builderForValue) {
+        if (componentListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          componentListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public Builder mergeComponentList(ubii.devices.ComponentOuterClass.ComponentList value) {
+        if (componentListBuilder_ == null) {
+          if (typeCase_ == 21 &&
+              type_ != ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance()) {
+            type_ = ubii.devices.ComponentOuterClass.ComponentList.newBuilder((ubii.devices.ComponentOuterClass.ComponentList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 21) {
+            componentListBuilder_.mergeFrom(value);
+          }
+          componentListBuilder_.setMessage(value);
+        }
+        typeCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public Builder clearComponentList() {
+        if (componentListBuilder_ == null) {
+          if (typeCase_ == 21) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 21) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          componentListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentList.Builder getComponentListBuilder() {
+        return getComponentListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
+        if ((typeCase_ == 21) && (componentListBuilder_ != null)) {
+          return componentListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 21) {
+            return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+          }
+          return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.ComponentList, ubii.devices.ComponentOuterClass.ComponentList.Builder, ubii.devices.ComponentOuterClass.ComponentListOrBuilder> 
+          getComponentListFieldBuilder() {
+        if (componentListBuilder_ == null) {
+          if (!(typeCase_ == 21)) {
+            type_ = ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+          }
+          componentListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.ComponentOuterClass.ComponentList, ubii.devices.ComponentOuterClass.ComponentList.Builder, ubii.devices.ComponentOuterClass.ComponentListOrBuilder>(
+                  (ubii.devices.ComponentOuterClass.ComponentList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 21;
+        onChanged();;
+        return componentListBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4636,41 +5070,43 @@ public final class ServiceReplyOuterClass {
     java.lang.String[] descriptorData = {
       "\n!proto/services/serviceReply.proto\022\rubi" +
       "i.services\032\033proto/general/success.proto\032" +
-      "\031proto/general/error.proto\0329proto/topicD" +
-      "ata/topicDataRecord/dataStructure/lists." +
-      "proto\032\032proto/clients/client.proto\032\032proto" +
-      "/devices/device.proto\032\034proto/devices/top" +
-      "icMux.proto\032\036proto/devices/topicDemux.pr" +
-      "oto\032\032proto/servers/server.proto\032\034proto/s" +
-      "essions/session.proto\032\034proto/services/se" +
-      "rvice.proto\032\'proto/processing/processing" +
-      "Module.proto\032)proto/processing/lockstepP" +
-      "rocessing.proto\"\333\007\n\014ServiceReply\022(\n\007succ" +
-      "ess\030\001 \001(\0132\025.ubii.general.SuccessH\000\022$\n\005er" +
-      "ror\030\002 \001(\0132\023.ubii.general.ErrorH\000\022&\n\006clie" +
-      "nt\030\003 \001(\0132\024.ubii.clients.ClientH\000\022&\n\006devi" +
-      "ce\030\004 \001(\0132\024.ubii.devices.DeviceH\000\022&\n\006serv" +
-      "er\030\005 \001(\0132\024.ubii.servers.ServerH\000\022)\n\007sess" +
-      "ion\030\006 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014s" +
-      "ession_list\030\007 \001(\0132\032.ubii.sessions.Sessio" +
-      "nListH\000\022>\n\021processing_module\030\010 \001(\0132!.ubi" +
-      "i.processing.ProcessingModuleH\000\022G\n\026proce" +
-      "ssing_module_list\030\t \001(\0132%.ubii.processin" +
-      "g.ProcessingModuleListH\000\0225\n\013string_list\030" +
-      "\n \001(\0132\036.ubii.dataStructure.StringListH\000\022" +
-      "+\n\ttopic_mux\030\013 \001(\0132\026.ubii.devices.TopicM" +
-      "uxH\000\0224\n\016topic_mux_list\030\014 \001(\0132\032.ubii.devi" +
-      "ces.TopicMuxListH\000\022/\n\013topic_demux\030\r \001(\0132" +
-      "\030.ubii.devices.TopicDemuxH\000\0228\n\020topic_dem" +
-      "ux_list\030\016 \001(\0132\034.ubii.devices.TopicDemuxL" +
-      "istH\000\022/\n\013client_list\030\017 \001(\0132\030.ubii.client" +
-      "s.ClientListH\000\022/\n\013device_list\030\020 \001(\0132\030.ub" +
-      "ii.devices.DeviceListH\000\022)\n\007service\030\021 \001(\013" +
-      "2\026.ubii.services.ServiceH\000\0222\n\014service_li" +
-      "st\030\022 \001(\0132\032.ubii.services.ServiceListH\000\022M" +
-      "\n\031lockstep_processing_reply\030\023 \001(\0132(.ubii" +
-      ".processing.LockstepProcessingReplyH\000B\006\n" +
-      "\004typeb\006proto3"
+      "\031proto/general/error.proto\032\037proto/dataSt" +
+      "ructure/lists.proto\032\032proto/clients/clien" +
+      "t.proto\032\035proto/devices/component.proto\032\032" +
+      "proto/devices/device.proto\032\034proto/device" +
+      "s/topicMux.proto\032\036proto/devices/topicDem" +
+      "ux.proto\032\032proto/servers/server.proto\032\034pr" +
+      "oto/sessions/session.proto\032\034proto/servic" +
+      "es/service.proto\032\'proto/processing/proce" +
+      "ssingModule.proto\032)proto/processing/lock" +
+      "stepProcessing.proto\"\300\010\n\014ServiceReply\022(\n" +
+      "\007success\030\001 \001(\0132\025.ubii.general.SuccessH\000\022" +
+      "$\n\005error\030\002 \001(\0132\023.ubii.general.ErrorH\000\022&\n" +
+      "\006client\030\003 \001(\0132\024.ubii.clients.ClientH\000\022&\n" +
+      "\006device\030\004 \001(\0132\024.ubii.devices.DeviceH\000\022&\n" +
+      "\006server\030\005 \001(\0132\024.ubii.servers.ServerH\000\022)\n" +
+      "\007session\030\006 \001(\0132\026.ubii.sessions.SessionH\000" +
+      "\0222\n\014session_list\030\007 \001(\0132\032.ubii.sessions.S" +
+      "essionListH\000\022>\n\021processing_module\030\010 \001(\0132" +
+      "!.ubii.processing.ProcessingModuleH\000\022G\n\026" +
+      "processing_module_list\030\t \001(\0132%.ubii.proc" +
+      "essing.ProcessingModuleListH\000\0225\n\013string_" +
+      "list\030\n \001(\0132\036.ubii.dataStructure.StringLi" +
+      "stH\000\022+\n\ttopic_mux\030\013 \001(\0132\026.ubii.devices.T" +
+      "opicMuxH\000\0224\n\016topic_mux_list\030\014 \001(\0132\032.ubii" +
+      ".devices.TopicMuxListH\000\022/\n\013topic_demux\030\r" +
+      " \001(\0132\030.ubii.devices.TopicDemuxH\000\0228\n\020topi" +
+      "c_demux_list\030\016 \001(\0132\034.ubii.devices.TopicD" +
+      "emuxListH\000\022/\n\013client_list\030\017 \001(\0132\030.ubii.c" +
+      "lients.ClientListH\000\022/\n\013device_list\030\020 \001(\013" +
+      "2\030.ubii.devices.DeviceListH\000\022)\n\007service\030" +
+      "\021 \001(\0132\026.ubii.services.ServiceH\000\0222\n\014servi" +
+      "ce_list\030\022 \001(\0132\032.ubii.services.ServiceLis" +
+      "tH\000\022M\n\031lockstep_processing_reply\030\023 \001(\0132(" +
+      ".ubii.processing.LockstepProcessingReply" +
+      "H\000\022,\n\tcomponent\030\024 \001(\0132\027.ubii.devices.Com" +
+      "ponentH\000\0225\n\016component_list\030\025 \001(\0132\033.ubii." +
+      "devices.ComponentListH\000B\006\n\004typeb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4687,6 +5123,7 @@ public final class ServiceReplyOuterClass {
           ubii.general.ErrorOuterClass.getDescriptor(),
           ubii.dataStructure.Lists.getDescriptor(),
           ubii.clients.ClientOuterClass.getDescriptor(),
+          ubii.devices.ComponentOuterClass.getDescriptor(),
           ubii.devices.DeviceOuterClass.getDescriptor(),
           ubii.devices.TopicMuxOuterClass.getDescriptor(),
           ubii.devices.TopicDemuxOuterClass.getDescriptor(),
@@ -4701,11 +5138,12 @@ public final class ServiceReplyOuterClass {
     internal_static_ubii_services_ServiceReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_ServiceReply_descriptor,
-        new java.lang.String[] { "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "ProcessingModule", "ProcessingModuleList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "Service", "ServiceList", "LockstepProcessingReply", "Type", });
+        new java.lang.String[] { "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "ProcessingModule", "ProcessingModuleList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "Service", "ServiceList", "LockstepProcessingReply", "Component", "ComponentList", "Type", });
     ubii.general.SuccessOuterClass.getDescriptor();
     ubii.general.ErrorOuterClass.getDescriptor();
     ubii.dataStructure.Lists.getDescriptor();
     ubii.clients.ClientOuterClass.getDescriptor();
+    ubii.devices.ComponentOuterClass.getDescriptor();
     ubii.devices.DeviceOuterClass.getDescriptor();
     ubii.devices.TopicMuxOuterClass.getDescriptor();
     ubii.devices.TopicDemuxOuterClass.getDescriptor();

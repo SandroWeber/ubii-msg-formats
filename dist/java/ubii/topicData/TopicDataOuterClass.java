@@ -1163,14 +1163,13 @@ public final class TopicDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037proto/topicData/topicData.proto\022\016ubii." +
-      "topicData\0325proto/topicData/topicDataReco" +
-      "rd/topicDataRecord.proto\032\031proto/general/" +
-      "error.proto\"\276\001\n\tTopicData\022<\n\021topic_data_" +
-      "record\030\002 \001(\0132\037.ubii.topicData.TopicDataR" +
-      "ecordH\000\022E\n\026topic_data_record_list\030\003 \001(\0132" +
-      "#.ubii.topicData.TopicDataRecordListH\000\022$" +
-      "\n\005error\030\004 \001(\0132\023.ubii.general.ErrorH\000B\006\n\004" +
-      "typeb\006proto3"
+      "topicData\032%proto/topicData/topicDataReco" +
+      "rd.proto\032\031proto/general/error.proto\"\276\001\n\t" +
+      "TopicData\022<\n\021topic_data_record\030\002 \001(\0132\037.u" +
+      "bii.topicData.TopicDataRecordH\000\022E\n\026topic" +
+      "_data_record_list\030\003 \001(\0132#.ubii.topicData" +
+      ".TopicDataRecordListH\000\022$\n\005error\030\004 \001(\0132\023." +
+      "ubii.general.ErrorH\000B\006\n\004typeb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

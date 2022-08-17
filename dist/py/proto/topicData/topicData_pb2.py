@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from proto.topicData.topicDataRecord import topicDataRecord_pb2 as proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2
+from proto.topicData import topicDataRecord_pb2 as proto_dot_topicData_dot_topicDataRecord__pb2
 from proto.general import error_pb2 as proto_dot_general_dot_error__pb2
 
 
@@ -21,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.topicData',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1fproto/topicData/topicData.proto\x12\x0eubii.topicData\x1a\x35proto/topicData/topicDataRecord/topicDataRecord.proto\x1a\x19proto/general/error.proto\"\xbe\x01\n\tTopicData\x12<\n\x11topic_data_record\x18\x02 \x01(\x0b\x32\x1f.ubii.topicData.TopicDataRecordH\x00\x12\x45\n\x16topic_data_record_list\x18\x03 \x01(\x0b\x32#.ubii.topicData.TopicDataRecordListH\x00\x12$\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n\x1fproto/topicData/topicData.proto\x12\x0eubii.topicData\x1a%proto/topicData/topicDataRecord.proto\x1a\x19proto/general/error.proto\"\xbe\x01\n\tTopicData\x12<\n\x11topic_data_record\x18\x02 \x01(\x0b\x32\x1f.ubii.topicData.TopicDataRecordH\x00\x12\x45\n\x16topic_data_record_list\x18\x03 \x01(\x0b\x32#.ubii.topicData.TopicDataRecordListH\x00\x12$\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x13.ubii.general.ErrorH\x00\x42\x06\n\x04typeb\x06proto3')
   ,
-  dependencies=[proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2.DESCRIPTOR,proto_dot_general_dot_error__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_topicData_dot_topicDataRecord__pb2.DESCRIPTOR,proto_dot_general_dot_error__pb2.DESCRIPTOR,])
 
 
 
@@ -71,12 +71,12 @@ _TOPICDATA = _descriptor.Descriptor(
       name='type', full_name='ubii.topicData.TopicData.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=134,
-  serialized_end=324,
+  serialized_start=118,
+  serialized_end=308,
 )
 
-_TOPICDATA.fields_by_name['topic_data_record'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORD
-_TOPICDATA.fields_by_name['topic_data_record_list'].message_type = proto_dot_topicData_dot_topicDataRecord_dot_topicDataRecord__pb2._TOPICDATARECORDLIST
+_TOPICDATA.fields_by_name['topic_data_record'].message_type = proto_dot_topicData_dot_topicDataRecord__pb2._TOPICDATARECORD
+_TOPICDATA.fields_by_name['topic_data_record_list'].message_type = proto_dot_topicData_dot_topicDataRecord__pb2._TOPICDATARECORDLIST
 _TOPICDATA.fields_by_name['error'].message_type = proto_dot_general_dot_error__pb2._ERROR
 _TOPICDATA.oneofs_by_name['type'].fields.append(
   _TOPICDATA.fields_by_name['topic_data_record'])
