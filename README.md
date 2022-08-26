@@ -32,7 +32,7 @@ If you are interested in how they communicate with each other, please see
 - to compile just specific parts:
     - run 'python scripts/compile.py --opt [language]' where [language] is one of py/python, j/java, js/javascript, cs/csharp, all
     - run 'node scripts/generate-protobuf-static.js'
-
+- to build the custom python package (using [proto-plus](https://github.com/googleapis/proto-plus-python) wrappers instead of default python types) install a python build backend (e.g. [build](https://pypi.org/project/build/)), then simply build the package from the repository root (e.g. with installed [build](https://pypi.org/project/build/) backend, run `python -m build` in the top level directory containing the `pyproject.toml` file)
 
 ## Contribution
 
