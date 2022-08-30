@@ -47,9 +47,16 @@ __protobuf__ = module(
 
 class SessionStatus(Enum):
     CREATED = 0
+    """Blah"""
+
     RUNNING = 1
+    """Blah"""
+
     PAUSED = 2
+    """Blah"""
+
     STOPPED = 3
+    """Blah"""
 
 class Session(Message):
     """

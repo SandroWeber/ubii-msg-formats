@@ -208,17 +208,35 @@ class ProcessingModule(Message):
 
     class Status(Enum):
         INITIALIZED = 0
+        """Blah"""
+
         CREATED = 1
+        """Blah"""
+
         PROCESSING = 2
+        """Blah"""
+
         HALTED = 3
+        """Blah"""
+
         DESTROYED = 4
+        """Blah"""
 
     class Language(Enum):
         CPP = 0
+        """Blah"""
+
         PY = 1
+        """Blah"""
+
         JS = 2
+        """Blah"""
+
         CS = 3
+        """Blah"""
+
         JAVA = 4
+        """Blah"""
 
     id: str = Field(
         STRING,

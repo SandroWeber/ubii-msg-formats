@@ -50,8 +50,13 @@ class Image2D(Message):
 
     class DataFormat(Enum):
         GRAY8 = 0
+        """Blah"""
+
         RGB8 = 1
+        """Blah"""
+
         RGBA8 = 2
+        """Blah"""
 
     width: int = Field(
         INT32,

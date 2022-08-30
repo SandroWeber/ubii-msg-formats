@@ -86,14 +86,14 @@ html_theme_options = {
     'description': metadata['Summary'],
     'logo': 'logo.png',
     'github_user': 'saggitar',
-    'github_repo': project,
+    'github_repo': 'ubii-msg-formats',
     'page_width': '75%'
 }
 
 autodoc_default_options = {
     'member-order': 'bysource',
     'members': True,
-    'undoc-members': True,
+    'no-undoc-members': True,
     'show-inheritance': True,
     'no-imported-members': True,
 }

@@ -74,8 +74,13 @@ class Client(Message):
 
     class State(Enum):
         ACTIVE = 0
+        """Blah"""
+
         INACTIVE = 1
+        """Blah"""
+
         UNAVAILABLE = 2
+        """Blah"""
 
     id: str = Field(
         STRING,
