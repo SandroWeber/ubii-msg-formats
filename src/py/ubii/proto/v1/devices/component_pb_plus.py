@@ -56,10 +56,10 @@ class Component(Message):
 
     class IOType(Enum):
         PUBLISHER = 0
-        """Blah"""
+        """"""
 
         SUBSCRIBER = 1
-        """Blah"""
+        """"""
 
     topic: str = Field(
         STRING,

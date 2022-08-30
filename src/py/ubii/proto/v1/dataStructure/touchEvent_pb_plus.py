@@ -54,13 +54,13 @@ class TouchEvent(Message):
 
     class TouchEventType(Enum):
         TOUCH_START = 0
-        """Blah"""
+        """"""
 
         TOUCH_MOVE = 1
-        """Blah"""
+        """"""
 
         TOUCH_END = 2
-        """Blah"""
+        """"""
 
     type: TouchEventType = Field(
         ENUM,

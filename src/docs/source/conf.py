@@ -29,7 +29,7 @@ metadata = importlib_metadata.metadata('ubii-message-formats')
 
 # -- Project information -----------------------------------------------------
 
-project = metadata['Name']
+project = 'ubii-msg-formats'
 copyright = f'{datetime.datetime.now().year}, {metadata["Author"]}'
 author = 'Maximilian Schmidt'
 url = metadata['Home-Page']
@@ -86,7 +86,7 @@ html_theme_options = {
     'description': metadata['Summary'],
     'logo': 'logo.png',
     'github_user': 'saggitar',
-    'github_repo': 'ubii-msg-formats',
+    'github_repo': project,
     'page_width': '75%'
 }
 

@@ -98,7 +98,7 @@ def patch_wrapper_class_repr(replacement='...', max_len=50) -> None:
     For messages with many fields or long representation of field values this to much information.
 
     This function simply monkeypatches the `__repr__` method of :class:`proto.message.Message` to replace
-    output that is longer than :param:`max_len` with :param:`replacement`
+    output that is longer than :obj:`max_len` with :obj:`replacement`
 
     Args:
         replacement: string used as replacement

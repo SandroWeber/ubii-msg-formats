@@ -18,19 +18,19 @@ __protobuf__ = module(
 
 class HandGestureType(Enum):
     REST = 0
-    """Blah"""
+    """"""
 
     FINGERS_SPREAD = 1
-    """Blah"""
+    """"""
 
     WAVE_IN = 2
-    """Blah"""
+    """"""
 
     WAVE_OUT = 3
-    """Blah"""
+    """"""
 
     FIST = 4
-    """Blah"""
+    """"""
 
     DOUBLE_TAP = 5
-    """Blah"""
+    """"""

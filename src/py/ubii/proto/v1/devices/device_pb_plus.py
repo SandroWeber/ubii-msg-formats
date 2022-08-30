@@ -58,10 +58,10 @@ class Device(Message):
 
     class DeviceType(Enum):
         PARTICIPANT = 0
-        """Blah"""
+        """"""
 
         WATCHER = 1
-        """Blah"""
+        """"""
 
     id: str = Field(
         STRING,

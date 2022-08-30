@@ -18,7 +18,7 @@ __protobuf__ = module(
 
 class ButtonEventType(Enum):
     UP = 0
-    """Blah"""
+    """"""
 
     DOWN = 1
-    """Blah"""
+    """"""
