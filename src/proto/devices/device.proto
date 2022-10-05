@@ -1,7 +1,7 @@
 syntax = "proto3";
 package ubii.devices;
 
-import "proto/devices/component.proto";
+import "devices/component.proto";
 
 message Device {
     string id = 1;

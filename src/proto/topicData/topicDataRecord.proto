@@ -1,27 +1,27 @@
 syntax = "proto3";
 package ubii.topicData;
 
-import "proto/topicData/timestamp.proto";
-import "proto/dataStructure/lists.proto";
-import "proto/dataStructure/vector2.proto";
-import "proto/dataStructure/vector3.proto";
-import "proto/dataStructure/vector4.proto";
-import "proto/dataStructure/quaternion.proto";
-import "proto/dataStructure/matrix3x2.proto";
-import "proto/dataStructure/matrix4x4.proto";
-import "proto/dataStructure/color.proto";
-import "proto/dataStructure/touchEvent.proto";
-import "proto/dataStructure/keyEvent.proto";
-import "proto/dataStructure/mouseEvent.proto";
-import "proto/dataStructure/myoEvent.proto";
-import "proto/dataStructure/pose2d.proto";
-import "proto/dataStructure/pose3d.proto";
-import "proto/dataStructure/object2d.proto";
-import "proto/dataStructure/object3d.proto";
-import "proto/dataStructure/image.proto";
+import "topicData/timestamp.proto";
+import "dataStructure/lists.proto";
+import "dataStructure/vector2.proto";
+import "dataStructure/vector3.proto";
+import "dataStructure/vector4.proto";
+import "dataStructure/quaternion.proto";
+import "dataStructure/matrix3x2.proto";
+import "dataStructure/matrix4x4.proto";
+import "dataStructure/color.proto";
+import "dataStructure/touchEvent.proto";
+import "dataStructure/keyEvent.proto";
+import "dataStructure/mouseEvent.proto";
+import "dataStructure/myoEvent.proto";
+import "dataStructure/pose2d.proto";
+import "dataStructure/pose3d.proto";
+import "dataStructure/object2d.proto";
+import "dataStructure/object3d.proto";
+import "dataStructure/image.proto";
 
-import "proto/sessions/session.proto";
-import "proto/processing/processingModule.proto";
+import "sessions/session.proto";
+import "processing/processingModule.proto";
 
 // continuous index: 38
 message TopicDataRecord {

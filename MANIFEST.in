@@ -1,0 +1,2 @@
+recursive-include src/py/ubii/proto *.proto
+include src/constants.json

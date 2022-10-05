@@ -1,0 +1,2 @@
+sphinxcontrib-napoleon==0.7
+sphinxcontrib-programoutput==0.17

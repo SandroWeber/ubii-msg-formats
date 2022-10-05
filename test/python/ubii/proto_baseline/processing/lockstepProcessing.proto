@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ubii.proto_baseline.processing;
+
+import "ubii/proto_baseline/topicData/topicDataRecord.proto";
+
+message LockstepProcessingRequest {
+    repeated string processing_module_ids = 1;
+    repeated ubii.proto_baseline.topicData.TopicDataRecord records = 2;
+    int32 delta_time_ms = 3;
+}
+
+message LockstepProcessingReply {
+    repeated string processing_module_ids = 1;
+    repeated ubii.proto_baseline.topicData.TopicDataRecord records = 2;
+}

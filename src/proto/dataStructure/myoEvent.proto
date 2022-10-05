@@ -1,10 +1,10 @@
 syntax = "proto3";
 package ubii.dataStructure;
 
-import "proto/dataStructure/vector8.proto";
-import "proto/dataStructure/vector3.proto";
-import "proto/dataStructure/quaternion.proto";
-import "proto/dataStructure/handGestureType.proto";
+import "dataStructure/vector8.proto";
+import "dataStructure/vector3.proto";
+import "dataStructure/quaternion.proto";
+import "dataStructure/handGestureType.proto";
 
 message MyoEvent {
     ubii.dataStructure.Vector8 emg = 1;

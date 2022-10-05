@@ -1,8 +1,8 @@
 syntax = "proto3";
 package ubii.clients;
 
-import "proto/devices/device.proto";
-import "proto/processing/processingModule.proto";
+import "devices/device.proto";
+import "processing/processingModule.proto";
 
 message Client {
     enum State {

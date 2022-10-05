@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ubii.proto_baseline.dataStructure;
+
+message Vector4 {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+    double w = 4;
+}
+
+message Vector4List {
+    repeated ubii.proto_baseline.dataStructure.Vector4 elements = 1;
+}

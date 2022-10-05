@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ubii.proto_baseline.dataStructure;
+
+import "ubii/proto_baseline/dataStructure/vector3.proto";
+import "ubii/proto_baseline/dataStructure/quaternion.proto";
+
+message Pose3D {
+    ubii.proto_baseline.dataStructure.Vector3 position = 1;
+    oneof orientation {
+        ubii.proto_baseline.dataStructure.Quaternion quaternion = 2;
+        ubii.proto_baseline.dataStructure.Vector3 euler = 3;
+    }
+}

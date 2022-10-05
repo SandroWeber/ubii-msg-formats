@@ -1,0 +1,156 @@
+syntax = "proto3";
+package ubii.servers;
+
+message Constants {
+  message DefaultTopics {
+    message Services {
+      string SERVER_CONFIG = 1;
+
+      string CLIENT_REGISTRATION = 2;
+      string CLIENT_DEREGISTRATION = 3;
+      string CLIENT_GET_LIST = 4;
+
+      string DEVICE_REGISTRATION = 5;
+      string DEVICE_DEREGISTRATION = 6;
+      string DEVICE_GET = 7;
+      string DEVICE_GET_LIST = 8;
+
+      string COMPONENT_GET_LIST = 48;
+
+      string PM_DATABASE_SAVE = 9;
+      string PM_DATABASE_DELETE = 10;
+      string PM_DATABASE_GET = 11;
+      string PM_DATABASE_GET_LIST = 12;
+      string PM_DATABASE_ONLINE_GET_LIST = 13;
+      string PM_DATABASE_LOCAL_GET_LIST = 14;
+      string PM_RUNTIME_ADD = 15;
+      string PM_RUNTIME_REMOVE = 16;
+      string PM_RUNTIME_GET = 17;
+      string PM_RUNTIME_GET_LIST = 18;
+      string PM_REGISTRY_ADD = 49;
+      string PM_REGISTRY_REMOVE = 50;
+
+      string SESSION_DATABASE_SAVE = 19;
+      string SESSION_DATABASE_DELETE = 20;
+      string SESSION_DATABASE_GET = 21;
+      string SESSION_DATABASE_GET_LIST = 22;
+      string SESSION_DATABASE_ONLINE_GET_LIST = 23;
+      string SESSION_DATABASE_LOCAL_GET_LIST = 24;
+      string SESSION_RUNTIME_ADD = 25;
+      string SESSION_RUNTIME_REMOVE = 26;
+      string SESSION_RUNTIME_GET = 27;
+      string SESSION_RUNTIME_GET_LIST = 28;
+      string SESSION_RUNTIME_START = 29;
+      string SESSION_RUNTIME_STOP = 30;
+      string SESSION_RUNTIME_UPDATE = 31;
+
+      string TOPIC_DEMUX_DATABASE_SAVE = 32;
+      string TOPIC_DEMUX_DATABASE_DELETE = 33;
+      string TOPIC_DEMUX_DATABASE_GET = 34;
+      string TOPIC_DEMUX_DATABASE_GET_LIST = 35;
+      string TOPIC_DEMUX_RUNTIME_GET = 36;
+      string TOPIC_DEMUX_RUNTIME_GET_LIST = 37;
+
+      string TOPIC_MUX_DATABASE_SAVE = 38;
+      string TOPIC_MUX_DATABASE_DELETE = 39;
+      string TOPIC_MUX_DATABASE_GET = 40;
+      string TOPIC_MUX_DATABASE_GET_LIST = 41;
+      string TOPIC_MUX_RUNTIME_GET = 42;
+      string TOPIC_MUX_RUNTIME_GET_LIST = 43;
+
+      string SERVICE_LIST = 44;
+      string TOPIC_LIST = 45;
+      string TOPIC_SUBSCRIPTION = 46;
+
+      string LATENCY_CLIENTS_LIST = 47;
+    }
+    message InfoTopics {
+      string REGEX_ALL_INFOS = 1;
+      string REGEX_PM_INFOS = 2;
+      string NEW_PM = 3;
+      string START_PM = 4;
+      string DELETE_PM = 5;
+      string CHANGE_PM = 6;
+      string PROCESSED_PM = 7;
+      string REGEX_SESSION_INFOS = 8;
+      string NEW_SESSION = 9;
+      string DELETE_SESSION = 10;
+      string CHANGE_SESSION = 11;
+      string START_SESSION = 12;
+      string STOP_SESSION = 13;
+      string RUNNING_SESSION = 14;
+    }
+
+    Services SERVICES = 1;
+    InfoTopics INFO_TOPICS = 2;
+  }
+
+  message MsgTypes {
+    string ERROR = 1;
+    string SUCCESS = 2;
+
+    string SERVER = 3;
+    string CLIENT = 4;
+    string CLIENT_LIST = 5;
+
+    string DEVICE = 6;
+    string DEVICE_LIST = 7;
+    string COMPONENT = 8;
+    string COMPONENT_LIST = 9;
+    string TOPIC_MUX = 10;
+    string TOPIC_MUX_LIST = 11;
+    string TOPIC_DEMUX = 12;
+    string TOPIC_DEMUX_LIST = 13;
+
+    string SERVICE = 14;
+    string SERVICE_LIST = 15;
+    string SERVICE_REQUEST = 16;
+    string SERVICE_REPLY = 17;
+    string SERVICE_REUEST_TOPIC_SUBSCRIPTION = 18;
+
+    string SESSION = 19;
+    string SESSION_LIST = 20;
+    string SESSION_IO_MAPPING = 21;
+
+    string PM = 22;
+    string PM_LIST = 24;
+    string PM_MODULE_IO = 25;
+    string PM_PROCESSING_MODE = 26;
+
+    string TOPIC_DATA = 27;
+    string TOPIC_DATA_RECORD = 28;
+    string TOPIC_DATA_RECORD_LIST = 29;
+    string TOPIC_DATA_TIMESTAMP = 30;
+    string DATASTRUCTURE_BOOL = 31;
+    string DATASTRUCTURE_BOOL_LIST = 32;
+    string DATASTRUCTURE_INT32 = 33;
+    string DATASTRUCTURE_INT32_LIST = 34;
+    string DATASTRUCTURE_STRING = 35;
+    string DATASTRUCTURE_STRING_LIST = 36;
+    string DATASTRUCTURE_FLOAT = 37;
+    string DATASTRUCTURE_FLOAT_LIST = 38;
+    string DATASTRUCTURE_DOUBLE = 39;
+    string DATASTRUCTURE_DOUBLE_LIST = 40;
+    string DATASTRUCTURE_COLOR = 41;
+    string DATASTRUCTURE_IMAGE = 42;
+    string DATASTRUCTURE_IMAGE_LIST = 43;
+    string DATASTRUCTURE_KEY_EVENT = 44;
+    string DATASTRUCTURE_MATRIX_3X2 = 45;
+    string DATASTRUCTURE_MATRIX_4X4 = 46;
+    string DATASTRUCTURE_MOUSE_EVENT = 47;
+    string DATASTRUCTURE_OBJECT2D = 48;
+    string DATASTRUCTURE_OBJECT2D_LIST = 49;
+    string DATASTRUCTURE_OBJECT3D = 50;
+    string DATASTRUCTURE_OBJECT3D_LIST = 51;
+    string DATASTRUCTURE_POSE2D = 52;
+    string DATASTRUCTURE_POSE3D = 53;
+    string DATASTRUCTURE_QUATERNION = 54;
+    string DATASTRUCTURE_TOUCH_EVENT = 55;
+    string DATASTRUCTURE_VECTOR2 = 56;
+    string DATASTRUCTURE_VECTOR3 = 57;
+    string DATASTRUCTURE_VECTOR4 = 58;
+    string DATASTRUCTURE_VECTOR8 = 59;
+  }
+  DefaultTopics DEFAULT_TOPICS = 1;
+  MsgTypes MSG_TYPES = 2;
+}

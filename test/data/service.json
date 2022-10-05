@@ -1,0 +1,11 @@
+{
+    "bytes": "",
+    "dict": {
+        "description": "",
+        "request_message_format": "",
+        "response_message_format": "",
+        "tags": [],
+        "topic": ""
+    },
+    "json": "{\n  \"topic\": \"\",\n  \"request_message_format\": \"\",\n  \"response_message_format\": \"\",\n  \"tags\": [],\n  \"description\": \"\"\n}"
+}
