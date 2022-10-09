@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ubii.conditions;
+
+import "proto/clients/client.proto";
+
+message NotifyCondition {
+    string id = 1;
+    string name = 2;
+    string evaluation_function_stringified = 3;
+    ubii.clients.Client client_profile_pub = 4;
+    ubii.clients.Client client_profile_sub = 5;
+}
