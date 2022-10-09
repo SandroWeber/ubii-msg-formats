@@ -103,6 +103,54 @@ public final class TopicSubscriptionOuterClass {
      */
     com.google.protobuf.ByteString
         getUnsubscribeTopicRegexpBytes(int index);
+
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    java.util.List<ubii.devices.ComponentOuterClass.Component> 
+        getSubscribeComponentsList();
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    ubii.devices.ComponentOuterClass.Component getSubscribeComponents(int index);
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    int getSubscribeComponentsCount();
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+        getSubscribeComponentsOrBuilderList();
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentOrBuilder getSubscribeComponentsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    java.util.List<ubii.devices.ComponentOuterClass.Component> 
+        getUnsubscribeComponentsList();
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    ubii.devices.ComponentOuterClass.Component getUnsubscribeComponents(int index);
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    int getUnsubscribeComponentsCount();
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+        getUnsubscribeComponentsOrBuilderList();
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentOrBuilder getUnsubscribeComponentsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code ubii.services.request.TopicSubscription}
@@ -122,6 +170,8 @@ public final class TopicSubscriptionOuterClass {
       unsubscribeTopics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       subscribeTopicRegexp_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       unsubscribeTopicRegexp_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subscribeComponents_ = java.util.Collections.emptyList();
+      unsubscribeComponents_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -190,6 +240,24 @@ public final class TopicSubscriptionOuterClass {
               unsubscribeTopicRegexp_.add(s);
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                subscribeComponents_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              subscribeComponents_.add(
+                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                unsubscribeComponents_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              unsubscribeComponents_.add(
+                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -216,6 +284,12 @@ public final class TopicSubscriptionOuterClass {
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           unsubscribeTopicRegexp_ = unsubscribeTopicRegexp_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          subscribeComponents_ = java.util.Collections.unmodifiableList(subscribeComponents_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          unsubscribeComponents_ = java.util.Collections.unmodifiableList(unsubscribeComponents_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -385,6 +459,76 @@ public final class TopicSubscriptionOuterClass {
       return unsubscribeTopicRegexp_.getByteString(index);
     }
 
+    public static final int SUBSCRIBE_COMPONENTS_FIELD_NUMBER = 6;
+    private java.util.List<ubii.devices.ComponentOuterClass.Component> subscribeComponents_;
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    public java.util.List<ubii.devices.ComponentOuterClass.Component> getSubscribeComponentsList() {
+      return subscribeComponents_;
+    }
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    public java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+        getSubscribeComponentsOrBuilderList() {
+      return subscribeComponents_;
+    }
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    public int getSubscribeComponentsCount() {
+      return subscribeComponents_.size();
+    }
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    public ubii.devices.ComponentOuterClass.Component getSubscribeComponents(int index) {
+      return subscribeComponents_.get(index);
+    }
+    /**
+     * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentOrBuilder getSubscribeComponentsOrBuilder(
+        int index) {
+      return subscribeComponents_.get(index);
+    }
+
+    public static final int UNSUBSCRIBE_COMPONENTS_FIELD_NUMBER = 7;
+    private java.util.List<ubii.devices.ComponentOuterClass.Component> unsubscribeComponents_;
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    public java.util.List<ubii.devices.ComponentOuterClass.Component> getUnsubscribeComponentsList() {
+      return unsubscribeComponents_;
+    }
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    public java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+        getUnsubscribeComponentsOrBuilderList() {
+      return unsubscribeComponents_;
+    }
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    public int getUnsubscribeComponentsCount() {
+      return unsubscribeComponents_.size();
+    }
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    public ubii.devices.ComponentOuterClass.Component getUnsubscribeComponents(int index) {
+      return unsubscribeComponents_.get(index);
+    }
+    /**
+     * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentOrBuilder getUnsubscribeComponentsOrBuilder(
+        int index) {
+      return unsubscribeComponents_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -413,6 +557,12 @@ public final class TopicSubscriptionOuterClass {
       }
       for (int i = 0; i < unsubscribeTopicRegexp_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unsubscribeTopicRegexp_.getRaw(i));
+      }
+      for (int i = 0; i < subscribeComponents_.size(); i++) {
+        output.writeMessage(6, subscribeComponents_.get(i));
+      }
+      for (int i = 0; i < unsubscribeComponents_.size(); i++) {
+        output.writeMessage(7, unsubscribeComponents_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -458,6 +608,14 @@ public final class TopicSubscriptionOuterClass {
         size += dataSize;
         size += 1 * getUnsubscribeTopicRegexpList().size();
       }
+      for (int i = 0; i < subscribeComponents_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, subscribeComponents_.get(i));
+      }
+      for (int i = 0; i < unsubscribeComponents_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, unsubscribeComponents_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -484,6 +642,10 @@ public final class TopicSubscriptionOuterClass {
           .equals(other.getSubscribeTopicRegexpList());
       result = result && getUnsubscribeTopicRegexpList()
           .equals(other.getUnsubscribeTopicRegexpList());
+      result = result && getSubscribeComponentsList()
+          .equals(other.getSubscribeComponentsList());
+      result = result && getUnsubscribeComponentsList()
+          .equals(other.getUnsubscribeComponentsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -512,6 +674,14 @@ public final class TopicSubscriptionOuterClass {
       if (getUnsubscribeTopicRegexpCount() > 0) {
         hash = (37 * hash) + UNSUBSCRIBE_TOPIC_REGEXP_FIELD_NUMBER;
         hash = (53 * hash) + getUnsubscribeTopicRegexpList().hashCode();
+      }
+      if (getSubscribeComponentsCount() > 0) {
+        hash = (37 * hash) + SUBSCRIBE_COMPONENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getSubscribeComponentsList().hashCode();
+      }
+      if (getUnsubscribeComponentsCount() > 0) {
+        hash = (37 * hash) + UNSUBSCRIBE_COMPONENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getUnsubscribeComponentsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -641,6 +811,8 @@ public final class TopicSubscriptionOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getSubscribeComponentsFieldBuilder();
+          getUnsubscribeComponentsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -656,6 +828,18 @@ public final class TopicSubscriptionOuterClass {
         bitField0_ = (bitField0_ & ~0x00000008);
         unsubscribeTopicRegexp_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
+        if (subscribeComponentsBuilder_ == null) {
+          subscribeComponents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          subscribeComponentsBuilder_.clear();
+        }
+        if (unsubscribeComponentsBuilder_ == null) {
+          unsubscribeComponents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          unsubscribeComponentsBuilder_.clear();
+        }
         return this;
       }
 
@@ -705,6 +889,24 @@ public final class TopicSubscriptionOuterClass {
           bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.unsubscribeTopicRegexp_ = unsubscribeTopicRegexp_;
+        if (subscribeComponentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            subscribeComponents_ = java.util.Collections.unmodifiableList(subscribeComponents_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.subscribeComponents_ = subscribeComponents_;
+        } else {
+          result.subscribeComponents_ = subscribeComponentsBuilder_.build();
+        }
+        if (unsubscribeComponentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            unsubscribeComponents_ = java.util.Collections.unmodifiableList(unsubscribeComponents_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.unsubscribeComponents_ = unsubscribeComponents_;
+        } else {
+          result.unsubscribeComponents_ = unsubscribeComponentsBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -797,6 +999,58 @@ public final class TopicSubscriptionOuterClass {
             unsubscribeTopicRegexp_.addAll(other.unsubscribeTopicRegexp_);
           }
           onChanged();
+        }
+        if (subscribeComponentsBuilder_ == null) {
+          if (!other.subscribeComponents_.isEmpty()) {
+            if (subscribeComponents_.isEmpty()) {
+              subscribeComponents_ = other.subscribeComponents_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureSubscribeComponentsIsMutable();
+              subscribeComponents_.addAll(other.subscribeComponents_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.subscribeComponents_.isEmpty()) {
+            if (subscribeComponentsBuilder_.isEmpty()) {
+              subscribeComponentsBuilder_.dispose();
+              subscribeComponentsBuilder_ = null;
+              subscribeComponents_ = other.subscribeComponents_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              subscribeComponentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSubscribeComponentsFieldBuilder() : null;
+            } else {
+              subscribeComponentsBuilder_.addAllMessages(other.subscribeComponents_);
+            }
+          }
+        }
+        if (unsubscribeComponentsBuilder_ == null) {
+          if (!other.unsubscribeComponents_.isEmpty()) {
+            if (unsubscribeComponents_.isEmpty()) {
+              unsubscribeComponents_ = other.unsubscribeComponents_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureUnsubscribeComponentsIsMutable();
+              unsubscribeComponents_.addAll(other.unsubscribeComponents_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.unsubscribeComponents_.isEmpty()) {
+            if (unsubscribeComponentsBuilder_.isEmpty()) {
+              unsubscribeComponentsBuilder_.dispose();
+              unsubscribeComponentsBuilder_ = null;
+              unsubscribeComponents_ = other.unsubscribeComponents_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              unsubscribeComponentsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUnsubscribeComponentsFieldBuilder() : null;
+            } else {
+              unsubscribeComponentsBuilder_.addAllMessages(other.unsubscribeComponents_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1272,6 +1526,486 @@ public final class TopicSubscriptionOuterClass {
         onChanged();
         return this;
       }
+
+      private java.util.List<ubii.devices.ComponentOuterClass.Component> subscribeComponents_ =
+        java.util.Collections.emptyList();
+      private void ensureSubscribeComponentsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          subscribeComponents_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>(subscribeComponents_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> subscribeComponentsBuilder_;
+
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public java.util.List<ubii.devices.ComponentOuterClass.Component> getSubscribeComponentsList() {
+        if (subscribeComponentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(subscribeComponents_);
+        } else {
+          return subscribeComponentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public int getSubscribeComponentsCount() {
+        if (subscribeComponentsBuilder_ == null) {
+          return subscribeComponents_.size();
+        } else {
+          return subscribeComponentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component getSubscribeComponents(int index) {
+        if (subscribeComponentsBuilder_ == null) {
+          return subscribeComponents_.get(index);
+        } else {
+          return subscribeComponentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder setSubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component value) {
+        if (subscribeComponentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubscribeComponentsIsMutable();
+          subscribeComponents_.set(index, value);
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder setSubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (subscribeComponentsBuilder_ == null) {
+          ensureSubscribeComponentsIsMutable();
+          subscribeComponents_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder addSubscribeComponents(ubii.devices.ComponentOuterClass.Component value) {
+        if (subscribeComponentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubscribeComponentsIsMutable();
+          subscribeComponents_.add(value);
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder addSubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component value) {
+        if (subscribeComponentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubscribeComponentsIsMutable();
+          subscribeComponents_.add(index, value);
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder addSubscribeComponents(
+          ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (subscribeComponentsBuilder_ == null) {
+          ensureSubscribeComponentsIsMutable();
+          subscribeComponents_.add(builderForValue.build());
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder addSubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (subscribeComponentsBuilder_ == null) {
+          ensureSubscribeComponentsIsMutable();
+          subscribeComponents_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder addAllSubscribeComponents(
+          java.lang.Iterable<? extends ubii.devices.ComponentOuterClass.Component> values) {
+        if (subscribeComponentsBuilder_ == null) {
+          ensureSubscribeComponentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, subscribeComponents_);
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder clearSubscribeComponents() {
+        if (subscribeComponentsBuilder_ == null) {
+          subscribeComponents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public Builder removeSubscribeComponents(int index) {
+        if (subscribeComponentsBuilder_ == null) {
+          ensureSubscribeComponentsIsMutable();
+          subscribeComponents_.remove(index);
+          onChanged();
+        } else {
+          subscribeComponentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder getSubscribeComponentsBuilder(
+          int index) {
+        return getSubscribeComponentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentOrBuilder getSubscribeComponentsOrBuilder(
+          int index) {
+        if (subscribeComponentsBuilder_ == null) {
+          return subscribeComponents_.get(index);  } else {
+          return subscribeComponentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+           getSubscribeComponentsOrBuilderList() {
+        if (subscribeComponentsBuilder_ != null) {
+          return subscribeComponentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(subscribeComponents_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder addSubscribeComponentsBuilder() {
+        return getSubscribeComponentsFieldBuilder().addBuilder(
+            ubii.devices.ComponentOuterClass.Component.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder addSubscribeComponentsBuilder(
+          int index) {
+        return getSubscribeComponentsFieldBuilder().addBuilder(
+            index, ubii.devices.ComponentOuterClass.Component.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.devices.Component subscribe_components = 6;</code>
+       */
+      public java.util.List<ubii.devices.ComponentOuterClass.Component.Builder> 
+           getSubscribeComponentsBuilderList() {
+        return getSubscribeComponentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+          getSubscribeComponentsFieldBuilder() {
+        if (subscribeComponentsBuilder_ == null) {
+          subscribeComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder>(
+                  subscribeComponents_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          subscribeComponents_ = null;
+        }
+        return subscribeComponentsBuilder_;
+      }
+
+      private java.util.List<ubii.devices.ComponentOuterClass.Component> unsubscribeComponents_ =
+        java.util.Collections.emptyList();
+      private void ensureUnsubscribeComponentsIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          unsubscribeComponents_ = new java.util.ArrayList<ubii.devices.ComponentOuterClass.Component>(unsubscribeComponents_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> unsubscribeComponentsBuilder_;
+
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public java.util.List<ubii.devices.ComponentOuterClass.Component> getUnsubscribeComponentsList() {
+        if (unsubscribeComponentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(unsubscribeComponents_);
+        } else {
+          return unsubscribeComponentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public int getUnsubscribeComponentsCount() {
+        if (unsubscribeComponentsBuilder_ == null) {
+          return unsubscribeComponents_.size();
+        } else {
+          return unsubscribeComponentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component getUnsubscribeComponents(int index) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          return unsubscribeComponents_.get(index);
+        } else {
+          return unsubscribeComponentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder setUnsubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component value) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnsubscribeComponentsIsMutable();
+          unsubscribeComponents_.set(index, value);
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder setUnsubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          ensureUnsubscribeComponentsIsMutable();
+          unsubscribeComponents_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder addUnsubscribeComponents(ubii.devices.ComponentOuterClass.Component value) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnsubscribeComponentsIsMutable();
+          unsubscribeComponents_.add(value);
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder addUnsubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component value) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUnsubscribeComponentsIsMutable();
+          unsubscribeComponents_.add(index, value);
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder addUnsubscribeComponents(
+          ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          ensureUnsubscribeComponentsIsMutable();
+          unsubscribeComponents_.add(builderForValue.build());
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder addUnsubscribeComponents(
+          int index, ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          ensureUnsubscribeComponentsIsMutable();
+          unsubscribeComponents_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder addAllUnsubscribeComponents(
+          java.lang.Iterable<? extends ubii.devices.ComponentOuterClass.Component> values) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          ensureUnsubscribeComponentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, unsubscribeComponents_);
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder clearUnsubscribeComponents() {
+        if (unsubscribeComponentsBuilder_ == null) {
+          unsubscribeComponents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public Builder removeUnsubscribeComponents(int index) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          ensureUnsubscribeComponentsIsMutable();
+          unsubscribeComponents_.remove(index);
+          onChanged();
+        } else {
+          unsubscribeComponentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder getUnsubscribeComponentsBuilder(
+          int index) {
+        return getUnsubscribeComponentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentOrBuilder getUnsubscribeComponentsOrBuilder(
+          int index) {
+        if (unsubscribeComponentsBuilder_ == null) {
+          return unsubscribeComponents_.get(index);  } else {
+          return unsubscribeComponentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public java.util.List<? extends ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+           getUnsubscribeComponentsOrBuilderList() {
+        if (unsubscribeComponentsBuilder_ != null) {
+          return unsubscribeComponentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(unsubscribeComponents_);
+        }
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder addUnsubscribeComponentsBuilder() {
+        return getUnsubscribeComponentsFieldBuilder().addBuilder(
+            ubii.devices.ComponentOuterClass.Component.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder addUnsubscribeComponentsBuilder(
+          int index) {
+        return getUnsubscribeComponentsFieldBuilder().addBuilder(
+            index, ubii.devices.ComponentOuterClass.Component.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ubii.devices.Component unsubscribe_components = 7;</code>
+       */
+      public java.util.List<ubii.devices.ComponentOuterClass.Component.Builder> 
+           getUnsubscribeComponentsBuilderList() {
+        return getUnsubscribeComponentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+          getUnsubscribeComponentsFieldBuilder() {
+        if (unsubscribeComponentsBuilder_ == null) {
+          unsubscribeComponentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder>(
+                  unsubscribeComponents_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          unsubscribeComponents_ = null;
+        }
+        return unsubscribeComponentsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1340,11 +2074,15 @@ public final class TopicSubscriptionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n.proto/services/request/topicSubscripti" +
-      "on.proto\022\025ubii.services.request\"\236\001\n\021Topi" +
-      "cSubscription\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subs" +
-      "cribe_topics\030\002 \003(\t\022\032\n\022unsubscribe_topics" +
-      "\030\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \003(\t\022 " +
-      "\n\030unsubscribe_topic_regexp\030\005 \003(\tb\006proto3"
+      "on.proto\022\025ubii.services.request\032\035proto/d" +
+      "evices/component.proto\"\216\002\n\021TopicSubscrip" +
+      "tion\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subscribe_top" +
+      "ics\030\002 \003(\t\022\032\n\022unsubscribe_topics\030\003 \003(\t\022\036\n" +
+      "\026subscribe_topic_regexp\030\004 \003(\t\022 \n\030unsubsc" +
+      "ribe_topic_regexp\030\005 \003(\t\0225\n\024subscribe_com" +
+      "ponents\030\006 \003(\0132\027.ubii.devices.Component\0227" +
+      "\n\026unsubscribe_components\030\007 \003(\0132\027.ubii.de" +
+      "vices.Componentb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1357,13 +2095,15 @@ public final class TopicSubscriptionOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          ubii.devices.ComponentOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_services_request_TopicSubscription_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_services_request_TopicSubscription_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_request_TopicSubscription_descriptor,
-        new java.lang.String[] { "ClientId", "SubscribeTopics", "UnsubscribeTopics", "SubscribeTopicRegexp", "UnsubscribeTopicRegexp", });
+        new java.lang.String[] { "ClientId", "SubscribeTopics", "UnsubscribeTopics", "SubscribeTopicRegexp", "UnsubscribeTopicRegexp", "SubscribeComponents", "UnsubscribeComponents", });
+    ubii.devices.ComponentOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

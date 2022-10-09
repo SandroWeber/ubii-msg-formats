@@ -88,6 +88,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, description_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::Component, notify_condition_ids_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::devices::ComponentList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -97,7 +98,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::devices::Component)},
-  { 13, -1, sizeof(::ubii::devices::ComponentList)},
+  { 14, -1, sizeof(::ubii::devices::ComponentList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -127,17 +128,18 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\035proto/devices/component.proto\022\014ubii.de"
-      "vices\"\334\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me"
+      "vices\"\372\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me"
       "ssage_format\030\002 \001(\t\022/\n\007io_type\030\003 \001(\0162\036.ub"
       "ii.devices.Component.IOType\022\021\n\tdevice_id"
       "\030\004 \001(\t\022\014\n\004tags\030\005 \003(\t\022\023\n\013description\030\006 \001("
-      "\t\022\n\n\002id\030\007 \001(\t\022\014\n\004name\030\010 \001(\t\"\'\n\006IOType\022\r\n"
-      "\tPUBLISHER\020\000\022\016\n\nSUBSCRIBER\020\001\":\n\rComponen"
-      "tList\022)\n\010elements\030\001 \003(\0132\027.ubii.devices.C"
-      "omponentb\006proto3"
+      "\t\022\n\n\002id\030\007 \001(\t\022\014\n\004name\030\010 \001(\t\022\034\n\024notify_co"
+      "ndition_ids\030\t \003(\t\"\'\n\006IOType\022\r\n\tPUBLISHER"
+      "\020\000\022\016\n\nSUBSCRIBER\020\001\":\n\rComponentList\022)\n\010e"
+      "lements\030\001 \003(\0132\027.ubii.devices.Componentb\006"
+      "proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 336);
+      descriptor, 366);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/devices/component.proto", &protobuf_RegisterTypes);
 }
@@ -190,6 +192,7 @@ const int Component::kTagsFieldNumber;
 const int Component::kDescriptionFieldNumber;
 const int Component::kIdFieldNumber;
 const int Component::kNameFieldNumber;
+const int Component::kNotifyConditionIdsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Component::Component()
@@ -202,7 +205,8 @@ Component::Component()
 Component::Component(const Component& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      tags_(from.tags_) {
+      tags_(from.tags_),
+      notify_condition_ids_(from.notify_condition_ids_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.topic().size() > 0) {
@@ -277,6 +281,7 @@ void Component::Clear() {
   (void) cached_has_bits;
 
   tags_.Clear();
+  notify_condition_ids_.Clear();
   topic_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_format_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   device_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -425,6 +430,23 @@ bool Component::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated string notify_condition_ids = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_notify_condition_ids()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->notify_condition_ids(this->notify_condition_ids_size() - 1).data(),
+            static_cast<int>(this->notify_condition_ids(this->notify_condition_ids_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "ubii.devices.Component.notify_condition_ids"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -527,6 +549,16 @@ void Component::SerializeWithCachedSizes(
       8, this->name(), output);
   }
 
+  // repeated string notify_condition_ids = 9;
+  for (int i = 0, n = this->notify_condition_ids_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->notify_condition_ids(i).data(), static_cast<int>(this->notify_condition_ids(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.notify_condition_ids");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      9, this->notify_condition_ids(i), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -623,6 +655,16 @@ void Component::SerializeWithCachedSizes(
         8, this->name(), target);
   }
 
+  // repeated string notify_condition_ids = 9;
+  for (int i = 0, n = this->notify_condition_ids_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->notify_condition_ids(i).data(), static_cast<int>(this->notify_condition_ids(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "ubii.devices.Component.notify_condition_ids");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(9, this->notify_condition_ids(i), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -646,6 +688,14 @@ size_t Component::ByteSizeLong() const {
   for (int i = 0, n = this->tags_size(); i < n; i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
       this->tags(i));
+  }
+
+  // repeated string notify_condition_ids = 9;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->notify_condition_ids_size());
+  for (int i = 0, n = this->notify_condition_ids_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->notify_condition_ids(i));
   }
 
   // string topic = 1;
@@ -724,6 +774,7 @@ void Component::MergeFrom(const Component& from) {
   (void) cached_has_bits;
 
   tags_.MergeFrom(from.tags_);
+  notify_condition_ids_.MergeFrom(from.notify_condition_ids_);
   if (from.topic().size() > 0) {
 
     topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
@@ -778,6 +829,7 @@ void Component::Swap(Component* other) {
 void Component::InternalSwap(Component* other) {
   using std::swap;
   tags_.InternalSwap(CastToBase(&other->tags_));
+  notify_condition_ids_.InternalSwap(CastToBase(&other->notify_condition_ids_));
   topic_.Swap(&other->topic_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   message_format_.Swap(&other->message_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),

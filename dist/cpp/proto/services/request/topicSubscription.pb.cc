@@ -19,6 +19,9 @@
 #endif
 // @@protoc_insertion_point(includes)
 
+namespace protobuf_proto_2fdevices_2fcomponent_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Component;
+}  // namespace protobuf_proto_2fdevices_2fcomponent_2eproto
 namespace ubii {
 namespace services {
 namespace request {
@@ -42,8 +45,9 @@ static void InitDefaultsTopicSubscription() {
   ::ubii::services::request::TopicSubscription::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_TopicSubscription =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTopicSubscription}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_TopicSubscription =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTopicSubscription}, {
+      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_Component.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_TopicSubscription.base);
@@ -62,6 +66,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, unsubscribe_topics_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, subscribe_topic_regexp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, unsubscribe_topic_regexp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, subscribe_components_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::request::TopicSubscription, unsubscribe_components_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::services::request::TopicSubscription)},
@@ -93,16 +99,21 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n.proto/services/request/topicSubscripti"
-      "on.proto\022\025ubii.services.request\"\236\001\n\021Topi"
-      "cSubscription\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subs"
-      "cribe_topics\030\002 \003(\t\022\032\n\022unsubscribe_topics"
-      "\030\003 \003(\t\022\036\n\026subscribe_topic_regexp\030\004 \003(\t\022 "
-      "\n\030unsubscribe_topic_regexp\030\005 \003(\tb\006proto3"
+      "on.proto\022\025ubii.services.request\032\035proto/d"
+      "evices/component.proto\"\216\002\n\021TopicSubscrip"
+      "tion\022\021\n\tclient_id\030\001 \001(\t\022\030\n\020subscribe_top"
+      "ics\030\002 \003(\t\022\032\n\022unsubscribe_topics\030\003 \003(\t\022\036\n"
+      "\026subscribe_topic_regexp\030\004 \003(\t\022 \n\030unsubsc"
+      "ribe_topic_regexp\030\005 \003(\t\0225\n\024subscribe_com"
+      "ponents\030\006 \003(\0132\027.ubii.devices.Component\0227"
+      "\n\026unsubscribe_components\030\007 \003(\0132\027.ubii.de"
+      "vices.Componentb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 240);
+      descriptor, 383);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/services/request/topicSubscription.proto", &protobuf_RegisterTypes);
+  ::protobuf_proto_2fdevices_2fcomponent_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -124,12 +135,20 @@ namespace request {
 
 void TopicSubscription::InitAsDefaultInstance() {
 }
+void TopicSubscription::clear_subscribe_components() {
+  subscribe_components_.Clear();
+}
+void TopicSubscription::clear_unsubscribe_components() {
+  unsubscribe_components_.Clear();
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TopicSubscription::kClientIdFieldNumber;
 const int TopicSubscription::kSubscribeTopicsFieldNumber;
 const int TopicSubscription::kUnsubscribeTopicsFieldNumber;
 const int TopicSubscription::kSubscribeTopicRegexpFieldNumber;
 const int TopicSubscription::kUnsubscribeTopicRegexpFieldNumber;
+const int TopicSubscription::kSubscribeComponentsFieldNumber;
+const int TopicSubscription::kUnsubscribeComponentsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TopicSubscription::TopicSubscription()
@@ -145,7 +164,9 @@ TopicSubscription::TopicSubscription(const TopicSubscription& from)
       subscribe_topics_(from.subscribe_topics_),
       unsubscribe_topics_(from.unsubscribe_topics_),
       subscribe_topic_regexp_(from.subscribe_topic_regexp_),
-      unsubscribe_topic_regexp_(from.unsubscribe_topic_regexp_) {
+      unsubscribe_topic_regexp_(from.unsubscribe_topic_regexp_),
+      subscribe_components_(from.subscribe_components_),
+      unsubscribe_components_(from.unsubscribe_components_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   client_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.client_id().size() > 0) {
@@ -191,6 +212,8 @@ void TopicSubscription::Clear() {
   unsubscribe_topics_.Clear();
   subscribe_topic_regexp_.Clear();
   unsubscribe_topic_regexp_.Clear();
+  subscribe_components_.Clear();
+  unsubscribe_components_.Clear();
   client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
@@ -289,6 +312,30 @@ bool TopicSubscription::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated .ubii.devices.Component subscribe_components = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_subscribe_components()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .ubii.devices.Component unsubscribe_components = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_unsubscribe_components()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -365,6 +412,24 @@ void TopicSubscription::SerializeWithCachedSizes(
       5, this->unsubscribe_topic_regexp(i), output);
   }
 
+  // repeated .ubii.devices.Component subscribe_components = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->subscribe_components_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6,
+      this->subscribe_components(static_cast<int>(i)),
+      output);
+  }
+
+  // repeated .ubii.devices.Component unsubscribe_components = 7;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->unsubscribe_components_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7,
+      this->unsubscribe_components(static_cast<int>(i)),
+      output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -430,6 +495,22 @@ void TopicSubscription::SerializeWithCachedSizes(
       WriteStringToArray(5, this->unsubscribe_topic_regexp(i), target);
   }
 
+  // repeated .ubii.devices.Component subscribe_components = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->subscribe_components_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, this->subscribe_components(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .ubii.devices.Component unsubscribe_components = 7;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->unsubscribe_components_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        7, this->unsubscribe_components(static_cast<int>(i)), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -479,6 +560,28 @@ size_t TopicSubscription::ByteSizeLong() const {
       this->unsubscribe_topic_regexp(i));
   }
 
+  // repeated .ubii.devices.Component subscribe_components = 6;
+  {
+    unsigned int count = static_cast<unsigned int>(this->subscribe_components_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->subscribe_components(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .ubii.devices.Component unsubscribe_components = 7;
+  {
+    unsigned int count = static_cast<unsigned int>(this->unsubscribe_components_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->unsubscribe_components(static_cast<int>(i)));
+    }
+  }
+
   // string client_id = 1;
   if (this->client_id().size() > 0) {
     total_size += 1 +
@@ -517,6 +620,8 @@ void TopicSubscription::MergeFrom(const TopicSubscription& from) {
   unsubscribe_topics_.MergeFrom(from.unsubscribe_topics_);
   subscribe_topic_regexp_.MergeFrom(from.subscribe_topic_regexp_);
   unsubscribe_topic_regexp_.MergeFrom(from.unsubscribe_topic_regexp_);
+  subscribe_components_.MergeFrom(from.subscribe_components_);
+  unsubscribe_components_.MergeFrom(from.unsubscribe_components_);
   if (from.client_id().size() > 0) {
 
     client_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.client_id_);
@@ -551,6 +656,8 @@ void TopicSubscription::InternalSwap(TopicSubscription* other) {
   unsubscribe_topics_.InternalSwap(CastToBase(&other->unsubscribe_topics_));
   subscribe_topic_regexp_.InternalSwap(CastToBase(&other->subscribe_topic_regexp_));
   unsubscribe_topic_regexp_.InternalSwap(CastToBase(&other->unsubscribe_topic_regexp_));
+  CastToBase(&subscribe_components_)->InternalSwap(CastToBase(&other->subscribe_components_));
+  CastToBase(&unsubscribe_components_)->InternalSwap(CastToBase(&other->unsubscribe_components_));
   client_id_.Swap(&other->client_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);

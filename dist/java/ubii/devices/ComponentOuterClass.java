@@ -105,6 +105,25 @@ public final class ComponentOuterClass {
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    java.util.List<java.lang.String>
+        getNotifyConditionIdsList();
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    int getNotifyConditionIdsCount();
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    java.lang.String getNotifyConditionIds(int index);
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getNotifyConditionIdsBytes(int index);
   }
   /**
    * Protobuf type {@code ubii.devices.Component}
@@ -127,6 +146,7 @@ public final class ComponentOuterClass {
       description_ = "";
       id_ = "";
       name_ = "";
+      notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -204,6 +224,15 @@ public final class ComponentOuterClass {
               name_ = s;
               break;
             }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                notifyConditionIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              notifyConditionIds_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -221,6 +250,9 @@ public final class ComponentOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           tags_ = tags_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          notifyConditionIds_ = notifyConditionIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -588,6 +620,35 @@ public final class ComponentOuterClass {
       }
     }
 
+    public static final int NOTIFY_CONDITION_IDS_FIELD_NUMBER = 9;
+    private com.google.protobuf.LazyStringList notifyConditionIds_;
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getNotifyConditionIdsList() {
+      return notifyConditionIds_;
+    }
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    public int getNotifyConditionIdsCount() {
+      return notifyConditionIds_.size();
+    }
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    public java.lang.String getNotifyConditionIds(int index) {
+      return notifyConditionIds_.get(index);
+    }
+    /**
+     * <code>repeated string notify_condition_ids = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNotifyConditionIdsBytes(int index) {
+      return notifyConditionIds_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -625,6 +686,9 @@ public final class ComponentOuterClass {
       }
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
+      }
+      for (int i = 0; i < notifyConditionIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, notifyConditionIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -665,6 +729,14 @@ public final class ComponentOuterClass {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < notifyConditionIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(notifyConditionIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getNotifyConditionIdsList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -696,6 +768,8 @@ public final class ComponentOuterClass {
           .equals(other.getId());
       result = result && getName()
           .equals(other.getName());
+      result = result && getNotifyConditionIdsList()
+          .equals(other.getNotifyConditionIdsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -725,6 +799,10 @@ public final class ComponentOuterClass {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      if (getNotifyConditionIdsCount() > 0) {
+        hash = (37 * hash) + NOTIFY_CONDITION_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getNotifyConditionIdsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -874,6 +952,8 @@ public final class ComponentOuterClass {
 
         name_ = "";
 
+        notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -914,6 +994,11 @@ public final class ComponentOuterClass {
         result.description_ = description_;
         result.id_ = id_;
         result.name_ = name_;
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          notifyConditionIds_ = notifyConditionIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.notifyConditionIds_ = notifyConditionIds_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -998,6 +1083,16 @@ public final class ComponentOuterClass {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          onChanged();
+        }
+        if (!other.notifyConditionIds_.isEmpty()) {
+          if (notifyConditionIds_.isEmpty()) {
+            notifyConditionIds_ = other.notifyConditionIds_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureNotifyConditionIdsIsMutable();
+            notifyConditionIds_.addAll(other.notifyConditionIds_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1579,6 +1674,100 @@ public final class ComponentOuterClass {
   checkByteStringIsUtf8(value);
         
         name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureNotifyConditionIdsIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          notifyConditionIds_ = new com.google.protobuf.LazyStringArrayList(notifyConditionIds_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getNotifyConditionIdsList() {
+        return notifyConditionIds_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public int getNotifyConditionIdsCount() {
+        return notifyConditionIds_.size();
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public java.lang.String getNotifyConditionIds(int index) {
+        return notifyConditionIds_.get(index);
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNotifyConditionIdsBytes(int index) {
+        return notifyConditionIds_.getByteString(index);
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public Builder setNotifyConditionIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNotifyConditionIdsIsMutable();
+        notifyConditionIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public Builder addNotifyConditionIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNotifyConditionIdsIsMutable();
+        notifyConditionIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public Builder addAllNotifyConditionIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureNotifyConditionIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, notifyConditionIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public Builder clearNotifyConditionIds() {
+        notifyConditionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string notify_condition_ids = 9;</code>
+       */
+      public Builder addNotifyConditionIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureNotifyConditionIdsIsMutable();
+        notifyConditionIds_.add(value);
         onChanged();
         return this;
       }
@@ -2437,14 +2626,15 @@ public final class ComponentOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035proto/devices/component.proto\022\014ubii.de" +
-      "vices\"\334\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
+      "vices\"\372\001\n\tComponent\022\r\n\005topic\030\001 \001(\t\022\026\n\016me" +
       "ssage_format\030\002 \001(\t\022/\n\007io_type\030\003 \001(\0162\036.ub" +
       "ii.devices.Component.IOType\022\021\n\tdevice_id" +
       "\030\004 \001(\t\022\014\n\004tags\030\005 \003(\t\022\023\n\013description\030\006 \001(" +
-      "\t\022\n\n\002id\030\007 \001(\t\022\014\n\004name\030\010 \001(\t\"\'\n\006IOType\022\r\n" +
-      "\tPUBLISHER\020\000\022\016\n\nSUBSCRIBER\020\001\":\n\rComponen" +
-      "tList\022)\n\010elements\030\001 \003(\0132\027.ubii.devices.C" +
-      "omponentb\006proto3"
+      "\t\022\n\n\002id\030\007 \001(\t\022\014\n\004name\030\010 \001(\t\022\034\n\024notify_co" +
+      "ndition_ids\030\t \003(\t\"\'\n\006IOType\022\r\n\tPUBLISHER" +
+      "\020\000\022\016\n\nSUBSCRIBER\020\001\":\n\rComponentList\022)\n\010e" +
+      "lements\030\001 \003(\0132\027.ubii.devices.Componentb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2463,7 +2653,7 @@ public final class ComponentOuterClass {
     internal_static_ubii_devices_Component_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_devices_Component_descriptor,
-        new java.lang.String[] { "Topic", "MessageFormat", "IoType", "DeviceId", "Tags", "Description", "Id", "Name", });
+        new java.lang.String[] { "Topic", "MessageFormat", "IoType", "DeviceId", "Tags", "Description", "Id", "Name", "NotifyConditionIds", });
     internal_static_ubii_devices_ComponentList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_devices_ComponentList_fieldAccessorTable = new

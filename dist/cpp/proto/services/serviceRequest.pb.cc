@@ -47,7 +47,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ProcessingModule;
 }  // namespace protobuf_proto_2fprocessing_2fprocessingModule_2eproto
 namespace protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicSubscription;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicSubscription;
 }  // namespace protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto
 namespace protobuf_proto_2fsessions_2fsession_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fsession_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SessionList;

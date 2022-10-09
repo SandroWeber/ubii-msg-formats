@@ -740,6 +740,304 @@ $root.ubii = (function() {
         return clients;
     })();
 
+    ubii.conditions = (function() {
+
+        /**
+         * Namespace conditions.
+         * @memberof ubii
+         * @namespace
+         */
+        var conditions = {};
+
+        conditions.NotifyCondition = (function() {
+
+            /**
+             * Properties of a NotifyCondition.
+             * @memberof ubii.conditions
+             * @interface INotifyCondition
+             * @property {string|null} [id] NotifyCondition id
+             * @property {string|null} [name] NotifyCondition name
+             * @property {string|null} [evaluationFunctionStringified] NotifyCondition evaluationFunctionStringified
+             * @property {ubii.clients.IClient|null} [clientProfilePub] NotifyCondition clientProfilePub
+             * @property {ubii.clients.IClient|null} [clientProfileSub] NotifyCondition clientProfileSub
+             */
+
+            /**
+             * Constructs a new NotifyCondition.
+             * @memberof ubii.conditions
+             * @classdesc Represents a NotifyCondition.
+             * @implements INotifyCondition
+             * @constructor
+             * @param {ubii.conditions.INotifyCondition=} [properties] Properties to set
+             */
+            function NotifyCondition(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NotifyCondition id.
+             * @member {string} id
+             * @memberof ubii.conditions.NotifyCondition
+             * @instance
+             */
+            NotifyCondition.prototype.id = "";
+
+            /**
+             * NotifyCondition name.
+             * @member {string} name
+             * @memberof ubii.conditions.NotifyCondition
+             * @instance
+             */
+            NotifyCondition.prototype.name = "";
+
+            /**
+             * NotifyCondition evaluationFunctionStringified.
+             * @member {string} evaluationFunctionStringified
+             * @memberof ubii.conditions.NotifyCondition
+             * @instance
+             */
+            NotifyCondition.prototype.evaluationFunctionStringified = "";
+
+            /**
+             * NotifyCondition clientProfilePub.
+             * @member {ubii.clients.IClient|null|undefined} clientProfilePub
+             * @memberof ubii.conditions.NotifyCondition
+             * @instance
+             */
+            NotifyCondition.prototype.clientProfilePub = null;
+
+            /**
+             * NotifyCondition clientProfileSub.
+             * @member {ubii.clients.IClient|null|undefined} clientProfileSub
+             * @memberof ubii.conditions.NotifyCondition
+             * @instance
+             */
+            NotifyCondition.prototype.clientProfileSub = null;
+
+            /**
+             * Creates a new NotifyCondition instance using the specified properties.
+             * @function create
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {ubii.conditions.INotifyCondition=} [properties] Properties to set
+             * @returns {ubii.conditions.NotifyCondition} NotifyCondition instance
+             */
+            NotifyCondition.create = function create(properties) {
+                return new NotifyCondition(properties);
+            };
+
+            /**
+             * Encodes the specified NotifyCondition message. Does not implicitly {@link ubii.conditions.NotifyCondition.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {ubii.conditions.INotifyCondition} message NotifyCondition message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NotifyCondition.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.evaluationFunctionStringified != null && Object.hasOwnProperty.call(message, "evaluationFunctionStringified"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.evaluationFunctionStringified);
+                if (message.clientProfilePub != null && Object.hasOwnProperty.call(message, "clientProfilePub"))
+                    $root.ubii.clients.Client.encode(message.clientProfilePub, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.clientProfileSub != null && Object.hasOwnProperty.call(message, "clientProfileSub"))
+                    $root.ubii.clients.Client.encode(message.clientProfileSub, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified NotifyCondition message, length delimited. Does not implicitly {@link ubii.conditions.NotifyCondition.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {ubii.conditions.INotifyCondition} message NotifyCondition message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NotifyCondition.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a NotifyCondition message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.conditions.NotifyCondition} NotifyCondition
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NotifyCondition.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.conditions.NotifyCondition();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.evaluationFunctionStringified = reader.string();
+                        break;
+                    case 4:
+                        message.clientProfilePub = $root.ubii.clients.Client.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.clientProfileSub = $root.ubii.clients.Client.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a NotifyCondition message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.conditions.NotifyCondition} NotifyCondition
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NotifyCondition.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a NotifyCondition message.
+             * @function verify
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NotifyCondition.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.evaluationFunctionStringified != null && message.hasOwnProperty("evaluationFunctionStringified"))
+                    if (!$util.isString(message.evaluationFunctionStringified))
+                        return "evaluationFunctionStringified: string expected";
+                if (message.clientProfilePub != null && message.hasOwnProperty("clientProfilePub")) {
+                    var error = $root.ubii.clients.Client.verify(message.clientProfilePub);
+                    if (error)
+                        return "clientProfilePub." + error;
+                }
+                if (message.clientProfileSub != null && message.hasOwnProperty("clientProfileSub")) {
+                    var error = $root.ubii.clients.Client.verify(message.clientProfileSub);
+                    if (error)
+                        return "clientProfileSub." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a NotifyCondition message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.conditions.NotifyCondition} NotifyCondition
+             */
+            NotifyCondition.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.conditions.NotifyCondition)
+                    return object;
+                var message = new $root.ubii.conditions.NotifyCondition();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.evaluationFunctionStringified != null)
+                    message.evaluationFunctionStringified = String(object.evaluationFunctionStringified);
+                if (object.clientProfilePub != null) {
+                    if (typeof object.clientProfilePub !== "object")
+                        throw TypeError(".ubii.conditions.NotifyCondition.clientProfilePub: object expected");
+                    message.clientProfilePub = $root.ubii.clients.Client.fromObject(object.clientProfilePub);
+                }
+                if (object.clientProfileSub != null) {
+                    if (typeof object.clientProfileSub !== "object")
+                        throw TypeError(".ubii.conditions.NotifyCondition.clientProfileSub: object expected");
+                    message.clientProfileSub = $root.ubii.clients.Client.fromObject(object.clientProfileSub);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a NotifyCondition message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.conditions.NotifyCondition
+             * @static
+             * @param {ubii.conditions.NotifyCondition} message NotifyCondition
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            NotifyCondition.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.name = "";
+                    object.evaluationFunctionStringified = "";
+                    object.clientProfilePub = null;
+                    object.clientProfileSub = null;
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                if (message.evaluationFunctionStringified != null && message.hasOwnProperty("evaluationFunctionStringified"))
+                    object.evaluationFunctionStringified = message.evaluationFunctionStringified;
+                if (message.clientProfilePub != null && message.hasOwnProperty("clientProfilePub"))
+                    object.clientProfilePub = $root.ubii.clients.Client.toObject(message.clientProfilePub, options);
+                if (message.clientProfileSub != null && message.hasOwnProperty("clientProfileSub"))
+                    object.clientProfileSub = $root.ubii.clients.Client.toObject(message.clientProfileSub, options);
+                return object;
+            };
+
+            /**
+             * Converts this NotifyCondition to JSON.
+             * @function toJSON
+             * @memberof ubii.conditions.NotifyCondition
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            NotifyCondition.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return NotifyCondition;
+        })();
+
+        return conditions;
+    })();
+
     ubii.dataStructure = (function() {
 
         /**
@@ -8525,6 +8823,7 @@ $root.ubii = (function() {
              * @property {string|null} [description] Component description
              * @property {string|null} [id] Component id
              * @property {string|null} [name] Component name
+             * @property {Array.<string>|null} [notifyConditionIds] Component notifyConditionIds
              */
 
             /**
@@ -8537,6 +8836,7 @@ $root.ubii = (function() {
              */
             function Component(properties) {
                 this.tags = [];
+                this.notifyConditionIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -8608,6 +8908,14 @@ $root.ubii = (function() {
             Component.prototype.name = "";
 
             /**
+             * Component notifyConditionIds.
+             * @member {Array.<string>} notifyConditionIds
+             * @memberof ubii.devices.Component
+             * @instance
+             */
+            Component.prototype.notifyConditionIds = $util.emptyArray;
+
+            /**
              * Creates a new Component instance using the specified properties.
              * @function create
              * @memberof ubii.devices.Component
@@ -8648,6 +8956,9 @@ $root.ubii = (function() {
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.id);
                 if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.name);
+                if (message.notifyConditionIds != null && message.notifyConditionIds.length)
+                    for (var i = 0; i < message.notifyConditionIds.length; ++i)
+                        writer.uint32(/* id 9, wireType 2 =*/74).string(message.notifyConditionIds[i]);
                 return writer;
             };
 
@@ -8707,6 +9018,11 @@ $root.ubii = (function() {
                         break;
                     case 8:
                         message.name = reader.string();
+                        break;
+                    case 9:
+                        if (!(message.notifyConditionIds && message.notifyConditionIds.length))
+                            message.notifyConditionIds = [];
+                        message.notifyConditionIds.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8776,6 +9092,13 @@ $root.ubii = (function() {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
+                if (message.notifyConditionIds != null && message.hasOwnProperty("notifyConditionIds")) {
+                    if (!Array.isArray(message.notifyConditionIds))
+                        return "notifyConditionIds: array expected";
+                    for (var i = 0; i < message.notifyConditionIds.length; ++i)
+                        if (!$util.isString(message.notifyConditionIds[i]))
+                            return "notifyConditionIds: string[] expected";
+                }
                 return null;
             };
 
@@ -8820,6 +9143,13 @@ $root.ubii = (function() {
                     message.id = String(object.id);
                 if (object.name != null)
                     message.name = String(object.name);
+                if (object.notifyConditionIds) {
+                    if (!Array.isArray(object.notifyConditionIds))
+                        throw TypeError(".ubii.devices.Component.notifyConditionIds: array expected");
+                    message.notifyConditionIds = [];
+                    for (var i = 0; i < object.notifyConditionIds.length; ++i)
+                        message.notifyConditionIds[i] = String(object.notifyConditionIds[i]);
+                }
                 return message;
             };
 
@@ -8836,8 +9166,10 @@ $root.ubii = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
                     object.tags = [];
+                    object.notifyConditionIds = [];
+                }
                 if (options.defaults) {
                     object.topic = "";
                     object.messageFormat = "";
@@ -8866,6 +9198,11 @@ $root.ubii = (function() {
                     object.id = message.id;
                 if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
+                if (message.notifyConditionIds && message.notifyConditionIds.length) {
+                    object.notifyConditionIds = [];
+                    for (var j = 0; j < message.notifyConditionIds.length; ++j)
+                        object.notifyConditionIds[j] = message.notifyConditionIds[j];
+                }
                 return object;
             };
 
@@ -14754,6 +15091,8 @@ $root.ubii = (function() {
                  * @property {Array.<string>|null} [unsubscribeTopics] TopicSubscription unsubscribeTopics
                  * @property {Array.<string>|null} [subscribeTopicRegexp] TopicSubscription subscribeTopicRegexp
                  * @property {Array.<string>|null} [unsubscribeTopicRegexp] TopicSubscription unsubscribeTopicRegexp
+                 * @property {Array.<ubii.devices.IComponent>|null} [subscribeComponents] TopicSubscription subscribeComponents
+                 * @property {Array.<ubii.devices.IComponent>|null} [unsubscribeComponents] TopicSubscription unsubscribeComponents
                  */
 
                 /**
@@ -14769,6 +15108,8 @@ $root.ubii = (function() {
                     this.unsubscribeTopics = [];
                     this.subscribeTopicRegexp = [];
                     this.unsubscribeTopicRegexp = [];
+                    this.subscribeComponents = [];
+                    this.unsubscribeComponents = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -14816,6 +15157,22 @@ $root.ubii = (function() {
                 TopicSubscription.prototype.unsubscribeTopicRegexp = $util.emptyArray;
 
                 /**
+                 * TopicSubscription subscribeComponents.
+                 * @member {Array.<ubii.devices.IComponent>} subscribeComponents
+                 * @memberof ubii.services.request.TopicSubscription
+                 * @instance
+                 */
+                TopicSubscription.prototype.subscribeComponents = $util.emptyArray;
+
+                /**
+                 * TopicSubscription unsubscribeComponents.
+                 * @member {Array.<ubii.devices.IComponent>} unsubscribeComponents
+                 * @memberof ubii.services.request.TopicSubscription
+                 * @instance
+                 */
+                TopicSubscription.prototype.unsubscribeComponents = $util.emptyArray;
+
+                /**
                  * Creates a new TopicSubscription instance using the specified properties.
                  * @function create
                  * @memberof ubii.services.request.TopicSubscription
@@ -14853,6 +15210,12 @@ $root.ubii = (function() {
                     if (message.unsubscribeTopicRegexp != null && message.unsubscribeTopicRegexp.length)
                         for (var i = 0; i < message.unsubscribeTopicRegexp.length; ++i)
                             writer.uint32(/* id 5, wireType 2 =*/42).string(message.unsubscribeTopicRegexp[i]);
+                    if (message.subscribeComponents != null && message.subscribeComponents.length)
+                        for (var i = 0; i < message.subscribeComponents.length; ++i)
+                            $root.ubii.devices.Component.encode(message.subscribeComponents[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    if (message.unsubscribeComponents != null && message.unsubscribeComponents.length)
+                        for (var i = 0; i < message.unsubscribeComponents.length; ++i)
+                            $root.ubii.devices.Component.encode(message.unsubscribeComponents[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                     return writer;
                 };
 
@@ -14909,6 +15272,16 @@ $root.ubii = (function() {
                             if (!(message.unsubscribeTopicRegexp && message.unsubscribeTopicRegexp.length))
                                 message.unsubscribeTopicRegexp = [];
                             message.unsubscribeTopicRegexp.push(reader.string());
+                            break;
+                        case 6:
+                            if (!(message.subscribeComponents && message.subscribeComponents.length))
+                                message.subscribeComponents = [];
+                            message.subscribeComponents.push($root.ubii.devices.Component.decode(reader, reader.uint32()));
+                            break;
+                        case 7:
+                            if (!(message.unsubscribeComponents && message.unsubscribeComponents.length))
+                                message.unsubscribeComponents = [];
+                            message.unsubscribeComponents.push($root.ubii.devices.Component.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -14976,6 +15349,24 @@ $root.ubii = (function() {
                             if (!$util.isString(message.unsubscribeTopicRegexp[i]))
                                 return "unsubscribeTopicRegexp: string[] expected";
                     }
+                    if (message.subscribeComponents != null && message.hasOwnProperty("subscribeComponents")) {
+                        if (!Array.isArray(message.subscribeComponents))
+                            return "subscribeComponents: array expected";
+                        for (var i = 0; i < message.subscribeComponents.length; ++i) {
+                            var error = $root.ubii.devices.Component.verify(message.subscribeComponents[i]);
+                            if (error)
+                                return "subscribeComponents." + error;
+                        }
+                    }
+                    if (message.unsubscribeComponents != null && message.hasOwnProperty("unsubscribeComponents")) {
+                        if (!Array.isArray(message.unsubscribeComponents))
+                            return "unsubscribeComponents: array expected";
+                        for (var i = 0; i < message.unsubscribeComponents.length; ++i) {
+                            var error = $root.ubii.devices.Component.verify(message.unsubscribeComponents[i]);
+                            if (error)
+                                return "unsubscribeComponents." + error;
+                        }
+                    }
                     return null;
                 };
 
@@ -15021,6 +15412,26 @@ $root.ubii = (function() {
                         for (var i = 0; i < object.unsubscribeTopicRegexp.length; ++i)
                             message.unsubscribeTopicRegexp[i] = String(object.unsubscribeTopicRegexp[i]);
                     }
+                    if (object.subscribeComponents) {
+                        if (!Array.isArray(object.subscribeComponents))
+                            throw TypeError(".ubii.services.request.TopicSubscription.subscribeComponents: array expected");
+                        message.subscribeComponents = [];
+                        for (var i = 0; i < object.subscribeComponents.length; ++i) {
+                            if (typeof object.subscribeComponents[i] !== "object")
+                                throw TypeError(".ubii.services.request.TopicSubscription.subscribeComponents: object expected");
+                            message.subscribeComponents[i] = $root.ubii.devices.Component.fromObject(object.subscribeComponents[i]);
+                        }
+                    }
+                    if (object.unsubscribeComponents) {
+                        if (!Array.isArray(object.unsubscribeComponents))
+                            throw TypeError(".ubii.services.request.TopicSubscription.unsubscribeComponents: array expected");
+                        message.unsubscribeComponents = [];
+                        for (var i = 0; i < object.unsubscribeComponents.length; ++i) {
+                            if (typeof object.unsubscribeComponents[i] !== "object")
+                                throw TypeError(".ubii.services.request.TopicSubscription.unsubscribeComponents: object expected");
+                            message.unsubscribeComponents[i] = $root.ubii.devices.Component.fromObject(object.unsubscribeComponents[i]);
+                        }
+                    }
                     return message;
                 };
 
@@ -15042,6 +15453,8 @@ $root.ubii = (function() {
                         object.unsubscribeTopics = [];
                         object.subscribeTopicRegexp = [];
                         object.unsubscribeTopicRegexp = [];
+                        object.subscribeComponents = [];
+                        object.unsubscribeComponents = [];
                     }
                     if (options.defaults)
                         object.clientId = "";
@@ -15066,6 +15479,16 @@ $root.ubii = (function() {
                         object.unsubscribeTopicRegexp = [];
                         for (var j = 0; j < message.unsubscribeTopicRegexp.length; ++j)
                             object.unsubscribeTopicRegexp[j] = message.unsubscribeTopicRegexp[j];
+                    }
+                    if (message.subscribeComponents && message.subscribeComponents.length) {
+                        object.subscribeComponents = [];
+                        for (var j = 0; j < message.subscribeComponents.length; ++j)
+                            object.subscribeComponents[j] = $root.ubii.devices.Component.toObject(message.subscribeComponents[j], options);
+                    }
+                    if (message.unsubscribeComponents && message.unsubscribeComponents.length) {
+                        object.unsubscribeComponents = [];
+                        for (var j = 0; j < message.unsubscribeComponents.length; ++j)
+                            object.unsubscribeComponents[j] = $root.ubii.devices.Component.toObject(message.unsubscribeComponents[j], options);
                     }
                     return object;
                 };
@@ -21537,6 +21960,515 @@ $root.ubii = (function() {
             };
 
             return TopicDataRecordList;
+        })();
+
+        topicData.TopicDataSource = (function() {
+
+            /**
+             * Properties of a TopicDataSource.
+             * @memberof ubii.topicData
+             * @interface ITopicDataSource
+             * @property {string|null} [topic] TopicDataSource topic
+             * @property {string|null} [regex] TopicDataSource regex
+             * @property {ubii.devices.IComponent|null} [component] TopicDataSource component
+             * @property {ubii.topicData.ITopicDataRecord|null} [staticRecord] TopicDataSource staticRecord
+             */
+
+            /**
+             * Constructs a new TopicDataSource.
+             * @memberof ubii.topicData
+             * @classdesc Represents a TopicDataSource.
+             * @implements ITopicDataSource
+             * @constructor
+             * @param {ubii.topicData.ITopicDataSource=} [properties] Properties to set
+             */
+            function TopicDataSource(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TopicDataSource topic.
+             * @member {string|null|undefined} topic
+             * @memberof ubii.topicData.TopicDataSource
+             * @instance
+             */
+            TopicDataSource.prototype.topic = null;
+
+            /**
+             * TopicDataSource regex.
+             * @member {string|null|undefined} regex
+             * @memberof ubii.topicData.TopicDataSource
+             * @instance
+             */
+            TopicDataSource.prototype.regex = null;
+
+            /**
+             * TopicDataSource component.
+             * @member {ubii.devices.IComponent|null|undefined} component
+             * @memberof ubii.topicData.TopicDataSource
+             * @instance
+             */
+            TopicDataSource.prototype.component = null;
+
+            /**
+             * TopicDataSource staticRecord.
+             * @member {ubii.topicData.ITopicDataRecord|null|undefined} staticRecord
+             * @memberof ubii.topicData.TopicDataSource
+             * @instance
+             */
+            TopicDataSource.prototype.staticRecord = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            /**
+             * TopicDataSource type.
+             * @member {"topic"|"regex"|"component"|"staticRecord"|undefined} type
+             * @memberof ubii.topicData.TopicDataSource
+             * @instance
+             */
+            Object.defineProperty(TopicDataSource.prototype, "type", {
+                get: $util.oneOfGetter($oneOfFields = ["topic", "regex", "component", "staticRecord"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new TopicDataSource instance using the specified properties.
+             * @function create
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {ubii.topicData.ITopicDataSource=} [properties] Properties to set
+             * @returns {ubii.topicData.TopicDataSource} TopicDataSource instance
+             */
+            TopicDataSource.create = function create(properties) {
+                return new TopicDataSource(properties);
+            };
+
+            /**
+             * Encodes the specified TopicDataSource message. Does not implicitly {@link ubii.topicData.TopicDataSource.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {ubii.topicData.ITopicDataSource} message TopicDataSource message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDataSource.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.topic != null && Object.hasOwnProperty.call(message, "topic"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.topic);
+                if (message.regex != null && Object.hasOwnProperty.call(message, "regex"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.regex);
+                if (message.component != null && Object.hasOwnProperty.call(message, "component"))
+                    $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.staticRecord != null && Object.hasOwnProperty.call(message, "staticRecord"))
+                    $root.ubii.topicData.TopicDataRecord.encode(message.staticRecord, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TopicDataSource message, length delimited. Does not implicitly {@link ubii.topicData.TopicDataSource.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {ubii.topicData.ITopicDataSource} message TopicDataSource message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDataSource.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TopicDataSource message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.topicData.TopicDataSource} TopicDataSource
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDataSource.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.topicData.TopicDataSource();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.topic = reader.string();
+                        break;
+                    case 2:
+                        message.regex = reader.string();
+                        break;
+                    case 3:
+                        message.component = $root.ubii.devices.Component.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.staticRecord = $root.ubii.topicData.TopicDataRecord.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TopicDataSource message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.topicData.TopicDataSource} TopicDataSource
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDataSource.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TopicDataSource message.
+             * @function verify
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TopicDataSource.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.topic != null && message.hasOwnProperty("topic")) {
+                    properties.type = 1;
+                    if (!$util.isString(message.topic))
+                        return "topic: string expected";
+                }
+                if (message.regex != null && message.hasOwnProperty("regex")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    if (!$util.isString(message.regex))
+                        return "regex: string expected";
+                }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.Component.verify(message.component);
+                        if (error)
+                            return "component." + error;
+                    }
+                }
+                if (message.staticRecord != null && message.hasOwnProperty("staticRecord")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.topicData.TopicDataRecord.verify(message.staticRecord);
+                        if (error)
+                            return "staticRecord." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a TopicDataSource message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.topicData.TopicDataSource} TopicDataSource
+             */
+            TopicDataSource.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.topicData.TopicDataSource)
+                    return object;
+                var message = new $root.ubii.topicData.TopicDataSource();
+                if (object.topic != null)
+                    message.topic = String(object.topic);
+                if (object.regex != null)
+                    message.regex = String(object.regex);
+                if (object.component != null) {
+                    if (typeof object.component !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataSource.component: object expected");
+                    message.component = $root.ubii.devices.Component.fromObject(object.component);
+                }
+                if (object.staticRecord != null) {
+                    if (typeof object.staticRecord !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataSource.staticRecord: object expected");
+                    message.staticRecord = $root.ubii.topicData.TopicDataRecord.fromObject(object.staticRecord);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TopicDataSource message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.topicData.TopicDataSource
+             * @static
+             * @param {ubii.topicData.TopicDataSource} message TopicDataSource
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TopicDataSource.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.topic != null && message.hasOwnProperty("topic")) {
+                    object.topic = message.topic;
+                    if (options.oneofs)
+                        object.type = "topic";
+                }
+                if (message.regex != null && message.hasOwnProperty("regex")) {
+                    object.regex = message.regex;
+                    if (options.oneofs)
+                        object.type = "regex";
+                }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    object.component = $root.ubii.devices.Component.toObject(message.component, options);
+                    if (options.oneofs)
+                        object.type = "component";
+                }
+                if (message.staticRecord != null && message.hasOwnProperty("staticRecord")) {
+                    object.staticRecord = $root.ubii.topicData.TopicDataRecord.toObject(message.staticRecord, options);
+                    if (options.oneofs)
+                        object.type = "staticRecord";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this TopicDataSource to JSON.
+             * @function toJSON
+             * @memberof ubii.topicData.TopicDataSource
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TopicDataSource.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TopicDataSource;
+        })();
+
+        topicData.TopicDataSourceList = (function() {
+
+            /**
+             * Properties of a TopicDataSourceList.
+             * @memberof ubii.topicData
+             * @interface ITopicDataSourceList
+             * @property {Array.<ubii.topicData.ITopicDataSource>|null} [elements] TopicDataSourceList elements
+             */
+
+            /**
+             * Constructs a new TopicDataSourceList.
+             * @memberof ubii.topicData
+             * @classdesc Represents a TopicDataSourceList.
+             * @implements ITopicDataSourceList
+             * @constructor
+             * @param {ubii.topicData.ITopicDataSourceList=} [properties] Properties to set
+             */
+            function TopicDataSourceList(properties) {
+                this.elements = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TopicDataSourceList elements.
+             * @member {Array.<ubii.topicData.ITopicDataSource>} elements
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @instance
+             */
+            TopicDataSourceList.prototype.elements = $util.emptyArray;
+
+            /**
+             * Creates a new TopicDataSourceList instance using the specified properties.
+             * @function create
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {ubii.topicData.ITopicDataSourceList=} [properties] Properties to set
+             * @returns {ubii.topicData.TopicDataSourceList} TopicDataSourceList instance
+             */
+            TopicDataSourceList.create = function create(properties) {
+                return new TopicDataSourceList(properties);
+            };
+
+            /**
+             * Encodes the specified TopicDataSourceList message. Does not implicitly {@link ubii.topicData.TopicDataSourceList.verify|verify} messages.
+             * @function encode
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {ubii.topicData.ITopicDataSourceList} message TopicDataSourceList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDataSourceList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.elements != null && message.elements.length)
+                    for (var i = 0; i < message.elements.length; ++i)
+                        $root.ubii.topicData.TopicDataSource.encode(message.elements[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TopicDataSourceList message, length delimited. Does not implicitly {@link ubii.topicData.TopicDataSourceList.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {ubii.topicData.ITopicDataSourceList} message TopicDataSourceList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TopicDataSourceList.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TopicDataSourceList message from the specified reader or buffer.
+             * @function decode
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ubii.topicData.TopicDataSourceList} TopicDataSourceList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDataSourceList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ubii.topicData.TopicDataSourceList();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.elements && message.elements.length))
+                            message.elements = [];
+                        message.elements.push($root.ubii.topicData.TopicDataSource.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TopicDataSourceList message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ubii.topicData.TopicDataSourceList} TopicDataSourceList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TopicDataSourceList.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TopicDataSourceList message.
+             * @function verify
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TopicDataSourceList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.elements != null && message.hasOwnProperty("elements")) {
+                    if (!Array.isArray(message.elements))
+                        return "elements: array expected";
+                    for (var i = 0; i < message.elements.length; ++i) {
+                        var error = $root.ubii.topicData.TopicDataSource.verify(message.elements[i]);
+                        if (error)
+                            return "elements." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a TopicDataSourceList message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ubii.topicData.TopicDataSourceList} TopicDataSourceList
+             */
+            TopicDataSourceList.fromObject = function fromObject(object) {
+                if (object instanceof $root.ubii.topicData.TopicDataSourceList)
+                    return object;
+                var message = new $root.ubii.topicData.TopicDataSourceList();
+                if (object.elements) {
+                    if (!Array.isArray(object.elements))
+                        throw TypeError(".ubii.topicData.TopicDataSourceList.elements: array expected");
+                    message.elements = [];
+                    for (var i = 0; i < object.elements.length; ++i) {
+                        if (typeof object.elements[i] !== "object")
+                            throw TypeError(".ubii.topicData.TopicDataSourceList.elements: object expected");
+                        message.elements[i] = $root.ubii.topicData.TopicDataSource.fromObject(object.elements[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TopicDataSourceList message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @static
+             * @param {ubii.topicData.TopicDataSourceList} message TopicDataSourceList
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TopicDataSourceList.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.elements = [];
+                if (message.elements && message.elements.length) {
+                    object.elements = [];
+                    for (var j = 0; j < message.elements.length; ++j)
+                        object.elements[j] = $root.ubii.topicData.TopicDataSource.toObject(message.elements[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this TopicDataSourceList to JSON.
+             * @function toJSON
+             * @memberof ubii.topicData.TopicDataSourceList
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TopicDataSourceList.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TopicDataSourceList;
         })();
 
         return topicData;

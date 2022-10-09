@@ -30,6 +30,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "proto/devices/component.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto 
 
@@ -240,6 +241,30 @@ class TopicSubscription : public ::google::protobuf::Message /* @@protoc_inserti
   const ::google::protobuf::RepeatedPtrField< ::std::string>& unsubscribe_topic_regexp() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_unsubscribe_topic_regexp();
 
+  // repeated .ubii.devices.Component subscribe_components = 6;
+  int subscribe_components_size() const;
+  void clear_subscribe_components();
+  static const int kSubscribeComponentsFieldNumber = 6;
+  ::ubii::devices::Component* mutable_subscribe_components(int index);
+  ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >*
+      mutable_subscribe_components();
+  const ::ubii::devices::Component& subscribe_components(int index) const;
+  ::ubii::devices::Component* add_subscribe_components();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >&
+      subscribe_components() const;
+
+  // repeated .ubii.devices.Component unsubscribe_components = 7;
+  int unsubscribe_components_size() const;
+  void clear_unsubscribe_components();
+  static const int kUnsubscribeComponentsFieldNumber = 7;
+  ::ubii::devices::Component* mutable_unsubscribe_components(int index);
+  ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >*
+      mutable_unsubscribe_components();
+  const ::ubii::devices::Component& unsubscribe_components(int index) const;
+  ::ubii::devices::Component* add_unsubscribe_components();
+  const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >&
+      unsubscribe_components() const;
+
   // string client_id = 1;
   void clear_client_id();
   static const int kClientIdFieldNumber = 1;
@@ -262,6 +287,8 @@ class TopicSubscription : public ::google::protobuf::Message /* @@protoc_inserti
   ::google::protobuf::RepeatedPtrField< ::std::string> unsubscribe_topics_;
   ::google::protobuf::RepeatedPtrField< ::std::string> subscribe_topic_regexp_;
   ::google::protobuf::RepeatedPtrField< ::std::string> unsubscribe_topic_regexp_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component > subscribe_components_;
+  ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component > unsubscribe_components_;
   ::google::protobuf::internal::ArenaStringPtr client_id_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::TableStruct;
@@ -604,6 +631,60 @@ inline ::google::protobuf::RepeatedPtrField< ::std::string>*
 TopicSubscription::mutable_unsubscribe_topic_regexp() {
   // @@protoc_insertion_point(field_mutable_list:ubii.services.request.TopicSubscription.unsubscribe_topic_regexp)
   return &unsubscribe_topic_regexp_;
+}
+
+// repeated .ubii.devices.Component subscribe_components = 6;
+inline int TopicSubscription::subscribe_components_size() const {
+  return subscribe_components_.size();
+}
+inline ::ubii::devices::Component* TopicSubscription::mutable_subscribe_components(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.services.request.TopicSubscription.subscribe_components)
+  return subscribe_components_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >*
+TopicSubscription::mutable_subscribe_components() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.services.request.TopicSubscription.subscribe_components)
+  return &subscribe_components_;
+}
+inline const ::ubii::devices::Component& TopicSubscription::subscribe_components(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.services.request.TopicSubscription.subscribe_components)
+  return subscribe_components_.Get(index);
+}
+inline ::ubii::devices::Component* TopicSubscription::add_subscribe_components() {
+  // @@protoc_insertion_point(field_add:ubii.services.request.TopicSubscription.subscribe_components)
+  return subscribe_components_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >&
+TopicSubscription::subscribe_components() const {
+  // @@protoc_insertion_point(field_list:ubii.services.request.TopicSubscription.subscribe_components)
+  return subscribe_components_;
+}
+
+// repeated .ubii.devices.Component unsubscribe_components = 7;
+inline int TopicSubscription::unsubscribe_components_size() const {
+  return unsubscribe_components_.size();
+}
+inline ::ubii::devices::Component* TopicSubscription::mutable_unsubscribe_components(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.services.request.TopicSubscription.unsubscribe_components)
+  return unsubscribe_components_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >*
+TopicSubscription::mutable_unsubscribe_components() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.services.request.TopicSubscription.unsubscribe_components)
+  return &unsubscribe_components_;
+}
+inline const ::ubii::devices::Component& TopicSubscription::unsubscribe_components(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.services.request.TopicSubscription.unsubscribe_components)
+  return unsubscribe_components_.Get(index);
+}
+inline ::ubii::devices::Component* TopicSubscription::add_unsubscribe_components() {
+  // @@protoc_insertion_point(field_add:ubii.services.request.TopicSubscription.unsubscribe_components)
+  return unsubscribe_components_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::ubii::devices::Component >&
+TopicSubscription::unsubscribe_components() const {
+  // @@protoc_insertion_point(field_list:ubii.services.request.TopicSubscription.unsubscribe_components)
+  return unsubscribe_components_;
 }
 
 #ifdef __GNUC__

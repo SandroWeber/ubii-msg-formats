@@ -55,6 +55,10 @@
       "TOPIC_MUX_RUNTIME_GET": "/services/device/topic_mux/runtime/get",
       "TOPIC_MUX_RUNTIME_GET_LIST": "/services/device/topic_mux/runtime/get_list",
 
+      "NOTIFY_CONDITION_ADD": "/services/notify_condition/add",
+      "NOTIFY_CONDITION_REMOVE": "/services/notify_condition/remove",
+      "NOTIFY_CONDITION_GET_LIST": "/services/notify_condition/get_list",
+
       "SERVICE_LIST": "/services/service_list",
       "TOPIC_LIST": "/services/topic_list",
       "TOPIC_SUBSCRIPTION": "/services/topic_subscription",

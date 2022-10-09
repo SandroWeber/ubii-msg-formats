@@ -37,7 +37,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.devices.Component.repeatedFields_ = [5];
+proto.ubii.devices.Component.repeatedFields_ = [5,9];
 
 
 
@@ -75,7 +75,8 @@ proto.ubii.devices.Component.toObject = function(includeInstance, msg) {
     tagsList: jspb.Message.getRepeatedField(msg, 5),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     id: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 8, "")
+    name: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    notifyConditionIdsList: jspb.Message.getRepeatedField(msg, 9)
   };
 
   if (includeInstance) {
@@ -143,6 +144,10 @@ proto.ubii.devices.Component.deserializeBinaryFromReader = function(msg, reader)
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addNotifyConditionIds(value);
       break;
     default:
       reader.skipField();
@@ -226,6 +231,13 @@ proto.ubii.devices.Component.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getNotifyConditionIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      9,
       f
     );
   }
@@ -371,6 +383,35 @@ proto.ubii.devices.Component.prototype.getName = function() {
 /** @param {string} value */
 proto.ubii.devices.Component.prototype.setName = function(value) {
   jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * repeated string notify_condition_ids = 9;
+ * @return {!Array<string>}
+ */
+proto.ubii.devices.Component.prototype.getNotifyConditionIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.devices.Component.prototype.setNotifyConditionIdsList = function(value) {
+  jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.devices.Component.prototype.addNotifyConditionIds = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+proto.ubii.devices.Component.prototype.clearNotifyConditionIdsList = function() {
+  this.setNotifyConditionIdsList([]);
 };
 
 

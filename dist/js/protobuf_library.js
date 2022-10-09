@@ -11,6 +11,7 @@
 goog.provide('proto.ubii.clients.Client');
 goog.provide('proto.ubii.clients.Client.State');
 goog.provide('proto.ubii.clients.ClientList');
+goog.provide('proto.ubii.conditions.NotifyCondition');
 goog.provide('proto.ubii.dataStructure.BoolList');
 goog.provide('proto.ubii.dataStructure.ButtonEventType');
 goog.provide('proto.ubii.dataStructure.Color');
@@ -91,6 +92,8 @@ goog.provide('proto.ubii.topicData.Timestamp');
 goog.provide('proto.ubii.topicData.TopicData');
 goog.provide('proto.ubii.topicData.TopicDataRecord');
 goog.provide('proto.ubii.topicData.TopicDataRecordList');
+goog.provide('proto.ubii.topicData.TopicDataSource');
+goog.provide('proto.ubii.topicData.TopicDataSourceList');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -14096,7 +14099,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.devices.Component.repeatedFields_ = [5];
+proto.ubii.devices.Component.repeatedFields_ = [5,9];
 
 
 
@@ -14134,7 +14137,8 @@ proto.ubii.devices.Component.toObject = function(includeInstance, msg) {
     tagsList: jspb.Message.getRepeatedField(msg, 5),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     id: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 8, "")
+    name: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    notifyConditionIdsList: jspb.Message.getRepeatedField(msg, 9)
   };
 
   if (includeInstance) {
@@ -14202,6 +14206,10 @@ proto.ubii.devices.Component.deserializeBinaryFromReader = function(msg, reader)
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addNotifyConditionIds(value);
       break;
     default:
       reader.skipField();
@@ -14285,6 +14293,13 @@ proto.ubii.devices.Component.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getNotifyConditionIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      9,
       f
     );
   }
@@ -14430,6 +14445,35 @@ proto.ubii.devices.Component.prototype.getName = function() {
 /** @param {string} value */
 proto.ubii.devices.Component.prototype.setName = function(value) {
   jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * repeated string notify_condition_ids = 9;
+ * @return {!Array<string>}
+ */
+proto.ubii.devices.Component.prototype.getNotifyConditionIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/** @param {!Array<string>} value */
+proto.ubii.devices.Component.prototype.setNotifyConditionIdsList = function(value) {
+  jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.ubii.devices.Component.prototype.addNotifyConditionIds = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+proto.ubii.devices.Component.prototype.clearNotifyConditionIdsList = function() {
+  this.setNotifyConditionIdsList([]);
 };
 
 
@@ -15794,7 +15838,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.services.request.TopicSubscription.repeatedFields_ = [2,3,4,5];
+proto.ubii.services.request.TopicSubscription.repeatedFields_ = [2,3,4,5,6,7];
 
 
 
@@ -15829,7 +15873,11 @@ proto.ubii.services.request.TopicSubscription.toObject = function(includeInstanc
     subscribeTopicsList: jspb.Message.getRepeatedField(msg, 2),
     unsubscribeTopicsList: jspb.Message.getRepeatedField(msg, 3),
     subscribeTopicRegexpList: jspb.Message.getRepeatedField(msg, 4),
-    unsubscribeTopicRegexpList: jspb.Message.getRepeatedField(msg, 5)
+    unsubscribeTopicRegexpList: jspb.Message.getRepeatedField(msg, 5),
+    subscribeComponentsList: jspb.Message.toObjectList(msg.getSubscribeComponentsList(),
+    proto.ubii.devices.Component.toObject, includeInstance),
+    unsubscribeComponentsList: jspb.Message.toObjectList(msg.getUnsubscribeComponentsList(),
+    proto.ubii.devices.Component.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -15885,6 +15933,16 @@ proto.ubii.services.request.TopicSubscription.deserializeBinaryFromReader = func
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addUnsubscribeTopicRegexp(value);
+      break;
+    case 6:
+      var value = new proto.ubii.devices.Component;
+      reader.readMessage(value,proto.ubii.devices.Component.deserializeBinaryFromReader);
+      msg.addSubscribeComponents(value);
+      break;
+    case 7:
+      var value = new proto.ubii.devices.Component;
+      reader.readMessage(value,proto.ubii.devices.Component.deserializeBinaryFromReader);
+      msg.addUnsubscribeComponents(value);
       break;
     default:
       reader.skipField();
@@ -15948,6 +16006,22 @@ proto.ubii.services.request.TopicSubscription.serializeBinaryToWriter = function
     writer.writeRepeatedString(
       5,
       f
+    );
+  }
+  f = message.getSubscribeComponentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto.ubii.devices.Component.serializeBinaryToWriter
+    );
+  }
+  f = message.getUnsubscribeComponentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
+      f,
+      proto.ubii.devices.Component.serializeBinaryToWriter
     );
   }
 };
@@ -16081,6 +16155,68 @@ proto.ubii.services.request.TopicSubscription.prototype.addUnsubscribeTopicRegex
 
 proto.ubii.services.request.TopicSubscription.prototype.clearUnsubscribeTopicRegexpList = function() {
   this.setUnsubscribeTopicRegexpList([]);
+};
+
+
+/**
+ * repeated ubii.devices.Component subscribe_components = 6;
+ * @return {!Array<!proto.ubii.devices.Component>}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.getSubscribeComponentsList = function() {
+  return /** @type{!Array<!proto.ubii.devices.Component>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.devices.Component, 6));
+};
+
+
+/** @param {!Array<!proto.ubii.devices.Component>} value */
+proto.ubii.services.request.TopicSubscription.prototype.setSubscribeComponentsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.ubii.devices.Component=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.devices.Component}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.addSubscribeComponents = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.ubii.devices.Component, opt_index);
+};
+
+
+proto.ubii.services.request.TopicSubscription.prototype.clearSubscribeComponentsList = function() {
+  this.setSubscribeComponentsList([]);
+};
+
+
+/**
+ * repeated ubii.devices.Component unsubscribe_components = 7;
+ * @return {!Array<!proto.ubii.devices.Component>}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.getUnsubscribeComponentsList = function() {
+  return /** @type{!Array<!proto.ubii.devices.Component>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.devices.Component, 7));
+};
+
+
+/** @param {!Array<!proto.ubii.devices.Component>} value */
+proto.ubii.services.request.TopicSubscription.prototype.setUnsubscribeComponentsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.ubii.devices.Component=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.devices.Component}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.addUnsubscribeComponents = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.ubii.devices.Component, opt_index);
+};
+
+
+proto.ubii.services.request.TopicSubscription.prototype.clearUnsubscribeComponentsList = function() {
+  this.setUnsubscribeComponentsList([]);
 };
 
 
@@ -19698,6 +19834,487 @@ proto.ubii.services.ServiceReply.prototype.hasComponentList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ubii.topicData.TopicDataSource = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.topicData.TopicDataSource.oneofGroups_);
+};
+goog.inherits(proto.ubii.topicData.TopicDataSource, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.topicData.TopicDataSource.displayName = 'proto.ubii.topicData.TopicDataSource';
+}
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.ubii.topicData.TopicDataSource.oneofGroups_ = [[1,2,3,4]];
+
+/**
+ * @enum {number}
+ */
+proto.ubii.topicData.TopicDataSource.TypeCase = {
+  TYPE_NOT_SET: 0,
+  TOPIC: 1,
+  REGEX: 2,
+  COMPONENT: 3,
+  STATIC_RECORD: 4
+};
+
+/**
+ * @return {proto.ubii.topicData.TopicDataSource.TypeCase}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.getTypeCase = function() {
+  return /** @type {proto.ubii.topicData.TopicDataSource.TypeCase} */(jspb.Message.computeOneofCase(this, proto.ubii.topicData.TopicDataSource.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.topicData.TopicDataSource.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.topicData.TopicDataSource} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.topicData.TopicDataSource.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    regex: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    component: (f = msg.getComponent()) && proto.ubii.devices.Component.toObject(includeInstance, f),
+    staticRecord: (f = msg.getStaticRecord()) && proto.ubii.topicData.TopicDataRecord.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.topicData.TopicDataSource}
+ */
+proto.ubii.topicData.TopicDataSource.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.topicData.TopicDataSource;
+  return proto.ubii.topicData.TopicDataSource.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.topicData.TopicDataSource} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.topicData.TopicDataSource}
+ */
+proto.ubii.topicData.TopicDataSource.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTopic(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegex(value);
+      break;
+    case 3:
+      var value = new proto.ubii.devices.Component;
+      reader.readMessage(value,proto.ubii.devices.Component.deserializeBinaryFromReader);
+      msg.setComponent(value);
+      break;
+    case 4:
+      var value = new proto.ubii.topicData.TopicDataRecord;
+      reader.readMessage(value,proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader);
+      msg.setStaticRecord(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.topicData.TopicDataSource.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.topicData.TopicDataSource} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.topicData.TopicDataSource.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getComponent();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.ubii.devices.Component.serializeBinaryToWriter
+    );
+  }
+  f = message.getStaticRecord();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string topic = 1;
+ * @return {string}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.getTopic = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.topicData.TopicDataSource.prototype.setTopic = function(value) {
+  jspb.Message.setOneofField(this, 1, proto.ubii.topicData.TopicDataSource.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataSource.prototype.clearTopic = function() {
+  jspb.Message.setOneofField(this, 1, proto.ubii.topicData.TopicDataSource.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.hasTopic = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string regex = 2;
+ * @return {string}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.getRegex = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.topicData.TopicDataSource.prototype.setRegex = function(value) {
+  jspb.Message.setOneofField(this, 2, proto.ubii.topicData.TopicDataSource.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataSource.prototype.clearRegex = function() {
+  jspb.Message.setOneofField(this, 2, proto.ubii.topicData.TopicDataSource.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.hasRegex = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ubii.devices.Component component = 3;
+ * @return {?proto.ubii.devices.Component}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.getComponent = function() {
+  return /** @type{?proto.ubii.devices.Component} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.devices.Component, 3));
+};
+
+
+/** @param {?proto.ubii.devices.Component|undefined} value */
+proto.ubii.topicData.TopicDataSource.prototype.setComponent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 3, proto.ubii.topicData.TopicDataSource.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataSource.prototype.clearComponent = function() {
+  this.setComponent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.hasComponent = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional TopicDataRecord static_record = 4;
+ * @return {?proto.ubii.topicData.TopicDataRecord}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.getStaticRecord = function() {
+  return /** @type{?proto.ubii.topicData.TopicDataRecord} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.topicData.TopicDataRecord, 4));
+};
+
+
+/** @param {?proto.ubii.topicData.TopicDataRecord|undefined} value */
+proto.ubii.topicData.TopicDataSource.prototype.setStaticRecord = function(value) {
+  jspb.Message.setOneofWrapperField(this, 4, proto.ubii.topicData.TopicDataSource.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataSource.prototype.clearStaticRecord = function() {
+  this.setStaticRecord(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataSource.prototype.hasStaticRecord = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.topicData.TopicDataSourceList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.topicData.TopicDataSourceList.repeatedFields_, null);
+};
+goog.inherits(proto.ubii.topicData.TopicDataSourceList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.topicData.TopicDataSourceList.displayName = 'proto.ubii.topicData.TopicDataSourceList';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.ubii.topicData.TopicDataSourceList.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.topicData.TopicDataSourceList.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.topicData.TopicDataSourceList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.topicData.TopicDataSourceList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.topicData.TopicDataSourceList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.ubii.topicData.TopicDataSource.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.topicData.TopicDataSourceList}
+ */
+proto.ubii.topicData.TopicDataSourceList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.topicData.TopicDataSourceList;
+  return proto.ubii.topicData.TopicDataSourceList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.topicData.TopicDataSourceList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.topicData.TopicDataSourceList}
+ */
+proto.ubii.topicData.TopicDataSourceList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.ubii.topicData.TopicDataSource;
+      reader.readMessage(value,proto.ubii.topicData.TopicDataSource.deserializeBinaryFromReader);
+      msg.addElements(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.topicData.TopicDataSourceList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.topicData.TopicDataSourceList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.topicData.TopicDataSourceList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.topicData.TopicDataSourceList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.ubii.topicData.TopicDataSource.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated TopicDataSource elements = 1;
+ * @return {!Array<!proto.ubii.topicData.TopicDataSource>}
+ */
+proto.ubii.topicData.TopicDataSourceList.prototype.getElementsList = function() {
+  return /** @type{!Array<!proto.ubii.topicData.TopicDataSource>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.ubii.topicData.TopicDataSource, 1));
+};
+
+
+/** @param {!Array<!proto.ubii.topicData.TopicDataSource>} value */
+proto.ubii.topicData.TopicDataSourceList.prototype.setElementsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.ubii.topicData.TopicDataSource=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.topicData.TopicDataSource}
+ */
+proto.ubii.topicData.TopicDataSourceList.prototype.addElements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.ubii.topicData.TopicDataSource, opt_index);
+};
+
+
+proto.ubii.topicData.TopicDataSourceList.prototype.clearElementsList = function() {
+  this.setElementsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ubii.topicData.TopicData = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, proto.ubii.topicData.TopicData.oneofGroups_);
 };
@@ -19958,6 +20575,290 @@ proto.ubii.topicData.TopicData.prototype.clearError = function() {
  */
 proto.ubii.topicData.TopicData.prototype.hasError = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.ubii.conditions.NotifyCondition = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.conditions.NotifyCondition, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.conditions.NotifyCondition.displayName = 'proto.ubii.conditions.NotifyCondition';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.conditions.NotifyCondition.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.conditions.NotifyCondition} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.conditions.NotifyCondition.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    evaluationFunctionStringified: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    clientProfilePub: (f = msg.getClientProfilePub()) && proto.ubii.clients.Client.toObject(includeInstance, f),
+    clientProfileSub: (f = msg.getClientProfileSub()) && proto.ubii.clients.Client.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.conditions.NotifyCondition}
+ */
+proto.ubii.conditions.NotifyCondition.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.conditions.NotifyCondition;
+  return proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.conditions.NotifyCondition} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.conditions.NotifyCondition}
+ */
+proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEvaluationFunctionStringified(value);
+      break;
+    case 4:
+      var value = new proto.ubii.clients.Client;
+      reader.readMessage(value,proto.ubii.clients.Client.deserializeBinaryFromReader);
+      msg.setClientProfilePub(value);
+      break;
+    case 5:
+      var value = new proto.ubii.clients.Client;
+      reader.readMessage(value,proto.ubii.clients.Client.deserializeBinaryFromReader);
+      msg.setClientProfileSub(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.conditions.NotifyCondition} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getEvaluationFunctionStringified();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getClientProfilePub();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.ubii.clients.Client.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientProfileSub();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.ubii.clients.Client.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string id = 1;
+ * @return {string}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.conditions.NotifyCondition.prototype.setId = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.conditions.NotifyCondition.prototype.setName = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string evaluation_function_stringified = 3;
+ * @return {string}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getEvaluationFunctionStringified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.conditions.NotifyCondition.prototype.setEvaluationFunctionStringified = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional ubii.clients.Client client_profile_pub = 4;
+ * @return {?proto.ubii.clients.Client}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getClientProfilePub = function() {
+  return /** @type{?proto.ubii.clients.Client} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.clients.Client, 4));
+};
+
+
+/** @param {?proto.ubii.clients.Client|undefined} value */
+proto.ubii.conditions.NotifyCondition.prototype.setClientProfilePub = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.ubii.conditions.NotifyCondition.prototype.clearClientProfilePub = function() {
+  this.setClientProfilePub(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.hasClientProfilePub = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional ubii.clients.Client client_profile_sub = 5;
+ * @return {?proto.ubii.clients.Client}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getClientProfileSub = function() {
+  return /** @type{?proto.ubii.clients.Client} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.clients.Client, 5));
+};
+
+
+/** @param {?proto.ubii.clients.Client|undefined} value */
+proto.ubii.conditions.NotifyCondition.prototype.setClientProfileSub = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.ubii.conditions.NotifyCondition.prototype.clearClientProfileSub = function() {
+  this.setClientProfileSub(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.hasClientProfileSub = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

@@ -11,6 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var proto_devices_component_pb = require('../../../proto/devices/component_pb.js');
 goog.exportSymbol('proto.ubii.services.request.TopicSubscription', null, global);
 
 /**
@@ -35,7 +36,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.ubii.services.request.TopicSubscription.repeatedFields_ = [2,3,4,5];
+proto.ubii.services.request.TopicSubscription.repeatedFields_ = [2,3,4,5,6,7];
 
 
 
@@ -70,7 +71,11 @@ proto.ubii.services.request.TopicSubscription.toObject = function(includeInstanc
     subscribeTopicsList: jspb.Message.getRepeatedField(msg, 2),
     unsubscribeTopicsList: jspb.Message.getRepeatedField(msg, 3),
     subscribeTopicRegexpList: jspb.Message.getRepeatedField(msg, 4),
-    unsubscribeTopicRegexpList: jspb.Message.getRepeatedField(msg, 5)
+    unsubscribeTopicRegexpList: jspb.Message.getRepeatedField(msg, 5),
+    subscribeComponentsList: jspb.Message.toObjectList(msg.getSubscribeComponentsList(),
+    proto_devices_component_pb.Component.toObject, includeInstance),
+    unsubscribeComponentsList: jspb.Message.toObjectList(msg.getUnsubscribeComponentsList(),
+    proto_devices_component_pb.Component.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -126,6 +131,16 @@ proto.ubii.services.request.TopicSubscription.deserializeBinaryFromReader = func
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addUnsubscribeTopicRegexp(value);
+      break;
+    case 6:
+      var value = new proto_devices_component_pb.Component;
+      reader.readMessage(value,proto_devices_component_pb.Component.deserializeBinaryFromReader);
+      msg.addSubscribeComponents(value);
+      break;
+    case 7:
+      var value = new proto_devices_component_pb.Component;
+      reader.readMessage(value,proto_devices_component_pb.Component.deserializeBinaryFromReader);
+      msg.addUnsubscribeComponents(value);
       break;
     default:
       reader.skipField();
@@ -189,6 +204,22 @@ proto.ubii.services.request.TopicSubscription.serializeBinaryToWriter = function
     writer.writeRepeatedString(
       5,
       f
+    );
+  }
+  f = message.getSubscribeComponentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto_devices_component_pb.Component.serializeBinaryToWriter
+    );
+  }
+  f = message.getUnsubscribeComponentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
+      f,
+      proto_devices_component_pb.Component.serializeBinaryToWriter
     );
   }
 };
@@ -322,6 +353,68 @@ proto.ubii.services.request.TopicSubscription.prototype.addUnsubscribeTopicRegex
 
 proto.ubii.services.request.TopicSubscription.prototype.clearUnsubscribeTopicRegexpList = function() {
   this.setUnsubscribeTopicRegexpList([]);
+};
+
+
+/**
+ * repeated ubii.devices.Component subscribe_components = 6;
+ * @return {!Array<!proto.ubii.devices.Component>}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.getSubscribeComponentsList = function() {
+  return /** @type{!Array<!proto.ubii.devices.Component>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_devices_component_pb.Component, 6));
+};
+
+
+/** @param {!Array<!proto.ubii.devices.Component>} value */
+proto.ubii.services.request.TopicSubscription.prototype.setSubscribeComponentsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.ubii.devices.Component=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.devices.Component}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.addSubscribeComponents = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.ubii.devices.Component, opt_index);
+};
+
+
+proto.ubii.services.request.TopicSubscription.prototype.clearSubscribeComponentsList = function() {
+  this.setSubscribeComponentsList([]);
+};
+
+
+/**
+ * repeated ubii.devices.Component unsubscribe_components = 7;
+ * @return {!Array<!proto.ubii.devices.Component>}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.getUnsubscribeComponentsList = function() {
+  return /** @type{!Array<!proto.ubii.devices.Component>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto_devices_component_pb.Component, 7));
+};
+
+
+/** @param {!Array<!proto.ubii.devices.Component>} value */
+proto.ubii.services.request.TopicSubscription.prototype.setUnsubscribeComponentsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.ubii.devices.Component=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.ubii.devices.Component}
+ */
+proto.ubii.services.request.TopicSubscription.prototype.addUnsubscribeComponents = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.ubii.devices.Component, opt_index);
+};
+
+
+proto.ubii.services.request.TopicSubscription.prototype.clearUnsubscribeComponentsList = function() {
+  this.setUnsubscribeComponentsList([]);
 };
 
 

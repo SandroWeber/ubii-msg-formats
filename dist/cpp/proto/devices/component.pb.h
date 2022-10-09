@@ -223,6 +223,28 @@ class Component : public ::google::protobuf::Message /* @@protoc_insertion_point
   const ::google::protobuf::RepeatedPtrField< ::std::string>& tags() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_tags();
 
+  // repeated string notify_condition_ids = 9;
+  int notify_condition_ids_size() const;
+  void clear_notify_condition_ids();
+  static const int kNotifyConditionIdsFieldNumber = 9;
+  const ::std::string& notify_condition_ids(int index) const;
+  ::std::string* mutable_notify_condition_ids(int index);
+  void set_notify_condition_ids(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_notify_condition_ids(int index, ::std::string&& value);
+  #endif
+  void set_notify_condition_ids(int index, const char* value);
+  void set_notify_condition_ids(int index, const char* value, size_t size);
+  ::std::string* add_notify_condition_ids();
+  void add_notify_condition_ids(const ::std::string& value);
+  #if LANG_CXX11
+  void add_notify_condition_ids(::std::string&& value);
+  #endif
+  void add_notify_condition_ids(const char* value);
+  void add_notify_condition_ids(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& notify_condition_ids() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_notify_condition_ids();
+
   // string topic = 1;
   void clear_topic();
   static const int kTopicFieldNumber = 1;
@@ -318,6 +340,7 @@ class Component : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::std::string> tags_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> notify_condition_ids_;
   ::google::protobuf::internal::ArenaStringPtr topic_;
   ::google::protobuf::internal::ArenaStringPtr message_format_;
   ::google::protobuf::internal::ArenaStringPtr device_id_;
@@ -847,6 +870,75 @@ inline void Component::set_allocated_name(::std::string* name) {
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:ubii.devices.Component.name)
+}
+
+// repeated string notify_condition_ids = 9;
+inline int Component::notify_condition_ids_size() const {
+  return notify_condition_ids_.size();
+}
+inline void Component::clear_notify_condition_ids() {
+  notify_condition_ids_.Clear();
+}
+inline const ::std::string& Component::notify_condition_ids(int index) const {
+  // @@protoc_insertion_point(field_get:ubii.devices.Component.notify_condition_ids)
+  return notify_condition_ids_.Get(index);
+}
+inline ::std::string* Component::mutable_notify_condition_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:ubii.devices.Component.notify_condition_ids)
+  return notify_condition_ids_.Mutable(index);
+}
+inline void Component::set_notify_condition_ids(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.notify_condition_ids)
+  notify_condition_ids_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Component::set_notify_condition_ids(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:ubii.devices.Component.notify_condition_ids)
+  notify_condition_ids_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Component::set_notify_condition_ids(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  notify_condition_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:ubii.devices.Component.notify_condition_ids)
+}
+inline void Component::set_notify_condition_ids(int index, const char* value, size_t size) {
+  notify_condition_ids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:ubii.devices.Component.notify_condition_ids)
+}
+inline ::std::string* Component::add_notify_condition_ids() {
+  // @@protoc_insertion_point(field_add_mutable:ubii.devices.Component.notify_condition_ids)
+  return notify_condition_ids_.Add();
+}
+inline void Component::add_notify_condition_ids(const ::std::string& value) {
+  notify_condition_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:ubii.devices.Component.notify_condition_ids)
+}
+#if LANG_CXX11
+inline void Component::add_notify_condition_ids(::std::string&& value) {
+  notify_condition_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:ubii.devices.Component.notify_condition_ids)
+}
+#endif
+inline void Component::add_notify_condition_ids(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  notify_condition_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:ubii.devices.Component.notify_condition_ids)
+}
+inline void Component::add_notify_condition_ids(const char* value, size_t size) {
+  notify_condition_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:ubii.devices.Component.notify_condition_ids)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Component::notify_condition_ids() const {
+  // @@protoc_insertion_point(field_list:ubii.devices.Component.notify_condition_ids)
+  return notify_condition_ids_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Component::mutable_notify_condition_ids() {
+  // @@protoc_insertion_point(field_mutable_list:ubii.devices.Component.notify_condition_ids)
+  return &notify_condition_ids_;
 }
 
 // -------------------------------------------------------------------

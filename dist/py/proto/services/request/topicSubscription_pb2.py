@@ -12,6 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from proto.devices import component_pb2 as proto_dot_devices_dot_component__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,8 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services.request',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n.proto/services/request/topicSubscription.proto\x12\x15ubii.services.request\"\x9e\x01\n\x11TopicSubscription\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x18\n\x10subscribe_topics\x18\x02 \x03(\t\x12\x1a\n\x12unsubscribe_topics\x18\x03 \x03(\t\x12\x1e\n\x16subscribe_topic_regexp\x18\x04 \x03(\t\x12 \n\x18unsubscribe_topic_regexp\x18\x05 \x03(\tb\x06proto3')
-)
+  serialized_pb=_b('\n.proto/services/request/topicSubscription.proto\x12\x15ubii.services.request\x1a\x1dproto/devices/component.proto\"\x8e\x02\n\x11TopicSubscription\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x18\n\x10subscribe_topics\x18\x02 \x03(\t\x12\x1a\n\x12unsubscribe_topics\x18\x03 \x03(\t\x12\x1e\n\x16subscribe_topic_regexp\x18\x04 \x03(\t\x12 \n\x18unsubscribe_topic_regexp\x18\x05 \x03(\t\x12\x35\n\x14subscribe_components\x18\x06 \x03(\x0b\x32\x17.ubii.devices.Component\x12\x37\n\x16unsubscribe_components\x18\x07 \x03(\x0b\x32\x17.ubii.devices.Componentb\x06proto3')
+  ,
+  dependencies=[proto_dot_devices_dot_component__pb2.DESCRIPTOR,])
 
 
 
@@ -67,6 +69,20 @@ _TOPICSUBSCRIPTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subscribe_components', full_name='ubii.services.request.TopicSubscription.subscribe_components', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unsubscribe_components', full_name='ubii.services.request.TopicSubscription.unsubscribe_components', index=6,
+      number=7, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -79,10 +95,12 @@ _TOPICSUBSCRIPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=74,
-  serialized_end=232,
+  serialized_start=105,
+  serialized_end=375,
 )
 
+_TOPICSUBSCRIPTION.fields_by_name['subscribe_components'].message_type = proto_dot_devices_dot_component__pb2._COMPONENT
+_TOPICSUBSCRIPTION.fields_by_name['unsubscribe_components'].message_type = proto_dot_devices_dot_component__pb2._COMPONENT
 DESCRIPTOR.message_types_by_name['TopicSubscription'] = _TOPICSUBSCRIPTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.devices',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1dproto/devices/component.proto\x12\x0cubii.devices\"\xdc\x01\n\tComponent\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x16\n\x0emessage_format\x18\x02 \x01(\t\x12/\n\x07io_type\x18\x03 \x01(\x0e\x32\x1e.ubii.devices.Component.IOType\x12\x11\n\tdevice_id\x18\x04 \x01(\t\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\n\n\x02id\x18\x07 \x01(\t\x12\x0c\n\x04name\x18\x08 \x01(\t\"\'\n\x06IOType\x12\r\n\tPUBLISHER\x10\x00\x12\x0e\n\nSUBSCRIBER\x10\x01\":\n\rComponentList\x12)\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x17.ubii.devices.Componentb\x06proto3')
+  serialized_pb=_b('\n\x1dproto/devices/component.proto\x12\x0cubii.devices\"\xfa\x01\n\tComponent\x12\r\n\x05topic\x18\x01 \x01(\t\x12\x16\n\x0emessage_format\x18\x02 \x01(\t\x12/\n\x07io_type\x18\x03 \x01(\x0e\x32\x1e.ubii.devices.Component.IOType\x12\x11\n\tdevice_id\x18\x04 \x01(\t\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\n\n\x02id\x18\x07 \x01(\t\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x1c\n\x14notify_condition_ids\x18\t \x03(\t\"\'\n\x06IOType\x12\r\n\tPUBLISHER\x10\x00\x12\x0e\n\nSUBSCRIBER\x10\x01\":\n\rComponentList\x12)\n\x08\x65lements\x18\x01 \x03(\x0b\x32\x17.ubii.devices.Componentb\x06proto3')
 )
 
 
@@ -41,8 +41,8 @@ _COMPONENT_IOTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=229,
-  serialized_end=268,
+  serialized_start=259,
+  serialized_end=298,
 )
 _sym_db.RegisterEnumDescriptor(_COMPONENT_IOTYPE)
 
@@ -110,6 +110,13 @@ _COMPONENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='notify_condition_ids', full_name='ubii.devices.Component.notify_condition_ids', index=8,
+      number=9, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -124,7 +131,7 @@ _COMPONENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=48,
-  serialized_end=268,
+  serialized_end=298,
 )
 
 
@@ -154,8 +161,8 @@ _COMPONENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=328,
+  serialized_start=300,
+  serialized_end=358,
 )
 
 _COMPONENT.fields_by_name['io_type'].enum_type = _COMPONENT_IOTYPE

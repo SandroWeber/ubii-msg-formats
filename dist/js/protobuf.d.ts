@@ -256,6 +256,124 @@ export namespace ubii {
         }
     }
 
+    /** Namespace conditions. */
+    namespace conditions {
+
+        /** Properties of a NotifyCondition. */
+        interface INotifyCondition {
+
+            /** NotifyCondition id */
+            id?: (string|null);
+
+            /** NotifyCondition name */
+            name?: (string|null);
+
+            /** NotifyCondition evaluationFunctionStringified */
+            evaluationFunctionStringified?: (string|null);
+
+            /** NotifyCondition clientProfilePub */
+            clientProfilePub?: (ubii.clients.IClient|null);
+
+            /** NotifyCondition clientProfileSub */
+            clientProfileSub?: (ubii.clients.IClient|null);
+        }
+
+        /** Represents a NotifyCondition. */
+        class NotifyCondition implements INotifyCondition {
+
+            /**
+             * Constructs a new NotifyCondition.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: ubii.conditions.INotifyCondition);
+
+            /** NotifyCondition id. */
+            public id: string;
+
+            /** NotifyCondition name. */
+            public name: string;
+
+            /** NotifyCondition evaluationFunctionStringified. */
+            public evaluationFunctionStringified: string;
+
+            /** NotifyCondition clientProfilePub. */
+            public clientProfilePub?: (ubii.clients.IClient|null);
+
+            /** NotifyCondition clientProfileSub. */
+            public clientProfileSub?: (ubii.clients.IClient|null);
+
+            /**
+             * Creates a new NotifyCondition instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NotifyCondition instance
+             */
+            public static create(properties?: ubii.conditions.INotifyCondition): ubii.conditions.NotifyCondition;
+
+            /**
+             * Encodes the specified NotifyCondition message. Does not implicitly {@link ubii.conditions.NotifyCondition.verify|verify} messages.
+             * @param message NotifyCondition message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: ubii.conditions.INotifyCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified NotifyCondition message, length delimited. Does not implicitly {@link ubii.conditions.NotifyCondition.verify|verify} messages.
+             * @param message NotifyCondition message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: ubii.conditions.INotifyCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NotifyCondition message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NotifyCondition
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ubii.conditions.NotifyCondition;
+
+            /**
+             * Decodes a NotifyCondition message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns NotifyCondition
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ubii.conditions.NotifyCondition;
+
+            /**
+             * Verifies a NotifyCondition message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a NotifyCondition message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns NotifyCondition
+             */
+            public static fromObject(object: { [k: string]: any }): ubii.conditions.NotifyCondition;
+
+            /**
+             * Creates a plain object from a NotifyCondition message. Also converts values to other types if specified.
+             * @param message NotifyCondition
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: ubii.conditions.NotifyCondition, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this NotifyCondition to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+    }
+
     /** Namespace dataStructure. */
     namespace dataStructure {
 
@@ -3487,6 +3605,9 @@ export namespace ubii {
 
             /** Component name */
             name?: (string|null);
+
+            /** Component notifyConditionIds */
+            notifyConditionIds?: (string[]|null);
         }
 
         /** Represents a Component. */
@@ -3521,6 +3642,9 @@ export namespace ubii {
 
             /** Component name. */
             public name: string;
+
+            /** Component notifyConditionIds. */
+            public notifyConditionIds: string[];
 
             /**
              * Creates a new Component instance using the specified properties.
@@ -5966,6 +6090,12 @@ export namespace ubii {
 
                 /** TopicSubscription unsubscribeTopicRegexp */
                 unsubscribeTopicRegexp?: (string[]|null);
+
+                /** TopicSubscription subscribeComponents */
+                subscribeComponents?: (ubii.devices.IComponent[]|null);
+
+                /** TopicSubscription unsubscribeComponents */
+                unsubscribeComponents?: (ubii.devices.IComponent[]|null);
             }
 
             /** Represents a TopicSubscription. */
@@ -5991,6 +6121,12 @@ export namespace ubii {
 
                 /** TopicSubscription unsubscribeTopicRegexp. */
                 public unsubscribeTopicRegexp: string[];
+
+                /** TopicSubscription subscribeComponents. */
+                public subscribeComponents: ubii.devices.IComponent[];
+
+                /** TopicSubscription unsubscribeComponents. */
+                public unsubscribeComponents: ubii.devices.IComponent[];
 
                 /**
                  * Creates a new TopicSubscription instance using the specified properties.
@@ -8109,6 +8245,207 @@ export namespace ubii {
 
             /**
              * Converts this TopicDataRecordList to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a TopicDataSource. */
+        interface ITopicDataSource {
+
+            /** TopicDataSource topic */
+            topic?: (string|null);
+
+            /** TopicDataSource regex */
+            regex?: (string|null);
+
+            /** TopicDataSource component */
+            component?: (ubii.devices.IComponent|null);
+
+            /** TopicDataSource staticRecord */
+            staticRecord?: (ubii.topicData.ITopicDataRecord|null);
+        }
+
+        /** Represents a TopicDataSource. */
+        class TopicDataSource implements ITopicDataSource {
+
+            /**
+             * Constructs a new TopicDataSource.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: ubii.topicData.ITopicDataSource);
+
+            /** TopicDataSource topic. */
+            public topic?: (string|null);
+
+            /** TopicDataSource regex. */
+            public regex?: (string|null);
+
+            /** TopicDataSource component. */
+            public component?: (ubii.devices.IComponent|null);
+
+            /** TopicDataSource staticRecord. */
+            public staticRecord?: (ubii.topicData.ITopicDataRecord|null);
+
+            /** TopicDataSource type. */
+            public type?: ("topic"|"regex"|"component"|"staticRecord");
+
+            /**
+             * Creates a new TopicDataSource instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TopicDataSource instance
+             */
+            public static create(properties?: ubii.topicData.ITopicDataSource): ubii.topicData.TopicDataSource;
+
+            /**
+             * Encodes the specified TopicDataSource message. Does not implicitly {@link ubii.topicData.TopicDataSource.verify|verify} messages.
+             * @param message TopicDataSource message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: ubii.topicData.ITopicDataSource, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified TopicDataSource message, length delimited. Does not implicitly {@link ubii.topicData.TopicDataSource.verify|verify} messages.
+             * @param message TopicDataSource message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: ubii.topicData.ITopicDataSource, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TopicDataSource message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TopicDataSource
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ubii.topicData.TopicDataSource;
+
+            /**
+             * Decodes a TopicDataSource message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns TopicDataSource
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ubii.topicData.TopicDataSource;
+
+            /**
+             * Verifies a TopicDataSource message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a TopicDataSource message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns TopicDataSource
+             */
+            public static fromObject(object: { [k: string]: any }): ubii.topicData.TopicDataSource;
+
+            /**
+             * Creates a plain object from a TopicDataSource message. Also converts values to other types if specified.
+             * @param message TopicDataSource
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: ubii.topicData.TopicDataSource, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this TopicDataSource to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a TopicDataSourceList. */
+        interface ITopicDataSourceList {
+
+            /** TopicDataSourceList elements */
+            elements?: (ubii.topicData.ITopicDataSource[]|null);
+        }
+
+        /** Represents a TopicDataSourceList. */
+        class TopicDataSourceList implements ITopicDataSourceList {
+
+            /**
+             * Constructs a new TopicDataSourceList.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: ubii.topicData.ITopicDataSourceList);
+
+            /** TopicDataSourceList elements. */
+            public elements: ubii.topicData.ITopicDataSource[];
+
+            /**
+             * Creates a new TopicDataSourceList instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TopicDataSourceList instance
+             */
+            public static create(properties?: ubii.topicData.ITopicDataSourceList): ubii.topicData.TopicDataSourceList;
+
+            /**
+             * Encodes the specified TopicDataSourceList message. Does not implicitly {@link ubii.topicData.TopicDataSourceList.verify|verify} messages.
+             * @param message TopicDataSourceList message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: ubii.topicData.ITopicDataSourceList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified TopicDataSourceList message, length delimited. Does not implicitly {@link ubii.topicData.TopicDataSourceList.verify|verify} messages.
+             * @param message TopicDataSourceList message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: ubii.topicData.ITopicDataSourceList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TopicDataSourceList message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TopicDataSourceList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ubii.topicData.TopicDataSourceList;
+
+            /**
+             * Decodes a TopicDataSourceList message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns TopicDataSourceList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ubii.topicData.TopicDataSourceList;
+
+            /**
+             * Verifies a TopicDataSourceList message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a TopicDataSourceList message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns TopicDataSourceList
+             */
+            public static fromObject(object: { [k: string]: any }): ubii.topicData.TopicDataSourceList;
+
+            /**
+             * Creates a plain object from a TopicDataSourceList message. Also converts values to other types if specified.
+             * @param message TopicDataSourceList
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: ubii.topicData.TopicDataSourceList, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this TopicDataSourceList to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
