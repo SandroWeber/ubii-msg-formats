@@ -1,10 +1,14 @@
 syntax = "proto3";
 package ubii.services.request;
 
+import "proto/devices/component.proto";
+
 message TopicSubscription {
     string client_id = 1;
     repeated string subscribe_topics = 2;
     repeated string unsubscribe_topics = 3;
     repeated string subscribe_topic_regexp = 4;
     repeated string unsubscribe_topic_regexp = 5;
+    repeated ubii.devices.Component subscribe_components = 6;
+    repeated ubii.devices.Component unsubscribe_components = 7;
 }

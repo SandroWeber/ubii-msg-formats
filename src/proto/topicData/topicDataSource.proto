@@ -1,0 +1,18 @@
+syntax = "proto3";
+package ubii.topicData;
+
+import "proto/devices/component.proto";
+import "proto/topicData/topicDataRecord.proto";
+
+message TopicDataSource {
+    oneof type {
+        string topic = 1;
+        string regex = 2;
+        ubii.devices.Component component = 3;
+        ubii.topicData.TopicDataRecord static_record = 4;
+    }
+}
+
+message TopicDataSourceList {
+    repeated ubii.topicData.TopicDataSource elements = 1;
+}
