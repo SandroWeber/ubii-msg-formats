@@ -27,42 +27,44 @@ namespace Ubii.Services {
             "CiFwcm90by9zZXJ2aWNlcy9zZXJ2aWNlUmVwbHkucHJvdG8SDXViaWkuc2Vy",
             "dmljZXMaG3Byb3RvL2dlbmVyYWwvc3VjY2Vzcy5wcm90bxoZcHJvdG8vZ2Vu",
             "ZXJhbC9lcnJvci5wcm90bxofcHJvdG8vZGF0YVN0cnVjdHVyZS9saXN0cy5w",
-            "cm90bxoacHJvdG8vY2xpZW50cy9jbGllbnQucHJvdG8aHXByb3RvL2Rldmlj",
-            "ZXMvY29tcG9uZW50LnByb3RvGhpwcm90by9kZXZpY2VzL2RldmljZS5wcm90",
-            "bxoccHJvdG8vZGV2aWNlcy90b3BpY011eC5wcm90bxoecHJvdG8vZGV2aWNl",
-            "cy90b3BpY0RlbXV4LnByb3RvGhpwcm90by9zZXJ2ZXJzL3NlcnZlci5wcm90",
-            "bxoccHJvdG8vc2Vzc2lvbnMvc2Vzc2lvbi5wcm90bxoccHJvdG8vc2Vydmlj",
-            "ZXMvc2VydmljZS5wcm90bxoncHJvdG8vcHJvY2Vzc2luZy9wcm9jZXNzaW5n",
-            "TW9kdWxlLnByb3RvGilwcm90by9wcm9jZXNzaW5nL2xvY2tzdGVwUHJvY2Vz",
-            "c2luZy5wcm90byLACAoMU2VydmljZVJlcGx5EigKB3N1Y2Nlc3MYASABKAsy",
-            "FS51YmlpLmdlbmVyYWwuU3VjY2Vzc0gAEiQKBWVycm9yGAIgASgLMhMudWJp",
-            "aS5nZW5lcmFsLkVycm9ySAASJgoGY2xpZW50GAMgASgLMhQudWJpaS5jbGll",
-            "bnRzLkNsaWVudEgAEiYKBmRldmljZRgEIAEoCzIULnViaWkuZGV2aWNlcy5E",
-            "ZXZpY2VIABImCgZzZXJ2ZXIYBSABKAsyFC51YmlpLnNlcnZlcnMuU2VydmVy",
-            "SAASKQoHc2Vzc2lvbhgGIAEoCzIWLnViaWkuc2Vzc2lvbnMuU2Vzc2lvbkgA",
-            "EjIKDHNlc3Npb25fbGlzdBgHIAEoCzIaLnViaWkuc2Vzc2lvbnMuU2Vzc2lv",
-            "bkxpc3RIABI+ChFwcm9jZXNzaW5nX21vZHVsZRgIIAEoCzIhLnViaWkucHJv",
-            "Y2Vzc2luZy5Qcm9jZXNzaW5nTW9kdWxlSAASRwoWcHJvY2Vzc2luZ19tb2R1",
-            "bGVfbGlzdBgJIAEoCzIlLnViaWkucHJvY2Vzc2luZy5Qcm9jZXNzaW5nTW9k",
-            "dWxlTGlzdEgAEjUKC3N0cmluZ19saXN0GAogASgLMh4udWJpaS5kYXRhU3Ry",
-            "dWN0dXJlLlN0cmluZ0xpc3RIABIrCgl0b3BpY19tdXgYCyABKAsyFi51Ymlp",
-            "LmRldmljZXMuVG9waWNNdXhIABI0Cg50b3BpY19tdXhfbGlzdBgMIAEoCzIa",
-            "LnViaWkuZGV2aWNlcy5Ub3BpY011eExpc3RIABIvCgt0b3BpY19kZW11eBgN",
-            "IAEoCzIYLnViaWkuZGV2aWNlcy5Ub3BpY0RlbXV4SAASOAoQdG9waWNfZGVt",
-            "dXhfbGlzdBgOIAEoCzIcLnViaWkuZGV2aWNlcy5Ub3BpY0RlbXV4TGlzdEgA",
-            "Ei8KC2NsaWVudF9saXN0GA8gASgLMhgudWJpaS5jbGllbnRzLkNsaWVudExp",
-            "c3RIABIvCgtkZXZpY2VfbGlzdBgQIAEoCzIYLnViaWkuZGV2aWNlcy5EZXZp",
-            "Y2VMaXN0SAASKQoHc2VydmljZRgRIAEoCzIWLnViaWkuc2VydmljZXMuU2Vy",
-            "dmljZUgAEjIKDHNlcnZpY2VfbGlzdBgSIAEoCzIaLnViaWkuc2VydmljZXMu",
-            "U2VydmljZUxpc3RIABJNChlsb2Nrc3RlcF9wcm9jZXNzaW5nX3JlcGx5GBMg",
-            "ASgLMigudWJpaS5wcm9jZXNzaW5nLkxvY2tzdGVwUHJvY2Vzc2luZ1JlcGx5",
-            "SAASLAoJY29tcG9uZW50GBQgASgLMhcudWJpaS5kZXZpY2VzLkNvbXBvbmVu",
-            "dEgAEjUKDmNvbXBvbmVudF9saXN0GBUgASgLMhsudWJpaS5kZXZpY2VzLkNv",
-            "bXBvbmVudExpc3RIAEIGCgR0eXBlYgZwcm90bzM="));
+            "cm90bxoacHJvdG8vY2xpZW50cy9jbGllbnQucHJvdG8aJnByb3RvL2NvbmRp",
+            "dGlvbnMvbm90aWZ5Q29uZGl0aW9uLnByb3RvGh1wcm90by9kZXZpY2VzL2Nv",
+            "bXBvbmVudC5wcm90bxoacHJvdG8vZGV2aWNlcy9kZXZpY2UucHJvdG8aHHBy",
+            "b3RvL2RldmljZXMvdG9waWNNdXgucHJvdG8aHnByb3RvL2RldmljZXMvdG9w",
+            "aWNEZW11eC5wcm90bxoacHJvdG8vc2VydmVycy9zZXJ2ZXIucHJvdG8aHHBy",
+            "b3RvL3Nlc3Npb25zL3Nlc3Npb24ucHJvdG8aHHByb3RvL3NlcnZpY2VzL3Nl",
+            "cnZpY2UucHJvdG8aJ3Byb3RvL3Byb2Nlc3NpbmcvcHJvY2Vzc2luZ01vZHVs",
+            "ZS5wcm90bxopcHJvdG8vcHJvY2Vzc2luZy9sb2Nrc3RlcFByb2Nlc3Npbmcu",
+            "cHJvdG8i/ggKDFNlcnZpY2VSZXBseRIoCgdzdWNjZXNzGAEgASgLMhUudWJp",
+            "aS5nZW5lcmFsLlN1Y2Nlc3NIABIkCgVlcnJvchgCIAEoCzITLnViaWkuZ2Vu",
+            "ZXJhbC5FcnJvckgAEiYKBmNsaWVudBgDIAEoCzIULnViaWkuY2xpZW50cy5D",
+            "bGllbnRIABImCgZkZXZpY2UYBCABKAsyFC51YmlpLmRldmljZXMuRGV2aWNl",
+            "SAASJgoGc2VydmVyGAUgASgLMhQudWJpaS5zZXJ2ZXJzLlNlcnZlckgAEikK",
+            "B3Nlc3Npb24YBiABKAsyFi51YmlpLnNlc3Npb25zLlNlc3Npb25IABIyCgxz",
+            "ZXNzaW9uX2xpc3QYByABKAsyGi51YmlpLnNlc3Npb25zLlNlc3Npb25MaXN0",
+            "SAASPgoRcHJvY2Vzc2luZ19tb2R1bGUYCCABKAsyIS51YmlpLnByb2Nlc3Np",
+            "bmcuUHJvY2Vzc2luZ01vZHVsZUgAEkcKFnByb2Nlc3NpbmdfbW9kdWxlX2xp",
+            "c3QYCSABKAsyJS51YmlpLnByb2Nlc3NpbmcuUHJvY2Vzc2luZ01vZHVsZUxp",
+            "c3RIABI1CgtzdHJpbmdfbGlzdBgKIAEoCzIeLnViaWkuZGF0YVN0cnVjdHVy",
+            "ZS5TdHJpbmdMaXN0SAASKwoJdG9waWNfbXV4GAsgASgLMhYudWJpaS5kZXZp",
+            "Y2VzLlRvcGljTXV4SAASNAoOdG9waWNfbXV4X2xpc3QYDCABKAsyGi51Ymlp",
+            "LmRldmljZXMuVG9waWNNdXhMaXN0SAASLwoLdG9waWNfZGVtdXgYDSABKAsy",
+            "GC51YmlpLmRldmljZXMuVG9waWNEZW11eEgAEjgKEHRvcGljX2RlbXV4X2xp",
+            "c3QYDiABKAsyHC51YmlpLmRldmljZXMuVG9waWNEZW11eExpc3RIABIvCgtj",
+            "bGllbnRfbGlzdBgPIAEoCzIYLnViaWkuY2xpZW50cy5DbGllbnRMaXN0SAAS",
+            "LwoLZGV2aWNlX2xpc3QYECABKAsyGC51YmlpLmRldmljZXMuRGV2aWNlTGlz",
+            "dEgAEikKB3NlcnZpY2UYESABKAsyFi51YmlpLnNlcnZpY2VzLlNlcnZpY2VI",
+            "ABIyCgxzZXJ2aWNlX2xpc3QYEiABKAsyGi51YmlpLnNlcnZpY2VzLlNlcnZp",
+            "Y2VMaXN0SAASTQoZbG9ja3N0ZXBfcHJvY2Vzc2luZ19yZXBseRgTIAEoCzIo",
+            "LnViaWkucHJvY2Vzc2luZy5Mb2Nrc3RlcFByb2Nlc3NpbmdSZXBseUgAEiwK",
+            "CWNvbXBvbmVudBgUIAEoCzIXLnViaWkuZGV2aWNlcy5Db21wb25lbnRIABI1",
+            "Cg5jb21wb25lbnRfbGlzdBgVIAEoCzIbLnViaWkuZGV2aWNlcy5Db21wb25l",
+            "bnRMaXN0SAASPAoQbm90aWZ5X2NvbmRpdGlvbhgWIAEoCzIgLnViaWkuY29u",
+            "ZGl0aW9ucy5Ob3RpZnlDb25kaXRpb25IAEIGCgR0eXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.DataStructure.ListsReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Devices.ComponentReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Services.ServiceReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, global::Ubii.Processing.LockstepProcessingReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ubii.General.SuccessReflection.Descriptor, global::Ubii.General.ErrorReflection.Descriptor, global::Ubii.DataStructure.ListsReflection.Descriptor, global::Ubii.Clients.ClientReflection.Descriptor, global::Ubii.Conditions.NotifyConditionReflection.Descriptor, global::Ubii.Devices.ComponentReflection.Descriptor, global::Ubii.Devices.DeviceReflection.Descriptor, global::Ubii.Devices.TopicMuxReflection.Descriptor, global::Ubii.Devices.TopicDemuxReflection.Descriptor, global::Ubii.Servers.ServerReflection.Descriptor, global::Ubii.Sessions.SessionReflection.Descriptor, global::Ubii.Services.ServiceReflection.Descriptor, global::Ubii.Processing.ProcessingModuleReflection.Descriptor, global::Ubii.Processing.LockstepProcessingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "ProcessingModule", "ProcessingModuleList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "Service", "ServiceList", "LockstepProcessingReply", "Component", "ComponentList" }, new[]{ "Type" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ubii.Services.ServiceReply), global::Ubii.Services.ServiceReply.Parser, new[]{ "Success", "Error", "Client", "Device", "Server", "Session", "SessionList", "ProcessingModule", "ProcessingModuleList", "StringList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "Service", "ServiceList", "LockstepProcessingReply", "Component", "ComponentList", "NotifyCondition" }, new[]{ "Type" }, null, null)
           }));
     }
     #endregion
@@ -157,6 +159,9 @@ namespace Ubii.Services {
           break;
         case TypeOneofCase.ComponentList:
           ComponentList = other.ComponentList.Clone();
+          break;
+        case TypeOneofCase.NotifyCondition:
+          NotifyCondition = other.NotifyCondition.Clone();
           break;
       }
 
@@ -399,6 +404,17 @@ namespace Ubii.Services {
       }
     }
 
+    /// <summary>Field number for the "notify_condition" field.</summary>
+    public const int NotifyConditionFieldNumber = 22;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Ubii.Conditions.NotifyCondition NotifyCondition {
+      get { return typeCase_ == TypeOneofCase.NotifyCondition ? (global::Ubii.Conditions.NotifyCondition) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.NotifyCondition;
+      }
+    }
+
     private object type_;
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
@@ -424,6 +440,7 @@ namespace Ubii.Services {
       LockstepProcessingReply = 19,
       Component = 20,
       ComponentList = 21,
+      NotifyCondition = 22,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -471,6 +488,7 @@ namespace Ubii.Services {
       if (!object.Equals(LockstepProcessingReply, other.LockstepProcessingReply)) return false;
       if (!object.Equals(Component, other.Component)) return false;
       if (!object.Equals(ComponentList, other.ComponentList)) return false;
+      if (!object.Equals(NotifyCondition, other.NotifyCondition)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -499,6 +517,7 @@ namespace Ubii.Services {
       if (typeCase_ == TypeOneofCase.LockstepProcessingReply) hash ^= LockstepProcessingReply.GetHashCode();
       if (typeCase_ == TypeOneofCase.Component) hash ^= Component.GetHashCode();
       if (typeCase_ == TypeOneofCase.ComponentList) hash ^= ComponentList.GetHashCode();
+      if (typeCase_ == TypeOneofCase.NotifyCondition) hash ^= NotifyCondition.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -597,6 +616,10 @@ namespace Ubii.Services {
         output.WriteRawTag(170, 1);
         output.WriteMessage(ComponentList);
       }
+      if (typeCase_ == TypeOneofCase.NotifyCondition) {
+        output.WriteRawTag(178, 1);
+        output.WriteMessage(NotifyCondition);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -667,6 +690,9 @@ namespace Ubii.Services {
       }
       if (typeCase_ == TypeOneofCase.ComponentList) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(ComponentList);
+      }
+      if (typeCase_ == TypeOneofCase.NotifyCondition) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(NotifyCondition);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -805,6 +831,12 @@ namespace Ubii.Services {
             ComponentList = new global::Ubii.Devices.ComponentList();
           }
           ComponentList.MergeFrom(other.ComponentList);
+          break;
+        case TypeOneofCase.NotifyCondition:
+          if (NotifyCondition == null) {
+            NotifyCondition = new global::Ubii.Conditions.NotifyCondition();
+          }
+          NotifyCondition.MergeFrom(other.NotifyCondition);
           break;
       }
 
@@ -1006,6 +1038,15 @@ namespace Ubii.Services {
             }
             input.ReadMessage(subBuilder);
             ComponentList = subBuilder;
+            break;
+          }
+          case 178: {
+            global::Ubii.Conditions.NotifyCondition subBuilder = new global::Ubii.Conditions.NotifyCondition();
+            if (typeCase_ == TypeOneofCase.NotifyCondition) {
+              subBuilder.MergeFrom(NotifyCondition);
+            }
+            input.ReadMessage(subBuilder);
+            NotifyCondition = subBuilder;
             break;
           }
         }

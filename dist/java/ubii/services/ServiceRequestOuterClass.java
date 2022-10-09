@@ -236,6 +236,19 @@ public final class ServiceRequestOuterClass {
      */
     ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder();
 
+    /**
+     * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+     */
+    boolean hasNotifyCondition();
+    /**
+     * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+     */
+    ubii.conditions.NotifyConditionOuterClass.NotifyCondition getNotifyCondition();
+    /**
+     * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+     */
+    ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder getNotifyConditionOrBuilder();
+
     public ubii.services.ServiceRequestOuterClass.ServiceRequest.TypeCase getTypeCase();
   }
   /**
@@ -508,6 +521,20 @@ public final class ServiceRequestOuterClass {
               typeCase_ = 17;
               break;
             }
+            case 146: {
+              ubii.conditions.NotifyConditionOuterClass.NotifyCondition.Builder subBuilder = null;
+              if (typeCase_ == 18) {
+                subBuilder = ((ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.conditions.NotifyConditionOuterClass.NotifyCondition.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 18;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -560,6 +587,7 @@ public final class ServiceRequestOuterClass {
       LOCKSTEP_PROCESSING_REQUEST(15),
       COMPONENT(16),
       COMPONENT_LIST(17),
+      NOTIFY_CONDITION(18),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -591,6 +619,7 @@ public final class ServiceRequestOuterClass {
           case 15: return LOCKSTEP_PROCESSING_REQUEST;
           case 16: return COMPONENT;
           case 17: return COMPONENT_LIST;
+          case 18: return NOTIFY_CONDITION;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -1056,6 +1085,32 @@ public final class ServiceRequestOuterClass {
       return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
     }
 
+    public static final int NOTIFY_CONDITION_FIELD_NUMBER = 18;
+    /**
+     * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+     */
+    public boolean hasNotifyCondition() {
+      return typeCase_ == 18;
+    }
+    /**
+     * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+     */
+    public ubii.conditions.NotifyConditionOuterClass.NotifyCondition getNotifyCondition() {
+      if (typeCase_ == 18) {
+         return (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_;
+      }
+      return ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+     */
+    public ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder getNotifyConditionOrBuilder() {
+      if (typeCase_ == 18) {
+         return (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_;
+      }
+      return ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1120,6 +1175,9 @@ public final class ServiceRequestOuterClass {
       }
       if (typeCase_ == 17) {
         output.writeMessage(17, (ubii.devices.ComponentOuterClass.ComponentList) type_);
+      }
+      if (typeCase_ == 18) {
+        output.writeMessage(18, (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -1196,6 +1254,10 @@ public final class ServiceRequestOuterClass {
       if (typeCase_ == 17) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, (ubii.devices.ComponentOuterClass.ComponentList) type_);
+      }
+      if (typeCase_ == 18) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1283,6 +1345,10 @@ public final class ServiceRequestOuterClass {
           result = result && getComponentList()
               .equals(other.getComponentList());
           break;
+        case 18:
+          result = result && getNotifyCondition()
+              .equals(other.getNotifyCondition());
+          break;
         case 0:
         default:
       }
@@ -1363,6 +1429,10 @@ public final class ServiceRequestOuterClass {
         case 17:
           hash = (37 * hash) + COMPONENT_LIST_FIELD_NUMBER;
           hash = (53 * hash) + getComponentList().hashCode();
+          break;
+        case 18:
+          hash = (37 * hash) + NOTIFY_CONDITION_FIELD_NUMBER;
+          hash = (53 * hash) + getNotifyCondition().hashCode();
           break;
         case 0:
         default:
@@ -1643,6 +1713,13 @@ public final class ServiceRequestOuterClass {
             result.type_ = componentListBuilder_.build();
           }
         }
+        if (typeCase_ == 18) {
+          if (notifyConditionBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = notifyConditionBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -1759,6 +1836,10 @@ public final class ServiceRequestOuterClass {
           }
           case COMPONENT_LIST: {
             mergeComponentList(other.getComponentList());
+            break;
+          }
+          case NOTIFY_CONDITION: {
+            mergeNotifyCondition(other.getNotifyCondition());
             break;
           }
           case TYPE_NOT_SET: {
@@ -4053,6 +4134,142 @@ public final class ServiceRequestOuterClass {
         onChanged();;
         return componentListBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.conditions.NotifyConditionOuterClass.NotifyCondition, ubii.conditions.NotifyConditionOuterClass.NotifyCondition.Builder, ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder> notifyConditionBuilder_;
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public boolean hasNotifyCondition() {
+        return typeCase_ == 18;
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public ubii.conditions.NotifyConditionOuterClass.NotifyCondition getNotifyCondition() {
+        if (notifyConditionBuilder_ == null) {
+          if (typeCase_ == 18) {
+            return (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_;
+          }
+          return ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance();
+        } else {
+          if (typeCase_ == 18) {
+            return notifyConditionBuilder_.getMessage();
+          }
+          return ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public Builder setNotifyCondition(ubii.conditions.NotifyConditionOuterClass.NotifyCondition value) {
+        if (notifyConditionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          notifyConditionBuilder_.setMessage(value);
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public Builder setNotifyCondition(
+          ubii.conditions.NotifyConditionOuterClass.NotifyCondition.Builder builderForValue) {
+        if (notifyConditionBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          notifyConditionBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public Builder mergeNotifyCondition(ubii.conditions.NotifyConditionOuterClass.NotifyCondition value) {
+        if (notifyConditionBuilder_ == null) {
+          if (typeCase_ == 18 &&
+              type_ != ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance()) {
+            type_ = ubii.conditions.NotifyConditionOuterClass.NotifyCondition.newBuilder((ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 18) {
+            notifyConditionBuilder_.mergeFrom(value);
+          }
+          notifyConditionBuilder_.setMessage(value);
+        }
+        typeCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public Builder clearNotifyCondition() {
+        if (notifyConditionBuilder_ == null) {
+          if (typeCase_ == 18) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 18) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          notifyConditionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public ubii.conditions.NotifyConditionOuterClass.NotifyCondition.Builder getNotifyConditionBuilder() {
+        return getNotifyConditionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      public ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder getNotifyConditionOrBuilder() {
+        if ((typeCase_ == 18) && (notifyConditionBuilder_ != null)) {
+          return notifyConditionBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 18) {
+            return (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_;
+          }
+          return ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.conditions.NotifyCondition notify_condition = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.conditions.NotifyConditionOuterClass.NotifyCondition, ubii.conditions.NotifyConditionOuterClass.NotifyCondition.Builder, ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder> 
+          getNotifyConditionFieldBuilder() {
+        if (notifyConditionBuilder_ == null) {
+          if (!(typeCase_ == 18)) {
+            type_ = ubii.conditions.NotifyConditionOuterClass.NotifyCondition.getDefaultInstance();
+          }
+          notifyConditionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.conditions.NotifyConditionOuterClass.NotifyCondition, ubii.conditions.NotifyConditionOuterClass.NotifyCondition.Builder, ubii.conditions.NotifyConditionOuterClass.NotifyConditionOrBuilder>(
+                  (ubii.conditions.NotifyConditionOuterClass.NotifyCondition) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 18;
+        onChanged();;
+        return notifyConditionBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4122,6 +4339,7 @@ public final class ServiceRequestOuterClass {
     java.lang.String[] descriptorData = {
       "\n#proto/services/serviceRequest.proto\022\ru" +
       "bii.services\032\032proto/clients/client.proto" +
+      "\032&proto/conditions/notifyCondition.proto" +
       "\032\035proto/devices/component.proto\032\032proto/d" +
       "evices/device.proto\032\034proto/devices/topic" +
       "Mux.proto\032\036proto/devices/topicDemux.prot" +
@@ -4129,7 +4347,7 @@ public final class ServiceRequestOuterClass {
       "ervices/request/topicSubscription.proto\032" +
       "\'proto/processing/processingModule.proto" +
       "\032)proto/processing/lockstepProcessing.pr" +
-      "oto\"\217\007\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t\022&\n" +
+      "oto\"\315\007\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t\022&\n" +
       "\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000\022&\n" +
       "\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000\022F\n" +
       "\022topic_subscription\030\004 \001(\0132(.ubii.service" +
@@ -4151,8 +4369,9 @@ public final class ServiceRequestOuterClass {
       "(\0132*.ubii.processing.LockstepProcessingR" +
       "equestH\000\022,\n\tcomponent\030\020 \001(\0132\027.ubii.devic" +
       "es.ComponentH\000\0225\n\016component_list\030\021 \001(\0132\033" +
-      ".ubii.devices.ComponentListH\000B\006\n\004typeb\006p" +
-      "roto3"
+      ".ubii.devices.ComponentListH\000\022<\n\020notify_" +
+      "condition\030\022 \001(\0132 .ubii.conditions.Notify" +
+      "ConditionH\000B\006\n\004typeb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4166,6 +4385,7 @@ public final class ServiceRequestOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.clients.ClientOuterClass.getDescriptor(),
+          ubii.conditions.NotifyConditionOuterClass.getDescriptor(),
           ubii.devices.ComponentOuterClass.getDescriptor(),
           ubii.devices.DeviceOuterClass.getDescriptor(),
           ubii.devices.TopicMuxOuterClass.getDescriptor(),
@@ -4180,8 +4400,9 @@ public final class ServiceRequestOuterClass {
     internal_static_ubii_services_ServiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_services_ServiceRequest_descriptor,
-        new java.lang.String[] { "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "ProcessingModule", "ProcessingModuleList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "LockstepProcessingRequest", "Component", "ComponentList", "Type", });
+        new java.lang.String[] { "Topic", "Client", "Device", "TopicSubscription", "Session", "SessionList", "ProcessingModule", "ProcessingModuleList", "TopicMux", "TopicMuxList", "TopicDemux", "TopicDemuxList", "ClientList", "DeviceList", "LockstepProcessingRequest", "Component", "ComponentList", "NotifyCondition", "Type", });
     ubii.clients.ClientOuterClass.getDescriptor();
+    ubii.conditions.NotifyConditionOuterClass.getDescriptor();
     ubii.devices.ComponentOuterClass.getDescriptor();
     ubii.devices.DeviceOuterClass.getDescriptor();
     ubii.devices.TopicMuxOuterClass.getDescriptor();

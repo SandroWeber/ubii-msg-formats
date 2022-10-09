@@ -16038,6 +16038,7 @@ $root.ubii = (function() {
              * @property {ubii.processing.ILockstepProcessingReply|null} [lockstepProcessingReply] ServiceReply lockstepProcessingReply
              * @property {ubii.devices.IComponent|null} [component] ServiceReply component
              * @property {ubii.devices.IComponentList|null} [componentList] ServiceReply componentList
+             * @property {ubii.conditions.INotifyCondition|null} [notifyCondition] ServiceReply notifyCondition
              */
 
             /**
@@ -16223,17 +16224,25 @@ $root.ubii = (function() {
              */
             ServiceReply.prototype.componentList = null;
 
+            /**
+             * ServiceReply notifyCondition.
+             * @member {ubii.conditions.INotifyCondition|null|undefined} notifyCondition
+             * @memberof ubii.services.ServiceReply
+             * @instance
+             */
+            ServiceReply.prototype.notifyCondition = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceReply type.
-             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList"|undefined} type
+             * @member {"success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList"|"notifyCondition"|undefined} type
              * @memberof ubii.services.ServiceReply
              * @instance
              */
             Object.defineProperty(ServiceReply.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "processingModule", "processingModuleList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList", "lockstepProcessingReply", "component", "componentList"]),
+                get: $util.oneOfGetter($oneOfFields = ["success", "error", "client", "device", "server", "session", "sessionList", "processingModule", "processingModuleList", "stringList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "service", "serviceList", "lockstepProcessingReply", "component", "componentList", "notifyCondition"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -16303,6 +16312,8 @@ $root.ubii = (function() {
                     $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                 if (message.componentList != null && Object.hasOwnProperty.call(message, "componentList"))
                     $root.ubii.devices.ComponentList.encode(message.componentList, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                if (message.notifyCondition != null && Object.hasOwnProperty.call(message, "notifyCondition"))
+                    $root.ubii.conditions.NotifyCondition.encode(message.notifyCondition, writer.uint32(/* id 22, wireType 2 =*/178).fork()).ldelim();
                 return writer;
             };
 
@@ -16399,6 +16410,9 @@ $root.ubii = (function() {
                         break;
                     case 21:
                         message.componentList = $root.ubii.devices.ComponentList.decode(reader, reader.uint32());
+                        break;
+                    case 22:
+                        message.notifyCondition = $root.ubii.conditions.NotifyCondition.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16644,6 +16658,16 @@ $root.ubii = (function() {
                             return "componentList." + error;
                     }
                 }
+                if (message.notifyCondition != null && message.hasOwnProperty("notifyCondition")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.conditions.NotifyCondition.verify(message.notifyCondition);
+                        if (error)
+                            return "notifyCondition." + error;
+                    }
+                }
                 return null;
             };
 
@@ -16763,6 +16787,11 @@ $root.ubii = (function() {
                     if (typeof object.componentList !== "object")
                         throw TypeError(".ubii.services.ServiceReply.componentList: object expected");
                     message.componentList = $root.ubii.devices.ComponentList.fromObject(object.componentList);
+                }
+                if (object.notifyCondition != null) {
+                    if (typeof object.notifyCondition !== "object")
+                        throw TypeError(".ubii.services.ServiceReply.notifyCondition: object expected");
+                    message.notifyCondition = $root.ubii.conditions.NotifyCondition.fromObject(object.notifyCondition);
                 }
                 return message;
             };
@@ -16885,6 +16914,11 @@ $root.ubii = (function() {
                     if (options.oneofs)
                         object.type = "componentList";
                 }
+                if (message.notifyCondition != null && message.hasOwnProperty("notifyCondition")) {
+                    object.notifyCondition = $root.ubii.conditions.NotifyCondition.toObject(message.notifyCondition, options);
+                    if (options.oneofs)
+                        object.type = "notifyCondition";
+                }
                 return object;
             };
 
@@ -16925,6 +16959,7 @@ $root.ubii = (function() {
              * @property {ubii.processing.ILockstepProcessingRequest|null} [lockstepProcessingRequest] ServiceRequest lockstepProcessingRequest
              * @property {ubii.devices.IComponent|null} [component] ServiceRequest component
              * @property {ubii.devices.IComponentList|null} [componentList] ServiceRequest componentList
+             * @property {ubii.conditions.INotifyCondition|null} [notifyCondition] ServiceRequest notifyCondition
              */
 
             /**
@@ -17078,17 +17113,25 @@ $root.ubii = (function() {
              */
             ServiceRequest.prototype.componentList = null;
 
+            /**
+             * ServiceRequest notifyCondition.
+             * @member {ubii.conditions.INotifyCondition|null|undefined} notifyCondition
+             * @memberof ubii.services.ServiceRequest
+             * @instance
+             */
+            ServiceRequest.prototype.notifyCondition = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * ServiceRequest type.
-             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList"|undefined} type
+             * @member {"client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList"|"notifyCondition"|undefined} type
              * @memberof ubii.services.ServiceRequest
              * @instance
              */
             Object.defineProperty(ServiceRequest.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "processingModule", "processingModuleList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "lockstepProcessingRequest", "component", "componentList"]),
+                get: $util.oneOfGetter($oneOfFields = ["client", "device", "topicSubscription", "session", "sessionList", "processingModule", "processingModuleList", "topicMux", "topicMuxList", "topicDemux", "topicDemuxList", "clientList", "deviceList", "lockstepProcessingRequest", "component", "componentList", "notifyCondition"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -17150,6 +17193,8 @@ $root.ubii = (function() {
                     $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.componentList != null && Object.hasOwnProperty.call(message, "componentList"))
                     $root.ubii.devices.ComponentList.encode(message.componentList, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+                if (message.notifyCondition != null && Object.hasOwnProperty.call(message, "notifyCondition"))
+                    $root.ubii.conditions.NotifyCondition.encode(message.notifyCondition, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 return writer;
             };
 
@@ -17234,6 +17279,9 @@ $root.ubii = (function() {
                         break;
                     case 17:
                         message.componentList = $root.ubii.devices.ComponentList.decode(reader, reader.uint32());
+                        break;
+                    case 18:
+                        message.notifyCondition = $root.ubii.conditions.NotifyCondition.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17432,6 +17480,16 @@ $root.ubii = (function() {
                             return "componentList." + error;
                     }
                 }
+                if (message.notifyCondition != null && message.hasOwnProperty("notifyCondition")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.conditions.NotifyCondition.verify(message.notifyCondition);
+                        if (error)
+                            return "notifyCondition." + error;
+                    }
+                }
                 return null;
             };
 
@@ -17528,6 +17586,11 @@ $root.ubii = (function() {
                     if (typeof object.componentList !== "object")
                         throw TypeError(".ubii.services.ServiceRequest.componentList: object expected");
                     message.componentList = $root.ubii.devices.ComponentList.fromObject(object.componentList);
+                }
+                if (object.notifyCondition != null) {
+                    if (typeof object.notifyCondition !== "object")
+                        throw TypeError(".ubii.services.ServiceRequest.notifyCondition: object expected");
+                    message.notifyCondition = $root.ubii.conditions.NotifyCondition.fromObject(object.notifyCondition);
                 }
                 return message;
             };
@@ -17628,6 +17691,11 @@ $root.ubii = (function() {
                     object.componentList = $root.ubii.devices.ComponentList.toObject(message.componentList, options);
                     if (options.oneofs)
                         object.type = "componentList";
+                }
+                if (message.notifyCondition != null && message.hasOwnProperty("notifyCondition")) {
+                    object.notifyCondition = $root.ubii.conditions.NotifyCondition.toObject(message.notifyCondition, options);
+                    if (options.oneofs)
+                        object.type = "notifyCondition";
                 }
                 return object;
             };

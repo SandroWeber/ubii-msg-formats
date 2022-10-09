@@ -15,6 +15,7 @@ var proto_general_success_pb = require('../../proto/general/success_pb.js');
 var proto_general_error_pb = require('../../proto/general/error_pb.js');
 var proto_dataStructure_lists_pb = require('../../proto/dataStructure/lists_pb.js');
 var proto_clients_client_pb = require('../../proto/clients/client_pb.js');
+var proto_conditions_notifyCondition_pb = require('../../proto/conditions/notifyCondition_pb.js');
 var proto_devices_component_pb = require('../../proto/devices/component_pb.js');
 var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
 var proto_devices_topicMux_pb = require('../../proto/devices/topicMux_pb.js');
@@ -51,7 +52,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]];
 
 /**
  * @enum {number}
@@ -78,7 +79,8 @@ proto.ubii.services.ServiceReply.TypeCase = {
   SERVICE_LIST: 18,
   LOCKSTEP_PROCESSING_REPLY: 19,
   COMPONENT: 20,
-  COMPONENT_LIST: 21
+  COMPONENT_LIST: 21,
+  NOTIFY_CONDITION: 22
 };
 
 /**
@@ -137,7 +139,8 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     serviceList: (f = msg.getServiceList()) && proto_services_service_pb.ServiceList.toObject(includeInstance, f),
     lockstepProcessingReply: (f = msg.getLockstepProcessingReply()) && proto_processing_lockstepProcessing_pb.LockstepProcessingReply.toObject(includeInstance, f),
     component: (f = msg.getComponent()) && proto_devices_component_pb.Component.toObject(includeInstance, f),
-    componentList: (f = msg.getComponentList()) && proto_devices_component_pb.ComponentList.toObject(includeInstance, f)
+    componentList: (f = msg.getComponentList()) && proto_devices_component_pb.ComponentList.toObject(includeInstance, f),
+    notifyCondition: (f = msg.getNotifyCondition()) && proto_conditions_notifyCondition_pb.NotifyCondition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -278,6 +281,11 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto_devices_component_pb.ComponentList;
       reader.readMessage(value,proto_devices_component_pb.ComponentList.deserializeBinaryFromReader);
       msg.setComponentList(value);
+      break;
+    case 22:
+      var value = new proto_conditions_notifyCondition_pb.NotifyCondition;
+      reader.readMessage(value,proto_conditions_notifyCondition_pb.NotifyCondition.deserializeBinaryFromReader);
+      msg.setNotifyCondition(value);
       break;
     default:
       reader.skipField();
@@ -474,6 +482,14 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       21,
       f,
       proto_devices_component_pb.ComponentList.serializeBinaryToWriter
+    );
+  }
+  f = message.getNotifyCondition();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      proto_conditions_notifyCondition_pb.NotifyCondition.serializeBinaryToWriter
     );
   }
 };
@@ -1106,6 +1122,36 @@ proto.ubii.services.ServiceReply.prototype.clearComponentList = function() {
  */
 proto.ubii.services.ServiceReply.prototype.hasComponentList = function() {
   return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional ubii.conditions.NotifyCondition notify_condition = 22;
+ * @return {?proto.ubii.conditions.NotifyCondition}
+ */
+proto.ubii.services.ServiceReply.prototype.getNotifyCondition = function() {
+  return /** @type{?proto.ubii.conditions.NotifyCondition} */ (
+    jspb.Message.getWrapperField(this, proto_conditions_notifyCondition_pb.NotifyCondition, 22));
+};
+
+
+/** @param {?proto.ubii.conditions.NotifyCondition|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setNotifyCondition = function(value) {
+  jspb.Message.setOneofWrapperField(this, 22, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearNotifyCondition = function() {
+  this.setNotifyCondition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasNotifyCondition = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

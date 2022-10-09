@@ -115,6 +115,8 @@
     "PM_MODULE_IO": "ubii.processing.ModuleIO",
     "PM_PROCESSING_MODE": "ubii.processing.ProcessingMode",
 
+    "NOTIFY_CONDITION": "ubii.conditions.NotifyCondition",
+
     "TOPIC_DATA": "ubii.topicData.TopicData",
     "TOPIC_DATA_RECORD": "ubii.topicData.TopicDataRecord",
     "TOPIC_DATA_RECORD_LIST": "ubii.topicData.TopicDataRecordList",

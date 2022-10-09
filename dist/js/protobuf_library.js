@@ -15826,6 +15826,290 @@ proto.ubii.clients.ClientList.prototype.clearElementsList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.ubii.conditions.NotifyCondition = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.ubii.conditions.NotifyCondition, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.ubii.conditions.NotifyCondition.displayName = 'proto.ubii.conditions.NotifyCondition';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.toObject = function(opt_includeInstance) {
+  return proto.ubii.conditions.NotifyCondition.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.ubii.conditions.NotifyCondition} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.conditions.NotifyCondition.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    evaluationFunctionStringified: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    clientProfilePub: (f = msg.getClientProfilePub()) && proto.ubii.clients.Client.toObject(includeInstance, f),
+    clientProfileSub: (f = msg.getClientProfileSub()) && proto.ubii.clients.Client.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.ubii.conditions.NotifyCondition}
+ */
+proto.ubii.conditions.NotifyCondition.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.ubii.conditions.NotifyCondition;
+  return proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.ubii.conditions.NotifyCondition} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.ubii.conditions.NotifyCondition}
+ */
+proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEvaluationFunctionStringified(value);
+      break;
+    case 4:
+      var value = new proto.ubii.clients.Client;
+      reader.readMessage(value,proto.ubii.clients.Client.deserializeBinaryFromReader);
+      msg.setClientProfilePub(value);
+      break;
+    case 5:
+      var value = new proto.ubii.clients.Client;
+      reader.readMessage(value,proto.ubii.clients.Client.deserializeBinaryFromReader);
+      msg.setClientProfileSub(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ubii.conditions.NotifyCondition} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getEvaluationFunctionStringified();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getClientProfilePub();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.ubii.clients.Client.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientProfileSub();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.ubii.clients.Client.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string id = 1;
+ * @return {string}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.conditions.NotifyCondition.prototype.setId = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.conditions.NotifyCondition.prototype.setName = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string evaluation_function_stringified = 3;
+ * @return {string}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getEvaluationFunctionStringified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.ubii.conditions.NotifyCondition.prototype.setEvaluationFunctionStringified = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional ubii.clients.Client client_profile_pub = 4;
+ * @return {?proto.ubii.clients.Client}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getClientProfilePub = function() {
+  return /** @type{?proto.ubii.clients.Client} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.clients.Client, 4));
+};
+
+
+/** @param {?proto.ubii.clients.Client|undefined} value */
+proto.ubii.conditions.NotifyCondition.prototype.setClientProfilePub = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.ubii.conditions.NotifyCondition.prototype.clearClientProfilePub = function() {
+  this.setClientProfilePub(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.hasClientProfilePub = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional ubii.clients.Client client_profile_sub = 5;
+ * @return {?proto.ubii.clients.Client}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.getClientProfileSub = function() {
+  return /** @type{?proto.ubii.clients.Client} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.clients.Client, 5));
+};
+
+
+/** @param {?proto.ubii.clients.Client|undefined} value */
+proto.ubii.conditions.NotifyCondition.prototype.setClientProfileSub = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.ubii.conditions.NotifyCondition.prototype.clearClientProfileSub = function() {
+  this.setClientProfileSub(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.conditions.NotifyCondition.prototype.hasClientProfileSub = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.ubii.services.request.TopicSubscription = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.ubii.services.request.TopicSubscription.repeatedFields_, null);
 };
@@ -16246,7 +16530,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]];
+proto.ubii.services.ServiceRequest.oneofGroups_ = [[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]];
 
 /**
  * @enum {number}
@@ -16268,7 +16552,8 @@ proto.ubii.services.ServiceRequest.TypeCase = {
   DEVICE_LIST: 14,
   LOCKSTEP_PROCESSING_REQUEST: 15,
   COMPONENT: 16,
-  COMPONENT_LIST: 17
+  COMPONENT_LIST: 17,
+  NOTIFY_CONDITION: 18
 };
 
 /**
@@ -16323,7 +16608,8 @@ proto.ubii.services.ServiceRequest.toObject = function(includeInstance, msg) {
     deviceList: (f = msg.getDeviceList()) && proto.ubii.devices.DeviceList.toObject(includeInstance, f),
     lockstepProcessingRequest: (f = msg.getLockstepProcessingRequest()) && proto.ubii.processing.LockstepProcessingRequest.toObject(includeInstance, f),
     component: (f = msg.getComponent()) && proto.ubii.devices.Component.toObject(includeInstance, f),
-    componentList: (f = msg.getComponentList()) && proto.ubii.devices.ComponentList.toObject(includeInstance, f)
+    componentList: (f = msg.getComponentList()) && proto.ubii.devices.ComponentList.toObject(includeInstance, f),
+    notifyCondition: (f = msg.getNotifyCondition()) && proto.ubii.conditions.NotifyCondition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16443,6 +16729,11 @@ proto.ubii.services.ServiceRequest.deserializeBinaryFromReader = function(msg, r
       var value = new proto.ubii.devices.ComponentList;
       reader.readMessage(value,proto.ubii.devices.ComponentList.deserializeBinaryFromReader);
       msg.setComponentList(value);
+      break;
+    case 18:
+      var value = new proto.ubii.conditions.NotifyCondition;
+      reader.readMessage(value,proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader);
+      msg.setNotifyCondition(value);
       break;
     default:
       reader.skipField();
@@ -16606,6 +16897,14 @@ proto.ubii.services.ServiceRequest.serializeBinaryToWriter = function(message, w
       17,
       f,
       proto.ubii.devices.ComponentList.serializeBinaryToWriter
+    );
+  }
+  f = message.getNotifyCondition();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter
     );
   }
 };
@@ -17103,6 +17402,36 @@ proto.ubii.services.ServiceRequest.prototype.clearComponentList = function() {
  */
 proto.ubii.services.ServiceRequest.prototype.hasComponentList = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional ubii.conditions.NotifyCondition notify_condition = 18;
+ * @return {?proto.ubii.conditions.NotifyCondition}
+ */
+proto.ubii.services.ServiceRequest.prototype.getNotifyCondition = function() {
+  return /** @type{?proto.ubii.conditions.NotifyCondition} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.conditions.NotifyCondition, 18));
+};
+
+
+/** @param {?proto.ubii.conditions.NotifyCondition|undefined} value */
+proto.ubii.services.ServiceRequest.prototype.setNotifyCondition = function(value) {
+  jspb.Message.setOneofWrapperField(this, 18, proto.ubii.services.ServiceRequest.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceRequest.prototype.clearNotifyCondition = function() {
+  this.setNotifyCondition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceRequest.prototype.hasNotifyCondition = function() {
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
@@ -18765,7 +19094,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]];
+proto.ubii.services.ServiceReply.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]];
 
 /**
  * @enum {number}
@@ -18792,7 +19121,8 @@ proto.ubii.services.ServiceReply.TypeCase = {
   SERVICE_LIST: 18,
   LOCKSTEP_PROCESSING_REPLY: 19,
   COMPONENT: 20,
-  COMPONENT_LIST: 21
+  COMPONENT_LIST: 21,
+  NOTIFY_CONDITION: 22
 };
 
 /**
@@ -18851,7 +19181,8 @@ proto.ubii.services.ServiceReply.toObject = function(includeInstance, msg) {
     serviceList: (f = msg.getServiceList()) && proto.ubii.services.ServiceList.toObject(includeInstance, f),
     lockstepProcessingReply: (f = msg.getLockstepProcessingReply()) && proto.ubii.processing.LockstepProcessingReply.toObject(includeInstance, f),
     component: (f = msg.getComponent()) && proto.ubii.devices.Component.toObject(includeInstance, f),
-    componentList: (f = msg.getComponentList()) && proto.ubii.devices.ComponentList.toObject(includeInstance, f)
+    componentList: (f = msg.getComponentList()) && proto.ubii.devices.ComponentList.toObject(includeInstance, f),
+    notifyCondition: (f = msg.getNotifyCondition()) && proto.ubii.conditions.NotifyCondition.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18992,6 +19323,11 @@ proto.ubii.services.ServiceReply.deserializeBinaryFromReader = function(msg, rea
       var value = new proto.ubii.devices.ComponentList;
       reader.readMessage(value,proto.ubii.devices.ComponentList.deserializeBinaryFromReader);
       msg.setComponentList(value);
+      break;
+    case 22:
+      var value = new proto.ubii.conditions.NotifyCondition;
+      reader.readMessage(value,proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader);
+      msg.setNotifyCondition(value);
       break;
     default:
       reader.skipField();
@@ -19188,6 +19524,14 @@ proto.ubii.services.ServiceReply.serializeBinaryToWriter = function(message, wri
       21,
       f,
       proto.ubii.devices.ComponentList.serializeBinaryToWriter
+    );
+  }
+  f = message.getNotifyCondition();
+  if (f != null) {
+    writer.writeMessage(
+      22,
+      f,
+      proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter
     );
   }
 };
@@ -19820,6 +20164,36 @@ proto.ubii.services.ServiceReply.prototype.clearComponentList = function() {
  */
 proto.ubii.services.ServiceReply.prototype.hasComponentList = function() {
   return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional ubii.conditions.NotifyCondition notify_condition = 22;
+ * @return {?proto.ubii.conditions.NotifyCondition}
+ */
+proto.ubii.services.ServiceReply.prototype.getNotifyCondition = function() {
+  return /** @type{?proto.ubii.conditions.NotifyCondition} */ (
+    jspb.Message.getWrapperField(this, proto.ubii.conditions.NotifyCondition, 22));
+};
+
+
+/** @param {?proto.ubii.conditions.NotifyCondition|undefined} value */
+proto.ubii.services.ServiceReply.prototype.setNotifyCondition = function(value) {
+  jspb.Message.setOneofWrapperField(this, 22, proto.ubii.services.ServiceReply.oneofGroups_[0], value);
+};
+
+
+proto.ubii.services.ServiceReply.prototype.clearNotifyCondition = function() {
+  this.setNotifyCondition(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.services.ServiceReply.prototype.hasNotifyCondition = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
@@ -20575,290 +20949,6 @@ proto.ubii.topicData.TopicData.prototype.clearError = function() {
  */
 proto.ubii.topicData.TopicData.prototype.hasError = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.ubii.conditions.NotifyCondition = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.ubii.conditions.NotifyCondition, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.ubii.conditions.NotifyCondition.displayName = 'proto.ubii.conditions.NotifyCondition';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.ubii.conditions.NotifyCondition.prototype.toObject = function(opt_includeInstance) {
-  return proto.ubii.conditions.NotifyCondition.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.ubii.conditions.NotifyCondition} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.conditions.NotifyCondition.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    evaluationFunctionStringified: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    clientProfilePub: (f = msg.getClientProfilePub()) && proto.ubii.clients.Client.toObject(includeInstance, f),
-    clientProfileSub: (f = msg.getClientProfileSub()) && proto.ubii.clients.Client.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ubii.conditions.NotifyCondition}
- */
-proto.ubii.conditions.NotifyCondition.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ubii.conditions.NotifyCondition;
-  return proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.ubii.conditions.NotifyCondition} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ubii.conditions.NotifyCondition}
- */
-proto.ubii.conditions.NotifyCondition.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEvaluationFunctionStringified(value);
-      break;
-    case 4:
-      var value = new proto.ubii.clients.Client;
-      reader.readMessage(value,proto.ubii.clients.Client.deserializeBinaryFromReader);
-      msg.setClientProfilePub(value);
-      break;
-    case 5:
-      var value = new proto.ubii.clients.Client;
-      reader.readMessage(value,proto.ubii.clients.Client.deserializeBinaryFromReader);
-      msg.setClientProfileSub(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.ubii.conditions.NotifyCondition.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.ubii.conditions.NotifyCondition} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.ubii.conditions.NotifyCondition.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getEvaluationFunctionStringified();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getClientProfilePub();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      proto.ubii.clients.Client.serializeBinaryToWriter
-    );
-  }
-  f = message.getClientProfileSub();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      proto.ubii.clients.Client.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.ubii.conditions.NotifyCondition.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.ubii.conditions.NotifyCondition.prototype.setId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.ubii.conditions.NotifyCondition.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/** @param {string} value */
-proto.ubii.conditions.NotifyCondition.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string evaluation_function_stringified = 3;
- * @return {string}
- */
-proto.ubii.conditions.NotifyCondition.prototype.getEvaluationFunctionStringified = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.ubii.conditions.NotifyCondition.prototype.setEvaluationFunctionStringified = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional ubii.clients.Client client_profile_pub = 4;
- * @return {?proto.ubii.clients.Client}
- */
-proto.ubii.conditions.NotifyCondition.prototype.getClientProfilePub = function() {
-  return /** @type{?proto.ubii.clients.Client} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.clients.Client, 4));
-};
-
-
-/** @param {?proto.ubii.clients.Client|undefined} value */
-proto.ubii.conditions.NotifyCondition.prototype.setClientProfilePub = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-proto.ubii.conditions.NotifyCondition.prototype.clearClientProfilePub = function() {
-  this.setClientProfilePub(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.conditions.NotifyCondition.prototype.hasClientProfilePub = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional ubii.clients.Client client_profile_sub = 5;
- * @return {?proto.ubii.clients.Client}
- */
-proto.ubii.conditions.NotifyCondition.prototype.getClientProfileSub = function() {
-  return /** @type{?proto.ubii.clients.Client} */ (
-    jspb.Message.getWrapperField(this, proto.ubii.clients.Client, 5));
-};
-
-
-/** @param {?proto.ubii.clients.Client|undefined} value */
-proto.ubii.conditions.NotifyCondition.prototype.setClientProfileSub = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-proto.ubii.conditions.NotifyCondition.prototype.clearClientProfileSub = function() {
-  this.setClientProfileSub(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.ubii.conditions.NotifyCondition.prototype.hasClientProfileSub = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 

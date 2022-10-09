@@ -2,6 +2,7 @@ syntax = "proto3";
 package ubii.services;
 
 import "proto/clients/client.proto";
+import "proto/conditions/notifyCondition.proto";
 import "proto/devices/component.proto";
 import "proto/devices/device.proto";
 import "proto/devices/topicMux.proto";
@@ -30,5 +31,6 @@ message ServiceRequest {
         ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
         ubii.devices.Component component = 16;
         ubii.devices.ComponentList component_list = 17;
+        ubii.conditions.NotifyCondition notify_condition = 18;
     }
 }

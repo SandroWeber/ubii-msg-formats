@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/clients/client.pb.h"
+#include "proto/conditions/notifyCondition.pb.h"
 #include "proto/devices/component.pb.h"
 #include "proto/devices/device.pb.h"
 #include "proto/devices/topicMux.pb.h"
@@ -117,6 +118,7 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     kLockstepProcessingRequest = 15,
     kComponent = 16,
     kComponentList = 17,
+    kNotifyCondition = 18,
     TYPE_NOT_SET = 0,
   };
 
@@ -384,6 +386,18 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   ::ubii::devices::ComponentList* mutable_component_list();
   void set_allocated_component_list(::ubii::devices::ComponentList* component_list);
 
+  // .ubii.conditions.NotifyCondition notify_condition = 18;
+  bool has_notify_condition() const;
+  void clear_notify_condition();
+  static const int kNotifyConditionFieldNumber = 18;
+  private:
+  const ::ubii::conditions::NotifyCondition& _internal_notify_condition() const;
+  public:
+  const ::ubii::conditions::NotifyCondition& notify_condition() const;
+  ::ubii::conditions::NotifyCondition* release_notify_condition();
+  ::ubii::conditions::NotifyCondition* mutable_notify_condition();
+  void set_allocated_notify_condition(::ubii::conditions::NotifyCondition* notify_condition);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.services.ServiceRequest)
@@ -404,6 +418,7 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   void set_has_lockstep_processing_request();
   void set_has_component();
   void set_has_component_list();
+  void set_has_notify_condition();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -428,6 +443,7 @@ class ServiceRequest : public ::google::protobuf::Message /* @@protoc_insertion_
     ::ubii::processing::LockstepProcessingRequest* lockstep_processing_request_;
     ::ubii::devices::Component* component_;
     ::ubii::devices::ComponentList* component_list_;
+    ::ubii::conditions::NotifyCondition* notify_condition_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1104,6 +1120,44 @@ inline ::ubii::devices::ComponentList* ServiceRequest::mutable_component_list() 
   }
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.component_list)
   return type_.component_list_;
+}
+
+// .ubii.conditions.NotifyCondition notify_condition = 18;
+inline bool ServiceRequest::has_notify_condition() const {
+  return type_case() == kNotifyCondition;
+}
+inline void ServiceRequest::set_has_notify_condition() {
+  _oneof_case_[0] = kNotifyCondition;
+}
+inline const ::ubii::conditions::NotifyCondition& ServiceRequest::_internal_notify_condition() const {
+  return *type_.notify_condition_;
+}
+inline ::ubii::conditions::NotifyCondition* ServiceRequest::release_notify_condition() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceRequest.notify_condition)
+  if (has_notify_condition()) {
+    clear_has_type();
+      ::ubii::conditions::NotifyCondition* temp = type_.notify_condition_;
+    type_.notify_condition_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::conditions::NotifyCondition& ServiceRequest::notify_condition() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceRequest.notify_condition)
+  return has_notify_condition()
+      ? *type_.notify_condition_
+      : *reinterpret_cast< ::ubii::conditions::NotifyCondition*>(&::ubii::conditions::_NotifyCondition_default_instance_);
+}
+inline ::ubii::conditions::NotifyCondition* ServiceRequest::mutable_notify_condition() {
+  if (!has_notify_condition()) {
+    clear_type();
+    set_has_notify_condition();
+    type_.notify_condition_ = CreateMaybeMessage< ::ubii::conditions::NotifyCondition >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceRequest.notify_condition)
+  return type_.notify_condition_;
 }
 
 inline bool ServiceRequest::has_type() const {

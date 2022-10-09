@@ -34,6 +34,7 @@
 #include "proto/general/error.pb.h"
 #include "proto/dataStructure/lists.pb.h"
 #include "proto/clients/client.pb.h"
+#include "proto/conditions/notifyCondition.pb.h"
 #include "proto/devices/component.pb.h"
 #include "proto/devices/device.pb.h"
 #include "proto/devices/topicMux.pb.h"
@@ -126,6 +127,7 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
     kLockstepProcessingReply = 19,
     kComponent = 20,
     kComponentList = 21,
+    kNotifyCondition = 22,
     TYPE_NOT_SET = 0,
   };
 
@@ -439,6 +441,18 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::ubii::devices::ComponentList* mutable_component_list();
   void set_allocated_component_list(::ubii::devices::ComponentList* component_list);
 
+  // .ubii.conditions.NotifyCondition notify_condition = 22;
+  bool has_notify_condition() const;
+  void clear_notify_condition();
+  static const int kNotifyConditionFieldNumber = 22;
+  private:
+  const ::ubii::conditions::NotifyCondition& _internal_notify_condition() const;
+  public:
+  const ::ubii::conditions::NotifyCondition& notify_condition() const;
+  ::ubii::conditions::NotifyCondition* release_notify_condition();
+  ::ubii::conditions::NotifyCondition* mutable_notify_condition();
+  void set_allocated_notify_condition(::ubii::conditions::NotifyCondition* notify_condition);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.services.ServiceReply)
@@ -464,6 +478,7 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
   void set_has_lockstep_processing_reply();
   void set_has_component();
   void set_has_component_list();
+  void set_has_notify_condition();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -492,6 +507,7 @@ class ServiceReply : public ::google::protobuf::Message /* @@protoc_insertion_po
     ::ubii::processing::LockstepProcessingReply* lockstep_processing_reply_;
     ::ubii::devices::Component* component_;
     ::ubii::devices::ComponentList* component_list_;
+    ::ubii::conditions::NotifyCondition* notify_condition_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1305,6 +1321,44 @@ inline ::ubii::devices::ComponentList* ServiceReply::mutable_component_list() {
   }
   // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.component_list)
   return type_.component_list_;
+}
+
+// .ubii.conditions.NotifyCondition notify_condition = 22;
+inline bool ServiceReply::has_notify_condition() const {
+  return type_case() == kNotifyCondition;
+}
+inline void ServiceReply::set_has_notify_condition() {
+  _oneof_case_[0] = kNotifyCondition;
+}
+inline const ::ubii::conditions::NotifyCondition& ServiceReply::_internal_notify_condition() const {
+  return *type_.notify_condition_;
+}
+inline ::ubii::conditions::NotifyCondition* ServiceReply::release_notify_condition() {
+  // @@protoc_insertion_point(field_release:ubii.services.ServiceReply.notify_condition)
+  if (has_notify_condition()) {
+    clear_has_type();
+      ::ubii::conditions::NotifyCondition* temp = type_.notify_condition_;
+    type_.notify_condition_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::conditions::NotifyCondition& ServiceReply::notify_condition() const {
+  // @@protoc_insertion_point(field_get:ubii.services.ServiceReply.notify_condition)
+  return has_notify_condition()
+      ? *type_.notify_condition_
+      : *reinterpret_cast< ::ubii::conditions::NotifyCondition*>(&::ubii::conditions::_NotifyCondition_default_instance_);
+}
+inline ::ubii::conditions::NotifyCondition* ServiceReply::mutable_notify_condition() {
+  if (!has_notify_condition()) {
+    clear_type();
+    set_has_notify_condition();
+    type_.notify_condition_ = CreateMaybeMessage< ::ubii::conditions::NotifyCondition >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.services.ServiceReply.notify_condition)
+  return type_.notify_condition_;
 }
 
 inline bool ServiceReply::has_type() const {

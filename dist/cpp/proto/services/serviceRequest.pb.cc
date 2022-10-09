@@ -23,6 +23,9 @@ namespace protobuf_proto_2fclients_2fclient_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ClientList;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Client;
 }  // namespace protobuf_proto_2fclients_2fclient_2eproto
+namespace protobuf_proto_2fconditions_2fnotifyCondition_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fconditions_2fnotifyCondition_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NotifyCondition;
+}  // namespace protobuf_proto_2fconditions_2fnotifyCondition_2eproto
 namespace protobuf_proto_2fdevices_2fcomponent_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Component;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ComponentList;
@@ -75,6 +78,7 @@ class ServiceRequestDefaultTypeInternal {
   const ::ubii::processing::LockstepProcessingRequest* lockstep_processing_request_;
   const ::ubii::devices::Component* component_;
   const ::ubii::devices::ComponentList* component_list_;
+  const ::ubii::conditions::NotifyCondition* notify_condition_;
 } _ServiceRequest_default_instance_;
 }  // namespace services
 }  // namespace ubii
@@ -90,8 +94,8 @@ static void InitDefaultsServiceRequest() {
   ::ubii::services::ServiceRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<16> scc_info_ServiceRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 16, InitDefaultsServiceRequest}, {
+::google::protobuf::internal::SCCInfo<17> scc_info_ServiceRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 17, InitDefaultsServiceRequest}, {
       &protobuf_proto_2fclients_2fclient_2eproto::scc_info_Client.base,
       &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_Device.base,
       &protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::scc_info_TopicSubscription.base,
@@ -107,7 +111,8 @@ static void InitDefaultsServiceRequest() {
       &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_DeviceList.base,
       &protobuf_proto_2fprocessing_2flockstepProcessing_2eproto::scc_info_LockstepProcessingRequest.base,
       &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_Component.base,
-      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_ComponentList.base,}};
+      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_ComponentList.base,
+      &protobuf_proto_2fconditions_2fnotifyCondition_2eproto::scc_info_NotifyCondition.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ServiceRequest.base);
@@ -138,6 +143,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, lockstep_processing_request_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, component_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, component_list_),
+  offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, notify_condition_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceRequest, type_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -171,6 +177,7 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n#proto/services/serviceRequest.proto\022\ru"
       "bii.services\032\032proto/clients/client.proto"
+      "\032&proto/conditions/notifyCondition.proto"
       "\032\035proto/devices/component.proto\032\032proto/d"
       "evices/device.proto\032\034proto/devices/topic"
       "Mux.proto\032\036proto/devices/topicDemux.prot"
@@ -178,7 +185,7 @@ void AddDescriptorsImpl() {
       "ervices/request/topicSubscription.proto\032"
       "\'proto/processing/processingModule.proto"
       "\032)proto/processing/lockstepProcessing.pr"
-      "oto\"\217\007\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t\022&\n"
+      "oto\"\315\007\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t\022&\n"
       "\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000\022&\n"
       "\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000\022F\n"
       "\022topic_subscription\030\004 \001(\0132(.ubii.service"
@@ -200,14 +207,16 @@ void AddDescriptorsImpl() {
       "(\0132*.ubii.processing.LockstepProcessingR"
       "equestH\000\022,\n\tcomponent\030\020 \001(\0132\027.ubii.devic"
       "es.ComponentH\000\0225\n\016component_list\030\021 \001(\0132\033"
-      ".ubii.devices.ComponentListH\000B\006\n\004typeb\006p"
-      "roto3"
+      ".ubii.devices.ComponentListH\000\022<\n\020notify_"
+      "condition\030\022 \001(\0132 .ubii.conditions.Notify"
+      "ConditionH\000B\006\n\004typeb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1285);
+      descriptor, 1387);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/services/serviceRequest.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2fclients_2fclient_2eproto::AddDescriptors();
+  ::protobuf_proto_2fconditions_2fnotifyCondition_2eproto::AddDescriptors();
   ::protobuf_proto_2fdevices_2fcomponent_2eproto::AddDescriptors();
   ::protobuf_proto_2fdevices_2fdevice_2eproto::AddDescriptors();
   ::protobuf_proto_2fdevices_2ftopicMux_2eproto::AddDescriptors();
@@ -267,6 +276,8 @@ void ServiceRequest::InitAsDefaultInstance() {
       ::ubii::devices::Component::internal_default_instance());
   ::ubii::services::_ServiceRequest_default_instance_.component_list_ = const_cast< ::ubii::devices::ComponentList*>(
       ::ubii::devices::ComponentList::internal_default_instance());
+  ::ubii::services::_ServiceRequest_default_instance_.notify_condition_ = const_cast< ::ubii::conditions::NotifyCondition*>(
+      ::ubii::conditions::NotifyCondition::internal_default_instance());
 }
 void ServiceRequest::set_allocated_client(::ubii::clients::Client* client) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -588,6 +599,26 @@ void ServiceRequest::clear_component_list() {
     clear_has_type();
   }
 }
+void ServiceRequest::set_allocated_notify_condition(::ubii::conditions::NotifyCondition* notify_condition) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (notify_condition) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      notify_condition = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, notify_condition, submessage_arena);
+    }
+    set_has_notify_condition();
+    type_.notify_condition_ = notify_condition;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.notify_condition)
+}
+void ServiceRequest::clear_notify_condition() {
+  if (has_notify_condition()) {
+    delete type_.notify_condition_;
+    clear_has_type();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ServiceRequest::kTopicFieldNumber;
 const int ServiceRequest::kClientFieldNumber;
@@ -606,6 +637,7 @@ const int ServiceRequest::kDeviceListFieldNumber;
 const int ServiceRequest::kLockstepProcessingRequestFieldNumber;
 const int ServiceRequest::kComponentFieldNumber;
 const int ServiceRequest::kComponentListFieldNumber;
+const int ServiceRequest::kNotifyConditionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ServiceRequest::ServiceRequest()
@@ -687,6 +719,10 @@ ServiceRequest::ServiceRequest(const ServiceRequest& from)
     }
     case kComponentList: {
       mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from.component_list());
+      break;
+    }
+    case kNotifyCondition: {
+      mutable_notify_condition()->::ubii::conditions::NotifyCondition::MergeFrom(from.notify_condition());
       break;
     }
     case TYPE_NOT_SET: {
@@ -792,6 +828,10 @@ void ServiceRequest::clear_type() {
     }
     case kComponentList: {
       delete type_.component_list_;
+      break;
+    }
+    case kNotifyCondition: {
+      delete type_.notify_condition_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -1031,6 +1071,18 @@ bool ServiceRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.conditions.NotifyCondition notify_condition = 18;
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_notify_condition()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1161,6 +1213,12 @@ void ServiceRequest::SerializeWithCachedSizes(
   if (has_component_list()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       17, this->_internal_component_list(), output);
+  }
+
+  // .ubii.conditions.NotifyCondition notify_condition = 18;
+  if (has_notify_condition()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      18, this->_internal_notify_condition(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1300,6 +1358,13 @@ void ServiceRequest::SerializeWithCachedSizes(
         17, this->_internal_component_list(), deterministic, target);
   }
 
+  // .ubii.conditions.NotifyCondition notify_condition = 18;
+  if (has_notify_condition()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        18, this->_internal_notify_condition(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -1437,6 +1502,13 @@ size_t ServiceRequest::ByteSizeLong() const {
           *type_.component_list_);
       break;
     }
+    // .ubii.conditions.NotifyCondition notify_condition = 18;
+    case kNotifyCondition: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.notify_condition_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -1535,6 +1607,10 @@ void ServiceRequest::MergeFrom(const ServiceRequest& from) {
     }
     case kComponentList: {
       mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from.component_list());
+      break;
+    }
+    case kNotifyCondition: {
+      mutable_notify_condition()->::ubii::conditions::NotifyCondition::MergeFrom(from.notify_condition());
       break;
     }
     case TYPE_NOT_SET: {

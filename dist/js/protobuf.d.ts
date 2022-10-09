@@ -6469,6 +6469,9 @@ export namespace ubii {
 
             /** ServiceReply componentList */
             componentList?: (ubii.devices.IComponentList|null);
+
+            /** ServiceReply notifyCondition */
+            notifyCondition?: (ubii.conditions.INotifyCondition|null);
         }
 
         /** Represents a ServiceReply. */
@@ -6543,8 +6546,11 @@ export namespace ubii {
             /** ServiceReply componentList. */
             public componentList?: (ubii.devices.IComponentList|null);
 
+            /** ServiceReply notifyCondition. */
+            public notifyCondition?: (ubii.conditions.INotifyCondition|null);
+
             /** ServiceReply type. */
-            public type?: ("success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList");
+            public type?: ("success"|"error"|"client"|"device"|"server"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"stringList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"service"|"serviceList"|"lockstepProcessingReply"|"component"|"componentList"|"notifyCondition");
 
             /**
              * Creates a new ServiceReply instance using the specified properties.
@@ -6670,6 +6676,9 @@ export namespace ubii {
 
             /** ServiceRequest componentList */
             componentList?: (ubii.devices.IComponentList|null);
+
+            /** ServiceRequest notifyCondition */
+            notifyCondition?: (ubii.conditions.INotifyCondition|null);
         }
 
         /** Represents a ServiceRequest. */
@@ -6732,8 +6741,11 @@ export namespace ubii {
             /** ServiceRequest componentList. */
             public componentList?: (ubii.devices.IComponentList|null);
 
+            /** ServiceRequest notifyCondition. */
+            public notifyCondition?: (ubii.conditions.INotifyCondition|null);
+
             /** ServiceRequest type. */
-            public type?: ("client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList");
+            public type?: ("client"|"device"|"topicSubscription"|"session"|"sessionList"|"processingModule"|"processingModuleList"|"topicMux"|"topicMuxList"|"topicDemux"|"topicDemuxList"|"clientList"|"deviceList"|"lockstepProcessingRequest"|"component"|"componentList"|"notifyCondition");
 
             /**
              * Creates a new ServiceRequest instance using the specified properties.

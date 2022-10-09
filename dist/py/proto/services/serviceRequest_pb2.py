@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 from proto.clients import client_pb2 as proto_dot_clients_dot_client__pb2
+from proto.conditions import notifyCondition_pb2 as proto_dot_conditions_dot_notifyCondition__pb2
 from proto.devices import component_pb2 as proto_dot_devices_dot_component__pb2
 from proto.devices import device_pb2 as proto_dot_devices_dot_device__pb2
 from proto.devices import topicMux_pb2 as proto_dot_devices_dot_topicMux__pb2
@@ -28,9 +29,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ubii.services',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n#proto/services/serviceRequest.proto\x12\rubii.services\x1a\x1aproto/clients/client.proto\x1a\x1dproto/devices/component.proto\x1a\x1aproto/devices/device.proto\x1a\x1cproto/devices/topicMux.proto\x1a\x1eproto/devices/topicDemux.proto\x1a\x1cproto/sessions/session.proto\x1a.proto/services/request/topicSubscription.proto\x1a\'proto/processing/processingModule.proto\x1a)proto/processing/lockstepProcessing.proto\"\x8f\x07\n\x0eServiceRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12&\n\x06\x63lient\x18\x02 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12&\n\x06\x64\x65vice\x18\x03 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12\x46\n\x12topic_subscription\x18\x04 \x01(\x0b\x32(.ubii.services.request.TopicSubscriptionH\x00\x12)\n\x07session\x18\x05 \x01(\x0b\x32\x16.ubii.sessions.SessionH\x00\x12\x32\n\x0csession_list\x18\x06 \x01(\x0b\x32\x1a.ubii.sessions.SessionListH\x00\x12>\n\x11processing_module\x18\x07 \x01(\x0b\x32!.ubii.processing.ProcessingModuleH\x00\x12G\n\x16processing_module_list\x18\x08 \x01(\x0b\x32%.ubii.processing.ProcessingModuleListH\x00\x12+\n\ttopic_mux\x18\t \x01(\x0b\x32\x16.ubii.devices.TopicMuxH\x00\x12\x34\n\x0etopic_mux_list\x18\n \x01(\x0b\x32\x1a.ubii.devices.TopicMuxListH\x00\x12/\n\x0btopic_demux\x18\x0b \x01(\x0b\x32\x18.ubii.devices.TopicDemuxH\x00\x12\x38\n\x10topic_demux_list\x18\x0c \x01(\x0b\x32\x1c.ubii.devices.TopicDemuxListH\x00\x12/\n\x0b\x63lient_list\x18\r \x01(\x0b\x32\x18.ubii.clients.ClientListH\x00\x12/\n\x0b\x64\x65vice_list\x18\x0e \x01(\x0b\x32\x18.ubii.devices.DeviceListH\x00\x12Q\n\x1blockstep_processing_request\x18\x0f \x01(\x0b\x32*.ubii.processing.LockstepProcessingRequestH\x00\x12,\n\tcomponent\x18\x10 \x01(\x0b\x32\x17.ubii.devices.ComponentH\x00\x12\x35\n\x0e\x63omponent_list\x18\x11 \x01(\x0b\x32\x1b.ubii.devices.ComponentListH\x00\x42\x06\n\x04typeb\x06proto3')
+  serialized_pb=_b('\n#proto/services/serviceRequest.proto\x12\rubii.services\x1a\x1aproto/clients/client.proto\x1a&proto/conditions/notifyCondition.proto\x1a\x1dproto/devices/component.proto\x1a\x1aproto/devices/device.proto\x1a\x1cproto/devices/topicMux.proto\x1a\x1eproto/devices/topicDemux.proto\x1a\x1cproto/sessions/session.proto\x1a.proto/services/request/topicSubscription.proto\x1a\'proto/processing/processingModule.proto\x1a)proto/processing/lockstepProcessing.proto\"\xcd\x07\n\x0eServiceRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12&\n\x06\x63lient\x18\x02 \x01(\x0b\x32\x14.ubii.clients.ClientH\x00\x12&\n\x06\x64\x65vice\x18\x03 \x01(\x0b\x32\x14.ubii.devices.DeviceH\x00\x12\x46\n\x12topic_subscription\x18\x04 \x01(\x0b\x32(.ubii.services.request.TopicSubscriptionH\x00\x12)\n\x07session\x18\x05 \x01(\x0b\x32\x16.ubii.sessions.SessionH\x00\x12\x32\n\x0csession_list\x18\x06 \x01(\x0b\x32\x1a.ubii.sessions.SessionListH\x00\x12>\n\x11processing_module\x18\x07 \x01(\x0b\x32!.ubii.processing.ProcessingModuleH\x00\x12G\n\x16processing_module_list\x18\x08 \x01(\x0b\x32%.ubii.processing.ProcessingModuleListH\x00\x12+\n\ttopic_mux\x18\t \x01(\x0b\x32\x16.ubii.devices.TopicMuxH\x00\x12\x34\n\x0etopic_mux_list\x18\n \x01(\x0b\x32\x1a.ubii.devices.TopicMuxListH\x00\x12/\n\x0btopic_demux\x18\x0b \x01(\x0b\x32\x18.ubii.devices.TopicDemuxH\x00\x12\x38\n\x10topic_demux_list\x18\x0c \x01(\x0b\x32\x1c.ubii.devices.TopicDemuxListH\x00\x12/\n\x0b\x63lient_list\x18\r \x01(\x0b\x32\x18.ubii.clients.ClientListH\x00\x12/\n\x0b\x64\x65vice_list\x18\x0e \x01(\x0b\x32\x18.ubii.devices.DeviceListH\x00\x12Q\n\x1blockstep_processing_request\x18\x0f \x01(\x0b\x32*.ubii.processing.LockstepProcessingRequestH\x00\x12,\n\tcomponent\x18\x10 \x01(\x0b\x32\x17.ubii.devices.ComponentH\x00\x12\x35\n\x0e\x63omponent_list\x18\x11 \x01(\x0b\x32\x1b.ubii.devices.ComponentListH\x00\x12<\n\x10notify_condition\x18\x12 \x01(\x0b\x32 .ubii.conditions.NotifyConditionH\x00\x42\x06\n\x04typeb\x06proto3')
   ,
-  dependencies=[proto_dot_clients_dot_client__pb2.DESCRIPTOR,proto_dot_devices_dot_component__pb2.DESCRIPTOR,proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_devices_dot_topicMux__pb2.DESCRIPTOR,proto_dot_devices_dot_topicDemux__pb2.DESCRIPTOR,proto_dot_sessions_dot_session__pb2.DESCRIPTOR,proto_dot_services_dot_request_dot_topicSubscription__pb2.DESCRIPTOR,proto_dot_processing_dot_processingModule__pb2.DESCRIPTOR,proto_dot_processing_dot_lockstepProcessing__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_clients_dot_client__pb2.DESCRIPTOR,proto_dot_conditions_dot_notifyCondition__pb2.DESCRIPTOR,proto_dot_devices_dot_component__pb2.DESCRIPTOR,proto_dot_devices_dot_device__pb2.DESCRIPTOR,proto_dot_devices_dot_topicMux__pb2.DESCRIPTOR,proto_dot_devices_dot_topicDemux__pb2.DESCRIPTOR,proto_dot_sessions_dot_session__pb2.DESCRIPTOR,proto_dot_services_dot_request_dot_topicSubscription__pb2.DESCRIPTOR,proto_dot_processing_dot_processingModule__pb2.DESCRIPTOR,proto_dot_processing_dot_lockstepProcessing__pb2.DESCRIPTOR,])
 
 
 
@@ -161,6 +162,13 @@ _SERVICEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='notify_condition', full_name='ubii.services.ServiceRequest.notify_condition', index=17,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -176,8 +184,8 @@ _SERVICEREQUEST = _descriptor.Descriptor(
       name='type', full_name='ubii.services.ServiceRequest.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=366,
-  serialized_end=1277,
+  serialized_start=406,
+  serialized_end=1379,
 )
 
 _SERVICEREQUEST.fields_by_name['client'].message_type = proto_dot_clients_dot_client__pb2._CLIENT
@@ -196,6 +204,7 @@ _SERVICEREQUEST.fields_by_name['device_list'].message_type = proto_dot_devices_d
 _SERVICEREQUEST.fields_by_name['lockstep_processing_request'].message_type = proto_dot_processing_dot_lockstepProcessing__pb2._LOCKSTEPPROCESSINGREQUEST
 _SERVICEREQUEST.fields_by_name['component'].message_type = proto_dot_devices_dot_component__pb2._COMPONENT
 _SERVICEREQUEST.fields_by_name['component_list'].message_type = proto_dot_devices_dot_component__pb2._COMPONENTLIST
+_SERVICEREQUEST.fields_by_name['notify_condition'].message_type = proto_dot_conditions_dot_notifyCondition__pb2._NOTIFYCONDITION
 _SERVICEREQUEST.oneofs_by_name['type'].fields.append(
   _SERVICEREQUEST.fields_by_name['client'])
 _SERVICEREQUEST.fields_by_name['client'].containing_oneof = _SERVICEREQUEST.oneofs_by_name['type']
@@ -244,6 +253,9 @@ _SERVICEREQUEST.fields_by_name['component'].containing_oneof = _SERVICEREQUEST.o
 _SERVICEREQUEST.oneofs_by_name['type'].fields.append(
   _SERVICEREQUEST.fields_by_name['component_list'])
 _SERVICEREQUEST.fields_by_name['component_list'].containing_oneof = _SERVICEREQUEST.oneofs_by_name['type']
+_SERVICEREQUEST.oneofs_by_name['type'].fields.append(
+  _SERVICEREQUEST.fields_by_name['notify_condition'])
+_SERVICEREQUEST.fields_by_name['notify_condition'].containing_oneof = _SERVICEREQUEST.oneofs_by_name['type']
 DESCRIPTOR.message_types_by_name['ServiceRequest'] = _SERVICEREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
