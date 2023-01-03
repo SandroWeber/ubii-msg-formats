@@ -2,6 +2,7 @@ syntax = "proto3";
 package ubii.topicData;
 
 import "proto/topicData/timestamp.proto";
+
 import "proto/dataStructure/lists.proto";
 import "proto/dataStructure/vector2.proto";
 import "proto/dataStructure/vector3.proto";
@@ -21,14 +22,17 @@ import "proto/dataStructure/object3d.proto";
 import "proto/dataStructure/image.proto";
 
 import "proto/sessions/session.proto";
+import "proto/devices/device.proto";
 import "proto/processing/processingModule.proto";
+import "proto/general/error.proto";
 
-// continuous index: 38
+// continuous index: 40
 message TopicDataRecord {
     string topic = 1;
     ubii.topicData.Timestamp timestamp = 2;
     string client_id = 33;
     oneof type {
+        ubii.general.Error error = 39;
         double double = 3;
         bool bool = 4;
         string string = 5;
@@ -64,6 +68,7 @@ message TopicDataRecord {
         ubii.dataStructure.Image2D image2D = 30;
         ubii.dataStructure.Image2DList image2D_list = 31;
         ubii.sessions.Session session = 32;
+        ubii.devices.Device device = 40;
     }    
 }
 
