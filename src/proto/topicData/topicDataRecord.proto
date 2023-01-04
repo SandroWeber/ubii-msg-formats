@@ -23,10 +23,11 @@ import "proto/dataStructure/image.proto";
 
 import "proto/sessions/session.proto";
 import "proto/devices/device.proto";
+import "proto/devices/component.proto";
 import "proto/processing/processingModule.proto";
 import "proto/general/error.proto";
 
-// continuous index: 40
+// continuous index: 44
 message TopicDataRecord {
     string topic = 1;
     ubii.topicData.Timestamp timestamp = 2;
@@ -68,7 +69,11 @@ message TopicDataRecord {
         ubii.dataStructure.Image2D image2D = 30;
         ubii.dataStructure.Image2DList image2D_list = 31;
         ubii.sessions.Session session = 32;
+        ubii.sessions.SessionList session_list = 44;
         ubii.devices.Device device = 40;
+        ubii.devices.DeviceList device_list = 41;
+        ubii.devices.Component component = 42;
+        ubii.devices.ComponentList component_list = 43;
     }    
 }
 
