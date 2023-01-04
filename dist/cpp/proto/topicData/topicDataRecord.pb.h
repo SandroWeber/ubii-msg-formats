@@ -49,7 +49,10 @@
 #include "proto/dataStructure/object3d.pb.h"
 #include "proto/dataStructure/image.pb.h"
 #include "proto/sessions/session.pb.h"
+#include "proto/devices/device.pb.h"
+#include "proto/devices/component.pb.h"
 #include "proto/processing/processingModule.pb.h"
+#include "proto/general/error.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto 
 
@@ -116,6 +119,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   static const TopicDataRecord& default_instance();
 
   enum TypeCase {
+    kError = 39,
     kDouble = 3,
     kBool = 4,
     kString = 5,
@@ -151,6 +155,11 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     kImage2D = 30,
     kImage2DList = 31,
     kSession = 32,
+    kSessionList = 44,
+    kDevice = 40,
+    kDeviceList = 41,
+    kComponent = 42,
+    kComponentList = 43,
     TYPE_NOT_SET = 0,
   };
 
@@ -251,6 +260,18 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::topicData::Timestamp* release_timestamp();
   ::ubii::topicData::Timestamp* mutable_timestamp();
   void set_allocated_timestamp(::ubii::topicData::Timestamp* timestamp);
+
+  // .ubii.general.Error error = 39;
+  bool has_error() const;
+  void clear_error();
+  static const int kErrorFieldNumber = 39;
+  private:
+  const ::ubii::general::Error& _internal_error() const;
+  public:
+  const ::ubii::general::Error& error() const;
+  ::ubii::general::Error* release_error();
+  ::ubii::general::Error* mutable_error();
+  void set_allocated_error(::ubii::general::Error* error);
 
   // double double = 3;
   private:
@@ -665,10 +686,71 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::sessions::Session* mutable_session();
   void set_allocated_session(::ubii::sessions::Session* session);
 
+  // .ubii.sessions.SessionList session_list = 44;
+  bool has_session_list() const;
+  void clear_session_list();
+  static const int kSessionListFieldNumber = 44;
+  private:
+  const ::ubii::sessions::SessionList& _internal_session_list() const;
+  public:
+  const ::ubii::sessions::SessionList& session_list() const;
+  ::ubii::sessions::SessionList* release_session_list();
+  ::ubii::sessions::SessionList* mutable_session_list();
+  void set_allocated_session_list(::ubii::sessions::SessionList* session_list);
+
+  // .ubii.devices.Device device = 40;
+  bool has_device() const;
+  void clear_device();
+  static const int kDeviceFieldNumber = 40;
+  private:
+  const ::ubii::devices::Device& _internal_device() const;
+  public:
+  const ::ubii::devices::Device& device() const;
+  ::ubii::devices::Device* release_device();
+  ::ubii::devices::Device* mutable_device();
+  void set_allocated_device(::ubii::devices::Device* device);
+
+  // .ubii.devices.DeviceList device_list = 41;
+  bool has_device_list() const;
+  void clear_device_list();
+  static const int kDeviceListFieldNumber = 41;
+  private:
+  const ::ubii::devices::DeviceList& _internal_device_list() const;
+  public:
+  const ::ubii::devices::DeviceList& device_list() const;
+  ::ubii::devices::DeviceList* release_device_list();
+  ::ubii::devices::DeviceList* mutable_device_list();
+  void set_allocated_device_list(::ubii::devices::DeviceList* device_list);
+
+  // .ubii.devices.Component component = 42;
+  bool has_component() const;
+  void clear_component();
+  static const int kComponentFieldNumber = 42;
+  private:
+  const ::ubii::devices::Component& _internal_component() const;
+  public:
+  const ::ubii::devices::Component& component() const;
+  ::ubii::devices::Component* release_component();
+  ::ubii::devices::Component* mutable_component();
+  void set_allocated_component(::ubii::devices::Component* component);
+
+  // .ubii.devices.ComponentList component_list = 43;
+  bool has_component_list() const;
+  void clear_component_list();
+  static const int kComponentListFieldNumber = 43;
+  private:
+  const ::ubii::devices::ComponentList& _internal_component_list() const;
+  public:
+  const ::ubii::devices::ComponentList& component_list() const;
+  ::ubii::devices::ComponentList* release_component_list();
+  ::ubii::devices::ComponentList* mutable_component_list();
+  void set_allocated_component_list(::ubii::devices::ComponentList* component_list);
+
   void clear_type();
   TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:ubii.topicData.TopicDataRecord)
  private:
+  void set_has_error();
   void set_has_double_();
   void set_has_bool_();
   void set_has_string();
@@ -704,6 +786,11 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   void set_has_image2d();
   void set_has_image2d_list();
   void set_has_session();
+  void set_has_session_list();
+  void set_has_device();
+  void set_has_device_list();
+  void set_has_component();
+  void set_has_component_list();
 
   inline bool has_type() const;
   inline void clear_has_type();
@@ -714,6 +801,7 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
   ::ubii::topicData::Timestamp* timestamp_;
   union TypeUnion {
     TypeUnion() {}
+    ::ubii::general::Error* error_;
     double double__;
     bool bool__;
     ::google::protobuf::internal::ArenaStringPtr string_;
@@ -749,6 +837,11 @@ class TopicDataRecord : public ::google::protobuf::Message /* @@protoc_insertion
     ::ubii::dataStructure::Image2D* image2d_;
     ::ubii::dataStructure::Image2DList* image2d_list_;
     ::ubii::sessions::Session* session_;
+    ::ubii::sessions::SessionList* session_list_;
+    ::ubii::devices::Device* device_;
+    ::ubii::devices::DeviceList* device_list_;
+    ::ubii::devices::Component* component_;
+    ::ubii::devices::ComponentList* component_list_;
   } type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1027,6 +1120,44 @@ inline void TopicDataRecord::set_allocated_client_id(::std::string* client_id) {
   }
   client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
   // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.client_id)
+}
+
+// .ubii.general.Error error = 39;
+inline bool TopicDataRecord::has_error() const {
+  return type_case() == kError;
+}
+inline void TopicDataRecord::set_has_error() {
+  _oneof_case_[0] = kError;
+}
+inline const ::ubii::general::Error& TopicDataRecord::_internal_error() const {
+  return *type_.error_;
+}
+inline ::ubii::general::Error* TopicDataRecord::release_error() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.error)
+  if (has_error()) {
+    clear_has_type();
+      ::ubii::general::Error* temp = type_.error_;
+    type_.error_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::general::Error& TopicDataRecord::error() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.error)
+  return has_error()
+      ? *type_.error_
+      : *reinterpret_cast< ::ubii::general::Error*>(&::ubii::general::_Error_default_instance_);
+}
+inline ::ubii::general::Error* TopicDataRecord::mutable_error() {
+  if (!has_error()) {
+    clear_type();
+    set_has_error();
+    type_.error_ = CreateMaybeMessage< ::ubii::general::Error >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.error)
+  return type_.error_;
 }
 
 // double double = 3;
@@ -2376,6 +2507,196 @@ inline ::ubii::sessions::Session* TopicDataRecord::mutable_session() {
   }
   // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.session)
   return type_.session_;
+}
+
+// .ubii.sessions.SessionList session_list = 44;
+inline bool TopicDataRecord::has_session_list() const {
+  return type_case() == kSessionList;
+}
+inline void TopicDataRecord::set_has_session_list() {
+  _oneof_case_[0] = kSessionList;
+}
+inline const ::ubii::sessions::SessionList& TopicDataRecord::_internal_session_list() const {
+  return *type_.session_list_;
+}
+inline ::ubii::sessions::SessionList* TopicDataRecord::release_session_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.session_list)
+  if (has_session_list()) {
+    clear_has_type();
+      ::ubii::sessions::SessionList* temp = type_.session_list_;
+    type_.session_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::sessions::SessionList& TopicDataRecord::session_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.session_list)
+  return has_session_list()
+      ? *type_.session_list_
+      : *reinterpret_cast< ::ubii::sessions::SessionList*>(&::ubii::sessions::_SessionList_default_instance_);
+}
+inline ::ubii::sessions::SessionList* TopicDataRecord::mutable_session_list() {
+  if (!has_session_list()) {
+    clear_type();
+    set_has_session_list();
+    type_.session_list_ = CreateMaybeMessage< ::ubii::sessions::SessionList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.session_list)
+  return type_.session_list_;
+}
+
+// .ubii.devices.Device device = 40;
+inline bool TopicDataRecord::has_device() const {
+  return type_case() == kDevice;
+}
+inline void TopicDataRecord::set_has_device() {
+  _oneof_case_[0] = kDevice;
+}
+inline const ::ubii::devices::Device& TopicDataRecord::_internal_device() const {
+  return *type_.device_;
+}
+inline ::ubii::devices::Device* TopicDataRecord::release_device() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.device)
+  if (has_device()) {
+    clear_has_type();
+      ::ubii::devices::Device* temp = type_.device_;
+    type_.device_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::Device& TopicDataRecord::device() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.device)
+  return has_device()
+      ? *type_.device_
+      : *reinterpret_cast< ::ubii::devices::Device*>(&::ubii::devices::_Device_default_instance_);
+}
+inline ::ubii::devices::Device* TopicDataRecord::mutable_device() {
+  if (!has_device()) {
+    clear_type();
+    set_has_device();
+    type_.device_ = CreateMaybeMessage< ::ubii::devices::Device >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.device)
+  return type_.device_;
+}
+
+// .ubii.devices.DeviceList device_list = 41;
+inline bool TopicDataRecord::has_device_list() const {
+  return type_case() == kDeviceList;
+}
+inline void TopicDataRecord::set_has_device_list() {
+  _oneof_case_[0] = kDeviceList;
+}
+inline const ::ubii::devices::DeviceList& TopicDataRecord::_internal_device_list() const {
+  return *type_.device_list_;
+}
+inline ::ubii::devices::DeviceList* TopicDataRecord::release_device_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.device_list)
+  if (has_device_list()) {
+    clear_has_type();
+      ::ubii::devices::DeviceList* temp = type_.device_list_;
+    type_.device_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::DeviceList& TopicDataRecord::device_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.device_list)
+  return has_device_list()
+      ? *type_.device_list_
+      : *reinterpret_cast< ::ubii::devices::DeviceList*>(&::ubii::devices::_DeviceList_default_instance_);
+}
+inline ::ubii::devices::DeviceList* TopicDataRecord::mutable_device_list() {
+  if (!has_device_list()) {
+    clear_type();
+    set_has_device_list();
+    type_.device_list_ = CreateMaybeMessage< ::ubii::devices::DeviceList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.device_list)
+  return type_.device_list_;
+}
+
+// .ubii.devices.Component component = 42;
+inline bool TopicDataRecord::has_component() const {
+  return type_case() == kComponent;
+}
+inline void TopicDataRecord::set_has_component() {
+  _oneof_case_[0] = kComponent;
+}
+inline const ::ubii::devices::Component& TopicDataRecord::_internal_component() const {
+  return *type_.component_;
+}
+inline ::ubii::devices::Component* TopicDataRecord::release_component() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.component)
+  if (has_component()) {
+    clear_has_type();
+      ::ubii::devices::Component* temp = type_.component_;
+    type_.component_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::Component& TopicDataRecord::component() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.component)
+  return has_component()
+      ? *type_.component_
+      : *reinterpret_cast< ::ubii::devices::Component*>(&::ubii::devices::_Component_default_instance_);
+}
+inline ::ubii::devices::Component* TopicDataRecord::mutable_component() {
+  if (!has_component()) {
+    clear_type();
+    set_has_component();
+    type_.component_ = CreateMaybeMessage< ::ubii::devices::Component >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.component)
+  return type_.component_;
+}
+
+// .ubii.devices.ComponentList component_list = 43;
+inline bool TopicDataRecord::has_component_list() const {
+  return type_case() == kComponentList;
+}
+inline void TopicDataRecord::set_has_component_list() {
+  _oneof_case_[0] = kComponentList;
+}
+inline const ::ubii::devices::ComponentList& TopicDataRecord::_internal_component_list() const {
+  return *type_.component_list_;
+}
+inline ::ubii::devices::ComponentList* TopicDataRecord::release_component_list() {
+  // @@protoc_insertion_point(field_release:ubii.topicData.TopicDataRecord.component_list)
+  if (has_component_list()) {
+    clear_has_type();
+      ::ubii::devices::ComponentList* temp = type_.component_list_;
+    type_.component_list_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ubii::devices::ComponentList& TopicDataRecord::component_list() const {
+  // @@protoc_insertion_point(field_get:ubii.topicData.TopicDataRecord.component_list)
+  return has_component_list()
+      ? *type_.component_list_
+      : *reinterpret_cast< ::ubii::devices::ComponentList*>(&::ubii::devices::_ComponentList_default_instance_);
+}
+inline ::ubii::devices::ComponentList* TopicDataRecord::mutable_component_list() {
+  if (!has_component_list()) {
+    clear_type();
+    set_has_component_list();
+    type_.component_list_ = CreateMaybeMessage< ::ubii::devices::ComponentList >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:ubii.topicData.TopicDataRecord.component_list)
+  return type_.component_list_;
 }
 
 inline bool TopicDataRecord::has_type() const {

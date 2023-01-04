@@ -69,7 +69,10 @@ let constants = {
       CHANGE_SESSION: '/info/session/change',
       START_SESSION: '/info/session/start',
       STOP_SESSION: '/info/session/stop',
-      RUNNING_SESSION: '/info/session/running'
+      RUNNING_SESSION: '/info/session/running',
+      REGEX_DEVICE_INFOS: '/info/device/*',
+      NEW_DEVICE: '/info/device/new',
+      DELETE_DEVICE: '/info/device/delete'
     }
   },
   MSG_TYPES: {

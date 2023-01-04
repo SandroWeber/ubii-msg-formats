@@ -81,14 +81,26 @@ namespace protobuf_proto_2fdataStructure_2fvector4_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdataStructure_2fvector4_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Vector4;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdataStructure_2fvector4_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Vector4List;
 }  // namespace protobuf_proto_2fdataStructure_2fvector4_2eproto
+namespace protobuf_proto_2fdevices_2fcomponent_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Component;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ComponentList;
+}  // namespace protobuf_proto_2fdevices_2fcomponent_2eproto
+namespace protobuf_proto_2fdevices_2fdevice_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Device;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_DeviceList;
+}  // namespace protobuf_proto_2fdevices_2fdevice_2eproto
+namespace protobuf_proto_2fgeneral_2ferror_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fgeneral_2ferror_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Error;
+}  // namespace protobuf_proto_2fgeneral_2ferror_2eproto
 namespace protobuf_proto_2fsessions_2fsession_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fsession_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SessionList;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fsession_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Session;
 }  // namespace protobuf_proto_2fsessions_2fsession_2eproto
 namespace protobuf_proto_2ftopicData_2ftimestamp_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp;
 }  // namespace protobuf_proto_2ftopicData_2ftimestamp_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<30> scc_info_TopicDataRecord;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<36> scc_info_TopicDataRecord;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto
 namespace ubii {
 namespace topicData {
@@ -96,6 +108,7 @@ class TopicDataRecordDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TopicDataRecord>
       _instance;
+  const ::ubii::general::Error* error_;
   double double__;
   bool bool__;
   ::google::protobuf::internal::ArenaStringPtr string_;
@@ -131,6 +144,11 @@ class TopicDataRecordDefaultTypeInternal {
   const ::ubii::dataStructure::Image2D* image2d_;
   const ::ubii::dataStructure::Image2DList* image2d_list_;
   const ::ubii::sessions::Session* session_;
+  const ::ubii::sessions::SessionList* session_list_;
+  const ::ubii::devices::Device* device_;
+  const ::ubii::devices::DeviceList* device_list_;
+  const ::ubii::devices::Component* component_;
+  const ::ubii::devices::ComponentList* component_list_;
 } _TopicDataRecord_default_instance_;
 class TopicDataRecordListDefaultTypeInternal {
  public:
@@ -151,9 +169,10 @@ static void InitDefaultsTopicDataRecord() {
   ::ubii::topicData::TopicDataRecord::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<30> scc_info_TopicDataRecord =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 30, InitDefaultsTopicDataRecord}, {
+::google::protobuf::internal::SCCInfo<36> scc_info_TopicDataRecord =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 36, InitDefaultsTopicDataRecord}, {
       &protobuf_proto_2ftopicData_2ftimestamp_2eproto::scc_info_Timestamp.base,
+      &protobuf_proto_2fgeneral_2ferror_2eproto::scc_info_Error.base,
       &protobuf_proto_2fdataStructure_2fvector2_2eproto::scc_info_Vector2.base,
       &protobuf_proto_2fdataStructure_2fvector2_2eproto::scc_info_Vector2List.base,
       &protobuf_proto_2fdataStructure_2fvector3_2eproto::scc_info_Vector3.base,
@@ -182,7 +201,12 @@ static void InitDefaultsTopicDataRecord() {
       &protobuf_proto_2fdataStructure_2flists_2eproto::scc_info_BoolList.base,
       &protobuf_proto_2fdataStructure_2fimage_2eproto::scc_info_Image2D.base,
       &protobuf_proto_2fdataStructure_2fimage_2eproto::scc_info_Image2DList.base,
-      &protobuf_proto_2fsessions_2fsession_2eproto::scc_info_Session.base,}};
+      &protobuf_proto_2fsessions_2fsession_2eproto::scc_info_Session.base,
+      &protobuf_proto_2fsessions_2fsession_2eproto::scc_info_SessionList.base,
+      &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_Device.base,
+      &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_DeviceList.base,
+      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_Component.base,
+      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_ComponentList.base,}};
 
 static void InitDefaultsTopicDataRecordList() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -215,6 +239,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, topic_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, timestamp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, client_id_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, error_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, double__),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, bool__),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, string_),
@@ -250,6 +275,11 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, image2d_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, image2d_list_),
   offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, session_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, session_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, device_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, device_list_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, component_),
+  offsetof(::ubii::topicData::TopicDataRecordDefaultTypeInternal, component_list_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecord, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataRecordList, _internal_metadata_),
@@ -260,7 +290,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::topicData::TopicDataRecord)},
-  { 44, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
+  { 50, -1, sizeof(::ubii::topicData::TopicDataRecordList)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -307,57 +337,66 @@ void AddDescriptorsImpl() {
       "tructure/object2d.proto\032\"proto/dataStruc"
       "ture/object3d.proto\032\037proto/dataStructure"
       "/image.proto\032\034proto/sessions/session.pro"
-      "to\032\'proto/processing/processingModule.pr"
-      "oto\"\350\r\n\017TopicDataRecord\022\r\n\005topic\030\001 \001(\t\022,"
-      "\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData.Times"
-      "tamp\022\021\n\tclient_id\030! \001(\t\022\020\n\006double\030\003 \001(\001H"
-      "\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022\017\n\005i"
-      "nt32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H\000\022.\n\007vector2"
-      "\030\006 \001(\0132\033.ubii.dataStructure.Vector2H\000\0227\n"
-      "\014vector2_list\030# \001(\0132\037.ubii.dataStructure"
-      ".Vector2ListH\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.d"
-      "ataStructure.Vector3H\000\0227\n\014vector3_list\030$"
-      " \001(\0132\037.ubii.dataStructure.Vector3ListH\000\022"
-      ".\n\007vector4\030\010 \001(\0132\033.ubii.dataStructure.Ve"
-      "ctor4H\000\0227\n\014vector4_list\030% \001(\0132\037.ubii.dat"
-      "aStructure.Vector4ListH\000\0224\n\nquaternion\030\t"
-      " \001(\0132\036.ubii.dataStructure.QuaternionH\000\0229"
-      "\n\017quaternion_list\030& \001(\0132\036.ubii.dataStruc"
-      "ture.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.u"
-      "bii.dataStructure.Matrix3x2H\000\0222\n\tmatrix4"
-      "x4\030\013 \001(\0132\035.ubii.dataStructure.Matrix4x4H"
-      "\000\022*\n\005color\030\014 \001(\0132\031.ubii.dataStructure.Co"
-      "lorH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.dataSt"
-      "ructure.TouchEventH\000\022>\n\020touch_event_list"
-      "\030\" \001(\0132\".ubii.dataStructure.TouchEventLi"
-      "stH\000\0221\n\tkey_event\030\016 \001(\0132\034.ubii.dataStruc"
-      "ture.KeyEventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.u"
-      "bii.dataStructure.MouseEventH\000\0221\n\tmyo_ev"
-      "ent\030\020 \001(\0132\034.ubii.dataStructure.MyoEventH"
-      "\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii.dataStructure.P"
-      "ose2DH\000\022,\n\006pose3D\030\022 \001(\0132\032.ubii.dataStruc"
-      "ture.Pose3DH\000\0220\n\010object2D\030\023 \001(\0132\034.ubii.d"
-      "ataStructure.Object2DH\000\0220\n\010object3D\030\024 \001("
-      "\0132\034.ubii.dataStructure.Object3DH\000\0229\n\robj"
-      "ect2D_list\030\025 \001(\0132 .ubii.dataStructure.Ob"
-      "ject2DListH\000\0229\n\robject3D_list\030\026 \001(\0132 .ub"
-      "ii.dataStructure.Object3DListH\000\0223\n\nint32"
-      "_list\030\031 \001(\0132\035.ubii.dataStructure.Int32Li"
-      "stH\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubii.dataStru"
-      "cture.FloatListH\000\0225\n\013double_list\030\033 \001(\0132\036"
-      ".ubii.dataStructure.DoubleListH\000\0225\n\013stri"
-      "ng_list\030\034 \001(\0132\036.ubii.dataStructure.Strin"
-      "gListH\000\0221\n\tbool_list\030\035 \001(\0132\034.ubii.dataSt"
-      "ructure.BoolListH\000\022.\n\007image2D\030\036 \001(\0132\033.ub"
-      "ii.dataStructure.Image2DH\000\0227\n\014image2D_li"
-      "st\030\037 \001(\0132\037.ubii.dataStructure.Image2DLis"
-      "tH\000\022)\n\007session\030  \001(\0132\026.ubii.sessions.Ses"
-      "sionH\000B\006\n\004type\"H\n\023TopicDataRecordList\0221\n"
-      "\010elements\030\001 \003(\0132\037.ubii.topicData.TopicDa"
-      "taRecordb\006proto3"
+      "to\032\032proto/devices/device.proto\032\035proto/de"
+      "vices/component.proto\032\'proto/processing/"
+      "processingModule.proto\032\031proto/general/er"
+      "ror.proto\"\200\020\n\017TopicDataRecord\022\r\n\005topic\030\001"
+      " \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData"
+      ".Timestamp\022\021\n\tclient_id\030! \001(\t\022$\n\005error\030\'"
+      " \001(\0132\023.ubii.general.ErrorH\000\022\020\n\006double\030\003 "
+      "\001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022"
+      "\017\n\005int32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H\000\022.\n\007vec"
+      "tor2\030\006 \001(\0132\033.ubii.dataStructure.Vector2H"
+      "\000\0227\n\014vector2_list\030# \001(\0132\037.ubii.dataStruc"
+      "ture.Vector2ListH\000\022.\n\007vector3\030\007 \001(\0132\033.ub"
+      "ii.dataStructure.Vector3H\000\0227\n\014vector3_li"
+      "st\030$ \001(\0132\037.ubii.dataStructure.Vector3Lis"
+      "tH\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.dataStructur"
+      "e.Vector4H\000\0227\n\014vector4_list\030% \001(\0132\037.ubii"
+      ".dataStructure.Vector4ListH\000\0224\n\nquaterni"
+      "on\030\t \001(\0132\036.ubii.dataStructure.Quaternion"
+      "H\000\0229\n\017quaternion_list\030& \001(\0132\036.ubii.dataS"
+      "tructure.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\013"
+      "2\035.ubii.dataStructure.Matrix3x2H\000\0222\n\tmat"
+      "rix4x4\030\013 \001(\0132\035.ubii.dataStructure.Matrix"
+      "4x4H\000\022*\n\005color\030\014 \001(\0132\031.ubii.dataStructur"
+      "e.ColorH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.da"
+      "taStructure.TouchEventH\000\022>\n\020touch_event_"
+      "list\030\" \001(\0132\".ubii.dataStructure.TouchEve"
+      "ntListH\000\0221\n\tkey_event\030\016 \001(\0132\034.ubii.dataS"
+      "tructure.KeyEventH\000\0225\n\013mouse_event\030\017 \001(\013"
+      "2\036.ubii.dataStructure.MouseEventH\000\0221\n\tmy"
+      "o_event\030\020 \001(\0132\034.ubii.dataStructure.MyoEv"
+      "entH\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii.dataStructu"
+      "re.Pose2DH\000\022,\n\006pose3D\030\022 \001(\0132\032.ubii.dataS"
+      "tructure.Pose3DH\000\0220\n\010object2D\030\023 \001(\0132\034.ub"
+      "ii.dataStructure.Object2DH\000\0220\n\010object3D\030"
+      "\024 \001(\0132\034.ubii.dataStructure.Object3DH\000\0229\n"
+      "\robject2D_list\030\025 \001(\0132 .ubii.dataStructur"
+      "e.Object2DListH\000\0229\n\robject3D_list\030\026 \001(\0132"
+      " .ubii.dataStructure.Object3DListH\000\0223\n\ni"
+      "nt32_list\030\031 \001(\0132\035.ubii.dataStructure.Int"
+      "32ListH\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubii.data"
+      "Structure.FloatListH\000\0225\n\013double_list\030\033 \001"
+      "(\0132\036.ubii.dataStructure.DoubleListH\000\0225\n\013"
+      "string_list\030\034 \001(\0132\036.ubii.dataStructure.S"
+      "tringListH\000\0221\n\tbool_list\030\035 \001(\0132\034.ubii.da"
+      "taStructure.BoolListH\000\022.\n\007image2D\030\036 \001(\0132"
+      "\033.ubii.dataStructure.Image2DH\000\0227\n\014image2"
+      "D_list\030\037 \001(\0132\037.ubii.dataStructure.Image2"
+      "DListH\000\022)\n\007session\030  \001(\0132\026.ubii.sessions"
+      ".SessionH\000\0222\n\014session_list\030, \001(\0132\032.ubii."
+      "sessions.SessionListH\000\022&\n\006device\030( \001(\0132\024"
+      ".ubii.devices.DeviceH\000\022/\n\013device_list\030) "
+      "\001(\0132\030.ubii.devices.DeviceListH\000\022,\n\tcompo"
+      "nent\030* \001(\0132\027.ubii.devices.ComponentH\000\0225\n"
+      "\016component_list\030+ \001(\0132\033.ubii.devices.Com"
+      "ponentListH\000B\006\n\004type\"H\n\023TopicDataRecordL"
+      "ist\0221\n\010elements\030\001 \003(\0132\037.ubii.topicData.T"
+      "opicDataRecordb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2616);
+      descriptor, 2982);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/topicData/topicDataRecord.proto", &protobuf_RegisterTypes);
   ::protobuf_proto_2ftopicData_2ftimestamp_2eproto::AddDescriptors();
@@ -379,7 +418,10 @@ void AddDescriptorsImpl() {
   ::protobuf_proto_2fdataStructure_2fobject3d_2eproto::AddDescriptors();
   ::protobuf_proto_2fdataStructure_2fimage_2eproto::AddDescriptors();
   ::protobuf_proto_2fsessions_2fsession_2eproto::AddDescriptors();
+  ::protobuf_proto_2fdevices_2fdevice_2eproto::AddDescriptors();
+  ::protobuf_proto_2fdevices_2fcomponent_2eproto::AddDescriptors();
   ::protobuf_proto_2fprocessing_2fprocessingModule_2eproto::AddDescriptors();
+  ::protobuf_proto_2fgeneral_2ferror_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -401,6 +443,8 @@ namespace topicData {
 void TopicDataRecord::InitAsDefaultInstance() {
   ::ubii::topicData::_TopicDataRecord_default_instance_._instance.get_mutable()->timestamp_ = const_cast< ::ubii::topicData::Timestamp*>(
       ::ubii::topicData::Timestamp::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.error_ = const_cast< ::ubii::general::Error*>(
+      ::ubii::general::Error::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.double__ = 0;
   ::ubii::topicData::_TopicDataRecord_default_instance_.bool__ = false;
   ::ubii::topicData::_TopicDataRecord_default_instance_.string_.UnsafeSetDefault(
@@ -467,12 +511,42 @@ void TopicDataRecord::InitAsDefaultInstance() {
       ::ubii::dataStructure::Image2DList::internal_default_instance());
   ::ubii::topicData::_TopicDataRecord_default_instance_.session_ = const_cast< ::ubii::sessions::Session*>(
       ::ubii::sessions::Session::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.session_list_ = const_cast< ::ubii::sessions::SessionList*>(
+      ::ubii::sessions::SessionList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.device_ = const_cast< ::ubii::devices::Device*>(
+      ::ubii::devices::Device::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.device_list_ = const_cast< ::ubii::devices::DeviceList*>(
+      ::ubii::devices::DeviceList::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.component_ = const_cast< ::ubii::devices::Component*>(
+      ::ubii::devices::Component::internal_default_instance());
+  ::ubii::topicData::_TopicDataRecord_default_instance_.component_list_ = const_cast< ::ubii::devices::ComponentList*>(
+      ::ubii::devices::ComponentList::internal_default_instance());
 }
 void TopicDataRecord::clear_timestamp() {
   if (GetArenaNoVirtual() == NULL && timestamp_ != NULL) {
     delete timestamp_;
   }
   timestamp_ = NULL;
+}
+void TopicDataRecord::set_allocated_error(::ubii::general::Error* error) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (error) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      error = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    type_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.error)
+}
+void TopicDataRecord::clear_error() {
+  if (has_error()) {
+    delete type_.error_;
+    clear_has_type();
+  }
 }
 void TopicDataRecord::set_allocated_vector2(::ubii::dataStructure::Vector2* vector2) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -1074,10 +1148,111 @@ void TopicDataRecord::clear_session() {
     clear_has_type();
   }
 }
+void TopicDataRecord::set_allocated_session_list(::ubii::sessions::SessionList* session_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (session_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      session_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, session_list, submessage_arena);
+    }
+    set_has_session_list();
+    type_.session_list_ = session_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.session_list)
+}
+void TopicDataRecord::clear_session_list() {
+  if (has_session_list()) {
+    delete type_.session_list_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_device(::ubii::devices::Device* device) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (device) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      device = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device, submessage_arena);
+    }
+    set_has_device();
+    type_.device_ = device;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.device)
+}
+void TopicDataRecord::clear_device() {
+  if (has_device()) {
+    delete type_.device_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_device_list(::ubii::devices::DeviceList* device_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (device_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      device_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, device_list, submessage_arena);
+    }
+    set_has_device_list();
+    type_.device_list_ = device_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.device_list)
+}
+void TopicDataRecord::clear_device_list() {
+  if (has_device_list()) {
+    delete type_.device_list_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_component(::ubii::devices::Component* component) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (component) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      component = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, component, submessage_arena);
+    }
+    set_has_component();
+    type_.component_ = component;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.component)
+}
+void TopicDataRecord::clear_component() {
+  if (has_component()) {
+    delete type_.component_;
+    clear_has_type();
+  }
+}
+void TopicDataRecord::set_allocated_component_list(::ubii::devices::ComponentList* component_list) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_type();
+  if (component_list) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      component_list = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, component_list, submessage_arena);
+    }
+    set_has_component_list();
+    type_.component_list_ = component_list;
+  }
+  // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataRecord.component_list)
+}
+void TopicDataRecord::clear_component_list() {
+  if (has_component_list()) {
+    delete type_.component_list_;
+    clear_has_type();
+  }
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TopicDataRecord::kTopicFieldNumber;
 const int TopicDataRecord::kTimestampFieldNumber;
 const int TopicDataRecord::kClientIdFieldNumber;
+const int TopicDataRecord::kErrorFieldNumber;
 const int TopicDataRecord::kDoubleFieldNumber;
 const int TopicDataRecord::kBoolFieldNumber;
 const int TopicDataRecord::kStringFieldNumber;
@@ -1113,6 +1288,11 @@ const int TopicDataRecord::kBoolListFieldNumber;
 const int TopicDataRecord::kImage2DFieldNumber;
 const int TopicDataRecord::kImage2DListFieldNumber;
 const int TopicDataRecord::kSessionFieldNumber;
+const int TopicDataRecord::kSessionListFieldNumber;
+const int TopicDataRecord::kDeviceFieldNumber;
+const int TopicDataRecord::kDeviceListFieldNumber;
+const int TopicDataRecord::kComponentFieldNumber;
+const int TopicDataRecord::kComponentListFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TopicDataRecord::TopicDataRecord()
@@ -1141,6 +1321,10 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
   }
   clear_has_type();
   switch (from.type_case()) {
+    case kError: {
+      mutable_error()->::ubii::general::Error::MergeFrom(from.error());
+      break;
+    }
     case kDouble: {
       set_double_(from.double_());
       break;
@@ -1281,6 +1465,26 @@ TopicDataRecord::TopicDataRecord(const TopicDataRecord& from)
       mutable_session()->::ubii::sessions::Session::MergeFrom(from.session());
       break;
     }
+    case kSessionList: {
+      mutable_session_list()->::ubii::sessions::SessionList::MergeFrom(from.session_list());
+      break;
+    }
+    case kDevice: {
+      mutable_device()->::ubii::devices::Device::MergeFrom(from.device());
+      break;
+    }
+    case kDeviceList: {
+      mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from.device_list());
+      break;
+    }
+    case kComponent: {
+      mutable_component()->::ubii::devices::Component::MergeFrom(from.component());
+      break;
+    }
+    case kComponentList: {
+      mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from.component_list());
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -1326,6 +1530,10 @@ const TopicDataRecord& TopicDataRecord::default_instance() {
 void TopicDataRecord::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.topicData.TopicDataRecord)
   switch (type_case()) {
+    case kError: {
+      delete type_.error_;
+      break;
+    }
     case kDouble: {
       // No need to clear
       break;
@@ -1464,6 +1672,26 @@ void TopicDataRecord::clear_type() {
     }
     case kSession: {
       delete type_.session_;
+      break;
+    }
+    case kSessionList: {
+      delete type_.session_list_;
+      break;
+    }
+    case kDevice: {
+      delete type_.device_;
+      break;
+    }
+    case kDeviceList: {
+      delete type_.device_list_;
+      break;
+    }
+    case kComponent: {
+      delete type_.component_;
+      break;
+    }
+    case kComponentList: {
+      delete type_.component_list_;
       break;
     }
     case TYPE_NOT_SET: {
@@ -1980,6 +2208,78 @@ bool TopicDataRecord::MergePartialFromCodedStream(
         break;
       }
 
+      // .ubii.general.Error error = 39;
+      case 39: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 314 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_error()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.Device device = 40;
+      case 40: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 322 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_device()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.DeviceList device_list = 41;
+      case 41: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 330 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_device_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.Component component = 42;
+      case 42: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 338 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_component()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.devices.ComponentList component_list = 43;
+      case 43: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(90u /* 346 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_component_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ubii.sessions.SessionList session_list = 44;
+      case 44: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(98u /* 354 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_session_list()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2240,6 +2540,42 @@ void TopicDataRecord::SerializeWithCachedSizes(
   if (has_quaternion_list()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       38, this->_internal_quaternion_list(), output);
+  }
+
+  // .ubii.general.Error error = 39;
+  if (has_error()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      39, this->_internal_error(), output);
+  }
+
+  // .ubii.devices.Device device = 40;
+  if (has_device()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      40, this->_internal_device(), output);
+  }
+
+  // .ubii.devices.DeviceList device_list = 41;
+  if (has_device_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      41, this->_internal_device_list(), output);
+  }
+
+  // .ubii.devices.Component component = 42;
+  if (has_component()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      42, this->_internal_component(), output);
+  }
+
+  // .ubii.devices.ComponentList component_list = 43;
+  if (has_component_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      43, this->_internal_component_list(), output);
+  }
+
+  // .ubii.sessions.SessionList session_list = 44;
+  if (has_session_list()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      44, this->_internal_session_list(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2526,6 +2862,48 @@ void TopicDataRecord::SerializeWithCachedSizes(
         38, this->_internal_quaternion_list(), deterministic, target);
   }
 
+  // .ubii.general.Error error = 39;
+  if (has_error()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        39, this->_internal_error(), deterministic, target);
+  }
+
+  // .ubii.devices.Device device = 40;
+  if (has_device()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        40, this->_internal_device(), deterministic, target);
+  }
+
+  // .ubii.devices.DeviceList device_list = 41;
+  if (has_device_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        41, this->_internal_device_list(), deterministic, target);
+  }
+
+  // .ubii.devices.Component component = 42;
+  if (has_component()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        42, this->_internal_component(), deterministic, target);
+  }
+
+  // .ubii.devices.ComponentList component_list = 43;
+  if (has_component_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        43, this->_internal_component_list(), deterministic, target);
+  }
+
+  // .ubii.sessions.SessionList session_list = 44;
+  if (has_session_list()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        44, this->_internal_session_list(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -2565,6 +2943,13 @@ size_t TopicDataRecord::ByteSizeLong() const {
   }
 
   switch (type_case()) {
+    // .ubii.general.Error error = 39;
+    case kError: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.error_);
+      break;
+    }
     // double double = 3;
     case kDouble: {
       total_size += 1 + 8;
@@ -2804,6 +3189,41 @@ size_t TopicDataRecord::ByteSizeLong() const {
           *type_.session_);
       break;
     }
+    // .ubii.sessions.SessionList session_list = 44;
+    case kSessionList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.session_list_);
+      break;
+    }
+    // .ubii.devices.Device device = 40;
+    case kDevice: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.device_);
+      break;
+    }
+    // .ubii.devices.DeviceList device_list = 41;
+    case kDeviceList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.device_list_);
+      break;
+    }
+    // .ubii.devices.Component component = 42;
+    case kComponent: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.component_);
+      break;
+    }
+    // .ubii.devices.ComponentList component_list = 43;
+    case kComponentList: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *type_.component_list_);
+      break;
+    }
     case TYPE_NOT_SET: {
       break;
     }
@@ -2847,6 +3267,10 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
     mutable_timestamp()->::ubii::topicData::Timestamp::MergeFrom(from.timestamp());
   }
   switch (from.type_case()) {
+    case kError: {
+      mutable_error()->::ubii::general::Error::MergeFrom(from.error());
+      break;
+    }
     case kDouble: {
       set_double_(from.double_());
       break;
@@ -2985,6 +3409,26 @@ void TopicDataRecord::MergeFrom(const TopicDataRecord& from) {
     }
     case kSession: {
       mutable_session()->::ubii::sessions::Session::MergeFrom(from.session());
+      break;
+    }
+    case kSessionList: {
+      mutable_session_list()->::ubii::sessions::SessionList::MergeFrom(from.session_list());
+      break;
+    }
+    case kDevice: {
+      mutable_device()->::ubii::devices::Device::MergeFrom(from.device());
+      break;
+    }
+    case kDeviceList: {
+      mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from.device_list());
+      break;
+    }
+    case kComponent: {
+      mutable_component()->::ubii::devices::Component::MergeFrom(from.component());
+      break;
+    }
+    case kComponentList: {
+      mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from.component_list());
       break;
     }
     case TYPE_NOT_SET: {

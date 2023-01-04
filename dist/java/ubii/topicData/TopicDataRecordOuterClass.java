@@ -52,6 +52,19 @@ public final class TopicDataRecordOuterClass {
         getClientIdBytes();
 
     /**
+     * <code>.ubii.general.Error error = 39;</code>
+     */
+    boolean hasError();
+    /**
+     * <code>.ubii.general.Error error = 39;</code>
+     */
+    ubii.general.ErrorOuterClass.Error getError();
+    /**
+     * <code>.ubii.general.Error error = 39;</code>
+     */
+    ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder();
+
+    /**
      * <code>double double = 3;</code>
      */
     double getDouble();
@@ -471,11 +484,76 @@ public final class TopicDataRecordOuterClass {
      */
     ubii.sessions.SessionOuterClass.SessionOrBuilder getSessionOrBuilder();
 
+    /**
+     * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     */
+    boolean hasSessionList();
+    /**
+     * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     */
+    ubii.sessions.SessionOuterClass.SessionList getSessionList();
+    /**
+     * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     */
+    ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder();
+
+    /**
+     * <code>.ubii.devices.Device device = 40;</code>
+     */
+    boolean hasDevice();
+    /**
+     * <code>.ubii.devices.Device device = 40;</code>
+     */
+    ubii.devices.DeviceOuterClass.Device getDevice();
+    /**
+     * <code>.ubii.devices.Device device = 40;</code>
+     */
+    ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder();
+
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     */
+    boolean hasDeviceList();
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     */
+    ubii.devices.DeviceOuterClass.DeviceList getDeviceList();
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     */
+    ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder();
+
+    /**
+     * <code>.ubii.devices.Component component = 42;</code>
+     */
+    boolean hasComponent();
+    /**
+     * <code>.ubii.devices.Component component = 42;</code>
+     */
+    ubii.devices.ComponentOuterClass.Component getComponent();
+    /**
+     * <code>.ubii.devices.Component component = 42;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder();
+
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     */
+    boolean hasComponentList();
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentList getComponentList();
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     */
+    ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder();
+
     public ubii.topicData.TopicDataRecordOuterClass.TopicDataRecord.TypeCase getTypeCase();
   }
   /**
    * <pre>
-   * continuous index: 38
+   * continuous index: 44
    * </pre>
    *
    * Protobuf type {@code ubii.topicData.TopicDataRecord}
@@ -990,6 +1068,90 @@ public final class TopicDataRecordOuterClass {
               typeCase_ = 38;
               break;
             }
+            case 314: {
+              ubii.general.ErrorOuterClass.Error.Builder subBuilder = null;
+              if (typeCase_ == 39) {
+                subBuilder = ((ubii.general.ErrorOuterClass.Error) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.general.ErrorOuterClass.Error.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.general.ErrorOuterClass.Error) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 39;
+              break;
+            }
+            case 322: {
+              ubii.devices.DeviceOuterClass.Device.Builder subBuilder = null;
+              if (typeCase_ == 40) {
+                subBuilder = ((ubii.devices.DeviceOuterClass.Device) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.DeviceOuterClass.Device.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.DeviceOuterClass.Device) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 40;
+              break;
+            }
+            case 330: {
+              ubii.devices.DeviceOuterClass.DeviceList.Builder subBuilder = null;
+              if (typeCase_ == 41) {
+                subBuilder = ((ubii.devices.DeviceOuterClass.DeviceList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.DeviceOuterClass.DeviceList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.DeviceOuterClass.DeviceList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 41;
+              break;
+            }
+            case 338: {
+              ubii.devices.ComponentOuterClass.Component.Builder subBuilder = null;
+              if (typeCase_ == 42) {
+                subBuilder = ((ubii.devices.ComponentOuterClass.Component) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.ComponentOuterClass.Component.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.Component) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 42;
+              break;
+            }
+            case 346: {
+              ubii.devices.ComponentOuterClass.ComponentList.Builder subBuilder = null;
+              if (typeCase_ == 43) {
+                subBuilder = ((ubii.devices.ComponentOuterClass.ComponentList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.devices.ComponentOuterClass.ComponentList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.devices.ComponentOuterClass.ComponentList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 43;
+              break;
+            }
+            case 354: {
+              ubii.sessions.SessionOuterClass.SessionList.Builder subBuilder = null;
+              if (typeCase_ == 44) {
+                subBuilder = ((ubii.sessions.SessionOuterClass.SessionList) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(ubii.sessions.SessionOuterClass.SessionList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ubii.sessions.SessionOuterClass.SessionList) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 44;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1026,6 +1188,7 @@ public final class TopicDataRecordOuterClass {
     private java.lang.Object type_;
     public enum TypeCase
         implements com.google.protobuf.Internal.EnumLite {
+      ERROR(39),
       DOUBLE(3),
       BOOL(4),
       STRING(5),
@@ -1061,6 +1224,11 @@ public final class TopicDataRecordOuterClass {
       IMAGE2D(30),
       IMAGE2D_LIST(31),
       SESSION(32),
+      SESSION_LIST(44),
+      DEVICE(40),
+      DEVICE_LIST(41),
+      COMPONENT(42),
+      COMPONENT_LIST(43),
       TYPE_NOT_SET(0);
       private final int value;
       private TypeCase(int value) {
@@ -1076,6 +1244,7 @@ public final class TopicDataRecordOuterClass {
 
       public static TypeCase forNumber(int value) {
         switch (value) {
+          case 39: return ERROR;
           case 3: return DOUBLE;
           case 4: return BOOL;
           case 5: return STRING;
@@ -1111,6 +1280,11 @@ public final class TopicDataRecordOuterClass {
           case 30: return IMAGE2D;
           case 31: return IMAGE2D_LIST;
           case 32: return SESSION;
+          case 44: return SESSION_LIST;
+          case 40: return DEVICE;
+          case 41: return DEVICE_LIST;
+          case 42: return COMPONENT;
+          case 43: return COMPONENT_LIST;
           case 0: return TYPE_NOT_SET;
           default: return null;
         }
@@ -1213,6 +1387,32 @@ public final class TopicDataRecordOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 39;
+    /**
+     * <code>.ubii.general.Error error = 39;</code>
+     */
+    public boolean hasError() {
+      return typeCase_ == 39;
+    }
+    /**
+     * <code>.ubii.general.Error error = 39;</code>
+     */
+    public ubii.general.ErrorOuterClass.Error getError() {
+      if (typeCase_ == 39) {
+         return (ubii.general.ErrorOuterClass.Error) type_;
+      }
+      return ubii.general.ErrorOuterClass.Error.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.general.Error error = 39;</code>
+     */
+    public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
+      if (typeCase_ == 39) {
+         return (ubii.general.ErrorOuterClass.Error) type_;
+      }
+      return ubii.general.ErrorOuterClass.Error.getDefaultInstance();
     }
 
     public static final int DOUBLE_FIELD_NUMBER = 3;
@@ -2082,6 +2282,136 @@ public final class TopicDataRecordOuterClass {
       return ubii.sessions.SessionOuterClass.Session.getDefaultInstance();
     }
 
+    public static final int SESSION_LIST_FIELD_NUMBER = 44;
+    /**
+     * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     */
+    public boolean hasSessionList() {
+      return typeCase_ == 44;
+    }
+    /**
+     * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     */
+    public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
+      if (typeCase_ == 44) {
+         return (ubii.sessions.SessionOuterClass.SessionList) type_;
+      }
+      return ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.sessions.SessionList session_list = 44;</code>
+     */
+    public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
+      if (typeCase_ == 44) {
+         return (ubii.sessions.SessionOuterClass.SessionList) type_;
+      }
+      return ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance();
+    }
+
+    public static final int DEVICE_FIELD_NUMBER = 40;
+    /**
+     * <code>.ubii.devices.Device device = 40;</code>
+     */
+    public boolean hasDevice() {
+      return typeCase_ == 40;
+    }
+    /**
+     * <code>.ubii.devices.Device device = 40;</code>
+     */
+    public ubii.devices.DeviceOuterClass.Device getDevice() {
+      if (typeCase_ == 40) {
+         return (ubii.devices.DeviceOuterClass.Device) type_;
+      }
+      return ubii.devices.DeviceOuterClass.Device.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.Device device = 40;</code>
+     */
+    public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
+      if (typeCase_ == 40) {
+         return (ubii.devices.DeviceOuterClass.Device) type_;
+      }
+      return ubii.devices.DeviceOuterClass.Device.getDefaultInstance();
+    }
+
+    public static final int DEVICE_LIST_FIELD_NUMBER = 41;
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     */
+    public boolean hasDeviceList() {
+      return typeCase_ == 41;
+    }
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     */
+    public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
+      if (typeCase_ == 41) {
+         return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+      }
+      return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.DeviceList device_list = 41;</code>
+     */
+    public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
+      if (typeCase_ == 41) {
+         return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+      }
+      return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+    }
+
+    public static final int COMPONENT_FIELD_NUMBER = 42;
+    /**
+     * <code>.ubii.devices.Component component = 42;</code>
+     */
+    public boolean hasComponent() {
+      return typeCase_ == 42;
+    }
+    /**
+     * <code>.ubii.devices.Component component = 42;</code>
+     */
+    public ubii.devices.ComponentOuterClass.Component getComponent() {
+      if (typeCase_ == 42) {
+         return (ubii.devices.ComponentOuterClass.Component) type_;
+      }
+      return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.Component component = 42;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
+      if (typeCase_ == 42) {
+         return (ubii.devices.ComponentOuterClass.Component) type_;
+      }
+      return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+    }
+
+    public static final int COMPONENT_LIST_FIELD_NUMBER = 43;
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     */
+    public boolean hasComponentList() {
+      return typeCase_ == 43;
+    }
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
+      if (typeCase_ == 43) {
+         return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+      }
+      return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+    }
+    /**
+     * <code>.ubii.devices.ComponentList component_list = 43;</code>
+     */
+    public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
+      if (typeCase_ == 43) {
+         return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+      }
+      return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2213,6 +2543,24 @@ public final class TopicDataRecordOuterClass {
       }
       if (typeCase_ == 38) {
         output.writeMessage(38, (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
+      }
+      if (typeCase_ == 39) {
+        output.writeMessage(39, (ubii.general.ErrorOuterClass.Error) type_);
+      }
+      if (typeCase_ == 40) {
+        output.writeMessage(40, (ubii.devices.DeviceOuterClass.Device) type_);
+      }
+      if (typeCase_ == 41) {
+        output.writeMessage(41, (ubii.devices.DeviceOuterClass.DeviceList) type_);
+      }
+      if (typeCase_ == 42) {
+        output.writeMessage(42, (ubii.devices.ComponentOuterClass.Component) type_);
+      }
+      if (typeCase_ == 43) {
+        output.writeMessage(43, (ubii.devices.ComponentOuterClass.ComponentList) type_);
+      }
+      if (typeCase_ == 44) {
+        output.writeMessage(44, (ubii.sessions.SessionOuterClass.SessionList) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -2376,6 +2724,30 @@ public final class TopicDataRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(38, (ubii.dataStructure.QuaternionOuterClass.Quaternion) type_);
       }
+      if (typeCase_ == 39) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(39, (ubii.general.ErrorOuterClass.Error) type_);
+      }
+      if (typeCase_ == 40) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(40, (ubii.devices.DeviceOuterClass.Device) type_);
+      }
+      if (typeCase_ == 41) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(41, (ubii.devices.DeviceOuterClass.DeviceList) type_);
+      }
+      if (typeCase_ == 42) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(42, (ubii.devices.ComponentOuterClass.Component) type_);
+      }
+      if (typeCase_ == 43) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(43, (ubii.devices.ComponentOuterClass.ComponentList) type_);
+      }
+      if (typeCase_ == 44) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(44, (ubii.sessions.SessionOuterClass.SessionList) type_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2405,6 +2777,10 @@ public final class TopicDataRecordOuterClass {
           other.getTypeCase());
       if (!result) return false;
       switch (typeCase_) {
+        case 39:
+          result = result && getError()
+              .equals(other.getError());
+          break;
         case 3:
           result = result && (
               java.lang.Double.doubleToLongBits(getDouble())
@@ -2549,6 +2925,26 @@ public final class TopicDataRecordOuterClass {
           result = result && getSession()
               .equals(other.getSession());
           break;
+        case 44:
+          result = result && getSessionList()
+              .equals(other.getSessionList());
+          break;
+        case 40:
+          result = result && getDevice()
+              .equals(other.getDevice());
+          break;
+        case 41:
+          result = result && getDeviceList()
+              .equals(other.getDeviceList());
+          break;
+        case 42:
+          result = result && getComponent()
+              .equals(other.getComponent());
+          break;
+        case 43:
+          result = result && getComponentList()
+              .equals(other.getComponentList());
+          break;
         case 0:
         default:
       }
@@ -2572,6 +2968,10 @@ public final class TopicDataRecordOuterClass {
       hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClientId().hashCode();
       switch (typeCase_) {
+        case 39:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
         case 3:
           hash = (37 * hash) + DOUBLE_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -2715,6 +3115,26 @@ public final class TopicDataRecordOuterClass {
           hash = (37 * hash) + SESSION_FIELD_NUMBER;
           hash = (53 * hash) + getSession().hashCode();
           break;
+        case 44:
+          hash = (37 * hash) + SESSION_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getSessionList().hashCode();
+          break;
+        case 40:
+          hash = (37 * hash) + DEVICE_FIELD_NUMBER;
+          hash = (53 * hash) + getDevice().hashCode();
+          break;
+        case 41:
+          hash = (37 * hash) + DEVICE_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getDeviceList().hashCode();
+          break;
+        case 42:
+          hash = (37 * hash) + COMPONENT_FIELD_NUMBER;
+          hash = (53 * hash) + getComponent().hashCode();
+          break;
+        case 43:
+          hash = (37 * hash) + COMPONENT_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getComponentList().hashCode();
+          break;
         case 0:
         default:
       }
@@ -2815,7 +3235,7 @@ public final class TopicDataRecordOuterClass {
     }
     /**
      * <pre>
-     * continuous index: 38
+     * continuous index: 44
      * </pre>
      *
      * Protobuf type {@code ubii.topicData.TopicDataRecord}
@@ -2900,6 +3320,13 @@ public final class TopicDataRecordOuterClass {
           result.timestamp_ = timestampBuilder_.build();
         }
         result.clientId_ = clientId_;
+        if (typeCase_ == 39) {
+          if (errorBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = errorBuilder_.build();
+          }
+        }
         if (typeCase_ == 3) {
           result.type_ = type_;
         }
@@ -3125,6 +3552,41 @@ public final class TopicDataRecordOuterClass {
             result.type_ = sessionBuilder_.build();
           }
         }
+        if (typeCase_ == 44) {
+          if (sessionListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = sessionListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 40) {
+          if (deviceBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = deviceBuilder_.build();
+          }
+        }
+        if (typeCase_ == 41) {
+          if (deviceListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = deviceListBuilder_.build();
+          }
+        }
+        if (typeCase_ == 42) {
+          if (componentBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = componentBuilder_.build();
+          }
+        }
+        if (typeCase_ == 43) {
+          if (componentListBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = componentListBuilder_.build();
+          }
+        }
         result.typeCase_ = typeCase_;
         onBuilt();
         return result;
@@ -3186,6 +3648,10 @@ public final class TopicDataRecordOuterClass {
           onChanged();
         }
         switch (other.getTypeCase()) {
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
           case DOUBLE: {
             setDouble(other.getDouble());
             break;
@@ -3326,6 +3792,26 @@ public final class TopicDataRecordOuterClass {
           }
           case SESSION: {
             mergeSession(other.getSession());
+            break;
+          }
+          case SESSION_LIST: {
+            mergeSessionList(other.getSessionList());
+            break;
+          }
+          case DEVICE: {
+            mergeDevice(other.getDevice());
+            break;
+          }
+          case DEVICE_LIST: {
+            mergeDeviceList(other.getDeviceList());
+            break;
+          }
+          case COMPONENT: {
+            mergeComponent(other.getComponent());
+            break;
+          }
+          case COMPONENT_LIST: {
+            mergeComponentList(other.getComponentList());
             break;
           }
           case TYPE_NOT_SET: {
@@ -3629,6 +4115,142 @@ public final class TopicDataRecordOuterClass {
         clientId_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.general.ErrorOuterClass.Error, ubii.general.ErrorOuterClass.Error.Builder, ubii.general.ErrorOuterClass.ErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public boolean hasError() {
+        return typeCase_ == 39;
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public ubii.general.ErrorOuterClass.Error getError() {
+        if (errorBuilder_ == null) {
+          if (typeCase_ == 39) {
+            return (ubii.general.ErrorOuterClass.Error) type_;
+          }
+          return ubii.general.ErrorOuterClass.Error.getDefaultInstance();
+        } else {
+          if (typeCase_ == 39) {
+            return errorBuilder_.getMessage();
+          }
+          return ubii.general.ErrorOuterClass.Error.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public Builder setError(ubii.general.ErrorOuterClass.Error value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        typeCase_ = 39;
+        return this;
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public Builder setError(
+          ubii.general.ErrorOuterClass.Error.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 39;
+        return this;
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public Builder mergeError(ubii.general.ErrorOuterClass.Error value) {
+        if (errorBuilder_ == null) {
+          if (typeCase_ == 39 &&
+              type_ != ubii.general.ErrorOuterClass.Error.getDefaultInstance()) {
+            type_ = ubii.general.ErrorOuterClass.Error.newBuilder((ubii.general.ErrorOuterClass.Error) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 39) {
+            errorBuilder_.mergeFrom(value);
+          }
+          errorBuilder_.setMessage(value);
+        }
+        typeCase_ = 39;
+        return this;
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (typeCase_ == 39) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 39) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public ubii.general.ErrorOuterClass.Error.Builder getErrorBuilder() {
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      public ubii.general.ErrorOuterClass.ErrorOrBuilder getErrorOrBuilder() {
+        if ((typeCase_ == 39) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 39) {
+            return (ubii.general.ErrorOuterClass.Error) type_;
+          }
+          return ubii.general.ErrorOuterClass.Error.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.general.Error error = 39;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.general.ErrorOuterClass.Error, ubii.general.ErrorOuterClass.Error.Builder, ubii.general.ErrorOuterClass.ErrorOrBuilder> 
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(typeCase_ == 39)) {
+            type_ = ubii.general.ErrorOuterClass.Error.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.general.ErrorOuterClass.Error, ubii.general.ErrorOuterClass.Error.Builder, ubii.general.ErrorOuterClass.ErrorOrBuilder>(
+                  (ubii.general.ErrorOuterClass.Error) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 39;
+        onChanged();;
+        return errorBuilder_;
       }
 
       /**
@@ -7910,6 +8532,686 @@ public final class TopicDataRecordOuterClass {
         onChanged();;
         return sessionBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.sessions.SessionOuterClass.SessionList, ubii.sessions.SessionOuterClass.SessionList.Builder, ubii.sessions.SessionOuterClass.SessionListOrBuilder> sessionListBuilder_;
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public boolean hasSessionList() {
+        return typeCase_ == 44;
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public ubii.sessions.SessionOuterClass.SessionList getSessionList() {
+        if (sessionListBuilder_ == null) {
+          if (typeCase_ == 44) {
+            return (ubii.sessions.SessionOuterClass.SessionList) type_;
+          }
+          return ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 44) {
+            return sessionListBuilder_.getMessage();
+          }
+          return ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public Builder setSessionList(ubii.sessions.SessionOuterClass.SessionList value) {
+        if (sessionListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          sessionListBuilder_.setMessage(value);
+        }
+        typeCase_ = 44;
+        return this;
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public Builder setSessionList(
+          ubii.sessions.SessionOuterClass.SessionList.Builder builderForValue) {
+        if (sessionListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          sessionListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 44;
+        return this;
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public Builder mergeSessionList(ubii.sessions.SessionOuterClass.SessionList value) {
+        if (sessionListBuilder_ == null) {
+          if (typeCase_ == 44 &&
+              type_ != ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance()) {
+            type_ = ubii.sessions.SessionOuterClass.SessionList.newBuilder((ubii.sessions.SessionOuterClass.SessionList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 44) {
+            sessionListBuilder_.mergeFrom(value);
+          }
+          sessionListBuilder_.setMessage(value);
+        }
+        typeCase_ = 44;
+        return this;
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public Builder clearSessionList() {
+        if (sessionListBuilder_ == null) {
+          if (typeCase_ == 44) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 44) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          sessionListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public ubii.sessions.SessionOuterClass.SessionList.Builder getSessionListBuilder() {
+        return getSessionListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      public ubii.sessions.SessionOuterClass.SessionListOrBuilder getSessionListOrBuilder() {
+        if ((typeCase_ == 44) && (sessionListBuilder_ != null)) {
+          return sessionListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 44) {
+            return (ubii.sessions.SessionOuterClass.SessionList) type_;
+          }
+          return ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.sessions.SessionList session_list = 44;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.sessions.SessionOuterClass.SessionList, ubii.sessions.SessionOuterClass.SessionList.Builder, ubii.sessions.SessionOuterClass.SessionListOrBuilder> 
+          getSessionListFieldBuilder() {
+        if (sessionListBuilder_ == null) {
+          if (!(typeCase_ == 44)) {
+            type_ = ubii.sessions.SessionOuterClass.SessionList.getDefaultInstance();
+          }
+          sessionListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.sessions.SessionOuterClass.SessionList, ubii.sessions.SessionOuterClass.SessionList.Builder, ubii.sessions.SessionOuterClass.SessionListOrBuilder>(
+                  (ubii.sessions.SessionOuterClass.SessionList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 44;
+        onChanged();;
+        return sessionListBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder> deviceBuilder_;
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public boolean hasDevice() {
+        return typeCase_ == 40;
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public ubii.devices.DeviceOuterClass.Device getDevice() {
+        if (deviceBuilder_ == null) {
+          if (typeCase_ == 40) {
+            return (ubii.devices.DeviceOuterClass.Device) type_;
+          }
+          return ubii.devices.DeviceOuterClass.Device.getDefaultInstance();
+        } else {
+          if (typeCase_ == 40) {
+            return deviceBuilder_.getMessage();
+          }
+          return ubii.devices.DeviceOuterClass.Device.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public Builder setDevice(ubii.devices.DeviceOuterClass.Device value) {
+        if (deviceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          deviceBuilder_.setMessage(value);
+        }
+        typeCase_ = 40;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public Builder setDevice(
+          ubii.devices.DeviceOuterClass.Device.Builder builderForValue) {
+        if (deviceBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          deviceBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 40;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public Builder mergeDevice(ubii.devices.DeviceOuterClass.Device value) {
+        if (deviceBuilder_ == null) {
+          if (typeCase_ == 40 &&
+              type_ != ubii.devices.DeviceOuterClass.Device.getDefaultInstance()) {
+            type_ = ubii.devices.DeviceOuterClass.Device.newBuilder((ubii.devices.DeviceOuterClass.Device) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 40) {
+            deviceBuilder_.mergeFrom(value);
+          }
+          deviceBuilder_.setMessage(value);
+        }
+        typeCase_ = 40;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public Builder clearDevice() {
+        if (deviceBuilder_ == null) {
+          if (typeCase_ == 40) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 40) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          deviceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public ubii.devices.DeviceOuterClass.Device.Builder getDeviceBuilder() {
+        return getDeviceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      public ubii.devices.DeviceOuterClass.DeviceOrBuilder getDeviceOrBuilder() {
+        if ((typeCase_ == 40) && (deviceBuilder_ != null)) {
+          return deviceBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 40) {
+            return (ubii.devices.DeviceOuterClass.Device) type_;
+          }
+          return ubii.devices.DeviceOuterClass.Device.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.Device device = 40;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder> 
+          getDeviceFieldBuilder() {
+        if (deviceBuilder_ == null) {
+          if (!(typeCase_ == 40)) {
+            type_ = ubii.devices.DeviceOuterClass.Device.getDefaultInstance();
+          }
+          deviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.DeviceOuterClass.Device, ubii.devices.DeviceOuterClass.Device.Builder, ubii.devices.DeviceOuterClass.DeviceOrBuilder>(
+                  (ubii.devices.DeviceOuterClass.Device) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 40;
+        onChanged();;
+        return deviceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> deviceListBuilder_;
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public boolean hasDeviceList() {
+        return typeCase_ == 41;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public ubii.devices.DeviceOuterClass.DeviceList getDeviceList() {
+        if (deviceListBuilder_ == null) {
+          if (typeCase_ == 41) {
+            return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+          }
+          return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 41) {
+            return deviceListBuilder_.getMessage();
+          }
+          return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public Builder setDeviceList(ubii.devices.DeviceOuterClass.DeviceList value) {
+        if (deviceListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          deviceListBuilder_.setMessage(value);
+        }
+        typeCase_ = 41;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public Builder setDeviceList(
+          ubii.devices.DeviceOuterClass.DeviceList.Builder builderForValue) {
+        if (deviceListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          deviceListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 41;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public Builder mergeDeviceList(ubii.devices.DeviceOuterClass.DeviceList value) {
+        if (deviceListBuilder_ == null) {
+          if (typeCase_ == 41 &&
+              type_ != ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance()) {
+            type_ = ubii.devices.DeviceOuterClass.DeviceList.newBuilder((ubii.devices.DeviceOuterClass.DeviceList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 41) {
+            deviceListBuilder_.mergeFrom(value);
+          }
+          deviceListBuilder_.setMessage(value);
+        }
+        typeCase_ = 41;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public Builder clearDeviceList() {
+        if (deviceListBuilder_ == null) {
+          if (typeCase_ == 41) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 41) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          deviceListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public ubii.devices.DeviceOuterClass.DeviceList.Builder getDeviceListBuilder() {
+        return getDeviceListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      public ubii.devices.DeviceOuterClass.DeviceListOrBuilder getDeviceListOrBuilder() {
+        if ((typeCase_ == 41) && (deviceListBuilder_ != null)) {
+          return deviceListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 41) {
+            return (ubii.devices.DeviceOuterClass.DeviceList) type_;
+          }
+          return ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.DeviceList device_list = 41;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder> 
+          getDeviceListFieldBuilder() {
+        if (deviceListBuilder_ == null) {
+          if (!(typeCase_ == 41)) {
+            type_ = ubii.devices.DeviceOuterClass.DeviceList.getDefaultInstance();
+          }
+          deviceListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.DeviceOuterClass.DeviceList, ubii.devices.DeviceOuterClass.DeviceList.Builder, ubii.devices.DeviceOuterClass.DeviceListOrBuilder>(
+                  (ubii.devices.DeviceOuterClass.DeviceList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 41;
+        onChanged();;
+        return deviceListBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> componentBuilder_;
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public boolean hasComponent() {
+        return typeCase_ == 42;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component getComponent() {
+        if (componentBuilder_ == null) {
+          if (typeCase_ == 42) {
+            return (ubii.devices.ComponentOuterClass.Component) type_;
+          }
+          return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+        } else {
+          if (typeCase_ == 42) {
+            return componentBuilder_.getMessage();
+          }
+          return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public Builder setComponent(ubii.devices.ComponentOuterClass.Component value) {
+        if (componentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          componentBuilder_.setMessage(value);
+        }
+        typeCase_ = 42;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public Builder setComponent(
+          ubii.devices.ComponentOuterClass.Component.Builder builderForValue) {
+        if (componentBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          componentBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 42;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public Builder mergeComponent(ubii.devices.ComponentOuterClass.Component value) {
+        if (componentBuilder_ == null) {
+          if (typeCase_ == 42 &&
+              type_ != ubii.devices.ComponentOuterClass.Component.getDefaultInstance()) {
+            type_ = ubii.devices.ComponentOuterClass.Component.newBuilder((ubii.devices.ComponentOuterClass.Component) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 42) {
+            componentBuilder_.mergeFrom(value);
+          }
+          componentBuilder_.setMessage(value);
+        }
+        typeCase_ = 42;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public Builder clearComponent() {
+        if (componentBuilder_ == null) {
+          if (typeCase_ == 42) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 42) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          componentBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public ubii.devices.ComponentOuterClass.Component.Builder getComponentBuilder() {
+        return getComponentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentOrBuilder getComponentOrBuilder() {
+        if ((typeCase_ == 42) && (componentBuilder_ != null)) {
+          return componentBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 42) {
+            return (ubii.devices.ComponentOuterClass.Component) type_;
+          }
+          return ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.Component component = 42;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder> 
+          getComponentFieldBuilder() {
+        if (componentBuilder_ == null) {
+          if (!(typeCase_ == 42)) {
+            type_ = ubii.devices.ComponentOuterClass.Component.getDefaultInstance();
+          }
+          componentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.ComponentOuterClass.Component, ubii.devices.ComponentOuterClass.Component.Builder, ubii.devices.ComponentOuterClass.ComponentOrBuilder>(
+                  (ubii.devices.ComponentOuterClass.Component) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 42;
+        onChanged();;
+        return componentBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.ComponentList, ubii.devices.ComponentOuterClass.ComponentList.Builder, ubii.devices.ComponentOuterClass.ComponentListOrBuilder> componentListBuilder_;
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public boolean hasComponentList() {
+        return typeCase_ == 43;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentList getComponentList() {
+        if (componentListBuilder_ == null) {
+          if (typeCase_ == 43) {
+            return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+          }
+          return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+        } else {
+          if (typeCase_ == 43) {
+            return componentListBuilder_.getMessage();
+          }
+          return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public Builder setComponentList(ubii.devices.ComponentOuterClass.ComponentList value) {
+        if (componentListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          componentListBuilder_.setMessage(value);
+        }
+        typeCase_ = 43;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public Builder setComponentList(
+          ubii.devices.ComponentOuterClass.ComponentList.Builder builderForValue) {
+        if (componentListBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          componentListBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 43;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public Builder mergeComponentList(ubii.devices.ComponentOuterClass.ComponentList value) {
+        if (componentListBuilder_ == null) {
+          if (typeCase_ == 43 &&
+              type_ != ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance()) {
+            type_ = ubii.devices.ComponentOuterClass.ComponentList.newBuilder((ubii.devices.ComponentOuterClass.ComponentList) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 43) {
+            componentListBuilder_.mergeFrom(value);
+          }
+          componentListBuilder_.setMessage(value);
+        }
+        typeCase_ = 43;
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public Builder clearComponentList() {
+        if (componentListBuilder_ == null) {
+          if (typeCase_ == 43) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 43) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          componentListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentList.Builder getComponentListBuilder() {
+        return getComponentListFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      public ubii.devices.ComponentOuterClass.ComponentListOrBuilder getComponentListOrBuilder() {
+        if ((typeCase_ == 43) && (componentListBuilder_ != null)) {
+          return componentListBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 43) {
+            return (ubii.devices.ComponentOuterClass.ComponentList) type_;
+          }
+          return ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ubii.devices.ComponentList component_list = 43;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ubii.devices.ComponentOuterClass.ComponentList, ubii.devices.ComponentOuterClass.ComponentList.Builder, ubii.devices.ComponentOuterClass.ComponentListOrBuilder> 
+          getComponentListFieldBuilder() {
+        if (componentListBuilder_ == null) {
+          if (!(typeCase_ == 43)) {
+            type_ = ubii.devices.ComponentOuterClass.ComponentList.getDefaultInstance();
+          }
+          componentListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ubii.devices.ComponentOuterClass.ComponentList, ubii.devices.ComponentOuterClass.ComponentList.Builder, ubii.devices.ComponentOuterClass.ComponentListOrBuilder>(
+                  (ubii.devices.ComponentOuterClass.ComponentList) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 43;
+        onChanged();;
+        return componentListBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8782,54 +10084,63 @@ public final class TopicDataRecordOuterClass {
       "tructure/object2d.proto\032\"proto/dataStruc" +
       "ture/object3d.proto\032\037proto/dataStructure" +
       "/image.proto\032\034proto/sessions/session.pro" +
-      "to\032\'proto/processing/processingModule.pr" +
-      "oto\"\350\r\n\017TopicDataRecord\022\r\n\005topic\030\001 \001(\t\022," +
-      "\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData.Times" +
-      "tamp\022\021\n\tclient_id\030! \001(\t\022\020\n\006double\030\003 \001(\001H" +
-      "\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022\017\n\005i" +
-      "nt32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H\000\022.\n\007vector2" +
-      "\030\006 \001(\0132\033.ubii.dataStructure.Vector2H\000\0227\n" +
-      "\014vector2_list\030# \001(\0132\037.ubii.dataStructure" +
-      ".Vector2ListH\000\022.\n\007vector3\030\007 \001(\0132\033.ubii.d" +
-      "ataStructure.Vector3H\000\0227\n\014vector3_list\030$" +
-      " \001(\0132\037.ubii.dataStructure.Vector3ListH\000\022" +
-      ".\n\007vector4\030\010 \001(\0132\033.ubii.dataStructure.Ve" +
-      "ctor4H\000\0227\n\014vector4_list\030% \001(\0132\037.ubii.dat" +
-      "aStructure.Vector4ListH\000\0224\n\nquaternion\030\t" +
-      " \001(\0132\036.ubii.dataStructure.QuaternionH\000\0229" +
-      "\n\017quaternion_list\030& \001(\0132\036.ubii.dataStruc" +
-      "ture.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\0132\035.u" +
-      "bii.dataStructure.Matrix3x2H\000\0222\n\tmatrix4" +
-      "x4\030\013 \001(\0132\035.ubii.dataStructure.Matrix4x4H" +
-      "\000\022*\n\005color\030\014 \001(\0132\031.ubii.dataStructure.Co" +
-      "lorH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.dataSt" +
-      "ructure.TouchEventH\000\022>\n\020touch_event_list" +
-      "\030\" \001(\0132\".ubii.dataStructure.TouchEventLi" +
-      "stH\000\0221\n\tkey_event\030\016 \001(\0132\034.ubii.dataStruc" +
-      "ture.KeyEventH\000\0225\n\013mouse_event\030\017 \001(\0132\036.u" +
-      "bii.dataStructure.MouseEventH\000\0221\n\tmyo_ev" +
-      "ent\030\020 \001(\0132\034.ubii.dataStructure.MyoEventH" +
-      "\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii.dataStructure.P" +
-      "ose2DH\000\022,\n\006pose3D\030\022 \001(\0132\032.ubii.dataStruc" +
-      "ture.Pose3DH\000\0220\n\010object2D\030\023 \001(\0132\034.ubii.d" +
-      "ataStructure.Object2DH\000\0220\n\010object3D\030\024 \001(" +
-      "\0132\034.ubii.dataStructure.Object3DH\000\0229\n\robj" +
-      "ect2D_list\030\025 \001(\0132 .ubii.dataStructure.Ob" +
-      "ject2DListH\000\0229\n\robject3D_list\030\026 \001(\0132 .ub" +
-      "ii.dataStructure.Object3DListH\000\0223\n\nint32" +
-      "_list\030\031 \001(\0132\035.ubii.dataStructure.Int32Li" +
-      "stH\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubii.dataStru" +
-      "cture.FloatListH\000\0225\n\013double_list\030\033 \001(\0132\036" +
-      ".ubii.dataStructure.DoubleListH\000\0225\n\013stri" +
-      "ng_list\030\034 \001(\0132\036.ubii.dataStructure.Strin" +
-      "gListH\000\0221\n\tbool_list\030\035 \001(\0132\034.ubii.dataSt" +
-      "ructure.BoolListH\000\022.\n\007image2D\030\036 \001(\0132\033.ub" +
-      "ii.dataStructure.Image2DH\000\0227\n\014image2D_li" +
-      "st\030\037 \001(\0132\037.ubii.dataStructure.Image2DLis" +
-      "tH\000\022)\n\007session\030  \001(\0132\026.ubii.sessions.Ses" +
-      "sionH\000B\006\n\004type\"H\n\023TopicDataRecordList\0221\n" +
-      "\010elements\030\001 \003(\0132\037.ubii.topicData.TopicDa" +
-      "taRecordb\006proto3"
+      "to\032\032proto/devices/device.proto\032\035proto/de" +
+      "vices/component.proto\032\'proto/processing/" +
+      "processingModule.proto\032\031proto/general/er" +
+      "ror.proto\"\200\020\n\017TopicDataRecord\022\r\n\005topic\030\001" +
+      " \001(\t\022,\n\ttimestamp\030\002 \001(\0132\031.ubii.topicData" +
+      ".Timestamp\022\021\n\tclient_id\030! \001(\t\022$\n\005error\030\'" +
+      " \001(\0132\023.ubii.general.ErrorH\000\022\020\n\006double\030\003 " +
+      "\001(\001H\000\022\016\n\004bool\030\004 \001(\010H\000\022\020\n\006string\030\005 \001(\tH\000\022" +
+      "\017\n\005int32\030\027 \001(\005H\000\022\017\n\005float\030\030 \001(\002H\000\022.\n\007vec" +
+      "tor2\030\006 \001(\0132\033.ubii.dataStructure.Vector2H" +
+      "\000\0227\n\014vector2_list\030# \001(\0132\037.ubii.dataStruc" +
+      "ture.Vector2ListH\000\022.\n\007vector3\030\007 \001(\0132\033.ub" +
+      "ii.dataStructure.Vector3H\000\0227\n\014vector3_li" +
+      "st\030$ \001(\0132\037.ubii.dataStructure.Vector3Lis" +
+      "tH\000\022.\n\007vector4\030\010 \001(\0132\033.ubii.dataStructur" +
+      "e.Vector4H\000\0227\n\014vector4_list\030% \001(\0132\037.ubii" +
+      ".dataStructure.Vector4ListH\000\0224\n\nquaterni" +
+      "on\030\t \001(\0132\036.ubii.dataStructure.Quaternion" +
+      "H\000\0229\n\017quaternion_list\030& \001(\0132\036.ubii.dataS" +
+      "tructure.QuaternionH\000\0222\n\tmatrix3x2\030\n \001(\013" +
+      "2\035.ubii.dataStructure.Matrix3x2H\000\0222\n\tmat" +
+      "rix4x4\030\013 \001(\0132\035.ubii.dataStructure.Matrix" +
+      "4x4H\000\022*\n\005color\030\014 \001(\0132\031.ubii.dataStructur" +
+      "e.ColorH\000\0225\n\013touch_event\030\r \001(\0132\036.ubii.da" +
+      "taStructure.TouchEventH\000\022>\n\020touch_event_" +
+      "list\030\" \001(\0132\".ubii.dataStructure.TouchEve" +
+      "ntListH\000\0221\n\tkey_event\030\016 \001(\0132\034.ubii.dataS" +
+      "tructure.KeyEventH\000\0225\n\013mouse_event\030\017 \001(\013" +
+      "2\036.ubii.dataStructure.MouseEventH\000\0221\n\tmy" +
+      "o_event\030\020 \001(\0132\034.ubii.dataStructure.MyoEv" +
+      "entH\000\022,\n\006pose2D\030\021 \001(\0132\032.ubii.dataStructu" +
+      "re.Pose2DH\000\022,\n\006pose3D\030\022 \001(\0132\032.ubii.dataS" +
+      "tructure.Pose3DH\000\0220\n\010object2D\030\023 \001(\0132\034.ub" +
+      "ii.dataStructure.Object2DH\000\0220\n\010object3D\030" +
+      "\024 \001(\0132\034.ubii.dataStructure.Object3DH\000\0229\n" +
+      "\robject2D_list\030\025 \001(\0132 .ubii.dataStructur" +
+      "e.Object2DListH\000\0229\n\robject3D_list\030\026 \001(\0132" +
+      " .ubii.dataStructure.Object3DListH\000\0223\n\ni" +
+      "nt32_list\030\031 \001(\0132\035.ubii.dataStructure.Int" +
+      "32ListH\000\0223\n\nfloat_list\030\032 \001(\0132\035.ubii.data" +
+      "Structure.FloatListH\000\0225\n\013double_list\030\033 \001" +
+      "(\0132\036.ubii.dataStructure.DoubleListH\000\0225\n\013" +
+      "string_list\030\034 \001(\0132\036.ubii.dataStructure.S" +
+      "tringListH\000\0221\n\tbool_list\030\035 \001(\0132\034.ubii.da" +
+      "taStructure.BoolListH\000\022.\n\007image2D\030\036 \001(\0132" +
+      "\033.ubii.dataStructure.Image2DH\000\0227\n\014image2" +
+      "D_list\030\037 \001(\0132\037.ubii.dataStructure.Image2" +
+      "DListH\000\022)\n\007session\030  \001(\0132\026.ubii.sessions" +
+      ".SessionH\000\0222\n\014session_list\030, \001(\0132\032.ubii." +
+      "sessions.SessionListH\000\022&\n\006device\030( \001(\0132\024" +
+      ".ubii.devices.DeviceH\000\022/\n\013device_list\030) " +
+      "\001(\0132\030.ubii.devices.DeviceListH\000\022,\n\tcompo" +
+      "nent\030* \001(\0132\027.ubii.devices.ComponentH\000\0225\n" +
+      "\016component_list\030+ \001(\0132\033.ubii.devices.Com" +
+      "ponentListH\000B\006\n\004type\"H\n\023TopicDataRecordL" +
+      "ist\0221\n\010elements\030\001 \003(\0132\037.ubii.topicData.T" +
+      "opicDataRecordb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8861,14 +10172,17 @@ public final class TopicDataRecordOuterClass {
           ubii.dataStructure.Object3DOuterClass.getDescriptor(),
           ubii.dataStructure.Image.getDescriptor(),
           ubii.sessions.SessionOuterClass.getDescriptor(),
+          ubii.devices.DeviceOuterClass.getDescriptor(),
+          ubii.devices.ComponentOuterClass.getDescriptor(),
           ubii.processing.ProcessingModuleOuterClass.getDescriptor(),
+          ubii.general.ErrorOuterClass.getDescriptor(),
         }, assigner);
     internal_static_ubii_topicData_TopicDataRecord_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_topicData_TopicDataRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ubii_topicData_TopicDataRecord_descriptor,
-        new java.lang.String[] { "Topic", "Timestamp", "ClientId", "Double", "Bool", "String", "Int32", "Float", "Vector2", "Vector2List", "Vector3", "Vector3List", "Vector4", "Vector4List", "Quaternion", "QuaternionList", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "TouchEventList", "KeyEvent", "MouseEvent", "MyoEvent", "Pose2D", "Pose3D", "Object2D", "Object3D", "Object2DList", "Object3DList", "Int32List", "FloatList", "DoubleList", "StringList", "BoolList", "Image2D", "Image2DList", "Session", "Type", });
+        new java.lang.String[] { "Topic", "Timestamp", "ClientId", "Error", "Double", "Bool", "String", "Int32", "Float", "Vector2", "Vector2List", "Vector3", "Vector3List", "Vector4", "Vector4List", "Quaternion", "QuaternionList", "Matrix3X2", "Matrix4X4", "Color", "TouchEvent", "TouchEventList", "KeyEvent", "MouseEvent", "MyoEvent", "Pose2D", "Pose3D", "Object2D", "Object3D", "Object2DList", "Object3DList", "Int32List", "FloatList", "DoubleList", "StringList", "BoolList", "Image2D", "Image2DList", "Session", "SessionList", "Device", "DeviceList", "Component", "ComponentList", "Type", });
     internal_static_ubii_topicData_TopicDataRecordList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ubii_topicData_TopicDataRecordList_fieldAccessorTable = new
@@ -8894,7 +10208,10 @@ public final class TopicDataRecordOuterClass {
     ubii.dataStructure.Object3DOuterClass.getDescriptor();
     ubii.dataStructure.Image.getDescriptor();
     ubii.sessions.SessionOuterClass.getDescriptor();
+    ubii.devices.DeviceOuterClass.getDescriptor();
+    ubii.devices.ComponentOuterClass.getDescriptor();
     ubii.processing.ProcessingModuleOuterClass.getDescriptor();
+    ubii.general.ErrorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

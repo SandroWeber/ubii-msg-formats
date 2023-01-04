@@ -30,7 +30,10 @@ var proto_dataStructure_object2d_pb = require('../../proto/dataStructure/object2
 var proto_dataStructure_object3d_pb = require('../../proto/dataStructure/object3d_pb.js');
 var proto_dataStructure_image_pb = require('../../proto/dataStructure/image_pb.js');
 var proto_sessions_session_pb = require('../../proto/sessions/session_pb.js');
+var proto_devices_device_pb = require('../../proto/devices/device_pb.js');
+var proto_devices_component_pb = require('../../proto/devices/component_pb.js');
 var proto_processing_processingModule_pb = require('../../proto/processing/processingModule_pb.js');
+var proto_general_error_pb = require('../../proto/general/error_pb.js');
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecord', null, global);
 goog.exportSymbol('proto.ubii.topicData.TopicDataRecordList', null, global);
 
@@ -59,13 +62,14 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[3,4,5,23,24,6,35,7,36,8,37,9,38,10,11,12,13,34,14,15,16,17,18,19,20,21,22,25,26,27,28,29,30,31,32]];
+proto.ubii.topicData.TopicDataRecord.oneofGroups_ = [[39,3,4,5,23,24,6,35,7,36,8,37,9,38,10,11,12,13,34,14,15,16,17,18,19,20,21,22,25,26,27,28,29,30,31,32,44,40,41,42,43]];
 
 /**
  * @enum {number}
  */
 proto.ubii.topicData.TopicDataRecord.TypeCase = {
   TYPE_NOT_SET: 0,
+  ERROR: 39,
   DOUBLE: 3,
   BOOL: 4,
   STRING: 5,
@@ -100,7 +104,12 @@ proto.ubii.topicData.TopicDataRecord.TypeCase = {
   BOOL_LIST: 29,
   IMAGE2D: 30,
   IMAGE2D_LIST: 31,
-  SESSION: 32
+  SESSION: 32,
+  SESSION_LIST: 44,
+  DEVICE: 40,
+  DEVICE_LIST: 41,
+  COMPONENT: 42,
+  COMPONENT_LIST: 43
 };
 
 /**
@@ -142,6 +151,7 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
     timestamp: (f = msg.getTimestamp()) && proto_topicData_timestamp_pb.Timestamp.toObject(includeInstance, f),
     clientId: jspb.Message.getFieldWithDefault(msg, 33, ""),
+    error: (f = msg.getError()) && proto_general_error_pb.Error.toObject(includeInstance, f),
     pb_double: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
     bool: jspb.Message.getFieldWithDefault(msg, 4, false),
     string: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -176,7 +186,12 @@ proto.ubii.topicData.TopicDataRecord.toObject = function(includeInstance, msg) {
     boolList: (f = msg.getBoolList()) && proto_dataStructure_lists_pb.BoolList.toObject(includeInstance, f),
     image2d: (f = msg.getImage2d()) && proto_dataStructure_image_pb.Image2D.toObject(includeInstance, f),
     image2dList: (f = msg.getImage2dList()) && proto_dataStructure_image_pb.Image2DList.toObject(includeInstance, f),
-    session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f)
+    session: (f = msg.getSession()) && proto_sessions_session_pb.Session.toObject(includeInstance, f),
+    sessionList: (f = msg.getSessionList()) && proto_sessions_session_pb.SessionList.toObject(includeInstance, f),
+    device: (f = msg.getDevice()) && proto_devices_device_pb.Device.toObject(includeInstance, f),
+    deviceList: (f = msg.getDeviceList()) && proto_devices_device_pb.DeviceList.toObject(includeInstance, f),
+    component: (f = msg.getComponent()) && proto_devices_component_pb.Component.toObject(includeInstance, f),
+    componentList: (f = msg.getComponentList()) && proto_devices_component_pb.ComponentList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -225,6 +240,11 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
     case 33:
       var value = /** @type {string} */ (reader.readString());
       msg.setClientId(value);
+      break;
+    case 39:
+      var value = new proto_general_error_pb.Error;
+      reader.readMessage(value,proto_general_error_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
@@ -396,6 +416,31 @@ proto.ubii.topicData.TopicDataRecord.deserializeBinaryFromReader = function(msg,
       reader.readMessage(value,proto_sessions_session_pb.Session.deserializeBinaryFromReader);
       msg.setSession(value);
       break;
+    case 44:
+      var value = new proto_sessions_session_pb.SessionList;
+      reader.readMessage(value,proto_sessions_session_pb.SessionList.deserializeBinaryFromReader);
+      msg.setSessionList(value);
+      break;
+    case 40:
+      var value = new proto_devices_device_pb.Device;
+      reader.readMessage(value,proto_devices_device_pb.Device.deserializeBinaryFromReader);
+      msg.setDevice(value);
+      break;
+    case 41:
+      var value = new proto_devices_device_pb.DeviceList;
+      reader.readMessage(value,proto_devices_device_pb.DeviceList.deserializeBinaryFromReader);
+      msg.setDeviceList(value);
+      break;
+    case 42:
+      var value = new proto_devices_component_pb.Component;
+      reader.readMessage(value,proto_devices_component_pb.Component.deserializeBinaryFromReader);
+      msg.setComponent(value);
+      break;
+    case 43:
+      var value = new proto_devices_component_pb.ComponentList;
+      reader.readMessage(value,proto_devices_component_pb.ComponentList.deserializeBinaryFromReader);
+      msg.setComponentList(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -445,6 +490,14 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
     writer.writeString(
       33,
       f
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      39,
+      f,
+      proto_general_error_pb.Error.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
@@ -722,6 +775,46 @@ proto.ubii.topicData.TopicDataRecord.serializeBinaryToWriter = function(message,
       proto_sessions_session_pb.Session.serializeBinaryToWriter
     );
   }
+  f = message.getSessionList();
+  if (f != null) {
+    writer.writeMessage(
+      44,
+      f,
+      proto_sessions_session_pb.SessionList.serializeBinaryToWriter
+    );
+  }
+  f = message.getDevice();
+  if (f != null) {
+    writer.writeMessage(
+      40,
+      f,
+      proto_devices_device_pb.Device.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeviceList();
+  if (f != null) {
+    writer.writeMessage(
+      41,
+      f,
+      proto_devices_device_pb.DeviceList.serializeBinaryToWriter
+    );
+  }
+  f = message.getComponent();
+  if (f != null) {
+    writer.writeMessage(
+      42,
+      f,
+      proto_devices_component_pb.Component.serializeBinaryToWriter
+    );
+  }
+  f = message.getComponentList();
+  if (f != null) {
+    writer.writeMessage(
+      43,
+      f,
+      proto_devices_component_pb.ComponentList.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -782,6 +875,36 @@ proto.ubii.topicData.TopicDataRecord.prototype.getClientId = function() {
 /** @param {string} value */
 proto.ubii.topicData.TopicDataRecord.prototype.setClientId = function(value) {
   jspb.Message.setProto3StringField(this, 33, value);
+};
+
+
+/**
+ * optional ubii.general.Error error = 39;
+ * @return {?proto.ubii.general.Error}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getError = function() {
+  return /** @type{?proto.ubii.general.Error} */ (
+    jspb.Message.getWrapperField(this, proto_general_error_pb.Error, 39));
+};
+
+
+/** @param {?proto.ubii.general.Error|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setError = function(value) {
+  jspb.Message.setOneofWrapperField(this, 39, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearError = function() {
+  this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasError = function() {
+  return jspb.Message.getField(this, 39) != null;
 };
 
 
@@ -1829,6 +1952,156 @@ proto.ubii.topicData.TopicDataRecord.prototype.clearSession = function() {
  */
 proto.ubii.topicData.TopicDataRecord.prototype.hasSession = function() {
   return jspb.Message.getField(this, 32) != null;
+};
+
+
+/**
+ * optional ubii.sessions.SessionList session_list = 44;
+ * @return {?proto.ubii.sessions.SessionList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getSessionList = function() {
+  return /** @type{?proto.ubii.sessions.SessionList} */ (
+    jspb.Message.getWrapperField(this, proto_sessions_session_pb.SessionList, 44));
+};
+
+
+/** @param {?proto.ubii.sessions.SessionList|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setSessionList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 44, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearSessionList = function() {
+  this.setSessionList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasSessionList = function() {
+  return jspb.Message.getField(this, 44) != null;
+};
+
+
+/**
+ * optional ubii.devices.Device device = 40;
+ * @return {?proto.ubii.devices.Device}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getDevice = function() {
+  return /** @type{?proto.ubii.devices.Device} */ (
+    jspb.Message.getWrapperField(this, proto_devices_device_pb.Device, 40));
+};
+
+
+/** @param {?proto.ubii.devices.Device|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setDevice = function(value) {
+  jspb.Message.setOneofWrapperField(this, 40, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearDevice = function() {
+  this.setDevice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasDevice = function() {
+  return jspb.Message.getField(this, 40) != null;
+};
+
+
+/**
+ * optional ubii.devices.DeviceList device_list = 41;
+ * @return {?proto.ubii.devices.DeviceList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getDeviceList = function() {
+  return /** @type{?proto.ubii.devices.DeviceList} */ (
+    jspb.Message.getWrapperField(this, proto_devices_device_pb.DeviceList, 41));
+};
+
+
+/** @param {?proto.ubii.devices.DeviceList|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setDeviceList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 41, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearDeviceList = function() {
+  this.setDeviceList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasDeviceList = function() {
+  return jspb.Message.getField(this, 41) != null;
+};
+
+
+/**
+ * optional ubii.devices.Component component = 42;
+ * @return {?proto.ubii.devices.Component}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getComponent = function() {
+  return /** @type{?proto.ubii.devices.Component} */ (
+    jspb.Message.getWrapperField(this, proto_devices_component_pb.Component, 42));
+};
+
+
+/** @param {?proto.ubii.devices.Component|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setComponent = function(value) {
+  jspb.Message.setOneofWrapperField(this, 42, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearComponent = function() {
+  this.setComponent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasComponent = function() {
+  return jspb.Message.getField(this, 42) != null;
+};
+
+
+/**
+ * optional ubii.devices.ComponentList component_list = 43;
+ * @return {?proto.ubii.devices.ComponentList}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.getComponentList = function() {
+  return /** @type{?proto.ubii.devices.ComponentList} */ (
+    jspb.Message.getWrapperField(this, proto_devices_component_pb.ComponentList, 43));
+};
+
+
+/** @param {?proto.ubii.devices.ComponentList|undefined} value */
+proto.ubii.topicData.TopicDataRecord.prototype.setComponentList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 43, proto.ubii.topicData.TopicDataRecord.oneofGroups_[0], value);
+};
+
+
+proto.ubii.topicData.TopicDataRecord.prototype.clearComponentList = function() {
+  this.setComponentList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ubii.topicData.TopicDataRecord.prototype.hasComponentList = function() {
+  return jspb.Message.getField(this, 43) != null;
 };
 
 

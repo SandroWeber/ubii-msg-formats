@@ -23,7 +23,7 @@ namespace protobuf_proto_2fdevices_2fcomponent_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Component;
 }  // namespace protobuf_proto_2fdevices_2fcomponent_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<30> scc_info_TopicDataRecord;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<36> scc_info_TopicDataRecord;
 }  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto
 namespace protobuf_proto_2ftopicData_2ftopicDataSource_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataSource_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_TopicDataSource;

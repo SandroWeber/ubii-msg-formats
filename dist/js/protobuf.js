@@ -20421,6 +20421,7 @@ $root.ubii = (function() {
              * @property {string|null} [topic] TopicDataRecord topic
              * @property {ubii.topicData.ITimestamp|null} [timestamp] TopicDataRecord timestamp
              * @property {string|null} [clientId] TopicDataRecord clientId
+             * @property {ubii.general.IError|null} [error] TopicDataRecord error
              * @property {number|null} [double] TopicDataRecord double
              * @property {boolean|null} [bool] TopicDataRecord bool
              * @property {string|null} [string] TopicDataRecord string
@@ -20456,6 +20457,11 @@ $root.ubii = (function() {
              * @property {ubii.dataStructure.IImage2D|null} [image2D] TopicDataRecord image2D
              * @property {ubii.dataStructure.IImage2DList|null} [image2DList] TopicDataRecord image2DList
              * @property {ubii.sessions.ISession|null} [session] TopicDataRecord session
+             * @property {ubii.sessions.ISessionList|null} [sessionList] TopicDataRecord sessionList
+             * @property {ubii.devices.IDevice|null} [device] TopicDataRecord device
+             * @property {ubii.devices.IDeviceList|null} [deviceList] TopicDataRecord deviceList
+             * @property {ubii.devices.IComponent|null} [component] TopicDataRecord component
+             * @property {ubii.devices.IComponentList|null} [componentList] TopicDataRecord componentList
              */
 
             /**
@@ -20496,6 +20502,14 @@ $root.ubii = (function() {
              * @instance
              */
             TopicDataRecord.prototype.clientId = "";
+
+            /**
+             * TopicDataRecord error.
+             * @member {ubii.general.IError|null|undefined} error
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.error = null;
 
             /**
              * TopicDataRecord double.
@@ -20777,17 +20791,57 @@ $root.ubii = (function() {
              */
             TopicDataRecord.prototype.session = null;
 
+            /**
+             * TopicDataRecord sessionList.
+             * @member {ubii.sessions.ISessionList|null|undefined} sessionList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.sessionList = null;
+
+            /**
+             * TopicDataRecord device.
+             * @member {ubii.devices.IDevice|null|undefined} device
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.device = null;
+
+            /**
+             * TopicDataRecord deviceList.
+             * @member {ubii.devices.IDeviceList|null|undefined} deviceList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.deviceList = null;
+
+            /**
+             * TopicDataRecord component.
+             * @member {ubii.devices.IComponent|null|undefined} component
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.component = null;
+
+            /**
+             * TopicDataRecord componentList.
+             * @member {ubii.devices.IComponentList|null|undefined} componentList
+             * @memberof ubii.topicData.TopicDataRecord
+             * @instance
+             */
+            TopicDataRecord.prototype.componentList = null;
+
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
             /**
              * TopicDataRecord type.
-             * @member {"double"|"bool"|"string"|"int32"|"float"|"vector2"|"vector2List"|"vector3"|"vector3List"|"vector4"|"vector4List"|"quaternion"|"quaternionList"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"touchEventList"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|undefined} type
+             * @member {"error"|"double"|"bool"|"string"|"int32"|"float"|"vector2"|"vector2List"|"vector3"|"vector3List"|"vector4"|"vector4List"|"quaternion"|"quaternionList"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"touchEventList"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|"sessionList"|"device"|"deviceList"|"component"|"componentList"|undefined} type
              * @memberof ubii.topicData.TopicDataRecord
              * @instance
              */
             Object.defineProperty(TopicDataRecord.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["double", "bool", "string", "int32", "float", "vector2", "vector2List", "vector3", "vector3List", "vector4", "vector4List", "quaternion", "quaternionList", "matrix3x2", "matrix4x4", "color", "touchEvent", "touchEventList", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList", "session"]),
+                get: $util.oneOfGetter($oneOfFields = ["error", "double", "bool", "string", "int32", "float", "vector2", "vector2List", "vector3", "vector3List", "vector4", "vector4List", "quaternion", "quaternionList", "matrix3x2", "matrix4x4", "color", "touchEvent", "touchEventList", "keyEvent", "mouseEvent", "myoEvent", "pose2D", "pose3D", "object2D", "object3D", "object2DList", "object3DList", "int32List", "floatList", "doubleList", "stringList", "boolList", "image2D", "image2DList", "session", "sessionList", "device", "deviceList", "component", "componentList"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -20891,6 +20945,18 @@ $root.ubii = (function() {
                     $root.ubii.dataStructure.Vector4List.encode(message.vector4List, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
                 if (message.quaternionList != null && Object.hasOwnProperty.call(message, "quaternionList"))
                     $root.ubii.dataStructure.Quaternion.encode(message.quaternionList, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
+                    $root.ubii.general.Error.encode(message.error, writer.uint32(/* id 39, wireType 2 =*/314).fork()).ldelim();
+                if (message.device != null && Object.hasOwnProperty.call(message, "device"))
+                    $root.ubii.devices.Device.encode(message.device, writer.uint32(/* id 40, wireType 2 =*/322).fork()).ldelim();
+                if (message.deviceList != null && Object.hasOwnProperty.call(message, "deviceList"))
+                    $root.ubii.devices.DeviceList.encode(message.deviceList, writer.uint32(/* id 41, wireType 2 =*/330).fork()).ldelim();
+                if (message.component != null && Object.hasOwnProperty.call(message, "component"))
+                    $root.ubii.devices.Component.encode(message.component, writer.uint32(/* id 42, wireType 2 =*/338).fork()).ldelim();
+                if (message.componentList != null && Object.hasOwnProperty.call(message, "componentList"))
+                    $root.ubii.devices.ComponentList.encode(message.componentList, writer.uint32(/* id 43, wireType 2 =*/346).fork()).ldelim();
+                if (message.sessionList != null && Object.hasOwnProperty.call(message, "sessionList"))
+                    $root.ubii.sessions.SessionList.encode(message.sessionList, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
                 return writer;
             };
 
@@ -20933,6 +20999,9 @@ $root.ubii = (function() {
                         break;
                     case 33:
                         message.clientId = reader.string();
+                        break;
+                    case 39:
+                        message.error = $root.ubii.general.Error.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.double = reader.double();
@@ -21039,6 +21108,21 @@ $root.ubii = (function() {
                     case 32:
                         message.session = $root.ubii.sessions.Session.decode(reader, reader.uint32());
                         break;
+                    case 44:
+                        message.sessionList = $root.ubii.sessions.SessionList.decode(reader, reader.uint32());
+                        break;
+                    case 40:
+                        message.device = $root.ubii.devices.Device.decode(reader, reader.uint32());
+                        break;
+                    case 41:
+                        message.deviceList = $root.ubii.devices.DeviceList.decode(reader, reader.uint32());
+                        break;
+                    case 42:
+                        message.component = $root.ubii.devices.Component.decode(reader, reader.uint32());
+                        break;
+                    case 43:
+                        message.componentList = $root.ubii.devices.ComponentList.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -21086,7 +21170,17 @@ $root.ubii = (function() {
                 if (message.clientId != null && message.hasOwnProperty("clientId"))
                     if (!$util.isString(message.clientId))
                         return "clientId: string expected";
+                if (message.error != null && message.hasOwnProperty("error")) {
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.general.Error.verify(message.error);
+                        if (error)
+                            return "error." + error;
+                    }
+                }
                 if (message.double != null && message.hasOwnProperty("double")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
                     properties.type = 1;
                     if (typeof message.double !== "number")
                         return "double: number expected";
@@ -21419,6 +21513,56 @@ $root.ubii = (function() {
                             return "session." + error;
                     }
                 }
+                if (message.sessionList != null && message.hasOwnProperty("sessionList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.sessions.SessionList.verify(message.sessionList);
+                        if (error)
+                            return "sessionList." + error;
+                    }
+                }
+                if (message.device != null && message.hasOwnProperty("device")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.Device.verify(message.device);
+                        if (error)
+                            return "device." + error;
+                    }
+                }
+                if (message.deviceList != null && message.hasOwnProperty("deviceList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.DeviceList.verify(message.deviceList);
+                        if (error)
+                            return "deviceList." + error;
+                    }
+                }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.Component.verify(message.component);
+                        if (error)
+                            return "component." + error;
+                    }
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        var error = $root.ubii.devices.ComponentList.verify(message.componentList);
+                        if (error)
+                            return "componentList." + error;
+                    }
+                }
                 return null;
             };
 
@@ -21443,6 +21587,11 @@ $root.ubii = (function() {
                 }
                 if (object.clientId != null)
                     message.clientId = String(object.clientId);
+                if (object.error != null) {
+                    if (typeof object.error !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.error: object expected");
+                    message.error = $root.ubii.general.Error.fromObject(object.error);
+                }
                 if (object.double != null)
                     message.double = Number(object.double);
                 if (object.bool != null)
@@ -21602,6 +21751,31 @@ $root.ubii = (function() {
                     if (typeof object.session !== "object")
                         throw TypeError(".ubii.topicData.TopicDataRecord.session: object expected");
                     message.session = $root.ubii.sessions.Session.fromObject(object.session);
+                }
+                if (object.sessionList != null) {
+                    if (typeof object.sessionList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.sessionList: object expected");
+                    message.sessionList = $root.ubii.sessions.SessionList.fromObject(object.sessionList);
+                }
+                if (object.device != null) {
+                    if (typeof object.device !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.device: object expected");
+                    message.device = $root.ubii.devices.Device.fromObject(object.device);
+                }
+                if (object.deviceList != null) {
+                    if (typeof object.deviceList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.deviceList: object expected");
+                    message.deviceList = $root.ubii.devices.DeviceList.fromObject(object.deviceList);
+                }
+                if (object.component != null) {
+                    if (typeof object.component !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.component: object expected");
+                    message.component = $root.ubii.devices.Component.fromObject(object.component);
+                }
+                if (object.componentList != null) {
+                    if (typeof object.componentList !== "object")
+                        throw TypeError(".ubii.topicData.TopicDataRecord.componentList: object expected");
+                    message.componentList = $root.ubii.devices.ComponentList.fromObject(object.componentList);
                 }
                 return message;
             };
@@ -21804,6 +21978,36 @@ $root.ubii = (function() {
                     object.quaternionList = $root.ubii.dataStructure.Quaternion.toObject(message.quaternionList, options);
                     if (options.oneofs)
                         object.type = "quaternionList";
+                }
+                if (message.error != null && message.hasOwnProperty("error")) {
+                    object.error = $root.ubii.general.Error.toObject(message.error, options);
+                    if (options.oneofs)
+                        object.type = "error";
+                }
+                if (message.device != null && message.hasOwnProperty("device")) {
+                    object.device = $root.ubii.devices.Device.toObject(message.device, options);
+                    if (options.oneofs)
+                        object.type = "device";
+                }
+                if (message.deviceList != null && message.hasOwnProperty("deviceList")) {
+                    object.deviceList = $root.ubii.devices.DeviceList.toObject(message.deviceList, options);
+                    if (options.oneofs)
+                        object.type = "deviceList";
+                }
+                if (message.component != null && message.hasOwnProperty("component")) {
+                    object.component = $root.ubii.devices.Component.toObject(message.component, options);
+                    if (options.oneofs)
+                        object.type = "component";
+                }
+                if (message.componentList != null && message.hasOwnProperty("componentList")) {
+                    object.componentList = $root.ubii.devices.ComponentList.toObject(message.componentList, options);
+                    if (options.oneofs)
+                        object.type = "componentList";
+                }
+                if (message.sessionList != null && message.hasOwnProperty("sessionList")) {
+                    object.sessionList = $root.ubii.sessions.SessionList.toObject(message.sessionList, options);
+                    if (options.oneofs)
+                        object.type = "sessionList";
                 }
                 return object;
             };

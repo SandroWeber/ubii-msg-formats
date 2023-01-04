@@ -7869,6 +7869,9 @@ export namespace ubii {
             /** TopicDataRecord clientId */
             clientId?: (string|null);
 
+            /** TopicDataRecord error */
+            error?: (ubii.general.IError|null);
+
             /** TopicDataRecord double */
             double?: (number|null);
 
@@ -7973,6 +7976,21 @@ export namespace ubii {
 
             /** TopicDataRecord session */
             session?: (ubii.sessions.ISession|null);
+
+            /** TopicDataRecord sessionList */
+            sessionList?: (ubii.sessions.ISessionList|null);
+
+            /** TopicDataRecord device */
+            device?: (ubii.devices.IDevice|null);
+
+            /** TopicDataRecord deviceList */
+            deviceList?: (ubii.devices.IDeviceList|null);
+
+            /** TopicDataRecord component */
+            component?: (ubii.devices.IComponent|null);
+
+            /** TopicDataRecord componentList */
+            componentList?: (ubii.devices.IComponentList|null);
         }
 
         /** Represents a TopicDataRecord. */
@@ -7992,6 +8010,9 @@ export namespace ubii {
 
             /** TopicDataRecord clientId. */
             public clientId: string;
+
+            /** TopicDataRecord error. */
+            public error?: (ubii.general.IError|null);
 
             /** TopicDataRecord double. */
             public double?: (number|null);
@@ -8098,8 +8119,23 @@ export namespace ubii {
             /** TopicDataRecord session. */
             public session?: (ubii.sessions.ISession|null);
 
+            /** TopicDataRecord sessionList. */
+            public sessionList?: (ubii.sessions.ISessionList|null);
+
+            /** TopicDataRecord device. */
+            public device?: (ubii.devices.IDevice|null);
+
+            /** TopicDataRecord deviceList. */
+            public deviceList?: (ubii.devices.IDeviceList|null);
+
+            /** TopicDataRecord component. */
+            public component?: (ubii.devices.IComponent|null);
+
+            /** TopicDataRecord componentList. */
+            public componentList?: (ubii.devices.IComponentList|null);
+
             /** TopicDataRecord type. */
-            public type?: ("double"|"bool"|"string"|"int32"|"float"|"vector2"|"vector2List"|"vector3"|"vector3List"|"vector4"|"vector4List"|"quaternion"|"quaternionList"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"touchEventList"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session");
+            public type?: ("error"|"double"|"bool"|"string"|"int32"|"float"|"vector2"|"vector2List"|"vector3"|"vector3List"|"vector4"|"vector4List"|"quaternion"|"quaternionList"|"matrix3x2"|"matrix4x4"|"color"|"touchEvent"|"touchEventList"|"keyEvent"|"mouseEvent"|"myoEvent"|"pose2D"|"pose3D"|"object2D"|"object3D"|"object2DList"|"object3DList"|"int32List"|"floatList"|"doubleList"|"stringList"|"boolList"|"image2D"|"image2DList"|"session"|"sessionList"|"device"|"deviceList"|"component"|"componentList");
 
             /**
              * Creates a new TopicDataRecord instance using the specified properties.
