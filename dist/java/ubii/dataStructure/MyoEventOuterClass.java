@@ -20,10 +20,12 @@ public final class MyoEventOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
+     * @return Whether the emg field is set.
      */
     boolean hasEmg();
     /**
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
+     * @return The emg.
      */
     ubii.dataStructure.Vector8OuterClass.Vector8 getEmg();
     /**
@@ -33,10 +35,12 @@ public final class MyoEventOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
+     * @return Whether the orientation field is set.
      */
     boolean hasOrientation();
     /**
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
+     * @return The orientation.
      */
     ubii.dataStructure.QuaternionOuterClass.Quaternion getOrientation();
     /**
@@ -46,10 +50,12 @@ public final class MyoEventOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
+     * @return Whether the gyroscope field is set.
      */
     boolean hasGyroscope();
     /**
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
+     * @return The gyroscope.
      */
     ubii.dataStructure.Vector3OuterClass.Vector3 getGyroscope();
     /**
@@ -59,10 +65,12 @@ public final class MyoEventOuterClass {
 
     /**
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
+     * @return Whether the accelerometer field is set.
      */
     boolean hasAccelerometer();
     /**
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
+     * @return The accelerometer.
      */
     ubii.dataStructure.Vector3OuterClass.Vector3 getAccelerometer();
     /**
@@ -72,17 +80,19 @@ public final class MyoEventOuterClass {
 
     /**
      * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+     * @return The enum numeric value on the wire for gesture.
      */
     int getGestureValue();
     /**
      * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+     * @return The gesture.
      */
     ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType getGesture();
   }
   /**
    * Protobuf type {@code ubii.dataStructure.MyoEvent}
    */
-  public  static final class MyoEvent extends
+  public static final class MyoEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ubii.dataStructure.MyoEvent)
       MyoEventOrBuilder {
@@ -96,106 +106,12 @@ public final class MyoEventOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MyoEvent();
     }
-    private MyoEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              ubii.dataStructure.Vector8OuterClass.Vector8.Builder subBuilder = null;
-              if (emg_ != null) {
-                subBuilder = emg_.toBuilder();
-              }
-              emg_ = input.readMessage(ubii.dataStructure.Vector8OuterClass.Vector8.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(emg_);
-                emg_ = subBuilder.buildPartial();
-              }
 
-              break;
-            }
-            case 18: {
-              ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder subBuilder = null;
-              if (orientation_ != null) {
-                subBuilder = orientation_.toBuilder();
-              }
-              orientation_ = input.readMessage(ubii.dataStructure.QuaternionOuterClass.Quaternion.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(orientation_);
-                orientation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              ubii.dataStructure.Vector3OuterClass.Vector3.Builder subBuilder = null;
-              if (gyroscope_ != null) {
-                subBuilder = gyroscope_.toBuilder();
-              }
-              gyroscope_ = input.readMessage(ubii.dataStructure.Vector3OuterClass.Vector3.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gyroscope_);
-                gyroscope_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              ubii.dataStructure.Vector3OuterClass.Vector3.Builder subBuilder = null;
-              if (accelerometer_ != null) {
-                subBuilder = accelerometer_.toBuilder();
-              }
-              accelerometer_ = input.readMessage(ubii.dataStructure.Vector3OuterClass.Vector3.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(accelerometer_);
-                accelerometer_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              gesture_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return ubii.dataStructure.MyoEventOuterClass.internal_static_ubii_dataStructure_MyoEvent_descriptor;
@@ -213,100 +129,121 @@ public final class MyoEventOuterClass {
     private ubii.dataStructure.Vector8OuterClass.Vector8 emg_;
     /**
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
+     * @return Whether the emg field is set.
      */
+    @java.lang.Override
     public boolean hasEmg() {
       return emg_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
+     * @return The emg.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector8OuterClass.Vector8 getEmg() {
       return emg_ == null ? ubii.dataStructure.Vector8OuterClass.Vector8.getDefaultInstance() : emg_;
     }
     /**
      * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector8OuterClass.Vector8OrBuilder getEmgOrBuilder() {
-      return getEmg();
+      return emg_ == null ? ubii.dataStructure.Vector8OuterClass.Vector8.getDefaultInstance() : emg_;
     }
 
     public static final int ORIENTATION_FIELD_NUMBER = 2;
     private ubii.dataStructure.QuaternionOuterClass.Quaternion orientation_;
     /**
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
+     * @return Whether the orientation field is set.
      */
+    @java.lang.Override
     public boolean hasOrientation() {
       return orientation_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
+     * @return The orientation.
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.Quaternion getOrientation() {
       return orientation_ == null ? ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance() : orientation_;
     }
     /**
      * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder getOrientationOrBuilder() {
-      return getOrientation();
+      return orientation_ == null ? ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance() : orientation_;
     }
 
     public static final int GYROSCOPE_FIELD_NUMBER = 3;
     private ubii.dataStructure.Vector3OuterClass.Vector3 gyroscope_;
     /**
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
+     * @return Whether the gyroscope field is set.
      */
+    @java.lang.Override
     public boolean hasGyroscope() {
       return gyroscope_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
+     * @return The gyroscope.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getGyroscope() {
       return gyroscope_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : gyroscope_;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getGyroscopeOrBuilder() {
-      return getGyroscope();
+      return gyroscope_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : gyroscope_;
     }
 
     public static final int ACCELEROMETER_FIELD_NUMBER = 4;
     private ubii.dataStructure.Vector3OuterClass.Vector3 accelerometer_;
     /**
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
+     * @return Whether the accelerometer field is set.
      */
+    @java.lang.Override
     public boolean hasAccelerometer() {
       return accelerometer_ != null;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
+     * @return The accelerometer.
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3 getAccelerometer() {
       return accelerometer_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : accelerometer_;
     }
     /**
      * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
      */
+    @java.lang.Override
     public ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder getAccelerometerOrBuilder() {
-      return getAccelerometer();
+      return accelerometer_ == null ? ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance() : accelerometer_;
     }
 
     public static final int GESTURE_FIELD_NUMBER = 5;
-    private int gesture_;
+    private int gesture_ = 0;
     /**
      * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+     * @return The enum numeric value on the wire for gesture.
      */
-    public int getGestureValue() {
+    @java.lang.Override public int getGestureValue() {
       return gesture_;
     }
     /**
      * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+     * @return The gesture.
      */
-    public ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType getGesture() {
-      @SuppressWarnings("deprecation")
-      ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType result = ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.valueOf(gesture_);
+    @java.lang.Override public ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType getGesture() {
+      ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType result = ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.forNumber(gesture_);
       return result == null ? ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.UNRECOGNIZED : result;
     }
 
@@ -339,7 +276,7 @@ public final class MyoEventOuterClass {
       if (gesture_ != ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.REST.getNumber()) {
         output.writeEnum(5, gesture_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -368,7 +305,7 @@ public final class MyoEventOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, gesture_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -383,30 +320,29 @@ public final class MyoEventOuterClass {
       }
       ubii.dataStructure.MyoEventOuterClass.MyoEvent other = (ubii.dataStructure.MyoEventOuterClass.MyoEvent) obj;
 
-      boolean result = true;
-      result = result && (hasEmg() == other.hasEmg());
+      if (hasEmg() != other.hasEmg()) return false;
       if (hasEmg()) {
-        result = result && getEmg()
-            .equals(other.getEmg());
+        if (!getEmg()
+            .equals(other.getEmg())) return false;
       }
-      result = result && (hasOrientation() == other.hasOrientation());
+      if (hasOrientation() != other.hasOrientation()) return false;
       if (hasOrientation()) {
-        result = result && getOrientation()
-            .equals(other.getOrientation());
+        if (!getOrientation()
+            .equals(other.getOrientation())) return false;
       }
-      result = result && (hasGyroscope() == other.hasGyroscope());
+      if (hasGyroscope() != other.hasGyroscope()) return false;
       if (hasGyroscope()) {
-        result = result && getGyroscope()
-            .equals(other.getGyroscope());
+        if (!getGyroscope()
+            .equals(other.getGyroscope())) return false;
       }
-      result = result && (hasAccelerometer() == other.hasAccelerometer());
+      if (hasAccelerometer() != other.hasAccelerometer()) return false;
       if (hasAccelerometer()) {
-        result = result && getAccelerometer()
-            .equals(other.getAccelerometer());
+        if (!getAccelerometer()
+            .equals(other.getAccelerometer())) return false;
       }
-      result = result && gesture_ == other.gesture_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (gesture_ != other.gesture_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -434,7 +370,7 @@ public final class MyoEventOuterClass {
       }
       hash = (37 * hash) + GESTURE_FIELD_NUMBER;
       hash = (53 * hash) + gesture_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -551,48 +487,39 @@ public final class MyoEventOuterClass {
 
       // Construct using ubii.dataStructure.MyoEventOuterClass.MyoEvent.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (emgBuilder_ == null) {
-          emg_ = null;
-        } else {
-          emg_ = null;
+        bitField0_ = 0;
+        emg_ = null;
+        if (emgBuilder_ != null) {
+          emgBuilder_.dispose();
           emgBuilder_ = null;
         }
-        if (orientationBuilder_ == null) {
-          orientation_ = null;
-        } else {
-          orientation_ = null;
+        orientation_ = null;
+        if (orientationBuilder_ != null) {
+          orientationBuilder_.dispose();
           orientationBuilder_ = null;
         }
-        if (gyroscopeBuilder_ == null) {
-          gyroscope_ = null;
-        } else {
-          gyroscope_ = null;
+        gyroscope_ = null;
+        if (gyroscopeBuilder_ != null) {
+          gyroscopeBuilder_.dispose();
           gyroscopeBuilder_ = null;
         }
-        if (accelerometerBuilder_ == null) {
-          accelerometer_ = null;
-        } else {
-          accelerometer_ = null;
+        accelerometer_ = null;
+        if (accelerometerBuilder_ != null) {
+          accelerometerBuilder_.dispose();
           accelerometerBuilder_ = null;
         }
         gesture_ = 0;
-
         return this;
       }
 
@@ -619,63 +546,38 @@ public final class MyoEventOuterClass {
       @java.lang.Override
       public ubii.dataStructure.MyoEventOuterClass.MyoEvent buildPartial() {
         ubii.dataStructure.MyoEventOuterClass.MyoEvent result = new ubii.dataStructure.MyoEventOuterClass.MyoEvent(this);
-        if (emgBuilder_ == null) {
-          result.emg_ = emg_;
-        } else {
-          result.emg_ = emgBuilder_.build();
-        }
-        if (orientationBuilder_ == null) {
-          result.orientation_ = orientation_;
-        } else {
-          result.orientation_ = orientationBuilder_.build();
-        }
-        if (gyroscopeBuilder_ == null) {
-          result.gyroscope_ = gyroscope_;
-        } else {
-          result.gyroscope_ = gyroscopeBuilder_.build();
-        }
-        if (accelerometerBuilder_ == null) {
-          result.accelerometer_ = accelerometer_;
-        } else {
-          result.accelerometer_ = accelerometerBuilder_.build();
-        }
-        result.gesture_ = gesture_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(ubii.dataStructure.MyoEventOuterClass.MyoEvent result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.emg_ = emgBuilder_ == null
+              ? emg_
+              : emgBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.orientation_ = orientationBuilder_ == null
+              ? orientation_
+              : orientationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.gyroscope_ = gyroscopeBuilder_ == null
+              ? gyroscope_
+              : gyroscopeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.accelerometer_ = accelerometerBuilder_ == null
+              ? accelerometer_
+              : accelerometerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.gesture_ = gesture_;
+        }
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ubii.dataStructure.MyoEventOuterClass.MyoEvent) {
@@ -703,7 +605,7 @@ public final class MyoEventOuterClass {
         if (other.gesture_ != 0) {
           setGestureValue(other.getGestureValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -718,31 +620,80 @@ public final class MyoEventOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ubii.dataStructure.MyoEventOuterClass.MyoEvent parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getEmgFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getOrientationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getGyroscopeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getAccelerometerFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 40: {
+                gesture_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ubii.dataStructure.MyoEventOuterClass.MyoEvent) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
-      private ubii.dataStructure.Vector8OuterClass.Vector8 emg_ = null;
+      private ubii.dataStructure.Vector8OuterClass.Vector8 emg_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector8OuterClass.Vector8, ubii.dataStructure.Vector8OuterClass.Vector8.Builder, ubii.dataStructure.Vector8OuterClass.Vector8OrBuilder> emgBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
+       * @return Whether the emg field is set.
        */
       public boolean hasEmg() {
-        return emgBuilder_ != null || emg_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
+       * @return The emg.
        */
       public ubii.dataStructure.Vector8OuterClass.Vector8 getEmg() {
         if (emgBuilder_ == null) {
@@ -760,11 +711,11 @@ public final class MyoEventOuterClass {
             throw new NullPointerException();
           }
           emg_ = value;
-          onChanged();
         } else {
           emgBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -774,11 +725,11 @@ public final class MyoEventOuterClass {
           ubii.dataStructure.Vector8OuterClass.Vector8.Builder builderForValue) {
         if (emgBuilder_ == null) {
           emg_ = builderForValue.build();
-          onChanged();
         } else {
           emgBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -786,38 +737,38 @@ public final class MyoEventOuterClass {
        */
       public Builder mergeEmg(ubii.dataStructure.Vector8OuterClass.Vector8 value) {
         if (emgBuilder_ == null) {
-          if (emg_ != null) {
-            emg_ =
-              ubii.dataStructure.Vector8OuterClass.Vector8.newBuilder(emg_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            emg_ != null &&
+            emg_ != ubii.dataStructure.Vector8OuterClass.Vector8.getDefaultInstance()) {
+            getEmgBuilder().mergeFrom(value);
           } else {
             emg_ = value;
           }
-          onChanged();
         } else {
           emgBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
        */
       public Builder clearEmg() {
-        if (emgBuilder_ == null) {
-          emg_ = null;
-          onChanged();
-        } else {
-          emg_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        emg_ = null;
+        if (emgBuilder_ != null) {
+          emgBuilder_.dispose();
           emgBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector8 emg = 1;</code>
        */
       public ubii.dataStructure.Vector8OuterClass.Vector8.Builder getEmgBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getEmgFieldBuilder().getBuilder();
       }
@@ -849,17 +800,19 @@ public final class MyoEventOuterClass {
         return emgBuilder_;
       }
 
-      private ubii.dataStructure.QuaternionOuterClass.Quaternion orientation_ = null;
+      private ubii.dataStructure.QuaternionOuterClass.Quaternion orientation_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.QuaternionOuterClass.Quaternion, ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder, ubii.dataStructure.QuaternionOuterClass.QuaternionOrBuilder> orientationBuilder_;
       /**
        * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
+       * @return Whether the orientation field is set.
        */
       public boolean hasOrientation() {
-        return orientationBuilder_ != null || orientation_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
+       * @return The orientation.
        */
       public ubii.dataStructure.QuaternionOuterClass.Quaternion getOrientation() {
         if (orientationBuilder_ == null) {
@@ -877,11 +830,11 @@ public final class MyoEventOuterClass {
             throw new NullPointerException();
           }
           orientation_ = value;
-          onChanged();
         } else {
           orientationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -891,11 +844,11 @@ public final class MyoEventOuterClass {
           ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder builderForValue) {
         if (orientationBuilder_ == null) {
           orientation_ = builderForValue.build();
-          onChanged();
         } else {
           orientationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -903,38 +856,38 @@ public final class MyoEventOuterClass {
        */
       public Builder mergeOrientation(ubii.dataStructure.QuaternionOuterClass.Quaternion value) {
         if (orientationBuilder_ == null) {
-          if (orientation_ != null) {
-            orientation_ =
-              ubii.dataStructure.QuaternionOuterClass.Quaternion.newBuilder(orientation_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            orientation_ != null &&
+            orientation_ != ubii.dataStructure.QuaternionOuterClass.Quaternion.getDefaultInstance()) {
+            getOrientationBuilder().mergeFrom(value);
           } else {
             orientation_ = value;
           }
-          onChanged();
         } else {
           orientationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
        */
       public Builder clearOrientation() {
-        if (orientationBuilder_ == null) {
-          orientation_ = null;
-          onChanged();
-        } else {
-          orientation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        orientation_ = null;
+        if (orientationBuilder_ != null) {
+          orientationBuilder_.dispose();
           orientationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Quaternion orientation = 2;</code>
        */
       public ubii.dataStructure.QuaternionOuterClass.Quaternion.Builder getOrientationBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getOrientationFieldBuilder().getBuilder();
       }
@@ -966,17 +919,19 @@ public final class MyoEventOuterClass {
         return orientationBuilder_;
       }
 
-      private ubii.dataStructure.Vector3OuterClass.Vector3 gyroscope_ = null;
+      private ubii.dataStructure.Vector3OuterClass.Vector3 gyroscope_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> gyroscopeBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
+       * @return Whether the gyroscope field is set.
        */
       public boolean hasGyroscope() {
-        return gyroscopeBuilder_ != null || gyroscope_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
+       * @return The gyroscope.
        */
       public ubii.dataStructure.Vector3OuterClass.Vector3 getGyroscope() {
         if (gyroscopeBuilder_ == null) {
@@ -994,11 +949,11 @@ public final class MyoEventOuterClass {
             throw new NullPointerException();
           }
           gyroscope_ = value;
-          onChanged();
         } else {
           gyroscopeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1008,11 +963,11 @@ public final class MyoEventOuterClass {
           ubii.dataStructure.Vector3OuterClass.Vector3.Builder builderForValue) {
         if (gyroscopeBuilder_ == null) {
           gyroscope_ = builderForValue.build();
-          onChanged();
         } else {
           gyroscopeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1020,38 +975,38 @@ public final class MyoEventOuterClass {
        */
       public Builder mergeGyroscope(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
         if (gyroscopeBuilder_ == null) {
-          if (gyroscope_ != null) {
-            gyroscope_ =
-              ubii.dataStructure.Vector3OuterClass.Vector3.newBuilder(gyroscope_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            gyroscope_ != null &&
+            gyroscope_ != ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance()) {
+            getGyroscopeBuilder().mergeFrom(value);
           } else {
             gyroscope_ = value;
           }
-          onChanged();
         } else {
           gyroscopeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
        */
       public Builder clearGyroscope() {
-        if (gyroscopeBuilder_ == null) {
-          gyroscope_ = null;
-          onChanged();
-        } else {
-          gyroscope_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        gyroscope_ = null;
+        if (gyroscopeBuilder_ != null) {
+          gyroscopeBuilder_.dispose();
           gyroscopeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector3 gyroscope = 3;</code>
        */
       public ubii.dataStructure.Vector3OuterClass.Vector3.Builder getGyroscopeBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getGyroscopeFieldBuilder().getBuilder();
       }
@@ -1083,17 +1038,19 @@ public final class MyoEventOuterClass {
         return gyroscopeBuilder_;
       }
 
-      private ubii.dataStructure.Vector3OuterClass.Vector3 accelerometer_ = null;
+      private ubii.dataStructure.Vector3OuterClass.Vector3 accelerometer_;
       private com.google.protobuf.SingleFieldBuilderV3<
           ubii.dataStructure.Vector3OuterClass.Vector3, ubii.dataStructure.Vector3OuterClass.Vector3.Builder, ubii.dataStructure.Vector3OuterClass.Vector3OrBuilder> accelerometerBuilder_;
       /**
        * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
+       * @return Whether the accelerometer field is set.
        */
       public boolean hasAccelerometer() {
-        return accelerometerBuilder_ != null || accelerometer_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
+       * @return The accelerometer.
        */
       public ubii.dataStructure.Vector3OuterClass.Vector3 getAccelerometer() {
         if (accelerometerBuilder_ == null) {
@@ -1111,11 +1068,11 @@ public final class MyoEventOuterClass {
             throw new NullPointerException();
           }
           accelerometer_ = value;
-          onChanged();
         } else {
           accelerometerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1125,11 +1082,11 @@ public final class MyoEventOuterClass {
           ubii.dataStructure.Vector3OuterClass.Vector3.Builder builderForValue) {
         if (accelerometerBuilder_ == null) {
           accelerometer_ = builderForValue.build();
-          onChanged();
         } else {
           accelerometerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1137,38 +1094,38 @@ public final class MyoEventOuterClass {
        */
       public Builder mergeAccelerometer(ubii.dataStructure.Vector3OuterClass.Vector3 value) {
         if (accelerometerBuilder_ == null) {
-          if (accelerometer_ != null) {
-            accelerometer_ =
-              ubii.dataStructure.Vector3OuterClass.Vector3.newBuilder(accelerometer_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            accelerometer_ != null &&
+            accelerometer_ != ubii.dataStructure.Vector3OuterClass.Vector3.getDefaultInstance()) {
+            getAccelerometerBuilder().mergeFrom(value);
           } else {
             accelerometer_ = value;
           }
-          onChanged();
         } else {
           accelerometerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
        */
       public Builder clearAccelerometer() {
-        if (accelerometerBuilder_ == null) {
-          accelerometer_ = null;
-          onChanged();
-        } else {
-          accelerometer_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        accelerometer_ = null;
+        if (accelerometerBuilder_ != null) {
+          accelerometerBuilder_.dispose();
           accelerometerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.Vector3 accelerometer = 4;</code>
        */
       public ubii.dataStructure.Vector3OuterClass.Vector3.Builder getAccelerometerBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getAccelerometerFieldBuilder().getBuilder();
       }
@@ -1203,43 +1160,51 @@ public final class MyoEventOuterClass {
       private int gesture_ = 0;
       /**
        * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+       * @return The enum numeric value on the wire for gesture.
        */
-      public int getGestureValue() {
+      @java.lang.Override public int getGestureValue() {
         return gesture_;
       }
       /**
        * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+       * @param value The enum numeric value on the wire for gesture to set.
+       * @return This builder for chaining.
        */
       public Builder setGestureValue(int value) {
         gesture_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+       * @return The gesture.
        */
+      @java.lang.Override
       public ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType getGesture() {
-        @SuppressWarnings("deprecation")
-        ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType result = ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.valueOf(gesture_);
+        ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType result = ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.forNumber(gesture_);
         return result == null ? ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType.UNRECOGNIZED : result;
       }
       /**
        * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+       * @param value The gesture to set.
+       * @return This builder for chaining.
        */
       public Builder setGesture(ubii.dataStructure.HandGestureTypeOuterClass.HandGestureType value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         gesture_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <code>.ubii.dataStructure.HandGestureType gesture = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGesture() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         gesture_ = 0;
         onChanged();
         return this;
@@ -1247,7 +1212,7 @@ public final class MyoEventOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1277,7 +1242,18 @@ public final class MyoEventOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MyoEvent(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1324,22 +1300,14 @@ public final class MyoEventOuterClass {
       "ructure.Vector3\0224\n\007gesture\030\005 \001(\0162#.ubii." +
       "dataStructure.HandGestureTypeb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           ubii.dataStructure.Vector8OuterClass.getDescriptor(),
           ubii.dataStructure.Vector3OuterClass.getDescriptor(),
           ubii.dataStructure.QuaternionOuterClass.getDescriptor(),
           ubii.dataStructure.HandGestureTypeOuterClass.getDescriptor(),
-        }, assigner);
+        });
     internal_static_ubii_dataStructure_MyoEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ubii_dataStructure_MyoEvent_fieldAccessorTable = new

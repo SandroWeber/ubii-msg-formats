@@ -5,63 +5,37 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_proto_2fclients_2fclient_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ClientList;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fclients_2fclient_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Client;
-}  // namespace protobuf_proto_2fclients_2fclient_2eproto
-namespace protobuf_proto_2fconditions_2fnotifyCondition_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fconditions_2fnotifyCondition_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NotifyCondition;
-}  // namespace protobuf_proto_2fconditions_2fnotifyCondition_2eproto
-namespace protobuf_proto_2fdevices_2fcomponent_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Component;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ComponentList;
-}  // namespace protobuf_proto_2fdevices_2fcomponent_2eproto
-namespace protobuf_proto_2fdevices_2fdevice_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Device;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fdevice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_DeviceList;
-}  // namespace protobuf_proto_2fdevices_2fdevice_2eproto
-namespace protobuf_proto_2fdevices_2ftopicDemux_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicDemux_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicDemux;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicDemux_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicDemuxList;
-}  // namespace protobuf_proto_2fdevices_2ftopicDemux_2eproto
-namespace protobuf_proto_2fdevices_2ftopicMux_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicMux_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TopicMux;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2ftopicMux_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicMuxList;
-}  // namespace protobuf_proto_2fdevices_2ftopicMux_2eproto
-namespace protobuf_proto_2fprocessing_2flockstepProcessing_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2flockstepProcessing_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LockstepProcessingRequest;
-}  // namespace protobuf_proto_2fprocessing_2flockstepProcessing_2eproto
-namespace protobuf_proto_2fprocessing_2fprocessingModule_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ProcessingModuleList;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fprocessing_2fprocessingModule_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ProcessingModule;
-}  // namespace protobuf_proto_2fprocessing_2fprocessingModule_2eproto
-namespace protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TopicSubscription;
-}  // namespace protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto
-namespace protobuf_proto_2fsessions_2fsession_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fsession_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SessionList;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fsessions_2fsession_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Session;
-}  // namespace protobuf_proto_2fsessions_2fsession_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fclients_2fclient_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Client_proto_2fclients_2fclient_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fclients_2fclient_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ClientList_proto_2fclients_2fclient_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fconditions_2fnotifyCondition_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fcomponent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Component_proto_2fdevices_2fcomponent_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fcomponent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ComponentList_proto_2fdevices_2fcomponent_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fdevice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Device_proto_2fdevices_2fdevice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fdevice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeviceList_proto_2fdevices_2fdevice_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicDemux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicDemux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicMux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TopicMux_proto_2fdevices_2ftopicMux_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2ftopicMux_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicMuxList_proto_2fdevices_2ftopicMux_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2flockstepProcessing_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fprocessing_2fprocessingModule_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fservices_2frequest_2ftopicSubscription_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Session_proto_2fsessions_2fsession_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fsessions_2fsession_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SessionList_proto_2fsessions_2fsession_2eproto;
 namespace ubii {
 namespace services {
 class ServiceRequestDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ServiceRequest>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServiceRequest> _instance;
   const ::ubii::clients::Client* client_;
   const ::ubii::devices::Device* device_;
   const ::ubii::services::request::TopicSubscription* topic_subscription_;
@@ -82,51 +56,48 @@ class ServiceRequestDefaultTypeInternal {
 } _ServiceRequest_default_instance_;
 }  // namespace services
 }  // namespace ubii
-namespace protobuf_proto_2fservices_2fserviceRequest_2eproto {
-static void InitDefaultsServiceRequest() {
+static void InitDefaultsscc_info_ServiceRequest_proto_2fservices_2fserviceRequest_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::services::_ServiceRequest_default_instance_;
     new (ptr) ::ubii::services::ServiceRequest();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::services::ServiceRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<17> scc_info_ServiceRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 17, InitDefaultsServiceRequest}, {
-      &protobuf_proto_2fclients_2fclient_2eproto::scc_info_Client.base,
-      &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_Device.base,
-      &protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::scc_info_TopicSubscription.base,
-      &protobuf_proto_2fsessions_2fsession_2eproto::scc_info_Session.base,
-      &protobuf_proto_2fsessions_2fsession_2eproto::scc_info_SessionList.base,
-      &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingModule.base,
-      &protobuf_proto_2fprocessing_2fprocessingModule_2eproto::scc_info_ProcessingModuleList.base,
-      &protobuf_proto_2fdevices_2ftopicMux_2eproto::scc_info_TopicMux.base,
-      &protobuf_proto_2fdevices_2ftopicMux_2eproto::scc_info_TopicMuxList.base,
-      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemux.base,
-      &protobuf_proto_2fdevices_2ftopicDemux_2eproto::scc_info_TopicDemuxList.base,
-      &protobuf_proto_2fclients_2fclient_2eproto::scc_info_ClientList.base,
-      &protobuf_proto_2fdevices_2fdevice_2eproto::scc_info_DeviceList.base,
-      &protobuf_proto_2fprocessing_2flockstepProcessing_2eproto::scc_info_LockstepProcessingRequest.base,
-      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_Component.base,
-      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_ComponentList.base,
-      &protobuf_proto_2fconditions_2fnotifyCondition_2eproto::scc_info_NotifyCondition.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<17> scc_info_ServiceRequest_proto_2fservices_2fserviceRequest_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 17, 0, InitDefaultsscc_info_ServiceRequest_proto_2fservices_2fserviceRequest_2eproto}, {
+      &scc_info_Client_proto_2fclients_2fclient_2eproto.base,
+      &scc_info_Device_proto_2fdevices_2fdevice_2eproto.base,
+      &scc_info_TopicSubscription_proto_2fservices_2frequest_2ftopicSubscription_2eproto.base,
+      &scc_info_Session_proto_2fsessions_2fsession_2eproto.base,
+      &scc_info_SessionList_proto_2fsessions_2fsession_2eproto.base,
+      &scc_info_ProcessingModule_proto_2fprocessing_2fprocessingModule_2eproto.base,
+      &scc_info_ProcessingModuleList_proto_2fprocessing_2fprocessingModule_2eproto.base,
+      &scc_info_TopicMux_proto_2fdevices_2ftopicMux_2eproto.base,
+      &scc_info_TopicMuxList_proto_2fdevices_2ftopicMux_2eproto.base,
+      &scc_info_TopicDemux_proto_2fdevices_2ftopicDemux_2eproto.base,
+      &scc_info_TopicDemuxList_proto_2fdevices_2ftopicDemux_2eproto.base,
+      &scc_info_ClientList_proto_2fclients_2fclient_2eproto.base,
+      &scc_info_DeviceList_proto_2fdevices_2fdevice_2eproto.base,
+      &scc_info_LockstepProcessingRequest_proto_2fprocessing_2flockstepProcessing_2eproto.base,
+      &scc_info_Component_proto_2fdevices_2fcomponent_2eproto.base,
+      &scc_info_ComponentList_proto_2fdevices_2fcomponent_2eproto.base,
+      &scc_info_NotifyCondition_proto_2fconditions_2fnotifyCondition_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_ServiceRequest.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fservices_2fserviceRequest_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fservices_2fserviceRequest_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fservices_2fserviceRequest_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[1];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fservices_2fserviceRequest_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::services::ServiceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceRequest, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::ubii::services::ServiceRequest, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceRequest, topic_),
+  PROTOBUF_FIELD_OFFSET(::ubii::services::ServiceRequest, topic_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, client_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, device_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, topic_subscription_),
@@ -144,100 +115,79 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, component_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, component_list_),
   offsetof(::ubii::services::ServiceRequestDefaultTypeInternal, notify_condition_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::services::ServiceRequest, type_),
+  PROTOBUF_FIELD_OFFSET(::ubii::services::ServiceRequest, type_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::services::ServiceRequest)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::services::_ServiceRequest_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::services::_ServiceRequest_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/services/serviceRequest.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_proto_2fservices_2fserviceRequest_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n#proto/services/serviceRequest.proto\022\ru"
+  "bii.services\032\032proto/clients/client.proto"
+  "\032&proto/conditions/notifyCondition.proto"
+  "\032\035proto/devices/component.proto\032\032proto/d"
+  "evices/device.proto\032\034proto/devices/topic"
+  "Mux.proto\032\036proto/devices/topicDemux.prot"
+  "o\032\034proto/sessions/session.proto\032.proto/s"
+  "ervices/request/topicSubscription.proto\032"
+  "\'proto/processing/processingModule.proto"
+  "\032)proto/processing/lockstepProcessing.pr"
+  "oto\"\315\007\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t\022&\n"
+  "\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000\022&\n"
+  "\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000\022F\n"
+  "\022topic_subscription\030\004 \001(\0132(.ubii.service"
+  "s.request.TopicSubscriptionH\000\022)\n\007session"
+  "\030\005 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014sess"
+  "ion_list\030\006 \001(\0132\032.ubii.sessions.SessionLi"
+  "stH\000\022>\n\021processing_module\030\007 \001(\0132!.ubii.p"
+  "rocessing.ProcessingModuleH\000\022G\n\026processi"
+  "ng_module_list\030\010 \001(\0132%.ubii.processing.P"
+  "rocessingModuleListH\000\022+\n\ttopic_mux\030\t \001(\013"
+  "2\026.ubii.devices.TopicMuxH\000\0224\n\016topic_mux_"
+  "list\030\n \001(\0132\032.ubii.devices.TopicMuxListH\000"
+  "\022/\n\013topic_demux\030\013 \001(\0132\030.ubii.devices.Top"
+  "icDemuxH\000\0228\n\020topic_demux_list\030\014 \001(\0132\034.ub"
+  "ii.devices.TopicDemuxListH\000\022/\n\013client_li"
+  "st\030\r \001(\0132\030.ubii.clients.ClientListH\000\022/\n\013"
+  "device_list\030\016 \001(\0132\030.ubii.devices.DeviceL"
+  "istH\000\022Q\n\033lockstep_processing_request\030\017 \001"
+  "(\0132*.ubii.processing.LockstepProcessingR"
+  "equestH\000\022,\n\tcomponent\030\020 \001(\0132\027.ubii.devic"
+  "es.ComponentH\000\0225\n\016component_list\030\021 \001(\0132\033"
+  ".ubii.devices.ComponentListH\000\022<\n\020notify_"
+  "condition\030\022 \001(\0132 .ubii.conditions.Notify"
+  "ConditionH\000B\006\n\004typeb\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fservices_2fserviceRequest_2eproto_deps[10] = {
+  &::descriptor_table_proto_2fclients_2fclient_2eproto,
+  &::descriptor_table_proto_2fconditions_2fnotifyCondition_2eproto,
+  &::descriptor_table_proto_2fdevices_2fcomponent_2eproto,
+  &::descriptor_table_proto_2fdevices_2fdevice_2eproto,
+  &::descriptor_table_proto_2fdevices_2ftopicDemux_2eproto,
+  &::descriptor_table_proto_2fdevices_2ftopicMux_2eproto,
+  &::descriptor_table_proto_2fprocessing_2flockstepProcessing_2eproto,
+  &::descriptor_table_proto_2fprocessing_2fprocessingModule_2eproto,
+  &::descriptor_table_proto_2fservices_2frequest_2ftopicSubscription_2eproto,
+  &::descriptor_table_proto_2fsessions_2fsession_2eproto,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fservices_2fserviceRequest_2eproto_sccs[1] = {
+  &scc_info_ServiceRequest_proto_2fservices_2fserviceRequest_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fservices_2fserviceRequest_2eproto_once;
+static bool descriptor_table_proto_2fservices_2fserviceRequest_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fservices_2fserviceRequest_2eproto = {
+  &descriptor_table_proto_2fservices_2fserviceRequest_2eproto_initialized, descriptor_table_protodef_proto_2fservices_2fserviceRequest_2eproto, "proto/services/serviceRequest.proto", 1387,
+  &descriptor_table_proto_2fservices_2fserviceRequest_2eproto_once, descriptor_table_proto_2fservices_2fserviceRequest_2eproto_sccs, descriptor_table_proto_2fservices_2fserviceRequest_2eproto_deps, 1, 10,
+  schemas, file_default_instances, TableStruct_proto_2fservices_2fserviceRequest_2eproto::offsets,
+  file_level_metadata_proto_2fservices_2fserviceRequest_2eproto, 1, file_level_enum_descriptors_proto_2fservices_2fserviceRequest_2eproto, file_level_service_descriptors_proto_2fservices_2fserviceRequest_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n#proto/services/serviceRequest.proto\022\ru"
-      "bii.services\032\032proto/clients/client.proto"
-      "\032&proto/conditions/notifyCondition.proto"
-      "\032\035proto/devices/component.proto\032\032proto/d"
-      "evices/device.proto\032\034proto/devices/topic"
-      "Mux.proto\032\036proto/devices/topicDemux.prot"
-      "o\032\034proto/sessions/session.proto\032.proto/s"
-      "ervices/request/topicSubscription.proto\032"
-      "\'proto/processing/processingModule.proto"
-      "\032)proto/processing/lockstepProcessing.pr"
-      "oto\"\315\007\n\016ServiceRequest\022\r\n\005topic\030\001 \001(\t\022&\n"
-      "\006client\030\002 \001(\0132\024.ubii.clients.ClientH\000\022&\n"
-      "\006device\030\003 \001(\0132\024.ubii.devices.DeviceH\000\022F\n"
-      "\022topic_subscription\030\004 \001(\0132(.ubii.service"
-      "s.request.TopicSubscriptionH\000\022)\n\007session"
-      "\030\005 \001(\0132\026.ubii.sessions.SessionH\000\0222\n\014sess"
-      "ion_list\030\006 \001(\0132\032.ubii.sessions.SessionLi"
-      "stH\000\022>\n\021processing_module\030\007 \001(\0132!.ubii.p"
-      "rocessing.ProcessingModuleH\000\022G\n\026processi"
-      "ng_module_list\030\010 \001(\0132%.ubii.processing.P"
-      "rocessingModuleListH\000\022+\n\ttopic_mux\030\t \001(\013"
-      "2\026.ubii.devices.TopicMuxH\000\0224\n\016topic_mux_"
-      "list\030\n \001(\0132\032.ubii.devices.TopicMuxListH\000"
-      "\022/\n\013topic_demux\030\013 \001(\0132\030.ubii.devices.Top"
-      "icDemuxH\000\0228\n\020topic_demux_list\030\014 \001(\0132\034.ub"
-      "ii.devices.TopicDemuxListH\000\022/\n\013client_li"
-      "st\030\r \001(\0132\030.ubii.clients.ClientListH\000\022/\n\013"
-      "device_list\030\016 \001(\0132\030.ubii.devices.DeviceL"
-      "istH\000\022Q\n\033lockstep_processing_request\030\017 \001"
-      "(\0132*.ubii.processing.LockstepProcessingR"
-      "equestH\000\022,\n\tcomponent\030\020 \001(\0132\027.ubii.devic"
-      "es.ComponentH\000\0225\n\016component_list\030\021 \001(\0132\033"
-      ".ubii.devices.ComponentListH\000\022<\n\020notify_"
-      "condition\030\022 \001(\0132 .ubii.conditions.Notify"
-      "ConditionH\000B\006\n\004typeb\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1387);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/services/serviceRequest.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2fclients_2fclient_2eproto::AddDescriptors();
-  ::protobuf_proto_2fconditions_2fnotifyCondition_2eproto::AddDescriptors();
-  ::protobuf_proto_2fdevices_2fcomponent_2eproto::AddDescriptors();
-  ::protobuf_proto_2fdevices_2fdevice_2eproto::AddDescriptors();
-  ::protobuf_proto_2fdevices_2ftopicMux_2eproto::AddDescriptors();
-  ::protobuf_proto_2fdevices_2ftopicDemux_2eproto::AddDescriptors();
-  ::protobuf_proto_2fsessions_2fsession_2eproto::AddDescriptors();
-  ::protobuf_proto_2fservices_2frequest_2ftopicSubscription_2eproto::AddDescriptors();
-  ::protobuf_proto_2fprocessing_2fprocessingModule_2eproto::AddDescriptors();
-  ::protobuf_proto_2fprocessing_2flockstepProcessing_2eproto::AddDescriptors();
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2fservices_2fserviceRequest_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2fservices_2fserviceRequest_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fservices_2fserviceRequest_2eproto), true);
 namespace ubii {
 namespace services {
 
@@ -279,13 +229,102 @@ void ServiceRequest::InitAsDefaultInstance() {
   ::ubii::services::_ServiceRequest_default_instance_.notify_condition_ = const_cast< ::ubii::conditions::NotifyCondition*>(
       ::ubii::conditions::NotifyCondition::internal_default_instance());
 }
+class ServiceRequest::_Internal {
+ public:
+  static const ::ubii::clients::Client& client(const ServiceRequest* msg);
+  static const ::ubii::devices::Device& device(const ServiceRequest* msg);
+  static const ::ubii::services::request::TopicSubscription& topic_subscription(const ServiceRequest* msg);
+  static const ::ubii::sessions::Session& session(const ServiceRequest* msg);
+  static const ::ubii::sessions::SessionList& session_list(const ServiceRequest* msg);
+  static const ::ubii::processing::ProcessingModule& processing_module(const ServiceRequest* msg);
+  static const ::ubii::processing::ProcessingModuleList& processing_module_list(const ServiceRequest* msg);
+  static const ::ubii::devices::TopicMux& topic_mux(const ServiceRequest* msg);
+  static const ::ubii::devices::TopicMuxList& topic_mux_list(const ServiceRequest* msg);
+  static const ::ubii::devices::TopicDemux& topic_demux(const ServiceRequest* msg);
+  static const ::ubii::devices::TopicDemuxList& topic_demux_list(const ServiceRequest* msg);
+  static const ::ubii::clients::ClientList& client_list(const ServiceRequest* msg);
+  static const ::ubii::devices::DeviceList& device_list(const ServiceRequest* msg);
+  static const ::ubii::processing::LockstepProcessingRequest& lockstep_processing_request(const ServiceRequest* msg);
+  static const ::ubii::devices::Component& component(const ServiceRequest* msg);
+  static const ::ubii::devices::ComponentList& component_list(const ServiceRequest* msg);
+  static const ::ubii::conditions::NotifyCondition& notify_condition(const ServiceRequest* msg);
+};
+
+const ::ubii::clients::Client&
+ServiceRequest::_Internal::client(const ServiceRequest* msg) {
+  return *msg->type_.client_;
+}
+const ::ubii::devices::Device&
+ServiceRequest::_Internal::device(const ServiceRequest* msg) {
+  return *msg->type_.device_;
+}
+const ::ubii::services::request::TopicSubscription&
+ServiceRequest::_Internal::topic_subscription(const ServiceRequest* msg) {
+  return *msg->type_.topic_subscription_;
+}
+const ::ubii::sessions::Session&
+ServiceRequest::_Internal::session(const ServiceRequest* msg) {
+  return *msg->type_.session_;
+}
+const ::ubii::sessions::SessionList&
+ServiceRequest::_Internal::session_list(const ServiceRequest* msg) {
+  return *msg->type_.session_list_;
+}
+const ::ubii::processing::ProcessingModule&
+ServiceRequest::_Internal::processing_module(const ServiceRequest* msg) {
+  return *msg->type_.processing_module_;
+}
+const ::ubii::processing::ProcessingModuleList&
+ServiceRequest::_Internal::processing_module_list(const ServiceRequest* msg) {
+  return *msg->type_.processing_module_list_;
+}
+const ::ubii::devices::TopicMux&
+ServiceRequest::_Internal::topic_mux(const ServiceRequest* msg) {
+  return *msg->type_.topic_mux_;
+}
+const ::ubii::devices::TopicMuxList&
+ServiceRequest::_Internal::topic_mux_list(const ServiceRequest* msg) {
+  return *msg->type_.topic_mux_list_;
+}
+const ::ubii::devices::TopicDemux&
+ServiceRequest::_Internal::topic_demux(const ServiceRequest* msg) {
+  return *msg->type_.topic_demux_;
+}
+const ::ubii::devices::TopicDemuxList&
+ServiceRequest::_Internal::topic_demux_list(const ServiceRequest* msg) {
+  return *msg->type_.topic_demux_list_;
+}
+const ::ubii::clients::ClientList&
+ServiceRequest::_Internal::client_list(const ServiceRequest* msg) {
+  return *msg->type_.client_list_;
+}
+const ::ubii::devices::DeviceList&
+ServiceRequest::_Internal::device_list(const ServiceRequest* msg) {
+  return *msg->type_.device_list_;
+}
+const ::ubii::processing::LockstepProcessingRequest&
+ServiceRequest::_Internal::lockstep_processing_request(const ServiceRequest* msg) {
+  return *msg->type_.lockstep_processing_request_;
+}
+const ::ubii::devices::Component&
+ServiceRequest::_Internal::component(const ServiceRequest* msg) {
+  return *msg->type_.component_;
+}
+const ::ubii::devices::ComponentList&
+ServiceRequest::_Internal::component_list(const ServiceRequest* msg) {
+  return *msg->type_.component_list_;
+}
+const ::ubii::conditions::NotifyCondition&
+ServiceRequest::_Internal::notify_condition(const ServiceRequest* msg) {
+  return *msg->type_.notify_condition_;
+}
 void ServiceRequest::set_allocated_client(::ubii::clients::Client* client) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (client) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      client = ::google::protobuf::internal::GetOwnedMessage(
+      client = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, client, submessage_arena);
     }
     set_has_client();
@@ -294,18 +333,18 @@ void ServiceRequest::set_allocated_client(::ubii::clients::Client* client) {
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.client)
 }
 void ServiceRequest::clear_client() {
-  if (has_client()) {
+  if (_internal_has_client()) {
     delete type_.client_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_device(::ubii::devices::Device* device) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (device) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      device = ::google::protobuf::internal::GetOwnedMessage(
+      device = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, device, submessage_arena);
     }
     set_has_device();
@@ -314,18 +353,18 @@ void ServiceRequest::set_allocated_device(::ubii::devices::Device* device) {
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.device)
 }
 void ServiceRequest::clear_device() {
-  if (has_device()) {
+  if (_internal_has_device()) {
     delete type_.device_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_topic_subscription(::ubii::services::request::TopicSubscription* topic_subscription) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (topic_subscription) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      topic_subscription = ::google::protobuf::internal::GetOwnedMessage(
+      topic_subscription = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_subscription, submessage_arena);
     }
     set_has_topic_subscription();
@@ -334,18 +373,18 @@ void ServiceRequest::set_allocated_topic_subscription(::ubii::services::request:
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.topic_subscription)
 }
 void ServiceRequest::clear_topic_subscription() {
-  if (has_topic_subscription()) {
+  if (_internal_has_topic_subscription()) {
     delete type_.topic_subscription_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_session(::ubii::sessions::Session* session) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (session) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      session = ::google::protobuf::internal::GetOwnedMessage(
+      session = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, session, submessage_arena);
     }
     set_has_session();
@@ -354,18 +393,18 @@ void ServiceRequest::set_allocated_session(::ubii::sessions::Session* session) {
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.session)
 }
 void ServiceRequest::clear_session() {
-  if (has_session()) {
+  if (_internal_has_session()) {
     delete type_.session_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_session_list(::ubii::sessions::SessionList* session_list) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (session_list) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      session_list = ::google::protobuf::internal::GetOwnedMessage(
+      session_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, session_list, submessage_arena);
     }
     set_has_session_list();
@@ -374,18 +413,18 @@ void ServiceRequest::set_allocated_session_list(::ubii::sessions::SessionList* s
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.session_list)
 }
 void ServiceRequest::clear_session_list() {
-  if (has_session_list()) {
+  if (_internal_has_session_list()) {
     delete type_.session_list_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_processing_module(::ubii::processing::ProcessingModule* processing_module) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (processing_module) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      processing_module = ::google::protobuf::internal::GetOwnedMessage(
+      processing_module = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, processing_module, submessage_arena);
     }
     set_has_processing_module();
@@ -394,18 +433,18 @@ void ServiceRequest::set_allocated_processing_module(::ubii::processing::Process
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.processing_module)
 }
 void ServiceRequest::clear_processing_module() {
-  if (has_processing_module()) {
+  if (_internal_has_processing_module()) {
     delete type_.processing_module_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_processing_module_list(::ubii::processing::ProcessingModuleList* processing_module_list) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (processing_module_list) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      processing_module_list = ::google::protobuf::internal::GetOwnedMessage(
+      processing_module_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, processing_module_list, submessage_arena);
     }
     set_has_processing_module_list();
@@ -414,18 +453,18 @@ void ServiceRequest::set_allocated_processing_module_list(::ubii::processing::Pr
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.processing_module_list)
 }
 void ServiceRequest::clear_processing_module_list() {
-  if (has_processing_module_list()) {
+  if (_internal_has_processing_module_list()) {
     delete type_.processing_module_list_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_topic_mux(::ubii::devices::TopicMux* topic_mux) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (topic_mux) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      topic_mux = ::google::protobuf::internal::GetOwnedMessage(
+      topic_mux = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_mux, submessage_arena);
     }
     set_has_topic_mux();
@@ -434,18 +473,18 @@ void ServiceRequest::set_allocated_topic_mux(::ubii::devices::TopicMux* topic_mu
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.topic_mux)
 }
 void ServiceRequest::clear_topic_mux() {
-  if (has_topic_mux()) {
+  if (_internal_has_topic_mux()) {
     delete type_.topic_mux_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_topic_mux_list(::ubii::devices::TopicMuxList* topic_mux_list) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (topic_mux_list) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      topic_mux_list = ::google::protobuf::internal::GetOwnedMessage(
+      topic_mux_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_mux_list, submessage_arena);
     }
     set_has_topic_mux_list();
@@ -454,18 +493,18 @@ void ServiceRequest::set_allocated_topic_mux_list(::ubii::devices::TopicMuxList*
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.topic_mux_list)
 }
 void ServiceRequest::clear_topic_mux_list() {
-  if (has_topic_mux_list()) {
+  if (_internal_has_topic_mux_list()) {
     delete type_.topic_mux_list_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_topic_demux(::ubii::devices::TopicDemux* topic_demux) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (topic_demux) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      topic_demux = ::google::protobuf::internal::GetOwnedMessage(
+      topic_demux = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_demux, submessage_arena);
     }
     set_has_topic_demux();
@@ -474,18 +513,18 @@ void ServiceRequest::set_allocated_topic_demux(::ubii::devices::TopicDemux* topi
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.topic_demux)
 }
 void ServiceRequest::clear_topic_demux() {
-  if (has_topic_demux()) {
+  if (_internal_has_topic_demux()) {
     delete type_.topic_demux_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_topic_demux_list(::ubii::devices::TopicDemuxList* topic_demux_list) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (topic_demux_list) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      topic_demux_list = ::google::protobuf::internal::GetOwnedMessage(
+      topic_demux_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, topic_demux_list, submessage_arena);
     }
     set_has_topic_demux_list();
@@ -494,18 +533,18 @@ void ServiceRequest::set_allocated_topic_demux_list(::ubii::devices::TopicDemuxL
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.topic_demux_list)
 }
 void ServiceRequest::clear_topic_demux_list() {
-  if (has_topic_demux_list()) {
+  if (_internal_has_topic_demux_list()) {
     delete type_.topic_demux_list_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_client_list(::ubii::clients::ClientList* client_list) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (client_list) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      client_list = ::google::protobuf::internal::GetOwnedMessage(
+      client_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, client_list, submessage_arena);
     }
     set_has_client_list();
@@ -514,18 +553,18 @@ void ServiceRequest::set_allocated_client_list(::ubii::clients::ClientList* clie
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.client_list)
 }
 void ServiceRequest::clear_client_list() {
-  if (has_client_list()) {
+  if (_internal_has_client_list()) {
     delete type_.client_list_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_device_list(::ubii::devices::DeviceList* device_list) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (device_list) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      device_list = ::google::protobuf::internal::GetOwnedMessage(
+      device_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, device_list, submessage_arena);
     }
     set_has_device_list();
@@ -534,18 +573,18 @@ void ServiceRequest::set_allocated_device_list(::ubii::devices::DeviceList* devi
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.device_list)
 }
 void ServiceRequest::clear_device_list() {
-  if (has_device_list()) {
+  if (_internal_has_device_list()) {
     delete type_.device_list_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_lockstep_processing_request(::ubii::processing::LockstepProcessingRequest* lockstep_processing_request) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (lockstep_processing_request) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      lockstep_processing_request = ::google::protobuf::internal::GetOwnedMessage(
+      lockstep_processing_request = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, lockstep_processing_request, submessage_arena);
     }
     set_has_lockstep_processing_request();
@@ -554,18 +593,18 @@ void ServiceRequest::set_allocated_lockstep_processing_request(::ubii::processin
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.lockstep_processing_request)
 }
 void ServiceRequest::clear_lockstep_processing_request() {
-  if (has_lockstep_processing_request()) {
+  if (_internal_has_lockstep_processing_request()) {
     delete type_.lockstep_processing_request_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_component(::ubii::devices::Component* component) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (component) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      component = ::google::protobuf::internal::GetOwnedMessage(
+      component = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, component, submessage_arena);
     }
     set_has_component();
@@ -574,18 +613,18 @@ void ServiceRequest::set_allocated_component(::ubii::devices::Component* compone
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.component)
 }
 void ServiceRequest::clear_component() {
-  if (has_component()) {
+  if (_internal_has_component()) {
     delete type_.component_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_component_list(::ubii::devices::ComponentList* component_list) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (component_list) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      component_list = ::google::protobuf::internal::GetOwnedMessage(
+      component_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, component_list, submessage_arena);
     }
     set_has_component_list();
@@ -594,18 +633,18 @@ void ServiceRequest::set_allocated_component_list(::ubii::devices::ComponentList
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.component_list)
 }
 void ServiceRequest::clear_component_list() {
-  if (has_component_list()) {
+  if (_internal_has_component_list()) {
     delete type_.component_list_;
     clear_has_type();
   }
 }
 void ServiceRequest::set_allocated_notify_condition(::ubii::conditions::NotifyCondition* notify_condition) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (notify_condition) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      notify_condition = ::google::protobuf::internal::GetOwnedMessage(
+      notify_condition = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, notify_condition, submessage_arena);
     }
     set_has_notify_condition();
@@ -614,115 +653,92 @@ void ServiceRequest::set_allocated_notify_condition(::ubii::conditions::NotifyCo
   // @@protoc_insertion_point(field_set_allocated:ubii.services.ServiceRequest.notify_condition)
 }
 void ServiceRequest::clear_notify_condition() {
-  if (has_notify_condition()) {
+  if (_internal_has_notify_condition()) {
     delete type_.notify_condition_;
     clear_has_type();
   }
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ServiceRequest::kTopicFieldNumber;
-const int ServiceRequest::kClientFieldNumber;
-const int ServiceRequest::kDeviceFieldNumber;
-const int ServiceRequest::kTopicSubscriptionFieldNumber;
-const int ServiceRequest::kSessionFieldNumber;
-const int ServiceRequest::kSessionListFieldNumber;
-const int ServiceRequest::kProcessingModuleFieldNumber;
-const int ServiceRequest::kProcessingModuleListFieldNumber;
-const int ServiceRequest::kTopicMuxFieldNumber;
-const int ServiceRequest::kTopicMuxListFieldNumber;
-const int ServiceRequest::kTopicDemuxFieldNumber;
-const int ServiceRequest::kTopicDemuxListFieldNumber;
-const int ServiceRequest::kClientListFieldNumber;
-const int ServiceRequest::kDeviceListFieldNumber;
-const int ServiceRequest::kLockstepProcessingRequestFieldNumber;
-const int ServiceRequest::kComponentFieldNumber;
-const int ServiceRequest::kComponentListFieldNumber;
-const int ServiceRequest::kNotifyConditionFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 ServiceRequest::ServiceRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2fservices_2fserviceRequest_2eproto::scc_info_ServiceRequest.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.services.ServiceRequest)
 }
 ServiceRequest::ServiceRequest(const ServiceRequest& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.topic().size() > 0) {
-    topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
+  topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_topic().empty()) {
+    topic_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.topic_);
   }
   clear_has_type();
   switch (from.type_case()) {
     case kClient: {
-      mutable_client()->::ubii::clients::Client::MergeFrom(from.client());
+      _internal_mutable_client()->::ubii::clients::Client::MergeFrom(from._internal_client());
       break;
     }
     case kDevice: {
-      mutable_device()->::ubii::devices::Device::MergeFrom(from.device());
+      _internal_mutable_device()->::ubii::devices::Device::MergeFrom(from._internal_device());
       break;
     }
     case kTopicSubscription: {
-      mutable_topic_subscription()->::ubii::services::request::TopicSubscription::MergeFrom(from.topic_subscription());
+      _internal_mutable_topic_subscription()->::ubii::services::request::TopicSubscription::MergeFrom(from._internal_topic_subscription());
       break;
     }
     case kSession: {
-      mutable_session()->::ubii::sessions::Session::MergeFrom(from.session());
+      _internal_mutable_session()->::ubii::sessions::Session::MergeFrom(from._internal_session());
       break;
     }
     case kSessionList: {
-      mutable_session_list()->::ubii::sessions::SessionList::MergeFrom(from.session_list());
+      _internal_mutable_session_list()->::ubii::sessions::SessionList::MergeFrom(from._internal_session_list());
       break;
     }
     case kProcessingModule: {
-      mutable_processing_module()->::ubii::processing::ProcessingModule::MergeFrom(from.processing_module());
+      _internal_mutable_processing_module()->::ubii::processing::ProcessingModule::MergeFrom(from._internal_processing_module());
       break;
     }
     case kProcessingModuleList: {
-      mutable_processing_module_list()->::ubii::processing::ProcessingModuleList::MergeFrom(from.processing_module_list());
+      _internal_mutable_processing_module_list()->::ubii::processing::ProcessingModuleList::MergeFrom(from._internal_processing_module_list());
       break;
     }
     case kTopicMux: {
-      mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from.topic_mux());
+      _internal_mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from._internal_topic_mux());
       break;
     }
     case kTopicMuxList: {
-      mutable_topic_mux_list()->::ubii::devices::TopicMuxList::MergeFrom(from.topic_mux_list());
+      _internal_mutable_topic_mux_list()->::ubii::devices::TopicMuxList::MergeFrom(from._internal_topic_mux_list());
       break;
     }
     case kTopicDemux: {
-      mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from.topic_demux());
+      _internal_mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from._internal_topic_demux());
       break;
     }
     case kTopicDemuxList: {
-      mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from.topic_demux_list());
+      _internal_mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from._internal_topic_demux_list());
       break;
     }
     case kClientList: {
-      mutable_client_list()->::ubii::clients::ClientList::MergeFrom(from.client_list());
+      _internal_mutable_client_list()->::ubii::clients::ClientList::MergeFrom(from._internal_client_list());
       break;
     }
     case kDeviceList: {
-      mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from.device_list());
+      _internal_mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from._internal_device_list());
       break;
     }
     case kLockstepProcessingRequest: {
-      mutable_lockstep_processing_request()->::ubii::processing::LockstepProcessingRequest::MergeFrom(from.lockstep_processing_request());
+      _internal_mutable_lockstep_processing_request()->::ubii::processing::LockstepProcessingRequest::MergeFrom(from._internal_lockstep_processing_request());
       break;
     }
     case kComponent: {
-      mutable_component()->::ubii::devices::Component::MergeFrom(from.component());
+      _internal_mutable_component()->::ubii::devices::Component::MergeFrom(from._internal_component());
       break;
     }
     case kComponentList: {
-      mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from.component_list());
+      _internal_mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from._internal_component_list());
       break;
     }
     case kNotifyCondition: {
-      mutable_notify_condition()->::ubii::conditions::NotifyCondition::MergeFrom(from.notify_condition());
+      _internal_mutable_notify_condition()->::ubii::conditions::NotifyCondition::MergeFrom(from._internal_notify_condition());
       break;
     }
     case TYPE_NOT_SET: {
@@ -733,7 +749,8 @@ ServiceRequest::ServiceRequest(const ServiceRequest& from)
 }
 
 void ServiceRequest::SharedCtor() {
-  topic_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ServiceRequest_proto_2fservices_2fserviceRequest_2eproto.base);
+  topic_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   clear_has_type();
 }
 
@@ -743,7 +760,7 @@ ServiceRequest::~ServiceRequest() {
 }
 
 void ServiceRequest::SharedDtor() {
-  topic_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_type()) {
     clear_type();
   }
@@ -752,13 +769,8 @@ void ServiceRequest::SharedDtor() {
 void ServiceRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* ServiceRequest::descriptor() {
-  ::protobuf_proto_2fservices_2fserviceRequest_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fservices_2fserviceRequest_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const ServiceRequest& ServiceRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fservices_2fserviceRequest_2eproto::scc_info_ServiceRequest.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ServiceRequest_proto_2fservices_2fserviceRequest_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -844,530 +856,325 @@ void ServiceRequest::clear_type() {
 
 void ServiceRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.services.ServiceRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  topic_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  topic_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   clear_type();
   _internal_metadata_.Clear();
 }
 
-bool ServiceRequest::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.services.ServiceRequest)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* ServiceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // string topic = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_topic()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->topic().data(), static_cast<int>(this->topic().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.services.ServiceRequest.topic"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_topic();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.services.ServiceRequest.topic"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.clients.Client client = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_client()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_client(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.Device device = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_device()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_device(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.services.request.TopicSubscription topic_subscription = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_topic_subscription()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_topic_subscription(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.sessions.Session session = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_session()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_session(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.sessions.SessionList session_list = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_session_list()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_session_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.processing.ProcessingModule processing_module = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_processing_module()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_processing_module(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.processing.ProcessingModuleList processing_module_list = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_processing_module_list()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_processing_module_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.TopicMux topic_mux = 9;
-      case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_topic_mux()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_topic_mux(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.TopicMuxList topic_mux_list = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_topic_mux_list()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr = ctx->ParseMessage(_internal_mutable_topic_mux_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.TopicDemux topic_demux = 11;
-      case 11: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_topic_demux()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          ptr = ctx->ParseMessage(_internal_mutable_topic_demux(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.TopicDemuxList topic_demux_list = 12;
-      case 12: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_topic_demux_list()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          ptr = ctx->ParseMessage(_internal_mutable_topic_demux_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.clients.ClientList client_list = 13;
-      case 13: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_client_list()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          ptr = ctx->ParseMessage(_internal_mutable_client_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.DeviceList device_list = 14;
-      case 14: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_device_list()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
+          ptr = ctx->ParseMessage(_internal_mutable_device_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
-      case 15: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(122u /* 122 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_lockstep_processing_request()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+          ptr = ctx->ParseMessage(_internal_mutable_lockstep_processing_request(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.Component component = 16;
-      case 16: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_component()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          ptr = ctx->ParseMessage(_internal_mutable_component(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.ComponentList component_list = 17;
-      case 17: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(138u /* 138 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_component_list()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+          ptr = ctx->ParseMessage(_internal_mutable_component_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.conditions.NotifyCondition notify_condition = 18;
-      case 18: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_notify_condition()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
+          ptr = ctx->ParseMessage(_internal_mutable_notify_condition(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.services.ServiceRequest)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.services.ServiceRequest)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void ServiceRequest::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.services.ServiceRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string topic = 1;
-  if (this->topic().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->topic().data(), static_cast<int>(this->topic().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.services.ServiceRequest.topic");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->topic(), output);
-  }
-
-  // .ubii.clients.Client client = 2;
-  if (has_client()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_client(), output);
-  }
-
-  // .ubii.devices.Device device = 3;
-  if (has_device()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_device(), output);
-  }
-
-  // .ubii.services.request.TopicSubscription topic_subscription = 4;
-  if (has_topic_subscription()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->_internal_topic_subscription(), output);
-  }
-
-  // .ubii.sessions.Session session = 5;
-  if (has_session()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->_internal_session(), output);
-  }
-
-  // .ubii.sessions.SessionList session_list = 6;
-  if (has_session_list()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->_internal_session_list(), output);
-  }
-
-  // .ubii.processing.ProcessingModule processing_module = 7;
-  if (has_processing_module()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->_internal_processing_module(), output);
-  }
-
-  // .ubii.processing.ProcessingModuleList processing_module_list = 8;
-  if (has_processing_module_list()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->_internal_processing_module_list(), output);
-  }
-
-  // .ubii.devices.TopicMux topic_mux = 9;
-  if (has_topic_mux()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      9, this->_internal_topic_mux(), output);
-  }
-
-  // .ubii.devices.TopicMuxList topic_mux_list = 10;
-  if (has_topic_mux_list()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      10, this->_internal_topic_mux_list(), output);
-  }
-
-  // .ubii.devices.TopicDemux topic_demux = 11;
-  if (has_topic_demux()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      11, this->_internal_topic_demux(), output);
-  }
-
-  // .ubii.devices.TopicDemuxList topic_demux_list = 12;
-  if (has_topic_demux_list()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      12, this->_internal_topic_demux_list(), output);
-  }
-
-  // .ubii.clients.ClientList client_list = 13;
-  if (has_client_list()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      13, this->_internal_client_list(), output);
-  }
-
-  // .ubii.devices.DeviceList device_list = 14;
-  if (has_device_list()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      14, this->_internal_device_list(), output);
-  }
-
-  // .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
-  if (has_lockstep_processing_request()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      15, this->_internal_lockstep_processing_request(), output);
-  }
-
-  // .ubii.devices.Component component = 16;
-  if (has_component()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      16, this->_internal_component(), output);
-  }
-
-  // .ubii.devices.ComponentList component_list = 17;
-  if (has_component_list()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      17, this->_internal_component_list(), output);
-  }
-
-  // .ubii.conditions.NotifyCondition notify_condition = 18;
-  if (has_notify_condition()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      18, this->_internal_notify_condition(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.services.ServiceRequest)
-}
-
-::google::protobuf::uint8* ServiceRequest::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* ServiceRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.services.ServiceRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string topic = 1;
   if (this->topic().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->topic().data(), static_cast<int>(this->topic().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic().data(), static_cast<int>(this->_internal_topic().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.services.ServiceRequest.topic");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->topic(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic(), target);
   }
 
   // .ubii.clients.Client client = 2;
-  if (has_client()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_client(), deterministic, target);
+  if (_internal_has_client()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::client(this), target, stream);
   }
 
   // .ubii.devices.Device device = 3;
-  if (has_device()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->_internal_device(), deterministic, target);
+  if (_internal_has_device()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::device(this), target, stream);
   }
 
   // .ubii.services.request.TopicSubscription topic_subscription = 4;
-  if (has_topic_subscription()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->_internal_topic_subscription(), deterministic, target);
+  if (_internal_has_topic_subscription()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::topic_subscription(this), target, stream);
   }
 
   // .ubii.sessions.Session session = 5;
-  if (has_session()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->_internal_session(), deterministic, target);
+  if (_internal_has_session()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::session(this), target, stream);
   }
 
   // .ubii.sessions.SessionList session_list = 6;
-  if (has_session_list()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        6, this->_internal_session_list(), deterministic, target);
+  if (_internal_has_session_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::session_list(this), target, stream);
   }
 
   // .ubii.processing.ProcessingModule processing_module = 7;
-  if (has_processing_module()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        7, this->_internal_processing_module(), deterministic, target);
+  if (_internal_has_processing_module()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        7, _Internal::processing_module(this), target, stream);
   }
 
   // .ubii.processing.ProcessingModuleList processing_module_list = 8;
-  if (has_processing_module_list()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        8, this->_internal_processing_module_list(), deterministic, target);
+  if (_internal_has_processing_module_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        8, _Internal::processing_module_list(this), target, stream);
   }
 
   // .ubii.devices.TopicMux topic_mux = 9;
-  if (has_topic_mux()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        9, this->_internal_topic_mux(), deterministic, target);
+  if (_internal_has_topic_mux()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        9, _Internal::topic_mux(this), target, stream);
   }
 
   // .ubii.devices.TopicMuxList topic_mux_list = 10;
-  if (has_topic_mux_list()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        10, this->_internal_topic_mux_list(), deterministic, target);
+  if (_internal_has_topic_mux_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        10, _Internal::topic_mux_list(this), target, stream);
   }
 
   // .ubii.devices.TopicDemux topic_demux = 11;
-  if (has_topic_demux()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        11, this->_internal_topic_demux(), deterministic, target);
+  if (_internal_has_topic_demux()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        11, _Internal::topic_demux(this), target, stream);
   }
 
   // .ubii.devices.TopicDemuxList topic_demux_list = 12;
-  if (has_topic_demux_list()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        12, this->_internal_topic_demux_list(), deterministic, target);
+  if (_internal_has_topic_demux_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        12, _Internal::topic_demux_list(this), target, stream);
   }
 
   // .ubii.clients.ClientList client_list = 13;
-  if (has_client_list()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        13, this->_internal_client_list(), deterministic, target);
+  if (_internal_has_client_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        13, _Internal::client_list(this), target, stream);
   }
 
   // .ubii.devices.DeviceList device_list = 14;
-  if (has_device_list()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        14, this->_internal_device_list(), deterministic, target);
+  if (_internal_has_device_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        14, _Internal::device_list(this), target, stream);
   }
 
   // .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
-  if (has_lockstep_processing_request()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        15, this->_internal_lockstep_processing_request(), deterministic, target);
+  if (_internal_has_lockstep_processing_request()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        15, _Internal::lockstep_processing_request(this), target, stream);
   }
 
   // .ubii.devices.Component component = 16;
-  if (has_component()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        16, this->_internal_component(), deterministic, target);
+  if (_internal_has_component()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        16, _Internal::component(this), target, stream);
   }
 
   // .ubii.devices.ComponentList component_list = 17;
-  if (has_component_list()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        17, this->_internal_component_list(), deterministic, target);
+  if (_internal_has_component_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        17, _Internal::component_list(this), target, stream);
   }
 
   // .ubii.conditions.NotifyCondition notify_condition = 18;
-  if (has_notify_condition()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        18, this->_internal_notify_condition(), deterministic, target);
+  if (_internal_has_notify_condition()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        18, _Internal::notify_condition(this), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.services.ServiceRequest)
   return target;
@@ -1377,135 +1184,134 @@ size_t ServiceRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.services.ServiceRequest)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string topic = 1;
   if (this->topic().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->topic());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic());
   }
 
   switch (type_case()) {
     // .ubii.clients.Client client = 2;
     case kClient: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.client_);
       break;
     }
     // .ubii.devices.Device device = 3;
     case kDevice: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.device_);
       break;
     }
     // .ubii.services.request.TopicSubscription topic_subscription = 4;
     case kTopicSubscription: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.topic_subscription_);
       break;
     }
     // .ubii.sessions.Session session = 5;
     case kSession: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.session_);
       break;
     }
     // .ubii.sessions.SessionList session_list = 6;
     case kSessionList: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.session_list_);
       break;
     }
     // .ubii.processing.ProcessingModule processing_module = 7;
     case kProcessingModule: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.processing_module_);
       break;
     }
     // .ubii.processing.ProcessingModuleList processing_module_list = 8;
     case kProcessingModuleList: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.processing_module_list_);
       break;
     }
     // .ubii.devices.TopicMux topic_mux = 9;
     case kTopicMux: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.topic_mux_);
       break;
     }
     // .ubii.devices.TopicMuxList topic_mux_list = 10;
     case kTopicMuxList: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.topic_mux_list_);
       break;
     }
     // .ubii.devices.TopicDemux topic_demux = 11;
     case kTopicDemux: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.topic_demux_);
       break;
     }
     // .ubii.devices.TopicDemuxList topic_demux_list = 12;
     case kTopicDemuxList: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.topic_demux_list_);
       break;
     }
     // .ubii.clients.ClientList client_list = 13;
     case kClientList: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.client_list_);
       break;
     }
     // .ubii.devices.DeviceList device_list = 14;
     case kDeviceList: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.device_list_);
       break;
     }
     // .ubii.processing.LockstepProcessingRequest lockstep_processing_request = 15;
     case kLockstepProcessingRequest: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.lockstep_processing_request_);
       break;
     }
     // .ubii.devices.Component component = 16;
     case kComponent: {
       total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.component_);
       break;
     }
     // .ubii.devices.ComponentList component_list = 17;
     case kComponentList: {
       total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.component_list_);
       break;
     }
     // .ubii.conditions.NotifyCondition notify_condition = 18;
     case kNotifyCondition: {
       total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.notify_condition_);
       break;
     }
@@ -1513,20 +1319,24 @@ size_t ServiceRequest::ByteSizeLong() const {
       break;
     }
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void ServiceRequest::MergeFrom(const ::google::protobuf::Message& from) {
+void ServiceRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.services.ServiceRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const ServiceRequest* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ServiceRequest>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServiceRequest>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.services.ServiceRequest)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.services.ServiceRequest)
     MergeFrom(*source);
@@ -1537,80 +1347,80 @@ void ServiceRequest::MergeFrom(const ServiceRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.services.ServiceRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.topic().size() > 0) {
 
-    topic_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.topic_);
+    topic_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.topic_);
   }
   switch (from.type_case()) {
     case kClient: {
-      mutable_client()->::ubii::clients::Client::MergeFrom(from.client());
+      _internal_mutable_client()->::ubii::clients::Client::MergeFrom(from._internal_client());
       break;
     }
     case kDevice: {
-      mutable_device()->::ubii::devices::Device::MergeFrom(from.device());
+      _internal_mutable_device()->::ubii::devices::Device::MergeFrom(from._internal_device());
       break;
     }
     case kTopicSubscription: {
-      mutable_topic_subscription()->::ubii::services::request::TopicSubscription::MergeFrom(from.topic_subscription());
+      _internal_mutable_topic_subscription()->::ubii::services::request::TopicSubscription::MergeFrom(from._internal_topic_subscription());
       break;
     }
     case kSession: {
-      mutable_session()->::ubii::sessions::Session::MergeFrom(from.session());
+      _internal_mutable_session()->::ubii::sessions::Session::MergeFrom(from._internal_session());
       break;
     }
     case kSessionList: {
-      mutable_session_list()->::ubii::sessions::SessionList::MergeFrom(from.session_list());
+      _internal_mutable_session_list()->::ubii::sessions::SessionList::MergeFrom(from._internal_session_list());
       break;
     }
     case kProcessingModule: {
-      mutable_processing_module()->::ubii::processing::ProcessingModule::MergeFrom(from.processing_module());
+      _internal_mutable_processing_module()->::ubii::processing::ProcessingModule::MergeFrom(from._internal_processing_module());
       break;
     }
     case kProcessingModuleList: {
-      mutable_processing_module_list()->::ubii::processing::ProcessingModuleList::MergeFrom(from.processing_module_list());
+      _internal_mutable_processing_module_list()->::ubii::processing::ProcessingModuleList::MergeFrom(from._internal_processing_module_list());
       break;
     }
     case kTopicMux: {
-      mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from.topic_mux());
+      _internal_mutable_topic_mux()->::ubii::devices::TopicMux::MergeFrom(from._internal_topic_mux());
       break;
     }
     case kTopicMuxList: {
-      mutable_topic_mux_list()->::ubii::devices::TopicMuxList::MergeFrom(from.topic_mux_list());
+      _internal_mutable_topic_mux_list()->::ubii::devices::TopicMuxList::MergeFrom(from._internal_topic_mux_list());
       break;
     }
     case kTopicDemux: {
-      mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from.topic_demux());
+      _internal_mutable_topic_demux()->::ubii::devices::TopicDemux::MergeFrom(from._internal_topic_demux());
       break;
     }
     case kTopicDemuxList: {
-      mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from.topic_demux_list());
+      _internal_mutable_topic_demux_list()->::ubii::devices::TopicDemuxList::MergeFrom(from._internal_topic_demux_list());
       break;
     }
     case kClientList: {
-      mutable_client_list()->::ubii::clients::ClientList::MergeFrom(from.client_list());
+      _internal_mutable_client_list()->::ubii::clients::ClientList::MergeFrom(from._internal_client_list());
       break;
     }
     case kDeviceList: {
-      mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from.device_list());
+      _internal_mutable_device_list()->::ubii::devices::DeviceList::MergeFrom(from._internal_device_list());
       break;
     }
     case kLockstepProcessingRequest: {
-      mutable_lockstep_processing_request()->::ubii::processing::LockstepProcessingRequest::MergeFrom(from.lockstep_processing_request());
+      _internal_mutable_lockstep_processing_request()->::ubii::processing::LockstepProcessingRequest::MergeFrom(from._internal_lockstep_processing_request());
       break;
     }
     case kComponent: {
-      mutable_component()->::ubii::devices::Component::MergeFrom(from.component());
+      _internal_mutable_component()->::ubii::devices::Component::MergeFrom(from._internal_component());
       break;
     }
     case kComponentList: {
-      mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from.component_list());
+      _internal_mutable_component_list()->::ubii::devices::ComponentList::MergeFrom(from._internal_component_list());
       break;
     }
     case kNotifyCondition: {
-      mutable_notify_condition()->::ubii::conditions::NotifyCondition::MergeFrom(from.notify_condition());
+      _internal_mutable_notify_condition()->::ubii::conditions::NotifyCondition::MergeFrom(from._internal_notify_condition());
       break;
     }
     case TYPE_NOT_SET: {
@@ -1619,7 +1429,7 @@ void ServiceRequest::MergeFrom(const ServiceRequest& from) {
   }
 }
 
-void ServiceRequest::CopyFrom(const ::google::protobuf::Message& from) {
+void ServiceRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.services.ServiceRequest)
   if (&from == this) return;
   Clear();
@@ -1637,34 +1447,28 @@ bool ServiceRequest::IsInitialized() const {
   return true;
 }
 
-void ServiceRequest::Swap(ServiceRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ServiceRequest::InternalSwap(ServiceRequest* other) {
   using std::swap;
-  topic_.Swap(&other->topic_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  topic_.Swap(&other->topic_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata ServiceRequest::GetMetadata() const {
-  protobuf_proto_2fservices_2fserviceRequest_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fservices_2fserviceRequest_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata ServiceRequest::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace services
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::services::ServiceRequest* Arena::CreateMaybeMessage< ::ubii::services::ServiceRequest >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::services::ServiceRequest* Arena::CreateMaybeMessage< ::ubii::services::ServiceRequest >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::services::ServiceRequest >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

@@ -5,163 +5,127 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_proto_2fdataStructure_2ftouchEvent_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdataStructure_2ftouchEvent_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TouchEvent;
-}  // namespace protobuf_proto_2fdataStructure_2ftouchEvent_2eproto
-namespace protobuf_proto_2fdataStructure_2fvector2_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdataStructure_2fvector2_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Vector2;
-}  // namespace protobuf_proto_2fdataStructure_2fvector2_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdataStructure_2ftouchEvent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdataStructure_2fvector2_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector2_proto_2fdataStructure_2fvector2_2eproto;
 namespace ubii {
 namespace dataStructure {
 class TouchEventDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TouchEvent>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TouchEvent> _instance;
 } _TouchEvent_default_instance_;
 class TouchEventListDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TouchEventList>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TouchEventList> _instance;
 } _TouchEventList_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
-namespace protobuf_proto_2fdataStructure_2ftouchEvent_2eproto {
-static void InitDefaultsTouchEvent() {
+static void InitDefaultsscc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::dataStructure::_TouchEvent_default_instance_;
     new (ptr) ::ubii::dataStructure::TouchEvent();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::dataStructure::TouchEvent::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_TouchEvent =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTouchEvent}, {
-      &protobuf_proto_2fdataStructure_2fvector2_2eproto::scc_info_Vector2.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto}, {
+      &scc_info_Vector2_proto_2fdataStructure_2fvector2_2eproto.base,}};
 
-static void InitDefaultsTouchEventList() {
+static void InitDefaultsscc_info_TouchEventList_proto_2fdataStructure_2ftouchEvent_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::dataStructure::_TouchEventList_default_instance_;
     new (ptr) ::ubii::dataStructure::TouchEventList();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::dataStructure::TouchEventList::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_TouchEventList =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTouchEventList}, {
-      &protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::scc_info_TouchEvent.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TouchEventList_proto_2fdataStructure_2ftouchEvent_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_TouchEventList_proto_2fdataStructure_2ftouchEvent_2eproto}, {
+      &scc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_TouchEvent.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TouchEventList.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fdataStructure_2ftouchEvent_2eproto[2];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_proto_2fdataStructure_2ftouchEvent_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fdataStructure_2ftouchEvent_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[2];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fdataStructure_2ftouchEvent_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, position_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, force_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, type_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, position_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, id_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::TouchEvent, force_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::TouchEventList, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::TouchEventList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::TouchEventList, elements_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::TouchEventList, elements_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::TouchEvent)},
   { 9, -1, sizeof(::ubii::dataStructure::TouchEventList)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::dataStructure::_TouchEvent_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::dataStructure::_TouchEventList_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::dataStructure::_TouchEvent_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::dataStructure::_TouchEventList_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/dataStructure/touchEvent.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-}
+const char descriptor_table_protodef_proto_2fdataStructure_2ftouchEvent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n$proto/dataStructure/touchEvent.proto\022\022"
+  "ubii.dataStructure\032)proto/dataStructure/"
+  "buttonEventType.proto\032!proto/dataStructu"
+  "re/vector2.proto\"\325\001\n\nTouchEvent\022;\n\004type\030"
+  "\001 \001(\0162-.ubii.dataStructure.TouchEvent.To"
+  "uchEventType\022-\n\010position\030\002 \001(\0132\033.ubii.da"
+  "taStructure.Vector2\022\n\n\002id\030\003 \001(\t\022\r\n\005force"
+  "\030\004 \001(\002\"@\n\016TouchEventType\022\017\n\013TOUCH_START\020"
+  "\000\022\016\n\nTOUCH_MOVE\020\001\022\r\n\tTOUCH_END\020\002\"B\n\016Touc"
+  "hEventList\0220\n\010elements\030\001 \003(\0132\036.ubii.data"
+  "Structure.TouchEventb\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_deps[2] = {
+  &::descriptor_table_proto_2fdataStructure_2fbuttonEventType_2eproto,
+  &::descriptor_table_proto_2fdataStructure_2fvector2_2eproto,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_sccs[2] = {
+  &scc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto.base,
+  &scc_info_TouchEventList_proto_2fdataStructure_2ftouchEvent_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_once;
+static bool descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto = {
+  &descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_initialized, descriptor_table_protodef_proto_2fdataStructure_2ftouchEvent_2eproto, "proto/dataStructure/touchEvent.proto", 428,
+  &descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_once, descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_sccs, descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto_deps, 2, 2,
+  schemas, file_default_instances, TableStruct_proto_2fdataStructure_2ftouchEvent_2eproto::offsets,
+  file_level_metadata_proto_2fdataStructure_2ftouchEvent_2eproto, 2, file_level_enum_descriptors_proto_2fdataStructure_2ftouchEvent_2eproto, file_level_service_descriptors_proto_2fdataStructure_2ftouchEvent_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n$proto/dataStructure/touchEvent.proto\022\022"
-      "ubii.dataStructure\032)proto/dataStructure/"
-      "buttonEventType.proto\032!proto/dataStructu"
-      "re/vector2.proto\"\325\001\n\nTouchEvent\022;\n\004type\030"
-      "\001 \001(\0162-.ubii.dataStructure.TouchEvent.To"
-      "uchEventType\022-\n\010position\030\002 \001(\0132\033.ubii.da"
-      "taStructure.Vector2\022\n\n\002id\030\003 \001(\t\022\r\n\005force"
-      "\030\004 \001(\002\"@\n\016TouchEventType\022\017\n\013TOUCH_START\020"
-      "\000\022\016\n\nTOUCH_MOVE\020\001\022\r\n\tTOUCH_END\020\002\"B\n\016Touc"
-      "hEventList\0220\n\010elements\030\001 \003(\0132\036.ubii.data"
-      "Structure.TouchEventb\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 428);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/dataStructure/touchEvent.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2fdataStructure_2fbuttonEventType_2eproto::AddDescriptors();
-  ::protobuf_proto_2fdataStructure_2fvector2_2eproto::AddDescriptors();
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2fdataStructure_2ftouchEvent_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2fdataStructure_2ftouchEvent_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto), true);
 namespace ubii {
 namespace dataStructure {
-const ::google::protobuf::EnumDescriptor* TouchEvent_TouchEventType_descriptor() {
-  protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::file_level_enum_descriptors[0];
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TouchEvent_TouchEventType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_proto_2fdataStructure_2ftouchEvent_2eproto);
+  return file_level_enum_descriptors_proto_2fdataStructure_2ftouchEvent_2eproto[0];
 }
 bool TouchEvent_TouchEventType_IsValid(int value) {
   switch (value) {
@@ -174,14 +138,14 @@ bool TouchEvent_TouchEventType_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const TouchEvent_TouchEventType TouchEvent::TOUCH_START;
-const TouchEvent_TouchEventType TouchEvent::TOUCH_MOVE;
-const TouchEvent_TouchEventType TouchEvent::TOUCH_END;
-const TouchEvent_TouchEventType TouchEvent::TouchEventType_MIN;
-const TouchEvent_TouchEventType TouchEvent::TouchEventType_MAX;
-const int TouchEvent::TouchEventType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr TouchEvent_TouchEventType TouchEvent::TOUCH_START;
+constexpr TouchEvent_TouchEventType TouchEvent::TOUCH_MOVE;
+constexpr TouchEvent_TouchEventType TouchEvent::TOUCH_END;
+constexpr TouchEvent_TouchEventType TouchEvent::TouchEventType_MIN;
+constexpr TouchEvent_TouchEventType TouchEvent::TouchEventType_MAX;
+constexpr int TouchEvent::TouchEventType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
@@ -189,38 +153,38 @@ void TouchEvent::InitAsDefaultInstance() {
   ::ubii::dataStructure::_TouchEvent_default_instance_._instance.get_mutable()->position_ = const_cast< ::ubii::dataStructure::Vector2*>(
       ::ubii::dataStructure::Vector2::internal_default_instance());
 }
+class TouchEvent::_Internal {
+ public:
+  static const ::ubii::dataStructure::Vector2& position(const TouchEvent* msg);
+};
+
+const ::ubii::dataStructure::Vector2&
+TouchEvent::_Internal::position(const TouchEvent* msg) {
+  return *msg->position_;
+}
 void TouchEvent::clear_position() {
-  if (GetArenaNoVirtual() == NULL && position_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
-  position_ = NULL;
+  position_ = nullptr;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TouchEvent::kTypeFieldNumber;
-const int TouchEvent::kPositionFieldNumber;
-const int TouchEvent::kIdFieldNumber;
-const int TouchEvent::kForceFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 TouchEvent::TouchEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::scc_info_TouchEvent.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.dataStructure.TouchEvent)
 }
 TouchEvent::TouchEvent(const TouchEvent& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.id().size() > 0) {
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
-  if (from.has_position()) {
+  if (from._internal_has_position()) {
     position_ = new ::ubii::dataStructure::Vector2(*from.position_);
   } else {
-    position_ = NULL;
+    position_ = nullptr;
   }
   ::memcpy(&type_, &from.type_,
     static_cast<size_t>(reinterpret_cast<char*>(&force_) -
@@ -229,7 +193,8 @@ TouchEvent::TouchEvent(const TouchEvent& from)
 }
 
 void TouchEvent::SharedCtor() {
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto.base);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&position_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&force_) -
       reinterpret_cast<char*>(&position_)) + sizeof(force_));
@@ -241,207 +206,134 @@ TouchEvent::~TouchEvent() {
 }
 
 void TouchEvent::SharedDtor() {
-  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete position_;
 }
 
 void TouchEvent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TouchEvent::descriptor() {
-  ::protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TouchEvent& TouchEvent::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::scc_info_TouchEvent.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TouchEvent_proto_2fdataStructure_2ftouchEvent_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TouchEvent::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.dataStructure.TouchEvent)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && position_ != NULL) {
+  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
-  position_ = NULL;
+  position_ = nullptr;
   ::memset(&type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&force_) -
       reinterpret_cast<char*>(&type_)) + sizeof(force_));
   _internal_metadata_.Clear();
 }
 
-bool TouchEvent::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.dataStructure.TouchEvent)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TouchEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_type(static_cast< ::ubii::dataStructure::TouchEvent_TouchEventType >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::ubii::dataStructure::TouchEvent_TouchEventType>(val));
+        } else goto handle_unusual;
+        continue;
       // .ubii.dataStructure.Vector2 position = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_position()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_position(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string id = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->id().data(), static_cast<int>(this->id().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.dataStructure.TouchEvent.id"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.dataStructure.TouchEvent.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float force = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &force_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          force_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.dataStructure.TouchEvent)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.dataStructure.TouchEvent)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TouchEvent::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.dataStructure.TouchEvent)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
-  if (this->type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->type(), output);
-  }
-
-  // .ubii.dataStructure.Vector2 position = 2;
-  if (this->has_position()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_position(), output);
-  }
-
-  // string id = 3;
-  if (this->id().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.dataStructure.TouchEvent.id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->id(), output);
-  }
-
-  // float force = 4;
-  if (this->force() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->force(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.dataStructure.TouchEvent)
-}
-
-::google::protobuf::uint8* TouchEvent::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TouchEvent::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.dataStructure.TouchEvent)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
   if (this->type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->type(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_type(), target);
   }
 
   // .ubii.dataStructure.Vector2 position = 2;
   if (this->has_position()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_position(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::position(this), target, stream);
   }
 
   // string id = 3;
   if (this->id().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.dataStructure.TouchEvent.id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->id(), target);
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_id(), target);
   }
 
   // float force = 4;
-  if (this->force() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->force(), target);
+  if (!(this->force() <= 0 && this->force() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_force(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.TouchEvent)
   return target;
@@ -451,50 +343,53 @@ size_t TouchEvent::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.dataStructure.TouchEvent)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string id = 3;
   if (this->id().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
   }
 
   // .ubii.dataStructure.Vector2 position = 2;
   if (this->has_position()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *position_);
   }
 
   // .ubii.dataStructure.TouchEvent.TouchEventType type = 1;
   if (this->type() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // float force = 4;
-  if (this->force() != 0) {
+  if (!(this->force() <= 0 && this->force() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TouchEvent::MergeFrom(const ::google::protobuf::Message& from) {
+void TouchEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.dataStructure.TouchEvent)
   GOOGLE_DCHECK_NE(&from, this);
   const TouchEvent* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TouchEvent>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TouchEvent>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.dataStructure.TouchEvent)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.dataStructure.TouchEvent)
     MergeFrom(*source);
@@ -505,25 +400,25 @@ void TouchEvent::MergeFrom(const TouchEvent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.TouchEvent)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.id().size() > 0) {
 
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
   if (from.has_position()) {
-    mutable_position()->::ubii::dataStructure::Vector2::MergeFrom(from.position());
+    _internal_mutable_position()->::ubii::dataStructure::Vector2::MergeFrom(from._internal_position());
   }
   if (from.type() != 0) {
-    set_type(from.type());
+    _internal_set_type(from._internal_type());
   }
-  if (from.force() != 0) {
-    set_force(from.force());
+  if (!(from.force() <= 0 && from.force() >= 0)) {
+    _internal_set_force(from._internal_force());
   }
 }
 
-void TouchEvent::CopyFrom(const ::google::protobuf::Message& from) {
+void TouchEvent::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.dataStructure.TouchEvent)
   if (&from == this) return;
   Clear();
@@ -541,23 +436,18 @@ bool TouchEvent::IsInitialized() const {
   return true;
 }
 
-void TouchEvent::Swap(TouchEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TouchEvent::InternalSwap(TouchEvent* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(position_, other->position_);
   swap(type_, other->type_);
   swap(force_, other->force_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata TouchEvent::GetMetadata() const {
-  protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TouchEvent::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -565,26 +455,25 @@ void TouchEvent::InternalSwap(TouchEvent* other) {
 
 void TouchEventList::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TouchEventList::kElementsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TouchEventList::_Internal {
+ public:
+};
 
 TouchEventList::TouchEventList()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::scc_info_TouchEventList.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.dataStructure.TouchEventList)
 }
 TouchEventList::TouchEventList(const TouchEventList& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       elements_(from.elements_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.dataStructure.TouchEventList)
 }
 
 void TouchEventList::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TouchEventList_proto_2fdataStructure_2ftouchEvent_2eproto.base);
 }
 
 TouchEventList::~TouchEventList() {
@@ -598,20 +487,15 @@ void TouchEventList::SharedDtor() {
 void TouchEventList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TouchEventList::descriptor() {
-  ::protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TouchEventList& TouchEventList::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::scc_info_TouchEventList.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TouchEventList_proto_2fdataStructure_2ftouchEvent_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TouchEventList::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.dataStructure.TouchEventList)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -619,88 +503,62 @@ void TouchEventList::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool TouchEventList::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.dataStructure.TouchEventList)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TouchEventList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // repeated .ubii.dataStructure.TouchEvent elements = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_elements()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_elements(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.dataStructure.TouchEventList)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.dataStructure.TouchEventList)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TouchEventList::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.dataStructure.TouchEventList)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .ubii.dataStructure.TouchEvent elements = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->elements(static_cast<int>(i)),
-      output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.dataStructure.TouchEventList)
-}
-
-::google::protobuf::uint8* TouchEventList::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TouchEventList::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.dataStructure.TouchEventList)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .ubii.dataStructure.TouchEvent elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->elements(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_elements_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_elements(i), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.TouchEventList)
   return target;
@@ -710,36 +568,35 @@ size_t TouchEventList::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.dataStructure.TouchEventList)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .ubii.dataStructure.TouchEvent elements = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->elements_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->elements(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_elements_size();
+  for (const auto& msg : this->elements_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TouchEventList::MergeFrom(const ::google::protobuf::Message& from) {
+void TouchEventList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.dataStructure.TouchEventList)
   GOOGLE_DCHECK_NE(&from, this);
   const TouchEventList* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TouchEventList>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TouchEventList>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.dataStructure.TouchEventList)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.dataStructure.TouchEventList)
     MergeFrom(*source);
@@ -750,13 +607,13 @@ void TouchEventList::MergeFrom(const TouchEventList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.TouchEventList)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   elements_.MergeFrom(from.elements_);
 }
 
-void TouchEventList::CopyFrom(const ::google::protobuf::Message& from) {
+void TouchEventList::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.dataStructure.TouchEventList)
   if (&from == this) return;
   Clear();
@@ -774,34 +631,28 @@ bool TouchEventList::IsInitialized() const {
   return true;
 }
 
-void TouchEventList::Swap(TouchEventList* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TouchEventList::InternalSwap(TouchEventList* other) {
   using std::swap;
-  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  elements_.InternalSwap(&other->elements_);
 }
 
-::google::protobuf::Metadata TouchEventList::GetMetadata() const {
-  protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2ftouchEvent_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TouchEventList::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dataStructure
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::dataStructure::TouchEvent* Arena::CreateMaybeMessage< ::ubii::dataStructure::TouchEvent >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::dataStructure::TouchEvent* Arena::CreateMaybeMessage< ::ubii::dataStructure::TouchEvent >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::dataStructure::TouchEvent >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::dataStructure::TouchEventList* Arena::CreateMaybeMessage< ::ubii::dataStructure::TouchEventList >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::ubii::dataStructure::TouchEventList* Arena::CreateMaybeMessage< ::ubii::dataStructure::TouchEventList >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::dataStructure::TouchEventList >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

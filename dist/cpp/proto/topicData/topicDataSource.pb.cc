@@ -5,165 +5,128 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_proto_2fdevices_2fcomponent_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdevices_2fcomponent_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Component;
-}  // namespace protobuf_proto_2fdevices_2fcomponent_2eproto
-namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto ::google::protobuf::internal::SCCInfo<36> scc_info_TopicDataRecord;
-}  // namespace protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto
-namespace protobuf_proto_2ftopicData_2ftopicDataSource_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2ftopicData_2ftopicDataSource_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_TopicDataSource;
-}  // namespace protobuf_proto_2ftopicData_2ftopicDataSource_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdevices_2fcomponent_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Component_proto_2fdevices_2fcomponent_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataRecord_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<36> scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2ftopicData_2ftopicDataSource_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto;
 namespace ubii {
 namespace topicData {
 class TopicDataSourceDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TopicDataSource>
-      _instance;
-  ::google::protobuf::internal::ArenaStringPtr topic_;
-  ::google::protobuf::internal::ArenaStringPtr regex_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TopicDataSource> _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr regex_;
   const ::ubii::devices::Component* component_;
   const ::ubii::topicData::TopicDataRecord* static_record_;
 } _TopicDataSource_default_instance_;
 class TopicDataSourceListDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TopicDataSourceList>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TopicDataSourceList> _instance;
 } _TopicDataSourceList_default_instance_;
 }  // namespace topicData
 }  // namespace ubii
-namespace protobuf_proto_2ftopicData_2ftopicDataSource_2eproto {
-static void InitDefaultsTopicDataSource() {
+static void InitDefaultsscc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::topicData::_TopicDataSource_default_instance_;
     new (ptr) ::ubii::topicData::TopicDataSource();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::topicData::TopicDataSource::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_TopicDataSource =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsTopicDataSource}, {
-      &protobuf_proto_2fdevices_2fcomponent_2eproto::scc_info_Component.base,
-      &protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::scc_info_TopicDataRecord.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto}, {
+      &scc_info_Component_proto_2fdevices_2fcomponent_2eproto.base,
+      &scc_info_TopicDataRecord_proto_2ftopicData_2ftopicDataRecord_2eproto.base,}};
 
-static void InitDefaultsTopicDataSourceList() {
+static void InitDefaultsscc_info_TopicDataSourceList_proto_2ftopicData_2ftopicDataSource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::topicData::_TopicDataSourceList_default_instance_;
     new (ptr) ::ubii::topicData::TopicDataSourceList();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::topicData::TopicDataSourceList::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_TopicDataSourceList =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTopicDataSourceList}, {
-      &protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::scc_info_TopicDataSource.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TopicDataSourceList_proto_2ftopicData_2ftopicDataSource_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_TopicDataSourceList_proto_2ftopicData_2ftopicDataSource_2eproto}, {
+      &scc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_TopicDataSource.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TopicDataSourceList.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2ftopicData_2ftopicDataSource_2eproto[2];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2ftopicData_2ftopicDataSource_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2ftopicData_2ftopicDataSource_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[2];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2ftopicData_2ftopicDataSource_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataSource, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataSource, _internal_metadata_),
   ~0u,  // no _extensions_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataSource, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataSource, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   offsetof(::ubii::topicData::TopicDataSourceDefaultTypeInternal, topic_),
   offsetof(::ubii::topicData::TopicDataSourceDefaultTypeInternal, regex_),
   offsetof(::ubii::topicData::TopicDataSourceDefaultTypeInternal, component_),
   offsetof(::ubii::topicData::TopicDataSourceDefaultTypeInternal, static_record_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataSource, type_),
+  PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataSource, type_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataSourceList, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataSourceList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::topicData::TopicDataSourceList, elements_),
+  PROTOBUF_FIELD_OFFSET(::ubii::topicData::TopicDataSourceList, elements_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::topicData::TopicDataSource)},
   { 10, -1, sizeof(::ubii::topicData::TopicDataSourceList)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::topicData::_TopicDataSource_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::topicData::_TopicDataSourceList_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::topicData::_TopicDataSource_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::topicData::_TopicDataSourceList_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/topicData/topicDataSource.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_proto_2ftopicData_2ftopicDataSource_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n%proto/topicData/topicDataSource.proto\022"
+  "\016ubii.topicData\032\035proto/devices/component"
+  ".proto\032%proto/topicData/topicDataRecord."
+  "proto\"\243\001\n\017TopicDataSource\022\017\n\005topic\030\001 \001(\t"
+  "H\000\022\017\n\005regex\030\002 \001(\tH\000\022,\n\tcomponent\030\003 \001(\0132\027"
+  ".ubii.devices.ComponentH\000\0228\n\rstatic_reco"
+  "rd\030\004 \001(\0132\037.ubii.topicData.TopicDataRecor"
+  "dH\000B\006\n\004type\"H\n\023TopicDataSourceList\0221\n\010el"
+  "ements\030\001 \003(\0132\037.ubii.topicData.TopicDataS"
+  "ourceb\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_deps[2] = {
+  &::descriptor_table_proto_2fdevices_2fcomponent_2eproto,
+  &::descriptor_table_proto_2ftopicData_2ftopicDataRecord_2eproto,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_sccs[2] = {
+  &scc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto.base,
+  &scc_info_TopicDataSourceList_proto_2ftopicData_2ftopicDataSource_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_once;
+static bool descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto = {
+  &descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_initialized, descriptor_table_protodef_proto_2ftopicData_2ftopicDataSource_2eproto, "proto/topicData/topicDataSource.proto", 373,
+  &descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_once, descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_sccs, descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto_deps, 2, 2,
+  schemas, file_default_instances, TableStruct_proto_2ftopicData_2ftopicDataSource_2eproto::offsets,
+  file_level_metadata_proto_2ftopicData_2ftopicDataSource_2eproto, 2, file_level_enum_descriptors_proto_2ftopicData_2ftopicDataSource_2eproto, file_level_service_descriptors_proto_2ftopicData_2ftopicDataSource_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n%proto/topicData/topicDataSource.proto\022"
-      "\016ubii.topicData\032\035proto/devices/component"
-      ".proto\032%proto/topicData/topicDataRecord."
-      "proto\"\243\001\n\017TopicDataSource\022\017\n\005topic\030\001 \001(\t"
-      "H\000\022\017\n\005regex\030\002 \001(\tH\000\022,\n\tcomponent\030\003 \001(\0132\027"
-      ".ubii.devices.ComponentH\000\0228\n\rstatic_reco"
-      "rd\030\004 \001(\0132\037.ubii.topicData.TopicDataRecor"
-      "dH\000B\006\n\004type\"H\n\023TopicDataSourceList\0221\n\010el"
-      "ements\030\001 \003(\0132\037.ubii.topicData.TopicDataS"
-      "ourceb\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 373);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/topicData/topicDataSource.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2fdevices_2fcomponent_2eproto::AddDescriptors();
-  ::protobuf_proto_2ftopicData_2ftopicDataRecord_2eproto::AddDescriptors();
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2ftopicData_2ftopicDataSource_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2ftopicData_2ftopicDataSource_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2ftopicData_2ftopicDataSource_2eproto), true);
 namespace ubii {
 namespace topicData {
 
@@ -171,21 +134,35 @@ namespace topicData {
 
 void TopicDataSource::InitAsDefaultInstance() {
   ::ubii::topicData::_TopicDataSource_default_instance_.topic_.UnsafeSetDefault(
-      &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::ubii::topicData::_TopicDataSource_default_instance_.regex_.UnsafeSetDefault(
-      &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::ubii::topicData::_TopicDataSource_default_instance_.component_ = const_cast< ::ubii::devices::Component*>(
       ::ubii::devices::Component::internal_default_instance());
   ::ubii::topicData::_TopicDataSource_default_instance_.static_record_ = const_cast< ::ubii::topicData::TopicDataRecord*>(
       ::ubii::topicData::TopicDataRecord::internal_default_instance());
 }
+class TopicDataSource::_Internal {
+ public:
+  static const ::ubii::devices::Component& component(const TopicDataSource* msg);
+  static const ::ubii::topicData::TopicDataRecord& static_record(const TopicDataSource* msg);
+};
+
+const ::ubii::devices::Component&
+TopicDataSource::_Internal::component(const TopicDataSource* msg) {
+  return *msg->type_.component_;
+}
+const ::ubii::topicData::TopicDataRecord&
+TopicDataSource::_Internal::static_record(const TopicDataSource* msg) {
+  return *msg->type_.static_record_;
+}
 void TopicDataSource::set_allocated_component(::ubii::devices::Component* component) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (component) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      component = ::google::protobuf::internal::GetOwnedMessage(
+      component = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, component, submessage_arena);
     }
     set_has_component();
@@ -194,18 +171,18 @@ void TopicDataSource::set_allocated_component(::ubii::devices::Component* compon
   // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataSource.component)
 }
 void TopicDataSource::clear_component() {
-  if (has_component()) {
+  if (_internal_has_component()) {
     delete type_.component_;
     clear_has_type();
   }
 }
 void TopicDataSource::set_allocated_static_record(::ubii::topicData::TopicDataRecord* static_record) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_type();
   if (static_record) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      static_record = ::google::protobuf::internal::GetOwnedMessage(
+      static_record = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, static_record, submessage_arena);
     }
     set_has_static_record();
@@ -214,45 +191,36 @@ void TopicDataSource::set_allocated_static_record(::ubii::topicData::TopicDataRe
   // @@protoc_insertion_point(field_set_allocated:ubii.topicData.TopicDataSource.static_record)
 }
 void TopicDataSource::clear_static_record() {
-  if (has_static_record()) {
+  if (_internal_has_static_record()) {
     delete type_.static_record_;
     clear_has_type();
   }
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TopicDataSource::kTopicFieldNumber;
-const int TopicDataSource::kRegexFieldNumber;
-const int TopicDataSource::kComponentFieldNumber;
-const int TopicDataSource::kStaticRecordFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 TopicDataSource::TopicDataSource()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::scc_info_TopicDataSource.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.topicData.TopicDataSource)
 }
 TopicDataSource::TopicDataSource(const TopicDataSource& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   clear_has_type();
   switch (from.type_case()) {
     case kTopic: {
-      set_topic(from.topic());
+      _internal_set_topic(from._internal_topic());
       break;
     }
     case kRegex: {
-      set_regex(from.regex());
+      _internal_set_regex(from._internal_regex());
       break;
     }
     case kComponent: {
-      mutable_component()->::ubii::devices::Component::MergeFrom(from.component());
+      _internal_mutable_component()->::ubii::devices::Component::MergeFrom(from._internal_component());
       break;
     }
     case kStaticRecord: {
-      mutable_static_record()->::ubii::topicData::TopicDataRecord::MergeFrom(from.static_record());
+      _internal_mutable_static_record()->::ubii::topicData::TopicDataRecord::MergeFrom(from._internal_static_record());
       break;
     }
     case TYPE_NOT_SET: {
@@ -263,6 +231,7 @@ TopicDataSource::TopicDataSource(const TopicDataSource& from)
 }
 
 void TopicDataSource::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto.base);
   clear_has_type();
 }
 
@@ -280,13 +249,8 @@ void TopicDataSource::SharedDtor() {
 void TopicDataSource::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TopicDataSource::descriptor() {
-  ::protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TopicDataSource& TopicDataSource::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::scc_info_TopicDataSource.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TopicDataSource_proto_2ftopicData_2ftopicDataSource_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -295,11 +259,11 @@ void TopicDataSource::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:ubii.topicData.TopicDataSource)
   switch (type_case()) {
     case kTopic: {
-      type_.topic_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      type_.topic_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
       break;
     }
     case kRegex: {
-      type_.regex_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      type_.regex_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
       break;
     }
     case kComponent: {
@@ -320,7 +284,7 @@ void TopicDataSource::clear_type() {
 
 void TopicDataSource::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.topicData.TopicDataSource)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -328,183 +292,110 @@ void TopicDataSource::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool TopicDataSource::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.topicData.TopicDataSource)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TopicDataSource::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // string topic = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_topic()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->topic().data(), static_cast<int>(this->topic().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.topicData.TopicDataSource.topic"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_topic();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.topicData.TopicDataSource.topic"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // string regex = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_regex()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->regex().data(), static_cast<int>(this->regex().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "ubii.topicData.TopicDataSource.regex"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_regex();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ubii.topicData.TopicDataSource.regex"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.devices.Component component = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_component()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_component(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.topicData.TopicDataRecord static_record = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_static_record()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_static_record(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.topicData.TopicDataSource)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.topicData.TopicDataSource)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TopicDataSource::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.topicData.TopicDataSource)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string topic = 1;
-  if (has_topic()) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->topic().data(), static_cast<int>(this->topic().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.topicData.TopicDataSource.topic");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->topic(), output);
-  }
-
-  // string regex = 2;
-  if (has_regex()) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->regex().data(), static_cast<int>(this->regex().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "ubii.topicData.TopicDataSource.regex");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->regex(), output);
-  }
-
-  // .ubii.devices.Component component = 3;
-  if (has_component()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_component(), output);
-  }
-
-  // .ubii.topicData.TopicDataRecord static_record = 4;
-  if (has_static_record()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->_internal_static_record(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.topicData.TopicDataSource)
-}
-
-::google::protobuf::uint8* TopicDataSource::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TopicDataSource::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.topicData.TopicDataSource)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string topic = 1;
-  if (has_topic()) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->topic().data(), static_cast<int>(this->topic().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+  if (_internal_has_topic()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic().data(), static_cast<int>(this->_internal_topic().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.topicData.TopicDataSource.topic");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->topic(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_topic(), target);
   }
 
   // string regex = 2;
-  if (has_regex()) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->regex().data(), static_cast<int>(this->regex().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+  if (_internal_has_regex()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_regex().data(), static_cast<int>(this->_internal_regex().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "ubii.topicData.TopicDataSource.regex");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->regex(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_regex(), target);
   }
 
   // .ubii.devices.Component component = 3;
-  if (has_component()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->_internal_component(), deterministic, target);
+  if (_internal_has_component()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::component(this), target, stream);
   }
 
   // .ubii.topicData.TopicDataRecord static_record = 4;
-  if (has_static_record()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->_internal_static_record(), deterministic, target);
+  if (_internal_has_static_record()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::static_record(this), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.topicData.TopicDataSource)
   return target;
@@ -514,37 +405,36 @@ size_t TopicDataSource::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.topicData.TopicDataSource)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   switch (type_case()) {
     // string topic = 1;
     case kTopic: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->topic());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_topic());
       break;
     }
     // string regex = 2;
     case kRegex: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->regex());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_regex());
       break;
     }
     // .ubii.devices.Component component = 3;
     case kComponent: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.component_);
       break;
     }
     // .ubii.topicData.TopicDataRecord static_record = 4;
     case kStaticRecord: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *type_.static_record_);
       break;
     }
@@ -552,20 +442,24 @@ size_t TopicDataSource::ByteSizeLong() const {
       break;
     }
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TopicDataSource::MergeFrom(const ::google::protobuf::Message& from) {
+void TopicDataSource::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.topicData.TopicDataSource)
   GOOGLE_DCHECK_NE(&from, this);
   const TopicDataSource* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TopicDataSource>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TopicDataSource>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.topicData.TopicDataSource)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.topicData.TopicDataSource)
     MergeFrom(*source);
@@ -576,24 +470,24 @@ void TopicDataSource::MergeFrom(const TopicDataSource& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.topicData.TopicDataSource)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.type_case()) {
     case kTopic: {
-      set_topic(from.topic());
+      _internal_set_topic(from._internal_topic());
       break;
     }
     case kRegex: {
-      set_regex(from.regex());
+      _internal_set_regex(from._internal_regex());
       break;
     }
     case kComponent: {
-      mutable_component()->::ubii::devices::Component::MergeFrom(from.component());
+      _internal_mutable_component()->::ubii::devices::Component::MergeFrom(from._internal_component());
       break;
     }
     case kStaticRecord: {
-      mutable_static_record()->::ubii::topicData::TopicDataRecord::MergeFrom(from.static_record());
+      _internal_mutable_static_record()->::ubii::topicData::TopicDataRecord::MergeFrom(from._internal_static_record());
       break;
     }
     case TYPE_NOT_SET: {
@@ -602,7 +496,7 @@ void TopicDataSource::MergeFrom(const TopicDataSource& from) {
   }
 }
 
-void TopicDataSource::CopyFrom(const ::google::protobuf::Message& from) {
+void TopicDataSource::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.topicData.TopicDataSource)
   if (&from == this) return;
   Clear();
@@ -620,20 +514,15 @@ bool TopicDataSource::IsInitialized() const {
   return true;
 }
 
-void TopicDataSource::Swap(TopicDataSource* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TopicDataSource::InternalSwap(TopicDataSource* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata TopicDataSource::GetMetadata() const {
-  protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TopicDataSource::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -641,26 +530,25 @@ void TopicDataSource::InternalSwap(TopicDataSource* other) {
 
 void TopicDataSourceList::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TopicDataSourceList::kElementsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TopicDataSourceList::_Internal {
+ public:
+};
 
 TopicDataSourceList::TopicDataSourceList()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::scc_info_TopicDataSourceList.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.topicData.TopicDataSourceList)
 }
 TopicDataSourceList::TopicDataSourceList(const TopicDataSourceList& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       elements_(from.elements_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ubii.topicData.TopicDataSourceList)
 }
 
 void TopicDataSourceList::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TopicDataSourceList_proto_2ftopicData_2ftopicDataSource_2eproto.base);
 }
 
 TopicDataSourceList::~TopicDataSourceList() {
@@ -674,20 +562,15 @@ void TopicDataSourceList::SharedDtor() {
 void TopicDataSourceList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TopicDataSourceList::descriptor() {
-  ::protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TopicDataSourceList& TopicDataSourceList::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::scc_info_TopicDataSourceList.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TopicDataSourceList_proto_2ftopicData_2ftopicDataSource_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TopicDataSourceList::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.topicData.TopicDataSourceList)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -695,88 +578,62 @@ void TopicDataSourceList::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool TopicDataSourceList::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.topicData.TopicDataSourceList)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TopicDataSourceList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // repeated .ubii.topicData.TopicDataSource elements = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_elements()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_elements(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.topicData.TopicDataSourceList)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.topicData.TopicDataSourceList)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TopicDataSourceList::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.topicData.TopicDataSourceList)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .ubii.topicData.TopicDataSource elements = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->elements(static_cast<int>(i)),
-      output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.topicData.TopicDataSourceList)
-}
-
-::google::protobuf::uint8* TopicDataSourceList::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TopicDataSourceList::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.topicData.TopicDataSourceList)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .ubii.topicData.TopicDataSource elements = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->elements(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_elements_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_elements(i), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.topicData.TopicDataSourceList)
   return target;
@@ -786,36 +643,35 @@ size_t TopicDataSourceList::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.topicData.TopicDataSourceList)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .ubii.topicData.TopicDataSource elements = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->elements_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->elements(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_elements_size();
+  for (const auto& msg : this->elements_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TopicDataSourceList::MergeFrom(const ::google::protobuf::Message& from) {
+void TopicDataSourceList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.topicData.TopicDataSourceList)
   GOOGLE_DCHECK_NE(&from, this);
   const TopicDataSourceList* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TopicDataSourceList>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TopicDataSourceList>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.topicData.TopicDataSourceList)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.topicData.TopicDataSourceList)
     MergeFrom(*source);
@@ -826,13 +682,13 @@ void TopicDataSourceList::MergeFrom(const TopicDataSourceList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.topicData.TopicDataSourceList)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   elements_.MergeFrom(from.elements_);
 }
 
-void TopicDataSourceList::CopyFrom(const ::google::protobuf::Message& from) {
+void TopicDataSourceList::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.topicData.TopicDataSourceList)
   if (&from == this) return;
   Clear();
@@ -850,34 +706,28 @@ bool TopicDataSourceList::IsInitialized() const {
   return true;
 }
 
-void TopicDataSourceList::Swap(TopicDataSourceList* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TopicDataSourceList::InternalSwap(TopicDataSourceList* other) {
   using std::swap;
-  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  elements_.InternalSwap(&other->elements_);
 }
 
-::google::protobuf::Metadata TopicDataSourceList::GetMetadata() const {
-  protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2ftopicData_2ftopicDataSource_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TopicDataSourceList::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace topicData
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::topicData::TopicDataSource* Arena::CreateMaybeMessage< ::ubii::topicData::TopicDataSource >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::topicData::TopicDataSource* Arena::CreateMaybeMessage< ::ubii::topicData::TopicDataSource >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::topicData::TopicDataSource >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::topicData::TopicDataSourceList* Arena::CreateMaybeMessage< ::ubii::topicData::TopicDataSourceList >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::ubii::topicData::TopicDataSourceList* Arena::CreateMaybeMessage< ::ubii::topicData::TopicDataSourceList >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::topicData::TopicDataSourceList >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

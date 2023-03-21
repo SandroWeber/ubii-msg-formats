@@ -5,128 +5,94 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_proto_2fdataStructure_2fquaternion_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdataStructure_2fquaternion_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Quaternion;
-}  // namespace protobuf_proto_2fdataStructure_2fquaternion_2eproto
-namespace protobuf_proto_2fdataStructure_2fvector3_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_proto_2fdataStructure_2fvector3_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Vector3;
-}  // namespace protobuf_proto_2fdataStructure_2fvector3_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdataStructure_2fquaternion_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Quaternion_proto_2fdataStructure_2fquaternion_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fdataStructure_2fvector3_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector3_proto_2fdataStructure_2fvector3_2eproto;
 namespace ubii {
 namespace dataStructure {
 class Pose3DDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Pose3D>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Pose3D> _instance;
   const ::ubii::dataStructure::Quaternion* quaternion_;
   const ::ubii::dataStructure::Vector3* euler_;
 } _Pose3D_default_instance_;
 }  // namespace dataStructure
 }  // namespace ubii
-namespace protobuf_proto_2fdataStructure_2fpose3d_2eproto {
-static void InitDefaultsPose3D() {
+static void InitDefaultsscc_info_Pose3D_proto_2fdataStructure_2fpose3d_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::ubii::dataStructure::_Pose3D_default_instance_;
     new (ptr) ::ubii::dataStructure::Pose3D();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ubii::dataStructure::Pose3D::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_Pose3D =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsPose3D}, {
-      &protobuf_proto_2fdataStructure_2fvector3_2eproto::scc_info_Vector3.base,
-      &protobuf_proto_2fdataStructure_2fquaternion_2eproto::scc_info_Quaternion.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Pose3D_proto_2fdataStructure_2fpose3d_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Pose3D_proto_2fdataStructure_2fpose3d_2eproto}, {
+      &scc_info_Vector3_proto_2fdataStructure_2fvector3_2eproto.base,
+      &scc_info_Quaternion_proto_2fdataStructure_2fquaternion_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Pose3D.base);
-}
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_proto_2fdataStructure_2fpose3d_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_proto_2fdataStructure_2fpose3d_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_proto_2fdataStructure_2fpose3d_2eproto = nullptr;
 
-::google::protobuf::Metadata file_level_metadata[1];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_proto_2fdataStructure_2fpose3d_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Pose3D, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose3D, _internal_metadata_),
   ~0u,  // no _extensions_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Pose3D, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose3D, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Pose3D, position_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose3D, position_),
   offsetof(::ubii::dataStructure::Pose3DDefaultTypeInternal, quaternion_),
   offsetof(::ubii::dataStructure::Pose3DDefaultTypeInternal, euler_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ubii::dataStructure::Pose3D, orientation_),
+  PROTOBUF_FIELD_OFFSET(::ubii::dataStructure::Pose3D, orientation_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ubii::dataStructure::Pose3D)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ubii::dataStructure::_Pose3D_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ubii::dataStructure::_Pose3D_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "proto/dataStructure/pose3d.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+const char descriptor_table_protodef_proto_2fdataStructure_2fpose3d_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n proto/dataStructure/pose3d.proto\022\022ubii"
+  ".dataStructure\032!proto/dataStructure/vect"
+  "or3.proto\032$proto/dataStructure/quaternio"
+  "n.proto\"\252\001\n\006Pose3D\022-\n\010position\030\001 \001(\0132\033.u"
+  "bii.dataStructure.Vector3\0224\n\nquaternion\030"
+  "\002 \001(\0132\036.ubii.dataStructure.QuaternionH\000\022"
+  ",\n\005euler\030\003 \001(\0132\033.ubii.dataStructure.Vect"
+  "or3H\000B\r\n\013orientationb\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_deps[2] = {
+  &::descriptor_table_proto_2fdataStructure_2fquaternion_2eproto,
+  &::descriptor_table_proto_2fdataStructure_2fvector3_2eproto,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_sccs[1] = {
+  &scc_info_Pose3D_proto_2fdataStructure_2fpose3d_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_once;
+static bool descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fdataStructure_2fpose3d_2eproto = {
+  &descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_initialized, descriptor_table_protodef_proto_2fdataStructure_2fpose3d_2eproto, "proto/dataStructure/pose3d.proto", 308,
+  &descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_once, descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_sccs, descriptor_table_proto_2fdataStructure_2fpose3d_2eproto_deps, 1, 2,
+  schemas, file_default_instances, TableStruct_proto_2fdataStructure_2fpose3d_2eproto::offsets,
+  file_level_metadata_proto_2fdataStructure_2fpose3d_2eproto, 1, file_level_enum_descriptors_proto_2fdataStructure_2fpose3d_2eproto, file_level_service_descriptors_proto_2fdataStructure_2fpose3d_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n proto/dataStructure/pose3d.proto\022\022ubii"
-      ".dataStructure\032!proto/dataStructure/vect"
-      "or3.proto\032$proto/dataStructure/quaternio"
-      "n.proto\"\252\001\n\006Pose3D\022-\n\010position\030\001 \001(\0132\033.u"
-      "bii.dataStructure.Vector3\0224\n\nquaternion\030"
-      "\002 \001(\0132\036.ubii.dataStructure.QuaternionH\000\022"
-      ",\n\005euler\030\003 \001(\0132\033.ubii.dataStructure.Vect"
-      "or3H\000B\r\n\013orientationb\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 308);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "proto/dataStructure/pose3d.proto", &protobuf_RegisterTypes);
-  ::protobuf_proto_2fdataStructure_2fvector3_2eproto::AddDescriptors();
-  ::protobuf_proto_2fdataStructure_2fquaternion_2eproto::AddDescriptors();
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_proto_2fdataStructure_2fpose3d_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_proto_2fdataStructure_2fpose3d_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_proto_2fdataStructure_2fpose3d_2eproto), true);
 namespace ubii {
 namespace dataStructure {
 
@@ -140,19 +106,38 @@ void Pose3D::InitAsDefaultInstance() {
   ::ubii::dataStructure::_Pose3D_default_instance_.euler_ = const_cast< ::ubii::dataStructure::Vector3*>(
       ::ubii::dataStructure::Vector3::internal_default_instance());
 }
+class Pose3D::_Internal {
+ public:
+  static const ::ubii::dataStructure::Vector3& position(const Pose3D* msg);
+  static const ::ubii::dataStructure::Quaternion& quaternion(const Pose3D* msg);
+  static const ::ubii::dataStructure::Vector3& euler(const Pose3D* msg);
+};
+
+const ::ubii::dataStructure::Vector3&
+Pose3D::_Internal::position(const Pose3D* msg) {
+  return *msg->position_;
+}
+const ::ubii::dataStructure::Quaternion&
+Pose3D::_Internal::quaternion(const Pose3D* msg) {
+  return *msg->orientation_.quaternion_;
+}
+const ::ubii::dataStructure::Vector3&
+Pose3D::_Internal::euler(const Pose3D* msg) {
+  return *msg->orientation_.euler_;
+}
 void Pose3D::clear_position() {
-  if (GetArenaNoVirtual() == NULL && position_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
-  position_ = NULL;
+  position_ = nullptr;
 }
 void Pose3D::set_allocated_quaternion(::ubii::dataStructure::Quaternion* quaternion) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_orientation();
   if (quaternion) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      quaternion = ::google::protobuf::internal::GetOwnedMessage(
+      quaternion = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, quaternion, submessage_arena);
     }
     set_has_quaternion();
@@ -161,18 +146,18 @@ void Pose3D::set_allocated_quaternion(::ubii::dataStructure::Quaternion* quatern
   // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Pose3D.quaternion)
 }
 void Pose3D::clear_quaternion() {
-  if (has_quaternion()) {
+  if (_internal_has_quaternion()) {
     delete orientation_.quaternion_;
     clear_has_orientation();
   }
 }
 void Pose3D::set_allocated_euler(::ubii::dataStructure::Vector3* euler) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   clear_orientation();
   if (euler) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      euler = ::google::protobuf::internal::GetOwnedMessage(
+      euler = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, euler, submessage_arena);
     }
     set_has_euler();
@@ -181,41 +166,33 @@ void Pose3D::set_allocated_euler(::ubii::dataStructure::Vector3* euler) {
   // @@protoc_insertion_point(field_set_allocated:ubii.dataStructure.Pose3D.euler)
 }
 void Pose3D::clear_euler() {
-  if (has_euler()) {
+  if (_internal_has_euler()) {
     delete orientation_.euler_;
     clear_has_orientation();
   }
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Pose3D::kPositionFieldNumber;
-const int Pose3D::kQuaternionFieldNumber;
-const int Pose3D::kEulerFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 Pose3D::Pose3D()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_proto_2fdataStructure_2fpose3d_2eproto::scc_info_Pose3D.base);
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ubii.dataStructure.Pose3D)
 }
 Pose3D::Pose3D(const Pose3D& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_position()) {
+  if (from._internal_has_position()) {
     position_ = new ::ubii::dataStructure::Vector3(*from.position_);
   } else {
-    position_ = NULL;
+    position_ = nullptr;
   }
   clear_has_orientation();
   switch (from.orientation_case()) {
     case kQuaternion: {
-      mutable_quaternion()->::ubii::dataStructure::Quaternion::MergeFrom(from.quaternion());
+      _internal_mutable_quaternion()->::ubii::dataStructure::Quaternion::MergeFrom(from._internal_quaternion());
       break;
     }
     case kEuler: {
-      mutable_euler()->::ubii::dataStructure::Vector3::MergeFrom(from.euler());
+      _internal_mutable_euler()->::ubii::dataStructure::Vector3::MergeFrom(from._internal_euler());
       break;
     }
     case ORIENTATION_NOT_SET: {
@@ -226,7 +203,8 @@ Pose3D::Pose3D(const Pose3D& from)
 }
 
 void Pose3D::SharedCtor() {
-  position_ = NULL;
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Pose3D_proto_2fdataStructure_2fpose3d_2eproto.base);
+  position_ = nullptr;
   clear_has_orientation();
 }
 
@@ -245,13 +223,8 @@ void Pose3D::SharedDtor() {
 void Pose3D::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Pose3D::descriptor() {
-  ::protobuf_proto_2fdataStructure_2fpose3d_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2fpose3d_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Pose3D& Pose3D::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_proto_2fdataStructure_2fpose3d_2eproto::scc_info_Pose3D.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Pose3D_proto_2fdataStructure_2fpose3d_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -277,146 +250,99 @@ void Pose3D::clear_orientation() {
 
 void Pose3D::Clear() {
 // @@protoc_insertion_point(message_clear_start:ubii.dataStructure.Pose3D)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == NULL && position_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
     delete position_;
   }
-  position_ = NULL;
+  position_ = nullptr;
   clear_orientation();
   _internal_metadata_.Clear();
 }
 
-bool Pose3D::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ubii.dataStructure.Pose3D)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* Pose3D::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // .ubii.dataStructure.Vector3 position = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_position()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_position(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.dataStructure.Quaternion quaternion = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_quaternion()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_quaternion(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .ubii.dataStructure.Vector3 euler = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_euler()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_euler(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:ubii.dataStructure.Pose3D)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:ubii.dataStructure.Pose3D)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void Pose3D::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ubii.dataStructure.Pose3D)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .ubii.dataStructure.Vector3 position = 1;
-  if (this->has_position()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_position(), output);
-  }
-
-  // .ubii.dataStructure.Quaternion quaternion = 2;
-  if (has_quaternion()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_quaternion(), output);
-  }
-
-  // .ubii.dataStructure.Vector3 euler = 3;
-  if (has_euler()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_euler(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ubii.dataStructure.Pose3D)
-}
-
-::google::protobuf::uint8* Pose3D::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* Pose3D::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ubii.dataStructure.Pose3D)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .ubii.dataStructure.Vector3 position = 1;
   if (this->has_position()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_position(), deterministic, target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::position(this), target, stream);
   }
 
   // .ubii.dataStructure.Quaternion quaternion = 2;
-  if (has_quaternion()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_quaternion(), deterministic, target);
+  if (_internal_has_quaternion()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::quaternion(this), target, stream);
   }
 
   // .ubii.dataStructure.Vector3 euler = 3;
-  if (has_euler()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->_internal_euler(), deterministic, target);
+  if (_internal_has_euler()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::euler(this), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ubii.dataStructure.Pose3D)
   return target;
@@ -426,15 +352,14 @@ size_t Pose3D::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ubii.dataStructure.Pose3D)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // .ubii.dataStructure.Vector3 position = 1;
   if (this->has_position()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *position_);
   }
 
@@ -442,14 +367,14 @@ size_t Pose3D::ByteSizeLong() const {
     // .ubii.dataStructure.Quaternion quaternion = 2;
     case kQuaternion: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *orientation_.quaternion_);
       break;
     }
     // .ubii.dataStructure.Vector3 euler = 3;
     case kEuler: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *orientation_.euler_);
       break;
     }
@@ -457,20 +382,24 @@ size_t Pose3D::ByteSizeLong() const {
       break;
     }
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Pose3D::MergeFrom(const ::google::protobuf::Message& from) {
+void Pose3D::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:ubii.dataStructure.Pose3D)
   GOOGLE_DCHECK_NE(&from, this);
   const Pose3D* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Pose3D>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Pose3D>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:ubii.dataStructure.Pose3D)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:ubii.dataStructure.Pose3D)
     MergeFrom(*source);
@@ -481,19 +410,19 @@ void Pose3D::MergeFrom(const Pose3D& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:ubii.dataStructure.Pose3D)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_position()) {
-    mutable_position()->::ubii::dataStructure::Vector3::MergeFrom(from.position());
+    _internal_mutable_position()->::ubii::dataStructure::Vector3::MergeFrom(from._internal_position());
   }
   switch (from.orientation_case()) {
     case kQuaternion: {
-      mutable_quaternion()->::ubii::dataStructure::Quaternion::MergeFrom(from.quaternion());
+      _internal_mutable_quaternion()->::ubii::dataStructure::Quaternion::MergeFrom(from._internal_quaternion());
       break;
     }
     case kEuler: {
-      mutable_euler()->::ubii::dataStructure::Vector3::MergeFrom(from.euler());
+      _internal_mutable_euler()->::ubii::dataStructure::Vector3::MergeFrom(from._internal_euler());
       break;
     }
     case ORIENTATION_NOT_SET: {
@@ -502,7 +431,7 @@ void Pose3D::MergeFrom(const Pose3D& from) {
   }
 }
 
-void Pose3D::CopyFrom(const ::google::protobuf::Message& from) {
+void Pose3D::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:ubii.dataStructure.Pose3D)
   if (&from == this) return;
   Clear();
@@ -520,33 +449,27 @@ bool Pose3D::IsInitialized() const {
   return true;
 }
 
-void Pose3D::Swap(Pose3D* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Pose3D::InternalSwap(Pose3D* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(position_, other->position_);
   swap(orientation_, other->orientation_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata Pose3D::GetMetadata() const {
-  protobuf_proto_2fdataStructure_2fpose3d_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_proto_2fdataStructure_2fpose3d_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Pose3D::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace dataStructure
 }  // namespace ubii
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ubii::dataStructure::Pose3D* Arena::CreateMaybeMessage< ::ubii::dataStructure::Pose3D >(Arena* arena) {
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::ubii::dataStructure::Pose3D* Arena::CreateMaybeMessage< ::ubii::dataStructure::Pose3D >(Arena* arena) {
   return Arena::CreateInternal< ::ubii::dataStructure::Pose3D >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>
